@@ -1,0 +1,951 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><meta name="viewport" content="width=device-width, initial-scale=1" /><title>
+	ConnectShip multi-carrier shipping software | on-premise and cloud services
+</title><link rel="stylesheet" type="text/css" href="styles/FlexCommon.css?v=8.00900" /><link rel="Shortcut Icon" href="assets/images/favicon.ico" />
+    
+    <!-- ********** Clickjacking defense for modern browsers, breaks this page out of frames ********** -->
+    <style type="text/css"> body { display : none;} </style>
+    <meta http-equiv="X-Frame-Options" content="deny" />
+    <!--*********** ********** ************************************************************************ -->
+
+    
+    
+
+    
+</head>
+<body class="TopMasterBody">
+    <script type="text/javascript">
+        //Clickjacking defense for legacy browsers
+        if (self == top) {
+            var theBody = document.getElementsByTagName('body')[0]
+            theBody.style.display = "block"
+        } else {
+            top.location = self.location
+        }
+    </script> 
+
+    <form method="post" action="./" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTk0NjI0MDIzOA9kFgJmD2QWAmYPZBYCAgMPZBYCAgMPZBYGAgMPZBYCAgEPZBYEAgEPZBYCAgEPZBYCAgcPZBYCAgEPZBYCAgEPDxYCHgtOYXZpZ2F0ZVVybAUcfi9jb250YWN0Lz9ycD1+L2RlZmF1bHQuYXNweGRkAgUPZBYCAgEPDxYCHgRUZXh0BeQHPHNjcmlwdCB0eXBlID0gInRleHQvamF2YXNjcmlwdCI+IHdpbmRvdy5zczM2MENvbmZpZyA9IHtjb250ZW50R3JvdXBzOiB7IGV4Y2x1ZGU6IFsnU0RLJywgJ0ZvcnVtJywgJ01lbWJlcnMnLCAnRG9jdW1lbnRhdGlvbiddIH0sc3R5bGU6e3RoZW1lQ29sb3I6ICIjNUQzQjVGIixzdWdnZXN0aW9uczp7dGV4dDp7Y29sb3I6ICIjMWE3NGQ3In0sYmFja2dyb3VuZDp7Y29sb3I6ICIjZjFmMWYxIn0scGFkZGluZzogIjBweCIsZGlzdGFuY2VGcm9tVG9wOiAiMHB4Iixib3JkZXI6e2NvbG9yOiAiI2YxZjFmMSIscmFkaXVzOiAiMHB4In19LHNlYXJjaEJveDp7dGV4dDp7Y29sb3I6ICIjNUQzQjVGIixzaXplOiAiMWVtIn0sYmFja2dyb3VuZDp7Y29sb3I6ICIjZjlmOWY5In0sYm9yZGVyOntjb2xvcjogIiNmMWYxZjEiLHJhZGl1czogIjBweCJ9LHBhZGRpbmc6ICI3cHgiLGJ1dHRvbjp7dGV4dDogIiAiLGljb246ICJtYWduaWZpZXIiLGNvbG9yOiAiIzY2NjY2NiJ9fSxsb2FkZXJUeXBlOiAiY2lyY2xlIn0sc2VhcmNoQm94OntzZWFyY2hCdXR0b246ICIjc3MzNjBTZWFyY2hCdXR0b24ifSx0cmFja2luZzp7cHJvdmlkZXJzOiBbXX0sbGF5b3V0Onttb2JpbGU6e3Nob3dVcmw6IHRydWV9LGRlc2t0b3A6e3Nob3dVcmw6IHRydWV9LG5hdmlnYXRpb246e3Bvc2l0aW9uOiAidG9wIn19LHZvaWNlU2VhcmNoOntlbmFibGVkOiBmYWxzZX0sZGF0YVBvaW50czp7ZXhjbHVkZTogW10sc2luZ2xlOiBbXX0sc2l0ZUlkOiAiY29ubmVjdHNoaXAuY29tIixyZXN1bHRzOnttb3JlUmVzdWx0c0J1dHRvbjogbnVsbH0sc2hvd0Vycm9yczogZmFsc2V9O3ZhciBlPWRvY3VtZW50LmNyZWF0ZUVsZW1lbnQoInNjcmlwdCIpO2UuYXN5bmM9ITA7ZS5zcmM9Imh0dHBzOi8vY2RuLnNpdGVzZWFyY2gzNjAuY29tL3YxMy9zaXRlc2VhcmNoMzYwLXYxMy5taW4uanMiO2RvY3VtZW50LmdldEVsZW1lbnRzQnlUYWdOYW1lKCJib2R5IilbMF0uYXBwZW5kQ2hpbGQoZSk7PC9zY3JpcHQ+ZGQCDw9kFgICAQ9kFgJmD2QWAgIBD2QWAgIFD2QWAgIBD2QWAgIBD2QWBAIHD2QWAgIBD2QWAmYPZBYCAgMPDxYCHwEFAjQzZGQCCQ9kFgICBQ9kFgICAQ8PFgIfAQUCNDNkZAIVD2QWAgIBD2QWBAIBDw8WAh4HVmlzaWJsZWhkZAIDD2QWAgIBD2QWBAIBD2QWAgIDDw8WAh8ABRx+L2NvbnRhY3QvP3JwPX4vZGVmYXVsdC5hc3B4ZGQCCw9kFgICDQ8PFgQeB1Rvb2xUaXAFEUxCX0RNX0NTV0VCUFJPRDAxHwEFBDIwMjNkZGRpKnEAvRpFKza0zDLzAenIJpP4DQ==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=aOIIsX1HlU97QCSiWFQ83rX8IkYFazZW91z5Rg88KNjG2tFL0f4UcFWwhcBJafoT_TRiu4WTcNDX_FO10&amp;t=637823149837077270" type="text/javascript"></script>
+
+
+<script src="/ScriptResource.axd?d=VXTYnxttIgg9DgC71UHZU41cUbvx-gEQYmpzjBzULbzqmdVfBcotKwCQbSQ92zx2o-Ip9yzHyM_pd3tZnIZlHiij2nOshR1vOQkm7F-7kbcgS-bOGa89FirINKEh6FBNaPSRkRQsK-SEeZjGn5GOC4f31OA1&amp;t=ffffffffaa493ab8" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=M3fycRqLwH5JoEMM3txoS0TcKibVifcuv9zqDOzNIOK_I6FbSdSP0A5Uh7UyLgnvJweEYWRSNqz4OA5uuk4cGkC4ahYxu48zZkpB5hZ-m30sEE0avqxihIM4ge686XC6ff58Z7K28xzqGv0OOv5cOKq9zI7dAY9G30iCaw2&amp;t=ffffffffaa493ab8" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAJ8KEGqv5NDaMDKMAlunp4t9yNYpYZhU2A8OLMPQ46jZpDoM5SY1U8U3e27hQ707k5OxSLp" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ctl00$ScriptManager1', 'form1', ['tctl00$ctl00$TopBody$MasterBody$updMain','TopBody_MasterBody_updMain'], [], [], 90, 'ctl00$ctl00');
+//]]>
+</script>
+
+
+        <div>
+            
+    
+
+    
+    <div class="MainBodyBack">
+        <div id="TopBody_pnlHeader">
+	
+            
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+<div class="FloatRight FullWidth TopMasterBody RightCenterOnSmall FlexSize">
+		
+
+    <div id="TopBody_ctl01_pnlLoginHeader">
+			
+        
+        <div id="TopBody_ctl01_pnlInteraction" class="Flex_HeaderHiddenWrapper">
+				
+            
+        
+			</div>
+        <div class="FloatRight Flex_HeaderLoginNameBox">
+				
+            
+                    <div id="TopBody_ctl01_LoginViewTop_pnlRegister" class="Flex_HeaderLoginNameBox">
+					
+                        <a id="TopBody_ctl01_LoginViewTop_hylRegister" class="Flex_LinkNormal" href="contact/?ref=register">Register</a> &nbsp;
+                    
+				</div>
+                    <div id="TopBody_ctl01_LoginViewTop_pnlLoginAnonymous" class="Flex_HeaderLoginNameBox">
+					
+                        <a id="TopBody_ctl01_LoginViewTop_hylLoginAnonymous" title="Login to the Members area" class="Flex_LinkNormal" href="Members/Login.aspx?rc=1">Login</a> &nbsp;
+                    
+				</div>
+                 
+        
+			</div>
+        
+
+        <div id="TopBody_ctl01_pnlSearchForm" class="Flex_HeaderSearchForm BackgroundLight">
+				
+            <input id="searchBox" type="text" placeholder="Search" class="Flex_HeaderSearchFormText" /><input type="submit" id="ss360SearchButton" value="Go"/>
+        
+			</div>
+
+        <div id="TopBody_ctl01_pnlSocialIcons" class="FloatRight Flex_HeaderLoginNameBox">
+				
+            <div class="BigScreenOnly">
+					
+                <a id="TopBody_ctl01_hylContactUs" title="Contact Us" class="Flex_LinkNormal" href="contact/?rp=~/default.aspx">Contact Us</a> &nbsp; &nbsp;
+            
+				</div>
+        
+			</div>
+
+    
+		</div>
+
+
+	</div>
+
+<div class="ClearFix"></div>
+
+<div id="TopBody_ctl01_pnlHeaderMainWrapper" class="MainBodyBack">
+		
+    
+    <div id="TopBody_ctl01_pnlHeaderMain" class="Flex_HeaderMain">
+			
+        
+
+        <div id="TopBody_ctl01_pnlLogo">
+				
+            
+            <a href="./"><img src="assets/images/logos/header.png" /></a>
+        
+            
+            <div id="TopBody_ctl01_pnlMainMenu" class="BigScreenOnly">
+					
+                <navMain role="navigation">
+                  <ul>
+                    <li><a class="TextMainMenu Bold">Shipping Software</a>
+                      <ul>
+                        <li><a class="Text0Hover Bold" href="products/">All Solutions</a></li>
+                        <li><a class="Text0Hover Bold" href="products/international/">International</a></li>
+                        <li><a class="Text0Hover Bold" href="carriers/">Supported Carriers</a></li>
+                      </ul>
+                    </li>
+                    <li><a class="TextMainMenu Bold">How to Buy</a>
+                      <ul>
+                        <li><a class="Text0Hover Bold" href="partners/">Partner Resellers</a></li>
+                        <li><a class="Text0Hover Bold" href="products/purchase/">ConnectShip Sales</a></li>
+                      </ul>
+                    </li>
+                    <li><a class="TextMainMenu Bold">Training</a>
+                      <ul>
+                        <li><a class="Text0Hover Bold" href="training/">Online Training</a></li>
+                      </ul>
+                    </li>
+                    <li><a class="TextMainMenu Bold">Resources</a>
+                      <ul>
+                        <li><a class="Text0Hover Bold" href="resources/">Resource Library</a></li>
+                        <li><a class="Text0Hover Bold" href="casestudies/">Case Studies</a></li>
+                        <li><a class="Text0Hover Bold" href="community/blog/">Industry Blog</a></li>
+                        <li><a class="Text0Hover Bold" href="community/videolibrary/">Video Library</a></li>
+                      </ul>
+                    </li>
+
+                    
+                            <li><a class="Text6_5Hover Bold">Members</a>
+                              <ul>
+                                <li><a class="Text0Hover Bold" href="members/login.aspx?rc=1">Login</a></li>
+                                <li><a class="Text0Hover Bold" href="contact/?ref=register">Register</a></li>
+                                <li>
+                                    <a class="Text0Hover Bold" href="docs/">Product Documentation<img id="TopBody_ctl01_LoginViewMenu_Image1" src="assets/images/icons/lockicon.png" align="absmiddle" /></a>
+                                </li>
+                              </ul>
+                            </li>
+                         
+
+                  </ul>
+                </navMain>
+            
+				</div>
+            
+            
+
+            
+            <div class="ClearFix"></div>
+
+            <div id="TopBody_ctl01_pnlMainMenuSmall" class="FlexSize SmallScreenOnly Flex_BodyBuffer">
+					
+                <a id="TopBody_ctl01_MenuLink1" class="TextMainMenu MobileMenuItem" href="products/">Shipping Software</a> 
+                <a id="TopBody_ctl01_MenuLink2" class="TextMainMenu MobileMenuItem" href="partners/">Resellers</a>
+                <a id="TopBody_ctl01_MenuLink4" class="TextMainMenu MobileMenuItem" href="training/">Training</a>
+                <a id="TopBody_ctl01_MenuLink5" class="TextMainMenu MobileMenuItem" href="resources/">Resources</a>
+                <a class="Flex_Link Text6_5Hover MobileMenuItem" href="members/">Members</a>
+                <span id="TopBody_ctl01_lblTest"></span>
+            
+				</div>
+
+        
+			</div>
+    
+		</div>
+
+
+	</div>
+    
+
+
+<!-- Start of Site Search 360 script (put right before the closing </body> tag) -->
+
+<span id="TopBody_ctl01_SiteSearch_lblScript"><script type = "text/javascript"> window.ss360Config = {contentGroups: { exclude: ['SDK', 'Forum', 'Members', 'Documentation'] },style:{themeColor: "#5D3B5F",suggestions:{text:{color: "#1a74d7"},background:{color: "#f1f1f1"},padding: "0px",distanceFromTop: "0px",border:{color: "#f1f1f1",radius: "0px"}},searchBox:{text:{color: "#5D3B5F",size: "1em"},background:{color: "#f9f9f9"},border:{color: "#f1f1f1",radius: "0px"},padding: "7px",button:{text: " ",icon: "magnifier",color: "#666666"}},loaderType: "circle"},searchBox:{searchButton: "#ss360SearchButton"},tracking:{providers: []},layout:{mobile:{showUrl: true},desktop:{showUrl: true},navigation:{position: "top"}},voiceSearch:{enabled: false},dataPoints:{exclude: [],single: []},siteId: "connectship.com",results:{moreResultsButton: null},showErrors: false};var e=document.createElement("script");e.async=!0;e.src="https://cdn.sitesearch360.com/v13/sitesearch360-v13.min.js";document.getElementsByTagName("body")[0].appendChild(e);</script></span>
+
+<!-- End of Site Search 360 script -->
+
+
+
+<div id="TopBody_ctl01_pnlCookies" class="Flex_CookiesBanner">
+		
+    <span class="Flex_Small">This site uses cookies</span>
+    <a id="TopBody_ctl01_btnAcceptCookies" class="Flex_Small Flex_Button Flex_Rounded TextInverse Background5Hover" href="javascript:__doPostBack(&#39;ctl00$ctl00$TopBody$ctl01$btnAcceptCookies&#39;,&#39;&#39;)">I'm okay with that</a>
+    <a id="TopBody_ctl01_hylCookiesMore" class="Flex_Small Flex_Button Flex_Rounded TextNormal Background6Hover" href="legal/useofcookies/">More info</a>
+
+	</div>
+
+        
+</div>
+
+        
+
+        
+    </div>
+
+    
+    <div class="FlexSize">
+	
+
+        <a class="Flex_LinkNoLine DisplayBlock" href="re/?c=iNtSeR23">
+            <div class="MainBodyBack BigScreenOnly" Style="height: 250px; background-color: #2B1F39; background-image: url('assets/images/banners/IntegrationBG_628690.png'); background-repeat: no-repeat; background-position: top right;">
+                <div class="Flex_StretchInside Flex_BodyBuffer VAlignTop">
+		
+                    
+                    <div class="FloatLeft FlexSize VPaddingTriple FullWidth">
+			
+                        <div class="VAlignTop">
+				
+                            <br />
+                            <h1 class="Inline TextInverse TextShadow1">Technology moving commerce</h1>
+                            <br /><br />
+                            <h3 class="Inline TextLight TextShadow1">We've expanded our integration services!<br /></h3>
+                            <br /><br />
+                            <span class="Flex_Button BackgroundWhite70_X Flex_RoundedSubtle TextWhiteHover B_Solid B_1 B_Color7Hover">Learn More</span>
+                            <br />
+                        
+			</div>
+                    
+		</div>
+
+                
+	</div>
+            </div>
+
+            <div class="MainBodyBack SmallScreenOnly" Style="background-color: #2B1F39; background-repeat: no-repeat; background-position: right;">
+                <div class="Flex_StretchInside VAlignTop">
+		
+                
+                    <div class="Flex_BodyBuffer">
+			
+                        <div class="VAlignTop VMarginDouble">
+				
+                            <h1 class="Inline TextLight">Technology moving commerce</h1>
+                            <br />
+                            <h2 class="Inline TextInverse">We've expanded our integration services!</h2>
+                            <br /><br />
+                            <span class="Flex_Button BackgroundWhite90_X Flex_RoundedSubtle TextWhiteHover B_Solid B_1 B_Color7Hover TextShadow1">Learn More</span>
+                        
+			</div>
+                    
+		</div>
+                
+                
+	</div>
+            </div>
+        </a>
+           
+    
+</div>
+
+    
+
+    
+
+    
+    <div id="TopBody_MasterBody_updMain">
+	
+            <div class="Flex_Main">
+		
+
+                <span id="TopBody_MasterBody_lblTest"></span>
+    
+                <div class="FlexSize MainBodyBack">
+			
+                    
+
+                
+		</div>
+
+                <div class="FlexSize MainBodyBack">
+			
+                    <div class="BGMark3 BGCenterBottom BGNoRepeat">
+				
+                        <div class="Flex_StretchInside ">
+					
+                            <br /><br />
+
+                            <div class="Flex_Box1of4 BigScreenOnly">
+						
+                                <div class="Flex_Rounder BackgroundSubtleHover BackgroundShadowSubtle B_Solid B_2 B_Color8Hover PaddingTriple AlignCenter Flex_VariableHeight9">
+							
+                                    <img title="Image showing packages" class="Flex_BoxIconSizeSmall" src="assets/images/icons/standard/pkglife.png" />
+                                    <br />
+                                    <span class="Flex_Jumbo TextNormal">+823M</span>
+                                    <br />
+                                    <span class="Flex_TextNormal">shipped in 2021</span>
+                                
+						</div>
+                            
+					</div>
+                            <div class="Flex_Box2of4 BigScreenOnly">
+						
+                                <a class="Flex_BoxLink" href="carriers/"><div class="Flex_Rounder BackgroundSubtleHover BackgroundShadowSubtle B_Solid B_2 B_Color8Hover PaddingTriple AlignCenter Flex_VariableHeight9">
+							
+                                        <img title="Image showing packages on a map" class="Flex_BoxIconSizeSmall" src="assets/images/icons/standard/origins.png" />
+                                        <br />
+                                        <span class="Flex_Jumbo TextNormal">50</span>
+                                        <br />
+                                        <span class="Flex_TextNormal">origin countries</span>
+                                    
+						</div></a>
+                            
+					</div>
+                            <div class="Flex_Box3of4 BigScreenOnly">
+						
+                                <a class="Flex_BoxLink" href="carriers/"><div class="Flex_Rounder BackgroundSubtleHover BackgroundShadowSubtle B_Solid B_2 B_Color8Hover PaddingTriple AlignCenter Flex_VariableHeight9">
+							
+                                        <img title="Image showing packages on a pallet" class="Flex_BoxIconSizeSmall" src="assets/images/icons/standard/palletized.png" />
+                                        <br />
+                                        <span class="Flex_Jumbo TextNormal">58</span>
+                                        <br />
+                                         <span class="Flex_TextNormal">parcel/LTL carriers</span>
+                                       
+                                    
+						</div></a>
+                            
+					</div>
+                            <div class="Flex_Box4of4 BigScreenOnly">
+						
+                                <a class="Flex_BoxLink" href="about/"><div class="Flex_Rounder BackgroundSubtleHover BackgroundShadowSubtle B_Solid B_2 B_Color8Hover PaddingTriple AlignCenter Flex_VariableHeight9">
+							
+                                        <img title="Image showing a history of growth" class="Flex_BoxIconSizeSmall" src="assets/images/icons/standard/results.png" />
+                                        <br />
+                                        <span class="Flex_Jumbo TextNormal"><span id="TopBody_MasterBody_lblYears">43</span></span>
+                                        <br />
+                                        <span class="Flex_TextNormal">years experience</span>
+                                    
+						</div></a>
+                            
+					</div>
+                    
+                            <div class="W85 SmallScreenOnly PaddingTriple">
+						
+                                <div class="W25 FloatLeft AlignRight VPaddingRelaxed">
+                                    <span class="Flex_Jumbo TextNormal">+823M</span>
+                                </div>
+                                <div class="W75 FloatLeft">
+                                    <div class="PaddingRelaxed">
+                                        <span class="Flex_Big TextNormal">shipments through ConnectShip systems <i>annually</i></span>
+                                    </div>
+                                </div>
+                                <div class="ClearFix"></div>
+
+                                <div class="W25 FloatLeft AlignRight VPaddingRelaxed">
+                                    <span id="TopBody_MasterBody_lblYearsSmall" class="Flex_Jumbo TextNormal">43</span>
+                                </div>
+                                <div class="W75 FloatLeft">
+                                    <div class="PaddingRelaxed">
+                                        <span class="Flex_Big TextNormal">years experience in the shipping software business</span>
+                                    </div>
+                                </div>
+                                <div class="ClearFix"></div>
+                            
+					</div>
+
+                            <div class="ClearFix"></div>
+                            <br /><br />
+                        
+				</div>
+                    
+			</div>
+                
+		</div>
+                
+                <div class="ClearFix"></div>
+
+                
+                <div class="BackgroundGradientPale FlexSize">
+			
+                    <div>
+				
+                        <div class="Flex_StretchInside VPaddingTriple">
+					
+                            <div class="Flex_BoxContainer">
+						
+                
+                                <div class="Flex_BoxSpanningHeader">
+							
+                                    <h1 class="Text3Hover Bold">What is ConnectShip Toolkit?</h1>
+                                    <br /><br />
+                                
+						</div>
+                            
+                                <div class="Flex_Box1of4 Flex_Rounder Flex_InsideBorderOnHover VPaddingRelaxed">
+							
+                                    <a class="Flex_LinkNoLine" href="products/toolkit/"><div class="Flex_BoxIconOrHeader">
+								
+                                            <span class="Flex_LinkBig Text8Hover">Shipping compliance software</span>
+                                        
+							</div><div class="Flex_BoxIconOrHeader">
+								
+                                            <img title="Image showing news" class="Flex_BoxIconSize" src="assets/images/icons/standard/compliance.png" />
+                                        
+							</div><div class="Flex_BoxSpanningHeaderLeft">
+								
+                                            <span class="Flex_TextNormal">
+                                                Get shipments to your customers with shipping labels, shipping rates, and electronic manifests.
+                                            </span>
+                                            <br /><br />
+                                            <span class="Text1 Bold">Learn More</span>
+                                        
+							</div></a>
+                                
+						</div>
+                                                
+                                <div class="Flex_Box2of4 Flex_Rounder Flex_InsideBorderOnHover VPaddingRelaxed">
+							
+                                    <a class="Flex_LinkNoLine" href="carriers/"><div class="Flex_BoxIconOrHeader">
+								
+                                            <span class="Flex_LinkBig Text8Hover">for small package, LTL, and mail</span>
+                                        
+							</div><div class="Flex_BoxIconOrHeader">
+								
+                                            <img title="Image showing multiple shipping carriers and modes" class="Flex_BoxIconSize" src="assets/images/icons/standard/multimodal.png" />
+                                        
+							</div><div class="Flex_BoxSpanningHeaderLeft">
+								
+                                            <span class="Flex_TextNormal">
+                                                ConnectShip Toolkit supports small package, LTL, and mail carriers, shipping from 50 origin countries.
+                                            </span>
+                                            <br /><br />
+                                            <span class="Text1 Bold">Learn More</span>
+                                        
+							</div></a>
+                                
+						</div>
+                                                
+                                <div class="Flex_Box3of4 Flex_Rounder Flex_InsideBorderOnHover VPaddingRelaxed">
+							
+                                    <a class="Flex_LinkNoLine" href="products/integrated/"><div class="Flex_BoxIconOrHeader">
+								
+                                            <span class="Flex_LinkBig Text8Hover">that connects to your systems</span>
+                                        
+							</div><div class="Flex_BoxIconOrHeader">
+								
+                                            <img title="Image showing an integratable solution" class="Flex_BoxIconSize" src="assets/images/icons/standard/integratedsystems.png" />
+                                        
+							</div><div class="Flex_BoxSpanningHeaderLeft">
+								
+                                            <span class="Flex_TextNormal">
+                                                The ConnectShip Toolkit API will connect to your WMS, ERP, OMS, or pretty much any business system.
+                                            </span>
+                                            <br /><br />
+                                            <span class="Text1 Bold">Learn More</span>
+                                        
+							</div></a>
+                                
+						</div>
+                                                
+                                <div class="Flex_Box4of4 Flex_Rounder Flex_InsideBorderOnHover VPaddingRelaxed">
+							
+                                    <a class="Flex_LinkNoLine" href="scalable/"><div class="Flex_BoxIconOrHeader">
+								
+                                            <span class="Flex_LinkBig Text8Hover">and grows with your business</span>
+                                        
+							</div><div class="Flex_BoxIconOrHeader">
+								
+                                            <img title="Image showing a scalable solution" class="Flex_BoxIconSize" src="assets/images/icons/standard/scalable.png" />
+                                        
+							</div><div class="Flex_BoxSpanningHeaderLeft">
+								
+                                            <span class="Flex_TextNormal">
+                                                Install on multiple servers, or use Toolkit Cloud and let us handle the hardware and updates.
+                                            </span>
+                                            <br /><br />
+                                            <span class="Text1 Bold">Learn More</span>
+                                        
+							</div></a>
+                                
+						</div>
+                                                
+                            
+					</div>  
+                        
+				</div>
+                    
+			</div>
+                
+		</div>
+
+
+                <div class="MainBodyBack FlexSize">
+			
+                    <div class="BGWorldMap BGCenterTop BGNoRepeat">
+				
+                        <br /><br />
+                        <div class="Flex_StretchInside Flex_VerticalSeparation">
+					
+                            <div class="Flex_Box1of2 VPaddingRelaxed">
+						
+                                <h2>Global, National, and Regional Carriers</h2>
+                                <span class="Flex_TextNormal">
+                                    We have the options you need, whether you ship with small package, postal, or LTL (less than truckload) carriers.
+                                    <br /><br />
+                                    Beyond the U.S., ConnectShip gives you access to carrier services shipping from 50 different origin 
+                                    countries to anywhere the carrier delivers.
+                                </span>
+                                <br /><br />
+                                <a class="Flex_LinkNormal Bold" href="carriers/">Complete List of Carriers and Countries</a>
+                            
+					</div>
+                            <div class="Flex_Box1of2 VPaddingRelaxed">
+						
+                                <div class="Flex_FullTo75">
+							
+                                    <a href="carriers/"><img class="MaxWidth" src="assets/images/icons/carriers/carriersbanner2.gif" /></a>
+                                
+						</div>
+                            
+					</div>
+                        
+				</div>
+
+
+                        <div class="Flex_StretchInside Flex_VerticalSeparation">
+					
+
+                            <div class="DisplayInlineBlock FullWidth Flex_VerticalSeparation Flex_Rounder Flex_InsideBorderOnHover VPaddingDouble">
+						
+                                <a class="Flex_LinkNoLine" href="products/intelligentlogistics/"><div class="Flex_Box1of1FourthIconLeft AlignCenter">
+							
+                                        <img title="Image showing ConnectShip Intelligent Logistics product" class="Flex_BoxIconSize" src="assets/images/icons/standard/casestudies.png" />
+                                    
+						</div><div class="Flex_Box2of1FourthIconLeft">
+							
+                                        <h1 class="Text3Hover Bold">ConnectShip Intelligent Logistics in the cloud</h1>
+                                     
+                                        <span class="LineSpacingNormal">
+                                            
+                                            <span class="Flex_TextNormal">
+                                                Identify cost saving opportunities, enhance order visibility, get customized dashboards,
+                                                and much more with the new ConnectShip Intelligent Logistics.
+                                            </span>
+                                        </span>
+                                    
+						</div></a>
+                            
+					</div>
+
+                            <div class="DisplayInlineBlock FullWidth Flex_VerticalSeparation Flex_Rounder Flex_InsideBorderOnHover VPaddingDouble">
+						
+                                <a class="Flex_LinkNoLine" href="insureshield/"><div class="Flex_Box1of1FourthIconLeft AlignCenter">
+							
+                                        <img title="Image showing insurance" class="Flex_BoxIconSize" src="assets/images/icons/standard/insurance.png" />
+                                    
+						</div><div class="Flex_Box2of1FourthIconLeft">
+							
+                                        <h1 class="Text3Hover Bold">All risk insurance now available</h1>
+                                     
+                                        <span class="LineSpacingNormal">
+                                            
+                                            <span class="Flex_TextNormal">
+                                                Protect your business against loss and damage with InsureShield.
+                                                Insure based on amount, product, or location, regardless of carrier or transportation mode.
+                                            </span>
+                                        </span>
+                                    
+						</div></a>
+                            
+					</div>
+
+                            <div class="DisplayInlineBlock FullWidth Flex_VerticalSeparation Flex_Rounder Flex_InsideBorderOnHover VPaddingDouble">
+						
+                                <a class="Flex_LinkNoLine" href="training/"><div class="Flex_Box1of1FourthIconLeft AlignCenter">
+							
+                                        <img title="Image showing training" class="Flex_BoxIconSize" src="assets/images/icons/standard/training.png" />
+                                    
+						</div><div class="Flex_Box2of1FourthIconLeft">
+							
+                                        <h1 class="Text3Hover Bold">Sign-up for online training courses</h1>
+                                     
+                                        <span class="LineSpacingNormal">
+                                            
+                                            <span class="Flex_TextNormal">
+                                                Get the most out of your shipping software by attending
+                                                one of our instructor-led online training courses.
+                                            </span>
+                                        </span>
+                                    
+						</div></a>
+                            
+					</div>
+
+                        
+				</div>
+                
+                    
+			</div>
+                
+		</div>
+            
+                <div class="ClearFix"></div>
+
+                <div class="BackgroundGradientPale FlexSize">
+			
+                    <br />
+                    <div class="Flex_StretchInside Flex_VerticalSeparation">
+				
+                            
+                        <div id="TopBody_MasterBody_pnlPartner" class="Flex_Box1of2 VPaddingRelaxed">
+					
+                            <a class="Flex_BoxLink Text1Hover DisplayBlock Flex_Rounder Flex_InsideBorderOnHover" href="partners/"><div class="PaddingDouble">
+						
+                                    <h2 class="Inline">Find a Partner</h2> &nbsp;
+                                    <span class="Flex_Circle Background1Hover TextInverse Flex_CircleGo Bold">></span>
+                                    <br /><br />
+                                    <span class="Flex_TextNormal">
+                                        These partners put our shipping engine into their best-in-class TMS, WMS, and ERP systems.
+                                    </span>
+                                
+					</div></a>
+                            <br /><br />
+
+                            <a class="Flex_BoxLink Text1Hover DisplayBlock Flex_Rounder Flex_InsideBorderOnHover" href="contact/?ref=partner"><div class="PaddingDouble">
+						
+                                    <h2 class="Inline">Become a Partner</h2> &nbsp;
+                                    <span class="Flex_Circle Background1Hover TextInverse Flex_CircleGo Bold">></span>
+                                    <br /><br />
+                                    <span class="Flex_TextNormal">
+                                        Interested in adding or replacing shipping functionality in your product?  Contact us here.
+                                    </span>
+                                
+					</div></a>
+                            <br /><br />
+                        
+				</div>
+                            
+                        <div id="TopBody_MasterBody_pnlNews" class="Flex_Box2of2 VPaddingRelaxed">
+					
+                            <div id="TopBody_MasterBody_pnlLittleNews" class="Flex_HomeLittleNewsWrapper FlexSize">
+						
+                                <div class="Flex_StretchInside">
+							
+                                    <h2 class="Inline">News and Industry Information</h2>
+                                    <br /><br />
+                                    <a class="Flex_LinkNoLine" href="news/article/?id=1024&amp;r=6FBXCSOG40&amp;title=ConnectShip-Strengthens-Integration-Services"><div class="FloatLeft Flex_Rounder Flex_InsideBorderOnHover Flex_HomeLittleNewsNoHover">
+								<div class="Flex_Box1of2ThirdsIconLeft VAlignTop">
+									<img class="FloatLeft PaddingRelaxed Flex_IconSize100" src="assets/images/news/2023/integrationThumb.png" />
+								</div><div class="Flex_Box2of2ThirdsIconLeft">
+									<span class="Flex_Smaller Bold TextNormal">June 13, 2023<br /></span><span class="Flex_Normal Text1Hover">ConnectShip Strengthens Integration Services Team, Doubling Size to Meet Growing Customer Demands</span><span><br /></span><span class="Flex_TextNormal">Dedicated team helps with custom integration projects, new carrier development, and more</span>
+								</div>
+							</div></a><div class="ClearFix">
+
+							</div><a class="Flex_LinkNoLine" href="community/blog/post?id=51"><div class="FloatLeft Flex_Rounder Flex_InsideBorderOnHover Flex_HomeLittleNewsNoHover">
+								<div class="Flex_Box1of2ThirdsIconLeft VAlignTop">
+									<img class="FloatLeft PaddingRelaxed Flex_IconSize100" src="assets/images/blog/PassportThumbnail.png" />
+								</div><div class="Flex_Box2of2ThirdsIconLeft">
+									<span class="Flex_Smaller Bold TextNormal">May 2, 2023<br /></span><span class="Flex_Normal Text1Hover">When the Local Shop, the Mom and Pop, Goes International</span><span><br /></span><span class="Flex_TextNormal">Small businesses power a significant section of our economy. SMBs themselves are empowered by technologies that provide simple omni-channel efficiency without a large-scale footprint. This blog explores opportunities for small business growth in international markets via flexible tech, while highlighting ConnectShip's partnership with Passport Shipping.</span>
+								</div>
+							</div></a><div class="ClearFix">
+
+							</div><a class="Flex_LinkNoLine" href="news/article/?id=1025&amp;r=4W2JB573XA&amp;title=ConnectShip-Adds-Support-for-Passport-Carrier"><div class="FloatLeft Flex_Rounder Flex_InsideBorderOnHover Flex_HomeLittleNewsNoHover">
+								<div class="Flex_Box1of2ThirdsIconLeft VAlignTop">
+									<img class="FloatLeft PaddingRelaxed Flex_IconSize100" src="assets/images/news/2023/passport100.png" />
+								</div><div class="Flex_Box2of2ThirdsIconLeft">
+									<span class="Flex_Smaller Bold TextNormal">April 14, 2023<br /></span><span class="Flex_Normal Text1Hover">ConnectShip Adds Support for Passport Carrier</span><span><br /></span><span class="Flex_TextNormal">Ship from the U.S. to over 200 countries with our new Passport carrier component</span>
+								</div>
+							</div></a><div class="ClearFix">
+
+							</div>
+                                
+						</div>
+                            
+					</div>
+                        
+				</div>
+
+                    
+			</div>
+                
+		</div>
+
+
+                <div class="ClearFix"></div>
+
+
+                <div class="MainBodyBack">
+			
+
+                    <div class="Flex_BoxContainer BackgroundGradient Flex_BottomSeparation">
+				
+                        <div class="Flex_Box1of1 Flex_BoxMinorHeaderLeft ">
+					
+                            <div class="Flex_StretchInside CenterOnSmall">
+						
+                                <span class="Flex_BoxHeader TextInverse">Carrier Compliance | Simplified</span>
+                            
+					</div>
+                        
+				</div>
+                    
+			</div>
+            
+                    <div class="ClearFix"></div>
+
+                    <div>
+				
+                        <div class="Flex_StretchInside">
+					
+                            <div class="Flex_BoxContainer">
+						
+                
+                                <div class="Flex_Box1of3 CenterOnSmall">
+							
+                                    <div>
+								
+                                        <br />
+                                        <h5 class="Inline">Educational Resources</h5>
+                                        <div class="Flex_BoxBody LineSpacingRelaxed">
+									
+                                            <br />
+                                            <a class="Flex_LinkNormal" href="casestudies/">Case Studies</a><br />
+                                            <a class="Flex_LinkNormal" href="community/blog/">Logistics Blog</a><br />
+                                            <a class="Flex_LinkNormal" href="community/videolibrary/">Video Library</a><br />
+                                            <a class="Flex_LinkNormal" href="industries/">Industry Guides</a><br />
+                                            <a class="Flex_LinkNormal" href="newsletters/">Community News</a><br />
+                                            <a class="Flex_LinkNormal" href="resources/whitepapers/">White Papers</a><br />
+                                        
+								</div>
+                                    
+							</div>
+                                
+						</div>
+                
+                                <div class="Flex_Box2of3 CenterOnSmall">
+							
+                                    <div>
+								
+                                        <br />
+                                        <h5 class="Inline">Training</h5>
+                                        <div class="Flex_BoxBody LineSpacingRelaxed">
+									
+                                            <br />
+                                            <a class="Flex_LinkNormal" href="training/">Overview</a><br />
+                                            <a class="Flex_LinkNormal" href="training/register/">Register</a><br />
+                                            <a class="Flex_LinkNormal" href="training/schedule/">Schedule</a><br />
+                                            <a title="ConnectShip Progistics Technology Engineer" class="Flex_LinkNormal" href="training/cpte/">CPTE Program</a><br />
+                                        
+								</div>
+                                    
+							</div>
+                                
+						</div>
+                
+                                <div class="Flex_Box3of3 CenterOnSmall">
+							
+                                    <div>
+								
+                                        <br />
+                                        <h5 class="Inline">Support</h5>
+                                        <div class="Flex_BoxBody LineSpacingRelaxed">
+									
+                                            <br />
+                                            <a class="Flex_LinkNormal" href="support/">For Current Customers</a><br />
+                                            <a class="Flex_LinkNormal" href="contact/">Become a Customer</a><br />
+                                        
+								</div>
+                                    
+							</div>
+                                
+						</div>
+                
+                            
+					</div>
+                        
+				</div>
+                        <br /><br />
+                    
+			</div>
+
+                
+		</div>
+
+            
+	</div>
+        
+</div>
+
+
+    
+    
+    
+
+    <div id="TopBody_pnlFooter">
+	
+        
+
+<div class="ClearFix"></div>
+
+
+<div class="FullWidth Flex_FooterBack BackgroundShadowBottom">
+		
+    <div id="TopBody_ctl02_pnlMain" class="Flex_StretchInside Flex_BodyBuffer">
+			
+         <div class="Flex_FooterColumn1">
+				
+            <span class="Flex_FooterColumnHeading">Questions?  We've got you covered.</span>
+            <br /><br />
+            <a id="TopBody_ctl02_hylContactLink" class="Flex_Button Flex_RoundedSubtle Text5_2Hover B_Solid B_1 B_Color8Hover" href="contact/?rp=~/default.aspx">Contact Us</a>
+        
+			</div>
+        <div class="Flex_FooterColumn2">
+				
+            <span id="TopBody_ctl02_lblSolutionsHeading" class="Flex_FooterColumnHeading">Solutions</span>
+            <br />
+            <div id="TopBody_ctl02_pnlColumn2Links" class="Flex_FooterLinkList">
+					
+                <a id="TopBody_ctl02_hylLeadership" class="Flex_FooterColumnLink" href="products/">OVERVIEW</a><br />
+                <a id="TopBody_ctl02_HyperLink1" class="Flex_FooterColumnLink" href="products/onpremise/">ON-PREMISE</a><br />
+                <a id="TopBody_ctl02_HyperLink2" class="Flex_FooterColumnLink" href="products/online/">CLOUD</a><br />
+                <a id="TopBody_ctl02_HyperLink10" class="Flex_FooterColumnLink" href="partners/">RESELLERS</a><br />
+                <a id="TopBody_ctl02_HyperLink9" class="Flex_FooterColumnLink" href="carriers/">CARRIERS</a><br />
+                <a id="TopBody_ctl02_HyperLink11" class="Flex_FooterColumnLink" href="products/integrated/">COMPATIBILITY</a><br /><br />
+            
+				</div>
+        
+			</div>
+        <div class="Flex_FooterColumn3">
+				
+            <span id="TopBody_ctl02_lblResourcesHeading" class="Flex_FooterColumnHeading">Resources</span>
+            <br />
+            <div id="TopBody_ctl02_pnlColumn3Links" class="Flex_FooterLinkList">
+					
+                <a id="TopBody_ctl02_HyperLink4" class="Flex_FooterColumnLink" href="casestudies/">CASE STUDIES</a><br />
+                <a id="TopBody_ctl02_hylNewsLink" class="Flex_FooterColumnLink" href="news/">NEWS</a><br />
+                <a id="TopBody_ctl02_HyperLink5" class="Flex_FooterColumnLink" href="members/supportcenter/">SUPPORT</a><br />
+                <a id="TopBody_ctl02_HyperLink13" class="Flex_FooterColumnLink" href="training/">TRAINING</a><br />
+                <a id="TopBody_ctl02_hylFAQLink" class="Flex_FooterColumnLink" href="faq/">FAQ</a><br />
+                <a id="TopBody_ctl02_HyperLink3" class="Flex_FooterColumnLink" href="members/">MEMBERS AREA</a><br /><br />
+            
+				</div>
+        
+			</div>
+       <div class="Flex_FooterColumn4">
+				
+            <span id="TopBody_ctl02_lblCompanyHeading" class="Flex_FooterColumnHeading">Company Info</span>
+            <br />
+            <div id="TopBody_ctl02_pnlColumn1Links" class="Flex_FooterLinkList">
+					
+                <a id="TopBody_ctl02_hylAboutLink" class="Flex_FooterColumnLink" href="about">ABOUT US</a><br />
+                <a id="TopBody_ctl02_hylLeadersLink" class="Flex_FooterColumnLink" href="leaders">LEADERSHIP</a><br />
+                <a id="TopBody_ctl02_HyperLink143" class="Flex_FooterColumnLink" href="resources/careers/">CAREERS</a><br /><br />
+            
+				</div>
+        
+			</div>
+        <div id="TopBody_ctl02_pnlSocial" class="ClearFix AlignCenter FullWidth VerticalSeparation">
+				
+            <a id="TopBody_ctl02_hylLinkedIn" title="Follow us on LinkedIn" class="MarginDouble" href="https://www.linkedin.com/company/connectship" target="_blank"><img id="TopBody_ctl02_imgLinkedIn" class="Flex_RoundedSubtle" src="assets/images/icons/linkedin30pxgray.png" /></a>
+            <a id="TopBody_ctl02_hylTwitter" title="Follow us on Twitter" class="MarginDouble" href="https://twitter.com/connectship/" target="_blank"><img id="TopBody_ctl02_imgTwitter" class="Flex_RoundedSubtle" src="assets/images/icons/twitter30pxgray.png" /></a>
+            <a id="TopBody_ctl02_hylFacebook" title="Follow us on Facebook" class="MarginDouble" href="https://www.facebook.com/connectship/" target="_blank"><img id="TopBody_ctl02_imgFacebook" class="Flex_RoundedSubtle" src="assets/images/icons/facebook30pxgray.png" /></a>
+            <a id="TopBody_ctl02_hylYouTube" title="Follow us on YouTube" class="MarginDouble" href="https://www.youtube.com/channel/UCQSsLR0B-DzRqRDWoYLZHvA/videos?view_as=subscriber" target="_blank"><img id="TopBody_ctl02_imgYouTube" class="Flex_RoundedSubtle" src="assets/images/icons/youtube30pxgray.png" /></a>
+        
+			</div>
+        <div class="AlignCenter">
+				
+            <br />
+            <a class="Flex_LinkTiny Text7Hover" href="legal/notices/">LEGAL NOTICES</a> &nbsp;
+            <a class="Flex_LinkTiny Text7Hover" href="legal/notices/#terms">WEBSITE TERMS OF USE</a> &nbsp;
+            <a class="Flex_LinkTiny Text7Hover" href="legal/notices/#privacy">PRIVACY POLICY</a> &nbsp;
+            <a class="Flex_LinkTiny Text7Hover" href="legal/notices/#patents">PATENT INFORMATION</a> &nbsp;
+            <a class="Flex_LinkTiny Text7Hover" href="legal/useofcookies/">USE OF COOKIES</a> &nbsp;
+            <a class="Flex_LinkTiny Text7Hover" href="https://www.ups.com/ppwa/doWork?loc=en_US" target="_blank">DO NOT SELL MY PERSONAL INFORMATION</a>
+            <br /><br />
+            <span class="Flex_FooterInverse">
+                Copyright&copy; ConnectShip, Inc. 
+                <span id="TopBody_ctl02_lblYear" title="LB_DM_CSWEBPROD01">2023</span>
+                <br />
+                All Rights Reserved
+                <br /><br /><br /><br />
+            </span>
+        
+			</div>
+    
+		</div>
+
+	</div>
+    
+</div>
+    
+    
+
+    
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6686145-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+        </div>
+    </form>
+</body>
+</html>

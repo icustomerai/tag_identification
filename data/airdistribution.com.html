@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta name="description" content="Air Distribution Technologies is a leading provider of innovative air distribution and 
+         ventilation solutions for residential and non-residential buildings as well as air movement and 
+         control solutions for industrial and infrastructure applications." /><meta name="keywords" content="Air Distribution Technologies, Air, Central Air, Industries, Technologies, Heating, Cooling, Air, Distribution, Products " /><meta name="author" content="Hobby Williams" /><title>
+	Air Distribution Technologies
+</title><link rel="stylesheet" href="Styles/masterStyleSheet.css" type="text/css" />
+     
+<script type="text/javascript" src="Scripts/jquery-1.3.1.min.js"></script>
+<script type="text/javascript">
+
+//<![CDATA[
+
+
+    $(document).ready(function () {
+
+        //Append a div with hover class to all the LI
+        $('#navMenu li').append('<div class="hover"><\/div>');
+
+
+        $('#navMenu li').hover(
+
+        //Mouseover, fadeIn the hidden hover class	
+		function () {
+
+		    $(this).children('div').fadeIn('1000');
+
+		},
+
+        //Mouseout, fadeOut the hover class
+		function () {
+
+		    $(this).children('div').fadeOut('1000');
+
+		}).click(function () {
+
+		    //Add selected class if user clicked on it
+		    $(this).addClass('selected');
+
+		});
+
+    });
+
+//]]>
+
+</script>
+<script type="text/javascript" src="Scripts/jquery-1.3.1.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        slideShow(4000);
+
+    });
+
+    function slideShow(speed) {
+
+
+        $('ul.slideshow').append('<li id="slideshow-caption" class="caption"><div class="slideshow-caption-container"><h3></h3><p></p></div></li>');
+
+        
+        $('ul.slideshow li').css({ opacity: 0.0 });
+
+        
+        $('ul.slideshow li:first').css({ opacity: 1.0 });
+
+        
+        $('#slideshow-caption h3').html($('ul.slideshow a:first').find('img').attr('title'));
+        $('#slideshow-caption p').html($('ul.slideshow a:first').find('img').attr('alt'));
+
+        
+        $('#slideshow-caption').css({ opacity: 0.0, bottom: 0 });
+
+       	
+        var timer = setInterval('gallery()', speed);
+
+        
+        $('ul.slideshow').hover(
+		function () {
+		    clearInterval(timer);
+		},
+		function () {
+		    timer = setInterval('gallery()', speed);
+		}
+	);
+
+    }
+
+    function gallery() {
+
+
+        
+        var current = ($('ul.slideshow li.show') ? $('ul.slideshow li.show') : $('#ul.slideshow li:first'));
+
+       
+        var next = ((current.next().length) ? ((current.next().attr('id') == 'slideshow-caption') ? $('ul.slideshow li:first') : current.next()) : $('ul.slideshow li:first'));
+
+       
+        var title = next.find('img').attr('title');
+        var desc = next.find('img').attr('alt');
+
+        
+        next.css({ opacity: 0.0 }).addClass('show').animate({ opacity: 1.0 }, 1000);
+
+       
+        $('#slideshow-caption').animate({ bottom: -70 }, 300, function () {
+            //Display the content
+            $('#slideshow-caption h3').html(title);
+            $('#slideshow-caption p').html(desc);
+            $('#slideshow-caption').animate({ bottom: 0 }, 500);
+        });
+
+       
+        current.animate({ opacity: 0.0 }, 1000).removeClass('show');
+
+    }
+</script>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-52198613-1', 'airdistribution.com');
+    ga('send', 'pageview');
+
+</script>
+<!-- -->
+<script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+<body>
+<form method="post" action="./" id="form1">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="2Qr3lsop6b0LYiDOvFiQsN0vZovO7Y50DKb24h791HI7LZCnXCefFl3/FgWJjm4VDYZpJ/YXUPw8HArbbWs7ICCR/H4wIrJCugSEtSx2FTI=" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="90059987" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+</div>
+    <!-- header -->
+<div id="header" class="clearfix">
+    <div id="search"></div>
+    <div id="header-left">
+        <div><img src="images/adt_logo.gif" alt="logo" width="320" height="62" border="0" usemap="#Map" />
+<map name="Map" id="Map"><area shape="rect" coords="6,4,315,57" href="index.aspx" alt="" /></map></div>
+  </div>
+    <div id="header-right">
+        <ul id="topnav">
+            	<li><a href="index.aspx">Home &nbsp;&nbsp; |</a>  &nbsp;&nbsp;</li>
+               
+                <li><a href="brands.aspx">Brands &nbsp;&nbsp; |</a>  &nbsp;&nbsp;</li>
+                 <li><a href="http://www.johnsoncontrols.com/careers/why-johnson-controls" target="_blank">Careers &nbsp;&nbsp; |</a>  &nbsp;&nbsp;</li>
+                <li><a href="contactus.aspx">Contact Us &nbsp;&nbsp;</a>  &nbsp;&nbsp;</li>
+               
+        </ul>
+    </div>
+    <div class="break"></div>
+    <div>
+        <img src="images/banner_main.jpg" width="917px" height="237" alt="" usemap="#jcmap" border="0"/></div>
+    <div><img src="images/header_orange_bar.gif" width="974" height="5" alt="" /></div>
+</div>
+<!-- end header -->
+
+<!-- content top -->
+<div id="content-top">
+    <!--Breadcrumb -->
+    <div id="breadcrumb">
+        <span id="SiteMapPath1" class="breadcrumb"><a href="#SiteMapPath1_SkipLink"><img alt="Skip Navigation Links" src="/WebResource.axd?d=jTID5s3QRd4alQVhpT7RQgdgGpOdju9h6ATt3S6FLJwJtNIHsd7wtUY-MONRXy1TOC92oXqcUdZJ9zn_J7XqGR_ItGuRTj67oFYex9v4r-A1&amp;t=637814473746327080" width="0" height="0" style="border-width:0px;" /></a><span>Home</span><a id="SiteMapPath1_SkipLink"></a></span>
+    </div>
+</div>
+<!-- end content top -->
+<!-- content -->
+<div id="content" class="clearfix">
+    <div>
+        
+  <!-- content left -->
+       <div id="content-lt">
+            <div id="inner-lt">
+                <h2>Johnson Controls acquires Air Distribution Technologies </h2>
+                <p><a href="http://www.johnsoncontrols.com/" class="company-name" target="_blank">Johnson Controls</a> has completed the acquisition on Air Distribution Technologies, one of the 
+                strongest and largest independent providers for air distribution and ventilation solutions in the United States.  
+                <br /><br />
+                Air Distribution Technologies produces a broad range of air distribution and ventilation products for buildings under well-known brands 
+                such as:</p>
+
+               <div id="bullet_section_left_bottom">
+               
+                   <img src="images/bullet.png" width="10" height="10" alt="" />&nbsp;Ruskin&#174; <br />                   <img src="images/bullet.png" width="10" height="10" alt="" />&nbsp;Titus&#174;<br />                   <img src="images/bullet.png" width="10" height="10" alt="" />&nbsp;Hart & Cooley&#174;<br />                   <img src="images/bullet.png" width="10" height="10" alt="" />&nbsp;Krueger&#153;<br />                   <img src="images/bullet.png" width="10" height="10" alt="" />&nbsp;PennBarry&#153;<br />
+                   <img src="images/bullet.png" width="10" height="10" alt="" />&nbsp;Tuttle & Bailey&#174;
+                
+            </div>
+                <p>The complete Air Distribution Technologies brand portfolio owns products used in nearly every building construction project.  </p>
+                    <div style="padding:7px 0 34px 77%;"><a href="brands.aspx"><img src="images/more_button.gif" width="153" height="14" alt="more button" /></a></div>
+            </div>
+       </div>
+       <!--end content left -->
+
+       <!-- content right -->
+        <div id="content-rt">
+            <div id="inner-rt">
+               <div class="wrap">
+                    <div class="top"></div>
+                    <div class="box">
+	                       <div id="left-nav">
+                             <img src="images/arrow.gif" width="8" height="7" alt="" /> <a href="http://www.airsysco.com/" target="_blank">ASC</a><br />
+                                <div class="hori_line"></div>
+                                <img src="images/arrow.gif" width="8" height="7" alt="" /> <a href="http://www.ruskin.com/" target="_blank">RUSKIN</a><br />
+                                 <div class="hori_line"></div>
+                                <img src="images/arrow.gif" width="8" height="7" alt="" /> <a href="http://www.hartandcooleyinc.com/" target="_blank">Hart & Cooley</a><br />
+                                <div class="hori_line"></div>
+                               <img src="images/arrow.gif" width="8" height="7" alt="" /><a href="http://www.selkirkcorp.com/" target="_blank">Selkirk</a><br />
+                                 <div class="hori_line"></div>
+                                
+             
+                          </div>
+                      
+                    </div>
+                    <div class="bottom"></div>
+                </div>
+            </div>
+       </div>
+       <!-- end content right -->
+      
+       <div id="lower-content">
+            <!-- lower lt cont. -->
+            <div id="lower-content-lt">
+                <h5>Latest News</h5>
+                <p>12.03.12 :: Get all the latest breaking news and information regarding Air 
+Distribution technologies and our major marketing brands.</p>
+ <div style="padding:7px 0 34px 35%;"><a href="latestnews.aspx"><img src="images/more_button.gif" width="153" height="14" alt="more button" /></a></div>
+            </div>
+            <!-- end lower lt cont. -->
+         
+             <!-- lower rt cont. -->
+              <div id="lower-content-rt">
+               <h5>Upcoming Events</h5>
+                <p>12.03.12 :: View all upcoming events and company-related activies for the current 
+year.</p>
+<div style="padding:7px 0 34px 35%;"><a href="upcomingevents.aspx"><img src="images/more_button.gif" width="153" height="14" alt="more button" /></a></div>
+              </div>
+            <!-- end lower rt cont. -->
+        </div>
+
+    </div>
+</div>
+<!-- end content -->
+<!-- footer -->
+<div id="footer">
+    <p>&copy;Copyright 2012 - 2016 Air Distribution Technologies, All rights reserved. <a href="http://www.airdistribution.com/conditions_of_sale/" target="_blank">Terms and Conditions</a> || <a href="policy.aspx">Privacy Policy</a> || <a href="https://www.johnsoncontrols.com/legal/terms">Terms of Use</a></p>
+</div>
+<!-- end footer -->
+<div id="footer_icons">
+    <table border="0" cellpadding="0" cellspacing="5px">
+    <tr>
+        <td style="padding-left:83px;"><center><p>Air Distribution Technologies, Inc. | 605 Shiloh RD. | Plano, Texas 75074 | <br />
+        Phone: (972) 943-6100  </p></center></td>
+        <td width="207"><table border="0" cellspacing="5" cellpadding="0">
+            <tr>
+                
+            </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+    <td height="25"></td>
+    </tr>
+    </table>
+</div>
+<map name="jcmap" id="jcmappara">
+<area shape="rect" coords="78,151,180,175" alt="" target="_blank" href="http://www.johnsoncontrols.com/" />
+</map>
+ </form>
+<script type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=1226637119" async></script></body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Transource&nbsp;&raquo;&nbsp;Home</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="description" content="Transource Energy combines the unique capabilities of American Electric Power and Great Plains Energy to develop, build, own and operate competitive electric transmission projects." />
+<link rel="stylesheet" href="https://use.typekit.net/nid2xkk.css" />
+<link rel="stylesheet" type="text/css" media="all" href="css/site.css?v=1" />
+<link rel="stylesheet" type="text/css" media="all" href="css/960.css" />
+<link rel="stylesheet" type="text/css" href="js/engine1/style.css" />
+<link rel="stylesheet" type="text/css" media="all" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" media="all" href="css/ie7.css" />
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" media="all" href="css/ie8.css" />
+<![endif]-->
+<!--[if IE 9]>
+<link rel="stylesheet" type="text/css" media="all" href="css/ie9.css" />
+<![endif]-->
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WQ32NNK');</script>
+<!-- End Google Tag Manager -->
+    <script src="/js/GATracking.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-1.8.2.js" type="text/javascript"></script>
+<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js" type="text/javascript"></script>
+    <link href="/css/swiper/swiper.css?v=1" rel="stylesheet" />
+    <style type="text/css">
+        .banner-section > .image {
+            background-image: none;
+        }
+    </style>
+    <style type="text/css">
+#content-home h2 {
+	margin-top:0;
+	margin-bottom:3px;	
+}
+
+        .auto-style1 {
+        font-size: small;
+        font-family: Arial;
+    }
+
+
+	.lead-in { 
+            font-size: 21px;
+		border-bottom: 1px solid #d9d9d9; 
+	}
+
+        .section-promos {
+            height: 460px;
+        }
+
+            .section-promos .section {
+                width: 156px;
+                margin-left: 50px;
+                float: left;
+            }
+
+                .section-promos .section:first-child {
+                    margin-left: 0;
+                }
+
+                .section-promos .section > img {
+                    border: 3px solid #d9d9d9;
+                }
+
+            .section-promos img + p {
+                margin-top: 1em;
+            }
+
+            .section-promos p {
+                line-height: 1.28;
+            }
+
+            .section-promos a.button {
+            }
+</style>
+</head>
+<body style="background-color: #ffffff">
+<!--`Begin Header Container-->
+<div id="container" class="container_12">
+	<!--`Begin Header-->
+	<div id="header" class="grid_12">
+		<div id="logo" class="grid_4 alpha">
+                <a href="/">
+                    <img src="images/logo.png" height="54" width="263" alt="Home" /></a>
+		</div>
+		<div class="grid_8 omega">
+			<ul id="main-menu">
+				<li><a href="/" class="active" title="Home">Home</a></li>
+				<li><a href="about/" title="About Us">About Us</a></li>
+				<li><a href="expertise/CostEffectiveSolutions.aspx" title="Expertise">Expertise</a></li>
+				<li><a href="projects/" title="Projects">Projects</a></li>
+				<li><a href="news/" title="News">News</a></li>
+				<li><a href="contact/" title="Contact Us">Contact Us</a></li>
+			</ul>
+		</div>
+	<!--`End Header-->
+	<br class="clear" />
+	</div>
+<!--`End Header Container-->
+<br class="clear" />
+</div>
+<!--`Begin Showcase-->
+    
+    
+    <script src="/js/modernizr.js" type="text/javascript"></script>
+    <script src="/js/jquery/jquery.min.2.0.3.js" type="text/javascript"></script>
+    <script src="/js/swiper/swiper.jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+
+	function changeToStaticPromo(settings) {
+		settings = $.extend({ bannerSelector: ".banner-section div.image[id*='Banner']:eq(0)", staticPromoKey: "", staticPromoSlideSelector: ".swiper-slide.default" }, settings);
+		var $banner = $(settings.bannerSelector);
+		if($banner.length > 0) {
+			var $staticPromoSlide = null;
+			if(settings.staticPromoKey == null || settings.staticPromoKey.length == 0) {
+				$staticPromoSlide = $banner.find(settings.staticPromoSlideSelector);
+				// Try active slide if default fails
+				if($staticPromoSlide.length == 0) {
+					$staticPromoSlide = $banner.find(".swiper-slide.swiper-slide-active");
+				}
+				if($staticPromoSlide.length > 0) {
+					// get the staticPromoKey from the slide
+					var classAttribute = $staticPromoSlide.attr('class');
+					if(classAttribute) {
+						var classList = $staticPromoSlide.attr('class').split(/\s+/);
+						$.each(classList, function(index, item) {
+							if(item.indexOf("swiper") < 0 && item != "default") {
+								settings.staticPromoKey = item;
+							}
+						});
+					}
+				}
+			} else {
+				$staticPromoSlide = $banner.find("." + settings.staticPromoKey);
+			}
+
+			if(settings.staticPromoKey && settings.staticPromoKey.length > 0) {
+				$banner.addClass(settings.staticPromoKey);
+			}
+			if($staticPromoSlide.length > 0) {
+				var html = $staticPromoSlide.html();
+				if(html != null && typeof (html) != "undefined") {
+					html = html.replace('class="swiper-content promo"', '');
+					$banner.find(".overlay").html('<div class="promo">' + html + "</div>");
+				}
+			}
+		}
+	}
+
+	var _CAROUSEL = null;
+	var _CAROUSEL_SETTINGS = null;
+	function createCarousel(settings) {
+		try {
+			_CAROUSEL_SETTINGS = settings;
+			_CAROUSEL = new Swiper('.swiper-container', {
+				autoplay: 5000,
+				loop: true,
+				//nextButton: ".swiper-button-next",
+				pagination: ".swiper-pagination",
+				paginationClickable: true,
+				//prevButton: ".swiper-button-prev",
+				speed: 600
+			});
+		} catch(ex) {
+			_CAROUSEL = null;
+			changeToStaticPromo(settings);
+		}
+	}
+
+	$(document).ready(function() {
+		if(!Modernizr.flexbox || !Modernizr.csstransitions || _CAROUSEL == null) {
+			changeToStaticPromo(_CAROUSEL_SETTINGS);
+		}
+	});
+</script>
+
+<div class="carousel">
+
+	<div class="carousel-container">
+		<div class="swiper-container">
+			<div class="swiper-wrapper">
+
+				<div class="swiper-slide CostEffectiveSolutions">
+					<div class="swiper-content promo">
+						<h1>Cost-Effective Solutions</h1>
+						<p>Maximizing customer benefits</p>
+						<a href="/expertise/CostEffectiveSolutions.aspx" class="button">Learn more</a>
+					</div>
+				</div>
+				<div class="swiper-slide ResultsFocused">
+					<div class="swiper-content promo">
+						<h1>Results Focused</h1>
+						<p>Controlling costs and maximizing performance</p>
+						<a href="/expertise/ResultsFocused.aspx" class="button">Learn more</a>
+					</div>
+				</div>
+				<div class="swiper-slide OperationalExcellence">
+					<div class="swiper-content promo">
+						<h1>Operational Excellence</h1>
+						<p>Committed to safety, reliability and compliance</p>
+						<a href="/expertise/OperationalExcellence.aspx" class="button">Learn more</a>
+					</div>
+				</div>
+				<div class="swiper-slide NewTechnologies">
+					<div class="swiper-content promo">
+						<h1>New Technologies </h1>
+						<p>Delivering advanced solutions for customers</p>
+						<a href="/expertise/NewTechnologies.aspx" class="button">Learn more</a>
+					</div>
+				</div>
+				<div class="swiper-slide EnvironmentalStewardship">
+					<div class="swiper-content promo">
+						<h1>Environmental Stewardship</h1>
+						<p>Focused on today and the future</p>
+						<a href="/expertise/EnvironmentalStewardship.aspx" class="button">Learn more</a>
+					</div>
+				</div>
+
+
+			</div>
+
+			<div class="swiper-pagination-container"></div>
+			<div class="swiper-pagination"></div>
+			<!--
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
+			-->
+		</div>
+	</div>
+        <script type="text/javascript">
+		createCarousel({ staticPromoKey: "IMEffGreen" });
+	</script>
+
+
+</div>
+<div id="content">
+	<div class="lead-in margin-bottom-1">
+		<p>Combining the unique capabilities of American Electric Power and Evergy, Transource<sup class="mark">®</sup> has the experience and expertise to execute and operate successful, competitive electric transmission projects.</p>
+	</div>
+	<div class="section-promos">
+		<div class="section">
+			<h2>Cost-Effective Solutions</h2>
+                <img src="/images/feature/feature-CostEffectiveSolutions.jpg" alt=" " />
+			<p>Our expert transmission planning team is focused on delivering solutions that minimize cost and maximize benefits for customers.</p>
+			<a href="/expertise/CostEffectiveSolutions.aspx" class="button">Learn more</a>
+		</div>
+		<div class="section">
+			<h2>Results<br /> Focused</h2>
+                <img src="/images/feature/feature-ResultsFocused.jpg" alt=" " />
+			<p>Our proven project management team drives down installed capital costs while meeting project milestones on or ahead of schedule.</p>
+			<a href="/expertise/ResultsFocused.aspx" class="button">Learn more</a>
+		</div>
+		<div class="section">
+			<h2>Operational Excellence</h2>
+                <img src="/images/feature/feature-OperationalExcellence.jpg" alt=" " />
+			<p>Transource operates its transmission assets to the highest standards of reliability, safety and NERC compliance.</p>
+			<a href="/expertise/OperationalExcellence.aspx" class="button">Learn more</a>
+		</div>
+		<div class="section">
+			<h2>Engineering &amp; Technology</h2>
+                <img src="/images/feature/feature-EngineeringTechnology.jpg" alt=" " />
+			<p>With significant engineering and technological resources to draw on, Transource brings an unparalleled level of experience and innovation to its transmission projects.</p>
+			<a href="/expertise/NewTechnologies.aspx" class="button">Learn more</a>
+		</div>
+		<div class="section">
+			<h2>Environmental Stewardship</h2>
+                <img src="/images/feature/feature-EnvironmentalStewardship.jpg" alt=" " />
+			<p>Transource is a partner of the environment and uses industry best practices to protect wetlands, waterways, habitats and endangered species</p>
+			<a href="/expertise/EnvironmentalStewardship.aspx" class="button">Learn more</a>
+		</div>
+	</div>
+</div>
+
+
+<!--`Begin Footer-->
+<div id="footer">
+	<!--`Begin Footer Container-->
+	<div id="container-footer" class="container_12">
+		<div id="footer-content" class="grid_12">
+			<div class="grid_3 alpha">
+                    <a href="/">
+                        <img src="images/logo-footer.png" height="49" width="242" alt="Home" /></a>
+			</div>
+			<div class="grid_9 omega">
+				<ul id="footer-menu">
+					<li><a href="/" title="Home">Home</a>&bull;</li>
+					<li><a href="about/" title="About Us">About Us</a>&bull;</li>
+					<li><a href="expertise/CostEffectiveSolutions.aspx" title="Expertise">Expertise</a>&bull;</li>
+					<li><a href="projects/" title="Projects">Projects</a>&bull;</li>
+					<li style="display:none;"><a href="news/" title="News">News</a>&bull;</li>
+					<li><a href="contact/" title="Contact Us">Contact Us</a></li>
+				</ul>
+                    <br />
+                    <span>View our <a href="Policy.aspx" style="color: #FFFFFF;" title="Privacy Policy">Privacy Policy </a>Copyright &copy; Transource Energy LLC. All Rights Reserved</span>
+			</div>
+		<!--`End Footer Content-->
+		<br class="clear" />
+		</div>
+	<!--`End Footer Container-->
+	<br class="clear" />
+	</div>
+<!--`End Footer-->
+</div>
+    <script type="text/javascript">
+		$(document).ready(function() {
+			$(".section-promos .section").each(function() {
+				var $section = $(this);
+				var $a = $section.find("a.button");
+				if($a.length == 1) {
+					var $clickable = $section.find("h2,img");
+					$clickable.click(function() {
+						window.location = $a.attr("href");
+					});
+					$clickable.css("cursor", "pointer");
+				}
+			});
+		});
+	</script>
+</body>
+</html>

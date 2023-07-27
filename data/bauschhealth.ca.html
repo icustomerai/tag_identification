@@ -1,0 +1,541 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline' fonts.googleapis.com ; script-src 'self' 'unsafe-inline' 'unsafe-eval' delivery.consentmanager.net www.googletagmanager.com cdn.consentmanager.net cdn.polyfill.io www.google.com www.gstatic.com; frame-src cdn.consentmanager.net www.google.com; font-src 'self' fonts.gstatic.com data:;">
+		<title>Bausch Health</title>
+		        <script type="text/javascript" src="https://cdn.consentmanager.net/delivery/autoblocking/79bfc1d2b1845.js" data-cmp-ab="1"
+                data-cmp-host="delivery.consentmanager.net"
+                data-cmp-cdn="cdn.consentmanager.net"
+                data-cmp-codesrc="10" ></script>
+        <meta name='robots' content='max-image-preview:large' />
+<link rel="alternate" href="https://bauschhealth.ca/" hreflang="en" />
+<link rel="alternate" href="https://bauschhealth.ca/fr/index/" hreflang="fr" />
+<link rel='dns-prefetch' href='//cdn.polyfill.io' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v8.15 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script src="//www.googletagmanager.com/gtag/js?id=UA-29676800-5"  data-cfasync="false" data-wpfc-render="false" type="text/javascript" async></script>
+			<script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '8.15';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+				
+								var disableStrs = [
+															'ga-disable-UA-29676800-5',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+							
+														parameters.send_to = monsterinsights_frontend.ua;
+							__gtagDataLayer(type, name, parameters);
+													} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+															__gtagTracker('config', 'UA-29676800-5', {"forceSSL":"true","link_attribution":"true"} );
+										window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+		<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/bauschhealth.ca\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.2.2"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){p.clearRect(0,0,i.width,i.height),p.fillText(e,0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(t,0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s("\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!s("\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!s("\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!s("\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='https://bauschhealth.ca/wp-includes/css/dist/block-library/style.min.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://bauschhealth.ca/wp-includes/css/classic-themes.min.css?ver=6.2.2' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='ivory-search-styles-css' href='https://bauschhealth.ca/wp-content/plugins/add-search-to-menu/public/css/ivory-search.min.css?ver=5.5.1' type='text/css' media='all' />
+<link rel='stylesheet' id='bsimple-bootstrap-css' href='https://bauschhealth.ca/wp-content/themes/bauschhealth/css/bootstrap.min.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='bsimple-clean-css' href='https://bauschhealth.ca/wp-content/themes/bauschhealth/style.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='bsimple-penega-css' href='https://bauschhealth.ca/wp-content/themes/bauschhealth/style-penega.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='bsimple-font2-css' href='https://fonts.googleapis.com/css?family=Montserrat%3A300%2C300i%2C400%2C600%2C600i&#038;ver=6.2.2' type='text/css' media='all' />
+<script type='text/javascript' src='https://bauschhealth.ca/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.15' id='monsterinsights-frontend-script-js'></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id='monsterinsights-frontend-script-js-extra'>/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/bauschhealth.ca","hash_tracking":"false","ua":"UA-29676800-5","v4_id":""};/* ]]> */
+</script>
+<script type='text/javascript' src='https://bauschhealth.ca/wp-content/themes/bauschhealth/js/jquery-3.4.1.min.js?ver=6.2.2' id='bsimple-jq-js'></script>
+<script type='text/javascript' src='https://bauschhealth.ca/wp-content/themes/bauschhealth/js/bootstrap.min.js?ver=6.2.2' id='bsimple-bootstrap-js'></script>
+<script type='text/javascript' src='https://cdn.polyfill.io/v2/polyfill.min.js?features=IntersectionObserver&#038;ver=6.2.2' id='bsimple-intersec-js'></script>
+<script type='text/javascript' src='https://bauschhealth.ca/wp-content/themes/bauschhealth/js/main.min.js?5&#038;ver=6.2.2' id='bsimple-main-js'></script>
+<script type='text/javascript' src='https://bauschhealth.ca/wp-content/themes/bauschhealth/js/penega2.js?ver=6.2.2' id='new-js-js'></script>
+<script type='text/javascript' src='https://bauschhealth.ca/wp-includes/js/jquery/jquery.min.js?ver=3.6.4' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://bauschhealth.ca/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0' id='jquery-migrate-js'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://bauschhealth.ca/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://bauschhealth.ca/wp-includes/wlwmanifest.xml" />
+
+<link rel="canonical" href="https://bauschhealth.ca/" />
+<link rel='shortlink' href='https://bauschhealth.ca/' />
+<link rel="alternate" type="application/json+oembed" href="https://bauschhealth.ca/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbauschhealth.ca%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://bauschhealth.ca/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fbauschhealth.ca%2F&#038;format=xml" />
+		<style type="text/css" id="wp-custom-css">
+			.banner-contact-us, .banner-nous-joindre, .banner-our-locations, .banner-our-canadian-locations, .banner-nos-emplacements, .banner-nos-emplacements-canadiens, .banner-executive-management-team, .banner-mission-vision-values, .banner-our-mission-vision-and-values, .banner-notre-mission-notre-vision-et-nos-valeurs, .banner-canadian-leadership-team, .banner-equipe-de-leadership-au-canada, .banner-our-locations, .banner-nos-emplacements, .banner-safety-data-sheets, .banner-supplier-diversity, .banner-supplier-diversity-profile, .banner-social-media-community-guidelines,.banner-lignes-directrices-relatives-aux-medias-sociaux {
+    background-image: url(/wp-content/uploads/2020/03/banner-350x1366-about-us-514375421.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.banner-gastroenterology,.banner-gastro-enterologie, .banner-liste-de-produits-canadiens{background-image:url(/wp-content/uploads/2020/03/banner-350x1366-products-487041629.jpg);background-size:cover;background-repeat:no-repeat;background-position:center}
+
+.banner-canadian-product-list h4, .banner-liste-de-produits-canadiens h4{
+	display: none;
+}
+.hidden-field{display:none;}
+ul.lists{
+	font-size: 16px;
+    padding-left: 0;
+    list-style: none;
+    margin: 0 0 25px;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+ul.lists li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 30px;
+}
+
+@media only screen and (max-width: 768px){
+  table#product-list td:nth-of-type(2), table#product-list td:nth-of-type(3) {
+      min-height: 60px;
+  }
+}		</style>
+					<style type="text/css">
+					</style>
+			</head>
+
+	<body class="home page-template page-template-front-page page-template-front-page-php page page-id-21 bauschhealth">
+
+	  	<header>
+	  	    <div class="container">
+	  	        <div class="row">
+	  	            <div class="col-sm-12">
+	  	                <div class="row">
+	  	                    <div class="col-9 col-md-5 col-lg-3 site-logo">
+	  	                        <a href="https://bauschhealth.ca/">
+	  	                            <img id="logo" class="img img-fluid" src="/wp-content/uploads/2020/03/logo-319x31-bausch-health.png" alt="Bausch Health"/>
+	  	                        </a>
+	  	                    </div>
+	  	                
+
+	  	                    <div class="col-3 col-md-7 col-lg-9 pr-0 navbar-wraper">
+	  	                        <nav class="navbar navbar-default navbar-light navbar-toggleable-lg">
+	  	                            <!-- Brand and toggle get grouped for better mobile display -->
+	  	                            <img class="hidden-xl-up" alt="Canadian Flag" width="28" height="14" src="/wp-content/uploads/2020/03/canada-27003_28x14.jpg" style="display: inline-block; position: absolute; right: 4rem; top: -20px;">
+                                    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	  	                                <span>&nbsp;</span>
+	  	                                <span>&nbsp;</span>
+	  	                                <span>&nbsp;</span>
+	  	                                <div class="nav-closed"><i class="close-menu thick"></i></div>                                        
+	  	                            </button>
+	  	                            <!-- Collect the nav links, forms, and other content for toggling -->
+	  	                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	  	                               	                                
+	                	    										<style type="text/css" media="screen">
+							#is-ajax-search-result-374 .is-highlight { background-color: #FFFFB9 !important;}
+							#is-ajax-search-result-374 .meta .is-highlight { background-color: transparent !important;}
+							</style>
+						<ul id="menu-top-menu" class="navbar-nav"><li id="menu-item-18" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-18 nav-item dropdown"><a href="https://bauschhealth.ca/about-us/" class="nav-link dropdown-toggle" data-toggle="dropdown">ABOUT US</a>
+<div class="dropdown-menu">
+<a href="https://bauschhealth.ca/about-us/who-we-are/" class=" dropdown-item">Who We Are</a><a href="https://bauschhealth.ca/about-us/our-mission-vision-and-values/" class=" dropdown-item">Our Mission, Vision and Values</a><a href="https://bauschhealth.ca/about-us/canadian-leadership-team/" class=" dropdown-item">Canadian Leadership Team</a><a href="https://bauschhealth.ca/about-us/our-canadian-locations/" class=" dropdown-item">Our Canadian Locations</a><a href="https://bauschhealth.ca/about-us/contact-us/" class=" dropdown-item">Contact Us</a></div>
+</li>
+<li id="menu-item-16" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-16 nav-item dropdown"><a href="https://bauschhealth.ca/products/" class="nav-link dropdown-toggle" data-toggle="dropdown">PRODUCTS</a>
+<div class="dropdown-menu">
+<a href="https://bauschhealth.ca/products/dermatology-products/" class=" dropdown-item">Dermatology Products</a><a href="https://bauschhealth.ca/products/gastroenterology/" class=" dropdown-item">Gastroenterology</a><a href="https://bauschhealth.ca/products/specialty-medicine/" class=" dropdown-item">Specialty Medicine</a><a href="https://bauschhealth.ca/products/weight-management/" class=" dropdown-item">Weight Management</a><a href="https://bauschhealth.ca/products/canadian-product-list/" class=" dropdown-item">Canadian Product List</a></div>
+</li>
+<li id="menu-item-17" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-17 nav-item dropdown"><a href="https://bauschhealth.ca/responsibility/" class="nav-link dropdown-toggle" data-toggle="dropdown">CORPORATE RESPONSIBILITY</a>
+<div class="dropdown-menu">
+<a href="https://bauschhealth.ca/responsibility/canadian-compassionate-use-program/" class=" dropdown-item">Canadian Compassionate Use Program</a><a href="https://bauschhealth.ca/responsibility/grants-and-investigator-initiated-studies/" class=" dropdown-item">Grants and Investigator-Initiated Studies</a></div>
+</li>
+<li id="menu-item-109" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-109 nav-item"><a href="https://bauschhealth.ca/newsroom/" class="nav-link">NEWSROOM</a></li>
+<li id="menu-item-108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-108 nav-item dropdown"><a href="https://bauschhealth.ca/careers/" class="nav-link dropdown-toggle" data-toggle="dropdown">CAREERS</a>
+<div class="dropdown-menu">
+<a href="https://bauschhealth.ca/careers/working-at-bausch-health/" class=" dropdown-item">Working at Bausch Health</a></div>
+</li>
+<li id="menu-item-369-fr" class="lang-item lang-item-14 lang-item-fr lang-item-first menu-item menu-item-type-custom menu-item-object-custom menu-item-369-fr nav-item"><a href="https://bauschhealth.ca/fr/index/" class="nav-link" hreflang="fr-CA" lang="fr-CA">Français</a></li>
+<li class="search-icon-wrapper astm-search-menu is-menu is-dropdown menu-item"><a href="#" aria-label="Search Icon Link"><svg width="20" height="20" class="search-icon" role="img" viewBox="2 9 20 5" focusable="false" aria-label="Search">
+						<path class="search-icon-path" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg></a><form data-min-no-for-search=3 data-result-box-max-height=400 data-form-id=374 class="is-search-form is-form-style is-form-style-2 is-form-id-374 is-ajax-search" action="https://bauschhealth.ca/" method="get" role="search" ><label for="is-search-input-374"><span class="is-screen-reader-text">Search for:</span><input  type="search" id="is-search-input-374" name="s" value="" class="is-search-input" placeholder="Search here..." autocomplete=off /><span class="is-loader-image" style="display: none;background-image:url(https://bauschhealth.ca/wp-content/plugins/add-search-to-menu/public/images/spinner.gif);" ></span></label><input type="hidden" name="post_type" value="page" /></form></li></ul>            	    			      	
+	  	                            </div><!-- /.navbar-collapse -->
+	  	                        </nav>
+	  	                    </div>
+	  	                </div>
+	  	            </div>
+	  	        </div>
+	  	    </div>
+	  	</header>
+	  	
+
+	  	
+
+	<section class="banner-image-home-sec">
+<div class="container-fluid"><!-- Carousel -->
+<!-- ============================================================================ -->
+<div class="row">
+<div id="carousel-example-generic" class="col-sm-12 carousel slide" data-ride="carousel" data-interval="4000">
+
+<!-- Indicators -->
+<ol class="carousel-indicators">
+ 	<li class="active" data-target="#carousel-example-generic" data-slide-to="0"></li>
+ 	<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+</ol>
+<!-- Wrapper for slides -->
+<div class="carousel-inner">
+<div class="carousel-item active">
+<div class="slide-1">
+<div class="container slide-container">
+<div class="hero"><hgroup>
+<h1>Delivering on our commitments</h1>
+</hgroup>
+<p class="para">Bausch Health’s mission is to improve people’s lives with our health care products worldwide</p>
+<p class="para"><a href="/about/">More About Bausch Health, Canada<span class="read-more">»</span></a></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="carousel-item">
+<div class="slide-3">
+<div class="container slide-container">
+<div class="hero"><hgroup>
+<h1>Working at Bausch Health, Canada</h1>
+</hgroup>
+<p class="para">Bausch Health is hiring dedicated and innovative team members who want to make a difference</p>
+<p class="para"><a href="/careers/">See Careers at Bausch Health, Canada<span class="read-more">»</span></a></p>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- End Carousel -->
+
+</div>
+</section><section>
+<div class="container articles-section">
+<div class="col-12 bod_wrapper blog-section-mobile">
+<div class="row m-0">
+<div class="col-12 pt-5 pb-2 pl-5">
+<h2 class="subtitle">Welcome to Bausch Health, Canada</h2>
+<p class="para">As a company dedicated to innovation and advancement of global health, Bausch Health is constantly building on our commitment to help Canadians and people around the world live longer, healthier and more productive lives, through initiatives that often go beyond health care.</p>
+
+<ul class="lists no-space-bottom-sec">
+ 	<li>Reaching out from our Canadian headquarters to 100 countries around the world</li>
+ 	<li>Proudly collaborating with patient communities, physicians, universities, hospitals, and charitable organizations to improve lives with our health care products</li>
+</ul>
+<p class="para"><a href="/who-we-are/">Read More About Who We Are<span class="read-more">»</span></a></p>
+
+</div>
+</div>
+</div>
+</div>
+</section><section>
+<div class="container articles-section">
+<div class="col-12 bod_wrapper blog-section-mobile">
+<div class="row m-0">
+<div class="col-12 pt-2 pb-5 pl-5">
+<div class="homepage-news-head">Latest News</div>
+<div class="news-load">
+<div class="py-4">
+<div class="date">MAY, 2023</div>
+<p class="para my-3"><a href="https://bauschhealth.ca/wp-content/uploads/2023/05/Emerade_Recall_EN_May_7_2023.pdf" target="_blank" rel="noopener">All EMERADE<sup>®</sup> epinephrine auto-injectors in Canada recalled</a></p>
+<p class="para my-3"><a href="https://bauschhealth.ca/wp-content/uploads/2023/05/RYALTRIS-launch-news-release-EN-May-3-2023_FIN.pdf" target="_blank" rel="noopener">RYALTRIS<sup>®</sup>, a new combination prescription nasal spray for moderate to severe seasonal allergic rhinitis (SAR), now available across Canada</a></p>
+</div>
+<div class="date">DECEMBER, 2022</div>
+<p class="para my-3"><a href="https://bauschhealth.ca/wp-content/uploads/2022/12/ARAZLO-listings-release-Dec-22-2022.pdf" target="_blank" rel="noopener">First tazarotene lotion treatment for acne vulgaris, ARAZLO™ (tazarotene lotion, 0.045%), now available to patients through Quebec, Ontario, Alberta, Saskatchewan and federal NIHB public drug plans</a></p>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</section><section class="questions_wrapper questions_wrapper-home">
+<div class="container articles-section">
+<div class="col-12 grey-box-home">
+<div class="row">
+<div class="col-md-6 white-box-wraper">
+<div class="white-box home-box-left">
+<div class="white-box-img-container"><img decoding="async" class="img img-fluid" src="/wp-content/uploads/2020/03/icon-148x148-pt.png" alt="" /></div>
+<div class="white-box-text-container">
+<h2 class="subtitle">Our mission: Improving people’s lives with our health care products</h2>
+<p class="para para-margin">Learn more about our products.</p>
+<p class="para"><a href="/canadian-product-list/">See Our Canadian Product List<span class="read-more">»</span></a></p>
+</div>
+</div>
+</div>
+<div class="col-md-6 white-box-wraper">
+<div class="white-box stock-ticker text-center">
+<div class="row">
+<div class="col-6 stock-ticker-text d-flex align-items-center justify-content-center">
+<div>
+<h3>NYSE:BHC</h3>
+<h2 id="stockTickerNYSE">$</h2>
+</div>
+</div>
+<div class="col-6 stock-ticker-text d-flex align-items-center justify-content-center">
+<div>
+<h3>TSX:BHC</h3>
+<h2 id="stockTickerTSX">$</h2>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+				
+
+	  	<footer>
+			<div class="container">
+													<div class="footer">
+						<div class="footer-logo">
+							<img alt="" class="img img-fluid" src="/wp-content/uploads/2020/03/logo-50x325-bausch-health-white.png">
+							<p class="address">
+								<b>Bausch Health, Canada Inc.</b><br>
+								2150 St. Elzéar Blvd. West<br>
+								Laval, Quebec H7L 4A8<br>
+								Canada<br>
+								800-361-1448<br>
+								514-744-6792
+							</p>
+						</div>
+
+						<div class="footer-contents">
+							<ul class="footer-links">
+							 	<li><a href="/wp/contact-us/">CONTACT US </a></li>
+							 	<li><a href="/wp/terms/">LEGAL NOTICE </a></li>
+							 	<li><a href="/wp/site-map/">SITE MAP </a></li>
+							 	<li><a href="/social-media-community-guidelines/">SOCIAL MEDIA COMMUNITY GUIDELINES</a></li>
+							</ul>
+							<p class="copy">All information herein is intended only for residents of Canada.<br>
+							Copyright © Bausch Health, Canada Inc 2023. All rights reserved.</p>
+							
+						</div>
+					</div>
+							</div>
+		</footer>
+
+		<link rel='stylesheet' id='ivory-ajax-search-styles-css' href='https://bauschhealth.ca/wp-content/plugins/add-search-to-menu/public/css/ivory-ajax-search.min.css?ver=5.5.1' type='text/css' media='all' />
+<script type='text/javascript' id='ivory-search-scripts-js-extra'>
+/* <![CDATA[ */
+var IvorySearchVars = {"is_analytics_enabled":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://bauschhealth.ca/wp-content/plugins/add-search-to-menu/public/js/ivory-search.min.js?ver=5.5.1' id='ivory-search-scripts-js'></script>
+<script type='text/javascript' id='ivory-ajax-search-scripts-js-extra'>
+/* <![CDATA[ */
+var IvoryAjaxVars = {"ajaxurl":"https:\/\/bauschhealth.ca\/wp-admin\/admin-ajax.php","ajax_nonce":"2a1cef68de"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://bauschhealth.ca/wp-content/plugins/add-search-to-menu/public/js/ivory-ajax-search.min.js?ver=5.5.1' id='ivory-ajax-search-scripts-js'></script>
+<script type='text/javascript' src='https://bauschhealth.ca/wp-content/plugins/add-search-to-menu/public/js/is-highlight.min.js?ver=5.5.1' id='is-highlight-js'></script>
+<script type='text/javascript'>
+(function() {
+				var expirationDate = new Date();
+				expirationDate.setTime( expirationDate.getTime() + 31536000 * 1000 );
+				document.cookie = "pll_language=en; expires=" + expirationDate.toUTCString() + "; path=/; secure; SameSite=Lax";
+			}());
+</script>
+
+	<script type="text/javascript" src="/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=1&cb=225333207" async></script></body>
+</html>

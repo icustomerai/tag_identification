@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="coh-ie8"  lang="en" dir="ltr"> <![endif]-->
+<!--[if IE 9 ]><html class="coh-ie9"  lang="en" dir="ltr"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" dir="ltr"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-0ba9fb1ada7e1198744",applicationID:"1398672114"};;(()=>{"use strict";var e,t,n={7442:(e,t,n)=>{n.d(t,{T:()=>r,p:()=>i});const r=/(iPad|iPhone|iPod)/g.test(navigator.userAgent),i=r&&Boolean("undefined"==typeof SharedWorker)},5763:(e,t,n)=>{n.d(t,{P_:()=>f,Mt:()=>p,C5:()=>s,DL:()=>m,OP:()=>j,lF:()=>_,Yu:()=>y,Dg:()=>g,CX:()=>c,GE:()=>b,sU:()=>E});var r=n(8632),i=n(9567);const o={beacon:r.ce.beacon,errorBeacon:r.ce.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0},a={};function s(e){if(!e)throw new Error("All info objects require an agent identifier!");if(!a[e])throw new Error("Info for ".concat(e," was never set"));return a[e]}function c(e,t){if(!e)throw new Error("All info objects require an agent identifier!");a[e]=(0,i.D)(t,o),(0,r.Qy)(e,a[e],"info")}var d=n(7056);const u=()=>{const e={blockSelector:"[data-nr-block]",maskInputOptions:{password:!0}};return{allow_bfcache:!0,privacy:{cookies_enabled:!0},ajax:{deny_list:void 0,enabled:!0,harvestTimeSeconds:10},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},session:{domain:void 0,expiresMs:d.oD,inactiveMs:d.Hb},ssl:void 0,obfuscate:void 0,jserrors:{enabled:!0,harvestTimeSeconds:10},metrics:{enabled:!0},page_action:{enabled:!0,harvestTimeSeconds:30},page_view_event:{enabled:!0},page_view_timing:{enabled:!0,harvestTimeSeconds:30,long_task:!1},session_trace:{enabled:!0,harvestTimeSeconds:10},session_replay:{enabled:!1,harvestTimeSeconds:60,sampleRate:.1,errorSampleRate:.1,maskTextSelector:"*",maskAllInputs:!0,get blockClass(){return"nr-block"},get ignoreClass(){return"nr-ignore"},get maskTextClass(){return"nr-mask"},get blockSelector(){return e.blockSelector},set blockSelector(t){e.blockSelector+=",".concat(t)},get maskInputOptions(){return e.maskInputOptions},set maskInputOptions(t){e.maskInputOptions={...t,password:!0}}},spa:{enabled:!0,harvestTimeSeconds:10}}},l={};function f(e){if(!e)throw new Error("All configuration objects require an agent identifier!");if(!l[e])throw new Error("Configuration for ".concat(e," was never set"));return l[e]}function g(e,t){if(!e)throw new Error("All configuration objects require an agent identifier!");l[e]=(0,i.D)(t,u()),(0,r.Qy)(e,l[e],"config")}function p(e,t){if(!e)throw new Error("All configuration objects require an agent identifier!");var n=f(e);if(n){for(var r=t.split("."),i=0;i<r.length-1;i++)if("object"!=typeof(n=n[r[i]]))return;n=n[r[r.length-1]]}return n}const h={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},v={};function m(e){if(!e)throw new Error("All loader-config objects require an agent identifier!");if(!v[e])throw new Error("LoaderConfig for ".concat(e," was never set"));return v[e]}function b(e,t){if(!e)throw new Error("All loader-config objects require an agent identifier!");v[e]=(0,i.D)(t,h),(0,r.Qy)(e,v[e],"loader_config")}const y=(0,r.mF)().o;var w=n(1720),A=n(6818);const x={buildEnv:A.Re,bytesSent:{},queryBytesSent:{},customTransaction:void 0,disabled:!1,distMethod:A.gF,isolatedBacklog:!1,loaderType:void 0,maxBytes:3e4,offset:Math.floor(w._A?.performance?.timeOrigin||w._A?.performance?.timing?.navigationStart||Date.now()),onerror:void 0,origin:""+w._A.location,ptid:void 0,releaseIds:{},session:void 0,xhrWrappable:"function"==typeof w._A.XMLHttpRequest?.prototype?.addEventListener,version:A.q4},D={};function j(e){if(!e)throw new Error("All runtime objects require an agent identifier!");if(!D[e])throw new Error("Runtime for ".concat(e," was never set"));return D[e]}function E(e,t){if(!e)throw new Error("All runtime objects require an agent identifier!");D[e]=(0,i.D)(t,x),(0,r.Qy)(e,D[e],"runtime")}function _(e){return function(e){try{const t=s(e);return!!t.licenseKey&&!!t.errorBeacon&&!!t.applicationID}catch(e){return!1}}(e)}},9567:(e,t,n)=>{n.d(t,{D:()=>i});var r=n(50);function i(e,t){try{if(!e||"object"!=typeof e)return(0,r.Z)("Setting a Configurable requires an object as input");if(!t||"object"!=typeof t)return(0,r.Z)("Setting a Configurable requires a model to set its initial properties");const n=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),o=0===Object.keys(n).length?e:n;for(let a in o)if(void 0!==e[a])try{"object"==typeof e[a]&&"object"==typeof t[a]?n[a]=i(e[a],t[a]):n[a]=e[a]}catch(e){(0,r.Z)("An error occurred while setting a property of a Configurable",e)}return n}catch(e){(0,r.Z)("An error occured while setting a Configurable",e)}}},6818:(e,t,n)=>{n.d(t,{Re:()=>i,gF:()=>o,q4:()=>r});const r="1.235.0",i="PROD",o="CDN"},1117:(e,t,n)=>{n.d(t,{w:()=>o});var r=n(50);const i={agentIdentifier:"",ee:void 0};class o{constructor(e){try{if("object"!=typeof e)return(0,r.Z)("shared context requires an object as input");this.sharedContext={},Object.assign(this.sharedContext,i),Object.entries(e).forEach((e=>{let[t,n]=e;Object.keys(i).includes(t)&&(this.sharedContext[t]=n)}))}catch(e){(0,r.Z)("An error occured while setting SharedContext",e)}}}},8e3:(e,t,n)=>{n.d(t,{L:()=>u,R:()=>c});var r=n(2177),i=n(1284),o=n(4322),a=n(3325);const s={};function c(e,t){const n={staged:!1,priority:a.p[t]||0};d(e),s[e].get(t)||s[e].set(t,n)}function d(e){e&&(s[e]||(s[e]=new Map))}function u(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"feature";if(d(e),!e||!s[e].get(t))return a(t);s[e].get(t).staged=!0;const n=[...s[e]];function a(t){const n=e?r.ee.get(e):r.ee,a=o.X.handlers;if(n.backlog&&a){var s=n.backlog[t],c=a[t];if(c){for(var d=0;s&&d<s.length;++d)l(s[d],c);(0,i.D)(c,(function(e,t){(0,i.D)(t,(function(t,n){n[0].on(e,n[1])}))}))}delete a[t],n.backlog[t]=null,n.emit("drain-"+t,[])}}n.every((e=>{let[t,n]=e;return n.staged}))&&(n.sort(((e,t)=>e[1].priority-t[1].priority)),n.forEach((e=>{let[t]=e;a(t)})))}function l(e,t){var n=e[1];(0,i.D)(t[n],(function(t,n){var r=e[0];if(n[0]===r){var i=n[1],o=e[3],a=e[2];i.apply(o,a)}}))}},2177:(e,t,n)=>{n.d(t,{ee:()=>d});var r=n(8632),i=n(2210),o=n(1284),a=n(5763),s="nr@context";let c=(0,r.fP)();var d;function u(){}function l(){return new u}function f(){d.aborted=!0,d.backlog={}}c.ee?d=c.ee:(d=function e(t,n){var r={},c={},g={},p=!1;try{p=16===n.length&&(0,a.OP)(n).isolatedBacklog}catch(e){}var h={on:b,addEventListener:b,removeEventListener:y,emit:m,get:A,listeners:w,context:v,buffer:x,abort:f,aborted:!1,isBuffering:D,debugId:n,backlog:p?{}:t&&"object"==typeof t.backlog?t.backlog:{}};return h;function v(e){return e&&e instanceof u?e:e?(0,i.X)(e,s,l):l()}function m(e,n,r,i,o){if(!1!==o&&(o=!0),!d.aborted||i){t&&o&&t.emit(e,n,r);for(var a=v(r),s=w(e),u=s.length,l=0;l<u;l++)s[l].apply(a,n);var f=j()[c[e]];return f&&f.push([h,e,n,a]),a}}function b(e,t){r[e]=w(e).concat(t)}function y(e,t){var n=r[e];if(n)for(var i=0;i<n.length;i++)n[i]===t&&n.splice(i,1)}function w(e){return r[e]||[]}function A(t){return g[t]=g[t]||e(h,t)}function x(e,t){var n=j();h.aborted||(0,o.D)(e,(function(e,r){t=t||"feature",c[r]=t,t in n||(n[t]=[])}))}function D(e){return!!j()[c[e]]}function j(){return h.backlog}}(void 0,"globalEE"),c.ee=d)},5546:(e,t,n)=>{n.d(t,{E:()=>r,p:()=>i});var r=n(2177).ee.get("handle");function i(e,t,n,i,o){o?(o.buffer([e],i),o.emit(e,t,n)):(r.buffer([e],i),r.emit(e,t,n))}},4322:(e,t,n)=>{n.d(t,{X:()=>o});var r=n(5546);o.on=a;var i=o.handlers={};function o(e,t,n,o){a(o||r.E,i,e,t,n)}function a(e,t,n,i,o){o||(o="feature"),e||(e=r.E);var a=t[o]=t[o]||{};(a[n]=a[n]||[]).push([e,i])}},3239:(e,t,n)=>{n.d(t,{bP:()=>s,iz:()=>c,m$:()=>a});var r=n(1720);let i=!1,o=!1;try{const e={get passive(){return i=!0,!1},get signal(){return o=!0,!1}};r._A.addEventListener("test",null,e),r._A.removeEventListener("test",null,e)}catch(e){}function a(e,t){return i||o?{capture:!!e,passive:i,signal:t}:!!e}function s(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=arguments.length>3?arguments[3]:void 0;window.addEventListener(e,t,a(n,r))}function c(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=arguments.length>3?arguments[3]:void 0;document.addEventListener(e,t,a(n,r))}},4402:(e,t,n)=>{n.d(t,{Rl:()=>a,ky:()=>s});var r=n(1720);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function o(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=r._A?.crypto||r._A?.msCrypto;let t,n=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(31))),i.split("").map((e=>"x"===e?o(t,++n).toString(16):"y"===e?(3&o()|8).toString(16):e)).join("")}function s(e){const t=r._A?.crypto||r._A?.msCrypto;let n,i=0;t&&t.getRandomValues&&(n=t.getRandomValues(new Uint8Array(31)));const a=[];for(var s=0;s<e;s++)a.push(o(n,++i).toString(16));return a.join("")}},7056:(e,t,n)=>{n.d(t,{Bq:()=>r,Hb:()=>o,oD:()=>i});const r="NRBA",i=144e5,o=18e5},7894:(e,t,n)=>{function r(){return Math.round(performance.now())}n.d(t,{z:()=>r})},50:(e,t,n)=>{function r(e,t){"function"==typeof console.warn&&(console.warn("New Relic: ".concat(e)),t&&console.warn(t))}n.d(t,{Z:()=>r})},2587:(e,t,n)=>{n.d(t,{N:()=>c,T:()=>d});var r=n(2177),i=n(5546),o=n(8e3),a=n(3325);const s={stn:[a.D.sessionTrace],err:[a.D.jserrors,a.D.metrics],ins:[a.D.pageAction],spa:[a.D.spa],sr:[a.D.sessionReplay,a.D.sessionTrace]};function c(e,t){const n=r.ee.get(t);e&&"object"==typeof e&&(Object.entries(e).forEach((e=>{let[t,r]=e;void 0===d[t]&&(s[t]?s[t].forEach((e=>{r?(0,i.p)("feat-"+t,[],void 0,e,n):(0,i.p)("block-"+t,[],void 0,e,n),(0,i.p)("rumresp-"+t,[Boolean(r)],void 0,e,n)})):r&&(0,i.p)("feat-"+t,[],void 0,void 0,n),d[t]=Boolean(r))})),Object.keys(s).forEach((e=>{void 0===d[e]&&(s[e]?.forEach((t=>(0,i.p)("rumresp-"+e,[!1],void 0,t,n))),d[e]=!1)})),(0,o.L)(t,a.D.pageViewEvent))}const d={}},2210:(e,t,n)=>{n.d(t,{X:()=>i});var r=Object.prototype.hasOwnProperty;function i(e,t,n){if(r.call(e,t))return e[t];var i=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},1720:(e,t,n)=>{n.d(t,{FN:()=>a,_A:()=>o,il:()=>r,v6:()=>i});const r=Boolean("undefined"!=typeof window&&window.document),i=Boolean("undefined"!=typeof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator);let o=(()=>{if(r)return window;if(i){if("undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope)return globalThis;if(self instanceof WorkerGlobalScope)return self}throw new Error('New Relic browser agent shutting down due to error: Unable to locate global scope. This is possibly due to code redefining browser global variables like "self" and "window".')})();const a=""+o.location},1284:(e,t,n)=>{n.d(t,{D:()=>r});const r=(e,t)=>Object.entries(e||{}).map((e=>{let[n,r]=e;return t(n,r)}))},4351:(e,t,n)=>{n.d(t,{P:()=>o});var r=n(2177);const i=()=>{const e=new WeakSet;return(t,n)=>{if("object"==typeof n&&null!==n){if(e.has(n))return;e.add(n)}return n}};function o(e){try{return JSON.stringify(e,i())}catch(e){try{r.ee.emit("internal-error",[e])}catch(e){}}}},3960:(e,t,n)=>{n.d(t,{K:()=>a,b:()=>o});var r=n(3239);function i(){return"undefined"==typeof document||"complete"===document.readyState}function o(e,t){if(i())return e();(0,r.bP)("load",e,t)}function a(e){if(i())return e();(0,r.iz)("DOMContentLoaded",e)}},8632:(e,t,n)=>{n.d(t,{EZ:()=>d,Qy:()=>c,ce:()=>o,fP:()=>a,gG:()=>u,mF:()=>s});var r=n(7894),i=n(1720);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function a(){return i._A.NREUM||(i._A.NREUM={}),void 0===i._A.newrelic&&(i._A.newrelic=i._A.NREUM),i._A.NREUM}function s(){let e=a();return e.o||(e.o={ST:i._A.setTimeout,SI:i._A.setImmediate,CT:i._A.clearTimeout,XHR:i._A.XMLHttpRequest,REQ:i._A.Request,EV:i._A.Event,PR:i._A.Promise,MO:i._A.MutationObserver,FETCH:i._A.fetch}),e}function c(e,t,n){let i=a();const o=i.initializedAgents||{},s=o[e]||{};return Object.keys(s).length||(s.initializedAt={ms:(0,r.z)(),date:new Date}),i.initializedAgents={...o,[e]:{...s,[n]:t}},i}function d(e,t){a()[e]=t}function u(){return function(){let e=a();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=a();const t=e.init||{};e.init={...t}}(),s(),function(){let e=a();const t=e.loader_config||{};e.loader_config={...t}}(),a()}},7956:(e,t,n)=>{n.d(t,{N:()=>i});var r=n(3239);function i(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],n=arguments.length>2?arguments[2]:void 0,i=arguments.length>3?arguments[3]:void 0;return void(0,r.iz)("visibilitychange",(function(){if(t)return void("hidden"==document.visibilityState&&e());e(document.visibilityState)}),n,i)}},3081:(e,t,n)=>{n.d(t,{gF:()=>o,mY:()=>i,t9:()=>r,vz:()=>s,xS:()=>a});const r=n(3325).D.metrics,i="sm",o="cm",a="storeSupportabilityMetrics",s="storeEventMetrics"},7633:(e,t,n)=>{n.d(t,{Dz:()=>i,OJ:()=>a,qw:()=>o,t9:()=>r});const r=n(3325).D.pageViewEvent,i="firstbyte",o="domcontent",a="windowload"},9251:(e,t,n)=>{n.d(t,{t:()=>r});const r=n(3325).D.pageViewTiming},5938:(e,t,n)=>{n.d(t,{W:()=>o});var r=n(5763),i=n(2177);class o{constructor(e,t,n){this.agentIdentifier=e,this.aggregator=t,this.ee=i.ee.get(e,(0,r.OP)(this.agentIdentifier).isolatedBacklog),this.featureName=n,this.blocked=!1}}},9144:(e,t,n)=>{n.d(t,{j:()=>v});var r=n(3325),i=n(5763),o=n(5546),a=n(2177),s=n(7894),c=n(8e3),d=n(3960),u=n(1720),l=n(50),f=n(3081),g=n(8632);function p(){const e=(0,g.gG)();["setErrorHandler","finished","addToTrace","inlineHit","addRelease","addPageAction","setCurrentRouteName","setPageViewName","setCustomAttribute","interaction","noticeError","setUserId"].forEach((t=>{e[t]=function(){for(var n=arguments.length,r=new Array(n),i=0;i<n;i++)r[i]=arguments[i];return function(t){for(var n=arguments.length,r=new Array(n>1?n-1:0),i=1;i<n;i++)r[i-1]=arguments[i];let o=[];return Object.values(e.initializedAgents).forEach((e=>{e.exposed&&e.api[t]&&o.push(e.api[t](...r))})),o.length>1?o:o[0]}(t,...r)}}))}var h=n(2587);function v(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},v=arguments.length>2?arguments[2]:void 0,m=arguments.length>3?arguments[3]:void 0,{init:b,info:y,loader_config:w,runtime:A={loaderType:v},exposed:x=!0}=t;const D=(0,g.gG)();y||(b=D.init,y=D.info,w=D.loader_config),(0,i.Dg)(e,b||{}),(0,i.GE)(e,w||{}),(0,i.sU)(e,A),y.jsAttributes??={},u.v6&&(y.jsAttributes.isWorker=!0),(0,i.CX)(e,y),p();const j=function(e,t){t||(0,c.R)(e,"api");const g={};var p=a.ee.get(e),h=p.get("tracer"),v="api-",m=v+"ixn-";function b(t,n,r,o){const a=(0,i.C5)(e);return null===n?delete a.jsAttributes[t]:(0,i.CX)(e,{...a,jsAttributes:{...a.jsAttributes,[t]:n}}),A(v,r,!0,o||null===n?"session":void 0)(t,n)}function y(){}["setErrorHandler","finished","addToTrace","inlineHit","addRelease"].forEach((e=>g[e]=A(v,e,!0,"api"))),g.addPageAction=A(v,"addPageAction",!0,r.D.pageAction),g.setCurrentRouteName=A(v,"routeName",!0,r.D.spa),g.setPageViewName=function(t,n){if("string"==typeof t)return"/"!==t.charAt(0)&&(t="/"+t),(0,i.OP)(e).customTransaction=(n||"http://custom.transaction")+t,A(v,"setPageViewName",!0)()},g.setCustomAttribute=function(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2];if("string"==typeof e){if(["string","number"].includes(typeof t)||null===t)return b(e,t,"setCustomAttribute",n);(0,l.Z)("Failed to execute setCustomAttribute.\nNon-null value must be a string or number type, but a type of <".concat(typeof t,"> was provided."))}else(0,l.Z)("Failed to execute setCustomAttribute.\nName must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.setUserId=function(e){if("string"==typeof e||null===e)return b("enduser.id",e,"setUserId",!0);(0,l.Z)("Failed to execute setUserId.\nNon-null value must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.interaction=function(){return(new y).get()};var w=y.prototype={createTracer:function(e,t){var n={},i=this,a="function"==typeof t;return(0,o.p)(m+"tracer",[(0,s.z)(),e,n],i,r.D.spa,p),function(){if(h.emit((a?"":"no-")+"fn-start",[(0,s.z)(),i,a],n),a)try{return t.apply(this,arguments)}catch(e){throw h.emit("fn-err",[arguments,this,"string"==typeof e?new Error(e):e],n),e}finally{h.emit("fn-end",[(0,s.z)()],n)}}}};function A(e,t,n,i){return function(){return(0,o.p)(f.xS,["API/"+t+"/called"],void 0,r.D.metrics,p),i&&(0,o.p)(e+t,[(0,s.z)(),...arguments],n?null:this,i,p),n?void 0:this}}function x(){n.e(439).then(n.bind(n,7438)).then((t=>{let{setAPI:n}=t;n(e),(0,c.L)(e,"api")})).catch((()=>(0,l.Z)("Downloading runtime APIs failed...")))}return["actionText","setName","setAttribute","save","ignore","onEnd","getContext","end","get"].forEach((e=>{w[e]=A(m,e,void 0,r.D.spa)})),g.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),(0,o.p)(f.xS,["API/noticeError/called"],void 0,r.D.metrics,p),(0,o.p)("err",[e,(0,s.z)(),!1,t],void 0,r.D.jserrors,p)},u.il?(0,d.b)((()=>x()),!0):x(),g}(e,m);return(0,g.Qy)(e,j,"api"),(0,g.Qy)(e,x,"exposed"),(0,g.EZ)("activatedFeatures",h.T),j}},3325:(e,t,n)=>{n.d(t,{D:()=>r,p:()=>i});const r={ajax:"ajax",jserrors:"jserrors",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",spa:"spa"},i={[r.pageViewEvent]:1,[r.pageViewTiming]:2,[r.metrics]:3,[r.jserrors]:4,[r.ajax]:5,[r.sessionTrace]:6,[r.pageAction]:7,[r.spa]:8,[r.sessionReplay]:9}}},r={};function i(e){var t=r[e];if(void 0!==t)return t.exports;var o=r[e]={exports:{}};return n[e](o,o.exports,i),o.exports}i.m=n,i.d=(e,t)=>{for(var n in t)i.o(t,n)&&!i.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:t[n]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce(((t,n)=>(i.f[n](e,t),t)),[])),i.u=e=>(({78:"page_action-aggregate",147:"metrics-aggregate",193:"session_trace-aggregate",242:"session-manager",317:"jserrors-aggregate",348:"page_view_timing-aggregate",412:"lazy-feature-loader",439:"async-api",538:"recorder",590:"session_replay-aggregate",675:"compressor",786:"page_view_event-aggregate",873:"spa-aggregate",898:"ajax-aggregate"}[e]||e)+"."+{78:"af5d1c80",147:"7ece083a",148:"03807465",193:"27e34592",242:"2a64278a",317:"dcb6ac07",348:"1c78d061",412:"0ba331d7",439:"d1647fbb",538:"1b18459f",590:"a5e677ba",675:"ae9f91a8",786:"a7935af6",860:"e997904f",873:"5c4318f2",898:"09a31ca7"}[e]+"-1.235.0.min.js"),i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA:",i.l=(n,r,o,a)=>{if(e[n])e[n].push(r);else{var s,c;if(void 0!==o)for(var d=document.getElementsByTagName("script"),u=0;u<d.length;u++){var l=d[u];if(l.getAttribute("src")==n||l.getAttribute("data-webpack")==t+o){s=l;break}}s||(c=!0,(s=document.createElement("script")).charset="utf-8",s.timeout=120,i.nc&&s.setAttribute("nonce",i.nc),s.setAttribute("data-webpack",t+o),s.src=n),e[n]=[r];var f=(t,r)=>{s.onerror=s.onload=null,clearTimeout(g);var i=e[n];if(delete e[n],s.parentNode&&s.parentNode.removeChild(s),i&&i.forEach((e=>e(r))),t)return t(r)},g=setTimeout(f.bind(null,void 0,{type:"timeout",target:s}),12e4);s.onerror=f.bind(null,s.onerror),s.onload=f.bind(null,s.onload),c&&document.head.appendChild(s)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.j=680,i.p="https://js-agent.newrelic.com/",(()=>{var e={680:0,617:0};i.f.j=(t,n)=>{var r=i.o(e,t)?e[t]:void 0;if(0!==r)if(r)n.push(r[2]);else{var o=new Promise(((n,i)=>r=e[t]=[n,i]));n.push(r[2]=o);var a=i.p+i.u(t),s=new Error;i.l(a,(n=>{if(i.o(e,t)&&(0!==(r=e[t])&&(e[t]=void 0),r)){var o=n&&("load"===n.type?"missing":n.type),a=n&&n.target&&n.target.src;s.message="Loading chunk "+t+" failed.\n("+o+": "+a+")",s.name="ChunkLoadError",s.type=o,s.request=a,r[1](s)}}),"chunk-"+t,t)}};var t=(t,n)=>{var r,o,[a,s,c]=n,d=0;if(a.some((t=>0!==e[t]))){for(r in s)i.o(s,r)&&(i.m[r]=s[r]);if(c)c(i)}for(t&&t(n);d<a.length;d++)o=a[d],i.o(e,o)&&e[o]&&e[o][0](),e[o]=0},n=window.webpackChunkNRBA=window.webpackChunkNRBA||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))})();var o={};(()=>{i.r(o);var e=i(3325),t=i(5763);const n=Object.values(e.D);function r(e){const r={};return n.forEach((n=>{r[n]=function(e,n){return!1!==(0,t.Mt)(n,"".concat(e,".enabled"))}(n,e)})),r}var a=i(9144);var s=i(5546),c=i(7442),d=i(8e3),u=i(5938),l=i(3960),f=i(1720),g=i(50);class p extends u.W{constructor(e,t,n){let r=!(arguments.length>3&&void 0!==arguments[3])||arguments[3];super(e,t,n),this.auto=r,this.abortHandler,this.featAggregate,this.onAggregateImported,r&&(0,d.R)(e,n)}importAggregator(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};if(this.featAggregate||!this.auto)return;const n=f.il&&!0===(0,t.Mt)(this.agentIdentifier,"privacy.cookies_enabled");let r,o;this.onAggregateImported=new Promise(((e,t)=>{r=e,o=t}));const a=async()=>{let t;try{if(n){const{setupAgentSession:e}=await Promise.all([i.e(860),i.e(242)]).then(i.bind(i,3228));t=e(this.agentIdentifier)}}catch(e){(0,g.Z)("A problem occurred when starting up session manager. This page will not start or extend any session.",e)}try{if(!this.shouldImportAgg(this.featureName,t))return void(0,d.L)(this.agentIdentifier,this.featureName);const{lazyFeatureLoader:n}=await i.e(412).then(i.bind(i,8582)),{Aggregate:o}=await n(this.featureName,"aggregate");this.featAggregate=new o(this.agentIdentifier,this.aggregator,e),r()}catch(e){(0,g.Z)("Downloading and initializing ".concat(this.featureName," failed..."),e),this.abortHandler?.(),o()}};f.il?(0,l.b)((()=>a()),!0):a()}shouldImportAgg(n,r){return n!==e.D.sessionReplay||!1!==(0,t.Mt)(this.agentIdentifier,"session_trace.enabled")&&(!!r?.isNew||!!r?.state.sessionReplay)}}var h=i(7633),v=i(7894);class m extends p{static featureName=h.t9;constructor(n,r){let i=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];if(super(n,r,h.t9,i),("undefined"==typeof PerformanceNavigationTiming||c.T)&&"undefined"!=typeof PerformanceTiming){const r=(0,t.OP)(n);r[h.Dz]=Math.max(Date.now()-r.offset,0),(0,l.K)((()=>r[h.qw]=Math.max((0,v.z)()-r[h.Dz],0))),(0,l.b)((()=>{const t=(0,v.z)();r[h.OJ]=Math.max(t-r[h.Dz],0),(0,s.p)("timing",["load",t],void 0,e.D.pageViewTiming,this.ee)}))}this.importAggregator()}}var b=i(1117),y=i(1284);class w extends b.w{constructor(e){super(e),this.aggregatedData={}}store(e,t,n,r,i){var o=this.getBucket(e,t,n,i);return o.metrics=function(e,t){t||(t={count:0});return t.count+=1,(0,y.D)(e,(function(e,n){t[e]=A(n,t[e])})),t}(r,o.metrics),o}merge(e,t,n,r,i){var o=this.getBucket(e,t,r,i);if(o.metrics){var a=o.metrics;a.count+=n.count,(0,y.D)(n,(function(e,t){if("count"!==e){var r=a[e],i=n[e];i&&!i.c?a[e]=A(i.t,r):a[e]=function(e,t){if(!t)return e;t.c||(t=x(t.t));return t.min=Math.min(e.min,t.min),t.max=Math.max(e.max,t.max),t.t+=e.t,t.sos+=e.sos,t.c+=e.c,t}(i,a[e])}}))}else o.metrics=n}storeMetric(e,t,n,r){var i=this.getBucket(e,t,n);return i.stats=A(r,i.stats),i}getBucket(e,t,n,r){this.aggregatedData[e]||(this.aggregatedData[e]={});var i=this.aggregatedData[e][t];return i||(i=this.aggregatedData[e][t]={params:n||{}},r&&(i.custom=r)),i}get(e,t){return t?this.aggregatedData[e]&&this.aggregatedData[e][t]:this.aggregatedData[e]}take(e){for(var t={},n="",r=!1,i=0;i<e.length;i++)t[n=e[i]]=D(this.aggregatedData[n]),t[n].length&&(r=!0),delete this.aggregatedData[n];return r?t:null}}function A(e,t){return null==e?function(e){e?e.c++:e={c:1};return e}(t):t?(t.c||(t=x(t.t)),t.c+=1,t.t+=e,t.sos+=e*e,e>t.max&&(t.max=e),e<t.min&&(t.min=e),t):{t:e}}function x(e){return{t:e,min:e,max:e,sos:e*e,c:1}}function D(e){return"object"!=typeof e?[]:(0,y.D)(e,j)}function j(e,t){return t}var E=i(8632),_=i(4402),k=i(4351);var T=i(7956),I=i(3239),N=i(9251);class P extends p{static featureName=N.t;constructor(e,n){let r=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,n,N.t,r),f.il&&((0,t.OP)(e).initHidden=Boolean("hidden"===document.visibilityState),(0,T.N)((()=>(0,s.p)("docHidden",[(0,v.z)()],void 0,N.t,this.ee)),!0),(0,I.bP)("pagehide",(()=>(0,s.p)("winPagehide",[(0,v.z)()],void 0,N.t,this.ee))),this.importAggregator())}}var O=i(3081);class S extends p{static featureName=O.t9;constructor(e,t){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,O.t9,n),this.importAggregator()}}new class{constructor(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:(0,_.ky)(16);this.agentIdentifier=t,this.sharedAggregator=new w({agentIdentifier:this.agentIdentifier}),this.features={},this.desiredFeatures=new Set(e.features||[]),this.desiredFeatures.add(m),Object.assign(this,(0,a.j)(this.agentIdentifier,e,e.loaderType||"agent")),this.start()}get config(){return{info:(0,t.C5)(this.agentIdentifier),init:(0,t.P_)(this.agentIdentifier),loader_config:(0,t.DL)(this.agentIdentifier),runtime:(0,t.OP)(this.agentIdentifier)}}start(){const t="features";try{const n=r(this.agentIdentifier),i=[...this.desiredFeatures];i.sort(((t,n)=>e.p[t.featureName]-e.p[n.featureName])),i.forEach((t=>{if(n[t.featureName]||t.featureName===e.D.pageViewEvent){const r=function(t){switch(t){case e.D.ajax:return[e.D.jserrors];case e.D.sessionTrace:return[e.D.ajax,e.D.pageViewEvent];case e.D.sessionReplay:return[e.D.sessionTrace];case e.D.pageViewTiming:return[e.D.pageViewEvent];default:return[]}}(t.featureName);r.every((e=>n[e]))||(0,g.Z)("".concat(t.featureName," is enabled but one or more dependent features has been disabled (").concat((0,k.P)(r),"). This may cause unintended consequences or missing data...")),this.features[t.featureName]=new t(this.agentIdentifier,this.sharedAggregator)}})),(0,E.Qy)(this.agentIdentifier,this.features,t)}catch(e){(0,g.Z)("Failed to initialize all enabled instrument classes (agent aborted) -",e);for(const e in this.features)this.features[e].abortHandler?.();const n=(0,E.fP)();return delete n.initializedAgents[this.agentIdentifier]?.api,delete n.initializedAgents[this.agentIdentifier]?.[t],delete this.sharedAggregator,n.ee?.abort(),delete n.ee?.get(this.agentIdentifier),!1}}}({features:[m,P,S],loaderType:"lite"})})(),window.NRBA=o})();</script>
+<link rel="canonical" href="https://tpicap.com/pvm/" />
+<link rel="shortlink" href="https://tpicap.com/pvm/" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8" />
+<script src="https://cdn-ukwest.onetrust.com/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="aeda9808-2b85-4bca-8c9b-e7893fd140cf"></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&amp;display=swap&quot; rel=&quot;stylesheet" type="text/css" />
+<link rel="icon" href="/pvm/sites/g/files/escbpb126/files/favicon_9.ico" type="image/vnd.microsoft.icon" />
+
+    <title>Home | PVM Oil</title>
+    <link rel="stylesheet" media="all" href="/pvm/sites/g/files/escbpb126/files/css/css_q18vFNz3vVs9u-ltuWmTYJRXMPWg_xdBVF0VIqCopSU.css" />
+<link rel="stylesheet" media="all" href="/pvm/sites/g/files/escbpb126/files/cohesion/styles/base/dx8-sub-theme-stylesheet.min.css?rw4eel" />
+<link rel="stylesheet" media="all" href="/pvm/sites/g/files/escbpb126/files/css/css_DfIk0kDE_97QqZBJr5TF4iiP6Rt7nG3gWSu-Jh5AKCY.css" />
+<link rel="stylesheet" media="all" href="/pvm/sites/g/files/escbpb126/files/cohesion/styles/theme/dx8-sub-theme-stylesheet.min.css?rw4eel" />
+<link rel="stylesheet" media="all" href="/pvm/sites/g/files/escbpb126/files/css/css_INqKuzJk40i4KgCwcAEyITx3UcFMBx5_eljuFk00x4s.css" />
+
+    
+    <style>.coh-instance-3193482945.coh-ce-cpt_stats-292ae026 { display: block; position: relative; float: left; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 100px; padding-right: 0; padding-bottom: 100px; padding-left: 0; max-width: 100%; width: 100%; height: auto;  background-image: url("/pvm/sites/g/files/escbpb126/files/Media/Images/test.jpg"); background-position: center; background-size: cover; background-repeat: no-repeat; background-attachment: scroll;  }.coh-instance-3193482945.coh-ce-cpt_stats-292ae026:before, .coh-instance-3193482945.coh-ce-cpt_stats-292ae026:after { clear: none; content: normal; display: inline; }</style>
+<style>.coh-instance-2876601963.coh-ce-cpt_custom_content_width-aa885445 { vertical-align: baseline; height: auto; width: 100%; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; float: left; position: relative; display: block;  background-color: rgba(255, 255, 255, 1); }.coh-instance-2876601963.coh-ce-cpt_custom_content_width-aa885445:before, .coh-instance-2876601963.coh-ce-cpt_custom_content_width-aa885445:after { clear: none; content: normal; display: inline; }.coh-instance-2876601963.coh-ce-cpt_custom_content_width-93fe1863 { vertical-align: baseline; height: auto; width: 100%;  max-width: 850px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: auto; margin-bottom: 0; margin-left: auto; float: none; position: relative; display: block; }</style>
+<style>.coh-instance-965899698.coh-ce-cpt_body_copy-3ee8d2d { vertical-align: baseline; height: auto; width: 100%;  padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: auto; margin-bottom: 0; margin-left: auto; float: none; position: relative; display: block; }.coh-instance-965899698.coh-ce-cpt_body_copy-3ee8d2d:before, .coh-instance-965899698.coh-ce-cpt_body_copy-3ee8d2d:after { clear: none; content: normal; display: inline; }@media (max-width: 99.9375rem) { .coh-instance-965899698.coh-ce-cpt_body_copy-3ee8d2d { padding-right: 0; padding-left: 0; } }@media (max-width: 88.6875rem) { .coh-instance-965899698.coh-ce-cpt_body_copy-3ee8d2d { padding-right: 40px; padding-left: 40px; } }@media (max-width: 63.9375rem) { .coh-instance-965899698.coh-ce-cpt_body_copy-3ee8d2d { padding-right: 24px; padding-left: 24px; } }@media (max-width: 47.9375rem) { .coh-instance-965899698.coh-ce-cpt_body_copy-3ee8d2d { padding-right: 24px; padding-left: 24px; } }@media (max-width: 31.1875rem) { .coh-instance-965899698.coh-ce-cpt_body_copy-3ee8d2d { padding-right: 24px; padding-left: 24px; } }</style>
+<style>.coh-instance-4136930220.coh-ce-cpt_hero-92fdf2b7 {  background-image: url("/pvm/sites/g/files/escbpb126/files/Media/PVM%20HP%201x1%20-%20Mobile_0.jpg"); background-position: center; background-size: cover; background-repeat: no-repeat; background-attachment: scroll; vertical-align: baseline; height: 100%; width: 100%; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: 1; display: none; opacity: 1; }.coh-instance-4136930220.coh-ce-cpt_hero-92fdf2b7:before, .coh-instance-4136930220.coh-ce-cpt_hero-92fdf2b7:after { clear: none; content: normal; display: inline; }@media (max-width: 99.9375rem) { .coh-instance-4136930220.coh-ce-cpt_hero-92fdf2b7 { display: none; } }@media (max-width: 88.6875rem) { .coh-instance-4136930220.coh-ce-cpt_hero-92fdf2b7 { display: none; } }@media (max-width: 63.9375rem) { .coh-instance-4136930220.coh-ce-cpt_hero-92fdf2b7 { display: none; } }@media (max-width: 47.9375rem) { .coh-instance-4136930220.coh-ce-cpt_hero-92fdf2b7 { display: block; } }@media (max-width: 31.1875rem) { .coh-instance-4136930220.coh-ce-cpt_hero-92fdf2b7 { display: block; } }.coh-instance-4136930220.coh-ce-cpt_hero-57768c52 { vertical-align: baseline;  background-image: url("/pvm/sites/g/files/escbpb126/files/Media/PVM%20HP%203x1%20-%20Desktop.jpg"); background-position: center; background-size: cover; background-repeat: no-repeat; background-attachment: scroll; height: 100%; width: 100%; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: 1; display: block; opacity: 1; }.coh-instance-4136930220.coh-ce-cpt_hero-57768c52:before, .coh-instance-4136930220.coh-ce-cpt_hero-57768c52:after { clear: none; content: normal; display: inline; }@media (max-width: 99.9375rem) { .coh-instance-4136930220.coh-ce-cpt_hero-57768c52 { display: block; } }@media (max-width: 88.6875rem) { .coh-instance-4136930220.coh-ce-cpt_hero-57768c52 { display: block; } }@media (max-width: 63.9375rem) { .coh-instance-4136930220.coh-ce-cpt_hero-57768c52 { display: block; } }@media (max-width: 47.9375rem) { .coh-instance-4136930220.coh-ce-cpt_hero-57768c52 { display: none; } }@media (max-width: 31.1875rem) { .coh-instance-4136930220.coh-ce-cpt_hero-57768c52 { display: none; } }.coh-instance-4136930220.coh-ce-cpt_hero-52c2d4a4 {  background-color: rgba(0, 0, 0, 0); height: 100%; width: 100%; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: 3; display: block; }.coh-instance-4136930220.coh-ce-cpt_hero-52c2d4a4:before, .coh-instance-4136930220.coh-ce-cpt_hero-52c2d4a4:after { clear: none; content: normal; display: inline; }.coh-instance-4136930220.coh-ce-cpt_hero-e3a3cbc1 { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; height: auto;  max-width: 1110px; width: 100%; padding-top: 0; padding-right: 1.25rem; padding-bottom: 0; padding-left: 1.25rem; margin-top: -webkit-calc(81px + 56px); margin-top: calc(81px + 56px); margin-right: auto; margin-bottom: 56px; margin-left: auto; float: none; position: relative; vertical-align: baseline; -webkit-box-flex: 1; -webkit-flex-grow: 1; -ms-flex-positive: 1; flex-grow: 1; -webkit-align-self: center; -ms-flex-item-align: center; align-self: center; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }@media (max-width: 63.9375rem) { .coh-instance-4136930220.coh-ce-cpt_hero-e3a3cbc1 { margin-top: 14%; margin-bottom: 14%; padding-right: 40px; padding-left: 40px; } }.coh-instance-4136930220.coh-ce-cpt_hero-4e9f4b1c { font-family: 'FSLucas-Light', sans-serif;; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; font-weight: normal; color: white; text-align: center; float: none; display: block; width: 100%; height: auto; text-transform: uppercase; margin: 0;  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); }</style>
+<style>.coh-instance-140552932.coh-ce-cpt_stats-292ae026 { display: block; position: relative; float: left; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 100px; padding-right: 0; padding-bottom: 100px; padding-left: 0; max-width: 100%; width: 100%; height: auto;  background-image: url("/pvm/sites/g/files/escbpb126/files/Media/Images/test.jpg"); background-position: center; background-size: cover; background-repeat: no-repeat; background-attachment: scroll;  }.coh-instance-140552932.coh-ce-cpt_stats-292ae026:before, .coh-instance-140552932.coh-ce-cpt_stats-292ae026:after { clear: none; content: normal; display: inline; }</style>
+<style>.coh-instance-4087904684.coh-ce-cpt_custom_content_width-aa885445 { vertical-align: baseline; height: auto; width: 100%; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; float: left; position: relative; display: block;  background-color: rgba(255, 255, 255, 1); }.coh-instance-4087904684.coh-ce-cpt_custom_content_width-aa885445:before, .coh-instance-4087904684.coh-ce-cpt_custom_content_width-aa885445:after { clear: none; content: normal; display: inline; }.coh-instance-4087904684.coh-ce-cpt_custom_content_width-93fe1863 { vertical-align: baseline; height: auto; width: 100%;  max-width: 850px; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: auto; margin-bottom: 0; margin-left: auto; float: none; position: relative; display: block; }</style>
+<style>.coh-instance-2179193426.coh-ce-cpt_body_copy-3ee8d2d { vertical-align: baseline; height: auto; width: 100%;  padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: auto; margin-bottom: 0; margin-left: auto; float: none; position: relative; display: block; }.coh-instance-2179193426.coh-ce-cpt_body_copy-3ee8d2d:before, .coh-instance-2179193426.coh-ce-cpt_body_copy-3ee8d2d:after { clear: none; content: normal; display: inline; }@media (max-width: 99.9375rem) { .coh-instance-2179193426.coh-ce-cpt_body_copy-3ee8d2d { padding-right: 0; padding-left: 0; } }@media (max-width: 88.6875rem) { .coh-instance-2179193426.coh-ce-cpt_body_copy-3ee8d2d { padding-right: 40px; padding-left: 40px; } }@media (max-width: 63.9375rem) { .coh-instance-2179193426.coh-ce-cpt_body_copy-3ee8d2d { padding-right: 24px; padding-left: 24px; } }@media (max-width: 47.9375rem) { .coh-instance-2179193426.coh-ce-cpt_body_copy-3ee8d2d { padding-right: 24px; padding-left: 24px; } }@media (max-width: 31.1875rem) { .coh-instance-2179193426.coh-ce-cpt_body_copy-3ee8d2d { padding-right: 24px; padding-left: 24px; } }</style>
+<style>.coh-instance-1773260954.coh-ce-cpt_hero-92fdf2b7 {  background-image: url("/pvm/sites/g/files/escbpb126/files/Media/PVM%20HP%201x1%20-%20Mobile_0.jpg"); background-position: center; background-size: cover; background-repeat: no-repeat; background-attachment: scroll; vertical-align: baseline; height: 100%; width: 100%; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: 1; display: none; opacity: 1; }.coh-instance-1773260954.coh-ce-cpt_hero-92fdf2b7:before, .coh-instance-1773260954.coh-ce-cpt_hero-92fdf2b7:after { clear: none; content: normal; display: inline; }@media (max-width: 99.9375rem) { .coh-instance-1773260954.coh-ce-cpt_hero-92fdf2b7 { display: none; } }@media (max-width: 88.6875rem) { .coh-instance-1773260954.coh-ce-cpt_hero-92fdf2b7 { display: none; } }@media (max-width: 63.9375rem) { .coh-instance-1773260954.coh-ce-cpt_hero-92fdf2b7 { display: none; } }@media (max-width: 47.9375rem) { .coh-instance-1773260954.coh-ce-cpt_hero-92fdf2b7 { display: block; } }@media (max-width: 31.1875rem) { .coh-instance-1773260954.coh-ce-cpt_hero-92fdf2b7 { display: block; } }.coh-instance-1773260954.coh-ce-cpt_hero-57768c52 { vertical-align: baseline;  background-image: url("/pvm/sites/g/files/escbpb126/files/Media/PVM%20HP%203x1%20-%20Desktop.jpg"); background-position: center; background-size: cover; background-repeat: no-repeat; background-attachment: scroll; height: 100%; width: 100%; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: 1; display: block; opacity: 1; }.coh-instance-1773260954.coh-ce-cpt_hero-57768c52:before, .coh-instance-1773260954.coh-ce-cpt_hero-57768c52:after { clear: none; content: normal; display: inline; }@media (max-width: 99.9375rem) { .coh-instance-1773260954.coh-ce-cpt_hero-57768c52 { display: block; } }@media (max-width: 88.6875rem) { .coh-instance-1773260954.coh-ce-cpt_hero-57768c52 { display: block; } }@media (max-width: 63.9375rem) { .coh-instance-1773260954.coh-ce-cpt_hero-57768c52 { display: block; } }@media (max-width: 47.9375rem) { .coh-instance-1773260954.coh-ce-cpt_hero-57768c52 { display: none; } }@media (max-width: 31.1875rem) { .coh-instance-1773260954.coh-ce-cpt_hero-57768c52 { display: none; } }.coh-instance-1773260954.coh-ce-cpt_hero-52c2d4a4 {  background-color: rgba(0, 0, 0, 0); height: 100%; width: 100%; padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; position: absolute; top: 0; bottom: 0; left: 0; right: 0; z-index: 3; display: block; }.coh-instance-1773260954.coh-ce-cpt_hero-52c2d4a4:before, .coh-instance-1773260954.coh-ce-cpt_hero-52c2d4a4:after { clear: none; content: normal; display: inline; }.coh-instance-1773260954.coh-ce-cpt_hero-e3a3cbc1 { display: -webkit-box; display: -webkit-flex; display: -ms-flexbox; display: flex; height: auto;  max-width: 1110px; width: 100%; padding-top: 0; padding-right: 1.25rem; padding-bottom: 0; padding-left: 1.25rem; margin-top: -webkit-calc(81px + 56px); margin-top: calc(81px + 56px); margin-right: auto; margin-bottom: 56px; margin-left: auto; float: none; position: relative; vertical-align: baseline; -webkit-box-flex: 1; -webkit-flex-grow: 1; -ms-flex-positive: 1; flex-grow: 1; -webkit-align-self: center; -ms-flex-item-align: center; align-self: center; -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }@media (max-width: 63.9375rem) { .coh-instance-1773260954.coh-ce-cpt_hero-e3a3cbc1 { margin-top: 14%; margin-bottom: 14%; padding-right: 40px; padding-left: 40px; } }.coh-instance-1773260954.coh-ce-cpt_hero-4e9f4b1c { font-family: 'FSLucas-Light', sans-serif;; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; font-weight: normal; color: white; text-align: center; float: none; display: block; width: 100%; height: auto; text-transform: uppercase; margin: 0;  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); }</style>
+</head>
+<body class="path-frontpage page-node-type-landing-page">
+<a href="#main-content" class="visually-hidden focusable skip-link">
+    Skip to main content
+</a>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WNSVHV3"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+           <div class="coh-block">  </div>  <div class="coh-container coh-style-master-template-outer-margins coh-ce-2c19620d" >           <div class="coh-container coh-component coh-component-instance-eb3ef6c3-bdca-440b-9c9f-94003b88b15e contextual-component pri-nav-header coh-ce-cpt_main_header-d60f851a" > <div class="coh-container coh-ce-cpt_main_header-5aa37ec9" > <div class="coh-container coh-ce-cpt_main_header-d8aacee8" > <a href="/home" class="coh-link coh-ce-cpt_main_header-861c8e26" target="_self" > <img class="coh-image coh-image-responsive-xl" src="/pvm/sites/g/files/escbpb126/files/TP%20ICAP%20Group%20Logo_new.png" /> </a> </div> <div class="coh-container coh-ce-cpt_main_header-a3213f43" > <div class="coh-container our-business-wrap coh-ce-cpt_main_header-34a1b72d" > <div class="coh-container our-business-text coh-ce-cpt_main_header-5d8754b4" > <div class="coh-container coh-ce-cpt_main_header-140b2a4b" > <a href="/investors/share-price" class="coh-link share-price-holder coh-ce-cpt_main_header-bcc170ed" target="_self" > </a> </div> </div> </div> </div> <div class="coh-container coh-ce-cpt_main_header-3e056682" >            <div class="coh-container coh-component coh-component-instance-eb3ef6c3-bdca-440b-9c9f-94003b88b15e contextual-component menu-outer-wrap coh-style-menu---tpicap-group-main-menu coh-style-menu---navigation-svg-arrows coh-ce-cpt_primary_navigation-6602868b" > <div class="coh-container menu-item-wrap" > <div class="coh-container" > <div class="coh-container menu-name" > <div class="coh-container link-wrap" >  <p class="coh-paragraph">Our Brands</p> </div> <div class="coh-container item-submenu" > <div class="coh-row coh-row-xl coh-row-visible-xl" data-coh-row-match-heights="{&quot;xl&quot;:{&quot;target&quot;:&quot;none&quot;}}"> <div class="coh-row-inner"> <div class="coh-column coh-col-xl coh-col-xl-push-0 coh-col-xl-pull-0 coh-col-xl-offset-0" > 
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://tpicap.com/tullettprebon">Tullett Prebon</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://tpicap.com/icap">ICAP</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://tpicap.com/pvm">PVM</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://parametasolutions.com">Parameta Solutions</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.liquidnet.com/">Liquidnet</a>
+              </li>
+        </ul>
+  
+
+ </div> </div> </div> </div> </div> </div> </div> <div class="coh-container menu-item-wrap" > <div class="coh-container" > <div class="coh-container menu-name" > <div class="coh-container link-wrap" > <a href="/careers/work-with-us" class="coh-link" target="_blank" >Careers</a> </div> </div> </div> </div> <div class="coh-container menu-item-wrap" > <div class="coh-container" > <div class="coh-container menu-name" > <div class="coh-container link-wrap" >  <p class="coh-paragraph">Media</p> </div> <div class="coh-container item-submenu" > <div class="coh-row coh-row-xl coh-row-visible-xl" data-coh-row-match-heights="{&quot;xl&quot;:{&quot;target&quot;:&quot;none&quot;}}"> <div class="coh-row-inner"> <div class="coh-column coh-col-xl coh-col-xl-push-0 coh-col-xl-pull-0 coh-col-xl-offset-0" > 
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://tpicap.com/media-get-touch">Get In Touch</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://tpicap.com/media-image-library">Image Library</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://tpicap.com/media/in-the-news">In the News</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://tpicap.com/media/pressreleases">Press Releases</a>
+              </li>
+        </ul>
+  
+
+ </div> </div> </div> </div> </div> </div> </div> <div class="coh-container menu-item-wrap" > <div class="coh-container" > <div class="coh-container menu-name" > <div class="coh-container link-wrap" > <a href="/contact-us" class="coh-link" target="_blank" >Contact Us</a> </div> </div> </div> </div> </div>  <script class="coh-inline-element coh-component coh-component-instance-eb3ef6c3-bdca-440b-9c9f-94003b88b15e contextual-component">document.addEventListener("DOMContentLoaded", function(event) { 
+    jQuery(document).ready(function( $ ){
+
+        if (window.location.href.indexOf("/investors") > -1) {
+            $('.primary-first-menu').addClass('active');
+        }
+
+        if (window.location.href.indexOf("/what-we-do") > -1) {
+            $('.secondary-first-menu').addClass('active');
+        }
+
+        if (window.location.href.indexOf("/who-we-are") > -1) {
+            $('.secondary-first-menu').addClass('active');
+        }
+
+        if (window.location.href.indexOf("/responsibility") > -1) {
+            $('.secondary-second-menu').addClass('active');
+        }
+
+        if (window.location.href.indexOf("/asset-classes") > -1) {
+            $('.secondary-second-menu').addClass('active');
+        }
+
+        if (window.location.href.indexOf("/media") > -1) {
+            $('.secondary-third-menu').addClass('active');
+        }
+
+        if (window.location.href.indexOf("/contact-us") > -1) {
+            $('.secondary-fourth-menu').addClass('active');
+        }
+
+//for new pages
+
+ if (window.location.href.indexOf("/who-we-are") > -1) {
+            $('.secondary-whoweare-menu').addClass('active');
+        }
+ if (window.location.href.indexOf("/sustainability") > -1) {
+            $('.secondary-esg-menu').addClass('active');
+        }
+ if (window.location.href.indexOf("/media") > -1) {
+            $('.secondary-third-menu').addClass('active');
+        }
+      
+        
+    });
+});document.addEventListener("DOMContentLoaded", function(event) { 
+    jQuery(document).ready(function( $ ){
+    
+        if (window.location.href.indexOf("/careers") > -1) {
+            $('.careers-menu-active').addClass('active-link');
+        }
+
+        if (window.location.href.indexOf("/contact-us") > -1) {
+            $('.contactus-menu-active').addClass('active-link');
+        }
+    });
+});</script> 
+ </div> </div> </div> 
+            <div class="coh-container coh-component coh-component-instance-5718a401-ab0c-4618-a95c-7c2ce764d329 contextual-component secondary-header coh-ce-cpt_sub_header-f7d77169" > <div class="coh-container white-navigation coh-ce-cpt_sub_header-86934f61" > <div class="coh-container burger-button coh-style-burger-menu-open-close coh-ce-cpt_sub_header-16516316" > <div class="coh-container mobile-nav-bt coh-ce-cpt_sub_header-f290bf44" >  <svg class="coh-inline-element burger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"> <path/ class="coh-inline-element coh-ce-cpt_sub_header-a0e2a856" d="M24 18.75v1.5H0v-1.5h24zm0-7.5v1.5H0v-1.5h24zm0-7.5v1.5H0v-1.5h24z" fill-rule="evenodd"></path/> </svg>  <svg class="coh-inline-element close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"> <path/ class="coh-inline-element coh-ce-cpt_sub_header-a0e2a856" d="M22.687 0l1.061 1.06-10.814 10.814 10.814 10.814-1.06 1.06-10.814-10.814L1.06 23.748 0 22.688l10.813-10.814L0 1.06 1.06 0l10.814 10.813L22.687 0z" fill-rule="evenodd"></path/> </svg>  <button class="coh-button bt-mobile-nav coh-ce-cpt_sub_header-ba1f8edc coh-interaction" data-interaction-modifiers="[{&quot;modifierType&quot;:&quot;toggle-modifier&quot;,&quot;interactionScope&quot;:&quot;document&quot;,&quot;interactionTarget&quot;:&quot;.mobile-nav-wrapper .mobile-nav-bt&quot;,&quot;modifierName&quot;:&quot;active&quot;},{&quot;modifierType&quot;:&quot;toggle-modifier&quot;,&quot;interactionScope&quot;:&quot;document&quot;,&quot;interactionTarget&quot;:&quot;.mobile-nav-wrapper&quot;,&quot;modifierName&quot;:&quot;active&quot;}]" data-coh-settings='{ "xl":{"buttonAnimation":[{"animationType":"none"}]} }' type="button"> </button> </div> </div> <div class="coh-container logo-centred coh-ce-cpt_sub_header-1e4b2100" > <a href="/" class="coh-link coh-ce-cpt_sub_header-7410ecba" title="home" target="_self" > <img class="coh-image coh-ce-cpt_sub_header-a7c6a7af coh-image-responsive-xl" src="/pvm/sites/g/files/escbpb126/files/Media/Logos/pvm%403x.png" title="PVM Oil" alt="PVM Oil" /> </a> </div> <div class="coh-container js-activate-search coh-style-menu---search-wrap" > <div class="coh-container" > <div class="coh-container input-wrap" >  <form/ class="coh-inline-element" action="/search?combine=&lt;?php echo $_GET['search_field']; ?&gt;"> <input/ class="coh-inline-element search-input-field coh-ce-cpt_sub_header-e0073bab" type="text" name="combine" placeholder="Type to search…"></input/> </form/> <div class="coh-container search-button activate-search" >  <svg class="coh-inline-element search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36"> <path/ class="coh-inline-element coh-ce-cpt_sub_header-a0e2a856" d="M14.968 0c4.97 0 9 4.03 9 9s-4.03 9-9 9c-2.216 0-4.244-.8-5.812-2.128l-8.095 8.096L0 22.908l8.095-8.096C6.768 13.244 5.968 11.215 5.968 9c0-4.97 4.03-9 9-9zm0 1.5c-4.136 0-7.5 3.364-7.5 7.5s3.364 7.5 7.5 7.5c4.135 0 7.5-3.364 7.5-7.5s-3.365-7.5-7.5-7.5z" fill-rule="evenodd"></path/> </svg> </div> <div class="coh-container close-wrap" >  <svg class="coh-inline-element close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"> <path/ class="coh-inline-element coh-ce-cpt_sub_header-a0e2a856" d="M22.687 0l1.061 1.06-10.814 10.814 10.814 10.814-1.06 1.06-10.814-10.814L1.06 23.748 0 22.688l10.813-10.814L0 1.06 1.06 0l10.814 10.813L22.687 0z" fill-rule="evenodd"></path/> </svg> </div> </div> <div class="coh-container search-button open-search coh-ce-cpt_sub_header-fe16018e" >  <svg class="coh-inline-element search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36"> <path/ class="coh-inline-element coh-ce-cpt_sub_header-a0e2a856" d="M14.968 0c4.97 0 9 4.03 9 9s-4.03 9-9 9c-2.216 0-4.244-.8-5.812-2.128l-8.095 8.096L0 22.908l8.095-8.096C6.768 13.244 5.968 11.215 5.968 9c0-4.97 4.03-9 9-9zm0 1.5c-4.136 0-7.5 3.364-7.5 7.5s3.364 7.5 7.5 7.5c4.135 0 7.5-3.364 7.5-7.5s-3.365-7.5-7.5-7.5z" fill-rule="evenodd"></path/> </svg> </div> </div> </div> </div> </div> <div class="coh-container coh-component coh-component-instance-5718a401-ab0c-4618-a95c-7c2ce764d329 contextual-component mobile-nav-popup-wrapper coh-style-menu---mobile-nav-popup coh-ce-cpt_sub_header-fff196f3" > <div class="coh-container mobile-nav-popup" > <div class="coh-container coh-ce-cpt_sub_header-9b6dd796" > <div class="coh-container coh-ce-cpt_sub_header-5ebdf4e" > <div class="coh-container menu-outer-wrap grey-navigation-area coh-style-menu-mobile---popup-mobile-menu coh-style-menu---mobile-nav-style coh-style-menu-mobile---navigation-svg-arrows" > <div class="coh-container mobile-menu-item-wrap" > <div class="coh-container" > <div class="coh-container menu-name" > <div class="coh-container link-wrap" >       <div class="coh-container coh-ce-44262c94" > <nav class="coh-container coh-style-menu-link coh-ce-82ff7511" >  <ul class="coh-menu-list-container coh-unordered-list"><li class="coh-menu-list-item" ></li></ul>  </nav> </div> 
+ </div> </div> <div class="coh-container item-submenu" > 
+    
+
+ </div> </div> </div> <div class="coh-container mobile-menu-item-wrap" > <div class="coh-container" > <div class="coh-container menu-name" > <div class="coh-container link-wrap" >       <div class="coh-container coh-ce-44262c94" > <nav class="coh-container coh-style-menu-link coh-ce-82ff7511" >  <ul class="coh-menu-list-container coh-unordered-list"><li class="coh-menu-list-item" ></li></ul>  </nav> </div> 
+ </div> </div> <div class="coh-container item-submenu" > 
+    
+
+ </div> </div> </div> <div class="coh-container mobile-menu-item-wrap" > <div class="coh-container" > <div class="coh-container menu-name" > <div class="coh-container link-wrap" >       <div class="coh-container coh-ce-44262c94" > <nav class="coh-container coh-style-menu-link coh-ce-82ff7511" >  <ul class="coh-menu-list-container coh-unordered-list"><li class="coh-menu-list-item" ></li></ul>  </nav> </div> 
+ </div> </div> <div class="coh-container item-submenu" > 
+    
+
+ </div> </div> </div> <div class="coh-container mobile-menu-item-wrap" > <div class="coh-container" > <div class="coh-container menu-name link" > <div class="coh-container link-wrap" >       <div class="coh-container coh-ce-44262c94" > <nav class="coh-container coh-style-menu-link coh-ce-82ff7511" >  <ul class="coh-menu-list-container coh-unordered-list"><li class="coh-menu-list-item" ></li></ul>  </nav> </div> 
+ </div> </div> </div> </div> </div> <div class="coh-container coh-ce-cpt_sub_header-1f7313e5" > <div class="coh-container coh-ce-cpt_sub_header-1d119a7b" > <div class="coh-container coh-ce-cpt_sub_header-ac991772" > <a href="/" class="coh-link coh-ce-cpt_sub_header-5b89c68e" target="_self" >  <svg class="coh-inline-element coh-ce-cpt_sub_header-355b5b9c" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103 18"> <defs/ class="coh-inline-element"> <linearGradient/ class="coh-inline-element" id="prefix__a" x1="50%" x2="50%" y1="100%" y2="0%"> <stop class="coh-inline-element" offset="0%" stop-color="#FFF" stop-opacity=".2"></stop>  <stop class="coh-inline-element" offset="100%" stop-color="#FFF"></stop> </linearGradient/>  <linearGradient/ class="coh-inline-element" id="prefix__b" x1="50%" x2="50%" y1="99.705%" y2="0%"> <stop class="coh-inline-element" offset=".042%" stop-color="#FFF" stop-opacity=".2"></stop>  <stop class="coh-inline-element" offset="100%" stop-color="#FFF"></stop> </linearGradient/>  <linearGradient/ class="coh-inline-element" id="prefix__c" x1="0%" x2="100%" y1="49.999%" y2="49.999%"> <stop class="coh-inline-element" offset="0%" stop-color="#FFF" stop-opacity=".2"></stop>  <stop class="coh-inline-element" offset="100%" stop-color="#FFF"></stop> </linearGradient/>  <linearGradient/ class="coh-inline-element" id="prefix__d" x1="0%" x2="100%" y1="49.999%" y2="49.999%"> <stop class="coh-inline-element" offset="0%" stop-color="#FFF" stop-opacity=".2"></stop>  <stop class="coh-inline-element" offset="100%" stop-color="#FFF"></stop> </linearGradient/> </defs/>  <g/ class="coh-inline-element" fill="none" fill-rule="evenodd"> <path/ class="coh-inline-element" fill="#FFF" d="M19.734 6.325L19.734 4.373 25.871 4.373 25.871 6.325 23.794 6.325 23.794 13.103 21.796 13.103 21.796 6.325zM31.025 8.496h-.844v-2.28h.797c.656 0 1.359.235 1.359 1.124 0 .765-.453 1.156-1.312 1.156m.187-4.123h-3.045v8.73h1.999V10.34h1.031c1.484-.016 3.044-.844 3.044-2.999 0-1.827-1.295-2.967-3.029-2.967" transform="translate(1)"></path/>  <path/ class="coh-inline-element" fill="#FFF" d="M36.486 13.103L38.485 13.103 38.485 4.373 36.486 4.373zM48.62 5.95l-1.405 1.39c-.5-.78-1.156-1.233-2.124-1.233-1.421 0-2.437 1.03-2.437 2.655 0 1.654 1.03 2.608 2.452 2.608.969 0 1.67-.453 2.17-1.234l1.406 1.39c-.75.812-1.701 1.686-3.623 1.686-2.577 0-4.435-1.718-4.435-4.45 0-2.64 1.906-4.498 4.42-4.498 2.155 0 3.06 1.046 3.576 1.686M52.727 10.12l.89-1.952.89 1.952h-1.78zm.937-5.872l-4.294 8.855h2.014l.625-1.39h3.232l.641 1.39h2.06l-4.278-8.855zM62.347 8.496h-.843v-2.28h.797c.656 0 1.358.234 1.358 1.124 0 .766-.453 1.156-1.312 1.156m.187-4.123h-3.045v8.73h1.999v-2.764h1.03c1.484-.016 3.046-.843 3.046-2.999 0-1.827-1.296-2.967-3.03-2.967" transform="translate(1)" opacity=".5"></path/>  <path/ class="coh-inline-element" fill="#FFF" d="M76.287 6.986h1.847v.538c.342-.416.794-.636 1.393-.636.196 0 .429.025.661.098v1.92c-.281-.147-.623-.208-.941-.208-.38 0-.82.147-1.113.404V13.1h-1.847V6.986zM85.166 10.043c0-.843-.563-1.43-1.321-1.43-.759 0-1.321.587-1.321 1.43 0 .844.562 1.431 1.32 1.431.76 0 1.322-.587 1.322-1.43m-4.5 0c0-1.737 1.418-3.156 3.179-3.156 1.76 0 3.18 1.419 3.18 3.155 0 1.737-1.42 3.156-3.18 3.156-1.761 0-3.18-1.419-3.18-3.156M92.124 12.648c-.379.355-.941.55-1.455.55-1.651 0-2.617-1.137-2.617-2.8V6.986h1.847v3.082c0 .831.342 1.443 1.076 1.443.452 0 .905-.22 1.15-.612V6.986h1.846V13.1h-1.847v-.453zM97.26 9.089v1.92c.245.331.588.502 1.04.502.881 0 1.407-.66 1.407-1.467 0-.808-.526-1.469-1.407-1.469-.452 0-.795.184-1.04.514zm-1.846-2.103h1.847v.367c.354-.293.843-.465 1.345-.465 1.81 0 2.96 1.48 2.96 3.156 0 1.674-1.15 3.154-2.96 3.154-.502 0-.99-.158-1.345-.452v2.605h-1.847V6.986zM72.986 10.557V9.09c-.269-.331-.648-.514-1.101-.514-.82 0-1.272.624-1.272 1.247 0 .624.453 1.248 1.272 1.248.453 0 .832-.184 1.1-.514zm1.847 2.555c0 1.977-1.619 2.361-3.107 2.361-.917 0-1.883-.122-2.751-.684l.831-1.628c.49.38 1.088.625 1.798.625.734 0 1.394-.245 1.394-.978v-.515c-.355.294-.856.465-1.358.465-1.846 0-2.886-1.443-2.886-2.935s1.04-2.935 2.886-2.935c.502 0 .991.171 1.346.464v-.366h1.847v6.126z" transform="translate(1)"></path/>  <path/ class="coh-inline-element" fill="#FFF" d="M17.913 8.979h-4.444V4.56c0-.015-.002-.03-.006-.044v-.003c-.009-.03-.024-.057-.045-.078L9.054.013 9.048.008 9.04.004 9.032 0h-.01C8.999 0 8.98.02 8.98.043v4.444H4.56c-.015 0-.03.002-.044.006h-.003c-.03.01-.057.024-.078.046L.013 8.903l-.005.007-.005.007-.002.008-.001.01c0 .024.02.044.044.044h4.444v4.417c0 .016.002.03.006.044v.003c.01.03.024.057.046.078l4.363 4.423.007.006.007.004.008.002.01.001c.024 0 .044-.02.044-.044V13.47h4.417c.015 0 .03-.003.044-.007h.003c.03-.009.057-.024.078-.045l4.423-4.364.006-.006.004-.008.002-.008.001-.01c0-.024-.02-.043-.044-.043" fill-opacity=".4" transform="translate(1)"></path/>  <path/ class="coh-inline-element" fill="url(#prefix__a)" d="M4.488 4.535v8.861c0 .049.02.093.052.125l4.363 4.423.007.006.007.004.008.002.01.001c.024 0 .044-.02.044-.044V8.979L4.563 4.504l-.006-.006-.008-.004-.008-.002-.01-.001c-.024 0-.043.02-.043.044" transform="translate(1)"></path/>  <path/ class="coh-inline-element" fill="url(#prefix__b)" d="M8.978.044V8.98l4.416 4.474.006.006.008.004.008.002.01.001c.024 0 .043-.02.043-.044v-8.86c0-.05-.02-.094-.051-.126L9.054.013 9.047.008 9.04.004 9.032 0 9.022 0c-.024 0-.044.02-.044.044" transform="translate(1)"></path/>  <path/ class="coh-inline-element" fill="url(#prefix__c)" d="M4.561 4.488c-.049 0-.093.02-.125.052L.013 8.903l-.005.007-.005.007-.002.009L0 8.934c0 .025.02.045.044.045H8.98l4.474-4.416.006-.006.004-.008.002-.008.001-.009c0-.024-.02-.044-.044-.044h-8.86z" transform="translate(1)"></path/>  <path/ class="coh-inline-element" fill="url(#prefix__d)" d="M8.979 8.979l-4.475 4.415-.006.007-.004.007-.002.008-.001.01c0 .024.02.044.044.044h8.861c.049 0 .093-.02.125-.052l4.423-4.364.006-.006.004-.008.002-.008.001-.009c0-.025-.02-.044-.044-.044H8.979z" transform="translate(1)"></path/> </g/> </svg> </a> </div> <div class="coh-container coh-ce-cpt_sub_header-504221cb" > <div class="coh-container coh-ce-cpt_sub_header-ab5627eb" > </div> </div> <div class="coh-container coh-ce-cpt_sub_header-3adfe71b" > <div class="coh-container our-business-text coh-ce-cpt_sub_header-ea2255c3" > <div class="coh-container coh-ce-cpt_sub_header-6eddc89b" > <a href="/investors/share-price" class="coh-link coh-style-absolute-link-full-height-and-width" target="_self" > </a> <iframe class="coh-iframe coh-ce-cpt_sub_header-75c43d3c" src="https://polaris.brighterir.com/public/tp_icap/data_table/share_price_header"> </iframe> </div> <div class="coh-container coh-ce-cpt_sub_header-1a53317a" >  <svg class="coh-inline-element" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" width="12" height="12"> <path/ class="coh-inline-element coh-ce-cpt_sub_header-5e4164ef" d="M7.39 2.61L11.78 7l-.53.53v.095h-.095L7.39 11.39l-.53-.53 3.234-3.235H.75v-1h9.594L6.86 3.14l.53-.53z" fill-rule="evenodd"></path/> </svg> </div> </div> </div> </div> </div> <div class="coh-container coh-style-menu-mobile---popup-mobile-menu coh-ce-cpt_sub_header-443f407e" > <div class="coh-container menu-outer-wrap dark coh-style-menu-mobile-dark---navigation-svg-arrows coh-ce-cpt_sub_header-fd153902" > <div class="coh-container mobile-menu-item-wrap" > <div class="coh-container" > <div class="coh-container menu-name" >  <p class="coh-paragraph">Investors</p> </div> <div class="coh-container item-submenu" > 
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://tpicap.com/tpicap/investors">Overview</a>
+              </li>
+        </ul>
+  
+
+ 
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://tpicap.com/tpicap/investors/share-price">Share price </a>
+              </li>
+                <li class="menu-item">
+        <a href="https://tpicap.com/tpicap/investors/financial-calendar-upcoming">Financial calendar</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://tpicap.com/tpicap/investors/analyst-consensus">Analyst consensus</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://tpicap.com/tpicap/investors/reports-and-presentations">Reports &amp; presentations</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://tpicap.com/tpicap/investors/regulatory-news-disclosures">Regulatory news &amp; disclosures</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://tpicap.com/tpicap/investors/agm">AGM information</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://tpicap.com/tpicap/investors/debt-investors">Debt investors</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://tpicap.com/tpicap/investors/corporate-governance">Corporate governance</a>
+              </li>
+        </ul>
+  
+
+ </div> </div> </div> <div class="coh-container mobile-menu-item-wrap" > <div class="coh-container" > <div class="coh-container menu-name" >  <p class="coh-paragraph">Our businesses</p> </div> <div class="coh-container item-submenu" > 
+              <ul class="menu">
+                    <li class="menu-item">
+        <a href="https://tpicap.com/tullettprebon">Tullett Prebon</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://tpicap.com/icap">ICAP</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://tpicap.com/pvm">PVM</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://parametasolutions.com">Parameta Solutions</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.liquidnet.com/">Liquidnet</a>
+              </li>
+        </ul>
+  
+
+ </div> </div> </div> <div class="coh-container mobile-menu-item-wrap" > <div class="coh-container" > <div class="coh-container menu-name link" > <a href="/regulations" class="coh-link" target="_self" >Regulations</a> </div> </div> </div> <div class="coh-container mobile-menu-item-wrap" > <div class="coh-container" > <div class="coh-container menu-name link" > <a href="http://www.linkedin.com" class="coh-link" target="_self" >Careers</a> </div> </div> </div> </div> </div> </div> </div> </div> </div>  <style class="coh-inline-element coh-component coh-component-instance-5718a401-ab0c-4618-a95c-7c2ce764d329 contextual-component">.menu-outer-wrap.dark .mobile-menu-item-wrap .menu-name svg path {
+stroke:  #fff!important;
+}
+
+.menu-outer-wrap.dark .mobile-menu-item-wrap .menu-name.link svg path {
+fill:  #fff!important;
+stroke: none!important;
+}</style>  <script class="coh-inline-element coh-component coh-component-instance-5718a401-ab0c-4618-a95c-7c2ce764d329 contextual-component">document.addEventListener('DOMContentLoaded', function () {
+
+    jQuery(document).ready(function ($) {
+
+        var $heroMenu = $('#hero-secondary-menu');
+        var $mobileNavPopup = $('.mobile-nav-popup');
+        var $burgerButton = $('.burger-button');
+
+        // Get all of the top level menu items for the secondary nav on mobil devices.
+        var $topLevelMenuItems = $mobileNavPopup
+            .find('.coh-style-menu-mobile---popup-mobile-menu')
+            .eq(0)
+            .find('.mobile-menu-item-wrap');
+
+        $topLevelMenuItems.each(function () {
+            var $link = $(this).find('.coh-link');
+            var $subMenu = $(this).find('.item-submenu');
+            if ($subMenu.length) {
+                $link.on('click', function (e) {
+                    e.preventDefault();
+                })
+            }
+        });
+
+        if ($heroMenu.hasClass('coh-style-menu-secondary---hide')) {
+            $('.coh-style-menu-mobile---popup-mobile-menu.coh-style-menu---mobile-nav-style').addClass(
+                'coh-style-menu-secondary---hide');
+        }
+
+        $('.open-search').on('click', function () {
+            $('.coh-style-menu---search-wrap').children('.coh-container').addClass('search-active');
+            $('.logo-centred').children('.coh-link').addClass('search-bar-active');
+            $burgerButton.children('.mobile-nav-bt').addClass('search-bar-active');
+        });
+
+        $('.close-wrap').on('click', function () {
+            $('.coh-style-menu---search-wrap').children('.coh-container').removeClass('search-active');
+            $('.logo-centred').children('.coh-link').removeClass('search-bar-active');
+            $burgerButton.children('.mobile-nav-bt').removeClass('search-bar-active');
+        });
+
+        $(window).resize(function () {
+            if ($('.search-active')[0]) {
+                $('.coh-style-menu---search-wrap').children('.coh-container').removeClass('search-active');
+                $('.logo-centred').children('.coh-link').removeClass('search-bar-active');
+                $burgerButton.children('.mobile-nav-bt').removeClass('search-bar-active');
+            }
+        });
+
+        function runSearchTerm() {
+            var get_search_search = $('.search-input-field').val();
+            window.location.href = '/search?combine=' + get_search_search;
+        }
+
+        $('.activate-search').on('click', function () {
+            runSearchTerm();
+        });
+
+        $('.search-input-field').keyup(function () {
+            $(this).attr('value', $(this).val());
+        });
+
+        $burgerButton.on('click', function ($e) {
+            $e.preventDefault();
+            $('body').toggleClass('burger-menu-active');
+            $('.mobile-nav-bt').toggleClass('active');
+
+            if ($('.mobile-menu-active')[0]) {
+                $mobileNavPopup.removeClass('mobile-menu-active');
+                $mobileNavPopup.css('visibility', 'hidden');
+                $mobileNavPopup.css('opacity', '0');
+                $('body').css({'position':'relative', 'overflow':'auto hidden'});
+
+                $('.secondary-header').css('position', 'relative');
+                $('.secondary-header').css('border-bottom', '1px solid #fff');
+                $('.secondary-header').css('z-index', '100');
+            } else {
+                $mobileNavPopup.addClass('mobile-menu-active');
+                $mobileNavPopup.css('visibility', 'visible');
+                $mobileNavPopup.css('opacity', '1');
+                // $('body').css({'position':'fixed', 'overflow':'hidden'});
+
+                $('.secondary-header').css('position', 'fixed');
+                $('.secondary-header').css('border-bottom', '1px solid #262626');
+                $('.secondary-header').css('z-index', '99999999');
+            }
+
+            if ($('.toolbar-vertical')[0]) {
+                if ($('.hideDrupalMenu')[0]) {
+                    // Do something if class exists
+                    $('body').removeClass('hideDrupalMenu');
+                    $('#toolbar-bar').css('top', '0px');
+                    $('body').css('padding-top', '39px');
+                } else {
+                    // Do something if class does not exist
+                    $('body').addClass('hideDrupalMenu');
+                    $('#toolbar-bar').css('top', '-100px');
+                    $('body').css('padding-top', '0px');
+                }
+            }
+        });
+
+        $(window).resize(function () {
+            if ($('.mobile-menu-active')[0]) {
+                $(this).children('.coh-container').children('.item-submenu').removeClass('show-sub-menu');
+                $(this).children('.coh-container').children('.menu-name').removeClass('name-active');
+                $('.mobile-nav-bt').removeClass('active');
+
+                $mobileNavPopup.removeClass('mobile-menu-active');
+                $mobileNavPopup.css('visibility', 'hidden');
+                $mobileNavPopup.css('opacity', '0');
+                $('body').css('position', 'relative');
+
+                $('.secondary-header').css('position', 'relative');
+                $('.secondary-header').css('border-bottom', '1px solid #fff');
+                $('.secondary-header').css('z-index', '100');
+
+                $('body').removeClass('hideDrupalMenu');
+                $('#toolbar-bar').css('top', '0px');
+                $('body').css('padding-top', '39px');
+            }
+        });
+
+        $('.mobile-menu-item-wrap').on('click', function () {
+            if (!$(this).children('.coh-container').children('.menu-name').is('.link')) {
+                if (!$(this).children('.coh-container').children('.item-submenu').is('.show-sub-menu')) {
+                    $('.mobile-menu-item-wrap').children('.coh-container').children('.item-submenu').removeClass(
+                        'show-sub-menu');
+                    $('.mobile-menu-item-wrap').children('.coh-container').children('.menu-name').removeClass(
+                        'name-active');
+                    $(this).children('.coh-container').children('.item-submenu').addClass('show-sub-menu');
+                    $(this).children('.coh-container').children('.menu-name').addClass('name-active');
+
+                } else {
+                    $(this).children('.coh-container').children('.item-submenu').removeClass('show-sub-menu');
+                    $(this).children('.coh-container').children('.menu-name').removeClass('name-active');
+                }
+            }
+        });
+
+    });
+});</script> 
+ </div>  <div class="coh-container content coh-style-master-template-outer-margins coh-style-filtering---search-filtering-svg-fix coh-style-filtering---select-filtering-svg-fix coh-style-filtering---table-heading-icons coh-ce-e946fa27" >   <div>
+    <div data-drupal-messages-fallback class="hidden"></div>      <article  role="article">    
+            <div>                               <div class="coh-container coh-component coh-component-instance-53c49436-5934-4ac8-99c8-b0ea8c994d39 contextual-component none coh-ce-cpt_hero-aa920d6d" id="" > </div> <div class="coh-container coh-component coh-component-instance-53c49436-5934-4ac8-99c8-b0ea8c994d39 contextual-component hero hero-max-height coh-style-hero-height-medium coh-style-hero-paragraph-cta coh-style-text-light no coh-ce-cpt_hero-fd775a23" > <div class="coh-container hero-height tabbed-padding coh-ce-cpt_hero-eb0c0f80" > <div class="coh-container background-mobile coh-instance-1773260954 coh-ce-cpt_hero-92fdf2b7" > </div> <div class="coh-container background-desktop coh-instance-1773260954 coh-ce-cpt_hero-57768c52" > </div> <div class="coh-container image-overlay coh-instance-1773260954 coh-ce-cpt_hero-52c2d4a4" > </div> <div class="coh-container hero-height coh-ce-cpt_hero-2f75fe26" > <div class="coh-container   coh-ce-cpt_hero-ac77e55c" id="hero-secondary-menu" >          <div class="coh-container coh-component coh-component-instance-53c49436-5934-4ac8-99c8-b0ea8c994d39 contextual-component coh-ce-cpt_secondary_navigation-45c3e50f" > <div class="coh-container menu-outer-wrap coh-style-menu-secondary---2nd-level-menu coh-style-menu-secondary---2nd-level-menu-new coh-style-menu---navigation-svg-arrows" > <div class="coh-container menu-item-wrap" > <div class="coh-container" > <div class="coh-container menu-name secondary-first-menu" > <div class="coh-container link-wrap coh-ce-cpt_secondary_navigation-2cd8052a" >       <div class="coh-container coh-ce-fab3c43a" > <nav class="coh-container coh-ce-14cbfda3" >  <ul class="coh-menu-list-container coh-unordered-list menu-level-1-ul"><li class="coh-menu-list-item coh-style-menu-link coh-ce-5a9b56d7 js-coh-menu-item" data-coh-settings='{"xl":"hidden"}' ></li></ul>  </nav> </div> 
+ </div> <div class="coh-container item-submenu" > <div class="coh-container inner-wrap" > 
+    
+
+ </div> </div> </div> </div> </div> <div class="coh-container menu-item-wrap" > <div class="coh-container" > <div class="coh-container menu-name secondary-second-menu" > <div class="coh-container link-wrap coh-ce-cpt_secondary_navigation-2cd8052a" >       <div class="coh-container coh-ce-fab3c43a" > <nav class="coh-container coh-ce-14cbfda3" >  <ul class="coh-menu-list-container coh-unordered-list menu-level-1-ul"><li class="coh-menu-list-item coh-style-menu-link coh-ce-5a9b56d7 js-coh-menu-item" data-coh-settings='{"xl":"hidden"}' ></li></ul>  </nav> </div> 
+ </div> <div class="coh-container item-submenu" > <div class="coh-container inner-wrap" > 
+    
+
+ </div> </div> </div> </div> </div> <div class="coh-container menu-item-wrap" > <div class="coh-container" > <div class="coh-container menu-name secondary-third-menu" > <div class="coh-container link-wrap coh-ce-cpt_secondary_navigation-2cd8052a" >       <div class="coh-container coh-ce-fab3c43a" > <nav class="coh-container coh-ce-14cbfda3" >  <ul class="coh-menu-list-container coh-unordered-list menu-level-1-ul"><li class="coh-menu-list-item coh-style-menu-link coh-ce-5a9b56d7 js-coh-menu-item" data-coh-settings='{"xl":"hidden"}' ></li></ul>  </nav> </div> 
+ </div> <div class="coh-container item-submenu" > <div class="coh-container inner-wrap" > 
+    
+
+ </div> </div> </div> </div> </div> <div class="coh-container menu-item-wrap" > <div class="coh-container" > <div class="coh-container menu-name secondary-fourth-menu" > <div class="coh-container link-wrap coh-ce-cpt_secondary_navigation-2cd8052a" >       <div class="coh-container coh-ce-fab3c43a" > <nav class="coh-container coh-ce-14cbfda3" >  <ul class="coh-menu-list-container coh-unordered-list menu-level-1-ul"><li class="coh-menu-list-item coh-style-menu-link coh-ce-5a9b56d7 js-coh-menu-item" data-coh-settings='{"xl":"hidden"}' ></li></ul>  </nav> </div> 
+ </div> <div class="coh-container item-submenu" > <div class="coh-container inner-wrap" > 
+    
+
+ </div> </div> </div> </div> </div> </div> <div class="coh-container coh-ce-cpt_secondary_navigation-e066bc91" > </div> </div>  <style class="coh-inline-element coh-component coh-component-instance-53c49436-5934-4ac8-99c8-b0ea8c994d39 contextual-component">.coh-container.item-submenu.remove-menu {
+display:none!important;
+}
+
+.coh-style-menu-secondary---2nd-level-menu .coh-menu-list-container .coh-menu-list-item {
+width: 100%!important;
+}
+
+
+.coh-style-menu-secondary---2nd-level-menu .menu-item-wrap .coh-container .menu-name .link-wrap a,
+.coh-style-menu-secondary---2nd-level-menu .menu-item-wrap .coh-container .menu-name .link-wrap .co-paragraph {
+position: relative;
+}
+
+
+.coh-style-menu-secondary---2nd-level-menu .menu-item-wrap .coh-container .menu-name .link-wrap a::after,
+.coh-style-menu-secondary---2nd-level-menu .menu-item-wrap .coh-container .menu-name .link-wrap .coh-paragraph::after {
+font-size: 0px;
+content: "0";
+width: 100%;
+padding: 0px;
+margin: 0px;
+height: 3px;
+background-color: #fff;
+display: block;
+position: absolute;
+left: 0;
+right: 0;
+bottom: 1px;
+opacity: 0;
+-webkit-transition: all 250ms ease-in-out;
+-o-transition: all 250ms ease-in-out;
+transition: all 250ms ease-in-out;
+}
+
+.coh-style-menu-secondary---2nd-level-menu .menu-item-wrap .coh-container .menu-name .link-wrap:hover a::after,
+.coh-style-menu-secondary---2nd-level-menu .menu-item-wrap .coh-container .menu-name .link-wrap:hover .coh-paragraph:after {
+opacity: 1;
+}
+
+.coh-style-menu-secondary---2nd-level-menu .menu-item-wrap .coh-container .menu-name.active .link-wrap a::after,
+.coh-style-menu-secondary---2nd-level-menu .menu-item-wrap .coh-container .menu-name.active .link-wrap .coh-paragraph:after {
+opacity: 1;
+}</style>  <script class="coh-inline-element coh-component coh-component-instance-53c49436-5934-4ac8-99c8-b0ea8c994d39 contextual-component">document.addEventListener("DOMContentLoaded", function(event) { 
+    jQuery(document).ready(function( $ ){
+
+        // IF SUB MENU IS EMPTY HIDE
+        $('.coh-style-menu-secondary---2nd-level-menu .item-submenu').each( function() {
+            if($(this).children(".inner-wrap").children("ul").length) {
+                $(this).addClass('show-menu');
+            } else {
+                $(this).addClass('remove-menu');
+            }
+        });
+/*
+        // ADD ARROWS TO PRIMARY NAV
+        $('.item-submenu').children().children().children().children().children().children('.menu-item a').each( function() {
+            $(this).addClass('black-arrow-added');
+            $('<svg class="black-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="#242424" d="M7.39 2.61L11.78 7l-.53.53v.095h-.095L7.39 11.39l-.53-.53 3.234-3.235H.75v-1h9.594L6.86 3.14l.53-.53z"/></svg>').prependTo(this);
+        });
+
+        $('.item-submenu').children('.inner-wrap').children('ul').children('li').children('a').each( function() {
+            $(this).addClass('black-arrow-added');
+            $('<svg class="black-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="#242424" d="M7.39 2.61L11.78 7l-.53.53v.095h-.095L7.39 11.39l-.53-.53 3.234-3.235H.75v-1h9.594L6.86 3.14l.53-.53z"/></svg>').prependTo(this);
+        });
+*/
+        $('.mobile-menu-item-wrap').children('.coh-container').children('.coh-container.menu-name').each( function() {
+            $(this).addClass('black-arrow-added');
+            if ($(this).attr("class").search('.link') != -1) {
+                //ARROW
+                $('<svg class="black-arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="#242424" d="M7.39 2.61L11.78 7l-.53.53v.095h-.095L7.39 11.39l-.53-.53 3.234-3.235H.75v-1h9.594L6.86 3.14l.53-.53z"/></svg>').prependTo(this);
+            } else {
+                //CHEVRON
+                $('<svg class="black-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="none" fill-rule="evenodd" stroke="#262626" d="M10 3L15.084 8.045 10.084 13"/></svg>').prependTo(this);
+            }
+        });
+
+    });
+});</script> 
+ </div> <div class="coh-container header coh-instance-1773260954 coh-ce-cpt_hero-e3a3cbc1" > <div class="coh-container coh-ce-cpt_hero-6b3833c1" > <h1 class="coh-heading hero-header coh-style-h1 coh-instance-1773260954 coh-ce-cpt_hero-4e9f4b1c"> THE WORLD&#039;S LEADING BROKER OF OIL INSTRUMENTS </h1> </div> </div> </div> </div> <div class="coh-container hero-content coh-ce-cpt_hero-5b4b24ff" >   <div class="coh-container hero-paragraph coh-ce-cpt_hero-bdc77b2d" > <div class="coh-container hero-intro-text coh-ce-cpt_hero-4f3f96d5" >  <p class="coh-paragraph coh-style-content---body-large---fslucas-light coh-ce-cpt_hero-5f469390">PVM is the world&#039;s leading broker of oil instruments, including over-the-counter broking of Swaps, Forwards, and Physical Crude Oil and Refined Products, together with exchange broking of WTI, Brent and Gasoil Futures contracts. <br />
+<br />
+Our non-oil business covers broking of Physical and Financial Coal, and EU Carbon Allowances and Offsets.</p> </div>   </div>  </div> </div> <div class="coh-container coh-component coh-component-instance-53c49436-5934-4ac8-99c8-b0ea8c994d39 contextual-component none coh-ce-cpt_hero-1d914930" > </div>  <script class="coh-inline-element coh-component coh-component-instance-53c49436-5934-4ac8-99c8-b0ea8c994d39 contextual-component">document.addEventListener("DOMContentLoaded", function(event) { 
+                jQuery(document).ready(function( $ ){
+
+                    const selector = '.hero > .hero-height';
+
+                    if($(window).width() <= 675){
+                        $(selector).css('min-height', $(window).width() + "px")
+                    }
+            
+                    $(window).on('resize', function(){
+                        let win = $(this); 
+                        
+                        if (win.width() <= 675) {
+                            let height = win.width() + "px";
+                            $(selector).css("min-height", height);
+                        } else {
+                            $(selector).css("min-height", "");
+                        }
+                    });
+            
+                });
+            });</script> 
+          <div class="coh-container coh-component coh-component-instance-f4107552-fc29-4e60-b246-745646a6973c contextual-component coh-style-spacer-normal coh-ce-cpt_page_break_line-1d914930" id="" > </div> <div class="coh-container coh-component coh-component-instance-f4107552-fc29-4e60-b246-745646a6973c contextual-component coh-ce-cpt_page_break_line-d34488df" > <div class="coh-container coh-ce-cpt_page_break_line-deac0b07" > <div class="coh-container  coh-ce-cpt_page_break_line-68c5e18b" > <div class="coh-container coh-ce-cpt_page_break_line-a933594b" > </div> <div class="coh-container coh-ce-cpt_page_break_line-a3c01a39" > </div> </div> </div> </div> <div class="coh-container coh-component coh-component-instance-f4107552-fc29-4e60-b246-745646a6973c contextual-component coh-style-spacer-normal coh-ce-cpt_page_break_line-1d914930" > </div> 
+                  <div class="coh-container coh-component coh-component-instance-47b1bbe2-90c9-4575-b51a-517cc6414f54 contextual-component coh-instance-4087904684 coh-ce-cpt_custom_content_width-aa885445" > <div class="coh-container none coh-ce-cpt_custom_content_width-1d914930" > </div> <div class="coh-container  coh-ce-cpt_custom_content_width-1d3724a2" > <div class="coh-container coh-instance-4087904684 coh-ce-cpt_custom_content_width-93fe1863" >                 <div class="coh-container coh-component coh-component-instance-cb2d21dd-caa1-48f7-8cdd-177c56349fd2 contextual-component coh-style-spacer-small coh-ce-cpt_title-aa920d6d" id="" > </div> <div class="coh-container coh-component coh-component-instance-cb2d21dd-caa1-48f7-8cdd-177c56349fd2 contextual-component coh-ce-cpt_title-2bc062f9" > <div class="coh-container coh-style-title-centred coh-ce-cpt_title-a4012367" > <div class="coh-container" > <h2 class="coh-heading coh-style-h2-sans-serif coh-ce-cpt_title-bee019ba"> Asset Classes </h2> <div class="coh-container coh-style-header-underline-none coh-ce-cpt_title-e38a9d61" > <div class="coh-container thick-block coh-ce-cpt_title-45c3a0e6" > </div> </div> </div> </div> </div> <div class="coh-container coh-component coh-component-instance-cb2d21dd-caa1-48f7-8cdd-177c56349fd2 contextual-component none coh-ce-cpt_title-1d914930" > </div> 
+             <div class="coh-container coh-component coh-component-instance-e4d90038-1233-4f73-9d14-07c625ae586f contextual-component none coh-ce-cpt_body_copy-1d914930" > </div> <div class="coh-container coh-component coh-component-instance-e4d90038-1233-4f73-9d14-07c625ae586f contextual-component coh-ce-cpt_body_copy-d34488df" > <div class="coh-container coh-instance-2179193426 coh-ce-cpt_body_copy-3ee8d2d" > <div class="coh-container coh-style-content---body-large---fslucas-light coh-style--wyswyg-editor-table-styles coh-ce-cpt_body_copy-a80b1fd6" > <div class="coh-wysiwyg">    <p class="text-align-center"><strong>We provide broking and high quality, value-added execution services for Swaps, Forwards, Physical Oil, Refined Petroleum Products, Futures Contracts and Renewables.</strong></p>
+ </div> </div> </div> </div> <div class="coh-container coh-component coh-component-instance-e4d90038-1233-4f73-9d14-07c625ae586f contextual-component none coh-ce-cpt_body_copy-1d914930" > </div> 
+                               <div class="coh-container coh-component coh-component-instance-93bc8476-d905-436d-8fe1-696415f5bf47 contextual-component coh-style-spacer-small coh-ce-cpt_section_links-1d914930" id="" > </div> <div class="coh-container coh-component coh-component-instance-93bc8476-d905-436d-8fe1-696415f5bf47 contextual-component coh-ce-cpt_section_links-d34488df" > <div class="coh-container coh-ce-cpt_section_links-361fe16a" > <div class="coh-row coh-row-xl coh-row-visible-xl" data-coh-row-match-heights="{&quot;xl&quot;:{&quot;target&quot;:&quot;none&quot;}}"> <div class="coh-row-inner coh-ce-cpt_section_links-cf89e352">   <div class="coh-column coh-ce-cpt_section_links-40685fbf coh-col-xl" > <div class="coh-container coh-style-section-links-off coh-ce-cpt_section_links-c1a5d963" > <div class="coh-container coh-ce-cpt_section_links-c0f66078" > <div class="coh-container coh-ce-cpt_section_links-8053b54d" > <div class="coh-container coh-style-content---underline-paragraph-text-on-hover coh-ce-cpt_section_links-18b9b94c" > <a href="#" class="coh-link coh-ce-cpt_section_links-29b314d1" title="Crude" target="_self" > </a> <div class="coh-container coh-ce-cpt_section_links-f20ec165" >  <p class="coh-paragraph coh-style-body-bold coh-ce-cpt_section_links-9ec4b8e3">Crude</p> </div> <div class="coh-container arrow-wrap coh-ce-cpt_section_links-ab7e7dda" >  <svg class="coh-inline-element" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" width="12" height="12"> <path/ class="coh-inline-element coh-ce-cpt_section_links-a0e2a856" d="M7.39 2.61L11.78 7l-.53.53v.095h-.095L7.39 11.39l-.53-.53 3.234-3.235H.75v-1h9.594L6.86 3.14l.53-.53z" fill-rule="evenodd"></path/> </svg> </div> </div> </div> </div> </div> </div>    <div class="coh-column coh-ce-cpt_section_links-fd7528ae coh-col-xl" > <div class="coh-container coh-style-section-links-off coh-ce-cpt_section_links-c1a5d963" > <div class="coh-container coh-ce-cpt_section_links-c0f66078" > <div class="coh-container coh-ce-cpt_section_links-8053b54d" > <div class="coh-container coh-style-content---underline-paragraph-text-on-hover coh-ce-cpt_section_links-18b9b94c" > <a href="" class="coh-link coh-ce-cpt_section_links-29b314d1" title="Petroleum" target="_self" > </a> <div class="coh-container coh-ce-cpt_section_links-f20ec165" >  <p class="coh-paragraph coh-style-body-bold coh-ce-cpt_section_links-9ec4b8e3">Petroleum</p> </div> <div class="coh-container arrow-wrap coh-ce-cpt_section_links-ab7e7dda" >  <svg class="coh-inline-element" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" width="12" height="12"> <path/ class="coh-inline-element coh-ce-cpt_section_links-a0e2a856" d="M7.39 2.61L11.78 7l-.53.53v.095h-.095L7.39 11.39l-.53-.53 3.234-3.235H.75v-1h9.594L6.86 3.14l.53-.53z" fill-rule="evenodd"></path/> </svg> </div> </div> </div> </div> </div> </div>    <div class="coh-column coh-ce-cpt_section_links-40685fbf coh-col-xl" > <div class="coh-container coh-style-section-links-off coh-ce-cpt_section_links-c1a5d963" > <div class="coh-container coh-ce-cpt_section_links-c0f66078" > <div class="coh-container coh-ce-cpt_section_links-8053b54d" > <div class="coh-container coh-style-content---underline-paragraph-text-on-hover coh-ce-cpt_section_links-18b9b94c" > <a href="" class="coh-link coh-ce-cpt_section_links-29b314d1" title="Futures" target="_self" > </a> <div class="coh-container coh-ce-cpt_section_links-f20ec165" >  <p class="coh-paragraph coh-style-body-bold coh-ce-cpt_section_links-9ec4b8e3">Futures</p> </div> <div class="coh-container arrow-wrap coh-ce-cpt_section_links-ab7e7dda" >  <svg class="coh-inline-element" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" width="12" height="12"> <path/ class="coh-inline-element coh-ce-cpt_section_links-a0e2a856" d="M7.39 2.61L11.78 7l-.53.53v.095h-.095L7.39 11.39l-.53-.53 3.234-3.235H.75v-1h9.594L6.86 3.14l.53-.53z" fill-rule="evenodd"></path/> </svg> </div> </div> </div> </div> </div> </div>    <div class="coh-column coh-ce-cpt_section_links-40685fbf coh-col-xl" > <div class="coh-container coh-style-section-links-off coh-ce-cpt_section_links-c1a5d963" > <div class="coh-container coh-ce-cpt_section_links-c0f66078" > <div class="coh-container coh-ce-cpt_section_links-8053b54d" > <div class="coh-container coh-style-content---underline-paragraph-text-on-hover coh-ce-cpt_section_links-18b9b94c" > <a href="" class="coh-link coh-ce-cpt_section_links-29b314d1" title="Renewables" target="_self" > </a> <div class="coh-container coh-ce-cpt_section_links-f20ec165" >  <p class="coh-paragraph coh-style-body-bold coh-ce-cpt_section_links-9ec4b8e3">Renewables</p> </div> <div class="coh-container arrow-wrap coh-ce-cpt_section_links-ab7e7dda" >  <svg class="coh-inline-element" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 12" width="12" height="12"> <path/ class="coh-inline-element coh-ce-cpt_section_links-a0e2a856" d="M7.39 2.61L11.78 7l-.53.53v.095h-.095L7.39 11.39l-.53-.53 3.234-3.235H.75v-1h9.594L6.86 3.14l.53-.53z" fill-rule="evenodd"></path/> </svg> </div> </div> </div> </div> </div> </div>      </div> </div> <h1 class="coh-heading"> </h1> </div> </div>  <style class="coh-inline-element coh-component coh-component-instance-93bc8476-d905-436d-8fe1-696415f5bf47 contextual-component">.coh-ie11 .link-wrapper-text .coh-paragraph::after {
+bottom: 12px!important;
+}</style> <div class="coh-container coh-component coh-component-instance-93bc8476-d905-436d-8fe1-696415f5bf47 contextual-component coh-style-spacer-large coh-ce-cpt_section_links-1d914930" > </div> 
+   </div> </div> <div class="coh-container none coh-ce-cpt_custom_content_width-1d914930" > </div> </div> 
+               <div class="coh-container coh-component coh-component-instance-fbfb0add-d048-435e-b1a0-0e6aeb89b05b contextual-component none coh-ce-cpt_title-aa920d6d" id="" > </div> <div class="coh-container coh-component coh-component-instance-fbfb0add-d048-435e-b1a0-0e6aeb89b05b contextual-component coh-ce-cpt_title-2bc062f9" > <div class="coh-container coh-style-title-centred coh-ce-cpt_title-a4012367" > <div class="coh-container" > <h3 class="coh-heading coh-style-h2-sans-serif coh-ce-cpt_title-bee019ba">  </h3> <div class="coh-container coh-style-header-underline-small coh-ce-cpt_title-e38a9d61" > <div class="coh-container thick-block coh-ce-cpt_title-45c3a0e6" > </div> </div> </div> </div> </div> <div class="coh-container coh-component coh-component-instance-fbfb0add-d048-435e-b1a0-0e6aeb89b05b contextual-component coh-style-spacer-small coh-ce-cpt_title-1d914930" > </div> 
+               <div class="coh-container coh-component coh-component-instance-33813306-3bf2-4b8a-857d-4e150c510a2e contextual-component coh-style-spacer-small coh-ce-cpt_title-aa920d6d" id="" > </div> <div class="coh-container coh-component coh-component-instance-33813306-3bf2-4b8a-857d-4e150c510a2e contextual-component coh-ce-cpt_title-2bc062f9" > <div class="coh-container coh-style-title-centred coh-ce-cpt_title-a4012367" > <div class="coh-container" > <h3 class="coh-heading coh-style-h2-sans-serif coh-ce-cpt_title-bee019ba"> Broker end-of-day pricing request </h3> <div class="coh-container coh-style-header-underline-none coh-ce-cpt_title-e38a9d61" > <div class="coh-container thick-block coh-ce-cpt_title-45c3a0e6" > </div> </div> </div> </div> </div> <div class="coh-container coh-component coh-component-instance-33813306-3bf2-4b8a-857d-4e150c510a2e contextual-component none coh-ce-cpt_title-1d914930" > </div> 
+             <div class="coh-container coh-component coh-component-instance-ca8a6367-e1ae-4fcd-bd4c-fda681aa80fb contextual-component none coh-ce-cpt_button-1d914930" id="" > </div> <div class="coh-container coh-component coh-component-instance-ca8a6367-e1ae-4fcd-bd4c-fda681aa80fb contextual-component coh-ce-cpt_button-d34488df" > <div class="coh-container coh-ce-cpt_button-6cebbff5" > <div class="coh-container coh-ce-cpt_button-975da759" > <div class="coh-container coh-ce-cpt_button-1dc213c9" > <div class="coh-container coh-ce-cpt_button-b69dee3f" > <div class="coh-container coh-ce-cpt_button-578e486b" > <div class="coh-container coh-ce-cpt_button-dafbbb09" > </div> </div> <div class="coh-container coh-style-button-outer-wrap-side-panels coh-ce-cpt_button-f67e591f" > <a href="https://tpicap.com/pvm/eod-pricing-request-form" class="coh-link coh-style-button-dark-style coh-ce-cpt_button-c17a49be" title="Sign up now" target="_self" > Sign up now    </a> </div> <div class="coh-container coh-ce-cpt_button-93ade6d" > <div class="coh-container coh-ce-cpt_button-dafbbb09" > </div> </div> </div> </div> </div> </div> </div> <div class="coh-container coh-component coh-component-instance-ca8a6367-e1ae-4fcd-bd4c-fda681aa80fb contextual-component coh-style-spacer-medium coh-ce-cpt_button-1d914930" > </div> 
+                      <div class="coh-container coh-component coh-component-instance-b955d444-6251-4267-b3e2-3308596fb556 contextual-component none coh-ce-cpt_stats-1d914930" id="coh-style-spacer-normal" > </div> <div class="coh-container coh-component coh-component-instance-b955d444-6251-4267-b3e2-3308596fb556 contextual-component coh-instance-140552932 coh-ce-cpt_stats-292ae026" > <div class="coh-container coh-style-text-light coh-ce-cpt_stats-ce0d5fb1" > <div class="coh-row coh-row-xl coh-row-visible-xl" data-coh-row-match-heights="{&quot;xl&quot;:{&quot;target&quot;:&quot;none&quot;}}"> <div class="coh-row-inner coh-ce-cpt_stats-236af6f4"> <div class="coh-column coh-col-xl" > <div class="coh-container coh-ce-cpt_stats-4a639708" >  <p class="coh-paragraph coh-style-xxl-figure-dark coh-ce-cpt_stats-b5e64278">100m</p> </div> <div class="coh-container coh-ce-cpt_stats-e6424786" >  <p class="coh-paragraph coh-ce-cpt_stats-a44ad576">BARRELS PER DAY</p> </div> <div class="coh-container coh-ce-cpt_stats-5f99ab6a" > <div class="coh-container line-block coh-ce-cpt_stats-4b45b684" > </div> </div> <div class="coh-container coh-ce-cpt_stats-4c4f05b0" >  <p class="coh-paragraph coh-style-body coh-ce-cpt_stats-b5e64278">Our daily turnover averages in excess of 100 million barrels of OTC oil derivatives, including options and oil futures contracts.</p> </div> </div> <div class="coh-column coh-col-xl coh-col-xl-push-0 coh-col-xl-pull-0 coh-col-xl-offset-0" > <div class="coh-container coh-ce-cpt_stats-4a639708" >  <p class="coh-paragraph coh-style-xxl-figure-dark coh-ce-cpt_stats-b5e64278">180</p> </div> <div class="coh-container coh-ce-cpt_stats-46084c1b" >  <p class="coh-paragraph coh-ce-cpt_stats-a44ad576">IN-HOUSE EXPERTS</p> </div> <div class="coh-container coh-ce-cpt_stats-5f99ab6a" > <div class="coh-container line-block coh-ce-cpt_stats-4b45b684" > </div> </div> <div class="coh-container coh-ce-cpt_stats-4c4f05b0" >  <p class="coh-paragraph coh-style-body coh-ce-cpt_stats-b5e64278">Our staff are experts in their fields, with backgrounds in major oil companies, ship brokers and futures and financial houses.</p> </div> </div> <div class="coh-column coh-col-xl coh-col-xl-push-0 coh-col-xl-pull-0 coh-col-xl-offset-0" > <div class="coh-container coh-ce-cpt_stats-4a639708" >  <p class="coh-paragraph coh-style-xxl-figure-dark coh-ce-cpt_stats-b5e64278">24</p> </div> <div class="coh-container coh-ce-cpt_stats-46084c1b" >  <p class="coh-paragraph coh-ce-cpt_stats-a44ad576">HOUR SERVICE</p> </div> <div class="coh-container coh-ce-cpt_stats-5f99ab6a" > <div class="coh-container line-block coh-ce-cpt_stats-4b45b684" > </div> </div> <div class="coh-container coh-ce-cpt_stats-4c4f05b0" >  <p class="coh-paragraph coh-style-body coh-ce-cpt_stats-b5e64278">Between our London, Singapore, New York and Houston offices, we are able to offer 24-hour access to global markets.</p> </div> </div> </div> </div> </div> </div> <div class="coh-container coh-component coh-component-instance-b955d444-6251-4267-b3e2-3308596fb556 contextual-component  coh-ce-cpt_stats-1d914930" > </div> 
+ 
+</div>
+        </article> 
+
+  </div>
+ </div>  <div class="coh-container coh-style-master-template-outer-margins coh-ce-d0f009d8" >                    <div class="coh-container coh-component coh-component-instance-7c5faf28-695b-4093-a33a-cd87000ea655 contextual-component footer-background coh-ce-cpt_footer-e6214759" > <div class="coh-container footer-background coh-ce-cpt_footer-cdfd5c68" > <div class="coh-container coh-ce-cpt_footer-70768f0" > <div class="coh-container coh-ce-cpt_footer-331e3a8b" > <div class="coh-container coh-ce-cpt_footer-135ca7bc" > <div class="coh-container coh-ce-cpt_footer-9cec5083" > <img class="coh-image coh-image-responsive-xl" src="/pvm/sites/g/files/escbpb126/files/Images/Logos/tpicapgroupsvg.svg" /> </div> <div class="coh-container coh-ce-cpt_footer-bf3c09b4" > <div class="coh-container coh-ce-cpt_footer-e7b123b4" > </div> </div> </div> <div class="coh-container coh-ce-cpt_footer-e16b378e" id="toTop" > <div class="coh-container coh-ce-cpt_footer-8f5220aa" >  <svg class="coh-inline-element" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"> <path/ class="coh-inline-element coh-ce-cpt_footer-5e4164ef" d="M2.146 6.354L8 .5l5.854 5.854-.708.707L8.5 2.415 8.5 15.207h-1V2.415L2.853 7.061l-.708-.707z" fill-rule="evenodd"></path/> </svg> </div> </div>   <div class="coh-container coh-ce-cpt_footer-e0bfd98e" > <div class="coh-container js--content-feedback coh-ce-cpt_footer-f7c9013e" id="tpicap--modal-home-hugw4tw46lg" >  <p class="coh-paragraph coh-style-h6-dark coh-ce-cpt_footer-6297d0df">FEEDBACK</p> </div> </div>  </div> <div class="coh-container coh-ce-cpt_footer-db9bf7b2" > <div class="coh-container coh-ce-cpt_footer-4df1bb95" > </div> </div> <div class="coh-container coh-ce-cpt_footer-d4932c96" > <div class="coh-row coh-row-xl coh-row-visible-xl" data-coh-row-match-heights="{&quot;xl&quot;:{&quot;target&quot;:&quot;none&quot;}}"> <div class="coh-row-inner coh-ce-cpt_footer-e86f9eb7"> <div class="coh-column coh-col-xl" > <div class="coh-container coh-ce-cpt_footer-556a779e" >        <ul class="coh-menu-list-container coh-unordered-list coh-ce-78296eeb"><li class="coh-menu-list-item coh-ce-8c4a72d4 js-coh-menu-item" data-coh-settings='{"xl":"hidden"}' >  <a href="https://tpicap.com/tpicap/privacy-notice"  data-coh-settings='{ "xl":{"link_interaction":"click-through-to-link"} }' class="coh-link coh-style-small-body-regular coh-ce-3d2375ab js-coh-menu-item-link" data-link="Privacy Notice">Privacy Notice</a></li><li class="coh-menu-list-item coh-ce-8c4a72d4 js-coh-menu-item" data-coh-settings='{"xl":"hidden"}' >  <a href="https://tpicap.com/tpicap/cookie-notice"  data-coh-settings='{ "xl":{"link_interaction":"click-through-to-link"} }' class="coh-link coh-style-small-body-regular coh-ce-3d2375ab js-coh-menu-item-link" data-link="Cookie Notice">Cookie Notice</a></li><li class="coh-menu-list-item coh-ce-8c4a72d4 js-coh-menu-item" data-coh-settings='{"xl":"hidden"}' >  <a href="https://tpicap.com/tpicap/accessibility"  data-coh-settings='{ "xl":{"link_interaction":"click-through-to-link"} }' class="coh-link coh-style-small-body-regular coh-ce-3d2375ab js-coh-menu-item-link" data-link="Accessibility">Accessibility</a></li></ul>  
+   <a href="/rss-feeds" class="coh-link coh-style-link-colour-change-on-hover---grey coh-ce-cpt_footer-a67ec0ea" target="_self" >  <p class="coh-paragraph coh-ce-cpt_footer-40971c5">RSS feed</p>  <svg class="coh-inline-element coh-ce-cpt_footer-4567384" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"> <path/ class="coh-inline-element coh-ce-cpt_footer-5e4164ef" d="M11.517 11.002c-.41-.02-.768.11-1.068.392-.297.282-.449.637-.449 1.05v1.927c0 .764.587 1.396 1.35 1.442 11.203.674 20.162 9.634 20.837 20.836.047.764.682 1.36 1.45 1.35h1.918c.414 0 .77-.15 1.051-.45.282-.294.414-.661.392-1.076-.764-13.72-11.756-24.707-25.481-25.472v.001zm.045 8.44c-.42-.033-.795.09-1.102.377-.308.286-.46.646-.46 1.07v1.929c0 .748.563 1.368 1.311 1.436 6.576.62 11.815 5.85 12.435 12.426.069.748.688 1.32 1.436 1.32h1.93c.423 0 .782-.16 1.069-.468.282-.308.41-.684.376-1.102-.752-9.035-7.955-16.234-16.994-16.986l-.001-.001zm2.652 10.12c-1.118.002-2.191.448-2.981 1.239-.79.79-1.234 1.863-1.233 2.98-.001 1.118.442 2.19 1.233 2.982.79.79 1.863 1.236 2.981 1.237 1.12.001 2.195-.443 2.987-1.235.793-.791 1.238-1.865 1.237-2.984 0-1.12-.444-2.192-1.237-2.983-.792-.792-1.866-1.237-2.987-1.236z" fill-rule="evenodd"></path/> </svg> </a>  </div> </div> <div class="coh-column coh-col-xl" > <div class="coh-container coh-ce-cpt_footer-f5e2c83" >        <ul class="coh-menu-list-container coh-unordered-list coh-ce-78296eeb"><li class="coh-menu-list-item coh-ce-8c4a72d4 js-coh-menu-item" data-coh-settings='{"xl":"hidden"}' >  <a href="https://tpicap.com/tpicap/legal-and-regulatory-terms-use"  data-coh-settings='{ "xl":{"link_interaction":"click-through-to-link"} }' class="coh-link coh-style-small-body-regular coh-ce-3d2375ab js-coh-menu-item-link" data-link="Legal and regulatory terms of use">Legal and regulatory terms of use</a></li><li class="coh-menu-list-item coh-ce-8c4a72d4 js-coh-menu-item" data-coh-settings='{"xl":"hidden"}' >  <a href="https://tpicap.com/tpicap/legal-notices"  data-coh-settings='{ "xl":{"link_interaction":"click-through-to-link"} }' class="coh-link coh-style-small-body-regular coh-ce-3d2375ab js-coh-menu-item-link" data-link="Legal notices">Legal notices</a></li><li class="coh-menu-list-item coh-ce-8c4a72d4 js-coh-menu-item" data-coh-settings='{"xl":"hidden"}' >  <a href="https://tpicap.com/tpicap/disclaimer"  data-coh-settings='{ "xl":{"link_interaction":"click-through-to-link"} }' class="coh-link coh-style-small-body-regular coh-ce-3d2375ab js-coh-menu-item-link" data-link="Disclaimer">Disclaimer</a></li><li class="coh-menu-list-item coh-ce-8c4a72d4 js-coh-menu-item" data-coh-settings='{"xl":"hidden"}' >  <a href="https://tpicap.com/tpicap/responsibility/our-commitments/modern-slavery-and-human-trafficking-statement"  data-coh-settings='{ "xl":{"link_interaction":"click-through-to-link"} }' class="coh-link coh-style-small-body-regular coh-ce-3d2375ab js-coh-menu-item-link" data-link="Modern Slavery Statement">Modern Slavery Statement</a></li><li class="coh-menu-list-item coh-ce-8c4a72d4 js-coh-menu-item" data-coh-settings='{"xl":"hidden"}' >  <a href="https://tpicap.com/tpicap/memberships"  data-coh-settings='{ "xl":{"link_interaction":"click-through-to-link"} }' class="coh-link coh-style-small-body-regular coh-ce-3d2375ab js-coh-menu-item-link" data-link="Memberships">Memberships</a></li></ul>  
+ </div> </div> <div class="coh-column coh-col-xl coh-col-xl-push-0 coh-col-xl-pull-0 coh-col-xl-offset-0" > <div class="coh-container" >   <div class="coh-container coh-ce-cpt_footer-8f93e68a" > <a href="https://www.linkedin.com/company/11005048" class="coh-link" title="PVM Oil LinkedIn" target="_blank" >  <svg class="coh-inline-element coh-ce-cpt_footer-54db536c" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36"> <path/ class="coh-inline-element coh-ce-cpt_footer-5e4164ef" d="M28.224 6c.979 0 1.775.775 1.775 1.73v20.538c0 .956-.796 1.732-1.775 1.732H7.77C6.793 30 6 29.224 6 28.268V7.731C6 6.775 6.793 6 7.77 6zm-15.105 8.997H9.556v11.454h3.563V14.997zm9.062-.284c-1.731 0-2.893.95-3.368 1.85h-.049v-1.566h-3.412v11.454h3.556v-5.665c0-1.495.282-2.942 2.134-2.942 1.827 0 1.85 1.709 1.85 3.037v5.57h3.559v-6.282c0-3.084-.666-5.456-4.27-5.456zM11.339 9.304c-1.144 0-2.066.925-2.066 2.064 0 1.14.922 2.065 2.066 2.065 1.138 0 2.063-.925 2.063-2.065s-.925-2.064-2.063-2.064z" fill-rule="evenodd"></path/> </svg> </a> </div>    <div class="coh-container coh-ce-cpt_footer-4e563208" > <a href="http://www.twitter.com/TPICAPGroupPLC" class="coh-link" title="PVM Oil Twitter" target="_blank" >  <svg class="coh-inline-element coh-ce-cpt_footer-cc99b32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36"> <path/ class="coh-inline-element coh-ce-cpt_footer-5e4164ef" d="M13.548 27.752c9.057 0 14.01-7.503 14.01-14.01 0-.213-.005-.425-.014-.636.961-.695 1.797-1.562 2.456-2.55-.882.392-1.832.657-2.828.776 1.017-.61 1.797-1.574 2.165-2.724-.951.564-2.004.974-3.126 1.195-.899-.957-2.178-1.555-3.594-1.555-2.72 0-4.925 2.205-4.925 4.923 0 .387.043.762.128 1.123-4.092-.206-7.721-2.165-10.15-5.145-.423.728-.666 1.573-.666 2.475 0 1.708.869 3.216 2.19 4.099-.807-.025-1.566-.247-2.23-.616v.063c0 2.385 1.697 4.375 3.95 4.827-.414.112-.849.173-1.298.173-.317 0-.626-.031-.926-.089.627 1.957 2.445 3.38 4.6 3.42-1.685 1.321-3.808 2.108-6.115 2.108-.398 0-.79-.023-1.175-.068 2.18 1.396 4.767 2.211 7.548 2.211" fill-rule="evenodd"></path/> </svg> </a> </div>    <div class="coh-container coh-ce-cpt_footer-8f93e68a" > <a href="https://www.instagram.com/tpicap/" class="coh-link" title="PVM Oil Instagram" target="_blank" >  <svg class="coh-inline-element coh-ce-cpt_footer-21699545" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36"> <path/ class="coh-inline-element coh-ce-cpt_footer-5e4164ef" d="M19.113 6.048c2.215.004 2.668.021 3.773.071 1.273.058 2.142.26 2.903.556.786.306 1.453.715 2.117 1.38.665.664 1.074 1.33 1.38 2.117.295.76.497 1.63.555 2.902.059 1.276.072 1.683.072 4.93v.315c0 2.96-.015 3.382-.072 4.615-.058 1.272-.26 2.142-.555 2.902-.306.786-.715 1.453-1.38 2.118-.664.665-1.331 1.073-2.117 1.379-.76.296-1.63.498-2.903.556-1.275.058-1.682.072-4.93.072h-.315c-2.96-.001-3.381-.016-4.614-.072-1.273-.058-2.142-.26-2.902-.556-.787-.306-1.453-.714-2.118-1.38-.665-.664-1.074-1.33-1.38-2.117-.295-.76-.497-1.63-.555-2.902-.05-1.105-.068-1.559-.071-3.774v-2.312c.003-2.215.02-2.668.07-3.774.059-1.272.261-2.141.557-2.902.305-.786.714-1.453 1.379-2.118.665-.664 1.331-1.073 2.118-1.379.76-.295 1.63-.498 2.902-.556 1.105-.05 1.558-.067 3.773-.07zm-.02 2.155H16.82c-2.173.003-2.603.019-3.696.068-1.166.054-1.799.248-2.22.412-.558.217-.956.476-1.375.895-.418.418-.677.816-.894 1.374-.164.422-.359 1.055-.412 2.22-.05 1.093-.066 1.523-.069 3.696v2.272c.003 2.173.02 2.603.069 3.696.053 1.165.248 1.798.412 2.22.217.558.476.956.894 1.375.419.418.817.677 1.375.894.421.164 1.054.359 2.22.412 1.093.05 1.522.065 3.696.069h2.271c2.174-.004 2.604-.02 3.696-.07 1.166-.052 1.799-.247 2.22-.411.558-.217.957-.476 1.375-.894.418-.419.678-.817.895-1.375.163-.422.358-1.055.411-2.22.052-1.135.067-1.555.07-3.955v-1.754c-.003-2.4-.018-2.82-.07-3.954-.053-1.166-.248-1.8-.411-2.22-.217-.559-.477-.957-.895-1.375-.418-.419-.817-.678-1.375-.895-.421-.164-1.054-.358-2.22-.412-1.093-.05-1.522-.065-3.696-.068zm-1.136 3.661c3.39 0 6.14 2.75 6.14 6.14 0 3.391-2.75 6.14-6.14 6.14-3.391 0-6.14-2.749-6.14-6.14 0-3.39 2.749-6.14 6.14-6.14zm0 2.155c-2.202 0-3.986 1.784-3.986 3.985 0 2.201 1.784 3.986 3.986 3.986 2.2 0 3.985-1.785 3.985-3.986 0-2.201-1.784-3.985-3.985-3.985zm6.382-3.832c.793 0 1.435.642 1.435 1.435 0 .792-.642 1.434-1.435 1.434-.792 0-1.435-.642-1.435-1.434 0-.793.643-1.435 1.435-1.435z" fill-rule="evenodd"></path/> </svg> </a> </div>  </div> </div> </div> </div> </div> <div class="coh-container coh-ce-cpt_footer-a8a59b09" > <div class="coh-container coh-ce-cpt_footer-bc8849d1" > <div class="coh-container coh-ce-cpt_footer-73a39578" >  <div class="coh-block"> <div class="views-element-container settings-tray-editable" id="block-views-block-dx8-company-list-logos-block-2" data-drupal-settingstray="editable">
+  
+    
+      <div>          <div  class="view view-dx8-company-list-logos view-id-dx8_company_list_logos view-display-id- js-view-dom-id-f9f1834cd02c0a0bbc009fa5b93b112614e9d397303b0f51499a03a1c4281101 coh-view"  >   <div> <div class="coh-view-contents views-infinite-scroll-content-wrapper clearfix" data-drupal-views-infinite-scroll-content-wrapper>               <article  role="article"> <div class="coh-container tpicap--company-logo-container" > <a href="https://tpicap.com/tullettprebon" class="coh-link" title="Tullett Prebon" target="_blank" > <img class="coh-image coh-ce-2666168c coh-image-responsive-xl" src="https://pvmoil.co.uk/sites/g/files/escbpb126/files/styles/crop_2_1_/public/2020-05/site-white-tullet.png?h=31e1bf11&amp;itok=mVbTqJ-P" title="Tullett Prebon" alt="Tullett Prebon" /> </a> </div> </article> 
+                 <article  role="article"> <div class="coh-container tpicap--company-logo-container" > <a href="https://tpicap.com/icap" class="coh-link" title="ICAP" target="_blank" > <img class="coh-image coh-ce-2666168c coh-image-responsive-xl" src="https://pvmoil.co.uk/sites/g/files/escbpb126/files/styles/crop_2_1_/public/2020-05/site-white-icap.png?h=a41f0441&amp;itok=7eokWNx0" title="ICAP" alt="ICAP" /> </a> </div> </article> 
+                 <article  role="article"> <div class="coh-container tpicap--company-logo-container" > <a href="https://tpicap.com/pvm" class="coh-link" title="PVM" target="_blank" > <img class="coh-image coh-ce-2666168c coh-image-responsive-xl" src="https://pvmoil.co.uk/sites/g/files/escbpb126/files/styles/crop_2_1_/public/2020-05/site-white-pvm.png?h=a41f0441&amp;itok=Y-1xhPiZ" title="PVM" alt="PVM" /> </a> </div> </article> 
+                 <article  role="article"> <div class="coh-container tpicap--company-logo-container" > <a href="https://parametasolutions.com" class="coh-link" title="Parameta Solutions" target="_blank" > <img class="coh-image coh-ce-2666168c coh-image-responsive-xl" src="https://pvmoil.co.uk/sites/g/files/escbpb126/files/styles/crop_2_1_/public/2021-04/param-white.png?h=3658ad3c&amp;itok=LmcUMw1c" title="Parameta Solutions" alt="Parameta Solutions" /> </a> </div> </article> 
+                 <article  role="article"> <div class="coh-container tpicap--company-logo-container" > <a href="http://liquidnet.com" class="coh-link" title="Liquidnet" target="_blank" > <img class="coh-image coh-ce-2666168c coh-image-responsive-xl" src="https://pvmoil.co.uk/sites/g/files/escbpb126/files/styles/crop_2_1_/public/styles/crop_2_1_/public/styles/crop_2_1_/public/2021-03/loquidnet-logo-white.png?itok=V7pTPFL7" title="Liquidnet" alt="Liquidnet" /> </a> </div> </article> 
+                 <article  role="article"> <div class="coh-container tpicap--company-logo-container" > <a href="https://tpicap.com/coexpartners" class="coh-link" title="COEX" target="_blank" > <img class="coh-image coh-ce-2666168c coh-image-responsive-xl" src="https://pvmoil.co.uk/sites/g/files/escbpb126/files/styles/crop_2_1_/public/2020-09/Coex%20Partners%20-%20White.png?itok=lmhQfnTh" title="COEX" alt="COEX" /> </a> </div> </article> 
+                 <article  role="article"> <div class="coh-container tpicap--company-logo-container" > <a href="https://midcapp.com/en/" class="coh-link" title="MidCap Partners" target="_blank" > <img class="coh-image coh-ce-2666168c coh-image-responsive-xl" src="https://pvmoil.co.uk/sites/g/files/escbpb126/files/styles/crop_2_1_/public/Media/Logos/MidCap_white_300x150px.png?h=e648a0f2&amp;itok=lcWHIb1P" title="MidCap Partners" alt="MidCap Partners" /> </a> </div> </article> 
+                 <article  role="article"> <div class="coh-container tpicap--company-logo-container" > <a href="https://www.louiscapital.com/" class="coh-link" title="Louis Capital Markets" target="_blank" > <img class="coh-image coh-ce-2666168c coh-image-responsive-xl" src="https://pvmoil.co.uk/sites/g/files/escbpb126/files/styles/crop_2_1_/public/2020-09/LCM_White_logo_300x150px.png?h=e648a0f2&amp;itok=tY560OY6" title="Louis Capital Markets" alt="Louis Capital Markets" /> </a> </div> </article> 
+                 <article  role="article"> <div class="coh-container tpicap--company-logo-container" > <a href="http://burton-taylor.com" class="coh-link" title="Burton Taylor" target="_blank" > <img class="coh-image coh-ce-2666168c coh-image-responsive-xl" src="https://pvmoil.co.uk/sites/g/files/escbpb126/files/styles/crop_2_1_/public/2021-03/burton-taylor-white.png?h=4fca42dc&amp;itok=rAbErNiY" title="Burton Taylor" alt="Burton Taylor" /> </a> </div> </article> 
+     </div>  </div> </div> 
+</div>
+
+  </div>
+ </div> </div> </div> </div> <div class="coh-container coh-ce-cpt_footer-9ba7776" > <div class="coh-container coh-ce-cpt_footer-6dad00fa" > </div> </div> <div class="coh-container coh-ce-cpt_footer-d0a160c4" > <div class="coh-container coh-ce-cpt_footer-5c6dc83c" > <div class="coh-container coh-ce-cpt_footer-4966494" >  <p class="coh-paragraph coh-style-small-body-regular coh-ce-cpt_footer-92eea8c6">Copyright © 2023 TP ICAP</p> </div> </div> </div> </div> </div> </div>  <script class="coh-inline-element coh-component coh-component-instance-7c5faf28-695b-4093-a33a-cd87000ea655 contextual-component">document.addEventListener("DOMContentLoaded", function(event) { 
+  jQuery(document).ready(function( $ ){
+
+  $("html, body").css({
+    overflow: 'auto',
+    overflowX: 'hidden'
+  });
+   
+  $("#toTop").click(function () {
+      $("html, body").animate({scrollTop: 0}, 1500);
+   });
+
+  });
+});</script>  <script class="coh-inline-element coh-component coh-component-instance-7c5faf28-695b-4093-a33a-cd87000ea655 contextual-component">document.addEventListener("DOMContentLoaded", function(event) {
+  jQuery(document).ready(function( $ ){
+
+    var collapse = '<svg id="svg-collapse" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#262626" fill-rule="evenodd" d="M0 0.5H24V1.5H0z" transform="translate(0 11)"/></svg>'
+
+    var expand = '<svg id="svg-expand" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#262626" fill-rule="evenodd" d="M12.375 0v11.625H24v.75H12.375V24h-.75V12.375H0v-.75h11.625V0h.75z"/></svg>'
+
+    $('.coh-style-accordion-dropdown-item a').each(function() {
+      $( this ).append(expand);
+      $( this ).append(collapse);
+    });
+
+  });
+});</script>  <style class="coh-inline-element coh-component coh-component-instance-7c5faf28-695b-4093-a33a-cd87000ea655 contextual-component" type="text/css">.footer-background { background-position: 105% 115%!important }
+
+@media (max-width: 1024px) {
+    .footer-background { background-position: 650px 50%!important }
+} 
+
+@media (max-width: 900px) {
+    .footer-background { background-position: 480px 50%!important }
+} 
+
+@media (max-width: 800px) {
+    .footer-background { background-position: 440px 50%!important }
+} 
+
+@media (max-width: 700px) {
+    .footer-background { background-position: 400px 50%!important }
+} 
+
+@media (max-width: 600px) {
+    .footer-background { background-position: 270px 50%!important }
+} 
+
+@media (max-width: 550px) {
+    .footer-background { background-position: 240px 50%!important  }
+}
+
+@media (max-width: 500px) {
+    .footer-background { background-position: 180px 50%!important }
+}
+
+@media (max-width: 450px) {
+    .footer-background { background-position: 130px 50%!important }
+}
+
+@media (max-width: 400px) {
+    .footer-background { background-position: 120px 50%!important }
+}
+
+@media (max-width: 350px) {
+    .footer-background { background-position: -85% 45%!important; }
+}
+
+@media (max-width: 300px) {
+    .footer-background { background-position: -85% 45%!important; }
+}</style> 
+ </div>  <style class="coh-inline-element">body {
+margin-left: 0!important;
+}</style>  <script class="coh-inline-element">document.addEventListener("DOMContentLoaded", function(event) { 
+    jQuery(document).ready(function( $ ){
+
+            var stamp = Date.now();
+                var urljson = "https://polaris.brighterir.com/public/tp_icap/price_feed/json_price?key=kg11wng0&time="+stamp;
+		$.ajax({
+			type: 'POST',
+			crossDomain: true,
+			dataType: 'jsonp',
+			url: urljson,
+			success: function(jsondata){		
+                                console.log( jsondata.feed_data[1].data);
+				$(".share-price-holder").html("TPICAP " + jsondata.feed_data[1].data + " GBP");
+			}
+               });
+
+        $('.js--content-feedback').on( 'click', function() {
+            setTimeout(function(){
+                $('.content-feedback-form').each(function() {
+                    $('.content-feedback-form input').attr('autocomplete', 'off');
+                });
+            }, 500);
+        });
+
+//cta scroll
+        $(".cta-button").click(function () {
+            var attr = $(this).attr("scrolltoid");
+      
+            if (typeof attr !== 'undefined' && attr !== false) {             
+                $("html, body").animate({scrollTop: $("#"+attr).offset().top}, 1500);
+                return false;
+            }
+
+        });
+
+
+
+    });
+});document.addEventListener("DOMContentLoaded", function(event) { 
+    jQuery(document).ready(function( $ ){
+
+        var userScroll = $(document).scrollTop();
+        $(window).on('scroll', function() {
+            onScrollHeader();
+        });
+    
+        function onScrollHeader() {
+            var newScroll = $(document).scrollTop();
+               
+               if ( newScroll > 50 || userScroll > 50 ) {
+                  $('.pri-nav-header').css('position', 'fixed');
+                  $('#toolbar-administration').css('display', 'none');
+               } else {
+                $('.pri-nav-header').css('position', 'relative');
+                $('#toolbar-administration').css('display', 'block');
+            }
+            
+            if (newScroll > 40 ) {
+                $('.pri-nav-header').css('position', 'fixed');
+                $('#toolbar-administration').css('display', 'none');
+            } else {
+                $('.pri-nav-header').css('position', 'relative');
+                $('#toolbar-administration').css('display', 'block');
+            }
+        }
+        onScrollHeader();
+
+    });
+});document.addEventListener("DOMContentLoaded", function(event) { 
+    jQuery(document).ready(function( $ ){
+
+        var userScroll = $(document).scrollTop();
+        $(window).on('scroll', function() {
+            onScrollHeader();
+        });
+    
+        function onScrollHeader() {
+            if ($(window).width() < 1024) {
+                var newScroll = $(document).scrollTop();
+               
+                if ( newScroll > 50 || userScroll > 50 ) {
+                      $('.pri-nav-header').css('position', 'fixed');
+                      $('.coh-ce-2c19620d').css({'position':'fixed','top':'0','z-index':'1000'});
+                      $('#toolbar-administration').css('display', 'none');
+                      $('body.toolbar-tray-open.toolbar-vertical.toolbar-fixed').css('margin-left', '0');
+                } else {
+                    $('.pri-nav-header').css('position', 'relative');
+                    $('.coh-ce-2c19620d').css('position', 'relative');
+                    $('#toolbar-administration').css('display', 'block');
+                    $('body.toolbar-tray-open.toolbar-vertical.toolbar-fixed').css('margin-left', '15rem');
+                }
+                
+                if (newScroll > 40 ) {
+                    $('.pri-nav-header').css('position', 'fixed');
+                    $('#toolbar-administration').css('display', 'none');
+                    $('body.toolbar-tray-open.toolbar-vertical.toolbar-fixed').css('margin-left', '0');
+                } else {
+                    $('.pri-nav-header').css('position', 'relative');
+                    $('#toolbar-administration').css('display', 'block');
+                    $('body.toolbar-tray-open.toolbar-vertical.toolbar-fixed').css('margin-left', '15rem');
+                }
+            }
+        }
+
+        onScrollHeader();
+
+        $( window ).resize(function() {
+            if ($(window).width() > 1024) {
+                $('.pri-nav-header').css('position', 'relative');
+                $('#toolbar-administration').css('display', 'block');
+                $('body.toolbar-tray-open.toolbar-vertical.toolbar-fixed').css('margin-left', '0rem');
+            }
+        });
+    });
+});document.addEventListener("DOMContentLoaded", function(event) { 
+
+/**
+ * jQuery.browser.mobile (http://detectmobilebrowser.com/)
+ * jQuery.browser.mobile will be true if the browser is a mobile device
+ **/
+
+   (function(a){(jQuery.browser=jQuery.browser||{}).mobile=/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows ce|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4))})(navigator.userAgent||navigator.vendor||window.opera);
+
+var isiPad = /ipad/i.test(navigator.userAgent.toLowerCase());
+var isiPhone = /iphone/i.test(navigator.userAgent.toLowerCase());
+var isiPod = /ipod/i.test(navigator.userAgent.toLowerCase());
+var isiDevice = /ipad|iphone|ipod/i.test(navigator.userAgent.toLowerCase());
+var isAndroid = /android/i.test(navigator.userAgent.toLowerCase());
+var isBlackBerry = /blackberry/i.test(navigator.userAgent.toLowerCase());
+var isWebOS = /webos/i.test(navigator.userAgent.toLowerCase());
+var isWindowsPhone = /windows phone/i.test(navigator.userAgent.toLowerCase());
+
+if (isiPad) {
+  jQuery("html").addClass("ipad");
+}
+
+if (isiPhone) {
+  jQuery("html").addClass("iphone");
+}
+
+if (isiPod) {
+  jQuery("html").addClass("ipod");
+}
+
+if (isiDevice) {
+  jQuery("html").addClass("idevice");
+}
+
+if (isAndroid)
+{
+  jQuery("html").addClass("android");
+}
+
+if (isBlackBerry)
+{
+  jQuery("html").addClass("blackberry");
+}
+
+if (isWebOS)
+{
+  jQuery("html").addClass("webos");
+}
+
+if (isWindowsPhone)
+{
+  jQuery("html").addClass("windowsphone");
+}
+
+});document.addEventListener("DOMContentLoaded", function(event) { 
+    jQuery(document).ready(function( $ ){
+
+        $('.search-wrap').children('.form-item').each( function() {
+            $(this).addClass('search-svg-added');
+            $('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#262626" fill-rule="evenodd" d="M14.968 0c4.97 0 9 4.03 9 9s-4.03 9-9 9c-2.216 0-4.244-.8-5.812-2.128l-8.095 8.096L0 22.908l8.095-8.096C6.768 13.244 5.968 11.215 5.968 9c0-4.97 4.03-9 9-9zm0 1.5c-4.136 0-7.5 3.364-7.5 7.5s3.364 7.5 7.5 7.5c4.135 0 7.5-3.364 7.5-7.5s-3.365-7.5-7.5-7.5z"/></svg>').prependTo(this);
+        });
+
+        $('.search-wrap').children('.coh-view-filter').children('.form-item').each( function() {
+            $(this).addClass('search-svg-added');
+            $('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#262626" fill-rule="evenodd" d="M14.968 0c4.97 0 9 4.03 9 9s-4.03 9-9 9c-2.216 0-4.244-.8-5.812-2.128l-8.095 8.096L0 22.908l8.095-8.096C6.768 13.244 5.968 11.215 5.968 9c0-4.97 4.03-9 9-9zm0 1.5c-4.136 0-7.5 3.364-7.5 7.5s3.364 7.5 7.5 7.5c4.135 0 7.5-3.364 7.5-7.5s-3.365-7.5-7.5-7.5z"/></svg>').prependTo(this);
+        });
+
+        $('.filter-year').children('.coh-container.select-wrap').each( function() {
+            $(this).addClass('select-svg-added');
+            $('<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="#242424" d="M10.39 8.015L6 12.405l-.53-.53h-.095v-.095L1.61 8.015l.53-.53 3.235 3.234V1.375h1v9.594L9.86 7.485l.53.53z"/></svg>').prependTo(this);
+        });
+
+        $('.coh-view-filter .form-type-select').each( function() {
+            $(this).addClass('select-svg-added');
+            $('<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="#242424" d="M10.39 8.015L6 12.405l-.53-.53h-.095v-.095L1.61 8.015l.53-.53 3.235 3.234V1.375h1v9.594L9.86 7.485l.53.53z"/></svg>').prependTo(this);
+        });
+
+
+        $('.coh-column .coh-container .coh-container.icon').each( function() {
+            $(this).addClass('svg-icons-added');
+            $('<svg class="double-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#262626" fill-rule="evenodd" d="M2.854 6.56l-.708-.706L7.5.5 8 0l5.854 5.854-.708.707-4.645-4.647v12.171l4.645-4.646.708.707L8.5 15.5 8.5 15.5 8 16l-.498-.5H7.5v-.001l-5.354-5.353.708-.707L7.5 14.085V1.914L2.854 6.561z" opacity=".5"/></svg>').prependTo(this);
+            $('<svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="#262626" d="M10.39 8.015L6 12.405l-.53-.53h-.095v-.095L1.61 8.015l.53-.53 3.235 3.234V1.375h1v9.594L9.86 7.485l.53.53z"/></svg>').prependTo(this);
+        });
+
+    });
+});document.addEventListener("DOMContentLoaded", function(event) { 
+    jQuery(document).ready(function( $ ){
+        $(".is-active").parent().closest(".menu-item-wrap").addClass("active-link");
+if($(".coh-style-menu---tpicap-group-main-menu .menu-item-wrap .menu-name").parent().closest(".menu-name").children(".item-submenu").length != 1){
+    console.log("No Submenu");
+}
+
+        $(".coh-style-menu-secondary---2nd-level-menu-new .menu-item-wrap .menu-name .link-wrap .menu-level-1-ul a").on("click",function(e){
+            
+            if($(this).parent().closest(".menu-name").hasClass("active-menu")){
+                $(this).parent().closest(".menu-name").removeClass("active-menu");
+            }
+            else
+            {
+                $(".coh-style-menu-secondary---2nd-level-menu-new .menu-item-wrap .menu-name").removeClass("active-menu");
+                $(this).parent().closest(".menu-name").addClass("active-menu");   
+            }
+
+            console.log($(this).parent().closest(".menu-name").children(".item-submenu").length);
+            if($(this).parent().closest(".menu-name").children(".item-submenu").length == 1)
+            {
+                return false;
+            }        
+        });
+        $("body").click(function(){
+            $(".coh-style-menu-secondary---2nd-level-menu-new .menu-item-wrap .menu-name").removeClass("active-menu");
+            $(".coh-style-menu---tpicap-group-main-menu .menu-item-wrap .menu-name").removeClass("active-menu");
+        });
+
+$(".coh-style-menu---tpicap-group-main-menu .menu-item-wrap .menu-name .link-wrap p").on("click", function(e){
+            if($(this).parent().closest(".menu-name").hasClass("active-menu")){
+                $(this).parent().closest(".menu-name").removeClass("active-menu");
+            }
+            else
+            {
+                $(".coh-style-menu---tpicap-group-main-menu .menu-item-wrap .menu-name").removeClass("active-menu");
+                $(this).parent().closest(".menu-name").addClass("active-menu");
+            }
+
+            console.log($(this).parent().closest(".menu-name").children(".item-submenu").length);
+            if($(this).parent().closest(".menu-name").children(".item-submenu").length == 1)
+            {
+console.log("YES!");
+                return false;
+            }  
+        });
+    });
+});</script> 
+
+  </div>
+
+
+<script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/pvm\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/1","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"cohesion\/coh-module,cohesion\/coh-theme,cohesion\/element_templates.drupal-menu,cohesion\/element_templates.drupal-view,cohesion\/element_templates.image,cohesion\/element_templates.link,cohesion\/element_templates.row-for-columns,cohesion\/global_libraries.cohMatchHeights,cohesion\/global_libraries.jquery_ui_effect_none,cohesion\/global_libraries.matchHeight,cohesion\/global_libraries.parallax_scrolling,cohesion\/global_libraries.responsiveJs,cohesion\/global_libraries.windowscroll,cohesion_theme\/global-styling,dx8_sub_theme\/global,google_tag\/gtag,google_tag\/gtag.ajax,google_tag\/gtm,system\/base,tpicap_content_feedback\/tpicap_content_feedback,tpicap_file_bundle\/global,tpicap_foundation\/tpicap_foundation,views\/views.module","theme":"dx8_sub_theme","theme_token":null},"ajaxTrustedUrl":[],"gtm":{"tagId":"GTM-WNSVHV3","settings":{"data_layer":"dataLayer","include_classes":false,"allowlist_classes":"google\nnonGooglePixels\nnonGoogleScripts\nnonGoogleIframes","blocklist_classes":"customScripts\ncustomPixels","include_environment":false,"environment_id":"","environment_token":""}},"gtag":{"tagId":"","otherIds":[],"events":[],"additionalConfigInfo":[]},"cohesion":{"google_map_api_key":"","google_map_api_key_geo":null,"animate_on_view_mobile":"ENABLED","add_animation_classes":"ENABLED","responsive_grid_settings":{"gridType":"desktop-first","columns":12,"breakpoints":{"xl":{"width":1600,"innerGutter":32,"outerGutter":64,"widthType":"fixed","previewColumns":12,"label":"Television","class":"coh-icon-television","iconHex":"F26C","boxedWidth":1472},"lg":{"width":1420,"innerGutter":32,"outerGutter":64,"widthType":"fluid","previewColumns":12,"label":"Desktop","class":"coh-icon-desktop","iconHex":"F108","boxedWidth":1292},"md":{"width":1024,"innerGutter":24,"outerGutter":48,"widthType":"fluid","previewColumns":12,"label":"Laptop","class":"coh-icon-laptop","iconHex":"F109","boxedWidth":928},"sm":{"width":768,"innerGutter":24,"outerGutter":48,"widthType":"fluid","previewColumns":6,"label":"Tablet","class":"coh-icon-tablet","iconHex":"F10A","boxedWidth":672},"ps":{"width":500,"innerGutter":24,"outerGutter":24,"widthType":"fluid","previewColumns":6,"label":"Mobile landscape","class":"coh-icon-mobile-landscape","iconHex":"E91E","boxedWidth":452},"xs":{"innerGutter":24,"outerGutter":24,"previewColumns":6,"label":"Mobile","class":"coh-icon-mobile","iconHex":"F10B","boxedWidth":272,"width":320,"widthType":"fluid","mobilePlaceholderWidth":320,"mobilePlaceholderType":"fluid"}}},"use_dx8":true,"urls":{"component-categories":{"url":"\/pvm\/cohesionapi\/element_categories\/component","method":"GET"},"helper-categories":{"url":"\/pvm\/cohesionapi\/element_categories\/helper","method":"GET"},"element-save":{"url":"\/pvm\/cohesionapi\/element-save","method":"POST"},"component-elements-list":{"url":"\/pvm\/cohesionapi\/element-group-info?entity_type=cohesion_component\u0026entity_type_access=node\u0026bundle_access=landing_page","method":"GET"},"helpers-elements-list":{"url":"\/pvm\/cohesionapi\/element-group-info?entity_type=cohesion_helper\u0026entity_type_access=node\u0026bundle_access=landing_page\u0026access_elements=false","method":"GET"},"component-content-elements-list":{"url":"\/pvm\/cohesionapi\/component-contents","method":"GET"}},"sidebar_view_style":"titles","log_dx8_error":false,"error_url":"\/pvm\/cohesionapi\/logger\/jserrors","dx8_content_paths":[["settings","content"],["settings","content","text"],["settings","markerInfo","text"],["settings","title"],["markup","prefix"],["markup","suffix"],["markup","attributes",["value"]],["hideNoData","hideData"]]},"user":{"uid":0,"permissionsHash":"71bbe2295fdb8401c854439449761545f18e5bbf0799ac6b0e6f5196084d717c"}}</script>
+<script src="/pvm/sites/g/files/escbpb126/files/js/js_yzxC7zO8hTen7wxXzhI3CSP-tkDMxPsj_CUAbi3X0Rw.js"></script>
+<script src="/pvm/modules/contrib/google_tag/js/gtm.js?rw4eel"></script>
+<script src="/pvm/modules/contrib/google_tag/js/gtag.js?rw4eel"></script>
+<script src="/pvm/sites/g/files/escbpb126/files/js/js_dTdC-DarPzVgL02Lfdp3CkuBRdbdLj-qAsk-_kV3V3A.js"></script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-0ba9fb1ada7e1198744","applicationID":"1398672114","transactionName":"NlNbN0JZWhZXVRddXw8ZeABEUVsLGUYCU1U+VVgAWF0=","queueTime":4,"applicationTime":55,"atts":"GhRYQQpDSRg=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

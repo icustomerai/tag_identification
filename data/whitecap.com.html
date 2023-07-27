@@ -1,0 +1,1419 @@
+
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Building Materials | Construction &amp; Industrial Supply - White Cap</title>
+
+    <link href="/" rel="canonical" />
+    <meta name="description" content="White Cap is one of the nation&#39;s largest suppliers of power tools and specialty materials to professional concrete contractors." />
+    <meta name="keywords" content="White Cap" />
+    <meta name="robots" content="" />
+
+    <meta name="facebook-domain-verification" content="mcaxo3nb7d430qlgbq7p83t234j2ky" />
+
+    <link rel="preconnect" href="https://cloud.typography.com" />
+    <link rel="preconnect" href="https://connect.facebook.net" />
+    <link rel="preconnect" href="https://www.google-analytics.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+
+    <link rel="stylesheet" href="https://cloud.typography.com/6352852/7042192/css/fonts.css" />
+    <link rel="stylesheet" href="/Static/dist/bootstrap.bundle.css?v=1.10.14.21602" />
+    <link rel="stylesheet" href="/Static/dist/app.bundle.css?v=1.10.14.21602" />
+    <link rel="prefetch stylesheet" as="style" href="/Static/dist/print.bundle.css?v=1.10.14.21602" media="print" />
+    
+    
+
+    <script type="text/javascript">
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PZDSPNC');
+</script>
+
+<script type="text/javascript">var appInsights=window.appInsights||function(config){function t(config){i[config]=function(){var t=arguments;i.queue.push(function(){i[config].apply(i,t)})}}var i={config:config},u=document,e=window,o="script",s="AuthenticatedUserContext",h="start",c="stop",l="Track",a=l+"Event",v=l+"Page",r,f;setTimeout(function(){var t=u.createElement(o);t.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(t)});try{i.cookie=u.cookie}catch(y){}for(i.queue=[],r=["Event","Exception","Metric","PageView","Trace","Dependency"];r.length;)t("track"+r.pop());return t("set"+s),t("clear"+s),t(h+a),t(c+a),t(h+v),t(c+v),t("flush"),config.disableExceptionTracking||(r="onerror",t("_"+r),f=e[r],e[r]=function(config,t,u,e,o){var s=f&&f(config,t,u,e,o);return s!==!0&&i["_"+r](config,t,u,e,o),s}),i}({instrumentationKey:"a24e8554-7806-4872-b01f-baf161442f07",sdkExtension:"a"});window.appInsights=appInsights;appInsights.queue&&appInsights.queue.length===0&&appInsights.trackPageView();</script></head>
+<body data-authenticated="False">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PZDSPNC"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <input name="__RequestVerificationToken" type="hidden" value="aXtmla8KRK4bW8mUqVJ4VmWS4xBRPUvI2NMFfpJen1aMq4E-jY7pCTV3B7D1opkcFaUdpu6j2ZAQafI5NT4gyU5KKTtn_NPCuRf2JhZAn2U1" />
+
+    <div class="wrapper">
+        
+
+
+
+
+
+
+<!-- Modal start -->
+
+<div id="shipping-verification" class="shipping-verification" data-init="{&quot;IsWebShippingEnabled&quot;:true}">
+    <div class="shipping-verification-modal" v-bind:class="{ activeVerification: isVerificationShown }">
+        <div class="shipping-verification-content" v-on-clickaway="clickAway">
+            <h3 class="shipping-verification__headline-text">Shipping Verification</h3>
+            <div class="shipping-verification__body">
+                <div v-if="displayAddTocartFailureMessage" class="shipping-verification_failure">
+                    <i class="hd-icon shipping-verification_icon" ></i> 
+                    This item is not available for shipping to <span class="shipping-verification_zip-code" v-text="storedZip"></span> and will not be added to your cart.
+                </div>
+                <div v-else-if="displayAddToCartSuccessMessage" class="shipping-verification_success">
+                    <i class="hd-icon shipping-verification_icon"></i> 
+                    This item is available for shipping to <span class="shipping-verification_zip-code" v-text="storedZip"></span> and was added to your cart.
+                </div>
+                <div v-else>
+                    <p>This item can only be delivered to select locations</p>
+                    <span>Please enter your delivery zip code below to determine shipping eligibility:</span>
+                    <form class="shipping-verification__zip-code__submit-form" v-on:submit.prevent="updateAddressVerifyShipping">
+                        <input type="text" required class="shipping-verification__zip-code__input" v-model="zip" placeholder="Delivery zip code" />
+                        <button class="button button--yellow-white shipping-verification__zip-code__submit-button">
+                            <span>Check</span>
+                        </button>
+                    </form>
+                    <span class="shipping-verification__zip-code__error-message" v-if="showInvalidZipCodeMessage">Invalid zip code. Please enter a 5-digit US zip code.</span>
+                    <span class="shipping-verification__zip-code__error-message" v-if="!showInvalidZipCodeMessage">.</span>
+                </div>
+            </div>
+            <button v-on:click="closeShippingVerification" class="shipping-verification_cancel-button"> <span v-if="displayAddTocartFailureMessage || displayAddToCartSuccessMessage">Close</span> <span v-else>Cancel</span></button>
+        </div>
+    </div>
+</div>
+
+<div id="favorite-list-selector" class="favorite-list-selector" data-init="{&quot;IsAuthorized&quot;:false,&quot;IsFavoriteListEnabled&quot;:true}">
+    <div class="favorite-list-selector-modal" v-bind:class="{ activeFavoriteListSelector: isFavoriteListSelectorShown }">
+        <div class="favorite-list-modal-content" v-on-clickaway="clickAway">
+            <div class="no-gutters favorite-list-modal__headline-section">
+                <div class="col-11">
+                    <h3 v-if="isProductAdded" class="favorite-list-modal__headline-text">Product(s) Added</h3>
+                    <h3 v-else class="favorite-list-modal__headline-text">Add Product(s) to Favorites List</h3>
+                </div>
+                <div class="col-1 favorite-list__close-button">
+                    <i class="fas fa-times fa-lg close" v-on:click="closeFavoriteListSelector"></i>
+                </div>
+            </div>
+
+            <div class="favorite-list-selector__body">
+                <div v-if="isProductAdded" class="favorite-list-modal__container">
+                    <span class="favorite-list-modal__container_title">The product(s) has been added to {{ listName }}</span>
+                </div>
+                <div v-else>
+                    <div class="row no-gutters">
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                            <button class="favorite-list-selector__tab-button" v-bind:class="{ favoriteListSelectorActiveTab: isExistingListTabDisplayed }" v-on:click="displayExistingListTab">Add to Existing List</button>
+                        </div>
+                        <div class="col-6 col-md-6 col-lg-6 col-sm-6">
+                            <button class="favorite-list-selector__tab-button" v-bind:class="{ favoriteListSelectorActiveTab: isNewListTabDisplayed }" v-on:click="displayNewListTab">Add to New List</button>
+                        </div>
+                    </div>
+
+                    <div class="" v-if="isExistingListTabDisplayed">
+
+                        <form class="" v-on:submit.prevent="addToExistingList">
+
+                            <select size="20" v-model="selectedListName" class="favorite-list-selector__select">
+                                <option disabled value="">My Favorite's List</option>
+                                <option v-for="(name, index) in favoriteListNames" v-bind:selected="index === 0">{{ name }}</option>
+                            </select>
+                            <button class="button button--yellow-black-big favorite-list-add-product-button">
+                                <span>ADD PRODUCT TO LIST</span>
+                            </button>
+
+                        </form>
+                    </div>
+                    <div v-if="isNewListTabDisplayed">
+                        <form class="favorite-list-selector__create-new-list-form" v-on:submit.prevent="createNewList">
+                            <p>Enter a new name for this list:</p>
+                            <input type="text" class="favorite-list__create-new-list-input" v-bind:class="{ error: displayErrorEmptyNameMessage }" title="List name must start and end with either a letter or number and may contain the following special characters: colon, hyphen, underscore, and space." v-model="newListName" />
+                            <span class="favorite-list__error-message" v-if="displayErrorEmptyNameMessage">This is a required field.</span>
+                            <span class="favorite-list__error-message" v-if="displayErrorInvalidNameMessage">Invalid list name. Name may only contain letters, numbers and the characters : - _ or space.</span>
+                            <button class="button button--yellow-black-big favorite-list-selector__create-new-button">
+                                <span>CREATE LIST</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal end -->
+
+<!-- Header start -->
+<header class="header">
+    <div class="header__container header__container--top">
+        <div class="header__section">
+            <a href="#" class="nav__trigger no-desktop">
+                <i class="hd-icon icon-menu"></i>
+            </a>
+                <div class="logo">
+                    <a class="logo__link" href="/" title="White Cap">
+                        <img class="logo__image" src="/contentassets/8ce2abfb64bf43d290f08457bf4dc4fb/sm-wc_business_unit_logo_reverse1-test-copy.png?v=1D6927936143380" alt="SM-WC_Business_Unit_Logo_Reverse1-test copy.png"/>
+                    </a>
+                </div>
+            
+<!-- Search form start -->
+<form id="search" class="search" action="/search" method="get" autocomplete="off"
+      v-on-clickaway="clickAway">
+    <div class="search__field">
+        <input v-model="selection"
+               name="query"
+               type="text"
+               class="search__text"
+               placeholder="Search by name, brand, product id…"
+               />
+        <i v-show="selection" v-on:click.stop.prevent="selection=''" class="search__clear" style="display: none;">x</i>
+        <button class="search__submit">
+            <span class="search__submit-text">Submit</span><i class="hd-icon icon-search"></i>
+        </button>
+    </div>
+    <div class="search__dropdown" v-bind:class="{ 'active': isOpened }">
+        <div v-for="section in results">
+            <div class="search__dropdown-section">{{section.Label}}</div>
+            <ul>
+                <li v-for="entry in section.Entries">
+                    <a v-bind:href="entry.Url">{{entry.Text}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</form>
+<!-- Search form end -->
+            <div class="user-panel">
+
+
+
+<!-- Account popup start -->
+<div id="user-panel" class="user-panel__item user-panel__item--account">
+        <i class="hd-icon icon-user"></i>
+        <a href="#" class="user-panel__link link" user-panel-link user-panel-dropdown-id="user_account">
+                <span>My Account</span>
+            <i class="hd-icon icon-chevron-down"></i>
+        </a>
+        <section class="header-dropdown header-dropdown--account " user-panel-dropdown id="user_account">
+            <a href="#" class="header-dropdown__close no-desktop">
+                <i class="hd-icon icon-cancel"></i>
+                Close
+            </a>
+                <div class="header-dropdown__top">
+                        <h3 class="header-dropdown__headline header-dropdown__headline--customer-login">CUSTOMER LOGIN</h3>
+                                        <a href="/util/login.aspx?returnUrl=https://www.whitecap.com/" class="button button--yellow-black-big header-dropdown__button">
+                        <span>Sign In</span>
+                    </a>
+                    <div class="header-dropdown__line"></div>
+                    <div class="header-dropdown__text header-dropdown__text--wide">Don't have an account?</div>
+                </div>
+                <div class="header-dropdown__bottom">
+                    <a href="/util/login.aspx?returnUrl=https://www.whitecap.com/" class="button button--login button--grey-dark header-dropdown__button">
+                        <span>Create An Account</span>
+                    </a>
+                </div>
+        </section>
+</div>
+<!-- Account popup end -->
+
+<!-- Location popup start -->
+<div class="user-panel__item user-panel__item--location" v-show="!checkout" v-cloak>
+    <i class="hd-icon icon-map-marker-alt"></i>
+    <a href="#" v-bind:class="{ applied: applied }" class="user-panel__link link" user-panel-link user-panel-dropdown-id="user_location">
+        <span class="user-panel__link-text" v-text="locationLabel">My Location</span> <i class="hd-icon icon-chevron-down"></i>
+    </a>
+    <section class="header-dropdown-location header-dropdown--location" user-panel-dropdown id="user_location">
+        <div class="header-dropdown-location__content">
+            <div class="header-dropdown-location__top">
+                <a class="header-dropdown-location__top-close"  v-on:click="closeLocationDropdown">
+                    <i class="far fa-times header-dropdown-location__top-close-icon"></i>
+                </a>
+                    <div class="header-dropdown-location__text header-dropdown-location__text--top">
+                        <span class="header-dropdown-location__text-value">
+                            You are delivering to
+                        </span>
+                        <br />
+                        <span class="header-dropdown-location__text-location">
+                            {{currentLocation}}
+                        </span>
+                        <br />
+                    </div>
+                <div class="header-dropdown-location__search-container">
+                    <div class="header-dropdown--location__search-inner">
+                        <form class="header-dropdown-location__search" id="user_location_form" action="" v-on:submit.prevent="searchByZipCode" autocomplete="off"
+                              geoapi-key="AIzaSyARh4Dw6n0wNICh-_2l5TQEknyqjz8hYZo"
+                              geoapi-cookie-name="WC_UserLocation"
+                              branch-cookie-name="WC_SelectedBranch"
+                              geolookup-cookie-name="WC_GeoLookup"
+                              default-location="{&quot;Coordinates&quot;:{&quot;Latitude&quot;:28.549765,&quot;Longitude&quot;:-81.424379,&quot;HorizontalAccuracy&quot;:0},&quot;City&quot;:&quot;Orlando&quot;,&quot;State&quot;:&quot;FL&quot;,&quot;PostalCode&quot;:&quot;32805&quot;,&quot;IsDefaultLocation&quot;:true,&quot;DaytimePhoneNumber&quot;:&quot;(407)298-7083&quot;}"
+                              needs-delivery-zip="True"
+                              hide-delivery-zip-modal="False"
+                              hide-delivery-zip-overlay="False"
+                              is-punchout-user="False"
+                              is-checkout-page="False">
+                            <input title="Change Delivery Zip Code" type="text" class="header-dropdown-location__search-text" placeholder="Change Delivery Zip Code" name="searchZipCode" v-model="searchZipCode" />
+                            <button type="submit" class="header-dropdown-location__search-submit">
+                                <span class="header-dropdown-location__search-submit-text">Update</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="branches-result__no-branch-spacer" v-if="!branchSelected">
+                </div>
+                <div class="branches-result__selected" v-else>
+                    <hr class="header-dropdown-location__hr" />
+                    <div class="branches-result__header">
+                        Nearest Branch:
+                    </div>
+                    <div class="branches-result__branchname">
+                        <a :href="'/branches/' + selectedBranch.WarehouseCode">{{upperBranchName}}</a>
+                    </div>
+                    <div class="branches-result__address">
+                        <div v-if="selectedBranch.Line1">
+                            {{ selectedBranch.Line1 }}
+                        </div>
+                        <div v-if="selectedBranch.Line2">
+                            {{ selectedBranch.Line2 }}
+                        </div>
+                        <div>
+                            {{ selectedBranch.City }}, {{ selectedBranch.State }} {{ selectedBranch.PostalCode }}
+                        </div>
+                    </div>
+                    <div class="branches-result__phone" v-if="selectedBranch.DaytimePhoneNumber">
+                        <!--<i class="hd-icon icon-phone"></i>--> <a :href="'tel:' + selectedBranch.DaytimePhoneNumber" class="branches-result__phone-text" v-on:click="fireAnalytics(branchDetails, 'Phone Number')">{{ selectedBranch.DaytimePhoneNumber }}</a>
+                    </div>
+                    <template v-if="branchCalculatedProperties && branchCalculatedProperties.todayWorkingHours">
+                        <div v-if="!branchCalculatedProperties.todayWorkingHours.isClosed" class="branches-result__hours">
+                            Today: <span class="branches-result__hours--open">Open</span> {{ branchCalculatedProperties.todayWorkingHours.hours }}
+                        </div>
+                        <div v-else class="branches-result__hours">
+                            Today: <span class="branches-result__hours--closed">Closed</span> {{ branchCalculatedProperties.nextOpeningTime }}
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <div class="header-dropdown-location__bottom">
+                <a class="header-dropdown-location__close header-dropdown-location__bottom-close no-desktop" v-on:click="closeLocationDropdown">
+                    Close
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
+
+            </div>
+
+
+
+<!-- Minicart start -->
+<div class="minicart" id="minicart" data-init="{&quot;TotalItemsCount&quot;:0,&quot;SubTotal&quot;:{&quot;Value&quot;:0.0,&quot;Formatted&quot;:&quot;$0.00&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;Items&quot;:[],&quot;Currency&quot;:&quot;USD&quot;}" v-bind:class="{ 'minicart--sticky': scrollPosition > headerHeight }" v-show="!checkout" v-cloak>
+    <a href="#" class="minicart__label" v-on:click="toggle($event)">
+        <div class="minicart__cart-count">
+            <i class="hd-icon icon-shopping-cart"></i>
+            <span class="minicart__cart-count-number" v-text="totalItemsCount"></span>
+        </div>
+        <span class="minicart__cart-text no-mobile">Cart</span>
+    </a>
+    <div class="minicart__content" v-bind:class="{ active: isOpened, 'minicart__content--sticky': scrollPosition > headerHeight }" v-on-clickaway="clickAway" v-on:mouseover="clearTimeout">
+        <div class="minicart__message"></div>
+        <div class="minicart__content-has-items" v-if="items.length">
+            <div class="minicart__header">
+                <div class="minicart__header-count">
+                    There are <span class="minicart__header-count-number" v-text="totalItemsCount"></span> item(s) in your cart.
+                </div>
+                <div class="minicart__totals">
+                    <span class="minicart__toal" v-text="'Est. Total: ' + subTotal.formatted"></span>
+                </div>
+                <a href="/checkout" class="button button--yellow-long minicart__checkout">
+                    <span>CHECKOUT</span>
+                </a>
+                <a href="/cart" class="minicart__header-view-cart">
+                    <span>View Cart</span>
+                </a>
+                <div class="minicart__close" v-on:click="close()"><i class="hd-icon icon-cancel"></i></div>
+            </div>
+            <div class="minicart__body">
+                <div class="minicart__sub-header">Most Recently Added:</div>
+                <ul class="minicart__items">
+                    <li class="minicart__item" v-for="item in items" :key="item.code" :data-code="item.code">
+                        <div class="minicart__image-wrapper">
+                            <a :href="item.url">
+                                <img rel="prefetch" as="image" :src="item.image.src" :alt="item.image.alt" class="minicart__image" />
+                            </a>
+                        </div>
+                        <div class="minicart__info-text">
+                            <div v-for="promo in item.promotions" class="minicart__promotions">
+                                <span v-text="promo.name" v-if="(item.isFreeItem && (promo.rewardType === 'Free' || promo.rewardType === 'Gift')) || (!item.isFreeItem && (promo.rewardType !== 'Free' && promo.rewardType !== 'Gift'))"></span>
+                            </div>
+                            <a :href="item.url" class="minicart__link"><span v-text="item.name"></span></a>
+                            <div v-if="item.saved>0" class="minicart__yousaved">
+                                <span class="minicart__savedmoney" v-text="item.saved.formatted"> </span>
+                            </div>
+                            <div class="minicart__sku-text">
+                                <span class="minicart__sku-label">SKU#:</span>
+                                <span class="minicart__sku-number"><span v-text="item.code"></span></span>
+                            </div>
+                            <a href="#" class="minicart__remove"
+                               v-confirm="{ questionText: 'REMOVE ITEM?',
+                                            confirmText: 'Remove',
+                                            cancelText: 'Cancel',
+                                            appendTo: '.minicart__item[data-code=\'' + item.code + '\']',
+                                            onConfirm: removeItem.bind(null, item.code) }">
+                                <span class="minicart__remove-x">X</span>
+                                Remove
+                            </a>
+                        </div>
+                        <div class="minicart__item-price">
+                            <div class="minicart__price-total">
+                                <span class="cart-product__free" v-if="item.isFreeItem" v-cloak>FREE</span>
+                                <span v-else v-text="item.total.formatted"></span>
+                            </div>
+                            <div class="minicart__qty">
+                                <span class="minicart__qty-label">Qty: </span>
+                                <div class="qty-counter" v-counter="{ code: item.code, qty: item.qty, fn: changeQty }" v-if="!item.isFreeItem"></div>
+                                <span v-text="item.qty" v-else></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="minicart__buttons">
+                <a href="/cart" class="button button--grey-dark minicart__view-cart">
+                    <span>VIEW CART</span>
+                </a>
+                <a href="/checkout" class="button button--grey-dark minicart__checkout">
+                    <span>CHECKOUT</span>
+                </a>
+            </div>
+        </div>
+        <div class="minicart__empty" v-else>
+            No items
+        </div>
+    </div>
+</div>
+<!-- Minicart end -->
+
+            <div class="header__actions no-desktop">
+                <a href="/locations" class="header__actions-item">
+                    Locations
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="header__container">
+        <div class="header__section">
+            <nav class="nav">
+                <ul class="nav__list visible-links">
+
+<!-- Menu item block start -->
+<li class="nav__list-item has-items" menu-item>
+        <i class="hd-icon no-mobile icon-menu"></i>
+                <span class="nav__list-link">CATEGORIES</span>
+
+    <i class="hd-icon icon-chevron-down no-desktop"></i>
+        <div class="nav__submenu nav__submenu--level-0" submenu data-user-id="" data-parent-id="3ad6a913-63fb-4354-860f-50cefb56ffb7">
+            <div class="nav__submenu-heading nav__submenu-heading--top no-desktop" submenu-heading>
+                <a href="#" class="nav__back">
+                    <i class="hd-icon icon-chevron-down"></i>
+                    Back
+                </a>
+                <span class="nav__submenu-heading-name">CATEGORIES</span>
+            </div>
+        </div>
+</li>
+<!-- Menu item block end -->
+
+<!-- Menu item block start -->
+<li class="nav__list-item " menu-item>
+                <a href="/brands" class="nav__list-link" title="BRANDS" target="_self">
+                BRANDS
+            </a>
+
+    <i class="hd-icon icon-chevron-down no-desktop"></i>
+</li>
+<!-- Menu item block end -->
+
+<!-- Menu item block start -->
+<li class="nav__list-item " menu-item>
+                <a href="/locations" class="nav__list-link" title="LOCATIONS" target="_self">
+                LOCATIONS
+            </a>
+
+    <i class="hd-icon icon-chevron-down no-desktop"></i>
+</li>
+<!-- Menu item block end -->
+
+<!-- Menu item block start -->
+<li class="nav__list-item " menu-item>
+                <a href="/construction-services" class="nav__list-link" title="SERVICES" target="_self">
+                SERVICES
+            </a>
+
+    <i class="hd-icon icon-chevron-down no-desktop"></i>
+</li>
+<!-- Menu item block end -->
+
+<!-- Menu item block start -->
+<li class="nav__list-item " menu-item>
+                <a href="/help-center/request-a-quote" class="nav__list-link" title="REQUEST A QUOTE" target="_top">
+                REQUEST A QUOTE
+            </a>
+
+    <i class="hd-icon icon-chevron-down no-desktop"></i>
+</li>
+<!-- Menu item block end -->
+
+<!-- Menu item block start -->
+<li class="nav__list-item " menu-item>
+                <a href="/top-deals" class="nav__list-link" title="TOP DEALS" target="_blank">
+                TOP DEALS
+            </a>
+
+    <i class="hd-icon icon-chevron-down no-desktop"></i>
+</li>
+<!-- Menu item block end -->
+                    <li class="nav__phone">
+                            <div class="nav__phone-number"><a href="tel:1-800-944-8322">1-800-944-8322</a></div>
+                                                    <a class="nav__phone-help" href="/help-center" title="Help Center">
+                                <i class="hd-icon icon-help-circled"></i>
+                            </a>
+                    </li>
+                </ul>
+                    <div class="nav__actions no-desktop">
+                        <ul class="nav__actions-list">
+                            <li class="nav__actions-item">
+                                <a href="/my-account" class="nav__actions-link">
+                                    <i class="hd-icon icon-user"></i>
+                                    My Account
+                                </a>
+                            </li>
+                            <li class="nav__actions-item">
+                                <a href="/locations" class="nav__actions-link">
+                                    <i class="hd-icon icon-map-marker-alt"></i>
+                                    Locations
+                                </a>
+                            </li>
+                                <li class="nav__actions-item">
+                                    <a href="/help-center" class="nav__actions-link" title="Help Center" target="_top">
+                                        <i class="hd-icon icon-chat"></i>
+                                        Help Center
+                                    </a>
+                                </li>
+                            <li class="nav__actions-item">
+                                    <a href="/util/login.aspx?returnUrl=https://www.whitecap.com/" class="nav__actions-link nav__actions-link--logout">
+                                        Log in
+                                    </a>
+                            </li>
+                        </ul>
+                    </div>
+            </nav>
+        </div>
+    </div>
+</header>
+<!-- Header end -->
+<main>
+    
+
+
+<!-- Start page start -->
+<div class="page page--start">
+    <!-- Banner block start -->
+    <section class="banner ">
+                    <a href="/milwaukee-mx-fuel" class="banner__link" title="" target="_self">
+                <picture>
+                    <source media="(max-width: 767px)" srcset="/globalassets/home-page/mxfuel_deals_mobile.jpg?v=1D9A44D196AB180">
+                    <source media="(min-width: 768px)" srcset="/globalassets/home-page/mxfuel_deals_dt.jpg?v=1D9A44D0BB52C00">
+                    <img class="banner__image" src="/globalassets/home-page/mxfuel_deals_dt.jpg?v=1D9A44D0BB52C00" alt="MXFuel_Deals_DT.jpg">
+                </picture>
+            </a>
+
+
+        <span class="banner__title"></span>
+
+    </section>
+    <!-- Banner block end -->
+
+    <!-- Product collection block start -->
+                <div class="product-collection" product-slider>
+
+
+
+<!-- Product card start -->
+<div class="product" data-init="{&quot;Code&quot;:&quot;P_105868&quot;,&quot;Image&quot;:{&quot;AltText&quot;:&quot;Alternate Image 1&quot;,&quot;Url&quot;:&quot;/globalassets/imports/default/entries/damhdsmarketingsafetyfall-protectionfall-protection-kits26300815_hero_b.jpg?v=1D9740BDFA90A80&quot;,&quot;Name&quot;:&quot;/DAM/HDSMARKETING/SAFETY/FALL PROTECTION/FALL PROTECTION KITS/26300815_HERO_B.jpg&quot;,&quot;Id&quot;:&quot;1dda4df9-1b03-47ac-a588-69a5273d9a32&quot;},&quot;Name&quot;:&quot;Guardian Fall Protection Roofer Bucket 01101 / 00455 / 01320&quot;,&quot;Url&quot;:&quot;/p/guardian-fall-protection-roofer-bucket-01101--00455--01320-105868/00815/26300815&quot;,&quot;Variants&quot;:[{&quot;Code&quot;:&quot;26300815&quot;,&quot;Name&quot;:&quot;Guardian Fall Protection Roofer Bucket 01101 / 00455 / 01320&quot;,&quot;PartNumber&quot;:&quot;00815&quot;,&quot;Images&quot;:[{&quot;AltText&quot;:&quot;Alternate Image 1&quot;,&quot;Url&quot;:&quot;/globalassets/imports/default/entries/damhdsmarketingsafetyfall-protectionfall-protection-kits26300815_hero_b.jpg?v=1D9740BDFA90A80&quot;,&quot;Name&quot;:&quot;/DAM/HDSMARKETING/SAFETY/FALL PROTECTION/FALL PROTECTION KITS/26300815_HERO_B.jpg&quot;,&quot;Id&quot;:&quot;1dda4df9-1b03-47ac-a588-69a5273d9a32&quot;},{&quot;AltText&quot;:&quot;Hero Image&quot;,&quot;Url&quot;:&quot;/globalassets/imports/default/entries/damhdsmarketingsafetyfall-protectionfall-protection-kits26300815_hero_a.jpg?v=1D9740BDFA90A80&quot;,&quot;Name&quot;:&quot;/DAM/HDSMARKETING/SAFETY/FALL PROTECTION/FALL PROTECTION KITS/26300815_HERO_A.jpg&quot;,&quot;Id&quot;:&quot;533aea0a-aa4a-4c64-8456-1847c7c73cee&quot;}],&quot;Documents&quot;:[],&quot;Swatches&quot;:[],&quot;Prices&quot;:{&quot;OnSale&quot;:false,&quot;DefaultPrice&quot;:{&quot;Value&quot;:144.9900,&quot;Formatted&quot;:&quot;$144.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalPrice&quot;:{&quot;Value&quot;:144.9900,&quot;Formatted&quot;:&quot;$144.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalModelType&quot;:&quot;MNT&quot;,&quot;FinalModelName&quot;:&quot;MARKET NATIONAL&quot;,&quot;MapPrice&quot;:{&quot;Value&quot;:0.0,&quot;Formatted&quot;:&quot;$0.00&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;HasMapPrice&quot;:false},&quot;Attributes&quot;:[{&quot;Name&quot;:&quot;CS_CAPACITY&quot;,&quot;DisplayName&quot;:&quot;Capacity&quot;,&quot;Value&quot;:&quot;130 - 420&quot;},{&quot;Name&quot;:&quot;CS_CAPACITY UOM&quot;,&quot;DisplayName&quot;:&quot;Capacity Uom&quot;,&quot;Value&quot;:&quot;lb.&quot;},{&quot;Name&quot;:&quot;CS_CHEST STRAP BUCKLES&quot;,&quot;DisplayName&quot;:&quot;Chest Strap Buckles&quot;,&quot;Value&quot;:&quot;Pass-Through&quot;},{&quot;Name&quot;:&quot;CS_HARDWARE MATERIAL&quot;,&quot;DisplayName&quot;:&quot;Hardware Material&quot;,&quot;Value&quot;:&quot;Steel&quot;},{&quot;Name&quot;:&quot;CS_HARNESS AND LANYARD WEBBING&quot;,&quot;DisplayName&quot;:&quot;Harness And Lanyard Webbing&quot;,&quot;Value&quot;:&quot;Polyester&quot;},{&quot;Name&quot;:&quot;CS_HARNESS SIZE&quot;,&quot;DisplayName&quot;:&quot;Harness Size&quot;,&quot;Value&quot;:&quot;S-L&quot;},{&quot;Name&quot;:&quot;CS_KIT TYPE&quot;,&quot;DisplayName&quot;:&quot;Kit Type&quot;,&quot;Value&quot;:&quot;Bucket&quot;},{&quot;Name&quot;:&quot;CS_LEG STRAP BUCKLES&quot;,&quot;DisplayName&quot;:&quot;Leg Strap Buckles&quot;,&quot;Value&quot;:&quot;Pass-Through&quot;},{&quot;Name&quot;:&quot;CS_SHOCK ABSORBENT&quot;,&quot;DisplayName&quot;:&quot;Shock Absorbent&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_STITCHING&quot;,&quot;DisplayName&quot;:&quot;Stitching&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_SUB PELVIC STRAP&quot;,&quot;DisplayName&quot;:&quot;Sub Pelvic Strap&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_TEAR WEBBING&quot;,&quot;DisplayName&quot;:&quot;Tear Webbing&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_TENSILE STRENGTH&quot;,&quot;DisplayName&quot;:&quot;Tensile Strength&quot;,&quot;Value&quot;:&quot;5000&quot;},{&quot;Name&quot;:&quot;GA_MATERIAL&quot;,&quot;DisplayName&quot;:&quot;Material&quot;,&quot;Value&quot;:&quot;Polyester&quot;}],&quot;IsLocalShippingOnly&quot;:false,&quot;IsCustomQuote&quot;:false,&quot;IsParcel&quot;:true,&quot;IsNmfc&quot;:false,&quot;IsHazardClass&quot;:false,&quot;TrackingData&quot;:{&quot;name&quot;:&quot;Guardian Fall Protection Roofer Bucket 01101 / 00455 / 01320&quot;,&quot;id&quot;:&quot;26300815&quot;,&quot;prod_id&quot;:&quot;P_105868&quot;,&quot;quantity&quot;:1,&quot;price&quot;:144.9900,&quot;category&quot;:&quot;Safety/Fall Protection/Fall Protection Kits&quot;,&quot;brand&quot;:&quot;Guardian Fall Protection&quot;},&quot;Id&quot;:&quot;ae53b8d9-12b5-4259-af79-61ba5a23f840&quot;}],&quot;Prices&quot;:{&quot;MinPrice&quot;:{&quot;Value&quot;:144.9900,&quot;Formatted&quot;:&quot;$144.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;MaxPrice&quot;:{&quot;Value&quot;:144.9900,&quot;Formatted&quot;:&quot;$144.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;}},&quot;Promotions&quot;:[{&quot;Name&quot;:&quot;Save $35*&quot;,&quot;Description&quot;:&quot;Buy ONE (1) Guardian Fall Protection Roofer Bucket 01101 / 00455 / 01320  (26300815) , save $35. While supplies last. Offer ends 07/31/023. &quot;,&quot;Banner&quot;:null,&quot;RewardType&quot;:&quot;None&quot;,&quot;HiddenCode&quot;:&quot;GFQ223BKT1 (26300815)&quot;,&quot;DiscountTypeName&quot;:&quot;LineItem&quot;}],&quot;TrackingData&quot;:{&quot;name&quot;:&quot;Guardian Fall Protection Roofer Bucket 01101 / 00455 / 01320&quot;,&quot;id&quot;:&quot;P_105868&quot;,&quot;category&quot;:&quot;Safety/Fall Protection/Fall Protection Kits&quot;,&quot;brand&quot;:&quot;Guardian Fall Protection&quot;,&quot;list&quot;:&quot;Fall Protection Kits&quot;},&quot;CanBeDeliveredToUser&quot;:true,&quot;IsLocalShippingOnly&quot;:false,&quot;IsOutOfStock&quot;:false,&quot;IsAvailableForOrder&quot;:false,&quot;NoSelectedBranch&quot;:true,&quot;SelectedBranchCity&quot;:&quot;Orlando&quot;,&quot;SelectedBranchPhoneNumber&quot;:&quot;(407)298-7083&quot;,&quot;UserZipCode&quot;:&quot;32805&quot;,&quot;IsAvailableLocally&quot;:false,&quot;Id&quot;:&quot;3ea39e6e-7659-42f4-bc0b-0f6ee36ae2ac&quot;}">
+    <div class="product__container">
+        <form method="post" add-to-cart-form>
+                <a href="/p/guardian-fall-protection-roofer-bucket-01101--00455--01320-105868/00815/26300815" class="product__image-link" title="Guardian Fall Protection Roofer Bucket 01101 / 00455 / 01320" object-fit>
+                        <div class="product__promo">
+                                    <div class="product__promo-title">Save $35*</div>
+                        </div>
+                                            <img class="product__image" src="/globalassets/imports/default/entries/damhdsmarketingsafetyfall-protectionfall-protection-kits26300815_hero_b.jpg?v=1D9740BDFA90A80&amp;width=187" alt="Alternate Image 1" />
+                </a>
+            <h3 class="product__title">
+                <a href="/p/guardian-fall-protection-roofer-bucket-01101--00455--01320-105868/00815/26300815" class="product__link" title="Guardian Fall Protection Roofer Bucket 01101 / 00455 / 01320">
+                    Guardian Fall Protection Roofer Bucket 01101 / 00455 / 01320
+                </a>
+            </h3>
+                    <div class="product__sku-label">
+                        SKU#: <span class="product__sku-id">26300815</span>
+                    </div>
+                        <div class="product__price">
+$144.99                                <input type="hidden" name="priceType" value="MNT" />
+                        </div>
+                        <input type="hidden" name="code" value="26300815" />
+                        <input type="hidden" name="isLocalShippingOnly" value="false" />
+                        <input type="hidden" name="quantity" value="1" />
+                                <button type="submit" class="button button--yellow-white" add-to-cart title="">
+                                    <span>Add to cart</span>
+                                </button>
+        </form>
+    </div>
+</div>
+<!-- Product card end -->
+
+
+
+<!-- Product card start -->
+<div class="product" data-init="{&quot;Code&quot;:&quot;P_483780&quot;,&quot;Image&quot;:{&quot;AltText&quot;:&quot;MAIN_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/0f9451b4-e522-449d-8f34-a291356afecf?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;bbf6b57f-9c03-4acc-85d7-cb4d1c0260df&quot;},&quot;Name&quot;:&quot;Dewalt 20V Max 2-Tool Combo Kit with Hammer Drill &amp; Impact Driver, 5.0-Ah&quot;,&quot;Url&quot;:&quot;/p/dewalt-20v-max-2tool-combo-kit-with-hammer-drill--impact-driver-50ah-483780/dck2100p2/324dck2100p2&quot;,&quot;Variants&quot;:[{&quot;Code&quot;:&quot;324DCK2100P2&quot;,&quot;Name&quot;:&quot;Dewalt 20V Max 2-Tool Combo Kit with Hammer Drill &amp; Impact Driver, 5.0-Ah&quot;,&quot;PartNumber&quot;:&quot;DCK2100P2&quot;,&quot;Images&quot;:[{&quot;AltText&quot;:&quot;MAIN_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/0f9451b4-e522-449d-8f34-a291356afecf?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;1de909b7-670a-47a9-a561-7b562177c2b8&quot;},{&quot;AltText&quot;:&quot;BRAND NAME LOGO&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/efa06673-90b6-4bda-aa9a-b3c1cf7bb73c?size=130&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;a6eb6f11-0cac-4bf4-8123-663649bc9454&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 10_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/ac7301ae-00d5-4ae7-9c52-acb5774ba2f0?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;0082deb9-3fc1-439c-a493-54e2662072ff&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 11_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/7e38c9f5-f475-49a8-995c-520390bf15d2?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;a8ce5ed3-f7fb-4ad9-b749-c28e0539a608&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 12_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/14716da1-e05e-4c52-bc88-96e305c59702?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;b6f0097d-9df8-462e-8d8e-79874fc20c47&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 2_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/17858c7f-f938-4f05-84ec-dea39f8f4a06?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;450a5c36-8a5f-4686-9528-261cfec0152d&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 3_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/5dd7b0fc-ccdd-4ac4-b25b-c3b23a2fc82c?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;d6b3e0b1-d5a2-4ad0-bf4d-8bc010f1d922&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 4_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/1177916b-4ffd-4a8e-a3e4-96725d75349a?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;6c7d4c2e-08c7-4e48-a6f7-a5031c86d83e&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 5_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/a7e4e677-4a95-4336-be86-16bb7744cf66?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;09188563-5a63-4083-a32f-a9243558ca27&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 6_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/9a1bac76-b1c9-4e50-b2c4-aeae1678ec5b?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;2cbb8291-01af-4a9c-83fb-89c092a885ca&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 7_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/ef6d1a8f-589e-43e3-a881-07c9754d8a6a?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;2583cdeb-fa5e-42b3-8bc4-1c22b2d62470&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 8_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/10ef8967-706d-405b-bac1-90d00433d3bf?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;e6ccd522-dca0-452a-925c-022f34464ca0&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 9_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/66ba3e5d-b4b3-4ede-8f7e-dafdce649893?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;74625344-3ff8-45f9-8e33-2e470f2e8b8e&quot;}],&quot;Documents&quot;:[{&quot;Url&quot;:&quot;https://assets.syndigo.com/e68cfc24-0707-4226-b536-dd26aac845a1&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;b5abebc9-080d-43e5-8b81-e00ae06db32d&quot;}],&quot;Swatches&quot;:[],&quot;Prices&quot;:{&quot;OnSale&quot;:false,&quot;DefaultPrice&quot;:{&quot;Value&quot;:399.9900,&quot;Formatted&quot;:&quot;$399.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalPrice&quot;:{&quot;Value&quot;:399.9900,&quot;Formatted&quot;:&quot;$399.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalModelType&quot;:&quot;MNT&quot;,&quot;FinalModelName&quot;:&quot;MARKET NATIONAL&quot;,&quot;MapPrice&quot;:{&quot;Value&quot;:0.0,&quot;Formatted&quot;:&quot;$0.00&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;HasMapPrice&quot;:false},&quot;Attributes&quot;:[{&quot;Name&quot;:&quot;CS_ACCESSORIES_INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Accessories Included&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_ASSEMBLED_WEIGHT_LBS&quot;,&quot;DisplayName&quot;:&quot;Assembled Weight [Lbs]&quot;,&quot;Value&quot;:&quot;12.7&quot;},{&quot;Name&quot;:&quot;CS_BATTERY_VOLTAGE_V&quot;,&quot;DisplayName&quot;:&quot;Battery Voltage (V)&quot;,&quot;Value&quot;:&quot;20&quot;},{&quot;Name&quot;:&quot;CS_CASE INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Case Included&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_CHARGER INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Charger Included&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_COLOR&quot;,&quot;DisplayName&quot;:&quot;Color&quot;,&quot;Value&quot;:&quot;Yellow/Black&quot;},{&quot;Name&quot;:&quot;CS_CORDLESS_CORDED&quot;,&quot;DisplayName&quot;:&quot;Cordless / Corded&quot;,&quot;Value&quot;:&quot;Cordless&quot;},{&quot;Name&quot;:&quot;CS_CSA_CERTIFIED&quot;,&quot;DisplayName&quot;:&quot;Csa Certified&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_ETL_LISTED&quot;,&quot;DisplayName&quot;:&quot;Etl Listed&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_KEYLESS_KEYED_BLADE_CHANGE&quot;,&quot;DisplayName&quot;:&quot;Keyless / Keyed Blade Change&quot;,&quot;Value&quot;:&quot;Keyless&quot;},{&quot;Name&quot;:&quot;CS_MANUFACTURER_WARRANTY&quot;,&quot;DisplayName&quot;:&quot;Manufacturer Warranty&quot;,&quot;Value&quot;:&quot;3 year limited warranty/1 year free service contract/90 day money back guarantee&quot;},{&quot;Name&quot;:&quot;CS_NUMBER OF BATTERIES INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Number Of Batteries Included&quot;,&quot;Value&quot;:&quot;2&quot;},{&quot;Name&quot;:&quot;CS_NUMBER OF TOOLS INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Number Of Tools Included&quot;,&quot;Value&quot;:&quot;2&quot;},{&quot;Name&quot;:&quot;CS_PACKAGE_CONTENTS&quot;,&quot;DisplayName&quot;:&quot;Package Contents&quot;,&quot;Value&quot;:&quot;(1) DCD999B 20V MAX 1/2 in. Brushless Cordless Hammer Drill/Driver with FLEXVOLT&#174; Advantage™;(1) DCF887 20V MAX 1/4 in. XR&#174; Brushless Cordless Impact Driver;(2) DCB205 20V MAX Lithium Ion 5.0Ah battery;(1) DCB118 8 Amp Fast Charger;(2) Belt Hooks;(1) Kit Bag&quot;},{&quot;Name&quot;:&quot;CS_POWERED_TOOL_POWER_SOURCE&quot;,&quot;DisplayName&quot;:&quot;Powered Tool Power Source&quot;,&quot;Value&quot;:&quot;Electric - Cordless&quot;},{&quot;Name&quot;:&quot;CS_PRODUCT_STORAGE_INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Product Storage Included&quot;,&quot;Value&quot;:&quot;Bag&quot;},{&quot;Name&quot;:&quot;CS_UL LISTED&quot;,&quot;DisplayName&quot;:&quot;Ul Listed&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;GA_WARRANTY&quot;,&quot;DisplayName&quot;:&quot;Warranty&quot;,&quot;Value&quot;:&quot;Yes&quot;}],&quot;IsLocalShippingOnly&quot;:false,&quot;IsCustomQuote&quot;:false,&quot;IsParcel&quot;:true,&quot;IsNmfc&quot;:false,&quot;IsHazardClass&quot;:false,&quot;TrackingData&quot;:{&quot;name&quot;:&quot;Dewalt 20V Max 2-Tool Combo Kit with Hammer Drill &amp; Impact Driver, 5.0-Ah&quot;,&quot;id&quot;:&quot;324DCK2100P2&quot;,&quot;prod_id&quot;:&quot;P_483780&quot;,&quot;quantity&quot;:1,&quot;price&quot;:399.9900,&quot;category&quot;:&quot;Power Tools and Equipment/Power Tool Combo Kits/Cordless Power Tool Combo Kits&quot;,&quot;brand&quot;:&quot;DEWALT&quot;},&quot;Id&quot;:&quot;6d0f5758-58dd-4abc-92c8-041bbde76a7a&quot;}],&quot;Prices&quot;:{&quot;MinPrice&quot;:{&quot;Value&quot;:399.9900,&quot;Formatted&quot;:&quot;$399.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;MaxPrice&quot;:{&quot;Value&quot;:399.9900,&quot;Formatted&quot;:&quot;$399.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;}},&quot;Promotions&quot;:[{&quot;Name&quot;:&quot;Save $50*&quot;,&quot;Description&quot;:&quot;Buy ONE (1) Dewalt 20V Max 2-Tool Combo Kit with Hammer Drill &amp; Impact Driver, 5.0-Ah (324DCK2100P2), save $50. While supplies last. Offer ends 07/31/23.\n&quot;,&quot;Banner&quot;:null,&quot;RewardType&quot;:&quot;None&quot;,&quot;HiddenCode&quot;:&quot;DWQ223HMRD50 (324DCK2100P2)&quot;,&quot;DiscountTypeName&quot;:&quot;LineItem&quot;},{&quot;Name&quot;:&quot;Free Battery*&quot;,&quot;Description&quot;:&quot;Buy ONE (1) Dewalt 20V Max 2-Tool Combo Kit with Hammer Drill &amp; Impact Driver, 5.0-Ah  (324DCK2100P2), get ONE (1) FREE DEWALT 20V MAX XR 5.0Ah Lithium Ion Single Battery (324DCB205). While supplies last. Offer ends 07/31/23.&quot;,&quot;Banner&quot;:null,&quot;RewardType&quot;:&quot;None&quot;,&quot;HiddenCode&quot;:&quot;DWQ223HMRD50 (324DCK2100P2)&quot;,&quot;DiscountTypeName&quot;:&quot;LineItem&quot;}],&quot;TrackingData&quot;:{&quot;name&quot;:&quot;Dewalt 20V Max 2-Tool Combo Kit with Hammer Drill &amp; Impact Driver, 5.0-Ah&quot;,&quot;id&quot;:&quot;P_483780&quot;,&quot;category&quot;:&quot;Power Tools and Equipment/Power Tool Combo Kits/Cordless Power Tool Combo Kits&quot;,&quot;brand&quot;:&quot;DEWALT&quot;,&quot;list&quot;:&quot;Cordless Power Tool Combo Kits&quot;},&quot;CanBeDeliveredToUser&quot;:true,&quot;IsLocalShippingOnly&quot;:false,&quot;IsOutOfStock&quot;:false,&quot;IsAvailableForOrder&quot;:false,&quot;NoSelectedBranch&quot;:true,&quot;SelectedBranchCity&quot;:&quot;Orlando&quot;,&quot;SelectedBranchPhoneNumber&quot;:&quot;(407)298-7083&quot;,&quot;UserZipCode&quot;:&quot;32805&quot;,&quot;IsAvailableLocally&quot;:false,&quot;Id&quot;:&quot;109de4cf-8b5e-4cfa-a4a1-ba7d2a0e88e9&quot;}">
+    <div class="product__container">
+        <form method="post" add-to-cart-form>
+                <a href="/p/dewalt-20v-max-2tool-combo-kit-with-hammer-drill--impact-driver-50ah-483780/dck2100p2/324dck2100p2" class="product__image-link" title="Dewalt 20V Max 2-Tool Combo Kit with Hammer Drill &amp; Impact Driver, 5.0-Ah" object-fit>
+                        <div class="product__promo">
+                                    <div class="product__promo-title">Save $50*</div>
+                                    <div class="product__promo-title">Free Battery*</div>
+                        </div>
+                                            <img class="product__image" src="https://assets.syndigo.com/0f9451b4-e522-449d-8f34-a291356afecf?size=1000&amp;Filetype=JPEG&amp;width=187" alt="MAIN_IMAGE" />
+                </a>
+            <h3 class="product__title">
+                <a href="/p/dewalt-20v-max-2tool-combo-kit-with-hammer-drill--impact-driver-50ah-483780/dck2100p2/324dck2100p2" class="product__link" title="Dewalt 20V Max 2-Tool Combo Kit with Hammer Drill &amp; Impact Driver, 5.0-Ah">
+                    Dewalt 20V Max 2-Tool Combo Kit with Hammer Drill &amp; Impact Driver, 5.0-Ah
+                </a>
+            </h3>
+                    <div class="product__sku-label">
+                        SKU#: <span class="product__sku-id">324DCK2100P2</span>
+                    </div>
+                        <div class="product__price">
+$399.99                                <input type="hidden" name="priceType" value="MNT" />
+                        </div>
+                        <input type="hidden" name="code" value="324DCK2100P2" />
+                        <input type="hidden" name="isLocalShippingOnly" value="false" />
+                        <input type="hidden" name="quantity" value="1" />
+                                <button type="submit" class="button button--yellow-white" add-to-cart title="">
+                                    <span>Add to cart</span>
+                                </button>
+        </form>
+    </div>
+</div>
+<!-- Product card end -->
+
+
+
+<!-- Product card start -->
+<div class="product" data-init="{&quot;Code&quot;:&quot;P_170962&quot;,&quot;Image&quot;:{&quot;AltText&quot;:&quot;Hero Image&quot;,&quot;Url&quot;:&quot;/globalassets/imports/default/entries/damhdsmarketingtoolspower-toolspower-sawscircular-sawscordless-circular-saws140xsr01pt_hero_a.jpg?v=1D932159B93D880&quot;,&quot;Name&quot;:&quot;/DAM/HDSMARKETING/TOOLS/POWER TOOLS/POWER SAWS/CIRCULAR SAWS/CORDLESS CIRCULAR SAWS/140XSR01PT_HERO_A.jpg&quot;,&quot;Id&quot;:&quot;89d96019-1e55-4abe-8043-b1c4eeda32b1&quot;},&quot;Name&quot;:&quot;Makita 18V X2 LXT Lithium-Ion (36V) Brushless Cordless Rear Handle 7-1/4\&quot; Circular Saw Kit (5.0Ah)&quot;,&quot;Url&quot;:&quot;/p/makita-18v-x2-lxt-lithiumion-36v-brushless-cordless-rear-handle-714-circular-saw-kit-50ah-170962/xsr01pt/140xsr01pt&quot;,&quot;Variants&quot;:[{&quot;Code&quot;:&quot;140XSR01PT&quot;,&quot;Name&quot;:&quot;Makita 18V X2 LXT Lithium-Ion (36V) Brushless Cordless Rear Handle 7-1/4\&quot; Circular Saw Kit (5.0Ah)&quot;,&quot;PartNumber&quot;:&quot;XSR01PT&quot;,&quot;Images&quot;:[{&quot;AltText&quot;:&quot;Hero Image&quot;,&quot;Url&quot;:&quot;/globalassets/imports/default/entries/damhdsmarketingtoolspower-toolspower-sawscircular-sawscordless-circular-saws140xsr01pt_hero_a.jpg?v=1D932159B93D880&quot;,&quot;Name&quot;:&quot;/DAM/HDSMARKETING/TOOLS/POWER TOOLS/POWER SAWS/CIRCULAR SAWS/CORDLESS CIRCULAR SAWS/140XSR01PT_HERO_A.jpg&quot;,&quot;Id&quot;:&quot;89d96019-1e55-4abe-8043-b1c4eeda32b1&quot;}],&quot;Documents&quot;:[],&quot;Swatches&quot;:[],&quot;Prices&quot;:{&quot;OnSale&quot;:false,&quot;DefaultPrice&quot;:{&quot;Value&quot;:399.0000,&quot;Formatted&quot;:&quot;$399.00&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalPrice&quot;:{&quot;Value&quot;:399.0000,&quot;Formatted&quot;:&quot;$399.00&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalModelType&quot;:&quot;MNT&quot;,&quot;FinalModelName&quot;:&quot;MARKET NATIONAL&quot;,&quot;MapPrice&quot;:{&quot;Value&quot;:0.0,&quot;Formatted&quot;:&quot;$0.00&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;HasMapPrice&quot;:false},&quot;Attributes&quot;:[{&quot;Name&quot;:&quot;CS_AMPERAGE&quot;,&quot;DisplayName&quot;:&quot;Amperage&quot;,&quot;Value&quot;:&quot;5A&quot;},{&quot;Name&quot;:&quot;CS_ARBOR SIZE&quot;,&quot;DisplayName&quot;:&quot;Arbor Size&quot;,&quot;Value&quot;:&quot;0.625\&quot;&quot;},{&quot;Name&quot;:&quot;CS_ARBOR_SIZE_IN&quot;,&quot;DisplayName&quot;:&quot;Arbor Size (In)&quot;,&quot;Value&quot;:&quot;0.625000&quot;},{&quot;Name&quot;:&quot;CS_BATTERY COMPOSITION&quot;,&quot;DisplayName&quot;:&quot;Battery Composition&quot;,&quot;Value&quot;:&quot;Lithium-Ion (Li-ion)&quot;},{&quot;Name&quot;:&quot;CS_BATTERY_VOLTAGE_V&quot;,&quot;DisplayName&quot;:&quot;Battery Voltage (V)&quot;,&quot;Value&quot;:&quot;18&quot;},{&quot;Name&quot;:&quot;CS_BEVEL_CAPACITY&quot;,&quot;DisplayName&quot;:&quot;Bevel Capacity (&#176;)&quot;,&quot;Value&quot;:&quot;53.000000&quot;},{&quot;Name&quot;:&quot;CS_BEVEL_STOP&quot;,&quot;DisplayName&quot;:&quot;Bevel Stop&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_BLADE DIAMETER&quot;,&quot;DisplayName&quot;:&quot;Blade Diameter&quot;,&quot;Value&quot;:&quot;7-1/4\&quot;&quot;},{&quot;Name&quot;:&quot;CS_BLADE_LOCATION&quot;,&quot;DisplayName&quot;:&quot;Blade Location&quot;,&quot;Value&quot;:&quot;Left&quot;},{&quot;Name&quot;:&quot;CS_BLADE_WRENCH_INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Blade Wrench Included&quot;,&quot;Value&quot;:&quot;Yes - Loose&quot;},{&quot;Name&quot;:&quot;CS_BLADES_INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Blades Included&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_CHARGER INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Charger Included&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_COLOR&quot;,&quot;DisplayName&quot;:&quot;Color&quot;,&quot;Value&quot;:&quot;Teal&quot;},{&quot;Name&quot;:&quot;CS_CORDLESS_CORDED&quot;,&quot;DisplayName&quot;:&quot;Cordless / Corded&quot;,&quot;Value&quot;:&quot;Cordless&quot;},{&quot;Name&quot;:&quot;CS_CSA_CERTIFIED&quot;,&quot;DisplayName&quot;:&quot;Csa Certified&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_CUTTING ANGLE&quot;,&quot;DisplayName&quot;:&quot;Cutting Angle&quot;,&quot;Value&quot;:&quot;90 degrees&quot;},{&quot;Name&quot;:&quot;CS_CUTTING CAPACITY&quot;,&quot;DisplayName&quot;:&quot;Cutting Capacity&quot;,&quot;Value&quot;:&quot;2-9/16 inches&quot;},{&quot;Name&quot;:&quot;CS_DEPTH ADJUSTMENT&quot;,&quot;DisplayName&quot;:&quot;Depth Adjustment&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_DUST_BLOWER&quot;,&quot;DisplayName&quot;:&quot;Dust Blower&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_DUST_PORT&quot;,&quot;DisplayName&quot;:&quot;Dust Port&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_ELECTRIC_MOTOR_BRAKE&quot;,&quot;DisplayName&quot;:&quot;Electric Motor Brake&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_ELECTRONIC SPEED CONTROL&quot;,&quot;DisplayName&quot;:&quot;Electronic Speed Control&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_ETL_LISTED&quot;,&quot;DisplayName&quot;:&quot;Etl Listed&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_EXTERNAL_MOTOR_BRUSH_ACCESS&quot;,&quot;DisplayName&quot;:&quot;External Motor Brush Access&quot;,&quot;Value&quot;:&quot;Brushless Motor&quot;},{&quot;Name&quot;:&quot;CS_INTEGRATED WORK LIGHT&quot;,&quot;DisplayName&quot;:&quot;Integrated Work Light&quot;,&quot;Value&quot;:&quot;Not Featured&quot;},{&quot;Name&quot;:&quot;CS_INTEGRATED_LASER_GUIDE&quot;,&quot;DisplayName&quot;:&quot;Integrated Laser Guide&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_INTEGRATED_RAFTER_HOOK&quot;,&quot;DisplayName&quot;:&quot;Integrated Rafter Hook&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_MANUFACTURER_WARRANTY&quot;,&quot;DisplayName&quot;:&quot;Manufacturer Warranty&quot;,&quot;Value&quot;:&quot;3-year limited warranty on tool, battery and charger&quot;},{&quot;Name&quot;:&quot;CS_MAXIMUM_CUT_DEPTH_45DEG_IN&quot;,&quot;DisplayName&quot;:&quot;Maximum Cut Depth  45&#176; (In)&quot;,&quot;Value&quot;:&quot;1.750000&quot;},{&quot;Name&quot;:&quot;CS_MAXIMUM_CUT_DEPTH_90DEG_IN&quot;,&quot;DisplayName&quot;:&quot;Maximum Cut Depth  90&#176; (In)&quot;,&quot;Value&quot;:&quot;2.562500&quot;},{&quot;Name&quot;:&quot;CS_MAXIMUM_RPM_NO_LOAD&quot;,&quot;DisplayName&quot;:&quot;Maximum Rpm - No Load&quot;,&quot;Value&quot;:&quot;5100&quot;},{&quot;Name&quot;:&quot;CS_NET_TOOL_WEIGHT_LBS&quot;,&quot;DisplayName&quot;:&quot;Net Tool Weight [Lbs]&quot;,&quot;Value&quot;:&quot;12.400000&quot;},{&quot;Name&quot;:&quot;CS_NUMBER OF BATTERIES INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Number Of Batteries Included&quot;,&quot;Value&quot;:&quot;2&quot;},{&quot;Name&quot;:&quot;CS_NUMBER_OF_BATTERIES_REQUIRED&quot;,&quot;DisplayName&quot;:&quot;Number Of Batteries Required&quot;,&quot;Value&quot;:&quot;2&quot;},{&quot;Name&quot;:&quot;CS_POWERED_TOOL_POWER_SOURCE&quot;,&quot;DisplayName&quot;:&quot;Powered Tool Power Source&quot;,&quot;Value&quot;:&quot;Electric - Cordless&quot;},{&quot;Name&quot;:&quot;CS_PRODUCT_STORAGE_INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Product Storage Included&quot;,&quot;Value&quot;:&quot;Bag&quot;},{&quot;Name&quot;:&quot;CS_ROTATION SPEED&quot;,&quot;DisplayName&quot;:&quot;Rotation Speed&quot;,&quot;Value&quot;:&quot;5100 RPM&quot;},{&quot;Name&quot;:&quot;CS_SAW_BLADE_DIAMETER_IN&quot;,&quot;DisplayName&quot;:&quot;Saw Blade Diameter (In)&quot;,&quot;Value&quot;:&quot;7&#188; in&quot;},{&quot;Name&quot;:&quot;CS_SAW_DRIVE&quot;,&quot;DisplayName&quot;:&quot;Saw Drive&quot;,&quot;Value&quot;:&quot;Direct Drive&quot;},{&quot;Name&quot;:&quot;CS_SHOE_MATERIAL&quot;,&quot;DisplayName&quot;:&quot;Shoe Material&quot;,&quot;Value&quot;:&quot;magnesium&quot;},{&quot;Name&quot;:&quot;CS_UL LISTED&quot;,&quot;DisplayName&quot;:&quot;Ul Listed&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_WATTAGE&quot;,&quot;DisplayName&quot;:&quot;Wattage&quot;,&quot;Value&quot;:&quot;180 W&quot;},{&quot;Name&quot;:&quot;CS_WEIGHT_BATTERY_INSTALLED_LBS&quot;,&quot;DisplayName&quot;:&quot;Weight - Battery Installed (Lbs)&quot;,&quot;Value&quot;:&quot;12.4000&quot;}],&quot;IsLocalShippingOnly&quot;:false,&quot;IsCustomQuote&quot;:false,&quot;IsParcel&quot;:true,&quot;IsNmfc&quot;:false,&quot;IsHazardClass&quot;:false,&quot;TrackingData&quot;:{&quot;name&quot;:&quot;Makita 18V X2 LXT Lithium-Ion (36V) Brushless Cordless Rear Handle 7-1/4\&quot; Circular Saw Kit (5.0Ah)&quot;,&quot;id&quot;:&quot;140XSR01PT&quot;,&quot;prod_id&quot;:&quot;P_170962&quot;,&quot;quantity&quot;:1,&quot;price&quot;:399.0000,&quot;category&quot;:&quot;Power Tools and Equipment/Power Saws/Circular Saws&quot;,&quot;brand&quot;:&quot;Makita&quot;},&quot;Id&quot;:&quot;c57b0a34-d2c4-4345-8028-aeeedb96ac32&quot;}],&quot;Prices&quot;:{&quot;MinPrice&quot;:{&quot;Value&quot;:399.0000,&quot;Formatted&quot;:&quot;$399.00&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;MaxPrice&quot;:{&quot;Value&quot;:399.0000,&quot;Formatted&quot;:&quot;$399.00&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;}},&quot;Promotions&quot;:[{&quot;Name&quot;:&quot;Save $60*&quot;,&quot;Description&quot;:&quot;Buy ONE (1) Makita 18V X2 LXT Lithium-Ion (36V) Brushless Cordless Rear Handle 7-1/4\&quot; Circular Saw Kit (5.0Ah) (140XSR01PT), save $60. While supplies last. Offer ends 07/31/2023.&quot;,&quot;Banner&quot;:null,&quot;RewardType&quot;:&quot;None&quot;,&quot;HiddenCode&quot;:&quot;MKQ123BTRPK (140XSR01PT) Makita Deal&quot;,&quot;DiscountTypeName&quot;:&quot;LineItem&quot;},{&quot;Name&quot;:&quot;Free Battery (2-pack)*&quot;,&quot;Description&quot;:&quot;Buy ONE (1) Makita 18V X2 LXT Lithium-Ion (36V) Brushless Cordless Rear Handle 7-1/4\&quot; Circular Saw Kit (5.0Ah) (140XSR01PT), get ONE (1) free Makita 18V LXT Lithium-Ion 5.0Ah Battery (2 Pack) (140BL1850B2). While supplies last. Offer ends 07/31/2023.&quot;,&quot;Banner&quot;:null,&quot;RewardType&quot;:&quot;None&quot;,&quot;HiddenCode&quot;:&quot;MKQ123BTRPK (140XSR01PT) Makita Deal&quot;,&quot;DiscountTypeName&quot;:&quot;LineItem&quot;}],&quot;TrackingData&quot;:{&quot;name&quot;:&quot;Makita 18V X2 LXT Lithium-Ion (36V) Brushless Cordless Rear Handle 7-1/4\&quot; Circular Saw Kit (5.0Ah)&quot;,&quot;id&quot;:&quot;P_170962&quot;,&quot;category&quot;:&quot;Power Tools and Equipment/Power Saws/Circular Saws&quot;,&quot;brand&quot;:&quot;Makita&quot;,&quot;list&quot;:&quot;Circular Saws&quot;},&quot;CanBeDeliveredToUser&quot;:true,&quot;IsLocalShippingOnly&quot;:false,&quot;IsOutOfStock&quot;:false,&quot;IsAvailableForOrder&quot;:false,&quot;NoSelectedBranch&quot;:true,&quot;SelectedBranchCity&quot;:&quot;Orlando&quot;,&quot;SelectedBranchPhoneNumber&quot;:&quot;(407)298-7083&quot;,&quot;UserZipCode&quot;:&quot;32805&quot;,&quot;IsAvailableLocally&quot;:false,&quot;Id&quot;:&quot;e089c3b1-5177-4d62-9b59-683ed09ba2a1&quot;}">
+    <div class="product__container">
+        <form method="post" add-to-cart-form>
+                <a href="/p/makita-18v-x2-lxt-lithiumion-36v-brushless-cordless-rear-handle-714-circular-saw-kit-50ah-170962/xsr01pt/140xsr01pt" class="product__image-link" title="Makita 18V X2 LXT Lithium-Ion (36V) Brushless Cordless Rear Handle 7-1/4&quot; Circular Saw Kit (5.0Ah)" object-fit>
+                        <div class="product__promo">
+                                    <div class="product__promo-title">Save $60*</div>
+                                    <div class="product__promo-title">Free Battery (2-pack)*</div>
+                        </div>
+                                            <img class="product__image" src="/globalassets/imports/default/entries/damhdsmarketingtoolspower-toolspower-sawscircular-sawscordless-circular-saws140xsr01pt_hero_a.jpg?v=1D932159B93D880&amp;width=187" alt="Hero Image" />
+                </a>
+            <h3 class="product__title">
+                <a href="/p/makita-18v-x2-lxt-lithiumion-36v-brushless-cordless-rear-handle-714-circular-saw-kit-50ah-170962/xsr01pt/140xsr01pt" class="product__link" title="Makita 18V X2 LXT Lithium-Ion (36V) Brushless Cordless Rear Handle 7-1/4&quot; Circular Saw Kit (5.0Ah)">
+                    Makita 18V X2 LXT Lithium-Ion (36V) Brushless Cordless Rear Handle 7-1/4&quot; Circular Saw Kit (5.0Ah)
+                </a>
+            </h3>
+                    <div class="product__sku-label">
+                        SKU#: <span class="product__sku-id">140XSR01PT</span>
+                    </div>
+                        <div class="product__price">
+$399.00                                <input type="hidden" name="priceType" value="MNT" />
+                        </div>
+                        <input type="hidden" name="code" value="140XSR01PT" />
+                        <input type="hidden" name="isLocalShippingOnly" value="false" />
+                        <input type="hidden" name="quantity" value="1" />
+                                <button type="submit" class="button button--yellow-white" add-to-cart title="">
+                                    <span>Add to cart</span>
+                                </button>
+        </form>
+    </div>
+</div>
+<!-- Product card end -->
+
+
+
+<!-- Product card start -->
+<div class="product" data-init="{&quot;Code&quot;:&quot;P_555840&quot;,&quot;Image&quot;:{&quot;AltText&quot;:&quot;MAIN_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/8cbf7524-914f-4661-a58f-f34572fc2e04?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;165501f0-5306-4395-8eb3-14b80e9923c5&quot;},&quot;Name&quot;:&quot;Dewalt Flexvolt 20V/60V Max15.0Ah Battery B&amp;D&quot;,&quot;Url&quot;:&quot;/p/dewalt-flexvolt-20v60v-max150ah-battery-bd-555840/dcb615/324dcb615&quot;,&quot;Variants&quot;:[{&quot;Code&quot;:&quot;324DCB615&quot;,&quot;Name&quot;:&quot;Dewalt Flexvolt 20V/60V Max 15.0Ah Battery B&amp;D&quot;,&quot;PartNumber&quot;:&quot;DCB615&quot;,&quot;Images&quot;:[{&quot;AltText&quot;:&quot;MAIN_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/8cbf7524-914f-4661-a58f-f34572fc2e04?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;a49ae1fb-d219-4958-8d47-ca9766bdd29d&quot;},{&quot;AltText&quot;:&quot;BRAND NAME LOGO&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/efa06673-90b6-4bda-aa9a-b3c1cf7bb73c?size=130&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;647fb794-0b59-416f-b9d4-f84a9b69dd62&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 2_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/bbd8702b-948c-47b3-9e6f-769892f1845a?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;a3f149c5-7b61-4783-a8a8-a903d9787e02&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 3_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/afb367d9-3d54-4a12-b2db-b6030cc15333?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;f804288e-9aae-4107-abed-e294e781da48&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 4_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/cad2fbf8-a330-47b5-8817-d25e9a538776?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;a6d1c1fa-250a-45c5-9a4f-d651d16496d5&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 5_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/553aecb3-a040-4096-ba5c-6ab2f1e2f5fd?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;ef9423e7-1c9a-4c69-a36f-a7a47074b91c&quot;}],&quot;Documents&quot;:[],&quot;Swatches&quot;:[],&quot;Prices&quot;:{&quot;OnSale&quot;:false,&quot;DefaultPrice&quot;:{&quot;Value&quot;:429.9900,&quot;Formatted&quot;:&quot;$429.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalPrice&quot;:{&quot;Value&quot;:429.9900,&quot;Formatted&quot;:&quot;$429.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalModelType&quot;:&quot;MNT&quot;,&quot;FinalModelName&quot;:&quot;MARKET NATIONAL&quot;,&quot;MapPrice&quot;:{&quot;Value&quot;:0.0,&quot;Formatted&quot;:&quot;$0.00&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;HasMapPrice&quot;:false},&quot;Attributes&quot;:[{&quot;Name&quot;:&quot;CS_AMPHOUR&quot;,&quot;DisplayName&quot;:&quot;Amp-Hour&quot;,&quot;Value&quot;:&quot;15&quot;},{&quot;Name&quot;:&quot;CS_ASSEMBLED_WEIGHT_LBS&quot;,&quot;DisplayName&quot;:&quot;Assembled Weight [Lbs]&quot;,&quot;Value&quot;:&quot;0&quot;},{&quot;Name&quot;:&quot;CS_BATTERY_CHARGER_INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Battery Charger Included&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_BATTERY_CHEMISTRY&quot;,&quot;DisplayName&quot;:&quot;Battery Chemistry&quot;,&quot;Value&quot;:&quot;Lithium Ion&quot;},{&quot;Name&quot;:&quot;CS_BATTERY_PACKAGE_COUNT&quot;,&quot;DisplayName&quot;:&quot;Battery Package Count&quot;,&quot;Value&quot;:&quot;1&quot;},{&quot;Name&quot;:&quot;CS_BATTERY_VOLTAGE_V&quot;,&quot;DisplayName&quot;:&quot;Battery Voltage (V)&quot;,&quot;Value&quot;:&quot;60&quot;},{&quot;Name&quot;:&quot;CS_COLOR&quot;,&quot;DisplayName&quot;:&quot;Color&quot;,&quot;Value&quot;:&quot;Yellow/Black&quot;},{&quot;Name&quot;:&quot;CS_COMPATIBILITY&quot;,&quot;DisplayName&quot;:&quot;Compatibility&quot;,&quot;Value&quot;:&quot;20V/60V Tools&quot;},{&quot;Name&quot;:&quot;CS_HOUSING MATERIAL&quot;,&quot;DisplayName&quot;:&quot;Housing Material&quot;,&quot;Value&quot;:&quot;Composite&quot;},{&quot;Name&quot;:&quot;CS_MANUFACTURER_WARRANTY&quot;,&quot;DisplayName&quot;:&quot;Manufacturer Warranty&quot;,&quot;Value&quot;:&quot;3 Year Limited Warranty&quot;},{&quot;Name&quot;:&quot;CS_PRODUCT_STORAGE_INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Product Storage Included&quot;,&quot;Value&quot;:&quot;No Case Included&quot;},{&quot;Name&quot;:&quot;CS_RECHARGEABLE&quot;,&quot;DisplayName&quot;:&quot;Rechargeable&quot;,&quot;Value&quot;:&quot;Yes&quot;}],&quot;IsLocalShippingOnly&quot;:false,&quot;IsCustomQuote&quot;:false,&quot;IsParcel&quot;:true,&quot;IsNmfc&quot;:false,&quot;IsHazardClass&quot;:false,&quot;TrackingData&quot;:{&quot;name&quot;:&quot;Dewalt Flexvolt 20V/60V Max 15.0Ah Battery B&amp;D&quot;,&quot;id&quot;:&quot;324DCB615&quot;,&quot;prod_id&quot;:&quot;P_555840&quot;,&quot;quantity&quot;:1,&quot;price&quot;:429.9900,&quot;category&quot;:&quot;Power Tool and Equipment Accessories/Batteries, Chargers and Accessories/Cordless Tool Batteries&quot;,&quot;brand&quot;:&quot;BLACK AND DECKER INC&quot;},&quot;Id&quot;:&quot;b7860bee-04be-4f5e-8a2b-cf76e7b206f3&quot;}],&quot;Prices&quot;:{&quot;MinPrice&quot;:{&quot;Value&quot;:429.9900,&quot;Formatted&quot;:&quot;$429.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;MaxPrice&quot;:{&quot;Value&quot;:429.9900,&quot;Formatted&quot;:&quot;$429.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;}},&quot;Promotions&quot;:[{&quot;Name&quot;:&quot;$269.99&quot;,&quot;Description&quot;:&quot;Get a Dewalt Flexvolt 20V/60V MAX 15.0AH Battery (324DCB615) for $269.99. While supplies last. Offer ends 07/31/23.&quot;,&quot;Banner&quot;:null,&quot;RewardType&quot;:&quot;None&quot;,&quot;HiddenCode&quot;:&quot;DWQ223FLEXBT (324DCB615)&quot;,&quot;DiscountTypeName&quot;:&quot;LineItem&quot;}],&quot;TrackingData&quot;:{&quot;name&quot;:&quot;Dewalt Flexvolt 20V/60V Max15.0Ah Battery B&amp;D&quot;,&quot;id&quot;:&quot;P_555840&quot;,&quot;category&quot;:&quot;Power Tool and Equipment Accessories/Batteries, Chargers and Accessories/Cordless Tool Batteries&quot;,&quot;brand&quot;:&quot;BLACK AND DECKER INC&quot;,&quot;list&quot;:&quot;Cordless Tool Batteries&quot;},&quot;CanBeDeliveredToUser&quot;:true,&quot;IsLocalShippingOnly&quot;:false,&quot;IsOutOfStock&quot;:false,&quot;IsAvailableForOrder&quot;:false,&quot;NoSelectedBranch&quot;:true,&quot;SelectedBranchCity&quot;:&quot;Orlando&quot;,&quot;SelectedBranchPhoneNumber&quot;:&quot;(407)298-7083&quot;,&quot;UserZipCode&quot;:&quot;32805&quot;,&quot;IsAvailableLocally&quot;:false,&quot;Id&quot;:&quot;f5b2bcdc-842a-4ca0-beae-89af9016fbc9&quot;}">
+    <div class="product__container">
+        <form method="post" add-to-cart-form>
+                <a href="/p/dewalt-flexvolt-20v60v-max150ah-battery-bd-555840/dcb615/324dcb615" class="product__image-link" title="Dewalt Flexvolt 20V/60V Max15.0Ah Battery B&amp;D" object-fit>
+                        <div class="product__promo">
+                                    <div class="product__promo-title">$269.99</div>
+                        </div>
+                                            <img class="product__image" src="https://assets.syndigo.com/8cbf7524-914f-4661-a58f-f34572fc2e04?size=1000&amp;Filetype=JPEG&amp;width=187" alt="MAIN_IMAGE" />
+                </a>
+            <h3 class="product__title">
+                <a href="/p/dewalt-flexvolt-20v60v-max150ah-battery-bd-555840/dcb615/324dcb615" class="product__link" title="Dewalt Flexvolt 20V/60V Max15.0Ah Battery B&amp;D">
+                    Dewalt Flexvolt 20V/60V Max15.0Ah Battery B&amp;D
+                </a>
+            </h3>
+                    <div class="product__sku-label">
+                        SKU#: <span class="product__sku-id">324DCB615</span>
+                    </div>
+                        <div class="product__price">
+$429.99                                <input type="hidden" name="priceType" value="MNT" />
+                        </div>
+                        <input type="hidden" name="code" value="324DCB615" />
+                        <input type="hidden" name="isLocalShippingOnly" value="false" />
+                        <input type="hidden" name="quantity" value="1" />
+                                <button type="submit" class="button button--yellow-white" add-to-cart title="">
+                                    <span>Add to cart</span>
+                                </button>
+        </form>
+    </div>
+</div>
+<!-- Product card end -->
+
+
+
+<!-- Product card start -->
+<div class="product" data-init="{&quot;Code&quot;:&quot;P_50838&quot;,&quot;Image&quot;:{&quot;AltText&quot;:&quot;MAIN_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/6f2abb51-ca60-4308-a4d6-a9068fa87b67?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;c809d707-4090-4d9e-9e1e-78dac11e0eda&quot;},&quot;Name&quot;:&quot;Bosch 1-1/8\&quot; Breaker Hammer Brute Turbo&quot;,&quot;Url&quot;:&quot;/p/bosch-118-breaker-hammer-brute-turbo-50838/bh2770vcd/162bh2770vcd&quot;,&quot;Variants&quot;:[{&quot;Code&quot;:&quot;162BH2770VCD&quot;,&quot;Name&quot;:&quot;Bosch 1-1/8\&quot; Breaker Hammer Brute Turbo&quot;,&quot;PartNumber&quot;:&quot;BH2770VCD&quot;,&quot;Images&quot;:[{&quot;AltText&quot;:&quot;MAIN_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/6f2abb51-ca60-4308-a4d6-a9068fa87b67?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;60e9a6ab-b900-4825-9c8e-b67634edf368&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 10_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/daa09a21-35b9-464d-bab8-62f442d66061?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;e1078aaf-0777-41ba-9708-7be70f25d31e&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 11_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/8d7a536e-3191-434c-aa25-d07c9deb99ff?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;55dc4809-126f-4d72-bc65-16c17cb1a722&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 12_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/bdb6442f-d7e4-4f9e-a140-dd260c28d860?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;303e3117-4867-4653-b585-9a52a29fd3ea&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 13_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/b69616fd-e381-4f68-bd87-5feacd85d869?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;fcfab2e4-b028-4fbb-80f5-e1130c86c01f&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 2_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/3a3b35b9-d056-4812-9e22-598a3382015c?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;6143a385-3715-4f89-a71e-ad68bafd85b7&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 3_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/e5a56cf3-838c-459e-863a-c13d349ffd56?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;2417617a-64c8-4187-aa36-10070a26dafc&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 4_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/f6692d76-ffdd-40dc-81b6-f04258fab7c9?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;070b0995-e498-4f85-ad40-c65511c97533&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 5_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/04c89ea0-7103-43f4-9054-80ed57d21ffc?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;5f9c6cfc-3c9b-4ea7-a7c5-508f9bc54954&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 6_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/fa5bf454-c277-43d4-b683-3f03a58c822f?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;cedd4df6-3118-41ab-8d0d-4ea95740a93d&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 7_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/f9477648-7ef2-4470-a84b-9618e66c8ca7?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;c986902b-441a-4622-a824-7fd18acb3f72&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 8_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/fd7489da-f7ab-43fc-8e32-11f16d14f6d8?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;1b3440d6-52b6-4dbe-ad93-ed9237a43cf4&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 9_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/8031722f-9ed5-4efa-894a-ee3e6ab5803e?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;3e275689-330d-4c4e-ab3f-35f78713c543&quot;}],&quot;Documents&quot;:[{&quot;Url&quot;:&quot;https://assetportal.syndigo.com/aade85a4-fa6a-4455-b958-cebcb80cdf19&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;f4f911bb-f09a-41bf-b5b0-ce88190f3b2e&quot;}],&quot;Swatches&quot;:[],&quot;Prices&quot;:{&quot;OnSale&quot;:false,&quot;DefaultPrice&quot;:{&quot;Value&quot;:2193.9900,&quot;Formatted&quot;:&quot;$2,193.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalPrice&quot;:{&quot;Value&quot;:2193.9900,&quot;Formatted&quot;:&quot;$2,193.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalModelType&quot;:&quot;MNT&quot;,&quot;FinalModelName&quot;:&quot;MARKET NATIONAL&quot;,&quot;MapPrice&quot;:{&quot;Value&quot;:0.0,&quot;Formatted&quot;:&quot;$0.00&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;HasMapPrice&quot;:false},&quot;Attributes&quot;:[{&quot;Name&quot;:&quot;CS_AMPERAGE_A&quot;,&quot;DisplayName&quot;:&quot;Amperage (A)&quot;,&quot;Value&quot;:&quot;15&quot;},{&quot;Name&quot;:&quot;CS_ASSEMBLED_DEPTH_IN&quot;,&quot;DisplayName&quot;:&quot;Assembled Depth (In)&quot;,&quot;Value&quot;:&quot;25&quot;},{&quot;Name&quot;:&quot;CS_ASSEMBLED_HEIGHT_IN&quot;,&quot;DisplayName&quot;:&quot;Assembled Height (In)&quot;,&quot;Value&quot;:&quot;6&quot;},{&quot;Name&quot;:&quot;CS_ASSEMBLED_WEIGHT_LBS&quot;,&quot;DisplayName&quot;:&quot;Assembled Weight [Lbs]&quot;,&quot;Value&quot;:&quot;65&quot;},{&quot;Name&quot;:&quot;CS_ASSEMBLED_WIDTH_IN&quot;,&quot;DisplayName&quot;:&quot;Assembled Width (In)&quot;,&quot;Value&quot;:&quot;30.75&quot;},{&quot;Name&quot;:&quot;CS_BLASTS_PER_MINUTE_MAXIMUM_BPM&quot;,&quot;DisplayName&quot;:&quot;Blasts Per Minute - Maximum (Bpm)&quot;,&quot;Value&quot;:&quot;1000&quot;},{&quot;Name&quot;:&quot;CS_BRUSH_FAILURE_SHUTDOWN&quot;,&quot;DisplayName&quot;:&quot;Brush Failure Shutdown&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_CHUCK SIZE&quot;,&quot;DisplayName&quot;:&quot;Chuck Size&quot;,&quot;Value&quot;:&quot;1-1/8 in&quot;},{&quot;Name&quot;:&quot;CS_CHUCK_DESIGN&quot;,&quot;DisplayName&quot;:&quot;Chuck Design&quot;,&quot;Value&quot;:&quot;Keyless&quot;},{&quot;Name&quot;:&quot;CS_COLOR&quot;,&quot;DisplayName&quot;:&quot;Color&quot;,&quot;Value&quot;:&quot;Blue, Silver&quot;},{&quot;Name&quot;:&quot;CS_CORD_LENGTH_FT&quot;,&quot;DisplayName&quot;:&quot;Cord Length (Ft)&quot;,&quot;Value&quot;:&quot;8&quot;},{&quot;Name&quot;:&quot;CS_CORDLESS_CORDED&quot;,&quot;DisplayName&quot;:&quot;Cordless / Corded&quot;,&quot;Value&quot;:&quot;Corded&quot;},{&quot;Name&quot;:&quot;CS_CSA_CERTIFIED&quot;,&quot;DisplayName&quot;:&quot;Csa Certified&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_DECIBEL_RATING_DB&quot;,&quot;DisplayName&quot;:&quot;Decibel Rating (Db)&quot;,&quot;Value&quot;:&quot;105&quot;},{&quot;Name&quot;:&quot;CS_ETL_LISTED&quot;,&quot;DisplayName&quot;:&quot;Etl Listed&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_HANDLE TYPE&quot;,&quot;DisplayName&quot;:&quot;Handle Type&quot;,&quot;Value&quot;:&quot;Shock Absorbing handle with soft grip&quot;},{&quot;Name&quot;:&quot;CS_HOUSING MATERIAL&quot;,&quot;DisplayName&quot;:&quot;Housing Material&quot;,&quot;Value&quot;:&quot;Metal, rubber non slip housing cover&quot;},{&quot;Name&quot;:&quot;CS_IMPACT_ENERGY&quot;,&quot;DisplayName&quot;:&quot;Impact Energy&quot;,&quot;Value&quot;:&quot;43 Ft.-Lbs. EPTA&quot;},{&quot;Name&quot;:&quot;CS_INCLUDED_ACCESSORIES&quot;,&quot;DisplayName&quot;:&quot;Included Accessories&quot;,&quot;Value&quot;:&quot;2 Narrow Chisels, 2 Star Point Chisels&quot;},{&quot;Name&quot;:&quot;CS_LENGTH_IN&quot;,&quot;DisplayName&quot;:&quot;Length [In]&quot;,&quot;Value&quot;:&quot;30.75&quot;},{&quot;Name&quot;:&quot;CS_LOCKON_SWITCH&quot;,&quot;DisplayName&quot;:&quot;Lock-On Switch&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_MANUFACTURER_WARRANTY&quot;,&quot;DisplayName&quot;:&quot;Manufacturer Warranty&quot;,&quot;Value&quot;:&quot;Limited 1 Year&quot;},{&quot;Name&quot;:&quot;CS_MATERIAL&quot;,&quot;DisplayName&quot;:&quot;Material&quot;,&quot;Value&quot;:&quot;Metal, Rubber&quot;},{&quot;Name&quot;:&quot;CS_MAXIMUM_WATTAGE_W&quot;,&quot;DisplayName&quot;:&quot;Maximum Wattage (W)&quot;,&quot;Value&quot;:&quot;1800&quot;},{&quot;Name&quot;:&quot;CS_NET_TOOL_WEIGHT_LBS&quot;,&quot;DisplayName&quot;:&quot;Net Tool Weight [Lbs]&quot;,&quot;Value&quot;:&quot;63.2&quot;},{&quot;Name&quot;:&quot;CS_PACKAGE_CONTENTS&quot;,&quot;DisplayName&quot;:&quot;Package Contents&quot;,&quot;Value&quot;:&quot;Hammer, Deluxe Cart, 2 Narrow Chisels, 2 Star Point Chisels&quot;},{&quot;Name&quot;:&quot;CS_POWERED_TOOL_POWER_SOURCE&quot;,&quot;DisplayName&quot;:&quot;Powered Tool Power Source&quot;,&quot;Value&quot;:&quot;Electric - Corded&quot;},{&quot;Name&quot;:&quot;CS_SOFT_START&quot;,&quot;DisplayName&quot;:&quot;Soft Start&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_SUSTAINED_VIBRATION_LEVEL_M_S2&quot;,&quot;DisplayName&quot;:&quot;Sustained Vibration Level (M/S&#178;)&quot;,&quot;Value&quot;:&quot;8&quot;},{&quot;Name&quot;:&quot;CS_TRANSPORT_CART_INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Transport Cart Included&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_UL LISTED&quot;,&quot;DisplayName&quot;:&quot;Ul Listed&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_VARIABLE SPEED&quot;,&quot;DisplayName&quot;:&quot;Variable Speed&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_VIBRATION_DAMPENING&quot;,&quot;DisplayName&quot;:&quot;Vibration Dampening&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_VOLTAGE&quot;,&quot;DisplayName&quot;:&quot;Voltage&quot;,&quot;Value&quot;:&quot;120&quot;},{&quot;Name&quot;:&quot;CS_WEIGHT_LBS&quot;,&quot;DisplayName&quot;:&quot;Weight (Lbs)&quot;,&quot;Value&quot;:&quot;63.2&quot;},{&quot;Name&quot;:&quot;CS_WIDTH_IN&quot;,&quot;DisplayName&quot;:&quot;Width (In)&quot;,&quot;Value&quot;:&quot;25&quot;},{&quot;Name&quot;:&quot;GA_MATERIAL&quot;,&quot;DisplayName&quot;:&quot;Material&quot;,&quot;Value&quot;:&quot;Metal/Rubber&quot;},{&quot;Name&quot;:&quot;GA_WARRANTY&quot;,&quot;DisplayName&quot;:&quot;Warranty&quot;,&quot;Value&quot;:&quot;Yes&quot;}],&quot;IsLocalShippingOnly&quot;:false,&quot;IsCustomQuote&quot;:false,&quot;IsParcel&quot;:true,&quot;IsNmfc&quot;:false,&quot;IsHazardClass&quot;:false,&quot;TrackingData&quot;:{&quot;name&quot;:&quot;Bosch 1-1/8\&quot; Breaker Hammer Brute Turbo&quot;,&quot;id&quot;:&quot;162BH2770VCD&quot;,&quot;prod_id&quot;:&quot;P_50838&quot;,&quot;quantity&quot;:1,&quot;price&quot;:2193.9900,&quot;category&quot;:&quot;Power Tools and Equipment/Rotary Hammers and Demolition Tools/Breaker Hammers&quot;,&quot;brand&quot;:&quot;Bosch&quot;},&quot;Id&quot;:&quot;1bc17f45-9850-4259-a24c-6c7e1a9c6590&quot;}],&quot;Prices&quot;:{&quot;MinPrice&quot;:{&quot;Value&quot;:2193.9900,&quot;Formatted&quot;:&quot;$2,193.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;MaxPrice&quot;:{&quot;Value&quot;:2193.9900,&quot;Formatted&quot;:&quot;$2,193.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;}},&quot;Promotions&quot;:[{&quot;Name&quot;:&quot;Free SDS Rotary Hammer*&quot;,&quot;Description&quot;:&quot;Buy ONE (1) Bosch 1-1/8\&quot; Breaker Hammer Brute Turbo (162BH2770VCD), get ONE (1) free Bosch 18V 1\&quot; SDS-Plus Bulldog Brushless D-Handle Rotary Hammer Kit W/ (2) 4.0 Ah Core 18V Compact (162GBH18V26DK25). While supplies last. Offer ends 07/31/2023.&quot;,&quot;Banner&quot;:null,&quot;RewardType&quot;:&quot;None&quot;,&quot;HiddenCode&quot;:&quot;BSQ223BRKHMR (162BH2770VCD)&quot;,&quot;DiscountTypeName&quot;:&quot;LineItem&quot;}],&quot;TrackingData&quot;:{&quot;name&quot;:&quot;Bosch 1-1/8\&quot; Breaker Hammer Brute Turbo&quot;,&quot;id&quot;:&quot;P_50838&quot;,&quot;category&quot;:&quot;Power Tools and Equipment/Rotary Hammers and Demolition Tools/Breaker Hammers&quot;,&quot;brand&quot;:&quot;Bosch&quot;,&quot;list&quot;:&quot;Breaker Hammers&quot;},&quot;CanBeDeliveredToUser&quot;:true,&quot;IsLocalShippingOnly&quot;:false,&quot;IsOutOfStock&quot;:false,&quot;IsAvailableForOrder&quot;:false,&quot;NoSelectedBranch&quot;:true,&quot;SelectedBranchCity&quot;:&quot;Orlando&quot;,&quot;SelectedBranchPhoneNumber&quot;:&quot;(407)298-7083&quot;,&quot;UserZipCode&quot;:&quot;32805&quot;,&quot;IsAvailableLocally&quot;:false,&quot;Id&quot;:&quot;9711361b-ede8-4d7d-9287-481cd44e2a71&quot;}">
+    <div class="product__container">
+        <form method="post" add-to-cart-form>
+                <a href="/p/bosch-118-breaker-hammer-brute-turbo-50838/bh2770vcd/162bh2770vcd" class="product__image-link" title="Bosch 1-1/8&quot; Breaker Hammer Brute Turbo" object-fit>
+                        <div class="product__promo">
+                                    <div class="product__promo-title">Free SDS Rotary Hammer*</div>
+                        </div>
+                                            <img class="product__image" src="https://assets.syndigo.com/6f2abb51-ca60-4308-a4d6-a9068fa87b67?size=1000&amp;Filetype=JPEG&amp;width=187" alt="MAIN_IMAGE" />
+                </a>
+            <h3 class="product__title">
+                <a href="/p/bosch-118-breaker-hammer-brute-turbo-50838/bh2770vcd/162bh2770vcd" class="product__link" title="Bosch 1-1/8&quot; Breaker Hammer Brute Turbo">
+                    Bosch 1-1/8&quot; Breaker Hammer Brute Turbo
+                </a>
+            </h3>
+                    <div class="product__sku-label">
+                        SKU#: <span class="product__sku-id">162BH2770VCD</span>
+                    </div>
+                        <div class="product__price">
+$2,193.99                                <input type="hidden" name="priceType" value="MNT" />
+                        </div>
+                        <input type="hidden" name="code" value="162BH2770VCD" />
+                        <input type="hidden" name="isLocalShippingOnly" value="false" />
+                        <input type="hidden" name="quantity" value="1" />
+                                <button type="submit" class="button button--yellow-white" add-to-cart title="">
+                                    <span>Add to cart</span>
+                                </button>
+        </form>
+    </div>
+</div>
+<!-- Product card end -->
+
+
+
+<!-- Product card start -->
+<div class="product" data-init="{&quot;Code&quot;:&quot;P_38345&quot;,&quot;Image&quot;:{&quot;AltText&quot;:&quot;Hero Image&quot;,&quot;Url&quot;:&quot;/globalassets/imports/default/entries/damhdsmarketingto_be_taxonomized245d63242_hero_a.jpg?v=1D9321FA18EB700&quot;,&quot;Name&quot;:&quot;/DAM/HDSMARKETING/TO_BE_TAXONOMIZED/245D63242_HERO_A.jpg&quot;,&quot;Id&quot;:&quot;a804e231-0eb1-4fe9-adf9-30d4425baa94&quot;},&quot;Name&quot;:&quot;Werner 24&#39; Fiberglass Extension Ladder Red Type 1A 300 lb. Rating&quot;,&quot;Url&quot;:&quot;/p/werner-24-fiberglass-extension-ladder-red-type-1a-300-lb-rating-38345/d62242/245d62242&quot;,&quot;Variants&quot;:[{&quot;Code&quot;:&quot;245D62242&quot;,&quot;Name&quot;:&quot;Werner 24&#39; Fiberglass Extension Ladder Red Type 1A 300 lb. Rating&quot;,&quot;PartNumber&quot;:&quot;D62242&quot;,&quot;Images&quot;:[{&quot;AltText&quot;:&quot;Hero Image&quot;,&quot;Url&quot;:&quot;/globalassets/imports/default/entries/damhdsmarketingto_be_taxonomized245d63242_hero_a.jpg?v=1D9321FA18EB700&quot;,&quot;Name&quot;:&quot;/DAM/HDSMARKETING/TO_BE_TAXONOMIZED/245D63242_HERO_A.jpg&quot;,&quot;Id&quot;:&quot;a804e231-0eb1-4fe9-adf9-30d4425baa94&quot;}],&quot;Documents&quot;:[],&quot;Swatches&quot;:[],&quot;Prices&quot;:{&quot;OnSale&quot;:false,&quot;DefaultPrice&quot;:{&quot;Value&quot;:344.4900,&quot;Formatted&quot;:&quot;$344.49&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalPrice&quot;:{&quot;Value&quot;:344.4900,&quot;Formatted&quot;:&quot;$344.49&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalModelType&quot;:&quot;MNT&quot;,&quot;FinalModelName&quot;:&quot;MARKET NATIONAL&quot;,&quot;MapPrice&quot;:{&quot;Value&quot;:0.0,&quot;Formatted&quot;:&quot;$0.00&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;HasMapPrice&quot;:false},&quot;Attributes&quot;:[{&quot;Name&quot;:&quot;CS_CAPACITY&quot;,&quot;DisplayName&quot;:&quot;Capacity&quot;,&quot;Value&quot;:&quot;300 lbs.&quot;},{&quot;Name&quot;:&quot;CS_COLOR&quot;,&quot;DisplayName&quot;:&quot;Color&quot;,&quot;Value&quot;:&quot;Red&quot;},{&quot;Name&quot;:&quot;CS_COLOR FAMILY&quot;,&quot;DisplayName&quot;:&quot;Color Family&quot;,&quot;Value&quot;:&quot;Red&quot;},{&quot;Name&quot;:&quot;CS_LADDER HEIGHT&quot;,&quot;DisplayName&quot;:&quot;Ladder Height&quot;,&quot;Value&quot;:&quot;24&#39;&quot;},{&quot;Name&quot;:&quot;CS_LADDER RATING&quot;,&quot;DisplayName&quot;:&quot;Ladder Rating&quot;,&quot;Value&quot;:&quot;Type IA&quot;},{&quot;Name&quot;:&quot;CS_LADDER TYPE&quot;,&quot;DisplayName&quot;:&quot;Ladder Type&quot;,&quot;Value&quot;:&quot;Extension Ladder&quot;},{&quot;Name&quot;:&quot;CS_MAXIMUM LOAD&quot;,&quot;DisplayName&quot;:&quot;Maximum Load&quot;,&quot;Value&quot;:&quot;300 pounds&quot;},{&quot;Name&quot;:&quot;CS_MAXIMUM STANDING HEIGHT&quot;,&quot;DisplayName&quot;:&quot;Maximum Standing Height&quot;,&quot;Value&quot;:&quot;20 inches&quot;},{&quot;Name&quot;:&quot;CS_REACH HEIGHT&quot;,&quot;DisplayName&quot;:&quot;Reach Height&quot;,&quot;Value&quot;:&quot;23&quot;},{&quot;Name&quot;:&quot;CS_STEP MATERIAL&quot;,&quot;DisplayName&quot;:&quot;Step Material&quot;,&quot;Value&quot;:&quot;Aluminum&quot;},{&quot;Name&quot;:&quot;GA_MATERIAL&quot;,&quot;DisplayName&quot;:&quot;Material&quot;,&quot;Value&quot;:&quot;Fiberglass&quot;}],&quot;IsLocalShippingOnly&quot;:true,&quot;IsCustomQuote&quot;:false,&quot;IsParcel&quot;:false,&quot;IsNmfc&quot;:false,&quot;IsHazardClass&quot;:false,&quot;TrackingData&quot;:{&quot;name&quot;:&quot;Werner 24&#39; Fiberglass Extension Ladder Red Type 1A 300 lb. Rating&quot;,&quot;id&quot;:&quot;245D62242&quot;,&quot;prod_id&quot;:&quot;P_38345&quot;,&quot;quantity&quot;:1,&quot;price&quot;:344.4900,&quot;category&quot;:&quot;Ladders and Scaffolding/Ladders, Ladder Parts and Accessories/Extension Ladders&quot;,&quot;brand&quot;:&quot;Werner&quot;},&quot;Id&quot;:&quot;952f3ad4-bb02-4cdb-b5e0-4bf435891710&quot;}],&quot;Prices&quot;:{&quot;MinPrice&quot;:{&quot;Value&quot;:344.4900,&quot;Formatted&quot;:&quot;$344.49&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;MaxPrice&quot;:{&quot;Value&quot;:344.4900,&quot;Formatted&quot;:&quot;$344.49&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;}},&quot;Promotions&quot;:[{&quot;Name&quot;:&quot;Save 15%&quot;,&quot;Description&quot;:&quot;Buy ONE (1) Werner 24&#39; Fiberglass Extension Ladder Red Type 1A 300 lb. Rating (245D62242), save 15%. &quot;,&quot;Banner&quot;:null,&quot;RewardType&quot;:&quot;None&quot;,&quot;HiddenCode&quot;:&quot;WEQ223EXT3 (245D62242)&quot;,&quot;DiscountTypeName&quot;:&quot;LineItem&quot;}],&quot;TrackingData&quot;:{&quot;name&quot;:&quot;Werner 24&#39; Fiberglass Extension Ladder Red Type 1A 300 lb. Rating&quot;,&quot;id&quot;:&quot;P_38345&quot;,&quot;category&quot;:&quot;Ladders and Scaffolding/Ladders, Ladder Parts and Accessories/Extension Ladders&quot;,&quot;brand&quot;:&quot;Werner&quot;,&quot;list&quot;:&quot;Extension Ladders&quot;},&quot;CanBeDeliveredToUser&quot;:false,&quot;IsLocalShippingOnly&quot;:true,&quot;IsOutOfStock&quot;:false,&quot;IsAvailableForOrder&quot;:false,&quot;NoSelectedBranch&quot;:true,&quot;SelectedBranchCity&quot;:&quot;Orlando&quot;,&quot;SelectedBranchPhoneNumber&quot;:&quot;(407)298-7083&quot;,&quot;UserZipCode&quot;:&quot;32805&quot;,&quot;IsAvailableLocally&quot;:false,&quot;Id&quot;:&quot;2b78acaf-16c9-43e8-b019-b98e28d81d09&quot;}">
+    <div class="product__container">
+        <form method="post" add-to-cart-form>
+                <a href="/p/werner-24-fiberglass-extension-ladder-red-type-1a-300-lb-rating-38345/d62242/245d62242" class="product__image-link" title="Werner 24&#39; Fiberglass Extension Ladder Red Type 1A 300 lb. Rating" object-fit>
+                        <div class="product__promo">
+                                    <div class="product__promo-title">Save 15%</div>
+                        </div>
+                                            <img class="product__image" src="/globalassets/imports/default/entries/damhdsmarketingto_be_taxonomized245d63242_hero_a.jpg?v=1D9321FA18EB700&amp;width=187" alt="Hero Image" />
+                </a>
+            <h3 class="product__title">
+                <a href="/p/werner-24-fiberglass-extension-ladder-red-type-1a-300-lb-rating-38345/d62242/245d62242" class="product__link" title="Werner 24&#39; Fiberglass Extension Ladder Red Type 1A 300 lb. Rating">
+                    Werner 24&#39; Fiberglass Extension Ladder Red Type 1A 300 lb. Rating
+                </a>
+            </h3>
+                    <div class="product__sku-label">
+                        SKU#: <span class="product__sku-id">245D62242</span>
+                    </div>
+                        <div class="product__price">
+$344.49                                <input type="hidden" name="priceType" value="MNT" />
+                        </div>
+                        <input type="hidden" name="code" value="245D62242" />
+                        <input type="hidden" name="isLocalShippingOnly" value="true" />
+                        <input type="hidden" name="quantity" value="1" />
+                                <button type="submit" class="button button--yellow-white" add-to-cart title="This item can only be delivered to select locations.">
+                                    <span>Add to cart</span>
+                                </button>
+        </form>
+    </div>
+</div>
+<!-- Product card end -->
+
+
+
+<!-- Product card start -->
+<div class="product" data-init="{&quot;Code&quot;:&quot;P_28499&quot;,&quot;Image&quot;:{&quot;AltText&quot;:&quot;MAIN_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/98c45957-22eb-4996-89bd-f2f589070457?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;b0233cc8-e713-4dec-a876-979c7bf77fae&quot;},&quot;Name&quot;:&quot;Bosch 14A 1890 BPM SDS-Max Demolition Hammer&quot;,&quot;Url&quot;:&quot;/p/bosch-14a-1890-bpm-sdsmax-demolition-hammer-28499/11316evs/16211316evs&quot;,&quot;Variants&quot;:[{&quot;Code&quot;:&quot;16211316EVS&quot;,&quot;Name&quot;:&quot;Bosch 14A 1890 BPM SDS-Max Demolition Hammer&quot;,&quot;PartNumber&quot;:&quot;11316EVS&quot;,&quot;Images&quot;:[{&quot;AltText&quot;:&quot;MAIN_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/98c45957-22eb-4996-89bd-f2f589070457?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;5c5b5b3f-c2e5-477f-9d9d-c9b89be0d691&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 10_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/572d7306-93b3-4a16-b06b-2f1ce91f1048?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;282cfe10-8786-45c9-b06d-f891c5bd995c&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 11_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/b9edbdbe-a983-4906-9d26-8f63729a705c?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;b9704b76-0df4-403e-afc5-6620cc255dd8&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 2_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/3a3b35b9-d056-4812-9e22-598a3382015c?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;7e317f56-04ce-4724-8e8b-29b971aee385&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 3_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/a690a78e-97ed-4f2e-ac72-88de79a86b4f?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;d6e49f5e-458a-4b3b-bade-fc50bbd937bd&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 4_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/22c1294c-906e-4fea-973b-5e7f6bda33b8?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;133c0890-b63e-48c4-967e-d45146103a71&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 5_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/3aca7a9d-7ad0-46c2-89a0-9f373e854c52?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;54c26f26-9a09-436f-9083-10b35defa0a2&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 6_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/5d44328f-9d08-4401-93fe-307175e4ba56?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;0d5a3726-cf2a-43c9-b8b0-5dcd313e9dd0&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 7_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/c984b6db-90aa-40c4-9e30-5fb17fcfc896?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;4179d74b-9a3d-446b-92f2-a00f186ca6c6&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 8_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/d53701c5-307e-49d3-9349-483148d82f38?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;1cb8345d-53b2-4e9e-9dbd-b8949a1ef605&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 9_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/f0a44f67-ed5f-45bc-884b-1a5b844f56e0?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;59c5211a-f075-4667-b897-cd31e849feb6&quot;}],&quot;Documents&quot;:[{&quot;Url&quot;:&quot;https://assetportal.syndigo.com/aade85a4-fa6a-4455-b958-cebcb80cdf19&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;3637dd81-37eb-4152-816b-e0a20723b953&quot;}],&quot;Swatches&quot;:[],&quot;Prices&quot;:{&quot;OnSale&quot;:false,&quot;DefaultPrice&quot;:{&quot;Value&quot;:729.9900,&quot;Formatted&quot;:&quot;$729.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalPrice&quot;:{&quot;Value&quot;:729.9900,&quot;Formatted&quot;:&quot;$729.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalModelType&quot;:&quot;MNT&quot;,&quot;FinalModelName&quot;:&quot;MARKET NATIONAL&quot;,&quot;MapPrice&quot;:{&quot;Value&quot;:0.0,&quot;Formatted&quot;:&quot;$0.00&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;HasMapPrice&quot;:false},&quot;Attributes&quot;:[{&quot;Name&quot;:&quot;CS_ADJUSTABLE_HANDLE_POSITION&quot;,&quot;DisplayName&quot;:&quot;Adjustable Handle Position&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_AMPERAGE&quot;,&quot;DisplayName&quot;:&quot;Amperage&quot;,&quot;Value&quot;:&quot;14 A&quot;},{&quot;Name&quot;:&quot;CS_AMPERAGE_A&quot;,&quot;DisplayName&quot;:&quot;Amperage (A)&quot;,&quot;Value&quot;:&quot;14&quot;},{&quot;Name&quot;:&quot;CS_ASSEMBLED_DEPTH_IN&quot;,&quot;DisplayName&quot;:&quot;Assembled Depth (In)&quot;,&quot;Value&quot;:&quot;17.5&quot;},{&quot;Name&quot;:&quot;CS_ASSEMBLED_HEIGHT_IN&quot;,&quot;DisplayName&quot;:&quot;Assembled Height (In)&quot;,&quot;Value&quot;:&quot;32.7&quot;},{&quot;Name&quot;:&quot;CS_ASSEMBLED_WEIGHT_LBS&quot;,&quot;DisplayName&quot;:&quot;Assembled Weight [Lbs]&quot;,&quot;Value&quot;:&quot;22.5&quot;},{&quot;Name&quot;:&quot;CS_ASSEMBLED_WIDTH_IN&quot;,&quot;DisplayName&quot;:&quot;Assembled Width (In)&quot;,&quot;Value&quot;:&quot;25.5&quot;},{&quot;Name&quot;:&quot;CS_BLASTS_PER_MINUTE_MAXIMUM_BPM&quot;,&quot;DisplayName&quot;:&quot;Blasts Per Minute - Maximum (Bpm)&quot;,&quot;Value&quot;:&quot;1890&quot;},{&quot;Name&quot;:&quot;CS_BLOWS PER MINUTE&quot;,&quot;DisplayName&quot;:&quot;Blows Per Minute&quot;,&quot;Value&quot;:&quot;900-1,890&quot;},{&quot;Name&quot;:&quot;CS_CHISEL_LOCK_POSITIONS&quot;,&quot;DisplayName&quot;:&quot;Chisel Lock Positions&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_CHUCK SIZE&quot;,&quot;DisplayName&quot;:&quot;Chuck Size&quot;,&quot;Value&quot;:&quot;SDS-Max&quot;},{&quot;Name&quot;:&quot;CS_CHUCK_CAPACITY&quot;,&quot;DisplayName&quot;:&quot;Chuck Capacity&quot;,&quot;Value&quot;:&quot;SDS-Max&quot;},{&quot;Name&quot;:&quot;CS_CHUCK_DESIGN&quot;,&quot;DisplayName&quot;:&quot;Chuck Design&quot;,&quot;Value&quot;:&quot;Keyless&quot;},{&quot;Name&quot;:&quot;CS_COLOR&quot;,&quot;DisplayName&quot;:&quot;Color&quot;,&quot;Value&quot;:&quot;Blue&quot;},{&quot;Name&quot;:&quot;CS_CORD_LENGTH_FT&quot;,&quot;DisplayName&quot;:&quot;Cord Length (Ft)&quot;,&quot;Value&quot;:&quot;8&quot;},{&quot;Name&quot;:&quot;CS_CSA_CERTIFIED&quot;,&quot;DisplayName&quot;:&quot;Csa Certified&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_ELECTRONIC SPEED CONTROL&quot;,&quot;DisplayName&quot;:&quot;Electronic Speed Control&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_ETL_LISTED&quot;,&quot;DisplayName&quot;:&quot;Etl Listed&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_HEIGHT_IN&quot;,&quot;DisplayName&quot;:&quot;Height (In)&quot;,&quot;Value&quot;:&quot;12&quot;},{&quot;Name&quot;:&quot;CS_IMPACT_ENERGY&quot;,&quot;DisplayName&quot;:&quot;Impact Energy&quot;,&quot;Value&quot;:&quot;12.4 Ft.-Lbs. EPTA&quot;},{&quot;Name&quot;:&quot;CS_LENGTH_IN&quot;,&quot;DisplayName&quot;:&quot;Length [In]&quot;,&quot;Value&quot;:&quot;22.5&quot;},{&quot;Name&quot;:&quot;CS_MAIN_HANDLE_TYPE&quot;,&quot;DisplayName&quot;:&quot;Main Handle Type&quot;,&quot;Value&quot;:&quot;Padded Rear Handle&quot;},{&quot;Name&quot;:&quot;CS_MANUFACTURER_WARRANTY&quot;,&quot;DisplayName&quot;:&quot;Manufacturer Warranty&quot;,&quot;Value&quot;:&quot;Limited 1 Year&quot;},{&quot;Name&quot;:&quot;CS_MATERIAL&quot;,&quot;DisplayName&quot;:&quot;Material&quot;,&quot;Value&quot;:&quot;Metal, Plastic&quot;},{&quot;Name&quot;:&quot;CS_NET_TOOL_WEIGHT_LBS&quot;,&quot;DisplayName&quot;:&quot;Net Tool Weight [Lbs]&quot;,&quot;Value&quot;:&quot;22.5&quot;},{&quot;Name&quot;:&quot;CS_PACKAGE_CONTENTS&quot;,&quot;DisplayName&quot;:&quot;Package Contents&quot;,&quot;Value&quot;:&quot;Hammer, Auxiliary Handle, Carrying Case&quot;},{&quot;Name&quot;:&quot;CS_POWERED_TOOL_POWER_SOURCE&quot;,&quot;DisplayName&quot;:&quot;Powered Tool Power Source&quot;,&quot;Value&quot;:&quot;Electric - Corded&quot;},{&quot;Name&quot;:&quot;CS_SIDE HANDLE&quot;,&quot;DisplayName&quot;:&quot;Side Handle&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_THIN_WALL_CORE_BIT_CAPACITY&quot;,&quot;DisplayName&quot;:&quot;Thin Wall Core Bit Capacity&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_TORQUE&quot;,&quot;DisplayName&quot;:&quot;Torque&quot;,&quot;Value&quot;:&quot;4.4-18.4 ft.-lbs. impact energy&quot;},{&quot;Name&quot;:&quot;CS_TYPE OF MODES&quot;,&quot;DisplayName&quot;:&quot;Type Of Modes&quot;,&quot;Value&quot;:&quot;Hammer Only&quot;},{&quot;Name&quot;:&quot;CS_UL LISTED&quot;,&quot;DisplayName&quot;:&quot;Ul Listed&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_VARIABLE SPEED&quot;,&quot;DisplayName&quot;:&quot;Variable Speed&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_VOLTAGE&quot;,&quot;DisplayName&quot;:&quot;Voltage&quot;,&quot;Value&quot;:&quot;120&quot;},{&quot;Name&quot;:&quot;CS_WIDTH_IN&quot;,&quot;DisplayName&quot;:&quot;Width (In)&quot;,&quot;Value&quot;:&quot;5&quot;},{&quot;Name&quot;:&quot;GA_MATERIAL&quot;,&quot;DisplayName&quot;:&quot;Material&quot;,&quot;Value&quot;:&quot;Metal/Plastic&quot;},{&quot;Name&quot;:&quot;GA_WARRANTY&quot;,&quot;DisplayName&quot;:&quot;Warranty&quot;,&quot;Value&quot;:&quot;Yes&quot;}],&quot;IsLocalShippingOnly&quot;:false,&quot;IsCustomQuote&quot;:false,&quot;IsParcel&quot;:true,&quot;IsNmfc&quot;:false,&quot;IsHazardClass&quot;:false,&quot;TrackingData&quot;:{&quot;name&quot;:&quot;Bosch 14A 1890 BPM SDS-Max Demolition Hammer&quot;,&quot;id&quot;:&quot;16211316EVS&quot;,&quot;prod_id&quot;:&quot;P_28499&quot;,&quot;quantity&quot;:1,&quot;price&quot;:729.9900,&quot;category&quot;:&quot;Power Tools and Equipment/Rotary Hammers and Demolition Tools/Demolition Hammers&quot;,&quot;brand&quot;:&quot;Bosch&quot;},&quot;Id&quot;:&quot;4b6612f1-2306-4c7c-9507-1016f53f263c&quot;}],&quot;Prices&quot;:{&quot;MinPrice&quot;:{&quot;Value&quot;:729.9900,&quot;Formatted&quot;:&quot;$729.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;MaxPrice&quot;:{&quot;Value&quot;:729.9900,&quot;Formatted&quot;:&quot;$729.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;}},&quot;Promotions&quot;:[{&quot;Name&quot;:&quot;Save $90*&quot;,&quot;Description&quot;:&quot;Buy ONE (1) Bosch 14A 1890 BPM SDS-Max Demolition Hammer (16211316EVS), save $90. While supplies last. Offer ends 07/31/2023.&quot;,&quot;Banner&quot;:null,&quot;RewardType&quot;:&quot;None&quot;,&quot;HiddenCode&quot;:&quot;BSQ223DEMHMR (16211316EVS)&quot;,&quot;DiscountTypeName&quot;:&quot;LineItem&quot;}],&quot;TrackingData&quot;:{&quot;name&quot;:&quot;Bosch 14A 1890 BPM SDS-Max Demolition Hammer&quot;,&quot;id&quot;:&quot;P_28499&quot;,&quot;category&quot;:&quot;Power Tools and Equipment/Rotary Hammers and Demolition Tools/Demolition Hammers&quot;,&quot;brand&quot;:&quot;Bosch&quot;,&quot;list&quot;:&quot;Demolition Hammers&quot;},&quot;CanBeDeliveredToUser&quot;:true,&quot;IsLocalShippingOnly&quot;:false,&quot;IsOutOfStock&quot;:false,&quot;IsAvailableForOrder&quot;:false,&quot;NoSelectedBranch&quot;:true,&quot;SelectedBranchCity&quot;:&quot;Orlando&quot;,&quot;SelectedBranchPhoneNumber&quot;:&quot;(407)298-7083&quot;,&quot;UserZipCode&quot;:&quot;32805&quot;,&quot;IsAvailableLocally&quot;:false,&quot;Id&quot;:&quot;62165c34-a2e2-4fde-bb56-feb9fe0692c5&quot;}">
+    <div class="product__container">
+        <form method="post" add-to-cart-form>
+                <a href="/p/bosch-14a-1890-bpm-sdsmax-demolition-hammer-28499/11316evs/16211316evs" class="product__image-link" title="Bosch 14A 1890 BPM SDS-Max Demolition Hammer" object-fit>
+                        <div class="product__promo">
+                                    <div class="product__promo-title">Save $90*</div>
+                        </div>
+                                            <img class="product__image" src="https://assets.syndigo.com/98c45957-22eb-4996-89bd-f2f589070457?size=1000&amp;Filetype=JPEG&amp;width=187" alt="MAIN_IMAGE" />
+                </a>
+            <h3 class="product__title">
+                <a href="/p/bosch-14a-1890-bpm-sdsmax-demolition-hammer-28499/11316evs/16211316evs" class="product__link" title="Bosch 14A 1890 BPM SDS-Max Demolition Hammer">
+                    Bosch 14A 1890 BPM SDS-Max Demolition Hammer
+                </a>
+            </h3>
+                    <div class="product__sku-label">
+                        SKU#: <span class="product__sku-id">16211316EVS</span>
+                    </div>
+                        <div class="product__price">
+$729.99                                <input type="hidden" name="priceType" value="MNT" />
+                        </div>
+                        <input type="hidden" name="code" value="16211316EVS" />
+                        <input type="hidden" name="isLocalShippingOnly" value="false" />
+                        <input type="hidden" name="quantity" value="1" />
+                                <button type="submit" class="button button--yellow-white" add-to-cart title="">
+                                    <span>Add to cart</span>
+                                </button>
+        </form>
+    </div>
+</div>
+<!-- Product card end -->
+
+
+
+<!-- Product card start -->
+<div class="product" data-init="{&quot;Code&quot;:&quot;P_649190&quot;,&quot;Image&quot;:{&quot;AltText&quot;:&quot;MAIN_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/d971dce8-42a1-470e-a982-62d264053f18?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;21f3f391-5148-4ba6-b492-bcb5ace74d22&quot;},&quot;Name&quot;:&quot;9\&quot; 60V MAX BRUSHLESS CORDLESS CUT-OFF SAW KIT DEWALT&quot;,&quot;Url&quot;:&quot;/p/9-60v-max-brushless-cordless-cutoff-saw-kit-dewalt-649190/dcs692x2/324dcs692x2&quot;,&quot;Variants&quot;:[{&quot;Code&quot;:&quot;324DCS692X2&quot;,&quot;Name&quot;:&quot;9\&quot; 60V MAX BRUSHLESS CORDLESS CUT-OFF SAW KIT DEWALT&quot;,&quot;PartNumber&quot;:&quot;DCS692X2&quot;,&quot;Images&quot;:[{&quot;AltText&quot;:&quot;MAIN_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/d971dce8-42a1-470e-a982-62d264053f18?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;64867562-f4e8-487a-8825-d0cf1a082b6a&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 2_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/8437c1f6-7e36-4f23-bf4e-ddb346e09849?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;2c617173-69d3-423d-a0a7-5ce0087177c9&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 3_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/a3845028-9f06-44eb-a0c7-b2c9f5d8057d?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;74960141-95a9-4733-8797-72fc5b8bbdec&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 4_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/3a95a687-c993-473a-8c9d-f655e8ff0e22?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;1a707a53-0edc-4a6a-97ae-cc22d3ff8f34&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 5_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/3527f4a9-3083-4dd5-ba63-76a95c87da29?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;5dc18a00-bf8c-42fc-8396-311b90e60d74&quot;}],&quot;Documents&quot;:[],&quot;Swatches&quot;:[],&quot;Prices&quot;:{&quot;OnSale&quot;:false,&quot;DefaultPrice&quot;:{&quot;Value&quot;:931.9900,&quot;Formatted&quot;:&quot;$931.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalPrice&quot;:{&quot;Value&quot;:931.9900,&quot;Formatted&quot;:&quot;$931.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalModelType&quot;:&quot;MNT&quot;,&quot;FinalModelName&quot;:&quot;MARKET NATIONAL&quot;,&quot;MapPrice&quot;:{&quot;Value&quot;:0.0,&quot;Formatted&quot;:&quot;$0.00&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;HasMapPrice&quot;:false},&quot;Attributes&quot;:[{&quot;Name&quot;:&quot;CS_ASSEMBLED_WEIGHT_LBS&quot;,&quot;DisplayName&quot;:&quot;Assembled Weight [Lbs]&quot;,&quot;Value&quot;:&quot;26.39&quot;},{&quot;Name&quot;:&quot;CS_BATTERY_VOLTAGE_V&quot;,&quot;DisplayName&quot;:&quot;Battery Voltage (V)&quot;,&quot;Value&quot;:&quot;60&quot;},{&quot;Name&quot;:&quot;CS_BEVEL_CAPACITY&quot;,&quot;DisplayName&quot;:&quot;Bevel Capacity (&#176;)&quot;,&quot;Value&quot;:&quot;0&quot;},{&quot;Name&quot;:&quot;CS_BLADE_LOCATION&quot;,&quot;DisplayName&quot;:&quot;Blade Location&quot;,&quot;Value&quot;:&quot;Straight&quot;},{&quot;Name&quot;:&quot;CS_BLADE_WRENCH_INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Blade Wrench Included&quot;,&quot;Value&quot;:&quot;Not Required&quot;},{&quot;Name&quot;:&quot;CS_BLADES_INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Blades Included&quot;,&quot;Value&quot;:&quot;2&quot;},{&quot;Name&quot;:&quot;CS_CHARGER INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Charger Included&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_CORDLESS_CORDED&quot;,&quot;DisplayName&quot;:&quot;Cordless / Corded&quot;,&quot;Value&quot;:&quot;Cordless&quot;},{&quot;Name&quot;:&quot;CS_CSA_CERTIFIED&quot;,&quot;DisplayName&quot;:&quot;Csa Certified&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_DEPTH ADJUSTMENT&quot;,&quot;DisplayName&quot;:&quot;Depth Adjustment&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_DUST_BLOWER&quot;,&quot;DisplayName&quot;:&quot;Dust Blower&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_DUST_PORT&quot;,&quot;DisplayName&quot;:&quot;Dust Port&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_ELECTRIC_MOTOR_BRAKE&quot;,&quot;DisplayName&quot;:&quot;Electric Motor Brake&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_ETL_LISTED&quot;,&quot;DisplayName&quot;:&quot;Etl Listed&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_EXTERNAL_MOTOR_BRUSH_ACCESS&quot;,&quot;DisplayName&quot;:&quot;External Motor Brush Access&quot;,&quot;Value&quot;:&quot;Brushless Motor&quot;},{&quot;Name&quot;:&quot;CS_INTEGRATED WORK LIGHT&quot;,&quot;DisplayName&quot;:&quot;Integrated Work Light&quot;,&quot;Value&quot;:&quot;Not Featured&quot;},{&quot;Name&quot;:&quot;CS_INTEGRATED_LASER_GUIDE&quot;,&quot;DisplayName&quot;:&quot;Integrated Laser Guide&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_INTEGRATED_RAFTER_HOOK&quot;,&quot;DisplayName&quot;:&quot;Integrated Rafter Hook&quot;,&quot;Value&quot;:&quot;Not Featured&quot;},{&quot;Name&quot;:&quot;CS_MANUFACTURER_WARRANTY&quot;,&quot;DisplayName&quot;:&quot;Manufacturer Warranty&quot;,&quot;Value&quot;:&quot;3 year limited warranty/1 year free service contract/90 day money back guarantee&quot;},{&quot;Name&quot;:&quot;CS_MAXIMUM_RPM_NO_LOAD&quot;,&quot;DisplayName&quot;:&quot;Maximum Rpm - No Load&quot;,&quot;Value&quot;:&quot;6600&quot;},{&quot;Name&quot;:&quot;CS_NET_TOOL_WEIGHT_LBS&quot;,&quot;DisplayName&quot;:&quot;Net Tool Weight [Lbs]&quot;,&quot;Value&quot;:&quot;18&quot;},{&quot;Name&quot;:&quot;CS_NUMBER OF BATTERIES INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Number Of Batteries Included&quot;,&quot;Value&quot;:&quot;2&quot;},{&quot;Name&quot;:&quot;CS_NUMBER_OF_BATTERIES_REQUIRED&quot;,&quot;DisplayName&quot;:&quot;Number Of Batteries Required&quot;,&quot;Value&quot;:&quot;1&quot;},{&quot;Name&quot;:&quot;CS_PACKAGE_CONTENTS&quot;,&quot;DisplayName&quot;:&quot;Package Contents&quot;,&quot;Value&quot;:&quot;DCS692 9 in. Cut-Off Saw;2 - DCB609 Batteries;1 - Fast Charger;1 - DWAFV8918 Ceramic Metal Cut-Off Wheel;1 - DWAFV8900 Diamond  Cutting Wheel&quot;},{&quot;Name&quot;:&quot;CS_POWERED_TOOL_POWER_SOURCE&quot;,&quot;DisplayName&quot;:&quot;Powered Tool Power Source&quot;,&quot;Value&quot;:&quot;Electric - Cordless&quot;},{&quot;Name&quot;:&quot;CS_PRODUCT_STORAGE_INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Product Storage Included&quot;,&quot;Value&quot;:&quot;No Case Included&quot;},{&quot;Name&quot;:&quot;CS_SAW_BLADE_DIAMETER_IN&quot;,&quot;DisplayName&quot;:&quot;Saw Blade Diameter (In)&quot;,&quot;Value&quot;:&quot;9 in&quot;},{&quot;Name&quot;:&quot;CS_SAW_DRIVE&quot;,&quot;DisplayName&quot;:&quot;Saw Drive&quot;,&quot;Value&quot;:&quot;Direct Drive&quot;},{&quot;Name&quot;:&quot;CS_SHOE_MATERIAL&quot;,&quot;DisplayName&quot;:&quot;Shoe Material&quot;,&quot;Value&quot;:&quot;Metal&quot;},{&quot;Name&quot;:&quot;CS_UL LISTED&quot;,&quot;DisplayName&quot;:&quot;Ul Listed&quot;,&quot;Value&quot;:&quot;Yes&quot;}],&quot;IsLocalShippingOnly&quot;:false,&quot;IsCustomQuote&quot;:false,&quot;IsParcel&quot;:true,&quot;IsNmfc&quot;:false,&quot;IsHazardClass&quot;:false,&quot;TrackingData&quot;:{&quot;name&quot;:&quot;9\&quot; 60V MAX BRUSHLESS CORDLESS CUT-OFF SAW KIT DEWALT&quot;,&quot;id&quot;:&quot;324DCS692X2&quot;,&quot;prod_id&quot;:&quot;P_649190&quot;,&quot;quantity&quot;:1,&quot;price&quot;:931.9900,&quot;category&quot;:&quot;Power Tools and Equipment/Concrete and Masonry Saws/Cutoff Saws&quot;,&quot;brand&quot;:&quot;BLACK AND DECKER INC&quot;},&quot;Id&quot;:&quot;37d96c14-f7a4-4849-998d-9796413a1cd2&quot;}],&quot;Prices&quot;:{&quot;MinPrice&quot;:{&quot;Value&quot;:931.9900,&quot;Formatted&quot;:&quot;$931.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;MaxPrice&quot;:{&quot;Value&quot;:931.9900,&quot;Formatted&quot;:&quot;$931.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;}},&quot;Promotions&quot;:[{&quot;Name&quot;:&quot;Save $75*&quot;,&quot;Description&quot;:&quot;Save $75 on the 9\&quot; 60V MAX Brushless Cut-Off Saw Kit (324DCS692X2) and get a free 20/60V MAX FLEXVOLT 9.0AH Battery (324DCB609). While supplies last. Offer ends 07/31/2023. &quot;,&quot;Banner&quot;:null,&quot;RewardType&quot;:&quot;None&quot;,&quot;HiddenCode&quot;:&quot;DWQ223SWKT75 (324DCS692X2)&quot;,&quot;DiscountTypeName&quot;:&quot;LineItem&quot;}],&quot;TrackingData&quot;:{&quot;name&quot;:&quot;9\&quot; 60V MAX BRUSHLESS CORDLESS CUT-OFF SAW KIT DEWALT&quot;,&quot;id&quot;:&quot;P_649190&quot;,&quot;category&quot;:&quot;Power Tools and Equipment/Concrete and Masonry Saws/Cutoff Saws&quot;,&quot;brand&quot;:&quot;BLACK AND DECKER INC&quot;,&quot;list&quot;:&quot;Cutoff Saws&quot;},&quot;CanBeDeliveredToUser&quot;:true,&quot;IsLocalShippingOnly&quot;:false,&quot;IsOutOfStock&quot;:false,&quot;IsAvailableForOrder&quot;:false,&quot;NoSelectedBranch&quot;:true,&quot;SelectedBranchCity&quot;:&quot;Orlando&quot;,&quot;SelectedBranchPhoneNumber&quot;:&quot;(407)298-7083&quot;,&quot;UserZipCode&quot;:&quot;32805&quot;,&quot;IsAvailableLocally&quot;:false,&quot;Id&quot;:&quot;119f74c2-3124-4a41-87c7-2105d09b901f&quot;}">
+    <div class="product__container">
+        <form method="post" add-to-cart-form>
+                <a href="/p/9-60v-max-brushless-cordless-cutoff-saw-kit-dewalt-649190/dcs692x2/324dcs692x2" class="product__image-link" title="9&quot; 60V MAX BRUSHLESS CORDLESS CUT-OFF SAW KIT DEWALT" object-fit>
+                        <div class="product__promo">
+                                    <div class="product__promo-title">Save $75*</div>
+                        </div>
+                                            <img class="product__image" src="https://assets.syndigo.com/d971dce8-42a1-470e-a982-62d264053f18?size=1000&amp;Filetype=JPEG&amp;width=187" alt="MAIN_IMAGE" />
+                </a>
+            <h3 class="product__title">
+                <a href="/p/9-60v-max-brushless-cordless-cutoff-saw-kit-dewalt-649190/dcs692x2/324dcs692x2" class="product__link" title="9&quot; 60V MAX BRUSHLESS CORDLESS CUT-OFF SAW KIT DEWALT">
+                    9&quot; 60V MAX BRUSHLESS CORDLESS CUT-OFF SAW KIT DEWALT
+                </a>
+            </h3>
+                    <div class="product__sku-label">
+                        SKU#: <span class="product__sku-id">324DCS692X2</span>
+                    </div>
+                        <div class="product__price">
+$931.99                                <input type="hidden" name="priceType" value="MNT" />
+                        </div>
+                        <input type="hidden" name="code" value="324DCS692X2" />
+                        <input type="hidden" name="isLocalShippingOnly" value="false" />
+                        <input type="hidden" name="quantity" value="1" />
+                                <button type="submit" class="button button--yellow-white" add-to-cart title="">
+                                    <span>Add to cart</span>
+                                </button>
+        </form>
+    </div>
+</div>
+<!-- Product card end -->
+
+
+
+<!-- Product card start -->
+<div class="product" data-init="{&quot;Code&quot;:&quot;P_466091&quot;,&quot;Image&quot;:{&quot;AltText&quot;:&quot;MAIN_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/5f72c906-aa4e-4452-85b8-f121f11cd8e5?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;50a4dbd0-0d67-451f-a99d-2fa47933748d&quot;},&quot;Name&quot;:&quot;DEWALT 60V MAX Brushless Cordless Reciprocating Saw Kit&quot;,&quot;Url&quot;:&quot;/p/dewalt-60v-max-brushless-cordless-reciprocating-saw-kit-466091/dcs389x2/324dcs389x2&quot;,&quot;Variants&quot;:[{&quot;Code&quot;:&quot;324DCS389X2&quot;,&quot;Name&quot;:&quot;DEWALT 60V MAX Brushless Cordless Reciprocating Saw Kit&quot;,&quot;PartNumber&quot;:&quot;DCS389X2&quot;,&quot;Images&quot;:[{&quot;AltText&quot;:&quot;MAIN_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/5f72c906-aa4e-4452-85b8-f121f11cd8e5?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;1276aaf7-b510-43eb-9bf7-4d7706d66354&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 10_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/5f4852f7-30fe-473e-838e-23203acc5610?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;d80e77f0-4196-432d-9adc-2a02c5d0f0bc&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 11_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/c21870d4-0f4c-443d-af55-26ef3b011b85?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;536d363a-dcfc-4e60-873e-e8c6a449d8f9&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 12_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/a4def8fe-0a8d-4171-b618-700fe6b9db62?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;82e31533-2378-43bf-bf3a-33cba134ee15&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 13_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/a1f5d0ce-46f3-4c30-9c4d-6d9dcc15b686?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;bd6ce8e6-ca91-4a49-b5ce-f296cf97a956&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 2_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/12fdb05c-6bb1-4367-bf6c-3a9d10ee178f?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;ff868368-3e1f-4d7a-b37f-9d0b8afd2c37&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 3_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/e89713dc-c5f6-475e-b0af-1c8f692aafee?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;11dc4966-bc24-4a4b-a25e-83978761ab7b&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 4_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/611c51a7-da89-46a3-940d-4b709f73f53f?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;74c95604-19b6-42e4-8c12-8072b6034150&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 5_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/185093f5-74c8-41b0-bf3f-ad13eebe1eee?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;1ab9df41-9ce7-449d-9c47-165353a3f85c&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 6_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/b8226088-a069-4bfe-8678-230a14494fdc?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;056d5725-aa85-4a56-912b-d55bc569fc90&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 7_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/bcfd5123-b424-4220-a150-4d0044e80625?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;f5754128-7e54-47de-8a3e-44c63ebd2d79&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 8_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/f7c484fc-46ae-4282-b0ec-103b5df971af?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;3a9a75b5-01ee-4925-a9f3-c9fa817e2add&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 9_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/1cc23caa-ea05-478d-8ae0-0e9172b8d043?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;e05c983c-1741-4218-9e73-dbaf10ab8f32&quot;}],&quot;Documents&quot;:[],&quot;Swatches&quot;:[],&quot;Prices&quot;:{&quot;OnSale&quot;:false,&quot;DefaultPrice&quot;:{&quot;Value&quot;:499.9900,&quot;Formatted&quot;:&quot;$499.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalPrice&quot;:{&quot;Value&quot;:499.9900,&quot;Formatted&quot;:&quot;$499.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalModelType&quot;:&quot;MNT&quot;,&quot;FinalModelName&quot;:&quot;MARKET NATIONAL&quot;,&quot;MapPrice&quot;:{&quot;Value&quot;:0.0,&quot;Formatted&quot;:&quot;$0.00&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;HasMapPrice&quot;:false},&quot;Attributes&quot;:[{&quot;Name&quot;:&quot;CS_ADJUSTABLE SHOE&quot;,&quot;DisplayName&quot;:&quot;Adjustable Shoe&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_ASSEMBLED_WEIGHT_LBS&quot;,&quot;DisplayName&quot;:&quot;Assembled Weight [Lbs]&quot;,&quot;Value&quot;:&quot;7.56&quot;},{&quot;Name&quot;:&quot;CS_BATTERY_VOLTAGE_V&quot;,&quot;DisplayName&quot;:&quot;Battery Voltage (V)&quot;,&quot;Value&quot;:&quot;60&quot;},{&quot;Name&quot;:&quot;CS_BLADES_INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Blades Included&quot;,&quot;Value&quot;:&quot;1&quot;},{&quot;Name&quot;:&quot;CS_CHARGER INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Charger Included&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_COLOR&quot;,&quot;DisplayName&quot;:&quot;Color&quot;,&quot;Value&quot;:&quot;Yellow/Black&quot;},{&quot;Name&quot;:&quot;CS_CORDLESS_CORDED&quot;,&quot;DisplayName&quot;:&quot;Cordless / Corded&quot;,&quot;Value&quot;:&quot;Cordless&quot;},{&quot;Name&quot;:&quot;CS_CSA_CERTIFIED&quot;,&quot;DisplayName&quot;:&quot;Csa Certified&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_ETL_LISTED&quot;,&quot;DisplayName&quot;:&quot;Etl Listed&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_HOUSING MATERIAL&quot;,&quot;DisplayName&quot;:&quot;Housing Material&quot;,&quot;Value&quot;:&quot;Plastic&quot;},{&quot;Name&quot;:&quot;CS_INTEGRATED WORK LIGHT&quot;,&quot;DisplayName&quot;:&quot;Integrated Work Light&quot;,&quot;Value&quot;:&quot;Not Featured&quot;},{&quot;Name&quot;:&quot;CS_LENGTH_IN&quot;,&quot;DisplayName&quot;:&quot;Length [In]&quot;,&quot;Value&quot;:&quot;17.725&quot;},{&quot;Name&quot;:&quot;CS_MAIN_HANDLE_TYPE&quot;,&quot;DisplayName&quot;:&quot;Main Handle Type&quot;,&quot;Value&quot;:&quot;D-Ring&quot;},{&quot;Name&quot;:&quot;CS_MANUFACTURER_WARRANTY&quot;,&quot;DisplayName&quot;:&quot;Manufacturer Warranty&quot;,&quot;Value&quot;:&quot;3 year limited warranty/1 year free service contract/90 day money back guarantee&quot;},{&quot;Name&quot;:&quot;CS_MAXIMUM_STROKES_PER_MINUTE_NO_LOAD&quot;,&quot;DisplayName&quot;:&quot;Maximum Strokes Per Minute - No Load&quot;,&quot;Value&quot;:&quot;3000&quot;},{&quot;Name&quot;:&quot;CS_NET_TOOL_WEIGHT_LBS&quot;,&quot;DisplayName&quot;:&quot;Net Tool Weight [Lbs]&quot;,&quot;Value&quot;:&quot;7.56&quot;},{&quot;Name&quot;:&quot;CS_NUMBER OF BATTERIES INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Number Of Batteries Included&quot;,&quot;Value&quot;:&quot;2&quot;},{&quot;Name&quot;:&quot;CS_NUMBER_OF_BATTERIES_REQUIRED&quot;,&quot;DisplayName&quot;:&quot;Number Of Batteries Required&quot;,&quot;Value&quot;:&quot;1&quot;},{&quot;Name&quot;:&quot;CS_ORBITAL_ACTION&quot;,&quot;DisplayName&quot;:&quot;Orbital Action&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_PACKAGE_CONTENTS&quot;,&quot;DisplayName&quot;:&quot;Package Contents&quot;,&quot;Value&quot;:&quot;(1) DCS389 60V MAX  Brushless Cordless Reciprocating Saw; (1) Blade; (1) Charger; (2) DCB609 FLEXVOLT&#174; 9.0Ah Battery; (1) Kit Bag&quot;},{&quot;Name&quot;:&quot;CS_POWERED_TOOL_POWER_SOURCE&quot;,&quot;DisplayName&quot;:&quot;Powered Tool Power Source&quot;,&quot;Value&quot;:&quot;Electric - Cordless&quot;},{&quot;Name&quot;:&quot;CS_PRODUCT_STORAGE_INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Product Storage Included&quot;,&quot;Value&quot;:&quot;No Case Included&quot;},{&quot;Name&quot;:&quot;CS_STROKE_LENGTH_IN&quot;,&quot;DisplayName&quot;:&quot;Stroke Length (In)&quot;,&quot;Value&quot;:&quot;1.125&quot;},{&quot;Name&quot;:&quot;CS_TOOLLESS_BLADE_CHANGING&quot;,&quot;DisplayName&quot;:&quot;Tool-Less Blade Changing&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_UL LISTED&quot;,&quot;DisplayName&quot;:&quot;Ul Listed&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_VARIABLE SPEED&quot;,&quot;DisplayName&quot;:&quot;Variable Speed&quot;,&quot;Value&quot;:&quot;Yes&quot;}],&quot;IsLocalShippingOnly&quot;:false,&quot;IsCustomQuote&quot;:false,&quot;IsParcel&quot;:false,&quot;IsNmfc&quot;:false,&quot;IsHazardClass&quot;:false,&quot;TrackingData&quot;:{&quot;name&quot;:&quot;DEWALT 60V MAX Brushless Cordless Reciprocating Saw Kit&quot;,&quot;id&quot;:&quot;324DCS389X2&quot;,&quot;prod_id&quot;:&quot;P_466091&quot;,&quot;quantity&quot;:1,&quot;price&quot;:499.9900,&quot;category&quot;:&quot;Power Tools and Equipment/Power Saws/Reciprocating Saws&quot;,&quot;brand&quot;:&quot;DEWALT&quot;},&quot;Id&quot;:&quot;cc09e940-5c44-41f8-b7e4-708ed6f4a373&quot;}],&quot;Prices&quot;:{&quot;MinPrice&quot;:{&quot;Value&quot;:499.9900,&quot;Formatted&quot;:&quot;$499.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;MaxPrice&quot;:{&quot;Value&quot;:499.9900,&quot;Formatted&quot;:&quot;$499.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;}},&quot;Promotions&quot;:[{&quot;Name&quot;:&quot;Save 10%*&quot;,&quot;Description&quot;:&quot;Save 10% on the DEWALT 60V MAX Brushless Recip Saw Kit (324DCS389X2). While supplies last. Offer ends 07/31/2023. &quot;,&quot;Banner&quot;:null,&quot;RewardType&quot;:&quot;None&quot;,&quot;HiddenCode&quot;:&quot;DWQ223RECSAW (324DCS389X2)&quot;,&quot;DiscountTypeName&quot;:&quot;LineItem&quot;}],&quot;TrackingData&quot;:{&quot;name&quot;:&quot;DEWALT 60V MAX Brushless Cordless Reciprocating Saw Kit&quot;,&quot;id&quot;:&quot;P_466091&quot;,&quot;category&quot;:&quot;Power Tools and Equipment/Power Saws/Reciprocating Saws&quot;,&quot;brand&quot;:&quot;DEWALT&quot;,&quot;list&quot;:&quot;Reciprocating Saws&quot;},&quot;CanBeDeliveredToUser&quot;:true,&quot;IsLocalShippingOnly&quot;:false,&quot;IsOutOfStock&quot;:false,&quot;IsAvailableForOrder&quot;:false,&quot;NoSelectedBranch&quot;:true,&quot;SelectedBranchCity&quot;:&quot;Orlando&quot;,&quot;SelectedBranchPhoneNumber&quot;:&quot;(407)298-7083&quot;,&quot;UserZipCode&quot;:&quot;32805&quot;,&quot;IsAvailableLocally&quot;:false,&quot;Id&quot;:&quot;b5906339-7538-4ddd-ab6a-100b1c50aed9&quot;}">
+    <div class="product__container">
+        <form method="post" add-to-cart-form>
+                <a href="/p/dewalt-60v-max-brushless-cordless-reciprocating-saw-kit-466091/dcs389x2/324dcs389x2" class="product__image-link" title="DEWALT 60V MAX Brushless Cordless Reciprocating Saw Kit" object-fit>
+                        <div class="product__promo">
+                                    <div class="product__promo-title">Save 10%*</div>
+                        </div>
+                                            <img class="product__image" src="https://assets.syndigo.com/5f72c906-aa4e-4452-85b8-f121f11cd8e5?size=1000&amp;Filetype=JPEG&amp;width=187" alt="MAIN_IMAGE" />
+                </a>
+            <h3 class="product__title">
+                <a href="/p/dewalt-60v-max-brushless-cordless-reciprocating-saw-kit-466091/dcs389x2/324dcs389x2" class="product__link" title="DEWALT 60V MAX Brushless Cordless Reciprocating Saw Kit">
+                    DEWALT 60V MAX Brushless Cordless Reciprocating Saw Kit
+                </a>
+            </h3>
+                    <div class="product__sku-label">
+                        SKU#: <span class="product__sku-id">324DCS389X2</span>
+                    </div>
+                        <div class="product__price">
+$499.99                                <input type="hidden" name="priceType" value="MNT" />
+                        </div>
+                        <input type="hidden" name="code" value="324DCS389X2" />
+                        <input type="hidden" name="isLocalShippingOnly" value="false" />
+                        <input type="hidden" name="quantity" value="1" />
+                                <button type="submit" class="button button--yellow-white" add-to-cart title="">
+                                    <span>Add to cart</span>
+                                </button>
+        </form>
+    </div>
+</div>
+<!-- Product card end -->
+
+
+
+<!-- Product card start -->
+<div class="product" data-init="{&quot;Code&quot;:&quot;P_476361&quot;,&quot;Image&quot;:{&quot;AltText&quot;:&quot;MAIN_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/b5c04f52-e6f6-4944-8bdb-a46139a4e739?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;6ce11957-a6c7-4230-857d-124f344a8b77&quot;},&quot;Name&quot;:&quot;Milwaukee Mx Fuel 14\&quot; 2 Battery Cut-Off Saw Kit&quot;,&quot;Url&quot;:&quot;/p/milwaukee-mx-fuel-14-2-battery-cutoff-saw-kit-476361/mxf3142xc/131mxf3142xc&quot;,&quot;Variants&quot;:[{&quot;Code&quot;:&quot;131MXF3142XC&quot;,&quot;Name&quot;:&quot;Milwaukee Mx Fuel 14\&quot; 2 Battery Cut-Off Saw Kit&quot;,&quot;PartNumber&quot;:&quot;MXF3142XC&quot;,&quot;Images&quot;:[{&quot;AltText&quot;:&quot;MAIN_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/b5c04f52-e6f6-4944-8bdb-a46139a4e739?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;db91135f-4ae2-44a7-afaa-907d396b8ac3&quot;},{&quot;AltText&quot;:&quot;ALTERNATE_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/012cca5f-189e-4dab-a1e6-c41306e59017?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;6c5ac028-5b86-4bff-ab32-3822fb1e906d&quot;},{&quot;AltText&quot;:&quot;BRAND NAME LOGO&quot;,&quot;Url&quot;:&quot;https://assetportal.syndigo.com/d6363f11-f473-4baa-8926-5b6841f0e8f5?size=130&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;2083fd82-1524-4fbe-a7de-a6fd714e9614&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 10_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/98c7e1aa-fc74-4f12-a699-2707b19a8ff1?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;d5de221a-83c8-4ffb-bd89-ac0222d556e4&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 11_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/47bc1318-d62b-48b2-813c-437544d7cbbd?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;f1d2bfc0-bb41-4f4b-8fa4-30ba58b65f11&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 12_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/2c365d7a-638e-4a7a-9803-d40dec036061?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;33d2002f-fa71-43b5-8cd9-7d335ebefd26&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 13_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/87316351-6034-4f07-b4b1-78d4d69adc95?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;15955086-4c9c-43fb-b8c6-67f427fc838c&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 14_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/04619d62-5b63-4779-8743-bed18ecd2390?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;718e1446-3446-48f8-bc42-6268b46037af&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 1_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/a7105a67-438d-44ae-a514-1bdb4de4b8af?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;a059d297-76a4-4454-b909-14dca8c7ba2d&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 2_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/c20c2dd9-ab3c-4d56-a7e6-43ace8765a0a?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;b776a615-0472-4831-8fe4-006b96df01e7&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 3_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/afd6e3b1-893e-407a-8846-2d94ca5835d9?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;d8af218e-c94b-408a-b326-d20cc540752b&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 4_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/c149637f-5c6f-4f72-be00-7a71e8bc34c9?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;49a822a8-7009-45df-8ad1-60ff9b93abb1&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 5_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/4b320712-6f83-4d85-9ba3-b08ea02dd268?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;c0264ca8-2533-4297-af10-10090cae9a3f&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 6_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/ee65b3cf-108a-4ac2-b844-613f8a3bcbe5?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;d70b5a67-8240-459c-aa90-940205c6f16c&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 7_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/14dad581-1b22-4298-bbb2-794b9957f072?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;288bcee4-2be8-4dc7-af69-574e937aeb21&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 8_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/f5086eb9-8f6e-4591-a7db-230c37ae7cc8?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;ee9f2ffe-f013-49ae-90dd-c82e690919c2&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 9_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/547b7eb2-1ff3-4102-87dc-1dca3d1e9bcd?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;15f5a3af-253e-45a9-9ad8-28fd123566e9&quot;},{&quot;AltText&quot;:&quot;LIFESTYLE_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/1ef41691-1a3f-47b4-9914-311e00a974f1?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;34900fa9-3e38-4063-a0bf-90e0e5f6092c&quot;}],&quot;Documents&quot;:[{&quot;Url&quot;:&quot;https://assetportal.syndigo.com/7b492e9d-dcc3-4247-9b61-ef694b853793&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;1cdf9fc1-bbb8-4964-ab47-ba56386b1aeb&quot;}],&quot;Swatches&quot;:[],&quot;Prices&quot;:{&quot;OnSale&quot;:false,&quot;DefaultPrice&quot;:{&quot;Value&quot;:2799.9900,&quot;Formatted&quot;:&quot;$2,799.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalPrice&quot;:{&quot;Value&quot;:2799.9900,&quot;Formatted&quot;:&quot;$2,799.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalModelType&quot;:&quot;MNT&quot;,&quot;FinalModelName&quot;:&quot;MARKET NATIONAL&quot;,&quot;MapPrice&quot;:{&quot;Value&quot;:0.0,&quot;Formatted&quot;:&quot;$0.00&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;HasMapPrice&quot;:false},&quot;Attributes&quot;:[{&quot;Name&quot;:&quot;CS_AC_OR_DC_COMPATIBLE&quot;,&quot;DisplayName&quot;:&quot;Ac Or Dc Compatible&quot;,&quot;Value&quot;:&quot;DC Only&quot;},{&quot;Name&quot;:&quot;CS_ARBOR_SIZE_IN&quot;,&quot;DisplayName&quot;:&quot;Arbor Size (In)&quot;,&quot;Value&quot;:&quot;1&quot;},{&quot;Name&quot;:&quot;CS_ASSEMBLED_DEPTH_IN&quot;,&quot;DisplayName&quot;:&quot;Assembled Depth (In)&quot;,&quot;Value&quot;:&quot;31.73&quot;},{&quot;Name&quot;:&quot;CS_ASSEMBLED_HEIGHT_IN&quot;,&quot;DisplayName&quot;:&quot;Assembled Height (In)&quot;,&quot;Value&quot;:&quot;13.93&quot;},{&quot;Name&quot;:&quot;CS_ASSEMBLED_WEIGHT_LBS&quot;,&quot;DisplayName&quot;:&quot;Assembled Weight [Lbs]&quot;,&quot;Value&quot;:&quot;32.1&quot;},{&quot;Name&quot;:&quot;CS_ASSEMBLED_WIDTH_IN&quot;,&quot;DisplayName&quot;:&quot;Assembled Width (In)&quot;,&quot;Value&quot;:&quot;12&quot;},{&quot;Name&quot;:&quot;CS_BATTERY TYPE&quot;,&quot;DisplayName&quot;:&quot;Battery Type&quot;,&quot;Value&quot;:&quot;MX FUEL&quot;},{&quot;Name&quot;:&quot;CS_CASE INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Case Included&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_COLOR&quot;,&quot;DisplayName&quot;:&quot;Color&quot;,&quot;Value&quot;:&quot;Red/Black&quot;},{&quot;Name&quot;:&quot;CS_CSA_CERTIFIED&quot;,&quot;DisplayName&quot;:&quot;Csa Certified&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_DEPTH_OF_CUT_RANGE&quot;,&quot;DisplayName&quot;:&quot;Depth Of Cut Range&quot;,&quot;Value&quot;:&quot;0-5 in.&quot;},{&quot;Name&quot;:&quot;CS_ETL_LISTED&quot;,&quot;DisplayName&quot;:&quot;Etl Listed&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_LENGTH_IN&quot;,&quot;DisplayName&quot;:&quot;Length [In]&quot;,&quot;Value&quot;:&quot;31.73&quot;},{&quot;Name&quot;:&quot;CS_MANUFACTURER_WARRANTY&quot;,&quot;DisplayName&quot;:&quot;Manufacturer Warranty&quot;,&quot;Value&quot;:&quot;2 Years&quot;},{&quot;Name&quot;:&quot;CS_MAXIMUM_RPM&quot;,&quot;DisplayName&quot;:&quot;Maximum Rpm&quot;,&quot;Value&quot;:&quot;5350&quot;},{&quot;Name&quot;:&quot;CS_NET_TOOL_WEIGHT_LBS&quot;,&quot;DisplayName&quot;:&quot;Net Tool Weight [Lbs]&quot;,&quot;Value&quot;:&quot;32.1&quot;},{&quot;Name&quot;:&quot;CS_PACKAGE_CONTENTS&quot;,&quot;DisplayName&quot;:&quot;Package Contents&quot;,&quot;Value&quot;:&quot;(1) MXF314 Cutoff Saw (2) MXFXC406 XC Batteries (1) MXFC Charger&quot;},{&quot;Name&quot;:&quot;CS_POWERED_TOOL_POWER_SOURCE&quot;,&quot;DisplayName&quot;:&quot;Powered Tool Power Source&quot;,&quot;Value&quot;:&quot;Electric - Cordless&quot;},{&quot;Name&quot;:&quot;CS_RECOMMENDED_SAFETY_EQUIPMENT&quot;,&quot;DisplayName&quot;:&quot;Recommended Safety Equipment&quot;,&quot;Value&quot;:&quot;Safety Glasses, Safety Gloves&quot;},{&quot;Name&quot;:&quot;CS_SPINDLE LOCK&quot;,&quot;DisplayName&quot;:&quot;Spindle Lock&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_UL LISTED&quot;,&quot;DisplayName&quot;:&quot;Ul Listed&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_WHEEL_DIAMETER_IN&quot;,&quot;DisplayName&quot;:&quot;Wheel Diameter (In)&quot;,&quot;Value&quot;:&quot;14&quot;},{&quot;Name&quot;:&quot;CS_WIDTH_IN&quot;,&quot;DisplayName&quot;:&quot;Width (In)&quot;,&quot;Value&quot;:&quot;12&quot;},{&quot;Name&quot;:&quot;GA_WARRANTY&quot;,&quot;DisplayName&quot;:&quot;Warranty&quot;,&quot;Value&quot;:&quot;Yes&quot;}],&quot;IsLocalShippingOnly&quot;:false,&quot;IsCustomQuote&quot;:false,&quot;IsParcel&quot;:false,&quot;IsNmfc&quot;:false,&quot;IsHazardClass&quot;:false,&quot;TrackingData&quot;:{&quot;name&quot;:&quot;Milwaukee Mx Fuel 14\&quot; 2 Battery Cut-Off Saw Kit&quot;,&quot;id&quot;:&quot;131MXF3142XC&quot;,&quot;prod_id&quot;:&quot;P_476361&quot;,&quot;quantity&quot;:1,&quot;price&quot;:2799.9900,&quot;category&quot;:&quot;Power Tools and Equipment/Concrete and Masonry Saws/Cutoff Saws&quot;,&quot;brand&quot;:&quot;Milwaukee&quot;},&quot;Id&quot;:&quot;e9644bbf-1e65-4610-8b96-c4c10d522800&quot;}],&quot;Prices&quot;:{&quot;MinPrice&quot;:{&quot;Value&quot;:2799.9900,&quot;Formatted&quot;:&quot;$2,799.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;MaxPrice&quot;:{&quot;Value&quot;:2799.9900,&quot;Formatted&quot;:&quot;$2,799.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;}},&quot;Promotions&quot;:[{&quot;Name&quot;:&quot;Save $500*&quot;,&quot;Description&quot;:&quot;Buy ONE (1) Milwaukee Mx Fuel 14\&quot; 2 Battery Cut-Off Saw Kit (131MXF3142XC), save $500. While supplies last. Offer ends 07/31/2023.&quot;,&quot;Banner&quot;:null,&quot;RewardType&quot;:&quot;None&quot;,&quot;HiddenCode&quot;:&quot;MWQ223NLPCSW (131MXF3142XC)&quot;,&quot;DiscountTypeName&quot;:&quot;LineItem&quot;}],&quot;TrackingData&quot;:{&quot;name&quot;:&quot;Milwaukee Mx Fuel 14\&quot; 2 Battery Cut-Off Saw Kit&quot;,&quot;id&quot;:&quot;P_476361&quot;,&quot;category&quot;:&quot;Power Tools and Equipment/Concrete and Masonry Saws/Cutoff Saws&quot;,&quot;brand&quot;:&quot;Milwaukee&quot;,&quot;list&quot;:&quot;Cutoff Saws&quot;},&quot;CanBeDeliveredToUser&quot;:true,&quot;IsLocalShippingOnly&quot;:false,&quot;IsOutOfStock&quot;:false,&quot;IsAvailableForOrder&quot;:false,&quot;NoSelectedBranch&quot;:true,&quot;SelectedBranchCity&quot;:&quot;Orlando&quot;,&quot;SelectedBranchPhoneNumber&quot;:&quot;(407)298-7083&quot;,&quot;UserZipCode&quot;:&quot;32805&quot;,&quot;IsAvailableLocally&quot;:false,&quot;Id&quot;:&quot;4ff07184-60d7-4bdf-8a0e-a74364f4be53&quot;}">
+    <div class="product__container">
+        <form method="post" add-to-cart-form>
+                <a href="/p/milwaukee-mx-fuel-14-2-battery-cutoff-saw-kit-476361/mxf3142xc/131mxf3142xc" class="product__image-link" title="Milwaukee Mx Fuel 14&quot; 2 Battery Cut-Off Saw Kit" object-fit>
+                        <div class="product__promo">
+                                    <div class="product__promo-title">Save $500*</div>
+                        </div>
+                                            <img class="product__image" src="https://assets.syndigo.com/b5c04f52-e6f6-4944-8bdb-a46139a4e739?size=1000&amp;Filetype=JPEG&amp;width=187" alt="MAIN_IMAGE" />
+                </a>
+            <h3 class="product__title">
+                <a href="/p/milwaukee-mx-fuel-14-2-battery-cutoff-saw-kit-476361/mxf3142xc/131mxf3142xc" class="product__link" title="Milwaukee Mx Fuel 14&quot; 2 Battery Cut-Off Saw Kit">
+                    Milwaukee Mx Fuel 14&quot; 2 Battery Cut-Off Saw Kit
+                </a>
+            </h3>
+                    <div class="product__sku-label">
+                        SKU#: <span class="product__sku-id">131MXF3142XC</span>
+                    </div>
+                        <div class="product__price">
+$2,799.99                                <input type="hidden" name="priceType" value="MNT" />
+                        </div>
+                        <input type="hidden" name="code" value="131MXF3142XC" />
+                        <input type="hidden" name="isLocalShippingOnly" value="false" />
+                        <input type="hidden" name="quantity" value="1" />
+                                <button type="submit" class="button button--yellow-white" add-to-cart title="">
+                                    <span>Add to cart</span>
+                                </button>
+        </form>
+    </div>
+</div>
+<!-- Product card end -->
+
+
+
+<!-- Product card start -->
+<div class="product" data-init="{&quot;Code&quot;:&quot;P_466084&quot;,&quot;Image&quot;:{&quot;AltText&quot;:&quot;MAIN_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/0f7f479a-7aef-404f-a02e-d6891274b615?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;ff23792b-efaf-4921-8dd6-9e4adf68bc81&quot;},&quot;Name&quot;:&quot;DEWALT Flexvolt 60V Max 4.5 - 6\&quot; SAG No Lock Kit&quot;,&quot;Url&quot;:&quot;/p/dewalt-flexvolt-60v-max-45--6-sag-no-lock-kit-466084/dcg418x2/324dcg418x2&quot;,&quot;Variants&quot;:[{&quot;Code&quot;:&quot;324DCG418X2&quot;,&quot;Name&quot;:&quot;DEWALT Flexvolt 60V Max 4.5 - 6\&quot; SAG No Lock Kit&quot;,&quot;PartNumber&quot;:&quot;DCG418X2&quot;,&quot;Images&quot;:[{&quot;AltText&quot;:&quot;MAIN_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/0f7f479a-7aef-404f-a02e-d6891274b615?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;ddf9fe39-2b75-47ae-a9c1-591f1150fae6&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 10_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/8da5106c-0ece-420e-beb5-4e65fb8f4b54?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;b3f3e102-2087-4452-bea2-37795eda9aad&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 11_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/bc953bdd-62a7-42fe-baa5-f1acfb7effc2?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;ece4dbe9-bc12-425d-9d8a-0fb8a9456bdb&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 12_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/fb06fe2a-702f-4766-b05a-108d2bccba03?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;dec95332-3064-4299-a81f-afb146b41566&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 13_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/3f9abd43-da54-4a14-87b5-547f367687d9?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;86994fb1-f124-4309-b02c-329cac47287c&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 14_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/83711b48-2ad4-43ce-9b65-7e2fb419d9dd?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;0f758c4e-ac32-4d0a-b361-d54361a65ae8&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 15_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/05ac6082-1513-402a-a93c-26716c295628?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;97c58ae5-9b7a-4ea3-a357-aec0b8c501d0&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 2_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/014b8850-7cbe-4ab6-9ace-fc1a7be64593?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;9f3d599f-1f59-413b-b7b0-27dc8b65cdda&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 3_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/d77e52ae-3b57-42bd-b0ae-45f6cd864bb7?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;014ed72d-a490-41c5-8efd-fddf5f689ca3&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 4_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/5f856aa9-bb4d-4fc2-b1ea-ce468aacca03?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;24553410-8244-44ba-b4a5-2905041ff72f&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 5_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/8f1f548c-67ae-4225-b95c-fb7f0b0e421e?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;e35ea8db-6a34-4f2c-8903-3e89b71ea2e6&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 6_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/dfea2dd5-6a57-483d-80d1-16d609a6a5f1?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;f1dc911d-429d-4eda-a477-0309681c58ff&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 7_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/b0db3aef-c2a2-4d13-b099-42b806f155eb?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;ec85a85b-a420-4100-ad88-493a1dacb725&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 8_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/981414f9-f0f4-4848-a08d-498059c9c764?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;bf7334ee-22e1-4400-82dc-aff20e5061be&quot;},{&quot;AltText&quot;:&quot;DETAILED PRODUCT VIEW 9_IMAGE&quot;,&quot;Url&quot;:&quot;https://assets.syndigo.com/f01d2497-eee8-4e99-b0a9-49b064fae97e?size=1000&amp;Filetype=JPEG&quot;,&quot;Name&quot;:&quot;&quot;,&quot;Id&quot;:&quot;0538dafd-fd64-42fa-9c7a-58c2d3434102&quot;}],&quot;Documents&quot;:[],&quot;Swatches&quot;:[],&quot;Prices&quot;:{&quot;OnSale&quot;:false,&quot;DefaultPrice&quot;:{&quot;Value&quot;:499.9900,&quot;Formatted&quot;:&quot;$499.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalPrice&quot;:{&quot;Value&quot;:499.9900,&quot;Formatted&quot;:&quot;$499.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalModelType&quot;:&quot;MNT&quot;,&quot;FinalModelName&quot;:&quot;MARKET NATIONAL&quot;,&quot;MapPrice&quot;:{&quot;Value&quot;:0.0,&quot;Formatted&quot;:&quot;$0.00&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;HasMapPrice&quot;:false},&quot;Attributes&quot;:[{&quot;Name&quot;:&quot;CS_ARBOR SIZE&quot;,&quot;DisplayName&quot;:&quot;Arbor Size&quot;,&quot;Value&quot;:&quot;5/8 -11 UNC&quot;},{&quot;Name&quot;:&quot;CS_ASSEMBLED_WEIGHT_LBS&quot;,&quot;DisplayName&quot;:&quot;Assembled Weight [Lbs]&quot;,&quot;Value&quot;:&quot;4.66&quot;},{&quot;Name&quot;:&quot;CS_BATTERY_VOLTAGE_V&quot;,&quot;DisplayName&quot;:&quot;Battery Voltage (V)&quot;,&quot;Value&quot;:&quot;60&quot;},{&quot;Name&quot;:&quot;CS_CHARGER INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Charger Included&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_COLOR&quot;,&quot;DisplayName&quot;:&quot;Color&quot;,&quot;Value&quot;:&quot;Yellow/Black&quot;},{&quot;Name&quot;:&quot;CS_CORDLESS_CORDED&quot;,&quot;DisplayName&quot;:&quot;Cordless / Corded&quot;,&quot;Value&quot;:&quot;Cordless&quot;},{&quot;Name&quot;:&quot;CS_CSA_CERTIFIED&quot;,&quot;DisplayName&quot;:&quot;Csa Certified&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_ETL_LISTED&quot;,&quot;DisplayName&quot;:&quot;Etl Listed&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_GRINDER TYPE&quot;,&quot;DisplayName&quot;:&quot;Grinder Type&quot;,&quot;Value&quot;:&quot;Straight&quot;},{&quot;Name&quot;:&quot;CS_HOUSING MATERIAL&quot;,&quot;DisplayName&quot;:&quot;Housing Material&quot;,&quot;Value&quot;:&quot;Plastic&quot;},{&quot;Name&quot;:&quot;CS_LENGTH_IN&quot;,&quot;DisplayName&quot;:&quot;Length [In]&quot;,&quot;Value&quot;:&quot;12&quot;},{&quot;Name&quot;:&quot;CS_MANUFACTURER_WARRANTY&quot;,&quot;DisplayName&quot;:&quot;Manufacturer Warranty&quot;,&quot;Value&quot;:&quot;3 year limited warranty/1 year free service contract/90 day money back guarantee&quot;},{&quot;Name&quot;:&quot;CS_MAXIMUM_RPM&quot;,&quot;DisplayName&quot;:&quot;Maximum Rpm&quot;,&quot;Value&quot;:&quot;9000&quot;},{&quot;Name&quot;:&quot;CS_NET_TOOL_WEIGHT_LBS&quot;,&quot;DisplayName&quot;:&quot;Net Tool Weight [Lbs]&quot;,&quot;Value&quot;:&quot;4.66&quot;},{&quot;Name&quot;:&quot;CS_NUMBER OF BATTERIES INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Number Of Batteries Included&quot;,&quot;Value&quot;:&quot;2&quot;},{&quot;Name&quot;:&quot;CS_NUMBER_OF_BATTERIES_REQUIRED&quot;,&quot;DisplayName&quot;:&quot;Number Of Batteries Required&quot;,&quot;Value&quot;:&quot;1&quot;},{&quot;Name&quot;:&quot;CS_PACKAGE_CONTENTS&quot;,&quot;DisplayName&quot;:&quot;Package Contents&quot;,&quot;Value&quot;:&quot;(1) DCG418 60V MAX Brushless 4-1/2 in. - 6 in. Cordless Grinder; (1) Wrench; (2) Flanges; (1) Side Handle; (1) 4-1/2 in. (115mm) Type 27 Guard; (1) 6 in. (150mm) Type 27 Guard; (2) DCB609 FLEXVOLT&#174; 9.0Ah Battery; (1) Charger; (1) Kit Bag&quot;},{&quot;Name&quot;:&quot;CS_POWERED_TOOL_POWER_SOURCE&quot;,&quot;DisplayName&quot;:&quot;Powered Tool Power Source&quot;,&quot;Value&quot;:&quot;Electric - Cordless&quot;},{&quot;Name&quot;:&quot;CS_PRODUCT_STORAGE_INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Product Storage Included&quot;,&quot;Value&quot;:&quot;Bag&quot;},{&quot;Name&quot;:&quot;CS_SIDE HANDLE&quot;,&quot;DisplayName&quot;:&quot;Side Handle&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_UL LISTED&quot;,&quot;DisplayName&quot;:&quot;Ul Listed&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_VARIABLE SPEED&quot;,&quot;DisplayName&quot;:&quot;Variable Speed&quot;,&quot;Value&quot;:&quot;No&quot;}],&quot;IsLocalShippingOnly&quot;:false,&quot;IsCustomQuote&quot;:false,&quot;IsParcel&quot;:false,&quot;IsNmfc&quot;:false,&quot;IsHazardClass&quot;:false,&quot;TrackingData&quot;:{&quot;name&quot;:&quot;DEWALT Flexvolt 60V Max 4.5 - 6\&quot; SAG No Lock Kit&quot;,&quot;id&quot;:&quot;324DCG418X2&quot;,&quot;prod_id&quot;:&quot;P_466084&quot;,&quot;quantity&quot;:1,&quot;price&quot;:499.9900,&quot;category&quot;:&quot;Power Tools and Equipment/Power Grinders and Sanders/Angle and Disc Grinders&quot;,&quot;brand&quot;:&quot;DEWALT&quot;},&quot;Id&quot;:&quot;3a0bc0a6-a39c-4c4d-954d-19186fa2156e&quot;}],&quot;Prices&quot;:{&quot;MinPrice&quot;:{&quot;Value&quot;:499.9900,&quot;Formatted&quot;:&quot;$499.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;MaxPrice&quot;:{&quot;Value&quot;:499.9900,&quot;Formatted&quot;:&quot;$499.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;}},&quot;Promotions&quot;:[{&quot;Name&quot;:&quot;Save 10% *&quot;,&quot;Description&quot;:&quot;Save 10% on the DEWALT 60V MAX Brushless 4-1/2\&quot;-6\&quot; Grinder w/ Kickback Brake Kit (324DCG418X2). While supplies last. Offer ends 07/31/2023. &quot;,&quot;Banner&quot;:null,&quot;RewardType&quot;:&quot;None&quot;,&quot;HiddenCode&quot;:&quot;DWQ223CRDLS1 (324DCG418X2)&quot;,&quot;DiscountTypeName&quot;:&quot;LineItem&quot;}],&quot;TrackingData&quot;:{&quot;name&quot;:&quot;DEWALT Flexvolt 60V Max 4.5 - 6\&quot; SAG No Lock Kit&quot;,&quot;id&quot;:&quot;P_466084&quot;,&quot;category&quot;:&quot;Power Tools and Equipment/Power Grinders and Sanders/Angle and Disc Grinders&quot;,&quot;brand&quot;:&quot;DEWALT&quot;,&quot;list&quot;:&quot;Angle and Disc Grinders&quot;},&quot;CanBeDeliveredToUser&quot;:true,&quot;IsLocalShippingOnly&quot;:false,&quot;IsOutOfStock&quot;:false,&quot;IsAvailableForOrder&quot;:false,&quot;NoSelectedBranch&quot;:true,&quot;SelectedBranchCity&quot;:&quot;Orlando&quot;,&quot;SelectedBranchPhoneNumber&quot;:&quot;(407)298-7083&quot;,&quot;UserZipCode&quot;:&quot;32805&quot;,&quot;IsAvailableLocally&quot;:false,&quot;Id&quot;:&quot;d5f72cdf-5a82-44f3-be2c-3d419fa2f34c&quot;}">
+    <div class="product__container">
+        <form method="post" add-to-cart-form>
+                <a href="/p/dewalt-flexvolt-60v-max-45--6-sag-no-lock-kit-466084/dcg418x2/324dcg418x2" class="product__image-link" title="DEWALT Flexvolt 60V Max 4.5 - 6&quot; SAG No Lock Kit" object-fit>
+                        <div class="product__promo">
+                                    <div class="product__promo-title">Save 10% *</div>
+                        </div>
+                                            <img class="product__image" src="https://assets.syndigo.com/0f7f479a-7aef-404f-a02e-d6891274b615?size=1000&amp;Filetype=JPEG&amp;width=187" alt="MAIN_IMAGE" />
+                </a>
+            <h3 class="product__title">
+                <a href="/p/dewalt-flexvolt-60v-max-45--6-sag-no-lock-kit-466084/dcg418x2/324dcg418x2" class="product__link" title="DEWALT Flexvolt 60V Max 4.5 - 6&quot; SAG No Lock Kit">
+                    DEWALT Flexvolt 60V Max 4.5 - 6&quot; SAG No Lock Kit
+                </a>
+            </h3>
+                    <div class="product__sku-label">
+                        SKU#: <span class="product__sku-id">324DCG418X2</span>
+                    </div>
+                        <div class="product__price">
+$499.99                                <input type="hidden" name="priceType" value="MNT" />
+                        </div>
+                        <input type="hidden" name="code" value="324DCG418X2" />
+                        <input type="hidden" name="isLocalShippingOnly" value="false" />
+                        <input type="hidden" name="quantity" value="1" />
+                                <button type="submit" class="button button--yellow-white" add-to-cart title="">
+                                    <span>Add to cart</span>
+                                </button>
+        </form>
+    </div>
+</div>
+<!-- Product card end -->
+
+
+
+<!-- Product card start -->
+<div class="product" data-init="{&quot;Code&quot;:&quot;P_142480&quot;,&quot;Image&quot;:{&quot;AltText&quot;:&quot;Hero Image&quot;,&quot;Url&quot;:&quot;/globalassets/imports/default/entries/damhdsmarketingtoolspower-toolsgrinders-and-accessoriesangle-and-disc-grinderscorded-angle-grinders162gws1350p_hero_a.jpg?v=1D93214E2350300&quot;,&quot;Name&quot;:&quot;/DAM/HDSMARKETING/TOOLS/POWER TOOLS/GRINDERS AND ACCESSORIES/ANGLE AND DISC GRINDERS/CORDED ANGLE GRINDERS/162GWS1350P_HERO_A.jpg&quot;,&quot;Id&quot;:&quot;4aff4d84-02a1-4cc9-8391-74fde1223438&quot;},&quot;Name&quot;:&quot;Bosch 5\&quot; Angle Grinder with Paddle Switch&quot;,&quot;Url&quot;:&quot;/p/bosch-5-angle-grinder-with-paddle-switch-142480/gws1350p/162gws1350p&quot;,&quot;Variants&quot;:[{&quot;Code&quot;:&quot;162GWS1350P&quot;,&quot;Name&quot;:&quot;Bosch 5\&quot; Angle Grinder with Paddle Switch&quot;,&quot;PartNumber&quot;:&quot;GWS1350P&quot;,&quot;Images&quot;:[{&quot;AltText&quot;:&quot;Hero Image&quot;,&quot;Url&quot;:&quot;/globalassets/imports/default/entries/damhdsmarketingtoolspower-toolsgrinders-and-accessoriesangle-and-disc-grinderscorded-angle-grinders162gws1350p_hero_a.jpg?v=1D93214E2350300&quot;,&quot;Name&quot;:&quot;/DAM/HDSMARKETING/TOOLS/POWER TOOLS/GRINDERS AND ACCESSORIES/ANGLE AND DISC GRINDERS/CORDED ANGLE GRINDERS/162GWS1350P_HERO_A.jpg&quot;,&quot;Id&quot;:&quot;4aff4d84-02a1-4cc9-8391-74fde1223438&quot;}],&quot;Documents&quot;:[],&quot;Swatches&quot;:[],&quot;Prices&quot;:{&quot;OnSale&quot;:false,&quot;DefaultPrice&quot;:{&quot;Value&quot;:150.9900,&quot;Formatted&quot;:&quot;$150.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalPrice&quot;:{&quot;Value&quot;:150.9900,&quot;Formatted&quot;:&quot;$150.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;FinalModelType&quot;:&quot;MNT&quot;,&quot;FinalModelName&quot;:&quot;MARKET NATIONAL&quot;,&quot;MapPrice&quot;:{&quot;Value&quot;:0.0,&quot;Formatted&quot;:&quot;$0.00&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;HasMapPrice&quot;:false},&quot;Attributes&quot;:[{&quot;Name&quot;:&quot;CS_ACCESSORIES_INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Accessories Included&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_ADJUSTABLE_HANDLE_POSITION&quot;,&quot;DisplayName&quot;:&quot;Adjustable Handle Position&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_AMPERAGE_A&quot;,&quot;DisplayName&quot;:&quot;Amperage (A)&quot;,&quot;Value&quot;:&quot;13&quot;},{&quot;Name&quot;:&quot;CS_ARBOR SIZE&quot;,&quot;DisplayName&quot;:&quot;Arbor Size&quot;,&quot;Value&quot;:&quot;5/8 -11 UNC&quot;},{&quot;Name&quot;:&quot;CS_COLOR&quot;,&quot;DisplayName&quot;:&quot;Color&quot;,&quot;Value&quot;:&quot;Blue&quot;},{&quot;Name&quot;:&quot;CS_CORD_LENGTH_FT&quot;,&quot;DisplayName&quot;:&quot;Cord Length (Ft)&quot;,&quot;Value&quot;:&quot;8&quot;},{&quot;Name&quot;:&quot;CS_CORDLESS_CORDED&quot;,&quot;DisplayName&quot;:&quot;Cordless / Corded&quot;,&quot;Value&quot;:&quot;Corded&quot;},{&quot;Name&quot;:&quot;CS_CSA_CERTIFIED&quot;,&quot;DisplayName&quot;:&quot;Csa Certified&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_ELECTRONIC SPEED CONTROL&quot;,&quot;DisplayName&quot;:&quot;Electronic Speed Control&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_ETL_LISTED&quot;,&quot;DisplayName&quot;:&quot;Etl Listed&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_GRINDER SWITCH TYPE&quot;,&quot;DisplayName&quot;:&quot;Grinder Switch Type&quot;,&quot;Value&quot;:&quot;Paddle&quot;},{&quot;Name&quot;:&quot;CS_GRINDER TYPE&quot;,&quot;DisplayName&quot;:&quot;Grinder Type&quot;,&quot;Value&quot;:&quot;Angle&quot;},{&quot;Name&quot;:&quot;CS_GRINDING WHEEL INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Grinding Wheel Included&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_HANDLE TYPE&quot;,&quot;DisplayName&quot;:&quot;Handle Type&quot;,&quot;Value&quot;:&quot;Anti-Vibration handle&quot;},{&quot;Name&quot;:&quot;CS_HOUSING MATERIAL&quot;,&quot;DisplayName&quot;:&quot;Housing Material&quot;,&quot;Value&quot;:&quot;Plastic Polymer Construction&quot;},{&quot;Name&quot;:&quot;CS_LENGTH_IN&quot;,&quot;DisplayName&quot;:&quot;Length [In]&quot;,&quot;Value&quot;:&quot;12.3&quot;},{&quot;Name&quot;:&quot;CS_LOCKON_SWITCH&quot;,&quot;DisplayName&quot;:&quot;Lock-On Switch&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_MANUFACTURER_WARRANTY&quot;,&quot;DisplayName&quot;:&quot;Manufacturer Warranty&quot;,&quot;Value&quot;:&quot;Limited 1 Year&quot;},{&quot;Name&quot;:&quot;CS_MAXIMUM_OUTPUT_WATTAGE&quot;,&quot;DisplayName&quot;:&quot;Maximum Output Wattage&quot;,&quot;Value&quot;:&quot;1500&quot;},{&quot;Name&quot;:&quot;CS_MAXIMUM_RPM&quot;,&quot;DisplayName&quot;:&quot;Maximum Rpm&quot;,&quot;Value&quot;:&quot;11500&quot;},{&quot;Name&quot;:&quot;CS_NET_TOOL_WEIGHT_LBS&quot;,&quot;DisplayName&quot;:&quot;Net Tool Weight [Lbs]&quot;,&quot;Value&quot;:&quot;5.3&quot;},{&quot;Name&quot;:&quot;CS_OVERLOAD PROTECTION&quot;,&quot;DisplayName&quot;:&quot;Overload Protection&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_PACKAGE_CONTENTS&quot;,&quot;DisplayName&quot;:&quot;Package Contents&quot;,&quot;Value&quot;:&quot;(1) 5 In. Angle Grinder, (1) Backing Flange, (1) Lock Nut, (1) Spanner Wrench, (1) Type 27 Grinding Guard, (1) Vibration Control Side Handle&quot;},{&quot;Name&quot;:&quot;CS_POWERED_TOOL_POWER_SOURCE&quot;,&quot;DisplayName&quot;:&quot;Powered Tool Power Source&quot;,&quot;Value&quot;:&quot;Electric - Corded&quot;},{&quot;Name&quot;:&quot;CS_PRODUCT_STORAGE_INCLUDED&quot;,&quot;DisplayName&quot;:&quot;Product Storage Included&quot;,&quot;Value&quot;:&quot;No Case Included&quot;},{&quot;Name&quot;:&quot;CS_REPLACEABLE BRUSHES&quot;,&quot;DisplayName&quot;:&quot;Replaceable Brushes&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_SIDE HANDLE&quot;,&quot;DisplayName&quot;:&quot;Side Handle&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_SPINDLE LOCK&quot;,&quot;DisplayName&quot;:&quot;Spindle Lock&quot;,&quot;Value&quot;:&quot;Yes&quot;},{&quot;Name&quot;:&quot;CS_UL LISTED&quot;,&quot;DisplayName&quot;:&quot;Ul Listed&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_VARIABLE SPEED&quot;,&quot;DisplayName&quot;:&quot;Variable Speed&quot;,&quot;Value&quot;:&quot;No&quot;},{&quot;Name&quot;:&quot;CS_VOLTAGE&quot;,&quot;DisplayName&quot;:&quot;Voltage&quot;,&quot;Value&quot;:&quot;120&quot;},{&quot;Name&quot;:&quot;CS_WHEEL_DIAMETER_IN&quot;,&quot;DisplayName&quot;:&quot;Wheel Diameter (In)&quot;,&quot;Value&quot;:&quot;5&quot;},{&quot;Name&quot;:&quot;GA_MATERIAL&quot;,&quot;DisplayName&quot;:&quot;Material&quot;,&quot;Value&quot;:&quot;Plastic Polymer&quot;}],&quot;IsLocalShippingOnly&quot;:false,&quot;IsCustomQuote&quot;:false,&quot;IsParcel&quot;:true,&quot;IsNmfc&quot;:false,&quot;IsHazardClass&quot;:false,&quot;TrackingData&quot;:{&quot;name&quot;:&quot;Bosch 5\&quot; Angle Grinder with Paddle Switch&quot;,&quot;id&quot;:&quot;162GWS1350P&quot;,&quot;prod_id&quot;:&quot;P_142480&quot;,&quot;quantity&quot;:1,&quot;price&quot;:150.9900,&quot;category&quot;:&quot;Power Tools and Equipment/Power Grinders and Sanders/Angle and Disc Grinders&quot;,&quot;brand&quot;:&quot;Bosch&quot;},&quot;Id&quot;:&quot;fe18664f-a9dc-4d97-92b5-84282c36317b&quot;}],&quot;Prices&quot;:{&quot;MinPrice&quot;:{&quot;Value&quot;:150.9900,&quot;Formatted&quot;:&quot;$150.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;},&quot;MaxPrice&quot;:{&quot;Value&quot;:150.9900,&quot;Formatted&quot;:&quot;$150.99&quot;,&quot;CurrencySymbol&quot;:&quot;$&quot;}},&quot;Promotions&quot;:[{&quot;Name&quot;:&quot;Save $20*&quot;,&quot;Description&quot;:&quot;Buy ONE (1) Bosch 5\&quot; Angle Grinder with Paddle Switch (162GWS1350P), save $20. While supplies last. Offer ends 07/31/2023.&quot;,&quot;Banner&quot;:null,&quot;RewardType&quot;:&quot;None&quot;,&quot;HiddenCode&quot;:&quot;BSQ223NGL20 (162GWS1350P)&quot;,&quot;DiscountTypeName&quot;:&quot;LineItem&quot;},{&quot;Name&quot;:&quot;Free Battery*&quot;,&quot;Description&quot;:&quot;Buy ONE (1) Bosch 5\&quot; Angle Grinder with Paddle Switch (162GWS1350P), get ONE (1) free Bosch 18V CORE18V Lithium Ion 8.0 Ah Performance Battery (162GBA18V80). While supplies last. Offer ends 07/31/2023.&quot;,&quot;Banner&quot;:null,&quot;RewardType&quot;:&quot;None&quot;,&quot;HiddenCode&quot;:&quot;BSQ223NGL20 (162GWS1350P)&quot;,&quot;DiscountTypeName&quot;:&quot;LineItem&quot;}],&quot;TrackingData&quot;:{&quot;name&quot;:&quot;Bosch 5\&quot; Angle Grinder with Paddle Switch&quot;,&quot;id&quot;:&quot;P_142480&quot;,&quot;category&quot;:&quot;Power Tools and Equipment/Power Grinders and Sanders/Angle and Disc Grinders&quot;,&quot;brand&quot;:&quot;Bosch&quot;,&quot;list&quot;:&quot;Angle and Disc Grinders&quot;},&quot;CanBeDeliveredToUser&quot;:true,&quot;IsLocalShippingOnly&quot;:false,&quot;IsOutOfStock&quot;:false,&quot;IsAvailableForOrder&quot;:false,&quot;NoSelectedBranch&quot;:true,&quot;SelectedBranchCity&quot;:&quot;Orlando&quot;,&quot;SelectedBranchPhoneNumber&quot;:&quot;(407)298-7083&quot;,&quot;UserZipCode&quot;:&quot;32805&quot;,&quot;IsAvailableLocally&quot;:false,&quot;Id&quot;:&quot;84809be9-ee87-483f-a494-49cdc1ac432e&quot;}">
+    <div class="product__container">
+        <form method="post" add-to-cart-form>
+                <a href="/p/bosch-5-angle-grinder-with-paddle-switch-142480/gws1350p/162gws1350p" class="product__image-link" title="Bosch 5&quot; Angle Grinder with Paddle Switch" object-fit>
+                        <div class="product__promo">
+                                    <div class="product__promo-title">Save $20*</div>
+                                    <div class="product__promo-title">Free Battery*</div>
+                        </div>
+                                            <img class="product__image" src="/globalassets/imports/default/entries/damhdsmarketingtoolspower-toolsgrinders-and-accessoriesangle-and-disc-grinderscorded-angle-grinders162gws1350p_hero_a.jpg?v=1D93214E2350300&amp;width=187" alt="Hero Image" />
+                </a>
+            <h3 class="product__title">
+                <a href="/p/bosch-5-angle-grinder-with-paddle-switch-142480/gws1350p/162gws1350p" class="product__link" title="Bosch 5&quot; Angle Grinder with Paddle Switch">
+                    Bosch 5&quot; Angle Grinder with Paddle Switch
+                </a>
+            </h3>
+                    <div class="product__sku-label">
+                        SKU#: <span class="product__sku-id">162GWS1350P</span>
+                    </div>
+                        <div class="product__price">
+$150.99                                <input type="hidden" name="priceType" value="MNT" />
+                        </div>
+                        <input type="hidden" name="code" value="162GWS1350P" />
+                        <input type="hidden" name="isLocalShippingOnly" value="false" />
+                        <input type="hidden" name="quantity" value="1" />
+                                <button type="submit" class="button button--yellow-white" add-to-cart title="">
+                                    <span>Add to cart</span>
+                                </button>
+        </form>
+    </div>
+</div>
+<!-- Product card end -->
+                </div>
+    <!-- Product collection block end -->
+
+    <!-- Html block start -->
+    <div class="cms-content ">
+        <p>&nbsp;</p>
+    </div>
+    <!-- Html block end -->
+
+    <!-- Banner block start -->
+    <section class="banner ">
+                    <a href="https://www.whitecap.com/c/hydration-and-heat-stress-prevention-312855" class="banner__link" title="" target="_self">
+                <picture>
+                    <source media="(max-width: 767px)" srcset="/globalassets/home-page/heatstress_600x230.jpg?v=1D9A4748F364380">
+                    <source media="(min-width: 768px)" srcset="/globalassets/hurricane-preparation/heatstress_1800x430.jpg?v=1D9A474847BAE80">
+                    <img class="banner__image" src="/globalassets/hurricane-preparation/heatstress_1800x430.jpg?v=1D9A474847BAE80" alt="Heatstress_1800x430.jpg">
+                </picture>
+            </a>
+
+
+        <span class="banner__title"></span>
+
+    </section>
+    <!-- Banner block end -->
+
+    <!-- Html block start -->
+    <div class="cms-content ">
+        <p>&nbsp;</p>
+    </div>
+    <!-- Html block end -->
+
+<!-- Promo collection block start -->
+<div class="promo-collection ">
+    
+<!-- Promo block start -->
+<section class="promo ">
+                <picture>
+                <source media="(max-width: 767px)" srcset="/globalassets/stormwater-management-reducing-runoff.jpg?v=1D97F894CCEAB00">
+                <source media="(min-width: 768px)" srcset="/globalassets/stormwater-management-reducing-runoff.jpg?v=1D97F894CCEAB00">
+                <img class="promo__image" src="/globalassets/stormwater-management-reducing-runoff.jpg?v=1D97F894CCEAB00" alt="stormwater-management-reducing-runoff.jpg">
+            </picture>
+
+
+        <h2 class="promo__title">Ways to Reduce Runoff</h2>
+
+        <div class="promo__text">
+            <p>Dewatering bags and inlet protective devices can help prevent regulatory fines and delays in project completion. <a href="/stormwater-management/how-to-choose-the-best-tools-to-reduce-runoff">More&nbsp;<i class="fa-regular fa-arrow-right"></i></a></p>
+        </div>
+    
+    
+</section>
+<!-- Promo block end -->
+<!-- Promo block start -->
+<section class="promo ">
+                <picture>
+                <source media="(max-width: 767px)" srcset="/contentassets/11207503608049a9a0277db9c5bff2c7/whitecap_construction_equipment_financing.jpg?v=1D7678A6CD89500">
+                <source media="(min-width: 768px)" srcset="/contentassets/11207503608049a9a0277db9c5bff2c7/whitecap_construction_equipment_financing.jpg?v=1D7678A6CD89500">
+                <img class="promo__image" src="/contentassets/11207503608049a9a0277db9c5bff2c7/whitecap_construction_equipment_financing.jpg?v=1D7678A6CD89500" alt="WhiteCap_Construction_Equipment_Financing.jpg">
+            </picture>
+
+
+        <h2 class="promo__title">0% Interest for 30 Days and Flexible Credit Terms</h2>
+
+        <div class="promo__text">
+            <p data-pm-slice="1 1 []">By leasing and financing equipment with White Cap, you&rsquo;ll enjoy flexible, project-based terms and 0% interest for 30 days.</p>
+<p style="text-align: center;" data-pm-slice="1 1 []"><a href="/construction-services/credit-application-for-contractors">Lease or finance your equipment today&nbsp;<i class="fa-regular fa-arrow-right"></i></a></p>
+        </div>
+    
+    
+</section>
+<!-- Promo block end -->
+<!-- Promo block start -->
+<section class="promo ">
+                <picture>
+                <source media="(max-width: 767px)" srcset="/globalassets/pumps-and-accessories-how-to-select-the-right-pump.jpg?v=1D97F89FF067280">
+                <source media="(min-width: 768px)" srcset="/globalassets/pumps-and-accessories-how-to-select-the-right-pump.jpg?v=1D97F89FF067280">
+                <img class="promo__image" src="/globalassets/pumps-and-accessories-how-to-select-the-right-pump.jpg?v=1D97F89FF067280" alt="pumps-and-accessories-how-to-select-the-right-pump.jpg">
+            </picture>
+
+
+        <h2 class="promo__title">How to Select the Right Pump</h2>
+
+        <div class="promo__text">
+            <p>As a construction contractor, one of the most important decisions you'll make on the jobsite is selecting the right pump. <a href="/pumps-and-accessories/how-to-select-the-right-pump">More&nbsp;<i class="fa-regular fa-arrow-right"></i></a></p>
+        </div>
+    
+    
+</section>
+<!-- Promo block end -->
+</div>
+<!-- Promo collection block end --></div>
+<!-- Start page end -->
+</main>
+
+    <!-- Footer start -->
+    <footer class="footer">
+        <div class="footer__container">
+            <ul class="footer__columns">
+                <li class="footer__collection footer__collection--narrow">
+                        <div class="logo logo--footer">
+                            <a class="logo__link" href="/" title="White Cap">
+                                <img class="logo__image logo__image--footer" src="/contentassets/8ce2abfb64bf43d290f08457bf4dc4fb/sm-wc_business_unit_logo_reverse1-test-copy.png?v=1D6927936143380" alt="SM-WC_Business_Unit_Logo_Reverse1-test copy.png" />
+                            </a>
+                        </div>
+
+                        <ul class="footer__social-icon-menu">
+                                <li class="footer__social-icon-item">
+                                                <a href="https://www.facebook.com/WeAreWhiteCap/" class="footer__social-icon-link" target="_blank" title="Facebook">
+                <img src="/contentassets/8ce2abfb64bf43d290f08457bf4dc4fb/facebook.svg?v=1D40E1DF94CFE00" class="footer__social-icon-image" alt="facebook.svg" />
+            </a>
+
+                                </li>
+                                <li class="footer__social-icon-item">
+                                                <a href="https://www.instagram.com/wearewhitecap/" class="footer__social-icon-link" target="_blank" title="Instagram">
+                <img src="/contentassets/8ce2abfb64bf43d290f08457bf4dc4fb/jcinsta.svg?v=1D5212D94BDA880" class="footer__social-icon-image" alt="JCinsta.svg" />
+            </a>
+
+                                </li>
+                                <li class="footer__social-icon-item">
+                                                <a href="http://www.linkedin.com/company/white-cap-construction-supply" class="footer__social-icon-link" target="_blank" title="LinkedIn">
+                <img src="/contentassets/8ce2abfb64bf43d290f08457bf4dc4fb/linkedin.svg?v=1D40E1DEDF9D280" class="footer__social-icon-image" alt="linkedin.svg" />
+            </a>
+
+                                </li>
+                                <li class="footer__social-icon-item">
+                                                <a href="http://www.youtube.com/HDSupplyCI" class="footer__social-icon-link" target="_blank" title="Youtube">
+                <img src="/contentassets/8ce2abfb64bf43d290f08457bf4dc4fb/youtube.svg?v=1D40E1DEDF9D280" class="footer__social-icon-image" alt="youtube.svg" />
+            </a>
+
+                                </li>
+                        </ul>
+
+                </li>
+
+
+                    <li class="footer__collection">
+                            <h3 class="footer__phone-headline">
+                                <a href="tel:1-800-944-8322">1-800-944-8322</a>
+                            </h3>
+
+                        <h3 class="footer__sub-headline">
+                                        <a href="/our-company" class="footer__link footer__link--headline" title="OUR COMPANY" target="_top">
+                OUR COMPANY
+            </a>
+
+                        </h3>
+
+                            <ul class="footer__link-list">
+                                    <li class="footer__list-item">
+                                                    <a href="https://about.whitecap.com/" class="footer__link" title="About White Cap&#174;" target="_blank">
+                About White Cap&#174;
+            </a>
+
+                                    </li>
+                                    <li class="footer__list-item">
+                                                    <a href="/our-company/careers" class="footer__link" title="Careers" target="_top">
+                Careers
+            </a>
+
+                                    </li>
+                                    <li class="footer__list-item">
+                                                    <a href="https://about.whitecap.com/investor-relations" class="footer__link" title="Investors" target="_blank">
+                Investors
+            </a>
+
+                                    </li>
+                                    <li class="footer__list-item">
+                                                    <a href="/our-company/our-suppliers" class="footer__link" title="Suppliers" target="_top">
+                Suppliers
+            </a>
+
+                                    </li>
+                                    <li class="footer__list-item">
+                                                    <a href="/our-company/former-associates" class="footer__link" title="Former Associates" target="_top">
+                Former Associates
+            </a>
+
+                                    </li>
+                                    <li class="footer__list-item">
+                                                    <a href="/our-company/contact-us" class="footer__link" title="Contact US" target="_top">
+                Contact Us
+            </a>
+
+                                    </li>
+                            </ul>
+                    </li>
+                    <li class="footer__collection">
+
+                        <h3 class="footer__sub-headline">
+                                        <a href="/help-center" class="footer__link footer__link--headline" title="Help Center" target="_self">
+                HELP CENTER
+            </a>
+
+                        </h3>
+
+                            <ul class="footer__link-list">
+                                    <li class="footer__list-item">
+                                                    <a href="/help-center/customer-assistance" class="footer__link" title="Customer Assistance Form" target="_top">
+                Customer Assistance Form
+            </a>
+
+                                    </li>
+                                    <li class="footer__list-item">
+                                                    <a href="/locations" class="footer__link" title="Branch Locations" target="_top">
+                Branch Locations
+            </a>
+
+                                    </li>
+                                    <li class="footer__list-item">
+                                                    <a href="/help-center/request-a-quote" class="footer__link" title="Request a Quote" target="_top">
+                Request a Quote
+            </a>
+
+                                    </li>
+                                    <li class="footer__list-item">
+                                                    <a href="/help-center/contact-a-specialist" class="footer__link" title="Contact a Specialist" target="_self">
+                Contact a Specialist
+            </a>
+
+                                    </li>
+                                    <li class="footer__list-item">
+                                                    <a href="/help-center/white-cap-return-policy" class="footer__link" title="Return Policy" target="_top">
+                Return Policy
+            </a>
+
+                                    </li>
+                                    <li class="footer__list-item">
+                                                    <a href="/help-center/link-your-account" class="footer__link" title="Link Your Account" target="_top">
+                Link Your Account
+            </a>
+
+                                    </li>
+                                    <li class="footer__list-item">
+                                                    <a href="/help-center/paving-supply-store" class="footer__link" title="DOT Guidelines" target="_top">
+                DOT Guidelines
+            </a>
+
+                                    </li>
+                                    <li class="footer__list-item">
+                                                    <a href="/help-center/osha-standards-safety-data-sheets" class="footer__link" title="SDS Publications" target="_top">
+                SDS Publications
+            </a>
+
+                                    </li>
+                            </ul>
+                    </li>
+                    <li class="footer__collection">
+
+                        <h3 class="footer__sub-headline">
+                                        <a href="/construction-services" class="footer__link footer__link--headline" title="SERVICES" target="_self">
+                SERVICES
+            </a>
+
+                        </h3>
+
+                            <ul class="footer__link-list">
+                                    <li class="footer__list-item">
+                                                    <a href="/construction-services/construction-supply-services-rebar-fabrication" class="footer__link" title="Rebar Fabrication" target="_self">
+                Rebar Fabrication
+            </a>
+
+                                    </li>
+                                    <li class="footer__list-item">
+                                                    <a href="/construction-services/tool-rental-for-construction-contractors" class="footer__link" title="Rentals" target="_top">
+                Rentals
+            </a>
+
+                                    </li>
+                                    <li class="footer__list-item">
+                                                    <a href="/construction-services/power-tool-repair-store" class="footer__link" title="Tool Repair" target="_self">
+                Tool Repair
+            </a>
+
+                                    </li>
+                                    <li class="footer__list-item">
+                                                    <a href="/construction-services/tilt-up-pre-cast" class="footer__link" title="Tilt-Up / Pre-Cast" target="_self">
+                Tilt-Up / Pre-Cast
+            </a>
+
+                                    </li>
+                                    <li class="footer__list-item">
+                                                    <a href="/construction-services/credit-application-for-contractors" class="footer__link" title="Credit" target="_top">
+                Credit
+            </a>
+
+                                    </li>
+                            </ul>
+                    </li>
+                    <li class="footer__collection">
+
+                        <h3 class="footer__sub-headline">
+                                        <a href="/herramientas-para-construccion-ordena-en-espanol" class="footer__link footer__link--headline" title="HABLAMOS TU IDIOMA" target="_top">
+                HABLAMOS TU IDIOMA
+            </a>
+
+                        </h3>
+
+                            <ul class="footer__link-list">
+                                    <li class="footer__list-item">
+                                                    <a href="/herramientas-para-construccion-ordena-en-espanol" class="footer__link" title="Ordena en Espa&#241;ol " target="_top">
+                Ordena en Espa&#241;ol 
+            </a>
+
+                                    </li>
+                                    <li class="footer__list-item">
+                                                    <a href="/financiacion-greatamerica" class="footer__link" title="Financiaci&#243;n GreatAmerica" target="_top">
+                Financiaci&#243;n GreatAmerica
+            </a>
+
+                                    </li>
+                            </ul>
+                    </li>
+                    <li class="footer__collection">
+
+                        <h3 class="footer__sub-headline">
+                                        <a href="/catalogs" class="footer__link footer__link--headline" title="CATALOGS" target="_top">
+                CATALOGS
+            </a>
+
+                        </h3>
+
+                            <ul class="footer__link-list">
+                                    <li class="footer__list-item">
+                                                    <a href="/catalogs/building-materials-catalog" class="footer__link" title="Request a Catalog" target="_top">
+                Request a Catalog
+            </a>
+
+                                    </li>
+                                    <li class="footer__list-item">
+                                                    <a href="https://whitecap.dcatalog.com/" class="footer__link" title="E-Catalogs" target="_blank">
+                E-Catalogs
+            </a>
+
+                                    </li>
+                                    <li class="footer__list-item">
+                                                    <a href="/catalogs/construction-supplies-catalog" class="footer__link" title="Contractor Trader&#174; Promotions" target="_top">
+                Contractor Trader&#174; Promotions
+            </a>
+
+                                    </li>
+                            </ul>
+                    </li>
+                    <li class="footer__collection">
+
+                        <h3 class="footer__sub-headline">
+                                        <a href="/government-resources" class="footer__link footer__link--headline" title="GOVERNMENT RESOURCES" target="_top">
+                GOVERNMENT RESOURCES
+            </a>
+
+                        </h3>
+
+                            <ul class="footer__link-list">
+                                    <li class="footer__list-item">
+                                                    <a href="/government-resources/gsa-schedule-federal-government" class="footer__link" title="GSA Schedule" target="_top">
+                GSA Schedule
+            </a>
+
+                                    </li>
+                                    <li class="footer__list-item">
+                                                    <a href="/government-resources/sourcewell" class="footer__link" title="Sourcewell" target="_top">
+                Sourcewell
+            </a>
+
+                                    </li>
+                            </ul>
+                    </li>
+            </ul>
+
+                <div class="footer__copyright">
+                    <p data-renderer-start-pos="669">&copy; Copyright 2023 White Cap Supply Holdings, LLC. All Rights Reserved.</p>
+<p data-renderer-start-pos="740">Use of this site is subject to the White Cap Supply Holdings, LLC. Legal <a style="color: #ffcc00;" href="/terms" target="_blank" rel="noopener">Terms</a>, <a style="color: #ffcc00;" href="/terms/terms-conditions-of-sale-terms" target="_blank" rel="noopener">Terms of Sale</a>, <a style="color: #ffcc00;" href="/terms/rental-agreement-terms-and-conditions" target="_blank" rel="noopener">Rental Agreement Terms and Conditions</a> and <a style="color: #ffcc00;" href="/terms/privacy" target="_blank" rel="noopener">Privacy</a>.</p>
+                </div>
+
+                <ul class="footer__credit-cards">
+                        <li class="footer__credit-card-item">
+                                        <img src="/contentassets/8ce2abfb64bf43d290f08457bf4dc4fb/visa-pay-logo.svg?v=1D40E1CC6EED100" class="footer__credit-cards-image" alt="visa-pay-logo.svg" />
+
+                        </li>
+                        <li class="footer__credit-card-item">
+                                        <img src="/contentassets/8ce2abfb64bf43d290f08457bf4dc4fb/american-express-logo.svg?v=1D40E1CC6EED100" class="footer__credit-cards-image" alt="american-express-logo.svg" />
+
+                        </li>
+                        <li class="footer__credit-card-item">
+                                        <img src="/contentassets/8ce2abfb64bf43d290f08457bf4dc4fb/discover-paying-card.svg?v=1D40E1CC6EED100" class="footer__credit-cards-image" alt="discover-paying-card.svg" />
+
+                        </li>
+                        <li class="footer__credit-card-item">
+                                        <img src="/contentassets/8ce2abfb64bf43d290f08457bf4dc4fb/maestro-paying-card.svg?v=1D40E1CC6EED100" class="footer__credit-cards-image" alt="maestro-paying-card.svg" />
+
+                        </li>
+                </ul>
+        </div>
+    </footer>
+    <!-- Footer end -->
+
+
+
+<div class="delivery-zip-overlay-item overlay__delivery-zip--location" v-show="showDeliveryZipOverlay" v-cloak>
+    <section class="overlay-delivery-zip overlay__delivery-zip--location overlay-delivery-zip-panel" id="delivery_zip">
+        <div class="overlay-delivery-zip__content">
+            <div class="overlay-delivery-zip__half overlay-delivery-zip__half--left">
+                <div class="overlay-delivery-zip__left">
+                    <div class="overlay-delivery-zip__let-us overlay-vertical-center">
+                        <span class="overlay-delivery-zip__let-us-text overlay-vertical-center">
+                            Discover better prices and
+                            location specific benefits
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="overlay-delivery-zip__half overlay-delivery-zip__half--right">
+                <span class="overlay-delivery-zip__right overlay-vertical-center">
+                    <div class="overlay-delivery-zip__search overlay-input-group">
+                        <form class="overlay-delivery-zip__search" id="delivery_zip_overlay_location_form" action="" v-on:submit.prevent="searchByZipCode" autocomplete="off"
+                              geoapi-key="AIzaSyARh4Dw6n0wNICh-_2l5TQEknyqjz8hYZo"
+                              geoapi-cookie-name="WC_UserLocation"
+                              branch-cookie-name="WC_SelectedBranch"
+                              geolookup-cookie-name="WC_GeoLookup"
+                              default-location="{&quot;Coordinates&quot;:{&quot;Latitude&quot;:28.549765,&quot;Longitude&quot;:-81.424379,&quot;HorizontalAccuracy&quot;:0},&quot;City&quot;:&quot;Orlando&quot;,&quot;State&quot;:&quot;FL&quot;,&quot;PostalCode&quot;:&quot;32805&quot;,&quot;IsDefaultLocation&quot;:true,&quot;DaytimePhoneNumber&quot;:&quot;(407)298-7083&quot;}"
+                              needs-delivery-zip="True"
+                              hide-delivery-zip-modal="False"
+                              hide-delivery-zip-overlay="False"
+                              is-punchout-user="False"
+                              is-checkout-page="False">
+                            <input title="Enter zip code" type="text" class="overlay-delivery-zip__search-text" placeholder="Enter Zip Code" name="searchZipCode" v-model="searchZipCode" v-on:keyup.native.enter="onEnter" autocomplete="off" />
+                            <span class="overlay-delivery-zip__error-message" v-if="invalidZipCode" v-text="address"></span>
+                        </form>
+                    </div>
+                    <div class="overlay-delivery-zip__no-thanks no-mobile">
+                        <a class="overlay-delivery-zip__no-thanks-text" v-on:click="closeDeliveryZipOverlay">
+                            No, thanks!
+                        </a>
+                    </div>
+                    <div class="overlay-delivery-zip__no-thanks no-desktop">
+                        <a class="overlay-delivery-zip__no-thanks-text" v-on:click="closeDeliveryZipOverlay">
+                            No, thanks!
+                        </a>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+
+
+    </div>
+
+    <script defer src="/Static/dist/bootstrap.bundle.js?v=1.10.14.21602"></script>
+    <script defer src="/Static/dist/app.bundle.js?v=1.10.14.21602"></script>
+    
+    
+
+    <script type="text/javascript" src="https://dl.episerver.net/13.5.7/epi-util/find.js"></script>
+<script type="text/javascript">
+if(FindApi && typeof FindApi === 'function'){var api = new FindApi();api.setApplicationUrl('/');api.setServiceApiBaseUrl('/find_v2/');api.processEventFromCurrentUri();api.bindWindowEvents();api.bindAClickEvent();api.sendBufferedEvents();}
+</script>
+
+    <script type="text/javascript">
+var dataLayer = window.dataLayer = window.dataLayer || [];dataLayer.push({"userType":"Guest","hashedEmail":"","accountId":"","productId":"","prod_id":"","productDescription":"","pageType":"Homepage","pageCategoryL1":"","pageCategoryL2":"","pageCategoryL3":"","pageCategoryL4":"","pageCategoryL5":"","pageCategoryL6":"","pageCategoryL7":"","pageCategoryL8":"","m":"StartPage","c":"StartPage"})
+</script>
+
+</body>
+</html>

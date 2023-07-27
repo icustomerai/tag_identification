@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head ><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v20.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>FGX Home - FGXI</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Cormorant%20Garamond%3A400%2C400i%2C700%7CRaleway%3A700&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant%20Garamond%3A400%2C400i%2C700%7CRaleway%3A700&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cormorant%20Garamond%3A400%2C400i%2C700%7CRaleway%3A700&#038;display=swap" /></noscript>
+	<link rel="canonical" href="https://www.fgxi.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="FGX Home - FGXI" />
+	<meta property="og:description" content="Welcome to FGX FGX International, an EssilorLuxottica company, is a leading global designer and marketer of non-prescription glasses. Featuring Foster Grant, our premiere eyewear brand with 90 years of heritage, our company continues to design stylish yet affordable eyewear for consumers around the world. Featured Brands As a leading global designer and marketer of non-prescription [&hellip;]" />
+	<meta property="og:url" content="https://www.fgxi.com/" />
+	<meta property="og:site_name" content="FGXI" />
+	<meta property="article:modified_time" content="2021-12-07T14:21:03+00:00" />
+	<meta property="og:image" content="http://www.fgxi.com/wp-content/uploads/2021/09/featured-brand-foster-grant-large@2x-scaled.jpg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="1 minute" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.fgxi.com/","url":"https://www.fgxi.com/","name":"FGX Home - FGXI","isPartOf":{"@id":"https://www.fgxi.com/#website"},"primaryImageOfPage":{"@id":"https://www.fgxi.com/#primaryimage"},"image":{"@id":"https://www.fgxi.com/#primaryimage"},"thumbnailUrl":"https://www.fgxi.com/wp-content/uploads/2021/09/featured-brand-foster-grant-large@2x-scaled.jpg","datePublished":"2021-05-24T10:04:16+00:00","dateModified":"2021-12-07T14:21:03+00:00","breadcrumb":{"@id":"https://www.fgxi.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.fgxi.com/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.fgxi.com/#primaryimage","url":"https://www.fgxi.com/wp-content/uploads/2021/09/featured-brand-foster-grant-large@2x-scaled.jpg","contentUrl":"https://www.fgxi.com/wp-content/uploads/2021/09/featured-brand-foster-grant-large@2x-scaled.jpg","width":2560,"height":558,"caption":"Foster Grant"},{"@type":"BreadcrumbList","@id":"https://www.fgxi.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://www.fgxi.com/#website","url":"https://www.fgxi.com/","name":"FGXI","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.fgxi.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel='dns-prefetch' href='//code.ionicframework.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="FGXI &raquo; Feed" href="https://www.fgxi.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="FGXI &raquo; Comments Feed" href="https://www.fgxi.com/comments/feed/" />
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='infinity-pro-css' href='https://www.fgxi.com/wp-content/themes/infinity-pro/style.css?ver=1.3.2' media='all' />
+<style id='infinity-pro-inline-css'>
+.front-page-1 { background-image: url(//www.fgxi.com/wp-content/themes/infinity-pro/images/bg-1.jpg); }.front-page-3 { background-image: url(//www.fgxi.com/wp-content/themes/infinity-pro/images/bg-3.jpg); }.front-page-5 { background-image: url(//www.fgxi.com/wp-content/themes/infinity-pro/images/bg-5.jpg); }.front-page-7 { background-image: url(//www.fgxi.com/wp-content/themes/infinity-pro/images/bg-7.jpg); }
+
+		a,
+		.entry-title a:focus,
+		.entry-title a:hover,
+		.featured-content .entry-meta a:focus,
+		.featured-content .entry-meta a:hover,
+		.front-page .genesis-nav-menu a:focus,
+		.front-page .genesis-nav-menu a:hover,
+		.front-page .offscreen-content-icon button:focus,
+		.front-page .offscreen-content-icon button:hover,
+		.front-page .white .genesis-nav-menu a:focus,
+		.front-page .white .genesis-nav-menu a:hover,
+		.genesis-nav-menu a:focus,
+		.genesis-nav-menu a:hover,
+		.genesis-nav-menu .current-menu-item > a,
+		.genesis-nav-menu .sub-menu .current-menu-item > a:focus,
+		.genesis-nav-menu .sub-menu .current-menu-item > a:hover,
+		.genesis-responsive-menu .genesis-nav-menu a:focus,
+		.genesis-responsive-menu .genesis-nav-menu a:hover,
+		.menu-toggle:focus,
+		.menu-toggle:hover,
+		.offscreen-content button:hover,
+		.offscreen-content-icon button:hover,
+		.site-footer a:focus,
+		.site-footer a:hover,
+		.sub-menu-toggle:focus,
+		.sub-menu-toggle:hover {
+			color: #5ca7d1;
+		}
+
+		button,
+		input[type="button"],
+		input[type="reset"],
+		input[type="select"],
+		input[type="submit"],
+		.button,
+		.enews-widget input:hover[type="submit"],
+		.front-page-1 a.button,
+		.front-page-3 a.button,
+		.front-page-5 a.button,
+		.front-page-7 a.button,
+		.footer-widgets .button:hover {
+			background-color: #5ca7d1;
+			color: #000000;
+		}
+
+		
+.has-accent-color {
+	color: #5ca7d1 !important;
+}
+
+.has-accent-background-color {
+	background-color: #5ca7d1 !important;
+}
+
+.content .wp-block-button .wp-block-button__link:focus,
+.content .wp-block-button .wp-block-button__link:hover {
+	background-color: #5ca7d1 !important;
+	color: #fff;
+}
+
+.content .wp-block-button.is-style-outline .wp-block-button__link:focus,
+.content .wp-block-button.is-style-outline .wp-block-button__link:hover {
+	border-color: #5ca7d1 !important;
+	color: #5ca7d1 !important;
+}
+
+
+.entry-content .wp-block-pullquote.is-style-solid-color {
+	background-color: #5ca7d1;
+}
+
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://www.fgxi.com/wp-includes/css/dist/block-library/style.min.css?ver=6.2.2' media='all' />
+<link rel='stylesheet' id='jetpack-layout-grid-css' href='https://www.fgxi.com/wp-content/plugins/layout-grid/style.css?ver=1679490102' media='all' />
+<link rel='stylesheet' id='fontawesome-free-css' href='https://www.fgxi.com/wp-content/plugins/getwid/vendors/fontawesome-free/css/all.min.css?ver=5.5.0' media='all' />
+<link rel='stylesheet' id='slick-css' href='https://www.fgxi.com/wp-content/plugins/getwid/vendors/slick/slick/slick.min.css?ver=1.9.0' media='all' />
+<link rel='stylesheet' id='slick-theme-css' href='https://www.fgxi.com/wp-content/plugins/getwid/vendors/slick/slick/slick-theme.min.css?ver=1.9.0' media='all' />
+<link rel='stylesheet' id='fancybox-css' href='https://www.fgxi.com/wp-content/plugins/getwid/vendors/fancybox/jquery.fancybox.min.css?ver=3.5.7' media='all' />
+<link rel='stylesheet' id='getwid-blocks-css' href='https://www.fgxi.com/wp-content/plugins/getwid/assets/css/blocks.style.css?ver=1.8.5' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://www.fgxi.com/wp-includes/css/classic-themes.min.css?ver=6.2.2' media='all' />
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--accent: #5ca7d1;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 18px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 26px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--larger: 30px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='fgxi-css-css' href='https://www.fgxi.com/wp-content/plugins/fgxi-functionality/css/fgxi.css?ver=1.0.0' media='all' />
+
+<link rel='stylesheet' id='infinity-ionicons-css' href='//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css?ver=1.3.2' media='all' />
+<link rel='stylesheet' id='infinity-pro-gutenberg-css' href='https://www.fgxi.com/wp-content/themes/infinity-pro/lib/gutenberg/front-end.css?ver=1.3.2' media='all' />
+<script type="rocketlazyloadscript" data-rocket-src='https://www.fgxi.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.4' id='jquery-core-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://www.fgxi.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0' id='jquery-migrate-js'></script>
+<script id='qubely_local_script-js-extra'>
+var qubely_urls = {"plugin":"https:\/\/www.fgxi.com\/wp-content\/plugins\/qubely\/","ajax":"https:\/\/www.fgxi.com\/wp-admin\/admin-ajax.php","nonce":"641d1a9be5","actual_url":".fgxi.com"};
+</script>
+<script id='qubely_container_width-js-extra'>
+var qubely_container_width = {"sm":"540","md":"720","lg":"960","xl":"1140"};
+</script>
+<link rel="https://api.w.org/" href="https://www.fgxi.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.fgxi.com/wp-json/wp/v2/pages/1010" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.fgxi.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.fgxi.com/wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='https://www.fgxi.com/' />
+<link rel="alternate" type="application/json+oembed" href="https://www.fgxi.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.fgxi.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.fgxi.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.fgxi.com%2F&#038;format=xml" />
+<!-- Stream WordPress user activity plugin v3.9.3 -->
+<link rel="pingback" href="https://www.fgxi.com/xmlrpc.php" />
+<link rel="stylesheet" href="https://use.typekit.net/ikw1dzq.css"><style type="text/css">.site-title a { background: url(https://www.fgxi.com/wp-content/uploads/2021/05/cropped-fgxi-logo-black@2x.png) no-repeat !important; }</style>
+<link rel="icon" href="https://www.fgxi.com/wp-content/uploads/2021/12/cropped-fgx-logo-favicon-2-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://www.fgxi.com/wp-content/uploads/2021/12/cropped-fgx-logo-favicon-2-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.fgxi.com/wp-content/uploads/2021/12/cropped-fgx-logo-favicon-2-180x180.png" />
+<meta name="msapplication-TileImage" content="https://www.fgxi.com/wp-content/uploads/2021/12/cropped-fgx-logo-favicon-2-270x270.png" />
+<style type="text/css"></style>		<style id="wp-custom-css">
+			/* Header white transparent overlay */
+body.home.header-color-transparent .site-container:not(.white) header.site-header {
+	background: rgb(255 255 255 / 60%);
+}
+
+/* Homepage slider white transparent overlay */
+.wp-block-eedee-block-gutenslider.slides-number .eedee-background-div .eedee-background-div__overlay {
+    background: linear-gradient(90deg,rgb(245 249 255 / 50%) 32%,rgba(245,247,255,0) 67%);
+}
+
+/* Our Beliefs block */
+.our-beliefs-col {
+	position: relative;
+}
+
+.our-beliefs-col p.has-background {
+	padding-bottom: 60px;
+}
+
+.our-beliefs-col .our-beliefs-icon {
+	position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.header-image .site-title a {
+	min-height: 60px;
+	margin: 10px;
+}
+
+.home-hero-img {
+	background-color: #D9D4CF;
+}
+
+	@media only screen and (max-width: 1024px) {
+	.home-hero-img img {
+		object-position: 80% 33% !important;
+	}
+}
+
+
+	@media only screen and (max-width: 599px) {
+		.home-hero-img {
+			min-height: auto !important;
+		}
+	.home-hero-img img {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 601px) {
+	.licensed-brands-block {
+		background-image: url('/wp-content/uploads/2021/08/LIcensed-Brands.jpeg') !important;
+		background-size: cover !important;
+		background-position: 20% 50% !important;
+	}
+	.licensed-brands-block > figure {
+		display: none !important;
+	}
+}		</style>
+		</head>
+<body class="home page-template-default page page-id-1010 wp-embed-responsive header-color-transparent qubely qubely-frontend custom-header header-image header-full-width full-width-content genesis-title-hidden genesis-breadcrumbs-hidden genesis-footer-widgets-hidden"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.498039215686" /><feFuncG type="table" tableValues="0 0.498039215686" /><feFuncB type="table" tableValues="0 0.498039215686" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.549019607843 0.988235294118" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.717647058824 0.254901960784" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.278431372549" /><feFuncB type="table" tableValues="0.592156862745 0.278431372549" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.647058823529" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.780392156863 1" /><feFuncG type="table" tableValues="0 0.949019607843" /><feFuncB type="table" tableValues="0.352941176471 0.470588235294" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.650980392157 0.403921568627" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.447058823529 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.0980392156863 1" /><feFuncG type="table" tableValues="0 0.662745098039" /><feFuncB type="table" tableValues="0.847058823529 0.419607843137" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><div class="site-container"><ul class="genesis-skip-link"><li><a href="#genesis-content" class="screen-reader-shortcut"> Skip to main content</a></li></ul><header class="site-header"><div class="wrap"><div class="title-area"><p class="site-title"><a href="https://www.fgxi.com/">FGXI</a></p></div><nav class="nav-primary" aria-label="Main" id="genesis-nav-primary"><div class="wrap"><ul id="menu-top-bar" class="menu genesis-nav-menu menu-primary js-superfish"><li id="menu-item-1042" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1042"><a href="https://www.fgxi.com/about-us/"><span >About Us</span></a></li>
+<li id="menu-item-1000" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1000"><a href="/brands"><span >Brands</span></a></li>
+<li id="menu-item-998" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-998"><a href="https://www.fgxi.com/global-reach/"><span >Global Reach</span></a></li>
+<li id="menu-item-1040" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1040"><a href="https://www.fgxi.com/initiatives/"><span >Initiatives</span></a></li>
+<li id="menu-item-999" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-999"><a href="https://www.fgxi.com/work-with-us/"><span >Work With Us</span></a></li>
+<li id="menu-item-1055" class="hide-for-desktop menu-item menu-item-type-post_type menu-item-object-page menu-item-1055"><a href="https://www.fgxi.com/contact-us/"><span >Contact</span></a></li>
+</ul></div></nav>
+		<div class="nav-side" id="fgxi-nav-side">
+			<ul id="menu-header-side" class="genesis-nav-menu"><li id="menu-item-1054" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1054"><a href="https://www.fgxi.com/contact-us/">Contact</a></li>
+</ul>		</div>
+
+		</div></header><div class="site-inner"><div class="content-sidebar-wrap"><main class="content" id="genesis-content"><article class="post-1010 page type-page status-publish entry" aria-label="FGX Home"><div class="entry-content"><div id="gutenslider-2xa64ycdj" class="wp-block-eedee-block-gutenslider content-fixed alignfull arrow-style-1 arrow-position-sides arrow-mb-none arrows-lg arrows-md arrows-sm dot-style-1 dots-lg dots-md dots-sm dot-position-bottom is-position-center-center ed-mobile-hidden mb-none" style="--gutenslider-min-height: 50vh;--gutenslider-arrow-size: 30px;--gutenslider-dot-size: 25px;--gutenslider-arrow-color: #ffffff;--gutenslider-dot-color: #ffffff;--gutenslider-padding-y-mobile: 40px;--gutenslider-padding-x-mobile: 40px;--gutenslider-padding-y-tablet: 40px;--gutenslider-padding-x-tablet: 40px;--gutenslider-padding-y-desktop: 40px;--gutenslider-padding-x-desktop: 40px;--gutenslider-bg-image: url();--gutenslider-min-height-md: 50vh;--gutenslider-min-height-sm: 50vh;--gutenslider-padding-x: 40px;--gutenslider-padding-x-md: 40px;--gutenslider-padding-x-sm: 20px;--gutenslider-padding-y: 40px;--gutenslider-padding-y-md: 40px;--gutenslider-padding-y-sm: 20px;--gutenslider-arrow-size-md: 30px;--gutenslider-arrow-size-sm: 30px;--gutenslider-dot-size-md: 25px;--gutenslider-dot-size-sm: 25px;--gutenslider-arrow-bg-color: transparent;--gutenslider-arrow-hover-color: #eeeeee;--gutenslider-arrow-bg-hover-color: transparent;--gutenslider-arrow-x-offset: 10px;--gutenslider-arrow-x-offset-md: 10px;--gutenslider-arrow-x-offset-sm: 10px;--gutenslider-arrow-y-offset: 0px;--gutenslider-arrow-y-offset-md: 0px;--gutenslider-arrow-y-offset-sm: 0px;--gutenslider-arrow-x-spacing: 0px;--gutenslider-dot-y-offset: 10px;--gutenslider-dot-y-offset-md: 10px;--gutenslider-dot-y-offset-sm: 10px;--gutenslider-margin-x: 0px;--gutenslider-margin-x-md: 0px;--gutenslider-margin-x-sm: 0px;--gutenslider-margin-y: 0px;--gutenslider-margin-y-md: 0px;--gutenslider-margin-y-sm: 0px;--gutenslider-divider-top: 60px;--gutenslider-divider-bottom: 60px;--gutenslider-lightgallery-bg: #ffffff;--gutenslider-lightgallery-font: #000000;" data-parallax-direction="down" data-parallax-amount="1.3" data-lg-transition="lg-slide" data-hash=""><div class="eedee-swiper-outer"><div class="gutenslider-divider-top" style="color:#fff; height:60px;"></div><div class="swiper" data-settings='{"autoplay":{"delay":3000,"pauseOnMouseEnter":true,"disableOnInteraction":false},"speed":700,"direction":"horizontal","autoHeight":"","loop":true,"centeredSlides":true,"spaceBetween":0,"slidesPerView":1,"slidesPerGroup":1,"effect":"slide","coverflowEffect":{"rotate":30,"slideShadows":false,"depth":100,"stretch":50,"modifier":1},"fadeEffect":{"crossFade":true},"zoom":"","navigation":{"nextEl":"#gutenslider-2xa64ycdj .eedee-gutenslider-next","prevEl":"#gutenslider-2xa64ycdj .eedee-gutenslider-prev"},"pagination":{"type":"bullets","clickable":true,"dynamicBullets":false,"el":"#gutenslider-2xa64ycdj .eedee-gutenslider-pagination"},"pauseOnHover":"1","watchSlidesProgress":true,"watchSlidesVisibility":true,"settingsMd":{"autoHeight":"","slidesPerView":1,"slidesPerGroup":1,"spaceBetween":0},"settingsLg":{"autoHeight":"","slidesPerView":1,"slidesPerGroup":1,"spaceBetween":0},"hasLg":false,"hasLgCounter":true,"isFullScreen":false,"arrowsFollowMouse":false,"lgTitle":"none","lgCaption":"none","lgThumbnails":true,"keyboard":{"keyboard":{"enabled":true,"onlyInViewport":true}},"hashNavigation":false}'><div class="swiper-wrapper">
+<div class="swiper-slide wp-block-eedee-block-gutenslide is-position-center-center ed-bg-image" style="--ed-vw:300;--ed-vh:95;" data-hash=""><div class="eedee-background-div bg-image"><img decoding="async" width="3514" height="1115" class="swiper-lazy wp-image-1319" src="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1.png" alt="" style="object-fit: cover; object-position: 70% 50%;"  data-title="FGX-Site-Hompage-Banner-1" srcset="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1.png 3514w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1-300x95.png 300w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1-1024x325.png 1024w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1-768x244.png 768w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1-1600x508.png 1600w" sizes="(max-width: 3514px) 100vw, 3514px" /><div class="eedee-background-div__overlay" style="opacity:1;"></div></div><div class="slide-content">
+
+<p class="has-text-align-center gutenslider-content-initial has-larger-font-size"></p>
+
+</div></div>
+
+<div class="swiper-slide wp-block-eedee-block-gutenslide is-position-center-center ed-bg-image" style="--ed-vw:300;--ed-vh:95;" data-hash=""><div class="eedee-background-div bg-image"><img decoding="async" loading="lazy" width="3514" height="1115" class="swiper-lazy wp-image-1320" src="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2.png" alt="" style="object-fit: cover; object-position: 65% 50%;"  data-title="FGX-Site-Hompage-Banner-2" srcset="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2.png 3514w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-300x95.png 300w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-1024x325.png 1024w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-768x244.png 768w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-1600x508.png 1600w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-1536x487.png 1536w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-2048x650.png 2048w" sizes="(max-width: 3514px) 100vw, 3514px" /><div class="eedee-background-div__overlay" style="opacity:1;"></div></div><div class="slide-content">
+
+<p class="has-text-align-center gutenslider-content-initial has-larger-font-size"></p>
+
+</div></div>
+
+<div class="swiper-slide wp-block-eedee-block-gutenslide is-position-center-center ed-bg-image" style="--ed-vw:300;--ed-vh:95;" data-hash=""><div class="eedee-background-div bg-image"><img decoding="async" loading="lazy" width="3514" height="1115" class="swiper-lazy wp-image-1321" src="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3.png" alt="" style="object-fit: cover; object-position: 60% 50%;"  data-title="FGX-Site-Hompage-Banner-3" srcset="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3.png 3514w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-300x95.png 300w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-1024x325.png 1024w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-768x244.png 768w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-1600x508.png 1600w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-1536x487.png 1536w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-2048x650.png 2048w" sizes="(max-width: 3514px) 100vw, 3514px" /><div class="eedee-background-div__overlay" style="opacity:1;"></div></div><div class="slide-content">
+
+<p class="has-text-align-center gutenslider-content-initial has-larger-font-size"></p>
+
+</div></div>
+
+
+<div class="wp-block-columns alignwide is-layout-flex wp-container-4">
+<div class="wp-block-column is-layout-flow">
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h1 class="wp-block-heading"><meta charset="utf-8">Welcome to FGX</h1>
+
+
+
+<p><meta charset="utf-8">FGX International, an EssilorLuxottica company, is a leading global designer and marketer of non-prescription glasses. Featuring Foster Grant®, our premiere eyewear brand with 90 years of heritage, our company continues to design stylish yet affordable eyewear for consumers around the world.</p>
+
+
+
+<div class="wp-block-buttons is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background" href="/about-us/" style="background-color:#ffffff;color:#243746"><meta charset="utf-8">Our Mission &amp; History</a></div>
+</div>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+</div>
+
+
+
+<div class="wp-block-column is-layout-flow"></div>
+</div>
+
+</div></div><div class="wp-block-eedee-gutenslider__content co-1">
+<div class="swiper-slide wp-block-eedee-block-gutenslide is-position-center-center ed-bg-image" style="--ed-vw:300;--ed-vh:95;" data-hash=""><div class="eedee-background-div bg-image"><img decoding="async" width="3514" height="1115" class="swiper-lazy wp-image-1319" src="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1.png" alt="" style="object-fit: cover; object-position: 70% 50%;"  data-title="FGX-Site-Hompage-Banner-1" srcset="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1.png 3514w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1-300x95.png 300w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1-1024x325.png 1024w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1-768x244.png 768w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1-1600x508.png 1600w" sizes="(max-width: 3514px) 100vw, 3514px" /><div class="eedee-background-div__overlay" style="opacity:1;"></div></div><div class="slide-content">
+
+<p class="has-text-align-center gutenslider-content-initial has-larger-font-size"></p>
+
+</div></div>
+
+<div class="swiper-slide wp-block-eedee-block-gutenslide is-position-center-center ed-bg-image" style="--ed-vw:300;--ed-vh:95;" data-hash=""><div class="eedee-background-div bg-image"><img decoding="async" loading="lazy" width="3514" height="1115" class="swiper-lazy wp-image-1320" src="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2.png" alt="" style="object-fit: cover; object-position: 65% 50%;"  data-title="FGX-Site-Hompage-Banner-2" srcset="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2.png 3514w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-300x95.png 300w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-1024x325.png 1024w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-768x244.png 768w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-1600x508.png 1600w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-1536x487.png 1536w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-2048x650.png 2048w" sizes="(max-width: 3514px) 100vw, 3514px" /><div class="eedee-background-div__overlay" style="opacity:1;"></div></div><div class="slide-content">
+
+<p class="has-text-align-center gutenslider-content-initial has-larger-font-size"></p>
+
+</div></div>
+
+<div class="swiper-slide wp-block-eedee-block-gutenslide is-position-center-center ed-bg-image" style="--ed-vw:300;--ed-vh:95;" data-hash=""><div class="eedee-background-div bg-image"><img decoding="async" loading="lazy" width="3514" height="1115" class="swiper-lazy wp-image-1321" src="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3.png" alt="" style="object-fit: cover; object-position: 60% 50%;"  data-title="FGX-Site-Hompage-Banner-3" srcset="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3.png 3514w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-300x95.png 300w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-1024x325.png 1024w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-768x244.png 768w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-1600x508.png 1600w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-1536x487.png 1536w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-2048x650.png 2048w" sizes="(max-width: 3514px) 100vw, 3514px" /><div class="eedee-background-div__overlay" style="opacity:1;"></div></div><div class="slide-content">
+
+<p class="has-text-align-center gutenslider-content-initial has-larger-font-size"></p>
+
+</div></div>
+
+
+<div class="wp-block-columns alignwide is-layout-flex wp-container-4">
+<div class="wp-block-column is-layout-flow">
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h1 class="wp-block-heading"><meta charset="utf-8">Welcome to FGX</h1>
+
+
+
+<p><meta charset="utf-8">FGX International, an EssilorLuxottica company, is a leading global designer and marketer of non-prescription glasses. Featuring Foster Grant®, our premiere eyewear brand with 90 years of heritage, our company continues to design stylish yet affordable eyewear for consumers around the world.</p>
+
+
+
+<div class="wp-block-buttons is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background" href="/about-us/" style="background-color:#ffffff;color:#243746"><meta charset="utf-8">Our Mission &amp; History</a></div>
+</div>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+</div>
+
+
+
+<div class="wp-block-column is-layout-flow"></div>
+</div>
+
+</div><button class="eedee-gutenslider-nav eedee-gutenslider-prev" aria-label="Previous Slide" aria-disabled="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><circle class="bg" cx="13" cy="12" r="11" /><path fill="none" d="M0 0h24v24H0z"/><path class="arrow" d="M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z"/></svg></button><button class="eedee-gutenslider-nav eedee-gutenslider-next" aria-label="Next Slide" aria-disabled="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><circle class="bg" cx="11" cy="12" r="11" /><path fill="none" d="M0 0h24v24H0z"/><path class="arrow" d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z"/></svg></button><div class="eedee-gutenslider-pagination"></div></div><div class="gutenslider-divider-bottom " style="color:#fff; height:60px;"></div></div>
+
+<div id="gutenslider-2abh1460g" class="wp-block-eedee-block-gutenslider content-fixed alignfull arrow-style-1 arrow-position-sides arrow-mb-none arrows-lg-none arrows-md-none arrows-sm-none dot-style-1 dots-lg-none dots-md-none dots-sm-none dot-position-bottom is-position-center-center ed-desktop-hidden ed-tablet-hidden mb-none" style="--gutenslider-min-height: 200px;--gutenslider-arrow-size: 30px;--gutenslider-dot-size: 25px;--gutenslider-arrow-color: #ffffff;--gutenslider-dot-color: #ffffff;--gutenslider-padding-y-mobile: 40px;--gutenslider-padding-x-mobile: 40px;--gutenslider-padding-y-tablet: 40px;--gutenslider-padding-x-tablet: 40px;--gutenslider-padding-y-desktop: 40px;--gutenslider-padding-x-desktop: 40px;--gutenslider-bg-image: url();--gutenslider-min-height-md: 200px;--gutenslider-min-height-sm: 200px;--gutenslider-padding-x: 40px;--gutenslider-padding-x-md: 40px;--gutenslider-padding-x-sm: 20px;--gutenslider-padding-y: 40px;--gutenslider-padding-y-md: 40px;--gutenslider-padding-y-sm: 20px;--gutenslider-arrow-size-md: 30px;--gutenslider-arrow-size-sm: 30px;--gutenslider-dot-size-md: 25px;--gutenslider-dot-size-sm: 25px;--gutenslider-arrow-bg-color: transparent;--gutenslider-arrow-hover-color: #eeeeee;--gutenslider-arrow-bg-hover-color: transparent;--gutenslider-arrow-x-offset: 10px;--gutenslider-arrow-x-offset-md: 10px;--gutenslider-arrow-x-offset-sm: 10px;--gutenslider-arrow-y-offset: 0px;--gutenslider-arrow-y-offset-md: 0px;--gutenslider-arrow-y-offset-sm: 0px;--gutenslider-arrow-x-spacing: 0px;--gutenslider-dot-y-offset: 10px;--gutenslider-dot-y-offset-md: 10px;--gutenslider-dot-y-offset-sm: 10px;--gutenslider-margin-x: 0px;--gutenslider-margin-x-md: 0px;--gutenslider-margin-x-sm: 0px;--gutenslider-margin-y: 0px;--gutenslider-margin-y-md: 0px;--gutenslider-margin-y-sm: 0px;--gutenslider-divider-top: 60px;--gutenslider-divider-bottom: 60px;--gutenslider-lightgallery-bg: #ffffff;--gutenslider-lightgallery-font: #000000;" data-parallax-direction="down" data-parallax-amount="1.3" data-lg-transition="lg-slide" data-hash=""><div class="eedee-swiper-outer"><div class="gutenslider-divider-top" style="color:#fff; height:60px;"></div><div class="swiper" data-settings='{"autoplay":{"delay":3000,"pauseOnMouseEnter":true,"disableOnInteraction":false},"speed":700,"direction":"horizontal","autoHeight":"","loop":true,"centeredSlides":true,"spaceBetween":0,"slidesPerView":1,"slidesPerGroup":1,"effect":"slide","coverflowEffect":{"rotate":30,"slideShadows":false,"depth":100,"stretch":50,"modifier":1},"fadeEffect":{"crossFade":true},"zoom":"","navigation":{"nextEl":"#gutenslider-2abh1460g .eedee-gutenslider-next","prevEl":"#gutenslider-2abh1460g .eedee-gutenslider-prev"},"pagination":{"type":"bullets","clickable":true,"dynamicBullets":false,"el":"#gutenslider-2abh1460g .eedee-gutenslider-pagination"},"pauseOnHover":"1","watchSlidesProgress":true,"watchSlidesVisibility":true,"settingsMd":{"autoHeight":"","slidesPerView":1,"slidesPerGroup":1,"spaceBetween":0},"settingsLg":{"autoHeight":"","slidesPerView":1,"slidesPerGroup":1,"spaceBetween":0},"hasLg":false,"hasLgCounter":true,"isFullScreen":false,"arrowsFollowMouse":false,"lgTitle":"none","lgCaption":"none","lgThumbnails":true,"keyboard":false,"hashNavigation":false}'><div class="swiper-wrapper">
+<div class="swiper-slide wp-block-eedee-block-gutenslide is-position-center-center ed-bg-image" style="--ed-vw:300;--ed-vh:95;" data-hash=""><div class="eedee-background-div bg-image"><img decoding="async" loading="lazy" width="3514" height="1115" class="swiper-lazy wp-image-1319" src="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1.png" alt="" style="object-fit: cover; object-position: 100% 50%;"  data-title="FGX-Site-Hompage-Banner-1" srcset="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1.png 3514w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1-300x95.png 300w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1-1024x325.png 1024w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1-768x244.png 768w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1-1600x508.png 1600w" sizes="(max-width: 3514px) 100vw, 3514px" /><div class="eedee-background-div__overlay" style="opacity:1;"></div></div><div class="slide-content">
+
+<p class="has-text-align-center gutenslider-content-initial has-larger-font-size"></p>
+
+</div></div>
+
+<div class="swiper-slide wp-block-eedee-block-gutenslide is-position-center-center ed-bg-image" style="--ed-vw:300;--ed-vh:95;" data-hash=""><div class="eedee-background-div bg-image"><img decoding="async" loading="lazy" width="3514" height="1115" class="swiper-lazy wp-image-1320" src="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2.png" alt="" style="object-fit: cover; object-position: 65% 50%;"  data-title="FGX-Site-Hompage-Banner-2" srcset="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2.png 3514w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-300x95.png 300w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-1024x325.png 1024w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-768x244.png 768w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-1600x508.png 1600w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-1536x487.png 1536w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-2048x650.png 2048w" sizes="(max-width: 3514px) 100vw, 3514px" /><div class="eedee-background-div__overlay" style="opacity:1;"></div></div><div class="slide-content">
+
+<p class="has-text-align-center gutenslider-content-initial has-larger-font-size"></p>
+
+</div></div>
+
+<div class="swiper-slide wp-block-eedee-block-gutenslide is-position-center-center ed-bg-image" style="--ed-vw:300;--ed-vh:95;" data-hash=""><div class="eedee-background-div bg-image"><img decoding="async" loading="lazy" width="3514" height="1115" class="swiper-lazy wp-image-1321" src="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3.png" alt="" style="object-fit: cover; object-position: 60% 50%;"  data-title="FGX-Site-Hompage-Banner-3" srcset="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3.png 3514w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-300x95.png 300w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-1024x325.png 1024w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-768x244.png 768w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-1600x508.png 1600w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-1536x487.png 1536w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-2048x650.png 2048w" sizes="(max-width: 3514px) 100vw, 3514px" /><div class="eedee-background-div__overlay" style="opacity:1;"></div></div><div class="slide-content">
+
+<p class="has-text-align-center gutenslider-content-initial has-larger-font-size"></p>
+
+</div></div>
+</div></div><div class="wp-block-eedee-gutenslider__content co-1">
+<div class="swiper-slide wp-block-eedee-block-gutenslide is-position-center-center ed-bg-image" style="--ed-vw:300;--ed-vh:95;" data-hash=""><div class="eedee-background-div bg-image"><img decoding="async" loading="lazy" width="3514" height="1115" class="swiper-lazy wp-image-1319" src="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1.png" alt="" style="object-fit: cover; object-position: 100% 50%;"  data-title="FGX-Site-Hompage-Banner-1" srcset="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1.png 3514w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1-300x95.png 300w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1-1024x325.png 1024w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1-768x244.png 768w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-1-1600x508.png 1600w" sizes="(max-width: 3514px) 100vw, 3514px" /><div class="eedee-background-div__overlay" style="opacity:1;"></div></div><div class="slide-content">
+
+<p class="has-text-align-center gutenslider-content-initial has-larger-font-size"></p>
+
+</div></div>
+
+<div class="swiper-slide wp-block-eedee-block-gutenslide is-position-center-center ed-bg-image" style="--ed-vw:300;--ed-vh:95;" data-hash=""><div class="eedee-background-div bg-image"><img decoding="async" loading="lazy" width="3514" height="1115" class="swiper-lazy wp-image-1320" src="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2.png" alt="" style="object-fit: cover; object-position: 65% 50%;"  data-title="FGX-Site-Hompage-Banner-2" srcset="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2.png 3514w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-300x95.png 300w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-1024x325.png 1024w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-768x244.png 768w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-1600x508.png 1600w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-1536x487.png 1536w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-2-2048x650.png 2048w" sizes="(max-width: 3514px) 100vw, 3514px" /><div class="eedee-background-div__overlay" style="opacity:1;"></div></div><div class="slide-content">
+
+<p class="has-text-align-center gutenslider-content-initial has-larger-font-size"></p>
+
+</div></div>
+
+<div class="swiper-slide wp-block-eedee-block-gutenslide is-position-center-center ed-bg-image" style="--ed-vw:300;--ed-vh:95;" data-hash=""><div class="eedee-background-div bg-image"><img decoding="async" loading="lazy" width="3514" height="1115" class="swiper-lazy wp-image-1321" src="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3.png" alt="" style="object-fit: cover; object-position: 60% 50%;"  data-title="FGX-Site-Hompage-Banner-3" srcset="https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3.png 3514w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-300x95.png 300w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-1024x325.png 1024w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-768x244.png 768w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-1600x508.png 1600w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-1536x487.png 1536w, https://www.fgxi.com/wp-content/uploads/2021/10/FGX-Site-Hompage-Banner-3-2048x650.png 2048w" sizes="(max-width: 3514px) 100vw, 3514px" /><div class="eedee-background-div__overlay" style="opacity:1;"></div></div><div class="slide-content">
+
+<p class="has-text-align-center gutenslider-content-initial has-larger-font-size"></p>
+
+</div></div>
+</div><button class="eedee-gutenslider-nav eedee-gutenslider-prev" aria-label="Previous Slide" aria-disabled="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><circle class="bg" cx="13" cy="12" r="11" /><path fill="none" d="M0 0h24v24H0z"/><path class="arrow" d="M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z"/></svg></button><button class="eedee-gutenslider-nav eedee-gutenslider-next" aria-label="Next Slide" aria-disabled="false"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><circle class="bg" cx="11" cy="12" r="11" /><path fill="none" d="M0 0h24v24H0z"/><path class="arrow" d="M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z"/></svg></button><div class="eedee-gutenslider-pagination"></div></div><div class="gutenslider-divider-bottom " style="color:#fff; height:60px;"></div></div>
+
+
+<div class="wp-block-columns is-layout-flex wp-container-7">
+<div class="wp-block-column show-for-small padding-top-large is-layout-flow">
+<h1 class="wp-block-heading"><meta charset="utf-8">Welcome to FGX</h1>
+
+
+
+<p><meta charset="utf-8">FGX International, an EssilorLuxottica company, is a leading global designer and marketer of non-prescription glasses. Featuring Foster Grant, our premiere eyewear brand with 90 years of heritage, our company continues to design stylish yet affordable eyewear for consumers around the world.</p>
+
+
+
+<div class="wp-block-buttons is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background" href="/about-us/" style="background-color:#ffb987;color:#243746"><meta charset="utf-8">Our Mission &amp; History</a></div>
+</div>
+</div>
+</div>
+
+
+
+<div style="height:100px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h2 class="has-text-align-center wp-block-heading" id="padding-top">Featured Brands</h2>
+
+
+
+<p class="has-text-align-center">As a leading global designer and marketer of non-prescription reading glasses and sunglasses, we comprise over 50 established, highly recognized eyewear brands.</p>
+
+
+
+<div class="wp-block-image hide-for-xs"><figure class="aligncenter size-full"><img decoding="async" loading="lazy" width="2560" height="558" src="https://www.fgxi.com/wp-content/uploads/2021/09/featured-brand-foster-grant-large@2x-scaled.jpg" alt="Foster Grant" class="wp-image-1305" srcset="https://www.fgxi.com/wp-content/uploads/2021/09/featured-brand-foster-grant-large@2x-scaled.jpg 2560w, https://www.fgxi.com/wp-content/uploads/2021/09/featured-brand-foster-grant-large@2x-300x65.jpg 300w, https://www.fgxi.com/wp-content/uploads/2021/09/featured-brand-foster-grant-large@2x-1024x223.jpg 1024w, https://www.fgxi.com/wp-content/uploads/2021/09/featured-brand-foster-grant-large@2x-768x167.jpg 768w, https://www.fgxi.com/wp-content/uploads/2021/09/featured-brand-foster-grant-large@2x-1536x335.jpg 1536w, https://www.fgxi.com/wp-content/uploads/2021/09/featured-brand-foster-grant-large@2x-2048x446.jpg 2048w" sizes="(max-width: 2560px) 100vw, 2560px" /></figure></div>
+
+
+
+<div class="wp-block-image show-for-xs-only"><figure class="aligncenter size-large"><img decoding="async" loading="lazy" width="1024" height="777" src="https://www.fgxi.com/wp-content/uploads/2021/11/featured-brand-foster-grant-mobile@2x-1024x777.png" alt="" class="wp-image-1358" srcset="https://www.fgxi.com/wp-content/uploads/2021/11/featured-brand-foster-grant-mobile@2x-1024x777.png 1024w, https://www.fgxi.com/wp-content/uploads/2021/11/featured-brand-foster-grant-mobile@2x-300x228.png 300w, https://www.fgxi.com/wp-content/uploads/2021/11/featured-brand-foster-grant-mobile@2x-768x583.png 768w, https://www.fgxi.com/wp-content/uploads/2021/11/featured-brand-foster-grant-mobile@2x.png 1323w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<div class="wp-block-columns is-layout-flex wp-container-11">
+<div class="wp-block-column is-layout-flow">
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="777" src="https://www.fgxi.com/wp-content/uploads/2021/10/featured-brand-readers@2x-100-1024x777.jpg" alt="" class="wp-image-1328" srcset="https://www.fgxi.com/wp-content/uploads/2021/10/featured-brand-readers@2x-100-1024x777.jpg 1024w, https://www.fgxi.com/wp-content/uploads/2021/10/featured-brand-readers@2x-100-300x228.jpg 300w, https://www.fgxi.com/wp-content/uploads/2021/10/featured-brand-readers@2x-100-768x583.jpg 768w, https://www.fgxi.com/wp-content/uploads/2021/10/featured-brand-readers@2x-100.jpg 1323w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+</div>
+
+
+
+<div class="wp-block-column is-layout-flow">
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="777" src="https://www.fgxi.com/wp-content/uploads/2021/08/featured-brand-gargoyles-1024x777.jpg" alt="" class="wp-image-1239" srcset="https://www.fgxi.com/wp-content/uploads/2021/08/featured-brand-gargoyles-1024x777.jpg 1024w, https://www.fgxi.com/wp-content/uploads/2021/08/featured-brand-gargoyles-300x228.jpg 300w, https://www.fgxi.com/wp-content/uploads/2021/08/featured-brand-gargoyles-768x583.jpg 768w, https://www.fgxi.com/wp-content/uploads/2021/08/featured-brand-gargoyles.jpg 1323w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+</div>
+
+
+
+<div class="wp-block-column is-layout-flow">
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="777" src="https://www.fgxi.com/wp-content/uploads/2021/10/featured-brand-ryders@2x-100-1-1024x777.jpg" alt="" class="wp-image-1332" srcset="https://www.fgxi.com/wp-content/uploads/2021/10/featured-brand-ryders@2x-100-1-1024x777.jpg 1024w, https://www.fgxi.com/wp-content/uploads/2021/10/featured-brand-ryders@2x-100-1-300x228.jpg 300w, https://www.fgxi.com/wp-content/uploads/2021/10/featured-brand-ryders@2x-100-1-768x583.jpg 768w, https://www.fgxi.com/wp-content/uploads/2021/10/featured-brand-ryders@2x-100-1.jpg 1323w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+</div>
+</div>
+
+
+
+<div class="wp-block-buttons is-content-justification-center is-layout-flex">
+<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-accent-background-color has-text-color has-background no-border-radius" href="/brands" style="color:#243746">View All Brands</a></div>
+</div>
+
+
+
+<div style="height:50px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<div class="wp-block-columns are-vertically-aligned-center extend-bg justify-columns has-background is-layout-flex wp-container-16" style="background-color:#f3f8ff">
+<div class="wp-block-column is-vertically-aligned-center is-layout-flow">
+<hr class="wp-block-separator has-text-color has-background is-style-wide" style="background-color:#231f20;color:#231f20"/>
+
+
+
+<h2 class="wp-block-heading">Improving Lives&nbsp;by Improving Sight</h2>
+
+
+
+<p>Daily, we make a difference in lives worldwide, bringing vision to improve quality of life and well-being.</p>
+
+
+
+<div class="wp-block-buttons is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background" href="/initiatives/" style="background-color:#ffb987;color:#243746">learn more</a></div>
+</div>
+
+
+
+<hr class="wp-block-separator has-text-color has-background is-style-wide" style="background-color:#231f20;color:#231f20"/>
+</div>
+
+
+
+<div class="wp-block-column is-vertically-aligned-center is-layout-flow">
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="720" src="https://www.fgxi.com/wp-content/uploads/2021/08/fgxi-initiatives-hero-banner@2x-1024x720.jpg" alt="" class="wp-image-1209" srcset="https://www.fgxi.com/wp-content/uploads/2021/08/fgxi-initiatives-hero-banner@2x-1024x720.jpg 1024w, https://www.fgxi.com/wp-content/uploads/2021/08/fgxi-initiatives-hero-banner@2x-300x211.jpg 300w, https://www.fgxi.com/wp-content/uploads/2021/08/fgxi-initiatives-hero-banner@2x-768x540.jpg 768w, https://www.fgxi.com/wp-content/uploads/2021/08/fgxi-initiatives-hero-banner@2x-1536x1081.jpg 1536w, https://www.fgxi.com/wp-content/uploads/2021/08/fgxi-initiatives-hero-banner@2x-2048x1441.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+</div>
+</div>
+
+
+
+<div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img decoding="async" loading="lazy" width="1024" height="353" src="https://www.fgxi.com/wp-content/uploads/2021/08/FGX-Site-Hompage-Mission-1024x353.jpg" alt="" class="wp-image-1257" srcset="https://www.fgxi.com/wp-content/uploads/2021/08/FGX-Site-Hompage-Mission-1024x353.jpg 1024w, https://www.fgxi.com/wp-content/uploads/2021/08/FGX-Site-Hompage-Mission-300x103.jpg 300w, https://www.fgxi.com/wp-content/uploads/2021/08/FGX-Site-Hompage-Mission-768x265.jpg 768w, https://www.fgxi.com/wp-content/uploads/2021/08/FGX-Site-Hompage-Mission.jpg 1414w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe loading="lazy" title="FGX International - Mission Statement" width="500" height="281" src="https://www.youtube.com/embed/IPcTQ01kH8s?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div></figure>
+
+
+
+<div style="height:41px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<div class="wp-block-columns are-vertically-aligned-center extend-bg justify-columns has-background is-layout-flex wp-container-20" style="background-color:#243746">
+<div class="wp-block-column is-vertically-aligned-center is-layout-flow">
+<hr class="wp-block-separator has-text-color has-background is-style-wide" style="background-color:#ffffff;color:#ffffff"/>
+
+
+
+<h2 class="has-text-color wp-block-heading" style="color:#ffffff">Careers</h2>
+
+
+
+<p class="has-text-color" style="color:#ffffff">See yourself growing in an inclusive network that values your talent, perspective, and ability to help us create a world of better vision for all.</p>
+
+
+
+<div class="wp-block-buttons is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link has-text-color has-background no-border-radius" href="/work-with-us/" style="background-color:#ffb987;color:#243746">join the fgx team</a></div>
+</div>
+
+
+
+<hr class="wp-block-separator has-text-color has-background is-style-wide" style="background-color:#ffffff;color:#ffffff"/>
+</div>
+
+
+
+<div class="wp-block-column is-vertically-aligned-center is-layout-flow">
+<figure class="wp-block-image size-large"><img decoding="async" loading="lazy" width="1024" height="541" src="https://www.fgxi.com/wp-content/uploads/2021/08/FGX-Site-Hompage-CultureCareers-1024x541.jpg" alt="" class="wp-image-1228" srcset="https://www.fgxi.com/wp-content/uploads/2021/08/FGX-Site-Hompage-CultureCareers-1024x541.jpg 1024w, https://www.fgxi.com/wp-content/uploads/2021/08/FGX-Site-Hompage-CultureCareers-300x159.jpg 300w, https://www.fgxi.com/wp-content/uploads/2021/08/FGX-Site-Hompage-CultureCareers-768x406.jpg 768w, https://www.fgxi.com/wp-content/uploads/2021/08/FGX-Site-Hompage-CultureCareers-1536x812.jpg 1536w, https://www.fgxi.com/wp-content/uploads/2021/08/FGX-Site-Hompage-CultureCareers-2048x1083.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+</div>
+</div>
+</div></article></main></div></div><footer class="site-footer"><div class="wrap"><nav class="nav-secondary" aria-label="Secondary"><div class="wrap"><ul id="menu-footer" class="menu genesis-nav-menu menu-secondary js-superfish"><li id="menu-item-980" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-980"><a href="https://www.fgxi.com/terms-conditions/"><span >Terms &amp; Conditions</span></a></li>
+<li id="menu-item-1367" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1367"><a target="_blank" rel="noopener" href="/wp-content/uploads/2021/12/Ethics-Hotline-Poster.pdf"><span >Ethics</span></a></li>
+<li id="menu-item-1369" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1369"><a href="https://www.fgxi.com/privacy-policy/"><span >Privacy Policy</span></a></li>
+<li id="menu-item-988" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-988"><a href="https://www.fgxi.com/accessibility-policy/"><span >Web Accessibility Statement</span></a></li>
+<li id="menu-item-987" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-987"><a href="https://www.fgxi.com/purchase-order-terms/"><span >Purchase Order Terms</span></a></li>
+<li id="menu-item-1045" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1045"><a target="_blank" rel="noopener" href="https://www.essilor.com/"><span >Essilor Group</span></a></li>
+<li id="menu-item-1044" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1044"><a target="_blank" rel="noopener" href="https://www.essilorluxottica.com/"><span >EssilorLuxottica</span></a></li>
+</ul></div></nav>
+		<div class="copyright">© 2023 FGX International / All Rights Reserved / An EssilorLuxottica Company</div>
+
+		</div></footer></div><link rel='stylesheet' id='eedee-gutenslider-block-editor-css' href='https://www.fgxi.com/wp-content/plugins/gutenslider/build/gutenslider.css?ver=1676476303' media='all' />
+<style id='core-block-supports-inline-css'>
+.wp-container-4.wp-container-4,.wp-container-7.wp-container-7,.wp-container-11.wp-container-11,.wp-container-16.wp-container-16,.wp-container-20.wp-container-20{flex-wrap:nowrap;}
+</style>
+<script id='getwid-blocks-frontend-js-js-extra'>
+var Getwid = {"settings":[],"ajax_url":"https:\/\/www.fgxi.com\/wp-admin\/admin-ajax.php","isRTL":"","nonces":{"recaptcha_v2_contact_form":"7fdb4dc418"}};
+</script>
+<script type="rocketlazyloadscript" data-rocket-src='https://www.fgxi.com/wp-content/plugins/getwid/assets/js/frontend.blocks.js?ver=1.8.5' id='getwid-blocks-frontend-js-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://www.fgxi.com/wp-content/plugins/fgxi-functionality/js/fgxi.js?ver=1.0.0' id='fgxi-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://www.fgxi.com/wp-content/plugins/qubely/assets/js/common-script.min.js?ver=1.8.5' id='qubely-block-common-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://www.fgxi.com/wp-content/plugins/qubely/assets/js/interaction.min.js?ver=1.8.5' id='qubely-interaction-js'></script>
+<script type="rocketlazyloadscript" id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script id='rocket-preload-links-js-extra'>
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.fgxi.com","onHoverDelay":"100","rateThrottle":"3"};
+</script>
+<script type="rocketlazyloadscript" id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-rocket-src='https://www.fgxi.com/wp-includes/js/hoverIntent.min.js?ver=1.10.2' id='hoverIntent-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://www.fgxi.com/wp-content/themes/genesis/lib/js/menu/superfish.min.js?ver=1.7.10' id='superfish-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://www.fgxi.com/wp-content/themes/genesis/lib/js/menu/superfish.args.min.js?ver=3.4.0' id='superfish-args-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://www.fgxi.com/wp-content/themes/genesis/lib/js/skip-links.min.js?ver=3.4.0' id='skip-links-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://www.fgxi.com/wp-content/themes/infinity-pro/js/match-height.js?ver=0.5.2' id='infinity-match-height-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://www.fgxi.com/wp-content/themes/infinity-pro/js/global.js?ver=1.0.0' id='infinity-global-js'></script>
+<script id='infinity-responsive-menu-js-extra'>
+var genesis_responsive_menu = {"mainMenu":"Menu","menuIconClass":"ionicons-before ion-ios-drag","subMenu":"Submenu","subMenuIconClass":"ionicons-before ion-chevron-down","menuClasses":{"others":[".nav-primary"]}};
+</script>
+<script type="rocketlazyloadscript" data-rocket-src='https://www.fgxi.com/wp-content/themes/infinity-pro/js/responsive-menus.min.js?ver=1.3.2' id='infinity-responsive-menu-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://www.fgxi.com/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2' id='wp-polyfill-inert-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://www.fgxi.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11' id='regenerator-runtime-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://www.fgxi.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script id='eedee-gutenslider-front-js-extra'>
+var eedeeGutenslider = {"siteUrl":"https:\/\/www.fgxi.com","arrows":[{"value":"arrow-style-1","label":"Style 1","next":"<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\"><circle class=\"bg\" cx=\"11\" cy=\"12\" r=\"11\" \/><path fill=\"none\" d=\"M0 0h24v24H0z\"\/><path class=\"arrow\" d=\"M13.172 12l-4.95-4.95 1.414-1.414L16 12l-6.364 6.364-1.414-1.414z\"\/><\/svg>","prev":"<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\"><circle class=\"bg\" cx=\"13\" cy=\"12\" r=\"11\" \/><path fill=\"none\" d=\"M0 0h24v24H0z\"\/><path class=\"arrow\" d=\"M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z\"\/><\/svg>"},{"value":"arrow-style-2","label":"Style 2","next":"<svg version=\"1.1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" width=\"24\" height=\"24\" x=\"0px\" y=\"0px\" viewBox=\"0 0 45 45\"><circle class=\"bg\" cx=\"22.5\" cy=\"22.5\" r=\"22.5\" \/><path class=\"arrow\" transform=\"translate(6.755, 6.755)\" d=\"M21.205,5.007c-0.429-0.444-1.143-0.444-1.587,0c-0.429,0.429-0.429,1.143,0,1.571l8.047,8.047H1.111 C0.492,14.626,0,15.118,0,15.737c0,0.619,0.492,1.127,1.111,1.127h26.554l-8.047,8.032c-0.429,0.444-0.429,1.159,0,1.587 c0.444,0.444,1.159,0.444,1.587,0l9.952-9.952c0.444-0.429,0.444-1.143,0-1.571L21.205,5.007z\"\/><\/svg>","prev":"<svg version=\"1.1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" width=\"24\" height=\"24\" x=\"0px\" y=\"0px\"\n    viewBox=\"0 0 45 45\" xml:space=\"preserve\">\n    <circle class=\"bg\" cx=\"22.5\" cy=\"22.5\" r=\"22.5\" \/><path class=\"arrow\" transform=\"translate(6.755, 6.755)\" d=\"M10.273,5.009c0.444-0.444,1.143-0.444,1.587,0c0.429,0.429,0.429,1.143,0,1.571l-8.047,8.047h26.554\n    c0.619,0,1.127,0.492,1.127,1.111c0,0.619-0.508,1.127-1.127,1.127H3.813l8.047,8.032c0.429,0.444,0.429,1.159,0,1.587\n    c-0.444,0.444-1.143,0.444-1.587,0l-9.952-9.952c-0.429-0.429-0.429-1.143,0-1.571L10.273,5.009z\"\/>\n    <\/svg>"},{"value":"arrow-style-3","label":"Style 3","next":"<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\"><circle class=\"bg\" cx=\"12\" cy=\"12\" r=\"10\" \/><path class=\"\" fill=\"none\" d=\"M0 0h24v24H0z\"\/><path class=\"arrow\" stroke-width=\"0px\" d=\"M12 11V8l4 4-4 4v-3H8v-2h4zm0-9c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 18c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8z\"\/><\/svg>","prev":"<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\"><circle class=\"bg\" cx=\"12\" cy=\"12\" r=\"10\" \/><path class=\"\" fill=\"none\" d=\"M0 0h24v24H0z\"\/><path class=\"arrow\" stroke-width=\"0px\" d=\"M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zm0 18c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8zm0-9h4v2h-4v3l-4-4 4-4v3z\"\/><\/svg>"},{"value":"arrow-style-4","label":"Style 4","next":"<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 514 514\"><circle class=\"bg\" cx=\"257\" cy=\"257\" r=\"257\" \/><path class=\"arrow\" d=\"M471.7,242.5l-416-192A16,16,0,0,0,36.2,74.6L173,257,36.2,439.4a16,16,0,0,0,19.5,24.1l416-192a16,16,0,0,0,0-29Z\"\/><\/svg>","prev":"<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 514 514\"><circle class=\"bg\" cx=\"257\" cy=\"257\" r=\"257\" \/><path class=\"arrow\" d=\"M42.28,271.57l416,192a16,16,0,0,0,19.5-24.1L341,257.07l136.8-182.4a16,16,0,0,0-19.5-24.1l-416,192a16,16,0,0,0,0,29Z\"\/><\/svg>"},{"value":"arrow-style-5","label":"Style 5","next":"<svg width=\"24px\" height=\"24px\" viewBox=\"0 0 590 590\"><circle class=\"bg\" cx=\"295\" cy=\"295\" r=\"295\" \/><path class=\"arrow\" d=\"M548.16,283.6l-96-112A16,16,0,0,0,424,182v49.89L54,278.13a16,16,0,0,0,0,31.75l370,46.23V406a16,16,0,0,0,28.16,10.4l96-112A16,16,0,0,0,548.16,283.6Z\"\/><\/svg>","prev":"<svg width=\"24px\" height=\"24px\" viewBox=\"0 0 590 590\"><circle class=\"bg\" cx=\"295\" cy=\"295\" r=\"295\" \/><path class=\"arrow\" d=\"M43.84,304.4l96,112A16,16,0,0,0,168,406V356.11l370-46.24a16,16,0,0,0,0-31.75L168,231.88V182a16,16,0,0,0-28.16-10.4l-96,112A16,16,0,0,0,43.84,304.4Z\"\/><\/svg>"},{"value":"arrow-style-6","label":"Style 6","prev":"<svg width=\"24\" height=\"24\" viewBox=\"0 0 128 128\" width=\"24\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><circle class=\"bg\" cx=\"64\" cy=\"64\" r=\"64\" \/><path stroke-width=\"0\" class=\"arrow\" d=\"m76 100c-1.023 0-2.047-.391-2.828-1.172l-32-32c-1.563-1.563-1.563-4.094 0-5.656l32-32c1.563-1.563 4.094-1.563 5.656 0s1.563 4.094 0 5.656l-29.172 29.172 29.172 29.172c1.563 1.563 1.563 4.094 0 5.656-.781.781-1.805 1.172-2.828 1.172zm52-36c0-35.289-28.711-64-64-64s-64 28.711-64 64 28.711 64 64 64 64-28.711 64-64zm-8 0c0 30.879-25.121 56-56 56s-56-25.121-56-56 25.121-56 56-56 56 25.121 56 56z\"\/><\/svg>","next":"<svg id=\"Layer_1\" height=\"24\" viewBox=\"0 0 128 128\" width=\"24\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><circle class=\"bg\" cx=\"64\" cy=\"64\" r=\"64\" \/><path stroke-width=\"0\" class=\"arrow\" d=\"m52 100c-1.023 0-2.047-.391-2.828-1.172-1.563-1.563-1.563-4.094 0-5.656l29.172-29.172-29.172-29.172c-1.563-1.563-1.563-4.094 0-5.656s4.094-1.563 5.656 0l32 32c1.563 1.563 1.563 4.094 0 5.656l-32 32c-.781.781-1.805 1.172-2.828 1.172zm76-36c0-35.289-28.711-64-64-64s-64 28.711-64 64 28.711 64 64 64 64-28.711 64-64zm-8 0c0 30.879-25.121 56-56 56s-56-25.121-56-56 25.121-56 56-56 56 25.121 56 56z\"\/><\/svg>"},{"value":"arrow-style-7","label":"Style 7","prev":"<svg height=\"512\" viewBox=\"0 0 128 128\" width=\"512\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><rect class=\"bg\" x=\"5\" y=\"5\" width=\"115\" height=\"115\" rx=\"18\" ry=\"18\" \/><path class=\"arrow\" d=\"m104 124h-80c-11.027 0-20-8.973-20-20v-80c0-11.027 8.973-20 20-20h80c11.027 0 20 8.973 20 20v80c0 11.027-8.973 20-20 20zm-80-112c-6.617 0-12 5.383-12 12v80c0 6.617 5.383 12 12 12h80c6.617 0 12-5.383 12-12v-80c0-6.617-5.383-12-12-12zm40 92c-.969 0-1.926-.354-2.676-1.027l-40-36c-.844-.758-1.324-1.838-1.324-2.973s.48-2.215 1.324-2.973l40-36c1.176-1.057 2.863-1.32 4.305-.682 1.441.643 2.371 2.075 2.371 3.655v20h32c2.211 0 4 1.791 4 4v24c0 2.209-1.789 4-4 4h-32v20c0 1.58-.93 3.012-2.371 3.654-.524.233-1.078.346-1.629.346zm-34.02-40 30.02 27.02v-15.02c0-2.209 1.789-4 4-4h32v-16h-32c-2.211 0-4-1.791-4-4v-15.02z\"\/><\/svg>","next":"<svg height=\"512\" viewBox=\"0 0 128 128\" width=\"512\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><rect class=\"bg\" x=\"5\" y=\"5\" width=\"115\" height=\"115\" rx=\"18\" ry=\"18\" \/><path class=\"arrow\" d=\"m104 124h-80c-11.027 0-20-8.973-20-20v-80c0-11.027 8.973-20 20-20h80c11.027 0 20 8.973 20 20v80c0 11.027-8.973 20-20 20zm-80-112c-6.617 0-12 5.383-12 12v80c0 6.617 5.383 12 12 12h80c6.617 0 12-5.383 12-12v-80c0-6.617-5.383-12-12-12zm40 92c-.551 0-1.105-.113-1.629-.346-1.441-.642-2.371-2.074-2.371-3.654v-20h-32c-2.211 0-4-1.791-4-4v-24c0-2.209 1.789-4 4-4h32v-20c0-1.58.93-3.012 2.371-3.654 1.441-.641 3.129-.375 4.305.682l40 36c.844.757 1.324 1.837 1.324 2.972s-.48 2.215-1.324 2.973l-40 36c-.75.673-1.707 1.027-2.676 1.027zm-32-32h32c2.211 0 4 1.791 4 4v15.02l30.02-27.02-30.02-27.02v15.02c0 2.209-1.789 4-4 4h-32z\"\/><\/svg>"},{"value":"arrow-style-8","label":"Style 8","prev":"<svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" x=\"0px\" y=\"0px\" viewBox=\"0 0 490.667 490.667\" style=\"enable-background:new 0 0 490.667 490.667;\" xml:space=\"preserve\"><rect class=\"bg\" x=\"0\" y=\"0\" width=\"490.667\" height=\"490.667\" rx=\"12\" ry=\"12\" \/><path class=\"arrow\" d=\"M480,0H10.667C4.776,0,0,4.776,0,10.667V480c0,5.891,4.776,10.667,10.667,10.667H480c5.891,0,10.667-4.776,10.667-10.667 V10.667C490.667,4.776,485.891,0,480,0z M469.333,469.333h-448v-448h448V469.333z\"\/><path class=\"arrow\" d=\"M301.792,380.875c4.237,4.093,10.99,3.976,15.083-0.261c3.993-4.134,3.993-10.688,0-14.821L196.416,245.333 l120.459-120.459c4.093-4.237,3.976-10.99-0.262-15.083c-4.134-3.993-10.687-3.993-14.821,0l-128,128 c-4.164,4.165-4.164,10.917,0,15.083L301.792,380.875z\"\/><\/svg>","next":"<svg version=\"1.1\" id=\"Layer_1\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" x=\"0px\" y=\"0px\"\n    viewBox=\"0 0 490.667 490.667\" style=\"enable-background:new 0 0 490.667 490.667;\" xml:space=\"preserve\">\n    <rect class=\"bg\" x=\"0\" y=\"0\" width=\"490.667\" height=\"490.667\" rx=\"12\" ry=\"12\" \/>\n    <path class=\"arrow\" d=\"M480,0H10.667C4.776,0,0,4.776,0,10.667V480c0,5.891,4.776,10.667,10.667,10.667H480c5.891,0,10.667-4.776,10.667-10.667\n    V10.667C490.667,4.776,485.891,0,480,0z M469.333,469.333h-448v-448h448V469.333z\"\/>\n    <path class=\"arrow\" d=\"M173.792,380.875c4.165,4.164,10.917,4.164,15.083,0l128-128c4.164-4.165,4.164-10.917,0-15.083l-128-128\n    c-4.237-4.093-10.99-3.975-15.083,0.262c-3.992,4.134-3.992,10.687,0,14.82l120.459,120.459L173.792,365.792\n    C169.628,369.957,169.628,376.709,173.792,380.875z\"\/>\n    <\/svg>"},{"value":"arrow-style-9","label":"Style 9","prev":"<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" xmlns:svgjs=\"http:\/\/svgjs.com\/svgjs\" version=\"1.1\" width=\"24\" height=\"24\" x=\"0\" y=\"0\" viewBox=\"0 0 511.9995 511\" style=\"enable-background:new 0 0 512 512\" xml:space=\"preserve\"><circle class=\"bg\" r=\"255.99975\" cx=\"255.99975\" cy=\"255.5\" shape=\"circle\"\/><g transform=\"matrix(-0.8,0,0,0.8,460.7982421875,108.09600625038146)\"><path xmlns=\"http:\/\/www.w3.org\/2000\/svg\" d=\"m326.390625 380.460938c-6.507813 0-13.085937-1.265626-19.375-3.871094-18.832031-7.792969-31-25.929688-31-46.203125v-43.03125c0-11.046875 8.953125-20.003907 20-20.003907s20.003906 8.957032 20.003906 20.003907v43.03125c0 5.992187 4.402344 8.457031 6.292969 9.242187 1.925781.796875 6.871094 2.183594 11.183594-2.132812l132.664062-132.828125c7.816406-7.824219 7.816406-20.554688 0-28.378907l-132.664062-132.824218c-4.3125-4.316406-9.257813-2.933594-11.179688-2.136719-1.894531.785156-6.296875 3.253906-6.296875 9.246094v120.902343c0 22.058594-17.945312 40.003907-40.003906 40.003907h-256.015625c-11.046875 0-20-8.953125-20-20s8.953125-20.003907 20-20.003907h256.015625v-120.902343c0-20.273438 12.167969-38.414063 31-46.207031 18.898437-7.820313 40.402344-3.570313 54.78125 10.828124l132.664063 132.824219c23.382812 23.414063 23.382812 61.507813 0 84.921875l-132.664063 132.824219c-9.59375 9.605469-22.359375 14.691406-35.40625 14.695313zm0 0\" class=\"arrow\" style=\"\"\/><\/g><\/svg>","next":"<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" xmlns:svgjs=\"http:\/\/svgjs.com\/svgjs\" version=\"1.1\" width=\"24\" height=\"24\" x=\"0\" y=\"0\" viewBox=\"0 0 511.9995 511\" style=\"enable-background:new 0 0 512 512\" xml:space=\"preserve\"><circle class=\"bg\" r=\"255.99975\" cx=\"255.99975\" cy=\"255.5\" shape=\"circle\"\/><g transform=\"matrix(0.8,0,0,0.8,51.19980468749998,103.09600625038141)\"><path class=\"arrow\" d=\"m326.390625 380.460938c-6.507813 0-13.085937-1.265626-19.375-3.871094-18.832031-7.792969-31-25.929688-31-46.203125v-43.03125c0-11.046875 8.953125-20.003907 20-20.003907s20.003906 8.957032 20.003906 20.003907v43.03125c0 5.992187 4.402344 8.457031 6.292969 9.242187 1.925781.796875 6.871094 2.183594 11.183594-2.132812l132.664062-132.828125c7.816406-7.824219 7.816406-20.554688 0-28.378907l-132.664062-132.824218c-4.3125-4.316406-9.257813-2.933594-11.179688-2.136719-1.894531.785156-6.296875 3.253906-6.296875 9.246094v120.902343c0 22.058594-17.945312 40.003907-40.003906 40.003907h-256.015625c-11.046875 0-20-8.953125-20-20s8.953125-20.003907 20-20.003907h256.015625v-120.902343c0-20.273438 12.167969-38.414063 31-46.207031 18.898437-7.820313 40.402344-3.570313 54.78125 10.828124l132.664063 132.824219c23.382812 23.414063 23.382812 61.507813 0 84.921875l-132.664063 132.824219c-9.59375 9.605469-22.359375 14.691406-35.40625 14.695313zm0 0\" style=\"\"\/><\/g><\/svg>"},{"value":"arrow-style-10","label":"Style 10","prev":"<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" xmlns:svgjs=\"http:\/\/svgjs.com\/svgjs\" version=\"1.1\" width=\"24\" height=\"24\" x=\"0\" y=\"0\" viewBox=\"0 0 123.958 123.959\" style=\"enable-background:new 0 0 512 512\" xml:space=\"preserve\" class=\"\"><circle class=\"bg\" r=\"61.979\" cx=\"61.979\" cy=\"61.9795\" shape=\"circle\"\/><g transform=\"matrix(-0.6,0,0,0.6,94.16719970703127,24.79160041809086)\"><path class=\"arrow\" d=\"M38.217,1.779c-3.8-3.8-10.2-1.1-10.2,4.2v112c0,5.3,6.4,8,10.2,4.2l56-56c2.3-2.301,2.3-6.101,0-8.401L38.217,1.779z\" \/><\/g><\/svg>","next":"<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" xmlns:xlink=\"http:\/\/www.w3.org\/1999\/xlink\" xmlns:svgjs=\"http:\/\/svgjs.com\/svgjs\" version=\"1.1\" width=\"24\" height=\"24\" x=\"0\" y=\"0\" viewBox=\"0 0 123.958 123.959\" class=\"\"><circle class=\"bg\" r=\"61.979\" cx=\"61.979\" cy=\"61.9795\" shape=\"circle\"\/><g transform=\"matrix(0.6,0,0,0.6,34.79179992675785,24.79160041809086)\"><path class=\"arrow\" d=\"M38.217,1.779c-3.8-3.8-10.2-1.1-10.2,4.2v112c0,5.3,6.4,8,10.2,4.2l56-56c2.3-2.301,2.3-6.101,0-8.401L38.217,1.779z\"\/><\/g><\/svg>"},{"value":"arrow-style-11","label":"Style 11","prev":"<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 817.95 1792.69\"><path class=\"arrow\" d=\"M824.62,1753.28c1.08,29.3-20.31,71.77-54.87,58.43-8.6-3.07-15.57-9.79-22.11-16.2-17.82-17.78-35-36.19-52.85-54-52.11-53.06-101.38-108.8-149.57-165.41q-52.1-58.76-104.08-117.6c-34-41.44-66.12-84.34-100.83-125.17-90.39-106.67-178.1-215.53-267.54-322.94C61,995,50.16,978.94,39.42,962.81,16.11,935.27.25,899.57,9.27,863.14c3.83-19.31,14.6-36,28-50,17-19,30.74-40.6,47-60.2,52.5-61.73,104.52-124,163.16-180,27.46-31.23,51.6-65.26,80.83-95,53.29-55.65,93.31-108.85,145.17-163.65,28.59-33.76,56-68.51,86.15-101,33.23-36,67.46-70.85,102.18-105.36,26.32-26.27,49.48-56.14,78.37-79.61C786.78.25,820,66,812.63,105.94c-1.46,34.29-27.58,56.91-50.62,78.87-47.17,50.21-96.72,98-143.59,148.47C583.28,371.41,553.39,414,517,451c-33.61,39.94-66.52,80.57-102.37,118.58-36.24,37.18-67.74,78.45-102,117.29-15.83,18.27-34.42,33.78-51.62,50.68-44.25,48.85-89.82,96.77-129.91,149.17,155.09,184,302,375.11,462.79,554.21,47.38,51.42,93.38,104.06,140.31,155.91C773.38,1641.63,822.89,1690.12,824.62,1753.28Z\" transform=\"translate(-6.7 -21.54)\"\/><\/svg>","next":"<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 817.95 1792.69\"><path class=\"arrow\" d=\"M6.74,82.49C5.66,53.2,27.05,10.73,61.61,24.06c8.6,3.08,15.57,9.79,22.11,16.2,17.82,17.78,35,36.19,52.85,54C188.68,147.27,237.94,203,286.14,259.62q52.1,58.76,104.08,117.6c34,41.44,66.11,84.34,100.83,125.17,90.39,106.67,178.09,215.53,267.54,322.94,11.78,15.41,22.6,31.5,33.35,47.64,23.31,27.53,39.17,63.23,30.15,99.66-3.83,19.31-14.6,36-28,50-17,19-30.75,40.61-47,60.2-52.49,61.73-104.51,124-163.16,180-27.45,31.24-51.59,65.26-80.82,95-53.29,55.65-93.31,108.86-145.17,163.65-28.59,33.76-56,68.51-86.16,101-33.22,36-67.45,70.85-102.18,105.36-26.31,26.27-49.48,56.15-78.36,79.62-46.61,28-79.85-37.67-72.45-77.64,1.46-34.29,27.57-56.9,50.61-78.86,47.17-50.22,96.72-98,143.6-148.48,35.14-38.13,65-80.72,101.4-117.68,33.61-39.94,66.52-80.56,102.37-118.57,36.24-37.19,67.74-78.46,102-117.29,15.83-18.28,34.42-33.79,51.62-50.69,44.25-48.85,89.82-96.77,129.91-149.17-155.09-184-302-375.1-462.79-554.2C190.08,343.46,144.07,290.82,97.15,239,58,194.14,8.47,145.66,6.74,82.49Z\" transform=\"translate(-6.7 -21.54)\"\/><\/svg>"}],"gutensliderDividers":{"none":{"value":"none","label":"No Divider","svg":""},"triangle":{"value":"triangle","label":"triangle","svg":"<svg viewBox=\"0 0 1200 120\" preserveAspectRatio=\"none\"><path d=\"M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z\"><\/path><\/svg>","svg-inverted":"<svg viewBox=\"0 0 1200 120\" preserveAspectRatio=\"none\"><path d=\"M1200 0L0 0 598.97 114.72 1200 0z\"><\/path><\/svg>"},"wave":{"value":"wave","label":"wave","svg":"<svg viewBox=\"0 0 1000 100\" height=\"100%\" width=\"100%\" preserveAspectRatio=\"none\"><path d=\"M1000,40c0,0 -120.077,-38.076 -250,-38c-129.923,0.076 -345.105,78 -500,78c-154.895,0 -250,-30 -250,-30l0,50l1000,0l0,-60Z\"><\/path><\/svg>"}},"pluginsUrl":"https:\/\/www.fgxi.com\/wp-content\/plugins\/gutenslider\/"};
+</script>
+<script type="rocketlazyloadscript" data-rocket-src='https://www.fgxi.com/wp-content/plugins/gutenslider/build/gutenslider-front.js?ver=46c9ec248e09d0bb9107' id='eedee-gutenslider-front-js'></script>
+</body></html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

@@ -1,0 +1,1358 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8"/>
+    <title>Home  | PULSE Network</title>
+    
+    <meta name="description" content="Experts in debit, believers in service"/>
+    <meta name="template" content="pulse-home-page-template"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="title" content="Home  | PULSE Network"/>
+	<link rel="shortcut icon" href="/etc.clientlibs/pulse/clientlibs/clientlib-site/resources/images/pulse_favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="/etc.clientlibs/pulse/clientlibs/clientlib-site/resources/images/pulse_favicon.ico" type="image/x-icon"/>	
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    
+
+<!-- DL Script Starts -->
+<script>
+	var pageName = document.title;
+	var pageUrl = window.location.href;
+	var urlwithoutQuery = window.location.protocol+"//"+window.location.hostname+window.location.pathname;
+	var pathwithoutQuery =  window.location.pathname.replace(/^\/|\/$/g, '');
+	var previouspathwithoutQuery = document.referrer.replace(/\?.*$/g, "").replace(/^[^:]+:\/\/[^/]+/, '').replace(/#.*/, '').replace(/^\/|$/g, '');
+	var debugQuery = window.location.search.replace(/\?/, '');
+	var siteDomain = window.location.hostname.split('.')[1] + "." + window.location.hostname.split('.')[2];
+	var siteName = window.location.pathname.split('/')[1];
+	var siteSection = "";
+    var siteSubsection = "";
+	var searchTerm ="";
+	var searchType ="";
+	var searchTypeClicked ="";
+	var resultType ="";
+	var searchResultTypeClicked ="";
+	
+	if(window.location.pathname.split('/').length == 3 || window.location.href.split('/').length == 4) {
+		siteSection = "";
+	}
+	else {
+		siteSection = window.location.pathname.split('/')[1] + "/" + window.location.pathname.split('/')[2];
+	}
+	
+	if(window.location.href.split('/').length >= 7) {
+		siteSubsection = window.location.pathname.split('/')[1] + "/" + window.location.pathname.split('/')[2] + "/" + window.location.pathname.split('/')[3];
+	}
+	else if(window.location.href.split('/').length == 6 && window.location.href.includes('#')) {
+		siteSubsection = window.location.pathname.split('/')[1] + "/" + window.location.pathname.split('/')[2] + "/" + window.location.hash.split('?')[0];
+	}
+	else {
+		siteSubsection = "";
+	}
+
+if(debugQuery.includes('q')) {
+	searchType = "public";
+	searchTerm = window.location.search.replace(/\?/,'').split('=')[1];
+}
+	
+if(debugQuery.includes('srchQ')) {
+	searchType = "public";
+	searchTerm = window.location.search.replace(/\?/,'').split('&')[1].split('=')[1].replace(/%20/g, ' ');
+		if(window.location.search.replace(/\?/, '').split('=')[0] == "gcmpgn") {
+			searchTypeClicked = window.location.search.replace(/\?/,'').split('=')[1].split('&')[0];
+			resultType = window.location.search.replace(/\?/,'').split('=')[1].split('_')[3];
+		
+				if(resultType == "gsap") {
+					searchResultTypeClicked = "KeyMatch";
+				}
+				else if(resultType == "gsan") {
+					searchResultTypeClicked = "RegularResult";
+				}
+				else if(resultType == "sro") {
+					searchResultTypeClicked = "QuickResult";
+				}	
+				else{
+					searchResultTypeClicked = "UnknownResult";
+				}
+		}
+	}
+
+var digitalData = {
+	page: {
+		pageInfo: {
+				pageName: pageName,
+				pageURL:pageUrl,
+				urlwithoutQuery:urlwithoutQuery,
+				pageInstanceID: "prod",
+				pathwithoutQuery:pathwithoutQuery,
+				previouspathwithoutQuery:previouspathwithoutQuery,
+				debugQuery:debugQuery,
+				siteDomain:siteDomain,
+				siteName:siteName == '' ? "Home" : siteName,
+				siteSection:siteSection,
+                siteSubsection:siteSubsection
+				}
+			},
+			
+		search: {
+				internalSearchType:searchType,
+				internalSearchTypeClicked:searchTypeClicked,
+				internalSearchTerm:searchTerm,
+				internalSearchResultTypeClicked:searchResultTypeClicked,
+				
+			},
+			
+		user: {
+				customerType:"Prospect"
+			},
+		privacy: {
+			user: {
+					acceptance:"optIn"
+				}   
+			},
+		version: "1.0"
+
+	}
+			
+</script>
+<!-- DL Script Ends -->
+
+<!-- Pulse Adobe Launch Container Script -->
+<script src="https://assets.adobedtm.com/1e5ef0994701/a6bae99803ff/launch-d1d9fa084543.min.js" async></script> 
+
+<link rel="preload" href="/etc.clientlibs/dfs-core/clientlibs/clientlib-core/resources/font/discoversans/woff2/DiscoverSans-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
+<link rel="preload" href="/etc.clientlibs/dfs-core/clientlibs/clientlib-core/resources/font/discoversans/woff2/DiscoverSans-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
+<link rel="preload" href="/etc.clientlibs/dfs-core/clientlibs/clientlib-core/resources/font/discoversans/woff2/DiscoverSans-Semibold.woff2" as="font" type="font/woff2" crossorigin="anonymous"/>
+
+
+	
+    
+<link rel="stylesheet" href="/etc.clientlibs/pulse/clientlibs/clientlib-base.min.ACSHASH06636b21e9851537decba3a9d0106ccc.css" type="text/css">
+
+
+
+
+
+
+
+
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+	
+</head>
+    <body class="page basicpage" id="page-2940bf628a">
+        
+        
+        
+            
+
+
+
+
+            
+
+
+
+            
+<div class="headerexperiencefragment experiencefragment">
+
+    
+    
+
+    
+
+
+
+<div class="xf-content-height">
+    
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="header aem-GridColumn aem-GridColumn--default--12"><div class="aem-Grid aem-Grid--6 aem-Grid--12"/>
+
+<div class="disnet-mainheader">
+    <header class="has-cookie" role="banner">
+        <a id="skip-content" href="#main-content-rwd" class="sr-only sr-only-focusable">Skip to main content</a>
+        
+        <nav class="container-header" aria-label="Primary Navigation" role="navigation">
+            <div class="nav-wrap">
+                <ul class="secondary-links no-style">
+                    
+                        <li>
+                            <a href="https://www.pulsenetwork.com/pn/pulse/login" target="_self" class="section">
+                                
+                                Log In / Register
+                            </a>
+                        </li><span class="secondary-separator">|</span>
+                    
+                        <li>
+                            <a href="/public/client-support/" target="_self" class="section">
+                                
+                                Client Support
+                            </a>
+                        </li><span class="secondary-separator">|</span>
+                    
+                        <li>
+                            <a href="https://www.pulsenetwork.com/pn/cal/search" target="_blank" class="section">
+                                <img src="/etc.clientlibs/pulse/clientlibs/clientlib-site/resources/images/images-icons-atm-pin.png" alt="Find ATMs"/>
+                                Find ATMs
+                            </a>
+                        </li><span class="secondary-separator">|</span>
+                    
+                    
+                    <li class="dropdown search-tab">
+                        <a href="#" id="mobile-search-btn" class="dropdown-toggle mobile-accessibility preventDefaultBehaviour section" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <i class="icon-search"></i>
+                            Search
+                        </a>
+                        <div id="search_overlay">
+                            <div class="search-container" id="desktop">
+                                <form id="suggestion_form" class="suggestion_form" name="search" aria-label="search" role="search" data-url="/acnav/scripts/suggestion_form.php?search=" action="/public/search/" method="get" autocomplete="off">
+                                    <label for="predict-input" class="sr-only">Search Now</label>
+                                        <span id="initInstr" class="search-initInstr">Please enter your search terms in the input box. When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.</span>
+                                    <div aria-live="assertive" class="sr-only"></div>
+                                    <input role="combobox" type="text" placeholder="Search" autocomplete="off" class="search-box predict-input" id="predict-input" maxlength="256" name="q" aria-describedby="initInstr"/>
+                                    
+                                        <ul role="listbox" id="search-suggestions">
+                                        </ul>
+                                    
+								<input type="submit" id="predict-submit" class="search-btn predict-submit" src="/content/dam/discover/en_us/pulse/images/icon-spyglass.png" alt="Search Now" value=""/>
+                                </form>
+
+                            </div>
+                        </div>
+                    </li>
+                    <a href="javascript:void(0)" tabindex="-1" class="custom-focus mobile-menu-last-false-focus">.</a>
+                </ul>
+                <div class="pull-left">
+                    <a href="#" class="nav-toggle" aria-expanded="false">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </a>
+                    <a href="/public/home/" class="logo hide-mobile">
+                        <img src="/content/dam/discover/en_us/pulse/images/PULSE_Logo_vFinal_UpdatedBrand.jpg" alt="PULSE, a Discover company"/>
+                    </a>
+                </div>
+                <div class="pull-right nav-links">
+                    
+                    
+                        <ul class="main-links no-style">
+                            
+                                
+                                    <li>
+                                        <a href="/public/why-pulse/" class="section" target="_self">
+                                            Why PULSE
+                                        </a>
+                                    </li>
+                                
+                                
+                                
+                                <a href="javascript:void(0)" tabindex="-1" class="custom-focus sub-menu-false-focus">.</a>
+                                </li>
+                            
+                                
+                                
+                                    <li>
+                                        <a aria-expanded="false" class="section has-sub">
+                                            <span class="has-sub-focus">
+                                                What We Offer</span>
+                                        </a>
+                                        <div class="sub-wrap show-desktop">
+                                            <div class="sub-nav">
+                                                <div class="container">
+                                                    
+                                                        <div class="col-md-4 col-sm-12">
+                                                            <div class="col-wrap">
+                                                                
+                                                                    <a href="/public/pulse-payments-network/" target="_self">PULSE Payments Network<i class="icon-arrow-right-thick desktop-hidden"></i></a>
+                                                                
+                                                                
+                                                                    <a href="/public/atm-network/" target="_self">PULSE ATM Network<i class="icon-arrow-right-thick desktop-hidden"></i></a>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    
+                                                        <div class="col-md-4 col-sm-12">
+                                                            <div class="col-wrap">
+                                                                
+                                                                    <a href="/public/discover-debit/" target="_self">Discover<sup>®</sup> Debit<i class="icon-arrow-right-thick desktop-hidden"></i></a>
+                                                                
+                                                                
+                                                                    <a href="/public/processing-and-gateways/" target="_self">Debit Processing and Gateways<i class="icon-arrow-right-thick desktop-hidden"></i></a>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    
+                                                        <div class="col-md-4 col-sm-12">
+                                                            <div class="col-wrap">
+                                                                
+                                                                    <a href="/public/fraud-detection/" target="_self">Fraud Detection and Risk Mitigation<i class="icon-arrow-right-thick desktop-hidden"></i></a>
+                                                                
+                                                                
+                                                                    <a href="/public/partner-support-services/" target="_self">Partner Support Services<i class="icon-arrow-right-thick desktop-hidden"></i></a>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    
+                                                    
+                                                    
+
+                                                    
+
+                                                    
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                
+                                
+                                    <div class="sub-wrap show-handset">
+                                        <div class="sub-nav">
+                                            <div class="container" role="list">
+                                                
+                                                    <div class="col-md-4 col-sm-12" role="listitem">
+                                                        <div class="col-wrap bold-font has-links">
+                                                            
+                                                                <a href="/public/pulse-payments-network/" title="PULSE Payments Network" target="_self">PULSE Payments Network
+																	<i class="icon-arrow-right-thick desktop-hidden"></i></a>
+                                                            
+                                                            
+                                                                <a href="/public/atm-network/" title="PULSE ATM Network" target="_self">PULSE ATM Network<i class="icon-arrow-right-thick desktop-hidden"></i></a>
+                                                            
+
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="col-md-4 col-sm-12" role="listitem">
+                                                        <div class="col-wrap bold-font has-links">
+                                                            
+                                                                <a href="/public/discover-debit/" title="Discover<sup>®</sup> Debit" target="_self">Discover<sup>®</sup> Debit
+																	<i class="icon-arrow-right-thick desktop-hidden"></i></a>
+                                                            
+                                                            
+                                                                <a href="/public/processing-and-gateways/" title="Debit Processing and Gateways" target="_self">Debit Processing and Gateways<i class="icon-arrow-right-thick desktop-hidden"></i></a>
+                                                            
+
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="col-md-4 col-sm-12" role="listitem">
+                                                        <div class="col-wrap bold-font has-links">
+                                                            
+                                                                <a href="/public/fraud-detection/" title="Fraud Detection and Risk Mitigation" target="_self">Fraud Detection and Risk Mitigation
+																	<i class="icon-arrow-right-thick desktop-hidden"></i></a>
+                                                            
+                                                            
+                                                                <a href="/public/partner-support-services/" title="Partner Support Services" target="_self">Partner Support Services<i class="icon-arrow-right-thick desktop-hidden"></i></a>
+                                                            
+
+                                                        </div>
+                                                    </div>
+                                                
+                                                
+                                                
+
+                                                
+
+                                                
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                <a href="javascript:void(0)" tabindex="-1" class="custom-focus sub-menu-false-focus">.</a>
+                                </li>
+                            
+                                
+                                
+                                    <li>
+                                        <a aria-expanded="false" class="section has-sub">
+                                            <span class="has-sub-focus">
+                                                Partner With Us</span>
+                                        </a>
+                                        <div class="sub-wrap show-desktop">
+                                            <div class="sub-nav">
+                                                <div class="container">
+                                                    
+                                                    
+                                                        <div class="col-md-4 col-sm-12" style="width:33.333">
+                                                            <div class="col-wrap">
+                                                                
+                                                                    <a href="/public/issuers/" target="_self">Issuers<i class="icon-arrow-right-thick desktop-hidden"></i></a>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    
+                                                        <div class="col-md-4 col-sm-12" style="width:33.333">
+                                                            <div class="col-wrap">
+                                                                
+                                                                    <a href="/public/atm-acquirers/" target="_self">ATM Acquirers<i class="icon-arrow-right-thick desktop-hidden"></i></a>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    
+                                                        <div class="col-md-4 col-sm-12" style="width:33.333">
+                                                            <div class="col-wrap">
+                                                                
+                                                                    <a href="/public/merchants/" target="_self">Merchants<i class="icon-arrow-right-thick desktop-hidden"></i></a>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                    
+                                                    
+
+                                                    
+
+                                                    
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                
+                                
+                                    <div class="sub-wrap show-handset">
+                                        <div class="sub-nav">
+                                            <div class="container" role="list">
+                                                
+                                                
+                                                    <div class="col-md-4 col-sm-12" role="listitem">
+                                                        <div class="col-wrap bold-font has-links">
+                                                            
+                                                                <a href="/public/issuers/" title="Issuers" target="_self">Issuers<i class="icon-arrow-right-thick desktop-hidden"></i></a>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="col-md-4 col-sm-12" role="listitem">
+                                                        <div class="col-wrap bold-font has-links">
+                                                            
+                                                                <a href="/public/atm-acquirers/" title="ATM Acquirers" target="_self">ATM Acquirers<i class="icon-arrow-right-thick desktop-hidden"></i></a>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                
+                                                    <div class="col-md-4 col-sm-12" role="listitem">
+                                                        <div class="col-wrap bold-font has-links">
+                                                            
+                                                                <a href="/public/merchants/" title="Merchants" target="_self">Merchants<i class="icon-arrow-right-thick desktop-hidden"></i></a>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                
+                                                
+
+                                                
+
+                                                
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                <a href="javascript:void(0)" tabindex="-1" class="custom-focus sub-menu-false-focus">.</a>
+                                </li>
+                            
+                                
+                                    <li>
+                                        <a href="/public/insights-and-news/" class="section" target="_self">
+                                            Insights and News
+                                        </a>
+                                    </li>
+                                
+                                
+                                
+                                <a href="javascript:void(0)" tabindex="-1" class="custom-focus sub-menu-false-focus">.</a>
+                                </li>
+                            
+                                
+                                    <li>
+                                        <a href="/public/contact-us/" class="section" target="_self">
+                                            Connect With Us
+                                        </a>
+                                    </li>
+                                
+                                
+                                
+                                <a href="javascript:void(0)" tabindex="-1" class="custom-focus sub-menu-false-focus">.</a>
+                                </li>
+                            
+                            <a href="javascript:void(0)" tabindex="-1" class="mobile-main-last-false-focus">.</a>
+                            <ul class="secondary-links-mobile no-style">
+                                
+                                    <li>
+                                        <a href="https://www.pulsenetwork.com/pn/pulse/login" target="_self" class="section">Log In / Register</a>
+                                    </li>
+                                
+                                    <li>
+                                        <a href="/public/client-support/" target="_self" class="section">Client Support</a>
+                                    </li>
+                                
+                                    <li>
+                                        <a href="https://www.pulsenetwork.com/pn/cal/search" target="_blank" class="section">Find ATMs</a>
+                                    </li>
+                                
+                                <li class="dropdown search-tab">
+                                    <a href="#" id="mobile-search-btn" class="dropdown-toggle mobile-accessibility preventDefaultBehaviour" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        <i class="icon-search"></i>
+                                        <span>Search</span>
+                                    </a>
+                                </li>
+                                <div id="search_overlay">
+                                    <div class="search-container" id="mobile">
+                                        <form id="suggestion_form" class="suggestion_form" name="search" aria-label="search" role="search" data-url="/acnav/scripts/suggestion_form.php?search=" action="/public/search/" method="get" autocomplete="off">
+                                            <label for="predict-input" class="sr-only">Search Now</label> <span id="initInstr" class="search-initInstr">Please enter your search terms in the input box. When
+                                                autocomplete results are available use up and down arrows to
+                                                review and enter to select. Touch device users, explore by
+                                                touch or with swipe gestures.</span>
+                                            <div aria-live="assertive" class="sr-only"></div>
+                                            <input type="text" placeholder="Search" autocomplete="off" class="search-box predict-input" id="predict-input" maxlength="256" name="q" aria-describedby="initInstr"/>
+                                            
+                                                <ul role="menu" id="search-suggestions">
+                                                </ul>
+                                            
+										 <input type="submit" id="predict-submit" class="search-btn predict-submit" src="/content/dam/discover/en_us/pulse/images/icon-spyglass.png" alt="Search Now" value=""/>
+                                        </form>
+                                    </div>
+                                </div>
+                                <a href="javascript:void(0)" tabindex="-1" class="custom-focus mobile-menu-last-false-focus">.</a>
+                            </ul>
+                        </ul>
+                    
+                </div>
+                <a href="/public/home/" class="mobile-logo col-xs-7">
+                    <img src="/content/dam/discover/en_us/pulse/images/PULSE_Logo_vFinal_UpdatedBrand.jpg" alt="PULSE, a Discover company"/>
+                </a>
+                <a href="/public/contact-us/" class="mobile-chat-logo col-xs-3">
+                    <img src="/content/dam/discover/en_us/pulse/images/assistance.png" alt="Connect with Us"/>
+                    <p>Connect with Us</p>
+                </a>
+                
+            </div>
+        </nav>
+        <input name="headersearchAutoCompApi" type="hidden" title="HeaderSearch AutoCompApi" value="https://discover-dev.b.lucidworks.cloud/api/apps/Discover/query/Discover_ta_sandbox_TYPEAHEAD_DW_QPF_v4?q="/>
+    </header>
+</div>
+</div></div>
+
+    
+</div>
+
+</div>
+</div>
+<div class="root responsivegrid">
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
+
+    
+    
+
+    
+
+
+
+<div class="xf-content-height">
+    
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="custommarquee pulse-homepage-top pulse-bottom-right-border-radius-on pulse-custom-marquee-homepage aem-GridColumn aem-GridColumn--default--12">
+
+    
+    <div class="cmp-container" style="background-image:url(\2f content\2f dam\2f discover\2f en_us\2fpulse\2f archive\2fimages\2fHomepage_Marquee_vNewest.jpg); background-color:#23233F;">
+        
+                <div class="marquee__panel-container-one" style="background-color: #23233F;
+                border-bottom-right-radius: 100px;
+                width: 45%">                
+                            
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="text pulse-white-marquee-mobile-text pulse-white-override aem-GridColumn aem-GridColumn--default--12">
+<div id="text-8ffce9bcbe" class="cmp-text">
+    <h1>Experts in debit,</h1>
+<h1>believers in service</h1>
+
+</div>
+
+    
+
+</div>
+<div class="button cmp-button-primary c-align-left aem-GridColumn aem-GridColumn--default--12"><a id="button-9e230938eb" class="cmp-button" href="/public/why-pulse/" aria-label="Explore Our Difference" role="button" target="_self">
+    
+    
+
+    <span class="cmp-button__text">Explore Our Difference</span>
+</a>
+</div>
+
+    
+</div>
+
+                </div>
+        
+        
+        
+    </div>
+
+</div>
+
+    
+</div>
+
+</div>
+</div>
+<div class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
+
+    
+    
+
+    
+
+
+
+<div class="xf-content-height">
+    
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="container responsivegrid pulse-homepage-article-top aem-GridColumn aem-GridColumn--default--12">
+
+    
+    <div class="cmp-container">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="articlecard aem-GridColumn aem-GridColumn--default--12"><div class="articlecard-wrap">
+	<div class="aem-Grid aem-Grid--6 aem-Grid--12 separator">
+		<div class="block no-padding-top">	
+			<div class="container">
+				<div class="wp-post-section-headline heading-four">
+					<h2>Payments &amp; You: What’s new in payments</h2>
+				</div>
+			</div>
+		</div>	
+	</div>
+</div>
+
+    
+
+	<div id="UfEmbeddedHub1563983437378"></div>
+<script>
+  window._ufHubConfig = window._ufHubConfig || [];
+  window._ufHubConfig.push({
+    'containers':{'app':'#UfEmbeddedHub1563983437378'},
+    'collection': '749794',
+    'openLink':function(url){
+      window.top.location.href=url;
+    },
+    'lazyloader':{
+      'itemDisplayLimit':20,
+      'maxTilesPerRow':3,
+      'maxItemsTotal': 3
+    },
+    'tileSize': 'medium',
+    'enablePageTracking':false,
+    'baseUrl': 'https://content.pulsenetwork.com/',
+    'filesUrl': 'https://content.pulsenetwork.com/',
+    'generatedAtUTC': '2019-07-24 15:50:06',
+  });
+</script>
+
+<script>
+ (function(d,t,u) {
+    function load(){
+      var s=d.createElement(t);s.src=u;d.body.appendChild(s);
+    }
+    if (window.addEventListener) {
+      window.addEventListener('load',load,false);
+    }
+    else if (window.attachEvent) {
+      window.attachEvent('onload',load);
+    }
+    else{
+      window.onload=load;
+    }
+  }(document,'script','https://content.pulsenetwork.com/hubsFront/embed_collection'));
+</script>
+
+<style>
+
+#uf-lazy-loader-749794 {
+          width: 100% !important;
+        }
+
+</style></div>
+<div class="button cmp-button-primary c-align-center aem-GridColumn aem-GridColumn--default--12"><a id="button-9854059eaa" class="cmp-button" href="http://content.pulsenetwork.com" role="button" target="_self">
+    
+    
+
+    <span class="cmp-button__text">Go to All Articles</span>
+</a>
+</div>
+
+    
+</div>
+
+    </div>
+
+    
+</div>
+
+    
+</div>
+
+</div>
+</div>
+<div class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
+
+    
+    
+
+    
+
+
+
+<div class="xf-content-height">
+    
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="container responsivegrid aem-GridColumn aem-GridColumn--default--12">
+
+    
+    
+    
+    <div class="cmp-container" style="background-color:#FFFFFF;">
+        
+        <div class="container responsivegrid pulse-homepage-middle1 pulse-bottom-right-border-radius-on">
+
+    
+    <div class="cmp-container" style="background-image:url(\2f content\2f dam\2f discover\2f en_us\2fpulse\2fimages\2fJen_Hannibal_Pre.jpg);background-size:100%;background-repeat:no-repeat;background-color:#FFFFFF;" data-mobile="/content/dam/discover/en_us/pulse/images/Jennifer_Hannibal_Mobile.jpg">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 aem-Grid--phone--12 ">
+    
+    <div class="text aem-GridColumn aem-GridColumn--default--12">
+<div id="text-f88c53f200" class="cmp-text">
+    <p><span class="eyebrow">Discover<sup>®</sup> Debit</span></p>
+<p>Debit that's here for you<sup><span style="font-size: 16.0px;">®</span></sup></p>
+
+</div>
+
+    
+
+</div>
+<div class="text aem-GridColumn--default--none aem-GridColumn aem-GridColumn--default--7 aem-GridColumn--offset--default--0">
+<div id="text-373cf29781" class="cmp-text">
+    <p><span class="body-copy-primary">We help community banks and credit unions get more from debit by putting their success, brand, people and revenue first.</span></p>
+
+</div>
+
+    
+
+</div>
+<div class="button cmp-button-primary c-align-left aem-GridColumn aem-GridColumn--default--12"><a id="button-bf9fed4a93" class="cmp-button" href="/public/discover-debit/" aria-label="Learn More" role="button" target="_self">
+    
+    
+
+    <span class="cmp-button__text">Learn More</span>
+</a>
+</div>
+<div class="text textalign-top-80 pulse-quote-byline aem-GridColumn--default--none aem-GridColumn--phone--none aem-GridColumn--phone--10 aem-GridColumn aem-GridColumn--offset--phone--1 aem-GridColumn--default--12 aem-GridColumn--offset--default--0">
+<div id="text-93317a190d" class="cmp-text">
+    <p><img alt="Quotation Marks" src="/content/dam/discover/en_us/pulse/images/Quote_Marks_Orange_Sized.png"/></p>
+<p><span style="color: rgb(35,35,63);"><i>Our process is simple. Figure out what you need, and then make it happen.<span style="font-size: 20.0px;">”</span></i></span></p>
+<h4><span style="color: rgb(35,35,63);">Jennifer Hannibal, PULSE<br />
+   Marketing Consultant</span></h4>
+
+</div>
+
+    
+
+</div>
+
+    
+</div>
+
+    </div>
+
+    
+</div>
+
+        
+    </div>
+
+</div>
+
+    
+</div>
+
+</div>
+</div>
+<div class="container responsivegrid aem-GridColumn aem-GridColumn--default--12">
+
+    
+    
+    
+    <div class="cmp-container" style="background-color:#FFFFFF;">
+        
+        <div class="barnavigation pulse-homepage-bar-navigation"><div class="aem-Grid aem-Grid--6 aem-Grid--12">
+	<div class="block barNavigation">
+		<div class="container">
+			<div class="block-center col-sm-12 col-xs-12">
+				<div class="header text-center col-sm-12 block-center">
+                     <h2 style="text-align: center;">Find out how we can make debit work for you</h2>
+<p style="text-align: center;"><span class="body-copy-primary">Highly competitive economics. Innovation. Security. Advocacy. Experience the benefits of partnership.</span></p>
+
+				</div>
+				<div class="content padding">
+					<div class="grid four">
+						
+                            <div id="barNavIds_1" value="1" class="item col-xs-12 col-sm-4 text-center" tabindex="0">
+                                <div class="content">
+                                    <img alt="Issuers" src="/content/dam/discover/en_us/pulse/icons/Homepage_BarNav_Issuers.jpg"/>
+                                    	<h2 style="text-align: center;">Issuers</h2>
+
+									<div class="border border-padding border-top max-height border-thick">
+                                        <a href="/public/issuers/" class="has-icon" tabindex="-1"> 
+											<div class="text-link">Learn more > </div>
+                                            <span class="sr-only"></span>
+                                        </a>
+                                     </div>
+                               </div>
+                            </div>
+						
+                            <div id="barNavIds_2" value="2" class="item col-xs-12 col-sm-4 text-center" tabindex="0">
+                                <div class="content">
+                                    <img alt="Merchants" src="/content/dam/discover/en_us/pulse/archive/icons/Homepage_BarNav_Merchants_v3.png"/>
+                                    	<h2 style="text-align: center;">Merchants</h2>
+
+									<div class="border border-padding border-top max-height border-thick">
+                                        <a href="/public/merchants/" class="has-icon" tabindex="-1"> 
+											<div class="text-link">Learn more > </div>
+                                            <span class="sr-only"></span>
+                                        </a>
+                                     </div>
+                               </div>
+                            </div>
+						
+                            <div id="barNavIds_3" value="3" class="item col-xs-12 col-sm-4 text-center" tabindex="0">
+                                <div class="content">
+                                    <img alt="ATM Acquirers" src="/content/dam/discover/en_us/pulse/icons/Homepage_BarNav_ATMAcquirers.jpg"/>
+                                    	<h2 style="text-align: center;">ATM Acquirers</h2>
+
+									<div class="border border-padding border-top max-height border-thick">
+                                        <a href="/public/atm-acquirers/" class="has-icon" tabindex="-1"> 
+											<div class="text-link">Learn more > </div>
+                                            <span class="sr-only"></span>
+                                        </a>
+                                     </div>
+                               </div>
+                            </div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    
+</div>
+
+        
+    </div>
+
+</div>
+<div class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
+
+    
+    
+
+    
+
+
+
+<div class="xf-content-height">
+    
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="container responsivegrid aem-GridColumn aem-GridColumn--default--12">
+
+    
+    
+    
+    <div class="cmp-container" style="background-color:#FFFFFF;">
+        
+        <div class="container responsivegrid pulse-homepage-middle2">
+
+    
+    <div class="cmp-container" style="background-image:url(\2f content\2f dam\2f discover\2f en_us\2fpulse\2fimages\2fQuote_Image_PULSE_does_an_awesome_job.jpg);background-size:100%;background-repeat:no-repeat;background-color:#FFFFFF;" data-mobile="/content/dam/discover/en_us/pulse/images/Quote_Image_PULSE_does_an_awesome_job_Mobile.jpg">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="text aem-GridColumn aem-GridColumn--default--12">
+<div id="text-fa91b34163" class="cmp-text">
+    <p style="text-align: left;"><img alt="Quotation Marks" src="/content/dam/discover/en_us/pulse/images/Quote_Marks_Orange.png"/></p>
+<h3 style="text-align: left;"><span style="color: rgb(255,255,255);">PULSE does an awesome job, primarily in delivering what was committed to, but also going above. They are very open for consultative discussions and input. I get many recommendations from PULSE.”</span></h3>
+<p style="text-align: left;"> </p>
+<p style="text-align: left;"><span style="color: rgb(255,255,255);">–PULSE Issuer, Voice of the Client Survey</span><br />
+</p>
+
+</div>
+
+    
+
+</div>
+
+    
+</div>
+
+    </div>
+
+    
+</div>
+<div class="web-line-space">
+<div style="height: 40px" data-desktop-style="height: 40px" data-mobile-style="height: "></div></div>
+
+        
+    </div>
+
+</div>
+
+    
+</div>
+
+</div>
+</div>
+<div class="experiencefragment aem-GridColumn aem-GridColumn--default--12">
+
+    
+    
+
+    
+
+
+
+<div class="xf-content-height">
+    
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="container responsivegrid aem-GridColumn aem-GridColumn--default--12">
+
+    
+    
+    
+    <div class="cmp-container" style="background-color:#FFFFFF;">
+        
+        <div class="container responsivegrid pulse-bottom pulse-bottom-right-border-radius-on">
+
+    
+    <div class="cmp-container" style="background-color:#23233F;">
+        
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="text textalign-top-80 aem-GridColumn aem-GridColumn--default--12">
+<div id="text-1bb28f8881" class="cmp-text">
+    <h2 style="text-align: center;"><span style="color: rgb(255,255,255);">Start getting more from debit</span></h2>
+
+</div>
+
+    
+
+</div>
+<div class="text textalign-middle-20 aem-GridColumn aem-GridColumn--default--12">
+<div id="text-88a259bbe8" class="cmp-text">
+    <p style="text-align: center;"><span style="color: rgb(255,255,255);">We’re here to help you get the most out of every transaction. Connect with our team to learn what’s possible.</span></p>
+
+</div>
+
+    
+
+</div>
+<div class="button cmp-button-primary c-align-center aem-GridColumn aem-GridColumn--default--12"><a id="button-4a611c8328" class="cmp-button" href="/public/contact-us/" aria-label="Connect with Us" role="button" target="_self">
+    
+    
+
+    <span class="cmp-button__text">Connect with Us</span>
+</a>
+</div>
+
+    
+</div>
+
+    </div>
+
+    
+</div>
+
+        
+    </div>
+
+</div>
+
+    
+</div>
+
+</div>
+</div>
+
+    
+</div>
+</div>
+<div class="footerexperiencefragment experiencefragment">
+
+    
+    
+
+    
+
+
+
+<div class="xf-content-height">
+    
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="container responsivegrid pulse-footer aem-GridColumn aem-GridColumn--default--newline aem-GridColumn--default--12 aem-GridColumn--offset--default--0">
+
+    
+    
+    
+    <div class="cmp-container" style="background-color:#FFFFFF;">
+        
+        <div class="footer dnCss">
+
+<footer role="contentinfo">
+    <div class="container">
+        
+            
+            <div class="footer-links">
+                <div class="menu-width">
+                    <div id="accordion-quick-links" aria-multiselectable="true">
+                        <div class="accordion-group">
+                            <div class="panel-heading">
+                                <a class="collapse-item collapsed" data-toggle="collapse" data-parent="#accordion-quick-links" href="#quick-links-panel" aria-expanded="false" aria-controls="quick-links-panel"><i class="icon-expand-toggle"></i>Quick Links</a>
+                            </div>
+                            <div id="quick-links-panel" class="panel-collapse collapse in" aria-expanded="false" style="height: 0px;">
+                                <div class="panel-body quick-links-body">
+                                    <div class="footer-nav">
+                                        
+                                            <div class="content-width">
+                                                <div class="no-heading">
+                                                   
+                                                    
+                                                    <h2><span>PULSE NETWORK</span></h2>
+                                                </div>
+                                                <div class="content">
+                                                    <ul>
+                                                        
+                                                            
+                                                                <li>
+                                                                <a href="/public/about-pulse/" title="About PULSE">About PULSE</a>
+                                                                
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                <a href="/public/why-pulse/" title="Why PULSE">Why PULSE</a>
+                                                                
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                <a href="/public/leadership-page/" title="Leadership">Leadership</a>
+                                                                
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                <a href="/public/insights-and-news/" title="Insights and News">Insights and News</a>
+                                                                
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                <a href="/public/client-support/#2" title="Acceptance Marks">Acceptance Marks</a>
+                                                                
+                                                                </li>
+                                                            
+                                                        
+                                                    </ul>
+                                                </div>
+                                            </div>
+<div class="content-width">
+                                                <div class="no-heading">
+                                                   
+                                                    
+                                                    <h2><span>WHAT WE OFFER</span></h2>
+                                                </div>
+                                                <div class="content">
+                                                    <ul>
+                                                        
+                                                            
+                                                                <li>
+                                                                <a href="/public/pulse-payments-network/" title="PULSE Payments Network">PULSE Payments Network</a>
+                                                                
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                <a href="/public/atm-network/" title="PULSE ATM Network">PULSE ATM Network</a>
+                                                                
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                <a href="/public/discover-debit/" title="Discover&lt;sup>®&lt;/sup> Debit">Discover<sup>®</sup> Debit</a>
+                                                                
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                <a href="/public/processing-and-gateways/" title="Debit Processing and Gateways">Debit Processing and Gateways</a>
+                                                                
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                <a href="/public/fraud-detection/" title="Fraud Detection and Risk Mitigation">Fraud Detection and Risk Mitigation</a>
+                                                                
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                <a href="/public/partner-support-services/" title="Partner Support Services">Partner Support Services</a>
+                                                                
+                                                                </li>
+                                                            
+                                                        
+                                                    </ul>
+                                                </div>
+                                            </div>
+<div class="content-width">
+                                                <div class="no-heading">
+                                                   
+                                                    
+                                                    <h2><span>PARTNER WITH US</span></h2>
+                                                </div>
+                                                <div class="content">
+                                                    <ul>
+                                                        
+                                                            
+                                                                <li>
+                                                                <a href="/public/issuers/" title="Issuers">Issuers</a>
+                                                                
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                <a href="/public/atm-acquirers/" title="ATM Acquirers">ATM Acquirers</a>
+                                                                
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                <a href="/public/merchants/" title="Merchants">Merchants</a>
+                                                                
+                                                                </li>
+                                                            
+                                                        
+                                                    </ul>
+                                                </div>
+                                            </div>
+<div class="content-width">
+                                                <div class="no-heading">
+                                                   
+                                                    
+                                                    <h2><span>LET&#39;S CONNECT</span></h2>
+                                                </div>
+                                                <div class="content">
+                                                    <ul>
+                                                        
+                                                            
+                                                                <li>
+                                                                <a href="https://www.pulsenetwork.com/pn/pulse/login" title="Log In / Register">Log In / Register</a>
+                                                                
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                <a href="/public/contact-us/" title="Connect with Us">Connect with Us</a>
+                                                                
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                <a href="/public/client-support/" title="Client Support">Client Support</a>
+                                                                
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                <a href="https://www.pulsenetwork.com/pn/cal/search" title="Find ATMs">Find ATMs</a>
+                                                                
+                                                                </li>
+                                                            
+                                                                <li>
+                                                                <a href="/public/career-opportunities/" title=" Career Opportunities"> Career Opportunities</a>
+                                                                
+                                                                </li>
+                                                            
+                                                        
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-social orderChange">
+                    <div class="social-wrap orderSecond">
+                        <a href="https://www.youtube.com/channel/UC5D2ud8Se4dme4VISLNykQQ" target="_blank" title="Youtube"><span class="sr-only"> Youtube opens in a new window</span><span class="icon-youtube-filled"></span></a>
+                    
+                        <a href="https://www.linkedin.com/company/pulse/" target="_blank" title="LinkedIn"><span class="sr-only"> LinkedIn opens in a new window</span><span class="icon-linkedin-filled"></span></a>
+                    </div>
+                    <div class="mobile-app orderFirst" tabindex="0">
+                        <a class="footer-icon-mobile" target="_self">
+                            <i class="icon-app-discover"></i>
+                            <span class="app-text"></span>
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="footer-utility col-lg-12">
+                <ul role="presentation">
+                    <li>
+                        
+                        <a href="/public/privacy-policy/" role="presentation" target="_self" title=" Privacy Policy"> Privacy Policy</a></li>
+                
+                    <li>
+                        
+                        <a href="/public/terms-of-use/" role="presentation" target="_self" title="Terms of Use">Terms of Use</a></li>
+                
+                    <li>
+                        
+                        <a href="/public/site-map/" role="presentation" target="_self" title="Site Map">Site Map</a></li>
+                </ul>
+
+            </div>
+
+            
+
+            <div class="certification-links col-xs-12">
+                <ul>
+                    <li><span class="icon-equal-housing-lender"><span class="sr-only"></span></span>
+                    </li>
+                    
+                </ul>
+                
+                    <li>
+                        <a href="" tabindex="-1" onmousedown="return mouseDown();" target="VRSN_Splash">
+                            <img name="seal" border="true" oncontextmenu="return false;" alt="Security Image"/>
+                        </a>
+                    </li>
+                </ul*>
+            </div>
+            
+            <div class="footer-copyright col-lg-12 clearfix">
+                <span><p>© 2023 PULSE, a Discover company</p>
+<p style="text-align: right;"><a title="Discover" href="https://www.discover.com/" target="_self"><img alt="Discover" src="/content/dam/discover/en_us/pulse/images/Discover_Logo.jpg"/></a></p>
+</span>
+            </div>
+        
+
+    </div>
+</footer></div>
+
+        
+    </div>
+
+</div>
+
+    
+</div>
+
+</div>
+</div>
+<div class="cookiedisclaimer"><div class="aem-Grid aem-Grid--6 aem-Grid--12">
+	<div class="cookie-toast displayed">
+		<div class="container">
+			<div class="cookie-message col-xs-12 col-sm-8">
+				<p><b><span style="color: rgb(255,255,255);">About Cookies On This Site</span></b></p>
+<p><span style="color: rgb(255,255,255);">We use cookies to personalize and enhance your experience on our site. Visit the <a title="Privacy Policy" href="/public/privacy-policy/" target="_blank" style="color: rgb(255,255,255);">Privacy Policy</a> to learn more. By using our site, you agree to the use of cookies.</span></p>
+
+			</div>
+			<div class="cookieButtonAccept col-xs-12 col-sm-4">
+                <div id="btnAcceptCookie" class="cookieButton">
+                    <button class="button button-secondary close-toast" role="button">Accept</button>
+                </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+    
+</div>
+
+
+            
+    
+    
+
+	
+    
+<script src="/etc.clientlibs/pulse/clientlibs/clientlib-header.min.ACSHASH2ca6c15598cfd8f6b8bf83a2d44ac70c.js"></script>
+
+
+
+    
+    
+<script src="/etc.clientlibs/pulse/clientlibs/clientlib-base.min.ACSHASHd9b8e5c2910ac2eb6eafa15197949759.js"></script>
+
+
+
+
+<script>
+
+
+</script>
+
+    
+
+    
+
+    
+    
+    
+
+            
+
+        
+    <script type="text/javascript"  src="/TTQoofsGi1KSYMEPSA/YrErNV2wJ4k13N/QGtpNgFaBQ/GS/cwfF1NKzQ"></script></body>
+</html>

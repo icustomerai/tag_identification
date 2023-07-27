@@ -1,0 +1,437 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	Login | Submittal Exchange®
+</title><meta charset="utf-8" /><link rel="icon" href="/pub/images/favicon.ico?v=2" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="master/styles/bootstrap.min.css" rel="stylesheet" /><link href="master/styles/kendo.min.css" rel="stylesheet" /><link href="master/styles/textura-bootstrap.min.css?17.08" rel="stylesheet" /><link href="master/styles/custom.css?1" rel="stylesheet" /><link href="master/styles/loginnew.css" rel="stylesheet" /><link href="../master/fonts/bluesky-prime-171.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="/pub/master/js/lib.js?22.7"></script>
+    
+    <script type="text/javascript" src="/master/heapAnalytics.js"></script>
+    <script type="text/javascript">
+        (function () {
+            try {
+                var heapAppName = "SubEx";
+                var heapAppId = "3755808175";
+                var heapUserId = "0";
+
+                
+                    var heapEventJson = { CEGBU_APP: heapAppName };
+                    var heapUserJson = { orgId: "0", SubExUserId: heapUserId };
+                
+                
+                initHeapAnalytics(heapAppId, heapUserId, heapEventJson, heapUserJson);
+            }
+            catch (ex) {
+                console.log("Exception in heap installation");
+                console.log(ex);
+            }
+        })()
+      
+     </script>
+    
+
+    <script type="text/javascript">
+
+        function TrackFileFlattenAndMerge() {
+            try {
+                var fileMergeControls = $('[Id$="dvMultipleVerbiage"]');
+                var fileForceFlattenHiddnValue = $('[Id$="hdnForceFlatten"]');
+                var fileFlattenCheckValue = $('[Id$="chkFlattenPDF"]');
+                var fileflattenDiv = $('[Id$="dvFlattenOpt"]');
+                for (var i = 0; i < fileMergeControls.length; i++) {
+                    if (fileMergeControls[i].style["display"] != "none") {
+                       var clId=fileMergeControls[i].id.substr(0, fileMergeControls[i].id.lastIndexOf("_"));
+                        count = GetMergedFileCount(clId);
+                        heap.track('MergeFiles',{ FilesMergedCount: count });
+                    }
+                }
+                for (var i = 0; i < fileflattenDiv.length; i++) {
+                       if (fileflattenDiv[i].style["display"] != "none") {
+                            if (fileFlattenCheckValue[i].checked ) {
+                                heap.track('FileFlatten', { isFlattened: true });
+                            }
+                            else {
+                                heap.track('FileFlatten', { isFlattened: false });
+                            }
+                        }
+                       if (fileForceFlattenHiddnValue[i].value == "1") {
+                            heap.track('ForceFileFlatten', { isForceFlatten: true });
+                       }
+                       else if (fileForceFlattenHiddnValue[i].value == "0") {
+                            heap.track('ForceFileFlatten', { isForceFlatten: false });
+                       }
+                    }
+                }
+            catch (ex) {
+                console.log("Exception in heap event tracking");
+            }
+
+        }
+        function GetMergedFileCount(clId) {
+            try {
+                var c = 0;
+                $("#" + clId + "_AsyncUpload1").find("input[name=RowRemove]").each(function () {
+                    c++;
+                });
+               return c;
+            }
+            catch (ex) {
+                console.log("Heap exception: error in getting merge file count.")
+                return 0;
+            }
+        }
+    </script></head>
+<body class="background-oil-gas">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if (typeof isLoad == "undefined" || isLoad == false) {
+                CheckError();
+            }
+            else {
+                isLoad = false;
+            }
+            if ($("#cookieConsent").css("display") == "none") {
+                $("#cookieConsent").css({ "display": "none" });
+                $("#trCookieConsent").css({ "display": "none" });
+            }
+        });
+        function CheckError() {
+            var itemUser = $("#usrVal")[0];
+            var itemPwd = $("#pwdVal")[0];
+            var itemMsg = $(".errMsgClass")[0];
+            var itemvalRequired2 = $("#valRequired2")[0];
+            var itemvalCompare1 = $("#valCompare1")[0];
+            var itemvalRequired1 = $("#valRequired1")[0];
+            var itemvalFormat1 = $("#valFormat1")[0];
+            var itemvalRequiredOldPass = $("#valRequiredOldPass")[0];
+            var itemvalRequiredEmail = $("#valRequiredEmail")[0];
+            var itemErrMsg = $("#lblError")[0];
+            if (typeof itemUser != "undefined" && itemUser.isvalid == false) {
+                $("#errorBlk").css({ "display": "block" });
+            }
+            else if (typeof itemPwd != "undefined" && itemPwd.isvalid == false) {
+                $("#errorBlk").css({ "display": "block" });
+            }
+            else if (typeof itemMsg != "undefined") {
+                $("#errorBlk").css({ "display": "block" });
+            }
+            else if (typeof itemvalRequired2 != "undefined" && itemvalRequired2.isvalid == false) {
+                $("#errorBlk").css({ "display": "block" });
+            }
+            else if (typeof itemvalCompare1 != "undefined" && itemvalCompare1.isvalid == false) {
+                $("#errorBlk").css({ "display": "block" });
+            }
+            else if (typeof itemvalRequired1 != "undefined" && itemvalRequired1.isvalid == false) {
+                $("#errorBlk").css({ "display": "block" });
+            }
+            else if (typeof itemvalFormat1 != "undefined" && itemvalFormat1.isvalid == false) {
+                $("#errorBlk").css({ "display": "block" });
+            }
+            else if (typeof itemvalRequiredOldPass != "undefined" && itemvalRequiredOldPass.isvalid == false) {
+                $("#errorBlk").css({ "display": "block" });
+            }
+            else if (typeof itemvalRequiredEmail != "undefined" && itemvalRequiredEmail.isvalid == false) {
+                $("#errorBlk").css({ "display": "block" });
+            }
+            else if (typeof itemErrMsg != "undefined" && itemErrMsg.innerText != "") {
+                $("#errorBlk").css({ "display": "block" });
+            }
+            else {
+                $("#errorBlk").css({ "display": "none" });
+            }
+            try {
+                if (document.getElementById("txtEmail").value != '') {
+                    document.getElementById("placeholderSpan").style.display = 'none';
+                } else {
+                    document.getElementById("placeholderSpan").style.display = '';
+                };
+            } catch (ex) { };
+        }
+    </script>
+    <div class="login-page">
+        <div class="branding">
+
+            <img style="max-width: 400px;margin-top:10px;" src="/pub/master/img/oracle_prime_projects_black.svg" alt="Oracle" />
+
+            <div class="app-logo">
+                <div class="generic-cloud-logo"></div>
+            </div>
+        </div>
+        <form name="aspnetForm" method="post" action="./login.aspx?ReturnUrl=%2f" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="KTpxB7zYaTk9K8oDhTXbjhxJlG+2YqJZ/B7vT9elEtaJ1OsRiBVQchf4P+BH9T1CvT2vr94F5W3r9B5RsGXDSIMDfCPgP2CXBlgz2vxICIOlLND+jXuZn8I++2hXfwkzZsEHG2c7YEexaF+WAGAZbl7kRbHOdozPqrWYLs+ndXfcf6L5Jn+r0A66wW3I+bKJh0Gbry7Q4pnDd5Xu0cuX5ydM9y1OVt3GJ9Vz9uFDwgEnr6Yveoaw2l6pmue6j6v7EvMwS9dQwALK4XL6+sLoTiCbhkTqBz44dCl0O3BtFeJcMOtDpKUb4wXckw27dp3iw+bJMPTG+Y/jiXRJyc8Jvy8IyZqVPg4aSvjXX9a3Sb0XgGME3lm7YlwrdOyAcYob0Kz5kRR///0z4kvhxQv+ADQwuBtrj77TOGGDYyF6QilDrdQb" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZDEhOcRFRozYDkQlBTiQ_O-FL-EUDPDZzn8UdC-HZwOxu_6Z3w2&amp;t=637814437746327080" type="text/javascript"></script>
+
+
+<script src="/WebResource.axd?d=x2nkrMJGXkMELz33nwnakBBT5ItCn4rRjYiIOHBQrddfFbfNFC3Dg5Vtsnx-SK8Yb86h4ZGG_VoCj4Spwf9sdiQkXyc1&amp;t=637814437746327080" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="2FAE37D2" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="NP6nCZW2d0dSIB05Vgt6CrQft31krvgag6odeT8SdziBh5zvHnyBMNFCy4jiO44dbWy6qdb3dBSIGdEUsB3OOuXb2AjQqmwlBBYrNEgCSy3oCbsBvfCHnGWIA25mqC9VCuWiBxbn338J2YpISmxnzYy9RCVHCPMuakRmcxIJ5kp9mHvX" />
+</div>
+            <input name="__RequestVerificationToken" type="hidden" value="90-MnGTsl-hNEw9y5ZYLrk5ziaxeIiZBIzPRwn8H9_9bPlidJe1lEiSKzmjb4VVPhQgIBZfyzxN0e4ALF-tT6cRv3JY1" />
+
+            
+
+    <div id="ctl00_Main_Content_PanelLogin">
+	
+        <div class="login-form" >
+            <div class="row" style="margin-left:1.42%;">
+                <div class="">
+                    <div class="col-sm-6 alpha-column mb20">
+                        <h2 class="mt10 hidden">Existing Users</h2>
+                        <div role="form" class="form-horizontal form-login">
+                            <div class="logo_text" id="logoTextDiv" style="width: 359px;"></div>
+                            <div class="form-group">
+                                <input name="ctl00$Main_Content$Username" type="text" id="ctl00_Main_Content_Username" class="username" style="width:100%" maxlength="50" placeholder="Username" onchange="CheckError()" />
+
+                            </div>
+                            <div class="form-group control-group  ">
+                                <div class="controls">
+                                    <input name="ctl00$Main_Content$Password" type="password" id="ctl00_Main_Content_Password" autocomplete="off" style="width:100%" class="left" placeholder="Password" maxlength="30" onchange="CheckError()" />
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+                                <div class="col-sm-12 pl0">
+                                    <input type="submit" name="ctl00$Main_Content$btnLogin" value="Sign In" onclick="$(&#39;#ctl00_Main_Content_PanelLogin&#39;).fadeOut(1000); return true;WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$Main_Content$btnLogin&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="ctl00_Main_Content_btnLogin" class="submit btn btn-action btn-huge" />
+                                    <a id="forgotpassword" class="forgot-password"  href="ForgotPassword.aspx?l=log">Can't Sign In?</a>
+                               
+                                     </div>
+                            </div>
+                          <div class="form-group" style="margin-bottom:-10px;margin-top:17px;">
+                              <label class="customcheck-cb">
+                                     <input name="ctl00$Main_Content$chkRemUserName" type="checkbox" id="ctl00_Main_Content_chkRemUserName" />
+                                            <span class="checkmark-cb"></span>
+                              </label><span class="rem-user-label">Remember Username</span>
+                          &nbsp;</div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 beta-column mb20 hidden">
+                        <h2 class="mt10">New User?</h2>
+                        <p>You can create a new account easily through our quick and simple registration process.</p>
+                        <a href="Create-Account.html" class="btn btn-primary">Create New Account</a>
+                    </div>
+                </div>
+                <div class="help-block-container" id="errorBlk" style="display: none">
+                    <span class="help-block error-message">
+                        <div>
+                            <span id="usrVal" class="validation-message-error" style="color:Red;display:none;">Username is required</span>
+                        </div>
+                        <div>
+                            <span id="pwdVal" class="validation-message-error" style="color:Red;display:none;">Password is required</span>
+                        </div>
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    
+</div>
+
+    
+     
+
+
+
+        
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("usrVal"), document.getElementById("pwdVal"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var usrVal = document.all ? document.all["usrVal"] : document.getElementById("usrVal");
+usrVal.controltovalidate = "ctl00_Main_Content_Username";
+usrVal.errormessage = "Username is required";
+usrVal.display = "Dynamic";
+usrVal.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+usrVal.initialvalue = "";
+var pwdVal = document.all ? document.all["pwdVal"] : document.getElementById("pwdVal");
+pwdVal.controltovalidate = "ctl00_Main_Content_Password";
+pwdVal.errormessage = "Password is required";
+pwdVal.display = "Dynamic";
+pwdVal.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+pwdVal.initialvalue = "";
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
+
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        //]]>
+</script>
+</form>
+    </div>
+    <footer style="z-index: 999; font-size: 12px">
+        
+        <table style="float: right;margin-right:3.9526%;">
+            <tr>
+                <td style="display: inline-block; text-align: right">
+                    <div class="copyright">
+                        <div>
+                            Copyright &copy; 1998, 2023, Oracle and/or its affiliates. All rights reserved.<br />
+                            Oracle and Java are registered trademarks of Oracle and/or its affiliates. Other names may be trademarks of their respective owners.
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td style="display: inline-block; text-align: right">
+                    <div class="release">
+                        <div>Version 23.6.8549.7477</div>
+                    </div>
+                </td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+            <tr id="trCookieConsent">
+                <td style="display: inline-block; text-align: center; padding-top: 30px">
+                    <div id="dvCookieBanner">
+                        
+<script type="text/javascript">
+    window.onload = function () {
+        var c = getCookie("cookie-consent-accepted" + hdnVersionNumber.value);
+        var div = document.getElementById("cookieConsent");
+        if (hdnEnableCookiePolicy.value == 1 ){
+            if (c != "1")
+                div.style.display = "";
+            else {
+                div.style.display = "none !important";
+                $("#cookieConsent").css({ "display": "none" });
+            }
+        }
+    };
+        function showhide() {
+            var div = document.getElementById("cookieConsent");
+            //  if (div.style.display != "none") {
+            if($("#cookieConsent").css("display") != "none"){
+                div.style.display = "none";
+                $("#cookieConsent").css({ "display": "none" });
+                $("#trCookieConsent").css({ "display": "none" });
+                setCookie("cookie-consent-accepted" + hdnVersionNumber.value, 1);
+            }
+            else {
+                div.style.dislpay = 'block';
+            }
+        }
+        function setCookie(name, value) {
+            document.cookie = name + "=" + encodeURIComponent(value) + "; path=/;";
+            localStorage.setItem(name, 1);
+            var prevVersion = hdnVersionNumber.value - 1;
+            if (prevVersion > 0) {
+                delete_cookie("cookie-consent-accepted" + prevVersion);
+            }
+        }
+
+        function getCookie(name) {
+            cookieArray = document.cookie.split("\;");
+            
+            var equal = '=';
+            var space = ' ';
+            
+            var cookie = localStorage.getItem(name);
+                if (cookie == 1)
+                    return decodeURIComponent(cookie);
+            
+        }
+        function delete_cookie(name) {
+            document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        }
+        function redirectPage() {
+            if (hdnContent.value == 1)
+             window.open('/pub/cookiePolicy.aspx', '_blank');
+        }
+    </script>
+    <style type="text/css">
+      .cookie-consent{
+            background-color: cornflowerblue ;
+            color :black ;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 3px;
+            height:30px !important;
+            align-content: center !important;
+            height :auto;
+            width :100% !important;
+            z-index:2000 !important ;
+            font-size:15px;
+            position:fixed !important;
+           
+      }
+    </style>
+     <div id="cookieConsent" class="cookie-consent" type="hidden" style="display:block " visibility="visible">
+         <input name="ctl00$cookieBanner$hdnContent" type="text" id="hdnContent" hidden="" value="0" />
+         <input name="ctl00$cookieBanner$hdnEnableCookiePolicy" type="text" id="hdnEnableCookiePolicy" hidden="" value="1" />
+         <input name="ctl00$cookieBanner$hdnVersionNumber" type="text" id="hdnVersionNumber" hidden="" value="4" />
+         <span id="lblText" style="position :fixed center !important;font :bold ;">This site uses cookies to help make it more useful to you.</span>&nbsp;&nbsp;&nbsp;&nbsp;
+         <a href="https://docs.oracle.com/cd/E80731_01/English/Administration/helpmain.htm?toc.htm?10298229.htm" id="urlLearnMore" style="color: blue; text-decoration: underline; cursor: pointer" target="_blank" onclick="redirectPage();">Find out more about cookies.</a>&nbsp;&nbsp;&nbsp;&nbsp;
+         <button class="gotItBtn" onclick="javascript:showhide()">Got It!</button>
+      </div>
+    
+
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </footer>
+    <!-- Start SiteCatalyst code -->
+    <script type="text/javascript" src="https://www.oracleimg.com/us/assets/metrics/ora_textura.js"></script>
+    <!-- End SiteCatalyst code -->
+
+</body>
+</html>
+

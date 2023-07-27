@@ -1,0 +1,816 @@
+<!doctype html>
+<html class="no-js" lang="en-US" >
+  <head><META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",e=>{this.persisted=e.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(e){if(document.hidden){e._triggerListener();return}this.triggerEvents.forEach(t=>window.addEventListener(t,e.userEventHandler,{passive:!0})),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(e=>window.removeEventListener(e,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(e=>{this._isClickPending?this._pendingClickFinished=e:e()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(e,t,i){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(i,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{if(t.hasAttribute("src")){let i=new URL(t.src).origin;i!==location.origin&&e.push({src:i,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}}),e=[...new Map(e.map(e=>[JSON.stringify(e),e])).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){console.error(e)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{e.hasAttribute("data-rocket-src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)})}async _transformScript(e){return await this._littleBreath(),new Promise(t=>{function i(){e.setAttribute("data-rocket-status","executed"),t()}function r(){e.setAttribute("data-rocket-status","failed"),t()}try{let n=e.getAttribute("data-rocket-type"),s=e.getAttribute("data-rocket-src");if(n?(e.type=n,e.removeAttribute("data-rocket-type")):e.removeAttribute("type"),e.addEventListener("load",i),e.addEventListener("error",r),s)e.src=s,e.removeAttribute("data-rocket-src");else if(navigator.userAgent.indexOf("Firefox/")>0){var a=document.createElement("script");[...e.attributes].forEach(e=>{"type"!==e.nodeName&&a.setAttribute("data-rocket-type"===e.nodeName?"type":e.nodeName,e.nodeValue)}),a.text=e.text,e.parentNode.replaceChild(a,e),i()}else e.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(e.text)))}catch(o){r()}})}async _loadScriptsFromList(e){let t=e.shift();return t&&t.isConnected?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var i=document.createDocumentFragment();e.forEach(e=>{let r=e.getAttribute&&e.getAttribute("data-rocket-src")||e.src;if(r){let n=document.createElement("link");n.href=r,n.rel=t,"preconnect"!==t&&(n.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),e.crossOrigin&&(n.crossOrigin=e.crossOrigin),e.integrity&&(n.integrity=e.integrity),i.appendChild(n),this.trash.push(n)}}),document.head.appendChild(i)}_delayEventListeners(e){let t={};function i(e,i){!function e(i){!t[i]&&(t[i]={originalFunctions:{add:i.addEventListener,remove:i.removeEventListener},eventsToRewrite:[]},i.addEventListener=function(){arguments[0]=r(arguments[0]),t[i].originalFunctions.add.apply(i,arguments)},i.removeEventListener=function(){arguments[0]=r(arguments[0]),t[i].originalFunctions.remove.apply(i,arguments)});function r(e){return t[i].eventsToRewrite.indexOf(e)>=0?"rocket-"+e:e}}(e),t[e].eventsToRewrite.push(i)}function r(e,t){let i=e[t];Object.defineProperty(e,t,{get:()=>i||function(){},set(r){e["rocket"+t]=i=r}})}i(document,"DOMContentLoaded"),i(window,"DOMContentLoaded"),i(window,"load"),i(window,"pageshow"),i(document,"readystatechange"),r(document,"onreadystatechange"),r(window,"onload"),r(window,"onpageshow")}_delayJQueryReady(e){let t;function i(i){if(i&&i.fn&&!e.allJQueries.includes(i)){i.fn.ready=i.fn.init.prototype.ready=function(t){return e.domReadyFired?t.bind(document)(i):document.addEventListener("rocket-DOMContentLoaded",()=>t.bind(document)(i)),i([])};let r=i.fn.on;i.fn.on=i.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map(e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]})}return r.apply(this,arguments),this},e.allJQueries.push(i)}t=i}i(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>t,set(e){i(e)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(e=>e(window).trigger("rocket-jquery-load")),await this._littleBreath();let e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let e=new Map;document.write=document.writeln=function(t){let i=document.currentScript;i||console.error("WPRocket unable to document.write this: "+t);let r=document.createRange(),n=i.parentElement,s=e.get(i);void 0===s&&(s=i.nextSibling,e.set(i,s));let a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(e=>setTimeout(e)):new Promise(e=>requestAnimationFrame(e))}_emptyTrash(){this.trash.forEach(e=>e.remove())}static run(){let e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+
+<!-- Google Tag Manager -->
+ <script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PRVX6WW');</script><!-- End Google Tag Manager -->
+    
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>
+    QUANTIL | Global Content Delivery    </title><link rel="stylesheet" href="https://www.quantil.com/wp-content/cache/min/1/21bc902dbfb796735fcfb892a1b1d01b.css" media="all" data-minify="1" />
+    
+    
+    <link rel="icon" href="https://www.quantil.com/wp-content/themes/FoundationPress/assets/img/icons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.quantil.com/wp-content/themes/FoundationPress/assets/img/icons/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.quantil.com/wp-content/themes/FoundationPress/assets/img/icons/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://www.quantil.com/wp-content/themes/FoundationPress/assets/img/icons/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="https://www.quantil.com/wp-content/themes/FoundationPress/assets/img/icons/apple-touch-icon-precomposed.png">
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v20.2 - https://yoast.com/wordpress/plugins/seo/ -->
+	<meta name="description" content="We provide global content delivery for live streaming, video on demand, downloadable content and websites with over 650 Points of Presence." />
+	<link rel="canonical" href="https://www.quantil.com/" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="2 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.quantil.com/","url":"https://www.quantil.com/","name":"Global Content Delivery | QUANTIL Content Delivery Network","isPartOf":{"@id":"https://www.quantil.com/#website"},"datePublished":"2015-04-20T21:26:13+00:00","dateModified":"2019-12-19T21:25:28+00:00","description":"We provide global content delivery for live streaming, video on demand, downloadable content and websites with over 650 Points of Presence.","breadcrumb":{"@id":"https://www.quantil.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.quantil.com/"]}]},{"@type":"BreadcrumbList","@id":"https://www.quantil.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://www.quantil.com/#website","url":"https://www.quantil.com/","name":"QUANTIL","description":"Global Content Delivery","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.quantil.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.bunny.net' />
+
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	
+
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+
+
+
+
+
+<link rel='stylesheet' id='sab-font-css' href='https://fonts.bunny.net/css?family=Open+Sans:400,700,400italic,700italic&#038;subset=latin' type='text/css' media='all' />
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://www.quantil.com/wp-content/cache/min/1/wp-content/plugins/wp-hide-security-enhancer/assets/js/devtools-detect.js?ver=1677619565' id='devtools-detect-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://www.quantil.com/wp-content/cache/min/1/wp-content/themes/FoundationPress/js/vendor/jquery.js?ver=1657935014' id='jquery-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://www.quantil.com/wp-content/cache/min/1/wp-content/plugins/geotargeting/public/js/geotarget-public.js?ver=1657935014' id='geotarget-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://www.quantil.com/wp-content/cache/min/1/wp-content/plugins/geotargeting/public/js/ddslick.js?ver=1657935014' id='geot-slick-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.quantil.com/wp-content/plugins/wp-user-avatar/assets/flatpickr/flatpickr.min.js' id='ppress-flatpickr-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.quantil.com/wp-content/plugins/wp-user-avatar/assets/select2/select2.min.js' id='ppress-select2-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://www.quantil.com/wp-content/cache/min/1/wp-content/themes/FoundationPress/js/vendor/modernizr.js?ver=1657935014' id='modernizr-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://www.quantil.com/wp-content/cache/min/1/wp-content/themes/FoundationPress/js/vendor/fastclick.js?ver=1657935014' id='fastclick-js' defer></script>
+<link rel="alternate" type="application/json+oembed" href="https://www.quantil.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.quantil.com%2F" />
+<style>
+		#category-posts-2-internal .cat-post-thumbnail .cat-post-crop img {object-fit: cover; max-width: 100%; display: block;}
+#category-posts-2-internal .cat-post-thumbnail .cat-post-crop-not-supported img {width: 100%;}
+#category-posts-2-internal .cat-post-thumbnail {max-width:100%;}
+#category-posts-2-internal .cat-post-item img {margin: initial;}
+</style>
+		<style>.cmplz-hidden{display:none!important;}</style><style type="text/css">.saboxplugin-wrap{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;border:1px solid #eee;width:100%;clear:both;display:block;overflow:hidden;word-wrap:break-word;position:relative}.saboxplugin-wrap .saboxplugin-gravatar{float:left;padding:0 20px 20px 20px}.saboxplugin-wrap .saboxplugin-gravatar img{max-width:100px;height:auto;border-radius:0;}.saboxplugin-wrap .saboxplugin-authorname{font-size:18px;line-height:1;margin:20px 0 0 20px;display:block}.saboxplugin-wrap .saboxplugin-authorname a{text-decoration:none}.saboxplugin-wrap .saboxplugin-authorname a:focus{outline:0}.saboxplugin-wrap .saboxplugin-desc{display:block;margin:5px 20px}.saboxplugin-wrap .saboxplugin-desc a{text-decoration:underline}.saboxplugin-wrap .saboxplugin-desc p{margin:5px 0 12px}.saboxplugin-wrap .saboxplugin-web{margin:0 20px 15px;text-align:left}.saboxplugin-wrap .sab-web-position{text-align:right}.saboxplugin-wrap .saboxplugin-web a{color:#ccc;text-decoration:none}.saboxplugin-wrap .saboxplugin-socials{position:relative;display:block;background:#fcfcfc;padding:5px;border-top:1px solid #eee}.saboxplugin-wrap .saboxplugin-socials a svg{width:20px;height:20px}.saboxplugin-wrap .saboxplugin-socials a svg .st2{fill:#fff; transform-origin:center center;}.saboxplugin-wrap .saboxplugin-socials a svg .st1{fill:rgba(0,0,0,.3)}.saboxplugin-wrap .saboxplugin-socials a:hover{opacity:.8;-webkit-transition:opacity .4s;-moz-transition:opacity .4s;-o-transition:opacity .4s;transition:opacity .4s;box-shadow:none!important;-webkit-box-shadow:none!important}.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-color{box-shadow:none;padding:0;border:0;-webkit-transition:opacity .4s;-moz-transition:opacity .4s;-o-transition:opacity .4s;transition:opacity .4s;display:inline-block;color:#fff;font-size:0;text-decoration:inherit;margin:5px;-webkit-border-radius:0;-moz-border-radius:0;-ms-border-radius:0;-o-border-radius:0;border-radius:0;overflow:hidden}.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-grey{text-decoration:inherit;box-shadow:none;position:relative;display:-moz-inline-stack;display:inline-block;vertical-align:middle;zoom:1;margin:10px 5px;color:#444;fill:#444}.clearfix:after,.clearfix:before{content:' ';display:table;line-height:0;clear:both}.ie7 .clearfix{zoom:1}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-twitch{border-color:#38245c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-addthis{border-color:#e91c00}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-behance{border-color:#003eb0}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-delicious{border-color:#06c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-deviantart{border-color:#036824}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-digg{border-color:#00327c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-dribbble{border-color:#ba1655}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-facebook{border-color:#1e2e4f}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-flickr{border-color:#003576}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-github{border-color:#264874}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-google{border-color:#0b51c5}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-googleplus{border-color:#96271a}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-html5{border-color:#902e13}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-instagram{border-color:#1630aa}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-linkedin{border-color:#00344f}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-pinterest{border-color:#5b040e}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-reddit{border-color:#992900}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-rss{border-color:#a43b0a}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-sharethis{border-color:#5d8420}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-skype{border-color:#00658a}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-soundcloud{border-color:#995200}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-spotify{border-color:#0f612c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-stackoverflow{border-color:#a95009}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-steam{border-color:#006388}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-user_email{border-color:#b84e05}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-stumbleUpon{border-color:#9b280e}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-tumblr{border-color:#10151b}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-twitter{border-color:#0967a0}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-vimeo{border-color:#0d7091}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-windows{border-color:#003f71}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-whatsapp{border-color:#003f71}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-wordpress{border-color:#0f3647}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-yahoo{border-color:#14002d}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-youtube{border-color:#900}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-xing{border-color:#000202}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-mixcloud{border-color:#2475a0}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-vk{border-color:#243549}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-medium{border-color:#00452c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-quora{border-color:#420e00}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-meetup{border-color:#9b181c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-goodreads{border-color:#000}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-snapchat{border-color:#999700}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-500px{border-color:#00557f}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-mastodont{border-color:#185886}.sabox-plus-item{margin-bottom:20px}@media screen and (max-width:480px){.saboxplugin-wrap{text-align:center}.saboxplugin-wrap .saboxplugin-gravatar{float:none;padding:20px 0;text-align:center;margin:0 auto;display:block}.saboxplugin-wrap .saboxplugin-gravatar img{float:none;display:inline-block;display:-moz-inline-stack;vertical-align:middle;zoom:1}.saboxplugin-wrap .saboxplugin-desc{margin:0 10px 20px;text-align:center}.saboxplugin-wrap .saboxplugin-authorname{text-align:center;margin:10px 0 20px}}body .saboxplugin-authorname a,body .saboxplugin-authorname a:hover{box-shadow:none;-webkit-box-shadow:none}a.sab-profile-edit{font-size:16px!important;line-height:1!important}.sab-edit-settings a,a.sab-profile-edit{color:#0073aa!important;box-shadow:none!important;-webkit-box-shadow:none!important}.sab-edit-settings{margin-right:15px;position:absolute;right:0;z-index:2;bottom:10px;line-height:20px}.sab-edit-settings i{margin-left:5px}.saboxplugin-socials{line-height:1!important}.rtl .saboxplugin-wrap .saboxplugin-gravatar{float:right}.rtl .saboxplugin-wrap .saboxplugin-authorname{display:flex;align-items:center}.rtl .saboxplugin-wrap .saboxplugin-authorname .sab-profile-edit{margin-right:10px}.rtl .sab-edit-settings{right:auto;left:0}img.sab-custom-avatar{max-width:75px;}.saboxplugin-wrap .saboxplugin-authorname {font-family:"Open Sans";}.saboxplugin-wrap .saboxplugin-desc {font-family:None;}.saboxplugin-wrap {margin-top:0px; margin-bottom:0px; padding: 0px 0px }.saboxplugin-wrap .saboxplugin-authorname {font-size:18px; line-height:25px;}.saboxplugin-wrap .saboxplugin-desc p, .saboxplugin-wrap .saboxplugin-desc {font-size:14px !important; line-height:21px !important;}.saboxplugin-wrap .saboxplugin-web {font-size:14px;}.saboxplugin-wrap .saboxplugin-socials a svg {width:18px;height:18px;}</style>		<style type="text/css" id="wp-custom-css">
+			.socialMedia a {
+	text-align: center;
+}
+
+
+#page404 li a {
+margin:0;
+padding:0;
+
+}
+
+.hidden {
+opacity:1!important;}
+
+
+div[id^="LPMcontainer"] {
+    width:auto!important;
+}
+
+img[id^="LPMimage"] {
+	right:5px!important;
+	left: auto!important;
+}
+
+
+.lp_maximized {bottom:20px!important}
+
+.cookie-notice-container{
+	background:#f9f9f9;
+	border-top: 1px solid #ccc;
+}
+
+.cookie-notice-container #cn-notice-text{
+	color:black;
+}
+
+#cn-notice-buttons .button{
+	transition: all .5s;
+	background:#f9f9f9;
+	border: 1px solid #bbb;
+	color: black;
+}
+
+#cn-notice-buttons .button:hover{
+	background:#d42026;
+	color: white;
+}
+
+
+/*CDN360 Server Tiers List*/
+ul.server-region {
+	list-style:none;
+	margin:0;
+}
+
+ul.server-region li div{
+	display: inline-block;
+	position: relative;
+	height:10px;
+	width:10px;
+	margin-left:8px;
+	border-radius:10px;
+	color:black;
+	top:8px;
+}
+
+ul.server-region li div.stdn{
+	background:#23cc6b;
+}
+
+ul.server-region li div.prem{
+	background:#4d83ff;
+	
+}
+
+ul.server-region li div.prem-plus{
+	background:#512da8;
+}
+
+ul.server-region li div.ultra{
+	background:#f7931e;
+}
+
+ul.server-region li div.soon{
+	background:#111111;
+}
+
+
+/*CDN360 Server Tiers Legend*/
+.server-legend{
+}
+
+
+.server-tier{
+	text-align:center;
+	padding: 10px 0;
+	line-height:1.25;
+}
+
+.add-charge{
+	margin:0px;
+	padding:20px 0 0 0;
+	background-color:#fefefe;
+}
+
+.server-tier-title {
+	font-size: 22px;
+	font-weight: 100;
+	color:white;	
+}
+
+.server-tier-price{
+	font-size: 22px;
+	font-weight: 500;
+	color:white;	
+}
+
+.server-tier-frequency{
+	font-size: 12px;
+	font-weight: 100;
+	color:white;	
+}
+
+.server-tier.stdn{
+	background-color:#23cc6b;
+}
+
+.server-tier.prem{
+	background-color:#4d83ff;
+}
+
+.server-tier.prem-plus{
+	background-color:#512da8;
+}
+
+.server-tier.ultra{
+	background-color:#f7931e;
+}
+
+.server-tier.soon{
+	background-color:#111;
+}
+		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>    <script type="application/ld+json">
+    {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "Quantil",
+    "url": "https://www.quantil.com",
+    "sameAs": [
+    "https://twitter.com/Team_Quantil",
+    "https://www.linkedin.com/company/quantil",
+    "https://plus.google.com/+Quantil_team/",
+    "https://www.facebook.com/quantil.inc",
+    "https://www.youtube.com/channel/UCBQRCb2cCeoDbJkLY6Gzknw"
+    ]
+    }
+    </script>
+    <!--<script type="rocketlazyloadscript" data-rocket-src="https://use.typekit.net/awj8dzy.js"></script>
+    <script type="rocketlazyloadscript">try{Typekit.load({ async: true });}catch(e){}</script>
+    -->
+    <script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.quantil.com/wp-content/cache/min/1/wfs5kez.js?ver=1657935014" defer></script>
+    <script type="rocketlazyloadscript">try{Typekit.load();}catch(e){}</script>
+    
+  </head>
+  <body data-cmplz=1 class="home page-template page-template-homepage page-template-homepage-php page page-id-51">
+
+
+ <noscript><iframe src='https://www.googletagmanager.com/ns.html?id=GTM-PRVX6WW'
+height='0' width='0' style='display:none;visibility:hidden'></iframe></noscript>     
+    
+
+
+
+    <!--ActOn Tracking Script-->
+   <!-- <script type="rocketlazyloadscript">/*<![CDATA[*/(function(w,a,b,d,s){w[a]=w[a]||{};w[a][b]=w[a][b]||{q:[],track:function(r,e,t){this.q.push({r:r,e:e,t:t||+new Date});}};var e=d.createElement(s);var f=d.getElementsByTagName(s)[0];e.async=1;e.src='//marketing.quantil.com/cdnr/26/acton/bn/tracker/18224';f.parentNode.insertBefore(e,f);})(window,'ActOn','Beacon',document,'script');ActOn.Beacon.track();/*]]>*/</script>-->
+    <!--End ActOn Tracking Script-->
+        <div class="off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+                <nav class="tab-bar show-for-small-only">
+          <section class=""> <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a> </section>
+          <section class="middle tab-bar-section">
+            <div class="title"> <a href="https://www.quantil.com"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" style="max-width:112px;" data-lazy-src="/wp-content/themes/FoundationPress/assets/img/quantil-logo.svg"><noscript><img src="/wp-content/themes/FoundationPress/assets/img/quantil-logo.svg" alt="" style="max-width:112px;"></noscript></a>
+            <!--<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Quantil" data-lazy-src="/wp-content/themes/FoundationPress/assets/img/logo-small.png"/><noscript><img src="/wp-content/themes/FoundationPress/assets/img/logo-small.png" alt="Quantil"/></noscript>-->
+          </div>
+        </section>
+      </nav>
+      <aside  class="left-off-canvas-menu" aria-hidden="true">
+    <ul id="menu-main-navigation" class="off-canvas-list"><li id="menu-item-235" class="solutions menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children has-dropdown menu-item-235"><a href="#">Solutions</a>
+<ul class="sub-menu dropdown">
+	<li id="menu-item-9855" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9855"><a href="https://www.quantil.com/cdnpro/">CDN Pro</a></li>
+	<li id="menu-item-7609" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7609"><a href="https://www.quantil.com/high-speed-data-transmission/">High-Speed Data Transmission</a></li>
+	<li id="menu-item-10075" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10075"><a href="https://www.quantil.com/edge-computing-platform/">Edge Computing Platform</a></li>
+	<li id="menu-item-5941" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5941"><a href="https://www.quantil.com/interactive-live-stream-acceleration/">Interactive Live Stream Acceleration</a></li>
+	<li id="menu-item-5869" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5869"><a href="https://www.quantil.com/live-stream-acceleration/">Live Stream Acceleration</a></li>
+	<li id="menu-item-129" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-129"><a href="https://www.quantil.com/video-on-demand-acceleration/">Video On Demand Acceleration</a></li>
+	<li id="menu-item-8269" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8269"><a href="https://www.quantil.com/website-acceleration/">Website Acceleration</a></li>
+	<li id="menu-item-130" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-130"><a href="https://www.quantil.com/download-acceleration/">Download Acceleration</a></li>
+	<li id="menu-item-7768" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7768"><a href="https://www.quantil.com/cloud-security/">Cloud Security</a></li>
+</ul>
+</li>
+<li id="menu-item-255" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-dropdown menu-item-255"><a href="https://www.quantil.com/company/">Company</a>
+<ul class="sub-menu dropdown">
+	<li id="menu-item-931" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-931"><a href="https://www.quantil.com/content-delivery-network/">Content Delivery Network</a></li>
+	<li id="menu-item-7165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7165"><a href="https://www.quantil.com/content-delivery-insights/">Content Delivery Insights</a></li>
+	<li id="menu-item-3619" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3619"><a href="https://www.quantil.com/careers/">Careers</a></li>
+	<li id="menu-item-8575" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8575"><a href="https://www.quantil.com/newsroom/press-releases/">Press Releases</a></li>
+</ul>
+</li>
+<li id="menu-item-661" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-661"><a href="https://www.quantil.com/support/">Support</a></li>
+<li id="menu-item-150" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-150"><a href="https://www.quantil.com/contact/">Contact</a></li>
+<li id="menu-item-236" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-236"><a title="Get Started" href="#">Get Started</a></li>
+</ul></aside>      <div class="top-bar-container contain-to-grid show-for-medium-up">
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <div class="logo small-12 columns "><a href="https://www.quantil.com"> <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Quantil Logo" data-lazy-src="/wp-content/themes/FoundationPress/assets/img/quantil-logo.svg"><noscript><img src="/wp-content/themes/FoundationPress/assets/img/quantil-logo.svg" alt="Quantil Logo"></noscript></a></div>
+      <!--<li class="name">
+        <h1> 
+          <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Quantil" data-lazy-src="https://www.quantil.com/wp-content/themes/FoundationPress/assets/img/logo.png"/><noscript><img src="https://www.quantil.com/wp-content/themes/FoundationPress/assets/img/logo.png" alt="Quantil"/></noscript>
+          
+                   </h1>
+      </li>-->
+    </ul>
+    <section class="top-bar-section">
+            <ul id="menu-main-navigation-1" class="top-bar-menu right"><li class="solutions menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children has-dropdown menu-item-235"><a href="#">Solutions</a>
+<ul class="sub-menu dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9855"><a href="https://www.quantil.com/cdnpro/">CDN Pro</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7609"><a href="https://www.quantil.com/high-speed-data-transmission/">High-Speed Data Transmission</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10075"><a href="https://www.quantil.com/edge-computing-platform/">Edge Computing Platform</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5941"><a href="https://www.quantil.com/interactive-live-stream-acceleration/">Interactive Live Stream Acceleration</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5869"><a href="https://www.quantil.com/live-stream-acceleration/">Live Stream Acceleration</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-129"><a href="https://www.quantil.com/video-on-demand-acceleration/">Video On Demand Acceleration</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8269"><a href="https://www.quantil.com/website-acceleration/">Website Acceleration</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-130"><a href="https://www.quantil.com/download-acceleration/">Download Acceleration</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7768"><a href="https://www.quantil.com/cloud-security/">Cloud Security</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children has-dropdown menu-item-255"><a href="https://www.quantil.com/company/">Company</a>
+<ul class="sub-menu dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-931"><a href="https://www.quantil.com/content-delivery-network/">Content Delivery Network</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7165"><a href="https://www.quantil.com/content-delivery-insights/">Content Delivery Insights</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3619"><a href="https://www.quantil.com/careers/">Careers</a></li>
+	<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-8575"><a href="https://www.quantil.com/newsroom/press-releases/">Press Releases</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-661"><a href="https://www.quantil.com/support/">Support</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-150"><a href="https://www.quantil.com/contact/">Contact</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-236"><a title="Get Started" href="#">Get Started</a></li>
+</ul>    </section>
+  </nav>
+</div>
+      <section class="container" role="document">
+        <div class="entry-content ">
+<div id="hp-section-1" class=" full-screen bg-cover section-center">
+		<!--
+<div class="row">
+<div class="columns smalll-8 medium-6 medium-offset-3">
+						<img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="/resources/home-chef-stream.png"><noscript><img decoding="async" src="/resources/home-chef-stream.png" alt=""></noscript></div>
+</div>
+-->
+<div id="hp-main-msg" class="row text-center white">
+<div class="small-12 columns">
+				<meta name="majestic-site-verification" content="MJ12_f1efed3f-4835-4e28-bb89-d31f0f2293a8">
+<h1 class="showFadeDown white">Global Content Delivery</h1>
+<div class="small-4 medium-2 small-centered columns"></div>
+<div class="small-12 small-centered columns margin-bottom-2">
+<p class="showFadeUp margin-top-1">Our global content delivery network connects your content to billions of end users<br class="show-for-medium-up"> with high speed, performance, and availability.</p>
+
+</div>
+<div class="small-12 medium-10 large-9 columns small-centered">
+<ul id="capabilities" class="small-block-grid-1 medium-block-grid-5 text-center">
+ 	<li class="showFadeLeft">Over<span>1500</span>Points of Presence</li>
+ 	<li class="showFadeLeft">Supporting<span>50 Tbps</span>Bandwidth</li>
+ 	<li class="showFadeIn">Below<span>1 Sec.</span>Stream Latency</li>
+ 	<li class="showFadeRight">Transfer Files<span>100X</span>Faster</li>
+ 	<li class="showFadeRight">Over<span>99.9%</span>Availability</li>
+</ul>
+</div>
+<div class="small-12 columns margin-top-2">
+<div class="showFadeDown"><a class="download small button radius button-transparent-white" href="#hp-section-2">Discover Our Solutions</a></div>
+</div>
+</div>
+</div>
+</div>
+<div id="hp-section-2" class="">
+<div class="row">
+<div class="small-12 medium-10 medium-centered columns text-center margin-bottom-2 padding-top-4">
+<h1 class="margin-bottom-1-5 showFadeIn">What content do you want to accelerate?</h1>
+</div>
+</div>
+<div class="row">
+<div class="small-12 medium-10 small-centered columns text-center">
+<ul id="homepage-solutions" class="small-block-grid-1 medium-block-grid-3">
+ 	<li class="showFadeLeft">
+<div class="description">
+							<span><strong>Ultra-Low Latency</strong>
+Deliver high-quality live video streams with less than 1 second latency for real-time engagement.</span></div>
+<div class="visual">
+							<img decoding="async" class="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Live Stream Acceleration" data-lazy-src="/resources/hp-live-video-stream-tablet.png"><noscript><img decoding="async" class="" src="/resources/hp-live-video-stream-tablet.png" alt="Live Stream Acceleration"></noscript>
+<span>Live Video Stream</span></div>
+<a href="/live-stream-acceleration/" class="button tiny white">Learn more</a></li>
+ 	<li class="showFadeIn">
+<div class="description">
+							<span><strong>Instant Load Time</strong>
+
+Real-time interactive experiences for viewers and broadcasters with instant load time and ultra-low latency.</span></div>
+<div class="visual">
+							<img decoding="async" class="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Interactive Live Streaming Acceleration" data-lazy-src="/resources/hp-interactive-live-stream.png"><noscript><img decoding="async" class="" src="/resources/hp-interactive-live-stream.png" alt="Interactive Live Streaming Acceleration"></noscript><span>Interactive Live Stream</span></div>
+<a href="/interactive-live-stream-acceleration/" class="button tiny white">Learn more</a></li>
+ 	<li class="showFadeRight">
+<div class="description">
+							<span><strong>Fast and Reliable Playback</strong>
+Ensure high availability with instant playback for your viewers anywhere on any device.</span></div>
+<div class="visual">
+							<img decoding="async" class="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Video On Demand Acceleration" data-lazy-src="/resources/hp-video-on-demand.png"><noscript><img decoding="async" class="" src="/resources/hp-video-on-demand.png" alt="Video On Demand Acceleration"></noscript><span>Video On Demand</span></div>
+<a href="/video-acceleration/" class="button tiny white">Learn more</a></li>
+ 	<li class="showFadeLeft">
+<div class="description">
+							<span><strong>Rapid File Transfer with High Availability</strong>
+Send and receive big data between multiple locations over long distances with no client software required.
+</span></div>
+<div class="visual">
+							<img decoding="async" class="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="High-Speed Data Transfer Acceleration" data-lazy-src="/resources/hp-big-data-files.png"><noscript><img decoding="async" class="" src="/resources/hp-big-data-files.png" alt="High-Speed Data Transfer Acceleration"></noscript><span>Big Data Files</span></div>
+<a href="/high-speed-data-transmission/" target="_blank" class="button tiny white" rel="noopener noreferrer">Learn more</a></li>
+ 	<li class="showFadeIn">
+<div class="description">
+							<span><strong>Always On, High-speed Delivery</strong>
+Downloadable content with high speed and availability to ensure the best user experience on your platform.</span></div>
+<div class="visual">
+							<img decoding="async" class="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Download Acceleration" data-lazy-src="/resources/hp-downlodable-content.png"><noscript><img decoding="async" class="" src="/resources/hp-downlodable-content.png" alt="Download Acceleration"></noscript><span>Downloadable Content</span></div>
+<a href="/download-acceleration/" class="button tiny white">Learn more</a></li>
+ 	<li class="showFadeRight">
+<div class="description">
+							<span><strong>Personalized Experiences with
+High Availability</strong>
+Increase conversion rates by accelerating static and dynamic website content to your visitors.</span></div>
+<div class="visual">
+							<img decoding="async" class="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Website Acceleration" data-lazy-src="/resources/hp-website.png"><noscript><img decoding="async" class="" src="/resources/hp-website.png" alt="Website Acceleration"></noscript><span>Website</span></div>
+<a href="/website-acceleration/" class="button tiny white">Learn more</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="hp-section-3" class="">
+<div class="row">
+<div class="small-12 medium-11 small-centered columns">
+<div class="customers-showcase">
+<div class="small-12 medium-8 columns customers-showcase-block customer customers-text text-left bg-none showFadeRight">
+<h2 class="strong">You’ll be in good company</h2>
+<span>We support global brands to deliver their content to end users on any device with high speed, performance, and availability.</span>
+
+</div>
+<div class="small-12 medium-4 columns customers-showcase-block customer microsoft showFadeRight"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Microsoft" data-lazy-src="/resources/microsoft-logo.png"><noscript><img decoding="async" src="/resources/microsoft-logo.png" alt="Microsoft"></noscript></div>
+<div class="small-12 medium-4 columns customers-showcase-block customer valve showFadeLeft"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Valve" data-lazy-src="/resources/valve-logo.png"><noscript><img decoding="async" src="/resources/valve-logo.png" alt="Valve"></noscript></div>
+<div class="small-12 medium-8 columns customers-showcase-block customers-text text-left showFadeLeft">
+						<span class="customer-quote"><span class="quote-open">“</span>As the world’s largest online gaming platform, Steam provides the best quality experience to the gaming community. QUANTIL helps us to do that by delivering accelerated live video streams, video on demand, and software downloads with high performance and availability.
+
+&#8211; Mike Dunkle, Business Development Operations, Valve
+
+</span></div>
+<div class="small-12 medium-4 columns customers-showcase-block customer mozilla showFadeLeft"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Mozilla" data-lazy-src="/resources/mozilla-logo.png"><noscript><img decoding="async" src="/resources/mozilla-logo.png" alt="Mozilla"></noscript></div>
+<div class="small-12 medium-4 columns customers-showcase-block customer lively showFadeIn"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Live.ly" data-lazy-src="/resources/lively-logo.png"><noscript><img decoding="async" src="/resources/lively-logo.png" alt="Live.ly"></noscript></div>
+<div class="small-12 medium-4 columns customers-showcase-block customer philipp-plein showFadeRight"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Philipp Plein" data-lazy-src="/resources/philipp-plein-customer.png"><noscript><img decoding="async" src="/resources/philipp-plein-customer.png" alt="Philipp Plein"></noscript></div>
+<!--
+<div class="small-12 medium-8 columns customers-showcase-block customers-text text-left">
+										<span><span class="quote-open">&ldquo;</span>As the world’s largest online gaming platform, Steam provides the best quality experience to the gaming community. QUANTIL helps us to do that by delivering accelerated live video streams, video on demand, and software downloads with high performance and availability.
+								- YouNow, CEO of YouNow</span></div>
+-->
+<div class="small-12 medium-4 columns customers-showcase-block customer younow showFadeLeft"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="YouNow" data-lazy-src="/resources/younow-logo.png"><noscript><img decoding="async" src="/resources/younow-logo.png" alt="YouNow"></noscript></div>
+<div class="small-12 medium-4 columns customers-showcase-block customer ferrari showFadeLeft"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Ferrari" data-lazy-src="/resources/ferrari-logo.png"><noscript><img decoding="async" src="/resources/ferrari-logo.png" alt="Ferrari"></noscript></div>
+<div class="small-12 medium-4 columns customers-showcase-block customer booking-com showFadeLeft"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Booking.com" data-lazy-src="/resources/booking-com-logo.png"><noscript><img decoding="async" src="/resources/booking-com-logo.png" alt="Booking.com"></noscript></div>
+<!--
+<div class="small-12 medium-4 columns customers-showcase-block customer economist showFadeLeft"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="The Economist" data-lazy-src="/resources/economist-logo.png"><noscript><img decoding="async" src="/resources/economist-logo.png" alt="The Economist"></noscript></div>
+-->
+
+</div>
+</div>
+</div>
+</div>
+<div id="hp-section-4" class="">
+<div class="row">
+<div class="small-12 small-centered columns text-center margin-bottom-2">
+<h1>Why do they work with QUANTIL?</h1>
+</div>
+</div>
+<div class="row">
+<div class="small-12 small-centered columns text-center">
+<ul class="small-block-grid-1 medium-block-grid-3 why-us">
+ 	<li class="showFadeLeft">
+						<img decoding="async" class="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Premium Performance" data-lazy-src="/resources/premium-performance-icon.png"><noscript><img decoding="async" class="" src="/resources/premium-performance-icon.png" alt="Premium Performance"></noscript>
+<h3 class="strong">Premium Performance</h3>
+We deliver customized content acceleration solutions with the best performance metrics in the market.</li>
+ 	<li class="showFadeIn">
+						<img decoding="async" class="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Advanced Technology" data-lazy-src="/resources/innovation-rd-icon.png"><noscript><img decoding="async" class="" src="/resources/innovation-rd-icon.png" alt="Advanced Technology"></noscript>
+<h3 class="strong">Advanced Technologies</h3>
+Our R&amp;D team builds advanced solutions to solve the current and future challenges of global content delivery.</li>
+ 	<li class="showFadeRight">
+						<img decoding="async" class="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Unique Expertise" data-lazy-src="/resources/unique-expertise-icon.png"><noscript><img decoding="async" class="" src="/resources/unique-expertise-icon.png" alt="Unique Expertise"></noscript>
+<h3 class="strong">Unique Expertise</h3>
+The QUANTIL international team has specialized knowledge to help customers deliver their content to new markets.</li>
+</ul>
+</div>
+</div>
+</div>
+<a class="full-width-contact-us text-center strong showFadeUp" href="#" data-reveal-id="freeTrialModal">CONTACT OUR TEAM</a>
+
+</div>
+<?php// include 'whyworkwithus.php';?>
+</section>
+
+<footer id="footer-main" class="border-top">
+<div class="row text-center">
+  <div class="small-6 medium-12  columns small-centered ">
+    <ul id="menu-footer-legal" class="small-block-grid-1 medium-block-grid-5 footer-legal footer-links"><li id="menu-item-152" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-152"><a href="https://www.quantil.com/acceptable-use-policy/">Acceptable Use Policy</a></li>
+<li id="menu-item-158" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-158"><a href="https://portal.quantil.com/login.html">Portal Login</a></li>
+<li id="menu-item-3481" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-3481"><a href="https://www.quantil.com/privacy-and-security-policy/">Privacy and Security Policy</a></li>
+<li id="menu-item-9973" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-9973"><a title="Data Processing Addendum" target="_blank" rel="noopener" href="/resources/Quantil-DPA_v2_20210210.pdf">Data Processing Addendum</a></li>
+<li id="menu-item-9988" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9988"><a href="https://www.quantil.com/sub-processors/">Sub-Processors</a></li>
+</ul>  </div>
+</div>
+<div class="row">
+  <div class="small-6 medium-3 large-2 small-centered columns">
+    <ul class="socialMedia small-block-grid-3">
+      <li><a class="twitter" href="https://twitter.com/Team_Quantil" target="_blank"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Twitter" data-lazy-src="/wp-content/themes/FoundationPress/assets/img/icons/tweeter.svg"/><noscript><img src="/wp-content/themes/FoundationPress/assets/img/icons/tweeter.svg" alt="Twitter"/></noscript></a></li>
+      <li><a class="linkedin" href="https://www.linkedin.com/company/quantil" target="_blank"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Linked In" data-lazy-src="/wp-content/themes/FoundationPress/assets/img/icons/linkedin.svg"/><noscript><img src="/wp-content/themes/FoundationPress/assets/img/icons/linkedin.svg" alt="Linked In"/></noscript></a></li>
+      <li><a class="googleplus" href="https://plus.google.com/+Quantil_team/" target="_blank"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Google Plus" data-lazy-src="/wp-content/themes/FoundationPress/assets/img/icons/googleplus .svg"/><noscript><img src="/wp-content/themes/FoundationPress/assets/img/icons/googleplus .svg" alt="Google Plus"/></noscript></a></li>
+    </ul>
+  </div>
+</div>
+<div class="row text-center">
+  <div class="small-12 columns">
+    <div class="small-12 columns">
+      <p class="all-rights">2021 QUANTIL, All rights reserved.</p>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns text-center">
+    
+        
+  </div>
+</div>
+</footer>
+<!-- Free Trail Modal -->
+<div id="freeTrialModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,initializeOnLoaded:function(o){gform.domLoaded&&gform.scriptsLoaded?o():!gform.domLoaded&&gform.scriptsLoaded?window.addEventListener("DOMContentLoaded",o):document.addEventListener("gform_main_scripts_loaded",o)},hooks:{action:{},filter:{}},addAction:function(o,r,n,t){gform.addHook("action",o,r,n,t)},addFilter:function(o,r,n,t){gform.addHook("filter",o,r,n,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,n){gform.removeHook("filter",o,r,n)},addHook:function(o,r,n,t,i){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var e=gform.hooks[o][r];null==i&&(i=r+"_"+e.length),gform.hooks[o][r].push({tag:i,callable:n,priority:t=null==t?10:t})},doHook:function(o,r,n){if(n=Array.prototype.slice.call(n,1),null!=gform.hooks[o][r]){var t,i=gform.hooks[o][r];i.sort(function(o,r){return o.priority-r.priority});for(var e=0;e<i.length;e++)"function"!=typeof(t=i[e].callable)&&(t=window[t]),"action"==o?t.apply(null,n):n[0]=t.apply(null,n)}if("filter"==o)return n[0]},removeHook:function(o,r,n,t){if(null!=gform.hooks[o][r])for(var i=gform.hooks[o][r],e=i.length-1;0<=e;e--)null!=t&&t!=i[e].tag||null!=n&&n!=i[e].priority||i.splice(e,1)}});</script>
+                <div class='gf_browser_chrome gform_wrapper foundation_wrapper gform_legacy_markup_wrapper' id='gform_wrapper_7' >
+                        <div class='gform_heading'>
+                            <h3 class="gform_title">Get started with QUANTIL</h3>
+                        </div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_7' id='gform_7' class='foundation gform_legacy_markup' action='/' >
+                        <div class='gform_body gform-body'><ul id='gform_fields_7' class='gform_fields left_label form_sublabel_below description_below'><li id="field_7_1" class="gfield gfield_contains_required field_sublabel_above field_description_below gfield_visibility_visible" ><label class='gfield_label gfield_label_before_complex'  >Name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_complex ginput_container no_prefix has_first_name no_middle_name has_last_name no_suffix gf_name_has_2 ginput_container_name' id='input_7_1'>
+                            
+                            <span id='input_7_1_3_container' class='name_first' >
+                                                    <label for='input_7_1_3' >First</label>
+                                                    <input type='text' name='input_1.3' id='input_7_1_3' value='' aria-label='First name' tabindex='1001'  aria-required='true'   placeholder='First Name'  />
+                                                </span>
+                            
+                            <span id='input_7_1_6_container' class='name_last' >
+                                                            <label for='input_7_1_6' >Last</label>
+                                                            <input type='text' name='input_1.6' id='input_7_1_6' value='' aria-label='Last name' tabindex='1003'  aria-required='true'   placeholder='Last Name'  />
+                                                        </span>
+                            
+                        </div></li><li id="field_7_2" class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" ><label class='gfield_label' for='input_7_2' >Email<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_2' id='input_7_2' type='text' value='' class='medium' tabindex='1005'  placeholder='Email Address (email@example.com)' aria-required="true" aria-invalid="false"  />
+                        </div></li><li id="field_7_4" class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" ><label class='gfield_label' for='input_7_4' >Company<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_text'><input name='input_4' id='input_7_4' type='text' value='' class='medium'   tabindex='1006' placeholder='Company Name' aria-required="true" aria-invalid="false"   /> </div></li><li id="field_7_10" class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" ><label class='gfield_label' for='input_7_10' >Website<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_text'><input name='input_10' id='input_7_10' type='text' value='' class='medium'   tabindex='1007' placeholder='Website (www.example.com)' aria-required="true" aria-invalid="false"   /> </div></li><li id="field_7_3" class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" ><label class='gfield_label' for='input_7_3' >Phone<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_phone'><input name='input_3' id='input_7_3' type='text' value='' class='medium' tabindex='1008' placeholder='Phone Number (incl. country code)' aria-required="true" aria-invalid="false"   /></div></li><li id="field_7_9" class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" ><label class='gfield_label' for='input_7_9' >Industry<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_select'><select name='input_9' id='input_7_9' class='medium gfield_select' tabindex='1009'   aria-required="true" aria-invalid="false" ><option value='' selected='selected' class='gf_placeholder'>Which industry do you work in?</option><option value='Broadcaster and/or OTT Provider' >Broadcaster and/or OTT Provider</option><option value='Education' >Education</option><option value='E-Commerce' >E-Commerce</option><option value='Enterprise' >Enterprise</option><option value='Gaming' >Gaming</option><option value='Government' >Government</option><option value='Hospitality and/or Tourism' >Hospitality and/or Tourism</option><option value='Live Events' >Live Events</option><option value='Reseller' >Reseller</option><option value='Streaming Service Provider' >Streaming Service Provider</option><option value='Other' >Other</option></select></div></li><li id="field_7_11" class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" ><label class='gfield_label' for='input_7_11' >Select a region *<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_select'><select name='input_11' id='input_7_11' class='medium gfield_select' tabindex='1010'   aria-required="true" aria-invalid="false" ><option value='' selected='selected' class='gf_placeholder'>Select a region *</option><option value='4000' >Americas</option><option value='7000' >Europe &amp; Africa</option><option value='7000' >Asia Pacific</option></select></div></li><li id="field_7_13" class="gfield gfield--width-full field_sublabel_below field_description_below gfield_visibility_visible" ><label class='gfield_label' for='input_7_13' >Select your product of interest</label><div class='ginput_container ginput_container_select'><select name='input_13' id='input_7_13' class='large gfield_select' tabindex='1011'    aria-invalid="false" ><option value='Select your product of interest' >Select your product of interest</option><option value='CDN Pro' >CDN Pro</option><option value='High-Speed Data Transmission' >High-Speed Data Transmission</option><option value='Edge Computing Platform' >Edge Computing Platform</option><option value='Interactive Live Stream Acceleration' >Interactive Live Stream Acceleration</option><option value='Live Stream Acceleration' >Live Stream Acceleration</option><option value='Video On Demand Acceleration' >Video On Demand Acceleration</option><option value='Website Acceleration' >Website Acceleration</option><option value='Download Acceleration' >Download Acceleration</option><option value='Cloud Security' >Cloud Security</option></select></div></li><li id="field_7_5" class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible" ><label class='gfield_label' for='input_7_5' >Message<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_textarea'><textarea name='input_5' id='input_7_5' class='textarea small' tabindex='1012'   placeholder='In a few words, please tell us how we could help you.' aria-required="true" aria-invalid="false"   rows='10' cols='50'></textarea></div></li><li id="field_7_7" class="gfield gform_hidden field_sublabel_below field_description_below gfield_visibility_visible" ><div class='ginput_container ginput_container_text'><input name='input_7' id='input_7_7' type='hidden' class='gform_hidden'  aria-invalid="false" value='QUANTIL Web' /></div></li><li id="field_7_14" class="gfield gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below field_description_below gfield_visibility_visible" ></li><li id="field_7_15" class="gfield gform_validation_container field_sublabel_below field_description_below gfield_visibility_visible" ><label class='gfield_label' for='input_7_15' >Phone</label><div class='ginput_container'><input name='input_15' id='input_7_15' type='text' value='' /></div><div class='gfield_description' id='gfield_description_7_15'>This field is for validation purposes and should be left unchanged.</div></li></ul></div>
+        <div class='gform_footer left_label'> <input type='submit' id='gform_submit_button_7' class='gform_button button' value='Submit' tabindex='1013' onclick='if(window["gf_submitting_7"]){return false;}  window["gf_submitting_7"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_7"]){return false;} window["gf_submitting_7"]=true;  jQuery("#gform_7").trigger("submit",[true]); }' /> <input type='hidden' name='gform_ajax' value='form_id=7&amp;title=1&amp;description=&amp;tabindex=0' />
+            <input type='hidden' class='gform_hidden' name='is_submit_7' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='7' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_7' value='WyJbXSIsImFiNWIwYzJhOTFhYmVhOTQwMDBlMzk4OWMxOWQ4NzY0Il0=' />
+            <input type='hidden' class='gform_hidden' name='gform_target_page_number_7' id='gform_target_page_number_7' value='0' />
+            <input type='hidden' class='gform_hidden' name='gform_source_page_number_7' id='gform_source_page_number_7' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        </form>
+                        </div>
+                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_7' id='gform_ajax_frame_7' title='This iframe contains the logic required to handle Ajax powered Gravity Forms.'></iframe>
+                <script type="rocketlazyloadscript" data-rocket-type="text/javascript">window.addEventListener('DOMContentLoaded', function() {
+gform.initializeOnLoaded( function() {gformInitSpinner( 7, 'https://www.quantil.com/wp-content/plugins/gravityforms/images/spinner.svg' );jQuery('#gform_ajax_frame_7').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_7');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_7').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_7').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_7').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_7').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */  }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_7').val();gformInitSpinner( 7, 'https://www.quantil.com/wp-content/plugins/gravityforms/images/spinner.svg' );jQuery(document).trigger('gform_page_loaded', [7, current_page]);window['gf_submitting_7'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_7').replaceWith(confirmation_content);jQuery(document).trigger('gform_confirmation_loaded', [7]);window['gf_submitting_7'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_7').text());}, 50);}else{jQuery('#gform_7').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [7, current_page]);} );} );
+});</script>
+<?//php echo do_shortcode("[salesforce form=1]"); ?>
+<a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+<!-- END Free Trail Modal -->
+<!-- <a class="cd-top gosmooth">Top</a> <a class="exit-off-canvas"></a> -->
+</div>
+                    <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+                                            
+                                            </script>
+                    
+<!-- Consent Management powered by Complianz | GDPR/CCPA Cookie Consent https://wordpress.org/plugins/complianz-gdpr -->
+<div id="cmplz-cookiebanner-container"><div class="cmplz-cookiebanner cmplz-hidden banner-1 optin cmplz-bottom cmplz-categories-type-no" aria-modal="true" data-nosnippet="true" role="dialog" aria-live="polite" aria-labelledby="cmplz-header-1-optin" aria-describedby="cmplz-message-1-optin">
+	<div class="cmplz-header">
+		<div class="cmplz-logo"></div>
+		<div class="cmplz-title" id="cmplz-header-1-optin">Manage Cookie Consent</div>
+		<div class="cmplz-close" tabindex="0" role="button" aria-label="close-dialog">
+			<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg>
+		</div>
+	</div>
+
+	<div class="cmplz-divider cmplz-divider-header"></div>
+	<div class="cmplz-body">
+		<div class="cmplz-message" id="cmplz-message-1-optin">We use cookies to ensure that we give you the best experience on our website. By using our services, you agree to our use of cookies.</div>
+		<!-- categories start -->
+		<div class="cmplz-categories">
+			<details class="cmplz-category cmplz-functional" >
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Functional</span>
+							<span class='cmplz-always-active'>
+								<span class="cmplz-banner-checkbox">
+									<input type="checkbox"
+										   id="cmplz-functional-optin"
+										   data-category="cmplz_functional"
+										   class="cmplz-consent-checkbox cmplz-functional"
+										   size="40"
+										   value="1"/>
+									<label class="cmplz-label" for="cmplz-functional-optin" tabindex="0"><span class="screen-reader-text">Functional</span></label>
+								</span>
+								Always active							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  height="18" ><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-functional">The technical storage or access is strictly necessary for the legitimate purpose of enabling the use of a specific service explicitly requested by the subscriber or user, or for the sole purpose of carrying out the transmission of a communication over an electronic communications network.</span>
+				</div>
+			</details>
+
+			<details class="cmplz-category cmplz-preferences" >
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Preferences</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox"
+									   id="cmplz-preferences-optin"
+									   data-category="cmplz_preferences"
+									   class="cmplz-consent-checkbox cmplz-preferences"
+									   size="40"
+									   value="1"/>
+								<label class="cmplz-label" for="cmplz-preferences-optin" tabindex="0"><span class="screen-reader-text">Preferences</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  height="18" ><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-preferences">The technical storage or access is necessary for the legitimate purpose of storing preferences that are not requested by the subscriber or user.</span>
+				</div>
+			</details>
+
+			<details class="cmplz-category cmplz-statistics" >
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Statistics</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox"
+									   id="cmplz-statistics-optin"
+									   data-category="cmplz_statistics"
+									   class="cmplz-consent-checkbox cmplz-statistics"
+									   size="40"
+									   value="1"/>
+								<label class="cmplz-label" for="cmplz-statistics-optin" tabindex="0"><span class="screen-reader-text">Statistics</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  height="18" ><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-statistics">The technical storage or access that is used exclusively for statistical purposes.</span>
+					<span class="cmplz-description-statistics-anonymous">The technical storage or access that is used exclusively for anonymous statistical purposes. Without a subpoena, voluntary compliance on the part of your Internet Service Provider, or additional records from a third party, information stored or retrieved for this purpose alone cannot usually be used to identify you.</span>
+				</div>
+			</details>
+			<details class="cmplz-category cmplz-marketing" >
+				<summary>
+						<span class="cmplz-category-header">
+							<span class="cmplz-category-title">Marketing</span>
+							<span class="cmplz-banner-checkbox">
+								<input type="checkbox"
+									   id="cmplz-marketing-optin"
+									   data-category="cmplz_marketing"
+									   class="cmplz-consent-checkbox cmplz-marketing"
+									   size="40"
+									   value="1"/>
+								<label class="cmplz-label" for="cmplz-marketing-optin" tabindex="0"><span class="screen-reader-text">Marketing</span></label>
+							</span>
+							<span class="cmplz-icon cmplz-open">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  height="18" ><path d="M224 416c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L224 338.8l169.4-169.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-192 192C240.4 412.9 232.2 416 224 416z"/></svg>
+							</span>
+						</span>
+				</summary>
+				<div class="cmplz-description">
+					<span class="cmplz-description-marketing">The technical storage or access is required to create user profiles to send advertising, or to track the user on a website or across several websites for similar marketing purposes.</span>
+				</div>
+			</details>
+		</div><!-- categories end -->
+			</div>
+
+	<div class="cmplz-links cmplz-information">
+		<a class="cmplz-link cmplz-manage-options cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">Manage options</a>
+		<a class="cmplz-link cmplz-manage-third-parties cookie-statement" href="#" data-relative_url="#cmplz-cookies-overview">Manage services</a>
+		<a class="cmplz-link cmplz-manage-vendors tcf cookie-statement" href="#" data-relative_url="#cmplz-tcf-wrapper">Manage vendors</a>
+		<a class="cmplz-link cmplz-external cmplz-read-more-purposes tcf" target="_blank" rel="noopener noreferrer nofollow" href="https://cookiedatabase.org/tcf/purposes/">Read more about these purposes</a>
+			</div>
+
+	<div class="cmplz-divider cmplz-footer"></div>
+
+	<div class="cmplz-buttons">
+		<button class="cmplz-btn cmplz-accept">Accept</button>
+		<button class="cmplz-btn cmplz-deny">Deny</button>
+		<button class="cmplz-btn cmplz-view-preferences">View preferences</button>
+		<button class="cmplz-btn cmplz-save-preferences">Save preferences</button>
+		<a class="cmplz-btn cmplz-manage-options tcf cookie-statement" href="#" data-relative_url="#cmplz-manage-consent-container">View preferences</a>
+			</div>
+
+	<div class="cmplz-links cmplz-documents">
+		<a class="cmplz-link cookie-statement" href="#" data-relative_url="">{title}</a>
+		<a class="cmplz-link privacy-statement" href="#" data-relative_url="">{title}</a>
+		<a class="cmplz-link impressum" href="#" data-relative_url="">{title}</a>
+			</div>
+
+</div>
+</div>
+					<div id="cmplz-manage-consent" data-nosnippet="true"><button class="cmplz-btn cmplz-hidden cmplz-manage-consent manage-consent-1">Manage consent</button>
+
+</div><script type='text/javascript' id='ppress-frontend-script-js-extra'>
+/* <![CDATA[ */
+var pp_ajax_form = {"ajaxurl":"https:\/\/www.quantil.com\/wp-admin\/admin-ajax.php","confirm_delete":"Are you sure?","deleting_text":"Deleting...","deleting_error":"An error occurred. Please try again.","nonce":"82177656f3","disable_ajax_form":"false","is_checkout":"0","is_checkout_tax_enabled":"0"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.quantil.com/wp-content/plugins/wp-user-avatar/assets/js/frontend.min.js' id='ppress-frontend-script-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?(.*)wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.quantil.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://www.quantil.com/wp-content/cache/min/1/wp-content/themes/FoundationPress/js/foundation.js?ver=1657935014' id='foundation-js' defer></script>
+<script type='text/javascript' id='cmplz-cookiebanner-js-extra'>
+/* <![CDATA[ */
+var complianz = {"prefix":"cmplz_","user_banner_id":"1","set_cookies":[],"block_ajax_content":"","banner_version":"41","version":"6.4.1","store_consent":"","do_not_track_enabled":"","consenttype":"optin","region":"eu","geoip":"","dismiss_timeout":"","disable_cookiebanner":"","soft_cookiewall":"","dismiss_on_scroll":"","cookie_expiry":"365","url":"https:\/\/www.quantil.com\/wp-json\/complianz\/v1\/","locale":"lang=en&locale=en_US","set_cookies_on_root":"","cookie_domain":"","current_policy_id":"24","cookie_path":"\/","categories":{"statistics":"statistics","marketing":"marketing"},"tcf_active":"","placeholdertext":"Click to accept {category} cookies and enable this content","css_file":"https:\/\/www.quantil.com\/resources\/complianz\/css\/banner-{banner_id}-{type}.css?v=41","page_links":{"eu":{"cookie-statement":{"title":"Privacy and Security Policy","url":"https:\/\/www.quantil.com\/privacy-and-security-policy\/"},"privacy-statement":{"title":"Privacy and Security Policy","url":"https:\/\/www.quantil.com\/privacy-and-security-policy\/"}}},"tm_categories":"1","forceEnableStats":"","preview":"","clean_cookies":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" defer data-rocket-type='text/javascript' data-rocket-src='https://www.quantil.com/wp-content/plugins/complianz-gdpr/cookiebanner/js/complianz.min.js' id='cmplz-cookiebanner-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='cmplz-cookiebanner-js-after'>
+		
+			document.addEventListener("cmplz_category_enabled", function(){
+				document.querySelectorAll('[data-rocket-lazyload]').forEach(obj => {
+					obj.setAttribute('src', obj.getAttribute('data-lazy-src'));
+				});
+			});
+		
+		
+		
+			//store the container where gf recaptcha resides
+			let recaptcha_field = document.querySelector('.ginput_recaptcha');
+			if (recaptcha_field) {
+				let reCaptchaContainer = recaptcha_field.closest('.gfield');
+				let html = '<span class="cmplz-gf-recaptcha cmplz-accept-marketing">Click to accept reCaptcha validation.</span>';
+				reCaptchaContainer.insertAdjacentHTML('beforeend', html);
+				document.addEventListener("cmplz_run_after_all_scripts", cmplz_cf7_fire_post_render);
+			}
+			function cmplz_cf7_fire_post_render() {
+				//fire a DomContentLoaded event, so the Contact Form 7 reCaptcha integration will work
+				window.document.dispatchEvent(new Event("gform_post_render", {
+					bubbles: true,
+					cancelable: true
+				}));
+				let obj = document.querySelector('.cmplz-gf-recaptcha');
+				if (obj){
+					obj.parentNode.removeChild(obj)
+				}
+			}
+		
+		
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.quantil.com/wp-content/plugins/complianz-gdpr/cookiebanner/js/migrate.min.js' id='cmplz-migrate-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.quantil.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js' id='regenerator-runtime-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.quantil.com/wp-includes/js/dist/vendor/wp-polyfill.min.js' id='wp-polyfill-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.quantil.com/wp-includes/js/dist/dom-ready.min.js' id='wp-dom-ready-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.quantil.com/wp-includes/js/dist/hooks.min.js' id='wp-hooks-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.quantil.com/wp-includes/js/dist/i18n.min.js' id='wp-i18n-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.quantil.com/wp-includes/js/dist/a11y.min.js' id='wp-a11y-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' defer='defer' data-rocket-src='https://www.quantil.com/wp-content/plugins/gravityforms/js/jquery.json.min.js' id='gform_json-js'></script>
+<script type='text/javascript' id='gform_gravityforms-js-extra'>
+/* <![CDATA[ */
+var gform_i18n = {"datepicker":{"days":{"monday":"Mon","tuesday":"Tue","wednesday":"Wed","thursday":"Thu","friday":"Fri","saturday":"Sat","sunday":"Sun"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https:\/\/www.quantil.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/www.quantil.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gf_legacy_multi = {"7":"1"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' defer='defer' data-rocket-src='https://www.quantil.com/wp-content/plugins/gravityforms/js/gravityforms.min.js' id='gform_gravityforms-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' defer='defer' data-rocket-src='https://www.quantil.com/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js' id='gform_placeholder-js'></script>
+<!-- Statistics script Complianz GDPR/CCPA -->
+						<script type="rocketlazyloadscript" data-category="functional">
+							(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PRVX6WW');
+						</script><script type="rocketlazyloadscript" data-rocket-type="text/javascript">window.addEventListener('DOMContentLoaded', function() {
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 7) {if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+});</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">window.addEventListener('DOMContentLoaded', function() {
+gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_render', [7, 1]) } );
+});</script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.quantil.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script>
+
+<script type="rocketlazyloadscript" data-rocket-src="https://www.quantil.com/wp-content/themes/FoundationPress/js/jquery.lazy.min.js" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.quantil.com/wp-content/cache/min/1/wp-content/themes/FoundationPress/js/main.js?ver=1657935014" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.quantil.com/wp-content/cache/min/1/wp-content/themes/FoundationPress/js/sticky.js?ver=1657935014" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.quantil.com/wp-content/cache/min/1/wp-content/themes/FoundationPress/js/jquery.validate.js?ver=1657935014" defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.quantil.com/wp-content/cache/min/1/wp-content/themes/FoundationPress/js/jquery.vide.js?ver=1657935014" defer></script>
+
+</body></html>
+<!-- Cached for great performance - Debug: cached@1686030919 -->

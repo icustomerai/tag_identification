@@ -1,0 +1,1196 @@
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]>         <html lang="en" class="no-js lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]>         <html lang="en" class="no-js lt-ie10"> <!<![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>Alexion</title>
+    <meta property="og:title" content="Alexion" />
+    <meta name="twitter:title" content="Alexion">
+    <meta name="keywords" content="alexion" />
+    <meta name="description" content="Alexion is a global biopharmaceutical company focused on developing life-changing therapies for people living with rare disorders." />
+    <meta property="og:description" content="Alexion is a global biopharmaceutical company focused on developing life-changing therapies for people living with rare disorders." />
+    <meta name="twitter:description" content="Alexion is a global biopharmaceutical company focused on developing life-changing therapies for people living with rare disorders." >
+
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="robots" content="index,follow" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="MobileOptimized" content="320" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/Content/Alexion_comRedesign/favicons/apple-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/Content/Alexion_comRedesign/favicons/apple-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/Content/Alexion_comRedesign/favicons/apple-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/Content/Alexion_comRedesign/favicons/apple-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/Content/Alexion_comRedesign/favicons/apple-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/Content/Alexion_comRedesign/favicons/apple-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/Content/Alexion_comRedesign/favicons/apple-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/Content/Alexion_comRedesign/favicons/apple-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="/Content/Alexion_comRedesign/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/Content/Alexion_comRedesign/favicons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/Content/Alexion_comRedesign/favicons/favicon-16x16.png" sizes="16x16" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="/ms-icon-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="/ms-icon-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="/ms-icon-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="/ms-icon-310x310.png" />
+    <meta property="og:url" content="https://alexion.com" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="http://alexion.com//~/media/Alexion_comRedesign/Images/Logos/Alexion_logo_RGB_OG.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="https://alexion.com" />
+    <meta name="twitter:image" content="http://alexion.com//~/media/Alexion_comRedesign/Images/Logos/Alexion_logo_RGB_OG.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="/Scripts/Alexion_comRedesign/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+
+    
+		<script src="/Scripts/Alexion_comRedesign/pages/home.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700" rel="stylesheet">
+	
+	
+
+    <script src="/Scripts/Alexion_comRedesign/core.bundle.min.js"></script>
+<script src="/Scripts/Alexion_comRedesign/vendor/bundle.min.js"></script>
+<!-- Segment Pixel - 718474_Reservoir Communications Group LLC - Alexion_RT - DO NOT MODIFY -->
+<script src="https://secure.adnxs.com/seg?add=32063039&t=1" type="text/javascript"></script>
+<!-- End of Segment Pixel -->
+<script src="/Scripts/Alexion_comRedesign/pages/home.js"></script>
+<script>
+ (function(){
+	document.addEventListener("DOMContentLoaded", function() { 
+		var ApiEndpoint = "/Models/Alexion_com_RedesignLatestNewsProxy.asmx/CallProxy?extras=";
+		var feedQuery = document.querySelectorAll('[data-feed="IR"]');
+		if (feedQuery.length != 0) {
+			var feedElement = feedQuery[0];
+			var count = +feedElement.dataset.count;
+			$.get(ApiEndpoint,function(r){
+				r = JSON.parse(r);
+				//console.log(JSON.parse(r));
+				let list = r.data;
+				list = list.slice(0,count);
+				list.forEach(function(item){
+					let date = item.releaseDate.date.split('T')[0].split('-');
+					date = date[1]+"/"+date[2]+"/"+date[0].substring(2);
+					let node = $('<li><span class="date">'+date+'</span><a target="_blank" href="'+item.link.hostedUrl+'">'+item.title+'</a></li>');
+					feedElement.appendChild(node[0]);
+				});
+			})
+		}
+	});
+})();	
+</script>
+
+    <link href="/Content/Alexion_comRedesign/core.min.css" rel="stylesheet" />
+<link href="/Content/Alexion_comRedesign/slick.min.css" rel="stylesheet" />
+
+
+   
+
+    	
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WV7NK7J');</script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body  id="" class="Page-home ">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WV7NK7J"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+        <div class="l-grid">
+        <div class="l-row u-mb-4 fullwidthmob lightblue">
+            <div class="l-col l-col-12">
+                <div class="announcement">
+                    <picture>
+                        <img class="lazyload " alt=""
+                             data-sizes="auto"
+                             data-aspectratio="1.6"
+                             data-srcset="/-/media/alexion_comredesign/images/non-patient-images/announcement-images/rdd-collage-434x326-a.jpg?rev=28f172f3a71b44f386be4d7cd958028b?mw=375 375w,
+							            /-/media/alexion_comredesign/images/non-patient-images/announcement-images/rdd-collage-434x326-a.jpg?rev=28f172f3a71b44f386be4d7cd958028b?mw=750 750w,
+							            /-/media/alexion_comredesign/images/non-patient-images/announcement-images/rdd-collage-434x326-a.jpg?rev=28f172f3a71b44f386be4d7cd958028b?mw=768 768w,
+							            /-/media/alexion_comredesign/images/non-patient-images/announcement-images/rdd-collage-434x326-a.jpg?rev=28f172f3a71b44f386be4d7cd958028b?mw=1024 1024w,
+							            /-/media/alexion_comredesign/images/non-patient-images/announcement-images/rdd-collage-434x326-a.jpg?rev=28f172f3a71b44f386be4d7cd958028b?mw=1280 1280w,
+							            /-/media/alexion_comredesign/images/non-patient-images/announcement-images/rdd-collage-434x326-a.jpg?rev=28f172f3a71b44f386be4d7cd958028b?mw=1536 1536w,
+							            /-/media/alexion_comredesign/images/non-patient-images/announcement-images/rdd-collage-434x326-a.jpg?rev=28f172f3a71b44f386be4d7cd958028b?mw=2048 2048w,
+							            /-/media/alexion_comredesign/images/non-patient-images/announcement-images/rdd-collage-434x326-a.jpg?rev=28f172f3a71b44f386be4d7cd958028b?mw=2560 2560w " />
+                    </picture>
+                    <div class="announcement-text">
+                        <div class="announcement-textinner">
+                            <span class="divider-text">Rare is Many. Rare is Strong. Rare is Proud.</span>
+                            <p class="t-accent-darkblue u-mt-3--md u-mb-1--md"><strong>Learn how we can address the health inequities facing the rare disease community in this message from our CEO.</strong></p>
+                        </div>
+                    </div>
+                    <a href="https://media.alexion.com/news-releases/news-release-details/working-every-day-rare-disease-community" class="btn--icon" target="_blank"><i class="icon-arrow_right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+<nav class="SiteNav">
+
+    
+<div class="SiteNav-Desktop">
+    <div class="preheader">
+        <div class="SiteNav-wrap">
+            <div class="preheader-inner">
+                <ul class="list--inline worldwide-list">
+                    <a class="skipcontent" href="#content">Skip to Content</a>
+                    <li>
+                        <a href="https://www.astrazeneca.com/investor-relations.html">Investors</a>
+                    </li>
+                    <li>
+                        <a href="https://media.alexion.com">News &amp; Media</a>
+                    </li>
+                    <li>
+                        <a href="/contact-alexion">Contact Us</a>
+                    </li>
+                    <li>
+                        <a class="worldwide-link" href="#">Worldwide</a>
+                        <div class="worldwide">
+                            <ul class="list--flex u-fill-white-offwhite" data-ww-toggle-menu="">
+                                <li data-ww-listItem="northAmerica"><a data-ww-toggle="northAmerica" href="#">North America</a></li>
+                                <li data-ww-listItem="latinAmerica"><a data-ww-toggle="latinAmerica" href="#">Latin America</a></li>
+                                <li data-ww-listItem="europeMidEast"><a data-ww-toggle="europeMidEast" href="#">Europe &amp; The Middle East</a></li>
+                                <li data-ww-listItem="asiaPacific"><a data-ww-toggle="asiaPacific" href="#">Asia Pacific</a></li>
+                            </ul>
+                            <div class="subnavcntr u-fill-white">
+                                <ul class="list--unstyled" data-ww="northAmerica">
+                                    <li><a href="/worldwide/Canada">Canada</a></li>
+                                    <li><a href="/worldwide/USA">United States</a></li>
+                                </ul>
+                                <ul class="list--unstyled" data-ww="latinAmerica">
+                                    <li><a href="/worldwide/Brazil">Brazil</a></li>
+                                    <li><a href="/worldwide/Colombia">Colombia</a></li>
+
+                                </ul>
+                                <ul class="list--unstyled" data-ww="europeMidEast">
+                                    <li><a href="/worldwide/Austria">Austria</a></li>
+                                    <li><a href="/worldwide/Belgium">Belgium</a></li>
+                                    <li><a href="/worldwide/Denmark">Denmark</a></li>
+                                    <li><a href="/worldwide/France">France</a></li>
+                                    <li><a href="/worldwide/Germany">Germany</a></li>
+                                    <li><a href="/worldwide/Ireland">Ireland</a></li>
+                                    <li><a href="/worldwide/Italy">Italy</a></li>
+                                    <li><a href="/worldwide/Netherlands">Netherlands</a></li>
+                                    <li><a href="/worldwide/Norway">Norway</a></li>
+                                    <li><a href="/worldwide/Spain">Spain</a></li>
+                                    <li><a href="/worldwide/Sweden">Sweden</a></li>
+                                    <li><a href="/worldwide/Switzerland">Switzerland</a></li>
+                                    <li><a href="/worldwide/Turkey">Turkey</a></li>
+                                    <li><a href="/worldwide/UAE">UAE</a></li>
+                                    <li><a href="/worldwide/UK">United Kingdom</a></li>
+                                </ul>
+                                <ul class="list--unstyled" data-ww="asiaPacific">
+                                    <li><a href="/worldwide/Australia">Australia</a></li>
+                                    <li><a href="/worldwide/China">China</a></li>
+                                    <li><a href="/worldwide/Japan">Japan</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="search searchcntr">
+                        <form class="search-bar">
+                            <input placeholder="Search" type="text">
+                        </form>
+                        <div class="search-icon"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="mainnav">
+        <div class="SiteNav-wrap">
+            <div class="mainnav-inner">
+                <a href="/"><img src="/~/media/Alexion_comRedesign/Images/Logos/alexion.svg"></a>
+                <ul data-nav-primary="" class="list--inline">
+
+                    <li data-nav-primary-item="" tabindex="0" role="button" aria-pressed="false" class="ourinspiration">
+                        <span>
+                            Our Inspiration
+                        </span>
+                        <div class="subnavcntr">
+                            <ul class="subnav">
+                                <li>
+                                    <a href="/our-inspiration/living-with-rare-diseases">Living With Rare Diseases</a>
+                                </li>
+                                <li>
+                                    <a href="/our-inspiration/real-stories">Real Stories</a>
+                                    <ul class="list--flex">
+                                        <li><a href="/our-inspiration/real-stories/ahus">aHUS</a></li>
+                                        <li><a href="/our-inspiration/real-stories/gmg">gMG</a></li>
+                                        <li><a href="/our-inspiration/real-stories/hpp">HPP</a></li>
+                                        <li><a href="/our-inspiration/real-stories/lal-d">LAL-D</a></li>
+                                        <li><a href="/our-inspiration/real-stories/nmosd">NMOSD</a></li>
+                                        <li><a href="/our-inspiration/real-stories/pnh">PNH</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/our-inspiration/support-services">Support Services</a>
+                                </li>
+                            </ul>
+                            <div class="snapshot">
+                                <img src="/-/media/alexion_comredesign/images/realstories/lal-d/albie/albie-04-r.jpg?h=200&amp;iar=0&amp;w=320&amp;rev=5c6742cf26fa4bfe8a8ca8df716d6fcd&amp;hash=B9408AFD53747B100B80E3C4D8B117AB" alt="Albie, diagnosed with LAL-D as an infant, holding a puppy" width="320" height="200" DisableWebEdit="False" />
+                                <p class="t-callout1">Albie, one of our guiding stars</p>
+                                <p class="t-body">When Albie was born, his mom, Charlotte, said that he was &ldquo;absolutely fine. Everything was fine for about two weeks.&rdquo;</p>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li data-nav-primary-item="" tabindex="0" role="button" aria-pressed="false" class="ourmedicines">
+                        <span>
+                            Our Medicines
+                        </span>
+                        <div class="subnavcntr">
+                            <ul class="subnav">
+                                <li>
+                                    <a href="/our-medicines/conditions-we-treat">Conditions We Treat</a>
+                                    <ul class="list--flex">
+                                        <li><a href="/our-medicines/conditions-we-treat/ahus">aHUS</a></li>
+                                        <li><a href="/our-medicines/conditions-we-treat/gmg">gMG</a></li>
+                                        <li><a href="/our-medicines/conditions-we-treat/hpp">HPP</a></li>
+                                        <li><a href="/our-medicines/conditions-we-treat/lal-d">LAL-D</a></li>
+                                        <li><a href="/our-medicines/conditions-we-treat/nf1-pn">NF1 PN</a></li>
+                                        <li><a href="/our-medicines/conditions-we-treat/nmosd">NMOSD</a></li>
+                                        <li><a href="/our-medicines/conditions-we-treat/pnh">PNH</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/our-medicines/medicines">Medicines</a>
+                                </li>
+                            </ul>
+                            <div class="snapshot">
+                                <img src="/-/media/alexion_comredesign/images/realstories/ahus/donnan/donnan-06-r.jpg?h=200&amp;iar=0&amp;w=320&amp;rev=b982cc6b3d104f57ae8aca563e9ce13c&amp;hash=EAB2FB7965AC273CE9EAD3F44B10C697" alt="Donnan, diagnosed with aHUS at 39 years old, and his two children" width="320" height="200" DisableWebEdit="False" />
+                                <p class="t-callout1">Our medicines help people like Donnan</p>
+                                <p class="t-body">As a father of two young children, Donnan recalls being afraid of what the future would hold prior to his diagnosis.</p>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li data-nav-primary-item="" tabindex="0" role="button" aria-pressed="false" class="ourresearch">
+                        <span>
+                            Our Research
+                        </span>
+                        <div class="subnavcntr">
+                            <ul class="subnav">
+                                <li>
+                                    <a href="/our-research/research-and-development">Research and Development</a>
+                                </li>
+                                <li>
+                                    <a href="/our-research/our-science">Our Science</a>
+                                </li>
+                                <li>
+                                    <a href="/our-research/pipeline">Pipeline</a>
+                                </li>
+                                <li>
+                                    <a href="/our-research/research-partnerships">Research Partnerships</a>
+                                    <ul class="list--flex">
+                                        <li><a href="/our-research/research-partnerships/discovery-partnerships">Discovery Partnerships</a></li>
+                                        <li><a href="/our-research/research-partnerships/externally-sponsored-research">Externally Sponsored Research</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="snapshot">
+                                <img src="/-/media/alexion_comredesign/images/realstories/pnh/ruthie/ruthie-04-r.jpg?h=200&amp;iar=0&amp;w=320&amp;rev=a8c70abd25404c8fa4516c06fe209b2e&amp;hash=70294EC8755B91FD996471893EFF547E" alt="Ruthie, diagnosed with PNH at 28 years old" width="320" height="200" DisableWebEdit="False" />
+                                <p class="t-callout1">We innovate for Ruthie</p>
+                                <p class="t-body">Married with a newborn son, Ruthie was scared to learn that PNH was a life-threatening illness that at the time had no approved treatment.</p>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li data-nav-primary-item="" tabindex="0" role="button" aria-pressed="false" class="ourcommitment">
+                        <span>
+                            Our Commitment
+                        </span>
+                        <div class="subnavcntr">
+                            <ul class="subnav">
+                                <li>
+                                    <a href="/our-commitment/corporate-social-responsibility">Corporate Social Responsibility</a>
+                                </li>
+                                <li>
+                                    <a href="/our-commitment/alexion-charitable-foundation">Alexion Charitable Foundation</a>
+                                </li>
+                                <li>
+                                    <a href="/our-commitment/managed-access-programs">Managed Access Programs</a>
+                                </li>
+                                <li>
+                                    <a href="/our-commitment/covid-19">COVID-19</a>
+                                </li>
+                            </ul>
+                            <div class="snapshot">
+                                <img src="/-/media/alexion_comredesign/images/realstories/hpp/evie/evie-01-r-nav.jpg?h=200&amp;iar=0&amp;w=320&amp;rev=7da5bff0e4634a959cc954bb373f7722&amp;hash=09F2972DD33DC38EE3244D4F41EB54DA" alt="Evie, diagnosed with HPP at 2 weeks old, playing on a playground" width="320" height="200" DisableWebEdit="False" />
+                                <p class="t-callout1">We give back for families like Evie&#39;s</p>
+                                <p class="t-body">At only three months old, Evie's parents were told that her case was severe and that there were no approved or effective treatment options.</p>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li data-nav-primary-item="" tabindex="0" role="button" aria-pressed="false" class="ourcompany">
+                        <span>
+                            Our Company
+                        </span>
+                        <div class="subnavcntr">
+                            <ul class="subnav">
+                                <li>
+                                    <a href="/our-company/about-us">About Us</a>
+                                </li>
+                                <li>
+                                    <a href="/our-company/leadership">Leadership</a>
+                                </li>
+                                <li>
+                                    <a href="/our-company/diversity-inclusion-and-belonging">Inclusion &amp; Diversity</a>
+                                </li>
+                                <li>
+                                    <a href="/our-company/history">History</a>
+                                </li>
+                                <li>
+                                    <a href="/our-company/ethical-standards">Ethical Standards</a>
+                                </li>
+                                <li>
+                                    <a href="/our-company/quality">Quality</a>
+                                </li>
+                                <li>
+                                    <a href="/our-company/product-safety">Product Safety</a>
+                                </li>
+                            </ul>
+                            <div class="snapshot">
+                                <img src="/-/media/alexion_comredesign/images/realstories/gmg/roberta/roberta-03-r.jpg?h=200&amp;iar=0&amp;w=320&amp;rev=ed2ed6c582a1447993be1d8548aae7cb&amp;hash=2B4386FB5333EC656E60807845839615" alt="Roberta, diagnosed with gMG at 16 years old" width="320" height="200" DisableWebEdit="False" />
+                                <p class="t-callout1">Roberta is our inspiration</p>
+                                <p class="t-body">Despite having a constant struggle with symptoms, Roberta revisited her dreams and put herself through nursing school.</p>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li data-nav-primary-item="" tabindex="0" role="button" aria-pressed="false" class="yourcareer">
+                        <span>
+                            Your Career
+                        </span>
+                        <div class="subnavcntr">
+                            <ul class="subnav">
+                                <li>
+                                    <a href="/your-career/career-opportunities">Career Opportunities</a>
+                                    <ul class="list--flex">
+                                        <li><a href="http://jobs.alexion.com/ ">Join Our Team</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="/your-career/working-here">Working Here</a>
+                                    <ul class="list--flex">
+                                        <li><a href="/your-career/working-here/benefits">Benefits</a></li>
+                                        <li><a href="/your-career/working-here/culture">Culture</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="snapshot">
+                                <img src="/-/media/alexion_comredesign/images/realstories/lal-d/tristan/tristan-02-r-nav.jpg?h=200&amp;iar=0&amp;w=320&amp;rev=6345509a24ef422dbb749abca98e8bc5&amp;hash=222586BC5F60F501E6748B9E74EEB0A9" alt="Tristan, diagnosed with LAL-D at 5 years old, with his father" width="320" height="200" DisableWebEdit="False" />
+                                <p class="t-callout1">Make a difference for families like Tristan&#39;s</p>
+                                <p class="t-body">Tristan's parents experienced a whirlwind of emotions and fear after learning their 5-year-old son had such a rare and serious disease.</p>
+                            </div>
+                        </div>
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="SiteNav-Mobile">
+    <div class="SiteNav-flex">
+        <div class="SiteNav-hamburger">
+            <a href="#" data-hamburger="open" class="hamburger"></a>
+            <a href="#" data-hamburger="close" class="hamburger x"></a>
+        </div>
+        <a href="/"><img src="/~/media/Alexion_comRedesign/Images/Logos/alexion-white.svg"></a>
+        <div class="SiteNav-search search"></div>
+    </div>
+    <form class="search-bar">
+        <input placeholder="Search" type="text">
+    </form>
+    <div class="SiteNav-Menu">
+        <div class="scrollWrap scrollable" id="scrollable">
+            <ul class="list--nav">
+
+                <li class="js-accordion our inspiration">
+                    <a class="js-accordion__header" href="#">
+                        Our Inspiration
+                    </a>
+                    <div class="subnavcntr js-accordion__panel">
+                        <ul class="subnav">
+                            <li>
+                                <a href="/our-inspiration/living-with-rare-diseases">Living With Rare Diseases</a>
+                            </li>
+                            <li>
+                                <a href="/our-inspiration/real-stories">Real Stories</a>
+                                <ul class="list--flex">
+                                    <li><a href="/our-inspiration/real-stories/ahus" target="">aHUS</a></li>
+                                    <li><a href="/our-inspiration/real-stories/gmg" target="">gMG</a></li>
+                                    <li><a href="/our-inspiration/real-stories/hpp" target="">HPP</a></li>
+                                    <li><a href="/our-inspiration/real-stories/lal-d" target="">LAL-D</a></li>
+                                    <li><a href="/our-inspiration/real-stories/nmosd" target="">NMOSD</a></li>
+                                    <li><a href="/our-inspiration/real-stories/pnh" target="">PNH</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/our-inspiration/support-services">Support Services</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="js-accordion our medicines">
+                    <a class="js-accordion__header" href="#">
+                        Our Medicines
+                    </a>
+                    <div class="subnavcntr js-accordion__panel">
+                        <ul class="subnav">
+                            <li>
+                                <a href="/our-medicines/conditions-we-treat">Conditions We Treat</a>
+                                <ul class="list--flex">
+                                    <li><a href="/our-medicines/conditions-we-treat/ahus" target="">aHUS</a></li>
+                                    <li><a href="/our-medicines/conditions-we-treat/gmg" target="">gMG</a></li>
+                                    <li><a href="/our-medicines/conditions-we-treat/hpp" target="">HPP</a></li>
+                                    <li><a href="/our-medicines/conditions-we-treat/lal-d" target="">LAL-D</a></li>
+                                    <li><a href="/our-medicines/conditions-we-treat/nf1-pn" target="">NF1 PN</a></li>
+                                    <li><a href="/our-medicines/conditions-we-treat/nmosd" target="">NMOSD</a></li>
+                                    <li><a href="/our-medicines/conditions-we-treat/pnh" target="">PNH</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/our-medicines/medicines">Medicines</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="js-accordion our research">
+                    <a class="js-accordion__header" href="#">
+                        Our Research
+                    </a>
+                    <div class="subnavcntr js-accordion__panel">
+                        <ul class="subnav">
+                            <li>
+                                <a href="/our-research/research-and-development">Research and Development</a>
+                            </li>
+                            <li>
+                                <a href="/our-research/our-science">Our Science</a>
+                            </li>
+                            <li>
+                                <a href="/our-research/pipeline">Pipeline</a>
+                            </li>
+                            <li>
+                                <a href="/our-research/research-partnerships">Research Partnerships</a>
+                                <ul class="list--flex">
+                                    <li><a href="/our-research/research-partnerships/discovery-partnerships" target="">Discovery Partnerships</a></li>
+                                    <li><a href="/our-research/research-partnerships/externally-sponsored-research" target="">Externally Sponsored Research</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="js-accordion our commitment">
+                    <a class="js-accordion__header" href="#">
+                        Our Commitment
+                    </a>
+                    <div class="subnavcntr js-accordion__panel">
+                        <ul class="subnav">
+                            <li>
+                                <a href="/our-commitment/corporate-social-responsibility">Corporate Social Responsibility</a>
+                            </li>
+                            <li>
+                                <a href="/our-commitment/alexion-charitable-foundation">Alexion Charitable Foundation</a>
+                            </li>
+                            <li>
+                                <a href="/our-commitment/managed-access-programs">Managed Access Programs</a>
+                            </li>
+                            <li>
+                                <a href="/our-commitment/covid-19">COVID-19</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="js-accordion our company">
+                    <a class="js-accordion__header" href="#">
+                        Our Company
+                    </a>
+                    <div class="subnavcntr js-accordion__panel">
+                        <ul class="subnav">
+                            <li>
+                                <a href="/our-company/about-us">About Us</a>
+                            </li>
+                            <li>
+                                <a href="/our-company/leadership">Leadership</a>
+                            </li>
+                            <li>
+                                <a href="/our-company/diversity-inclusion-and-belonging">Inclusion &amp; Diversity</a>
+                            </li>
+                            <li>
+                                <a href="/our-company/history">History</a>
+                            </li>
+                            <li>
+                                <a href="/our-company/ethical-standards">Ethical Standards</a>
+                            </li>
+                            <li>
+                                <a href="/our-company/quality">Quality</a>
+                            </li>
+                            <li>
+                                <a href="/our-company/product-safety">Product Safety</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="js-accordion your career">
+                    <a class="js-accordion__header" href="#">
+                        Your Career
+                    </a>
+                    <div class="subnavcntr js-accordion__panel">
+                        <ul class="subnav">
+                            <li>
+                                <a href="/your-career/career-opportunities">Career Opportunities</a>
+                                <ul class="list--flex">
+                                    <li><a href="http://jobs.alexion.com/ " target="_blank">Join Our Team</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="/your-career/working-here">Working Here</a>
+                                <ul class="list--flex">
+                                    <li><a href="/your-career/working-here/benefits" target="">Benefits</a></li>
+                                    <li><a href="/your-career/working-here/culture" target="">Culture</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+            <ul class="list--nav last">
+                <li>
+                    <a href="https://www.astrazeneca.com/investor-relations.html">Investors</a>
+                </li>
+                <li>
+                    <a href="https://media.alexion.com">News &amp; Media</a>
+                </li>
+                <li>
+                    <a href="/contact-alexion">Contact Us</a>
+                </li>
+                <li class="js-accordion">
+                    <a href="#" id="wwm" class="js-accordion__header worldwidemobile">Worldwide</a>
+                    <ul class="list--unstyled worldwidelist js-accordion__panel">
+                        <li class="headline">North America</li>
+                        <li><a href="/worldwide/Canada">Canada</a></li>
+                        <li><a href="/worldwide/USA">United States</a></li>
+
+                        <li class="headline">Latin America</li>
+                        <li><a href="/worldwide/Brazil">Brazil</a></li>
+                        <li><a href="/worldwide/Colombia">Colombia</a></li>
+
+
+                        <li class="headline">Europe &amp; The Middle East</li>
+                        <li><a href="/worldwide/Austria">Austria</a></li>
+                        <li><a href="/worldwide/Belgium">Belgium</a></li>
+                        <li><a href="/worldwide/Denmark">Denmark</a></li>
+                        <li><a href="/worldwide/France">France</a></li>
+                        <li><a href="/worldwide/Germany">Germany</a></li>
+                        <li><a href="/worldwide/Ireland">Ireland</a></li>
+                        <li><a href="/worldwide/Italy">Italy</a></li>
+                        <li><a href="/worldwide/Netherlands">Netherlands</a></li>
+                        <li><a href="/worldwide/Norway">Norway</a></li>
+
+                        <li><a href="/worldwide/Spain">Spain</a></li>
+                        <li><a href="/worldwide/Sweden">Sweden</a></li>
+                        <li><a href="/worldwide/Switzerland">Switzerland</a></li>
+                        <li><a href="/worldwide/Turkey">Turkey</a></li>
+                        <li><a href="/worldwide/UAE">UAE</a></li>
+                        <li><a href="/worldwide/UK">United Kingdom</a></li>
+
+                        <li class="headline">Asia Pacific</li>
+                        <li><a href="/worldwide/Australia">Australia</a></li>
+                        <li><a href="/worldwide/China">China</a></li>
+                        <li><a href="/worldwide/Japan">Japan</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</nav>
+
+    <div class="content">
+        
+<div id="content">
+    
+
+    <div class="l-grid HeroCntr">
+
+        <div class="l-row Hero-home">
+            <div class="l-col l-col-5 l-col-12--md Hero-headline u-pt-3--md u-pb-6--md">
+                <h1 class="t-accent">Inspired <strong>Every Day</strong></h1>
+                <p>The work we do is guided by people living with rare and devastating diseases. We are driven to continuously innovate and create meaningful value in all we do to help patients and families fully live their best lives.</p>
+                <a href="/our-inspiration/real-stories" class="btn u-mt-2">SEE THEIR STORIES</a>
+            </div>
+            <div class="l-col l-col-7 l-col-12--md u-px-0--md">
+                <ul class="Hero-cards">
+                            <li class="Hero-card">
+                            <a href="#" class="toggleBtnAnchor"><i class="icon-plus_alt2 toggleBtn"></i></a>
+                            <picture>
+                                <img class="lazyload " alt="Tanner, diagnosed with HPP at 4 days old, with a stuffed animal"
+                                        data-sizes="auto"
+                                        data-aspectratio="1"
+                                        data-srcset="/-/media/alexion_comredesign/images/realstories/hpp/tanner/tanner-01-s.jpg?rev=b77cad09bd994fecb9bfd2922fba5521?mw=375 375w,
+							                /-/media/alexion_comredesign/images/realstories/hpp/tanner/tanner-01-s.jpg?rev=b77cad09bd994fecb9bfd2922fba5521?mw=750 750w,
+							                /-/media/alexion_comredesign/images/realstories/hpp/tanner/tanner-01-s.jpg?rev=b77cad09bd994fecb9bfd2922fba5521?mw=768 768w,
+							                /-/media/alexion_comredesign/images/realstories/hpp/tanner/tanner-01-s.jpg?rev=b77cad09bd994fecb9bfd2922fba5521?mw=1024 1024w,
+							                /-/media/alexion_comredesign/images/realstories/hpp/tanner/tanner-01-s.jpg?rev=b77cad09bd994fecb9bfd2922fba5521?mw=1280 1280w,
+							                /-/media/alexion_comredesign/images/realstories/hpp/tanner/tanner-01-s.jpg?rev=b77cad09bd994fecb9bfd2922fba5521?mw=1536 1536w,
+							                /-/media/alexion_comredesign/images/realstories/hpp/tanner/tanner-01-s.jpg?rev=b77cad09bd994fecb9bfd2922fba5521?mw=2048 2048w,
+							                /-/media/alexion_comredesign/images/realstories/hpp/tanner/tanner-01-s.jpg?rev=b77cad09bd994fecb9bfd2922fba5521?mw=2560 2560w " />
+                            </picture>
+                            <div class="Hero-cardback  hpp">
+                                <h2 class="u-mb-3">My hope for Tanner in the future is that he enters into adulthood. I kind of hope that he will be a doctor and maybe help kids like doctors have helped him.&rdquo;</h2>
+                                <p class="t-small1 t-white t-bold u-my-0">RENE, MOM OF TANNER</p>
+<p class="t-small1 t-white t-bold u-my-0">LIVING WITH HPP</p>
+                                <div class="u-fill-white">
+                                    <a href="/our-inspiration/real-stories/hpp/tanners-story" class="btn btn--secondary">HEAR HIS STORY</a>
+                                    <a href="/our-medicines/conditions-we-treat/hpp" class="btn btn--secondary">ABOUT HPP</a>
+                                </div>
+                            </div>
+                            <div class="caption">
+                                <figcaption><p>TANNER<br />
+LIVING WITH HPP</p></figcaption>
+                            </div>
+                        </li>
+                            <li class="Hero-card  Hero-next">
+                            <a href="#" class="toggleBtnAnchor"><i class="icon-plus_alt2 toggleBtn"></i></a>
+                            <picture>
+                                <img class="lazyload " alt="Roberta, diagnosed with gMG at 16 years old"
+                                        data-sizes="auto"
+                                        data-aspectratio="1"
+                                        data-srcset="/-/media/alexion_comredesign/images/realstories/gmg/roberta/roberta-01-s.jpg?rev=3da2312793004c109854f60d7ebfacb7?mw=375 375w,
+							                /-/media/alexion_comredesign/images/realstories/gmg/roberta/roberta-01-s.jpg?rev=3da2312793004c109854f60d7ebfacb7?mw=750 750w,
+							                /-/media/alexion_comredesign/images/realstories/gmg/roberta/roberta-01-s.jpg?rev=3da2312793004c109854f60d7ebfacb7?mw=768 768w,
+							                /-/media/alexion_comredesign/images/realstories/gmg/roberta/roberta-01-s.jpg?rev=3da2312793004c109854f60d7ebfacb7?mw=1024 1024w,
+							                /-/media/alexion_comredesign/images/realstories/gmg/roberta/roberta-01-s.jpg?rev=3da2312793004c109854f60d7ebfacb7?mw=1280 1280w,
+							                /-/media/alexion_comredesign/images/realstories/gmg/roberta/roberta-01-s.jpg?rev=3da2312793004c109854f60d7ebfacb7?mw=1536 1536w,
+							                /-/media/alexion_comredesign/images/realstories/gmg/roberta/roberta-01-s.jpg?rev=3da2312793004c109854f60d7ebfacb7?mw=2048 2048w,
+							                /-/media/alexion_comredesign/images/realstories/gmg/roberta/roberta-01-s.jpg?rev=3da2312793004c109854f60d7ebfacb7?mw=2560 2560w " />
+                            </picture>
+                            <div class="Hero-cardback  gmg">
+                                <h2 class="u-mb-3">This experience has taught me to look at the small things that count. Now, I feel that I have something to look forward to and I am who I want to be.&rdquo;</h2>
+                                <p class="t-small1 t-white t-bold u-my-0">ROBERTA</p>
+<p class="t-small1 t-white t-bold u-my-0">LIVING WITH gMG</p>
+                                <div class="u-fill-white">
+                                    <a href="/our-inspiration/real-stories/gmg/robertas-story" class="btn btn--secondary">HEAR HER STORY</a>
+                                    <a href="/our-medicines/conditions-we-treat/gmg" class="btn btn--secondary">ABOUT gMG</a>
+                                </div>
+                            </div>
+                            <div class="caption">
+                                <figcaption><p>ROBERTA<br />
+LIVING WITH GMG</p></figcaption>
+                            </div>
+                        </li>
+                            <li class="Hero-card  Hero-next">
+                            <a href="#" class="toggleBtnAnchor"><i class="icon-plus_alt2 toggleBtn"></i></a>
+                            <picture>
+                                <img class="lazyload " alt="The Trendys, diagnosed at 17, 14, 11, and 9 with LAL-D"
+                                        data-sizes="auto"
+                                        data-aspectratio="1"
+                                        data-srcset="/-/media/alexion_comredesign/images/realstories/lal-d/the-trendys/trendy-02-s.jpg?rev=722eae0884b4415e827ab73a16d7059e?mw=375 375w,
+							                /-/media/alexion_comredesign/images/realstories/lal-d/the-trendys/trendy-02-s.jpg?rev=722eae0884b4415e827ab73a16d7059e?mw=750 750w,
+							                /-/media/alexion_comredesign/images/realstories/lal-d/the-trendys/trendy-02-s.jpg?rev=722eae0884b4415e827ab73a16d7059e?mw=768 768w,
+							                /-/media/alexion_comredesign/images/realstories/lal-d/the-trendys/trendy-02-s.jpg?rev=722eae0884b4415e827ab73a16d7059e?mw=1024 1024w,
+							                /-/media/alexion_comredesign/images/realstories/lal-d/the-trendys/trendy-02-s.jpg?rev=722eae0884b4415e827ab73a16d7059e?mw=1280 1280w,
+							                /-/media/alexion_comredesign/images/realstories/lal-d/the-trendys/trendy-02-s.jpg?rev=722eae0884b4415e827ab73a16d7059e?mw=1536 1536w,
+							                /-/media/alexion_comredesign/images/realstories/lal-d/the-trendys/trendy-02-s.jpg?rev=722eae0884b4415e827ab73a16d7059e?mw=2048 2048w,
+							                /-/media/alexion_comredesign/images/realstories/lal-d/the-trendys/trendy-02-s.jpg?rev=722eae0884b4415e827ab73a16d7059e?mw=2560 2560w " />
+                            </picture>
+                            <div class="Hero-cardback  lald">
+                                <h2 class="u-mb-3"><span>Now we knew what we were up against, we knew we could fight.&rdquo;</span></h2>
+                                <p class="t-small1 t-white t-bold u-my-0">REBECCA, MOM OF TRENDY BROTHERS</p>
+<p class="t-small1 t-white t-bold u-my-0">LIVING WITH LAL-D</p>
+                                <div class="u-fill-white">
+                                    <a href="/our-inspiration/real-stories/lal-d/trendy-family-story" class="btn btn--secondary">HEAR THEIR STORY</a>
+                                    <a href="/our-medicines/conditions-we-treat/lal-d" class="btn btn--secondary">ABOUT LAL-D</a>
+                                </div>
+                            </div>
+                            <div class="caption">
+                                <figcaption><p>THE TRENDY FAMILY<br />
+LIVING WITH LAL-D</p></figcaption>
+                            </div>
+                        </li>
+                            <li class="Hero-card  Hero-next">
+                            <a href="#" class="toggleBtnAnchor"><i class="icon-plus_alt2 toggleBtn"></i></a>
+                            <picture>
+                                <img class="lazyload " alt="Chelsey, living with NMOSD, painting"
+                                        data-sizes="auto"
+                                        data-aspectratio="1"
+                                        data-srcset="/-/media/alexion_comredesign/images/realstories/nmosd/chelsey/chelsey-02-s.jpg?rev=d1ab819e5dac455193d057b9674b8c4e?mw=375 375w,
+							                /-/media/alexion_comredesign/images/realstories/nmosd/chelsey/chelsey-02-s.jpg?rev=d1ab819e5dac455193d057b9674b8c4e?mw=750 750w,
+							                /-/media/alexion_comredesign/images/realstories/nmosd/chelsey/chelsey-02-s.jpg?rev=d1ab819e5dac455193d057b9674b8c4e?mw=768 768w,
+							                /-/media/alexion_comredesign/images/realstories/nmosd/chelsey/chelsey-02-s.jpg?rev=d1ab819e5dac455193d057b9674b8c4e?mw=1024 1024w,
+							                /-/media/alexion_comredesign/images/realstories/nmosd/chelsey/chelsey-02-s.jpg?rev=d1ab819e5dac455193d057b9674b8c4e?mw=1280 1280w,
+							                /-/media/alexion_comredesign/images/realstories/nmosd/chelsey/chelsey-02-s.jpg?rev=d1ab819e5dac455193d057b9674b8c4e?mw=1536 1536w,
+							                /-/media/alexion_comredesign/images/realstories/nmosd/chelsey/chelsey-02-s.jpg?rev=d1ab819e5dac455193d057b9674b8c4e?mw=2048 2048w,
+							                /-/media/alexion_comredesign/images/realstories/nmosd/chelsey/chelsey-02-s.jpg?rev=d1ab819e5dac455193d057b9674b8c4e?mw=2560 2560w " />
+                            </picture>
+                            <div class="Hero-cardback  nmosd">
+                                <h2 class="u-mb-3">I don't define myself as having a rare disease. It&rsquo;s part of my life, but it&rsquo;s certainly not who I am.&rdquo;</h2>
+                                <p class="t-small1 t-white t-bold u-my-0">CHELSEY</p>
+<p class="t-small1 t-white t-bold u-my-0">LIVING WITH NMOSD</p>
+                                <div class="u-fill-white">
+                                    <a href="/our-inspiration/real-stories/nmosd/chelseys-story" class="btn btn--secondary">HEAR HER STORY</a>
+                                    <a href="/our-medicines/conditions-we-treat/nmosd" class="btn btn--secondary">ABOUT NMOSD</a>
+                                </div>
+                            </div>
+                            <div class="caption">
+                                <figcaption><p>CHELSEY<br />
+LIVING WITH NMOSD</p></figcaption>
+                            </div>
+                        </li>
+                            <li class="Hero-card  Hero-next">
+                            <a href="#" class="toggleBtnAnchor"><i class="icon-plus_alt2 toggleBtn"></i></a>
+                            <picture>
+                                <img class="lazyload " alt="Donnan, diagnosed with aHUS at 39 years old, and his son"
+                                        data-sizes="auto"
+                                        data-aspectratio="1"
+                                        data-srcset="/-/media/alexion_comredesign/images/realstories/ahus/donnan/donnan-05-s.jpg?rev=8024d038d7e949f6bcf650afc1086458?mw=375 375w,
+							                /-/media/alexion_comredesign/images/realstories/ahus/donnan/donnan-05-s.jpg?rev=8024d038d7e949f6bcf650afc1086458?mw=750 750w,
+							                /-/media/alexion_comredesign/images/realstories/ahus/donnan/donnan-05-s.jpg?rev=8024d038d7e949f6bcf650afc1086458?mw=768 768w,
+							                /-/media/alexion_comredesign/images/realstories/ahus/donnan/donnan-05-s.jpg?rev=8024d038d7e949f6bcf650afc1086458?mw=1024 1024w,
+							                /-/media/alexion_comredesign/images/realstories/ahus/donnan/donnan-05-s.jpg?rev=8024d038d7e949f6bcf650afc1086458?mw=1280 1280w,
+							                /-/media/alexion_comredesign/images/realstories/ahus/donnan/donnan-05-s.jpg?rev=8024d038d7e949f6bcf650afc1086458?mw=1536 1536w,
+							                /-/media/alexion_comredesign/images/realstories/ahus/donnan/donnan-05-s.jpg?rev=8024d038d7e949f6bcf650afc1086458?mw=2048 2048w,
+							                /-/media/alexion_comredesign/images/realstories/ahus/donnan/donnan-05-s.jpg?rev=8024d038d7e949f6bcf650afc1086458?mw=2560 2560w " />
+                            </picture>
+                            <div class="Hero-cardback  ahus">
+                                <h2 class="u-mb-3">I can chase my kids and play again. I think knowing what I have brings a peace to my life.&rdquo;</h2>
+                                <p class="t-small1 t-white t-bold u-my-0">DONNAN</p>
+<p class="t-small1 t-white t-bold u-my-0">LIVING WITH aHUS</p>
+                                <div class="u-fill-white">
+                                    <a href="/our-inspiration/real-stories/ahus/donnans-story" class="btn btn--secondary">HEAR HIS STORY</a>
+                                    <a href="/our-medicines/conditions-we-treat/ahus" class="btn btn--secondary">ABOUT aHUS</a>
+                                </div>
+                            </div>
+                            <div class="caption">
+                                <figcaption><p>DONNAN<br />
+LIVING WITH aHUS</p></figcaption>
+                            </div>
+                        </li>
+
+
+                </ul>
+                <a class="iconcntr" href="#"><i class="icon-arrow_carrot-right_alt2"></i></a>
+            </div>
+        </div>
+    </div>
+
+<div class="u-fill-accent contentwrap darkstats u-py-8 u-py-3--md">
+    <div class="l-grid t-center">
+            <div class="l-row">
+        <div class="l-col l-col-10 l-col-push-1 l-col-12--md l-col-push-0--md u-pt-6 u-pb-5 u-pt-3--md u-pb-3--md">
+            <h3><strong>Every day,</strong>&nbsp;those who live with rare diseases and devastating conditions inspire us to push the boundaries of medicine, technology, and healthcare services. Our goal is to transform their reality for the better.</h3>
+        </div>
+    </div>
+    <div class="l-row u-mt-3--md">
+        <div class="l-col l-col-3 l-col-12--md u-mb-4 u-mb-6--md">
+            <p class="stat">5</p>
+            <span>APPROVED MEDICINES</span>
+        </div>
+        <div class="l-col l-col-3 l-col-12--md u-mb-4 u-mb-6--md">
+            <p class="stat">7</p>
+            <span>RARE DISEASES & DEVASTATING CONDITIONS</span>
+        </div>
+        <div class="l-col l-col-3 l-col-12--md u-mb-4 u-mb-6--md">
+            <p class="stat">25+</p>
+            <span>OFFICES WORLDWIDE</span>
+        </div>
+        <div class="l-col l-col-3 l-col-12--md u-mb-4 u-mb-8--md">
+            <p class="stat">3000+</p>
+            <span>TALENTED COLLEAGUES</span>
+        </div>
+    </div>
+        <div class="l-row">
+            <div class="l-col l-col-12 u-pb-5--md">
+                <a href="/our-research/research-and-development" class="btn btn--reverse">SEE HOW WE DO IT</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="u-fill-white-offwhite contentwrap">
+    <section class="l-grid u-pt-6 u-pb-6 u-pt-7--md u-pb-7--md home-content">
+            <h1 class="t-accent-magenta t-center u-pb-6--md">Everyday Stories</h1>
+    <div class="videocaption lightblue l-row u-pb-4 u-mt-4 u-mb-6 u-py-0--md">
+        <div class="l-col l-col-10 l-col-12--md">
+                <div class="wistia_responsive_padding">
+
+                    <picture>
+                        <img class="lazyload " alt=""
+                             data-sizes="auto"
+                             data-aspectratio="1.6"
+                             data-srcset="/-/media/alexion_comredesign/images/non-patient-images/featured-story-images/rdd_1451x813.jpg?rev=9b54a00d8f5c46b9b0c5a68b307fd2d9?mw=375 375w,
+							    /-/media/alexion_comredesign/images/non-patient-images/featured-story-images/rdd_1451x813.jpg?rev=9b54a00d8f5c46b9b0c5a68b307fd2d9?mw=750 750w,
+							    /-/media/alexion_comredesign/images/non-patient-images/featured-story-images/rdd_1451x813.jpg?rev=9b54a00d8f5c46b9b0c5a68b307fd2d9?mw=768 768w,
+							    /-/media/alexion_comredesign/images/non-patient-images/featured-story-images/rdd_1451x813.jpg?rev=9b54a00d8f5c46b9b0c5a68b307fd2d9?mw=1024 1024w,
+							    /-/media/alexion_comredesign/images/non-patient-images/featured-story-images/rdd_1451x813.jpg?rev=9b54a00d8f5c46b9b0c5a68b307fd2d9?mw=1280 1280w,
+							    /-/media/alexion_comredesign/images/non-patient-images/featured-story-images/rdd_1451x813.jpg?rev=9b54a00d8f5c46b9b0c5a68b307fd2d9?mw=1536 1536w,
+							    /-/media/alexion_comredesign/images/non-patient-images/featured-story-images/rdd_1451x813.jpg?rev=9b54a00d8f5c46b9b0c5a68b307fd2d9?mw=2048 2048w,
+							    /-/media/alexion_comredesign/images/non-patient-images/featured-story-images/rdd_1451x813.jpg?rev=9b54a00d8f5c46b9b0c5a68b307fd2d9?mw=2560 2560w " />
+                    </picture>
+
+                    <div class="wistia_responsive_wrapper">
+                        <div style="height:100%;position:relative;width:100%" class="wistia_embed wistia_async_ videoFoam=true">
+                            <div style="height:100%;left:0;opacity:0;overflow:hidden;position:absolute;top:0;transition:opacity 200ms;width:100%;" class="wistia_swatch">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div class="videocaption-block l-col l-col-5 l-col-12--md u-mt-2--md">
+            <div class="videocaption-inner u-fill-accent-lightblue">
+                <div class="divider--quicklinks divider--quicklinks-darkblue t-white t-bold">Working Every Day for the Rare Disease Community</div>
+                <p class="t-accent-darkblue u-mt-3--md u-mb-1--md">
+                    At Alexion, AstraZeneca Rare Disease, we are committed to working with the patient community and health care stakeholders worldwide to address the challenges facing the rare disease community. Together, on Rare Disease Day — and every day — we can make a powerful difference.
+                </p>
+                <a href="https://media.alexion.com/news-releases/news-release-details/working-every-day-rare-disease-community" class="btn btn--secondary u-mb-1--md">Learn More</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://fast.wistia.com/assets/external/E-v1.js"></script>
+<div class="l-row">
+  <div class="l-col l-col-5 l-col-12--md home-social-icons">
+    <div class="d-flex justify-content-between flex-wrap align-items-center">
+      <div class="divider--quicklinks divider--quicklinks-blue t-white t-bold">FOLLOW US</div>
+      <div class="socialicons">
+        <a href="https://www.facebook.com/AlexionPharmaceuticalsInc/" target="_blank" class="icon-social_facebook">
+        </a>
+        <a href="https://www.linkedin.com/company/alexion-pharmaceuticals/" target="_blank" class="icon-social_linkedin">
+        </a>
+        <a href="https://twitter.com/AlexionPharma" target="_blank" class="icon-social_twitter">
+        </a>
+        <a href="https://www.instagram.com/alexionpharmaceuticals/" target="_blank" class="custom_social_instagram">
+          <svg class="insta" style="width:22px;" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 25.01 25.02">
+            <title>insta</title>
+            <g id="Group_1582" data-name="Group 1582">
+              <g id="Group_443" data-name="Group 443">
+                <path id="Path_604" data-name="Path 604" class="cls-1" d="M12.51,7.41a5.1,5.1,0,1,0,3.6,1.5A4.89,4.89,0,0,0,12.51,7.41Z" transform="translate(0 0)">
+                </path>
+                <path id="Path_606" data-name="Path 606" class="cls-1" d="M24.41,3.54A4.93,4.93,0,0,0,21.48.61,13.41,13.41,0,0,0,17.81.07c-1,0-2.4-.07-4.21-.07H11.42C9.61,0,8.2,0,7.21.07A14.3,14.3,0,0,0,3.53.61,5,5,0,0,0,.61,3.53,13.54,13.54,0,0,0,.07,7.21C0,8.21,0,9.62,0,11.43V13.6c0,1.81,0,3.22.07,4.22a14.29,14.29,0,0,0,.54,3.67,5.16,5.16,0,0,0,2.93,2.92A14.16,14.16,0,0,0,7.21,25c1,.05,2.4.07,4.21.07h2.17c1.86,0,3.26,0,4.22-.07a13.47,13.47,0,0,0,3.67-.54,5.12,5.12,0,0,0,2.92-2.92A14.75,14.75,0,0,0,25,17.82c0-1,.06-2.41.06-4.22V11.43c0-1.86,0-3.27-.06-4.22A14.22,14.22,0,0,0,24.41,3.54ZM19.27,16.42A7.81,7.81,0,1,1,16.42,5.74a7.83,7.83,0,0,1,2.85,10.68ZM21.92,5.64a1.62,1.62,0,0,1-1.25.55A1.83,1.83,0,1,1,22.5,4.35a2.08,2.08,0,0,1-.58,1.29Z" transform="translate(0 0)">
+                </path>
+              </g>
+            </g>
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/channel/UClgBSounH8P9Lo22uaaZ0gw" target="_blank" class="icon-social_youtube">
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="l-col l-col-6 l-col-push-1 l-col-12--md l-col-push-0--md u-mt-6--md">
+    <div class="divider--quicklinks divider--quicklinks-teal t-white t-bold">LATEST NEWS</div>
+    <ul class="list--links" data-feed="IR" data-count="4">
+    </ul>
+    <a rel="noopener noreferrer" target="_blank" href="https://media.alexion.com" class="btn">MORE NEWS</a>
+  </div>
+</div>
+
+
+
+    <div class="slider l-col l-col-6 l-col-12--md home-slider" data-slider='{"dots":true,"infinite":false}'>
+        <div class="slider-slides">
+                <div class="l-col l-col-6 l-col-12--md">
+                    <div class="row">
+                        <a class="col-md-11 alexion-logo" href="https://twitter.com/AlexionPharma" target="_blank">
+                            <img src="/-/media/alexion_comredesign/images/logos/00alexionalogo2x.png?rev=a9d8af2b14e84c95946b8a7ea1b6befc&amp;h=90&amp;w=374&amp;la=en&amp;hash=52774F52E2ABB65BBAACFD9E05E546AD" alt="" />
+                        </a>
+                        
+                        <a class="col-md-1 twitter-logo" href="https://twitter.com/AlexionPharma" target="_blank">
+                            <img src="/-/media/alexion_comredesign/images/icons/00twittericonltblue2x.png?rev=00984cfdced547d1a391d6fc482985b4&amp;h=40&amp;w=52&amp;la=en&amp;hash=304E7E77F3A06BAF3151C4ABD3767BC4" alt="" />
+                        </a>
+                    </div>
+					<div class="row">
+						<p>The World Health Organization estimates that one out of 15 people worldwide could be affected by a rare disease. For more information: <a href="https://bit.ly/2EhEfWG">https://bit.ly/2EhEfWG</a><span data-contrast="auto" class="TextRun SCXW148552386 BCX0" style="background-color: #ffffff; margin: 0px; padding: 0px;"><span class="NormalTextRun SCXW148552386 BCX0" style="margin: 0px; padding: 0px;"></span></span><span class="EOP SCXW148552386 BCX0" data-ccp-props="{'201341983':0,'335559740':259}" style="background-color: #ffffff; margin: 0px; padding: 0px;"></span></p>
+					</div>
+					<div class="row">
+						<img src="/-/media/alexion_comredesign/images/twitter/twitterlinkedin_090922_1in15people.jpg?rev=e3ee6cc6322349568f3afa072bad0e5b&amp;h=800&amp;w=1600&amp;la=en&amp;hash=A67CCCD779762A17A2F49F67A370F912" alt="" />
+					</div>
+                </div>
+                <div class="l-col l-col-6 l-col-12--md">
+                    <div class="row">
+                        <a class="col-md-11 alexion-logo" href="https://twitter.com/AlexionPharma" target="_blank">
+                            <img src="/-/media/alexion_comredesign/images/logos/00alexionalogo2x.png?rev=a9d8af2b14e84c95946b8a7ea1b6befc&amp;h=90&amp;w=374&amp;la=en&amp;hash=52774F52E2ABB65BBAACFD9E05E546AD" alt="" />
+                        </a>
+                        
+                        <a class="col-md-1 twitter-logo" href="https://twitter.com/AlexionPharma" target="_blank">
+                            <img src="/-/media/alexion_comredesign/images/icons/00twittericonltblue2x.png?rev=00984cfdced547d1a391d6fc482985b4&amp;h=40&amp;w=52&amp;la=en&amp;hash=304E7E77F3A06BAF3151C4ABD3767BC4" alt="" />
+                        </a>
+                    </div>
+					<div class="row">
+						Generalized myasthenia gravis (#gMG) is a rare autoimmune disorder characterized by loss of muscle function and severe muscle weakness. For further advice and support: <a href="https://myasthenia.org/">https://myasthenia.org/</a> #RareDisease<span class="EOP SCXW230157642 BCX0" data-ccp-props="{'201341983':0,'335559740':259}" style="background-color: #ffffff; margin: 0px; padding: 0px;"></span>
+					</div>
+					<div class="row">
+						<img src="/-/media/alexion_comredesign/images/twitter/twitterlinkedin_082322_gmg.jpg?rev=c8fa3d45992944598fa0917490d5e8ed&amp;h=800&amp;w=1600&amp;la=en&amp;hash=9977678C04FCDC4D2051821E1FBD175C" alt="" />
+					</div>
+                </div>
+                <div class="l-col l-col-6 l-col-12--md">
+                    <div class="row">
+                        <a class="col-md-11 alexion-logo" href="https://twitter.com/AlexionPharma" target="_blank">
+                            <img src="/-/media/alexion_comredesign/images/logos/00alexionalogo2x.png?rev=a9d8af2b14e84c95946b8a7ea1b6befc&amp;h=90&amp;w=374&amp;la=en&amp;hash=52774F52E2ABB65BBAACFD9E05E546AD" alt="" />
+                        </a>
+                        
+                        <a class="col-md-1 twitter-logo" href="https://twitter.com/AlexionPharma" target="_blank">
+                            <img src="/-/media/alexion_comredesign/images/icons/00twittericonltblue2x.png?rev=00984cfdced547d1a391d6fc482985b4&amp;h=40&amp;w=52&amp;la=en&amp;hash=304E7E77F3A06BAF3151C4ABD3767BC4" alt="" />
+                        </a>
+                    </div>
+					<div class="row">
+						<p>We strive to ignite an inclusive environment where people belong because of their uniqueness and unleash their individuality and diversity to spur innovative breakthroughs for patients. Join us: <a href="https://jobs.alexion.com">https://jobs.alexion.com</a> #hiring</p>
+					</div>
+					<div class="row">
+						<img src="/-/media/alexion_comredesign/images/twitter/twitterlinkedin_081822_ta.jpg?rev=925e261a329d44068cf9d106120a5012&amp;h=800&amp;w=1600&amp;la=en&amp;hash=6C707686192BC30CA7423A1A4DDB92F7" alt="" />
+					</div>
+                </div>
+                <div class="l-col l-col-6 l-col-12--md">
+                    <div class="row">
+                        <a class="col-md-11 alexion-logo" href="https://twitter.com/AlexionPharma" target="_blank">
+                            <img src="/-/media/alexion_comredesign/images/logos/00alexionalogo2x.png?rev=a9d8af2b14e84c95946b8a7ea1b6befc&amp;h=90&amp;w=374&amp;la=en&amp;hash=52774F52E2ABB65BBAACFD9E05E546AD" alt="" />
+                        </a>
+                        
+                        <a class="col-md-1 twitter-logo" href="https://twitter.com/AlexionPharma" target="_blank">
+                            <img src="/-/media/alexion_comredesign/images/icons/00twittericonltblue2x.png?rev=00984cfdced547d1a391d6fc482985b4&amp;h=40&amp;w=52&amp;la=en&amp;hash=304E7E77F3A06BAF3151C4ABD3767BC4" alt="" />
+                        </a>
+                    </div>
+					<div class="row">
+						<p>&nbsp;DYK&hellip; 80% of #RareDiseases are genetic, while others are the result of infection, allergies, and environmental causes, or are rare cancers. For more information and support, visit&nbsp;<a href="https://globalgenes.org/rare-disease-facts/">https://globalgenes.org/rare-disease-facts/</a></p>
+					</div>
+					<div class="row">
+						<img src="/-/media/alexion_comredesign/images/twitter/twitterlinkedin_080522_80percent.jpg?rev=b41c059beaa94a3b81cd5e66cd26e546&amp;h=800&amp;w=1600&amp;la=en&amp;hash=C8A0A9809E1490888BCE476F4D4121A1" alt="Text: 80% of rare diseases have identified genetic origins" />
+					</div>
+                </div>
+                <div class="l-col l-col-6 l-col-12--md">
+                    <div class="row">
+                        <a class="col-md-11 alexion-logo" href="https://twitter.com/AlexionPharma" target="_blank">
+                            <img src="/-/media/alexion_comredesign/images/logos/00alexionalogo2x.png?rev=a9d8af2b14e84c95946b8a7ea1b6befc&amp;h=90&amp;w=374&amp;la=en&amp;hash=52774F52E2ABB65BBAACFD9E05E546AD" alt="" />
+                        </a>
+                        
+                        <a class="col-md-1 twitter-logo" href="https://twitter.com/AlexionPharma" target="_blank">
+                            <img src="/-/media/alexion_comredesign/images/icons/00twittericonltblue2x.png?rev=00984cfdced547d1a391d6fc482985b4&amp;h=40&amp;w=52&amp;la=en&amp;hash=304E7E77F3A06BAF3151C4ABD3767BC4" alt="" />
+                        </a>
+                    </div>
+					<div class="row">
+						At Alexion, you&rsquo;re encouraged to take on the most daunting of challenges, settle for nothing less than transformation, and push the boundaries of what science has traditionally offered. Check out our career opportunities:&nbsp;<a href="https://jobs.alexion.com/">jobs.alexion.com</a>&nbsp;#hiring
+					</div>
+					<div class="row">
+						<img src="/-/media/alexion_comredesign/images/twitter/twitterlinkedin_072522_ta.jpg?rev=f99b055f5a5349439f1e2eb2a4e13fbc&amp;h=800&amp;w=1600&amp;la=en&amp;hash=06CA578F586BC4EBE7E4590D1269BBF4" alt="Multiple images of people working in scientific lab setting" />
+					</div>
+                </div>
+        </div>
+        <div class="slider-nav">
+            <button class="slider-btn slider-btn--previous" aria-label="Previous" type="button"><span></span></button>
+            <div class="slider-dots"></div>
+            <button class="slider-btn slider-btn--next" aria-label="Next" type="button"><span></span></button>
+        </div>
+    </div>
+
+    
+    
+    <script>
+    (function () {
+        document.addEventListener("DOMContentLoaded", () => {
+            var ApiEndpoint = "/Models/Alexion_com_RedesignLatestNewsProxy.asmx/CallProxy?extras=";
+            var feedQuery = document.querySelectorAll('[data-feed="IR"]');
+            if (feedQuery.length != 0) {
+                var feedElement = feedQuery[0];
+                var count = +feedElement.dataset.count;
+                $.get(ApiEndpoint, function (r) {
+                    r = JSON.parse(r);
+                    //console.log(JSON.parse(r));
+                    let list = r.data;
+                    list = list.slice(0, count);
+                    list.forEach(function (item) {
+                        let date = item.releaseDate.date.split('T')[0].split('-');
+                        date = date[1] + "/" + date[2] + "/" + date[0].substring(2);
+                        let node = $('<li><span class="date">' + date + '</span><a target="_blank" href="' + item.link.hostedUrl + '">' + item.title + '</a></li>');
+                        //feedElement.appendChild(node[0]);
+                    });
+                })
+            }
+        });
+    })();
+    </script>        
+    </section>
+</div><div class="ctaquoteblockwrap">
+    <div class="ctaquoteblock">
+
+                <picture>
+                    <img class="lazyload " alt="Roberta, diagnosed with gMG at 16 years old"
+                         data-sizes="auto"
+                         data-aspectratio="1"
+                         data-srcset="/-/media/alexion_comredesign/images/realstories/gmg/roberta/roberta-01-f.jpg?rev=24f916ffd98045e298cc96ddca1ff86e?mw=375 375w,
+							    /-/media/alexion_comredesign/images/realstories/gmg/roberta/roberta-01-f.jpg?rev=24f916ffd98045e298cc96ddca1ff86e?mw=750 750w,
+							    /-/media/alexion_comredesign/images/realstories/gmg/roberta/roberta-01-f.jpg?rev=24f916ffd98045e298cc96ddca1ff86e?mw=768 768w,
+							    /-/media/alexion_comredesign/images/realstories/gmg/roberta/roberta-01-f.jpg?rev=24f916ffd98045e298cc96ddca1ff86e?mw=1024 1024w,
+							    /-/media/alexion_comredesign/images/realstories/gmg/roberta/roberta-01-f.jpg?rev=24f916ffd98045e298cc96ddca1ff86e?mw=1280 1280w,
+							    /-/media/alexion_comredesign/images/realstories/gmg/roberta/roberta-01-f.jpg?rev=24f916ffd98045e298cc96ddca1ff86e?mw=1536 1536w,
+							    /-/media/alexion_comredesign/images/realstories/gmg/roberta/roberta-01-f.jpg?rev=24f916ffd98045e298cc96ddca1ff86e?mw=2048 2048w,
+							    /-/media/alexion_comredesign/images/realstories/gmg/roberta/roberta-01-f.jpg?rev=24f916ffd98045e298cc96ddca1ff86e?mw=2560 2560w " />
+                </picture>
+            <div class="ctablock  gmg">
+                <div class="aligntop">
+                    <blockquote>This experience has taught me to look at the small things that count. Now, I feel that I have something to look forward to and I am who I want to be.”</blockquote>
+                    <span class="t-quoteby">ROBERTA</span>
+                    <span class="t-quotecondition">LIVING WITH gMG</span>
+                    </div>
+                    <div class="alignbottom">
+                        <a href="/our-inspiration/real-stories/gmg/robertas-story">
+                            <p class="t-small1 t-bold">HEAR HER STORY</p>
+                            <i class="icon-arrow_right"></i>
+                        </a>
+                    </div>
+                  </div>
+
+    </div>
+    </div>
+</div>
+    </div>
+    <div class="modal-backdrop"></div>
+    <div class="modal" data-modal-id="exitModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-modal-close="" aria-label="Close">
+                        <span class="t-white" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="t-white">You are now leaving www.alexion.com, a website provided by Alexion Pharmaceuticals, Inc. This link will take you to a different site to which this Privacy Policy does not apply.</h5>
+                </div>
+                <div class="modal-footer">
+                    <a type="button" class="btn continue-button">CONFIRM</a>
+                    <button type="button" class="btn" data-modal-close="">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" data-modal-id="exitModal-UK">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-modal-close="" aria-label="Close">
+                        <span class="t-white" aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="t-white">You are now leaving the alexion.com UK webpage for the global alexion.com website. The content on the global site is intended for a U.S. audience only</h5>
+                </div>
+                <div class="modal-footer">
+                    <a type="button" class="btn continue-button">CONFIRM</a>
+                    <button type="button" class="btn" data-modal-close="">CLOSE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="SiteFooter">
+        <div class="SiteFooter-wrap">
+            <div class="l-row u-mb-6 u-mb-0--md">
+                <div class="l-col l-col-3 l-col-12--md SiteFooter-navblock">
+                    <span class="navhead">MEDICAL PROFESSIONALS</span>
+                    <ul class="list--unstyled">
+                        <li><a href="/our-medicines/conditions-we-treat">Conditions We Treat</a></li>
+                        <li><a href="/our-medicines/medicines">Medicines</a></li>
+                        <li><a href="/our-research/pipeline">Pipeline</a></li>
+                    </ul>
+                </div>
+                <div class="l-col l-col-3 l-col-12--md SiteFooter-navblock">
+                    <span class="navhead">The rare disease community</span>
+                    <ul class="list--unstyled">
+                        <li><a href="/our-inspiration/real-stories">Real Stories</a></li>
+                        <li><a href="/our-inspiration/living-with-rare-diseases">Living With Rare Diseases</a></li>
+                        <li><a href="/our-inspiration/support-services">Support Services</a></li>
+                    </ul>
+                </div>
+                <div class="l-col l-col-3 l-col-12--md SiteFooter-navblock">
+                    <span class="navhead">NEWS & MEDIA</span>
+                    <ul class="list--unstyled">
+                        <li><a href="https://media.alexion.com/news-media/press-releases">Press Releases</a></li>
+                        <li><a href="https://media.alexion.com/news-media/featured-stories">Featured Stories</a></li>
+                        <li><a href="https://media.alexion.com/news-media/media-materials">Media Materials</a></li>
+                    </ul>
+                </div>
+                <div class="l-col l-col-3 l-col-12--md SiteFooter-navblock">
+                    <span class="navhead">JOB SEEKERS</span>
+                    <ul class="list--unstyled">
+                        <li><a href="/your-career/working-here/benefits">Benefits</a></li>
+                        <li><a href="/your-career/working-here/culture">Culture</a></li>
+                        <li><a href="/your-career/working-here">Working Here</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="l-row">
+                <div class="socialicons l-col l-col-12">
+                    <a target="_blank" href="https://www.instagram.com/alexionpharmaceuticals/" class="custom_social_instagram">
+                        <svg class="insta" style="width:22px;" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.01 25.02">
+                            <defs>
+                                <style>
+                                    .cls-1 {
+                                        fill: #fff;
+                                    }
+                                </style>
+                            </defs>
+                            <title>insta</title>
+                            <g id="Group_1582" data-name="Group 1582"><g id="Group_443" data-name="Group 443"><path id="Path_604" data-name="Path 604" class="cls-1" d="M12.51,7.41a5.1,5.1,0,1,0,3.6,1.5A4.89,4.89,0,0,0,12.51,7.41Z" transform="translate(0 0)"></path><path id="Path_606" data-name="Path 606" class="cls-1" d="M24.41,3.54A4.93,4.93,0,0,0,21.48.61,13.41,13.41,0,0,0,17.81.07c-1,0-2.4-.07-4.21-.07H11.42C9.61,0,8.2,0,7.21.07A14.3,14.3,0,0,0,3.53.61,5,5,0,0,0,.61,3.53,13.54,13.54,0,0,0,.07,7.21C0,8.21,0,9.62,0,11.43V13.6c0,1.81,0,3.22.07,4.22a14.29,14.29,0,0,0,.54,3.67,5.16,5.16,0,0,0,2.93,2.92A14.16,14.16,0,0,0,7.21,25c1,.05,2.4.07,4.21.07h2.17c1.86,0,3.26,0,4.22-.07a13.47,13.47,0,0,0,3.67-.54,5.12,5.12,0,0,0,2.92-2.92A14.75,14.75,0,0,0,25,17.82c0-1,.06-2.41.06-4.22V11.43c0-1.86,0-3.27-.06-4.22A14.22,14.22,0,0,0,24.41,3.54ZM19.27,16.42A7.81,7.81,0,1,1,16.42,5.74a7.83,7.83,0,0,1,2.85,10.68ZM21.92,5.64a1.62,1.62,0,0,1-1.25.55A1.83,1.83,0,1,1,22.5,4.35a2.08,2.08,0,0,1-.58,1.29Z" transform="translate(0 0)"></path></g></g>
+                        </svg>
+                    </a>
+                    <a target="_blank" href="https://www.youtube.com/channel/UClgBSounH8P9Lo22uaaZ0gw" class="icon-social_youtube"></a>
+                    <a target="_blank" href="https://twitter.com/AlexionPharma" class="icon-social_twitter"></a>
+                    <a target="_blank" href="https://www.linkedin.com/company/alexion-pharmaceuticals/" class="icon-social_linkedin"></a>
+                </div>
+            </div>
+            <div class="l-row">
+                <div class="signoff l-col l-col-12">
+                    <a href="/"><img src="/~/media/Alexion_comRedesign/Images/Logos/alexion-white.svg"></a>
+                    <div class="signoff-col">
+                        <ul class="list--inline t-small1">
+                            <li><a href="/contact-alexion">Contact Us</a></li>
+                            <li><a href="/Legal#legalstatement">Legal Statement</a></li>
+                            <li><a href="/Legal#privacynotice">Privacy Notice</a></li>
+                            <li><a href="/Legal#termsofuse">Terms of Use</a></li>
+                            <li><button id="ot-sdk-btn" class="ot-sdk-show-settings">Cookie Settings</button></li>
+                        </ul>
+                        
+
+
+<span class="t-small1">This website is intended only for residents of the United States. © 2022 Alexion Pharmaceuticals, Inc.</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/Scripts/Alexion_comRedesign/vendor/accordion.min.js"></script>
+    
+    <script>objectFitImages();</script>
+
+</body>
+</html>

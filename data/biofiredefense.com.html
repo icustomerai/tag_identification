@@ -1,0 +1,1108 @@
+
+<!doctype html>
+<html class="no-js" lang="en-US" >
+	<head><meta charset="UTF-8"/><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+	
+<!-- Google Tag Manager -->
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PJX34LJ');</script>
+<!-- End Google Tag Manager -->
+	
+		
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<!--Crazy Egg Tracking Code-->
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="//script.crazyegg.com/pages/scripts/0071/4432.js" async="async"></script>
+		<!--End Crazy Egg Tracking Code-->
+		<link rel="icon" href="https://www.biofiredefense.com/wp-content/themes/BiofiredxTheme/favicon.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="144x144" href="https://www.biofiredefense.com/wp-content/themes/BiofiredxTheme/assets/images/icons/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="https://www.biofiredefense.com/wp-content/themes/BiofiredxTheme/assets/images/icons/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="https://www.biofiredefense.com/wp-content/themes/BiofiredxTheme/assets/images/icons/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" href="https://www.biofiredefense.com/wp-content/themes/BiofiredxTheme/assets/images/icons/apple-touch-icon.png">
+		
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="https://fast.fonts.net/cssapi/3c19447b-ccc9-453c-83de-c4db37700b83.css"/>
+		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v20.9 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Safeguarding Humanity - BioFire Defense</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Nunito%3A400%2C700%2C300%7CDidact%20Gothic%7COpen%20Sans%3A400%2C300%2C600%2C700%2C800%7CNunito%3A300%2C400%2C600%2C700%2C800%7CRoboto%3A500%2C900%2C400&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito%3A400%2C700%2C300%7CDidact%20Gothic%7COpen%20Sans%3A400%2C300%2C600%2C700%2C800%7CNunito%3A300%2C400%2C600%2C700%2C800%7CRoboto%3A500%2C900%2C400&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito%3A400%2C700%2C300%7CDidact%20Gothic%7COpen%20Sans%3A400%2C300%2C600%2C700%2C800%7CNunito%3A300%2C400%2C600%2C700%2C800%7CRoboto%3A500%2C900%2C400&#038;display=swap" /></noscript>
+	<link rel="canonical" href="https://www.biofiredefense.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Safeguarding Humanity - BioFire Defense" />
+	<meta property="og:description" content="At BioFire Defense we deliver a fully integrated suite of biological agent identification products, including BioFire® FilmArray® and RAZOR® Mk II Systems to the biodefense and first responder community. Our products and services speed up medical results, help people stay healthy, and make communities more secure. Simply put, we make the world a safer and Continue reading &raquo;" />
+	<meta property="og:url" content="https://www.biofiredefense.com/" />
+	<meta property="og:site_name" content="BioFire Defense" />
+	<meta property="article:publisher" content="https://www.facebook.com/BiofireDefense/" />
+	<meta property="article:modified_time" content="2022-11-10T19:03:36+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@BiofireDefense" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.biofiredefense.com/","url":"https://www.biofiredefense.com/","name":"Safeguarding Humanity - BioFire Defense","isPartOf":{"@id":"https://www.biofiredefense.com/#website"},"about":{"@id":"https://www.biofiredefense.com/#organization"},"datePublished":"2018-04-19T19:52:50+00:00","dateModified":"2022-11-10T19:03:36+00:00","breadcrumb":{"@id":"https://www.biofiredefense.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.biofiredefense.com/"]}]},{"@type":"BreadcrumbList","@id":"https://www.biofiredefense.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://www.biofiredefense.com/#website","url":"https://www.biofiredefense.com/","name":"BioFire Defense","description":"BioFire Defense is committed to making the world a healthier and safer place.","publisher":{"@id":"https://www.biofiredefense.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.biofiredefense.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://www.biofiredefense.com/#organization","name":"BioFire Defense","url":"https://www.biofiredefense.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.biofiredefense.com/#/schema/logo/image/","url":"https://www.biofiredefense.com/wp-content/uploads/2018/04/BFDF-DNA-Gradient-250.png","contentUrl":"https://www.biofiredefense.com/wp-content/uploads/2018/04/BFDF-DNA-Gradient-250.png","width":250,"height":250,"caption":"BioFire Defense"},"image":{"@id":"https://www.biofiredefense.com/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/BiofireDefense/","https://twitter.com/BiofireDefense","https://www.youtube.com/channel/UC8EWtFrUSwofXwYNDDDjOVA"]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//ajax.googleapis.com' />
+<link rel='dns-prefetch' href='//www.google.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel='stylesheet' id='passster-public-css' href='https://www.biofiredefense.com/wp-content/plugins/content-protector/assets/public/passster-public.min.css?ver=4.2.1' type='text/css' media='all' />
+<link rel='stylesheet' id='carousel-stylesheet-css' href='https://www.biofiredefense.com/wp-content/themes/BiofiredxTheme/assets/stylesheets/owl.carousel.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='magnificpopup-stylesheet-css' href='https://www.biofiredefense.com/wp-content/themes/BiofiredxTheme/assets/stylesheets/magnific-popup.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='main-stylesheet-css' href='https://www.biofiredefense.com/wp-content/themes/BiofiredxTheme/assets/stylesheets/foundation.css?ver=2.3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='ubermenu-css' href='https://www.biofiredefense.com/wp-content/plugins/ubermenu/pro/assets/css/ubermenu.min.css?ver=3.8.1' type='text/css' media='all' />
+<link rel='stylesheet' id='ubermenu-minimal-css' href='https://www.biofiredefense.com/wp-content/plugins/ubermenu/assets/css/skins/minimal.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='ubermenu-font-awesome-all-css' href='https://www.biofiredefense.com/wp-content/plugins/ubermenu/assets/fontawesome/css/all.min.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='scss-css' href='https://www.biofiredefense.com/wp-content/cache/busting/1/sccss.css?ver=1684342020' type='text/css' media='all' />
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js?ver=2.1.0' id='jquery-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.biofiredefense.com/wp-content/plugins/content-protector/assets/public/cookie.js?ver=6.2.2' id='passster-cookie-js'></script>
+<script type='text/javascript' id='passster-public-js-extra'>
+/* <![CDATA[ */
+var ps_ajax = {"ajax_url":"https:\/\/www.biofiredefense.com\/wp-admin\/admin-ajax.php","nonce":"f613084349","hash_nonce":"2e1c04623d","logout_nonce":"974319d1f2","post_id":"3","shortcodes":[],"permalink":"https:\/\/www.biofiredefense.com\/","cookie_duration_unit":"days","cookie_duration":"2","disable_cookie":"","unlock_mode":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.biofiredefense.com/wp-content/plugins/content-protector/assets/public/passster-public.min.js?ver=4.2.1' id='passster-public-js'></script>
+<link rel="https://api.w.org/" href="https://www.biofiredefense.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.biofiredefense.com/wp-json/wp/v2/pages/3" /><link rel="alternate" type="application/json+oembed" href="https://www.biofiredefense.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.biofiredefense.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.biofiredefense.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.biofiredefense.com%2F&#038;format=xml" />
+
+<!--BEGIN: TRACKING CODE MANAGER (v2.0.16) BY INTELLYWP.COM IN HEAD//-->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=UA-47128992-1"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-47128992-1');
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-Q2C8SQLNY4"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q2C8SQLNY4');
+</script>
+<script type="rocketlazyloadscript" data-rocket-src="https://assets.adobedtm.com/175f7caa2b90/c2388c4648e3/launch-647305fed10b.min.js" async></script>
+<!--END: https://wordpress.org/plugins/tracking-code-manager IN HEAD//--><style id="ubermenu-custom-generated-css">
+/** Font Awesome 4 Compatibility **/
+.fa{font-style:normal;font-variant:normal;font-weight:normal;font-family:FontAwesome;}
+
+/** UberMenu Custom Menu Styles (Customizer) **/
+/* main */
+ .ubermenu-main.ubermenu-mobile-modal.ubermenu-mobile-view { background:#c26b11; }
+ .ubermenu.ubermenu-main { background:none; border:none; box-shadow:none; }
+ .ubermenu.ubermenu-main .ubermenu-item-level-0 > .ubermenu-target { border:none; box-shadow:none; }
+ .ubermenu.ubermenu-main.ubermenu-horizontal .ubermenu-submenu-drop.ubermenu-submenu-align-left_edge_bar, .ubermenu.ubermenu-main.ubermenu-horizontal .ubermenu-submenu-drop.ubermenu-submenu-align-full_width { left:0; }
+ .ubermenu.ubermenu-main.ubermenu-horizontal .ubermenu-item-level-0.ubermenu-active > .ubermenu-submenu-drop, .ubermenu.ubermenu-main.ubermenu-horizontal:not(.ubermenu-transition-shift) .ubermenu-item-level-0 > .ubermenu-submenu-drop { margin-top:0; }
+ .ubermenu-main .ubermenu-item-level-0 > .ubermenu-target { font-size:18px; text-transform:uppercase; color:#ffffff; }
+ .ubermenu-main .ubermenu-nav .ubermenu-item.ubermenu-item-level-0 > .ubermenu-target { font-weight:bold; }
+ .ubermenu.ubermenu-main .ubermenu-item-normal > .ubermenu-target:hover, .ubermenu.ubermenu-main .ubermenu-item-normal.ubermenu-active > .ubermenu-target { color:#c26b11; background-color:#f8f8f8; }
+ .ubermenu-main .ubermenu-item-normal.ubermenu-current-menu-item > .ubermenu-target { color:#c26b11; }
+ .ubermenu-main .ubermenu-item-normal > .ubermenu-target { font-weight:500; }
+ .ubermenu-responsive-toggle.ubermenu-responsive-toggle-main { font-size:18px; font-weight:bold; }
+
+
+/* Status: Loaded from Transient */
+
+</style>        <style>
+            .passster-form {
+                max-width: 700px !important;
+                        }
+
+            .passster-form > form {
+                background: #FAFAFA;
+                padding: 20px 20px 20px 20px;
+                margin: 0px 0px 0px 0px;
+                border-radius: px;
+            }
+
+            .passster-form h4 {
+                font-size: 24px;
+                font-weight: 500;
+                color: #c26b11;
+            }
+
+            .passster-form p {
+                font-size: 16px;
+                font-weight: 300;
+                color: #000;
+            }
+
+            .passster-submit, .passster-submit-recaptcha {
+                background: #c26b11;
+                padding: 10px 10px 10px 10px;
+                margin: 0px 0px 0px 0px;
+                border-radius: px;
+                font-size: 12px;
+                font-weight: 400;
+                color: #fff;
+            }
+
+            .passster-submit:hover, .passster-submit-recaptcha:hover {
+                background: #c1c1c1;
+                color: #fff;
+            }
+        </style>
+		<meta name="generator" content="Powered by Slider Revolution 6.5.6 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+<link rel="icon" href="https://www.biofiredefense.com/wp-content/uploads/2019/02/cropped-bioFavicon-32x32.gif" sizes="32x32" />
+<link rel="icon" href="https://www.biofiredefense.com/wp-content/uploads/2019/02/cropped-bioFavicon-192x192.gif" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.biofiredefense.com/wp-content/uploads/2019/02/cropped-bioFavicon-180x180.gif" />
+<meta name="msapplication-TileImage" content="https://www.biofiredefense.com/wp-content/uploads/2019/02/cropped-bioFavicon-270x270.gif" />
+
+<!-- BEGIN Typekit Fonts for WordPress -->
+<link rel="stylesheet" href="https://use.typekit.net/fyf8sfi.css">
+<style type="text/css">
+h1, h2, h3, h4, h5, h6 {
+    font-family: "century-gothic";
+    font-weight: 600;
+}
+.testimonial-content p, 
+.our-services h3 em,
+#main-header .mega-menu li a,
+#main-header .sign-up p {
+font-family: "century-gothic";
+}</style>
+
+<!-- END Typekit Fonts for WordPress -->
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {				 
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;	
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;	
+				try {								
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);		
+					if(e.layout==="fullscreen" || e.l==="fullscreen") 						
+						newh = Math.max(e.mh,window.RSIH);					
+					else{					
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];					
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,						
+							sl;					
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;					
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];									
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}															
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);					
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}
+					var el = document.getElementById(e.c);
+					if (el!==null && el) el.style.height = newh+"px";					
+					el = document.getElementById(e.c+"_wrapper");
+					if (el!==null && el) {
+						el.style.height = newh+"px";
+						el.style.display = "block";
+					}
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}					   
+			//});
+		  };</script>
+		<style type="text/css" id="wp-custom-css">
+			body,p, ul li,ol li,#footer .copyright span,#footer .copyright p,#footer .copyright ul li a,.film-array-sec .features p,#footer ul.footer-menu li a,#main-header .mega-menu li .sub-menu li a,.contact-content input[type="submit"],#main-header .menu-box-icon,.products-section ul li .product-listing .btn a,.video-library-content h3,#main-header .mega-search-wrap input[type="text"]{
+	font-family: 'Nunito', sans-serif;
+}
+
+#main-header .logo img {
+padding: 0;
+display: block;
+width: auto;
+height: 98px;
+margin-top: 5px;
+image-rendering: auto;
+position: relative;
+z-index: 2;
+-webkit-transition: opacity 0.4s ease-in-out;
+transition: opacity 0.4s ease-in-out;
+}
+#main-header .mega-menu>li.menu-item {
+    vertical-align: top;
+}
+@media screen and (min-width: 40em){
+#main-header .mega-menu>li.menu-item {
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+}
+}
+div.gform_wrapper.gf_browser_chrome .gfield_checkbox li input, div.gform_wrapper.gf_browser_chrome .gfield_checkbox li input[type=checkbox], div.gform_wrapper.gf_browser_chrome .gfield_radio li input[type=radio] {
+    margin-top: 0px;
+}
+.gfield_checkbox li label {
+    padding-left: 0 !important;
+}
+.gform_body ul li [type='checkbox'] + label, .gform_body ul li [type='radio'] + label {
+    margin-left: 4px;
+}
+.gform_body ul li [type="checkbox"] + label::after {
+    display: none;
+}
+.gform_body ul li input[type="checkbox"], .gform_body ul li input[type="radio"] {
+    opacity: 1;
+    position: relative;
+}
+
+@media only screen and (max-width: 634px) {
+	#main-header {
+	  overflow:hidden;
+}
+#main-header .medium-6 {
+    width: 50%;
+	}
+#main-header .mega-search-wrap form {
+    margin-top: 35px;
+    margin-right: 20px;
+}
+}		</style>
+		<style id="sccss">#main-header .header-right {
+    float: right;
+    margin-top: 0;
+}
+#main-header {
+    padding: 0;
+    height: 118px;
+    line-height: 118px;
+	  overflow:hidden;
+}
+#main-header .logo a{
+	overflow: hidden;
+	position: relative;
+	display: block;
+	height: 100%;
+}
+
+#main-header .logo img {
+padding: 0;
+display: block;
+width: auto;
+height: 98px;
+margin-top: 5px;
+image-rendering: auto;
+position: relative;
+z-index: 2;
+-webkit-transition: opacity 0.4s ease-in-out;
+transition: opacity 0.4s ease-in-out;
+}
+#main-header .logo img svg{
+	max-width:100%;
+}
+
+#main-header .mega-search-wrap .search-btn {
+    display: block;
+    position: absolute;
+}
+#main-header .mega-search-wrap input[type="text"] {
+	position: relative;
+}
+.header-scrolled-full #main-header .our-social {
+    margin-top: 0;
+}
+.header-scrolled-full #main-header .header-right {
+    margin-top: 0;
+}
+main-header .header-right {
+    float: right;
+    margin-top: 0;
+}
+#main-menu{
+	background: #c26b11;
+}
+#masthead{
+	position: fixed;
+	z-index: 501;
+  width: 100%;
+}
+#main-wrapper {
+    padding-top: 143px;
+}
+@media only screen and (max-width: 959px) {
+#masthead{
+	position: relative;
+}
+#main-wrapper {
+    padding-top: 0;
+}
+}
+
+.menu > li > a {
+    color: #fff;
+}
+.courses {
+    margin: 0;
+}
+.courses .course-title.open-accordian.active {
+    background-color: transparent;
+}
+.courses .course-title {
+    background: transparent;
+}
+.courses .course-title::after {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-width: 0;
+    right: auto;
+    top: 24px;
+    font-family: FontAwesome;
+    content: "\f0fe";
+    left: 5px;
+}
+.courses .course-title.open-accordian.active::after {
+    content: "\f146";
+    font-family: FontAwesome;
+    border: none;
+    top: 10px;
+    right: auto;
+	  left: 6px;
+}
+.courses h2 {
+    padding: 12px 3px 12px 30px;
+    font-size: 15px;
+    line-height: 1;
+    margin: 0;
+    color: #c26b11;
+    border: 1px solid #ccc;
+    position: relative;
+}
+.courses .course-title:hover {
+    background: #f4f4f4;
+}
+.courses .course-content {
+    border-style: solid;
+        border-top-style: solid;
+    border-width: 1px;
+        border-top-width: 1px;
+    border-color: #ccc;
+        border-top-color: rgb(204, 204, 204);
+    border-top: none;
+    background: #fcfcfc;
+}
+.full-slider{
+	width: 100%
+}
+.columns-social{
+	float: right;
+}
+@media only screen and (max-width: 639px) {
+	.columns-social{
+		float: none;
+	}
+	#main-header .our-social {
+    margin-right: 0;
+	}
+}
+.ubermenu .ubermenu-target {
+    padding: 15px 22px;
+}
+.ubermenu-responsive-toggle.ubermenu-responsive-toggle-main {
+    text-transform: uppercase;
+}
+.research-content {
+    padding: 30px 0;
+}
+
+@media only screen and (max-width: 634px) {
+	#main-header.medium-6 {
+    width: 50%;
+	}
+}</style>		<!-- Multiview Script -->
+		<script type="rocketlazyloadscript" data-rocket-src="//assets.adobedtm.com/c876840ac68fc41c08a580a3fb1869c51ca83380/satelliteLib-fe24f2313fc6946e1682358570e1d78258dbe80a.js"></script>
+	</head>
+<body class="home page-template-default page page-id-3 page-parent offcanvas">
+	<script type="rocketlazyloadscript" language="javascript">
+		$( function () {
+			//l'array ARR va contenir la liste des images
+			var arr = [];
+			//trop lazy pour tout taper...
+			for ( var x = 1; x <= 24; x++ )
+				arr.push( "https://www.biofiredefense.com/wp-content/themes/BiofiredxTheme/assets/images/rotate/" + x + '.png' );
+			/* var arr2 = []
+			 for (var x=1; x<= 25; x++)
+				 arr2.push(x + ".jpg");*/
+
+			//bindons le widget rotate � l'image pic avec la liste d'image arr
+			jQuery( window ).load( function () {
+				$( '#mousemove123465' ).threesixty( {
+					images: arr,
+					method: 'click',
+					'cycle': 1,
+					'sensibility': 1,
+					direction: 'backward'
+				} );
+			} );
+			/*$("#click").threesixty({images:arr2, method:'click', 'cycle':1, 'resetMargin': 10});
+			$("#auto").threesixty({images:arr2, method:'auto', autoscrollspeed:100});*/
+
+		} );
+	</script>
+	
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJX34LJ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+	<header id="masthead" class="site-header">
+		<div id="main-header">
+			<div class="row cf">
+				<div class="large-6 medium-6 columns">
+
+					<div class="logo">
+						<a href="https://www.biofiredefense.com" title="BioFire Defense"><img src="https://www.biofiredefense.com/wp-content/themes/BiofiredxTheme/assets/images/BFDF-Gradient.svg" alt="BioFire Defense" title="BioFire Defense"/></a>					</div>
+				</div>
+				<div class="large-6 medium-6 columns">
+					<div class="header-right">
+						<div class="mega-search-wrap">
+
+
+							<form method="get" id="searchForm" class="mega-search expand-to-left"
+							      action="https://www.biofiredefense.com/">
+								<span class="search-btn"></span>
+								<input type="submit" id="searchsubmit" value="Search"/>
+								<input type="text" value="" name="s" id="s"
+								       placeholder="Search"/>
+							</form>
+
+						</div>
+					
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="main-menu">
+			<div class="row">
+				<div class="columns large-12">
+					
+<!-- UberMenu [Configuration:main] [Theme Loc:main-nav] [Integration:auto] -->
+<button class="ubermenu-responsive-toggle ubermenu-responsive-toggle-main ubermenu-skin-minimal ubermenu-loc-main-nav ubermenu-responsive-toggle-content-align-left ubermenu-responsive-toggle-align-full ubermenu-responsive-toggle-close-icon-times " tabindex="0" data-ubermenu-target="ubermenu-main-3-main-nav-2"  ><i class="fas fa-bars" ></i>Menu</button><nav id="ubermenu-main-3-main-nav-2" class="ubermenu ubermenu-nojs ubermenu-main ubermenu-menu-3 ubermenu-loc-main-nav ubermenu-responsive ubermenu-responsive-default ubermenu-responsive-collapse ubermenu-horizontal ubermenu-transition-fade ubermenu-trigger-hover_intent ubermenu-skin-minimal  ubermenu-bar-align-full ubermenu-items-align-auto ubermenu-bound-inner ubermenu-disable-submenu-scroll ubermenu-retractors-responsive ubermenu-submenu-indicator-closes"><ul id="ubermenu-nav-main-3-main-nav" class="ubermenu-nav" data-title="Main Navigation"><li id="menu-item-535" class="large-2 medium-4 small-12 column ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-home ubermenu-current-menu-item ubermenu-page_item ubermenu-page-item-3 ubermenu-current_page_item ubermenu-item-535 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto active" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">HOME</span></a></li><li id="menu-item-522" class="large-2 medium-4 small-12 column ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-item-522 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-flyout" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/products/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">PRODUCTS</span></a><ul  class="ubermenu-submenu ubermenu-submenu-id-522 ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item"  ><li id="menu-item-532" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-532 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/products/biofire-filmarray-biosurveillance-system/"><span class="ubermenu-target-title ubermenu-target-text">BioFire FilmArray</span></a></li><li id="menu-item-2793" class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-2793 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/products/biofire-filmarray-biosurveillance-system/#FilmArrayTestKits"><span class="ubermenu-target-title ubermenu-target-text">&#8211; BioFire FilmArray Test Kits</span></a></li><li id="menu-item-793" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-793 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/products/razor/"><span class="ubermenu-target-title ubermenu-target-text">RAZOR Mk II</span></a></li><li id="menu-item-1127" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-1127 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/products/life-science-melting-dyes-and-kits/"><span class="ubermenu-target-title ubermenu-target-text">Life Science Melting Dyes and Kits</span></a></li><li id="menu-item-1128" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-1128 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/products/government-program/"><span class="ubermenu-target-title ubermenu-target-text">Government Programs</span></a></li></ul></li><li id="menu-item-523" class="large-2 medium-4 small-12 column ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-item-523 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-flyout" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/product-support/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">SUPPORT</span></a><ul  class="ubermenu-submenu ubermenu-submenu-id-523 ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item"  ><li id="menu-item-1216" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-1216 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/product-support/filmarray-support/"><span class="ubermenu-target-title ubermenu-target-text">BioFire FilmArray</span></a></li><li id="menu-item-531" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-531 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/product-support/razor-support/"><span class="ubermenu-target-title ubermenu-target-text">RAZOR</span></a></li><li id="menu-item-1217" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-1217 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/product-support/life-science-support/"><span class="ubermenu-target-title ubermenu-target-text">Life Science</span></a></li><li id="menu-item-1218" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-1218 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/product-support/safety-data-sheets/"><span class="ubermenu-target-title ubermenu-target-text">SDS Sheets</span></a></li><li id="menu-item-820" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-820 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/product-support/return-forms/"><span class="ubermenu-target-title ubermenu-target-text">Return Forms</span></a></li></ul></li><li id="menu-item-526" class="large-2 medium-4 small-12 column ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-item-526 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-flyout" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/biofire-media/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">MEDIA</span></a><ul  class="ubermenu-submenu ubermenu-submenu-id-526 ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item"  ><li id="menu-item-528" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-528 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/biofire-media/conferences-and-events/"><span class="ubermenu-target-title ubermenu-target-text">Conferences and Events</span></a></li><li id="menu-item-822" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-822 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/biofire-media/conference-posters/"><span class="ubermenu-target-title ubermenu-target-text">Conference Posters &#038; Publications</span></a></li><li id="menu-item-823" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-823 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/biofire-media/press-releases/"><span class="ubermenu-target-title ubermenu-target-text">Press Releases</span></a></li><li id="menu-item-828" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-828 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/biofire-media/video-library/"><span class="ubermenu-target-title ubermenu-target-text">Video Library</span></a></li></ul></li><li id="menu-item-524" class="large-2 medium-4 small-12 column ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-item-524 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-flyout" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/contact-us/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">CONTACT US</span></a><ul  class="ubermenu-submenu ubermenu-submenu-id-524 ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item"  ><li id="menu-item-1248" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-1248 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/contact-us/distributors/"><span class="ubermenu-target-title ubermenu-target-text">Global <br> Distributors</span></a></li></ul></li><li id="menu-item-525" class="large-2 medium-4 small-12 column ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-item-525 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-flyout" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/about-us/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">ABOUT US</span></a><ul  class="ubermenu-submenu ubermenu-submenu-id-525 ubermenu-submenu-type-flyout ubermenu-submenu-drop ubermenu-submenu-align-left_edge_item"  ><li id="menu-item-530" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-530 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/about-us/biofires-mission-and-values/"><span class="ubermenu-target-title ubermenu-target-text">Mission and Values</span></a></li><li id="menu-item-821" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-821 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/about-us/product-history/"><span class="ubermenu-target-title ubermenu-target-text">Product History</span></a></li><li id="menu-item-529" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-529 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/about-us/careers/"><span class="ubermenu-target-title ubermenu-target-text">Careers</span></a></li><li id="menu-item-3190" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-3190 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-1" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/quality-certificates/"><span class="ubermenu-target-title ubermenu-target-text">Quality Certificates</span></a></li></ul></li><li id="menu-item-2560" class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-2560 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto" ><a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only" href="https://www.biofiredefense.com/product-support/filmarray-support/" tabindex="0"><span class="ubermenu-target-title ubermenu-target-text">Product Labeling</span></a></li></ul></nav>
+<!-- End UberMenu -->
+				</div>
+			</div>
+		</div>
+	</header>
+	<div id="main-wrapper" class="container">
+  
+<!-- Page Content -->
+
+  <div class="products-section">
+    <div class="row">
+      <div class="large-12 columns">
+        <h2>Safeguarding Humanity</h2>
+          <div class="sub-text">
+          <p>At BioFire Defense we deliver a fully integrated suite of biological agent identification products, including BioFire<sup>®</sup> FilmArray<sup>®</sup> and RAZOR<sup>®</sup> Mk II Systems to the biodefense and first responder community. Our products and services speed up medical results, help people stay healthy, and make communities more secure.</p>
+<p>Simply put, we make the world a safer and healthier place.</p>
+          </div>
+      </div>
+    </div>
+  </div>
+
+<!-- End Page Content -->
+
+<!--- Flex Content -->
+
+  <div class="full-slider">
+			<!-- START slider 1 REVOLUTION SLIDER 6.5.6 --><p class="rs-p-wp-fix"></p>
+			<rs-module-wrap id="rev_slider_1_1_wrapper" data-source="gallery" style="visibility:hidden;background:transparent;padding:0;margin:0px auto;margin-top:0;margin-bottom:0;">
+				<rs-module id="rev_slider_1_1" style="" data-version="6.5.6">
+					<rs-slides>
+						<rs-slide style="position: absolute;" data-key="rs-4" data-title="Slide" data-thumb="//www.biofiredefense.com/wp-content/uploads/2021/08/mosquito-swarm-globe2-50x100.jpg" data-link="//www.biofiredefense.com/globalfeverpanel/" data-target="_self" data-seoz="front" data-in="o:0;" data-out="a:false;" id="Global Fever Panel">
+							<img src="//www.biofiredefense.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" title="mosquito-swarm-globe2" width="950" height="300" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="//www.biofiredefense.com/wp-content/uploads/2021/08/mosquito-swarm-globe2.jpg" data-no-retina>
+<!--
+							--><a
+								id="slider-1-slide-4-layer-4" 
+								class="rs-layer"
+								href="" target="_self"
+								data-type="text"
+								data-color="#fff"
+								data-rsp_ch="on"
+								data-xy="x:244px;y:213px;"
+								data-text="w:normal;s:16;l:40;ls:0px;fw:500;a:center;"
+								data-dim="h:58px;"
+								data-actions='o:click;a:menulink;target:_self;sp:300;e:none;'
+								data-padding="t:10;r:30;b:10;l:30;"
+								data-border="bor:5px,5px,5px,5px;"
+								data-frame_1="st:880;sR:880;"
+								data-frame_999="o:0;st:8900;sR:7720;"
+								style="z-index:11;background-color:#5e5e5e;font-family:'Roboto';"
+							>Learn More 
+							</a><!--
+
+							--><rs-layer
+								id="slider-1-slide-4-layer-7" 
+								data-type="text"
+								data-color="#fff"
+								data-tsh="h:2px;v:2px;"
+								data-rsp_ch="on"
+								data-xy="x:245px;y:60px;"
+								data-text="w:normal;s:36;l:45;fw:900;"
+								data-frame_1="st:880;sR:880;"
+								data-frame_999="o:0;st:8900;sR:7720;"
+								style="z-index:8;font-family:'Roboto';text-transform:uppercase;"
+							>BioFire 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-4-layer-8" 
+								data-type="text"
+								data-color="#fff"
+								data-tsh="h:2px;v:2px;"
+								data-rsp_ch="on"
+								data-xy="x:245px;y:94px;"
+								data-text="w:normal;s:53;l:67;fw:900;"
+								data-frame_1="st:880;sR:880;"
+								data-frame_999="o:0;st:8900;sR:7720;"
+								style="z-index:9;font-family:'Roboto';text-transform:uppercase;"
+							>GLOBAL FEVER PANEL 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-4-layer-15" 
+								data-type="text"
+								data-color="#fff"
+								data-rsp_ch="on"
+								data-xy="x:243px;y:154px;"
+								data-text="w:normal;s:19;l:40;ls:3px;fw:500;a:center;"
+								data-dim="h:48px;"
+								data-padding="t:5;r:5;b:5;l:10;"
+								data-border="bor:5px,5px,5px,5px;"
+								data-frame_1="st:880;sR:880;"
+								data-frame_999="o:0;st:8900;sR:7720;"
+								style="z-index:10;background-color:rgba(62,81,50,0.99);font-family:'Roboto';"
+							>1 Clinical Test. 6 Targets.  All in under an Hour.<br />
+ 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-4-layer-20" 
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="x:795px;y:84px;"
+								data-text="w:normal;"
+								data-dim="w:300px;h:205px;"
+								data-frame_1="st:1200;sR:1200;"
+								data-frame_999="o:0;st:8880;sR:7380;"
+								style="z-index:12;"
+							><img src="//www.biofiredefense.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" class="tp-rs-img rs-lazyload" width="300" height="205" data-lazyload="//www.biofiredefense.com/wp-content/uploads/2021/08/BFDF-GF-IVD-Panel-300.png" data-no-retina> 
+							</rs-layer><!--
+-->						</rs-slide>
+						<rs-slide style="position: absolute;" data-key="rs-1" data-title="Slide" data-thumb="//www.biofiredefense.com/wp-content/uploads/2020/12/COVIDFront-1240x400-1-50x100.jpg" data-link="//www.biofiredefense.com/covid-19test/" data-target="_self" data-seoz="front" data-in="x:100%;">
+							<img src="//www.biofiredefense.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" title="COVIDFront-1240&#215;400" width="1240" height="400" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="//www.biofiredefense.com/wp-content/uploads/2020/12/COVIDFront-1240x400-1.jpg" data-bg="p:center top;" data-no-retina>
+<!--
+							--><a
+								id="slider-1-slide-1-layer-6" 
+								class="rs-layer"
+								href="https://www.biofiredefense.com/covid-19test/" target="_self"
+								data-type="text"
+								data-color="#fff"
+								data-rsp_ch="on"
+								data-xy="x:272px;y:218px;"
+								data-text="w:normal;s:16;l:40;ls:0px;fw:500;a:center;"
+								data-dim="h:58px;"
+								data-padding="t:10;r:30;b:10;l:30;"
+								data-border="bor:5px,5px,5px,5px;"
+								data-frame_1="st:880;sR:880;"
+								data-frame_999="o:0;st:8900;sR:7720;"
+								style="z-index:8;background-color:#b56f2c;font-family:'Roboto';"
+							>Learn More 
+							</a><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-9" 
+								data-type="text"
+								data-color="#fff"
+								data-tsh="c:rgba(0,0,0,0.75);h:7px;v:7px;b:10px;"
+								data-rsp_ch="on"
+								data-xy="x:272px;y:146px;"
+								data-text="w:normal;s:18;l:20;"
+								data-dim="w:556px;h:69;"
+								data-frame_1="st:880;sR:880;"
+								data-frame_999="o:0;st:w;sR:7820;"
+								style="z-index:10;font-family:'Arial';"
+							>The BioFire<sup>®</sup> COVID-19 Test detects SARS-CoV-2 RNA<br /> in samples from individuals suspected of COVID-19. <br />Emergency use of this test is limited to authorized laboratories. 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-10" 
+								data-type="text"
+								data-color="#fff"
+								data-bsh="c:rgba(0,0,0,0.5);"
+								data-tsh="c:rgba(0,0,0,0.75);h:7px;v:7px;b:10px;"
+								data-rsp_ch="on"
+								data-xy="x:273px;y:90px;"
+								data-text="w:normal;s:50;l:50;fw:900;"
+								data-dim="minh:0px;"
+								data-frame_1="st:880;sR:880;"
+								data-frame_999="o:0;st:w;sR:7820;"
+								style="z-index:9;font-family:'Roboto';text-transform:uppercase;"
+							>BioFire COVID-19 Test 
+							</rs-layer><!--
+-->						</rs-slide>
+						<rs-slide style="position: absolute;" data-key="rs-2" data-title="Slide" data-thumb="//www.biofiredefense.com/wp-content/uploads/2018/09/FilmArrayLinedUp1-1030w-50x100.jpg" data-link="//www.biofiredefense.com/products/biofire-filmarray-biosurveillance-system/" data-target="_self" data-seoz="front" data-in="x:100%;">
+							<img src="//www.biofiredefense.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" title="FilmArrayLinedUp1-1030w" width="1030" height="300" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="//www.biofiredefense.com/wp-content/uploads/2018/09/FilmArrayLinedUp1-1030w.jpg" data-bg="p:left top;" data-no-retina>
+<!--
+							--><rs-layer
+								id="slider-1-slide-2-layer-0" 
+								data-type="text"
+								data-color="#fff"
+								data-rsp_ch="on"
+								data-xy="x:244px;y:213px;"
+								data-text="w:normal;s:16;l:40;ls:0px;fw:500;a:center;"
+								data-dim="h:58px;"
+								data-padding="t:10;r:30;b:10;l:30;"
+								data-border="bor:5px,5px,5px,5px;"
+								data-frame_1="st:880;sR:880;"
+								data-frame_999="o:0;st:8900;sR:7720;"
+								style="z-index:11;background-color:#b56f2c;font-family:'Roboto';"
+							>Learn More 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-2-layer-2" 
+								data-type="text"
+								data-color="#fff"
+								data-tsh="h:2px;v:2px;"
+								data-rsp_ch="on"
+								data-xy="x:243px;y:52px;"
+								data-text="w:normal;s:54;l:68;fw:900;"
+								data-frame_1="st:880;sR:880;"
+								data-frame_999="o:0;st:8900;sR:7720;"
+								style="z-index:8;font-family:'Roboto';text-transform:uppercase;"
+							>FilmArray 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-2-layer-3" 
+								data-type="text"
+								data-color="#fff"
+								data-tsh="h:2px;v:2px;"
+								data-rsp_ch="on"
+								data-xy="x:244px;y:109px;"
+								data-text="w:normal;s:40;l:50;fw:900;"
+								data-frame_1="st:880;sR:880;"
+								data-frame_999="o:0;st:8900;sR:7720;"
+								style="z-index:9;font-family:'Roboto';text-transform:uppercase;"
+							>BioSurveillance System 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-2-layer-5" 
+								data-type="text"
+								data-color="#fff"
+								data-rsp_ch="on"
+								data-xy="x:243px;y:154px;"
+								data-text="w:normal;s:19;l:40;ls:9;fw:500;a:center;"
+								data-dim="h:48px;"
+								data-padding="t:5;r:5;b:5;l:10;"
+								data-border="bor:5px,5px,5px,5px;"
+								data-frame_1="st:880;sR:880;"
+								data-frame_999="o:0;st:8900;sR:7720;"
+								style="z-index:10;background-color:rgba(0,54,99,0.51);font-family:'Roboto';"
+							> Fully Automated BioDetection 
+							</rs-layer><!--
+-->						</rs-slide>
+						<rs-slide style="position: absolute;" data-key="rs-3" data-title="Slide" data-thumb="//www.biofiredefense.com/wp-content/uploads/2020/12/RAZOR-FIre-1240x400-1-50x100.jpg" data-link="//www.biofiredefense.com/products/razorex/" data-target="_self" data-seoz="front" data-in="x:100%;">
+							<img src="//www.biofiredefense.com/wp-content/plugins/revslider/public/assets/assets/dummy.png" title="RAZOR-FIre-1240&#215;400" width="1240" height="400" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="//www.biofiredefense.com/wp-content/uploads/2020/12/RAZOR-FIre-1240x400-1.jpg" data-bg="p:left top;" data-no-retina>
+<!--
+							--><rs-layer
+								id="slider-1-slide-3-layer-11" 
+								data-type="text"
+								data-color="#fff"
+								data-tsh="h:3px;v:3px;b:3px;"
+								data-rsp_ch="on"
+								data-xy="x:196px;y:215px;"
+								data-text="w:normal;s:20;l:40;ls:1;fw:500;"
+								data-dim="minh:0px;"
+								data-padding="t:5;r:5;b:5;l:5;"
+								data-border="bor:5px,5px,5px,5px;"
+								data-frame_1="x:-1px;y:6px;st:870;sR:870;"
+								data-frame_999="o:0;st:w;sR:7830;"
+								style="z-index:10;background-color:rgba(255,114,114,0.5);font-family:'Roboto';"
+							>Identifies BioThreat Agents Using Cutting Edge PCR Technology 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-3-layer-12" 
+								data-type="text"
+								data-color="#fff"
+								data-tsh="h:3px;v:3px;b:3px;"
+								data-rsp_ch="on"
+								data-xy="x:198px;y:131px;"
+								data-text="w:normal;s:50;l:50;fw:900;"
+								data-dim="minh:0px;"
+								data-frame_1="y:5px;st:870;sR:870;"
+								data-frame_999="o:0;st:w;sR:7830;"
+								style="z-index:8;font-family:'Roboto';text-transform:uppercase;"
+							>RAZOR Mk II 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-3-layer-13" 
+								data-type="text"
+								data-color="#fff"
+								data-tsh="h:3px;v:3px;b:3px;"
+								data-rsp_ch="on"
+								data-xy="x:198px;y:176px;"
+								data-text="w:normal;s:35;l:50;fw:900;"
+								data-dim="minh:0px;"
+								data-frame_1="st:870;sR:870;"
+								data-frame_999="o:0;st:w;sR:7830;"
+								style="z-index:9;font-family:'Roboto';text-transform:uppercase;"
+							>BioDetection System 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-3-layer-14" 
+								data-type="text"
+								data-color="#fff"
+								data-rsp_ch="on"
+								data-xy="x:198px;y:277px;"
+								data-text="w:normal;s:16;l:40;ls:0px;fw:500;a:center;"
+								data-dim="h:58px;"
+								data-padding="t:10;r:30;b:10;l:30;"
+								data-border="bor:5px,5px,5px,5px;"
+								data-frame_1="st:880;sR:880;"
+								data-frame_999="o:0;st:8900;sR:7720;"
+								style="z-index:11;background-color:#b56f2c;font-family:'Roboto';"
+							>Learn More 
+							</rs-layer><!--
+-->						</rs-slide>
+					</rs-slides>
+				</rs-module>
+				<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+					setREVStartSize({c: 'rev_slider_1_1',rl:[1240,1024,778,480],el:[400],gw:[1240],gh:[400],type:'standard',justify:'',layout:'fullwidth',mh:"0"});if (window.RS_MODULES!==undefined && window.RS_MODULES.modules!==undefined && window.RS_MODULES.modules["revslider11"]!==undefined) {window.RS_MODULES.modules["revslider11"].once = false;window.revapi1 = undefined;if (window.RS_MODULES.checkMinimal!==undefined) window.RS_MODULES.checkMinimal()}
+				</script>
+			</rs-module-wrap>
+			<!-- END REVOLUTION SLIDER -->
+</div>		<div class="request-demo-content ' . $add_class . '" style="background-color:;">
+			<div class="row">
+				<div class="columns large-6 medium-6"><p>&nbsp;</p>
+<h4></h4>
+<h4>Tests for Coronavirus (COVID-19) with results in about 45 minutes.</h4>
+<p>The BioFire<sup>®</sup> COVID-19 Test is a nested multiplexed RT-PCR test intended for the qualitative detection of SARS-CoV-2 RNA in samples from individuals suspected of COVID-19 by their healthcare provider.</p>
+</div>
+				<div class="columns large-6 medium-6"><p><a href="https://www.biofiredefense.com/covid-19test/"><img decoding="async" loading="lazy" class="alignnone wp-image-3015 size-full" src="https://www.biofiredefense.com/wp-content/uploads/2021/08/COVID-19-Pouch-v1.1-400w.png" alt="BioFire COVID-19 Test" width="400" height="315" srcset="https://www.biofiredefense.com/wp-content/uploads/2021/08/COVID-19-Pouch-v1.1-400w.png 400w, https://www.biofiredefense.com/wp-content/uploads/2021/08/COVID-19-Pouch-v1.1-400w-300x236.png 300w" sizes="(max-width: 400px) 100vw, 400px" /></a></p>
+</div>
+			</div>
+		</div>
+			<div class="request-demo-content ' . $add_class . '" style="background-color:#ffffff;">
+			<div class="row">
+				<div class="columns large-6 medium-6"><h2></h2>
+<h2>BioFire FilmArray BioSurveillance System</h2>
+<h3>Fully Automated BioDetection</h3>
+<p>The BioFire FilmArray System is able to identify, in a closed system, dozens of the most lethal viruses and bacteria, including emerging infectious diseases. The easy-to-use system represents the next generation in automated detection systems. The BioFire FilmArray System uses a plastic pouch with automated capabilities, including sample preparation, reverse transcription for RNA viruses, and a two-stage nested multiplex PCR process. The results are a revolutionary detection system in a lightweight, small-footprint format.</p>
+<p><a class="maxbutton-1 maxbutton maxbutton-learn-more" title="Learn More" href="https://www.biofiredefense.com/products/biofire-filmarray-biosurveillance-system/"><span class='mb-text'>Learn More</span></a></p>
+</div>
+				<div class="columns large-6 medium-6"><p><a href="https://www.biofiredefense.com/products/biofire-filmarray-biosurveillance-system/"><img decoding="async" loading="lazy" class="size-full wp-image-288 alignright" src="https://www.biofiredefense.com/wp-content/uploads/2018/05/FilmArray-Gray-800w.jpg" alt="" width="800" height="677" srcset="https://www.biofiredefense.com/wp-content/uploads/2018/05/FilmArray-Gray-800w.jpg 800w, https://www.biofiredefense.com/wp-content/uploads/2018/05/FilmArray-Gray-800w-300x254.jpg 300w, https://www.biofiredefense.com/wp-content/uploads/2018/05/FilmArray-Gray-800w-768x650.jpg 768w" sizes="(max-width: 800px) 100vw, 800px" /></a></p>
+</div>
+			</div>
+		</div>
+	<div class="featured-section parallax">
+					<div class="row">
+						<div class="large-10 columns">
+							<h3>BioFire FilmArray Test Kits. 1 Streamlined System. Many BioThreat Targets.</h3>
+<p>The BioFire FilmArray panels contain all the required reagents for sample preparation, PCR, and detection in a simple freeze-dried, room temperature stable format making it the ideal system for any mobile lab. Prior to a run, the operator injects the unknown sample and hydration solution into the pouch and the FilmArray instrument does the rest.</p>
+
+						</div>
+					</div>
+				</div>			<div class="career-content film-array-content">
+				<div class="row">
+					<div class="columns large-12">
+						<h3 style="text-align: center;">BioFire FilmArray Panels</h3>
+<p style="text-align: center;">Our BioFire FilmArray panels test for a host of viruses, bacteria and protozoa. Whether you’re identifying that unknown white powder or ensuring that your water system is free of deadly bacteria, the BioFire FilmArray System can return answers fast.</p>
+<table style="width: 100%; border-collapse: collapse;" cellpadding="5">
+<tbody>
+<tr>
+<td style="width: 12.5%; text-align: center; vertical-align: top;"><a href="https://www.biofiredefense.com/products/biofire-filmarray-biosurveillance-system/#BFglobalfever"><img src="https://www.biofiredefense.com/wp-content/uploads/2021/08/GlobalFever-IVD-110.png" class="alignnone size-full" /></a></td>
+<td style="width: 12.5%; text-align: center; vertical-align: top;"><a href="https://www.biofiredefense.com/products/biofire-filmarray-biosurveillance-system/#FAbiothreat-e"><img src="https://www.biofiredefense.com/wp-content/uploads/2020/06/Panel-BTE-110w.png" class="alignnone size-full" /></a></td>
+<td style="width: 12.5%; text-align: center; vertical-align: top;"><a href="https://www.biofiredefense.com/covid-19test/"><img src="https://www.biofiredefense.com/wp-content/uploads/2020/06/Panel-COVID-110w.png" class="alignnone" /></a></td>
+<td style="width: 12.5%; text-align: center; vertical-align: top;"><a href="https://www.biofiredefense.com/products/biofire-filmarray-biosurveillance-system/#FAbiothreat"><img src="https://www.biofiredefense.com/wp-content/uploads/2020/06/Panel-BT-110w.png" class="alignnone size-full" /></a></td>
+<td style="width: 12.5%; text-align: center; vertical-align: top;"><a href="https://www.biofiredefense.com/products/biofire-filmarray-biosurveillance-system/#FAglobalfever"><img src="https://www.biofiredefense.com/wp-content/uploads/2020/06/Panel-GF-110w.png" class="alignnone size-full" /></a></td>
+<td style="width: 12.5%; text-align: center; vertical-align: top;"><a href="https://www.biofiredefense.com/products/biofire-filmarray-biosurveillance-system/#FAfood_water"><img src="https://www.biofiredefense.com/wp-content/uploads/2020/10/Panel-FW-110w.png" class="alignnone size-full" /></a></td>
+<td style="width: 12.5%; text-align: center; vertical-align: top;"><a href="https://www.biofiredefense.com/products/biofire-filmarray-biosurveillance-system/#Sentinel"><img src="https://www.biofiredefense.com/wp-content/uploads/2020/06/Panel-Sentinel-110w.png" class="alignnone" /></a></td>
+<td style="width: 12.5%; text-align: center; vertical-align: top;"><a href="https://www.biofiredefense.com/products/biofire-filmarray-biosurveillance-system/#Warrior"><img src="https://www.biofiredefense.com/wp-content/uploads/2020/06/Panel-Warrior-110w.png" class="alignnone size-full" /></a></td>
+</tr>
+<tr style="background-color: #ffffff;">
+<td style="vertical-align: top; width: 12.5%; text-align: center;">
+<p style="text-align: center;"><strong><a href="https://www.biofiredefense.com/products/biofire-filmarray-biosurveillance-system/#BFglobalfever">BioFire Global Fever Panel</a></strong></p>
+</td>
+<td style="vertical-align: top; width: 12.5%; height: 80px; text-align: center;">
+<p style="text-align: center;"><strong><a href="https://www.biofiredefense.com/products/biofire-filmarray-biosurveillance-system/#FAbiothreat-e">FilmArray BioThreat-E Kit</a><br />
+</strong></p>
+</td>
+<td style="vertical-align: top; width: 12.5%; height: 80px; text-align: center;">
+<p style="text-align: center;"><strong><a href="https://www.biofiredefense.com/covid-19test/">BioFire COVID-19 Test</a><br />
+</strong></p>
+</td>
+<td style="vertical-align: top; width: 12.5%; height: 80px; text-align: center;">
+<p style="text-align: center;"><strong><a href="https://www.biofiredefense.com/products/biofire-filmarray-biosurveillance-system/#FAbiothreat">FilmArray BioThreat Panel</a><br />
+</strong></p>
+</td>
+<td style="vertical-align: top; width: 12.5%; height: 80px; text-align: center;">
+<p style="text-align: center;"><a href="https://www.biofiredefense.com/products/biofire-filmarray-biosurveillance-system/#FAglobalfever"><strong>FilmArray Global Fever Panel – RUO</strong></a></p>
+</td>
+<td style="vertical-align: top; width: 12.5%; height: 80px; text-align: center;">
+<p style="text-align: center;"><a href="https://www.biofiredefense.com/products/biofire-filmarray-biosurveillance-system/#FAfood_water"><strong>FilmArray Food &amp; Water Panel</strong></a></p>
+</td>
+<td style="vertical-align: top; width: 12.5%; height: 80px; text-align: center;">
+<p style="text-align: center;"><strong><a href="https://www.biofiredefense.com/products/biofire-filmarray-biosurveillance-system/#Sentinel">FilmArray Sentinel Panel</a><br />
+</strong></p>
+</td>
+<td style="vertical-align: top; width: 12.5%; height: 80px; text-align: center;">
+<p style="text-align: center;"><strong><a href="https://www.biofiredefense.com/products/biofire-filmarray-biosurveillance-system/#Warrior">FilmArray NGDS Warrior Panel (IVD)</a><br />
+</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;"><a class="maxbutton-1 maxbutton maxbutton-learn-more" title="Learn More" href="https://www.biofiredefense.com/products/biofire-filmarray-biosurveillance-system/#FilmArrayTestKits"><span class='mb-text'>Learn More</span></a></p>
+					</div>
+				</div>
+			</div>
+		<div class="two-columns gray-bg vdo-bar" style="background-color:">
+					<div class="container-vdo">
+						<div class="row">
+							<div class="small-12 medium-6 large-6 columns">
+								<div class="images-wrapper"><a href="https://www.biofiredefense.com/products/razor/" target="_blank"><img src="https://www.biofiredefense.com/wp-content/uploads/2020/04/RAZORMkII-Right-600w.png" alt=""/></a></div>
+							</div>
+							<div class="small-12 medium-6 large-6 columns">
+								<div class="text-content">
+									<div class="page-header">
+<h1></h1>
+<h1>RAZOR Mk II BioDetection System</h1>
+<p>The RAZOR Mk II System detects and identifies biological agents using cutting edge PCR technology. Made for field use, RAZOR Mk II is compact, lightweight, and easy to use. It is a field PCR unit that is fast, with ultra-reliable DNA based results. Created for first responders and front line military troops, it is easily operated while working in protective equipment under extreme conditions. The new battery powered unit includes barcode reader, and a bright, easy to read color screen.</p>
+<p><a class="maxbutton-1 maxbutton maxbutton-learn-more" title="Learn More" href="https://www.biofiredefense.com/products/razor/"><span class='mb-text'>Learn More</span></a>
+</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>			<div class="career-content film-array-content">
+				<div class="row">
+					<div class="columns large-12">
+						<h3 style="text-align: center;">RAZOR Reagent Kits</h3>
+<p style="text-align: center;">Our RAZOR Reagent Kits offer ready-to-use, freeze-dried test kits for the detection and identification of pathogens and biothreat agents. Whether you&#8217;re in the hot-zone testing for biological threat agents or you need to confirm that your lettuce is free of <em>e. coli</em>, the RAZOR Mk II System will provide you with quick and reliable results.</p>
+<table style="width: 100%; border-collapse: collapse; background-color: #ffffff;" border="0" cellpadding="5">
+<tbody>
+<tr>
+<td style="width: 25%; text-align: center;"><a href="https://www.biofiredefense.com/products/razor/#RZten"><img src="https://www.biofiredefense.com/wp-content/uploads/2018/11/RAZOR-10Icon-1500w.png" class="alignnone size-full" /></a></td>
+<td style="width: 25%; text-align: center;"><a href="https://www.biofiredefense.com/products/razor/#RZanthrax"><img src="https://www.biofiredefense.com/wp-content/uploads/2018/11/RAZOR-AntIcon-150w.png" class="alignnone size-full" /></a></td>
+</tr>
+<tr style="background-color: #ffffff;">
+<td style="width: 25%; text-align: center;"><a href="https://www.biofiredefense.com/products/razor/#RZten"><strong>10 Target Screen Kit</strong></a></td>
+<td style="width: 25%; text-align: center;"><a href="https://www.biofiredefense.com/products/razor/#RZanthrax"><strong>Anthrax 3 Target Kit</strong></a></td>
+</tr>
+</tbody>
+</table>
+<p style="text-align: center;"><a class="maxbutton-1 maxbutton maxbutton-learn-more" title="Learn More" href="https://www.biofiredefense.com/products/razor/"><span class='mb-text'>Learn More</span></a></p>
+					</div>
+				</div>
+			</div>
+		
+<!-- End Flex Content -->
+
+<!-- CTA Section starts -->
+<!-- CTA Section ends -->
+</div>
+
+<div id="footer-container">
+  <footer id="footer">
+                <div class="row">
+      <div class="large-12 columns">      	
+      
+				<div class="menu-footer-container"><ul id="menu-footer" class="footer-menu"><li id="menu-item-357" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-357"><a href="https://www.biofiredefense.com/products/">Products</a></li>
+<li id="menu-item-333" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-333"><a href="https://www.biofiredefense.com/product-support/">Support</a></li>
+<li id="menu-item-370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-370"><a href="https://www.biofiredefense.com/biofire-media/">Media</a></li>
+<li id="menu-item-313" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-313"><a href="https://www.biofiredefense.com/contact-us/">Contact Us</a></li>
+<li id="menu-item-249" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-249"><a href="https://www.biofiredefense.com/about-us/">About Us</a></li>
+<li id="menu-item-649" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-649"><a href="https://www.biofiredefense.com/about-us/careers/">Careers</a></li>
+</ul></div>                
+        <div class="our-social">
+        	          <ul>
+          	<li><a href="https://www.facebook.com/BiofireDefense/" target="_blank" title=""><i class="fa fa-facebook"></i></a></li><li><a href="https://twitter.com/BiofireDefense" target="_blank" title=""><i class="fa fa-tumblr"></i></a></li><li><a href="https://www.youtube.com/channel/UC8EWtFrUSwofXwYNDDDjOVA" target="_blank" title=""><i class="fa fa-play"></i></a></li>          </ul>
+        </div>
+        <div class="copyright">
+        	<p style="text-align: left;"><span style="color: #d6d6d6;">© 2023 BioFire Defense, All Rights Reserved   |   <a href="https://www.biofiredefense.com/legalnotices/"> <span style="color: #d6d6d6;"> Legal Notices</span></a></span></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+			window.RS_MODULES = window.RS_MODULES || {};
+			window.RS_MODULES.modules = window.RS_MODULES.modules || {};
+			window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
+			window.RS_MODULES.defered = true;
+			window.RS_MODULES.moduleWaiting = window.RS_MODULES.moduleWaiting || {};
+			window.RS_MODULES.type = 'compiled';
+		</script>
+		<!--noptimize--><!--email_off--><style type='text/css'>.maxbutton-1.maxbutton.maxbutton-learn-more{position:relative;text-decoration:none;display:inline-block;vertical-align:middle;width:160px;height:50px;border:2px solid #c26b11;border-radius:1px 1px 1px 1px;background-color:#c26b11;box-shadow:0px 0px 2px 0px #333333}.maxbutton-1.maxbutton.maxbutton-learn-more:hover{border-color:#9e5917;background-color:#9e5917;box-shadow:0px 0px 2px 0px #333333}.maxbutton-1.maxbutton.maxbutton-learn-more .mb-text{color:#ffffff;font-family:Arial;font-size:15px;text-align:center;font-style:normal;font-weight:normal;line-height:1em;box-sizing:border-box;display:block;background-color:unset;padding:18px 0px 0px 0px}.maxbutton-1.maxbutton.maxbutton-learn-more:hover .mb-text{color:#ffffff}@media only screen and (min-width:0px) and (max-width:480px){.maxbutton-1.maxbutton.maxbutton-learn-more{width:90%}.maxbutton-1.maxbutton.maxbutton-learn-more .mb-text{font-size:12px}}
+</style><!--/email_off--><!--/noptimize-->
+
+
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+		if(typeof revslider_showDoubleJqueryError === "undefined") {function revslider_showDoubleJqueryError(sliderID) {console.log("You have some jquery.js library include that comes after the Slider Revolution files js inclusion.");console.log("To fix this, you can:");console.log("1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on");console.log("2. Find the double jQuery.js inclusion and remove it");return "Double Included jQuery Library";}}
+</script>
+<link rel='stylesheet' id='rs-plugin-settings-css' href='https://www.biofiredefense.com/wp-content/plugins/revslider/public/assets/css/rs6.css?ver=6.5.6' type='text/css' media='all' />
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+		#rev_slider_1_1_wrapper .uranus.tparrows{width:50px; height:50px; background:rgba(255,255,255,0)}#rev_slider_1_1_wrapper .uranus.tparrows:before{width:50px; height:50px; line-height:50px; font-size:40px; transition:all 0.3s;-webkit-transition:all 0.3s}#rev_slider_1_1_wrapper .uranus.tparrows.rs-touchhover:before{opacity:0.75}#rev_slider_1_1_wrapper .ares.tp-bullets{}#rev_slider_1_1_wrapper .ares.tp-bullets:before{content:' ';position:absolute;width:100%;height:100%;background:transparent;padding:10px;margin-left:-10px;margin-top:-10px;box-sizing:content-box}#rev_slider_1_1_wrapper .ares .tp-bullet{width:13px;height:13px;position:absolute;background:#000000;border-radius:50%;cursor:pointer;box-sizing:content-box}#rev_slider_1_1_wrapper .ares .tp-bullet.rs-touchhover,#rev_slider_1_1_wrapper .ares .tp-bullet.selected{background:#ffffff}#rev_slider_1_1_wrapper .ares .tp-bullet-title{position:absolute; color:#888888; font-size:12px; padding:0px 10px; font-weight:600; right:27px; top:-4px;  background:rgba(255,255,255,0.75); visibility:hidden; transform:translatex(-20px); -webkit-transform:translatex(-20px); transition:transform 0.3s; -webkit-transition:transform 0.3s; line-height:20px; white-space:nowrap}#rev_slider_1_1_wrapper .ares .tp-bullet-title:after{width:0px;height:0px;border-style:solid;border-width:10px 0 10px 10px;border-color:transparent transparent transparent rgba(255,255,255,0.75);content:' ';  position:absolute;  right:-10px;top:0px}#rev_slider_1_1_wrapper .ares .tp-bullet.rs-touchhover .tp-bullet-title{visibility:visible;  transform:translatex(0px); -webkit-transform:translatex(0px)}#rev_slider_1_1_wrapper .ares .tp-bullet.selected.rs-touchhover .tp-bullet-title{background:#ffffff}#rev_slider_1_1_wrapper .ares .tp-bullet.selected.rs-touchhover .tp-bullet-title:after{border-color:transparent transparent transparent #ffffff}#rev_slider_1_1_wrapper .ares.tp-bullets.rs-touchhover .tp-bullet-title{visibility:hidden}#rev_slider_1_1_wrapper .ares.tp-bullets.rs-touchhover .tp-bullet.rs-touchhover .tp-bullet-title{visibility:visible;  transform:translateX(0px) translatey(0px); -webkit-transform:translateX(0px) translatey(0px)}#rev_slider_1_1_wrapper .ares.nav-dir-vertical.nav-pos-hor-left .tp-bullet-title{right:auto; left:27px; transform:translatex(20px); -webkit-transform:translatex(20px)}#rev_slider_1_1_wrapper .ares.nav-dir-vertical.nav-pos-hor-left .tp-bullet-title:after{border-width:10px 10px 10px 0 !important; border-color:transparent rgba(255,255,255,0.75) transparent transparent; right:auto !important; left:-10px !important}#rev_slider_1_1_wrapper .ares.nav-dir-vertical.nav-pos-hor-left .tp-bullet.selected.rs-touchhover .tp-bullet-title:after{border-color:transparent #ffffff transparent transparent !important}#rev_slider_1_1_wrapper .ares.nav-dir-horizontal.nav-pos-ver-center .tp-bullet-title,#rev_slider_1_1_wrapper .ares.nav-dir-horizontal.nav-pos-ver-bottom .tp-bullet-title{top:-35px; left:50%; right:auto; transform:translateX(-50%) translateY(-10px);-webkit-transform:translateX(-50%) translateY(-10px)}#rev_slider_1_1_wrapper .ares.nav-dir-horizontal.nav-pos-ver-center .tp-bullet-title:after,#rev_slider_1_1_wrapper .ares.nav-dir-horizontal.nav-pos-ver-bottom .tp-bullet-title:after{border-width:10px 10px 0px 10px; border-color:rgba(255,255,255,0.75) transparent transparent transparent; right:auto; left:50%; margin-left:-10px; top:auto; bottom:-10px}#rev_slider_1_1_wrapper .ares.nav-dir-horizontal.nav-pos-ver-center .tp-bullet.selected.rs-touchhover .tp-bullet-title:after,#rev_slider_1_1_wrapper .ares.nav-dir-horizontal.nav-pos-ver-bottom .tp-bullet.selected.rs-touchhover .tp-bullet-title:after{border-color:#ffffff transparent transparent transparent}#rev_slider_1_1_wrapper .ares.nav-dir-horizontal.nav-pos-ver-center .tp-bullet.rs-touchhover .tp-bullet-title,#rev_slider_1_1_wrapper .ares.nav-dir-horizontal.nav-pos-ver-bottom .tp-bullet.rs-touchhover .tp-bullet-title{transform:translateX(-50%) translatey(0px); -webkit-transform:translateX(-50%) translatey(0px)}#rev_slider_1_1_wrapper .ares.nav-dir-horizontal.nav-pos-ver-top .tp-bullet-title{top:25px; left:50%; right:auto; transform:translateX(-50%) translateY(10px);-webkit-transform:translateX(-50%) translateY(10px)}#rev_slider_1_1_wrapper .ares.nav-dir-horizontal.nav-pos-ver-top .tp-bullet-title:after{border-width:0 10px 10px 10px; border-color:transparent transparent rgba(255,255,255,0.75) transparent; right:auto; left:50%; margin-left:-10px; bottom:auto; top:-10px}#rev_slider_1_1_wrapper .ares.nav-dir-horizontal.nav-pos-ver-top .tp-bullet.selected.rs-touchhover .tp-bullet-title:after{border-color:transparent transparent #ffffff transparent}#rev_slider_1_1_wrapper .ares.nav-dir-horizontal.nav-pos-ver-top .tp-bullet.rs-touchhover .tp-bullet-title{transform:translateX(-50%) translatey(0px); -webkit-transform:translateX(-50%) translatey(0px)}
+</style>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.biofiredefense.com/wp-content/plugins/revslider/public/assets/js/rbtools.min.js?ver=6.5.6' defer async id='tp-tools-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.biofiredefense.com/wp-content/plugins/revslider/public/assets/js/rs6.min.js?ver=6.5.6' defer async id='revmin-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/about-us\/careers\/|\/product-support\/filmarray-support\/biothreat-e-adverse-reporting-form\/|\/pouch-credit-reimbursement\/|\/pouch-credit-reimbursement-form\/|\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.biofiredefense.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.biofiredefense.com/wp-content/themes/BiofiredxTheme/assets/javascript/foundation.js?ver=2.3.0' id='foundation-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.biofiredefense.com/wp-content/themes/BiofiredxTheme/assets/javascript/menu.js?ver=6.2.2' id='menujs-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.biofiredefense.com/wp-content/themes/BiofiredxTheme/assets/javascript/owl.carousel.js?ver=6.2.2' id='owlcarouseljs-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.biofiredefense.com/wp-content/themes/BiofiredxTheme/assets/javascript/jquery.magnific-popup.js?ver=6.2.2' id='magnificpopupjs-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.biofiredefense.com/wp-content/themes/BiofiredxTheme/assets/javascript/jquery.threesixty.js?ver=6.2.2' id='threesixtyjs-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.biofiredefense.com/wp-content/themes/BiofiredxTheme/assets/javascript/equalHeight.js?ver=6.2.2' id='equalHeight-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.biofiredefense.com/wp-content/themes/BiofiredxTheme/assets/javascript/general.js?ver=6.2.2' id='generaljs-js'></script>
+<script type='text/javascript' id='gforms_recaptcha_recaptcha-js-extra'>
+/* <![CDATA[ */
+var gforms_recaptcha_recaptcha_strings = {"site_key":"6LccSvokAAAAAGHaSMReb_gZ75Z97DIiiURofvsn","ajaxurl":"https:\/\/www.biofiredefense.com\/wp-admin\/admin-ajax.php","nonce":"4975ed02d0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=6LccSvokAAAAAGHaSMReb_gZ75Z97DIiiURofvsn&#038;ver=1.1' id='gforms_recaptcha_recaptcha-js'></script>
+<script type='text/javascript' id='gforms_recaptcha_recaptcha-js-after'>
+(function($){grecaptcha.ready(function(){$('.grecaptcha-badge').css('visibility','hidden');});})(jQuery);
+</script>
+<script type='text/javascript' id='ubermenu-js-extra'>
+/* <![CDATA[ */
+var ubermenu_data = {"remove_conflicts":"on","reposition_on_load":"off","intent_delay":"300","intent_interval":"100","intent_threshold":"7","scrollto_offset":"50","scrollto_duration":"1000","responsive_breakpoint":"959","accessible":"on","mobile_menu_collapse_on_navigate":"on","retractor_display_strategy":"responsive","touch_off_close":"on","submenu_indicator_close_mobile":"on","collapse_after_scroll":"on","v":"3.8.1","configurations":["main"],"ajax_url":"https:\/\/www.biofiredefense.com\/wp-admin\/admin-ajax.php","plugin_url":"https:\/\/www.biofiredefense.com\/wp-content\/plugins\/ubermenu\/","disable_mobile":"off","prefix_boost":"","use_core_svgs":"off","aria_role_navigation":"off","aria_nav_label":"off","aria_expanded":"off","aria_hidden":"off","aria_controls":"","aria_responsive_toggle":"off","icon_tag":"i","esc_close_mobile":"on","keyboard_submenu_trigger":"enter","theme_locations":{"top-bar-r":"Right Top Bar","mobile-nav":"Mobile","main-nav":"Main"}};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://www.biofiredefense.com/wp-content/plugins/ubermenu/assets/js/ubermenu.min.js?ver=3.8.1' id='ubermenu-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="rs-initialisation-scripts">
+		var	tpj = jQuery;
+
+		var	revapi1;
+
+		if(window.RS_MODULES === undefined) window.RS_MODULES = {};
+		if(RS_MODULES.modules === undefined) RS_MODULES.modules = {};
+		RS_MODULES.modules["revslider11"] = {init:function() {
+			window.revapi1 = window.revapi1===undefined || window.revapi1===null || window.revapi1.length===0  ? document.getElementById("rev_slider_1_1") : window.revapi1;
+			if(window.revapi1 === null || window.revapi1 === undefined || window.revapi1.length==0) { window.revapi1initTry = window.revapi1initTry ===undefined ? 0 : window.revapi1initTry+1; if (window.revapi1initTry<20) requestAnimationFrame(function() {RS_MODULES.modules["revslider11"].init()}); return;}
+			window.revapi1 = jQuery(window.revapi1);
+			if(window.revapi1.revolution==undefined){ revslider_showDoubleJqueryError("rev_slider_1_1"); return;}
+			revapi1.revolutionInit({
+					revapi:"revapi1",
+					DPR:"dpr",
+					visibilityLevels:"1240,1024,778,480",
+					gridwidth:1240,
+					gridheight:400,
+					lazyType:"smart",
+					spinner:"spinner0",
+					perspective:600,
+					perspectiveType:"global",
+					editorheight:"400,768,960,720",
+					responsiveLevels:"1240,1024,778,480",
+					progressBar:{disableProgressBar:true},
+					navigation: {
+						wheelCallDelay:1000,
+						onHoverStop:false,
+						arrows: {
+							enable:true,
+							style:"uranus",
+							animSpeed:"800ms",
+							animDelay:"800ms",
+							left: {
+								h_offset:30,
+								v_offset:1
+							},
+							right: {
+								h_offset:30
+							}
+						},
+						bullets: {
+							enable:true,
+							tmp:"<span class=\"tp-bullet-title\">{{title}}</span>",
+							style:"ares",
+							space:10
+						}
+					},
+					viewPort: {
+						global:true,
+						globalDist:"-200px",
+						enable:false
+					},
+					fallbacks: {
+						allowHTML5AutoPlayOnAndroid:true
+					},
+			});
+			
+		}} // End of RevInitScript
+
+		if (window.RS_MODULES.checkMinimal!==undefined) { window.RS_MODULES.checkMinimal();};
+	</script>
+<div class="preload">
+    <img src="https://www.biofiredefense.com/wp-content/themes/BiofiredxTheme/assets/images/minus-sub.png" alt="" />
+    <img src="https://www.biofiredefense.com/wp-content/themes/BiofiredxTheme/assets/images/plus-sub.png" alt="" />
+    <img src="https://www.biofiredefense.com/wp-content/themes/BiofiredxTheme/assets/images/minus.png" alt="" />
+    <img src="https://www.biofiredefense.com/wp-content/themes/BiofiredxTheme/assets/images/plus.png" alt="" />
+    <img src="https://www.biofiredefense.com/wp-content/themes/BiofiredxTheme/assets/images/composite.jpg" alt="" />
+</div>
+<!-- AdRoll Pixel Tracking -->
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+    adroll_adv_id = "B4IX4R3U6BCINEFFQ2YSF5";
+    adroll_pix_id = "PKAEZ7FQHJHZ3MMRSGAW46";
+    /* OPTIONAL: provide email to improve user identification */
+    /* adroll_email = "username@example.com"; */
+    (function () {
+        var _onload = function(){
+            if (document.readyState && !/loaded|complete/.test(document.readyState)){setTimeout(_onload, 10);return}
+            if (!window.__adroll_loaded){__adroll_loaded=true;setTimeout(_onload, 50);return}
+            var scr = document.createElement("script");
+            var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+            scr.setAttribute('async', 'true');
+            scr.type = "text/javascript";
+            scr.src = host + "/j/roundtrip.js";
+            ((document.getElementsByTagName('head') || [null])[0] ||
+                document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+        };
+        if (window.addEventListener) {window.addEventListener('load', _onload, false);}
+        else {window.attachEvent('onload', _onload)}
+    }());
+</script>
+<!-- Multiview Script -->
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">_satellite.pageBottom();</script>
+</body></html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

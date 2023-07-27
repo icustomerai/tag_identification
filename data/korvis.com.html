@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="en-US">
+
+<head>
+	<title>Contract Manufacturing &amp; System Design | Korvis</title>
+	<meta charset="UTF-8" />
+	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=12.0, minimum-scale=1.0" name="viewport">
+
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+	<link rel="stylesheet" href="https://use.typekit.net/ekd1jms.css">
+	<!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css" /> -->
+	<link href="https://fonts.googleapis.com/css?family=Caveat&display=swap" rel="stylesheet">
+	
+<!-- The SEO Framework by Sybre Waaijer -->
+<meta name="robots" content="max-snippet:-1,max-image-preview:standard,max-video-preview:-1" />
+<meta property="og:image" content="https://www.korvis.com/wp-content/uploads/2020/01/cropped-DSC01324.jpg" />
+<meta property="og:image:width" content="1920" />
+<meta property="og:image:height" content="1007" />
+<meta property="og:image" content="https://www.korvis.com/wp-content/uploads/2020/01/favicon-2.png" />
+<meta property="og:image:width" content="32" />
+<meta property="og:image:height" content="32" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Contract Manufacturing &amp; System Design | Korvis" />
+<meta property="og:url" content="https://www.korvis.com/" />
+<meta property="og:site_name" content="Korvis" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Contract Manufacturing &amp; System Design | Korvis" />
+<meta name="twitter:image" content="https://www.korvis.com/wp-content/uploads/2020/01/cropped-DSC01324.jpg" />
+<link rel="canonical" href="https://www.korvis.com/" />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","url":"https://www.korvis.com/","name":"Korvis","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.korvis.com/search/{search_term_string}/"},"query-input":"required name=search_term_string"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","url":"https://www.korvis.com/","name":"Korvis","logo":"https://www.korvis.com/wp-content/uploads/2020/01/favicon-2.png"}</script>
+<!-- / The SEO Framework by Sybre Waaijer | 5.44ms meta | 0.16ms boot -->
+
+<link rel='dns-prefetch' href='//www.korvis.com' />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.korvis.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.2.2"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){p.clearRect(0,0,i.width,i.height),p.fillText(e,0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(t,0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s("\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!s("\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!s("\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!s("\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='https://www.korvis.com/wp-includes/css/dist/block-library/style.min.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://www.korvis.com/wp-includes/css/classic-themes.min.css?ver=6.2.2' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='trp-language-switcher-style-css' href='https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/css/trp-language-switcher.css?ver=2.5.4' type='text/css' media='all' />
+<link rel='stylesheet' id='trp-popup-style-css' href='https://www.korvis.com/wp-content/plugins/translatepress-developer/add-ons-pro/automatic-language-detection/assets/css/trp-popup.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='theme-css-css' href='https://www.korvis.com/wp-content/themes/theme/build/bundle.a81045ed.css' type='text/css' media='all' />
+<style id='theme-css-inline-css' type='text/css'>
+
+		.color-primary {
+			color: #2a3174;
+		}
+	
+		.bg-primary, .th-bg-primary table tr:first-of-type td, .th-bg-primary table tr:first-of-type th {
+			background-color: #2a3174;
+		}
+	
+		.btn-primary.btn-outline {
+			border-color: #2a3174;
+			color: #2a3174;
+		}
+	
+		.btn-primary.btn-outline:hover {
+			background-color: #2a3174;
+			border-color: #2a3174 !important;
+			color: #fff !important;
+		}
+
+		.btn-primary.btn-filled {
+			background-color: #2a3174;
+			border-color: #2a3174 !important;
+			color: #fff !important;
+		}
+
+	
+		.bg-primarystrong {
+			color: #fff;
+		}
+	
+		.border-primary {
+			border-color: #2a3174;
+		}
+	
+		.overlay-primary:after {
+			background-color: #2a3174;
+		}
+		.block-bpg-hero .large-heading.color-primary {
+			color: #09126c;
+		}
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			.overlay-primary:after {
+				background-color: #09126c;
+			}
+			
+		}
+		@media not all and (min-resolution: 0.001dpcm) {
+			@supports (-webkit-appearance: none) {
+				.overlay-primary:after {
+					background-color: #09126c;
+					mix-blend-mode: none;
+				}
+			}
+		}
+		@supports (-ms-ime-align: auto) {
+			.overlay-primary:after {
+				background-color: #09126c;
+			}
+		}
+		
+		.color-secondary {
+			color: #0081be;
+		}
+	
+		.bg-secondary, .th-bg-secondary table tr:first-of-type td, .th-bg-secondary table tr:first-of-type th {
+			background-color: #0081be;
+		}
+	
+		.btn-secondary.btn-outline {
+			border-color: #0081be;
+			color: #0081be;
+		}
+	
+		.btn-secondary.btn-outline:hover {
+			background-color: #0081be;
+			border-color: #0081be !important;
+			color: #fff !important;
+		}
+
+		.btn-secondary.btn-filled {
+			background-color: #0081be;
+			border-color: #0081be !important;
+			color: #fff !important;
+		}
+
+	
+		.bg-secondarystrong {
+			color: #fff;
+		}
+	
+		.border-secondary {
+			border-color: #0081be;
+		}
+	
+		.overlay-secondary:after {
+			background-color: #0081be;
+		}
+		.block-bpg-hero .large-heading.color-secondary {
+			color: #00608e;
+		}
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			.overlay-secondary:after {
+				background-color: #00608e;
+			}
+			
+		}
+		@media not all and (min-resolution: 0.001dpcm) {
+			@supports (-webkit-appearance: none) {
+				.overlay-secondary:after {
+					background-color: #00608e;
+					mix-blend-mode: none;
+				}
+			}
+		}
+		@supports (-ms-ime-align: auto) {
+			.overlay-secondary:after {
+				background-color: #00608e;
+			}
+		}
+		
+		.color-tertiary {
+			color: #ffa502;
+		}
+	
+		.bg-tertiary, .th-bg-tertiary table tr:first-of-type td, .th-bg-tertiary table tr:first-of-type th {
+			background-color: #ffa502;
+		}
+	
+		.btn-tertiary.btn-outline {
+			border-color: #ffa502;
+			color: #ffa502;
+		}
+	
+		.btn-tertiary.btn-outline:hover {
+			background-color: #ffa502;
+			border-color: #ffa502 !important;
+			color: #fff !important;
+		}
+
+		.btn-tertiary.btn-filled {
+			background-color: #ffa502;
+			border-color: #ffa502 !important;
+			color: #fff !important;
+		}
+
+	
+		.bg-tertiarystrong {
+			color: #fff;
+		}
+	
+		.border-tertiary {
+			border-color: #ffa502;
+		}
+	
+		.overlay-tertiary:after {
+			background-color: #ffa502;
+		}
+		.block-bpg-hero .large-heading.color-tertiary {
+			color: #bf7b00;
+		}
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			.overlay-tertiary:after {
+				background-color: #bf7b00;
+			}
+			
+		}
+		@media not all and (min-resolution: 0.001dpcm) {
+			@supports (-webkit-appearance: none) {
+				.overlay-tertiary:after {
+					background-color: #bf7b00;
+					mix-blend-mode: none;
+				}
+			}
+		}
+		@supports (-ms-ime-align: auto) {
+			.overlay-tertiary:after {
+				background-color: #bf7b00;
+			}
+		}
+		
+	.color-dark strong {
+		color: #2a3174 !important;
+	}
+	
+	a.btn.btn-outline.btn-white:hover, .bg-tertiary input[type='submit']:hover, input[type='submit'].btn-white:hover, a:hover .btn-white {
+		color: #2a3174 !important;
+	}
+
+	.site-footer .color-tertiary {
+		color: #ffa502 !important;
+	}
+	a:hover div.btn-white,
+	a:hover div.btn-light,
+	.btn-white:hover,
+	.btn-outline:hover,
+	.btn-light:hover, .bg-tertiary input[type='submit']:hover {
+		color: #2a3174 !important;
+		border-color: #fff;
+	}
+
+	h1 strong,
+	h2 strong,
+	h3 strong,
+	h4 strong,
+	h5 strong,
+	h6 strong,
+	.bg-white strong,
+	.bg-light strong,
+	.overlay-light strong,
+	.bg-gray strong {
+		color: #2a3174;
+	}
+	.block-immersive-header .text-xl strong {
+		color: #ffa502;
+	}
+	.btn,
+	input[type='submit'] {
+		background-color: #ffa502;
+		border-color: #ffa502;
+		color: #fff;
+	}
+
+	a, .bg-primary .bg-gray a:not(.btn) {
+		color: #2a3174;
+		text-decoration: none;
+
+	}
+
+	a:hover {
+		color: #21275c;
+		text-decoration: none;
+	}
+
+	a:hover div.btn,
+	.btn:hover,
+	input[type='submit']:hover {
+		border-color: #ffa502;
+		color: #fff;
+	}
+	.carousel-thumbnails .slick-current .slide {
+		border-color: #ffa502 !important;
+	}
+	a:hover div.btn.btn-outline.btn-primary {
+		color: #fff;
+		background-color: #2a3174 !important;
+		border-color: #2a3174 !important;
+	}
+	a:hover div.btn.btn-outline.btn-secondary {
+		color: #fff;
+		background-color: #0081be !important;
+		border-color: #0081be !important;
+	}
+	.color-tertiary a:hover,
+	a.color-tertiary:hover,
+	a:hover .text-link.color-tertiary {
+		color: #cc8401;
+	}
+	.color-secondary a:hover,
+	a.color-secondary:hover,
+	a:hover .text-link.color-secondary {
+		color: #006798;
+	}
+
+	.btn-outline {
+		background: none;
+		color: #ffa502;
+	}
+
+	a:hover div.btn-outline,
+	.btn-outline:hover {
+		background-color: #ffa502;
+		color: #fff;
+		border-color: #ffa502;
+	}
+
+	.btn-white,
+	.btn-light {
+		background-color: transparent;
+		border-color: #fff;
+		color: #fff;
+	}
+
+	a:hover div.btn-white,
+	a:hover div.btn-light,
+	.btn-white:hover,
+	.btn-outline:hover,
+	.btn-light:hover, .bg-tertiary input[type='submit']:hover {
+		color: #2a3174 !important;
+		border-color: #fff;
+	}
+	.social-icon svg {
+		stroke: #2a3174;
+		fill: #2a3174;
+		transition: all .4s ease;
+	}
+	.social-media-footer .social-icon svg {
+		stroke: #fff;
+		fill: #fff;
+	}
+	.social-icon:hover svg {
+		stroke: #fff;
+		fill: #fff;
+	}
+	.social-media-footer .social-icon:hover svg {
+		stroke: #2a3174;
+		fill: #2a3174;
+	}
+	.site-footer a:hover .text-link, .site-footer a:hover {
+		color: #cc8401 !important;
+	}
+	@media (max-width: 767px) {
+		.block-industries .grid-link .text-link {
+			background: #2a3174;
+			opacity: .85;
+			padding-left: 2rem;
+			height: 100%;
+			color: #fff;
+		}
+		.block-industries .grid-link .link-border {
+			display: none;
+		}
+	}
+	
+</style>
+<script type='text/javascript' src='https://www.korvis.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.4' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://www.korvis.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0' id='jquery-migrate-js'></script>
+<script type='text/javascript' id='trp-language-cookie-js-extra'>
+/* <![CDATA[ */
+var trp_language_cookie_data = {"abs_home":"https:\/\/www.korvis.com","url_slugs":{"en_US":"en","en_GB":"en_gb","pl_PL":"pl","cs_CZ":"cs","de_DE":"de","fr_FR":"fr","es_ES":"es","es_MX":"es_mx","es_AR":"es_ar","tr_TR":"tr","ru_RU":"ru","pt_PT":"pt","pt_BR":"pt_br","uk":"uk","zh_CN":"zh","it_IT":"it"},"cookie_name":"trp_language","cookie_age":"30","cookie_path":"\/","default_language":"en_US","publish_languages":["en_US","en_GB","pl_PL","cs_CZ","de_DE","fr_FR","es_ES","es_MX","es_AR","tr_TR","ru_RU","pt_PT","pt_BR","uk","zh_CN","it_IT"],"trp_ald_ajax_url":"https:\/\/www.korvis.com\/wp-content\/plugins\/translatepress-developer\/add-ons-pro\/automatic-language-detection\/includes\/trp-ald-ajax.php","detection_method":"browser-ip","popup_option":"popup","popup_type":"normal_popup","popup_textarea":"We've detected you might be speaking a different language. Do you want to change to:","popup_textarea_change_button":"Change Language","popup_textarea_close_button":"Close and do not switch language","iso_codes":{"en_US":"en","en_GB":"en","pl_PL":"pl","cs_CZ":"cs","de_DE":"de","fr_FR":"fr","es_ES":"es","es_MX":"es","es_AR":"es","tr_TR":"tr","ru_RU":"ru","pt_PT":"pt","pt_BR":"pt","uk":"uk","zh_CN":"zh-CN","it_IT":"it"},"language_urls":{"en_US":"https:\/\/www.korvis.com\/","en_GB":"https:\/\/www.korvis.com\/en_gb\/","pl_PL":"https:\/\/www.korvis.com\/pl\/","cs_CZ":"https:\/\/www.korvis.com\/cs\/","de_DE":"https:\/\/www.korvis.com\/de\/","fr_FR":"https:\/\/www.korvis.com\/fr\/","es_ES":"https:\/\/www.korvis.com\/es\/","es_MX":"https:\/\/www.korvis.com\/es_mx\/","es_AR":"https:\/\/www.korvis.com\/es_ar\/","tr_TR":"https:\/\/www.korvis.com\/tr\/","ru_RU":"https:\/\/www.korvis.com\/ru\/","pt_PT":"https:\/\/www.korvis.com\/pt\/","pt_BR":"https:\/\/www.korvis.com\/pt_br\/","uk":"https:\/\/www.korvis.com\/uk\/","zh_CN":"https:\/\/www.korvis.com\/zh\/","it_IT":"https:\/\/www.korvis.com\/it\/"},"english_name":{"en_US":"English (United States)","en_GB":"English (UK)","pl_PL":"Polish","cs_CZ":"Czech","de_DE":"German","fr_FR":"French","es_ES":"Spanish (Spain)","es_MX":"Spanish (Mexico)","es_AR":"Spanish (Argentina)","tr_TR":"Turkish","ru_RU":"Russian","pt_PT":"Portuguese (Portugal)","pt_BR":"Portuguese (Brazil)","uk":"Ukrainian","zh_CN":"Chinese","it_IT":"Italian"},"is_iphone_user_check":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.korvis.com/wp-content/plugins/translatepress-developer/add-ons-pro/automatic-language-detection/assets/js/trp-language-cookie.js?ver=1.0.9' id='trp-language-cookie-js'></script>
+<link rel="https://api.w.org/" href="https://www.korvis.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.korvis.com/wp-json/wp/v2/pages/7" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.korvis.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.korvis.com/wp-includes/wlwmanifest.xml" />
+<link rel="alternate" type="application/json+oembed" href="https://www.korvis.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.korvis.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.korvis.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.korvis.com%2F&#038;format=xml" />
+<link rel="alternate" hreflang="en-US" href="https://www.korvis.com/"/>
+<link rel="alternate" hreflang="en-GB" href="https://www.korvis.com/en_gb/"/>
+<link rel="alternate" hreflang="pl-PL" href="https://www.korvis.com/pl/"/>
+<link rel="alternate" hreflang="cs-CZ" href="https://www.korvis.com/cs/"/>
+<link rel="alternate" hreflang="de-DE" href="https://www.korvis.com/de/"/>
+<link rel="alternate" hreflang="fr-FR" href="https://www.korvis.com/fr/"/>
+<link rel="alternate" hreflang="es-ES" href="https://www.korvis.com/es/"/>
+<link rel="alternate" hreflang="es-MX" href="https://www.korvis.com/es_mx/"/>
+<link rel="alternate" hreflang="es-AR" href="https://www.korvis.com/es_ar/"/>
+<link rel="alternate" hreflang="tr-TR" href="https://www.korvis.com/tr/"/>
+<link rel="alternate" hreflang="ru-RU" href="https://www.korvis.com/ru/"/>
+<link rel="alternate" hreflang="pt-PT" href="https://www.korvis.com/pt/"/>
+<link rel="alternate" hreflang="pt-BR" href="https://www.korvis.com/pt_br/"/>
+<link rel="alternate" hreflang="uk" href="https://www.korvis.com/uk/"/>
+<link rel="alternate" hreflang="zh-CN" href="https://www.korvis.com/zh/"/>
+<link rel="alternate" hreflang="it-IT" href="https://www.korvis.com/it/"/>
+<link rel="alternate" hreflang="en" href="https://www.korvis.com/"/>
+<link rel="alternate" hreflang="pl" href="https://www.korvis.com/pl/"/>
+<link rel="alternate" hreflang="cs" href="https://www.korvis.com/cs/"/>
+<link rel="alternate" hreflang="de" href="https://www.korvis.com/de/"/>
+<link rel="alternate" hreflang="fr" href="https://www.korvis.com/fr/"/>
+<link rel="alternate" hreflang="es" href="https://www.korvis.com/es/"/>
+<link rel="alternate" hreflang="tr" href="https://www.korvis.com/tr/"/>
+<link rel="alternate" hreflang="ru" href="https://www.korvis.com/ru/"/>
+<link rel="alternate" hreflang="pt" href="https://www.korvis.com/pt/"/>
+<link rel="alternate" hreflang="zh" href="https://www.korvis.com/zh/"/>
+<link rel="alternate" hreflang="it" href="https://www.korvis.com/it/"/>
+<link rel="icon" href="https://www.korvis.com/wp-content/uploads/2020/01/favicon-2.png" sizes="32x32" />
+<link rel="icon" href="https://www.korvis.com/wp-content/uploads/2020/01/favicon-2.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.korvis.com/wp-content/uploads/2020/01/favicon-2.png" />
+<meta name="msapplication-TileImage" content="https://www.korvis.com/wp-content/uploads/2020/01/favicon-2.png" />
+		<style type="text/css" id="wp-custom-css">
+			.site-header .site-header-inner .logo {
+	height: 4rem;
+}
+
+.site-header .site-header-inner .menu-item a {
+	font-size: 1.7rem !important;
+}
+
+
+@media (min-width: 768px) {
+	.text-xl {
+	font-size: 7rem;
+}
+.block-immersive-header .text-xl strong {
+	font-size: 6rem;
+}
+}		</style>
+		
+			<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:600,700&display=swap" rel="stylesheet">		<style>
+		h1, h2, h3, h4, h5, h6, .btn, .menu-item a, .text-link, label {
+			font-family: 'Source Sans Pro', sans-serif !important;
+					}
+					/* .site-header {
+				background: rgba(255,255,255,.84) !important;
+			}
+			body {
+				padding-top: 0;
+			} */
+			.sub-menu .menu-item a {
+				font-family: inherit !important;
+				text-transform: none !important;
+			}
+				
+		</style>
+					<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-71407512-3"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-71407512-3');
+		</script>	</head>
+
+<body class="home page-template-default page page-id-7 translatepress-en_US">
+		<div id="page" class="site"></div>
+	<header id="masthead" class="site-header">
+		<div class="site-header-inner container-fluid">
+						<a class="logo" href="https://www.korvis.com" style="background: url('https://www.korvis.com/wp-content/uploads/2019/12/Korvis-Logo-Color.svg') no-repeat center left;"></a>
+
+			<nav id="site-navigation" class="main-nav">
+				<div class="menu-main-menu-container"><ul id="primary-menu" class="menu"><li id="menu-item-1055" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1055"><a href="https://www.korvis.com/quality-management-system/">Quality Management System</a></li>
+<li id="menu-item-1057" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1057"><a href="https://www.korvis.com/services-support/">Services &#038; Support</a>
+<ul class="sub-menu">
+	<li id="menu-item-1266" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1266"><a href="https://www.korvis.com/services-support/">View All Services &#038; Support</a></li>
+	<li id="menu-item-1136" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1136"><a href="https://www.korvis.com/services/">Services</a></li>
+	<li id="menu-item-1135" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1135"><a href="https://www.korvis.com/support/">Support</a></li>
+	<li id="menu-item-1134" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1134"><a href="https://www.korvis.com/portfolio/">Portfolio</a></li>
+</ul>
+</li>
+<li id="menu-item-1058" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1058"><a href="https://www.korvis.com/about-us/">About Us</a></li>
+<li id="menu-item-1059" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1059"><a href="https://www.korvis.com/contact/">Contact</a></li>
+</ul></div>			</nav><!-- #site-navigation -->
+			<div class="search-wrap">
+				<div class="search-toggle"></div>
+				<div class="search-form">
+					<form action="/" method="get">
+												<input type="text" name="s" placeholder="Search" id="search" value="" />
+						<input type="submit" value="Search" />
+					</form>
+				</div>
+			</div>
+			<button class="menu-toggle reset" aria-controls="primary-menu" aria-expanded="false">
+				<div class="target">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</button>
+
+		</div>
+	</header><!-- #masthead -->
+			<a href="https://www.burkeportergroup.com/" target="_blank" class="bpg-company-banner"><div class="image" style="background: url('https://www.korvis.com/wp-content/themes/theme/img/a-bpg-company.png') no-repeat center; background-size: contain"></div></a>
+		<div class="mobile-overlay-menu bg-dark color-white">
+		<div class="container-fluid">
+			<div class="wrap-large">
+				<nav id="site-navigation" class="mobile-nav">
+					<div class="menu-main-menu-container"><ul id="primary-menu" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1055"><a href="https://www.korvis.com/quality-management-system/">Quality Management System</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1057"><a href="https://www.korvis.com/services-support/">Services &#038; Support</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1266"><a href="https://www.korvis.com/services-support/">View All Services &#038; Support</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1136"><a href="https://www.korvis.com/services/">Services</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1135"><a href="https://www.korvis.com/support/">Support</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1134"><a href="https://www.korvis.com/portfolio/">Portfolio</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1058"><a href="https://www.korvis.com/about-us/">About Us</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1059"><a href="https://www.korvis.com/contact/">Contact</a></li>
+</ul></div>				</nav><!-- #site-navigation -->
+			</div>
+			<div class="search-wrap">
+				<div class="search-form">
+					<form action="/" method="get">
+												<input type="text" name="s" placeholder="Search" id="search" value="" />
+						<input type="submit" value="Search" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<main id="primary" class="site-main">
+		<div id="cookie-policy" class="cookie-policy">
+			<div class="container">
+				<p>This website uses cookies to ensure you get the best experience on our website. You can manage your preferences by viewing our <a href="https://www.korvis.com/cookie-notice">Cookie Notice</a>.
+				</p>
+				<a class="btn" id="cookie-policy-accept">Agree & Proceed</a>
+			</div>
+		</div>
+					<div class="social-media-sidebar">
+																			</div>
+		
+	<section class="block block-immersive-header no-margin color-white align-middle justify-left overlay overlay-dark" style="background: url('https://www.korvis.com/wp-content/uploads/2020/01/DSC01324-1.jpg') no-repeat center; background-size: cover;">
+		<div class="container">
+		<div class="text-contain">
+
+			<h1 class="text-xl"><p>EXPERTS IN SYSTEM<br />
+<strong>DESIGN &amp; MANUFACTURING</strong></p>
+</h1>			<div class="copy"><p>Korvis designs and manufactures, in volume, complex machinery and instruments. We provide our customers with tested product, ready to ship to the end user. Our manufacturing services include value engineering and cost cutting manufacturing techniques. Korvis&#8217; unique blend of product design and contract manufacturing lowers the overall product cost to its customers.</p>
+</div>
+			<a class="btn  btn-filled btn-tertiary" href="https://www.korvis.com/portfolio/" target="_self">View Our Portfolio</a>		</div>
+	</div>
+	<div class="arrow-down arrow-down-scroll"></div>
+</section>
+
+<section class="block block-highlight-box no-margin  overlay overlay-primary" style="background: url('https://www.korvis.com/wp-content/uploads/2020/01/DSC01324-1-1920x550.jpg') no-repeat center; background-size: cover;">
+	<div class="container">
+		<div class="left-box">
+			<div class="text-contain">
+				
+				<div class="copy"><h3>PROVIDING TURNKEY SOLUTIONS</h3>
+<p>We provide our contract manufacturing and system design services to global markets including life sciences, renewable energy, displays, electronics, rapid prototyping, optics, inkjets, semiconductors, and more.</p>
+</div>
+							</div>
+			
+		</div>
+	</div>
+	<div class="container gray-box-container">
+		<div class="gray-box bg-gray">
+			<div class="info">
+				
+				<h3>Proud Members of The Burke Porter Group</h3>				<div class="copy"><p>The Burke Porter Group is a global leader in the design, manufacture, and supply of advanced technological testing and assembly solutions. Our family encompasses over 40 locations across 4 continents, with manufacturing and support capabilities across the globe.</p>
+</div>
+				<a class="btn btn-primary" href="https://www.burkeportergroup.com/" target="_blank">Visit Website</a>			</div>
+		</div>
+	</div>
+
+</section>
+
+<div class="block no-margin block-padding mobile-gray-box gray-box bg-gray">
+	<div class="container info">
+		
+		<h5>Proud Members of The Burke Porter Group</h5>		<div class="copy"><p>The Burke Porter Group is a global leader in the design, manufacture, and supply of advanced technological testing and assembly solutions. Our family encompasses over 40 locations across 4 continents, with manufacturing and support capabilities across the globe.</p>
+</div>
+		<a class="btn btn-primary" href="https://www.burkeportergroup.com/" target="_blank">Visit Website</a>	</div>
+</div>
+
+<section class="block block-media-and-text no-margin media-position-right block-padding media-fill-inset">
+	<div class="container">
+		<div class="row">
+							<div class="col-lg-6 item-media item-image" style="background: url('https://www.korvis.com/wp-content/uploads/2020/01/life-science-instruments.jpg') no-repeat center; background-size: cover;"></div>
+			
+			<div class="col-lg-6 content-col">
+				<div class="item-content">
+										<h3>LIFE SCIENCE INSTRUMENTS</h3>					<div class="copy"><p>Korvis has extensive expertise in microfluidics, optics, precision motion, thermal management, software, and low-cost control solutions.</p>
+</div>
+					<a class="btn  btn-filled btn-tertiary" href="https://www.korvis.com/contact/" target="_self">Contact Us</a>				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="block block-media-and-text no-margin media-position-left block-padding media-fill-inset">
+	<div class="container">
+		<div class="row">
+							<div class="col-lg-6 item-media item-image" style="background: url('https://www.korvis.com/wp-content/uploads/2020/01/oem-contract-manufacturing.jpg') no-repeat center; background-size: cover;"></div>
+			
+			<div class="col-lg-6 content-col">
+				<div class="item-content">
+										<h3>OEM CONTRACT MANUFACTURING</h3>					<div class="copy"><p>We provide product design services uniquely coupled to advanced manufacturing capabilities. Specializing in precision systems, Korvis designs, prototypes, and manufactures products in a supporting OEM role.</p>
+</div>
+					<a class="btn  btn-filled btn-tertiary" href="https://www.korvis.com/services/" target="_self">Learn More</a>				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="block block-media-and-text no-margin media-position-right block-padding media-fill-inset">
+	<div class="container">
+		<div class="row">
+							<div class="col-lg-6 item-media item-image" style="background: url('https://www.korvis.com/wp-content/uploads/2020/01/modular-approach.jpg') no-repeat center; background-size: cover;"></div>
+			
+			<div class="col-lg-6 content-col">
+				<div class="item-content">
+										<h3>WE APPLY A MODULAR APPROACH</h3>					<div class="copy"><p>Korvis employs a flexible toolkit based on a variety of Korvis standard products. Contact us to learn more about our modular approach to systems design.</p>
+</div>
+					<a class="btn  btn-filled btn-tertiary" href="https://www.korvis.com/contact/" target="_self">Contact Us</a>				</div>
+			</div>
+		</div>
+	</div>
+</section>
+</main><!-- .site-main -->
+
+<footer class="site-footer bg-dark">
+	<div class="container-fluid">
+		<div class="row mb-5">
+			<div class="footer-col col-lg">
+								<a class="footer-logo bpg-company" target="_blank" href="https://www.burkeportergroup.com" style="background: url('https://www.korvis.com/wp-content/themes/theme/img/a-bpg-company.png') no-repeat top left; background-size: contain;"></a>
+			</div>
+			<div class="footer-col col-lg">
+				<h4></h4>
+
+				<nav class="footer-nav">
+									</nav>
+			</div>
+			<div class="footer-col col-lg">
+				<h4>ABOUT</h4>
+				<nav class="footer-nav">
+					<div class="menu-footer-2-container"><ul id="menu-footer-2" class="menu"><li id="menu-item-1161" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1161"><a href="https://www.korvis.com/contact/"><div class="text-link color-tertiary">Contact</div></a></li>
+<li id="menu-item-1162" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1162"><a href="https://www.korvis.com/about-us/"><div class="text-link color-tertiary">About Us</div></a></li>
+<li id="menu-item-565" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-565"><a href="https://www.korvis.com/cookie-notice/"><div class="text-link color-tertiary">Cookie Notice</div></a></li>
+<li id="menu-item-564" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-564"><a href="https://www.korvis.com/eu-notice/"><div class="text-link color-tertiary">EU Notice</div></a></li>
+<li id="menu-item-566" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-566"><a href="https://www.korvis.com/privacy-policy/"><div class="text-link color-tertiary">Privacy Policy</div></a></li>
+<li id="menu-item-1164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1164"><a href="https://www.korvis.com/support/"><div class="text-link color-tertiary">Support</div></a></li>
+<li id="menu-item-1293" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1293"><a href="https://www.korvis.com/ccpa-privacy-notice/"><div class="text-link color-tertiary">CCPA Privacy Notice</div></a></li>
+</ul></div>				</nav>
+			</div>
+			<div class="footer-col col-lg">
+				<h4>CONTACT</h4>
+				
+				<div class="copy">
+											<p></p><a class="address inherit-link" href="https://maps.google.com/?q=2101 NE Jack London St.
+Corvallis, OR 97330
+USA" target="_blank">2101 NE Jack London St.<br />Corvallis, OR 97330<br />USA</a></p>																<p><a class="phone color-tertiary" href="tel:+1 (541) 738-4360">+1 (541) 738-4360</a></p>										                        						<p><a class="email color-tertiary" href="mailto:employment@korvis.com">employment@korvis.com</a></p>									</div>
+				<div class="copy"><p><strong>USA</strong> <a href="tel:+15417384360">+1 541 738 4360</a></p>
+<p><strong>Shanghai</strong> <a href="tel:+86 (21)61681268">+86 (21)61681268</a></p>
+<p><strong>Singapore</strong> <a href="https://www.korvis.com/support/">(65) 67551977</a></p>
+<p><strong>Europe</strong> <a href="tel:+32 9 389 70 89">+32 9 389 70 89</a></p>
+</div>				<div class="social-media-footer">
+																								</div>
+			</div>
+		</div>
+
+		<p class="copyright">&copy; 2023 Korvis</p>
+
+	</div>
+</footer>
+
+</div><!-- #page -->
+
+
+<template id="tp-language" data-tp-language="en_US"></template><div class="trp_model_container" id="trp_ald_modal_container" style="display: none" data-no-dynamic-translation data-no-translation>
+        <div class="trp_ald_modal" id="trp_ald_modal_popup">
+            <div id="trp_ald_popup_text"></div>
+
+        <div class="trp_ald_select_and_button">
+            <div class="trp_ald_ls_container">
+            <div class="trp-language-switcher trp-language-switcher-container"  id="trp_ald_popup_select_container" data-no-translation >
+                
+                <div class="trp-ls-shortcode-current-language" id="en_US" special-selector="trp_ald_popup_current_language" data-trp-ald-selected-language= "en_US">
+                    <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_US.png" width="18" height="12" alt="en_US" title="English (United States)"> English (United States)                </div>
+                <div class="trp-ls-shortcode-language">
+                    <div class="trp-ald-popup-select" id="en_US" data-trp-ald-selected-language = "en_US">
+                        <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_US.png" width="18" height="12" alt="en_US" title="English (United States)"> English (United States)                    </div>
+                                                                    <div class="trp-ald-popup-select" id="en_GB" data-trp-ald-selected-language = "en_GB">
+                                <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_GB.png" width="18" height="12" alt="en_GB" title="English (UK)"> English (UK)                            </div>
+                                                                        <div class="trp-ald-popup-select" id="pl_PL" data-trp-ald-selected-language = "pl_PL">
+                                <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/pl_PL.png" width="18" height="12" alt="pl_PL" title="Polish"> Polish                            </div>
+                                                                        <div class="trp-ald-popup-select" id="cs_CZ" data-trp-ald-selected-language = "cs_CZ">
+                                <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/cs_CZ.png" width="18" height="12" alt="cs_CZ" title="Czech"> Czech                            </div>
+                                                                        <div class="trp-ald-popup-select" id="de_DE" data-trp-ald-selected-language = "de_DE">
+                                <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/de_DE.png" width="18" height="12" alt="de_DE" title="German"> German                            </div>
+                                                                        <div class="trp-ald-popup-select" id="fr_FR" data-trp-ald-selected-language = "fr_FR">
+                                <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/fr_FR.png" width="18" height="12" alt="fr_FR" title="French"> French                            </div>
+                                                                        <div class="trp-ald-popup-select" id="es_ES" data-trp-ald-selected-language = "es_ES">
+                                <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/es_ES.png" width="18" height="12" alt="es_ES" title="Spanish (Spain)"> Spanish (Spain)                            </div>
+                                                                        <div class="trp-ald-popup-select" id="es_MX" data-trp-ald-selected-language = "es_MX">
+                                <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/es_MX.png" width="18" height="12" alt="es_MX" title="Spanish (Mexico)"> Spanish (Mexico)                            </div>
+                                                                        <div class="trp-ald-popup-select" id="es_AR" data-trp-ald-selected-language = "es_AR">
+                                <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/es_AR.png" width="18" height="12" alt="es_AR" title="Spanish (Argentina)"> Spanish (Argentina)                            </div>
+                                                                        <div class="trp-ald-popup-select" id="tr_TR" data-trp-ald-selected-language = "tr_TR">
+                                <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/tr_TR.png" width="18" height="12" alt="tr_TR" title="Turkish"> Turkish                            </div>
+                                                                        <div class="trp-ald-popup-select" id="ru_RU" data-trp-ald-selected-language = "ru_RU">
+                                <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/ru_RU.png" width="18" height="12" alt="ru_RU" title="Russian"> Russian                            </div>
+                                                                        <div class="trp-ald-popup-select" id="pt_PT" data-trp-ald-selected-language = "pt_PT">
+                                <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/pt_PT.png" width="18" height="12" alt="pt_PT" title="Portuguese (Portugal)"> Portuguese (Portugal)                            </div>
+                                                                        <div class="trp-ald-popup-select" id="pt_BR" data-trp-ald-selected-language = "pt_BR">
+                                <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/pt_BR.png" width="18" height="12" alt="pt_BR" title="Portuguese (Brazil)"> Portuguese (Brazil)                            </div>
+                                                                        <div class="trp-ald-popup-select" id="uk" data-trp-ald-selected-language = "uk">
+                                <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/uk.png" width="18" height="12" alt="uk" title="Ukrainian"> Ukrainian                            </div>
+                                                                        <div class="trp-ald-popup-select" id="zh_CN" data-trp-ald-selected-language = "zh_CN">
+                                <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/zh_CN.png" width="18" height="12" alt="zh_CN" title="Chinese"> Chinese                            </div>
+                                                                        <div class="trp-ald-popup-select" id="it_IT" data-trp-ald-selected-language = "it_IT">
+                                <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/it_IT.png" width="18" height="12" alt="it_IT" title="Italian"> Italian                            </div>
+                                                            </div>
+            </div>
+            </div>
+
+
+            <div class="trp_ald_button">
+            <a href="https://www.korvis.com" id="trp_ald_popup_change_language"></a>
+            </div>
+         </div>
+        <a id="trp_ald_x_button_and_textarea"> <span id="trp_ald_x_button"></span><span id="trp_ald_x_button_textarea"></span></a>
+    </div>
+</div>
+<template id="trp_ald_no_text_popup_template">
+    <div id="trp_no_text_popup_wrap">
+        <div id="trp_no_text_popup" class="trp_ald_no_text_popup" data-no-dynamic-translation data-no-translation>
+            
+            <div id="trp_ald_not_text_popup_ls_and_button">
+                <div id="trp_ald_no_text_popup_div">
+                    <span id="trp_ald_no_text_popup_text"></span>
+                </div>
+                <div class="trp_ald_ls_container">
+                    <div class="trp-language-switcher trp-language-switcher-container" id="trp_ald_no_text_select"
+                         data-no-translation >
+                        
+                        <div class="trp-ls-shortcode-current-language" id="en_US"
+                             special-selector="trp_ald_popup_current_language" data-trp-ald-selected-language="en_US">
+                            <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_US.png" width="18" height="12" alt="en_US" title="English (United States)"> English (United States)                        </div>
+                        <div class="trp-ls-shortcode-language" id="trp_ald_no_text_popup_select_container">
+                            <div class="trp-ald-popup-select" id="en_US"
+                                 data-trp-ald-selected-language= en_US>
+                                <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_US.png" width="18" height="12" alt="en_US" title="English (United States)"> English (United States)                            </div>
+                                                                                            <div class="trp-ald-popup-select" id="en_GB"
+                                         data-trp-ald-selected-language="en_GB">
+                                        <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/en_GB.png" width="18" height="12" alt="en_GB" title="English (UK)"> English (UK)
+                                    </div>
+                                                                                                <div class="trp-ald-popup-select" id="pl_PL"
+                                         data-trp-ald-selected-language="pl_PL">
+                                        <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/pl_PL.png" width="18" height="12" alt="pl_PL" title="Polish"> Polish
+                                    </div>
+                                                                                                <div class="trp-ald-popup-select" id="cs_CZ"
+                                         data-trp-ald-selected-language="cs_CZ">
+                                        <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/cs_CZ.png" width="18" height="12" alt="cs_CZ" title="Czech"> Czech
+                                    </div>
+                                                                                                <div class="trp-ald-popup-select" id="de_DE"
+                                         data-trp-ald-selected-language="de_DE">
+                                        <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/de_DE.png" width="18" height="12" alt="de_DE" title="German"> German
+                                    </div>
+                                                                                                <div class="trp-ald-popup-select" id="fr_FR"
+                                         data-trp-ald-selected-language="fr_FR">
+                                        <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/fr_FR.png" width="18" height="12" alt="fr_FR" title="French"> French
+                                    </div>
+                                                                                                <div class="trp-ald-popup-select" id="es_ES"
+                                         data-trp-ald-selected-language="es_ES">
+                                        <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/es_ES.png" width="18" height="12" alt="es_ES" title="Spanish (Spain)"> Spanish (Spain)
+                                    </div>
+                                                                                                <div class="trp-ald-popup-select" id="es_MX"
+                                         data-trp-ald-selected-language="es_MX">
+                                        <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/es_MX.png" width="18" height="12" alt="es_MX" title="Spanish (Mexico)"> Spanish (Mexico)
+                                    </div>
+                                                                                                <div class="trp-ald-popup-select" id="es_AR"
+                                         data-trp-ald-selected-language="es_AR">
+                                        <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/es_AR.png" width="18" height="12" alt="es_AR" title="Spanish (Argentina)"> Spanish (Argentina)
+                                    </div>
+                                                                                                <div class="trp-ald-popup-select" id="tr_TR"
+                                         data-trp-ald-selected-language="tr_TR">
+                                        <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/tr_TR.png" width="18" height="12" alt="tr_TR" title="Turkish"> Turkish
+                                    </div>
+                                                                                                <div class="trp-ald-popup-select" id="ru_RU"
+                                         data-trp-ald-selected-language="ru_RU">
+                                        <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/ru_RU.png" width="18" height="12" alt="ru_RU" title="Russian"> Russian
+                                    </div>
+                                                                                                <div class="trp-ald-popup-select" id="pt_PT"
+                                         data-trp-ald-selected-language="pt_PT">
+                                        <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/pt_PT.png" width="18" height="12" alt="pt_PT" title="Portuguese (Portugal)"> Portuguese (Portugal)
+                                    </div>
+                                                                                                <div class="trp-ald-popup-select" id="pt_BR"
+                                         data-trp-ald-selected-language="pt_BR">
+                                        <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/pt_BR.png" width="18" height="12" alt="pt_BR" title="Portuguese (Brazil)"> Portuguese (Brazil)
+                                    </div>
+                                                                                                <div class="trp-ald-popup-select" id="uk"
+                                         data-trp-ald-selected-language="uk">
+                                        <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/uk.png" width="18" height="12" alt="uk" title="Ukrainian"> Ukrainian
+                                    </div>
+                                                                                                <div class="trp-ald-popup-select" id="zh_CN"
+                                         data-trp-ald-selected-language="zh_CN">
+                                        <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/zh_CN.png" width="18" height="12" alt="zh_CN" title="Chinese"> Chinese
+                                    </div>
+                                                                                                <div class="trp-ald-popup-select" id="it_IT"
+                                         data-trp-ald-selected-language="it_IT">
+                                        <img class="trp-flag-image" src="https://www.korvis.com/wp-content/plugins/translatepress-multilingual/assets/images/flags/it_IT.png" width="18" height="12" alt="it_IT" title="Italian"> Italian
+                                    </div>
+                                                                                    </div>
+                    </div>
+                </div>
+                <div class="trp_ald_change_language_div">
+                    <a href="https://www.korvis.com" id="trp_ald_no_text_popup_change_language"></a>
+                </div>
+                <div id="trp_ald_no_text_popup_x_button_and_textarea"> <a id="trp_ald_no_text_popup_x_button"></a><span id="trp_ald_no_text_popup_x_button_textarea"></span></div>
+            </div>
+            <div id="trp_ald_no_text_popup_x">
+                <button id="trp_close"></button>
+            </div>
+        </div>
+    </div>
+</template><script type='text/javascript' id='theme-js-js-extra'>
+/* <![CDATA[ */
+var localized = {"ajaxUrl":"https:\/\/www.korvis.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.korvis.com/wp-content/themes/theme/build/bundle.a81045ed.js' id='theme-js-js'></script>
+</body>
+
+</html>

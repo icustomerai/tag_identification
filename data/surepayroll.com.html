@@ -1,0 +1,2571 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+    
+
+
+        <link rel="canonical" href="https://www.surepayroll.com/" />
+
+
+    
+    <script type="text/javascript" src="/Scripts/jquery-1.12.4.min.js"></script>
+    
+    <meta name="google-site-verification" content="pLywS2vHFhLNpLbev7pNdH8tNaZeLH3s2Gl5T5KPWfM" />
+
+
+    <link rel="stylesheet" type="text/css" href="/Static/dist/css/sprResource-dd73faa67dca9d243feac1821a9c0371/main.css" />
+
+    
+    <script async src="//stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+
+
+
+
+
+<script async>
+    $(document).ready(function() {
+            
+            var promoCampaignIdQueryString = '';
+            var pricepromoCampaignIdQueryString = '';
+            var allstate = '';
+            var marketingTest = '';
+            var vwoMarketTestCookie = "Marketing_Test__c";
+            var marketingTestCookieInterval = setInterval(marketingTestGetParam(), 100);
+            var ecomGuid = 'crm_guid__c=b63ebda4-231f-4b8b-b2f9-c8d1f44673d4';
+            var payrollType = getCookie("payroll-type");
+            var campaignIdQueryString = '';
+            var marketoTrackingCode = 'Marketo+Tracking+Code+Cookie+Not+Found';
+            var rsCode = getCookie("rsCode");
+            var leadId = getParam("leadId");
+            var utmCampaign = getParam("utm_campaign");
+
+            // check Cookie is specifically custom to VWO test as they set a new cookie after dom ready.
+            // check Cookie is to capture a change to update form input
+            var checkCookie = function() {
+            var lastCookie = getCookie(vwoMarketTestCookie); // 'static' memory between function calls
+            return function() {
+                var currentCookie = getCookie(vwoMarketTestCookie);
+
+                if (currentCookie !== lastCookie) {
+                    lastCookie = currentCookie; // store latest cookie
+                    $('input[value*="TieredPricing"], input[value*="QuotePricing"]').val(currentCookie);
+
+                }
+            };
+        }();
+
+        window.setInterval(checkCookie, 100); // run every 100 ms
+
+            function marketingTestGetParam() {
+                var vwoMarketingTestCookie = getCookie(vwoMarketTestCookie);
+                if (vwoMarketingTestCookie && vwoMarketingTestCookie.includes("TieredPricing")) {
+                    marketingTest = vwoMarketTestCookie + "=" + vwoMarketingTestCookie;
+                    $('input[value*="TieredPricing"], input[value*="QuotePricing"]').val(vwoMarketingTestCookie);
+
+                } else {
+                    if (marketingTest) {
+                        var marName = marketingTest.split("=")[0];
+                        var marValue = marketingTest.split("=")[1];
+                        setCookie(marName,marValue, 120);
+                        clearInterval(marketingTestCookieInterval);
+                         }
+                    }
+                }
+
+
+            function setCookie(name, value, days){
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                var expires = "; expires=" + date.toGMTString();
+                document.cookie = name + "=" + value + expires + ";path=/;SameSite=None;secure";
+            }
+            function getParam(p){
+                var match = RegExp('[?&]' + p + '=([^&]*)').exec(window.location.search);
+                return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+            }
+
+            function getCookie(cname) {
+                var name = cname + "=";
+                var decodedCookie = decodeURIComponent(document.cookie);
+                var ca = decodedCookie.split(';');
+                for(var i = 0; i <ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ') {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+
+            var gclid = getParam('gclid');
+            if(gclid){
+                var gclsrc = getParam('gclsrc');
+                if(!gclsrc || gclsrc.indexOf('aw') !== -1){
+                    setCookie('gclid', gclid, 90);
+                }
+             }
+
+        $("a[href^='https://start.surepayroll.com'],a[href^='https://easy.surepayroll.com'],a[href^='https://web22-team:4000'],a[href^='https://stgstart.surepayroll.com']").each(function() {
+                var href = $(this).attr('href');
+
+
+                if (href) {
+                    
+                    if (promoCampaignIdQueryString) {
+                        href += (href.match(/\?/) ? '&' : '?') + promoCampaignIdQueryString;
+                    }
+                    if (pricepromoCampaignIdQueryString) {
+                        href += (href.match(/\?/) ? '&' : '?') + pricepromoCampaignIdQueryString;
+                    }
+                    if (gclid) {
+                        href += (href.match(/\?/) ? '&' : '?') + "GCLID__c=" + gclid;
+                    }
+                    if (ecomGuid) {
+                        href += (href.match(/\?/) ? '&' : '?') + ecomGuid;
+                    }
+                    if (campaignIdQueryString) {
+                        href += (href.match(/\?/) ? '&' : '?') + "campaign_id__c="+ campaignIdQueryString;
+                    }
+                    if (marketingTest) {
+                        href += (href.match(/\?/) ? '&' : '?')  + marketingTest;
+                    }
+                    if (marketoTrackingCode && marketoTrackingCode !== "Marketo+Tracking+Code+Cookie+Not+Found") {
+                        href += (href.match(/\?/) ? '&' : '?') + "MarketoVisitorId__c=" + marketoTrackingCode;
+                    }
+                    if (rsCode) {
+                        href += (href.match(/\?/) ? '&' : '?') + "Referrer_SaaSquatch_Referral_Code__c=" + rsCode;
+                    }
+                    if (leadId) {
+                        href += (href.match(/\?/) ? '&' : '?') + "leadId=" + leadId;
+                    }
+                    if (utmCampaign) {
+                        href += (href.match(/\?/) ? '&' : '?') + "UTM_Campaign_Name__c=" + utmCampaign;
+                    }
+
+                    $(this).attr('href', href);
+                }
+
+
+
+            });
+    });
+</script>
+
+    <style type="text/css" media="all">
+        @media (max-width: 960px) and (min-width: 768px) {
+            .sf_colsOut.grid-4.grid-text-column {
+                width: 33% !important;
+            }
+        }
+
+        .sf_colsOut.grid-4.grid-text-column {
+            border: none !important;
+        }
+
+        .calculator-instance {
+            display: block !important;
+        }
+
+        @media screen and (min-width:0px) and (max-width:960px) {
+            .interiorTwoCols .interiorContent {
+                display: block;
+            }
+        }
+
+        @media (min-width:960px) {
+            .header a.logo {
+                margin-top: 10px;
+                width: auto;
+            }
+        }
+
+        @media (min-width:768px) {
+            .header a.logo {
+                margin: 8px 0 0 0px;
+            }
+
+            .mainHero {
+                margin-top: 25px;
+            }
+
+            a.menu-toggle {
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width:768px) {
+            .header a.logo {
+                margin: 10px 0 10px 20px;
+            }
+
+            .mainHero {
+                margin-top: 25px;
+            }
+        }
+
+        @media (min-width:768px) and (max-width:960px) {
+            .header a.logo {
+                margin: 25px 0 0 20px;
+            }
+        }
+
+        .vidyard_wrapper {
+            position: relative;
+            float: left;
+            cursor: pointer;
+        }
+
+        @media (min-width: 0) {
+            .vidyard_wrapper img {
+                max-width: 100%;
+            }
+        }
+
+        @-webkit-keyframes fadeIn {
+            0% {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        .fadeIn {
+            -webkit-animation-name: fadeIn;
+            animation-name: fadeIn
+        }
+
+        @-webkit-keyframes fadeOut {
+            0% {
+                opacity: 1
+            }
+
+            to {
+                opacity: 0
+            }
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1
+            }
+
+            to {
+                opacity: 0
+            }
+        }
+
+        .fadeOut {
+            -webkit-animation-name: fadeOut;
+            animation-name: fadeOut
+        }
+
+        .sfCheckListBox, .sfRadioList {
+            margin: 1em 1em !important;
+        }
+
+        .formInstructions p {
+            margin: 1em 1em !important;
+        }
+    </style>
+
+
+    
+<link rel='stylesheet' type='text/css' data-f-resource='EPiServerForms.css' href='/WebResource.axd?d=s-f6ie6T4Qaxga0Un_qm83FAGA4UVdb3eOWsHKxWTQ12I58Ah5qwbm1kt2tvr20p3iIUVfHFd9iixCTrfTJAcLMxCimxslb2Xzd-KfQxS1RZBNv2BsGbs-pXOwnyd6LjYLQhdix8i4swweaUEf-GyCuswQw1&t=637243469960000000' />
+
+<script type="text/javascript">
+var epi = epi||{}; epi.EPiServer = epi.EPiServer||{}; epi.EPiServer.Forms = epi.EPiServer.Forms||{};
+                    epi.EPiServer.Forms.InjectFormOwnJQuery = true;epi.EPiServer.Forms.OriginalJQuery = typeof jQuery !== 'undefined' ? jQuery : undefined;
+</script>
+<script type="text/javascript" src="/WebResource.axd?d=rQapnFTl_pgMjn3yGS-nPsGjsc9dNGT8adFIVoR-0olcasIDWDRaRqQOoNRroWA0MXqWPlmkkGiG8tqtObeyQ2J60Ie2kmT4Q41o6PtkxvL8T3pb8hqMew5ZTwplgy0ctkGQKXKoIgxWy-iIkw_6lfKJht41&t=637243469960000000"></script>
+<script type="text/javascript">
+/*
+This EPiServerForms_prerequisite.js TEMPLATE will be compiled with serverside values and injected into ViewMode page
+We reuse the existed global var epi from EPiServer CMS, if any. It will init/grab the epi object, and init epi.EPiServer.Forms object
+*/
+
+// (by default) Forms's jQuery will be injected right before this file. From now on, we refer Forms own jQuery as $$epiforms.
+// after this code, the object $ and jQuery will revert back to its original meaning in original library (Alloy jQuery or other lib).
+
+// Our clients' sites may include their own Jquery version (e.g. a higher version for some special functionalities), which leads to unexpected conflicts with ours.
+// To avoid this, we use jQuery.noConflict()  to set up $$epiforms as an allias for our jquery and then, revert Jquery allias to clients' by using
+// epi.EPiServer.Forms.OriginalJQuery whose value is set up as Jquery at the beginning in FormBlockController.
+// This also allows us to extend our own Jquery's functionalities without causing further conflicts.
+
+var $$epiforms = epi.EPiServer.Forms.InjectFormOwnJQuery ? jQuery.noConflict() : jQuery;
+if (epi.EPiServer.Forms.OriginalJQuery) {
+    jQuery = epi.EPiServer.Forms.OriginalJQuery;
+    delete epi.EPiServer.Forms.OriginalJQuery;
+}
+(function () {
+    var externalScript = ["/ClientResources/ViewMode/FormScript.js","/ClientResources/ViewMode/FormScript.js","/ClientResources/ViewMode/MinimumStringLengthValidator.js","/ClientResources/ViewMode/MaximumStringLengthValidator.js","/ClientResources/ViewMode/PhoneValidator.js","/ClientResources/ViewMode/CustomPositiveIntegerValidator.js"],
+        externalCss = [];
+
+    if (epi.EPiServer.Forms.ExternalScriptSources) {
+        externalScript = epi.EPiServer.Forms.ExternalScriptSources.concat(externalScript);
+        // Remove duplicate items
+        externalScript = externalScript.filter(function (value, index, self) {
+            return self.indexOf(value) === index;
+        });
+    }
+    if (epi.EPiServer.Forms.ExternalCssSources) {
+        externalCss = epi.EPiServer.Forms.ExternalCssSources.concat(externalCss);
+        // Remove duplicate items
+        externalCss = externalCss.filter(function (value, index, self) {
+            return self.indexOf(value) === index;
+        });
+    }
+
+    $$epiforms.extend(true, epi.EPiServer, {
+        CurrentPageLink: "6",
+        CurrentPageLanguage: "en",
+        CurrentFormLanguage: "en",
+        Forms: {
+            Utils: {}, Data: {}, Extension: {}, Validation: {}, Navigation: {}, Dependency: {},
+            $: $$epiforms,  // save our own link to our own jQuery
+            ThrottleTimeout: 500,  // miliseconds
+            ExternalScriptSources: externalScript,
+            ExternalCssSources: externalCss,
+            UploadExtensionBlackList: "asp,aspx,asa,ashx,asmx,bat,chm,class,cmd,com,config,dll,exe,hta,htr,htw,jse,json,lnk,mda,mdb,msc,msh,pif,printer,ps1,ps2,reg,rem,scf,scr,sct,shtm,shtml,soap,stm,svc,url,vb,vbe,vbs,vsix,ws,wsc,wsf,wsh,xamlx,htm,html,js,jar",
+            Messages: {"viewMode":{"malformStepConfiguration":"Improperly formed FormStep configuration. Some steps are attached to pages, while some steps are not attached, or attached to content with no public URL.","commonValidationFail":"This element value is not valid."},"fileUpload":{"overFileSize":"The upload file size should be less than {0} MB.","invalidFileType":"The upload file format is not allowed or not supported.","postedFile":"(Previous posted file - {0})"}},
+            LocalizedResources: {"contenttypescomponent":{"title":"Form Elements","description":"Show all content types of Episerver Forms"},"formscomponent":{"title":"Forms","description":"Manage forms for the website","command":{"create":{"label":"New form"},"viewdata":{"label":"Form submissions"}},"messages":{"nocontent":"This folder does not contain any forms."}},"formdataview":{"name":"Form submissions","description":"View form submissions","heading":"Form submissions","begindate":"From date","enddate":"To date","search":"Search","nodata":"There is no data","export":"Export as ...","exportasxml":"XML","exportasxmldesc":"Export form data in XML format","exportascsv":"CSV","exportascsvdesc":"Export form data in CSV format","exportasdecryptedcsv":"Decrypted CSV","exportasdecryptedcsvdesc":"Decrypt and export form data in CSV format","exportasjson":"JSON","exportasjsondesc":"Export form data in JSON format","finalizedonly":"Finalized Only","deleteselecteditems":"Delete","deleteconfirmation":"Do you want to delete the selected items?","nopostid":"No post Id for deleting.","couldnotgetassociateform":"Could not get associate Form.","deletesuccessful":"Successfully deleted post data.","accessdenied":"You do not have permission to view this data.","submittime":"Time","submituser":"By user","hostedpage":"Submitted from","finalizedsubmission":"Finalized","exportasxlsx":"XLSX","exportasxlsxdesc":"Export form data in XLSX format","selectalltooltip":"Select All","deselectalltooltip":"Deselect All","selectioninfo":"All <b>${0}</b> record(s) are selected. ","extraselectionlink":"Select all <b>${0}</b> records","clearselectionlink":"Clear selection","filterdata":"Filter","searchallcolumns":"All columns"},"formscontentarea":{"emptyactions":{"actions":{"createnewformselement":"browse"},"template":"You can drop form elements here or {createnewformselement}.","templatewithoutcreate":"You can drop content here."}},"fieldselector":{"title":"Select dependent field"},"submissionactors":{"episerver.forms.implementation.actors.callwebhookaftersubmissionactor":{"displayname":"Trigger webhook after form submission"},"episerver.forms.implementation.actors.sendemailaftersubmissionactor":{"displayname":"Send email after form submission"}},"validators":{"episerver.forms.implementation.validation.requiredvalidator":{"displayname":"Required","message":"This information is required"},"episerver.forms.implementation.validation.regularexpressionvalidator":{"displayname":"Regular expression","message":"This field should be in \"{0}\" format"},"episerver.forms.implementation.validation.captchavalidator":{"displayname":"Captcha","message":"Enter the characters you see in the picture"},"episerver.forms.implementation.validation.allowedextensionsvalidator":{"displayname":"Allowed extensions","message":"The upload file format is not allowed or not supported.","allowedextensionsmessage":"The upload file format is not allowed or not supported. File format should be: {0}"},"episerver.forms.implementation.validation.maxfilesizevalidator":{"displayname":"Max file size","message":"The upload file size should be less than {0} MB."},"episerver.forms.implementation.validation.emailvalidator":{"displayname":"Email","message":"You have entered an invalid email address"},"episerver.forms.implementation.validation.urlvalidator":{"displayname":"Url","message":"Enter a valid URL"},"episerver.forms.implementation.validation.dateddmmyyyyvalidator":{"displayname":"Date (DD/MM/YYYY)","message":"Enter a date in the DD/MM/YYYY format"},"episerver.forms.implementation.validation.datemmddyyyyvalidator":{"displayname":"Date (MM/DD/YYYY)","message":"Enter a date in the MM/DD/YYYY format"},"episerver.forms.implementation.validation.dateyyyymmddvalidator":{"displayname":"Date (YYYY-MM-DD)","message":"Enter a date in the YYYY-MM-DD format"},"episerver.forms.implementation.validation.numericvalidator":{"displayname":"Numeric","message":"Enter a valid number"},"episerver.forms.implementation.validation.integervalidator":{"displayname":"Integer","message":"Enter a valid integer"},"episerver.forms.implementation.validation.positiveintegervalidator":{"displayname":"Positive integer","message":"Enter a valid positive integer"},"elementselfvalidator":{"unexpectedvalueisnotaccepted":"Unexpected value is not accepted."},"spr.website.domain.models.helpers.customvalidators.validators.minimumstringlengthvalidator":{"displayname":"Minimum Length","message":"Please enter at least {0} characters"},"spr.website.domain.models.helpers.customvalidators.validators.maximumstringlengthvalidator":{"displayname":"Maximum Length","message":"Please enter less than {0} characters"},"spr.website.domain.models.helpers.customvalidators.validators.phonevalidator":{"displayname":"Phone","message":"Must be between 10 and 25 characters"},"spr.website.domain.models.helpers.customvalidators.validators.custompositiveintegervalidator":{"displayname":"Positive Integers","message":"Positive integers only"},"fileuploadelementselfvalidator":{"multiplefilenotallowed":"Not allowed to upload multiple files."},"custommessage":{"resetbuttonlabel":"Reset to default","errormessagelabel":"Error message "}},"visitordatasources":{"episerver.forms.implementation.visitordata.ipaddressvisitordatasource":{"displayname":"IP Address"},"episerver.forms.implementation.visitordata.geovisitordatasource":{"displayname":"Geo","properties":{"city":"City","country_code":"Country code","country_name":"Country name","ip":"IP","latitude":"Latitude","longitude":"Longitude","metro_code":"Metro code","region_code":"Region code","region_name":"Region name","time_zone":"Time zone","zip_code":"Zip code"}},"episerver.forms.implementation.visitordata.profilevisitordatasource":{"displayname":"Profile","properties":{"address":"Address","zipcode":"Zip code","locality":"Locality","email":"Email","firstname":"First name","lastname":"Last name","language":"Language","country":"Country","company":"Company","title":"Title"}},"episerver.forms.implementation.visitordata.useragentvisitordatasource":{"displayname":"User agent","properties":{"ismobiledevice":"Is mobile","useragent":"User agent"}},"episerver.forms.implementation.visitordata.visitorgroupvisitordatasource":{"displayname":"Visitor groups","properties":{"id":"Id","name":"Name"}},"youmustselectvalueforhiddenvisitor":"You must select a value for the type of visitor data you choose."},"messages":{"fileupload":{"overfilesize":"The upload file size should be less than {0} MB.","invalidfiletype":"The upload file format is not allowed or not supported.","postedfile":"(Previous posted file - {0})"},"formsubmission":{"outdatedforminit":"Your current session for viewing the form is expired. Refresh your page to continue.","requirelogin":"You must be logged in to submit the form.","denymultisubmit":"You already submitted this form.","submitsuccess":"Submit successful.","validationfailformat":"Validation failed on \"{0}\" field: {1}","thereisnoformguid":"Submit data FAILED: there is no Form's Guid.","couldnotgetform":"Submit data FAILED: could not get Form with Id = {0}.","submitcancelled":"TECHNICAL INFO: Submitting process is cancelled. Reason: ","formisrestricted":"Could not submit form. You do not have sufficient privileges.","formexpired":"Could not submit form. Form has been expired.","formdeleted":"Could not submit form. Form has been deleted.","submitnotsuccess":"Failed to submit.","sessionoff":"You cannot submit this form because it do not allow to store data and Session State is OFF."}},"dependcondition":{"notapplicable":"Not applicable","matchregularexpression":"Match with regular expression","equals":"Equals","notequals":"Not equals","contains":"Contains","notcontains":"Not contains"},"imagechoiceitems":{"emptyactions":{"actions":{"createnewitem":"Create a link to an image"},"template":"Drop image content here.<br/>You also can {createnewitem}."},"menutooltip":"Display menu"},"editview":{"notconfigured":"Not configured yet","insertplaceholder":"Insert placeholder","selectanitem":"Select an item","externalsystems":"External system field mapping","connecteddatasource":"Connect to Datasource","createemailtemplate":"Create email template","editemailtemplate":"Edit email template","addwebhook":"Add webhook","editwebhook":"Edit webhook","selectpage":"Select page","usemanualinput":"Use manual input","errorconditionalstepcannotcontainrequiredelement":"This Form step should not depend on other elements because it contains mandatory element [{0}].","cannotbuildformmodel":"Cannot build the form. You cannot use FormContainerBlock as a property. You can render a form in a ContentArea only.","elementdependant":"This field depends on other field(s)","retentionperiod":{"partial":"partial","finalized":"finalized","default":"Default","keepforsomedays":"{0} days","customization":"Custom (days):","keepforever":"Forever","validation":{"errormessage":{"long":"The {0} submission retention period field must be an integer between {1} and {2}","short":"Input must be an integer between {0} and {1}"}},"revision":{"warningmessage":"At least {0} submission(s) are affected by your retention policy change"}},"resetconnecteddatasource":"Reset"},"viewmode":{"stepnavigation":{"previous":"Previous step","next":"Next step","page":"Step"},"untitled":"Untitled","selection":{"selectanoption":"-- Select an option --","selectoptions":"-- Select options --"},"reset":"Reset form","submit":"Submit","refreshcaptcha":"Refresh captcha","captchalabel":"Word verification","malformstepconfigruation":"Improperly formed FormStep configuration. Some steps are attached to pages, while some steps are not attached, or attached to content with no public URL.","commonvalidationfail":"This element value is not valid.","readonlymode":"Read-only mode. Submitted data is not saved.","submissionactors":{"savedatatostorage":{"error":"Something went wrong. Please contact the administrator for more information."}}},"contentediting":{"optionitem":{"caption":"Choice","value":"Value","checked":"Checked by default","containsinvalidcharacter":"Comma (,) character is not allowed."},"emailtemplateactor":{"fromemail":"From","fromemaildescription":"Email address to send from","toemails":"To","toemailsdescription":"Email address to send to, or name of a form field with the email address (for confirmation emails)","subject":"Subject","subjectdescription":"Subject line for the email. You can use #FIELDNAME# to insert values from the form.","body":"Message","bodydescription":"The body of the email. You can insert values from the form with #FIELDNAME#, or show a summary listing of the form fields with #SUMMARY.","fromemailplaceholder":"someone@example.com","toemailsplaceholder":"address@example.com,...","subjectplaceholder":"Enter email subject"},"webhookactor":{"url":"Webhook URL","urldescription":"Webhook URL to send data payload to (http or https protocol).","jsonformat":"POST data in JSON format"},"validation":{"greaterthanequaltoerrorformat":"The {0} must be >= {1}'s value.","lessthanequaltoerrorformat":"The {0} must be <= {1}'s value.","inrangeerrorformat":"\"{0}\" is not a valid value for {1}. Only number is allowed and {1} must be in range of [{2} - {3}]'s value.","stepinrangeerrorformat":"The {0} must be >= 1 and <= {2} - {1} value.","positiveinteger":"Only a positive number is allowed.","circulardependency":"Circular dependency configuration is not allowed"},"fielddependency":{"condition":{"field":"Field","operator":"Operator","value":"Value"},"invalidcondition":"The condition is no longer valid","conditiondialog":{"title":"Condition Details"}}},"externalsystems":{"episerver.marketing.connector.forms.marketingconnectormapping":{"displayname":"MA System Database"}},"conditioncombination":{"all":"All","any":"Any"},"satisfiedaction":{"hide":"Hidden","show":"Shown"},"admin":{"databasejob":{"expiredformsubmissionremovejob":{"description":"\n                This job will delete all expired Form Submission data. The expiration of Form Submission data is defined in the form properties, retention policy. In addition, all submissions of forms that are no longer available are also deleted as well.\n              ","displayname":"Form Submissions Cleanup","returnmessage":"{0} expired submission(s) deleted. {1} submission(s) of removed form deleted."},"updatemissingvalueofretentionpolicyjob":{"description":"This job will update forms with missing retention values.","displayname":"Form Update Missing Retention Values.","returnmessage":"Updated forms with missing retention values."}}}}
+        }
+    });
+})();
+
+</script>
+<script type="text/javascript">
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MJCDTBT');
+</script>
+
+
+    <title>Online Payroll Services | Payroll Online | Payroll Services  | SurePayroll</title>
+
+        <meta property="og:title" content="Online Payroll Services | Payroll Online | Payroll Services  | SurePayroll" />
+
+        <meta property="og:description" content="SurePayroll is a small business payroll company providing easy online payroll services and hr solutions. Learn about our services for small businesses." />
+
+        <meta property="og:url" content="/" />
+
+        <meta property="og:image" content="https://www.surepayroll.com/globalassets/images/homepage/payroll-hero.jpg" />
+
+        <meta name="description" content="SurePayroll is a small business payroll company providing easy online payroll services and hr solutions. Learn about our services for small businesses.">
+
+        <meta name="keywords" content="payroll, online payroll services">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script defer >
+    
+// LAST TOUCH ATTRIBUTION
+
+var urlParams;
+(window.onpopstate = function () {
+    var match,
+        pl     = /\+/g,  // Regex for replacing addition symbol with a space
+        search = /([^&=]+)=?([^&]*)/g,
+        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+        query  = window.location.search.substring(1);
+
+    urlParams = {};
+    while (match = search.exec(query))
+       urlParams[decode(match[1])] = decode(match[2]);
+})();
+    
+     function setCookie(name, value, days){
+                var date = new Date();
+                date.setTime(date.getTime() + (days*24*60*60*1000));
+                var expires = "; expires=" + date.toGMTString();
+                document.cookie = name + "=" + value + expires + ";path=/";
+            }
+
+//URL PARAMS
+var adGroup = urlParams["adgroup"];
+var network = urlParams["network"];
+var gclid = urlParams["gclid"];
+var leadid = urlParams["leadid"];
+var shortcode = urlParams["mbsy"];
+
+
+//NON-URL PARAMS
+function addAttr() {
+$(document).ready(function() {
+    var campaignid = urlParams["campaignid"];
+    var leadsource = urlParams["leadsource"];;
+    
+    if (typeof campaignid !== 'undefined' && campaignid.length > 14 ) {
+        var leadsource = "SEM";
+        setCookie('campaignid', campaignid, 120);
+        setCookie('leadsource', leadsource, 120); 
+                   
+    } else 
+        {
+        if (window.location.href.indexOf("get-started-ni") > -1) {
+            var campaignid = "7010e000000at54AAA";
+            var leadsource = "SEM";
+            setCookie('campaignid', campaignid, 120);
+            setCookie('leadsource', leadsource, 120);
+        }
+        else if (window.location.href.indexOf("get-started-q") > -1) {
+            var campaignid = "7010e000000atubAAA";
+            var leadsource = "SEM";
+            setCookie('campaignid', campaignid, 120);
+            setCookie('leadsource', leadsource, 120);
+        }
+        else if (window.location.href.indexOf("get-started-b") > -1) {
+            var campaignid = "7010e000000ats1AAA";
+            var leadsource = "SEM";
+            setCookie('campaignid', campaignid, 120);
+            setCookie('leadsource', leadsource, 120);
+        }
+        else if (window.location.href.indexOf("get-started-li") > -1) {
+            var campaignid = "7010e000000atuRAAQ";
+            var leadsource = "SEM";
+            setCookie('campaignid', campaignid, 120);
+            setCookie('leadsource', leadsource, 120);
+        }
+            else if (window.location.href.indexOf("get-started-f") > -1) {
+            var campaignid = "7010e000000atsBAAQ";
+            var leadsource = "SEM";
+            setCookie('campaignid', campaignid, 120);
+            setCookie('leadsource', leadsource, 120);
+        }
+            else if (window.location.href.indexOf("get-started-o") > -1) {
+            var campaignid = "7010e000001GH4EAAW";
+            var leadsource = "SEM";
+            setCookie('campaignid', campaignid, 120);
+            setCookie('leadsource', leadsource, 120);
+        }
+        else if (window.location.href.indexOf("get-started-ct") > -1) {
+            var campaignid = "70160000000kjvKAAQ";
+            var leadsource = "SEM";
+            setCookie('campaignid', campaignid, 120);
+            setCookie('leadsource', leadsource, 120);
+        }
+        else if (window.location.href.indexOf("get-started-tw") > -1) {
+            var campaignid = "7010e000000atu2AAA";
+            var leadsource = "SEM";
+            setCookie('campaignid', campaignid, 120);
+            setCookie('leadsource', leadsource, 120);
+        }
+        else if (window.location.href.indexOf("get-started-ambassador") > -1) {
+            var campaignid = "7010e000000muuRAAQ";
+            var leadsource = "SEM";
+            setCookie('campaignid', campaignid, 120);
+            setCookie('leadsource', leadsource, 120);
+        }
+        else if (window.location.href.indexOf("get-started") > -1) {
+            var campaignid = "7010e000000arSeAAI";
+            var leadsource = "SEM";
+            setCookie('campaignid', campaignid, 120);
+            setCookie('leadsource', leadsource, 120);
+        }
+        }
+    }
+)
+}
+addAttr();
+
+    
+// IF PARAMS EXIST, SET COOKIE
+if(adGroup){setCookie('adgroup', adGroup, 120);};
+if(network){setCookie('network', network, 120); };
+if(gclid){setCookie('gclid', gclid, 120); };
+if(leadid){setCookie('leadid', leadid, 120);};
+if(shortcode){setCookie('shortcode', shortcode, 120);};
+
+    
+function getCookie(name) {
+  var value = "; " + document.cookie;
+  var parts = value.split("; " + name + "=");
+  if (parts.length == 2) return parts.pop().split(";").shift();
+}
+
+    
+var gclidcookie = getCookie('gclid');
+    
+</script>
+
+<style>
+.banner-block-container .gradient {
+background: none !important;}
+</style>
+
+
+<!-- Google Optimize -->
+<!-- Google Optimize Anti-flicker snippet -->
+<script> window.dataLayer = window.dataLayer || []; </script>
+<style>.async-hide { opacity: 0 !important} </style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-MSC4R9L':true});</script>
+<!-- End Google Optimize Anti-flicker snippet -->
+<script src="https://www.googleoptimize.com/optimize.js?id=GTM-MSC4R9L"></script>
+<!-- Optimize Tag 2 -->
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'OPT-NDZJCVG':true});</script>
+<script src="https://www.googleoptimize.com/optimize.js?id=OPT-NDZJCVG"></script>
+<script>
+$(document).ready(function() {
+
+    $(".text-align-right .top-nav-links .top-nav-link:nth-child(1) a").css({ 'color': '#aee7f0', 'text-decoration': 'underline' });
+
+    $('.menu-item a:contains("Accountants")').attr("id" , "acct-link");
+
+});
+
+// HOTJAR VERIFICATION
+// hj=1035906-09062022
+</script>
+
+<style>
+#main .sfFieldWrp input {
+margin-bottom:0px;
+}
+</style>
+<script>
+$(document).ready(function () {
+
+     //enrollment buttons - add universal cookie
+    var enrollmentButton =
+       document.querySelectorAll('a[href*="start.surepayroll.com"]');
+
+
+       
+
+    var expirationDate = new Date();
+    expirationDate.setFullYear(expirationDate.getFullYear() + 1);
+
+
+
+    [].forEach.call(enrollmentButton, function (enrollmentButton) {
+       enrollmentButton.addEventListener('click', function () {
+           document.cookie = "ecommerce=true; path=/; domain=surepayroll.com; secure; expires=" + expirationDate.toUTCString();
+       });
+
+
+
+       enrollmentButton.addEventListener('click', function () {
+           document.cookie = "directToECom=; expires=Thu, 01 Jan 1970 00:00:01 GMT;";
+       });
+
+    });
+
+});
+</script>
+<script>
+$(document).ready(function(){
+     $(".calloutInnerContainer img.lazy:nth-child(2)").wrap("<a href='https://www.surepayroll.com/resources/blog'></a>")
+});
+</script>
+<script>
+
+   function getParam(p){
+                var match = RegExp('[?&]' + p + '=([^&]*)').exec(window.location.search);
+                return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+            }
+
+$(document).ready(function(){
+var utmCampaign = getParam("utm_campaign");
+var utm_campaign_name = getParam("utm_campaign_name");
+utmCampaignResult =  utmCampaign ?? utm_campaign_name;
+
+
+if(utmCampaignResult) {
+	$('input[name = "__field_34055"]').val(utmCampaignResult);
+       $('input[name = "__field_33339"]').val(utmCampaignResult);
+}
+
+});
+
+</script>
+<style>
+    .covid-cont {
+        background-color: #FB9108;
+        text-align:center;
+    }
+    .covid-reset {
+        max-width:1540px;
+        margin:0 auto;
+        width:100%;
+        text-align:left;
+        color:white;
+        font-size:15px;
+        font-weight:600;
+        margin:0 auto;
+        text-align:center;
+        padding:15px 0px 5px 0px;
+    }
+    #covreset {
+        display:inline;
+        text-decoration:underline;
+        color:#ff6b47 !important;
+    }
+    .inline {
+        display:inline;
+    }
+    .break {
+        display:none;
+        margin:-5px;
+    }
+    .covid-reset span {
+        background-color:white;
+        border-radius:5px;
+        padding:10px;
+        margin:10px;
+        color:#465260
+    }
+    .covid-reset span .inline {
+        color:#88ac2e !important;
+        font-size:1.2em;
+
+    }
+    .flxwrp {
+        display: flex;
+        flex-wrap: wrap;
+        margin:0 auto;
+        justify-content:center;
+        max-width:1200px;
+    }
+    .flxwrp p   {
+        line-height:25px;
+        padding-right:5%;
+        margin-bottom:0px;
+    }
+    
+
+    
+ @media (max-width: 965px) {
+        .covid-cont {
+        
+        text-align:center;
+    }
+         .break {
+        display:block;
+    }
+    }
+
+    @media(max-width: 510px) {
+       .covid-cont {
+           display: none;    
+       }
+    }
+
+</style>
+
+
+
+
+
+<script>
+
+$( document ).ready(function() {
+    if (typeof isCustomer === 'undefined') {
+        $('html').prepend('<div class="covid-cont"><div class="covid-reset"><span><p class="inline" id="timer"></p> days</span><span><p class="inline timer" id="timer-hh"></p> hours</span><span><p class="inline timer" id="timer-mm"></p> minutes</span><p class="inline" ><p class="break"><br></p> Hurry, our best offer ends soon! Get up to 6 Months Free.<a id="form-btn" style="color:white;" href="/terms/disclaimer" target="_blank" rel="noopener">*</a> </b> <a style="color:white; text-decoration: underline;" href="https://www.surepayroll.com/payroll/instant-payroll-quote"><u>Get Started</u></a>.</p></div></div>');
+    } else {}
+})
+    
+
+var countDownDate = new Date("July 01, 2023 00:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+  // Get today's date and time
+  var now = new Date().getTime();
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+  document.getElementById("timer").innerHTML = days;
+    document.getElementById("timer-hh").innerHTML = hours;
+      document.getElementById("timer-mm").innerHTML = minutes;
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("timer").innerHTML = "EXPIRED";
+  }
+}, 1000);
+
+
+// end of top banner countdown
+</script>
+
+
+
+
+
+
+
+<style>
+    #cs_b_sticky { 
+        display: none; 
+        position: fixed; 
+        bottom: 0; 
+        left: 0; 
+        text-align: center; 
+        width: 100%; 
+        padding: 1em; 
+        color: white; 
+        background: #FB9108;
+        z-index:2;
+    } 
+
+    #cs_b_sticky > span { 
+        cursor: pointer; 
+    } 
+
+    @media (max-width:480px) {
+        div#cs_b_sticky {
+            font-size: 14px;
+        }
+    }
+</style>
+
+<script>
+$(function() {
+  $('body').append('<style>#cs_b_sticky { display: none; position: fixed; bottom: 0; left: 0; text-align: center; width: 100%; padding: 1em; color: white; background: #FB9108;} #cs_b_sticky > span { cursor: pointer; } @media (max-width:480px) { div#cs_b_sticky { font-size: 14px; } }</style><div id="cs_b_sticky"><span>Act now! Get up to 6 months Free. <b><u>Get Started</u></b>.</span></div>');
+ 
+  $('#cs_b_sticky > span').click(function() {
+    window.location.href = "https://www.surepayroll.com/payroll/instant-payroll-quote";
+  });
+ 
+  var hh = $('.homepage-hero-container').height() -50;
+  $(window).scroll(function() {
+    if (window.window.pageYOffset > hh)
+      $('#cs_b_sticky:not(.cs_vis)').fadeIn('fast').addClass('cs_vis');
+    else
+      $('#cs_b_sticky.cs_vis').fadeOut('fast').removeClass('cs_vis');
+	if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight)
+		$('#cs_b_sticky.cs_vis').fadeOut('fast').removeClass('cs_vis');    
+  }).scroll();
+});
+
+// end of sticky footer
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">var appInsights=window.appInsights||function(config){function t(config){i[config]=function(){var t=arguments;i.queue.push(function(){i[config].apply(i,t)})}}var i={config:config},u=document,e=window,o="script",s="AuthenticatedUserContext",h="start",c="stop",l="Track",a=l+"Event",v=l+"Page",r,f;setTimeout(function(){var t=u.createElement(o);t.src=config.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js";u.getElementsByTagName(o)[0].parentNode.appendChild(t)});try{i.cookie=u.cookie}catch(y){}for(i.queue=[],r=["Event","Exception","Metric","PageView","Trace","Dependency"];r.length;)t("track"+r.pop());return t("set"+s),t("clear"+s),t(h+a),t(c+a),t(h+v),t(c+v),t("flush"),config.disableExceptionTracking||(r="onerror",t("_"+r),f=e[r],e[r]=function(config,t,u,e,o){var s=f&&f(config,t,u,e,o);return s!==!0&&i["_"+r](config,t,u,e,o),s}),i}({instrumentationKey:"3bd14389-a710-410b-8ba8-d5ee621582a3",sdkExtension:"a"});window.appInsights=appInsights;appInsights.queue&&appInsights.queue.length===0&&appInsights.trackPageView();</script></head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MJCDTBT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<style>
+.homepage-hero-container.desktop-home-page-hero-block:before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    content: "";
+    background-size: 50%;
+    background-repeat: no-repeat;
+    max-width: 1920px;
+    background-position: 75% 74%;
+}
+
+.homepage-hero-container.desktop-home-page-hero-block {
+    background: #c9f0e2 !important;
+    position: relative;
+    background-color: #92c9ed !important;
+    background-image: url(https://www.surepayroll.com/globalassets/images/page-header---svgs/surepayroll_homeherobanner_groundbg.svg) !important;
+    background-repeat: repeat-y;
+    background-size: auto 100% !important;
+}
+
+.hero-header, .hero-header .extrabold, .hero-header h6.form-title {
+    color: #333;
+}
+
+.homepage-hero-container .hero-header h1.heading {
+    text-transform: capitalize !important;
+    font-weight: bold !important;
+}
+
+.homepage-hero-container.desktop-home-page-hero-block:before {
+    background-image: url(https://d2t92d45b68dnb.cloudfront.net/SurePayroll/210817/sp-product-in-laptop-and-smartphone.svg);
+    background-size: auto 50%
+}
+
+@media (max-width: 1439px) {
+    .homepage-hero-container.desktop-home-page-hero-block:before {
+        background-size: auto 40%;
+        background-position: 90% 75%;
+    }
+}
+
+@media (max-width: 1199px) {
+    .homepage-hero-container.desktop-home-page-hero-block:before {
+        background-size: auto 35%;
+    }
+}
+
+@media (max-width: 767px) {
+    .homepage-hero-container.desktop-home-page-hero-block:before {
+        display: none !important;
+    }
+
+    .homepage-hero-container.desktop-home-page-hero-block:after {
+        position: relative;
+        background-image: url(https://d2t92d45b68dnb.cloudfront.net/SurePayroll/210817/sp-product-in-laptop-and-smartphone.svg);
+        width: 100%;
+        height: 300px;
+        transform: none;
+        left: 0;
+        content: "";
+        background-repeat: no-repeat;
+        content: "";
+        background-size: 95% auto !important;
+        background-position: center 80% !important;
+        position: relative;
+        display: block;
+    }
+
+    .homepage-hero-container.desktop-home-page-hero-block {
+        padding-bottom: 0;
+        background-size: auto 165% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .homepage-hero-container.desktop-home-page-hero-block:after {
+        height: 200px;
+    }
+}
+
+</style>
+<style>
+.ipt-four-boxes .col-lg-3{
+	margin: 0 auto;
+	text-align: center;
+	border: 1px solid #999;
+	border-radius: 5px;
+	background: #fff;
+	position: relative;
+	padding: 25px 25px 96px;
+	transition: 0.2s ease-in-out;
+	max-width: 24% !important;
+	flex: 0 0 24% !important;
+}
+
+.ipt-four-boxes a.pillbox-primary {
+	position: absolute;
+	bottom: 25px;
+	left: 0;
+	width: 80%;
+	right: 0;
+	margin: auto;
+}
+
+.ipt-four-boxes.no-btn .col-lg-3 {
+	padding: 25px !important;
+}
+
+
+/******* RESPONSIVENESS ******/
+@media (max-width:1199px) {
+	.ipt-four-boxes .col-lg-3 {
+	  margin: 9px auto 0;
+	  max-width: 49% !important;
+	  flex: 0 0 49% !important;
+	}
+}
+
+@media (max-width:991px) {
+
+	.ipt-four-boxes .col-lg-3 {
+		flex: 0 0 90% !important;
+		max-width: 90% !important;
+	}
+
+}
+
+</style>
+
+
+
+    <a href="#main" id="sfSkip" class="visuallyhidden">Skip To The Main Content</a>
+    
+    
+
+
+
+
+
+
+
+<header>
+    
+
+
+<input id="requestUrl" name="requestUrl" type="hidden" value="/search-results" />
+
+<div class="hsbox site-search ">
+    <a href="#" class="close">X</a>
+    <fieldset class="sfsearchBox">
+        <input name="ctl00$Navigation$T93D3CA1E033$ctl00$ctl00$txtKeyword" type="text" id="Navigation_T93D3CA1E033_ctl00_ctl00_txtKeyword" class="hint text search-bar" placeholder="Enter Search Keywords" autocomplete="off">
+        <label class="icon-search" for="Header_T7B398469014_btnSubmit">
+            <input type="submit" name="ctl00$Navigation$T93D3CA1E033$ctl00$ctl00$btnSubmit" value="SEARCH" id="Navigation_T93D3CA1E033_ctl00_ctl00_btnSubmit" class="pillbox-primary">
+        </label>
+    </fieldset>
+</div>
+<div class="top-navigation theme-dark-gray py-2">
+    <div class="container">
+        <div class="row">
+            <div class="text-align-left col-sm">
+                <div class="top-nav-links">
+                            <span class="mr-3 top-nav-link">
+                                <a href="/about/contact-us">Support</a>
+                            </span>
+                </div>
+                <a href="#" class="dis-inline-block pillbox-primary-white search-toggle">Search</a>
+            </div>            
+            <div class="text-align-center col-sm">
+                <div class="top-nav-links">
+                            <span class="mr-3 top-nav-link">
+                                <a href="tel:8779547873">877-954-7873</a>
+                            </span>
+                </div>
+            </div>
+            <div class="text-align-right col-sm">
+                <div class="top-nav-links">
+                            <span class="mr-3 top-nav-link">
+                                <a href="https://secure.surepayroll.com/SPF/Login/Auth.aspx">Already Have an Account? Log In</a>
+                            </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="theme-white py-4 main-navigation">
+        <div class="container">
+                <a class="logo" href="/">
+                    
+<img class="img-responsive" src="/globalassets/images/spr-main-logo.jpg"  alt="SurePayroll.com" />
+                </a>
+
+    <div class="d-none d-xl-block main-navigation-links">
+
+
+<div class="dis-inline-block ml-4 pos-rel menu-item">
+    <a href="/industry/small-business-payroll">
+        Small Business
+    </a>
+</div>
+
+<div class="dis-inline-block ml-4 pos-rel menu-item">
+    <a href="/industry/nanny">
+        Nanny &amp; Household
+    </a>
+</div>
+
+<div class="dis-inline-block ml-4 pos-rel menu-item">
+    <a href="/benefits">
+        Benefits &amp; HR
+    </a>
+</div>
+
+<div class="dis-inline-block ml-4 pos-rel menu-item">
+    <a href="https://partners.surepayroll.com/accountants">
+        Accountants
+    </a>
+</div>
+
+<div class="dis-inline-block ml-4 pos-rel menu-item">
+    <a href="/payroll/instant-payroll-quote" class="pillbox-primary">
+        Get My Payroll Quote
+    </a>
+</div>    </div>
+
+<div class="tablet-menu d-xl-none my-auto">
+        <button class="tablet-menu-btn  pillbox-primary">
+            MENU&nbsp;&#9776;
+        </button>
+
+</div>        </div>
+    </div>
+    <div class="accordion d-xl-none mobile-nav tablet-mobile-menu" id="mobileNavAccordion">
+
+
+
+    <div class="card theme-white top-level-card">
+            <div class="card-header theme-white top-level-header" id="headingSmall_Business">
+                <div class="mb-0 dis-inline-block">
+                    <a href="/industry/small-business-payroll">
+                        Small Business
+                    </a>
+                </div>
+                <div class="dis-inline-block expand-plus collapsed" data-toggle="collapse" data-target="#sectionSmall_Business4" aria-expanded="false" aria-controls="sectionSmall_Business4">
+                    <i class="fas fa-plus sign-toggle"></i>
+                </div>
+            </div>
+        
+
+        <div class="card theme-brand-hr-gray border-sides-light ml-3 collapse" id="sectionSmall_Business4">
+                <div class="card-header theme-brand-hr-gray p-sides-none">
+                    <div class="mb-0 dis-inline-block">
+                        <a href="/industry/small-business-payroll">Small Business Payroll</a>
+                    </div>
+                    <div class="dis-inline-block expand-plus sub-toggle collapsed" data-toggle="collapse" data-target="#sectionSmall_Business_Payroll3" aria-expanded="true" aria-controls="sectionSmall_Business_Payroll3">
+                        <i class="fas fa-plus sign-toggle"></i>
+                    </div>
+                </div>
+            
+
+        <div class="card theme-brand-hr-gray border-sides-light ml-3 collapse" id="sectionSmall_Business_Payroll3">
+                <a href="/payroll/features">
+                    <div class="card-header theme-brand-hr-gray p-sides-none">
+                        <div class="mb-0 dis-inline-block">
+                            Features
+
+                        </div>
+                    </div>
+                </a>
+            
+
+
+        </div>
+        <div class="card theme-brand-hr-gray border-sides-light ml-3 collapse" id="sectionSmall_Business_Payroll3">
+                <a href="/about/reviews">
+                    <div class="card-header theme-brand-hr-gray p-sides-none">
+                        <div class="mb-0 dis-inline-block">
+                            Reviews
+
+                        </div>
+                    </div>
+                </a>
+            
+
+
+        </div>
+        <div class="card theme-brand-hr-gray border-sides-light ml-3 collapse" id="sectionSmall_Business_Payroll3">
+                <a href="/payroll/compare">
+                    <div class="card-header theme-brand-hr-gray p-sides-none">
+                        <div class="mb-0 dis-inline-block">
+                            Compare
+
+                        </div>
+                    </div>
+                </a>
+            
+
+
+        </div>
+        <div class="card theme-brand-hr-gray border-sides-light ml-3 collapse" id="sectionSmall_Business_Payroll3">
+                <a href="/resources">
+                    <div class="card-header theme-brand-hr-gray p-sides-none">
+                        <div class="mb-0 dis-inline-block">
+                            Learn More
+
+                        </div>
+                    </div>
+                </a>
+            
+
+
+        </div>
+
+        </div>
+        <div class="card theme-brand-hr-gray border-sides-light ml-3 collapse" id="sectionSmall_Business4">
+                <div class="card-header theme-brand-hr-gray p-sides-none">
+                    <div class="mb-0 dis-inline-block">
+                        <a href="/industry/nanny">Nanny Payroll</a>
+                    </div>
+                    <div class="dis-inline-block expand-plus sub-toggle collapsed" data-toggle="collapse" data-target="#sectionNanny_Payroll3" aria-expanded="true" aria-controls="sectionNanny_Payroll3">
+                        <i class="fas fa-plus sign-toggle"></i>
+                    </div>
+                </div>
+            
+
+        <div class="card theme-brand-hr-gray border-sides-light ml-3 collapse" id="sectionNanny_Payroll3">
+                <a href="/industry/nanny/payroll-guide">
+                    <div class="card-header theme-brand-hr-gray p-sides-none">
+                        <div class="mb-0 dis-inline-block">
+                            Nanny Taxes
+
+                        </div>
+                    </div>
+                </a>
+            
+
+
+        </div>
+        <div class="card theme-brand-hr-gray border-sides-light ml-3 collapse" id="sectionNanny_Payroll3">
+                <a href="/industry/nanny/payroll-guide">
+                    <div class="card-header theme-brand-hr-gray p-sides-none">
+                        <div class="mb-0 dis-inline-block">
+                            Nanny Payroll Guide
+
+                        </div>
+                    </div>
+                </a>
+            
+
+
+        </div>
+
+        </div>
+        <div class="card theme-brand-hr-gray border-sides-light ml-3 collapse" id="sectionSmall_Business4">
+                <a href="/benefits">
+                    <div class="card-header theme-brand-hr-gray p-sides-none">
+                        <div class="mb-0 dis-inline-block">
+                            Benefits &amp; HR
+
+                        </div>
+                    </div>
+                </a>
+            
+
+
+        </div>
+
+    </div>
+
+
+
+    <div class="card theme-white top-level-card">
+            <a href="/industry/nanny">
+                <div class="card-header theme-white top-level-header" id="headingNanny___Household">
+                    <div class="mb-0 dis-inline-block">
+                        Nanny &amp; Household
+                    </div>
+                </div>
+            </a>
+        
+
+
+    </div>
+
+
+
+    <div class="card theme-white top-level-card">
+            <a href="/benefits">
+                <div class="card-header theme-white top-level-header" id="headingBenefits___HR">
+                    <div class="mb-0 dis-inline-block">
+                        Benefits &amp; HR
+                    </div>
+                </div>
+            </a>
+        
+
+
+    </div>
+
+
+
+    <div class="card theme-white top-level-card">
+            <a href="https://partners.surepayroll.com/accountants">
+                <div class="card-header theme-white top-level-header" id="headingAccountants">
+                    <div class="mb-0 dis-inline-block">
+                        Accountants
+                    </div>
+                </div>
+            </a>
+        
+
+
+    </div>
+
+
+
+    <a href="/payroll/instant-payroll-quote">
+        <div class="get-my-payroll-btn theme-orange center-text py-3">
+            <div class="bold mb-0">Get my Payroll Quote</div>
+        </div>
+    </a>
+
+        <div class="menu-close-btn theme-green center-text py-4">
+            <div class="bold mb-0">CLOSE</div>
+        </div>
+    </div>
+</header>
+
+
+
+<main id="main" class="main" tabindex="-1" role="main">
+    
+
+
+<div><div>
+
+<!--Desktop Home Background-->
+    <div class="homepage-hero-container desktop-home-page-hero-block lazy">
+        <div class="container">
+            <div class="row">
+                <div class="hero-header col-md-12 my-auto">
+                    <div>
+                        <h1 class="desktop-content heading bold">
+Small Business&#160;is Our Business.                        </h1>
+                        <h1 class="mobile-content heading bold">
+small business&#160;is our business.                        </h1>
+                    </div>
+                    <div class="desktop-content sub-title">
+                        <h2 style="color: #45525f; font-size: 26px;">Get Up to 6 Months Free. <strong> <a id="form-btn" style="text-decoration: none !important;" href="/terms/disclaimer" target="_blank" rel="noopener">*</a> </strong></h2>
+<div style="font-weight: 400;">
+<p>You deserve a partner who understands your needs and helps simplify the complex. When it comes to online payroll and benefits&mdash;whether you&rsquo;re paying one employee or many&mdash;SurePayroll checks every box. <strong><em>Act now</em></strong> to get up to 6 Months Free.</p>
+</div>
+                    </div>
+                    <div class="mobile-content sub-title">
+                        <h2 style="color: #45525f; font-size: 26px;">Small Businesses Get Up to 6 Months Free. <strong> <a id="form-btn" style="text-decoration: none !important;" href="/terms/disclaimer" target="_blank" rel="noopener">*</a> </strong></h2>
+<div style="font-weight: 400;">
+<p>You deserve a partner who understands your needs and helps simplify the complex. When it comes to online payroll and benefits&mdash;whether you&rsquo;re paying one employee or many&mdash;SurePayroll checks every box. <strong><em>Act now</em></strong> to get up to 6 Months Free.</p>
+</div>
+                    </div>
+                    <div class="payroll-quote-block">
+                        <h6 class="bold form-title">
+                            View Our Pricing &amp; Plans
+                        </h6>
+                        <div id="form-area-desktop">
+                            <div><div>
+
+    <form method="post" novalidate="novalidate"
+        data-f-metadata=""
+        enctype="multipart/form-data" class="EPiServerForms ValidationSuccess" data-f-type="form" id="2c99fbd1-785e-47ef-9af4-a6a2621bb5e7">
+
+        
+
+        
+        <script type="text/javascript" src="/EPiServer.Forms/DataSubmit/GetFormInitScript?formGuid=2c99fbd1-785e-47ef-9af4-a6a2621bb5e7&formLanguage=en"></script>
+
+        
+        <input type="hidden" class="Form__Element Form__SystemElement FormHidden FormHideInSummarized" name="__FormGuid" value="2c99fbd1-785e-47ef-9af4-a6a2621bb5e7" data-f-type="hidden" />
+        <input type="hidden" class="Form__Element Form__SystemElement FormHidden FormHideInSummarized" name="__FormHostedPage" value="6" data-f-type="hidden" />
+        <input type="hidden" class="Form__Element Form__SystemElement FormHidden FormHideInSummarized" name="__FormLanguage" value="en" data-f-type="hidden" />
+        <input type="hidden" class="Form__Element Form__SystemElement FormHidden FormHideInSummarized" name="__FormCurrentStepIndex" value="0" data-f-type="hidden" />
+        <input type="hidden" class="Form__Element Form__SystemElement FormHidden FormHideInSummarized" name="__FormSubmissionId" value="" data-f-type="hidden" />
+        <input name="__RequestVerificationToken" type="hidden" value="DGkbasDJGSzVWiSzczJyLpmtNXxUtchSzcEFTpn9HCUU2v3dLmxHKvNB9Cm5zqJB96dREk7nzLje7oYnSEESsEGBZkQ1" />
+
+        
+
+        
+        <div class="Form__Status">
+            <div class="Form__Status__Message hide" data-f-form-statusmessage>
+                
+            </div>
+        </div>
+
+        <div data-f-mainbody class="Form__MainBody">
+            
+            <section id="__field_" data-f-type="step" data-f-element-name="__field_" class="Form__Element FormStep Form__Element--NonData " data-f-stepindex="0" data-f-element-nondata>
+                
+
+                <!-- Each FormStep groups the elements below it til the next FormStep -->
+                <div class="Form__Element FormSelection sfFormDropdown payroll-type addCookie ValidationRequired" data-f-element-name="__field_26560" data-f-type="selection">
+        <label for="c6d278eb-ce23-48f7-b6c4-8ec109535951" class="Form__Element__Caption sfTxtLbl">Payroll Type</label>
+
+        <span class="dropdownList sfFieldWrp">
+            <select  class="payroll-type addCookieprepopulate-false" name="__field_26560" id="c6d278eb-ce23-48f7-b6c4-8ec109535951"   required aria-required="true">
+                <option selected="selected" value="">Payroll Type</option>
+                
+                <option value="General Business"   data-f-datainput>General Business</option>
+                
+                <option value="Household Employer Payroll"   data-f-datainput>Household / Nanny</option>
+                
+                <option value="Officer Only Payroll"   data-f-datainput>Officer Only / S-Corp</option>
+                
+                <option value="Restaurant Payroll"   data-f-datainput>Restaurant w/Tips</option>
+                
+                <option value="Non-Profit Organization"   data-f-datainput>Non-Profit Organization</option>
+                
+                <option value="Church Payroll"   data-f-datainput>Church / Clergy</option>
+                
+            </select>
+        </span>
+<div class="Form__Element__ValidationError" data-f-linked-name="__field_26560" data-f-validationerror="" id="__field_26560_desc" style="display:none"></div>
+</div><div class="Form__Element FormTextbox sfFormBox sfTxtBoxMedium addCookie ValidationRequired" data-f-element-name="__field_26561" data-f-type="textbox">
+
+        <div>
+            <label for="600b451c-d1c7-45a2-9842-f8611ae73fbf" class="Form__Element__Caption sfTxtLbl sfInlineBlock">Name</label>
+        </div>
+
+        <div class="sfFieldWrp">
+            <input name="__field_26561" id="600b451c-d1c7-45a2-9842-f8611ae73fbf" type="text" class="FormTextbox__Input sfTxt addCookie prepopulate-false"
+            placeholder="Name" value=""  required aria-required="true" data-f-datainput  />
+        </div>
+
+        <div class="Form__Element__ValidationError" data-f-linked-name="__field_26561" data-f-validationerror="" id="__field_26561_desc" style="display:none"></div>
+        
+</div><div class="Form__Element FormTextbox sfFormBox sfTxtBoxMedium addCookie ValidationRequired" data-f-element-name="__field_26562" data-f-type="textbox">
+
+        <div>
+            <label for="a09c1f14-4846-4cfe-8a7b-4a8945b17043" class="Form__Element__Caption sfTxtLbl sfInlineBlock">Email</label>
+        </div>
+
+        <div class="sfFieldWrp">
+            <input name="__field_26562" id="a09c1f14-4846-4cfe-8a7b-4a8945b17043" type="text" class="FormTextbox__Input sfTxt addCookie prepopulate-false"
+            placeholder="Email" value=""  required aria-required="true" data-f-datainput  />
+        </div>
+
+        <div class="Form__Element__ValidationError" data-f-linked-name="__field_26562" data-f-validationerror="" id="__field_26562_desc" style="display:none"></div>
+        
+</div><div class="Form__Element FormTextbox sfFormBox sfTxtBoxMedium  ValidationRequired" data-f-element-name="__field_26563" data-f-type="textbox">
+
+        <div>
+            <label for="ae80abd0-5d15-407b-a3d6-1f192db4a31a" class="Form__Element__Caption sfTxtLbl sfInlineBlock">Phone</label>
+        </div>
+
+        <div class="sfFieldWrp">
+            <input name="__field_26563" id="ae80abd0-5d15-407b-a3d6-1f192db4a31a" type="text" class="FormTextbox__Input sfTxt  prepopulate-false"
+            placeholder="Phone" value=""  required aria-required="true" data-f-datainput  />
+        </div>
+
+        <div class="Form__Element__ValidationError" data-f-linked-name="__field_26563" data-f-validationerror="" id="__field_26563_desc" style="display:none"></div>
+        
+</div>
+
+<input name="__field_26564" id="67b839e5-1172-44b4-a103-48a25abad206" type="hidden"
+    value="SP_HP"
+    class="Form__Element FormHidden FormHideInSummarized referral-code-field truncate-False"  data-f-type="hidden" />
+
+
+<input name="__field_26567" id="bac65117-4a6d-4cff-a145-63b7cb2ad04e" type="hidden"
+    value=""
+    class="Form__Element FormHidden FormHideInSummarized devicetype-field truncate-True"  data-f-type="hidden" />
+
+
+<input name="__field_26568" id="3cba5e4e-8dd2-4009-9fe3-a0c37cf5355d" type="hidden"
+    value=""
+    class="Form__Element FormHidden FormHideInSummarized usertype-field truncate-True"  data-f-type="hidden" />
+
+
+<input name="__field_26573" id="0378f25d-49d1-418d-8de6-12ba3e470b2c" type="hidden"
+    value=""
+    class="Form__Element FormHidden FormHideInSummarized referral-page-field truncate-True"  data-f-type="hidden" />
+
+
+<input name="__field_26574" id="eda047f0-3702-4625-82f5-cbc5bfc9eebe" type="hidden"
+    value=""
+    class="Form__Element FormHidden FormHideInSummarized landing-page-field truncate-True"  data-f-type="hidden" />
+
+
+<input name="__field_26575" id="7d9c6bb9-db5b-46fd-bd30-5adb021e8b8f" type="hidden"
+    value=""
+    class="Form__Element FormHidden FormHideInSummarized form-page truncate-True"  data-f-type="hidden" />
+
+
+<input name="__field_26576" id="e84e1e39-2bb9-4cd8-aa0b-06516f6a6d1a" type="hidden"
+    value="012600000009HL1"
+    class="Form__Element FormHidden FormHideInSummarized  truncate-False"  data-f-type="hidden" />
+
+
+<input name="__field_26577" id="f688a8fd-284e-40a2-8fe2-cd62f8ceec2e" type="hidden"
+    value=""
+    class="Form__Element FormHidden FormHideInSummarized site-entry-point-field truncate-True"  data-f-type="hidden" />
+
+
+<div class="formSubmit quote-submit">
+
+    <button id="fb0a096b-14b3-4ee5-a645-1d0a486d2ad1" name="submit" type="submit"  value="fb0a096b-14b3-4ee5-a645-1d0a486d2ad1" data-f-is-finalized="false"
+            data-f-is-progressive-submit="true" data-f-type="submitbutton"
+             
+            
+            class="Form__Element FormExcludeDataRebind FormSubmitButton quote-submit obtn">
+        Get Started
+        
+    </button>
+
+</div>
+
+<script type="text/javascript">
+    $(function () {
+         
+        $('button#fb0a096b-14b3-4ee5-a645-1d0a486d2ad1').click(function () {
+            $('html, body').animate({
+                    scrollTop: '77px'
+                },
+                1000);
+            return false;
+        });
+    });
+</script>
+
+    <input name="__field_26599" id="25c9a182-fd50-4b4f-a2a2-db7a881b3500" type="hidden"      
+           value="Organic"
+           class="Form__Element FormHidden FormHideInSummarized"  data-f-type="hidden" />
+
+
+    <input name="__field_26598" id="a5ef701c-f044-497d-9323-5a44aa1b28e2" type="hidden"      
+           value="70132000000lULwAAM"
+           class="Form__Element FormHidden FormHideInSummarized"  data-f-type="hidden" />
+
+
+    <input name="__field_26593" id="9cec1b6b-a69d-47ac-8042-b51794165eb3" type="hidden"      
+           value=""
+           class="Form__Element FormHidden FormHideInSummarized"  data-f-type="hidden" />
+
+
+    <input name="__field_26594" id="d4bf65e9-7a9f-469a-8d71-8fc6b56694d6" type="hidden"      
+           value=""
+           class="Form__Element FormHidden FormHideInSummarized"  data-f-type="hidden" />
+
+
+    <input name="__field_26597" id="fd4272ab-dea4-4b09-aaaa-374e2790cd94" type="hidden"      
+           value=""
+           class="Form__Element FormHidden FormHideInSummarized"  data-f-type="hidden" />
+
+
+    <input name="__field_26601" id="d4ccbc6e-cb3c-4da8-b11d-f4194eda63bf" type="hidden"      
+           value=""
+           class="Form__Element FormHidden FormHideInSummarized"  data-f-type="hidden" />
+
+
+    <input name="__field_26602" id="4fb12649-6334-42fe-a845-f822d87c4b04" type="hidden"      
+           value=""
+           class="Form__Element FormHidden FormHideInSummarized"  data-f-type="hidden" />
+
+
+    <input name="__field_26604" id="1c5bef14-e0f9-44e2-9b60-dc409a14ecc5" type="hidden"      
+           value=""
+           class="Form__Element FormHidden FormHideInSummarized"  data-f-type="hidden" />
+
+
+    <input name="__field_26600" id="dacd199e-8576-4af0-8804-4b1cf603b8e8" type="hidden"
+           value="b63ebda4-231f-4b8b-b2f9-c8d1f44673d4"
+           class="Form__Element FormHidden FormHideInSummarized"  data-f-type="hidden" />
+
+
+    <input name="__field_31664" id="f92ba8e0-043a-460f-9522-d1cbaac37a74" type="hidden"
+           value="Marketo Tracking Code Cookie Not Found"
+           class="Form__Element FormHidden FormHideInSummarized"  data-f-type="hidden" />
+
+
+    <input name="__field_34053" id="bdc45656-f151-4c41-90cd-1213699246b9" type="hidden"      
+           value=""
+           class="Form__Element FormHidden FormHideInSummarized"  data-f-type="hidden" />
+
+
+    <input name="__field_34054" id="bc859bc2-0a3b-492e-b4e3-39dd2bd84625" type="hidden"      
+           value=""
+           class="Form__Element FormHidden FormHideInSummarized"  data-f-type="hidden" />
+
+
+    <input name="__field_34055" id="d74fedfd-2419-4693-813a-790607123463" type="hidden"      
+           value=""
+           class="Form__Element FormHidden FormHideInSummarized"  data-f-type="hidden" />
+
+
+    <input name="__field_34056" id="2836431b-f149-4750-ac0b-3a08bdfbfee9" type="hidden"      
+           value=""
+           class="Form__Element FormHidden FormHideInSummarized"  data-f-type="hidden" />
+
+
+    <input name="__field_40421" id="62253292-5b86-46d8-8f21-da181a33e04e" type="hidden"      
+           value="SURE"
+           class="Form__Element FormHidden FormHideInSummarized"  data-f-type="hidden" />
+
+
+<input name="__field_70764" id="79fb1413-3b80-4c5e-8424-e332cfa409f4" type="hidden"
+    value=""
+    class="Form__Element FormHidden FormHideInSummarized  truncate-False"  data-f-type="hidden" />
+
+            </section>
+
+            
+        </div>
+        
+
+        
+    </form>
+
+
+
+<style>
+    .EPiServerForms .Form__Element .Form__Element__ValidationError {
+        font-weight: bold;
+    }
+</style></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<script>
+    $(document).ready(function () {
+        var isSolid = false;
+        var isDefault = true;
+        var desktopTheme = 'theme-dark-blue';
+        var desktopImage = '/globalassets/images/homepage/sp-main-banner_product-in-mac_2400x741_darken.jpg';
+        var desktopBg = '#45525f';
+        var desktopFont = '#fff';
+
+        var isSolidMb = false;
+        var isDefaultMb = true;
+        var mobileTheme = 'theme-dark-blue';
+        var mobileImage = '/globalassets/images/homepage/sp-main-banner-narrow.jpg';
+        var mobileBg = '#45525f';
+        var mobileFont = '#fff';
+
+        var homeContainerSelector = $('.homepage-hero-container');
+
+        var clearOut = function() {
+            homeContainerSelector.css('background-color', "");
+            homeContainerSelector.css('color', '');
+            homeContainerSelector.removeClass(desktopTheme);
+            homeContainerSelector.removeClass(mobileTheme);
+            homeContainerSelector.attr('data-src', '');
+            homeContainerSelector.css('background-image', '');
+        }
+
+        var desktopCheck = function () {
+            clearOut();
+
+            if (isSolid === true) {
+                homeContainerSelector.css("background-color", desktopBg);
+                homeContainerSelector.css("color", desktopFont);
+
+            } else if (isDefault === true) {
+                homeContainerSelector.addClass(desktopTheme);
+                homeContainerSelector.css('data-src', desktopImage);
+                homeContainerSelector.css('background-image', 'url('+ desktopImage + ')');
+
+
+            }
+        }
+
+        var mobileCheck = function () {
+            clearOut();
+
+            if (isSolidMb === true) {
+                homeContainerSelector.css("background-color", mobileBg);
+                homeContainerSelector.css("color", mobileFont);
+
+            } else if (isDefaultMb === true) {
+                homeContainerSelector.addClass(mobileTheme);
+                homeContainerSelector.attr('data-src', mobileImage);
+                homeContainerSelector.css('background-image', 'url('+ mobileImage + ')');
+            }
+        }
+
+
+        var getBrowserWidth = function () {
+            if (window.innerWidth < 768) {
+                mobileCheck();
+            } else if (window.innerWidth < 991) {
+                mobileCheck();
+            } else if (window.innerWidth < 1199) {
+                desktopCheck();
+            } else {
+                desktopCheck();
+
+            }
+        };
+
+        getBrowserWidth();
+        $(window).on('resize',
+            function() {
+                getBrowserWidth();
+            });
+
+    });
+</script></div><div><div class="featured-in bg-light-gray d-none d-md-block">
+    <div class="container">
+        <div class="featured-in-container">
+            <div class="featured-in-block-container">
+                <div class="featured-in-block font-color-white bg-dark-gray">
+                    As Featured In:
+                </div>
+            </div>
+            <div  class="featured-in-logos">
+                    <div class="dis-inline-block feat-block">
+                            <img class="lazy" data-src="/globalassets/images/logos/surepayroll-credibility-logos_inc_74x26.png" alt="Inc Magazine"/>
+                    </div>
+                    <div class="dis-inline-block feat-block">
+                            <img class="lazy" data-src="/globalassets/images/logos/surepayroll-credibility-logos_sm-bus-trends_134x36.png"/>
+                    </div>
+                    <div class="dis-inline-block feat-block">
+                            <img class="lazy" data-src="/globalassets/images/logos/surepayroll-credibility-logos_cnn-money_124x24.png"/>
+                    </div>
+                    <div class="dis-inline-block feat-block">
+                            <img class="lazy" data-src="/globalassets/images/logos/surepayroll-credibility-logos_fox-bus_68x33.png"/>
+                    </div>
+                    <div class="dis-inline-block feat-block">
+                            <img class="lazy" data-src="/globalassets/images/logos/surepayroll-credibility-logos_tech-crunch_166x27.png"/>
+                    </div>
+                    <div class="dis-inline-block feat-block">
+                            <img class="lazy" data-src="/globalassets/images/logos/surepayroll-credibility-logos_usa-today_58x35.png"/>
+                    </div>
+                    <div class="dis-inline-block feat-block">
+                            <img class="lazy" data-src="/globalassets/images/logos/surepayroll-credibility-logos_fast-company_150x22.png"/>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div><div>
+
+<div class="block-row theme-white ipt-four-boxes no-btn  lazy" data-src="">
+
+
+    <div class="container">
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1 col-md-12 mb-3">
+                    <h3 style="text-align: center; font-weight: bold;">Payroll You Can Set Up and Run Yourself &ndash; In Minutes.</h3>
+<p style="text-align: center;">Payroll is a big job &ndash; but that doesn&rsquo;t mean it needs to be a big job for <strong><em>you</em></strong><em>.</em> Our online payroll is easy to set up, fast to learn, and runs from your computer or smartphone in minutes.&nbsp;</p>
+<p style="text-align: center;">&nbsp;</p>
+                </div>
+            </div>
+
+        
+<div class="row">
+    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 lazy">
+        <div><div>
+<div class="rich-text">
+  <p><img style="display: block; margin-left: auto; margin-right: auto;" src="/globalassets/images/icons---svg/surepayroll-icons_100-percent-guarantee_135x135.png" alt="surepayroll-icons_100-percent-guarantee_135x135.png" width="100" height="100" /></p>
+<h5 style="text-align: center; font-size: 20px;"><strong>100% Guarantee</strong></h5>
+<p style="text-align: center; font-size: 20px;">All of our payroll services are backed by our <a href="/about/tax-filing-guarantee">guarantee</a>.</p>
+</div></div></div>   
+    </div>                                  
+    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 lazy">
+        <div><div>
+<div class="rich-text">
+  <h5 style="text-align: center;"><img src="/globalassets/images/icons---svg/surepayroll-icons_easy-set-up_135x135.png" alt="surepayroll-icons_easy-set-up_135x135.png" width="100" height="100" /></h5>
+<h5 style="text-align: center; font-size: 20px;"><strong>Easy to set up and learn</strong></h5>
+<p style="text-align: center;">Set it up and run payroll yourself in minutes.</p>
+</div></div></div>   
+    </div>                                  
+    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0 lazy">
+        <div><div>
+<div class="rich-text">
+  <p style="text-align: center;"><img src="/globalassets/images/icons---svg/surepayroll-icons_auto-payroll_135x135.png" alt="surepayroll-icons_auto-payroll_135x135.png" width="100" height="100" /></p>
+<h5 style="text-align: center; font-size: 20px;"><strong>Save Time with Auto Payroll</strong></h5>
+<p style="text-align: center;">Run payroll automatically (and easily make changes when needed).</p>
+</div></div></div>   
+    </div>                                  
+    <div class="col-lg-3 col-md-6 lazy">
+        <div><div>
+<div class="rich-text">
+  <p style="text-align: center;"><img src="/globalassets/images/icons---svg/surepayroll-icons_chat_135x135.png" alt="surepayroll-icons_chat_135x135.png" width="100" height="100" /></p>
+<h5 style="text-align: center; font-size: 20px;"><strong>Live, US-based support</strong></h5>
+<p style="text-align: center;">Get help when you need it via chat, email or phone</p>
+</div></div></div>
+    </div>
+</div>
+
+    </div>
+
+</div></div><div>
+
+<div class="block-row theme-white  lazy" data-src="">
+
+
+    <div class="container">
+
+        
+<div class="row vertical-align">
+    <div class="col-md-12 my-auto epi-form-wide">
+        <div><div>
+<div class="rich-text">
+  <h2 style="text-align: center;">Simplify Your Payroll Management</h2>
+<p>&nbsp;</p>
+
+<style>
+.acc-features {
+  background-color: #fff;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+    border-left: none;
+    border-top: 1px solid #ddd;
+    border-bottom: none;
+    border-right: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+  transition: 0.4s;
+}
+.features-accordion ul {
+font-size: 16px;
+}
+.features-accordion {
+    border-bottom: 1px solid #ddd;
+}
+    
+div.panel {
+    display: none;
+}
+
+div.panel.show {
+    display: block !important;
+}
+    
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+
+.features-accordion h4{
+    margin-bottom:0px;
+}
+    
+.features-accordion .panel {
+ border:none;
+}
+
+.features-accordion h4:focus {
+ outline:none;
+}
+
+h4.acc-features:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+h4.acc-features.active:after {
+    content: "\2212";
+}
+.acc-features h4:last-child {
+border-bottom: 1px solid #ddd;
+}
+.features-accordion .pillbox-primary {
+    margin-top:30px;
+}
+    
+.panel .accordion-gif .img-fluid {
+    max-width:800px !important;
+    width:100%;
+}
+    
+ .accordion-gif {
+    text-align:center;    
+}
+
+@media screen and (min-width: 769px) {
+    .features-accordion{
+        max-width:400px;
+    }
+    
+    .accordion-gif {
+        float:right;
+        position: absolute;
+        top: 7rem;
+        right: 0;
+        width: calc(100% - 480px);
+    }
+}
+</style>
+
+<div class="features-accordion">
+<h4 class="acc-features">Tax Calculation &amp; Filing</h4>
+<div class="panel">
+  <p>Focus on your business while we track and apply changing tax laws.</p>
+   <ul>
+        <li>Accurate tax liability calculation guarantee</li>
+        <li>Federal, state, and local taxes filing and deposit (Full-Service Plan)</li>
+        <li>Tax payment and filing guarantee</li>
+    </ul>
+  <div class="accordion-gif">
+      <img class="img-fluid" src="https://www.surepayroll.com/globalassets/images/Homepage/Payroll-Preview.gif">
+      <p style="text-align: center;"><a class="pillbox-primary" href="https://www.surepayroll.com/about/tax-filing-guarantee">Discover our Guarantees</a></p>
+  </div>
+</div>
+
+<h4 class="acc-features">Extensive Reporting Capabilities</h4>
+<div class="panel">
+  <p>Gain insights from up-to-date payroll, employee, benefits, and status reports.</p>
+   <ul>
+        <li>View and download customizable reports</li>
+        <li>Eliminate manual errors with an integrated timeclock</li>
+        <li>Integrate with your accounting software to streamline tracking</li>
+    </ul>
+
+  <div class="accordion-gif">
+      <img class="img-fluid" src="https://www.surepayroll.com/globalassets/images/Homepage/Reports.gif">
+      <p style="text-align: center;"><a class="pillbox-primary" href="https://www.surepayroll.com/payroll/payroll-reports">Stay organized with reporting</a></p>
+  </div>
+</div>
+
+<h4 class="acc-features">Easy Direct Deposit Setup</h4>
+<div class="panel">
+  <p>Enjoy the convenience of direct deposit.</p>
+   <ul>
+        <li>Trust that your employees are paid accurately and on time</li>
+        <li>Take advantage of same-day and next-day payroll</li>
+        <li>Cancel Payroll (within cancellation window) to fix errors</li>
+    </ul>
+  <div class="accordion-gif">
+      <img class="img-fluid" src="https://www.surepayroll.com/globalassets/images/Homepage/Direct-Deposit.gif">
+      <p style="text-align: center;"><a class="pillbox-primary" href="https://www.surepayroll.com/payroll/flexible-payroll">Discover Flexible Options</a></p>
+  </div>
+</div>
+    
+<h4 class="acc-features">Automate Running Payroll</h4>
+<div class="panel">
+  <p>Save time by automating your regular payroll runs.</p>
+   <ul>
+        <li>Get reminder before processing</li>
+        <li>Make changes if needed</li>
+        <li>Toggle on/off at any time</li>
+    </ul>
+  <div class="accordion-gif">
+      <img class="img-fluid" src="https://www.surepayroll.com/globalassets/images/Homepage/AutoPayroll-Setup.gif">
+      <p style="text-align: center;"><a class="pillbox-primary" href="https://www.surepayroll.com/resources/blog/introducing-auto-payroll">Auto Payroll</a></p>
+  </div>
+</div>
+    
+<h4 class="acc-features">Payroll on the Go</h4>
+<div class="panel">
+  <p>Manage payroll from anywhere.</p>
+   <ul>
+        <li>Access our app from your mobile, tablet, or desktop</li>
+        <li>Grant instant app access to your employees</li>
+        <li>Download and run your payroll in minutes</li>
+    </ul>
+  <div class="accordion-gif">
+      <img class="img-fluid" src="https://www.surepayroll.com/globalassets/images/Homepage/Mobile.gif">
+      <p style="text-align: center;"><a class="pillbox-primary" href="https://www.surepayroll.com/payroll/mobile">Download the App</a></p>
+  </div>
+</div>
+    
+</div>
+
+<script>
+    
+var acc1 = document.getElementsByClassName("acc-features");
+var panel = document.getElementsByClassName('panel');
+
+for (var i = 0; i < acc1.length; i++) {
+    
+    acc1[i].onclick = function() {
+    
+        var setClasses = !this.classList.contains('active');
+        setClass(acc1, 'active', 'remove');
+        setClass(panel, 'show', 'remove');
+                
+        if (setClasses) {
+            this.classList.toggle("active");
+            this.nextElementSibling.classList.toggle("show");
+        } else {
+            acc1[0].classList.toggle("active");
+            panel[0].classList.toggle("show");
+        }
+        
+    }; 
+        acc1[0].classList.toggle("active");
+        panel[0].classList.toggle("show");
+};
+
+function setClass(els, className, fnName) {
+    for (var i = 0; i < els.length; i++) {
+        els[i].classList[fnName](className);
+    }
+}
+</script>
+
+</div></div></div>
+    </div>
+</div>
+
+
+    </div>
+
+</div></div><div>
+
+<div class="block-row theme-white cs-row with-background lazy" data-src="/globalassets/images/layouts/customer-service-row-background-vector_2284x383_center.jpg">
+
+
+    <div class="container">
+
+        
+
+<div class="row vertical-align-large">
+    <div class="column-40-left col-md-12 col-lg-5 my-lg-auto epi-form-narrow lazy mb-4">
+        
+    </div>
+    <div class="column-60-right col-md-7 offset-md-5 epi-form-narrow my-lg-auto pl-lg-5 ">
+        <div><div>
+<div class="rich-text">
+  <h2>We're Here When You Need Help</h2>
+<p>We provide in-product knowledge articles to help guide you through common issues and tasks. And if you ever need help, our US-based customer care team is available via chat, email or phone to support you.</p>
+</div></div></div>
+    </div>
+</div>
+
+
+    </div>
+
+</div></div><div>
+<div class="block-row theme-green">
+    <div class="container">
+        <div class="row testimonial vertical-align">
+                <div class="img-container-aspect col-lg-3 col-md-4 offset-lg-1 my-lg-auto">
+                    <div class="img-wrapper lazy" data-src="/globalassets/images/testimonials/battleship-testimonial_299x299_headshot.png">
+                    </div>
+                </div>
+            <div class="col-lg-7 col-md-8 my-auto pl-md-5">
+                <h2 style="text-align: left;"><em>"I literally ran payroll on my Hawaiian vacation."</em></h2>
+<p style="text-align: left;">I was on vacation, taking a tour in Hawaii, when SurePayroll sent me a reminder to run my company&rsquo;s payroll. I logged into the SurePayroll app on my phone and about 3 clicks later, payroll was complete. A total of 15 seconds. I was happy and the tour guide didn&rsquo;t even notice!</p>
+                <div class="signature">
+                    <strong>
+                        Jovim Ventura
+                         |
+                            <a href="http://inoprints.com/">
+                                InoPrints
+                            </a>
+                    </strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></div><div>
+
+<div class="block-row theme-light-gray  lazy" data-src="">
+
+
+    <div class="container">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2 col-md-12 mb-3">
+                    <h2 id="ad" style="text-align: center;">See How Easy Payroll Can Be</h2>
+<p>&nbsp;</p>
+<div class="youtube lazy" data-embed="V-j1gt2nZrc"> 
+    <div class="play-button lazy"></div> 
+</div>
+
+<style>
+.youtube {
+    background-color: gray;
+    margin-bottom: 30px;
+    position: relative;
+    padding-top: 56.25%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.youtube img {
+    width: 100%;
+    top: -16.84%;
+    left: 0;
+    opacity: 0.7;
+}
+.youtube .play-button {
+    width: 90px;
+    height: 60px;
+    background-color: #333;
+    box-shadow: 0 0 30px rgba( 0,0,0,0.6 );
+    z-index: 1;
+    opacity: 0.8;
+    border-radius: 6px;
+}
+.youtube .play-button:before {
+    content: "";
+    border-style: solid;
+    border-width: 15px 0 15px 26.0px;
+    border-color: transparent transparent transparent #fff;
+}
+.youtube img,
+.youtube .play-button {
+    cursor: pointer;
+}
+.youtube img,
+.youtube iframe,
+.youtube .play-button,
+.youtube .play-button:before {
+    position: absolute;
+}
+.youtube .play-button,
+.youtube .play-button:before {
+    top: 50%;
+    left: 50%;
+    transform: translate3d( -50%, -50%, 0 );
+}
+.youtube iframe {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+</style>
+
+<script>
+( function() {
+
+    var youtube = document.querySelectorAll( ".youtube" );
+    
+    for (var i = 0; i < youtube.length; i++) {
+        
+        var source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed +"/sddefault.jpg";
+        
+        var image = new Image();
+                image.src = source;
+                image.addEventListener( "load", function() {
+                    youtube[ i ].appendChild( image );
+                }( i ) );
+        
+                youtube[i].addEventListener( "click", function() {
+
+                    var iframe = document.createElement( "iframe" );
+
+                            iframe.setAttribute( "frameborder", "0" );
+                            iframe.setAttribute( "allowfullscreen", "" );
+                            iframe.setAttribute( "src", "https://www.youtube.com/embed/"+ this.dataset.embed +"?rel=0&showinfo=0&autoplay=1" );
+
+                            this.innerHTML = "";
+                            this.appendChild( iframe );
+                } );    
+    };
+    
+} )();
+
+</script>
+
+<!--<div class="epi-contentfragment" contenteditable="false" data-classid="36f4349b-8093-492b-b616-05d8964e4c89" data-contentguid="a87822fd-2724-4e65-a336-d38cfcb58f32" data-contentlink="24892" data-contentname="Video - Homepage">Video - Homepage</div>-->
+                </div>
+            </div>
+
+        
+<div class="row">
+    <div class="col-md-10 offset-md-1 epi-form-wide">
+        
+    </div>
+</div>
+
+
+
+    </div>
+
+</div></div><div>
+
+<div class="block-row  lazy" data-src="">
+
+
+    <div class="container">
+
+        
+<div class="row vertical-align-large">
+    <div class="col-lg-6 col-md-12 my-lg-auto epi-form-narrow mb-4">
+        <div><div>
+<div class="rich-text">
+  <h2>Take Care of Your Employees (and Yourself) with Additional Benefits</h2>
+<p>Health care benefits and 401(k) retirement plans are within reach for small business. Whether you&rsquo;re in growth mode or are a sole proprietor, SurePayroll has options that fit your needs.&nbsp;</p>
+<p>See which <a title="HR &amp; Benefits" href="/benefits">Benefits &amp; HR</a> options fit your business.</p>
+</div></div></div>
+    </div>
+    <div class="col-lg-6 col-md-12 my-lg-auto epi-form-narrow ">
+        <div><div><div class="icon-block mb-3 offset-lg-1 vertical-align">
+    <div class="icon my-auto mr-4">
+        
+
+
+    <img class="lazy" data-src="/globalassets/images/icons---fontawesome-png/check-circle-light-75px.png" />
+
+    </div>
+    <h5 class="my-auto">
+            <a class="icon-link" href="/benefits/401k">
+                401(k)
+            </a>
+    </h5>
+</div>
+</div><div><div class="icon-block mb-3 offset-lg-1 vertical-align">
+    <div class="icon my-auto mr-4">
+        
+
+
+    <img class="lazy" data-src="/globalassets/images/icons---fontawesome-png/check-circle-light-75px.png" />
+
+    </div>
+    <h5 class="my-auto">
+            <a class="icon-link" href="/benefits/workers-compensation">
+                Workers&#39; Comp
+            </a>
+    </h5>
+</div>
+</div><div><div class="icon-block mb-3 offset-lg-1 vertical-align">
+    <div class="icon my-auto mr-4">
+        
+
+
+    <img class="lazy" data-src="/globalassets/images/icons---fontawesome-png/check-circle-light-75px.png" />
+
+    </div>
+    <h5 class="my-auto">
+            <a class="icon-link" href="/benefits/health-insurance">
+                Health Insurance
+            </a>
+    </h5>
+</div>
+</div><div><div class="icon-block mb-3 offset-lg-1 vertical-align">
+    <div class="icon my-auto mr-4">
+        
+
+
+    <img class="lazy" data-src="/globalassets/images/icons---fontawesome-png/check-circle-light-75px.png" />
+
+    </div>
+    <h5 class="my-auto">
+            <a class="icon-link" href="/benefits/screening">
+                Pre-employment Screening
+            </a>
+    </h5>
+</div>
+</div></div>
+    </div>
+</div>
+
+
+    </div>
+
+</div></div><div>
+
+<div class="block-row theme-dark-gray  lazy" data-src="">
+
+
+    <div class="container">
+
+        
+
+<div class="row vertical-align-large">
+    <div class="column-40-left col-md-12 col-lg-5 my-lg-auto epi-form-narrow lazy mb-4">
+        <div><div>
+<img class="img-responsive" src="/globalassets/images/what-nanny-tax-means-to-you_649x358.jpg"  alt="nanny payroll" /></div></div>
+    </div>
+    <div class="column-60-right col-md-12 col-lg-7 epi-form-narrow my-lg-auto pl-lg-5 ">
+        <div><div>
+<div class="rich-text">
+  <h2>Did you know that if you hire a nanny, in the eyes of the IRS, you&rsquo;re considered a business?</h2>
+<ul>
+<ul>
+<li>If you will pay your nanny more than $2,600 in 2023 you must withhold and pay Social Security and Medicare on all their wages.</li>
+<li>If you will pay your nanny more than $1,000 in any quarter in 2023, you must pay the federal employment tax or FUTA. You may also owe state unemployment taxes.</li>
+<li class="m-b-20">SurePayroll makes it easy to pay your employees, correctly file payroll taxes and handle the year-end forms.</li>
+</ul>
+</ul>
+<p>&nbsp;</p>
+<p><a class="pillbox-primary" title="See how we make paying your nanny easy" href="/industry/nanny">See how we make paying your nanny easy</a></p>
+</div></div></div>
+    </div>
+</div>
+
+
+    </div>
+
+</div></div><div>
+
+<div class="block-row theme-white  lazy" data-src="">
+
+
+    <div class="container">
+
+        
+<div class="row vertical-align-large">
+    <div class="col-lg-6 col-md-12 my-lg-auto epi-form-narrow mb-4">
+        <div><div>
+<div class="rich-text">
+  <h2>Refer Businesses &mdash; Get Rewards</h2>
+<p>Get up to $300 per business you refer to SurePayroll. The best part? There's no cap on what you can earn, and you don't even have to be a SurePayroll customer.</p>
+<p>&nbsp;</p>
+<p><a class="pillbox-primary" href="/refer-a-business-and-earn-free-payroll">Get Started</a></p>
+</div></div></div>
+    </div>
+    <div class="col-lg-6 col-md-12 my-lg-auto epi-form-narrow ">
+        <div><div>
+<div class="rich-text">
+  <p><img src="/globalassets/images/homepage/surepayroll-referral-program.svg" alt="" width="1600" height="1369" /></p>
+</div></div></div>
+    </div>
+</div>
+
+
+    </div>
+
+</div></div><div>
+
+<div class="block-row theme-light-gray  lazy" data-src="">
+
+
+    <div class="container">
+
+        
+<div class="row">
+    <div class="col-lg-3 col-md-3 col-sm-6 col-6 mb-4 mb-lg-0 lazy">
+        <div><div>
+<div class="stat-block center-text">
+    <div class="font-color-green stat-value">
+        22M
+    </div>
+    <div class="bold font-color-dark-gray stat-name">
+        Payrolls Run
+    </div>
+</div></div></div>   
+    </div>                                  
+    <div class="col-lg-3 col-md-3 col-sm-6 col-6 mb-4 mb-lg-0 lazy">
+        <div><div>
+<div class="stat-block center-text">
+    <div class="font-color-green stat-value">
+        73.1
+    </div>
+    <div class="bold font-color-dark-gray stat-name">
+        Net Promoter Score
+    </div>
+</div></div></div>   
+    </div>                                  
+    <div class="col-lg-3 col-md-3 col-sm-6 col-6 mb-4 mb-lg-0 lazy">
+        <div><div>
+<div class="stat-block center-text">
+    <div class="font-color-green stat-value">
+        4.5
+    </div>
+    <div class="bold font-color-dark-gray stat-name">
+        Stars on Google
+    </div>
+</div></div></div>   
+    </div>                                  
+    <div class="col-lg-3 col-md-3 col-sm-6 col-6 lazy">
+        <div><div>
+<div class="stat-block center-text">
+    <div class="font-color-green stat-value">
+        6,077
+    </div>
+    <div class="bold font-color-dark-gray stat-name">
+        Different Taxes Supported
+    </div>
+</div></div></div>
+    </div>
+</div>
+
+    </div>
+
+</div></div><div>
+
+<div class="block-row  lazy" data-src="">
+
+
+    <div class="container">
+
+        
+<div class="row vertical-align-large">
+    <div class="column-60-left col-md-12 col-lg-7 my-lg-auto pr-md-5 epi-form-wide mb-4">
+        <div><div>
+<div class="rich-text">
+  <h2 style="text-align: left;">Ready To Give It A Try?</h2>
+<p style="text-align: left;">Join the tens of thousands of small businesses and households that trust SurePayroll for fast, easy and accurate payroll processing.</p>
+<p>&nbsp;</p>
+<p><a id="ecommButton" class="pillbox-primary" style="text-transform: none;" href="/payroll/instant-payroll-quote">Get Started Now With Up to 6 Months Free</a></p>
+</div></div></div>
+    </div>
+    <div class="column-40-right col-md-12 col-lg-5 my-lg-auto epi-form-wide lazy ">
+        <div><div>
+<img class="img-responsive" src="/globalassets/images/contact-us-image_649x358-002.jpg"  alt="Smiling customer service rep ready to help you with your small business payroll needs. " /></div></div>
+    </div>
+</div>
+
+
+    </div>
+
+</div></div></div>
+
+</main>
+
+    <footer class="block-row py-5 bg-dark-blue">
+        <div class="container">
+            <div class="row footer-mob-tab-container">
+                            <div class="footer-column col-lg-3 col-md-4 order-lg-1 order-2">
+                                <div class="footer-title font-24">
+                                    <b>About Us</b>
+                                </div>
+                                
+                                        <div class="footer-links">
+                                            <a href="/about">About the Company</a>
+                                        </div>
+                                        <div class="footer-links">
+                                            <a href="/about/careers">Careers</a>
+                                        </div>
+                                        <div class="footer-links">
+                                            <a href="/media">Media Center</a>
+                                        </div>
+                                        <div class="footer-links">
+                                            <a href="/about/privacy">Privacy Policy</a>
+                                        </div>
+                            </div>
+                            <div class="footer-column col-lg-3 col-md-4 order-lg-1 order-2">
+                                <div class="footer-title font-24">
+                                    <b>Payroll Services</b>
+                                </div>
+                                
+                                        <div class="footer-links">
+                                            <a href="/resources">Resources</a>
+                                        </div>
+                                        <div class="footer-links">
+                                            <a href="/industry/small-business-payroll">Small Business Payroll</a>
+                                        </div>
+                                        <div class="footer-links">
+                                            <a href="/benefits">Benefits &amp; HR</a>
+                                        </div>
+                                        <div class="footer-links">
+                                            <a href="https://partners.surepayroll.com/accountants">Accountants</a>
+                                        </div>
+                                        <div class="footer-links">
+                                            <a href="/resources/blog">SurePayroll Blog</a>
+                                        </div>
+                                        <div class="footer-links">
+                                            <a href="/podcast">SurePayroll Podcast</a>
+                                        </div>
+                                        <div class="footer-links">
+                                            <a href="/resources/states">Payroll by State</a>
+                                        </div>
+                            </div>
+                            <div class="footer-column col-lg-3 col-md-4 order-lg-1 order-2">
+                                <div class="footer-title font-24">
+                                    <b>Contact Us</b>
+                                </div>
+                                <p><a style="color: #fff;" href="/link/abbf963b09ed4a0e9694b581bfa44ad2.aspx">Customer Support</a></p>
+<p>Mon - Fri, 8 a.m. - 7 p.m. CST<br />Sat, 9 a.m. - 1 p.m. CST<br />Phone: <a href="tel:8779567873">877-956-7873</a><br />Fax: <a href="tel:8476765150">847-676-5150</a></p>
+<p>&nbsp;</p>
+                            </div>
+                <div class="spr-logo-footer col-lg-3 col-md-12 order-lg-4 order-1">
+
+<img class="img-responsive" src="/globalassets/images/spr-footer-logo.png"  alt="SurePayroll.com" />                </div>
+            </div>
+        </div>
+    </footer>
+
+
+<div class="theme-dark-gray bottom-footer">
+    <div class="container">
+        <div class="row">
+            <div class="bottom-footer-links-container col-md-12 col-lg-8 bottom-footer-links-container order-lg-1 order-md-2 order-sm-2 order-2">
+                <div class="dis-inline-block bottom-footer-links">
+                    <span>&#169; 2023</span>
+                        <a href="http://www.paychex.com/" target="_top">A Paychex Company<span>.</span></a>
+                                            <span>|</span>
+                             <a href="/about/privacy" target="_blank">Privacy Policy</a>
+                             <span>|</span>
+                             <a href="/terms">Terms of Service</a>
+                             <span>|</span>
+                             <a href="/about/licenses" target="_top">Licenses</a>
+                             <span>|</span>
+                </div>
+            </div>
+            <div class="bottom-footer-icons-container col-md-12 col-lg-4 footer-icon-container order-lg-2 order-md-1 order-sm-1 order-1">
+                    <div class="dis-inline-block bottom-footer-icon">
+                            <a href="https://www.facebook.com/SurePayroll" target="_blank">
+                                
+<img class="img-responsive" src="/globalassets/images/icons/social/spr_fb.png"  alt="Facebook" />
+                            </a>
+                    </div>
+                    <div class="dis-inline-block bottom-footer-icon">
+                            <a href="https://www.youtube.com/user/SurePayroll" target="_blank">
+                                
+<img class="img-responsive" src="/globalassets/images/icons/social/spr-youtube.png"  alt="Youtube" />
+                            </a>
+                    </div>
+                    <div class="dis-inline-block bottom-footer-icon">
+                            <a href="https://www.linkedin.com/company/surepayroll" target="_blank">
+                                
+<img class="img-responsive" src="/globalassets/images/icons/social/spr-linkedin.png"  alt="LinkedIn" />
+                            </a>
+                    </div>
+                    <div class="dis-inline-block bottom-footer-icon">
+                            <a href="https://twitter.com/SurePayroll" target="_blank">
+                                
+<img class="img-responsive" src="/globalassets/images/icons/social/spr-twitter.png"  alt="Twitter" />
+                            </a>
+                    </div>
+                    <div class="dis-inline-block bottom-footer-icon">
+                            <a href="https://www.instagram.com/surepayroll_official/?hl=en" target="_blank">
+                                
+<img class="img-responsive" src="/globalassets/images/icons/social/spr_ig.png"  alt="Surepayroll Instagram" />
+                            </a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    
+<noscript>
+	<img src="/util/LiveMonitor/Tracking/Index?contentId=6&amp;languageId=en" alt="" style="display:none" />
+</noscript>
+
+<script type="text/javascript" src="https://dl.episerver.net/13.5.7/epi-util/find.js"></script>
+<script type="text/javascript" src="/WebResource.axd?d=TzRGlCddaaqtz0Im2nSJhHeRRlq-jg7P_eNtfRvyMeSUWC9oeE4ye3KpoIJ8eJeRIuNIO7E7FfWrDPNlQTs5vZ2rDxvrtW79WAkoxMYpIOiL2KhNR6TNCGzEuVQcZQkoRWFiPEW7iBLjOMLOPBbRAhLcLN81&t=637243469960000000"></script>
+<script type="text/javascript">
+void(function(){
+    var tUrl = "/util/LiveMonitor/Tracking/Index?contentId=6&languageId=en";
+    
+    tUrl += (tUrl.indexOf("?") > 0 ? "&" : "?");
+    var tUrl1 = tUrl + "r=" + Math.random() + "&referrer=" + escape(document.referrer);
+    document.write("<img id='LiveMonTransparentImage' src='" + tUrl1 + "' alt='' width='1' height='1'/>");
+
+    
+    
+    
+    window.onpageshow = function (ev) {
+        if (ev && ev.persisted){
+            document.getElementById("LiveMonTransparentImage").src = tUrl + "r=" + Math.random() + "&referrer=" + escape(document.referrer);
+        }
+    }
+}());
+</script>
+<script type="text/javascript">
+if(FindApi){var api = new FindApi();api.setApplicationUrl('/');api.setServiceApiBaseUrl('/find_v2/');api.processEventFromCurrentUri();api.bindWindowEvents();api.bindAClickEvent();api.sendBufferedEvents();}
+</script>
+
+
+    <script type="text/javascript" src="/Static/dist/js/main/sprResource-c0b8694719801f0f5925bb2efcb506cb/main.js"></script>
+    <script type="text/javascript" src="/Static/dist/js/global/sprResource-f6f084daa56cc49a7fd3e35162e47882/jquery-functions.js"></script>
+    <script defer type="text/javascript" src="/Static/dist/js/vendor/jquery.dataTables.min.js"></script>
+    <script defer type="text/javascript" src="/Static/dist/js/vendor/jquery.fitvids.js"></script>
+    <script defer type="text/javascript" src="/Static/dist/js/vendor/moment.min.js"></script>
+    <script defer type="text/javascript" src="/Scripts/modernizr.custom.js"></script>
+    <script type="text/javascript" src="/Static/dist/js/forms/sprResource-428232c358f68c9ddb47b79d78bdc30b/form-cookies.js"></script>
+    <script type="text/javascript" src="/Static/dist/js/forms/sprResource-081349d24a290914b82f67239257b63f/QuoteForm.js"></script>
+    <script type="text/javascript" src="/Static/dist/js/forms/sprResource-3169c8a93dd5180f6574895029c45a71/ReferralRewardsForm.js"></script>
+    <!-- cdnjs -->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
+    <script>
+        $(function () {
+            $('.lazy').Lazy();
+        });
+    </script>
+
+    
+
+    <script>     
+        $("a[href^='https://start.surepayroll.com'],a[href^='https://easy.surepayroll.com'],a[href^='https://devstart.surepayroll.com'],a[href^='https://stgstart.surepayroll.com']").each(function() {
+            $(this).on("click", function(event){
+                event.preventDefault();
+
+                var href = $(this).attr('href');
+
+                if (href.indexOf('pardotVisitorID=undefined') >= 0) {
+
+                    var pardotCookie = document.cookie.split(';').filter(function (c) {
+                        return c.trim().indexOf('visitor_id') === 0 && c.trim().indexOf('-hash') === -1;
+                    }).map(function (c) {
+                        return c.trim().split('=')[1];
+                    });
+
+                    href = href.replace('pardotVisitorID=undefined', 'pardotVisitorID=' + pardotCookie[0]);
+                }
+
+                window.location.href = href;
+            
+            });
+        });
+</script>
+<script type="text/javascript">
+(function() {
+  var didInit = false;
+  function initMunchkin() {
+    if(didInit === false) {
+     didInit = true;
+      Munchkin.init('635-BFF-282');
+    }
+  }
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = '//munchkin.marketo.net/munchkin.js';
+  s.onreadystatechange = function() {
+    if (this.readyState == 'complete' || this.readyState == 'loaded') {
+      initMunchkin();
+    }
+  };
+  s.onload = initMunchkin;
+  document.getElementsByTagName('head')[0].appendChild(s);
+})();
+</script>
+
+<!-- start number replacer -->
+<script defer><!--
+vs_account_id      = "fwABAWIf299eKwAM";
+//--></script>
+<script defer src="https://rw1.calls.net/euinc/number-changer.js">
+</script>
+<!-- end ad widget -->
+<style>
+#main .login_button span {
+display:none;}
+
+</style>
+<script>
+$(function(){
+
+	$('#smb-blurb').text('You deserve a partner who understands your needs and helps simplify the complex. When it comes to online payroll and benefits—whether you’re paying one employee or many—SurePayroll checks every box. Try SurePayroll for Free.');
+
+});
+</script>
+
+
+</body>
+</html>

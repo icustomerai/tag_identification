@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+  <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"006b5744c1",applicationID:"466090314"};;(()=>{"use strict";var e,t,n={8768:(e,t,n)=>{n.d(t,{T:()=>r,p:()=>i});const r=/(iPad|iPhone|iPod)/g.test(navigator.userAgent),i=r&&Boolean("undefined"==typeof SharedWorker)},880:(e,t,n)=>{n.d(t,{P_:()=>f,Mt:()=>p,C5:()=>s,DL:()=>m,OP:()=>_,lF:()=>E,Yu:()=>y,Dg:()=>g,CX:()=>c,GE:()=>b,sU:()=>j});var r=n(6797),i=n(4286);const o={beacon:r.ce.beacon,errorBeacon:r.ce.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0},a={};function s(e){if(!e)throw new Error("All info objects require an agent identifier!");if(!a[e])throw new Error("Info for ".concat(e," was never set"));return a[e]}function c(e,t){if(!e)throw new Error("All info objects require an agent identifier!");a[e]=(0,i.D)(t,o),(0,r.Qy)(e,a[e],"info")}var u=n(2797);const d=()=>{const e={blockSelector:"[data-nr-block]",maskInputOptions:{password:!0}};return{allow_bfcache:!0,privacy:{cookies_enabled:!0},ajax:{deny_list:void 0,enabled:!0,harvestTimeSeconds:10},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},session:{domain:void 0,expiresMs:u.oD,inactiveMs:u.Hb},ssl:void 0,obfuscate:void 0,jserrors:{enabled:!0,harvestTimeSeconds:10},metrics:{enabled:!0},page_action:{enabled:!0,harvestTimeSeconds:30},page_view_event:{enabled:!0},page_view_timing:{enabled:!0,harvestTimeSeconds:30,long_task:!1},session_trace:{enabled:!0,harvestTimeSeconds:10},session_replay:{enabled:!1,harvestTimeSeconds:60,sampleRate:.1,errorSampleRate:.1,maskTextSelector:"*",maskAllInputs:!0,get blockClass(){return"nr-block"},get ignoreClass(){return"nr-ignore"},get maskTextClass(){return"nr-mask"},get blockSelector(){return e.blockSelector},set blockSelector(t){e.blockSelector+=",".concat(t)},get maskInputOptions(){return e.maskInputOptions},set maskInputOptions(t){e.maskInputOptions={...t,password:!0}}},spa:{enabled:!0,harvestTimeSeconds:10}}},l={};function f(e){if(!e)throw new Error("All configuration objects require an agent identifier!");if(!l[e])throw new Error("Configuration for ".concat(e," was never set"));return l[e]}function g(e,t){if(!e)throw new Error("All configuration objects require an agent identifier!");l[e]=(0,i.D)(t,d()),(0,r.Qy)(e,l[e],"config")}function p(e,t){if(!e)throw new Error("All configuration objects require an agent identifier!");var n=f(e);if(n){for(var r=t.split("."),i=0;i<r.length-1;i++)if("object"!=typeof(n=n[r[i]]))return;n=n[r[r.length-1]]}return n}const h={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},v={};function m(e){if(!e)throw new Error("All loader-config objects require an agent identifier!");if(!v[e])throw new Error("LoaderConfig for ".concat(e," was never set"));return v[e]}function b(e,t){if(!e)throw new Error("All loader-config objects require an agent identifier!");v[e]=(0,i.D)(t,h),(0,r.Qy)(e,v[e],"loader_config")}const y=(0,r.mF)().o;var w=n(2374),A=n(1651);const x={buildEnv:A.Re,bytesSent:{},queryBytesSent:{},customTransaction:void 0,disabled:!1,distMethod:A.gF,isolatedBacklog:!1,loaderType:void 0,maxBytes:3e4,offset:Math.floor(w._A?.performance?.timeOrigin||w._A?.performance?.timing?.navigationStart||Date.now()),onerror:void 0,origin:""+w._A.location,ptid:void 0,releaseIds:{},session:void 0,xhrWrappable:"function"==typeof w._A.XMLHttpRequest?.prototype?.addEventListener,version:A.q4},D={};function _(e){if(!e)throw new Error("All runtime objects require an agent identifier!");if(!D[e])throw new Error("Runtime for ".concat(e," was never set"));return D[e]}function j(e,t){if(!e)throw new Error("All runtime objects require an agent identifier!");D[e]=(0,i.D)(t,x),(0,r.Qy)(e,D[e],"runtime")}function E(e){return function(e){try{const t=s(e);return!!t.licenseKey&&!!t.errorBeacon&&!!t.applicationID}catch(e){return!1}}(e)}},4286:(e,t,n)=>{n.d(t,{D:()=>i});var r=n(8610);function i(e,t){try{if(!e||"object"!=typeof e)return(0,r.Z)("Setting a Configurable requires an object as input");if(!t||"object"!=typeof t)return(0,r.Z)("Setting a Configurable requires a model to set its initial properties");const n=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),o=0===Object.keys(n).length?e:n;for(let a in o)if(void 0!==e[a])try{"object"==typeof e[a]&&"object"==typeof t[a]?n[a]=i(e[a],t[a]):n[a]=e[a]}catch(e){(0,r.Z)("An error occurred while setting a property of a Configurable",e)}return n}catch(e){(0,r.Z)("An error occured while setting a Configurable",e)}}},1651:(e,t,n)=>{n.d(t,{Re:()=>i,gF:()=>o,q4:()=>r});const r="1.234.0",i="PROD",o="CDN"},9557:(e,t,n)=>{n.d(t,{w:()=>o});var r=n(8610);const i={agentIdentifier:"",ee:void 0};class o{constructor(e){try{if("object"!=typeof e)return(0,r.Z)("shared context requires an object as input");this.sharedContext={},Object.assign(this.sharedContext,i),Object.entries(e).forEach((e=>{let[t,n]=e;Object.keys(i).includes(t)&&(this.sharedContext[t]=n)}))}catch(e){(0,r.Z)("An error occured while setting SharedContext",e)}}}},4329:(e,t,n)=>{n.d(t,{L:()=>d,R:()=>c});var r=n(3752),i=n(7022),o=n(4045),a=n(2325);const s={};function c(e,t){const n={staged:!1,priority:a.p[t]||0};u(e),s[e].get(t)||s[e].set(t,n)}function u(e){e&&(s[e]||(s[e]=new Map))}function d(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"feature";if(u(e),!e||!s[e].get(t))return a(t);s[e].get(t).staged=!0;const n=[...s[e]];function a(t){const n=e?r.ee.get(e):r.ee,a=o.X.handlers;if(n.backlog&&a){var s=n.backlog[t],c=a[t];if(c){for(var u=0;s&&u<s.length;++u)l(s[u],c);(0,i.D)(c,(function(e,t){(0,i.D)(t,(function(t,n){n[0].on(e,n[1])}))}))}delete a[t],n.backlog[t]=null,n.emit("drain-"+t,[])}}n.every((e=>{let[t,n]=e;return n.staged}))&&(n.sort(((e,t)=>e[1].priority-t[1].priority)),n.forEach((e=>{let[t]=e;a(t)})))}function l(e,t){var n=e[1];(0,i.D)(t[n],(function(t,n){var r=e[0];if(n[0]===r){var i=n[1],o=e[3],a=e[2];i.apply(o,a)}}))}},3752:(e,t,n)=>{n.d(t,{ee:()=>u});var r=n(6797),i=n(3916),o=n(7022),a=n(880),s="nr@context";let c=(0,r.fP)();var u;function d(){}function l(){return new d}function f(){u.aborted=!0,u.backlog={}}c.ee?u=c.ee:(u=function e(t,n){var r={},c={},g={},p=!1;try{p=16===n.length&&(0,a.OP)(n).isolatedBacklog}catch(e){}var h={on:b,addEventListener:b,removeEventListener:y,emit:m,get:A,listeners:w,context:v,buffer:x,abort:f,aborted:!1,isBuffering:D,debugId:n,backlog:p?{}:t&&"object"==typeof t.backlog?t.backlog:{}};return h;function v(e){return e&&e instanceof d?e:e?(0,i.X)(e,s,l):l()}function m(e,n,r,i,o){if(!1!==o&&(o=!0),!u.aborted||i){t&&o&&t.emit(e,n,r);for(var a=v(r),s=w(e),d=s.length,l=0;l<d;l++)s[l].apply(a,n);var f=_()[c[e]];return f&&f.push([h,e,n,a]),a}}function b(e,t){r[e]=w(e).concat(t)}function y(e,t){var n=r[e];if(n)for(var i=0;i<n.length;i++)n[i]===t&&n.splice(i,1)}function w(e){return r[e]||[]}function A(t){return g[t]=g[t]||e(h,t)}function x(e,t){var n=_();h.aborted||(0,o.D)(e,(function(e,r){t=t||"feature",c[r]=t,t in n||(n[t]=[])}))}function D(e){return!!_()[c[e]]}function _(){return h.backlog}}(void 0,"globalEE"),c.ee=u)},9252:(e,t,n)=>{n.d(t,{E:()=>r,p:()=>i});var r=n(3752).ee.get("handle");function i(e,t,n,i,o){o?(o.buffer([e],i),o.emit(e,t,n)):(r.buffer([e],i),r.emit(e,t,n))}},4045:(e,t,n)=>{n.d(t,{X:()=>o});var r=n(9252);o.on=a;var i=o.handlers={};function o(e,t,n,o){a(o||r.E,i,e,t,n)}function a(e,t,n,i,o){o||(o="feature"),e||(e=r.E);var a=t[o]=t[o]||{};(a[n]=a[n]||[]).push([e,i])}},8544:(e,t,n)=>{n.d(t,{bP:()=>s,iz:()=>c,m$:()=>a});var r=n(2374);let i=!1,o=!1;try{const e={get passive(){return i=!0,!1},get signal(){return o=!0,!1}};r._A.addEventListener("test",null,e),r._A.removeEventListener("test",null,e)}catch(e){}function a(e,t){return i||o?{capture:!!e,passive:i,signal:t}:!!e}function s(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=arguments.length>3?arguments[3]:void 0;window.addEventListener(e,t,a(n,r))}function c(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=arguments.length>3?arguments[3]:void 0;document.addEventListener(e,t,a(n,r))}},5526:(e,t,n)=>{n.d(t,{Rl:()=>a,ky:()=>s});var r=n(2374);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function o(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=r._A?.crypto||r._A?.msCrypto;let t,n=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(31))),i.split("").map((e=>"x"===e?o(t,++n).toString(16):"y"===e?(3&o()|8).toString(16):e)).join("")}function s(e){const t=r._A?.crypto||r._A?.msCrypto;let n,i=0;t&&t.getRandomValues&&(n=t.getRandomValues(new Uint8Array(31)));const a=[];for(var s=0;s<e;s++)a.push(o(n,++i).toString(16));return a.join("")}},2797:(e,t,n)=>{n.d(t,{Bq:()=>r,Hb:()=>o,oD:()=>i});const r="NRBA",i=144e5,o=18e5},2053:(e,t,n)=>{function r(){return Math.round(performance.now())}n.d(t,{z:()=>r})},8610:(e,t,n)=>{function r(e,t){"function"==typeof console.warn&&(console.warn("New Relic: ".concat(e)),t&&console.warn(t))}n.d(t,{Z:()=>r})},7269:(e,t,n)=>{n.d(t,{N:()=>u,T:()=>d});var r=n(7022),i=n(3752),o=n(9252),a=n(4329),s=n(2325);const c={stn:[s.D.sessionTrace],err:[s.D.jserrors,s.D.metrics],ins:[s.D.pageAction],spa:[s.D.spa],sr:[s.D.sessionReplay]};function u(e,t){var n=i.ee.get(t);e&&"object"==typeof e&&((0,r.D)(e,(function(e,t){if(!t)return(c[e]||[]).forEach((t=>{(0,o.p)("block-"+e,[],void 0,t,n)}));d[e]||((0,o.p)("feat-"+e,[],void 0,c[e],n),d[e]=!0)})),(0,a.L)(t,s.D.pageViewEvent))}const d={}},3916:(e,t,n)=>{n.d(t,{X:()=>i});var r=Object.prototype.hasOwnProperty;function i(e,t,n){if(r.call(e,t))return e[t];var i=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},2374:(e,t,n)=>{n.d(t,{FN:()=>a,_A:()=>o,il:()=>r,v6:()=>i});const r=Boolean("undefined"!=typeof window&&window.document),i=Boolean("undefined"!=typeof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator);let o=(()=>{if(r)return window;if(i){if("undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope)return globalThis;if(self instanceof WorkerGlobalScope)return self}throw new Error('New Relic browser agent shutting down due to error: Unable to locate global scope. This is possibly due to code redefining browser global variables like "self" and "window".')})();const a=""+o.location},7022:(e,t,n)=>{n.d(t,{D:()=>r});const r=(e,t)=>Object.entries(e||{}).map((e=>{let[n,r]=e;return t(n,r)}))},2438:(e,t,n)=>{n.d(t,{P:()=>o});var r=n(3752);const i=()=>{const e=new WeakSet;return(t,n)=>{if("object"==typeof n&&null!==n){if(e.has(n))return;e.add(n)}return n}};function o(e){try{return JSON.stringify(e,i())}catch(e){try{r.ee.emit("internal-error",[e])}catch(e){}}}},2650:(e,t,n)=>{n.d(t,{K:()=>a,b:()=>o});var r=n(8544);function i(){return"undefined"==typeof document||"complete"===document.readyState}function o(e,t){if(i())return e();(0,r.bP)("load",e,t)}function a(e){if(i())return e();(0,r.iz)("DOMContentLoaded",e)}},6797:(e,t,n)=>{n.d(t,{EZ:()=>u,Qy:()=>c,ce:()=>o,fP:()=>a,gG:()=>d,mF:()=>s});var r=n(2053),i=n(2374);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function a(){return i._A.NREUM||(i._A.NREUM={}),void 0===i._A.newrelic&&(i._A.newrelic=i._A.NREUM),i._A.NREUM}function s(){let e=a();return e.o||(e.o={ST:i._A.setTimeout,SI:i._A.setImmediate,CT:i._A.clearTimeout,XHR:i._A.XMLHttpRequest,REQ:i._A.Request,EV:i._A.Event,PR:i._A.Promise,MO:i._A.MutationObserver,FETCH:i._A.fetch}),e}function c(e,t,n){let i=a();const o=i.initializedAgents||{},s=o[e]||{};return Object.keys(s).length||(s.initializedAt={ms:(0,r.z)(),date:new Date}),i.initializedAgents={...o,[e]:{...s,[n]:t}},i}function u(e,t){a()[e]=t}function d(){return function(){let e=a();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=a();const t=e.init||{};e.init={...t}}(),s(),function(){let e=a();const t=e.loader_config||{};e.loader_config={...t}}(),a()}},6998:(e,t,n)=>{n.d(t,{N:()=>i});var r=n(8544);function i(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],n=arguments.length>2?arguments[2]:void 0,i=arguments.length>3?arguments[3]:void 0;return void(0,r.iz)("visibilitychange",(function(){if(t)return void("hidden"==document.visibilityState&&e());e(document.visibilityState)}),n,i)}},6034:(e,t,n)=>{n.d(t,{gF:()=>o,mY:()=>i,t9:()=>r,vz:()=>s,xS:()=>a});const r=n(2325).D.metrics,i="sm",o="cm",a="storeSupportabilityMetrics",s="storeEventMetrics"},2484:(e,t,n)=>{n.d(t,{Dz:()=>i,OJ:()=>a,qw:()=>o,t9:()=>r});const r=n(2325).D.pageViewEvent,i="firstbyte",o="domcontent",a="windowload"},6382:(e,t,n)=>{n.d(t,{t:()=>r});const r=n(2325).D.pageViewTiming},1509:(e,t,n)=>{n.d(t,{W:()=>o});var r=n(880),i=n(3752);class o{constructor(e,t,n){this.agentIdentifier=e,this.aggregator=t,this.ee=i.ee.get(e,(0,r.OP)(this.agentIdentifier).isolatedBacklog),this.featureName=n,this.blocked=!1}}},3975:(e,t,n)=>{n.d(t,{j:()=>v});var r=n(2325),i=n(880),o=n(9252),a=n(3752),s=n(2053),c=n(4329),u=n(2650),d=n(2374),l=n(8610),f=n(6034),g=n(6797);function p(){const e=(0,g.gG)();["setErrorHandler","finished","addToTrace","inlineHit","addRelease","addPageAction","setCurrentRouteName","setPageViewName","setCustomAttribute","interaction","noticeError","setUserId"].forEach((t=>{e[t]=function(){for(var n=arguments.length,r=new Array(n),i=0;i<n;i++)r[i]=arguments[i];return function(t){for(var n=arguments.length,r=new Array(n>1?n-1:0),i=1;i<n;i++)r[i-1]=arguments[i];let o=[];return Object.values(e.initializedAgents).forEach((e=>{e.exposed&&e.api[t]&&o.push(e.api[t](...r))})),o.length>1?o:o[0]}(t,...r)}}))}var h=n(7269);function v(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},v=arguments.length>2?arguments[2]:void 0,m=arguments.length>3?arguments[3]:void 0,{init:b,info:y,loader_config:w,runtime:A={loaderType:v},exposed:x=!0}=t;const D=(0,g.gG)();y||(b=D.init,y=D.info,w=D.loader_config),(0,i.Dg)(e,b||{}),(0,i.GE)(e,w||{}),(0,i.sU)(e,A),y.jsAttributes??={},d.v6&&(y.jsAttributes.isWorker=!0),(0,i.CX)(e,y),p();const _=function(e,t){t||(0,c.R)(e,"api");const g={};var p=a.ee.get(e),h=p.get("tracer"),v="api-",m=v+"ixn-";function b(t,n,r,o){const a=(0,i.C5)(e);return null===n?delete a.jsAttributes[t]:(0,i.CX)(e,{...a,jsAttributes:{...a.jsAttributes,[t]:n}}),A(v,r,!0,o||null===n?"session":void 0)(t,n)}function y(){}["setErrorHandler","finished","addToTrace","inlineHit","addRelease"].forEach((e=>g[e]=A(v,e,!0,"api"))),g.addPageAction=A(v,"addPageAction",!0,r.D.pageAction),g.setCurrentRouteName=A(v,"routeName",!0,r.D.spa),g.setPageViewName=function(t,n){if("string"==typeof t)return"/"!==t.charAt(0)&&(t="/"+t),(0,i.OP)(e).customTransaction=(n||"http://custom.transaction")+t,A(v,"setPageViewName",!0)()},g.setCustomAttribute=function(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2];if("string"==typeof e){if(["string","number"].includes(typeof t)||null===t)return b(e,t,"setCustomAttribute",n);(0,l.Z)("Failed to execute setCustomAttribute.\nNon-null value must be a string or number type, but a type of <".concat(typeof t,"> was provided."))}else(0,l.Z)("Failed to execute setCustomAttribute.\nName must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.setUserId=function(e){if("string"==typeof e||null===e)return b("enduser.id",e,"setUserId",!0);(0,l.Z)("Failed to execute setUserId.\nNon-null value must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.interaction=function(){return(new y).get()};var w=y.prototype={createTracer:function(e,t){var n={},i=this,a="function"==typeof t;return(0,o.p)(m+"tracer",[(0,s.z)(),e,n],i,r.D.spa,p),function(){if(h.emit((a?"":"no-")+"fn-start",[(0,s.z)(),i,a],n),a)try{return t.apply(this,arguments)}catch(e){throw h.emit("fn-err",[arguments,this,"string"==typeof e?new Error(e):e],n),e}finally{h.emit("fn-end",[(0,s.z)()],n)}}}};function A(e,t,n,i){return function(){return(0,o.p)(f.xS,["API/"+t+"/called"],void 0,r.D.metrics,p),i&&(0,o.p)(e+t,[(0,s.z)(),...arguments],n?null:this,i,p),n?void 0:this}}function x(){n.e(439).then(n.bind(n,5692)).then((t=>{let{setAPI:n}=t;n(e),(0,c.L)(e,"api")})).catch((()=>(0,l.Z)("Downloading runtime APIs failed...")))}return["actionText","setName","setAttribute","save","ignore","onEnd","getContext","end","get"].forEach((e=>{w[e]=A(m,e,void 0,r.D.spa)})),g.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),(0,o.p)(f.xS,["API/noticeError/called"],void 0,r.D.metrics,p),(0,o.p)("err",[e,(0,s.z)(),!1,t],void 0,r.D.jserrors,p)},d.v6?x():(0,u.b)((()=>x()),!0),g}(e,m);return(0,g.Qy)(e,_,"api"),(0,g.Qy)(e,x,"exposed"),(0,g.EZ)("activatedFeatures",h.T),_}},2325:(e,t,n)=>{n.d(t,{D:()=>r,p:()=>i});const r={ajax:"ajax",jserrors:"jserrors",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",spa:"spa"},i={[r.pageViewEvent]:1,[r.pageViewTiming]:2,[r.metrics]:3,[r.jserrors]:4,[r.ajax]:5,[r.sessionTrace]:6,[r.pageAction]:7,[r.spa]:8,[r.sessionReplay]:9}}},r={};function i(e){var t=r[e];if(void 0!==t)return t.exports;var o=r[e]={exports:{}};return n[e](o,o.exports,i),o.exports}i.m=n,i.d=(e,t)=>{for(var n in t)i.o(t,n)&&!i.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:t[n]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce(((t,n)=>(i.f[n](e,t),t)),[])),i.u=e=>(({78:"page_action-aggregate",147:"metrics-aggregate",193:"session_trace-aggregate",242:"session-manager",317:"jserrors-aggregate",348:"page_view_timing-aggregate",412:"lazy-feature-loader",439:"async-api",538:"recorder",590:"session_replay-aggregate",675:"compressor",786:"page_view_event-aggregate",873:"spa-aggregate",898:"ajax-aggregate"}[e]||e)+"."+{78:"e03e2220",147:"75d6a08d",193:"715c3096",242:"9219a813",286:"d701d70f",317:"8c74e315",348:"ad791b05",412:"fe5af5d1",439:"bbe52263",538:"1b18459f",590:"36b41a12",646:"c6971123",675:"ae9f91a8",786:"e157f7ce",873:"e1bcad73",898:"716f46cf"}[e]+"-1.234.0.min.js"),i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA:",i.l=(n,r,o,a)=>{if(e[n])e[n].push(r);else{var s,c;if(void 0!==o)for(var u=document.getElementsByTagName("script"),d=0;d<u.length;d++){var l=u[d];if(l.getAttribute("src")==n||l.getAttribute("data-webpack")==t+o){s=l;break}}s||(c=!0,(s=document.createElement("script")).charset="utf-8",s.timeout=120,i.nc&&s.setAttribute("nonce",i.nc),s.setAttribute("data-webpack",t+o),s.src=n),e[n]=[r];var f=(t,r)=>{s.onerror=s.onload=null,clearTimeout(g);var i=e[n];if(delete e[n],s.parentNode&&s.parentNode.removeChild(s),i&&i.forEach((e=>e(r))),t)return t(r)},g=setTimeout(f.bind(null,void 0,{type:"timeout",target:s}),12e4);s.onerror=f.bind(null,s.onerror),s.onload=f.bind(null,s.onload),c&&document.head.appendChild(s)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.j=35,i.p="https://js-agent.newrelic.com/",(()=>{var e={35:0,266:0};i.f.j=(t,n)=>{var r=i.o(e,t)?e[t]:void 0;if(0!==r)if(r)n.push(r[2]);else{var o=new Promise(((n,i)=>r=e[t]=[n,i]));n.push(r[2]=o);var a=i.p+i.u(t),s=new Error;i.l(a,(n=>{if(i.o(e,t)&&(0!==(r=e[t])&&(e[t]=void 0),r)){var o=n&&("load"===n.type?"missing":n.type),a=n&&n.target&&n.target.src;s.message="Loading chunk "+t+" failed.\n("+o+": "+a+")",s.name="ChunkLoadError",s.type=o,s.request=a,r[1](s)}}),"chunk-"+t,t)}};var t=(t,n)=>{var r,o,[a,s,c]=n,u=0;if(a.some((t=>0!==e[t]))){for(r in s)i.o(s,r)&&(i.m[r]=s[r]);if(c)c(i)}for(t&&t(n);u<a.length;u++)o=a[u],i.o(e,o)&&e[o]&&e[o][0](),e[o]=0},n=window.webpackChunkNRBA=window.webpackChunkNRBA||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))})();var o={};(()=>{i.r(o);var e=i(2325),t=i(880);const n=Object.values(e.D);function r(e){const r={};return n.forEach((n=>{r[n]=function(e,n){return!1!==(0,t.Mt)(n,"".concat(e,".enabled"))}(n,e)})),r}var a=i(3975);var s=i(9252),c=i(8768),u=i(4329),d=i(1509),l=i(2650),f=i(2374),g=i(8610);class p extends d.W{constructor(e,t,n){let r=!(arguments.length>3&&void 0!==arguments[3])||arguments[3];super(e,t,n),this.hasAggregator=!1,this.auto=r,this.abortHandler,r&&(0,u.R)(e,n)}importAggregator(n){if(this.hasAggregator||!this.auto)return;let r,o;this.hasAggregator=!0,!0!==(0,t.Mt)(this.agentIdentifier,"privacy.cookies_enabled")||f.v6||(o=Promise.all([i.e(286),i.e(242)]).then(i.bind(i,3289)).catch((e=>{(0,g.Z)("failed to import the session manager",e)})));const a=async()=>{try{if(o&&!r){const{setupAgentSession:e}=await o;r=e(this.agentIdentifier)}if(!function(t,n){return t!==e.D.sessionReplay||(!!n?.isNew||!!n?.state.sessionReplayActive)}(this.featureName,r))return void(0,u.L)(this.agentIdentifier,this.featureName);const{lazyFeatureLoader:t}=await i.e(412).then(i.bind(i,3160)),{Aggregate:a}=await t(this.featureName,"aggregate");new a(this.agentIdentifier,this.aggregator,n)}catch(e){(0,g.Z)("Downloading ".concat(this.featureName," failed..."),e),this.abortHandler?.()}};f.v6?a():(0,l.b)((()=>a()),!0)}}var h=i(2484),v=i(2053);class m extends p{static featureName=h.t9;constructor(n,r){let i=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];if(super(n,r,h.t9,i),("undefined"==typeof PerformanceNavigationTiming||c.T)&&"undefined"!=typeof PerformanceTiming){const r=(0,t.OP)(n);r[h.Dz]=Math.max(Date.now()-r.offset,0),(0,l.K)((()=>r[h.qw]=Math.max((0,v.z)()-r[h.Dz],0))),(0,l.b)((()=>{const t=(0,v.z)();r[h.OJ]=Math.max(t-r[h.Dz],0),(0,s.p)("timing",["load",t],void 0,e.D.pageViewTiming,this.ee)}))}this.importAggregator()}}var b=i(9557),y=i(7022);class w extends b.w{constructor(e){super(e),this.aggregatedData={}}store(e,t,n,r,i){var o=this.getBucket(e,t,n,i);return o.metrics=function(e,t){t||(t={count:0});return t.count+=1,(0,y.D)(e,(function(e,n){t[e]=A(n,t[e])})),t}(r,o.metrics),o}merge(e,t,n,r,i){var o=this.getBucket(e,t,r,i);if(o.metrics){var a=o.metrics;a.count+=n.count,(0,y.D)(n,(function(e,t){if("count"!==e){var r=a[e],i=n[e];i&&!i.c?a[e]=A(i.t,r):a[e]=function(e,t){if(!t)return e;t.c||(t=x(t.t));return t.min=Math.min(e.min,t.min),t.max=Math.max(e.max,t.max),t.t+=e.t,t.sos+=e.sos,t.c+=e.c,t}(i,a[e])}}))}else o.metrics=n}storeMetric(e,t,n,r){var i=this.getBucket(e,t,n);return i.stats=A(r,i.stats),i}getBucket(e,t,n,r){this.aggregatedData[e]||(this.aggregatedData[e]={});var i=this.aggregatedData[e][t];return i||(i=this.aggregatedData[e][t]={params:n||{}},r&&(i.custom=r)),i}get(e,t){return t?this.aggregatedData[e]&&this.aggregatedData[e][t]:this.aggregatedData[e]}take(e){for(var t={},n="",r=!1,i=0;i<e.length;i++)t[n=e[i]]=D(this.aggregatedData[n]),t[n].length&&(r=!0),delete this.aggregatedData[n];return r?t:null}}function A(e,t){return null==e?function(e){e?e.c++:e={c:1};return e}(t):t?(t.c||(t=x(t.t)),t.c+=1,t.t+=e,t.sos+=e*e,e>t.max&&(t.max=e),e<t.min&&(t.min=e),t):{t:e}}function x(e){return{t:e,min:e,max:e,sos:e*e,c:1}}function D(e){return"object"!=typeof e?[]:(0,y.D)(e,_)}function _(e,t){return t}var j=i(6797),E=i(5526),k=i(2438);var T=i(6998),N=i(8544),P=i(6382);class S extends p{static featureName=P.t;constructor(e,n){let r=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,n,P.t,r),f.il&&((0,t.OP)(e).initHidden=Boolean("hidden"===document.visibilityState),(0,T.N)((()=>(0,s.p)("docHidden",[(0,v.z)()],void 0,P.t,this.ee)),!0),(0,N.bP)("pagehide",(()=>(0,s.p)("winPagehide",[(0,v.z)()],void 0,P.t,this.ee))),this.importAggregator())}}var I=i(6034);class O extends p{static featureName=I.t9;constructor(e,t){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,I.t9,n),this.importAggregator()}}new class{constructor(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:(0,E.ky)(16);this.agentIdentifier=t,this.sharedAggregator=new w({agentIdentifier:this.agentIdentifier}),this.features={},this.desiredFeatures=new Set(e.features||[]),this.desiredFeatures.add(m),Object.assign(this,(0,a.j)(this.agentIdentifier,e,e.loaderType||"agent")),this.start()}get config(){return{info:(0,t.C5)(this.agentIdentifier),init:(0,t.P_)(this.agentIdentifier),loader_config:(0,t.DL)(this.agentIdentifier),runtime:(0,t.OP)(this.agentIdentifier)}}start(){const t="features";try{const n=r(this.agentIdentifier),i=[...this.desiredFeatures];i.sort(((t,n)=>e.p[t.featureName]-e.p[n.featureName])),i.forEach((t=>{if(n[t.featureName]||t.featureName===e.D.pageViewEvent){const r=function(t){switch(t){case e.D.ajax:return[e.D.jserrors];case e.D.sessionTrace:return[e.D.ajax,e.D.pageViewEvent];case e.D.pageViewTiming:return[e.D.pageViewEvent];default:return[]}}(t.featureName);r.every((e=>n[e]))||(0,g.Z)("".concat(t.featureName," is enabled but one or more dependent features has been disabled (").concat((0,k.P)(r),"). This may cause unintended consequences or missing data...")),this.features[t.featureName]=new t(this.agentIdentifier,this.sharedAggregator)}})),(0,j.Qy)(this.agentIdentifier,this.features,t)}catch(e){(0,g.Z)("Failed to initialize all enabled instrument classes (agent aborted) -",e);for(const e in this.features)this.features[e].abortHandler?.();const n=(0,j.fP)();return delete n.initializedAgents[this.agentIdentifier]?.api,delete n.initializedAgents[this.agentIdentifier]?.[t],delete this.sharedAggregator,n.ee?.abort(),delete n.ee?.get(this.agentIdentifier),!1}}}({features:[m,S,O],loaderType:"lite"})})(),window.NRBA=o})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-313674950"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("set", "developer_id.dMDhkMT", true);gtag("config", "G-313674950", {"groups":"default","page_placeholder":"PLACEHOLDER_page_location"});</script>
+<style>/* @see https://github.com/aFarkas/lazysizes#broken-image-symbol */.js img.lazyload:not([src]) { visibility: hidden; }/* @see https://github.com/aFarkas/lazysizes#automatically-setting-the-sizes-attribute */.js img.lazyloaded[data-sizes=auto] { display: block; width: 100%; }</style>
+<link rel="canonical" href="https://www.visionfund.org/" />
+<link rel="shortlink" href="https://www.visionfund.org/" />
+<link rel="alternate" hreflang="x-default" href="/home" />
+<meta name="google-site-verification" content="fOubxX1vuuibanA_upRS1wTaqEDASVeqyHC6u5n28JI" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" href="/sites/default/files/favicon.png" type="image/png" />
+<link rel="alternate" hreflang="en" href="https://www.visionfund.org/" />
+<style>.async-hide { opacity: 0 !important}</style>
+<script>(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-KWVHJLV':true});</script>
+<script src="/sites/default/files/google_tag/default/google_tag.script.js?rvyx39" defer></script>
+
+    <title>Home Page | VisionFund</title>
+    <link rel="stylesheet" media="all" href="/sites/default/files/css/css_8f_urlwO-YwfnhpYpK-RNqsna2EBBDcMw5mdDgcsOyg.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_nLWULmlXTepDZGGwkoo0qap92wzgRaMUvqoZWsJYYf8.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_sxI08jBm7TfsW0jXG_q5btk9A6qloUHr_HpX46b7y1Y.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_jefJglxw6OQGXoyXS5hcbgliQkldEyjmvQRkcmbpst0.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_BLn4m8_3XWgLzoa0i6Irag98bahttsA_WEnRqsaLLck.css" />
+
+      
+        </head>
+<body class="page--front current-user--anonymous">
+<a href="#main-content" class="visually-hidden focusable">
+  Skip to main content
+</a>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWVHJLV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+
+  <div class="region region-topnav">
+    <div class="container">
+      <div id="block-sitebranding" class="block block-system block-system-branding-block block--sitebranding">
+  
+    
+              <a class="topnav__logo" href="/" title="Home" rel="home">
+        <img src="/themes/custom/wvi_2018/logo.svg" alt="Home"  width="164" height="31" />
+      </a>
+          
+</div>
+      <div class="show-menu" aria-label="Show Menu" aria-controls="menu-level-0"></div>
+  <nav role="navigation" aria-labelledby="block-mainnavigation-menu" id="block-mainnavigation" class="block block-menu navigation menu--main region-topnav__menu--main">
+                      
+    <h2 class="visually-hidden" id="block-mainnavigation-menu">Main navigation</h2>
+    
+
+              
+<ul class="menu menu-level-0">
+  
+  <li class="menu-item menu-item--expanded menu-item--our-focus">
+    <div class="menu_link_title"><a href="/our-focus" data-drupal-link-system-path="node/31">Our Focus</a></div><div class="menu_link_title_chevron"></div>
+              <div class="menu-dropdown-wrapper menu-dropdown">
+        <h3>Our Focus</h3>
+        
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+  <ul class="menu menu-level-1">
+                  
+        <li class="menu-item menu-item--collapsed">
+          <a href="/our-focus/fragile" data-drupal-link-system-path="group/166">Fragile</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item menu-item--collapsed">
+          <a href="/our-focus/impact" data-drupal-link-system-path="group/171">Impact</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item menu-item--collapsed">
+          <a href="/our-focus/innovation" data-drupal-link-system-path="group/176">Innovation</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item menu-item--collapsed">
+          <a href="/our-focus/insurance" data-drupal-link-system-path="group/186">Insurance</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item menu-item--collapsed">
+          <a href="/our-focus/loans" data-drupal-link-system-path="group/181">Loans</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item menu-item--collapsed">
+          <a href="/our-focus/rural-agriculture" data-drupal-link-system-path="group/191">Rural Agriculture</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/our-focus/savings-group-loans" data-drupal-link-system-path="node/166">Savings Group Loans</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/our-focus/women" data-drupal-link-system-path="group/156">Women</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/our-focus" data-drupal-link-system-path="node/31">Our focus</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+
+      </div>
+
+
+
+      </div>
+      </li>
+  
+  <li class="menu-item menu-item--expanded menu-item--where-we-work">
+    <div class="menu_link_title"><a href="/where-we-work" data-drupal-link-system-path="node/66">Where We Work</a></div><div class="menu_link_title_chevron"></div>
+              <div class="menu-dropdown-wrapper menu-dropdown">
+        <h3>Where We Work</h3>
+        
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+  <ul class="menu menu-level-1">
+                  
+        <li class="menu-item">
+          <a href="/where-we-work/africa" data-drupal-link-system-path="node/646">Africa</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/where-we-work/asia" data-drupal-link-system-path="node/71">Asia</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/where-we-work/eastern-europe" data-drupal-link-system-path="node/76">Eastern Europe</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/where-we-work/latin-america" data-drupal-link-system-path="node/21">Latin America</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/where-we-work" data-drupal-link-system-path="node/66">See all locations</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+
+      </div>
+
+
+
+      </div>
+      </li>
+  
+  <li class="menu-item menu-item--expanded menu-item--resources">
+    <div class="menu_link_title"><a href="/resources" data-drupal-link-system-path="node/16">Resources</a></div><div class="menu_link_title_chevron"></div>
+              <div class="menu-dropdown-wrapper menu-dropdown">
+        <h3>Resources</h3>
+        
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-0 menu-type-default">
+              
+  <ul class="menu menu-level-1">
+                  
+        <li class="menu-item">
+          <a href="/stories" data-drupal-link-system-path="stories">Client Stories</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/newsroom" data-drupal-link-system-path="newsroom">News Room</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/publications" title="Publications" data-drupal-link-system-path="publications">Publications</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item menu-item--collapsed">
+          <a href="/view" data-drupal-link-system-path="node/346">VisionFund View</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+                      
+        <li class="menu-item">
+          <a href="/resources" data-drupal-link-system-path="node/16">See all resources</a>
+                                
+  
+  <div class="menu_link_content menu-link-contentmain view-mode-default menu-dropdown menu-dropdown-1 menu-type-default">
+              
+      </div>
+
+
+
+                  </li>
+          </ul>
+
+
+
+      </div>
+
+
+
+      </div>
+      </li>
+</ul>
+
+      </nav>
+  <div id="overlay--dropdown" class="overlay--dropdown"></div>
+<div class="language-switcher-language-url block block-language block-language-blocklanguage-interface block--anguageswitcher" id="block-languageswitcher" role="navigation">
+  
+    
+      
+  </div>
+
+      <div class="region-topnav__search">
+        <div class="topnav__search-wrapper">
+          <form class="region-topnav__search-form" action="/search">
+            <div>
+              <a class="region-topnav__search-icon" href="/search"></a>
+              <input class="region-topnav__search-input" type="text" name="search" value="" placeholder="Search VisionFund">
+              <input class="region-topnav__search-submit" type="submit" value="Search">
+              <div class="hide-search" aria-label="Close Search"></div>
+            </div>
+          </form>
+          <div class="show-search" aria-label="Search Site" aria-controls="region-topnav__search"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="region region-preheader">
+    <div data-drupal-messages-fallback class="hidden"></div>
+
+  </div>
+
+<header>
+  
+    
+</header>
+
+<main role="main" id="main-content" tabindex="-1" class="body-wrapper">
+    <div class="region region-content">
+    <div id="block-wvi-2018-content" class="block block-system block-system-main-block block--wvi-2018-content">
+  
+    
+      
+<article role="article" about="/home" class="node--landing-page page--home-page">
+
+  <div>
+          
+
+  <div class="eck-entity hero--default component-hero image-align-center text-align-left text-color-white">
+    <div class="hero__background">
+      <div class="background-video">
+  
+  
+            <div class="field field--name-thumbnail field--type-image field--label-hidden">    <picture>
+                  <source media="(min-width: 1500px)" type="image/jpeg" data-srcset="/sites/default/files/styles/hero_rectangle/public/2022-04/PHOTO%202-4%20cropped.jpg?itok=7A2Wjz8N 1x, /sites/default/files/styles/hero_rectangle/public/2022-04/PHOTO%202-4%20cropped.jpg?itok=7A2Wjz8N 2x"/>
+              <source media="(min-width: 960px)" type="image/jpeg" data-srcset="/sites/default/files/styles/hero_rectangle/public/2022-04/PHOTO%202-4%20cropped.jpg?itok=7A2Wjz8N 1x, /sites/default/files/styles/hero_rectangle/public/2022-04/PHOTO%202-4%20cropped.jpg?itok=7A2Wjz8N 2x"/>
+              <source media="(min-width: 768px)" type="image/jpeg" data-srcset="/sites/default/files/styles/hero_rectangle/public/2022-04/PHOTO%202-4%20cropped.jpg?itok=7A2Wjz8N 1x, /sites/default/files/styles/hero_rectangle/public/2022-04/PHOTO%202-4%20cropped.jpg?itok=7A2Wjz8N 2x"/>
+              <source media="(min-width: 480px)" type="image/jpeg" data-srcset="/sites/default/files/styles/large_landscape/public/2022-04/PHOTO%202-4%20cropped.jpg?itok=lOfiu70O 1x, /sites/default/files/styles/large_landscape/public/2022-04/PHOTO%202-4%20cropped.jpg?itok=lOfiu70O 2x"/>
+              <source type="image/jpeg" data-srcset="/sites/default/files/styles/medium_portrait/public/2022-04/PHOTO%202-4%20cropped.jpg?h=0d27ee61&amp;itok=wk-hGZcE 1x, /sites/default/files/styles/medium_portrait/public/2022-04/PHOTO%202-4%20cropped.jpg?h=0d27ee61&amp;itok=wk-hGZcE 2x"/>
+                  <img alt="Mother and children in Africa" class="lazyload" data-src="/sites/default/files/styles/medium_portrait/public/2022-04/PHOTO%202-4%20cropped.jpg?h=0d27ee61&amp;itok=wk-hGZcE" typeof="foaf:Image" />
+
+  </picture>
+
+</div>
+      
+</div>
+
+    </div>
+    <div class="hero__content">
+      <div class="hero__content--inner">
+                          <h1 class="hero__title">
+            In the aftermath of a crisis, offering loans to help families rebuild their lives
+          </h1>
+                                  <a href="https://www.visionfund.org/our-focus/fragile" class="btn btn--lg btn--primary--orange" target="_blank" rel="noopener">Learn More</a>
+              </div>
+    </div>
+  </div>
+
+
+        <div class="eck-entity component--container container--stat js-slider">
+  <div class="container--inner">
+          <h4 class="container__title">VisionFund FY22 Highlights</h4>
+            <div class="container__slider">
+            
+            <div class="field field--name-field-statistic field--type-entity-reference field--label-hidden"><div class="component--stat">
+  <h3 class="stat__value">4.7M</h3>
+  <div class="stat__subtitle">children impacted through VisionFund clients</div>
+</div>
+</div>
+      
+
+        
+            <div class="field field--name-field-statistic field--type-entity-reference field--label-hidden"><div class="component--stat">
+  <h3 class="stat__value">1M</h3>
+  <div class="stat__subtitle">clients/borrowers</div>
+</div>
+</div>
+      
+
+        
+            <div class="field field--name-field-statistic field--type-entity-reference field--label-hidden"><div class="component--stat">
+  <h3 class="stat__value">42%</h3>
+  <div class="stat__subtitle">Clients in World Vision Area Programmes</div>
+</div>
+</div>
+      
+
+        
+            <div class="field field--name-field-statistic field--type-entity-reference field--label-hidden"><div class="component--stat">
+  <h3 class="stat__value">US $706M</h3>
+  <div class="stat__subtitle">worth of loans disbursed</div>
+</div>
+</div>
+      
+
+        
+            <div class="field field--name-field-statistic field--type-entity-reference field--label-hidden"><div class="component--stat">
+  <h3 class="stat__value">1.1M</h3>
+  <div class="stat__subtitle">number of loans disbursed</div>
+</div>
+</div>
+      
+
+        
+            <div class="field field--name-field-statistic field--type-entity-reference field--label-hidden"><div class="component--stat">
+  <h3 class="stat__value">98%</h3>
+  <div class="stat__subtitle">global repayment rate</div>
+</div>
+</div>
+      
+
+        
+            <div class="field field--name-field-statistic field--type-entity-reference field--label-hidden"><div class="component--stat">
+  <h3 class="stat__value">69%</h3>
+  <div class="stat__subtitle">VisionFund clients globally who are women</div>
+</div>
+</div>
+      
+
+        
+            <div class="field field--name-field-statistic field--type-entity-reference field--label-hidden"><div class="component--stat">
+  <h3 class="stat__value">65%</h3>
+  <div class="stat__subtitle">VisionFund clients living in rural areas</div>
+</div>
+</div>
+      
+
+        
+            <div class="field field--name-field-statistic field--type-entity-reference field--label-hidden"><div class="component--stat">
+  <h3 class="stat__value">40%</h3>
+  <div class="stat__subtitle">clients who are smallholder farmers</div>
+</div>
+</div>
+      
+
+  
+    </div>
+              <div class="container__footer"><p class="text-align-right">As of 9/30/2022 <br />
+ </p></div>
+        
+  </div>
+</div>
+
+        <div class="eck-entity component--media background-color-white accent-color-orange single-item">
+    
+      <div class="field field--name-field-component-media field--type-entity-reference field--label-hidden">
+              <div><div>
+  
+  
+            <div class="field field--name-field-media-oembed-video field--type-string field--label-hidden">
+<div  class="oembed-lazyload oembed-lazyload--vimeo" data-strategy="intersection-observer">
+  <a class="oembed-lazyload__button" href="https://vimeo.com/810345365" title="Watch VisionFund Presents: Our Livelihoods Promise" rel="nofollow"><span class="oembed-lazyload__thumbnail" style="background-image: url('https://i.vimeocdn.com/video/1637657236-d045bea38913bf3eff4560e11db1832e6cf0fe4577763b4ce7fb8f62cdb6fef3-d_295x166')"></span></a>
+  <iframe data-src="/media/oembed?url=https%3A//vimeo.com/810345365&amp;max_width=0&amp;max_height=0&amp;hash=4nLls3YeHr_RR0-4-7Yg-LsBo7qKL5bJXFDvJHK3by0&amp;oembed_lazyload=1&amp;provider=Vimeo&amp;oembed_lazyload_hash=YLwjpUUT9qk_rZTIFrSNXdybQCnKhuqA-uMntOEDI2M" frameborder="0" id="oembed-iframe" allowtransparency width="426" height="240" class="media-oembed-content oembed-lazyload__iframe oembed-lazyload__iframe--hidden" title="VisionFund Presents: Our Livelihoods Promise"></iframe>
+
+</div>
+</div>
+      
+</div>
+</div>
+          </div>
+  
+</div>
+
+        <div  class="eck-entity component-powerclaim">
+  <div class="powerclaim__background color-orange">
+    <div class="powerclaim__background--inner">60</div>
+  </div>
+  <div class="powerclaim__foreground">
+    <div class="powerclaim__foreground--inner">Every 60 seconds a family receives the tools to overcome poverty</div>
+  </div>
+</div>
+
+        <div class="eck-entity component--container container--icon not-slider">
+  <div class="container--inner">
+              <div class="container__header"><h4>How We Do It</h4></div>
+        <div class="container__components ">
+            <div  class="eck-entity component-icon">
+    <a class="icon__wrapper" href="/our-focus/loans">
+      <div class="icon__image">  <img src="/sites/default/files/styles/thumbnail/public/icon/icon/Loans%404x.png?itok=393wETaP" width="100" height="74" alt="Loans" loading="lazy" typeof="foaf:Image" />
+
+
+</div>
+    <div class="icon__subtitle">Loans</div>
+    </a>
+  </div>
+
+        <div  class="eck-entity component-icon">
+    <a class="icon__wrapper" href="/our-focus/rural-agriculture">
+      <div class="icon__image">  <img src="/sites/default/files/styles/thumbnail/public/icon/icon/Rural%20Agriculture%404x.png?itok=N_cpBMku" width="100" height="93" alt="rural agriculture" loading="lazy" typeof="foaf:Image" />
+
+
+</div>
+    <div class="icon__subtitle">Rural Agriculture</div>
+    </a>
+  </div>
+
+        <div  class="eck-entity component-icon">
+    <a class="icon__wrapper" href="/our-focus/savings-group-loans">
+      <div class="icon__image">  <img src="/sites/default/files/styles/thumbnail/public/icon/icon/Savings%404x.png?itok=Q-QoKHV7" width="100" height="75" alt="savings group loans" loading="lazy" typeof="foaf:Image" />
+
+
+</div>
+    <div class="icon__subtitle">Savings Group Loans</div>
+    </a>
+  </div>
+
+        <div  class="eck-entity component-icon">
+    <a class="icon__wrapper" href="/our-focus/insurance">
+      <div class="icon__image">  <img src="/sites/default/files/styles/thumbnail/public/icon/icon/Insurance%404x.png?itok=5tXqG_j3" width="85" height="100" alt="Insurance" loading="lazy" typeof="foaf:Image" />
+
+
+</div>
+    <div class="icon__subtitle">Insurance</div>
+    </a>
+  </div>
+
+        <div  class="eck-entity component-icon">
+    <a class="icon__wrapper" href="/our-focus/fragile">
+      <div class="icon__image">  <img src="/sites/default/files/styles/thumbnail/public/icon/icon/Fragile%404x.png?itok=EotA0prA" width="100" height="98" alt="Fragile" loading="lazy" typeof="foaf:Image" />
+
+
+</div>
+    <div class="icon__subtitle">Fragile Context</div>
+    </a>
+  </div>
+
+        <div  class="eck-entity component-icon">
+    <a class="icon__wrapper" href="/our-focus/women">
+      <div class="icon__image">  <img src="/sites/default/files/styles/thumbnail/public/icon/icon/Women%27s%20Empowerment%404x.png?itok=uFOhAhfr" width="85" height="100" alt="Women Empowerment" loading="lazy" typeof="foaf:Image" />
+
+
+</div>
+    <div class="icon__subtitle">Women&#039;s Empowerment</div>
+    </a>
+  </div>
+
+        <div  class="eck-entity component-icon">
+    <a class="icon__wrapper" href="/our-focus/impact">
+      <div class="icon__image">  <img src="/sites/default/files/styles/thumbnail/public/icon/icon/Impact%404x.png?itok=l-oz-fge" width="100" height="100" alt="Impact" loading="lazy" typeof="foaf:Image" />
+
+
+</div>
+    <div class="icon__subtitle">Impact</div>
+    </a>
+  </div>
+
+        <div  class="eck-entity component-icon">
+    <a class="icon__wrapper" href="/our-focus/innovation">
+      <div class="icon__image">  <img src="/sites/default/files/styles/thumbnail/public/icon/icon/Innovation%404x.png?itok=s-rA-ggA" width="96" height="100" alt="Innovation" loading="lazy" typeof="foaf:Image" />
+
+
+</div>
+    <div class="icon__subtitle">Innovation</div>
+    </a>
+  </div>
+
+  
+    </div>
+        
+  </div>
+</div>
+
+        <div class="eck-entity component--container container--stat not-slider">
+  <div class="container--inner">
+            <div class="container__components ">
+            
+            <div class="field field--name-field-statistic field--type-entity-reference field--label-hidden"><div class="component--stat">
+  <h3 class="stat__value">Our Vision</h3>
+  <div class="stat__subtitle">Life in All <br />
+Its Fullness</div>
+</div>
+</div>
+      
+
+        
+            <div class="field field--name-field-statistic field--type-entity-reference field--label-hidden"><div class="component--stat">
+  <h3 class="stat__value">Our Mission</h3>
+  <div class="stat__subtitle">Empowering People <br />
+Out of Poverty</div>
+</div>
+</div>
+      
+
+        
+            <div class="field field--name-field-statistic field--type-entity-reference field--label-hidden"><div class="component--stat">
+  <h3 class="stat__value">Our Values</h3>
+  <div class="stat__subtitle">Rooted in the <br />
+Love of Christ</div>
+</div>
+</div>
+      
+
+  
+    </div>
+        
+  </div>
+</div>
+
+        <div class="eck-entity component--container container--card not-slider">
+  <div class="container--inner">
+            <div class="container__components ">
+            <div  class="eck-entity component-card">
+    <a href="/publications/impact-evaluation/visionfund-impact-evaluation-savings-group-lending-visionfund-rwanda">
+      <div class="card__image"><div>
+  
+  
+            <div class="field field--name-field-media-image field--type-image field--label-hidden">    <picture>
+                  <source media="(min-width: 960px)" type="image/png" data-srcset="/sites/default/files/styles/extra_large_landscape/public/2023-06/Screenshot%202023-06-01%20at%202.23.57%20PM_0.png?itok=85h1nhjm 1x"/>
+              <source media="(min-width: 768px)" type="image/png" data-srcset="/sites/default/files/styles/large_landscape/public/2023-06/Screenshot%202023-06-01%20at%202.23.57%20PM_0.png?itok=PvzDOgO1 1x"/>
+              <source type="image/png" data-srcset="/sites/default/files/styles/medium_landscape/public/2023-06/Screenshot%202023-06-01%20at%202.23.57%20PM_0.png?itok=tD1cwFSS 1x"/>
+                  <img alt="VisionFund Impact Evaluation: Savings Group Lending for VisionFund Rwanda" class="lazyload" data-src="/sites/default/files/styles/medium_landscape/public/2023-06/Screenshot%202023-06-01%20at%202.23.57%20PM_0.png?itok=tD1cwFSS" typeof="foaf:Image" />
+
+  </picture>
+
+</div>
+      
+</div>
+</div>
+    <div class="card__content">
+                  <div class="card__title">
+      Impact Evaluation: Savings Group Lending for VisionFund Rwanda
+      </div>
+                  <div class="card__description">
+      
+            <div class="field field--name-field-component-description field--type-text-long field--label-hidden"><p>To get a scientific, objective, third-party analysis of our work, VisionFund commissioned 60_Decibels to conduct two impact evaluations (an initial...</p></div>
+      
+      </div>
+                  <span class="card__btn">Learn More</span>
+          </div>
+    </a>
+  </div>
+
+        <div  class="eck-entity component-card">
+    <a href="/publications/case-study/savings-linked-insurance-resilience-ghana-malawi-final-report-april-2023">
+      <div class="card__image"><div>
+  
+  
+            <div class="field field--name-field-media-image field--type-image field--label-hidden">    <picture>
+                  <source media="(min-width: 960px)" type="image/png" data-srcset="/sites/default/files/styles/extra_large_landscape/public/2023-06/Screenshot%202023-06-06%20at%202.22.47%20PM.png?itok=KzFaMKLm 1x"/>
+              <source media="(min-width: 768px)" type="image/png" data-srcset="/sites/default/files/styles/large_landscape/public/2023-06/Screenshot%202023-06-06%20at%202.22.47%20PM.png?itok=ovv3RoM6 1x"/>
+              <source type="image/png" data-srcset="/sites/default/files/styles/medium_landscape/public/2023-06/Screenshot%202023-06-06%20at%202.22.47%20PM.png?itok=FavpdBHs 1x"/>
+                  <img alt="Savings Linked Insurance for Resilience:Ghana &amp; Malawi Final Report" class="lazyload" data-src="/sites/default/files/styles/medium_landscape/public/2023-06/Screenshot%202023-06-06%20at%202.22.47%20PM.png?itok=FavpdBHs" typeof="foaf:Image" />
+
+  </picture>
+
+</div>
+      
+</div>
+</div>
+    <div class="card__content">
+                  <div class="card__title">
+      Savings Linked Insurance for Resilience Final Project Report
+      </div>
+                  <div class="card__description">
+      
+            <div class="field field--name-field-component-description field--type-text-long field--label-hidden"><p>For the past seven years, VisionFund has been actively designing microinsurance products tailored to meet the needs of the clients we serve. We...</p></div>
+      
+      </div>
+                  <span class="card__btn">Learn More</span>
+          </div>
+    </a>
+  </div>
+
+        <div  class="eck-entity component-card">
+    <a href="/publications/annual-report/visionfund-fy22-annual-report">
+      <div class="card__image"><div>
+  
+  
+            <div class="field field--name-field-media-image field--type-image field--label-hidden">    <picture>
+                  <source media="(min-width: 960px)" type="image/png" data-srcset="/sites/default/files/styles/extra_large_landscape/public/2023-05/Screenshot%202023-05-15%20at%209.58.48%20AM.png?itok=Z8iD8VnB 1x"/>
+              <source media="(min-width: 768px)" type="image/png" data-srcset="/sites/default/files/styles/large_landscape/public/2023-05/Screenshot%202023-05-15%20at%209.58.48%20AM.png?itok=X0VjsSut 1x"/>
+              <source type="image/png" data-srcset="/sites/default/files/styles/medium_landscape/public/2023-05/Screenshot%202023-05-15%20at%209.58.48%20AM.png?itok=TIen999V 1x"/>
+                  <img alt="VisionFund FY22 Annual Report" class="lazyload" data-src="/sites/default/files/styles/medium_landscape/public/2023-05/Screenshot%202023-05-15%20at%209.58.48%20AM.png?itok=TIen999V" typeof="foaf:Image" />
+
+  </picture>
+
+</div>
+      
+</div>
+</div>
+    <div class="card__content">
+                  <div class="card__title">
+      FY22 Annual Report
+      </div>
+                  <div class="card__description">
+      
+            <div class="field field--name-field-component-description field--type-text-long field--label-hidden"><p>VisionFund International released its Annual Report for the financial year ending 30 September 2022, empowering lives through microfinance services.</p>...</div>
+      
+      </div>
+                  <span class="card__btn">Learn More</span>
+          </div>
+    </a>
+  </div>
+
+  
+    </div>
+        
+  </div>
+</div>
+
+        
+
+  <div class="eck-entity hero--default component-hero image-align-center text-align-left text-color-white">
+    <div class="hero__background">
+      <div class="background-video">
+  
+  
+            <div class="field field--name-thumbnail field--type-image field--label-hidden">    <picture>
+                  <source media="(min-width: 1500px)" type="image/jpeg" data-srcset="/sites/default/files/styles/hero_rectangle/public/2022-04/D145-0219-015%20reduced.jpg?itok=mLuAtWoz 1x, /sites/default/files/styles/hero_rectangle/public/2022-04/D145-0219-015%20reduced.jpg?itok=mLuAtWoz 2x"/>
+              <source media="(min-width: 960px)" type="image/jpeg" data-srcset="/sites/default/files/styles/hero_rectangle/public/2022-04/D145-0219-015%20reduced.jpg?itok=mLuAtWoz 1x, /sites/default/files/styles/hero_rectangle/public/2022-04/D145-0219-015%20reduced.jpg?itok=mLuAtWoz 2x"/>
+              <source media="(min-width: 768px)" type="image/jpeg" data-srcset="/sites/default/files/styles/hero_rectangle/public/2022-04/D145-0219-015%20reduced.jpg?itok=mLuAtWoz 1x, /sites/default/files/styles/hero_rectangle/public/2022-04/D145-0219-015%20reduced.jpg?itok=mLuAtWoz 2x"/>
+              <source media="(min-width: 480px)" type="image/jpeg" data-srcset="/sites/default/files/styles/large_landscape/public/2022-04/D145-0219-015%20reduced.jpg?itok=DIXpLp52 1x, /sites/default/files/styles/large_landscape/public/2022-04/D145-0219-015%20reduced.jpg?itok=DIXpLp52 2x"/>
+              <source type="image/jpeg" data-srcset="/sites/default/files/styles/medium_portrait/public/2022-04/D145-0219-015%20reduced.jpg?h=790be497&amp;itok=E3DxVHeC 1x, /sites/default/files/styles/medium_portrait/public/2022-04/D145-0219-015%20reduced.jpg?h=790be497&amp;itok=E3DxVHeC 2x"/>
+                  <img alt="Guatemala family with sheep" class="lazyload" data-src="/sites/default/files/styles/medium_portrait/public/2022-04/D145-0219-015%20reduced.jpg?h=790be497&amp;itok=E3DxVHeC" typeof="foaf:Image" />
+
+  </picture>
+
+</div>
+      
+</div>
+
+    </div>
+    <div class="hero__content">
+      <div class="hero__content--inner">
+                          <h1 class="hero__title">
+            We&#039;re working to end intergenerational poverty.
+          </h1>
+                                  <a href="/our-focus" class="btn btn--lg btn--primary--yellow">Learn How</a>
+              </div>
+    </div>
+  </div>
+
+
+  
+  </div>
+
+</article>
+
+  </div>
+
+  </div>
+
+</main>
+
+<footer>
+    <div class="region region-footer">
+    <div class="container footer__container">
+      <div id="block-footerlogo" class="block block-block-content block-block-content3e795e84-5dfc-48a0-84f5-772fedcdcb6e block--footerlogo">
+  
+    
+      
+            <div class="field field--name-body field--type-text-with-summary field--label-hidden"><p><img alt="VisionFund Logo" data-entity-type="file" data-entity-uuid="c40a8eff-7274-4cc9-98b2-3dbd6485c06f" height="29" src="/sites/default/files/inline-images/VF-logo-PMS1505-Reversed.png" width="154" loading="lazy" /></p></div>
+      
+  </div>
+<nav role="navigation" aria-labelledby="block-footer-menu" id="block-footer" class="block block-menu navigation menu--footer">
+            
+  <h2 class="visually-hidden" id="block-footer-menu">Footer</h2>
+  
+
+        
+              <ul>
+                    <li class="menu-item--about-us menu-item--expandable">
+        <a href="/about" data-drupal-link-system-path="node/141">About Us</a>
+                                <ul>
+                    <li class="menu-item--our-vision-mission--values">
+        <a href="/values" data-drupal-link-system-path="node/96">Our Vision, Mission &amp; Values</a>
+              </li>
+                <li class="menu-item--our-history">
+        <a href="/history" data-drupal-link-system-path="node/136">Our History</a>
+              </li>
+                <li class="menu-item--our-leadership">
+        <a href="/leadership" data-drupal-link-system-path="node/126">Our Leadership</a>
+              </li>
+                <li class="menu-item--accountability">
+        <a href="/accountability" data-drupal-link-system-path="node/121">Accountability</a>
+              </li>
+                <li class="menu-item--faq">
+        <a href="/faq" data-drupal-link-system-path="node/116">FAQ</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item--our-approach menu-item--expandable">
+        <a href="/our-livelihoods-promise" data-drupal-link-system-path="node/3191">Our Approach</a>
+                                <ul>
+                    <li class="menu-item--our-livelihoods-promise">
+        <a href="/our-livelihoods-promise" data-drupal-link-system-path="node/3191">Our Livelihoods Promise</a>
+              </li>
+                <li class="menu-item--faith-and-development">
+        <a href="/faith-development" data-drupal-link-system-path="node/106">Faith and Development</a>
+              </li>
+                <li class="menu-item--impact-of-a-donation">
+        <a href="/donation-impact" title="Explore the impact of a donation" data-drupal-link-system-path="node/1711">Impact of a Donation</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item--careers">
+        <a href="/careers" data-drupal-link-system-path="group/151">Careers</a>
+              </li>
+                <li class="menu-item--connect-with-us menu-item--expandable">
+        <a href="/contact-us" data-drupal-link-system-path="node/336">Connect with Us</a>
+                                <ul>
+                    <li class="menu-item--facebook">
+        <a href="https://www.facebook.com/VisionFundOrg/" class="facebook-link" target="_blank" rel="noopener">Facebook</a>
+              </li>
+                <li class="menu-item--twitter">
+        <a href="https://twitter.com/visionfund" class="twitter-link" target="_blank" rel="noopener">Twitter</a>
+              </li>
+                <li class="menu-item--instagram">
+        <a href="https://www.instagram.com/visionfundpics/" class="instagram-link" target="_blank" rel="noopener">Instagram</a>
+              </li>
+                <li class="menu-item--linkedin">
+        <a href="https://www.linkedin.com/company/6950435" class="linkedin-link" target="_blank" rel="noopener">LinkedIn</a>
+              </li>
+                <li class="menu-item--youtube">
+        <a href="https://www.youtube.com/user/VisionFund/" class="youtube-link" target="_blank" rel="noopener">Youtube</a>
+              </li>
+                <li class="menu-item--visionfund-portal">
+        <a href="/portal" data-drupal-link-system-path="portal">VisionFund Portal</a>
+              </li>
+                <li class="menu-item--report-a-concern">
+        <a href="https://secure.ethicspoint.com/domain/media/en/gui/24325/index.html" target="_blank" rel="noopener">Report A Concern</a>
+              </li>
+        </ul>
+  
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<nav role="navigation" aria-labelledby="block-footerlegal-menu" id="block-footerlegal" class="block block-menu navigation menu--footer-legal">
+            
+  <h2 class="visually-hidden" id="block-footerlegal-menu">Footer Legal</h2>
+  
+
+        
+              <ul>
+          <li class='copyright'>&copy; 2023 VisionFund International</li>
+          <li>
+        <a href="/privacy-policy" data-drupal-link-system-path="node/1506">Privacy Policy</a>
+              </li>
+          <li>
+        <a href="/terms" data-drupal-link-system-path="node/1531">Terms of Use</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+    </div>
+  </div>
+
+</footer>
+
+  </div>
+
+<div class="map-overlay" id="ie-warning">
+  <div class="map-overlay-container--outer">
+    <div class="map-overlay-container--middle">
+      <div class="map-overlay-container--inner">
+        <div class="map-overlay-content-wrap">
+          <div class="close-overlay" aria-label="Close Map Overlay">&#10005;</div>
+                    <div class="map-overlay-stats-container">
+            For optimal viewing experience of our website, please use the most current version of Microsoft Edge, Google Chrome or Mozilla Firefox. 
+          </div>
+                  </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/151","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"google_analytics":{"account":"G-313674950","trackOutbound":true,"trackMailto":true,"trackTel":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"lazy":{"lazysizes":{"lazyClass":"lazyload","loadedClass":"lazyloaded","loadingClass":"lazyloading","preloadClass":"lazypreload","errorClass":"lazyerror","autosizesClass":"lazyautosizes","srcAttr":"data-src","srcsetAttr":"data-srcset","sizesAttr":"data-sizes","minSize":40,"customMedia":[],"init":true,"expFactor":1.5,"hFac":0.80000000000000004,"loadMode":2,"loadHidden":true,"ricTimeout":0,"throttleDelay":125,"plugins":[]},"placeholderSrc":"","preferNative":false,"minified":true,"libraryPath":"\/libraries\/lazysizes"},"eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \u003Cp\u003EThis site uses cookie to store information on your computer. By using this site you agree to our use of cookies.\u003Cbr \/\u003EFor More information see our \u003Ca href=\u0022\/privacy-policy\u0022\u003EPrivacy Policy\u003C\/a\u003E.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button btn--secondary--orange\u0022 \u003EDeny\u003C\/button\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button btn--primary--orange\u0022\u003EAccept\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022\u003E\n      \n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button btn--secondary--orange\u0022 \u003EDeny\u003C\/button\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button btn--primary--orange\u0022\u003EAccept\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":true,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"\/privacy-policy","popup_link_new_window":true,"popup_position":false,"fixed_top_position":true,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"set_cookie_session_zero_on_disagree":0,"disagree_do_not_show_popup":false,"method":"opt_in","automatic_cookies_removal":true,"allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv aria-labelledby=\u0022popup-text\u0022 class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button \u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"reload_options":0,"reload_routes_list":"","withdraw_button_on_info_popup":false,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":false,"cookie_value_disagreed":"0","cookie_value_agreed_show_thank_you":"1","cookie_value_agreed":"2","containing_element":"body","settings_tab_enabled":false,"olivero_primary_button_classes":"","olivero_secondary_button_classes":"","close_button_action":"close_banner","open_by_default":true,"modules_allow_popup":true,"hide_the_banner":false,"geoip_match":true},"intersectionObserverMargin":"","user":{"uid":0,"permissionsHash":"f7322c6c883ca3aed05676236d3b9557187478f5505c0eeefafaf711fd6eeb75"}}</script>
+<script src="/sites/default/files/js/js_6Z11r6BsGmIVTQM_Os19SoZbnMvBAFqOSKshSyYGNuc.js"></script>
+<script src="/sites/default/files/js/js_-lWA3ml6WpTgnAPMW5gDp6WWufaWwy7XU3glt7amuNQ.js"></script>
+<script src="/sites/default/files/js/js_mvbfUB1ZNAUEewutJ5HreLG7hqBi3lPu2dWqjNj00rI.js"></script>
+<script src="/modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.min.js?v=9.5.8" defer></script>
+<script src="/sites/default/files/js/js_CSlppBXAcygGWea_kU-mS9HYGOi-DQdZnSPH0PxYdsk.js"></script>
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"006b5744c1","applicationID":"466090314","transactionName":"MVwHZkMDWxBSVhUPDQgWJFFFC1oNHHETExIHVTlcXgZQP3BaDxIQCVUJV0M+ewxXUDcPBxF6ClxFEFoPX1ATS1wQUABF","queueTime":16,"applicationTime":489,"atts":"HRsQEAsZSE8RVENcGRtE","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]>   <html class="no-js oldie ie9 ie" lang="en-US" > <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="en-US" > <!--<![endif]-->
+<head><meta charset="UTF-8" ><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- devices setting -->
+        <meta name="viewport"   content="initial-scale=1,user-scalable=no,width=device-width">
+
+<!-- outputs by wp_head -->
+<title>AM Technologies &#8211; Creating Smart Technologies</title>
+<meta name='robots' content='max-image-preview:large' />
+<link rel='dns-prefetch' href='//use.fontawesome.com' />
+<link rel="alternate" type="application/rss+xml" title="AM Technologies &raquo; Feed" href="https://amtechiot.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="AM Technologies &raquo; Comments Feed" href="https://amtechiot.com/comments/feed/" />
+<script type="rocketlazyloadscript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/amtechiot.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.3"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='https://amtechiot.com/wp-includes/css/dist/block-library/style.min.css?ver=6.1.3' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://amtechiot.com/wp-includes/css/classic-themes.min.css?ver=1' media='all' />
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link data-minify="1" rel='stylesheet' id='contact-form-7-css' href='https://amtechiot.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=1684987939' media='all' />
+<link data-minify="1" rel='stylesheet' id='rs-plugin-settings-css' href='https://amtechiot.com/wp-content/cache/min/1/wp-content/plugins/revslider/public/assets/css/rs6.css?ver=1684987939' media='all' />
+<style id='rs-plugin-settings-inline-css'>
+#rs-demo-id {}
+</style>
+<link data-minify="1" rel='stylesheet' id='auxin-base-css' href='https://amtechiot.com/wp-content/cache/min/1/wp-content/themes/phlox/css/base.css?ver=1684987939' media='all' />
+<link data-minify="1" rel='stylesheet' id='auxin-front-icon-css' href='https://amtechiot.com/wp-content/cache/min/1/wp-content/themes/phlox/css/auxin-icon.css?ver=1684987939' media='all' />
+<link data-minify="1" rel='stylesheet' id='auxin-main-css' href='https://amtechiot.com/wp-content/cache/min/1/wp-content/themes/phlox/css/main.css?ver=1684987939' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-css' href='https://amtechiot.com/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=1684987939' media='all' />
+<link rel='stylesheet' id='elementor-frontend-legacy-css' href='https://amtechiot.com/wp-content/plugins/elementor/assets/css/frontend-legacy.min.css?ver=3.13.3' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css' href='https://amtechiot.com/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.13.3' media='all' />
+<link rel='stylesheet' id='swiper-css' href='https://amtechiot.com/wp-content/plugins/elementor/assets/lib/swiper/css/swiper.min.css?ver=5.3.6' media='all' />
+<link rel='stylesheet' id='elementor-post-10-css' href='https://amtechiot.com/wp-content/uploads/elementor/css/post-10.css?ver=1684984624' media='all' />
+<link data-minify="1" rel='stylesheet' id='auxin-elementor-base-css' href='https://amtechiot.com/wp-content/cache/min/1/wp-content/themes/phlox/css/other/elementor.css?ver=1684987939' media='all' />
+<link rel='stylesheet' id='elementor-pro-css' href='https://amtechiot.com/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=3.13.1' media='all' />
+<link rel='stylesheet' id='elementor-global-css' href='https://amtechiot.com/wp-content/uploads/elementor/css/global.css?ver=1684984625' media='all' />
+<link rel='stylesheet' id='elementor-post-74096-css' href='https://amtechiot.com/wp-content/uploads/elementor/css/post-74096.css?ver=1684984625' media='all' />
+<link rel='stylesheet' id='elementor-post-74339-css' href='https://amtechiot.com/wp-content/uploads/elementor/css/post-74339.css?ver=1684984625' media='all' />
+<link rel='stylesheet' id='elementor-post-74612-css' href='https://amtechiot.com/wp-content/uploads/elementor/css/post-74612.css?ver=1684984625' media='all' />
+<link data-minify="1" rel='stylesheet' id='font-awesome-official-css' href='https://amtechiot.com/wp-content/cache/min/1/releases/v5.15.1/css/all.css?ver=1684987939' media='all' crossorigin="anonymous" />
+<link data-minify="1" rel='stylesheet' id='font-awesome-official-v4shim-css' href='https://amtechiot.com/wp-content/cache/min/1/releases/v5.15.1/css/v4-shims.css?ver=1684987940' media='all' crossorigin="anonymous" />
+<style id='font-awesome-official-v4shim-inline-css'>
+@font-face {
+font-family: "FontAwesome";
+font-display: block;
+src: url("https://use.fontawesome.com/releases/v5.15.1/webfonts/fa-brands-400.eot"),
+		url("https://use.fontawesome.com/releases/v5.15.1/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"),
+		url("https://use.fontawesome.com/releases/v5.15.1/webfonts/fa-brands-400.woff2") format("woff2"),
+		url("https://use.fontawesome.com/releases/v5.15.1/webfonts/fa-brands-400.woff") format("woff"),
+		url("https://use.fontawesome.com/releases/v5.15.1/webfonts/fa-brands-400.ttf") format("truetype"),
+		url("https://use.fontawesome.com/releases/v5.15.1/webfonts/fa-brands-400.svg#fontawesome") format("svg");
+}
+
+@font-face {
+font-family: "FontAwesome";
+font-display: block;
+src: url("https://use.fontawesome.com/releases/v5.15.1/webfonts/fa-solid-900.eot"),
+		url("https://use.fontawesome.com/releases/v5.15.1/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"),
+		url("https://use.fontawesome.com/releases/v5.15.1/webfonts/fa-solid-900.woff2") format("woff2"),
+		url("https://use.fontawesome.com/releases/v5.15.1/webfonts/fa-solid-900.woff") format("woff"),
+		url("https://use.fontawesome.com/releases/v5.15.1/webfonts/fa-solid-900.ttf") format("truetype"),
+		url("https://use.fontawesome.com/releases/v5.15.1/webfonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+
+@font-face {
+font-family: "FontAwesome";
+font-display: block;
+src: url("https://use.fontawesome.com/releases/v5.15.1/webfonts/fa-regular-400.eot"),
+		url("https://use.fontawesome.com/releases/v5.15.1/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"),
+		url("https://use.fontawesome.com/releases/v5.15.1/webfonts/fa-regular-400.woff2") format("woff2"),
+		url("https://use.fontawesome.com/releases/v5.15.1/webfonts/fa-regular-400.woff") format("woff"),
+		url("https://use.fontawesome.com/releases/v5.15.1/webfonts/fa-regular-400.ttf") format("truetype"),
+		url("https://use.fontawesome.com/releases/v5.15.1/webfonts/fa-regular-400.svg#fontawesome") format("svg");
+unicode-range: U+F004-F005,U+F007,U+F017,U+F022,U+F024,U+F02E,U+F03E,U+F044,U+F057-F059,U+F06E,U+F070,U+F075,U+F07B-F07C,U+F080,U+F086,U+F089,U+F094,U+F09D,U+F0A0,U+F0A4-F0A7,U+F0C5,U+F0C7-F0C8,U+F0E0,U+F0EB,U+F0F3,U+F0F8,U+F0FE,U+F111,U+F118-F11A,U+F11C,U+F133,U+F144,U+F146,U+F14A,U+F14D-F14E,U+F150-F152,U+F15B-F15C,U+F164-F165,U+F185-F186,U+F191-F192,U+F1AD,U+F1C1-F1C9,U+F1CD,U+F1D8,U+F1E3,U+F1EA,U+F1F6,U+F1F9,U+F20A,U+F247-F249,U+F24D,U+F254-F25B,U+F25D,U+F267,U+F271-F274,U+F279,U+F28B,U+F28D,U+F2B5-F2B6,U+F2B9,U+F2BB,U+F2BD,U+F2C1-F2C2,U+F2D0,U+F2D2,U+F2DC,U+F2ED,U+F328,U+F358-F35B,U+F3A5,U+F3D1,U+F410,U+F4AD;
+}
+</style>
+<link rel='stylesheet' id='google-fonts-1-css' href='https://fonts.googleapis.com/css?family=Roboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto+Slab%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CMontserrat%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&#038;display=auto&#038;ver=6.1.3' media='all' />
+<link rel='stylesheet' id='elementor-icons-shared-0-css' href='https://amtechiot.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/fontawesome.min.css?ver=5.15.3' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-fa-solid-css' href='https://amtechiot.com/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/solid.min.css?ver=1684987940' media='all' />
+<link data-minify="1" rel='stylesheet' id='elementor-icons-fa-regular-css' href='https://amtechiot.com/wp-content/cache/min/1/wp-content/plugins/elementor/assets/lib/font-awesome/css/regular.min.css?ver=1684987940' media='all' />
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><script type="rocketlazyloadscript" src='https://amtechiot.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.1' id='jquery-core-js' defer></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js' defer></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-content/plugins/revslider/public/assets/js/rbtools.min.js?ver=6.0' id='tp-tools-js' defer></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-content/plugins/revslider/public/assets/js/rs6.min.js?ver=6.2.3' id='revmin-js' defer></script>
+<script id='auxin-modernizr-js-extra'>
+var auxin = {"ajax_url":"https:\/\/amtechiot.com\/wp-admin\/admin-ajax.php","is_rtl":"","is_reponsive":"1","is_framed":"","frame_width":"20","wpml_lang":"en","uploadbaseurl":"https:\/\/amtechiot.com\/wp-content\/uploads","nonce":"b7b4662fed"};
+</script>
+<script type="rocketlazyloadscript" id='auxin-modernizr-js-before'>
+/* < ![CDATA[ */
+function auxinNS(n){for(var e=n.split("."),a=window,i="",r=e.length,t=0;r>t;t++)"window"!=e[t]&&(i=e[t],a[i]=a[i]||{},a=a[i]);return a;}
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-content/themes/phlox/js/solo/modernizr-custom.min.js?ver=2.12.0' id='auxin-modernizr-js' defer></script>
+<link rel="https://api.w.org/" href="https://amtechiot.com/wp-json/" /><link rel="alternate" type="application/json" href="https://amtechiot.com/wp-json/wp/v2/pages/74096" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://amtechiot.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://amtechiot.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.1.3" />
+<link rel="canonical" href="https://amtechiot.com/" />
+<link rel='shortlink' href='https://amtechiot.com/' />
+<link rel="alternate" type="application/json+oembed" href="https://amtechiot.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Famtechiot.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://amtechiot.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Famtechiot.com%2F&#038;format=xml" />
+<!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#1bb0ce" />
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#1bb0ce" />
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<meta name="generator" content="Elementor 3.13.3; features: a11y_improvements, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+<style>.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><meta name="generator" content="Powered by Slider Revolution 6.2.3 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+<link rel="icon" href="https://amtechiot.com/wp-content/uploads/2020/09/cropped-Logo-Website-01-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://amtechiot.com/wp-content/uploads/2020/09/cropped-Logo-Website-01-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://amtechiot.com/wp-content/uploads/2020/09/cropped-Logo-Website-01-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://amtechiot.com/wp-content/uploads/2020/09/cropped-Logo-Website-01-1-270x270.png" />
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">function setREVStartSize(e){
+			//window.requestAnimationFrame(function() {				 
+				window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;	
+				window.RSIH = window.RSIH===undefined ? window.innerHeight : window.RSIH;	
+				try {								
+					var pw = document.getElementById(e.c).parentNode.offsetWidth,
+						newh;
+					pw = pw===0 || isNaN(pw) ? window.RSIW : pw;
+					e.tabw = e.tabw===undefined ? 0 : parseInt(e.tabw);
+					e.thumbw = e.thumbw===undefined ? 0 : parseInt(e.thumbw);
+					e.tabh = e.tabh===undefined ? 0 : parseInt(e.tabh);
+					e.thumbh = e.thumbh===undefined ? 0 : parseInt(e.thumbh);
+					e.tabhide = e.tabhide===undefined ? 0 : parseInt(e.tabhide);
+					e.thumbhide = e.thumbhide===undefined ? 0 : parseInt(e.thumbhide);
+					e.mh = e.mh===undefined || e.mh=="" || e.mh==="auto" ? 0 : parseInt(e.mh,0);		
+					if(e.layout==="fullscreen" || e.l==="fullscreen") 						
+						newh = Math.max(e.mh,window.RSIH);					
+					else{					
+						e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
+						for (var i in e.rl) if (e.gw[i]===undefined || e.gw[i]===0) e.gw[i] = e.gw[i-1];					
+						e.gh = e.el===undefined || e.el==="" || (Array.isArray(e.el) && e.el.length==0)? e.gh : e.el;
+						e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
+						for (var i in e.rl) if (e.gh[i]===undefined || e.gh[i]===0) e.gh[i] = e.gh[i-1];
+											
+						var nl = new Array(e.rl.length),
+							ix = 0,						
+							sl;					
+						e.tabw = e.tabhide>=pw ? 0 : e.tabw;
+						e.thumbw = e.thumbhide>=pw ? 0 : e.thumbw;
+						e.tabh = e.tabhide>=pw ? 0 : e.tabh;
+						e.thumbh = e.thumbhide>=pw ? 0 : e.thumbh;					
+						for (var i in e.rl) nl[i] = e.rl[i]<window.RSIW ? 0 : e.rl[i];
+						sl = nl[0];									
+						for (var i in nl) if (sl>nl[i] && nl[i]>0) { sl = nl[i]; ix=i;}															
+						var m = pw>(e.gw[ix]+e.tabw+e.thumbw) ? 1 : (pw-(e.tabw+e.thumbw)) / (e.gw[ix]);					
+						newh =  (e.gh[ix] * m) + (e.tabh + e.thumbh);
+					}				
+					if(window.rs_init_css===undefined) window.rs_init_css = document.head.appendChild(document.createElement("style"));					
+					document.getElementById(e.c).height = newh+"px";
+					window.rs_init_css.innerHTML += "#"+e.c+"_wrapper { height: "+newh+"px }";				
+				} catch(e){
+					console.log("Failure at Presize of Slider:" + e)
+				}					   
+			//});
+		  };</script>
+		<style id="wp-custom-css">
+			.hentry .entry-info{
+	display:none;
+}
+
+/* Contact Form 7 Submit Button 
+ -------------------------------*/
+ .wpcf7 input[type="submit"] {
+     color: #ffffff;
+     font-size: 18px;
+	   font-family: 'Montserrat';
+     font-weight: 700;
+     background: #E2272E;
+     padding: 15px 25px 15px 25px;
+     border: none;
+     border-radius: 5px;
+     width: auto;
+     text-transform: uppercase;
+     letter-spacing: 5px;
+ }
+ .wpcf7 input:hover[type="submit"] {
+     background: #494949;
+     transition: all 0.4s ease 0s;
+ }
+ .wpcf7 input:active[type="submit"] {
+     background: #000000;
+ }
+
+/* Contact Form 7 Input CSS 
+ ---------------------------*/
+.wpcf7 input[type="text"],
+.wpcf7 input[type="email"],
+.wpcf7 textarea
+  {
+	 	 font-family: 'Montserrat';
+     font-size: 16px;
+     background-color: #f5f5f5;
+     border: 1;
+     width: 95%;
+     padding: 2%;
+ }
+.wpcf7-form-control-wrap your-name input[type="text"],
+{
+	font-family: 'Montserrat';
+	font-size: 30px;
+}/* header-logo-width 
+=========================*/
+.aux-logo-header .aux-logo-anchor{ max-width:80px; }
+/* header-logo-max-height-type 
+=========================*/
+.aux-logo-header .aux-logo-anchor > img { max-height:85px; }
+/* site-frame-background-color 
+=========================*/
+@media screen and (min-width: 700px) { .aux-framed .aux-side-frames, body.aux-framed:after,
+            .aux-framed .aux-side-frames:before, .aux-framed .aux-side-frames:after{ background-color:#111111; } }
+/* sticky-header-color 
+=========================*/
+.site-header-section.aux-sticky, .aux-elementor-header.aux-sticky { background-color:#FFFFFF; }
+/* site-header-container-scaled-height 
+=========================*/
+.aux-top-sticky .site-header-section.aux-sticky .aux-fill .aux-menu-depth-0 > .aux-item-content, .aux-top-sticky .site-header-section.aux-sticky .aux-header-elements,.aux-elementor-header.aux-sticky { height:80px; }
+/* site-header-container-height 
+=========================*/
+.site-header-section .aux-header-elements:not(.aux-vertical-menu-elements), .site-header-section .aux-fill .aux-menu-depth-0 > .aux-item-content { height:85px; }
+/* site-transparent-header-bgcolor 
+=========================*/
+.site-header-section { background-color:#FFFFFF; }
+/* site-vertical-menu-background-color 
+=========================*/
+.aux-vertical-menu-side  { background-color:#FFF; }
+/* site-header-navigation-item-height 
+=========================*/
+.site-header-section .aux-middle .aux-menu-depth-0 > .aux-item-content { height:60px; }
+/* site-mobile-header-toggle-button-color 
+=========================*/
+.site-header-section .aux-header .aux-burger:before, .site-header-section .aux-header .aux-burger:after, .site-header-section .aux-header .aux-burger .mid-line{ border-color:#3d3d3d; }
+/* site-menu-full-screen-background-color 
+=========================*/
+#fs-menu-search:before { background-color:rgba(255, 255, 255, 0.95); }
+/* site-top-header-background-color 
+=========================*/
+#top-header{background-color:#FFFFFF;}
+/* blog-post-share-button-icon-size 
+=========================*/
+.single-post .aux-single-post-share span::before { font-size:10px; }
+/* post-title-bar-overlay-pattern-opacity 
+=========================*/
+.single-post .aux-overlay-bg-hash::before { opacity:0.15; }
+/* page-title-bar-overlay-pattern-opacity 
+=========================*/
+.page .aux-overlay-bg-hash::before { opacity:0.5; }
+/* subfooter-bar-layout-bg-color 
+=========================*/
+.aux-subfooter-bar { background-color:#fafafa; }
+/* subfooter-bar-top-border-color 
+=========================*/
+.aux-subfooter-bar { border-top:1px solid #EAEAEA; }
+/* subfooter-layout-bg-image-position 
+=========================*/
+.aux-subfooter{background-position:center center;}
+/* subfooter-layout-bg-image-size 
+=========================*/
+.aux-subfooter{background-size:cover;}
+/* subfooter-layout-bg-image-repeat 
+=========================*/
+.aux-subfooter{background-repeat:no-repeat;}
+/* subfooter-top-border-color 
+=========================*/
+.aux-subfooter { border-top:1px solid #EAEAEA; }
+/* site-footer-bg-color 
+=========================*/
+.aux-site-footer{background-color:#1A1A1A;}
+/* footer-top-border-color 
+=========================*/
+.aux-site-footer{border-top:1px solid #EAEAEA;}
+/* footer-top-border-width 
+=========================*/
+.aux-site-footer { border-top-width:1px; }
+
+		</style>
+		<!-- end wp_head -->
+</head>
+
+
+<body class="home page-template-default page page-id-74096 wp-custom-logo elementor-default elementor-kit-10 elementor-page elementor-page-74096 phlox aux-dom-unready aux-full-width aux-resp aux-s-fhd aux-top-sticky  aux-page-animation-off"  data-framed="">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>
+<div id="inner-body">
+
+		<div data-elementor-type="header" data-elementor-id="74339" class="elementor elementor-74339 elementor-location-header">
+					<div class="elementor-section-wrap">
+								<section class="elementor-section elementor-top-section elementor-element elementor-element-512e5e6 elementor-section-full_width elementor-section-stretched elementor-section-height-min-height topBar elementor-hidden-phone elementor-section-height-default elementor-section-items-middle" data-id="512e5e6" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-d5c8412" data-id="d5c8412" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-8358d3c elementor-nav-menu--dropdown-tablet elementor-nav-menu__text-align-aside elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="8358d3c" data-element_type="widget" data-settings="{&quot;layout&quot;:&quot;horizontal&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i class=\&quot;fas fa-caret-down\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;},&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
+				<div class="elementor-widget-container">
+						<nav class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-underline e--animation-fade">
+				<!-- start master menu -->
+<ul id="menu-1-8358d3c" class="elementor-nav-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-74348"><a href="#" class="elementor-item elementor-item-anchor">About Us</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74350"><a href="https://amtechiot.com/meet-our-team/" class="elementor-sub-item">Meet Our Team</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-75077"><a href="https://amtechiot.com/client-references/" class="elementor-sub-item">Client References</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74718"><a href="https://amtechiot.com/contact-us/" class="elementor-sub-item">Contact Us</a></li>
+</ul>
+</li>
+</ul>
+<!-- end master menu -->
+			</nav>
+					<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle" aria-expanded="false">
+			<i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--open eicon-menu-bar"></i><i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--close eicon-close"></i>			<span class="elementor-screen-only">Menu</span>
+		</div>
+					<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
+				<!-- start master menu -->
+<ul id="menu-2-8358d3c" class="elementor-nav-menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-74348"><a href="#" class="elementor-item elementor-item-anchor" tabindex="-1">About Us</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74350"><a href="https://amtechiot.com/meet-our-team/" class="elementor-sub-item" tabindex="-1">Meet Our Team</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-75077"><a href="https://amtechiot.com/client-references/" class="elementor-sub-item" tabindex="-1">Client References</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74718"><a href="https://amtechiot.com/contact-us/" class="elementor-sub-item" tabindex="-1">Contact Us</a></li>
+</ul>
+</li>
+</ul>
+<!-- end master menu -->
+			</nav>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-1b36fa4" data-id="1b36fa4" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-00592af elementor-widget elementor-widget-text-editor" data-id="00592af" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+									</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-b7782de" data-id="b7782de" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-0779358 elementor-widget elementor-widget-image" data-id="0779358" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img width="956" height="134" src="https://amtechiot.com/wp-content/uploads/2020/09/sales_amtechiot-1.png" class="attachment-1536x1536 size-1536x1536 wp-image-75085" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-519250d elementor-section-height-min-height elementor-hidden-mobile elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="519250d" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-2ef9684" data-id="2ef9684" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-b3fe663 sticky-logo elementor-widget elementor-widget-image" data-id="b3fe663" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+													<a href="http://amtechiot.com/">
+							<img width="6084" height="1425" src="https://amtechiot.com/wp-content/uploads/2020/09/Logo-Website-01-1.png" class="attachment-full size-full wp-image-74908" alt="" loading="lazy" srcset="https://amtechiot.com/wp-content/uploads/2020/09/Logo-Website-01-1.png 6084w, https://amtechiot.com/wp-content/uploads/2020/09/Logo-Website-01-1-1536x360.png 1536w, https://amtechiot.com/wp-content/uploads/2020/09/Logo-Website-01-1-2048x480.png 2048w" sizes="(max-width: 6084px) 100vw, 6084px" />								</a>
+														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-101a9ed" data-id="101a9ed" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-94a09a6 elementor-nav-menu__align-right elementor-nav-menu--dropdown-tablet elementor-nav-menu__text-align-aside elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="94a09a6" data-element_type="widget" data-settings="{&quot;layout&quot;:&quot;horizontal&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i class=\&quot;fas fa-caret-down\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;},&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
+				<div class="elementor-widget-container">
+						<nav class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-underline e--animation-fade">
+				<!-- start master menu -->
+<ul id="menu-1-94a09a6" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-74759"><a href="https://amtechiot.com/our-technologies/" class="elementor-item">Our Technologies</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74343"><a href="https://amtechiot.com/amiot-platform/" class="elementor-sub-item">AMIoT Platform</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74342"><a href="https://amtechiot.com/bossc/" class="elementor-sub-item">BOSSC</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74341"><a href="https://amtechiot.com/property-relyance/" class="elementor-sub-item">Property Relyance</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-74684"><a target="_blank" rel="noopener" href="https://www.vuelogix.com/" class="elementor-sub-item">VueLogix</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74392"><a href="https://amtechiot.com/smart-buildings/" class="elementor-item">Smart Buildings</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74345"><a href="https://amtechiot.com/broadband-wireless/" class="elementor-item">Broadband &#038; Wireless</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74347"><a href="https://amtechiot.com/telecom/" class="elementor-item">Telecom</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74346"><a href="https://amtechiot.com/data-centers/" class="elementor-item">Data Centers</a></li>
+</ul>
+<!-- end master menu -->
+			</nav>
+					<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle" aria-expanded="false">
+			<i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--open eicon-menu-bar"></i><i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--close eicon-close"></i>			<span class="elementor-screen-only">Menu</span>
+		</div>
+					<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
+				<!-- start master menu -->
+<ul id="menu-2-94a09a6" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-74759"><a href="https://amtechiot.com/our-technologies/" class="elementor-item" tabindex="-1">Our Technologies</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74343"><a href="https://amtechiot.com/amiot-platform/" class="elementor-sub-item" tabindex="-1">AMIoT Platform</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74342"><a href="https://amtechiot.com/bossc/" class="elementor-sub-item" tabindex="-1">BOSSC</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74341"><a href="https://amtechiot.com/property-relyance/" class="elementor-sub-item" tabindex="-1">Property Relyance</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-74684"><a target="_blank" rel="noopener" href="https://www.vuelogix.com/" class="elementor-sub-item" tabindex="-1">VueLogix</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74392"><a href="https://amtechiot.com/smart-buildings/" class="elementor-item" tabindex="-1">Smart Buildings</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74345"><a href="https://amtechiot.com/broadband-wireless/" class="elementor-item" tabindex="-1">Broadband &#038; Wireless</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74347"><a href="https://amtechiot.com/telecom/" class="elementor-item" tabindex="-1">Telecom</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74346"><a href="https://amtechiot.com/data-centers/" class="elementor-item" tabindex="-1">Data Centers</a></li>
+</ul>
+<!-- end master menu -->
+			</nav>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-8127275 elementor-section-full_width elementor-section-height-min-height elementor-section-stretched elementor-hidden-desktop elementor-section-height-default elementor-section-items-middle" data-id="8127275" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-a928a86" data-id="a928a86" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-58cb02e elementor-hidden-desktop elementor-widget elementor-widget-image" data-id="58cb02e" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+													<a href="http://amtechiot.com/">
+							<img width="6084" height="1425" src="https://amtechiot.com/wp-content/uploads/2020/09/Logo-Website-01.png" class="attachment-full size-full wp-image-74361" alt="" loading="lazy" srcset="https://amtechiot.com/wp-content/uploads/2020/09/Logo-Website-01.png 6084w, https://amtechiot.com/wp-content/uploads/2020/09/Logo-Website-01-300x70.png 300w, https://amtechiot.com/wp-content/uploads/2020/09/Logo-Website-01-1024x240.png 1024w, https://amtechiot.com/wp-content/uploads/2020/09/Logo-Website-01-768x180.png 768w, https://amtechiot.com/wp-content/uploads/2020/09/Logo-Website-01-1536x360.png 1536w, https://amtechiot.com/wp-content/uploads/2020/09/Logo-Website-01-2048x480.png 2048w" sizes="(max-width: 6084px) 100vw, 6084px" />								</a>
+														</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-9754574 elementor-nav-menu__align-right elementor-nav-menu--stretch elementor-widget-mobile__width-initial elementor-absolute elementor-nav-menu--dropdown-tablet elementor-nav-menu__text-align-aside elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="9754574" data-element_type="widget" data-settings="{&quot;full_width&quot;:&quot;stretch&quot;,&quot;_position&quot;:&quot;absolute&quot;,&quot;layout&quot;:&quot;horizontal&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i class=\&quot;fas fa-caret-down\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;},&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
+				<div class="elementor-widget-container">
+						<nav class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-underline e--animation-fade">
+				<!-- start master menu -->
+<ul id="menu-1-9754574" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-74606"><a href="https://amtechiot.com/our-technologies/" class="elementor-item">Our Technologies</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74471"><a href="https://amtechiot.com/amiot-platform/" class="elementor-sub-item">AMIoT Platform</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74470"><a href="https://amtechiot.com/bossc/" class="elementor-sub-item">BOSSC</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74469"><a href="https://amtechiot.com/property-relyance/" class="elementor-sub-item">Property Relyance</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-74673"><a target="_blank" rel="noopener" href="http://vuelogix.com/" class="elementor-sub-item">VueLogix</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74472"><a href="https://amtechiot.com/smart-buildings/" class="elementor-item">Smart Buildings</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74473"><a href="https://amtechiot.com/broadband-wireless/" class="elementor-item">Broadband &#038; Wireless</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74474"><a href="https://amtechiot.com/telecom/" class="elementor-item">Telecom</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74475"><a href="https://amtechiot.com/data-centers/" class="elementor-item">Data Centers</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-74476"><a href="#" class="elementor-item elementor-item-anchor">About Us</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74477"><a href="https://amtechiot.com/meet-our-team/" class="elementor-sub-item">Meet Our Team</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74760"><a href="https://amtechiot.com/contact-us/" class="elementor-sub-item">Contact Us</a></li>
+</ul>
+</li>
+</ul>
+<!-- end master menu -->
+			</nav>
+					<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle" aria-expanded="false">
+			<i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--open eicon-menu-bar"></i><i aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--close eicon-close"></i>			<span class="elementor-screen-only">Menu</span>
+		</div>
+					<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
+				<!-- start master menu -->
+<ul id="menu-2-9754574" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-74606"><a href="https://amtechiot.com/our-technologies/" class="elementor-item" tabindex="-1">Our Technologies</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74471"><a href="https://amtechiot.com/amiot-platform/" class="elementor-sub-item" tabindex="-1">AMIoT Platform</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74470"><a href="https://amtechiot.com/bossc/" class="elementor-sub-item" tabindex="-1">BOSSC</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74469"><a href="https://amtechiot.com/property-relyance/" class="elementor-sub-item" tabindex="-1">Property Relyance</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-74673"><a target="_blank" rel="noopener" href="http://vuelogix.com/" class="elementor-sub-item" tabindex="-1">VueLogix</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74472"><a href="https://amtechiot.com/smart-buildings/" class="elementor-item" tabindex="-1">Smart Buildings</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74473"><a href="https://amtechiot.com/broadband-wireless/" class="elementor-item" tabindex="-1">Broadband &#038; Wireless</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74474"><a href="https://amtechiot.com/telecom/" class="elementor-item" tabindex="-1">Telecom</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74475"><a href="https://amtechiot.com/data-centers/" class="elementor-item" tabindex="-1">Data Centers</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-74476"><a href="#" class="elementor-item elementor-item-anchor" tabindex="-1">About Us</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74477"><a href="https://amtechiot.com/meet-our-team/" class="elementor-sub-item" tabindex="-1">Meet Our Team</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-74760"><a href="https://amtechiot.com/contact-us/" class="elementor-sub-item" tabindex="-1">Contact Us</a></li>
+</ul>
+</li>
+</ul>
+<!-- end master menu -->
+			</nav>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-b680a81" data-id="b680a81" data-element_type="column">
+			<div class="elementor-column-wrap">
+							<div class="elementor-widget-wrap">
+								</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+							</div>
+				</div>
+		
+    <main id="main" class="aux-main aux-territory  aux-single aux-page aux-boxed-container no-sidebar aux-sidebar-style-border aux-user-entry" >
+        <div class="aux-wrapper">
+            <div class="aux-container aux-fold">
+
+                <div id="primary" class="aux-primary" >
+                    <div class="content" role="main"  >
+
+                        
+                
+                        
+                        <article id="post-74096" class="post-74096 page type-page status-publish hentry">
+
+                            <div class="entry-main">
+
+                                <div class="entry-content">
+
+                                    		<div data-elementor-type="wp-page" data-elementor-id="74096" class="elementor elementor-74096">
+						<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+									<section class="elementor-section elementor-top-section elementor-element elementor-element-e0e26f2 elementor-section-full_width elementor-section-height-min-height elementor-section-stretched elementor-section-height-default elementor-section-items-middle" data-id="e0e26f2" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-14e43a7" data-id="14e43a7" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-b85105d elementor-widget elementor-widget-slider_revolution" data-id="b85105d" data-element_type="widget" data-widget_type="slider_revolution.default">
+				<div class="elementor-widget-container">
+			
+		<div class="wp-block-themepunch-revslider">
+			<!-- START Coming Soon REVOLUTION SLIDER 6.2.3 --><p class="rs-p-wp-fix"></p>
+			<rs-module-wrap id="rev_slider_1_1_wrapper" data-source="gallery" style="background:transparent;padding:0;margin:0px auto;margin-top:-10px;margin-bottom:-10px;">
+				<rs-module id="rev_slider_1_1" style="" data-version="6.2.3">
+					<rs-slides>
+						<rs-slide data-key="rs-1" data-title="Home" data-thumb="//amtechiot.com/wp-content/uploads/2020/09/slider1-1-e1527087507827-100x50.jpg" data-anim="ei:d;eo:d;s:600;r:0;t:fade;sl:d;">
+							<img decoding="async" src="//amtechiot.com/wp-content/uploads/2020/09/slider1-1-e1527087507827.jpg" title="slider1-1-e1527087507827" width="1094" height="499" class="rev-slidebg" data-no-retina>
+<!--
+							--><rs-layer
+								id="slider-1-slide-1-layer-1" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:117px,117px,117px,136px;yo:196px,196px,196px,136px;"
+								data-text="s:36,36,36,60;l:22;fw:700,700,700,600;a:inherit;"
+								data-vbility="t,t,t,f"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:5;font-family:Montserrat;"
+							>From Sensing 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-2" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:117px,117px,117px,136px;yo:246px,246px,246px,268px;"
+								data-text="s:24,24,24,42;l:29,29,29,48;ls:-1px;a:inherit;"
+								data-vbility="t,t,t,f"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:6;font-family:Montserrat;"
+							>We create smart technologies that <br>make true human connection<br> faster, stronger, better. 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-3" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:389px,389px,389px,136px;yo:196px;"
+								data-text="s:36,36,36,60;l:22;fw:800;a:inherit;"
+								data-vbility="t,t,t,f"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:7;font-family:Montserrat;"
+							>to Services 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-5" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:532px,532px,532px,136px;yo:201px,201px,201px,196px;"
+								data-text="s:36,36,36,60;l:22;fw:700,700,700,800;a:inherit;"
+								data-vbility="f,f,f,t"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:8;font-family:Montserrat;"
+							>to Services 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-6" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:532px,532px,532px,136px;yo:161px,161px,161px,136px;"
+								data-text="s:36,36,36,60;l:22;fw:700,700,700,600;a:inherit;"
+								data-vbility="f,f,f,t"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:9;font-family:Montserrat;"
+							>From Sensing 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-7" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:533px,533px,533px,136px;yo:248px,248px,248px,268px;"
+								data-text="s:36,36,36,42;l:41,41,41,48;ls:-1px;a:inherit;"
+								data-vbility="f,f,f,t"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:10;font-family:Montserrat;"
+							>We create smart <br>technologies that<br> make true human <br>connection faster,<br> stronger, better. 
+							</rs-layer><!--
+-->						</rs-slide>
+						<rs-slide data-key="rs-2" data-title="Smart Buildings" data-thumb="//amtechiot.com/wp-content/uploads/2020/09/AM-Tech-Slider-1c-100x50.jpg" data-anim="ei:d;eo:d;s:600;r:0;t:fade;sl:d;">
+							<img decoding="async" loading="lazy" src="//amtechiot.com/wp-content/uploads/2020/09/AM-Tech-Slider-1c.jpg" title="AM-Tech-Slider-1c" width="1440" height="700" class="rev-slidebg" data-no-retina>
+<!--
+							--><rs-layer
+								id="slider-1-slide-2-layer-1" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:117px,117px,117px,126px;yo:146px,146px,146px,116px;"
+								data-text="s:36,36,36,60;l:22,22,22,65;fw:600;a:inherit;"
+								data-vbility="t,t,t,f"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:5;font-family:Montserrat;"
+							>When buildings are smarter, 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-2-layer-2" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:117px,117px,117px,126px;yo:237px,237px,237px,418px;"
+								data-text="s:24,24,24,42;l:29,29,29,48;ls:-1px;a:inherit;"
+								data-vbility="t,t,t,f"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:6;font-family:Montserrat;"
+							>Our technology can help make your property <br>safer and more efficient. 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-2-layer-3" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:117px,117px,117px,126px;yo:187px,187px,187px,246px;"
+								data-text="s:36,36,36,60;l:22,22,22,65;fw:800;a:inherit;"
+								data-vbility="t,t,t,f"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:7;font-family:Montserrat;"
+							>the lives inside are just better. 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-2-layer-5" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:602px,602px,602px,126px;yo:191px,191px,191px,116px;"
+								data-text="s:36,36,36,60;l:22,22,22,65;fw:600;a:inherit;"
+								data-vbility="f,f,f,t"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:8;font-family:Montserrat;"
+							>When buildings <br>are smarter, 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-2-layer-6" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:601px,601px,601px,126px;yo:240px,240px,240px,246px;"
+								data-text="s:36,36,36,60;l:22,22,22,65;fw:800;a:inherit;"
+								data-vbility="f,f,f,t"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:9;font-family:Montserrat;"
+							>the lives inside <br>are just better. 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-2-layer-7" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:593px,593px,593px,126px;yo:291px,291px,291px,418px;"
+								data-text="s:36,36,36,42;l:41,41,41,48;ls:-1px;a:inherit;"
+								data-vbility="f,f,f,t"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:10;font-family:Montserrat;"
+							>Our technology can help<br>make your property safer<br>and more efficient. 
+							</rs-layer><!--
+-->						</rs-slide>
+						<rs-slide data-key="rs-3" data-title="Field &amp; Facility" data-thumb="//amtechiot.com/wp-content/uploads/2020/09/AM-Tech-Slider-2b-100x50.jpg" data-anim="ei:d;eo:d;s:600;r:0;t:fade;sl:d;">
+							<img decoding="async" loading="lazy" src="//amtechiot.com/wp-content/uploads/2020/09/AM-Tech-Slider-2b.jpg" title="AM-Tech-Slider-2b" width="1440" height="700" class="rev-slidebg" data-no-retina>
+<!--
+							--><rs-layer
+								id="slider-1-slide-3-layer-1" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:117px,117px,117px,126px;yo:146px,146px,146px,116px;"
+								data-text="s:36,36,36,60;l:22,22,22,65;fw:600;a:inherit;"
+								data-vbility="t,t,t,f"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:5;font-family:Montserrat;"
+							>Our field & facility services 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-3-layer-2" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:117px,117px,117px,126px;yo:237px,237px,237px,418px;"
+								data-text="s:24,24,24,42;l:29,29,29,48;ls:-1px;a:inherit;"
+								data-vbility="t,t,t,f"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:6;font-family:Montserrat;"
+							>AM Technologies’ solutions improve efficiency and<br> drive greater productivity. Our monitoring systems <br>provide valuable insights that will streamline the<br> deployment of your workforce. 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-3-layer-3" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:117px,117px,117px,126px;yo:187px,187px,187px,246px;"
+								data-text="s:36,36,36,60;l:22,22,22,65;fw:800;a:inherit;"
+								data-vbility="t,t,t,f"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:7;font-family:Montserrat;"
+							>support greater team efficiency. 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-3-layer-5" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:552px,552px,552px,126px;yo:100px,100px,100px,116px;"
+								data-text="s:36,36,36,60;l:22,22,22,65;fw:600;a:inherit;"
+								data-vbility="f,f,f,t"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:8;font-family:Montserrat;"
+							>Our field & <br>facility services 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-3-layer-6" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:744px,744px,744px,126px;yo:240px,240px,240px,246px;"
+								data-text="s:36,36,36,60;l:22,22,22,65;fw:800;a:inherit;"
+								data-vbility="f,f,f,t"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:9;font-family:Montserrat;"
+							>support greater <br>team efficiency. 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-3-layer-7" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:753px,753px,753px,126px;yo:291px,291px,291px,418px;"
+								data-text="s:24,24,24,42;l:29,29,29,48;ls:-1px;a:inherit;"
+								data-vbility="f,f,f,t"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:10;font-family:Montserrat;"
+							>AM Technologies’ solutions<br> improve efficiency and drive <br>greater productivity.
+ 
+							</rs-layer><!--
+-->						</rs-slide>
+						<rs-slide data-key="rs-4" data-title="Remote BT Station" data-thumb="//amtechiot.com/wp-content/uploads/2020/09/AM-Tech-Slider-3-100x50.jpg" data-anim="ei:d;eo:d;s:600;r:0;t:fade;sl:d;">
+							<img decoding="async" loading="lazy" src="//amtechiot.com/wp-content/uploads/2020/09/AM-Tech-Slider-3.jpg" title="AM-Tech-Slider-3" width="1440" height="700" data-bg="p:70% 0%;" class="rev-slidebg" data-no-retina>
+<!--
+							--><rs-layer
+								id="slider-1-slide-4-layer-1" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:99px,99px,99px,362px;yo:176px,176px,176px,75px;"
+								data-text="s:36,36,36,60;l:22,22,22,65;fw:600;a:inherit,inherit,inherit,right;"
+								data-vbility="f,f,f,t"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:5;font-family:Montserrat;"
+							>Our technology<br>goes far and wide 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-4-layer-2" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:109px,109px,109px,324px;yo:266px,266px,266px,313px;"
+								data-text="s:24,24,24,42;l:29,29,29,48;ls:-1px;a:inherit,inherit,inherit,right;"
+								data-vbility="f,f,f,t"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:6;font-family:Montserrat;"
+							>AM Technologies’ platforms  <br>make it possible to monitor <br>your Base Transceiver Stations <br> from anywhere in the world. 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-4-layer-3" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:104px,104px,104px,254px;yo:226px,226px,226px,229px;"
+								data-text="s:36,36,36,60;l:22;fw:800;a:inherit;"
+								data-vbility="f,f,f,t"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:7;font-family:Montserrat;"
+							>so you don't have to. 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-4-layer-8" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:454px,454px,454px,312px;yo:146px,146px,146px,76px;"
+								data-text="s:36,36,36,60;l:22,22,22,65;fw:600;a:inherit;"
+								data-vbility="t,t,t,f"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:8;font-family:Montserrat;"
+							>Our technology goes far and wide 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-4-layer-9" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="xo:688px,688px,688px,318px;yo:187px,187px,187px,262px;"
+								data-text="s:36,36,36,60;l:22;fw:800;a:inherit;"
+								data-vbility="t,t,t,f"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:9;font-family:Montserrat;"
+							>so you don't have to. 
+							</rs-layer><!--
+
+							--><rs-layer
+								id="slider-1-slide-4-layer-10" 
+								data-type="text"
+								data-color="#000000"
+								data-rsp_ch="on"
+								data-xy="x:r,r,r,l;xo:155px,155px,155px,322px;yo:237px,237px,237px,313px;"
+								data-text="s:24,24,24,42;l:29,29,29,48;ls:-1px;a:right,right,right,inherit;"
+								data-vbility="t,t,t,f"
+								data-frame_1="sR:10;"
+								data-frame_999="o:0;st:w;sR:8690;"
+								style="z-index:10;font-family:Montserrat;"
+							>AM Technologies’ platforms make it possible to monitor<br> your hard-to-reach Base Transceiver Station sites<br> and remotely ensure that things are running smoothly. 
+							</rs-layer><!--
+-->						</rs-slide>
+					</rs-slides>
+					<rs-static-layers><!--
+
+							--><rs-layer
+								id="slider-1-slide-1-layer-11" 
+								class="rs-layer-static"
+								data-type="image"
+								data-rsp_ch="on"
+								data-xy="xo:21px;yo:20px;"
+								data-text="l:22;a:inherit;"
+								data-dim="w:['300px','300px','300px','300px'];h:['66px','66px','66px','66px'];"
+								data-onslides="s:1;"
+								data-frame_0="tp:600;"
+								data-frame_1="tp:600;st:0;"
+								data-frame_999="o:0;tp:600;st:w;sR:8700;"
+								style="z-index:30;"
+							> 
+							</rs-layer><!--
+					--></rs-static-layers>
+					<rs-progress class="rs-bottom" style="visibility: hidden !important;"></rs-progress>
+				</rs-module>
+				<script type="rocketlazyloadscript" data-rocket-type="text/javascript">window.addEventListener('DOMContentLoaded', function() {
+					setREVStartSize({c: 'rev_slider_1_1',rl:[1240,1240,1240,480],el:[768,768,768,720],gw:[1240,1240,1240,1080],gh:[768,768,768,720],type:'standard',justify:'',layout:'fullwidth',mh:"0"});
+					var	revapi1,
+						tpj;
+					jQuery(function() {
+						tpj = jQuery;
+						revapi1 = tpj("#rev_slider_1_1")
+						if(revapi1==undefined || revapi1.revolution == undefined){
+							revslider_showDoubleJqueryError("rev_slider_1_1");
+						}else{
+							revapi1.revolution({
+								sliderLayout:"fullwidth",
+								visibilityLevels:"1240,1240,1240,480",
+								gridwidth:"1240,1240,1240,1080",
+								gridheight:"768,768,768,720",
+								spinner:"spinner0",
+								perspective:600,
+								perspectiveType:"local",
+								editorheight:"768,768,960,720",
+								responsiveLevels:"1240,1240,1240,480",
+								disableProgressBar:"on",
+								navigation: {
+									mouseScrollNavigation:false,
+									arrows: {
+										enable:true,
+										style:"custom",
+										hide_onleave:true,
+										hide_delay:1200,
+										hide_delay_mobile:10,
+										left: {
+
+										},
+										right: {
+
+										}
+									},
+									bullets: {
+										enable:true,
+										tmp:"<span class=\"tp-bullet-image\"></span><span class=\"tp-bullet-imageoverlay\"></span><span class=\"tp-bullet-title\">{{title}}</span>",
+										style:"zeus"
+									}
+								},
+								fallbacks: {
+									allowHTML5AutoPlayOnAndroid:true
+								},
+							});
+						}
+						
+					});
+				});</script>
+				<script type="rocketlazyloadscript">
+					var htmlDivCss = unescape("%23rev_slider_1_1_wrapper%20.custom.tparrows%20%7B%0A%09cursor%3Apointer%3B%0A%09background%3A%23000%3B%0A%09background%3Argba%280%2C0%2C0%2C0.5%29%3B%0A%09width%3A40px%3B%0A%09height%3A40px%3B%0A%09position%3Aabsolute%3B%0A%09display%3Ablock%3B%0A%09z-index%3A1000%3B%0A%7D%0A%23rev_slider_1_1_wrapper%20.custom.tparrows%3Ahover%20%7B%0A%09background%3A%23000%3B%0A%7D%0A%23rev_slider_1_1_wrapper%20.custom.tparrows%3Abefore%20%7B%0A%09font-family%3A%20%27revicons%27%3B%0A%09font-size%3A15px%3B%0A%09color%3A%23fff%3B%0A%09display%3Ablock%3B%0A%09line-height%3A%2040px%3B%0A%09text-align%3A%20center%3B%0A%7D%0A%23rev_slider_1_1_wrapper%20.custom.tparrows.tp-leftarrow%3Abefore%20%7B%0A%09content%3A%20%27%5Ce824%27%3B%0A%7D%0A%23rev_slider_1_1_wrapper%20.custom.tparrows.tp-rightarrow%3Abefore%20%7B%0A%09content%3A%20%27%5Ce825%27%3B%0A%7D%0A%0A%0A%23rev_slider_1_1_wrapper%20.zeus%20.tp-bullet%20%7B%0A%20%20%20%20%20box-sizing%3Acontent-box%3B%20-webkit-box-sizing%3Acontent-box%3B%20border-radius%3A50%25%3B%0A%20%20%20%20%20%20background-color%3A%20rgba%280%2C%200%2C%200%2C%200%29%3B%0A%20%20%20%20%20%20-webkit-transition%3A%20opacity%200.3s%20ease%3B%0A%20%20%20%20%20%20transition%3A%20opacity%200.3s%20ease%3B%0A%20%20%20%20width%3A13px%3Bheight%3A13px%3B%0A%20%20%20%20border%3A2px%20solid%20%23ffffff%3B%0A%20%7D%0A%23rev_slider_1_1_wrapper%20.zeus%20.tp-bullet%3Aafter%20%7B%0A%20%20content%3A%20%27%27%3B%0A%20%20position%3A%20absolute%3B%0A%20%20width%3A%20100%25%3B%0A%20%20height%3A%20100%25%3B%0A%20%20left%3A%200%3B%0A%20%20border-radius%3A%2050%25%3B%0A%20%20background-color%3A%20%23ffffff%3B%0A%20%20-webkit-transform%3A%20scale%280%29%3B%0A%20%20transform%3A%20scale%280%29%3B%0A%20%20-webkit-transform-origin%3A%2050%25%2050%25%3B%0A%20%20transform-origin%3A%2050%25%2050%25%3B%0A%20%20-webkit-transition%3A%20-webkit-transform%200.3s%20ease%3B%0A%20%20transition%3A%20transform%200.3s%20ease%3B%0A%7D%0A%23rev_slider_1_1_wrapper%20.zeus%20.tp-bullet%3Ahover%3Aafter%2C%0A%23rev_slider_1_1_wrapper%20.zeus%20.tp-bullet.selected%3Aafter%7B%0A%20%20%20%20-webkit-transform%3A%20scale%281.2%29%3B%0A%20%20transform%3A%20scale%281.2%29%3B%0A%7D%0A%20%20%0A%20%23rev_slider_1_1_wrapper%20.zeus%20.tp-bullet-image%2C%0A%20%23rev_slider_1_1_wrapper%20.zeus%20.tp-bullet-imageoverlay%7B%0A%20%20%20%20%20%20%20%20width%3A135px%3B%0A%20%20%20%20%20%20%20%20height%3A60px%3B%0A%20%20%20%20%20%20%20%20position%3Aabsolute%3B%0A%20%20%20%20%20%20%20%20background%3A%23000%3B%0A%20%20%20%20%20%20%20%20background%3Argba%280%2C0%2C0%2C0.5%29%3B%0A%20%20%20%20%20%20%20%20bottom%3A13px%3B%0A%20%20%20%20%20%20%20%20margin-bottom%3A10px%3B%0A%20%20%20%20%20%20%20%20transform%3AtranslateX%28-50%25%29%3B%0A%20%20%20%20%20%20%20-webkit-transform%3AtranslateX%28-50%25%29%3B%0A%20%20%20%20%20%20%20%20box-sizing%3Aborder-box%3B%0A%20%20%20%20%20%20%20%20background-size%3Acover%3B%0A%20%20%20%20%20%20%20%20background-position%3Acenter%20center%3B%0A%20%20%20%20%20%20%20%20visibility%3Ahidden%3B%0A%20%20%20%20%20%20%20%20opacity%3A0%3B%0A%20%20%20%20%20%20%20%20%20-webkit-backface-visibility%3A%20hidden%3B%20%0A%20%20%20%20%20%20%20%20backface-visibility%3A%20hidden%3B%0A%20%20%20%20%20%20%20%20-webkit-transform-origin%3A%2050%25%2050%25%3B%0A%20%20%20%20transform-origin%3A%2050%25%2050%25%3B%0A%20%20%20%20%20%20-webkit-transition%3A%20all%200.3s%20ease%3B%0A%20%20%20%20%20%20transition%3A%20all%200.3s%20ease%3B%0A%20%20%20%20%20%20%20%20border-radius%3A4px%3B%0A%7D%0A%20%20%20%20%20%20%20%20%20%20%0A%0A%23rev_slider_1_1_wrapper%20.zeus%20.tp-bullet-title%2C%0A%23rev_slider_1_1_wrapper%20.zeus%20.tp-bullet-imageoverlay%20%7B%0A%20%20%20%20%20%20%20%20z-index%3A2%3B%0A%20%20%20%20%20%20%20%20-webkit-transition%3A%20all%200.5s%20ease%3B%0A%20%20%20%20%20%20transition%3A%20all%200.5s%20ease%3B%0A%20%20%20%20%20%20%20%20transform%3AtranslateX%28-50%25%29%3B%0A%20%20%20%20%20%20%20-webkit-transform%3AtranslateX%28-50%25%29%3B%0A%7D%20%20%20%20%20%0A%23rev_slider_1_1_wrapper%20.zeus%20.tp-bullet-title%20%7B%20%0A%20%20%20%20%20%20%20%20color%3A%23ffffff%3B%0A%20%20%20%20%20%20%20%20text-align%3Acenter%3B%0A%20%20%20%20%20%20%20%20line-height%3A15px%3B%0A%20%20%20%20%20%20%20%20font-size%3A13px%3B%0A%20%20%20%20%20%20%20%20font-weight%3A600%3B%20%20%0A%20%20%20%20%20%20%20%20z-index%3A3%3B%0A%20%20%20%20%20%20%20%20%20visibility%3Ahidden%3B%0A%20%20%20%20%20%20%20%20opacity%3A0%3B%0A%20%20%20%20%20%20%20%20%20-webkit-backface-visibility%3A%20hidden%3B%20%0A%20%20%20%20%20%20%20%20backface-visibility%3A%20hidden%3B%0A%20%20%20%20%20%20%20%20-webkit-transform-origin%3A%2050%25%2050%25%3B%0A%20%20%20%20transform-origin%3A%2050%25%2050%25%3B%0A%20%20%20%20%20%20-webkit-transition%3A%20all%200.3s%20ease%3B%0A%20%20%20%20%20%20transition%3A%20all%200.3s%20ease%3B%0A%20%20%20%20%20%20%20%20position%3Aabsolute%3B%0A%20%20%20%20%20%20%20%20bottom%3A45px%3B%0A%20%20%20%20%20%20%20%20width%3A135px%3B%0A%20%20%20%20%20%20vertical-align%3Amiddle%3B%0A%20%20%20%20%20%20%20%0A%7D%0A%20%20%20%20%20%20%0A%23rev_slider_1_1_wrapper%20.zeus%20.tp-bullet%3Ahover%20.tp-bullet-title%2C%0A%23rev_slider_1_1_wrapper%20.zeus%20.tp-bullet%3Ahover%20.tp-bullet-image%2C%0A%23rev_slider_1_1_wrapper%20.zeus%20.tp-bullet%3Ahover%20.tp-bullet-imageoverlay%7B%0A%20%20%20%20%20%20opacity%3A1%3B%0A%20%20%20%20%20%20visibility%3Avisible%3B%0A%20%20%20%20-webkit-transform%3AtranslateY%280px%29%20translateX%28-50%25%29%3B%0A%20%20%20%20%20%20transform%3AtranslateY%280px%29%20translateX%28-50%25%29%3B%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%7D%0A%0A%0A%0A%0A%2F%2A%20VERTICAL%20RIGHT%20%2A%2F%0A%0A%23rev_slider_1_1_wrapper%20.zeus.nav-dir-vertical%20.tp-bullet-image%2C%0A%23rev_slider_1_1_wrapper%20.zeus.nav-dir-vertical%20.tp-bullet-imageoverlay%7B%0A%20%20bottom%3Aauto%3B%0A%20%20margin-right%3A10px%3B%0A%20%20margin-bottom%3A0px%3B%0A%20%20right%3A13px%3B%0A%20%20transform%3A%20translateX%280px%29%20translateY%28-50%25%29%3B%0A%20%20-webkit-transform%3A%20%20translateX%280px%29%20translateY%28-50%25%29%3B%0A%20%20%0A%7D%0A%0A%23rev_slider_1_1_wrapper%20.zeus.nav-dir-vertical%20.tp-bullet%3Ahover%20.tp-bullet-image%20%7B%0A%20%20transform%3A%20translateX%280px%29%20translateY%28-50%25%29%3B%0A%20%20-webkit-transform%3A%20translateX%280px%29%20translateY%28-50%25%29%3B%0A%7D%0A%0A%0A%23rev_slider_1_1_wrapper%20.zeus.nav-dir-vertical%20.tp-bullet-title%2C%0A%23rev_slider_1_1_wrapper%20.zeus.nav-dir-vertical%20.tp-bullet-imageoverlay%20%7B%0A%20%20%20%20%20%20%20%20z-index%3A2%3B%0A%20%20%20%20%20%20%20%20-webkit-transition%3A%20all%200.5s%20ease%3B%0A%20%20%20%20%20%20%20transition%3A%20all%200.5s%20ease%3B%0A%20%20%20%20%20%20%20%20transform%3A%20translateX%280px%29%20translateY%28-50%25%29%3B%0A%20%20%20%20%20%20%20-webkit-transform%3A%20translateX%280px%29%20translateY%28-50%25%29%3B%0A%7D%20%20%20%0A%0A%0A%23rev_slider_1_1_wrapper%20.zeus.nav-dir-vertical%20.tp-bullet-title%20%7B%0A%20%20%20%20%20bottom%3Aauto%3B%0A%20%20%20%20%20right%3A100%25%3B%0A%20%20%20%20%20margin-right%3A10px%3B%0A%7D%0A%0A%23rev_slider_1_1_wrapper%20.zeus.nav-dir-vertical%20.tp-bullet%3Ahover%20.tp-bullet-title%2C%0A%23rev_slider_1_1_wrapper%20.zeus.nav-dir-vertical%20.tp-bullet%3Ahover%20.tp-bullet-image%2C%0A%23rev_slider_1_1_wrapper%20.zeus.nav-dir-vertical%20.tp-bullet%3Ahover%20.tp-bullet-imageoverlay%20%7B%0A%20transform%3A%20translateX%280px%29%20translateY%28-50%25%29%3B%0A%20%20-webkit-transform%3A%20translateX%280px%29%20translateY%28-50%25%29%3B%0A%7D%0A%0A%0A%0A%2F%2A%20VERTICAL%20LEFT%20%2A%2F%0A%0A%23rev_slider_1_1_wrapper%20.zeus.nav-dir-vertical.nav-pos-hor-left%20.tp-bullet-image%2C%0A%23rev_slider_1_1_wrapper%20.zeus.nav-dir-vertical.nav-pos-hor-left%20.tp-bullet-imageoverlay%7B%0A%20%20bottom%3Aauto%3B%0A%20%20margin-left%3A10px%3B%0A%20%20margin-bottom%3A0px%3B%0A%20%20left%3A13px%3B%0A%20%20transform%3A%20%20translateX%280px%29%20translateY%28-50%25%29%3B%0A%20%20-webkit-transform%3A%20%20translateX%280px%29%20translateY%28-50%25%29%3B%0A%20%20%0A%7D%0A%0A%23rev_slider_1_1_wrapper%20.zeus.nav-dir-vertical.nav-pos-hor-left%20.tp-bullet%3Ahover%20.tp-bullet-image%20%7B%0A%20%20transform%3A%20translateX%280px%29%20translateY%28-50%25%29%3B%0A%20%20-webkit-transform%3A%20translateX%280px%29%20translateY%28-50%25%29%3B%0A%7D%0A%0A%23rev_slider_1_1_wrapper%20.zeus.nav-dir-vertical.nav-pos-hor-left%20.tp-bullet-title%2C%0A%23rev_slider_1_1_wrapper%20.zeus.nav-dir-vertical.nav-pos-hor-left%20.tp-bullet-imageoverlay%20%7B%0A%20%20%20%20%20%20%20%20z-index%3A2%3B%0A%20%20%20%20%20%20%20%20-webkit-transition%3A%20all%200.5s%20ease%3B%0A%20%20%20%20%20%20%20transition%3A%20all%200.5s%20ease%3B%0A%20%20%20%20%20%20%20%20transform%3AtranslateX%280px%29%20translateY%28-50%25%29%3B%0A%20%20%20%20%20%20%20-webkit-transform%3AtranslateX%280px%29%20translateY%28-50%25%29%3B%0A%7D%20%20%20%0A%0A%0A%23rev_slider_1_1_wrapper%20.zeus.nav-dir-vertical.nav-pos-hor-left%20.tp-bullet-title%20%7B%0A%20%20%20%20%20bottom%3Aauto%3B%0A%20%20%20%20%20left%3A100%25%3B%0A%20%20%20%20%20margin-left%3A10px%3B%0A%7D%0A%0A%2F%2A%20HORIZONTAL%20TOP%20%2A%2F%0A%0A%23rev_slider_1_1_wrapper%20.zeus.nav-dir-horizontal.nav-pos-ver-top%20.tp-bullet-image%2C%0A%23rev_slider_1_1_wrapper%20.zeus.nav-dir-horizontal.nav-pos-ver-top%20.tp-bullet-imageoverlay%7B%0A%20%20bottom%3Aauto%3B%0A%20%20top%3A13px%3B%0A%20%20margin-top%3A10px%3B%0A%20%20margin-bottom%3A0px%3B%0A%20%20left%3A0px%3B%0A%20%20transform%3AtranslateY%280px%29%20translateX%28-50%25%29%3B%0A%20%20-webkit-transform%3AtranslateX%280px%29%20translateX%28-50%25%29%3B%0A%20%20%0A%7D%0A%0A%23rev_slider_1_1_wrapper%20.zeus.nav-dir-horizontal.nav-pos-ver-top%20.tp-bullet%3Ahover%20.tp-bullet-image%20%7B%0A%20%20%0A%20%20transform%3A%20scale%281%29%20translateY%280px%29%20translateX%28-50%25%29%3B%0A%20%20-webkit-transform%3A%20scale%281%29%20translateY%280px%29%20translateX%28-50%25%29%3B%0A%20%20%0A%7D%0A%0A%23rev_slider_1_1_wrapper%20.zeus.nav-dir-horizontal.nav-pos-ver-top%20.tp-bullet-title%2C%0A%23rev_slider_1_1_wrapper%20.zeus.nav-dir-horizontal.nav-pos-ver-top%20.tp-bullet-imageoverlay%20%7B%0A%20%20%20%20%20%20%20%20z-index%3A2%3B%0A%20%20%20%20%20%20%20%20-webkit-transition%3A%20all%200.5s%20ease%3B%0A%20%20%20%20%20%20%20transition%3A%20all%200.5s%20ease%3B%0A%20%20%20%20%20%20%20%20transform%3AtranslateY%280px%29%20translateX%28-50%25%29%3B%0A%20%20%20%20%20%20%20-webkit-transform%3AtranslateY%280px%29%20translateX%28-50%25%29%3B%0A%7D%20%20%20%0A%0A%0A%23rev_slider_1_1_wrapper%20.zeus.nav-dir-horizontal.nav-pos-ver-top%20.tp-bullet-title%20%7B%0A%20%20%20%20%20bottom%3Aauto%3B%0A%20%20%20%20%20top%3A13px%3B%0A%20%20%20%20%20margin-top%3A20px%3B%0A%7D%0A%0A");
+					var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
+					if(htmlDiv) {
+						htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+					}else{
+						var htmlDiv = document.createElement('div');
+						htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
+						document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
+					}
+				</script>
+				<script type="rocketlazyloadscript">
+					var htmlDivCss = unescape("%0A%0A%0A%0A%0A%0A%0A%0A");
+					var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
+					if(htmlDiv) {
+						htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+					}else{
+						var htmlDiv = document.createElement('div');
+						htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
+						document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
+					}
+				</script>
+			</rs-module-wrap>
+			<!-- END REVOLUTION SLIDER -->
+</div>
+
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-02563f9 elementor-section-full_width elementor-section-stretched elementor-hidden-desktop elementor-section-height-default elementor-section-height-default" data-id="02563f9" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-aed29a7" data-id="aed29a7" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-23d54cf elementor-widget elementor-widget-spacer" data-id="23d54cf" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-e550c7c elementor-widget elementor-widget-heading" data-id="e550c7c" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default"><marquee>AM Technologies Wins the prestigious Aegis Graham Bell Award (9th Edition) for "Innovation IoT"</marquee></h2>		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-872069c elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="872069c" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-eb5b79e" data-id="eb5b79e" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-2b6c868 elementor-widget elementor-widget-heading" data-id="2b6c868" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">About Us</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-874e525 elementor-widget elementor-widget-text-editor" data-id="874e525" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>With more than four decades of experience serving satisfied customers across the globe, AM Technologies is a pioneer in the development of monitoring systems for myriad applications, employing technology that has evolved into the Internet of Things.</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-85dd7fd" data-id="85dd7fd" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-94e2126 elementor-widget elementor-widget-text-editor" data-id="94e2126" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>Our solutions enhance the sense of <strong>things that <br /></strong><strong>matter to you.</strong></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-fad198e elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="fad198e" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-28f0837" data-id="28f0837" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-d073fe0 elementor-widget elementor-widget-heading" data-id="d073fe0" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Our Areas of Expertise</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-1c331bc elementor-widget elementor-widget-text-editor" data-id="1c331bc" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>We bring decades of experience and relationships to craft products and strategies designed to connect people to the systems, properties and places they value. Our services and insights create pathways to better data, health, connectivity and community.</p>					</div>
+						</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-879d000 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="879d000" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-9ea52f2" data-id="9ea52f2" data-element_type="column">
+			<div class="elementor-column-wrap">
+							<div class="elementor-widget-wrap">
+								</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-4256cab" data-id="4256cab" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-21a334b elementor-widget elementor-widget-text-editor" data-id="21a334b" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<h4>Smart Buildings</h4>					</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-092b24e elementor-widget elementor-widget-text-editor" data-id="092b24e" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>Protecting the property and its occupants should be Priority One for any Smart Building.  Our Property Relyance™ system brings Internet of Things technology to multifamily and commercial buildings, monitoring the environmental conditions and security of the property.</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-67a8a9c elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="67a8a9c" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-57cf055" data-id="57cf055" data-element_type="column">
+			<div class="elementor-column-wrap">
+							<div class="elementor-widget-wrap">
+								</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-563694c" data-id="563694c" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-6c1296d elementor-widget elementor-widget-text-editor" data-id="6c1296d" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<h4>Broadband &amp; Wireless</h4>					</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-f845ad8 elementor-widget elementor-widget-text-editor" data-id="f845ad8" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>HFC system monitoring and BTS site monitoring share the same overall objective: enabling remote visibility into the operation and condition of outside plant equipment, to ensure network reliability. AM Technologies’ BOSSc platform is used by Broadband and Mobile operators throughout the world, monitoring more than 100,000 network equipment sites.</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-d179c4d elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="d179c4d" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-d8d7887" data-id="d8d7887" data-element_type="column">
+			<div class="elementor-column-wrap">
+							<div class="elementor-widget-wrap">
+								</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8739377" data-id="8739377" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-522c561 elementor-widget elementor-widget-text-editor" data-id="522c561" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<h4>Telecommunications</h4>					</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-f2a1b84 elementor-widget elementor-widget-text-editor" data-id="f2a1b84" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>For Telecom field service organizations, the connection of remote IoT sensors to cognitive cloud intelligence enables an unprecedented level of workforce management and productivity. Our AMIoT platform enables customers to deploy limited resources in a more efficient manner with exception management, automated trouble ticketing and geolocation/direction finding.</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-1c40956 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1c40956" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-9b1b77b" data-id="9b1b77b" data-element_type="column">
+			<div class="elementor-column-wrap">
+							<div class="elementor-widget-wrap">
+								</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-16b8a12" data-id="16b8a12" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-26a5a15 elementor-widget elementor-widget-text-editor" data-id="26a5a15" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<h4>Data Centers</h4>					</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-f1db418 elementor-widget elementor-widget-text-editor" data-id="f1db418" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>Rack-level visibility of energy usage and environmental conditions is an absolute necessity in data centers. Our AMIoT platform collects this vital data in real time and monitors for exceptions, facilitating the efficient use of resources.</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-8649f0d elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="8649f0d" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c13b6db" data-id="c13b6db" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-37a244e elementor-widget elementor-widget-heading" data-id="37a244e" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Our Technologies</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-f0a5520 elementor-widget elementor-widget-text-editor" data-id="f0a5520" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>We deliver complete systems of software and hardware, and handle large manufacturing operations. We can augment your existing team, or bring your vision to life with a complete solution.</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-cb1adf6 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="cb1adf6" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-c25f3ec" data-id="c25f3ec" data-element_type="column">
+			<div class="elementor-column-wrap">
+							<div class="elementor-widget-wrap">
+								</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-389cd21" data-id="389cd21" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-9b9cb5e elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="9b9cb5e" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img decoding="async" width="258" height="258" src="https://amtechiot.com/wp-content/uploads/2020/09/Connect.png" class="attachment-full size-full wp-image-74133" alt="" loading="lazy" srcset="https://amtechiot.com/wp-content/uploads/2020/09/Connect.png 258w, https://amtechiot.com/wp-content/uploads/2020/09/Connect-150x150.png 150w" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Connect</h3></div></div>		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-a745df3" data-id="a745df3" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-64c5bc3 elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="64c5bc3" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img decoding="async" width="258" height="258" src="https://amtechiot.com/wp-content/uploads/2020/09/Monitor.png" class="attachment-full size-full wp-image-74134" alt="" loading="lazy" srcset="https://amtechiot.com/wp-content/uploads/2020/09/Monitor.png 258w, https://amtechiot.com/wp-content/uploads/2020/09/Monitor-150x150.png 150w" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Monitor</h3></div></div>		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-ed3bfca" data-id="ed3bfca" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-3a717a4 elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="3a717a4" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img decoding="async" width="258" height="258" src="https://amtechiot.com/wp-content/uploads/2020/09/Act.png" class="attachment-full size-full wp-image-74132" alt="" loading="lazy" srcset="https://amtechiot.com/wp-content/uploads/2020/09/Act.png 258w, https://amtechiot.com/wp-content/uploads/2020/09/Act-150x150.png 150w" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Act</h3></div></div>		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-d3cc300" data-id="d3cc300" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-fd69d04 elementor-widget elementor-widget-text-editor" data-id="fd69d04" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				You Make the Rules. Literally.
+<strong>Customizable logic lets you address what matters most.					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-462cc2c elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="462cc2c" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-cbe4c07" data-id="cbe4c07" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-f36208f elementor-widget elementor-widget-heading" data-id="f36208f" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">
+Featured Initiative: Make Affordable Housing Smart</h2>		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-6b9b9ba elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="6b9b9ba" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-ba2cb46" data-id="ba2cb46" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-d84a367 elementor-widget elementor-widget-image" data-id="d84a367" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="258" height="52" src="https://amtechiot.com/wp-content/uploads/2020/09/AM-Tech-Affordable-Housing-Logo-1-uai-258x52-1.png" class="attachment-full size-full wp-image-74155" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-24ced13 elementor-widget elementor-widget-text-editor" data-id="24ced13" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>AM Technologies, in partnership with the JKH Foundation has launched the ‘Make Affordable Housing Smart’ initiative as part of its Corporate Social Responsibility program.</p>					</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-93a128f elementor-widget elementor-widget-text-editor" data-id="93a128f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><br />The initiative is designed to equip affordable housing apartment buildings with first-class sensing and monitoring solutions, aimed at enhancing property management system, adding value to the building, as well and contributing to the sustainability of affordable housing.</p><p>Currently, AM Technologies and the Foundation are working with Community League Of The Heights (CLOTH), a nonprofit affordable housing developer in New York to create a demonstration of the efficiencies of AM’s Property Relyance system in two apartment buildings, including a ‘special needs’ building for the formerly homeless.</p><p>The initiative offers AM’s technology to nonprofit housing developers at a deep discount, and the program includes capacity building and training of the property managers on both the hardware and software aspects of the technology. The initiative has also drawn attention from a number of nonprofit developers nationwide.</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-86b7cd4" data-id="86b7cd4" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-6a391b9 elementor-widget elementor-widget-text-editor" data-id="6a391b9" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				Protecting the property and its occupants with<strong> connected devices, monitoring systems and a mobile app.</strong>					</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-d0a5c8e elementor-widget elementor-widget-text-editor" data-id="d0a5c8e" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>The Property Relyance App</p>					</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-ea0ede9 elementor-widget elementor-widget-image" data-id="ea0ede9" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="258" height="481" src="https://amtechiot.com/wp-content/uploads/2020/09/Property-Relyance-App.png" class="elementor-animation-pulse-shrink attachment-large size-large wp-image-74144" alt="" loading="lazy" srcset="https://amtechiot.com/wp-content/uploads/2020/09/Property-Relyance-App.png 258w, https://amtechiot.com/wp-content/uploads/2020/09/Property-Relyance-App-161x300.png 161w" sizes="(max-width: 258px) 100vw, 258px" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-e611d84 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="e611d84" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-69c10a7" data-id="69c10a7" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-79b8a06 elementor-widget elementor-widget-text-editor" data-id="79b8a06" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>Technologies Deployed</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-5201339" data-id="5201339" data-element_type="column">
+			<div class="elementor-column-wrap">
+							<div class="elementor-widget-wrap">
+								</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-79ac9be elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="79ac9be" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-02c2c6f" data-id="02c2c6f" data-element_type="column">
+			<div class="elementor-column-wrap">
+							<div class="elementor-widget-wrap">
+								</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-c110d97" data-id="c110d97" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-f6d3df4 elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="f6d3df4" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img decoding="async" width="258" height="258" src="https://amtechiot.com/wp-content/uploads/2020/09/Connect.png" class="elementor-animation-shrink attachment-full size-full wp-image-74133" alt="" loading="lazy" srcset="https://amtechiot.com/wp-content/uploads/2020/09/Connect.png 258w, https://amtechiot.com/wp-content/uploads/2020/09/Connect-150x150.png 150w" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">AMIoT Platform</h3></div></div>		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-d3f7d9a" data-id="d3f7d9a" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-73824c5 elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="73824c5" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img decoding="async" width="258" height="259" src="https://amtechiot.com/wp-content/uploads/2020/09/RelyanceHub.png" class="elementor-animation-shrink attachment-full size-full wp-image-74166" alt="" loading="lazy" srcset="https://amtechiot.com/wp-content/uploads/2020/09/RelyanceHub.png 258w, https://amtechiot.com/wp-content/uploads/2020/09/RelyanceHub-150x150.png 150w" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">RelyanceHub</h3></div></div>		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-62d8456" data-id="62d8456" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-2867028 elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="2867028" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img decoding="async" width="258" height="258" src="https://amtechiot.com/wp-content/uploads/2020/09/Property-Relyance-Mobile-App.png" class="elementor-animation-shrink attachment-full size-full wp-image-74165" alt="" loading="lazy" srcset="https://amtechiot.com/wp-content/uploads/2020/09/Property-Relyance-Mobile-App.png 258w, https://amtechiot.com/wp-content/uploads/2020/09/Property-Relyance-Mobile-App-150x150.png 150w" /></figure><div class="elementor-image-box-content"><h3 class="elementor-image-box-title">Property Relyance App</h3></div></div>		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-deb0283" data-id="deb0283" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-bfe2105 elementor-widget elementor-widget-image" data-id="bfe2105" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="1505" height="605" src="https://amtechiot.com/wp-content/uploads/2022/08/jkh_foundation.jpg" class="attachment-full size-full wp-image-75439" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-5c3d4dd elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="5c3d4dd" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-be0e32a" data-id="be0e32a" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-1d0681f elementor-widget elementor-widget-heading" data-id="1d0681f" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Ready to Connect?</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-cd54ced elementor-widget elementor-widget-text-editor" data-id="cd54ced" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>Our team of experts is standing by to learn more about your unique needs and share the many ways AM Technologies can help achieve your goals.</p>					</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-a1609ae elementor-widget elementor-widget-image" data-id="a1609ae" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" src="http://amt.thedigitalvantage.com/wp-content/uploads/2022/08/sales_amtechiot_2.png" title="" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-d6856ab elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="d6856ab" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-6c1e415" data-id="6c1e415" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-63da7bb elementor-widget elementor-widget-text-editor" data-id="63da7bb" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>Send us an Email:</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-a0742f5" data-id="a0742f5" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-449b2b0 elementor-widget elementor-widget-image" data-id="449b2b0" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="902" height="107" src="https://amtechiot.com/wp-content/uploads/2022/08/sales_amtechiot_2-1.png" class="attachment-full size-full wp-image-75109" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-inner-section elementor-element elementor-element-7569d9d elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="7569d9d" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-51f0a25" data-id="51f0a25" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-31a4da2 elementor-widget elementor-widget-text-editor" data-id="31a4da2" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>Get in Touch:</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-b33db1a" data-id="b33db1a" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-3f6aa3c elementor-widget elementor-widget-text-editor" data-id="3f6aa3c" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><span style="color: #1690b9;">+1 703 653 1111</span></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-6819d37" data-id="6819d37" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-29e9e91 elementor-widget elementor-widget-text-editor" data-id="29e9e91" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				2,000,000+ sensors deployed.
+<strong>100,000+ smart sites.</strong>
+40 years of experience.					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-be16728 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="be16728" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-6d59c49" data-id="6d59c49" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-1aea2b9 elementor-widget elementor-widget-heading" data-id="1aea2b9" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Our Partners</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-fc6e840 elementor-arrows-position-outside elementor-pagination-position-outside elementor-widget elementor-widget-image-carousel" data-id="fc6e840" data-element_type="widget" data-settings="{&quot;slides_to_show&quot;:&quot;4&quot;,&quot;slides_to_scroll&quot;:&quot;1&quot;,&quot;slides_to_show_mobile&quot;:&quot;1&quot;,&quot;image_spacing_custom&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:28,&quot;sizes&quot;:[]},&quot;navigation&quot;:&quot;both&quot;,&quot;autoplay&quot;:&quot;yes&quot;,&quot;pause_on_hover&quot;:&quot;yes&quot;,&quot;pause_on_interaction&quot;:&quot;yes&quot;,&quot;autoplay_speed&quot;:5000,&quot;infinite&quot;:&quot;yes&quot;,&quot;speed&quot;:500,&quot;image_spacing_custom_tablet&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:[]}}" data-widget_type="image-carousel.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-image-carousel-wrapper swiper-container" dir="ltr">
+			<div class="elementor-image-carousel swiper-wrapper swiper-image-stretch">
+								<div class="swiper-slide"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://amtechiot.com/wp-content/uploads/2020/09/download-1.jpg" alt="" /></figure></div><div class="swiper-slide"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://amtechiot.com/wp-content/uploads/2020/09/download-2.jpg" alt="" /></figure></div><div class="swiper-slide"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://amtechiot.com/wp-content/uploads/2022/08/logo.png" alt="logo" /></figure></div><div class="swiper-slide"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://amtechiot.com/wp-content/uploads/2022/08/sfo_logo.png" alt="sfo_logo" /></figure></div><div class="swiper-slide"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://amtechiot.com/wp-content/uploads/2022/08/viewway-logo.png" alt="viewway-logo" /></figure></div><div class="swiper-slide"><figure class="swiper-slide-inner"><img decoding="async" class="swiper-slide-image" src="https://amtechiot.com/wp-content/uploads/2022/08/qual-pro.jpg" alt="qual-pro" /></figure></div>			</div>
+												<div class="swiper-pagination"></div>
+													<div class="elementor-swiper-button elementor-swiper-button-prev" role="button" tabindex="0">
+						<i aria-hidden="true" class="eicon-chevron-left"></i>						<span class="elementor-screen-only">Previous image</span>
+					</div>
+					<div class="elementor-swiper-button elementor-swiper-button-next" role="button" tabindex="0">
+						<i aria-hidden="true" class="eicon-chevron-right"></i>						<span class="elementor-screen-only">Next image</span>
+					</div>
+									</div>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+									</div>
+			</div>
+					</div>
+		<div class="clear"></div>
+                                </div> <!-- end article section -->
+
+                                <footer class="entry-meta">
+                                                                    </footer> <!-- end article footer -->
+
+                            </div>
+
+                        </article> <!-- end article -->
+
+
+                        
+                        <div class="clear"></div>
+
+                        
+                        <div class="clear"></div>
+
+                        
+
+<!-- You can start editing here. -->
+
+
+    
+
+
+
+                
+                    </div><!-- end content -->
+                </div><!-- end primary -->
+
+                
+            </div><!-- end container -->
+        </div><!-- end wrapper -->
+    </main><!-- end main -->
+
+		<div data-elementor-type="footer" data-elementor-id="74612" class="elementor elementor-74612 elementor-location-footer">
+					<div class="elementor-section-wrap">
+								<section class="elementor-section elementor-top-section elementor-element elementor-element-9a9d37b elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="9a9d37b" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-8334636" data-id="8334636" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-f0f253a elementor-position-top elementor-vertical-align-top elementor-widget elementor-widget-image-box" data-id="f0f253a" data-element_type="widget" data-widget_type="image-box.default">
+				<div class="elementor-widget-container">
+			<div class="elementor-image-box-wrapper"><figure class="elementor-image-box-img"><img width="562" height="122" src="https://amtechiot.com/wp-content/uploads/2020/09/white-AM-Technologies-Logos-Final-Artboards@2x.png" class="attachment-full size-full wp-image-74616" alt="" loading="lazy" /></figure><div class="elementor-image-box-content"><p class="elementor-image-box-description">AM Technologies<br>
+44873 Falcon Place, Suite 118,<br>
+Sterling, VA 20166<br>
+Phone: +1 (703) 653 1111<br></p></div></div>		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-823d7e7" data-id="823d7e7" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-0a643e3 elementor-widget elementor-widget-text-editor" data-id="0a643e3" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>Our Technologies</p>					</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-d25fe31 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="d25fe31" data-element_type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<a href="http://amtechiot.com/amiot-platform/">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="far fa-check-circle"></i>						</span>
+										<span class="elementor-icon-list-text">AMIoT Platform</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="http://amtechiot.com/bossc/">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="far fa-check-circle"></i>						</span>
+										<span class="elementor-icon-list-text">BOSSc</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="http://amtechiot.com/property-relyance/">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="far fa-check-circle"></i>						</span>
+										<span class="elementor-icon-list-text">Property Relyance</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="https://www.vuelogix.com/" target="_blank">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="far fa-check-circle"></i>						</span>
+										<span class="elementor-icon-list-text">Vue Logix</span>
+											</a>
+									</li>
+						</ul>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-111242b" data-id="111242b" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-0624da2 elementor-widget elementor-widget-text-editor" data-id="0624da2" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>Quick Links</p>					</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-5aef170 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="5aef170" data-element_type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<a href="http://amtechiot.com/smart-buildings/">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="far fa-check-circle"></i>						</span>
+										<span class="elementor-icon-list-text">Smart Buildings</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="http://amtechiot.com/broadband-wireless/">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="far fa-check-circle"></i>						</span>
+										<span class="elementor-icon-list-text">Broadband & Wireless</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="http://amtechiot.com/telecom/">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="far fa-check-circle"></i>						</span>
+										<span class="elementor-icon-list-text">Telecom </span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="http://amtechiot.com/data-centers/">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="far fa-check-circle"></i>						</span>
+										<span class="elementor-icon-list-text">Data Centers</span>
+											</a>
+									</li>
+						</ul>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-d9d6d24" data-id="d9d6d24" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-6fc8485 elementor-widget elementor-widget-text-editor" data-id="6fc8485" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>Pages</p>					</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-47f4a42 elementor-icon-list--layout-traditional elementor-list-item-link-full_width elementor-widget elementor-widget-icon-list" data-id="47f4a42" data-element_type="widget" data-widget_type="icon-list.default">
+				<div class="elementor-widget-container">
+					<ul class="elementor-icon-list-items">
+							<li class="elementor-icon-list-item">
+											<a href="http://amtechiot.com/contact-us/">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="far fa-check-circle"></i>						</span>
+										<span class="elementor-icon-list-text">Contact Us</span>
+											</a>
+									</li>
+								<li class="elementor-icon-list-item">
+											<a href="http://amtechiot.com/meet-our-team/">
+
+												<span class="elementor-icon-list-icon">
+							<i aria-hidden="true" class="far fa-check-circle"></i>						</span>
+										<span class="elementor-icon-list-text">Meet our Team</span>
+											</a>
+									</li>
+						</ul>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-56956e5 elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="56956e5" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+							<div class="elementor-background-overlay"></div>
+							<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-6c31864" data-id="6c31864" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-bb55704 elementor-widget elementor-widget-text-editor" data-id="bb55704" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>© 2022 AM Technologies All rights reserved</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+							</div>
+				</div>
+		
+</div><!--! end of #inner-body -->
+
+    <div class="aux-hidden-blocks">
+
+        <section id="offmenu" class="aux-offcanvas-menu aux-pin-left" >
+            <div class="aux-panel-close">
+                <div class="aux-close aux-cross-symbol aux-thick-medium"></div>
+            </div>
+            <div class="offcanvas-header">
+            </div>
+            <div class="offcanvas-content">
+            </div>
+            <div class="offcanvas-footer">
+            </div>
+        </section>
+        <!-- offcanvas section -->
+
+        <section id="offcart" class="aux-offcanvas-menu aux-offcanvas-cart aux-pin-left" >
+            <div class="aux-panel-close">
+                <div class="aux-close aux-cross-symbol aux-thick-medium"></div>
+            </div>
+            <div class="offcanvas-header">
+                Shopping Basket            </div>
+            <div class="aux-cart-wrapper aux-elegant-cart aux-offcart-content">
+            </div>
+        </section>
+        <!-- cartcanvas section -->
+
+                <section id="fs-menu-search" class="aux-fs-popup  aux-fs-menu-layout-center aux-indicator">
+            <div class="aux-panel-close">
+                <div class="aux-close aux-cross-symbol aux-thick-medium"></div>
+            </div>
+            <div class="aux-fs-menu">
+                        </div>
+            <div class="aux-fs-search">
+                <div  class="aux-search-section ">
+                <div  class="aux-search-form ">
+            <form action="https://amtechiot.com/" method="get" >
+            <div class="aux-search-input-form">
+                            <input type="text" class="aux-search-field"  placeholder="Type here.." name="s" autocomplete="off" />
+                                    </div>
+                            <input type="submit" class="aux-black aux-search-submit aux-uppercase" value="Search" >
+                        </form>
+        </div><!-- end searchform -->
+                </div>
+
+            </div>
+        </section>
+        <!-- fullscreen search and menu -->
+                <section id="fs-search" class="aux-fs-popup aux-search-overlay  has-ajax-form">
+            <div class="aux-panel-close">
+                <div class="aux-close aux-cross-symbol aux-thick-medium"></div>
+            </div>
+            <div class="aux-search-field">
+
+            <div  class="aux-search-section aux-404-search">
+                <div  class="aux-search-form aux-iconic-search">
+            <form action="https://amtechiot.com/" method="get" >
+            <div class="aux-search-input-form">
+                            <input type="text" class="aux-search-field"  placeholder="Search..." name="s" autocomplete="off" />
+                                    </div>
+                            <div class="aux-submit-icon-container auxicon-search-4 ">
+                    <input type="submit" class="aux-iconic-search-submit" value="Search" >
+                </div>
+                        </form>
+        </div><!-- end searchform -->
+                </div>
+
+            </div>
+        </section>
+        <!-- fullscreen search-->
+
+        <div class="aux-scroll-top"></div>
+    </div>
+
+    <div class="aux-goto-top-btn aux-align-btn-right" data-animate-scroll="1"><div class="aux-hover-slide aux-arrow-nav aux-round aux-outline">    <span class="aux-overlay"></span>    <span class="aux-svg-arrow aux-h-small-up"></span>    <span class="aux-hover-arrow aux-svg-arrow aux-h-small-up aux-white"></span></div></div>
+<!-- outputs by wp_footer -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:700%2C600%2C400%2C800%7CRoboto:400" rel="stylesheet" property="stylesheet" media="all" type="text/css" >
+
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript">window.addEventListener('DOMContentLoaded', function() {
+		if(typeof revslider_showDoubleJqueryError === "undefined") {
+			function revslider_showDoubleJqueryError(sliderID) {
+				var err = "<div class='rs_error_message_box'>";
+				err += "<div class='rs_error_message_oops'>Oops...</div>";
+				err += "<div class='rs_error_message_content'>";
+				err += "You have some jquery.js library include that comes after the Slider Revolution files js inclusion.<br>";
+				err += "To fix this, you can:<br>&nbsp;&nbsp;&nbsp; 1. Set 'Module General Options' -> 'Advanced' -> 'jQuery & OutPut Filters' -> 'Put JS to Body' to on";
+				err += "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jQuery.js inclusion and remove it";
+				err += "</div>";
+			err += "</div>";
+				var slider = document.getElementById(sliderID); slider.innerHTML = err; slider.style.display = "block";
+			}
+		}
+		});</script>
+<link rel='stylesheet' id='e-animations-css' href='https://amtechiot.com/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.13.3' media='all' />
+<script type="rocketlazyloadscript" data-minify="1" src='https://amtechiot.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=1677934456' id='swv-js' defer></script>
+<script id='contact-form-7-js-extra'>
+var wpcf7 = {"api":{"root":"https:\/\/amtechiot.com\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+</script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://amtechiot.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1677934456' id='contact-form-7-js' defer></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-includes/js/imagesloaded.min.js?ver=4.1.4' id='imagesloaded-js' defer></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-includes/js/masonry.min.js?ver=4.2.2' id='masonry-js' defer></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-content/themes/phlox/js/plugins.min.js?ver=2.12.0' id='auxin-plugins-js' defer></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-content/themes/phlox/js/scripts.min.js?ver=2.12.0' id='auxin-scripts-js' defer></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-content/plugins/elementor-pro/assets/lib/smartmenus/jquery.smartmenus.min.js?ver=1.0.1' id='smartmenus-js' defer></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.13.1' id='elementor-pro-webpack-runtime-js' defer></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.13.3' id='elementor-webpack-runtime-js' defer></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.13.3' id='elementor-frontend-modules-js' defer></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js' defer></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-includes/js/dist/hooks.min.js?ver=4169d3cf8e8d95a3d6d5' id='wp-hooks-js'></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-includes/js/dist/i18n.min.js?ver=9e794f35a71bb98672ae' id='wp-i18n-js'></script>
+<script type="rocketlazyloadscript" id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type="rocketlazyloadscript" id='elementor-pro-frontend-js-before'>
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/amtechiot.com\/wp-admin\/admin-ajax.php","nonce":"8b5b1bc4fb","urls":{"assets":"https:\/\/amtechiot.com\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/amtechiot.com\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/amtechiot.com\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+</script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.13.1' id='elementor-pro-frontend-js' defer></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2' id='elementor-waypoints-js' defer></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2' id='jquery-ui-core-js' defer></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=5.3.6' id='swiper-js' defer></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-content/plugins/elementor/assets/lib/share-link/share-link.min.js?ver=3.13.3' id='share-link-js' defer></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js?ver=4.9.0' id='elementor-dialog-js' defer></script>
+<script type="rocketlazyloadscript" id='elementor-frontend-js-before'>
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.13.3","is_static":false,"experimentalFeatures":{"a11y_improvements":true,"additional_custom_breakpoints":true,"theme_builder_v2":true,"landing-pages":true,"page-transitions":true,"notes":true,"loop":true,"form-submissions":true,"e_scroll_snap":true},"urls":{"assets":"https:\/\/amtechiot.com\/wp-content\/plugins\/elementor\/assets\/"},"swiperClass":"swiper-container","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":74096,"title":"AM%20Technologies%20%E2%80%93%20Creating%20Smart%20Technologies","excerpt":"","featuredImage":false}};
+</script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.13.3' id='elementor-frontend-js' defer></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-content/plugins/elementor-pro/assets/js/preloaded-elements-handlers.min.js?ver=3.13.1' id='pro-preloaded-elements-handlers-js' defer></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-content/plugins/elementor/assets/js/preloaded-modules.min.js?ver=3.13.3' id='preloaded-modules-js' defer></script>
+<script type="rocketlazyloadscript" src='https://amtechiot.com/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.13.1' id='e-sticky-js' defer></script>
+<!-- end wp_footer -->
+<script>class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);</script></body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1687594887 -->

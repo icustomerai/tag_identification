@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html class="ie ie7" prefix="og: http://ogp.me/ns#"><![endif]-->
+<!--[if IE 8]><html class="ie ie8" prefix="og: http://ogp.me/ns#"><![endif]-->
+<!--[if IE 9]><html class="ie ie9" prefix="og: http://ogp.me/ns#"><![endif]-->
+<!--[if !IE]> -->
+<html prefix="og: http://ogp.me/ns#" lang='en'>
+<!-- <![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Binary Tree by Quest | Solutions for Microsoft 365</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!--Meta Tags Starts-->
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=100">-->
+    <meta name="keywords">
+    <meta name="description" content="Binary Tree solutions power enterprise-scale transformations of Microsoft 365, Active Directory, Azure AD, Exchange, SharePoint, OneDrive for Business and Teams.">
+    <meta name="title" content="Binary Tree by Quest | Solutions for Microsoft 365">
+    <meta content="Binary Tree by Quest | Solutions for Microsoft 365" property="og:title">
+        <meta content="https://www.binarytree.com/images/og/BinaryTree_159078.jpg" property="og:image">
+    <meta content="https://www.binarytree.com/" property="og:url">
+    <meta content="Binary Tree solutions power enterprise-scale transformations of Microsoft 365, Active Directory, Azure AD, Exchange, SharePoint, OneDrive for Business and Teams." property="og:description">
+
+    <meta name="Solution" content="">
+    <meta name="Product" content="">
+    <meta name="Domain" content="Corporate">
+    <meta name="ProductLine" content="">
+    <meta name="Portfolio" content="">
+    <meta name="Language" content="English">
+    <meta name="SiteDomain" content="www.binarytree.com" />
+    <meta name="Locality" content="en-us" />
+    <meta name="SupportProduct" />
+    <meta name="ProductLine" content="">
+    <meta name="Partner/Direct" content="Direct">
+    <meta name="PageUniqueId" content="1138369">
+
+    <meta name="PageTemplate" content="Corporate">
+
+    <meta name="Section" content="home">
+    <meta name="Subsection" content="">
+    <!--start Search meta-->
+        <!--end Search meta-->
+    <link href="/static/bundles/cssquestv3?v=IYwsC2XwKA24AQ-4Hdw6Q70KEEdENE6ePLs9a1I-DDQ1" rel="stylesheet"/>
+
+    <script src="/static/bundles/jsquest?v=UwjcCQWkwXEQBg1CsbMziYaaB2yw3q5S22-gv-m_qf41"></script>
+
+
+
+            <link rel="alternate" hreflang="en" href="https://www.binarytree.com/" />
+            <link rel="alternate" hreflang="pt" href="https://www.binarytree.com/br-pt/" />
+            <link rel="alternate" hreflang="zh" href="https://www.binarytree.com/cn-zh/" />
+            <link rel="alternate" hreflang="de" href="https://www.binarytree.com/de-de/" />
+            <link rel="alternate" hreflang="fr" href="https://www.binarytree.com/fr-fr/" />
+            <link rel="alternate" hreflang="ja" href="https://www.binarytree.com/jp-ja/" />
+            <link rel="alternate" hreflang="es" href="https://www.binarytree.com/mx-es/" />
+    <link rel="canonical" href="https://www.binarytree.com/">
+    <script type="text/javascript">
+        var demandbasecall = false,
+            FormShowFull = false,
+            CheckAutoRedirect = false,
+            ProspectOrigin="binarytree",
+					DomainPath = "",
+					RootPath = "/",
+					SecureRootPath = "https://www.binarytree.com",
+                    IsOISites = "0",
+					currentpage = "https://www.binarytree.com/",
+					siteTags = {
+DbDomainTagId: "470dd47d",SiteRegWarningMessageEmailRequired: "Please enter a valid Email address",SiteRegWarningMessagePasswordRequired: "Please enter a valid Password",SiteRegPleaseWait: "Please wait...",SiteRegWarningValidPassword: "Please enter a valid Password",SiteRegWarningInvalid: "Invalid",SiteRegWarningInvalidPleaseTryAgain: ". Please try again",SiteRegMessageEmailSameAsOld: "New email cannot be the same as old email",SiteRegWarningInvalidEmail: "Invalid Email. Please try again.",RegLabelDefaultDropdown: "Select",SiteRegWarningErrorSavingProfile: "Error saving Profile, Please complete profile correctly",SiteRegWarningUserEmailExists: "The user with this email already exists",SiteRegWarningCorporateEmailNotAllow: "Corporate email addresses are not allowed",SiteRegLabelCreatePassword: "Create Password",SiteRegWarningInvalidEmailShort: "Email Invalid",SiteUnsWarningSelectReason: "Please select a reason.",SiteRegWarningItemNeedAttentionSingular: "item need attention",SiteRegWarningItemNeedAttentionPlural: "items need attention",SiteSearchDomainUnified: "http://sp10050c33.guided.ss-omtrdc.net/",EncKey: "1598300138712553",EncIV: "1598300138712553",			_: ''
+					};
+    </script>
+    <!-- OneTrust Cookies Consent Notice start for binarytree.com -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/33fa86f9-9e43-499d-8706-415d6f66708d/OtAutoBlock.js" ></script>
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="33fa86f9-9e43-499d-8706-415d6f66708d" ></script>
+<!-- OneTrust Cookies Consent Notice end for binarytree.com -->
+    <!-- V2HeadAllLocalized - us-en - localized content for domains -->
+<!-- currently in use for us-en, br-pt, mx-es, de-de, fr-fr, it-it -->
+
+<link rel="preload" href="/fonts/NotoSans-Bold.woff2" as="font" crossorigin="anonymous" />
+<link rel="preload" href="/fonts/NotoSans-Regular.woff2" as="font" crossorigin="anonymous" />
+
+<style>
+	@font-face {
+		font-family: "Noto Sans";
+		src: url('/fonts/NotoSans-Regular.woff2') format('woff2');
+		font-weight: 400;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: "Noto Sans";
+		src: url('/fonts/NotoSans-Bold.woff2') format('woff2');
+		font-weight: 700;
+		font-style: normal;
+		font-display: swap;
+	}
+</style>
+<!-- V2HeadAll - appears on all domains -->
+
+<link rel="preload" href="/static/css/icomoon/fonts/icomoon.woff2?01102023" as="font" crossorigin="anonymous" />
+
+<!--[if IE]><link rel="stylesheet" href="/static/css/bootstrap-ie.min.css"><![endif]-->
+
+<!--[if lte IE 9]>
+<script type="text/javascript" async="" src="/Static/js/old-browser.js"></script>
+<![endif]-->
+
+<script> (function(a, b, c, d, e, m) { a['OktopostTrackerObject'] = d; a[d] = a[d] || function() { (a[d].q = a[d].q || []).push(arguments); }; e = b.createElement('script'); m = b.getElementsByTagName('script')[0]; e.async = 1; e.src = c; m.parentNode.insertBefore(e, m); })(window, document, 'https://static.oktopost.com/oktrk.js', '_oktrk'); _oktrk('create', '001m48enoy0exsu'); </script>
+
+<!-- V2Head us-en bt -->
+<link rel="stylesheet" href="/static/css/v3/header-footer.min.css?06012023">
+<script type="text/javascript" src="/static/js/v3/header-footer.min.js?06012023"></script>
+
+<script>
+	if (location.search !== '?noGTM') {
+		(function (w, d, s, l, i) {
+			var auth = 'PpbTNCfZsG74pKfgm651Dw', env = '1';
+			if (/^(www-|uat|test|preview)/.test(location.hostname)) {
+				auth = 'XMkY6XUcTCIkjr1ZHHjkEQ';
+				env = '4';
+			} else if (/^stage./.test(location.hostname)) {
+				auth = 'hQXnZlkpPGNebJSXxQb3Dw';
+				env = '3';
+			}
+			w[l] = w[l] || [];
+			w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			});
+			var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+			j.async = true;
+			j.src =
+				'https://www.googletagmanager.com/gtm.js?id=' + i + dl + '&gtm_auth='+auth+'&gtm_preview=env-'+env+'&gtm_cookies_win=x';
+			f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-5XNBM6D');
+	}
+</script>
+
+<script type="application/ld+json">
+	{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"url": "https://www.binarytree.com",
+		"logo": "https://www.binarytree.com/images/shared/binary-tree-quest.svg",
+		"sameAs": [
+			"https://facebook.com/questsoftware",
+			"https://plus.google.com/102956101365345137794/",
+			"https://www.linkedin.com/company/quest-software?trk=biz-companies-cym",
+			"https://twitter.com/quest"
+		]
+	}
+</script>
+<script type="application/ld+json">
+	{
+		"@context": "http://schema.org",
+		"@type": "WebSite",
+		"url": "https://www.binarytree.com/",
+		"potentialAction": {
+			"@type": "SearchAction",
+			"target": "https://www.binarytree.com/search/results/?q={search_term_string}",
+			"query-input": "required name=search_term_string"
+		}
+	}
+</script>
+
+
+    <!--MasterHeadElq starts here-->
+    <script type="text/javascript">var _elqQ=_elqQ||[];_elqQ.push(["elqSetSiteId","1009272243"]),_elqQ.push(['elqUseFirstPartyCookie', 'eloqua.binarytree.com']),_elqQ.push(["elqTrackPageView"]),function(){function e(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//img04.en25.com/i/elqCfg.min.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}window.addEventListener?window.addEventListener("DOMContentLoaded",e,!1):window.attachEvent&&window.attachEvent("onload",e)}();</script>
+    <!--MasterHeadElq ends here-->
+    <!--[if lt IE 9]>
+
+    <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+
+    <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+    <style>
+	iframe{
+		max-width: 100%;
+	}
+	#overview-old, #binarytreeproductportfolio {
+		display: none!important;
+	}
+   
+	.binary-boxes{
+		display: flex;
+	}
+	.binary-boxes .binary-box{
+		padding: 30px;
+		color: #fff;
+	}
+	.binary-boxes .binary-box:first-child{
+		background: #00556c;
+	}
+	.binary-boxes .binary-box:nth-child(2){
+		background: #fb4f14;
+	}
+	.binary-boxes .binary-box:nth-child(3){
+		background: #53565a;
+	}
+	.binary-boxes .binary-box > div .icomoon-icon{
+		font-size: 32px;
+	}
+	.binary-boxes .binary-box h3{
+		color: #fff;
+	}
+	.binary-boxes .binary-box .link-v3-white{
+		display: block;
+	}
+	.binary-boxes .binary-box .icomoon-container{
+
+	}
+
+	.icon-text-v3 a{
+		text-decoration: none;
+	}
+	.icon-text-v3 a:hover h4{
+		text-decoration: underline;
+	}
+</style>
+            <script type="text/javascript">
+                function OptanonWrapper() { }
+            </script>
+    </head>
+<body class="home ">
+     <!--googleoff: index-->
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5XNBM6D&gtm_auth=PpbTNCfZsG74pKfgm651Dw&gtm_preview=env-1&gtm_cookies_win=x"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+    <div id="optinwrapper" class="hide"></div>
+    <input type="hidden" value="US" id="CountryCodeValue" />
+    <input type="hidden" id="CKCountryCode" />
+    <input type="hidden" id="FormFillType">
+    <input type="hidden" value="binarytree" id="siteprefix" />
+    <input type="hidden" id="buyxcodewithparam" />
+
+    <div class="site-wrapper">
+        <div class="site-canvas">
+            <!-- BEGIN NOINDEX -->
+            <header class="masthead mh" id="masthead">
+
+                
+
+                <div id="old-browser">For the best web experience, please use IE11+, Chrome, Firefox, or Safari<a href="JavaScript:void(0)" id="old-browser-close"></a></div>
+
+                
+
+                <!-- V2LayoutHeader Binary Tree prod us-en -->
+<div id="head-v3">
+	<div id="hv3-top">
+		<div class="container">
+			<ul>
+				<li data-type="Resources"><a class="txt-lnk" href="/resources/">Resources</a></li>
+				<!--Country selector-->
+				<li class="hv3-country" data-type="Locale">
+					<div>
+						<a class="utility icomoon-container">
+							<span class="icomoon-icon icon-globe"></span>
+						</a>
+						<ul class="hv3-country-drop-down">
+							<li data-type="United States"><a href="/" class="active">United States (English)</a></li>
+							<li data-type="Brazil"><a href="/br-pt/">Brazil (Português)</a></li>
+							<li data-type="China"><a href="/cn-zh/">China (中文)</a></li>
+							<li data-type="France"><a href="/fr-fr/">France (Français)</a></li>
+							<li data-type="Germany"><a href="/de-de/">Germany (Deutsch)</a></li>
+							<li data-type="Japan"><a href="/jp-ja/">Japan (日本語)</a></li>
+							<li data-type="Mexico"><a href="/mx-es/">Mexico (Español)</a></li>
+						</ul>
+					</div>
+					<div class="v3-drop-down-over-lay"></div>
+				</li>
+				<!--Search-->
+				<li class="hv3-search">
+					<a class="utility icomoon-container">
+						<span class="icomoon-icon icon-search_A"></span>
+					</a>
+					<div class="search-wrapper">
+						<div id="masthead-search" class="search-container">
+							<div class="container">
+								<div id="searchbox" data-type="Onsite Search">
+									<span class="close-search"></span>
+									<div class="CoveoSearchbox" data-enable-omnibox="true" data-enable-query-suggest-addon="false" data-enable-partial-match="true" data-partial-match-keywords="3" data-enable-reveal-query-suggest-addon="false"></div>
+									<div class="CoveoFieldSuggestions" data-field="@title" data-query-override="@qxmarketingtype" data-number-of-suggestions="20"></div>
+									<div class="CoveoFieldSuggestions" data-field="@title" data-query-override="@qxcategory" data-number-of-suggestions="20"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="v3-drop-down-over-lay"></div>
+				</li>
+				<!--Sign-in-->
+				<li id="signin-container" data-type="Account">
+					<div>
+						<a class="utility icomoon-container" id="signin-link">
+							<span class="icomoon-icon icon-user">
+								<span class="badge is-logged-in"><i class="icon-check"></i></span>
+							</span>
+						</a>
+						<ul class="signin-drop-down">
+							<li class="is-logged-in" data-type="Account Settings">
+								<a href="#" id="lnkMyAccount" class="btn-v3-orange-border">Account Settings</a>
+							</li>
+							<li class="is-logged-in" data-type="Sign Out">
+								<button id="lnkmainloggOut" role="button" class="btn-v3-black-border">Sign Out</button>
+							</li>
+							<li class="not-logged-in" data-type="Sign In">
+								<button role="button" id="lnkmenusignin" class="btn-v3-orange lnk-sign-in">Sign In</button>
+							</li>
+							<li class="not-logged-in" data-type="Create Account">
+								<button id="lnkmenucreateaccount" role="button" class="btn-v3-orange-border lnk-create-account">Create Account</button>
+							</li>
+						</ul>
+					</div>
+					<div class="v3-drop-down-over-lay"></div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="sticky-v3">
+		<div class="sticky-wrap">
+			<div class="container">
+				<div id="hv3-bottom">
+					<a id="logo" class="binarytree-logo" href="/" ><img src="/images/shared/binary-tree-quest.svg" alt="Binary Tree Logo"></a>
+					<div>
+						<div class="mobile-menu-container">
+							<button class="utility mobile-menu icomoon-container">
+								<span class="icomoon-icon icon-menu_A"></span>
+							</button>
+							<div id="hv3-mobile-user"></div>
+							<button class="utility mobile-search icomoon-container">
+								<span class="icomoon-icon icon-search_A"></span>
+							</button>
+						</div>
+						<nav>
+							<div>
+								<div class="v3-tier-1 nav-v3-products" data-type="Products">
+									<span>Products</span>
+									<div class="v3-tier-2 v3-mega-nav" id="nav-v3-products">
+										<div>
+											<div class="container">
+												<span class="menu-back">Main Menu</span>
+												<span class="menu-back-tier-2">Products</span>
+												<div class="row">
+													<div class="col-xs-12 col-md-2 hv3-left-col">
+														<h3>Products</h3>
+														<div data-type="Products A - Z"><a href="/products/" class="btn-v3-orange mt-10">Products A - Z</a></div>
+														<div data-type="Free Trials"><a href="/trials/" class="link-v3-white icomoon-container">Free Trials<span class="icomoon-icon icon-arrow_forward"></span></a></div>
+													</div>
+													<div class="col-xs-12 col-md-10 hv3-right-col">
+														<span class="close-mega-menu visible-md visible-lg"></span>
+														<h3 class="visible-sm visible-xs">Products</h3>
+														<div class="row">
+															<div class="col-xs-12 col-md-6">
+																<h4 class="mt-10">On-premises Software</h4>
+																<h6 data-type="Archive Migrator for Notes">
+																	<a href="/products/binary-tree-archive-migrator-for-notes/">Archive Migrator for Notes</a>
+																</h6>
+																<h6 data-type="Directory Sync Pro">
+																	<a href="/products/binary-tree-directory-sync-pro/">Directory Sync Pro</a>
+																</h6>
+																<h6 data-type="Integration for Notes">
+																	<a href="/products/binary-tree-integration-for-notes/">Integration for Notes</a>
+																</h6>
+																<h6 data-type="Migrator Pro for Active Directory">
+																	<a href="/products/binary-tree-migrator-pro-for-active-directory/">Migrator Pro for Active Directory</a>
+																</h6>
+																<h6 data-type="Migrator Pro for Exchange">
+																	<a href="/products/binary-tree-migrator-pro-for-exchange/">Migrator Pro for Exchange</a>
+																</h6>
+																<h6 data-type="Migrator for Notes">
+																	<a href="/products/binary-tree-migrator-for-notes/">Migrator for Notes</a>
+																</h6>
+															</div>
+															<div class="col-xs-12 col-md-6">
+																<h4 class="mt-10">SaaS</h4>
+																<h6 data-type="Power365 Directory Sync">
+																	<a href="/products/binary-tree-power365-directory-sync/">Power365 Directory Sync</a>
+																</h6>
+																<h6 data-type="Power365 Integration">
+																	<a href="/products/binary-tree-power365-integration/">Power365 Integration</a>
+																</h6>
+																<h6 data-type="Power365 Integration Pro">
+																	<a href="/products/binary-tree-power365-integration-pro/">Power365 Integration Pro</a>
+																</h6>
+																<h6 data-type="Power365 Migration">
+																	<a href="/products/binary-tree-power365-migration/">Power365 Migration</a>
+																</h6>
+																<h6 data-type="Power365 for Active Directory">
+																	<a href="/products/binary-tree-power365-for-active-directory/">Power365 for Active Directory</a>
+																</h6>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="v3-drop-down-over-lay"></div>
+								</div>
+
+								<div class="v3-tier-1 no-tier-2" data-type="Services"><span><a href="https://www.quest.com/services/microsoft-platform-management-services/" target="_blank">Services</a></span>
+								</div>
+								<div class="v3-tier-1" data-type="Support"><span>Support</span>
+									<div class="v3-tier-2 v3-mega-nav" id="nav-v3-products">
+										<div>
+											<div class="container">
+												<span class="menu-back">Main Menu</span>
+												<span class="menu-back-tier-2">Support</span>
+												<div class="row">
+													<div class="col-xs-12 col-md-2 hv3-left-col">
+														<h3>Support</h3>
+														<div data-type="Support Portal"><a rel="noreferrer,noopener" href="https://support.quest.com/" target="_blank" class="btn-v3-orange mt-10">Support Portal</a></div>
+														<div data-type="Contact Support"><a rel="noreferrer,noopener" href="https://support.quest.com/contact-support/" target="_blank" class="link-v3-white icomoon-container">Contact Support</a></div>
+													</div>
+													<div class="col-xs-12 col-md-10 hv3-right-col">
+														<span class="close-mega-menu visible-md visible-lg"></span>
+														<h3 class="visible-sm visible-xs">Support</h3>
+														<div class="row">
+
+															<div class="col-xs-12 col-md-6">
+																<h4 class="mt-10">Products</h4>
+																<h6 data-type="Archive Migrator for Notes">
+																	<a rel="noreferrer,noopener" href="https://support.quest.com/binary-tree-archive-migrator-for-notes/" target="_blank" >Archive Migrator for Notes</a>
+																</h6>
+																<h6 data-type="Directory Sync Pro for Active Directory">
+																	<a rel="noreferrer,noopener" href="https://support.quest.com/binary-tree-directory-sync-pro-for-active-directory/" target="_blank" >Directory Sync Pro for Active Directory</a>
+																</h6>
+																<h6 data-type="Directory Sync Pro for Notes">
+																	<a rel="noreferrer,noopener" href="https://support.quest.com/binary-tree-directory-sync-pro-for-notes/" target="_blank" >Directory Sync Pro for Notes</a>
+																</h6>
+																<h6 data-type="Integration for Notes">
+																	<a rel="noreferrer,noopener" href="https://support.quest.com/binary-tree-integration-for-notes/" target="_blank">Integration for Notes</a>
+																</h6>
+															</div>
+															<div class="col-xs-12 col-md-6">
+																<h4 class="mt-10">&nbsp;</h4>
+																<h6 data-type="Migrator for Notes">
+																	<a rel="noreferrer,noopener" href="https://support.quest.com/binary-tree-migrator-for-notes/" target="_blank">Migrator for Notes</a>
+																</h6>
+																<h6 data-type="Migrator Pro for Active Directory">
+																	<a rel="noreferrer,noopener" href="https://support.quest.com/binary-tree-migrator-pro-for-active-directory/" target="_blank">Migrator Pro for Active Directory</a>
+																</h6>
+																<h6 data-type="Migrator Pro for Exchange">
+																	<a rel="noreferrer,noopener" href="https://support.quest.com/binary-tree-migrator-pro-for-exchange/" target="_blank">Migrator Pro for Exchange</a>
+																</h6>
+																<h6 data-type="Power365">
+																	<a rel="noreferrer,noopener" href="https://support.quest.com/binary-tree-power365/" target="_blank">Power365</a>
+																</h6>
+																<h6 data-type="Self-Service Archive Migrator">
+																	<a rel="noreferrer,noopener" href="https://support.quest.com/binary-tree-self-service-archive-migrator/" target="_blank">Self-Service Archive Migrator</a>
+																</h6>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="v3-drop-down-over-lay"></div>
+								</div>
+								<div class="v3-tier-1 no-tier-2" data-type="Partners">
+									<span><a href="https://partners.quest.com/English/">Partners</a></span>
+								</div>
+								<div class="v3-tier-1 visible-xs visible-sm simple-link" data-type="Resources">
+									<a href="/resources/"><span>Resources</span></a>
+								</div>
+								<div class="v3-tier-1 no-bold-menu v3-drop-down visible-xs visible-sm">
+									<span class="icomoon-container"><span class="icomoon-icon icon-globe"></span>United States (EN)</span>
+									<div class="v3-tier-2 v3-drop-down">
+										<span class="menu-back">Main Menu</span>
+										<ul class="hv3-country-drop-down" data-type="Locale">
+											<li data-type="United States"><a href="/" class="active">United States (English)</a></li>
+											<li data-type="Brazil"><a href="/br-pt/">Brazil (Português)</a></li>
+											<li data-type="China"><a href="/cn-zh/">China (中文)</a></li>
+											<li data-type="France"><a href="/fr-fr/">France (Français)</a></li>
+											<li data-type="Germany"><a href="/de-de/">Germany (Deutsch)</a></li>
+											<li data-type="Japan"><a href="/jp-ja/">Japan (日本語)</a></li>
+											<li data-type="Mexico"><a href="/mx-es/">Mexico (Español)</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</nav>
+						<div class="nav-cta">
+							<span data-type="Free Trials"><a class="btn-v3-orange" href="/trials/">Free Trials</a></span>
+							<span data-type="Request Pricing"><a class="btn-v3-orange-border" href="/contact-sales/">Request Pricing</a></span>
+						</div>
+						<div class="mobile-nav-over-lay"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+                
+
+            </header>
+            <!-- END NOINDEX -->
+             <!--googleon: snippet-->
+            <!--Content Start-->
+            
+
+<div class="site-wide-bodies">
+
+
+
+
+<div data-v3="HTML" class="html-editor-v3 left bg-white   bulletedlist-v3">
+	<div class='' >
+		<div data-v3-action="Content">
+			<div id="overview" data-v3="Overview" class="home-page-hero "><div class="container"><div class="row"><div class="col-xs-12 col-sm-6 col-md-7"><div class="hero-content-wrapper pb-20"><h1>We Power Enterprise<br />Cloud Migrations</h1><div class="txt-v3" data-v3-action="Content"><p>Binary Tree by Quest enables enterprises everywhere to transform and
+							manage
+							change with the Microsoft cloud. Through our market-leading cloud
+							migration software and SaaS solutions, we have helped organizations
+							around the world to plan, modernize, and manage transformations that
+							involve Microsoft 365, Office 365, Azure, business applications and
+							merging organizations.</p></div></div></div><div class="col-xs-12 col-sm-6 col-md-5 home-hero-img "><img src="/images/patterns/zigzag/6-column/binary-tree-welcome-image-v2.jpg" alt="Binary Tree" /></div></div></div></div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div data-v3="HTML" class="html-editor-v3 centered bg-grey pt-v3 pb-v3 bulletedlist-v3">
+	<div class='' >
+		<div data-v3-action="Content">
+			<div data-v3="Stat" class="stats-v3"><div class="container"><div class="intro-v3"><h2 class="title-v3">Binary Tree Solutions</h2><div class="txt-v3" data-v3-action="Content"><p>Our solutions are adaptable, scalable, secure and provide the highest
+					levels of control.</p></div></div><div class="stats-boxes col-xs-12"><div class="bg-svg bg-svg-left bg-svg-circle"></div><div class="bg-svg bg-svg-right bg-svg-dots"></div><div class="col-xs-4 col-sm-4 stat-0"><h4>10K</h4><p>customers</p></div><div class="col-xs-4 col-sm-4 stat-1"><h4>2000+</h4><p>mergers and acquisitions managed</p></div><div class="col-xs-4 col-sm-4 stat-2"><h4>60M</h4><p>users migrated</p></div></div></div></div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div data-v3="HTML" class="html-editor-v3 centered bg-white pt-v3 pb-v3 bulletedlist-v3">
+	<div class='' >
+		<div class="intro-v3">
+			<h2 class="title-v3">Featured Products</h2>
+		</div>
+		<div data-v3-action="Content">
+			<div class="intro-v3 mb-10"><a data-v3-action="View All Link" class="link-v3-orange icomoon-container" href="/products/" target="">View All
+	<em class="icomoon-icon icon-arrow_forward"></em></a>
+</div><div class="splide splide__page-arrows fp-v3 static-3-wide"><div class="splide__track"><div class="splide__list"><div class="splide__slide"><a class="fp" data-v3-action="Featured Product" data-v3-label="Binary Tree Migrator Pro for Active Directory" href="/products/binary-tree-migrator-pro-for-active-directory/" target="" style="background-image:url(/images/asset/screenshot/370-250/binary-tree-migrator-pro-for-active-directory.png);"><div class="fp-txt icomoon-container"><em class="icomoon-icon icon-chevron_up"></em><h4>Binary Tree Migrator Pro for Active Directory</h4><div class="fp-hover"><p>Consolidate Active Directory with advanced coexistence, customization
+							and automation.</p><em class="btn-default-color btn-v3 btn-v3-small">Learn
+						More</em>
+					</div></div></a>
+				<a class="fp" data-v3-action="Featured Product" data-v3-label="Binary Tree Migrator for Notes" href="/products/binary-tree-migrator-for-notes/" target="" style="background-image:url(/images/asset/screenshot/370-250/binary-tree-migrator-for-notes.png);">
+					<div class="fp-txt icomoon-container"><em class="icomoon-icon icon-chevron_up"></em><h4>Binary Tree Migrator for Notes</h4><div class="fp-hover"><p>Automate and customize a high-performance Notes to Exchange
+								migration.</p><em class="btn-default-color btn-v3 btn-v3-small">Learn More</em>
+						</div></div></a>
+			</div><div class="splide__slide"><a class="fp" data-v3-action="Featured Product" data-v3-label="Binary Tree Directory Sync Pro" href="/products/binary-tree-directory-sync-pro/" target="" style="background-image:url(/images/asset/screenshot/370-250/binary-tree-directory-sync-pro.png);"><div class="fp-txt icomoon-container"><em class="icomoon-icon icon-chevron_up"></em><h4>Binary Tree Directory Sync Pro</h4><div class="fp-hover"><p>Extend user collaboration with a powerful Active Directory sync
+							solution.</p><em class="btn-default-color btn-v3 btn-v3-small">Learn
+						More</em>
+					</div></div></a>
+				<a class="fp" data-v3-action="Featured Product" data-v3-label="Binary Tree Integration for Notes" href="/products/binary-tree-integration-for-notes/" target="" style="background-image:url(/images/asset/screenshot/370-250/binary-tree-integration-for-notes.png);">
+					<div class="fp-txt icomoon-container"><em class="icomoon-icon icon-chevron_up"></em><h4>Binary Tree Integration for Notes</h4><div class="fp-hover"><p>Enable IBM Domino integration with Exchange or Office 365 for
+								seamless user collaboration.</p><em class="btn-default-color btn-v3 btn-v3-small">Learn More</em>
+						</div></div></a>
+			</div><div class="splide__slide"><a class="fp" data-v3-action="Featured Product" data-v3-label="Binary Tree Exchange Pro" href="/products/binary-tree-migrator-pro-for-exchange/" target="" style="background-image:url(/images/asset/screenshot/370-250/binary-tree-migrator-pro-for-exchange.png);"><div class="fp-txt icomoon-container"><em class="icomoon-icon icon-chevron_up"></em><h4>Binary Tree Migrator Pro for Exchange</h4><div class="fp-hover"><p>Simplify your Microsoft Exchange modernization with a robust Exchange
+							migration tool.</p><em class="btn-default-color btn-v3 btn-v3-small">Learn
+						More</em>
+					</div></div></a>
+				<a class="fp" data-v3-action="Featured Product" data-v3-label="Binary Tree Power365 Migration" href="/products/binary-tree-power365-migration/" target="" style="background-image:url(/images/asset/screenshot/370-250/binary-tree-power365-migration.png);">
+					<div class="fp-txt icomoon-container"><em class="icomoon-icon icon-chevron_up"></em><h4>Binary Tree Power365 Migration</h4><div class="fp-hover"><p>Robustly move mail and workloads for Office 365 tenant migrations.</p><em class="btn-default-color btn-v3 btn-v3-small">Learn
+							More</em>
+						</div></div></a>
+			</div></div></div><div class="splide__arrows icomoon-container"><button class="splide__arrow splide__arrow--prev sn-prev icomoon-icon icon-arrow_back"></button><button class="splide__arrow splide__arrow--next sn-next icomoon-icon icon-arrow_forward"></button></div></div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div data-v3="HTML" class="html-editor-v3 centered bg-grey pt-v3 pb-v3 bulletedlist-v3">
+	<div class='' >
+		<div class="intro-v3">
+			<h2 class="title-v3">Case Study</h2>
+		</div>
+		<div data-v3-action="Content">
+			<div data-v3="Customer Story" class="customer-stories-v3"><div class="splide splide__page-arrows get-static"><div class="splide__track"><div class="splide__list"><div class="splide__slide tl-tile cs-wrap cs-img"><a data-v3-action="Story" data-v3-label="Food & Beverage Company" class="cs-link" href="/casestudy/food-and-beverage-company-postdivestiture-active-directory-migration8145899/" target="_self"><div role="img" aria-label="image alt text" class="cs-img-bar icomoon-container" lazy-bg-src="/images/patterns/customer-stories/manufacturer_001.png"></div><div class="cs-txt"><h4>Food &amp; Beverage Company</h4><p class="cs-main-p">"Binary Tree&rsquo;s project team was prompt,
+								professional and performed the AD migration exactly as we asked."</p><p class="cs-author"><strong>Systems Specialist</strong></p><strong class="link-v3-white icomoon-container">See
+								the Success Story<em class="icomoon-icon icon-arrow_forward"></em></strong>
+						</div></a>
+				</div><div class="splide__slide tl-tile cs-wrap"><a data-v3-action="Story" data-v3-label="YFAI" class="cs-link" href="/casestudy/joint-venture-automotive-interior-company-chooses-binary-tree-for-its-8145900/" target="_self"><div class="cs-txt"><h4>YFAI</h4><p class="cs-main-p">"We were impressed with the flexibility,
+								professionalism, and responsiveness of the team from Binary Tree. They
+								understood the scope of our project and stood behind their
+								commitments."</p><p class="cs-author"><strong>Kay Matthiesen</strong>
+								- Director of Global Infrastructure</p><strong class="link-v3-white icomoon-container">See
+								the Success Story<em class="icomoon-icon icon-arrow_forward"></em></strong>
+						</div></a>
+				</div><div class="splide__slide tl-tile cs-wrap cs-img"><a data-v3-action="Story" data-v3-label="Smarsh" class="cs-link" href="/casestudy/software-companies-merge-in-the-office-365-cloud8145892/" target="_self"><div role="img" aria-label="image alt text" class="cs-img-bar icomoon-container" lazy-bg-src="/images/patterns/customer-stories/insurance_001.png"></div><div class="cs-txt"><h4>Smarsh</h4><p class="cs-main-p">"Binary Tree enabled us to quickly operate as one
+								company and brand by merging our users, identities, and Office 365
+								tenants into a unified environment."</p><p class="cs-author"><strong>Anthony Webster</strong>
+								- CTO</p><strong class="link-v3-white icomoon-container">See
+								the Success Story<em class="icomoon-icon icon-arrow_forward"></em></strong>
+						</div></a>
+				</div><div class="splide__slide tl-tile cs-wrap "><a data-v3-action="Story" data-v3-label="AirFrance-KLM" class="cs-link" href="/casestudy/airline-streamlines-collaboration-by-merging-directories8145898/" target="_self"><div class="cs-txt"><h4>AirFrance-KLM</h4><p class="cs-main-p">"We&rsquo;re very positive about our experience
+								with the Binary Tree solutions. The Binary Tree Migrator Pro for Active
+								Directory software does exactly what they say it does..."</p><p class="cs-author"><strong>Project Manager</strong></p><strong class="link-v3-white icomoon-container">See
+								the Success Story<em class="icomoon-icon icon-arrow_forward"></em></strong>
+						</div></a>
+				</div><div class="splide__slide tl-tile cs-wrap cs-img"><a data-v3-action="Story" data-v3-label="Anglia Ruskin University " class="cs-link" href="/casestudy/advancing-higher-education-in-the-microsoft-office-365-cloud8146869/" target="_self"><div role="img" aria-label="image alt text" class="cs-img-bar icomoon-container" lazy-bg-src="/images/patterns/customer-stories/education_002.png"></div><div class="cs-txt"><h4>Anglia Ruskin University</h4><p class="cs-main-p">"Binary Tree Power365 Migration by Quest allowed us
+								to easily migrate cloud data for more than 25,000 users while also
+								being able to integrate with our own migration logic and automation."</p><p class="cs-author"><strong>Mladen Kirilov</strong>
+								- Senior Cloud Engineer</p><strong class="link-v3-white icomoon-container">See
+								the Success Story<em class="icomoon-icon icon-arrow_forward"></em></strong>
+						</div></a>
+				</div><div class="splide__slide tl-tile cs-wrap"><a data-v3-action="Story" data-v3-label="Empact Group" class="cs-link" href="/casestudy/case-study-empact-group-moves-directories-and-tenants8146040/" target="_self"><div class="cs-txt"><h4>Empact Group</h4><p class="cs-main-p">"This was the smoothest migration we have ever had
+								and we would definitely use Cloud Essentials and the Binary Tree
+								toolset again if we need to do another migration!"</p><p class="cs-author"><strong>Alan Quinn</strong>
+								- CFO</p><strong class="link-v3-white icomoon-container">See the
+								Success Story<em class="icomoon-icon icon-arrow_forward"></em></strong>
+						</div></a>
+				</div><div class="splide__slide tl-tile cs-wrap cs-img"><a data-v3-action="Story" data-v3-label="Jefferson University" class="cs-link" href="/casestudy/case-study-jefferson-university-hospitals-in-the-cloud8145962/" target="_self"><div role="img" aria-label="image alt text" class="cs-img-bar icomoon-container" lazy-bg-src="/images/patterns/customer-stories/education_001.png"></div><div class="cs-txt"><h4>Jefferson University</h4><p class="cs-main-p">"We were extremely satisfied with the level of
+								service, resources, and professional team. We had a very tight
+								timeframe, which the team exceeded by two weeks. Most important, our
+								end users were happy."</p><p class="cs-author"><strong>Project Manager</strong>
+								- CFO</p><strong class="link-v3-white icomoon-container">See the
+								Success Story<em class="icomoon-icon icon-arrow_forward"></em></strong>
+						</div></a>
+				</div></div></div><div class="splide__arrows icomoon-container"><button class="splide__arrow splide__arrow--prev sn-prev icomoon-icon icon-arrow_back" aria-label="Previous">Previous</button><button class="splide__arrow splide__arrow--next sn-next icomoon-icon icon-arrow_forward" aria-label="Next">Next</button></div></div></div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div data-v3="Contact Us" class="contact-v3 bg-white centered bulletedlist-v3 pt-v3 pb-v3">
+	<div class="container">
+		<div class="bg-svg bg-svg-right bg-svg-dots">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.985 70.596">
+				<path id="Path_39046" data-name="Path 39046" d="M132.773,809.32a1.636,1.636,0,1,1-1.636-1.636A1.636,1.636,0,0,1,132.773,809.32Zm13.792-1.636a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,807.684Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,824.515Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,841.345Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,858.176Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,875.007Z" transform="translate(-129.5 -807.684)">
+				</path></svg>
+		</div>
+		<div class="contact-info bg-dark-grey">
+			<div class="intro-v3">
+				<h2 class="title-v3">Contact Us</h2>
+				<div class="txt-v3" data-v3-action="Content">Ready to tackle your next IT challenge? We&rsquo;re here to help.</div>
+			</div>
+			<div class="cta-v3">
+				<a data-v3-action="CTA Button" class="btn-v3 btn-block-xs btn-orange" target="" href="/register/126919/">Contact Us</a>
+			</div>
+		</div>
+		<div class="bg-svg bg-svg-left bg-svg-dots">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.985 70.596">
+				<path id="Path_39046" data-name="Path 39046" d="M132.773,809.32a1.636,1.636,0,1,1-1.636-1.636A1.636,1.636,0,0,1,132.773,809.32Zm13.792-1.636a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,807.684Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,824.515Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,841.345Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,858.176Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,875.007Z" transform="translate(-129.5 -807.684)">
+				</path></svg>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div data-v3="Latest Content" class="latest-content-v3 bg-grey pt-v3 pb-v3">
+	<div class="container centered">
+		<h2 class="title-v3">Latest Content</h2>
+				<div class="intro-v3">
+			<a data-v3-action="View All Link" class="link-v3-orange icomoon-container" href="/resources/" target="">
+				View All
+				<span class="icomoon-icon icon-arrow_forward"></span>
+			</a>
+		</div>
+	</div>
+
+	<div class="splide splide__page-arrows ">
+		<div class="splide__track">
+			<div class="splide__list">
+				<a class="splide__slide" data-v3-action="White Paper" data-v3-label="February 2021 Gartner Market Guide for Cloud Office Migration Tools" href="/whitepaper/gartner-february-2021-market-guide-for-cloud-office-migration-tools8148207/" target="">
+					<div class="bg-svg bg-svg-dots">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.985 70.596">
+							<path id="Path_39046" data-name="Path 39046" d="M132.773,809.32a1.636,1.636,0,1,1-1.636-1.636A1.636,1.636,0,0,1,132.773,809.32Zm13.792-1.636a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,807.684Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,824.515Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,841.345Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,858.176Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,875.007Z" transform="translate(-129.5 -807.684)">
+							</path></svg>
+					</div>
+					<span class="icomoon-container"><span class="icon-documents icomoon-icon"></span></span>
+					<span class="lc-type">White Paper</span>
+					<h3><u>February 2021 Gartner Market Guide for Cloud Office Migration Tools</u></h3>
+					<div>Quest, Binary Tree, and Quadrotech are all listed as Representative Vendors in the February 2021 Gartner Market Guide for Cloud Office Migrations.</div>
+				</a>
+				<a class="splide__slide" data-v3-action="White Paper" data-v3-label="Best Practices for Active Directory Migrations" href="/whitepaper/white-paper-best-practices-for-active-directory-migrations8145865/" target="">
+					<div class="bg-svg bg-svg-dots">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.985 70.596">
+							<path id="Path_39046" data-name="Path 39046" d="M132.773,809.32a1.636,1.636,0,1,1-1.636-1.636A1.636,1.636,0,0,1,132.773,809.32Zm13.792-1.636a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,807.684Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,824.515Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,841.345Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,858.176Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,875.007Z" transform="translate(-129.5 -807.684)">
+							</path></svg>
+					</div>
+					<span class="icomoon-container"><span class="icon-documents icomoon-icon"></span></span>
+					<span class="lc-type">White Paper</span>
+					<h3><u>Best Practices for Active Directory Migrations</u></h3>
+					<div>Discover the processes and best practices for migrating Active Directory or Azure AD domains.</div>
+				</a>
+				<a class="splide__slide" data-v3-action="White Paper" data-v3-label="Managing Remote Workstations with Active Directory Domain Joins" href="/whitepaper/white-paper-active-directory-remote-workstation-joins8145880/" target="">
+					<div class="bg-svg bg-svg-dots">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.985 70.596">
+							<path id="Path_39046" data-name="Path 39046" d="M132.773,809.32a1.636,1.636,0,1,1-1.636-1.636A1.636,1.636,0,0,1,132.773,809.32Zm13.792-1.636a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,807.684Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,824.515Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,841.345Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,858.176Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,875.007Z" transform="translate(-129.5 -807.684)">
+							</path></svg>
+					</div>
+					<span class="icomoon-container"><span class="icon-documents icomoon-icon"></span></span>
+					<span class="lc-type">White Paper</span>
+					<h3><u>Managing Remote Workstations with Active Directory Domain Joins</u></h3>
+					<div>Understand the best practices for managing remote workstations with Active Directory domain joins.</div>
+				</a>
+				<a class="splide__slide" data-v3-action="White Paper" data-v3-label="Transform Microsoft Teams into a Path-to-Value for Your Remote Workforce" href="/whitepaper/white-paper-transform-microsoft-teams8145816/" target="">
+					<div class="bg-svg bg-svg-dots">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.985 70.596">
+							<path id="Path_39046" data-name="Path 39046" d="M132.773,809.32a1.636,1.636,0,1,1-1.636-1.636A1.636,1.636,0,0,1,132.773,809.32Zm13.792-1.636a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,807.684Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,824.515Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,841.345Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,858.176Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,875.007Z" transform="translate(-129.5 -807.684)">
+							</path></svg>
+					</div>
+					<span class="icomoon-container"><span class="icon-documents icomoon-icon"></span></span>
+					<span class="lc-type">White Paper</span>
+					<h3><u>Transform Microsoft Teams into a Path-to-Value for Your Remote Workforce</u></h3>
+					<div>Gain insight into transforming Microsoft Teams into a path-to-value.</div>
+				</a>
+				<a class="splide__slide" data-v3-action="White Paper" data-v3-label="Planning Mergers and Acquisitions in the Microsoft Office 365 Cloud" href="/whitepaper/white-paper-planning-mergers-and-acquisitions-in-the-microsoft-office-8145877/" target="">
+					<div class="bg-svg bg-svg-dots">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.985 70.596">
+							<path id="Path_39046" data-name="Path 39046" d="M132.773,809.32a1.636,1.636,0,1,1-1.636-1.636A1.636,1.636,0,0,1,132.773,809.32Zm13.792-1.636a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,807.684Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,824.515Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,841.345Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,858.176Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,875.007Z" transform="translate(-129.5 -807.684)">
+							</path></svg>
+					</div>
+					<span class="icomoon-container"><span class="icon-documents icomoon-icon"></span></span>
+					<span class="lc-type">White Paper</span>
+					<h3><u>Planning Mergers and Acquisitions in the Microsoft Office 365 Cloud</u></h3>
+					<div>Learn how to plan your merger, acquisition or divestiture in the Microsoft Office 365 cloud.</div>
+				</a>
+				<a class="splide__slide" data-v3-action="Datasheet" data-v3-label="Migration Services" href="/documents/datasheet-quest-migration-services-datasheet-145848.pdf" target="_blank">
+					<div class="bg-svg bg-svg-dots">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.985 70.596">
+							<path id="Path_39046" data-name="Path 39046" d="M132.773,809.32a1.636,1.636,0,1,1-1.636-1.636A1.636,1.636,0,0,1,132.773,809.32Zm13.792-1.636a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,807.684Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,824.515Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,841.345Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,858.176Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,875.007Z" transform="translate(-129.5 -807.684)">
+							</path></svg>
+					</div>
+					<span class="icomoon-container"><span class="icon-text_analytics icomoon-icon"></span></span>
+					<span class="lc-type">Datasheet</span>
+					<h3><u>Migration Services</u></h3>
+					<div>Reach your specific goals led by Quest experts who perform hundreds of migrations every year.</div>
+				</a>
+				<a class="splide__slide" data-v3-action="Datasheet" data-v3-label="Domino Application Services" href="/documents/datasheet-domino-application-services-datasheet-145849.pdf" target="_blank">
+					<div class="bg-svg bg-svg-dots">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.985 70.596">
+							<path id="Path_39046" data-name="Path 39046" d="M132.773,809.32a1.636,1.636,0,1,1-1.636-1.636A1.636,1.636,0,0,1,132.773,809.32Zm13.792-1.636a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,807.684Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,824.515Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,841.345Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,858.176Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,875.007Z" transform="translate(-129.5 -807.684)">
+							</path></svg>
+					</div>
+					<span class="icomoon-container"><span class="icon-text_analytics icomoon-icon"></span></span>
+					<span class="lc-type">Datasheet</span>
+					<h3><u>Domino Application Services</u></h3>
+					<div>Transform and retire your Domino apps.</div>
+				</a>
+				<a class="splide__slide" data-v3-action="Datasheet" data-v3-label="Binary Tree Migrator Pro for Active Directory" href="/documents/datasheet-binary-tree-migrator-pro-for-active-directory-datasheet-145845.pdf" target="_blank">
+					<div class="bg-svg bg-svg-dots">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.985 70.596">
+							<path id="Path_39046" data-name="Path 39046" d="M132.773,809.32a1.636,1.636,0,1,1-1.636-1.636A1.636,1.636,0,0,1,132.773,809.32Zm13.792-1.636a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,807.684Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,824.515Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,841.345Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,858.176Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,875.007Z" transform="translate(-129.5 -807.684)">
+							</path></svg>
+					</div>
+					<span class="icomoon-container"><span class="icon-text_analytics icomoon-icon"></span></span>
+					<span class="lc-type">Datasheet</span>
+					<h3><u>Binary Tree Migrator Pro for Active Directory</u></h3>
+					<div>Consolidate Active Directory with advanced coexistence, customization and automation.</div>
+				</a>
+				<a class="splide__slide" data-v3-action="Datasheet" data-v3-label="Binary Tree Migrator for Notes" href="/documents/datasheet-binary-tree-migrator-for-notes-datasheet-145847.pdf" target="_blank">
+					<div class="bg-svg bg-svg-dots">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64.985 70.596">
+							<path id="Path_39046" data-name="Path 39046" d="M132.773,809.32a1.636,1.636,0,1,1-1.636-1.636A1.636,1.636,0,0,1,132.773,809.32Zm13.792-1.636a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,807.684Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,807.684Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,824.515Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,824.515Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,841.345Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,841.345Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,858.176Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,858.176Zm-61.713,16.831a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,131.136,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,146.564,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,161.993,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,177.421,875.007Zm15.428,0a1.636,1.636,0,1,0,1.636,1.636A1.636,1.636,0,0,0,192.849,875.007Z" transform="translate(-129.5 -807.684)">
+							</path></svg>
+					</div>
+					<span class="icomoon-container"><span class="icon-text_analytics icomoon-icon"></span></span>
+					<span class="lc-type">Datasheet</span>
+					<h3><u>Binary Tree Migrator for Notes</u></h3>
+					<div>Easily migrate your Notes mail archives to Microsoft Exchange or Office 365.</div>
+				</a>
+			</div>
+		</div>
+		<div class="splide__arrows icomoon-container">
+			<button class="splide__arrow splide__arrow--prev sn-prev icomoon-icon icon-arrow_back"></button>
+			<button class="splide__arrow splide__arrow--next sn-next icomoon-icon icon-arrow_forward"></button>
+		</div>
+	</div>
+</div>
+</div>
+<script src="/static/js/v3/default.min.js?10292021" defer></script>
+            <!--Content End-->
+             <!--googleoff: snippet-->
+            <!-- BEGIN NOINDEX -->
+            <footer class="footer-menu mhf" id="footer">
+                
+                <!--V2LayoutFooterTop us-en quest Footer V3 HTML-->
+<div class="footer-v3 blue">
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-md-9 pull-right-md">
+				<div class="f-link">
+					<div>
+						<h4>About</h4>
+						<ul>
+							<li data-type="About Us"><a href="https://www.quest.com/company/" target="_blank">About Us</a></li>
+							<li data-type="Leadership"><a href="https://www.quest.com/company/leadership.aspx" target="_blank">Leadership</a></li>
+							<li data-type="Customer Stories"><a href="/customer-stories/">Customer Stories</a></li>
+							<li data-type="News"><a href="https://www.quest.com/community/news/" target="_blank">News</a></li>
+							<li data-type="Careers"><a href="https://www.quest.com/company/careers.aspx" target="_blank">Careers</a></li>
+							<li data-type="Contact Quest"><a href="https://www.quest.com/company/contact-us.aspx" target="_blank">Contact Quest</a></li>
+						</ul>
+					</div>
+					<div  data-type="Support">
+						<h4>Support</h4>
+						<ul>
+							<li data-type="Support Portal"><a rel="noreferrer,noopener" href="https://support.quest.com/" target="_blank">Support Portal</a></li>
+							<li data-type="Contact Support"><a rel="noreferrer,noopener" href="https://support.quest.com/contact-support/" target="_blank">Contact Support</a></li>
+							<li  data-type="Forums"><a href="https://www.quest.com/community/p/product-forum-listing/" target="_blank">Forums</a></li>
+						</ul>
+					</div>
+					<div data-type="Contact">
+						<h4>Contact</h4>
+						<ul>
+							<li data-type="Contact Quest"><a href="https://www.quest.com/company/contact-us.aspx" target="_blank">Contact Quest</a></li>
+							<li data-type="Request Pricing"><a href="/contact-sales/">Request Pricing</a></li>
+							<li data-type="Licensing Assistance"><a rel="noreferrer,noopener" href="https://support.quest.com/contact-us/licensing/" target="_blank">Licensing Assistance</a></li>
+							<li data-type="Accounting"><a href="https://www.quest.com/company/contact-us.aspx" target="_blank">Accounting</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-3">
+				<div class="f-info">
+					<img src="/images/shared/binary-tree-quest-white.svg" class="f-logo" alt="Quest Footer Logo">
+					<span>&copy; <span class="copyright-year p-0"></span> Quest Software ALL RIGHTS RESERVED.</span>
+					<span>
+						<span data-type="Legal"><a href="https://www.quest.com/legal/" target="_blank">Legal</a></span>|
+						<span data-type="Terms of Use"><a href="https://www.quest.com/legal/" target="_blank">Terms of Use</a></span>|
+						<span data-type="Privacy Policy"><a href="https://www.quest.com/legal/privacy.aspx" target="_blank">Privacy Policy</a></span>
+					</span>
+					<span>
+						<span><a href="/" class="footer-ot-settings">Cookie Preference Center</a></span>| 
+						<span><a target="_blank" href="/docs/cookie-use-policy-legal-152474.pdf">Cookie Use Policy</a></span>
+					</span>
+					<div class="f-social" data-type="Social Networks">
+						<ul>
+							<li class="linkedin" data-type="LinkedIn"><a rel="noreferrer,noopener" href="https://www.linkedin.com/company/quest-software?xd_co_f=YTQxY2ZmNzctNDlhNy00ZmMzLTg3ZDMtNjVhOWZkYWZjYTZm" target="_blank"><span></span></a></li>
+							<li class="twitter" data-type="Twitter"><a rel="noreferrer,noopener" href="https://twitter.com/quest" target="_blank"><span></span></a></li>
+							<li class="facebook" data-type="Facebook"><a rel="noreferrer,noopener" href="https://www.facebook.com/questsoftware" target="_blank"><span></span></a></li>
+							<li class="youtube" data-type="YouTube"><a rel="noreferrer,noopener" href="https://www.youtube.com/user/questsoftware" target="_blank"><span></span></a></li>
+						</ul>
+					</div>
+					<div class="f-lan-selector">
+						<div class="current-country">
+							<span class="icomoon-container">
+								<span class="icomoon-icon icon-globe"></span>
+							</span>
+							<span class="f-country-label">United States of America (EN)</span>
+						</div>
+						<div id="country-popup">
+							<div>
+								<div data-type="Country Selector">
+									<span class="f-close"></span>
+									<ul>
+										<li data-type="United States"><a href="/" class="active">United States (English)</a></li>
+										<li data-type="Brazil"><a href="/br-pt/">Brazil (Português)</a></li>
+										<li data-type="China"><a href="/cn-zh/">China (中文)</a></li>
+										<li data-type="France"><a href="/fr-fr/">France (Français)</a></li>
+										<li data-type="Germany"><a href="/de-de/">Germany (Deutsch)</a></li>
+										<li data-type="Japan"><a href="/jp-ja/">Japan (日本語)</a></li>
+										<li data-type="Mexico"><a href="/mx-es/">Mexico (Español)</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>$('.copyright-year').text(new Date().getFullYear());</script>
+<script id="quest-ot-settings-script">
+	(function(){
+		$('.footer-ot-settings').on('click', function(){
+			OneTrust.ToggleInfoDisplay();
+			return false;
+		});
+	})();
+</script>
+                
+
+                
+                
+                
+            </footer>
+            <!-- DomainTransferModal -->
+            <!-- END NOINDEX -->
+        </div>
+    </div>
+
+    
+        <script src='/static/js/demandbase-v2.min.js?202306140820' defer></script>
+
+    <script type="text/javascript" defer>
+        var llg = "en", scipcountry = $.cookie("ccip");
+
+    </script>
+
+
+    
+    <div id="loading-container" class="vertical-center horizontal-center hidden">
+        <div class="text-center mt-15 loading-spinner">
+            <div class="preloader preloader-relative">
+                <div class="preloader-wrapper active">
+                    <div class="spinner-layer quest-orange">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div><div class="gap-patch">
+                            <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="preloader-text preloader-overlay-text">
+                            Please wait...
+                </p>
+            </div>
+        </div>
+    </div>
+            <div id="divpageset"></div>
+        <script defer>
+	        $(document).ready(function () {
+				$.ajax({
+					url: "/sso/pageset/",
+					data: {
+						refer: document.referrer, currentpage: 'https://www.binarytree.com/',
+						region: '', localityItemId: 138369,
+						dsgLocalityItemId: 3, prospectOrigin: ''
+					},
+                    contentType: "application/json; charset=utf-8",
+					complete: function (a) {
+						a = a.responseText && a.responseText.length ? JSON.parse(a.responseText) : a.responseText;
+						if (a != "true") {
+                            $("#divpageset").append(a);
+
+						}
+					},
+            error: function (e) {
+                console.error('ssopageset', 'error:',  e)
+            }
+		        });
+				SetDemandbaseScript("");
+            });
+        </script>
+    <a href="/thisistheend" rel="nofollow" style="display: none" aria-hidden="true">This is the end</a>
+  
+</body>
+</html>

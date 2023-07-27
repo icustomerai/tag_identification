@@ -1,0 +1,1192 @@
+<!-- WARNING: Dynamicweb 8 compatibility mode active (Dynamicweb.TemplateCompatibilityPack.dll). For optimal performance update your razor templates to use the Dynamicweb 9 API and remove the Dynamicweb.TemplateCompatibilityPack.dll from the /bin-->
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>FiberVisions</title>
+<link rel="canonical" href="/?">
+<base href="https://www.fibervisions.com/">
+<meta name="generator" content="Dynamicweb 9">
+
+
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="robots" content="index, follow">
+      
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-50879080-2', 'auto');
+  var mEventTracking = true;
+  ga('send', 'pageview');
+
+</script>
+
+      
+
+
+
+    
+    
+
+
+    <!-- Facebook Admin -->
+
+    <!-- Essential styles -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.5.0/css/flag-icon.min.css" type="text/css">
+
+    <!-- Mobile menu styles -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css" rel="stylesheet" type="text/css" media="screen">
+
+    <!-- Favicon -->
+
+    <link href="/Files/Templates/Designs/FiberVisions/images/favicon.png" rel="icon" type="image/png">
+
+    <!-- Variables -->
+
+
+    <!--FONT SETTINGS-->
+
+
+
+
+    			<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800,900">
+			<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=PT Sans:100,200,300,400,500,600,700,800,900">
+
+
+    <!-- GENERAL/COLOR SETTINGS -->
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+    <!-- Template styles -->
+    <link id="dwStylesheet" type="text/css" href="/Files/Templates/Designs/FiberVisions/css/DWGlobalStyles.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="/Files/Templates/Designs/FiberVisions/css/invoice.css">
+    <link rel="stylesheet" type="text/css" href="/Files/Templates/Designs/FiberVisions/css/jquerybxslider.css">
+    <link rel="stylesheet" type="text/css" href="/Files/Templates/Designs/FiberVisions/css/print.css" media="print">
+
+
+
+    <link type="text/css" href="/Files/Templates/Designs/FiberVisions/css/DWGlobalStylesSite4_auto.min.css?t=@areaUpdated.Ticks" rel="stylesheet">
+
+    <!-- Analytics code -->
+    
+
+    <link rel="stylesheet" type="text/css" href="/Files/Templates/Designs/FiberVisions/css/typeahead.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+      
+      <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+<script src="/Files/Templates/Designs/FiberVisions/js/ESFV-animation.js"></script>
+<script>
+var canvas, stage, exportRoot;
+function init() {
+	canvas = document.getElementById("canvas");
+	handleComplete();
+}
+function handleComplete() {
+	exportRoot = new lib.ESFVflash();
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);	
+	//Registers the "tick" event listener.
+	createjs.Ticker.setFPS(lib.properties.fps);
+	createjs.Ticker.addEventListener("tick", stage);	    
+	//Code to support hidpi screens and responsive scaling.
+	(function(isResp, respDim, isScale, scaleType) {		
+		var lastW, lastH, lastS=1;		
+		window.addEventListener('resize', resizeCanvas);		
+		resizeCanvas();		
+		function resizeCanvas() {			
+			var w = lib.properties.width, h = lib.properties.height;			
+			var iw = window.innerWidth, ih=window.innerHeight;			
+			var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+			if(isResp) {                
+				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+					sRatio = lastS;                
+				}				
+				else if(!isScale) {					
+					if(iw<w || ih<h)						
+						sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==1) {					
+					sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==2) {					
+					sRatio = Math.max(xRatio, yRatio);				
+				}			
+			}			
+			canvas.width = w*pRatio*sRatio;			
+			canvas.height = h*pRatio*sRatio;
+			canvas.style.width = w*sRatio+'px';			
+			canvas.style.height = h*sRatio+'px';
+			stage.scaleX = pRatio*sRatio;			
+			stage.scaleY = pRatio*sRatio;			
+			lastW = iw; lastH = ih; lastS = sRatio;		
+		}
+	})(false,'both',false,1);	
+}
+</script>
+
+  <!-- Slider code -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="/Files/System/Slider/responsiveslides.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="/Files/System/Slider/responsiveslides.css">
+<script>
+  $(function() {
+    $(".rslides").responsiveSlides({
+ speed: 3500
+      });
+  });
+</script>  
+      
+
+<script type="text/javascript">
+(function(w,d,n) {
+w[n]=w[n]||function(name,value){ w[n][name]=value; };
+var dwa = d.createElement('script'); dwa.type = 'text/javascript'; dwa.async = 1;
+dwa.src = '/Admin/Content/JsLib/dw/dwansta.min.js';
+var s = d.getElementsByTagName('script')[0]; s.parentNode.insertBefore(dwa, s);
+})(window,document,'analytics');
+
+analytics('sessionID', 't2ooe5xod5mkym5sy4tet1le');
+analytics('pageID', 10380);
+analytics('areaID', 4);
+analytics('engagement', 0);
+</script>
+
+</head>
+<body style="background: url('/Admin/Public/GetImage.ashx?width=1920&amp;Crop=1&amp;Compression=75&amp;image=/Files/Templates/Designs/FiberVisions/images/background/FV-bg.jpg')  !important; " id="sitecontent" onload="init();">
+    <div id="fb-root"></div>
+    <script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/da_DK/sdk.js#xfbml=1&version=v2.5";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <!-- MODALS -->
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Login</h4>
+                </div>
+                <form role="form" id="loginform" method="post">
+                    <div class="modal-body">
+
+                        <input type="hidden" name="ID" value="10380">
+                        <input type="hidden" name="DWExtranetUsernameRemember" value="True">
+                        <input type="hidden" name="DWExtranetPasswordRemember" value="True">
+                        <div class="form-group">
+
+
+                            <label for="username">Email</label>
+                            <input type="text" class="form-control" name="username" id="username" placeholder="Enter email" value="">
+                        </div>
+                        <div class="form-group">
+
+
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Enter password">
+                            <p>&nbsp;</p>
+                            <a class="pull-left" href='/Default.aspx?ID=8482&LoginAction=Recovery'>Forgot your password?</a>
+                            &nbsp;
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="checkbox pull-left">
+                                    <label>
+                                        <input type="checkbox" name="Autologin" checked="checked" value="True"> Remember me
+                                    </label>
+                                </div>
+                                <button type="submit" class="btn btn-xs btn-base pull-right">Sign in</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+
+
+    <div id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas">
+        <div class="col-sm-12 col-xs-12 offcanvas-col">
+            <div class="row offcanvas-row">&nbsp;</div>
+            <div class="row offcanvas-row">
+                <div class="col-sm-12 col-xs-12 offcanvas-col">
+                    <a href="/fibervisions" class="brand">
+                            <div class="img-responsive dw-offsetmenu-logo pull-left">
+                                    <img class="img-responsive" src="/Files/Templates/Designs/FiberVisions/images/FV-logo.png" alt="Logo">
+                            </div>
+
+                    </a>
+                </div>
+            </div>
+            <div class="row offcanvas-row">&nbsp;</div>
+        </div>
+
+        <div class="col-sm-12 col-xs-12 offcanvas-col">
+        </div>
+
+
+        <div class="row offcanvas-row">
+            <div class="col-sm-12 col-xs-12 offcanvas-col">
+                <ul class="nav nav-pills nav-stacked">
+  <li class="nav-line">
+    <hr class="nav-line-hr" />
+  </li>
+  <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+    <a href="/fibervisions">FiberVisions</a>
+    <ul class="nav nav-stacked M1">
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/fibervisions/our-locations">Our Locations</a>
+        <ul class="nav nav-stacked M2">
+          <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+            <a href="/fibervisions/our-locations/north-america-hq-duluth-ga">North America - HQ - Duluth, GA</a>
+          </li>
+          <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+            <a href="/fibervisions/our-locations/north-america-covington-ga">North America - Covington, GA</a>
+          </li>
+          <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+            <a href="/fibervisions/our-locations/north-america-athens-ga">North America - Athens, GA</a>
+          </li>
+          <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+            <a href="/fibervisions/our-locations/europe-middle-east-varde-denmark">Europe Middle East - Varde, Denmark</a>
+          </li>
+          <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+            <a href="/fibervisions/our-locations/asia-pacific-suzhou-china">Asia Pacific - Suzhou China</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+    <a href="/technology-innovation/r-d-capabilities">Technology Innovation</a>
+    <ul class="nav nav-stacked M1">
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/technology-innovation/r-d-capabilities">R&D Capabilities</a>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/technology-innovation/biotransformation-technology-1">Biotransformation Technology</a>
+      </li>
+    </ul>
+  </li>
+  <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+    <a href="/markets/markets">Markets</a>
+    <ul class="nav nav-stacked M1">
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/markets/markets">Markets</a>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/markets/diapers">Diapers</a>
+        <ul class="nav nav-stacked M2">
+          <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+            <a href="/markets/diapers/top-sheet">Top Sheet</a>
+          </li>
+          <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+            <a href="/markets/diapers/leg-cuff">Leg Cuff</a>
+          </li>
+          <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+            <a href="/markets/diapers/acquisition-distribution-layer">Acquisition Distribution Layer</a>
+          </li>
+          <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+            <a href="/markets/diapers/back-sheet">Back Sheet</a>
+          </li>
+          <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+            <a href="/markets/diapers/extensible-fabric">Extensible Fabric</a>
+          </li>
+          <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+            <a href="/markets/diapers/closure-systems">Closure Systems</a>
+          </li>
+        </ul>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/markets/wipes">Wipes</a>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/markets/femcare">Femcare</a>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/markets/filtration">Filtration</a>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/markets/geosynthetics">Geosynthetics</a>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/markets/building-and-construction">Building and Construction</a>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/markets/automotive">Automotive</a>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/markets/apparel-and-textiles">Apparel and Textiles</a>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/markets/paper">Paper</a>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/markets/other">Other</a>
+      </li>
+    </ul>
+  </li>
+  <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+    <a href="/converting-technologies/converting-technologies">Converting Technologies</a>
+    <ul class="nav nav-stacked M1">
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/converting-technologies/converting-technologies">Converting Technologies</a>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/converting-technologies/calender-bonding">Calender Bonding</a>
+        <ul class="nav nav-stacked M2">
+          <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+            <a href="/converting-technologies/calender-bonding/calendar-bonding-carded">Calendar Bonding Carded</a>
+          </li>
+          <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+            <a href="/converting-technologies/calender-bonding/airlaid-calendar-bonding">Airlaid Calendar Bonding</a>
+          </li>
+        </ul>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/converting-technologies/spunlace">Spunlace</a>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/converting-technologies/needlepunch">Needlepunch</a>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/converting-technologies/through-air-bonding">Through Air Bonding</a>
+        <ul class="nav nav-stacked M2">
+          <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+            <a href="/converting-technologies/through-air-bonding/carded-through-air-bonding">Carded Through Air Bonding</a>
+          </li>
+          <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+            <a href="/converting-technologies/through-air-bonding/airlaid-through-air-bonding">Airlaid Through Air Bonding</a>
+          </li>
+        </ul>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/converting-technologies/spun-yarns-ring-spinning">Spun Yarns / Ring Spinning</a>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/converting-technologies/wetlaid">Wetlaid</a>
+      </li>
+    </ul>
+  </li>
+  <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+    <a href="/products/products-2">Products</a>
+    <ul class="nav nav-stacked M1">
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/products/products-2">Products</a>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/products/monocomponent-fibers-1">Monocomponent Fibers</a>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/products/bicomponent-products">Bicomponent Products</a>
+      </li>
+    </ul>
+  </li>
+  <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+    <a href="/about-us/about-us-1">About Us</a>
+    <ul class="nav nav-stacked M1">
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/about-us/about-us-1">About Us</a>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/about-us/why-fibervisions">Why FiberVisions?</a>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/about-us/our-vision-and-strategy">Our Vision and Strategy</a>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/about-us/our-history">Our History</a>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/about-us/our-management-team">Our Management Team</a>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/about-us/sustainability">Sustainability</a>
+        <ul class="nav nav-stacked M2">
+          <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+            <a href="/about-us/sustainability/sustainability-throughout-our-product-lifecycle">Sustainability Throughout Our Product Lifecycle</a>
+          </li>
+          <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+            <a href="/about-us/sustainability/environment">Environment</a>
+          </li>
+          <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+            <a href="/about-us/sustainability/safe-by-design">Safe By Design</a>
+          </li>
+        </ul>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/about-us/jobs">Jobs</a>
+      </li>
+    </ul>
+  </li>
+  <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+    <a href="/news-events-1">News/Events</a>
+    <ul class="nav nav-stacked M1">
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/news-events-1">News/Events</a>
+      </li>
+      <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+        <a href="/news-events/news-archive">News archive</a>
+      </li>
+    </ul>
+  </li>
+  <li class="&#xA;&#x9;&#x9;&#x9;&#x9;offcanvas-menubtn&#xA;&#x9;&#x9;&#x9;">
+    <a href="/contact-2">Contact</a>
+  </li>
+</ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER AND CONTENT-->
+
+    <div class="body-wrap shad fluid">
+
+        <!-- HEADER -->
+        <div id="divHeaderWrapper">
+         <div id="toplinks" align="center" style="background: #eee;"><a href="http://www.indoramaventures.com/en" target="_blank" style="font-style: italic;">Indorama Ventures</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://www.es-fibervisions.com" target="_blank" style="font-style: italic;">ES FiberVisions Bicomponent Fibers</a></div>
+            <header class="">
+
+                <!-- TOP HEADER -->
+                    <div class="top-header">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-4 logobox">
+                                        <a href="/fibervisions" class="brand">
+                                                <img class="img-responsive dw-logoimage pull-left" src="/Files/Templates/Designs/FiberVisions/images/FV-logo.png" alt="Logo">
+
+                                        </a>
+                                </div>
+
+                                <div class="col-md-8 logobox">
+                                    <nav class="top-header-menu hidden-sm hidden-xs">
+                                        <ul class="top-menu">
+                                           
+                                                <li><a href="/fibervisions/our-locations">» Our locations</a></li>
+                                                <li><a href="/fibervisions/document-center">» Document Center</a></li>
+                                         
+                                           
+
+                                            <!-- Ecommerce user menu -->
+
+                                            <!-- Ecommerce Cart -->
+                                        </ul>
+
+
+
+                                        <ul style="list-style-type: none; margin-right: 10px; padding-bottom:10px; font-size:12px; float:right;">
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                <!-- MAIN NAV -->
+
+
+                <div id="navOne" class="navbar navbar-wp  navbar-fixed affix-top" role="navigation" data-spy="affix" data-offset-top="110" data-offset-bottom="300">
+                    <div class="container">
+
+								<!-- Small screen header -->
+                            <div class="hidden-md hidden-lg row">
+                                <div class="dw-header-sm">
+                                    <div class="pull-left">
+                                        <button type="button" class="btn btn-sm btn-base" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
+                                            <i class="fa fa-bars"></i>
+                                        </button>
+                                        &nbsp;&nbsp;&nbsp;
+                                    </div>
+
+                                    <div class="pull-left">
+                                        <h2 class="dw-header-sm-title">FiberVisions</h2>
+                                    </div>
+
+                                </div>
+                            </div>
+							<!-- Big screen header -->
+                            <div class="navbar-navigation">
+                                <div class="hidden-sm hidden-xs">
+                                    <nav class="col-md-10 col-sm-10 col-xs-10 p-0 navbar-collapse collapse navbar-left">
+<ul class="nav navbar-nav" id="topnavigation">
+  <li class="dropdown dw-navbar-button active ">
+    <a class="dropdown-toggle" data-hover="dropdown" data-close-others="true" id="homemenubtn" href="/fibervisions">FiberVisions<span /></a>
+    <ul class="M1 dropdown-menu">
+      <li class="dropdown">
+        <a href="/fibervisions/our-locations">Our Locations<span /></a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown dw-navbar-button">
+    <a class="dropdown-toggle" data-hover="dropdown" data-close-others="true" href="/technology-innovation/r-d-capabilities">Technology Innovation<span /></a>
+    <ul class="M1 dropdown-menu">
+      <li class="dropdown">
+        <a href="/technology-innovation/r-d-capabilities">R&D Capabilities<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/technology-innovation/biotransformation-technology-1">Biotransformation Technology<span /></a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown dw-navbar-button">
+    <a class="dropdown-toggle" data-hover="dropdown" data-close-others="true" href="/markets/markets">Markets<span /></a>
+    <ul class="M1 dropdown-menu">
+      <li class="dropdown">
+        <a href="/markets/markets">Markets<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/markets/diapers">Diapers<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/markets/wipes">Wipes<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/markets/femcare">Femcare<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/markets/filtration">Filtration<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/markets/geosynthetics">Geosynthetics<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/markets/building-and-construction">Building and Construction<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/markets/automotive">Automotive<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/markets/apparel-and-textiles">Apparel and Textiles<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/markets/paper">Paper<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/markets/other">Other<span /></a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown dw-navbar-button">
+    <a class="dropdown-toggle" data-hover="dropdown" data-close-others="true" href="/converting-technologies/converting-technologies">Converting Technologies<span /></a>
+    <ul class="M1 dropdown-menu">
+      <li class="dropdown">
+        <a href="/converting-technologies/converting-technologies">Converting Technologies<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/converting-technologies/calender-bonding">Calender Bonding<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/converting-technologies/spunlace">Spunlace<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/converting-technologies/needlepunch">Needlepunch<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/converting-technologies/through-air-bonding">Through Air Bonding<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/converting-technologies/spun-yarns-ring-spinning">Spun Yarns / Ring Spinning<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/converting-technologies/wetlaid">Wetlaid<span /></a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown dw-navbar-button">
+    <a class="dropdown-toggle" data-hover="dropdown" data-close-others="true" href="/products/products-2">Products<span /></a>
+    <ul class="M1 dropdown-menu">
+      <li class="dropdown">
+        <a href="/products/products-2">Products<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/products/monocomponent-fibers-1">Monocomponent Fibers<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/products/bicomponent-products">Bicomponent Products<span /></a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown dw-navbar-button">
+    <a class="dropdown-toggle" data-hover="dropdown" data-close-others="true" href="/about-us/about-us-1">About Us<span /></a>
+    <ul class="M1 dropdown-menu">
+      <li class="dropdown">
+        <a href="/about-us/about-us-1">About Us<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/about-us/why-fibervisions">Why FiberVisions?<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/about-us/our-vision-and-strategy">Our Vision and Strategy<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/about-us/our-history">Our History<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/about-us/our-management-team">Our Management Team<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/about-us/sustainability">Sustainability<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/about-us/jobs">Jobs<span /></a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown dw-navbar-button">
+    <a class="dropdown-toggle" data-hover="dropdown" data-close-others="true" href="/news-events-1">News/Events<span /></a>
+    <ul class="M1 dropdown-menu">
+      <li class="dropdown">
+        <a href="/news-events-1">News/Events<span /></a>
+      </li>
+      <li class="dropdown">
+        <a href="/news-events/news-archive">News archive<span /></a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown dw-navbar-button">
+    <a class="dropdown-toggle" data-hover="dropdown" data-close-others="true" href="/contact-2">Contact<span /></a>
+  </li>
+</ul>
+                                        <!-- Extra navigation when no header is shown -->
+                                    </nav>
+                                </div>
+
+                            </div>
+                    </div>
+                </div>
+
+                    </header>
+                </div>
+
+                <!-- MAIN CONTENT -->
+
+
+
+
+
+
+
+<section class="slice white animate-hover-slide">
+    <div class="container">
+        
+
+        <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xm-12">
+                <div class="row" id="maincontent">
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- FONT SETTINGS -->
+    	<style>
+    		.dw-carousel-caption {
+    			text-shadow: 0px 0px 8px #333;
+    		}
+    	</style>
+    <!-- COLUMNS + FLUID CONTROLS-->
+
+
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT Sans:100,200,300,400,500,600,700,800,900">
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=PT Sans:100,200,300,400,500,600,700,800,900">
+
+<!-- Fluid settings --> 
+	<!-- Fluid settings -->
+	    </div></div></div></div>
+	    	<!-- Makes the banner stick to the top -->
+	    <div class="container-fluid" style="position: relative !important; top: -21px; width: 100% !important; "><div class="row">
+
+
+<div class="">
+<section style="height: 520px !important; background: url('/Admin/Public/Getimage.ashx?width=2560&amp;compression=75&amp;Crop=5&amp;image=/Files/Images/FiberVisions/Front/Sustainability-2.jpg') no-repeat 0 0; background-position: center; margin-bottom: 0px; background-color: #005731; ">
+
+
+
+	<div class="container">
+		<div style="padding-top: 180px">
+		    <div><span class="title dw-carousel-caption" style="font-family: PT Sans; font-size: 50px; color: #FFFFFF; line-height: 1.3; text-transform: none; font-weight: 600; letter-spacing: 5;">Innovative Technology for a<br />Sustainable Future&nbsp;</span></div>
+				<div>
+				    <span class="subtitle dw-carousel-caption" style="font-family: PT Sans; font-size: 30px; color: #FFFFFF; line-height: 1.3; text-transform: none; font-weight: 600; letter-spacing: 5">FiberVisions Announces partnership with<br />Polymateria to bring Biotransformation<br />technology to Fibers & Nonwovens.&nbsp;&nbsp;&nbsp;</span>
+				</div>
+			<span class="clearfix"></span>
+
+<br />
+<div id="knap"><a href="/technology-innovation/biotransformation-technology-1">Learn more</a></div>
+		</div>
+	</div>
+</div>
+
+<!-- Fluid settings -->    
+	    </div></div>
+	    <!-- Makes the rest of the page work proberly -->
+			<div class="container"><div class="row"><div class="col-md-12 col-sm-12 col-xs-12"><div class="row" id="maincontent" title="Content area">
+
+
+
+
+
+</div><div class="row">
+
+<div class="col-md-12 col-xs-12">
+
+
+
+
+
+
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div><div class="row">
+
+<div class="col-md-4 col-xs-12">
+
+		<div class="figure" style="font-size: 16px;!important;">
+			<p><img alt="" src="/Files/Images/FiberVisions/Front/Markets-served.png" style="width: 100%;" /></p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="width:100%;">
+	<tbody>
+		<tr>
+			<td style="text-align: left; vertical-align: top; width: 50%;">» <a href="/markets/diapers">Diaper</a><br />
+			» <a href="/markets/wipes">Wipes</a><br />
+			» <a href="/markets/femcare">Fem Care</a><br />
+			» <a href="/markets/filtration">Filtration</a><br />
+			» <a href="/markets/paper">Paper</a></td>
+			<td style="text-align: left; vertical-align: top;">» <a href="/markets/apparel-and-textiles">Apparel</a><br />
+			» <a href="/markets/building-and-construction">Construction</a><br />
+			» <a href="/markets/automotive">Automotive</a><br />
+			» <a href="/markets/geosynthetics">Geosynthetics</a><br />
+			» <a href="/markets/other">Other</a></td>
+		</tr>
+	</tbody>
+</table>
+
+<p>&nbsp;</p>
+
+<p><img alt="" src="/Files/Images/FiberVisions/Front/Technologies-supported.png" style="width: 100%;" /></p>
+
+<p>» <a href="/converting-technologies/calender-bonding">Calender Bonding</a><br />
+» <a href="/converting-technologies/needlepunch">Needlepunch</a><br />
+» <a href="/converting-technologies/spun-yarns-ring-spinning">Spun Yarns/Ring Spinning</a><br />
+» <a href="/converting-technologies/spunlace">Spunlace</a><br />
+» <a href="/converting-technologies/through-air-bonding">Through Air Bonding</a><br />
+» <a href="/converting-technologies/wetlaid">Wetlaid</a></p>
+
+<p>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" style="width:100%;">
+	<tbody>
+		<tr>
+		</tr>
+	</tbody>
+</table>
+
+		</div>
+
+
+
+
+
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-md-4 col-xs-12">
+
+		<div class="figure" style="background: #eeeeee; color: #333; padding-top: 10px; padding-left: 10px;padding-right: 10px;padding-bottom: 16px;font-size: 17px; font-family: Roboto !important;">
+			<p style="text-align: center;">FIBERVISIONS LOCATIONS AROUND THE WORLD</p>
+
+<p style="text-align: center;"><img alt="" src="/Files/Images/FiberVisions/Front/FV-world-map.png" style="width: 320px; height: 172px;" /></p>
+
+<p>FiberVisions has the broadest global reach of any polyolefin staple fiber producer.<br />
+Facilities are located in key strategic locations in all of the world's major regions, giving the Company the ability to serve our customers wherever they are located.</p>
+
+<form action="" class="location" method="POST" name="location">
+<p align="left"><select name="select" onchange="window.location=this.value"><option selected="selected">Choose a Location</option><option value="/fibervisions/our-locations/asia-pacific-suzhou-china">Asia Pacific - Suzhou China</option><option value="/fibervisions/our-locations/north-america-hq-duluth-ga">Corporate Office</option><option value="/fibervisions/our-locations/europe-middle-east-varde-denmark">Europe Middle East - Varde, Denmark</option><option value="/fibervisions/our-locations/north-america-athens-ga">North America - Athens, GA</option><option value="/fibervisions/our-locations/north-america-covington-ga">North America - Covington, GA</option> </select></p>
+</form>
+
+		</div>
+
+
+
+
+
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-md-4 col-xs-12">
+
+		<div class="figure" style="font-size: 16px;!important;">
+			<p><img alt="" src="/Files/Images/FiberVisions/Front/Product-selector.png" style="width: 91px; height: 91px; float: right;" /><a href="/products-2">» PRODUCT SELECTOR</a></p>
+
+<p>Find fiber products best suited for your applications</p>
+
+<p>&nbsp;</p>
+
+<p><a href="/about-us-2">» ABOUT US</a><img alt="" src="/Files/Images/FiberVisions/TZA 2019 91 91 B.jpg" style="width: 91px; height: 91px; float: right;" /></p>
+
+<p>FiberVisions is the global leader in polyolefin staple fibers.<br />
+<em><span style="font-size:11px;">Tom Zaiser - CEO</span></em></p>
+
+<p><img alt="" src="/Files/Images/FiberVisions/Front/Sustainability.png" style="width: 91px; height: 91px; float: right;" /><a href="/about-us/sustainability">» SUSTAINABILITY</a></p>
+
+<p>We are committed to responsible stewardship of the environment...</p>
+
+<p>&nbsp;</p>
+
+<p><a href="/fibervisions/document-center"><img alt="" src="/Files/Images/FiberVisions/Front/Document-center.png" style="width: 91px; height: 91px; float: right;" />» DOCUMENT CENTER</a></p>
+
+<p>Quick access to product literature and documents.</p>
+
+		</div>
+
+
+
+
+
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div><div class="row">
+
+<div class="col-md-12 col-xs-12">
+
+
+
+
+
+
+	
+</div>
+
+
+
+
+
+
+
+
+</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+                <!-- FOOTER -->
+                <div class="body-wrap fluid">
+                    <footer class="footer">
+                        <div class="container">
+                                                    					<div class="row">
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<div class="col">
+                                  <h4>FiberVisions Corporation</h4>
+
+
+
+									<ul>
+										<li><p>3700 Crestwood Pkwy, Suite 900, Duluth , GA 30096<br />
+Tel 678-578-7240 - Fax 678-578-7276&nbsp;</p>
+</li>
+						
+									</ul>
+									
+								</div>
+							</div>
+
+							<div class="col-md-6 col-sm-6 col-xs-12">
+								<div class="col">
+									
+
+
+</div><div class="row">
+
+<div class="col-md-12 col-xs-12">
+
+			<h1 class="dw-section-title" style="font-size: 30px;">
+				<span>
+					Footer 
+				</span>
+			</h1>
+		<div class="figure" style="font-size: 16px;!important;">
+			<p style="text-align: right;"><span style="font-size:14px;">© FiberVisions, L.P. 2023&nbsp; |&nbsp; <a href="/privacy-policy"><span style="color:#FFFFFF;">Privacy Policy</span></a>&nbsp; |&nbsp; <a href="/sitemap"><span style="color:#FFFFFF;">Sitemap</span></a><span style="color:#FFFFFF;">&nbsp;</span></span></p>
+
+		</div>
+
+
+
+
+
+	
+</div>
+
+
+
+
+
+
+
+
+
+									</div>
+							</div>
+
+                   
+
+
+                            </div>
+
+                           
+                            <div class="row">
+                                <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 copyright">
+                                    <div class="col">
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+<br><br><br><br><br><br><br><br>
+                    </footer>
+                </div>
+
+                <!--[if IE]>
+                <style>
+
+                    .widget.affix{
+
+                        width:21% !important;
+
+                    }
+
+
+                </style>
+                <![endif]-->
+                <!-- Essentials -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+                <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+                <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+                <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+                <script src="/Files/Templates/Designs/FiberVisions/js/typeahead.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+                <script src="/Files/Templates/Designs/FiberVisions/js/jquerybxslidermin.js"></script>
+
+
+                <script src="/Files/Templates/Designs/FiberVisions/js/GeneralMethods.js"></script>
+                <script src="/Files/Templates/Designs/FiberVisions/js/cart.js"></script>
+
+                <!-- Assets -->
+                <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-hover-dropdown/2.0.10/bootstrap-hover-dropdown.min.js"></script>
+
+                <script src="//cdnjs.cloudflare.com/ajax/libs/spin.js/2.0.1/spin.min.js"></script>
+
+                <!-- Sripts for individual pages, depending on what plug-ins are used -->
+                <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+
+                <!-- Replacing the Home text -->
+                <script>
+                    if (document.getElementById("homemenubtn")) {
+                        document.getElementById("homemenubtn").innerHTML = "<i class='fa fa-home fa-2'></i><span></span>";
+                    }
+                </script>
+
+                <script type="text/html-template" id="OrderlineAjaxTemplate">
+                    <tr>
+                        <td class="text-center"><img src="/Admin/Public/GetImage.ashx?width=50&height=50&crop=5&image=Obj.image&Compression=99" class="img-center" alt=""></td>
+                        <td>
+                            <a href="Obj.link">
+                                Obj.name Obj.variantname
+                            </a>
+                        </td>
+                        <td class="text-center">Obj.quantity</td>
+                        <td class="text-right">
+                            <nobr>
+                                Obj.totalprice
+                            </nobr>
+                        </td>
+                    </tr>
+                </script>
+
+
+                <!-- Initialize Fancybox -->
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        MiniCartInit(, );
+                        $(".fancybox").fancybox();
+                    });
+                </script>
+
+                <script>
+                    function underlineActiveArea(){
+                        var areaId = 4+"area";
+                        document.getElementById(areaId).className = "activeArea";
+                    }
+                    underlineActiveArea();
+
+                    function underlineActiveCurrency(){
+                        var currency = "id"+"currency";
+                        document.getElementById(currency).className = "activeArea";
+                    }
+                    underlineActiveCurrency()
+                </script>
+
+                <script>
+                    var bestPictures = new Bloodhound({
+                        datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+                        queryTokenizer: Bloodhound.tokenizers.whitespace,
+                        remote: {
+                            url: '/Default.aspx?ID=&Search=%QUERY',
+                            wildcard: '%QUERY'
+                        }
+                    });
+
+                    $('#remote .typeahead').typeahead(null, {
+                        name: 'name',
+                        display: 'name',
+                        source: bestPictures,
+                        templates: {
+                            empty: [
+                              '<div class="empty-message">',
+                                'unable to find any Best Picture winners that match the current query',
+                              '</div>'
+                            ].join('\n'),
+                            suggestion: Handlebars.compile('<div><a href="{{link}}" title="{{name}}"><img class="tt-img" src="{{image}}" /><strong class="name">{{name}}</strong><div class="tt-price">{{price}}</div><div class="clearfix"></div></a></div>')
+                        }
+                    });
+
+                    $('.bxslider').bxSlider({
+                        mode: 'fade',
+                        captions: true
+                    });
+                </script>
+
+                <!--@Snippet(JavaScriptBottom)-->
+                  
+                  
+
+        </div><div id="cookieWarningDiv" class="cookieWarning" style="z-index: 9001; background-color: white; box-shadow: 0px 0px 5px rgb(0, 0, 0); font: 12px/18px arial; color: rgb(51, 51, 51); position: fixed; left: 0px; top: 0px; width: 100%; padding-top: 10px; height: 90px;">
+    <script type="text/javascript">
+        function setOptInCookie(optInLevel) {
+            var xmlhttp;
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            }
+            else {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var div = document.getElementById("cookieWarningDiv");
+                    div.parentNode.removeChild(div);
+                    return false;
+                }
+            }
+            xmlhttp.open("GET", "/admin/public/CookieOptInLevelConfig.aspx?cmd=SetCookieOptInLevel&OptInLevel=" + optInLevel, true);
+            xmlhttp.send();
+            return false;
+        }
+    </script>
+ <p style="margin: 0px 0px 0px 10px;line-height: 20px;"> This site uses cookies. By continuing to browse the site you are agreeing to our use of cookies. <br />Cookies can always be deleted in your browser's preferences.<br /><a href="/contact/information-about-cookies">Read our privacy policy</a>.</p>
+	<p style="margin: 0px 0px 0px 10px;"></p>
+	<div style="text-align: right; position: absolute; right: 20px; bottom: 15px;">
+ <li><a href="#" onclick="return setOptInCookie(0);" class="btn btn btn-sm btn-link p-0">Do not accept cookies</a></li>
+        <li><a href="#" onclick="return setOptInCookie(1);" class="btn btn btn-sm btn-link p-0">Only accept functional cookies</a></li>
+		<a href="#" onclick="return setOptInCookie(2);" style="background-color: #000 !important; display: inline-block; color: #FFF !important; border: 1px solid rgb(4, 132, 37); padding: 3px 8px; margin: 0px 0px -5px 10px;">Accept cookies</a>
+	</div>
+    <style>body { padding-top: 45px; background-position: 0px 45px;}</style>
+</div>
+
+
+              </body>
+    </html>

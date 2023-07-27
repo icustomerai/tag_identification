@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="not-ie" lang="en"><!-- InstanceBegin template="/Templates/HOMER4.dwt" codeOutsideHTMLIsLocked="false" -->
+<!--<![endif]-->
+
+<head><!-- OneTrust Cookies Consent Notice start for homerenergy.com -->
+
+	<script src=https://cdn.cookielaw.org/scripttemplates/otSDKStub.js type="text/javascript" charset="UTF-8"
+		data-domain-script="40841d4a-700c-452d-b0b5-53902c36d873"></script>
+	<script type="text/javascript">
+		function OptanonWrapper() { }
+	</script>
+	<!-- OneTrust Cookies Consent Notice end for homerenergy.com -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- InstanceBeginEditable name="doctitle" -->
+	<meta name="description"
+		content="HOMER software for microgrid and distributed generation power system design and optimization" />
+	<meta name="keywords" content="renewable energy, microgrid, distributed generation, off-grid power systems" />
+	<title>HOMER - Hybrid Renewable and Distributed Generation System Design Software</title>
+
+	<!--flexslider scripts starts-->
+	<link rel="stylesheet" media="screen" href="css/flexslider.css" />
+	<!--flexslider scripts ends-->
+
+
+	<!-- InstanceEndEditable -->
+	<!-- Google Tag Manager -->
+	<script>(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+				'gtm.start':
+					new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+				j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+					'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-N25PBGH');</script>
+	<!-- End Google Tag Manager -->
+	<!--Favicon-->
+	<link rel="shortcut icon" href="img/icons/favicon.ico">
+	<!--google web font-->
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<!--style sheet-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		crossorigin="anonymous">
+	<link rel="stylesheet" media="screen" href="css/style2.css" />
+	<link rel="stylesheet" media="screen" href="css/custom2.css">
+	<link rel="stylesheet" href="css/zozo.tabs.min.css">
+	<link rel="stylesheet" media="screen" href="css/flexslider.css" />
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-Bx4pytHkyTDy3aJKjGkGoHPt3tvv6zlwwjc3iqN7ktaiEMLDPqLSZYts2OjKcBx1" crossorigin="anonymous">
+	<!--jquery libraries / others are at the bottom-->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+		crossorigin="anonymous"></script>
+	<script src="js/modernizr.js" type="text/javascript"></script>
+
+	<!--prettyphoto scripts starts-->
+	<link rel="stylesheet" media="screen" href="css/prettyPhoto.css" />
+	<script src="js/jquery.prettyPhoto.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$('a[data-rel]').each(function () {
+				$(this).attr('rel', $(this).data('rel'));
+			});
+			$("a[rel^='prettyPhoto[gallery1]']").prettyPhoto({
+				animation_speed: 'fast',
+				slideshow: 5000,
+				autoplay_slideshow: false,
+				opacity: 0.80,
+				show_title: false,
+				theme: 'pp_default', /* light_rounded / dark_rounded / light_square / dark_square / facebook */
+				overlay_gallery: false,
+				social_tools: false,
+				changepicturecallback: function () {
+					var $pp = $('.pp_default');
+					if (parseInt($pp.css('left')) < 0) {
+						$pp.css('left', 0);
+					}
+				}
+			});
+		});
+	</script>
+	<!--prettyphoto scripts ends-->
+	<!-- zozo tabs scripts -->
+	<script src="js/zozo.tabs.min.js"></script>
+	<!-- zozo tabs end -->
+</head>
+
+<body>
+	<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N25PBGH" height="0" width="0"
+			style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+	<!-- header starts
+================================================== -->
+	<section id="header" class="clearfix">
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type='text/javascript'>
+(function(){var g=function(e,h,f,g){
+this.get=function(a){for(var a=a+"=",c=document.cookie.split(";"),b=0,e=c.length;b<e;b++){for(var d=c[b];" "==d.charAt(0);)d=d.substring(1,d.length);if(0==d.indexOf(a))return d.substring(a.length,d.length)}return null};
+this.set=function(a,c){var b="",b=new Date;b.setTime(b.getTime()+6048E5);b="; expires="+b.toGMTString();document.cookie=a+"="+c+b+"; path=/; "};
+this.check=function(){var a=this.get(f);if(a)a=a.split(":");else if(100!=e)"v"==h&&(e=Math.random()>=e/100?0:100),a=[h,e,0],this.set(f,a.join(":"));else return!0;var c=a[1];if(100==c)return!0;switch(a[0]){case "v":return!1;case "r":return c=a[2]%Math.floor(100/c),a[2]++,this.set(f,a.join(":")),!c}return!0};
+this.go=function(){if(this.check()){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)}};
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+try{(new g(100,"r","QSI_S_ZN_0VuLTkB3XKiU8dw","https://zn0vultkb3xkiu8dw-ulsolutions.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_0VuLTkB3XKiU8dw")).start()}catch(i){}})();
+</script><div id='ZN_0VuLTkB3XKiU8dw'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET-->
+		<div class="container-fluid">
+			<div class="row align-items-center mt-n3 mb-n3">
+				<div class="col-5 col-md-2">
+					<a href="index.html"><img src="img/logos/ul-homer-software-white.png" alt="UL HOMER Software" /></a>
+				</div>
+				<div class="col-12 col-md-10">
+					<div class="row no-gutters justify-content-between">
+						<div class="col-sm-auto">
+							<div id="smoothmenu" class="ddsmoothmenu">
+								<ul>
+									<li><a href="products/index.html">Products</a>
+										<ul>
+											<li><a href="products/pro/index.html">HOMER Pro</a>
+												<ul>
+													<li><a href="products/pro/index.html">Information</a></li>
+													<li><a href="http://users.homerenergy.com/pages/homer_pro" target="_blank">Download</a></li>
+													<li><a href="products/pro/pricing/index.html">Pricing</a></li>
+												</ul>
+											</li>
+											<li><a href="products/grid/index.html">HOMER Grid</a>
+												<ul>
+													<li><a href="products/grid/index.html">Information</a></li>
+													<li><a href="http://users.homerenergy.com/homer-grid/download" target="_blank">Download</a>
+													</li>
+													<li><a href="products/grid/pricing/index.html">Pricing</a></li>
+												</ul>
+											</li>
+											<li><a href="products/front/index.html">HOMER Front</a></li>
+											<li><a href="products/quickstart/index.html">HOMER QuickStart</a></li>
+
+										</ul>
+									</li>
+									<li><a href="#">Services</a>
+										<ul>
+											<li><a href="support/engineer-hours.html">HOMER Engineering Support</a></li>
+											<li><a href="services/homer-ul-advisory-services.html">Advisory Services</a></li>
+											<li><a href="products/front/index.html">Utility-Scale Project Analysis</a></li>
+											<li><a href="services/training/index.html">HOMER Training</a></li>
+											<li><a href="services/member-program.html">Member Programs</a></li>
+
+										</ul>
+									</li>
+									<li><a href="support/index.html">Support</a></li>
+									<li><a href="connect/contact.html">Connect</a>
+										<ul>
+											<li><a href="connect/contact.html">Contact</a></li>
+											<li><a href="http://microgridconference.com/" target="_blank">Microgrid Conference</a></li>
+											<li><a href="connect/members/index.html">Members</a></li>
+											<li><a href="http://microgridnews.com/category/events/homer-events/" target="_blank">Other
+													Events</a></li>
+										</ul>
+									</li>
+									<li><a href="#">Learn More</a>
+										<ul>
+											<li><a href="resources/brochures-videos.html">Brochures and Videos</a> </li>
+											<li><a href="http://microgridnews.com/category/webinar/" target="_blank">Webinars</a></li>
+											<!--                                        <li><a href="http://microgridnews.com/homer-energy-newsletters/" target="_blank">Newsletters</a></li>-->
+											<li><a href="resources/conference-recordings.html">HOMER Conference Recordings</a> </li>
+											<li><a href="http://microgridnews.com/category/homer-energy/press-releases/" target="_blank">Press
+													Releases</a></li>
+											<li><a href="https://microgridnews.com/" target="_blank">Microgrid News</a> </li>
+											<li><a href="https://microgridnews.com/homer-energy-press-coverage-references/">News Coverage</a>
+											</li>
+											<li><a href="http://microgridnews.com/homer-energy-bibliography/" target="_blank">HOMER
+													Bibliography</a> </li>
+											<li><a href="http://microgridnews.com/microgrid-white-papers/" target="_blank">White Papers</a>
+											</li>
+										</ul>
+									</li>
+									<li><a href="https://users.homerenergy.com" target="_blank">Sign In</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-sm-auto">
+							<form method="get" action="search.html" class="form-inline justify-content-end">
+								<input type="text" name="q" placeholder="Search..." class="form-control form-control-sm" required />
+								<button class="btn btn-secondary btn-sm" type="submit"><i class="far fa-search"></i></button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- header ends
+================================================== -->
+	<!-- content starts
+================================================== -->
+	<section id="content" class="clearfix">
+		<!--features starts-->
+		<!-- InstanceBeginEditable name="Main" -->
+		<div class="container-fluid" style="background-color: #333;">
+			<div class="row mx-5 pt-2">
+				<div class="col-12">
+
+					<a href="https://www.ul.com/news/ul-acquires-homer-energy" target="_new">
+						<h3 style="color:#FFFFFF;">HOMER Energy is now UL Solutions.</h3>
+					</a>
+
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid h-100 mt-n1 mb-n1" id="homepage-hero">
+			<div class="col-12">
+				<div class="row h-100 text-left p-5">
+					<div class="col-md-6">
+						<h1 style="color:#000000; text-align:left;">Optimize the value of your hybrid power system&mdash;from
+							utility-scale and distributed generation to standalone microgrids</h1>
+					</div>
+					<div class="col-md-6 text-left align-self-end">
+						<a href="#" data-toggle="modal" data-target="#videoModalMain">
+							<h2 style="color:#000000; text-align:left;">WATCH <img src="img/WatchArrow.png"></h2>
+						</a>
+						<div class="modal fade" id="videoModalMain" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog modal-lg" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">HOMER Solutions</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<iframe width="560" height="315" src="https://www.youtube.com/embed/ol_oqoy01b8"
+											title="YouTube video player" frameborder="0"
+											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+											allowfullscreen></iframe>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="row text-center mx-5 py-4">
+				<div class="col-12">
+					<h2 style="color:#000000;">HOMER software â the trusted global standard in hybrid power system modeling</h2>
+				</div>
+			</div>
+			<div class="row text-center mb-5 mx-5">
+				<div class="col-12">
+					<div class="card-deck">
+						<div class="card shadow">
+							<div class="card-header pt-4" style="min-height: 220px;">
+								<a href="products/pro/index.html"><img src="img/logos/HOMERPro-TaglineLogo.png"></a><br><br>
+								<p style="text-align:left;">Explore the lowest-cost solutions for remote power systems, microgrids and
+									islanded utilities</p>
+							</div>
+							<a href="products/pro/index.html" class="img-link">
+								<div class="card-body text-left p-0"
+									style="min-height: 150px; background-image:url('./img/home-bg-2.jpg'); height: 150px;  background-position: center; background-repeat: no-repeat; background-size: cover;">
+									<div class="h-100 transbox">
+										<ul class="p-3 mx-3">
+											<li>Trusted global standard</li>
+											<li>Simulate hundreds of systems</li>
+											<li>Optimize for most cost-effective, reliable solution</li>
+										</ul>
+									</div>
+								</div>
+							</a>
+							<div class="card-body">
+								<a href="./products/pro/index.html"><button type="button" class="btn btn-primary"
+										style="min-width: 150px;">LEARN MORE >></button></a><br><br>
+								<a href="./products/pro/pricing/index.html"><button type="button" class="btn btn-outline-primary"
+										style="min-width: 150px;">BUY NOW >></button></a>
+							</div>
+						</div>
+						<div class="card shadow">
+							<div class="card-header pt-4" style="min-height: 220px;">
+								<a href="products/grid/index.html"><img src="img/logos/HOMERGrid-TaglineLogo.png"></a><br><br>
+								<p style="text-align:left;">Reduce energy costs and increase resilience for grid-connected facilities
+									and electric vehicle charging stations</p>
+							</div>
+							<a href="products/grid/index.html" class="img-link">
+								<div class="card-body text-left p-0"
+									style="min-height: 150px; background-image:url('./img/home-bg-1.jpg'); height: 150px;  background-position: center; background-repeat: no-repeat; background-size: cover;">
+									<div class="h-100 transbox">
+										<ul class="p-3 mx-3">
+											<li><span>Maximize energy savings</span></li>
+											<li>Minimize demand charges</li>
+											<li>Increase resilience</li>
+											<li>Integrate EV charging</li>
+										</ul>
+									</div>
+								</div>
+								<a href="products/grid/index.html" class="img-link">
+									<div class="card-body">
+										<a href="./products/grid/index.html"><button type="button" class="btn btn-primary"
+												style="min-width: 150px;">LEARN MORE >></button></a><br><br>
+										<a href="./products/grid/pricing/index.html"><button type="button" class="btn btn-outline-primary"
+												style="min-width: 150px;">BUY NOW >></button></a>
+									</div>
+						</div>
+						<div class="card shadow">
+							<div class="card-header pt-4" style="min-height: 220px;">
+								<a href="products/front/index.html"><img src="img/logos/HOMERFront-TaglineLogo.png"></a><br><br>
+								<p style="text-align:left;">Maximize return on utility-scale storage systems, with or without solar or
+									wind</p>
+							</div>
+							<a href="products/front/index.html" class="img-link">
+								<div class="card-body text-left p-0"
+									style="min-height: 150px; background-image:url('./img/home-bg-3.jpg'); height: 150px;  background-position: center; background-repeat: no-repeat; background-size: cover;">
+									<div class="h-100 transbox">
+										<ul class="p-3 mx-3">
+											<li>Leverage value of energy storage</li>
+											<li>Maximize revenue and IRR</li>
+											<li>Project screening, site selection and in-depth project validation</li>
+										</ul>
+									</div>
+								</div>
+							</a>
+							<div class="card-body">
+								<a href="./products/front/index.html"><button type="button" class="btn btn-primary"
+										style="min-width: 150px;">LEARN MORE >></button></a><br><br>
+								</a>
+							</div>
+						</div>
+					</div> <!-- /col -->
+				</div>
+			</div> <!-- /row -->
+			<!--features ends-->
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<h2 style="color:#000000; text-align:center;">Discover how HOMER software helps more than 250,000 energy
+							professionals worldwide</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="row">
+							<div class="col-12"><a href="#" data-toggle="modal" data-target="#videoModalMain"><img
+										src="./img/index/VideoThumbnail-Explainer.png"></a></div>
+						</div>
+					</div>
+					<div class="col-md-8">
+						<p>
+							All HOMER software products are built on the trusted, market-leading HOMER platform, used by more than 250,000
+							system designers and developers in over 190 countries. With decades of experience, we provide the most
+							robust, accurate solutions to help make hybrid power systems technically optimal and maximally
+							cost-effective.
+						</p>
+						<p>
+							Explore which product is most suited for your project, or further understand our approach to
+							techno-economic analysis. Watch the video, download the white paper, or talk to an expert to learn how
+							UL Solutions advisory professionals can help.
+						</p>
+						<p>
+							Whether designing hybrid microgrids or distributed generation systems, our software solutions:
+						</p>
+						<ul>
+							<li>Combine engineering and economics in one powerful model</li>
+							<li>Allow users to quickly and efficiently determine least-cost options </li>
+							<li>Simulate real-world performance and deliver a choice of optimized design</li>
+							<li>Consider geographic-specific criteria and risks, such as fuel price changes, load growth, accelerated
+								battery degradation and changing weather patterns</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<h2 style="color:#000000; text-align:center;">Need help optimizing your hybrid power system?<br>Put the
+							proven power of HOMER and UL Solutions to work for you</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<img src="./img/index/homer-project-map-april-2019.jpg">
+						<br><br>
+						<p style="text-align:center;">Used by more than 250,000 energy professionals in over 190 countries</p>
+					</div>
+					<div class="col-md-8">
+						<p>
+							If you need help with your modeling and analysis, or need training in HOMER software, we are here to help.
+							We offer a full range of support services to ensure your success.
+						</p>
+						<p>
+						<h3>Advisory Services</h3>
+						UL Solutions advisory services enable you to leverage our long-standing expertise in renewable energy and
+						qualifications as independent engineers. We offer full project support from feasibility studies, to design
+						and certification. <br>
+						<a href="/services/homer-ul-advisory-services.html"><strong>Talk to an expert to learn how we can help with
+								your project.</strong></a>
+						</p>
+						<p>
+						<h3>HOMER Engineer Hours</h3>
+						Put a UL Solutions expert on your team by hiring a HOMER specialist by the hour and get the help you need, when you
+						need it. We can work alongside your team until they are comfortable on their own, do all of the analyses for
+						you, or anywhere in between. <br>
+						<a href="/support/engineer-hours.html"><strong>Click here to discover how we can help.</strong></a>
+						</p>
+						<p>
+						<h3>Training in HOMER Software and Analysis</h3>
+						Empower your team with the skills and understanding needed to get the full benefit of HOMER software and
+						analysis. Sessions are available for individuals or organizations. <br>
+						<a href="/services/training/index.html"><strong>Find the training session you need.</strong></a>
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<h2 style="color:#000000; text-align:center;">Now available on-demand: 9th Annual HOMER Microgrid and Hybrid
+							Power International</h2>
+					</div>
+				</div>
+				<div class="row pb-3">
+					<div class="col-md-4">
+						<a href="#" data-toggle="modal" data-target="#videoModal">
+							<img src="./img/2020HighlightsThumb.png"></a>
+						<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog modal-lg" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">HMHI 2020 Highlights</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<iframe width="560" height="315" src="https://www.youtube.com/embed/BFcIvpawOX4"
+											title="YouTube video player" frameborder="0"
+											allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+											allowfullscreen></iframe>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8">
+						<h3>Powering the new energy world</h3>
+						<p>
+							Microgrid experts and people from more than 120 countries joined us three energy-charged days at the ninth
+							annual HOMER Microgrid and Hybrid Power International Conference in October 2021. <a
+								href="https://microgridconference.com/hmhi-2021-resources-access-request">Complimentary recordings of
+								the conference presentations are available to watch on-demand.</a><br>
+							</br>
+							Join the hybrid power revolution!
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<h2 style="color:#000000; text-align:center;">HOMER Energy is now UL Solutions</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<img src="./img/index/UL-slider.jpg">
+					</div>
+					<div class="col-md-8">
+						<p>
+							Together, UL and HOMER Energy provide a strong foundation to empower people around the world with tools,
+							services and information to accelerate the adoption of renewable and distributed energy sources. Read the
+							<a href="https://www.ul.com/news/ul-acquires-homer-energy" target="_new">press release on www.ul.com</a>
+							for more information.
+						</p>
+					</div>
+				</div>
+				<div class="row pt-3">
+					<div class="col-12">
+						<h2 style="color:#000000; text-align:center;">See what our global community of customers say</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div class="row no-margins" style="background-color:#CCCCCC">
+				<div class="col-12 mt-2">
+					<div id="carouselQuotes" class="carousel slide" data-ride="carousel">
+						<!--
+			  <ol class="carousel-indicators">
+				<li data-target="#carouselQuotes" data-slide-to="0" class="active"></li>
+				<li data-target="#carouselQuotes" data-slide-to="1"></li>
+				<li data-target="#carouselQuotes" data-slide-to="2"></li>
+				<li data-target="#carouselQuotes" data-slide-to="3"></li>
+				<li data-target="#carouselQuotes" data-slide-to="4"></li>
+				<li data-target="#carouselQuotes" data-slide-to="5"></li>
+				<li data-target="#carouselQuotes" data-slide-to="6"></li>
+				<li data-target="#carouselQuotes" data-slide-to="7"></li>
+				<li data-target="#carouselQuotes" data-slide-to="8"></li>
+				<li data-target="#carouselQuotes" data-slide-to="9"></li>
+			  </ol> -->
+						<div class="carousel-inner mt-3 px-5">
+							<div class="carousel-item px-5 active" data-interval="10000" style="min-height:150px;">
+								<h3 style="text-align:center;"><em>âWhen we talk to prospective customers about microgrids, they have
+										always already used HOMER.â</em></h3>
+								<p style="text-align:center;">
+									<strong>Juergen Zimmerman</strong><br>
+									ABB Australia
+								</p>
+							</div>
+							<div class="carousel-item px-5" data-interval="10000" style="min-height:150px;">
+								<h3 style="text-align:center;"><em>âWe recommend HOMER to everyone. There is nothing else out there that
+										does what it does.â</em></h3>
+								<p style="text-align:center;">
+									<strong>Anders Pedersen</strong><br>
+									World Bank
+								</p>
+							</div>
+							<div class="carousel-item px-5" data-interval="10000" style="min-height:150px;">
+								<h3 style="text-align:center;"><em>âWe use HOMER for all of the tender packages we distribute and
+										require that project proposals include their HOMER model.â</em></h3>
+								<p style="text-align:center;">
+									<strong>David Edwards</strong><br>
+									Horizon Power, Australia
+								</p>
+							</div>
+							<div class="carousel-item px-5" data-interval="10000" style="min-height:150px;">
+								<h3 style="text-align:center;"><em>âWe spent a lot of money developing our own model, but threw it away
+										because everyone kept asking for our HOMER results.â</em></h3>
+								<p style="text-align:center;">
+									<strong>Bruce Levy, CEO</strong><br>
+									TDX Power, USA
+								</p>
+							</div>
+							<div class="carousel-item px-5" data-interval="10000" style="min-height:150px;">
+								<h3 style="text-align:center;"><em>âHOMER has become a staple in our program's integrated energy
+										planning course.â</em></h3>
+								<p style="text-align:center;">
+									<strong>Martin Obermaier</strong><br>
+									Energy Planning Program, COPPE-UFRJ, Brazil
+								</p>
+							</div>
+							<div class="carousel-item px-5" data-interval="10000" style="min-height:150px;">
+								<h3 style="text-align:center;"><em>âThe best hourly assessment tool for hybrid renewable electric
+										generation systems in the world â bar none.â</em></h3>
+								<p style="text-align:center;">
+									<strong>Dr. Jan F. Kreider</strong><br>
+									Building Systems Program, University of Colorado, USA
+								</p>
+							</div>
+							<div class="carousel-item px-5" data-interval="10000" style="min-height:150px;">
+								<h3 style="text-align:center;"><em>âI have been using HOMER, Legacy version and now Pro, for the better
+										part of two years. Its GUI is powerful, sleek, and has a great balance between flexibility and
+										simplicity. Iâve been trying to spread the word, as I do think itâs the best software that I know
+										of.â</em></h3>
+								<p style="text-align:center;">
+									<strong>Steve Jenks</strong><br>
+									NJ TransitGrid, USA
+								</p>
+							</div>
+							<div class="carousel-item px-5" data-interval="10000" style="min-height:150px;">
+								<h3 style="text-align:center;"><em>âEverbody I know who is working with HOMER is amazed.â</em></h3>
+								<p style="text-align:center;">
+									<strong>Michael Tittmann</strong><br>
+									Tittmann Solar GmbH, Germany
+								</p>
+							</div>
+							<div class="carousel-item px-5" data-interval="10000" style="min-height:150px;">
+								<h3 style="text-align:center;"><em>âWe are amazed at both the thoroughness of the software and the
+										design complexity that it allows us to relatively quickly evaluate. To our knowledge, there is no
+										other software on the market that matches HOMER for the purpose of designing renewable energy
+										systems.â</em></h3>
+								<p style="text-align:center;">
+									<strong>Lisa Michael</strong><br>
+									Renewable Energy Systems, Anchorage, Alaska, USA
+								</p>
+							</div>
+							<div class="carousel-item px-5" data-interval="10000" style="min-height:150px;">
+								<h3 style="text-align:center;"><em>âYour program is amazing and I love it.â</em></h3>
+								<p style="text-align:center;">
+									<strong>Michael Elliott</strong><br>
+									Southwest Windpower, USA
+								</p>
+							</div>
+
+						</div>
+						<a class="carousel-control-prev" href="#carouselQuotes" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="carousel-control-next" href="#carouselQuotes" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<style>
+			#content {
+				padding-bottom: 0px;
+			}
+		</style> <!-- fixes white strip -->
+		<!-- InstanceEndEditable -->
+		<!--box ends-->
+	</section>
+	<!-- content ends
+================================================== -->
+
+	<!-- footer starts
+================================================== -->
+	<footer id="footer" class="clearfix">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-6 col-md-4">
+					<p><img class="w-50" src="img/logos/ul-homer-software-white.png" alt="UL HOMER Software" /></p>
+					<p class="footer-text">HOMER (Hybrid Optimization of Multiple Energy Resources) software navigates the
+						complexities of building cost effective and reliable hybrid microgrid and grid-connected systems that
+						combine traditionally generated and renewable power, storage, and load management. With over 250,000 users
+						in 193 countries, HOMER is the established global leader for design optimization and feasibility, and the UL Solutions
+						HOMER software community is a nexus for the microgrid market.</p>
+				</div>
+				<div class="col-6 col-md-4">
+					<h5>Top Content</h5>
+					<ul class="list-unstyled">
+						<li><a href="https://microgridnews.com/the-need-for-operational-resilience-drives-microgrid-innovation/"
+								target="_blank"><img src="img/microgrid-market-growth.jpg" width="70" alt="Microgrid Market Growth"></a>
+							<h6>Operational Resilience Drives Microgrid Innovation</h6>
+							<span><a href="https://microgridnews.com/the-need-for-operational-resilience-drives-microgrid-innovation/"
+									target="_blank">&nbsp;</a></span>
+						</li>
+						<li><a href="https://microgridnews.com/building-green-powering-construction-sites-with-renewable-energy/"
+								target="_blank"><img src="img/scaling_microgrids.png" alt="Scaling Microgrids" /></a>
+							<h6>Building Green: Power Construction Sites with Renewable Energy</h6>
+							<span><a
+									href="https://microgridnews.com/building-green-powering-construction-sites-with-renewable-energy/"
+									target="_blank">&nbsp;</a></span>
+						</li>
+						<li><a href="http://microgridnews.com/the-problem-with-100-renewable-energy/" target="_blank"><img
+									src="img/solar-photovoltaics-sunrise.jpg" width="70" alt="Solar PV cells with sunrise"></a>
+							<h6>100% Renewable Energy Challenges</h6>
+							<span><a href="http://microgridnews.com/the-problem-with-100-renewable-energy/" target="_blank">by Peter
+									Lilienthal</a></span>
+						</li>
+					</ul>
+				</div>
+				<div class="col-6 col-md-2">
+					<h5>Get in touch</h5>
+					<ul class="list-unstyled">
+						<li><i style="margin-right:10px;" class="fas fa-map-signs"></i>UL Solutions</li>
+						<li><i style="margin-right:10px;" class="fas fa-phone"></i>+(1) 720-565-4046</li>
+						<li><i style="margin-right:10px;" class="fas fa-envelope"></i><a href="connect/contact.html">Contact Us</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-6 col-md-2">
+					<ul class="list-unstyled">
+						<li><a href="https://homerenergy.force.com/supportcenter/s/" target="_blank">Support</a></li>
+						<li><a href="http://microgridnews.com" target="_blank">Microgrid News You Can Use</a></li>
+						<li><a href="legal/terms-of-use.html">Terms of Use</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- footer ends
+================================================== -->
+	<!--other jqueries required-->
+	<script src="js/ddsmoothmenu.js" type="text/javascript"></script>
+	<script src="twitter/twitter.js" type="text/javascript"></script>
+	<script src="js/jquery.easing.1.3.js" type="text/javascript"></script>
+	<script src="js/custom.js" type="text/javascript"></script>
+	<script src="js/comparetable.js" type="text/javascript"></script>
+	<!--Begin Pardot Tracking Code-->
+	<script type="text/javascript">
+		piAId = '172982';
+		piCId = '1146';
+
+		(function () {
+			function async_load() {
+				var s = document.createElement('script'); s.type = 'text/javascript';
+				s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+				var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+			}
+			if (window.attachEvent) { window.attachEvent('onload', async_load); }
+			else { window.addEventListener('load', async_load, false); }
+		})();
+	</script>
+	<!--End Pardot Tracking Code-->
+</body>
+<!-- InstanceEnd -->
+
+</html>

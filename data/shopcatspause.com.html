@@ -1,0 +1,747 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript" src="/a/j/milonic/milonic_src.js"></script>
+<script	type="text/javascript">
+if(ns4)_d.write("<scr"+"ipt src=/a/j/milonic/mmenuns4.js><\/scr"+"ipt>"); 
+  else _d.write("<scr"+"ipt src=/a/j/milonic/mmenudom.js><\/scr"+"ipt>"); 
+</script>
+<script type="text/javascript">
+var Config_CDN_URL = '/'
+</script>
+<script type="text/javascript" src="/v/vspfiles/templates/194/Menu_Popout_Styles.js"></script>
+<script type="text/javascript" src="/v/vspfiles/templates/194/Menu_Popout_Data.js"></script>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta name="_globalsign-domain-verification" content="V92l7ifyYNK--j29opnwnjOlaVYDJaai_OtxR9y1iu" /> 
+<meta name="Description" content="" />
+<meta name="Keywords" content="" />
+<title>SHOPCatsPause &#226;&#8364;&#8220; Your home for University of Kentucky Wildcats merchandise and memorabilia.</title>
+<meta name="robots" content="index, follow" />
+<meta name="GOOGLEBOT" content="INDEX, FOLLOW" />
+
+<link type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/themes/base/jquery-ui.css" rel="stylesheet" />
+<link type="text/css" href="/a/c/default.css" rel="stylesheet" />
+
+
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/jquery-ui.min.js"></script>
+
+
+
+<script type="text/javascript">
+	var Config_VCompare_MaxProducts = '3';
+	var PageText_783 = "Compare";
+	var PageText_784 = "Change Selections";
+	var PageText_785 = "You've attempted to select more than {0} items. Click {1} to continue with your initial {0} items or {2} to change your selections.";
+	var PageText_819 = "Product Comparison";
+    var PageText_822 = "Compare";
+    var PageText_840 = "Create Password";
+    var PageText_841 = "Retype Password";
+    var PageText_842 = "Added to cart";
+    var PageText_843 = "Subtotal";
+    var PageText_844 = "items in cart";
+</script>
+<script type="text/javascript" src="/a/j/volusion.js?7.223.0"></script>
+<script type="text/javascript">
+    (function ($) {
+        volusion.ready(function () {
+            if (volusion.cart.isObservingCount()) {
+                var ts = new Date().getTime();
+                $.getJSON('/ajaxcart.asp?cachebust=' + ts, function (data) {
+                    var quantityTotal = 0;
+                    $.each(data.Products, function (key, val) {
+                        if (val.IsProduct === 'Y') {
+                            quantityTotal += parseInt(val.Quantity);
+                        } else if (val.IsAccessory === 'Y') {
+                            quantityTotal += parseInt(val.Quantity);
+                        }
+                    });
+                    quantityTotal = quantityTotal || '0';
+                    volusion.cart.itemCount(quantityTotal);
+                });
+            }
+        });
+    } (jQuery));
+</script>
+<link type="text/css" rel="stylesheet" href="/a/contentbuilder/assets/default/content.css" />
+<script type="text/javascript" src="../../a/j/paypal-rest-default-buttons.js"></script>
+
+	<script type="text/javascript" src="/a/j/soft_add.js"></script>
+
+	<!-- Support for multi-product add to soft cart missing from product details page and possibly others -->
+	<script type="text/javascript" src="/a/j/soft_add_mult.js"></script>
+
+
+<link type="text/css" rel="stylesheet" href="/a/c/soft_add.css" />
+<script type="text/javascript">
+	var global_Config_EnableDisplayOptionProducts = 'False';
+	var global_Config_ForceSecureShoppingCartPage = false;
+	var global_PageText_OtherItemsAdded = '(All other items have been added to the cart)';
+	var Config_EnableSoftAddToCart = true;
+</script>
+
+<script type="text/javascript" src="/a/j/soft_add_mult.js"></script>
+<script type="text/javascript" src="/a/j/javascripts.js?6_5_7.223.0"></script>
+
+<script type="text/javascript">
+	var Config_Search_Auto_Complete = false;
+</script>
+
+<script type="text/javascript">
+/* New Checkout JS */
+
+if (!String.prototype.includes) {
+    String.prototype.includes = function() {
+        'use strict';
+        return String.prototype.indexOf.apply(this, arguments) !== -1;
+    };
+}
+
+if (!Array.prototype.includes) {
+  Object.defineProperty(Array.prototype, "includes", {
+    enumerable: false,
+    value: function(obj) {
+        var newArr = this.filter(function(el) {
+          return el == obj;
+        });
+        return newArr.length > 0;
+      }
+  });
+}
+
+var whichCheckoutToGoTo = "new"
+
+console.log("whichCheckoutToGoTo:", whichCheckoutToGoTo)
+
+function setWhichCheckoutToGoTo(choice) {
+	whichCheckoutToGoTo = choice
+	console.log("setWhichCheckoutToGoTo:", choice)
+}
+
+function goToCheckout() {
+	var IsAGift = $('#IsAGift').val();
+	console.log("goToCheckout: whichCheckoutToGoTo:", whichCheckoutToGoTo)
+	if (whichCheckoutToGoTo === "new") {
+		console.log("going to new checkout")
+		proceedToNewCheckout(IsAGift)
+	} else {
+		console.log("going to old checkout")
+		proceedToOldCheckout()
+	}
+}
+
+function proceedToOldCheckout() {
+  console.log("fired proceedToOldCheckout()")
+  window.location.href = "/one-page-checkout.asp";
+}
+
+function proceedToNewCheckout(IsAGift) {
+	console.log("fired proceedToNewCheckout()")
+    if (IsAGift == "Y") {
+		window.location.href = "/GiftOptions.asp";
+    } else {
+		window.location.href = "/checkout/";
+    }
+}
+
+function linkCheckoutButtonsToNewCheckout() {
+	/* Replace links to one-page-checkout.asp to instead open new checkout modal */
+	var anchors = document.getElementsByTagName("a");
+	for (var i = 0; i < anchors.length; i++) {
+		if (anchors[i].href.includes("/one-page-checkout.asp")) {
+			console.log("found " + anchors[i].href + " and replaced it")
+			anchors[i].href = "javascript:void(0);"
+			anchors[i].setAttribute("onclick","goToCheckout()")
+		}
+	}
+	/* Also look for the patterns we see for proceed to checkout buttons on shoppingcart.asp */
+	var inputs = document.getElementsByTagName("input");
+	for (var i = 0; i < inputs.length; i++) {
+		if (inputs[i].name.includes("btn_checkout_guest")) {
+			console.log("found " + inputs[i].name + " and added onClick goToCheckout()")
+			inputs[i].setAttribute("onclick","goToCheckout()")
+		}
+	}
+
+	if (document.Proceed_To_Checkout_Form) {
+		document.Proceed_To_Checkout_Form.action = "javascript:void(0);"
+	}
+}
+document.addEventListener("DOMContentLoaded", linkCheckoutButtonsToNewCheckout); /* this one runs super fast right away on page load */
+window.addEventListener("load", linkCheckoutButtonsToNewCheckout); /* this one is important to run after credo template does its replacements */
+</script>
+<style type="text/css">
+/* New Checkout CSS */
+
+.new-secure-checkout-modal {
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(54, 54, 54, 0.5));
+  backdrop-filter: blur(3px);
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  text-align: center;
+}
+
+.new-secure-checkout-modal-content {
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+
+.new-secure-checkout-iframe {
+  height:calc(100vh - 4px);
+  width:calc(100vw - 4px);
+  box-sizing: border-box;
+}
+</style>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-1399167-37"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-1399167-37');
+</script>
+<script src="https://www.googleoptimize.com/optimize.js?id=OPT-WDZXWGG"></script>
+
+<script type="text/javascript" src="https://js-cdn.dynatrace.com/jstag/17052aca8bb/bf64226adg/f2c8c7e93216e073_complete.js" crossorigin="anonymous"></script>
+
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<!--
+DYNAMIC PAGE-SPECIFIC META TAGS WILL BE PLACED HERE
+DO NOT ADD YOUR OWN META TAGS
+ONLY PUT CSS/JAVSCRIPT INCLUDES IN YOUR HEAD TAG
+-->
+<link href="/v/vspfiles/templates/194/css/Imports.css" rel="stylesheet" type="text/css" />
+<meta id="v65-layout-mode" data-cart="storedot" data-checkout="storedot" data-use-simplified-checkout="true">
+</head>
+
+
+<!-- #################### FREE TEMPLATE INFO VAURA-MF-DWC-062011 #################### -->
+
+<body id="body">
+<div id="wrapper">
+<div id="page_wrapper">
+
+<!-- #################### HEADER #################### -->
+<div id="header">
+	<div id="display_homepage_title"><span class="vol-logo vol-logo--graphic" itemscope itemtype='http://schema.org/Store'><meta itemprop='name' content='www.SHOPCatsPause.com'><a class="vol-logo__link" href="http://www.SHOPCatsPause.com/default.asp" title="www.SHOPCatsPause.com">www.SHOPCatsPause.com</a></span></div>
+    
+    <div id="site_tools">
+        <a href="http://www.SHOPCatsPause.com/shoppingcart.asp">View Cart</a>
+        <a href="http://www.SHOPCatsPause.com/aboutus.asp">About</a>
+        <a href="http://www.SHOPCatsPause.com/myaccount.asp">My Account</a>
+	</div>
+    
+<!-- #################### SEARCH BOX --> 
+<div id="display_search">
+       	<form action="http://www.SHOPCatsPause.com/SearchResults.asp" method="get" name="SearchBoxForm">
+            <input type="text" name="Search" id="search_input" value="search" onfocus="if (this.value == 'search') {this.value = '';}" onblur="if (this.value == '') {this.value = 'search';}"/>
+			<input type="submit" name="Submit" id="search_submit" value="Search"/>
+        </form>
+    </div>
+  
+</div>  
+    
+
+<!-- #################### SHOPPING CART DISPLAY
+		<div id="display_cart_summary"><div class="cartsummary_empty">(Your shopping cart is empty)</div></div>
+#################### -->
+ 
+<!-- #################### TOP NAVIGATION #################### -->
+<div id="top_nav">
+
+<!-- #################### LIST ITEMS OR ROLLOVER COLORS OR ROLLOVER COLORS POPOUT #################### -->
+    <div id="display_menu_1">
+<script type="text/javascript">var breadCrumb="||";</script>
+<script type="text/javascript">display_menu_1();</script>
+</div>
+</div>
+
+</div> 
+
+
+
+<div class="clear"></div>
+
+</div>
+
+<div id="stripe">
+
+
+<!-- #################### BEGIN HOMEPAGE STYLES IN TEMPLATE HTML #################### -->
+    <style type="text/css">	
+	#content_area{padding:0px;}
+    </style>
+    
+<!-- #################### END HOMEPAGE STYLES IN TEMPLATE HTML #################### -->
+
+
+<!-- #################### CONTENT #################### -->
+<div id="content">
+    
+      <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td id="content_area" valign="top" >
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+        <tr> 
+		
+		<td width="100%" valign="top"> 
+		<div id="div_articleid_2">
+<br><img src="/v/vspfiles/assets/images/SHOPTCPhomepageart.jpg" alt="">
+</div><!-- .vcb-article -->
+<textarea style="display:none;" id="articleBody_2" readonly="true"></textarea>
+
+			<br />
+			<br />
+<table width="96%" border="0" cellspacing="0" cellpadding="2" align="center"><tr><td>
+<table width="100%" border="0" cellspacing="10" cellpadding="10" class="v65-productDisplay"> 
+<tr><td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="v65-productDisplay"> 
+<tr> 
+<td valign="top" width="33%" align="center"> 
+<a href="http://www.SHOPCatsPause.com/product_p/tcp-bbyb.htm" title="TCP magazine + Basketball Yearbook" alt="TCP magazine + Basketball Yearbook">
+<img src="//cdn3.volusion.com/npmdr.smgzg/v/vspfiles/photos/TCP-BBYB-1.jpg?v-cache=1682494126" style="BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; BORDER-LEFT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid"  border=0 alt="TCP magazine + Basketball Yearbook" title="TCP magazine + Basketball Yearbook"></a>
+<script type="text/javascript">if(window.VCompare){VCompare('TCP-BBYB', 5);}</script>
+</td> 
+<td rowspan="3" background="/v/vspfiles/templates/194/images/Grid_Divider_Vertical.gif"> 
+<img src="/v/vspfiles/templates/194/images/clear1x1.gif" width="25" height="25" alt=""> 
+</td> 
+<td valign="top" width="33%" align="center"> 
+<a href="http://www.SHOPCatsPause.com/product_p/tcp-fbyb.htm" title="TCP magazine + Football Yearbook" alt="TCP magazine + Football Yearbook">
+<img src="//cdn3.volusion.com/npmdr.smgzg/v/vspfiles/photos/TCP-FBYB-1.jpg?v-cache=1682494276" style="BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; BORDER-LEFT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid"  border=0 alt="TCP magazine + Football Yearbook" title="TCP magazine + Football Yearbook"></a>
+<script type="text/javascript">if(window.VCompare){VCompare('TCP-FBYB', 5);}</script>
+</td> 
+<td rowspan="3" background="/v/vspfiles/templates/194/images/Grid_Divider_Vertical.gif"> 
+<img src="/v/vspfiles/templates/194/images/clear1x1.gif" width="25" height="25" alt=""> 
+</td> 
+<td valign="top" width="33%" align="center"> 
+<a href="http://www.SHOPCatsPause.com/product_p/tcpsub.htm" title="Cats' Pause Magazine subscription" alt="Cats' Pause Magazine subscription">
+<img src="//cdn3.volusion.com/npmdr.smgzg/v/vspfiles/photos/TCPsub-1.jpg?v-cache=1682494596" style="BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; BORDER-LEFT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid"  border=0 alt="Cats' Pause Magazine subscription" title="Cats' Pause Magazine subscription"></a>
+<script type="text/javascript">if(window.VCompare){VCompare('TCPsub', 5);}</script>
+</td> 
+</tr> 
+<tr> 
+<td valign="top" width="33%"> 
+<div>
+
+<a href="http://www.SHOPCatsPause.com/product_p/tcp-bbyb.htm" class="productnamecolor colors_productname" title="TCP magazine + Basketball Yearbook, TCP-BBYB"> 
+<span itemprop='name'>
+TCP magazine + Basketball Yearbook
+</span>
+</a>
+<br />
+<div>
+
+<div>
+<font class="pricecolor colors_productprice">    <div class="product_productprice">        <b><!-- <font class="text colors_text"><img src='/a/i/blank.gif' width='12' height='12' name='placeholder'/>:</font> -->$84.90 </b>    </div></font>
+</div>
+<img src="/v/vspfiles/templates/194/images/Icon_FreeShipping_Small.gif">
+</div>
+</td>
+</td> 
+<td valign="top" width="33%"> 
+<div>
+
+<a href="http://www.SHOPCatsPause.com/product_p/tcp-fbyb.htm" class="productnamecolor colors_productname" title="TCP magazine + Football Yearbook, TCP-FBYB"> 
+<span itemprop='name'>
+TCP magazine + Football Yearbook
+</span>
+</a>
+<br />
+<div>
+
+<div>
+<font class="pricecolor colors_productprice">    <div class="product_productprice">        <b><!-- <font class="text colors_text"><img src='/a/i/blank.gif' width='12' height='12' name='placeholder'/>:</font> -->$79.90 </b>    </div></font>
+</div>
+<img src="/v/vspfiles/templates/194/images/Icon_FreeShipping_Small.gif">
+</div>
+</td>
+</td> 
+<td valign="top" width="33%"> 
+<div>
+
+<a href="http://www.SHOPCatsPause.com/product_p/tcpsub.htm" class="productnamecolor colors_productname" title="Cats' Pause Magazine subscription, TCPsub"> 
+<span itemprop='name'>
+Cats' Pause Magazine subscription
+</span>
+</a>
+<br />
+<div>
+
+<div>
+<font class="pricecolor colors_productprice">    <div class="product_productprice">        <b><!-- <font class="text colors_text"><img src='/a/i/blank.gif' width='12' height='12' name='placeholder'/>:</font> -->$64.95 </b>    </div></font>
+</div>
+<img src="/v/vspfiles/templates/194/images/Icon_FreeShipping_Small.gif">
+</div>
+</td>
+</td> 
+</tr> 
+<tr> 
+<td valign="top" width="33%"> 
+</td> 
+<td valign="top" width="33%"> 
+</td> 
+<td valign="top" width="33%"> 
+</td> 
+</tr> 
+<tr> 
+<td background="/v/vspfiles/templates/194/images/Grid_Divider_Horizontal.gif" colspan="5"> 
+<img src="/v/vspfiles/templates/194/images/clear1x1.gif" width="3" height="9" alt=""> 
+</td> 
+</tr> 
+<tr> 
+<td valign="top" width="33%" align="center"> 
+<a href="http://www.SHOPCatsPause.com/product_p/tcp-fbyb-bbyb.htm" title="Cats Pause magazine + Football Yearbook + Basketball Yearbook" alt="Cats Pause magazine + Football Yearbook + Basketball Yearbook">
+<img src="//cdn3.volusion.com/npmdr.smgzg/v/vspfiles/photos/TCP-FBYB-BBYB-1.jpg?v-cache=1682494415" style="BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; BORDER-LEFT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid"  border=0 alt="Cats Pause magazine + Football Yearbook + Basketball Yearbook" title="Cats Pause magazine + Football Yearbook + Basketball Yearbook"></a>
+<script type="text/javascript">if(window.VCompare){VCompare('TCP-FBYB-BBYB', 5);}</script>
+</td> 
+<td rowspan="3" background="/v/vspfiles/templates/194/images/Grid_Divider_Vertical.gif"> 
+<img src="/v/vspfiles/templates/194/images/clear1x1.gif" width="25" height="25" alt=""> 
+</td> 
+<td valign="top" width="33%" align="center"> 
+<a href="http://www.SHOPCatsPause.com/product_p/joebtribute.htm" title="Joe B. Hall Tribute issue" alt="Joe B. Hall Tribute issue">
+<img src="//cdn3.volusion.com/npmdr.smgzg/v/vspfiles/photos/JoeBTribute-1.jpg?v-cache=1642499118" style="BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; BORDER-LEFT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid"  border=0 alt="Joe B. Hall Tribute issue" title="Joe B. Hall Tribute issue"></a>
+<script type="text/javascript">if(window.VCompare){VCompare('JoeBTribute', 5);}</script>
+</td> 
+<td rowspan="3" background="/v/vspfiles/templates/194/images/Grid_Divider_Vertical.gif"> 
+<img src="/v/vspfiles/templates/194/images/clear1x1.gif" width="25" height="25" alt=""> 
+</td> 
+<td valign="top" width="33%" align="center"> 
+<a href="http://www.SHOPCatsPause.com/product_p/1970issue.htm" title="Cats Pause magazine 1970 season 50th anniversary issue" alt="Cats Pause magazine 1970 season 50th anniversary issue">
+<img src="//cdn3.volusion.com/npmdr.smgzg/v/vspfiles/photos/1970Issue-1.jpg?v-cache=1583489368" style="BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; BORDER-LEFT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid"  border=0 alt="Cats Pause magazine 1970 season 50th anniversary issue" title="Cats Pause magazine 1970 season 50th anniversary issue"></a>
+<script type="text/javascript">if(window.VCompare){VCompare('1970Issue', 5);}</script>
+</td> 
+</tr> 
+<tr> 
+<td valign="top" width="33%"> 
+<div>
+
+<a href="http://www.SHOPCatsPause.com/product_p/tcp-fbyb-bbyb.htm" class="productnamecolor colors_productname" title="Cats Pause magazine + Football Yearbook + Basketball Yearbook, TCP-FBYB-BBYB"> 
+<span itemprop='name'>
+Cats Pause magazine + Football Yearbook + Basketball Yearbook
+</span>
+</a>
+<br />
+<div>
+
+<div>
+<font class="pricecolor colors_productprice">    <div class="product_productprice">        <b><!-- <font class="text colors_text"><img src='/a/i/blank.gif' width='12' height='12' name='placeholder'/>:</font> -->$99.85 </b>    </div></font>
+</div>
+<img src="/v/vspfiles/templates/194/images/Icon_FreeShipping_Small.gif">
+</div>
+</td>
+</td> 
+<td valign="top" width="33%"> 
+<div>
+
+<a href="http://www.SHOPCatsPause.com/product_p/joebtribute.htm" class="productnamecolor colors_productname" title="Joe B. Hall Tribute issue, JoeBTribute"> 
+<span itemprop='name'>
+Joe B. Hall Tribute issue
+</span>
+</a>
+<br />
+<div>
+
+<div>
+<font class="pricecolor colors_productprice">    <div class="product_productprice">        <b><!-- <font class="text colors_text"><img src='/a/i/blank.gif' width='12' height='12' name='placeholder'/>:</font> -->$5.00 </b>    </div></font>
+</div>
+<img src="/v/vspfiles/templates/194/images/Icon_FreeShipping_Small.gif">
+</div>
+</td>
+</td> 
+<td valign="top" width="33%"> 
+<div>
+
+<a href="http://www.SHOPCatsPause.com/product_p/1970issue.htm" class="productnamecolor colors_productname" title="Cats Pause magazine 1970 season 50th anniversary issue, 1970Issue"> 
+<span itemprop='name'>
+Cats Pause magazine 1970 season 50th anniversary issue
+</span>
+</a>
+<br />
+<div>
+
+<div>
+<font class="pricecolor colors_productprice">    <div class="product_productprice">        <b><!-- <font class="text colors_text"><img src='/a/i/blank.gif' width='12' height='12' name='placeholder'/>:</font> -->$5.00 </b>    </div></font>
+</div>
+<img src="/v/vspfiles/templates/194/images/Icon_FreeShipping_Small.gif">
+</div>
+</td>
+</td> 
+</tr> 
+<tr> 
+<td valign="top" width="33%"> 
+</td> 
+<td valign="top" width="33%"> 
+</td> 
+<td valign="top" width="33%"> 
+</td> 
+</tr> 
+<tr> 
+<td background="/v/vspfiles/templates/194/images/Grid_Divider_Horizontal.gif" colspan="5"> 
+<img src="/v/vspfiles/templates/194/images/clear1x1.gif" width="3" height="9" alt=""> 
+</td> 
+</tr> 
+<tr> 
+<td valign="top" width="33%" align="center"> 
+<a href="http://www.SHOPCatsPause.com/product_p/tcp1st-fbyb-bbyb.htm" title="Cats' Pause magazine (1st Class) + Football Yearbook + Basketball Yearbook" alt="Cats' Pause magazine (1st Class) + Football Yearbook + Basketball Yearbook">
+<img src="//cdn3.volusion.com/npmdr.smgzg/v/vspfiles/photos/TCP1st-FBYB-BBYB-1.jpg?v-cache=1682494532" style="BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; BORDER-LEFT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid"  border=0 alt="Cats' Pause magazine (1st Class) + Football Yearbook + Basketball Yearbook" title="Cats' Pause magazine (1st Class) + Football Yearbook + Basketball Yearbook"></a>
+<script type="text/javascript">if(window.VCompare){VCompare('TCP1st-FBYB-BBYB', 5);}</script>
+</td> 
+<td rowspan="3" background="/v/vspfiles/templates/194/images/Grid_Divider_Vertical.gif"> 
+<img src="/v/vspfiles/templates/194/images/clear1x1.gif" width="25" height="25" alt=""> 
+</td> 
+<td valign="top" width="33%" align="center"> 
+<a href="http://www.SHOPCatsPause.com/product_p/2024bbyb.htm" title="2023-24 Basketball Yearbook" alt="2023-24 Basketball Yearbook">
+<img src="//cdn3.volusion.com/npmdr.smgzg/v/vspfiles/photos/2024BBYB-1.jpg" style="BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; BORDER-LEFT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid"  border=0 alt="2023-24 Basketball Yearbook" title="2023-24 Basketball Yearbook"></a>
+<script type="text/javascript">if(window.VCompare){VCompare('2024BBYB', 5);}</script>
+</td> 
+<td rowspan="3" background="/v/vspfiles/templates/194/images/Grid_Divider_Vertical.gif"> 
+<img src="/v/vspfiles/templates/194/images/clear1x1.gif" width="25" height="25" alt=""> 
+</td> 
+<td valign="top" width="33%" align="center"> 
+<a href="http://www.SHOPCatsPause.com/product_p/25thcomebackcatsissue.htm" title="Comeback Cats 25th anniversary issue" alt="Comeback Cats 25th anniversary issue">
+<img src="//cdn3.volusion.com/npmdr.smgzg/v/vspfiles/photos/25thComebackCatsIssue-1.jpg" style="BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; BORDER-LEFT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid"  border=0 alt="Comeback Cats 25th anniversary issue" title="Comeback Cats 25th anniversary issue"></a>
+<script type="text/javascript">if(window.VCompare){VCompare('25thComebackCatsIssue', 5);}</script>
+</td> 
+</tr> 
+<tr> 
+<td valign="top" width="33%"> 
+<div>
+
+<a href="http://www.SHOPCatsPause.com/product_p/tcp1st-fbyb-bbyb.htm" class="productnamecolor colors_productname" title="Cats' Pause magazine (1st Class) + Football Yearbook + Basketball Yearbook, TCP1st-FBYB-BBYB"> 
+<span itemprop='name'>
+Cats' Pause magazine (1st Class) + Football Yearbook + Basketball Yearbook
+</span>
+</a>
+<br />
+<div>
+
+<div>
+<font class="pricecolor colors_productprice">    <div class="product_productprice">        <b><!-- <font class="text colors_text"><img src='/a/i/blank.gif' width='12' height='12' name='placeholder'/>:</font> -->$138.85 </b>    </div></font>
+</div>
+<img src="/v/vspfiles/templates/194/images/Icon_FreeShipping_Small.gif">
+</div>
+</td>
+</td> 
+<td valign="top" width="33%"> 
+<div>
+
+<a href="http://www.SHOPCatsPause.com/product_p/2024bbyb.htm" class="productnamecolor colors_productname" title="2023-24 Basketball Yearbook, 2024BBYB"> 
+<span itemprop='name'>
+2023-24 Basketball Yearbook
+</span>
+</a>
+<br />
+<div>
+
+<div>
+<font class="pricecolor colors_productprice">    <div class="product_productprice">        <b><!-- <font class="text colors_text"><img src='/a/i/blank.gif' width='12' height='12' name='placeholder'/>:</font> -->$15.95 </b>    </div></font>
+</div>
+</div>
+</td>
+</td> 
+<td valign="top" width="33%"> 
+<div>
+
+<a href="http://www.SHOPCatsPause.com/product_p/25thcomebackcatsissue.htm" class="productnamecolor colors_productname" title="Comeback Cats 25th anniversary issue, 25thComebackCatsIssue"> 
+<span itemprop='name'>
+Comeback Cats 25th anniversary issue
+</span>
+</a>
+<br />
+<div>
+
+<div>
+<font class="pricecolor colors_productprice">    <div class="product_productprice">        <b><!-- <font class="text colors_text"><img src='/a/i/blank.gif' width='12' height='12' name='placeholder'/>:</font> -->$5.00 </b>    </div></font>
+</div>
+<img src="/v/vspfiles/templates/194/images/Icon_FreeShipping_Small.gif">
+</div>
+</td>
+</td> 
+</tr> 
+<tr> 
+<td valign="top" width="33%"> 
+</td> 
+<td valign="top" width="33%"> 
+</td> 
+<td valign="top" width="33%"> 
+</td> 
+</tr> 
+<tr> 
+<td background="/v/vspfiles/templates/194/images/Grid_Divider_Horizontal.gif" colspan="5"> 
+<img src="/v/vspfiles/templates/194/images/clear1x1.gif" width="3" height="9" alt=""> 
+</td> 
+</tr> 
+<tr> 
+<td valign="top" width="33%" align="center"> 
+<a href="http://www.SHOPCatsPause.com/product_p/2023fbyb.htm" title="2023 Kentucky Football Yearbook" alt="2023 Kentucky Football Yearbook">
+<img src="//cdn3.volusion.com/npmdr.smgzg/v/vspfiles/photos/2023FBYB-1.jpg?v-cache=1686571285" style="BORDER-RIGHT: #666666 1px solid; BORDER-TOP: #666666 1px solid; BORDER-LEFT: #666666 1px solid; BORDER-BOTTOM: #666666 1px solid"  border=0 alt="2023 Kentucky Football Yearbook" title="2023 Kentucky Football Yearbook"></a>
+<script type="text/javascript">if(window.VCompare){VCompare('2023FBYB', 5);}</script>
+</td> 
+<td rowspan="3" background="/v/vspfiles/templates/194/images/Grid_Divider_Vertical.gif"> 
+<img src="/v/vspfiles/templates/194/images/clear1x1.gif" width="25" height="25" alt=""> 
+</td> 
+<td rowspan="3" width="33%"> 
+<img src="/v/vspfiles/templates/194/images/clear1x1.gif" width="50" height="50" alt=""> 
+</td> 
+<td rowspan="3" background="/v/vspfiles/templates/194/images/Grid_Divider_Vertical.gif"> 
+<img src="/v/vspfiles/templates/194/images/clear1x1.gif" width="25" height="25" alt=""> 
+</td> 
+<td rowspan="3" width="33%"> 
+<img src="/v/vspfiles/templates/194/images/clear1x1.gif" width="50" height="50" alt=""> 
+</td> 
+</tr> 
+<tr> 
+<td valign="top" width="33%"> 
+<div>
+
+<a href="http://www.SHOPCatsPause.com/product_p/2023fbyb.htm" class="productnamecolor colors_productname" title="2023 Kentucky Football Yearbook, 2023FBYB"> 
+<span itemprop='name'>
+2023 Kentucky Football Yearbook
+</span>
+</a>
+<br />
+<div>
+
+<div>
+<font class="pricecolor colors_productprice">    <div class="product_productprice">        <b><!-- <font class="text colors_text"><img src='/a/i/blank.gif' width='12' height='12' name='placeholder'/>:</font> -->$10.95 </b>    </div></font>
+</div>
+</div>
+</td>
+</td> 
+</tr> 
+<tr> 
+<td valign="top" width="33%"> 
+</td> 
+</tr> 
+<tr> 
+<td background="/v/vspfiles/templates/194/images/Grid_Divider_Horizontal.gif" colspan="5"> 
+<img src="/v/vspfiles/templates/194/images/clear1x1.gif" width="3" height="9" alt=""> 
+</td> 
+</tr> 
+</table> 
+</td></tr></table>
+<div id="div_articleid_71">
+<div style="text-align: center;"><br></div>
+</div><!-- .vcb-article -->
+<textarea style="display:none;" id="articleBody_71" readonly="true"></textarea>
+</td></tr></table><br><br>
+</td><td valign="top">
+<div id="div_articleid_72">
+</div><!-- .vcb-article -->
+<textarea style="display:none;" id="articleBody_72" readonly="true"></textarea>
+</td></tr></table>
+</td>
+    </tr>
+  </table>
+    
+</div>
+
+<div class="clear"></div>
+
+</div>
+
+<!-- #################### FOOTER #################### -->
+<div id="footer">
+	<div id="footerTop">
+    	<ul style="width:366px;">
+        <li>
+        <!-- ======================== Mailing List Section ======================== -->
+		<div id="eList">
+          <form name="MailingList" method="post" action="http://www.SHOPCatsPause.com/MailingList_subscribe.asp">  
+            <input type="text" id="elist_input" name="emailaddress" value="enter your email" onfocus="if (this.value == 'enter your email') {this.value = '';}" onblur="if (this.value == '') {this.value = 'enter your email';}" /> 
+            <input type="submit" name="Submit" id="elist_submit" value="" />
+          </form>
+        </div>
+        </li>
+        <li>
+        
+        <!-- ==========================================================================================
+				VOLUSION LINK - BEGIN
+===============================================================================================
+Customer has agreed per Volusion's Terms of Service (http://www.volusion.com/agreement_monthtomonth.asp) to maintain a text hyperlink to "http://www.volusion.com" in the footer of the website. The link must be standard html, contain no javascript, and be approved by Volusion. Removing this link breaches the Volusion agreement.
+=========================================================================================== -->	
+    <div id="footerBottom">
+		<a href="http://www.SHOPCatsPause.com/terms.asp">Copyright &copy; <script type="text/javascript">document.write((new Date()).getFullYear());</script>&nbsp;www.SHOPCatsPause.com. All Rights Reserved.</a><br />Built with <a href="http://www.volusion.com" target="_blank" rel="nofollow">Volusion</a></div>
+        
+        </li>
+        </ul>
+		<ul style="margin-left:12px;">
+        <li class="title">Company Info</li>
+		<li><a href="http://www.SHOPCatsPause.com/aboutus.asp">About Us</a></li>
+        <li><a href="mailto:dbird@catspause.com?subject=Contact Us">Contact Us</a></li>
+		<li><a href="http://www.SHOPCatsPause.com/terms_privacy.asp">Privacy Policy</a></li>
+        </ul>
+        <ul>
+        <li class="title">My Account</li>
+		<li><a href="http://www.SHOPCatsPause.com/login.asp">Login</a>/<a href="http://www.SHOPCatsPause.com/register.asp">Register</a></li>
+		<li><a href="http://www.SHOPCatsPause.com/shoppingcart.asp">Shopping Cart</a></li>
+		<li><a href="http://www.SHOPCatsPause.com/orders.asp">Order Status</a></li>
+        </ul>
+        <ul>
+        <li class="title">Site Maps</li>
+		<li><a href="http://www.SHOPCatsPause.com/pindex.asp">Product Index</a></li>
+		<li><a href="http://www.SHOPCatsPause.com/cindex.asp">Category index</a></li>
+        </ul>
+        <ul>
+        <li class="title">Customer Service</li>
+		<li><a href="http://www.SHOPCatsPause.com/help.asp">Help</a></li>
+		<li><a href="http://www.SHOPCatsPause.com/articles.asp?ID=57">Shipping &amp; Deliveries</a></li>
+		<li><a href="http://www.SHOPCatsPause.com/returns.asp">Returns &amp; Exchanges</a></li>
+		</ul>
+	</div>
+    
+    <div class="clear"></div>
+
+</div>
+
+</div>
+
+
+
+<script type="text/javascript">function store_init(event){} AttachEvent(window, 'load', store_init);</script>
+
+<script type="text/javascript">
+    if (!/\/shoppingcart\.asp/i.test(window.location.pathname)) {
+        jQuery(document).ready(function() {
+            jQuery('a').each(AddCartLink)
+        });
+    }
+</script>
+
+  <script>
+     if (document.getElementsByName("MailingList")[0]) {
+        var emailSubscribeForm = document.getElementsByName("MailingList")[0];
+        disableSubscribeSubmit = function() {
+          emailSubscribeButton.removeAttribute("type");
+        }
+        forwardToMailingList = function(e) {
+            var subscribeEmail = emailSubscribeForm.querySelector("input").value;
+          sessionStorage.setItem("subEmailAddress", subscribeEmail);
+          emailSubscribeForm.submit();
+        }
+
+        if (emailSubscribeForm.querySelector("button")) {
+            var emailSubscribeButton = emailSubscribeForm.querySelector("button");
+            emailSubscribeButton.addEventListener("click", forwardToMailingList);
+        }
+    }
+  </script>
+
+
+</body>
+</html>

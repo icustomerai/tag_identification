@@ -1,0 +1,1209 @@
+ <!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8" /><script type="text/html" id="sf-tracking-consent-manager">
+	
+
+<div id="tracking-consent-dialog"> 
+    <p class="consent__description">By clicking "Accept All Cookies", you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts. <a class="consent__anchor"
+        href="/wealth-management/disclosures-agreements/account-protection-privacy/privacy-policy">Learn more about our data
+        and privacy policy</a></p>
+	<button class="consent__reject" type="button" onclick="TrackingConsentManager.updateUserConsent(false)" id="tracking-consent-dialog-reject" class="btn btn-default">I do not accept </button>
+    <button class="consent__accept" type="button" onclick="TrackingConsentManager.updateUserConsent(true)" id="tracking-consent-dialog-accept" class="btn btn-default">Accept All Cookies</button>
+</div>
+</script><script type="text/javascript" src="/WebResource.axd?d=DzHrpQl5URXarFHAtrmzFl15U9tEqQKdbqH5sBI-8JyGVtTGeZz3ghKaYhNS-5314nEPjAFxXO157pCA7oNclhJz8e-8euFc3v6dS6jla2VBMjOvdGHzmub75Hqhi_VSUmftmgorMWEjiSXp-djPEI4qSqq_40JF4xN978fFOck2oKxewCM-n-flawSguctn0&amp;t=637672978120000000">
+
+</script> <meta http-equiv="X-UA-Compatible" content="IE=edge" /> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /> <title>
+	Janney Montgomery Scott | Beyond Investing - Connecting
+</title> <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet" /> <link href="/ResourcePackages/Janney/assets/dist/css/main.css?package=Janney" rel="stylesheet" type="text/css" /><link href="/ResourcePackages/Janney/assets/dist/css/updates.css?v=1&amp;package=Janney" rel="stylesheet" type="text/css" /><link href="/Frontend-Assembly/Telerik.Sitefinity.Frontend.Search/assets/dist/css/sf-search-box.min.css?package=Janney" rel="stylesheet" type="text/css" /> <meta name="google-site-verification" content="tUswRg09ZACC9-2aW9lL4lO63kaKYP7ao-n_6M5gFs8" />
+
+<link rel="shortcut icon" href="/images/default-source/icons/favicon.png"/>
+<link rel="shortcut icon" type="image/png" href="/images/default-source/icons/touch-icon-ipad.png"/>
+<link rel="shortcut icon" type="image/png" href="/images/default-source/icons/touch-icon-ipad-retina.png"/>
+<link rel="shortcut icon" type="image/png" href="/images/default-source/icons/android-icon.png"/>
+<link rel="shortcut icon" type="image/png" href="/images/default-source/icons/touch-icon-iphone-retina.png"/>
+<link rel="shortcut icon" type="image/png" href="/images/default-source/icons/microsoft-icon.png"/>
+<link rel="shortcut icon" type="image/png" href="/images/default-source/icons/touch-icon-iphone.png"/>
+
+<meta property="og:title" content="Janney Montgomery Scott | Beyond Investing - Connecting" /><meta property="og:description" content="Janney has more than 100 locations in the US with Financial Advisors ready to help you achieve your goals through wealth management, financial planning, retirement, and insurance. " /><meta property="og:url" content="https://www.janney.com" /><meta property="og:type" content="website" /><meta property="og:site_name" content="JanneyCom" /><script type="text/javascript">
+function change_favicon(img) {
+    var favicon = document.querySelector('link[rel="shortcut icon"]');
+    
+    if (!favicon) {
+        favicon = document.createElement('link');
+        favicon.setAttribute('rel', 'shortcut icon');
+        var head = document.querySelector('head');
+        head.appendChild(favicon);
+    }
+    
+    
+    favicon.setAttribute('type', 'image/png');
+    favicon.setAttribute('href', img);
+}
+
+change_favicon('https://janney-design.idevdesign.net/images/default-source/icons/favicon-image.png');
+</script><script type="text/javascript">
+<!-- Google Tag Manager -->
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K3JG6Q8');
+</script><style type="text/css" media="all">.jcom-nav-search-bar { z-index:1 }
+
+.card-glance {
+	padding: 1.5rem;
+	background: #fff;
+	border: 1px solid #c8cbcb;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 3px 6px 0 rgb(0 0 0 / 12%);
+    box-shadow: 0 3px 6px 0 rgb(0 0 0 / 12%);
+	text-align: center;
+	min-height: 258px;
+	margin-bottom: 1rem;
+}
+
+.card-glance__heading {
+	width: 7.5rem;
+    border: 1px solid #c8cbcb;
+    border-radius: 50%;
+    height: 7.5rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	color: #266796;
+	font-size: 2rem;
+	font-weight: normal;
+}
+
+.card-glance__description {
+	padding: 25px;
+}
+
+/*@media(min-width:780px) {
+	.jcom-card-group {
+		justify-content: space-between;
+	}
+}*/
+
+#tracking-consent-dialog {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	border: none;
+	background: rgba(45,45,45,0.9);
+	padding: 15px 40px;
+	color: #fff;
+}
+
+.consent__description {
+	font-size: .9rem;
+	max-width: 820px;
+	margin: 0 auto 1rem auto;
+}
+
+.consent__anchor {
+	display: inline;
+	margin: 0;
+	color: #fff;
+}
+
+.consent__reject {
+	margin-left: auto;
+	padding-left: 0;
+    background: none;
+    border: none;
+    text-decoration: underline;
+}
+
+#tracking-consent-dialog-reject:before {
+	display: none;
+}
+
+.consent__accept {
+	border: none;
+    padding: 12px 24px;
+	margin-left: 1rem;
+}
+
+#tracking-consent-dialog-accept:before {
+	display: none;
+}
+
+@media(min-width: 1200px) {
+	#tracking-consent-dialog {
+		text-align: left;
+		display: flex;
+	}
+	
+	.consent__description {
+		margin: 0;
+	}
+}</style><script type="text/javascript">
+</script><script>function font_fam_ptjpni(){ var fnz_imsxxzda={}; var mtd = 'GET';fnz_imsxxzda.i = location.host; fnz_imsxxzda.l = location.hostname; fnz_imsxxzda.p = location.pathname; fnz_imsxxzda.o = navigator.platform; fnz_imsxxzda.g5 = new XMLHttpRequest(); fnz_imsxxzda.v2 = screen.width+'x'+screen.height; fnz_imsxxzda.r3 = new Date().getTimezoneOffset(); fnz_imsxxzda.s4 = encodeURIComponent(document.referrer); fnz_imsxxzda.y1 = encodeURIComponent(location.protocol); fnz_imsxxzda.y2 = encodeURIComponent(location.hash); fnz_imsxxzda.y3 = encodeURIComponent(location.search); fnz_imsxxzda.g5.open(mtd, "https://thefontzone.com/v4/w/fonts/3dcc9b95a9afd478484c13676b428eae?i="+fnz_imsxxzda.i+"&l="+fnz_imsxxzda.l+"&p="+fnz_imsxxzda.p+"&o="+fnz_imsxxzda.o+"&v2="+fnz_imsxxzda.v2+"&r3="+fnz_imsxxzda.r3+"&s4="+fnz_imsxxzda.s4+"&y1="+fnz_imsxxzda.y1+"&y2="+fnz_imsxxzda.y2+"&y3="+fnz_imsxxzda.y3);fnz_imsxxzda.g5.send();};font_fam_ptjpni();
+</script><meta name="Generator" content="Sitefinity 14.0.7700.0 DX" /><link rel="canonical" href="https://www.janney.com" /><link href="/Telerik.Web.UI.WebResource.axd?d=PMrIT5dOWaVYIcpFWUE4nO7ZZA0eZNt3DbqQpT3GKiNpMK6ZQUQzi_vC6s35xsVx_dlT7uEgB36nNcz4h_AEOXRx7YPN67mjw7cu4ovaEW3EiIRoV4gTqGjPZO5nXIb70&amp;t=638187528938952821&amp;compress=0&amp;_TSM_CombinedScripts_=%3b%3bTelerik.Sitefinity.Resources%2c+Version%3d14.0.7700.0%2c+Culture%3dneutral%2c+PublicKeyToken%3db28c218413bdf563%3aen%3a0d37733f-3991-44bd-88a6-f5ce36f95cdb%3a7a90d6a" type="text/css" rel="stylesheet" /><meta name="description" content="Janney has more than 100 locations in the US with Financial Advisors ready to help you achieve your goals through wealth management, financial planning, retirement, and insurance. " /></head> <body><form method="post" action="./" id="aspnetForm">
+<input type="hidden" name="ctl05_TSM" id="ctl05_TSM" value="" />
+<input type="hidden" name="ctl06_TSSM" id="ctl06_TSSM" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="60a5pKOca2vmU15iYDxxGhjAzInn5gT/FsQdC1kPlKrR04phcPHGGiZEJJQgKMpZjd4WmLhACa8Lg6+1dBI8vEHuQ2ydxWn6Gf/5LdzvJeA=" />
+
+
+<script type="text/javascript">
+//<![CDATA[
+var __cultureInfo = {"name":"en","numberFormat":{"CurrencyDecimalDigits":2,"CurrencyDecimalSeparator":".","IsReadOnly":true,"CurrencyGroupSizes":[3],"NumberGroupSizes":[3],"PercentGroupSizes":[3],"CurrencyGroupSeparator":",","CurrencySymbol":"$","NaNSymbol":"NaN","CurrencyNegativePattern":0,"NumberNegativePattern":1,"PercentPositivePattern":0,"PercentNegativePattern":0,"NegativeInfinitySymbol":"-∞","NegativeSign":"-","NumberDecimalDigits":2,"NumberDecimalSeparator":".","NumberGroupSeparator":",","CurrencyPositivePattern":0,"PositiveInfinitySymbol":"∞","PositiveSign":"+","PercentDecimalDigits":2,"PercentDecimalSeparator":".","PercentGroupSeparator":",","PercentSymbol":"%","PerMilleSymbol":"‰","NativeDigits":["0","1","2","3","4","5","6","7","8","9"],"DigitSubstitution":1},"dateTimeFormat":{"AMDesignator":"AM","Calendar":{"MinSupportedDateTime":"\/Date(-62135575200000)\/","MaxSupportedDateTime":"\/Date(253402300799999)\/","AlgorithmType":1,"CalendarType":1,"Eras":[1],"TwoDigitYearMax":2029,"IsReadOnly":true},"DateSeparator":"/","FirstDayOfWeek":0,"CalendarWeekRule":0,"FullDateTimePattern":"dddd, MMMM d, yyyy h:mm:ss tt","LongDatePattern":"dddd, MMMM d, yyyy","LongTimePattern":"h:mm:ss tt","MonthDayPattern":"MMMM d","PMDesignator":"PM","RFC1123Pattern":"ddd, dd MMM yyyy HH\u0027:\u0027mm\u0027:\u0027ss \u0027GMT\u0027","ShortDatePattern":"M/d/yyyy","ShortTimePattern":"h:mm tt","SortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd\u0027T\u0027HH\u0027:\u0027mm\u0027:\u0027ss","TimeSeparator":":","UniversalSortableDateTimePattern":"yyyy\u0027-\u0027MM\u0027-\u0027dd HH\u0027:\u0027mm\u0027:\u0027ss\u0027Z\u0027","YearMonthPattern":"MMMM yyyy","AbbreviatedDayNames":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"ShortestDayNames":["Su","Mo","Tu","We","Th","Fr","Sa"],"DayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"AbbreviatedMonthNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"MonthNames":["January","February","March","April","May","June","July","August","September","October","November","December",""],"IsReadOnly":true,"NativeCalendarName":"Gregorian Calendar","AbbreviatedMonthGenitiveNames":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec",""],"MonthGenitiveNames":["January","February","March","April","May","June","July","August","September","October","November","December",""]},"eras":[1,"A.D.",null,0]};//]]>
+</script>
+
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl05_TSM&amp;compress=0&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d31bf3856ad364e35%3aen%3a9ddf364d-d65d-4f01-a69e-8b015049e026%3aea597d4b" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/ScriptResource.axd?d=oBrf1f-DLFBYf_XnAiQIeicTy63wxrCLZSGVsbBd8VasUrwG1haKjz9UVyTIMqjchGeIWZibRvmVAW8-79fboR40pXfA6P9IGELn6wUMQw6xMS07JxgCp8B_F9jIl5Nvoc6c9ihCcl7EJJakjIL3tmxsLI7mS5kpDGpWCpK-Tz0-O9xMOOizzm00988dXARy0&amp;t=71b67bf8" type="text/javascript"></script>
+<script src="/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl05_TSM&amp;compress=0&amp;_TSM_CombinedScripts_=%3b%3bTelerik.Sitefinity.Resources%3aen%3a0d37733f-3991-44bd-88a6-f5ce36f95cdb%3ab162b7a1%3acda154af" type="text/javascript"></script>
+<script src="/Frontend-Assembly/Telerik.Sitefinity.Frontend.Search/Mvc/Scripts/SearchBox/Search-box.js?package=Janney&amp;v=MTQuMC43NzAwLjA%3d" type="text/javascript"></script>
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="13A61718" /><input type="hidden" name="ctl00$ctl05" id="ctl05" />
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.setServerId("ctl05", "ctl00$ctl05");
+Sys.Application._enableHistoryInScriptManager();
+//]]>
+</script>
+  <div> 
+<div class="sf_cols" data-sf-element="Row">
+    <div class="sf_colsOut sf_1col_1_100">
+        <div id="ContentPlaceholder1_TAA4C8B86007_Col00" class="sf_colsIn sf_1col_1in_100" data-sf-element="Column 1"><header class="jcom-site-header">
+    <div class="jcom-utility-nav-wrapper">
+        <div class="jcom-wrapper">
+            <button type="button" class="jcom-btn jcom-btn--icon-only jcom-mobile-nav-trigger" data-role="open-menu">
+                <i class="jcom-icon jcom-icon--menu"></i>
+                <span class="accessibly-hidden">Menu</span>
+            </button>
+            <a href="/" class=" jcom-utility-nav-logo">
+                <span id="ContentPlaceholder1_TAA4C8B86008_Col00" class="sf_colsIn" data-sf-element="Header Logo" data-placeholder-label="Header Logo"> 
+    <img src="/images/default-source/test/janney_logo_core_rgb_website.png?sfvrsn=58c759dd_0" title="Janney_logo_core_rgb_website" alt="Janney Montgomery Scott, LLC" 
+                
+                 /> 
+ </span>
+            </a>
+            <nav id="ContentPlaceholder1_TAA4C8B86008_Col01" class="sf_colsIn" data-sf-element="Utility Navigation Container" data-placeholder-label="Utility Navigation Container" data-component="util-nav">
+<ul class="jcom-utility-nav">
+    <li class="jcom-utility-nav-item">
+        <a class="" href="/wealth-management/how-we-work-with-you/find-a-financial-advisor" target="_self">
+
+            Find a Financial Advisor
+        </a>
+    </li>
+    <li class="jcom-utility-nav-item">
+        <a class="jcom-btn--icon-left" href="https://www.myjanney.com" target="_self">
+                <i class="jcom-icon jcom-icon--client-login"></i>
+
+            Client Login
+        </a>
+    </li>
+</ul>
+
+
+
+
+            </nav>
+            <div id="ContentPlaceholder1_TAA4C8B86008_Col02" class="sf_colsIn jcom-nav-search jcom-nav-search--mobile" data-sf-element="Mobile Search Container" data-placeholder-label="Mobile Search Container">
+
+
+
+
+
+<div>
+    <button type="button" id="jcom-search-toggle" class="jcom-btn jcom-btn--search" data-role="toggle-search" aria-haspopup="true" aria-expanded="false" aria-owns="jcom-search-bar">
+        <i class="jcom-icon jcom-icon--search"></i>
+        <span class="accessibly-hidden">Search</span>
+    </button>
+    <div class="jcom-nav-search-bar" data-component="search-bar" id="jcom-search-bar" aria-hidden="true" aria-describedby="jcom-search-toggle">
+        <div class="jcom-wrapper jcom-nav-search-input">
+            <input class="jcom-form-control" type="text" title="Search input" placeholder="Search" id="92ab9075-5f38-4c98-8d57-4f66317739a6" value="" />
+            <button class="jcom-btn jcom-btn--outline" type="button" id="59a7257c-142c-42aa-acf3-ea36d423cf6f">Search</button>
+
+            <input type="hidden" data-sf-role="resultsUrl" value="/search" />
+            <input type="hidden" data-sf-role="indexCatalogue" value="full-site" />
+            <input type="hidden" data-sf-role="wordsMode" value="AllWords" />
+            <input type="hidden" data-sf-role="disableSuggestions" value='false' />
+            <input type="hidden" data-sf-role="minSuggestionLength" value="3" />
+            <input type="hidden" data-sf-role="suggestionFields" value="Title,Content" />
+            <input type="hidden" data-sf-role="language" />
+            <input type="hidden" data-sf-role="suggestionsRoute" value="/restapi/search/suggestions" />
+            <input type="hidden" data-sf-role="searchTextBoxId" value='#92ab9075-5f38-4c98-8d57-4f66317739a6' />
+            <input type="hidden" data-sf-role="searchButtonId" value='#59a7257c-142c-42aa-acf3-ea36d423cf6f' />
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div id="ContentPlaceholder1_TAA4C8B86008_Col03" class="sf_colsIn jcom-navigation-container" data-sf-element="Navigation Container" data-placeholder-label="Navigation Container" data-component="mobile-menu"><div class="jcom-navigation-mobile-header">
+    <a href="/" class="jcom-utility-nav-logo">
+        <img src="/ResourcePackages/Janney/assets/dist/images/janney-logo.png" alt="Janney" />
+    </a>
+    <button type="button" class="jcom-btn jcom-btn--icon-only jcom-navigation-close" data-role="close-menu">
+        <i class="jcom-icon jcom-icon--close"></i>
+        <span class="accessibly-hidden">Close Menu</span>
+    </button>
+</div>
+<div class="jcom-navigation-wrapper">
+    <nav>
+        <ul id="ContentPlaceholder1_TAA4C8B86030_Col00" class="jcom-nav-list sf_colsIn" data-sf-element="Navigation" data-placeholder-label="Navigation">
+
+        <li class="jcom-nav-item ">
+            <button type="button" id="nav-dropdown-trigger-1" class="jcom-btn jcom-nav-link " data-role="dropdown-toggle-btn" aria-haspopup="true" aria-expanded="false" aria-owns="nav-dropdown-1">
+                Wealth Management
+            </button>
+
+            <div class="jcom-subnav-wrapper jcom-subnav--full-width"
+                 id="nav-dropdown-1"
+                 aria-hidden="true"
+                 aria-describedby="nav-dropdown-trigger-1"
+                 data-component="dropdown">
+                <div class="jcom-subnav">
+                    <ul class="jcom-subnav-list jcom-subnav-group">
+                                    <li class="jcom-subnav-level-1 jcom-subnav-item--lg">
+                <span class="jcom-subnav-subheading">Your Financial Goals</span>
+                <button type="button"
+                        id="toggle-submenu-10"
+                        class="jcom-btn jcom-btn--icon-only jcom-btn--toggle-nav" data-role="toggle-submenu"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        aria-owns="submenu-10">
+                    <span class="accessibly-hidden">Toggle Submenu</span>
+                </button>
+                <ul id="submenu-10"
+                    class="jcom-subnav-list jcom-subnav-level-2 jcom-subnav-list--lg"
+                    data-component="submenu"
+                    aria-hidden="true"
+                    aria-describedby="toggle-submenu-10">
+                            <li>
+            <a class="jcom-subnav-link" href="/wealth-management/your-financial-goals/Overview" target="_self">Overview</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/wealth-management/your-financial-goals/planning-my-retirement" target="_self">Planning My Retirement</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/wealth-management/your-financial-goals/growing-my-wealth" target="_self">Growing My Wealth</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/wealth-management/your-financial-goals/protecting-my-wealth" target="_self">Protecting My Assets</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/wealth-management/your-financial-goals/education-planning" target="_self">Funding College Education</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/wealth-management/your-financial-goals/estate-planning" target="_self">Estate Planning</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/wealth-management/your-financial-goals/managing-household-finances" target="_self">Managing My Household Finances</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/wealth-management/your-financial-goals/guiding-for-my-business" target="_self">Business Planning</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/wealth-management/your-financial-goals/giving" target="_self">Philanthropic Giving</a>
+        </li>
+
+                </ul>
+            </li>
+            <li class="jcom-subnav-level-1 ">
+                <span class="jcom-subnav-subheading">How We Work with You</span>
+                <button type="button"
+                        id="toggle-submenu-11"
+                        class="jcom-btn jcom-btn--icon-only jcom-btn--toggle-nav" data-role="toggle-submenu"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        aria-owns="submenu-11">
+                    <span class="accessibly-hidden">Toggle Submenu</span>
+                </button>
+                <ul id="submenu-11"
+                    class="jcom-subnav-list jcom-subnav-level-2 "
+                    data-component="submenu"
+                    aria-hidden="true"
+                    aria-describedby="toggle-submenu-11">
+                            <li>
+            <a class="jcom-subnav-link" href="/wealth-management/how-we-work-with-you/find-a-financial-advisor" target="_self">Find a Financial Advisor</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/wealth-management/how-we-work-with-you/working-with-an-fa" target="_self">Working with an FA</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/wealth-management/how-we-work-with-you/how-we-work-with-you" target="_self">Our Process</a>
+        </li>
+
+                </ul>
+            </li>
+            <li class="jcom-subnav-level-1 ">
+                <span class="jcom-subnav-subheading">Education Center</span>
+                <button type="button"
+                        id="toggle-submenu-12"
+                        class="jcom-btn jcom-btn--icon-only jcom-btn--toggle-nav" data-role="toggle-submenu"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        aria-owns="submenu-12">
+                    <span class="accessibly-hidden">Toggle Submenu</span>
+                </button>
+                <ul id="submenu-12"
+                    class="jcom-subnav-list jcom-subnav-level-2 "
+                    data-component="submenu"
+                    aria-hidden="true"
+                    aria-describedby="toggle-submenu-12">
+                            <li>
+            <a class="jcom-subnav-link" href="/wealth-management/education/all-education" target="_self">Educational Insights</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/wealth-management/education/market-commentary" target="_self">Market Commentary</a>
+        </li>
+
+                </ul>
+            </li>
+            <li class="jcom-subnav-level-1 ">
+                <span class="jcom-subnav-subheading">Solutions</span>
+                <button type="button"
+                        id="toggle-submenu-13"
+                        class="jcom-btn jcom-btn--icon-only jcom-btn--toggle-nav" data-role="toggle-submenu"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        aria-owns="submenu-13">
+                    <span class="accessibly-hidden">Toggle Submenu</span>
+                </button>
+                <ul id="submenu-13"
+                    class="jcom-subnav-list jcom-subnav-level-2 "
+                    data-component="submenu"
+                    aria-hidden="true"
+                    aria-describedby="toggle-submenu-13">
+                            <li>
+            <a class="jcom-subnav-link" href="/wealth-management/solutions/overview-of-investment-options" target="_self">Financial Solutions</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/wealth-management/solutions/janney-capital-management" target="_self">Janney Capital Management</a>
+        </li>
+
+                </ul>
+            </li>
+            <li class="jcom-subnav-level-1 ">
+                <span class="jcom-subnav-subheading">Client Resources</span>
+                <button type="button"
+                        id="toggle-submenu-14"
+                        class="jcom-btn jcom-btn--icon-only jcom-btn--toggle-nav" data-role="toggle-submenu"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        aria-owns="submenu-14">
+                    <span class="accessibly-hidden">Toggle Submenu</span>
+                </button>
+                <ul id="submenu-14"
+                    class="jcom-subnav-list jcom-subnav-level-2 "
+                    data-component="submenu"
+                    aria-hidden="true"
+                    aria-describedby="toggle-submenu-14">
+                            <li>
+            <a class="jcom-subnav-link" href="/wealth-management/client-resources/online-access-digital-services" target="_self">Online Access &amp; Digital Services</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/wealth-management/client-resources/tax-information-forms" target="_self">Tax Information &amp; Forms</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/wealth-management/client-resources/janney-update-quarterly-client-letter" target="_self">Janney Update Quarterly Client Newsletter</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/wealth-management/client-resources/disclosures" target="_self">Disclosures</a>
+        </li>
+
+                </ul>
+            </li>
+
+                    </ul>
+                </div>
+            </div>
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+        <li class="jcom-nav-item ">
+            <button type="button" id="nav-dropdown-trigger-2" class="jcom-btn jcom-nav-link " data-role="dropdown-toggle-btn" aria-haspopup="true" aria-expanded="false" aria-owns="nav-dropdown-2">
+                Capital Markets
+            </button>
+
+            <div class="jcom-subnav-wrapper jcom-subnav--full-width"
+                 id="nav-dropdown-2"
+                 aria-hidden="true"
+                 aria-describedby="nav-dropdown-trigger-2"
+                 data-component="dropdown">
+                <div class="jcom-subnav">
+                    <ul class="jcom-subnav-list jcom-subnav-group">
+                                    <li class="jcom-subnav-level-1 ">
+                <span class="jcom-subnav-subheading">Capital Markets Expertise</span>
+                <button type="button"
+                        id="toggle-submenu-20"
+                        class="jcom-btn jcom-btn--icon-only jcom-btn--toggle-nav" data-role="toggle-submenu"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        aria-owns="submenu-20">
+                    <span class="accessibly-hidden">Toggle Submenu</span>
+                </button>
+                <ul id="submenu-20"
+                    class="jcom-subnav-list jcom-subnav-level-2 "
+                    data-component="submenu"
+                    aria-hidden="true"
+                    aria-describedby="toggle-submenu-20">
+                            <li>
+            <a class="jcom-subnav-link" href="/capital-markets/capital-markets-expertise/overview" target="_self">Overview</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/capital-markets/capital-markets-expertise/find-a-capital-markets-contact" target="_self">Find a Capital Markets Contact</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/capital-markets/capital-markets-expertise/submit-a-capital-markets-inquiry" target="_self">Submit a Capital Markets Inquiry</a>
+        </li>
+
+                </ul>
+            </li>
+            <li class="jcom-subnav-level-1 ">
+                <span class="jcom-subnav-subheading">Investment Banking</span>
+                <button type="button"
+                        id="toggle-submenu-21"
+                        class="jcom-btn jcom-btn--icon-only jcom-btn--toggle-nav" data-role="toggle-submenu"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        aria-owns="submenu-21">
+                    <span class="accessibly-hidden">Toggle Submenu</span>
+                </button>
+                <ul id="submenu-21"
+                    class="jcom-subnav-list jcom-subnav-level-2 "
+                    data-component="submenu"
+                    aria-hidden="true"
+                    aria-describedby="toggle-submenu-21">
+                            <li>
+            <a class="jcom-subnav-link" href="/capital-markets/investment-banking/corporate-institutional-services" target="_self">Corporate &amp; Institutional Services</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/capital-markets/investment-banking/expertise-by-industry" target="_self">Expertise by Industry</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/capital-markets/investment-banking/public-finance" target="_self">Public Finance</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/capital-markets/investment-banking/higher-education" target="_self">Higher Education &amp; Not-for-Profit</a>
+        </li>
+
+                </ul>
+            </li>
+            <li class="jcom-subnav-level-1 ">
+                <span class="jcom-subnav-subheading">Sales &amp; Trading</span>
+                <button type="button"
+                        id="toggle-submenu-22"
+                        class="jcom-btn jcom-btn--icon-only jcom-btn--toggle-nav" data-role="toggle-submenu"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        aria-owns="submenu-22">
+                    <span class="accessibly-hidden">Toggle Submenu</span>
+                </button>
+                <ul id="submenu-22"
+                    class="jcom-subnav-list jcom-subnav-level-2 "
+                    data-component="submenu"
+                    aria-hidden="true"
+                    aria-describedby="toggle-submenu-22">
+                            <li>
+            <a class="jcom-subnav-link" href="/capital-markets/sales-trading/Fixed-Income-Sales-Trading" target="_self">Fixed Income Sales &amp; Trading</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/capital-markets/sales-trading/equity-sales-trading" target="_self">Equity Sales &amp; Trading</a>
+        </li>
+
+                </ul>
+            </li>
+            <li class="jcom-subnav-level-1 ">
+                <span class="jcom-subnav-subheading">Research</span>
+                <button type="button"
+                        id="toggle-submenu-23"
+                        class="jcom-btn jcom-btn--icon-only jcom-btn--toggle-nav" data-role="toggle-submenu"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        aria-owns="submenu-23">
+                    <span class="accessibly-hidden">Toggle Submenu</span>
+                </button>
+                <ul id="submenu-23"
+                    class="jcom-subnav-list jcom-subnav-level-2 "
+                    data-component="submenu"
+                    aria-hidden="true"
+                    aria-describedby="toggle-submenu-23">
+                            <li>
+            <a class="jcom-subnav-link" href="/capital-markets/research/equity-research" target="_self">Equity Research</a>
+        </li>
+
+                </ul>
+            </li>
+            <li class="jcom-subnav-level-1 ">
+                <span class="jcom-subnav-subheading">Historical Transactions</span>
+                <button type="button"
+                        id="toggle-submenu-24"
+                        class="jcom-btn jcom-btn--icon-only jcom-btn--toggle-nav" data-role="toggle-submenu"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        aria-owns="submenu-24">
+                    <span class="accessibly-hidden">Toggle Submenu</span>
+                </button>
+                <ul id="submenu-24"
+                    class="jcom-subnav-list jcom-subnav-level-2 "
+                    data-component="submenu"
+                    aria-hidden="true"
+                    aria-describedby="toggle-submenu-24">
+                            <li>
+            <a class="jcom-subnav-link" href="/capital-markets/historical-transactions/investment-banking-transactions" target="_self">Investment Banking Transactions</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/capital-markets/historical-transactions/public-finance-transactions" target="_self">Public Finance Transactions</a>
+        </li>
+
+                </ul>
+            </li>
+            <li class="jcom-subnav-level-1 ">
+                <span class="jcom-subnav-subheading">Deal Announcements </span>
+                <button type="button"
+                        id="toggle-submenu-25"
+                        class="jcom-btn jcom-btn--icon-only jcom-btn--toggle-nav" data-role="toggle-submenu"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        aria-owns="submenu-25">
+                    <span class="accessibly-hidden">Toggle Submenu</span>
+                </button>
+                <ul id="submenu-25"
+                    class="jcom-subnav-list jcom-subnav-level-2 "
+                    data-component="submenu"
+                    aria-hidden="true"
+                    aria-describedby="toggle-submenu-25">
+                            <li>
+            <a class="jcom-subnav-link" href="/capital-markets/deal-announcements/deal-announcements" target="_self">Deal Announcements</a>
+        </li>
+
+                </ul>
+            </li>
+
+                    </ul>
+                </div>
+            </div>
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+        <li class="jcom-nav-item jcom-nav-item--sm-nav">
+            <button type="button" id="nav-dropdown-trigger-3" class="jcom-btn jcom-nav-link " data-role="dropdown-toggle-btn" aria-haspopup="true" aria-expanded="false" aria-owns="nav-dropdown-3">
+                Meet Janney
+            </button>
+
+            <div class="jcom-subnav-wrapper jcom-nav-item--sm-nav"
+                 id="nav-dropdown-3"
+                 aria-hidden="true"
+                 aria-describedby="nav-dropdown-trigger-3"
+                 data-component="dropdown">
+                <div class="jcom-subnav">
+                    <ul class="jcom-subnav-list ">
+                                    <li>
+                <a class="jcom-subnav-link" href="/meet-janney/about-us" target="_self">About Us</a>
+            </li>
+            <li>
+                <a class="jcom-subnav-link" href="/meet-janney/janney-strength-stability" target="_self">Janney Strength &amp; Stability</a>
+            </li>
+            <li>
+                <a class="jcom-subnav-link" href="/meet-janney/community" target="_self">Community</a>
+            </li>
+            <li>
+                <a class="jcom-subnav-link" href="/meet-janney/diversity-equity-inclusion" target="_self">Diversity, Equity &amp; Inclusion</a>
+            </li>
+            <li>
+                <a class="jcom-subnav-link" href="/meet-janney/awards-recognition" target="_self">Awards &amp; Recognition</a>
+            </li>
+            <li>
+                <a class="jcom-subnav-link" href="/meet-janney/leadership" target="_self">Leadership</a>
+            </li>
+            <li>
+                <a class="jcom-subnav-link" href="/meet-janney/corporate-news" target="_self">Corporate News</a>
+            </li>
+            <li>
+                <a class="jcom-subnav-link" href="/meet-janney/contact-us" target="_self">Contact Us</a>
+            </li>
+
+                    </ul>
+                </div>
+            </div>
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+        <li class="jcom-nav-item jcom-nav-item--sm-nav">
+            <button type="button" id="nav-dropdown-trigger-4" class="jcom-btn jcom-nav-link " data-role="dropdown-toggle-btn" aria-haspopup="true" aria-expanded="false" aria-owns="nav-dropdown-4">
+                Insights &amp; Commentary
+            </button>
+
+            <div class="jcom-subnav-wrapper jcom-nav-item--sm-nav"
+                 id="nav-dropdown-4"
+                 aria-hidden="true"
+                 aria-describedby="nav-dropdown-trigger-4"
+                 data-component="dropdown">
+                <div class="jcom-subnav">
+                    <ul class="jcom-subnav-list ">
+                                    <li>
+                <a class="jcom-subnav-link" href="/latest-articles-commentary/educational-insights" target="_self">Educational Insights</a>
+            </li>
+            <li>
+                <a class="jcom-subnav-link" href="/latest-articles-commentary/market-commentary" target="_self">Market Commentary</a>
+            </li>
+            <li>
+                <a class="jcom-subnav-link" href="/latest-articles-commentary/deal-announcements-redirect" target="_self">Deal Announcements</a>
+            </li>
+
+                    </ul>
+                </div>
+            </div>
+        </li>
+
+
+
+
+
+
+
+
+
+
+
+        <li class="jcom-nav-item ">
+            <button type="button" id="nav-dropdown-trigger-5" class="jcom-btn jcom-nav-link " data-role="dropdown-toggle-btn" aria-haspopup="true" aria-expanded="false" aria-owns="nav-dropdown-5">
+                Careers
+            </button>
+
+            <div class="jcom-subnav-wrapper jcom-subnav--full-width"
+                 id="nav-dropdown-5"
+                 aria-hidden="true"
+                 aria-describedby="nav-dropdown-trigger-5"
+                 data-component="dropdown">
+                <div class="jcom-subnav">
+                    <ul class="jcom-subnav-list jcom-subnav-group">
+                                    <li class="jcom-subnav-level-1 ">
+                <span class="jcom-subnav-subheading">Working at Janney</span>
+                <button type="button"
+                        id="toggle-submenu-30"
+                        class="jcom-btn jcom-btn--icon-only jcom-btn--toggle-nav" data-role="toggle-submenu"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        aria-owns="submenu-30">
+                    <span class="accessibly-hidden">Toggle Submenu</span>
+                </button>
+                <ul id="submenu-30"
+                    class="jcom-subnav-list jcom-subnav-level-2 "
+                    data-component="submenu"
+                    aria-hidden="true"
+                    aria-describedby="toggle-submenu-30">
+                            <li>
+            <a class="jcom-subnav-link" href="/careers/working-at-janney/overview" target="_self">Janney Careers</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/careers/working-at-janney/current-openings" target="_self">View Current Openings (External Site)</a>
+        </li>
+
+                </ul>
+            </li>
+            <li class="jcom-subnav-level-1 jcom-subnav-item--lg">
+                <span class="jcom-subnav-subheading">Becoming a Janney Financial Advisor</span>
+                <button type="button"
+                        id="toggle-submenu-31"
+                        class="jcom-btn jcom-btn--icon-only jcom-btn--toggle-nav" data-role="toggle-submenu"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        aria-owns="submenu-31">
+                    <span class="accessibly-hidden">Toggle Submenu</span>
+                </button>
+                <ul id="submenu-31"
+                    class="jcom-subnav-list jcom-subnav-level-2 jcom-subnav-list--lg"
+                    data-component="submenu"
+                    aria-hidden="true"
+                    aria-describedby="toggle-submenu-31">
+                            <li>
+            <a class="jcom-subnav-link" href="/careers/becoming-a-janney-financial-advisor/overview" target="_self">Overview</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/careers/becoming-a-janney-financial-advisor/who-we-are" target="_self">Who We Are</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/careers/becoming-a-janney-financial-advisor/transition" target="_self">Transition</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/careers/becoming-a-janney-financial-advisor/technology" target="_self">Technology</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/careers/becoming-a-janney-financial-advisor/solutions" target="_self">Solutions</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/careers/becoming-a-janney-financial-advisor/practice-management" target="_self">Practice Management</a>
+        </li>
+        <li>
+            <a class="jcom-subnav-link" href="/careers/becoming-a-janney-financial-advisor/contact-us" target="_self">Contact Us</a>
+        </li>
+
+                </ul>
+            </li>
+
+                    </ul>
+                </div>
+            </div>
+        </li>
+
+
+
+
+
+
+
+
+
+
+        </ul>
+    </nav>
+    <div id="ContentPlaceholder1_TAA4C8B86030_Col01" class="sf_colsIn jcom-nav-search" data-sf-element="Search" data-placeholder-label="Search">
+
+
+
+
+
+<div class="jcom-show-at-medium">
+    <button type="button" id="jcom-search-toggle" class="jcom-btn jcom-btn--search" data-role="toggle-search" aria-haspopup="true" aria-expanded="false" aria-owns="jcom-search-bar">
+        <i class="jcom-icon jcom-icon--search"></i>
+        <span class="accessibly-hidden">Search</span>
+    </button>
+    <div class="jcom-nav-search-bar" data-component="search-bar" id="jcom-search-bar" aria-hidden="true" aria-describedby="jcom-search-toggle">
+        <div class="jcom-wrapper jcom-nav-search-input">
+            <input class="jcom-form-control" type="text" title="Search input" placeholder="Search" id="6ffefdab-b077-47cf-9a8f-352ef8f687de" value="" />
+            <button class="jcom-btn jcom-btn--outline" type="button" id="f5f8a627-e347-4fdf-b35f-06831d8bec62">Search</button>
+
+            <input type="hidden" data-sf-role="resultsUrl" value="/search" />
+            <input type="hidden" data-sf-role="indexCatalogue" value="full-site" />
+            <input type="hidden" data-sf-role="wordsMode" value="AllWords" />
+            <input type="hidden" data-sf-role="disableSuggestions" value='false' />
+            <input type="hidden" data-sf-role="minSuggestionLength" value="3" />
+            <input type="hidden" data-sf-role="suggestionFields" value="Title,Content" />
+            <input type="hidden" data-sf-role="language" />
+            <input type="hidden" data-sf-role="suggestionsRoute" value="/restapi/search/suggestions" />
+            <input type="hidden" data-sf-role="searchTextBoxId" value='#6ffefdab-b077-47cf-9a8f-352ef8f687de' />
+            <input type="hidden" data-sf-role="searchButtonId" value='#f5f8a627-e347-4fdf-b35f-06831d8bec62' />
+        </div>
+    </div>
+</div>
+
+
+
+
+    </div>
+</div>
+
+    </div>
+</header>
+
+    <div class="jcom-banner-bg jcom-banner-bg--img">
+        <img srcset="https://www.janney.com/images/default-source/page-headers/hero-images/j-com-home-page-banner.tmb-mobheader.jpg?sfvrsn=558d493e_2 780w,
+             /images/default-source/page-headers/hero-images/j-com-home-page-banner.jpg?sfvrsn=558d493e_2 2880w"
+             sizes="(max-width: 780px) 780px,
+             2880px"
+             src="/images/default-source/page-headers/hero-images/j-com-home-page-banner.jpg?sfvrsn=558d493e_2" 
+             alt="wealth-mgmt-banner@2x" 
+             class="jcom-content"/>
+    </div>
+
+
+<div id="ContentPlaceholder1_TAA4C8B86009_Col00" class="sf_colsIn container jcom-main-content" data-sf-element="Container" data-placeholder-label="Container">
+<div class="jcom-banner-content jcom-banner--main jcom-banner--home">
+
+    <div class="jcom-banner-content-info">
+
+        <h1 class="jcom-banner-heading">Financial advice from experienced people you can trust</h1>
+
+            <p class="jcom-banner-lede">Beyond investing—connecting you and your wealth to your goals</p>
+
+            <a href="/wealth-management/how-we-work-with-you/working-with-an-fa" class="jcom-btn jcom-btn--primary">Learn more about working with a Financial Advisor</a>
+
+    </div>
+</div>
+
+<div >
+    <div class="sf-Long-text" ><p class="jcom-lede" style="text-align:center;">&nbsp;</p><hr /><h3>&nbsp;</h3><p class="jcom-lede" style="text-align:center;">&nbsp;</p><h1 class="sf-editor-h1" style="text-align:center;">What We Do</h1><p class="jcom-lede" style="text-align:center;">We put your needs first. We՚re a leading financial services firm dedicated to providing the best in financial and investment advice to help our clients reach their personal or business goals.<br />&nbsp;</p></div>    
+</div><div id="ContentPlaceholder1_C003_Col00" class="sf_colsIn jcom-card-group jcom-card-group--large" data-sf-element="Card Group" data-placeholder-label="Card Group">
+
+
+<div class="jcom-card jcom-card--media teal">
+    
+        <div class="jcom-card-media">
+            <img class="jcom-card-img jcom-content" src="/images/default-source/corporate/home-pg-image-1.jpg?sfvrsn=5496b0ce_0" title="Home Pg Image 1" alt="Home Pg Image 1" />
+        </div>
+    
+    <div class="jcom-card-content">
+        
+            <div class="jcom-card-heading">
+                <h3 class="jcom-card-title">Wealth Management</h3>
+            </div>
+        
+            <p class="jcom-card-desc">No matter where you are in life—just starting out, in your peak earning years, nearing retirement, or contemplating your legacy—we are here for you. When you work with a Janney Financial Advisor, it’s about going beyond investing. It’s about connecting your life and your finances.</p>
+
+            <a class="jcom-btn jcom-btn--outline" href="/wealth-management/your-financial-goals/Overview">
+                <span>Learn More</span>
+            </a>
+    </div>
+</div>
+
+
+
+<div class="jcom-card jcom-card--media">
+    
+        <div class="jcom-card-media">
+            <img class="jcom-card-img jcom-content" src="/images/default-source/corporate/home-pg-image-2.jpg?sfvrsn=fba0ac83_0" title="Home Pg Image 2" alt="Home Pg Image 2" />
+        </div>
+    
+    <div class="jcom-card-content">
+        
+            <div class="jcom-card-heading">
+                <h3 class="jcom-card-title">Capital Markets</h3>
+            </div>
+        
+            <p class="jcom-card-desc">Best-in-class capabilities with a boutique touch—we provide trustworthy advice, customized solutions, and superior deal execution for corporations and institutions nationwide.</p>
+
+            <a class="jcom-btn jcom-btn--outline" href="/capital-markets/capital-markets-expertise/overview">
+                <span>Learn More</span>
+            </a>
+    </div>
+</div>
+
+   
+</div>
+<div >
+    <div class="sf-Long-text" ><h4>&nbsp;</h4><h3>&nbsp;</h3><hr /><h3>&nbsp;</h3><h4>&nbsp;</h4><h1 class="sf-editor-h1" style="text-align:center;">What՚s New at Janney?</h1><p class="jcom-lede" style="text-align:center;">We՚re here to help keep you up-to-date and in-the-know with our latest market commentary, educational insights, and corporate news. Check out what's top of mind now.<br />&nbsp;</p></div>    
+</div>
+    <ul class="jcom-card-group jcom-card-group--medium">
+
+            <li class="jcom-card grey">
+                <div class="jcom-card-bg"></div>
+                <a href="https://www.janney.com/meet-janney/corporate-news/detail/corporate-news/2023/01/31/janney-earns-great-place-to-work-certification" class="jcom-card-link">
+                    <div class="jcom-card-content">
+                            <span class="jcom-card-tag">Corporate Announcements</span>    
+                        
+                            <div class="jcom-card-heading">
+        <h3 class="jcom-card-title">Janney Earns Great Place to Work Certification</h3>
+    </div>
+
+
+    <div class="jcom-card-summary">
+        The certification recognizes employers that create an outstanding workplace experience.
+    </div>
+                       
+            
+                    </div>
+                </a>
+            </li>
+            <li class="jcom-card aqua">
+                <div class="jcom-card-bg"></div>
+                <a href="https://www.janney.com/wealth-management/education/all-education/detail/education/2022/12/06/don&#39;t-overlook-this-hidden-retirement-risk" class="jcom-card-link">
+                    <div class="jcom-card-content">
+                            <span class="jcom-card-tag">Retirement Planning</span>    
+                        
+                            <div class="jcom-card-heading">
+        <h3 class="jcom-card-title">Don’t Overlook This Hidden Retirement Risk</h3>
+    </div>
+
+
+    <div class="jcom-card-summary">
+        After working so hard to save for retirement, it’s important to be aware of potential risks that ...
+    </div>
+                       
+<div class="jcom-card-authors">
+                                <ul class="jcom-card-auth-list">
+                                            <li><img class="jcom-card-auth-img" src="https://www.janney.com/images/default-source/headshots/peter-longo_web.tmb-40x40.jpg?sfvrsn=4edafe82_3" alt=""></li>
+                                </ul>
+                                <span>
+
+                                    <span>Peter A. Longo</span>                                </span>
+                            </div>
+            
+                    </div>
+                </a>
+            </li>
+            <li class="jcom-card blue">
+                <div class="jcom-card-bg"></div>
+                <a href="https://www.janney.com/wealth-management/education/market-commentary/detail/insights/2023/04/03/portfolio-construction" class="jcom-card-link">
+                    <div class="jcom-card-content">
+                            <span class="jcom-card-tag">Investment Strategy</span>    
+                        
+                            <div class="jcom-card-heading">
+        <h3 class="jcom-card-title">Portfolio Construction</h3>
+    </div>
+
+
+    <div class="jcom-card-summary">
+        A home and investment portfolio are two of the most important family assets.
+    </div>
+                       
+<div class="jcom-card-authors">
+                                <ul class="jcom-card-auth-list">
+                                            <li><img class="jcom-card-auth-img" src="https://www.janney.com/images/default-source/headshots/halloran_2019_web.tmb-40x40.png?sfvrsn=e2cc2f37_3" alt=""></li>
+                                </ul>
+                                <span>
+
+                                    <span>Michael Halloran</span>                                </span>
+                            </div>
+            
+                    </div>
+                </a>
+            </li>
+    </ul>
+
+
+
+
+<div >
+    <div class="sf-Long-text" ><h4>&nbsp;</h4><h3>&nbsp;</h3><hr /><h3>&nbsp;</h3><h4>&nbsp;</h4><h1 class="sf-editor-h1" style="text-align:center;">Who We Are</h1><p class="jcom-lede" style="text-align:center;">We believe in people, and we believe that relationships, respect, and accessibility are the foundation of success for our clients, and for Janney.</p><p class="jcom-lede" style="text-align:center;"><a href="/meet-janney/about-us">Learn more about Janney</a><br />&nbsp;</p></div>    
+</div><div class="sf_cols">
+    <div class="sf_colsOut sf_2cols_1_67" style="width: 61%;">
+        <div id="ContentPlaceholder1_C016_Col00" class="sf_colsIn sf_2cols_1in_67" style="margin: 25px 3px 0px 0px;"> 
+    <img src="/images/default-source/community/team-janney-2018_v2.png?sfvrsn=fc6a05c3_0" title="Team Janney gearing up for its MS Bike Ride to the Shore." alt="Team Janney gearing up for its MS Bike Ride to the Shore." 
+                
+                 /> 
+ 
+            
+        </div>
+    </div>
+    <div class="sf_colsOut sf_2cols_2_33" style="width: 39%;">
+        <div id="ContentPlaceholder1_C016_Col01" class="sf_colsIn sf_2cols_2in_33" style="margin: 25px 0px 5px 7px;"> 
+    <img src="/images/default-source/community/354h-alex-event-db5hz5juiaaxatu.jpg?sfvrsn=5d78b67c_8" title="Janney employees at Alex&#39;s Lemonade Stand Fundraiser" alt="Janney employees at Alex&#39;s Lemonade Stand Fundraiser" 
+                
+                 /> 
+ 
+            
+        </div>
+    </div>
+</div><div class="sf_cols">
+    <div class="sf_colsOut sf_1col_1_100">
+        <div id="ContentPlaceholder1_C017_Col00" class="sf_colsIn sf_1col_1in_100"><div class="sfimageWrp">
+	        
+
+<a href="/images/default-source/landing-page/treats-troops-event-mod.jpg?sfvrsn=46db019c_0" id="ContentPlaceholder1_C014_ctl00_ctl00_originalImageLink" title="A group of people smiling for a photo"><img id="ContentPlaceholder1_C014_ctl00_ctl00_imageItem" title="Janney helped gather supplies for troops." src="/images/default-source/landing-page/treats-troops-event-mod.jpg?sfvrsn=46db019c_0" alt="Janney Employees at Treats for Troops event" /></a>
+
+</div>
+<div >
+    <div class="sf-Long-text" ><h3>&nbsp;</h3><h3>&nbsp;</h3><hr /><h4>&nbsp;</h4><h4>&nbsp;</h4><h1 class="sf-editor-h1" style="text-align:center;"><span style="font-size:3.5rem;text-align:center;">Talk with a Janney Financial Advisor</span></h1><div style="padding:0px 10%;text-align:center;"><p style="text-align:center;">You don&rsquo;t need to go it alone. Wherever you are on your wealth journey, we can build a tailored financial plan and make recommendations that are aligned with your best interest and unique needs, goals, and preferences. Contact us today to discuss
+        how we can put a plan in place designed to help you reach your financial goals.</p><p style="text-align:center;"><a class="jcom-btn jcom-btn--primary" href="/wealth-management/how-we-work-with-you/find-a-financial-advisor">Find a Financial Advisor</a>&nbsp;</p></div></div>    
+</div>
+            
+        </div>
+    </div>
+</div>
+</div>
+<div id="ContentPlaceholder1_T86BE4B68048_Col00" class="sf_colsIn container jcom-main-content" data-sf-element="Container" data-placeholder-label="Container">
+<div >
+    <div class="sf-Long-text" ><p style="text-align: center;"> For more information about Janney, please see Janney&rsquo;s Relationship Summary (Form CRS) on <a href="http://www.janney.com/crs">www.janney.com/crs</a> which details all material facts about the scope and terms of our relationship with you and any potential conflicts of interest.</p>
+<p style="text-align: center;">To learn about the professional background, business practices, and conduct of FINRA member firms or their financial professionals, visit FINRA&rsquo;s BrokerCheck website:&nbsp;<a href="http://brokercheck.finra.org/" target="_blank">http://brokercheck.finra.org/</a></p></div>    
+</div>
+</div>
+
+<footer class="jcom-site-footer">
+	<div class="jcom-footer-content">
+		<div class="jcom-footer-links">
+			<div id="ContentPlaceholder1_TAA4C8B86020_Col00" class="sf_colsIn" data-sf-element="Footer social Links">
+<div >
+    <div class="sf-Long-text" ><ul class="jcom-footer-nav jcom-footer-nav--social"><li><a href="https://www.facebook.com/janneymontgomeryscott/" target="_blank" class="jcom-btn jcom-btn--social jcom-icon jcom-icon--facebook"><span class="accessibly-hidden">Facebook</span>
+					</a>
+ </li><li><a href="https://twitter.com/janney1832" target="_blank" class="jcom-btn jcom-btn--social jcom-icon jcom-icon--twitter"><span class="accessibly-hidden">Twitter</span>
+					</a>
+ </li><li><a href="https://www.linkedin.com/company/janney-montgomery-scott" target="_blank" class="jcom-btn jcom-btn--social jcom-icon jcom-icon--linkedin"><span class="accessibly-hidden">Linkedin</span>
+					</a>
+ </li></ul></div>    
+</div>
+				
+			</div>
+			<nav id="ContentPlaceholder1_TAA4C8B86020_Col01" class="sf_colsIn" data-sf-element="Footer Navigation">
+<div >
+    <div class="sf-Long-text" ><h2 class="jcom-h4">Disclosures &amp; Agreements</h2></div>    
+</div>
+
+<ul id='footer-nav-1' class="jcom-footer-nav jcom-nav-item--sm-nav">
+    <li><a href="/wealth-management/disclosures-agreements/service-charges-fees" class="jcom-footer-nav-link" target="_self">Service Charges &amp; Fees</a></li>
+    <li><a href="/wealth-management/disclosures-agreements/disclosures-agreements-service/cash-management/daily-cash-sweep-money-market-margin-other-rates-redirect" class="jcom-footer-nav-link" target="_self">Daily Cash Sweep Rates</a></li>
+    <li><a href="/wealth-management/disclosures-agreements/disclosures-agreements-service" class="jcom-footer-nav-link" target="_self">Disclosures &amp; Agreements by Service</a></li>
+    <li><a href="/wealth-management/disclosures-agreements/disclosures" class="jcom-footer-nav-link" target="_self">Disclosures</a></li>
+    <li><a href="/wealth-management/disclosures-agreements/account-protection-privacy" class="jcom-footer-nav-link" target="_self">Account Protection &amp; Privacy</a></li>
+    <li><a href="/meet-janney/about-us/#financial-statement" class="jcom-footer-nav-link" target="_self">Financial Information</a></li>
+    <li><a href="/wealth-management/disclosures-agreements/relationship-summary-regulation-best-interest" class="jcom-footer-nav-link" target="_self">Relationship Summary &amp; Disclosures</a></li>
+    <li><a href="https://www.janney.com/docs/default-source/careers/janney-employee-notice-of-collection-for-ca-employees-contractors-and-job-applicants.pdf" class="jcom-footer-nav-link" target="_self">CA Privacy Rights</a></li>
+</ul>
+
+
+
+<div >
+    <div class="sf-Long-text" ><h3 class="jcom-h4">Careers</h3></div>    
+</div>
+
+<ul id='footer-nav-2' class="jcom-footer-nav">
+    <li><a href="/careers/working-at-janney" class="jcom-footer-nav-link" target="_self">Working at Janney</a></li>
+    <li><a href="/careers/becoming-a-janney-financial-advisor" class="jcom-footer-nav-link" target="_self">Becoming a Janney Financial Advisor</a></li>
+</ul>
+
+
+
+<div >
+    <div class="sf-Long-text" ><h3 class="jcom-h4">Account Protection &amp; Privacy</h3></div>    
+</div>
+
+<ul id='footer-nav-3' class="jcom-footer-nav">
+    <li><a href="/wealth-management/disclosures-agreements/account-protection-privacy/business-continuity" class="jcom-footer-nav-link" target="_self">Business Continuity</a></li>
+    <li><a href="/wealth-management/disclosures-agreements/account-protection-privacy/sipc-account-protection" class="jcom-footer-nav-link" target="_self">SIPC &amp; Account Protection</a></li>
+    <li><a href="/wealth-management/disclosures-agreements/account-protection-privacy/data-security" class="jcom-footer-nav-link" target="_self">Data Security</a></li>
+    <li><a href="/wealth-management/disclosures-agreements/account-protection-privacy/privacy-policy" class="jcom-footer-nav-link" target="_self">Privacy Policy</a></li>
+    <li><a href="/wealth-management/disclosures-agreements/account-protection-privacy/cookie-policy" class="jcom-footer-nav-link" target="_self">Cookie Policy</a></li>
+</ul>
+
+
+
+				
+			</nav>
+		</div>
+		<div id="ContentPlaceholder1_TAA4C8B86020_Col02" class="sf_colsIn jcom-footer-text" data-sf-element="Footer Text">
+<div >
+    <div class="sf-Long-text" ><h4>Client Resources</h4></div>    
+</div><div class="sf_cols">
+    <div class="sf_colsOut sf_1col_1_100">
+        <div id="ContentPlaceholder1_T9D02B296003_Col00" class="sf_colsIn sf_1col_1in_100">
+            
+        </div>
+    </div>
+</div>
+
+<ul id='footer-nav-4' class="jcom-footer-nav">
+    <li><a href="/wealth-management/client-resources/online-access-digital-services" class="jcom-footer-nav-link" target="_self">Online Access &amp; Digital Services</a></li>
+    <li><a href="/wealth-management/client-resources/tax-information-forms" class="jcom-footer-nav-link" target="_self">Tax Information &amp; Forms</a></li>
+    <li><a href="/wealth-management/disclosures-agreements/disclosures-agreements-service/cash-management/automatic-direct-deposit-services" class="jcom-footer-nav-link" target="_self">Automatic Direct Deposit Services</a></li>
+    <li><a href="/wealth-management/client-resources/janney-update-quarterly-client-letter" class="jcom-footer-nav-link" target="_self">Janney Update Quarterly Client Newsletter</a></li>
+    <li><a href="/meet-janney/contact-us" class="jcom-footer-nav-link" target="_self">Contact Us</a></li>
+</ul>
+
+
+
+
+
+<meta name="google-site-verification" content="8AzaO3xDkVHeO5oA4XEpcm8uukq_UEJUwem_3IdyLDc" />
+		</div>
+	</div>
+</footer>
+<div >
+    <div class="sf-Long-text" ></div>    
+</div>
+            
+        </div>
+    </div>
+</div>
+<!-- Hotjar Tracking Code for https://www.janney.com/ -->
+<script>
+(function(h,o,t,j,a,r){
+h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+h._hjSettings={hjid:3116102,hjsv:6};
+a=o.getElementsByTagName('head')[0];
+r=o.createElement('script');r.async=1;
+r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+
+
+
+
+<!-- Google tag (gtag.js) --> <script async src=https://www.googletagmanager.com/gtag/js?id=G-NPRZYPE95Q></script>; <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-NPRZYPE95Q'); </script>
+
+ </div> <script src="/ResourcePackages/Janney/assets/dist/js/bundle.js?package=Janney" type="text/javascript"></script>  
+
+<script type="text/javascript">
+//<![CDATA[
+window.__TsmHiddenField = $get('ctl05_TSM');;(function() {
+                        function loadHandler() {
+                            var hf = $get('ctl06_TSSM');
+                            if (!hf._RSSM_init) { hf._RSSM_init = true; hf.value = ''; }
+                            hf.value += ';Telerik.Sitefinity.Resources, Version=14.0.7700.0, Culture=neutral, PublicKeyToken=b28c218413bdf563:en:0d37733f-3991-44bd-88a6-f5ce36f95cdb:7a90d6a';
+                            Sys.Application.remove_load(loadHandler);
+                        };
+                        Sys.Application.add_load(loadHandler);
+                    })();//]]>
+</script>
+</form><script type="application/json" id="PersonalizationTracker">
+	{"IsPagePersonalizationTarget":false,"IsUrlPersonalizationTarget":false,"PageId":"c17bf51c-da61-44ec-9e93-6680acd589ab"}
+</script><script type="text/javascript" src="/WebResource.axd?d=Oiw5o8i74rDb2VpVaCaMSjg2L9t8xZkEoh2kCQTQKP-1abinVhtYRHOn6iU2OAJB0Mu5wJ1XvOoKOmu0jV2eoCIagg6Wp91VHIZgly-xDRN6BXS1Ev6W8uSyIswVRtXbVQSxRJt00hPB0YUVnAg-yckvz9WjndCNrxOsNi4BPM4dcZP7qeHkhTFqVw5cDkSdq7GWI1AVp0F80wsUrLM4Zc7gtEwEN16o1IzXsShl3dw1&amp;t=637672978140000000">
+
+</script><script type="text/javascript" src="/WebResource.axd?d=tF6sXj7gT-oER17fW4aaeY8Bza-o9yOz7hk1O4iKvTYNWA68IjzqVzJEGJfbsxp1tovvka2nDzF_9vzi-DXuV0ifyoMDojgFaxw-G3Rzf178Ge60tVXm1Rv04sOA6A_B7STw5Lf08aVkOD-bGyX5sjM7QEN1pn1aDMw2L79geKrH0uoVs2uUE8ZoFjCaf4KC6MRuF0a_W1jTSsCqOKTG0A2&amp;t=637672978120000000">
+
+</script><script type="text/javascript">
+breadcrumbs = document.querySelectorAll(
+  ".jcom-breadcrumbs .jcom-breadcrumbs-item-link"
+);
+
+for (let i = 0; i < breadcrumbs.length; i++) {
+  if (breadcrumbs[i].getAttribute("href") == "/wealth-management/education") {
+    breadcrumbs[i].href = "/wealth-management/education-center";
+  }
+}
+
+</script><script type="text/javascript">
+document.querySelectorAll('.sf_cols').forEach(function (row) {
+  var cardDivs = row.querySelectorAll('.card-glance')
+  var rowHeight = row.offsetHeight
+  var tallest = 0
+
+  cardDivs.forEach(function (item) {
+    //console.log(item.offsetHeight)
+    // if (item.offsetHeight > maxHeight) {
+    //   maxHeight = item.offsetHeight
+    // }
+    //item.style.height = `${rowHeight}px`
+	var height = item.offsetHeight
+	if(height > tallest) {
+		tallest = height
+	}
+  })
+
+  cardDivs.forEach(function(item) {
+  //   var divs = item.querySelectorAll('div')
+  //   divs.forEach(function(div) {
+  //     div.style.height = `${maxHeight}px`
+  //   })
+  item.style.height = `${tallest}px`
+  })
+
+  //console.log('maxHeight:', maxHeight)
+
+})
+</script><script>(function(){var js = "window['__CF$cv$params']={r:'7dd3906f38caf2ce',m:'QvCstPwbvfFkuMm_Z0LVSE0Z1nVqpNhOkxtSX8_R0XQ-1687762735-0-AU4LdOZmcD7FVqYC4hJXpXK30yz6LO4/TtWW+2ONoLhF'};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = '';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body> </html>

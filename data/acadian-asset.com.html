@@ -1,0 +1,1097 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WF65GBG');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"a413ebf10d","applicationID":"1557279413","transactionName":"MQMGbEQCDxBVUkZcXwhJKW51TDIKQFRRWkIDJQtWQhEOD1hUQBp5CAIBQA==","queueTime":0,"applicationTime":121,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam.nr-data.net"]},distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:"1588613146",accountID:"493763",trustKey:"493763",xpid:"UA8EVlBQGwIFUVZQAAgDV1c=",licenseKey:"a413ebf10d",applicationID:"1557279413"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(31),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{l?l-=1:o(s||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:c.now();i("err",[t,n])}var i=t("handle"),a=t(32),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,p="nr@seenError";if(!c.disabled){var l=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(14),t(13),"addEventListener"in window&&t(7),c.xhrWrappable&&t(15),d=!0)}s.on("fn-start",function(t,e,n){d&&(l+=1)}),s.on("fn-err",function(t,e,n){d&&!n[p]&&(f(n,p,function(){return!0}),this.thrown=!0,o(n))}),s.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){U++,L=g.hash,this[u]=y.now()}function o(){U--,g.hash!==L&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var s="-start",c="-end",f="-body",u="fn"+s,d="fn"+c,p="cb"+s,l="cb"+c,h="jsTime",m="fetch",v="addEventListener",w=window,g=w.location,y=t("loader");if(w[v]&&y.xhrWrappable&&!y.disabled){var x=t(11),b=t(12),E=t(9),R=t(7),O=t(14),T=t(8),S=t(15),P=t(10),M=t("ee"),C=M.get("tracer"),N=t(23);t(17),y.features.spa=!0;var L,U=0;M.on(u,r),b.on(p,r),P.on(p,r),M.on(d,o),b.on(l,o),P.on(l,o),M.buffer([u,d,"xhr-resolved"]),R.buffer([u]),O.buffer(["setTimeout"+c,"clearTimeout"+s,u]),S.buffer([u,"new-xhr","send-xhr"+s]),T.buffer([m+s,m+"-done",m+f+s,m+f+c]),E.buffer(["newURL"]),x.buffer([u]),b.buffer(["propagate",p,l,"executor-err","resolve"+s]),C.buffer([u,"no-"+u]),P.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(T,m+s),a(T,m+"-done"),a(P,"new-jsonp"),a(P,"jsonp-end"),a(P,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,N(!0)),w[v]("load",i,N(!0)),w[v]("popstate",function(){i(0,U>1)},N(!0))}},{}],5:[function(t,e,n){function r(){var t=new PerformanceObserver(function(t,e){var n=t.getEntries();s(v,[n])});try{t.observe({entryTypes:["resource"]})}catch(e){}}function o(t){if(s(v,[window.performance.getEntriesByType(w)]),window.performance["c"+p])try{window.performance[h](m,o,!1)}catch(t){}else try{window.performance[h]("webkit"+m,o,!1)}catch(t){}}function i(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var a=t("ee"),s=t("handle"),c=t(14),f=t(13),u=t(6),d=t(23),p="learResourceTimings",l="addEventListener",h="removeEventListener",m="resourcetimingbufferfull",v="bstResource",w="resource",g="-start",y="-end",x="fn"+g,b="fn"+y,E="bstTimer",R="pushState",O=t("loader");if(!O.disabled){O.features.stn=!0,t(9),"addEventListener"in window&&t(7);var T=NREUM.o.EV;a.on(x,function(t,e){var n=t[0];n instanceof T&&(this.bstStart=O.now())}),a.on(b,function(t,e){var n=t[0];n instanceof T&&s("bst",[n,e,this.bstStart,O.now()])}),c.on(x,function(t,e,n){this.bstStart=O.now(),this.bstType=n}),c.on(b,function(t,e){s(E,[e,this.bstStart,O.now(),this.bstType])}),f.on(x,function(){this.bstStart=O.now()}),f.on(b,function(t,e){s(E,[e,this.bstStart,O.now(),"requestAnimationFrame"])}),a.on(R+g,function(t){this.time=O.now(),this.startPath=location.pathname+location.hash}),a.on(R+y,function(t){s("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),u()?(s(v,[window.performance.getEntriesByType("resource")]),r()):l in window.performance&&(window.performance["c"+p]?window.performance[l](m,o,d(!1)):window.performance[l]("webkit"+m,o,d(!1))),document[l]("scroll",i,d(!1)),document[l]("keypress",i,d(!1)),document[l]("click",i,d(!1))}}},{}],6:[function(t,e,n){e.exports=function(){return"PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver}},{}],7:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1];if(null!==n&&("function"==typeof n||"object"==typeof n)){var r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],8:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=i(arguments),e={};o.emit(n+"before-start",[t],e);var a;e[m]&&e[m].dt&&(a=e[m].dt);var s=r.apply(this,t);return o.emit(n+"start",[t,a],s),s.then(function(t){return o.emit(n+"end",[null,t],s),t},function(t){throw o.emit(n+"end",[t],s),t})})}var o=t("ee").get("fetch"),i=t(32),a=t(31);e.exports=o;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,p=s.Response,l=s.fetch,h="prototype",m="nr@context";d&&p&&l&&(a(u,function(t,e){r(d[h],e,f),r(p[h],e,f)}),r(s,"fetch",c),o.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(c+"done",[null,e],n)}else o.emit(c+"done",[t],n)}))},{}],9:[function(t,e,n){var r=t("ee").get("history"),o=t("wrap-function")(r);e.exports=r;var i=window.history&&window.history.constructor&&window.history.constructor.prototype,a=window.history;i&&i.pushState&&i.replaceState&&(a=i),o.inPlace(a,["pushState","replaceState"],"-")},{}],10:[function(t,e,n){function r(t){function e(){f.emit("jsonp-end",[],l),t.removeEventListener("load",e,c(!1)),t.removeEventListener("error",n,c(!1))}function n(){f.emit("jsonp-error",[],l),f.emit("jsonp-end",[],l),t.removeEventListener("load",e,c(!1)),t.removeEventListener("error",n,c(!1))}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var d=s(a),p="function"==typeof d.parent[d.key];if(p){var l={};u.inPlace(d.parent,[d.key],"cb-",l),t.addEventListener("load",e,c(!1)),t.addEventListener("error",n,c(!1)),f.emit("new-jsonp",[t.src],l)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(d);return e?e[1]:null}function a(t,e){var n=t.match(l),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function s(t){var e=t.match(p);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var c=t(23),f=t("ee").get("jsonp"),u=t("wrap-function")(f);if(e.exports=f,o()){var d=/[?&](?:callback|cb)=([^&#]+)/,p=/(.*)\.([^.]+)/,l=/^(\w+)(\.|$)(.*)$/,h=["appendChild","insertBefore","replaceChild"];Node&&Node.prototype&&Node.prototype.appendChild?u.inPlace(Node.prototype,h,"dom-"):(u.inPlace(HTMLElement.prototype,h,"dom-"),u.inPlace(HTMLHeadElement.prototype,h,"dom-"),u.inPlace(HTMLBodyElement.prototype,h,"dom-")),f.on("dom-start",function(t){r(t[0])})}},{}],11:[function(t,e,n){var r=t("ee").get("mutation"),o=t("wrap-function")(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],12:[function(t,e,n){function r(t){var e=i.context(),n=s(t,"executor-",e,null,!1),r=new f(n);return i.context(r).getCtx=function(){return e},r}var o=t("wrap-function"),i=t("ee").get("promise"),a=t("ee").getOrSetContext,s=o(i),c=t(31),f=NREUM.o.PR;e.exports=i,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){i.emit("propagate",[null,!o],a,!1,!1),o=o||!t}}var o=!1;c(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var a=e.apply(f,arguments),s=f.resolve(a);return s}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&i.emit("propagate",[t,!0],n,!1,!1),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),c(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),o.wrapInPlace(f.prototype,"then",function(t){return function(){var e=this,n=o.argsToArray.apply(this,arguments),r=a(e);r.promise=e,n[0]=s(n[0],"cb-",r,null,!1),n[1]=s(n[1],"cb-",r,null,!1);var c=t.apply(this,n);return r.nextPromise=c,i.emit("propagate",[e,!0],c,!1,!1),c}}),i.on("executor-start",function(t){t[0]=s(t[0],"resolve-",this,null,!1),t[1]=s(t[1],"resolve-",this,null,!1)}),i.on("executor-err",function(t,e,n){t[1](n)}),i.on("cb-end",function(t,e,n){i.emit("propagate",[n,!0],this.nextPromise,!1,!1)}),i.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=i.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],13:[function(t,e,n){var r=t("ee").get("raf"),o=t("wrap-function")(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],14:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t("wrap-function")(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],15:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){x.push(t),m&&(E?E.then(a):w?w(a):(R=-R,O.data=R))}function a(){for(var t=0;t<x.length;t++)r([],x[t]);x.length&&(x=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(7);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),p=t(23),l=NREUM.o,h=l.XHR,m=l.MO,v=l.PR,w=l.SI,g="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],x=[];e.exports=u;var b=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(g,o,p(!1))}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(h,b),b.prototype=h.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),m){var E=v&&v.resolve();if(!w&&!v){var R=1,O=document.createTextNode(R);new m(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===g||a()})},{}],16:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=l.generateSpanId(),m=l.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||c(t)&&p())&&(w.traceContextParentHeader=o(h,m),w.traceContextStateHeader=i(h,v,n,r,f)),(t.sameOrigin&&!u()||!t.sameOrigin&&c(t)&&d())&&(w.newrelicHeader=a(h,m,v,n,r,f)),w}function o(t,e){return"00-"+e+"-"+t+"-01"}function i(t,e,n,r,o){var i=0,a="",s=1,c="",f="";return o+"@nr="+i+"-"+s+"-"+n+"-"+r+"-"+t+"-"+a+"-"+c+"-"+f+"-"+e}function a(t,e,n,r,o,i){var a="btoa"in window&&"function"==typeof window.btoa;if(!a)return null;var s={v:[0,1],d:{ty:"Browser",ac:r,ap:o,id:t,tr:e,ti:n}};return i&&r!==i&&(s.d.tk=i),btoa(JSON.stringify(s))}function s(t){return f()&&c(t)}function c(t){var e=!1,n={};if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(n=NREUM.init.distributed_tracing),t.sameOrigin)e=!0;else if(n.allowed_origins instanceof Array)for(var r=0;r<n.allowed_origins.length;r++){var o=h(n.allowed_origins[r]);if(t.hostname===o.hostname&&t.protocol===o.protocol&&t.port===o.port){e=!0;break}}return e}function f(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.enabled}function u(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.exclude_newrelic_header}function d(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&NREUM.init.distributed_tracing.cors_use_newrelic_header!==!1}function p(){return"init"in NREUM&&"distributed_tracing"in NREUM.init&&!!NREUM.init.distributed_tracing.cors_use_tracecontext_headers}var l=t(28),h=t(18);e.exports={generateTracePayload:r,shouldGenerateTrace:s}},{}],17:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(d[r],this.listener,!1);return e.protocol&&"data"===e.protocol?void g("Ajax/DataUrl/Excluded"):void(e.aborted||(n.duration=a.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==e.status&&(e.status=0):i(this,t),n.cbTime=this.cbTime,s("xhr",[e,n,this.startTime,this.endTime,"xhr"],this)))}}function o(t,e){var n=c(e),r=t.params;r.hostname=n.hostname,r.port=n.port,r.protocol=n.protocol,r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.parsedOrigin=n,t.sameOrigin=n.sameOrigin}function i(t,e){t.params.status=e.status;var n=v(e,t.lastSize);if(n&&(t.metrics.rxSize=n),t.sameOrigin){var r=e.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var a=t("loader");if(a.xhrWrappable&&!a.disabled){var s=t("handle"),c=t(18),f=t(16).generateTracePayload,u=t("ee"),d=["load","error","abort","timeout"],p=d.length,l=t("id"),h=t(24),m=t(22),v=t(19),w=t(23),g=t(25).recordSupportability,y=NREUM.o.REQ,x=window.XMLHttpRequest;a.features.xhr=!0,t(15),t(8),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,e.loadCaptureCalled=!1,e.params=this.params||{},e.metrics=this.metrics||{},t.addEventListener("load",function(n){i(e,t)},w(!1)),h&&(h>34||h<10)||t.addEventListener("progress",function(t){e.lastSize=t.loaded},w(!1))}),u.on("open-xhr-start",function(t){this.params={method:t[0]},o(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var n=f(this.parsedOrigin);if(n){var r=!1;n.newrelicHeader&&(e.setRequestHeader("newrelic",n.newrelicHeader),r=!0),n.traceContextParentHeader&&(e.setRequestHeader("traceparent",n.traceContextParentHeader),n.traceContextStateHeader&&e.setRequestHeader("tracestate",n.traceContextStateHeader),r=!0),r&&(this.dt=n)}}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=m(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<p;s++)e.addEventListener(d[s],this.listener,w(!1))}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("xhr-resolved",function(){this.endTime=a.now()}),u.on("addEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof x&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof x&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)}),u.on("fetch-before-start",function(t){function e(t,e){var n=!1;return e.newrelicHeader&&(t.set("newrelic",e.newrelicHeader),n=!0),e.traceContextParentHeader&&(t.set("traceparent",e.traceContextParentHeader),e.traceContextStateHeader&&t.set("tracestate",e.traceContextStateHeader),n=!0),n}var n,r=t[1]||{};"string"==typeof t[0]?n=t[0]:t[0]&&t[0].url?n=t[0].url:window.URL&&t[0]&&t[0]instanceof URL&&(n=t[0].href),n&&(this.parsedOrigin=c(n),this.sameOrigin=this.parsedOrigin.sameOrigin);var o=f(this.parsedOrigin);if(o&&(o.newrelicHeader||o.traceContextParentHeader))if("string"==typeof t[0]||window.URL&&t[0]&&t[0]instanceof URL){var i={};for(var a in r)i[a]=r[a];i.headers=new Headers(r.headers||{}),e(i.headers,o)&&(this.dt=o),t.length>1?t[1]=i:t.push(i)}else t[0]&&t[0].headers&&e(t[0].headers,o)&&(this.dt=o)}),u.on("fetch-start",function(t,e){this.params={},this.metrics={},this.startTime=a.now(),this.dt=e,t.length>=1&&(this.target=t[0]),t.length>=2&&(this.opts=t[1]);var n,r=this.opts||{},i=this.target;if("string"==typeof i?n=i:"object"==typeof i&&i instanceof y?n=i.url:window.URL&&"object"==typeof i&&i instanceof URL&&(n=i.href),o(this,n),"data"!==this.params.protocol){var s=(""+(i&&i instanceof y&&i.method||r.method||"GET")).toUpperCase();this.params.method=s,this.txSize=m(r.body)||0}}),u.on("fetch-done",function(t,e){if(this.endTime=a.now(),this.params||(this.params={}),"data"===this.params.protocol)return void g("Ajax/DataUrl/Excluded");this.params.status=e?e.status:0;var n;"string"==typeof this.rxSize&&this.rxSize.length>0&&(n=+this.rxSize);var r={txSize:this.txSize,rxSize:n,duration:a.now()-this.startTime};s("xhr",[this.params,r,this.startTime,this.endTime,"fetch"],this)})}},{}],18:[function(t,e,n){var r={};e.exports=function(t){if(t in r)return r[t];if(0===(t||"").indexOf("data:"))return{protocol:"data"};var e=document.createElement("a"),n=window.location,o={};e.href=t,o.port=e.port;var i=e.href.split("://");!o.port&&i[1]&&(o.port=i[1].split("/")[0].split("@").pop().split(":")[1]),o.port&&"0"!==o.port||(o.port="https"===i[0]?"443":"80"),o.hostname=e.hostname||n.hostname,o.pathname=e.pathname,o.protocol=i[0],"/"!==o.pathname.charAt(0)&&(o.pathname="/"+o.pathname);var a=!e.protocol||":"===e.protocol||e.protocol===n.protocol,s=e.hostname===document.domain&&e.port===n.port;return o.sameOrigin=a&&(!e.hostname||s),"/"===o.pathname&&(r[t]=o),o}},{}],19:[function(t,e,n){function r(t,e){var n=t.responseType;return"json"===n&&null!==e?e:"arraybuffer"===n||"blob"===n||"json"===n?o(t.response):"text"===n||""===n||void 0===n?o(t.responseText):void 0}var o=t(22);e.exports=r},{}],20:[function(t,e,n){function r(){}function o(t,e,n,r){return function(){return u.recordSupportability("API/"+e+"/called"),i(t+e,[f.now()].concat(s(arguments)),n?null:this,r),n?void 0:this}}var i=t("handle"),a=t(31),s=t(32),c=t("ee").get("tracer"),f=t("loader"),u=t(25),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",h=l+"ixn-";a(p,function(t,e){d[e]=o(l,e,!0,"api")}),d.addPageAction=o(l,"addPageAction",!0),d.setCurrentRouteName=o(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(h+"tracer",[f.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=o(h,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),u.recordSupportability("API/noticeError/called"),i("err",[t,f.now(),!1,e])}},{}],21:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],22:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],23:[function(t,e,n){var r=!1;try{var o=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,o),window.removeEventListener("testPassive",null,o)}catch(i){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],24:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],25:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return i("storeMetric",n,null,"api"),n}function o(t,e){var n=[s,t,{name:t},e];return i("storeEventMetrics",n,null,"api"),n}var i=t("handle"),a="sm",s="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:s},recordSupportability:r,recordCustom:o}},{}],26:[function(t,e,n){function r(){return s.exists&&performance.now?Math.round(performance.now()):(i=Math.max((new Date).getTime(),i))-a}function o(){return i}var i=(new Date).getTime(),a=i,s=t(33);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=o},{}],27:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function o(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(f&&f<r.startTime)return;var o=[r],i=a({});i&&o.push(i),l("lcp",o)}}function i(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function s(t){if(t instanceof w&&!y){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=h.now()?n.fid=h.now()-e:e>h.offset&&e<=Date.now()?(e-=h.offset,n.fid=h.now()-e):e=h.now(),y=!0,l("timing",["fi",e,n])}}function c(t){"hidden"===t&&(f=h.now(),l("pageHide",[f]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,d,p,l=t("handle"),h=t("loader"),m=t(30),v=t(23),w=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){u=new PerformanceObserver(r);try{u.observe({entryTypes:["paint"]})}catch(g){}d=new PerformanceObserver(o);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(g){}p=new PerformanceObserver(i);try{p.observe({type:"layout-shift",buffered:!0})}catch(g){}}if("addEventListener"in document){var y=!1,x=["click","keydown","mousedown","pointerdown","touchstart"];x.forEach(function(t){document.addEventListener(t,s,v(!1))})}m(c)}},{}],28:[function(t,e,n){function r(){function t(){return e?15&e[n++]:16*Math.random()|0}var e=null,n=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(e=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){return a(16)}function i(){return a(32)}function a(t){function e(){return n?15&n[r++]:16*Math.random()|0}var n=null,r=0,o=window.crypto||window.msCrypto;o&&o.getRandomValues&&Uint8Array&&(n=o.getRandomValues(new Uint8Array(t)));for(var i=[],a=0;a<t;a++)i.push(e().toString(16));return i.join("")}e.exports={generateUuid:r,generateSpanId:o,generateTraceId:i}},{}],29:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}e.exports={agent:o,version:i,match:r}},{}],30:[function(t,e,n){function r(t){function e(){t(s&&document[s]?document[s]:document[i]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,o(!1))}var o=t(23);e.exports=r;var i,a,s;"undefined"!=typeof document.hidden?(i="hidden",a="visibilitychange",s="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",a="webkitvisibilitychange",s="webkitVisibilityState")},{}],31:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],32:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],33:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?f(t,c,a):a()}function n(n,r,o,i,a){if(a!==!1&&(a=!0),!l.aborted||i){t&&a&&t(n,r,o);for(var s=e(o),c=m(n),f=c.length,u=0;u<f;u++)c[u].apply(s,r);var p=d[y[n]];return p&&p.push([x,n,r,s]),s}}function i(t,e){g[t]=m(t).concat(e)}function h(t,e){var n=g[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return g[t]||[]}function v(t){return p[t]=p[t]||o(n)}function w(t,e){l.aborted||u(t,function(t,n){e=e||"feature",y[n]=e,e in d||(d[e]=[])})}var g={},y={},x={on:i,addEventListener:i,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:s,aborted:!1};return x}function i(t){return f(t,c,a)}function a(){return new r}function s(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",f=t("gos"),u=t(31),d={},p={},l=e.exports=o();e.exports.getOrSetContext=i,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!T++){var t=O.info=NREUM.info,e=m.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();s("mark",["onload",n+O.offset],null,"api"),s("timing",["load",n]);var r=m.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function o(){"complete"===m.readyState&&i()}function i(){s("mark",["domContent",a()+O.offset],null,"api")}var a=t(26),s=t("handle"),c=t(31),f=t("ee"),u=t(29),d=t(21),p=t(23),l=d.getConfiguration("ssl")===!1?"http":"https",h=window,m=h.document,v="addEventListener",w="attachEvent",g=h.XMLHttpRequest,y=g&&g.prototype,x=!1;NREUM.o={ST:setTimeout,SI:h.setImmediate,CT:clearTimeout,XHR:g,REQ:h.Request,EV:h.Event,PR:h.Promise,MO:h.MutationObserver};var b=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1216.min.js"},R=g&&y&&y[v]&&!/CriOS/.test(navigator.userAgent),O=e.exports={offset:a.getLastTimestamp(),now:a,origin:b,features:{},xhrWrappable:R,userAgent:u,disabled:x};if(!x){t(20),t(27),m[v]?(m[v]("DOMContentLoaded",i,p(!1)),h[v]("load",r,p(!1))):(m[w]("onreadystatechange",o),h[w]("onload",r)),s("mark",["firstbyte",a.getLastTimestamp()],null,"api");var T=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,f){function nrWrapper(){var i,a,u,p;try{a=this,i=d(arguments),u="function"==typeof r?r(i,a):r||{}}catch(l){o([l,"",[i,a,c],u],t)}s(n+"start",[i,a,c],u,f);try{return p=e.apply(a,i)}catch(h){throw s(n+"err",[i,a,h],u,f),h}finally{s(n+"end",[i,a,p],u,f)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,i(e,nrWrapper,t),nrWrapper)}function r(t,e,r,o,i){r||(r="");var s,c,f,u="-"===r.charAt(0);for(f=0;f<e.length;f++)c=e[f],s=t[c],a(s)||(t[c]=n(s,u?c+r:r,o,c,i))}function s(n,r,i,a){if(!h||e){var s=h;h=!0;try{t.emit(n,r,i,e,a)}catch(c){o([c,n,r,i],t)}h=s}}return t||(t=u),n.inPlace=r,n.flag=p,n}function o(t,e){e||(e=u);try{e.emit("internal-error",t)}catch(n){}}function i(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(i){o([i],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function s(t,e){var n=e(t);return n[p]=t,i(t,n,u),n}function c(t,e,n){var r=t[e];t[e]=s(r,n)}function f(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var u=t("ee"),d=t(32),p="nr@original",l=Object.prototype.hasOwnProperty,h=!1;e.exports=r,e.exports.wrapFunction=s,e.exports.wrapInPlace=c,e.exports.argsToArray=f},{}]},{},["loader",2,17,5,3,4]);</script>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Asset and Investment Management | Acadian Asset Management</title>
+
+    <meta name="keywords" content="" />
+    <meta property="og:type" content="website" />
+    <meta name="description" content="Acadian Asset Management is a global investment management firm that specializes in systematic investment strategies." />
+
+    <link rel="canonical" href="https://www.acadian-asset.com/" />
+    
+    
+    <!-- Critical css -->
+    <style> 
+        .header__inner-nav {
+            opacity: 0;
+            visibility: hidden;
+        }
+    </style>
+
+    <link rel="preload" href="/Areas/Acadian/Content/fonts/DMSans-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/Areas/Acadian/Content/fonts/DMSans-BoldItalic.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/Areas/Acadian/Content/fonts/DMSans-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/Areas/Acadian/Content/fonts/DMSans-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/Areas/Acadian/Content/fonts/DMSans-MediumItalic.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="/Areas/Acadian/Content/fonts/DMSans-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/Areas/Acadian/Content/css/styles.css?v=638197423980000000" />
+
+    <link rel="apple-touch-icon" sizes="76x76" href="/Areas/Acadian/Content/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/Areas/Acadian/Content/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/Areas/Acadian/Content/images/favicon/favicon-16x16.png">
+    <link rel="mask-icon" href="/Areas/Acadian/Content/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    
+<meta name="VIcurrentDateTime" content="638233597429087387" />
+<meta name="VirtualFolder" content="/" />
+<script type="text/javascript" src="/layouts/system/VisitorIdentification.js"></script>
+
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WF65GBG"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <!-- HEADER -->
+
+    
+
+    <div aria-hidden=true class=modal id=exit-modal><div class=modal__backdrop><div aria-labelledby=exit-modal-title class=modal__container role=dialog aria-modal=true><header class=modal__header><h3 id=exit-modal-title class=modal__title>Exit Disclaimer</h3><button class="modal__close-button modal__close-button-js" aria-label="" tabindex=-1> <svg viewBox="0 0 120 120" width=20 height=20 role=presentation><use xlink:href=#close-bold /></svg> </button></header><div class="modal__content rtf"><div class=exit-modal aria-label="Exit Modal"><p>You will be leaving Acadian-Asset.com and headed to an external site. Acadian Asset Management is not responsible for the content provided on your destination site and makes no warranties, express or implied, for the accuracy of any content or use of a third-party website and assumes no liability for any errors, inaccuracies, or omissions for third-party website content. While Acadian is providing a link to a third-party website, Acadian does not control, approve, or endorse the website or any of its contents, its sponsor, or any of the policies, activities, products, or services offered on the site or by any advertiser on the site.</div></div><footer class=modal__footer><button class="btn btn--outline btn--modalclose modal__close-button-js" type=button> Decline </button> <a class=btn href=#> Agree </a></footer></div></div></div>
+    
+
+
+<header class="header"
+        data-module="header"
+        data-endpoint="/api/sitecore/SearchApi/GetHeaderSearchResults"
+        data-search-page-url="/search">
+    <div class="header__content-wrapper">
+        <button class="header__mobile-btn header__mobile-btn--nav" aria-expanded="false" aria-label="Search in page, press escape to close">
+            <svg viewBox="0 0 120 120"
+                 role="presentation">
+                <use xlink:href="#menu" />
+            </svg>
+            <svg viewBox="0 0 120 120"
+                 role="presentation">
+                <use xlink:href="#close-thin" />
+            </svg>
+        </button>
+        
+        <a href="/" class="header__logo">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="304" height="36" viewBox="0 0 3425 480" enable-background="new 0 0 3425 480" xml:space="preserve">  <image id="image0" width="3425" height="480" x="0" y="0"
+    href="data:image/png;base64,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" />
+</svg>
+</a>
+        <nav class="header__primary-nav" aria-label="Primary Navigation">
+            
+            <ul>
+        <li class="header__item">
+            <button aria-haspopup="true" aria-expanded="false">
+                Our Edge
+            </button>
+                <ul class="header__inner-nav" style="display:none">
+                        <li class="header__item">
+                            <a href="/our-edge" target="">
+                                About Our Edge
+                            </a>
+                        </li>
+                        <li class="header__item">
+                            <a href="/our-edge#people" target="">
+                                People
+                            </a>
+                        </li>
+                        <li class="header__item">
+                            <a href="/our-edge#data" target="">
+                                Data
+                            </a>
+                        </li>
+                        <li class="header__item">
+                            <a href="/our-edge#clarity" target="">
+                                Clarity
+                            </a>
+                        </li>
+                </ul>
+        </li>
+        <li class="header__item">
+            <button aria-haspopup="true" aria-expanded="false">
+                Insights
+            </button>
+                <div class="header__inner-nav header__inner-nav--two">
+                        <div class="header__nav-column">
+                            <span class="header__nav-title">ACADIAN SPOTLIGHTS</span>
+                            <ul>
+                                    <li class="header__item">
+                                        <a href="/investment-insights/client-advisory" target="">
+                                            Client Advisory
+                                        </a>
+                                    </li>
+                                    <li class="header__item">
+                                        <a href="/investment-insights/behind-the-signals-podcast" target="">
+                                            Podcast: Behind the Signals
+                                        </a>
+                                    </li>
+                                    <li class="header__item">
+                                        <a href="/investment-insights/leadership-insights" target="">
+                                            Leadership Insights
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                        <div class="header__nav-column">
+                            <span class="header__nav-title">BROWSE BY TOPIC</span>
+                            <ul>
+                                    <li class="header__item">
+                                        <a href="/investment-insights" target="">
+                                            Browse All Insights
+                                        </a>
+                                    </li>
+                                    <li class="header__item">
+                                        <a href="/investment-insights/equities" target="">
+                                            Equities
+                                        </a>
+                                    </li>
+                                    <li class="header__item">
+                                        <a href="/investment-insights/geopolitics-and-macro" target="">
+                                            Geopolitics &amp; Macro
+                                        </a>
+                                    </li>
+                                    <li class="header__item">
+                                        <a href="/investment-insights/esg" target="">
+                                            ESG
+                                        </a>
+                                    </li>
+                                    <li class="header__item">
+                                        <a href="/investment-insights/managing-risk" target="">
+                                            Managing Risk
+                                        </a>
+                                    </li>
+                                    <li class="header__item">
+                                        <a href="/investment-insights/systematic-methods" target="">
+                                            Systematic Methods
+                                        </a>
+                                    </li>
+                                    <li class="header__item">
+                                        <a href="/investment-insights/multi-asset-investing" target="">
+                                            Multi-Asset Investing
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                </div>
+        </li>
+        <li class="header__item">
+            <button aria-haspopup="true" aria-expanded="false">
+                Strategies
+            </button>
+                <ul class="header__inner-nav" style="display:none">
+                        <li class="header__item">
+                            <a href="/investment-strategies" target="">
+                                About Our Strategies
+                            </a>
+                        </li>
+                        <li class="header__item">
+                            <a href="/investment-strategies/equity" target="">
+                                Equity
+                            </a>
+                        </li>
+                        <li class="header__item">
+                            <a href="/investment-strategies/macro" target="">
+                                Macro
+                            </a>
+                        </li>
+                        <li class="header__item">
+                            <a href="/investment-strategies/managed-volatility" target="">
+                                Managed Volatility
+                            </a>
+                        </li>
+                        <li class="header__item">
+                            <a href="/investment-strategies/equity-alternative" target="">
+                                Equity Alternatives
+                            </a>
+                        </li>
+                        <li class="header__item">
+                            <a href="/investment-strategies/responsible-investing" target="">
+                                Responsible Investing
+                            </a>
+                        </li>
+                </ul>
+        </li>
+        <li class="header__item">
+            <button aria-haspopup="true" aria-expanded="false">
+                About Us
+            </button>
+                <div class="header__inner-nav header__inner-nav--two">
+                        <div class="header__nav-column">
+                            <span class="header__nav-title">WHO WE ARE</span>
+                            <ul>
+                                    <li class="header__item">
+                                        <a href="/about-us/our-history" target="">
+                                            Learn About Acadian
+                                        </a>
+                                    </li>
+                                    <li class="header__item">
+                                        <a href="/about-us/leadership" target="">
+                                            Leadership
+                                        </a>
+                                    </li>
+                                    <li class="header__item">
+                                        <a href="/about-us/news" target="">
+                                            News
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                        <div class="header__nav-column">
+                            <span class="header__nav-title">CORPORATE RESPONSIBILITY</span>
+                            <ul>
+                                    <li class="header__item">
+                                        <a href="/about-us/corporate-social-responsibility/diversity-and-inclusion" target="">
+                                            Diversity, Equity &amp; Inclusion
+                                        </a>
+                                    </li>
+                                    <li class="header__item">
+                                        <a href="/about-us/corporate-social-responsibility/community-engagement" target="">
+                                            Community Engagement
+                                        </a>
+                                    </li>
+                                    <li class="header__item">
+                                        <a href="/about-us/corporate-social-responsibility/sustainability" target="">
+                                            Sustainability
+                                        </a>
+                                    </li>
+                            </ul>
+                        </div>
+                </div>
+        </li>
+</ul>
+            
+            
+
+<div class="header__search">
+    <div class="header__search-field" aria-haspopup="true" aria-expanded="false" role="button">
+        <div id="search-announce" class="sr-only" aria-live="assertive"></div>
+        <button aria-label="Open Search" class="header__search-btn">
+            <svg viewBox="0 0 120 120"
+                 role="presentation">
+                <use xlink:href="#search" />
+            </svg>
+        </button>
+        <label class="sr-only" for="header-search">Search in page, press escape to close</label>
+        <input autocomplete="off"
+               class="header__search-input"
+               placeholder="Search"
+               id="header-search"
+               role="combobox"
+               type="text" />
+        <button aria-label="Clear Search Input" class="header__clear-input-btn" hidden>
+            <svg viewBox="0 0 120 120"
+                 role="presentation">
+                <use xlink:href="#close-bold" />
+            </svg>
+        </button>
+        <button aria-label="Clear Search Input" class="header__close-input-btn">
+            <svg viewBox="0 0 120 120" role="presentation">
+                <use xlink:href="#close-thin"></use>
+            </svg>
+        </button>
+    </div>
+    <div class="header__search-results-backdrop">
+        <div class="header__search-results">
+            <span class="header__search-results-heading" id="search-suggested-results-heading">Suggested Results</span>
+            <ul role="listbox" hidden></ul>
+            <a class="header__search-view-all" data-additional-query-string="Content=all">
+              View All Results
+            </a>
+        </div>
+    </div>
+</div>
+        </nav>
+        
+        <nav class=header__utility-nav aria-label="Utility Nav"><ul><li class=header__item><a href=/careers target=""> Careers </a><li class=header__item><a href=/contact-us target=""> Contact Us </a><li class=header__item><button aria-haspopup=true aria-expanded=false> Fund Information </button><ul class=header__inner-nav><li class=header__item><a href=/emfund target=""> Acadian Emerging Markets Portfolio </a><li class=header__item><a href=/au target=""> Australian Funds </a></ul></ul></nav>
+        
+        <nav class="header__mobile-nav" aria-label="Mobile Nav">
+    <ul>
+            <li class="header__mobile-item">
+                <button aria-haspopup="true" aria-expanded="false">
+                    Our Edge
+                </button>
+                    <ul class="header__mobile-inner-nav">
+                        <li class="header__mobile-item header__mobile-item--back">
+                            <button>
+                                Back
+                            </button>
+                        </li>
+                            <li class="header__mobile-item header__mobile-item--main-link">
+                                <a href="/our-edge" target="">
+                                    About Our Edge
+                                </a>
+                            </li>
+                            <li class="header__mobile-item header__mobile-item--main-link">
+                                <a href="/our-edge#people" target="">
+                                    People
+                                </a>
+                            </li>
+                            <li class="header__mobile-item header__mobile-item--main-link">
+                                <a href="/our-edge#data" target="">
+                                    Data
+                                </a>
+                            </li>
+                            <li class="header__mobile-item header__mobile-item--main-link">
+                                <a href="/our-edge#clarity" target="">
+                                    Clarity
+                                </a>
+                            </li>
+                    </ul>
+            </li>
+            <li class="header__mobile-item">
+                <button aria-haspopup="true" aria-expanded="false">
+                    Insights
+                </button>
+                    <div class="header__mobile-inner-nav">
+                        <span class="header__mobile-item header__mobile-item--back">
+                            <button>
+                                Back
+                            </button>
+                        </span>
+                            <div class="header__nav-column">
+                                <span class="header__nav-title">ACADIAN SPOTLIGHTS</span>
+                                <ul>
+                                        <li class="header__mobile-item header__mobile-item--main-link">
+                                            <a href="/investment-insights/client-advisory" target="">
+                                                Client Advisory
+                                            </a>
+                                        </li>
+                                        <li class="header__mobile-item header__mobile-item--main-link">
+                                            <a href="/investment-insights/behind-the-signals-podcast" target="">
+                                                Podcast: Behind the Signals
+                                            </a>
+                                        </li>
+                                        <li class="header__mobile-item header__mobile-item--main-link">
+                                            <a href="/investment-insights/leadership-insights" target="">
+                                                Leadership Insights
+                                            </a>
+                                        </li>
+                                </ul>
+                            </div>
+                            <div class="header__nav-column">
+                                <span class="header__nav-title">BROWSE BY TOPIC</span>
+                                <ul>
+                                        <li class="header__mobile-item header__mobile-item--main-link">
+                                            <a href="/investment-insights" target="">
+                                                Browse All Insights
+                                            </a>
+                                        </li>
+                                        <li class="header__mobile-item header__mobile-item--main-link">
+                                            <a href="/investment-insights/equities" target="">
+                                                Equities
+                                            </a>
+                                        </li>
+                                        <li class="header__mobile-item header__mobile-item--main-link">
+                                            <a href="/investment-insights/geopolitics-and-macro" target="">
+                                                Geopolitics &amp; Macro
+                                            </a>
+                                        </li>
+                                        <li class="header__mobile-item header__mobile-item--main-link">
+                                            <a href="/investment-insights/esg" target="">
+                                                ESG
+                                            </a>
+                                        </li>
+                                        <li class="header__mobile-item header__mobile-item--main-link">
+                                            <a href="/investment-insights/managing-risk" target="">
+                                                Managing Risk
+                                            </a>
+                                        </li>
+                                        <li class="header__mobile-item header__mobile-item--main-link">
+                                            <a href="/investment-insights/systematic-methods" target="">
+                                                Systematic Methods
+                                            </a>
+                                        </li>
+                                        <li class="header__mobile-item header__mobile-item--main-link">
+                                            <a href="/investment-insights/multi-asset-investing" target="">
+                                                Multi-Asset Investing
+                                            </a>
+                                        </li>
+                                </ul>
+                            </div>
+                    </div>
+            </li>
+            <li class="header__mobile-item">
+                <button aria-haspopup="true" aria-expanded="false">
+                    Strategies
+                </button>
+                    <ul class="header__mobile-inner-nav">
+                        <li class="header__mobile-item header__mobile-item--back">
+                            <button>
+                                Back
+                            </button>
+                        </li>
+                            <li class="header__mobile-item header__mobile-item--main-link">
+                                <a href="/investment-strategies" target="">
+                                    About Our Strategies
+                                </a>
+                            </li>
+                            <li class="header__mobile-item header__mobile-item--main-link">
+                                <a href="/investment-strategies/equity" target="">
+                                    Equity
+                                </a>
+                            </li>
+                            <li class="header__mobile-item header__mobile-item--main-link">
+                                <a href="/investment-strategies/macro" target="">
+                                    Macro
+                                </a>
+                            </li>
+                            <li class="header__mobile-item header__mobile-item--main-link">
+                                <a href="/investment-strategies/managed-volatility" target="">
+                                    Managed Volatility
+                                </a>
+                            </li>
+                            <li class="header__mobile-item header__mobile-item--main-link">
+                                <a href="/investment-strategies/equity-alternative" target="">
+                                    Equity Alternatives
+                                </a>
+                            </li>
+                            <li class="header__mobile-item header__mobile-item--main-link">
+                                <a href="/investment-strategies/responsible-investing" target="">
+                                    Responsible Investing
+                                </a>
+                            </li>
+                    </ul>
+            </li>
+            <li class="header__mobile-item">
+                <button aria-haspopup="true" aria-expanded="false">
+                    About Us
+                </button>
+                    <div class="header__mobile-inner-nav">
+                        <span class="header__mobile-item header__mobile-item--back">
+                            <button>
+                                Back
+                            </button>
+                        </span>
+                            <div class="header__nav-column">
+                                <span class="header__nav-title">WHO WE ARE</span>
+                                <ul>
+                                        <li class="header__mobile-item header__mobile-item--main-link">
+                                            <a href="/about-us/our-history" target="">
+                                                Learn About Acadian
+                                            </a>
+                                        </li>
+                                        <li class="header__mobile-item header__mobile-item--main-link">
+                                            <a href="/about-us/leadership" target="">
+                                                Leadership
+                                            </a>
+                                        </li>
+                                        <li class="header__mobile-item header__mobile-item--main-link">
+                                            <a href="/about-us/news" target="">
+                                                News
+                                            </a>
+                                        </li>
+                                </ul>
+                            </div>
+                            <div class="header__nav-column">
+                                <span class="header__nav-title">CORPORATE RESPONSIBILITY</span>
+                                <ul>
+                                        <li class="header__mobile-item header__mobile-item--main-link">
+                                            <a href="/about-us/corporate-social-responsibility/diversity-and-inclusion" target="">
+                                                Diversity, Equity &amp; Inclusion
+                                            </a>
+                                        </li>
+                                        <li class="header__mobile-item header__mobile-item--main-link">
+                                            <a href="/about-us/corporate-social-responsibility/community-engagement" target="">
+                                                Community Engagement
+                                            </a>
+                                        </li>
+                                        <li class="header__mobile-item header__mobile-item--main-link">
+                                            <a href="/about-us/corporate-social-responsibility/sustainability" target="">
+                                                Sustainability
+                                            </a>
+                                        </li>
+                                </ul>
+                            </div>
+                    </div>
+            </li>
+
+                <li class="header__mobile-item">
+                    <a href="/careers" target="">
+                        Careers
+                    </a>
+                </li>
+                <li class="header__mobile-item">
+                    <a href="/contact-us" target="">
+                        Contact Us
+                    </a>
+                </li>
+                <li class="header__mobile-item">
+                    <button aria-haspopup="true" aria-expanded="false">
+                        Fund Information
+                    </button>
+                    <ul class="header__mobile-inner-nav">
+                        <li class="header__mobile-item header__mobile-item--back">
+                            <button>
+                                Back
+                            </button>
+                        </li>
+                            <li class="header__mobile-item header__mobile-item--main-link">
+                                <a href="/emfund" target="">
+                                    Acadian Emerging Markets Portfolio
+                                </a>
+                            </li>
+                            <li class="header__mobile-item header__mobile-item--main-link">
+                                <a href="/au" target="">
+                                    Australian Funds
+                                </a>
+                            </li>
+                    </ul>
+                </li>
+    </ul>
+</nav>
+    </div>
+</header>
+    <main>
+        
+        
+        
+        <header class=home-masthead data-module=home-masthead><div class=home-masthead__content-wrapper><div class=home-masthead__bg-imgs-wrapper><img class=home-masthead__bg-img role=presentation src="/-/media/images/content/mastheads/homepage/first-image-v7-01.png?h=865&amp;w=800&amp;hash=FB9EAEC175711E23AA4F6F8861379FA4" alt="" height=864 width=800> <img class=home-masthead__bg-img role=presentation src="/-/media/images/content/mastheads/homepage/second-image-v2-01.png?h=865&amp;w=800&amp;hash=5E639E3BDA4820C6BC7C530F40CDF512" alt="" height=864 width=800> <img class=home-masthead__bg-img role=presentation src="/-/media/images/content/mastheads/homepage/third-image-v3-01.png?h=865&amp;w=800&amp;hash=0289B3D2F28A502656FBA42DAD580BFC" alt="" height=864 width=800></div><span class=home-masthead__heading-sub>Systematic Investing Powered By</span><h1 class=home-masthead__heading id=main-heading><span class=home-masthead__heading-main> <span class="home-masthead__heading-line home-masthead__heading-line--1"> People </span> <span class="home-masthead__heading-line home-masthead__heading-line--2"> Data </span> <span class="home-masthead__heading-line home-masthead__heading-line--3"> Clarity </span> </span></h1><div class=home-masthead__actions><a class=btn href=/our-edge target="">Our Edge</a> <a class="btn btn--outline" href=/investment-strategies target="">Our Strategies</a></div></div></header><section aria-label="Featured Stats" class=featured-stats data-module=featured-stats><div class=stats__background></div><div class=stats__content--desktop><div class=stats__leading-header><p>Investing systematically for over 30 years, we combine intellectual rigor, rich data, and powerful tools to deliver results with analytical clarity.</div><h2 class=stats__header>This is our edge.</h2></div><div class=stats-wrapper><div class=stat><div class=stat__content><h2 class=stat__title>40k+</h2><span class=stat__subtitle>TRADED ASSETS</span></div><span class=stat__line></span></div><div class=stat><div class=stat__content><h2 class=stat__title>44TB+</h2><span class=stat__subtitle>DATA</span></div><span class=stat__line></span></div><div class=stat><div class=stat__content><h2 class=stat__title>200M+</h2><span class=stat__subtitle>DAILY OBSERVATIONS</span></div><span class=stat__line></span></div></div><div class=stats__content--mobile><div class=stats__leading-header><p>Investing systematically for over 30 years, we combine intellectual rigor, rich data, and powerful tools to deliver results with analytical clarity.</div><h2 class=stats__header>This is our edge.</h2></div></section><section class=insights aria-labelledby=343BA0F34A2D4B12BC12B9504F075F07 data-module=featured-insights><div id=particles-js-circle role=presentation></div><div id=particles-js-rightbg role=presentation></div><div class=insights-bg-decoration role=presentation></div><div class=insights-header><div class=insights-header__wrapper><h2 id=343BA0F34A2D4B12BC12B9504F075F07 class=insights__heading>Investment Insights</h2><a class="btn btn--on-dark btn--outline" href=/investment-insights target=""> Browse Our Insights </a></div><p class=insights__copy>From thematic research, to topical perspectives, to quick takes on market events, you can browse Acadian thought leadership on a number of key topics.</div><div class=insights-featured__container><div class=super><div class=super__content><span class=super__label>FEATURED INSIGHTS</span><h3 class=super__heading>Opportunity Beyond U.S. Shores</h3><p class=super__copy>We encourage U.S. investors to look beyond their shores and consider opportunities in international equity markets. This piece explores several key factors related to valuations outside the U.S. and persistent growthy speculation that has particularly benefited the U.S.</div><a href=/investment-insights/equities/opportunity-beyond-us-shores class=super__btn aria-label="Read More about Opportunity Beyond U.S. Shores"><span class="btn btn--block">Read More</span></a> <img class=super__img role=presentation alt="" src="/-/media/images/articles/thumbnails/opportnuities-outside-us-01-01.png?h=567&amp;w=753&amp;hash=70B253B8E63BFB796DCD2B365EC41EF1" width=960 height=540></div><div class=insight__card><h3 class=insight__card-heading><a href=/investment-insights/equities/us-equities-back-to-the-future class=insight__card-link>U.S. Equities: Back to the Future?</a></h3><p class=insight__card-copy>With U.S. mega-cap tech stocks delivering the lion&#39;s share of gains year to date, investors have renewed their focus on this segment. Acadian&#39;s Client Advisory team evaluates the market context and prospects for a continued rally in this segment.</div><div class=insight__card><h3 class=insight__card-heading><a href=/investment-insights/equities/growth-versus-value-end-of-an-era class=insight__card-link>Growth Versus Value: End of an Era?</a></h3><p class=insight__card-copy>Acadian’s Client Advisory team clarifies muddled narratives around value’s revival in 2022, which have been based on the behavior of increasingly irrelevant value benchmarks.</div><div class=insight__card><h3 class=insight__card-heading><a href=/investment-insights/geopolitics-and-macro/reflections-on-the-ukraine-crisis class=insight__card-link>Reflections on the Ukraine Crisis: Watershed for EM Investing?</a></h3><p class=insight__card-copy>Acadian’s Client Advisory team looks beyond the war’s immediate market impacts and considers longer-term implications—even as the situation continues to unfold.</div></div></section>
+    </main>
+    <!-- FOOTER-->
+    
+
+
+<footer class="footer">
+    <div class="footer__container">
+        <a href="/" class="footer__logo">
+            <img src="/-/media/images/footer/logo-acadian-footer.svg?as=0&amp;h=70&amp;iar=0&amp;w=141&amp;hash=B7AE86EB0449C669DF1BC405DDB9C92B" width="141" height="70" alt="Acadian Footer Logoa" loading="lazy">
+        </a>
+
+
+        
+        <div class=footer__links-wrapper><ul class=footer-links__items><li class=footer-links__item><a class="link link--dark link--small" href="https://adviserinfo.sec.gov/"> Compliance </a><li class=footer-links__item><a class="link link--dark link--small" href=/privacy-policy> Privacy Policy </a><li class=footer-links__item><a class="link link--dark link--small" href=/legal-disclosures-and-terms> Legal Disclosures and Terms </a></ul></div>
+
+        <div class="footer__copyright">
+            <p class="footer__copyright-text">&#169; Copyright 2023 Acadian Asset Management LLC. All Rights Reserved</p>
+        </div>
+
+        
+        <div class=footer__social-media-wrapper><ul class=footer__social-media><li><a href="https://www.linkedin.com/company/acadian-asset-management/" aria-label=LinkedIn class=footer-social__item target=_blank rel="noopener noreferrer" data-share=true> <svg viewBox="0 0 120 120" width=30 height=30 role=presentation><use xlink:href=#linkedin /></svg> <span class=sr-only>(Opens in a new tab)</span> </a><li><a href=https://twitter.com/AcadianAsset aria-label=Twitter class=footer-social__item target=_blank rel="noopener noreferrer" data-share=true> <svg viewBox="0 0 120 120" width=30 height=30 role=presentation><use xlink:href=#twitter /></svg> <span class=sr-only>(Opens in a new tab)</span> </a></ul></div>
+
+    </div>
+</footer>
+
+
+    <script type=application/ld+json>
+    {"@context":"https://schema.org","@type":"Organization","name":"Acadian Asset Management","description":"Acadian Asset Management is a global, quantitative, investment manager. Founded in 1986, Acadian is headquartered in Boston, with affiliates located in London, Singapore, and Sydney.","sameAs":["https://www.linkedin.com/company/acadian-asset-management/","https://twitter.com/AcadianAsset"],"url":"https://www.acadian-asset.com/","founder":{"@type":"Person","name":"Gary Bergstrom"},"foundingDate":1977,"legalName":"Acadian Asset Management","logo":"https://www.acadian-asset.com/-/media/images/header/acadian-pride-color-logo-reduced.svg"}
+</script>
+    <script>
+        fetch('/Areas/Acadian/Content/images/svgsheet.svg')
+            .then((blob) => blob.text())
+            .then((response) => {
+                const div = document.createElement('div');
+                div.style.display = 'none';
+                div.innerHTML = response;
+                document.body.insertBefore(div, document.body.childNodes[0]);
+            })
+    </script>
+
+    <script src="/Areas/Acadian/scripts/main.bundle.js?v=638145856900000000"></script>
+    <script>
+        window.acadian = {
+            labels: {
+                goToPage: "Go to",
+                paginationAriaLabel: "Pagination",
+                prevArrow: 'Previous arrow',
+                nextArrow: 'Next arrow'
+            }
+        }
+    </script>
+
+    <!-- PARDOT Integration-->
+    <script type='text/javascript'>
+        piAId = '986041';
+        piCId = '';
+        piHostname = 'go.acadian-asset.com';
+
+        (function() {
+            function async_load(){
+                var s = document.createElement('script'); s.type = 'text/javascript';
+                s.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + piHostname + '/pd.js';
+                var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+            }
+            if(window.attachEvent) { window.attachEvent('onload', async_load); }
+            else { window.addEventListener('load', async_load, false); }
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Dentca</title>
+  <base href="/" />
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1" />
+  <meta name="theme-color"
+        content="#FF3867" />
+
+  <link rel="manifest"
+        href="/manifest.json" />
+  <link rel="icon"
+        type="image/x-icon"
+        href="favicon.png" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async
+          src="https://www.googletagmanager.com/gtag/js?id=UA-186538083-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-186538083-1');
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCLogJN6E_s1uNso1FDiB90qGFHVOjd9w"
+          async
+          defer></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="styles.017840a7f7f07406d69c.css"></head>
+
+<body>
+  <script>
+    var detectBrowser = function (userAgent) {
+      var chrome = /.*(Chrome\/).*(Safari\/).*/g;
+      var firefox = /.*(Firefox\/).*/g;
+      var safari = /.*(Version\/).*(Safari\/).*/g;
+      var opera = /.*(Chrome\/).*(Safari\/).*(OPR\/).*/g;
+
+      // if (opera.exec(userAgent)) return 'Opera';
+      if (chrome.exec(userAgent)) return 'Chrome';
+      if (safari.exec(userAgent)) return 'Safari';
+      if (firefox.exec(userAgent)) return 'Firefox';
+      return false;
+    };
+    if (!detectBrowser(navigator.userAgent)) {
+      window.location = '/assets/html/invalid_browser.htm';
+    }
+  </script>
+
+  <app-root> </app-root>
+
+  <!-- <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
+        console.log('Service Worker registered');
+      }).catch(function (err) {
+        console.log('Service Worker registration failed: ', err);
+      });
+    }
+  </script> -->
+<script src="runtime.b120d07a599730b55c3b.js" defer></script><script src="polyfills.9f7c7c5f5bd8858a4630.js" defer></script><script src="scripts.320b88393ec4f39c148f.js" defer></script><script src="main.a08572e5f7367914221f.js" defer></script></body>
+
+</html>

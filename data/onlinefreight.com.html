@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Freight Services</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,500,600,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
+    <script src="/Content/lib/jquery/jquery-3.5.1.min.js"></script>
+
+    <link rel="stylesheet" href="/Content/lib/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="/Content/lib/font-awesome/css/all.min.css" />
+    <link rel="stylesheet" href="/Content/lib/animate/animate.min.css" />
+    <link rel="stylesheet" href="/Content/lib/ionicons/css/ionicons.min.css" />
+    <link rel="stylesheet" href="/Content/lib/owlcarousel/assets/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/Content/lib/lightbox/css/lightbox.min.css" />
+    <link rel="stylesheet" href="/Content/lib/device-mockups/device-mockups.min.css" />
+    <link rel="stylesheet" href="/Content/css/site.css" />
+
+</head>
+<body>
+    
+    
+
+    <!--==========================
+    Header
+    ============================-->
+<header id="header">
+
+    <div id="topbar">
+        <div class="container">
+            <div class="social-links">
+                <a href="tel:1-800-284-2603" class="">800.284.2603</a>
+                <a href="#loadinfo" class=""><i class="ion-navigate"></i> Track Shipment</a>
+                <a href="#" data-toggle="modal" data-target="#requestquote"><i class="ion-ios-chatboxes"></i> Request a Quote</a>
+                <a href="https://www.onlinefreight.com/offramp/Public/OpenLoads/Index" class=""><i class="ion-map"></i> Open Loads</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="logo float-left">
+            <a href="#header" class="scrollto">
+                <img src="/Content/images/logo-banner.png" alt="" class="img-fluid" />
+            </a>
+        </div>
+
+        <nav class="main-nav float-right d-none d-lg-block">
+            <ul>
+                <li class="active">
+                    <a href="#topbar">Home</a>
+                </li>
+                <li><a href="#tech">Technology</a></li>
+                <li><a href="#customer">Services</a></li>
+                <li><a href="#carrier">Carriers</a></li>
+                <li><a href="#agent">Agents</a></li>
+                <li><a href="#footer">Contact Us</a></li>
+                <li class="drop-down">
+                    <a href="">Log In</a>
+                    <ul>
+                        <li><a href="https://www.onlinefreight.com/customerportal/">Customer - OnRamp</a></li>
+                        <li><a href="https://www.onlinefreight.com/offramp/">Carrier - OffRamp</a></li>
+                        
+                    </ul>
+                </li>
+            </ul>
+        </nav><!-- .main-nav -->
+
+    </div>
+</header><!-- #header -->
+
+<!-- Request Quote Modal -->
+<div class="modal fade" id="requestquote" tabindex="-1" aria-labelledby="requestquote-label" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            
+<form action="/" id="quoterequest" method="get">    <div class="modal-header">
+        <h5 class="modal-title" id="applynow-label">Request Quote</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-5">
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div class="apply-links">
+                                <img src="/Content/images/logo-banner.png" alt="" class="img-fluid" style="max-width:300px;" />
+                                <p class="mt-3">
+                                    2275 Waters Drive <br>
+                                    Mendota Heights, MN 55120<br>
+                                    United States <br>
+                                    <strong>Phone:</strong>&nbsp;&nbsp;<a href="tel:+18002842603">800.284.2603</a><br>
+                                    <strong>Fax:</strong>&nbsp;&nbsp;<a href="tel:+16514686869">651.468.6869</a><br>
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-6">
+
+                    <div class="applyform">
+
+                        <h4 class="mb-0"><i class="fas fa-file-invoice"></i>&nbsp;&nbsp;Request Freight Quote  </h4>
+                        <p class="text-muted">To request a freight quote please submit the form below. We will be in contact shortly with more details.</p>
+
+                        <div class="form-group">
+                            <input class="form-control" data-val="true" data-val-required="Company Name Required" id="CompanyName" name="CompanyName" placeholder="Your Company" required="true" type="text" value="" />
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select class="form-control" data-val="true" data-val-required="Mode Required" id="Mode" name="Mode" required="true"><option value="Truckload">Truckload</option>
+<option value="LTL">LTL</option>
+</select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control" data-val="true" data-val-required="Phone # Required" id="Phone" name="Phone" placeholder="Phone #" required="true" type="text" value="" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control" data-val="true" data-val-required="Contact Name Required" id="ContactName" name="ContactName" placeholder="Your Name" required="true" type="text" value="" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input class="form-control" data-val="true" data-val-required="Email Required" id="Email" name="Email" placeholder="Your Email" required="true" type="text" value="" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input class="form-control" data-val="true" data-val-required="Subject Required" id="Subject" name="Subject" placeholder="Subject" required="true" type="text" value="" />
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p><em>Description of Freight </em></p>
+                                <div class="form-group">
+                                    <textarea class="form-control" cols="20" data-val="true" data-val-required="Message Required" id="Message" name="Message" rows="2">
+</textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <input class="form-control" id="Message2" name="Message2" placeholder="Subject" required="true" type="hidden" value="" />
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" style="font-size:small;" data-dismiss="modal">Close</button>
+        <button id="sendmessage" type="button" class="btn btn-primary" style="font-size:small;">Send Message</button>
+    </div>
+</form>
+<!-- Page-Level Scripts -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#sendmessage').on('click', function () {
+            $.ajax({
+                url: '../Home/QuoteRequest',
+                type: 'GET',
+                contentType: "application/json; charset=utf-8",
+                data: $('#quoterequest').serialize(),
+                cache: false,
+                async: true,
+                beforeSend: function () {
+                },
+                success: function (data) {
+                    if (data.QuoteSent === "yes") {
+                        swal({
+                            title: "Quote Request Sent",
+                            text: "We will be in contact soon.",
+                            type: "success",
+                            showCancelButton: false
+                        }, function () {
+                            var url = data.Location;
+                            window.location.href = url;
+                        });
+                    }
+                    else {
+                        swal({
+                            title: "Request Not Sent",
+                            text: data.MissingData,
+                            type: "warning",
+                            showCancelButton: false
+                        });
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status);
+                    alert(thrownError);
+                },
+                complete: function (data) {
+                }
+            });
+        });
+    });
+</script>
+        </div>
+    </div>
+</div>
+
+<style>
+    .txtloadstatus {
+        border: 0;
+        padding: 6px 8px;
+        width: 65%;
+        border: 1px solid #d9dde6;
+    }
+
+    .btnloadstatus {
+        background: #383e41;
+        border: none;
+        width: 35%;
+        padding: 6px 0;
+        text-align: center;
+        color: #fff;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+    .btnloadstatus:hover {
+        background: #6d1301;
+    }
+</style>
+
+<link href="/Content/lib/sweetalert/sweetalert.css" rel="stylesheet" />
+
+    <!--==========================
+        Intro Section
+      ============================-->
+    <section id="intro" class="clearfix" style="margin-top:125px !important;">
+        <div id="intro-content" class="container-fluid my-10 mb-5">
+            <div class="row">
+                <div class="col-5 intro-info">
+                    <div class="p-4">
+                        <h2>Relationships <br /> Are Key</h2>
+                        <h3>
+                            Our staff is <strong>dedicated</strong> to maintaining <strong>vital</strong> business <strong>relationships</strong> from the Customer, to the Broker, to the Carrier.
+                        </h3>
+                    </div>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <main id="main">
+
+        <!--==========================
+      Technology Section
+    ============================-->
+        <section id="tech" class="wow fadeIn pt-5">
+            <div class="container-fluid">
+
+                <header class="section-header">
+                    <h3>Industry Leading Software</h3>
+                    <p>At OFS, agents, clients, and carrier partners enjoy our suite of proprietary technology, including TMSPro, OnRamp, and OffRamp.</p>
+                </header>
+
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="why-us-img">
+                            <img src="/Content/images/software.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active" id="nav-tmspro-tab" data-toggle="tab" href="#nav-tmspro" role="tab" aria-controls="nav-tmspro" aria-selected="true">
+                                    <img src="/Content/images/tmspro-logo.png" alt="" style="max-height:24px; max-width:35px;"> TMSPro
+                                </a>
+                                <a class="nav-item nav-link" id="nav-onramp-tab" data-toggle="tab" href="#nav-onramp" role="tab" aria-controls="nav-onramp" aria-selected="false">
+                                    <img src="/Content/images/on-off-ramp-logo.png" alt="" style="max-height:24px; max-width:35px;"> OnRamp
+                                </a>
+                                <a class="nav-item nav-link" id="nav-offramp-tab" data-toggle="tab" href="#nav-offramp" role="tab" aria-controls="nav-offramp" aria-selected="false">
+                                    <img src="/Content/images/on-off-ramp-logo.png" alt="" style="max-height:24px; max-width:35px;"> OffRamp
+                                </a>
+                                <a class="nav-item nav-link" id="nav-thirdparty-tab" data-toggle="tab" href="#nav-thirdparty" role="tab" aria-controls="nav-thirdparty" aria-selected="false">
+                                    <i class="fas fa-external-link-alt" style="max-height:24px; max-width:35px;"></i> Integration
+                                </a>
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-tmspro" role="tabpanel" aria-labelledby="nav-tmspro-tab">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col"></div>
+                                        <div class="col-md-10">
+                                            <p class="mt-2 mb-0">
+                                                TMSPro is our industry-leading transportation management software for agents.
+                                            </p>
+                                        </div>
+                                        <div class="col"></div>
+                                    </div>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-lg-6 text-center">
+                                                <img src="/Content/images/tech1.png" alt="" class="m-3" style="height:65px; width:65px;">
+                                                <h4 class="mb-0">Simplicity</h4>
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item" style="font-size:small;">
+                                                        Dashboard displays book of business and commissions conveniently on one screen
+                                                    </li>
+                                                    <li class="list-group-item" style="font-size:small;">
+                                                        Easy-to-use features allow users to manage and post hundreds of loads with one click
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-6 text-center">
+                                                <img src="/Content/images/tech2.png" alt="" class="m-3" style="height:65px; width:65px;">
+                                                <h4 class="mb-0">Cloud Computing</h4>
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item" style="font-size:small;">
+                                                        EDI and API integration enables system-to-system transfer of data
+                                                    </li>
+                                                    <li class="list-group-item" style="font-size:small;">
+                                                        Cloud-based storage provides immediate access to all documents electronically
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6 text-center">
+                                                <img src="/Content/images/tech3.png" alt="" class="m-3" style="height:65px; width:65px;">
+                                                <h4 class="mb-0">Automation</h4>
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item" style="font-size:small;">
+                                                        Notifications signal customer setup, carrier setup, billing, and more
+                                                    </li>
+                                                    <li class="list-group-item" style="font-size:small;">
+                                                        Carrier insurance and DOT authority verification is automated
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-6 text-center">
+                                                <img src="/Content/images/tech4.png" alt="" class="m-3" style="height:65px; width:65px;">
+                                                <h4 class="mb-0">Reporting</h4>
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item" style="font-size:small;">
+                                                        Charts, graphs, and reports that show load and customer information are available anytime
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-onramp" role="tabpanel" aria-labelledby="nav-onramp-tab">
+                                <div class="row">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col"></div>
+                                            <div class="col-md-10">
+                                                <p class="mt-2 mb-0">
+                                                    OnRamp is our self-service web portal built specifically for hands-on shippers.
+                                                </p>
+                                            </div>
+                                            <div class="col"></div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg-6 text-center">
+                                                <img src="/Content/images/tech5.png" alt="" class="m-3" style="height:65px; width:65px;">
+                                                <h3 class="mb-0">High Visibility</h3>
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item" style="font-size:small;">
+                                                        Quote and book shipments quickly and conveniently
+                                                    </li>
+                                                    <li class="list-group-item" style="font-size:small;">
+                                                        See real-time shipment status updates
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-lg-6 text-center">
+                                                <img src="/Content/images/tech6.png" alt="" class="m-3" style="height:65px; width:65px;">
+                                                <h3 class="mb-0">Superior Functionality</h3>
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item" style="font-size:small;">
+                                                        Store frequently used shipment information (e.g. items and locations)
+                                                    </li>
+                                                    <li class="list-group-item" style="font-size:small;">
+                                                        Select carriers by what matters most (transit time, cost, equipment, etc.)
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col"></div>
+                                            <div class="col-lg-6 text-center">
+                                                <img src="/Content/images/tech7.png" alt="" class="m-3" style="height:65px; width:65px;">
+                                                <h3 class="mb-0">Intuitive Interface</h3>
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item" style="font-size:small;">
+                                                        Access all load documents in one place
+                                                    </li>
+                                                    <li class="list-group-item" style="font-size:small;">
+                                                        Portal access via all major browsers and devices
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-offramp" role="tabpanel" aria-labelledby="nav-offramp-tab">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col"></div>
+                                        <div class="col-md-10">
+                                            <p class="mt-2 mb-0">
+                                                OffRamp is our innovative platform for carriers, where drivers and dispatchers can access all the information they need in one convenient portal.
+                                            </p>
+                                        </div>
+                                        <div class="col"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 text-center">
+                                            <img src="/Content/images/tech8.png" alt="" class="m-3" style="height:65px; width:65px;">
+                                            <h3 class="mb-0">Visibility and Transparency</h3>
+
+                                        </div>
+                                        <div class="col-lg-6 text-center">
+                                            <img src="/Content/images/tech9.png" alt="" class="m-3" style="height:65px; width:65px;">
+                                            <h3 class="mb-0">Document Upload Capabilities</h3>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item" style="font-size:small;">
+                                                    Upload documents to get paid faster
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col"></div>
+                                        <div class="col-lg-6 text-center">
+                                            <img src="/Content/images/tech10.png" alt="" class="m-3" style="height:65px; width:65px;">
+                                            <h3 class="mb-0">Intuitive Interface</h3>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item" style="font-size:small;">
+                                                    Access all load documents in one place
+                                                </li>
+                                                <li class="list-group-item" style="font-size:small;">
+                                                    Portal access via all major browsers and devices
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="nav-thirdparty" role="tabpanel" aria-labelledby="nav-thirdparty">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col"></div>
+                                        <div class="col-md-10">
+                                            <p class="mt-2 mb-0">
+                                                We integrate with key tools to streamline processes and improve efficiency.
+                                            </p>
+                                        </div>
+                                        <div class="col"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 text-center">
+                                            <img src="/Content/images/tech11.png" alt="" class="m-3" style="height:65px; width:65px;">
+                                            <h3 class="mb-0">Phone System</h3>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item" style="font-size:small;">
+                                                    Integrated caller ID accessed through TMSPro
+                                                </li>
+                                                <li class="list-group-item" style="font-size:small;">
+                                                    Toll free incoming calls and a voicemail-to-email phone system
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 text-center">
+                                            <img src="/Content/images/tech12.png" alt="" class="m-3" style="height:65px; width:65px;">
+                                            <h3 class="mb-0">Mapping</h3>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item" style="font-size:small;">
+                                                    TMSPro also features integrated mapping tools
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6 text-center">
+                                            <img src="/Content/images/office365.png" alt="" class="m-3" style="height:65px; width:65px;">
+                                            <h3 class="mb-0">Microsoft Office</h3>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item" style="font-size:small;">
+                                                    Agents are equipped with Microsoft Office, a suite of products including Outlook, Word, Excel, and PowerPoint
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-lg-6 text-center">
+                                            <img src="/Content/images/thirdparty.png" alt="" class="m-3" style="height:65px; width:65px;">
+                                            <h3 class="mb-0">3rd Party Tools</h3>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item" style="font-size:small;">
+                                                    Integrated with all major load board websites, such as DAT, Truckstop, and PostEverywhere
+                                                </li>
+                                                <li class="list-group-item" style="font-size:small;">
+                                                    Integrated with PC*MILER for instant mileage calculations
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section id="loadinfo" class="section-bg">
+            <div class="container">
+                <div class="row counters">
+
+                    <div class="col-lg-2 col-4 text-right">
+                        <span data-toggle="counter-up">733</span>
+                    </div>
+
+                    <div class="col-lg-4 col-8 text-left">
+                        <h2 style="line-height:80px;"><a href="https://www.onlinefreight.com/offramp/Public/OpenLoads/Index">Posted Loads &nbsp; <i class="fas fa-external-link-alt"></i></a></h2>
+                    </div>
+
+                    <div class="col-lg-4 col-8 text-center">
+                        <h2 style="line-height:80px;">Track a Shipment</h2>
+                    </div>
+
+                    <div class="col-lg-2 col-4 text-center">
+
+                        
+                        <input type="text" id="loadid" name="loadid" class="txtloadstatus" style="margin-top:20px;"><input id="getloadstatus" class="btnloadstatus" style="margin-top:20px;" type="button" value="Go">
+                        
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="customer">
+            <div class="container">
+                <div class="row feature-item mt-3 pt-3">
+                    <div class="col-lg-3 wow fadeInUp">
+                        <img src="/Content/images/frieghtservices.jpg" class="img-fluid img-thumbnail" alt="">
+                    </div>
+                    <div class="col-lg-9 wow fadeInUp pt-5 pt-lg-0">
+                        <h4>Freight and Logistics Services</h4>
+                        <p>
+                            Online Freight Services (OFS) offers a wide variety of services to seamlessly deliver freight across the country or around the world.
+                            Combined with our expert logistics professionals, proprietary technology, and commitment to quality, we offer you the transportation management that best fits your unique needs.
+                            With OFS, you will enjoy the personal service of a local office backed by the resources of a 2-billion-dollar Fortune 1000 publicly traded company.
+                        </p>
+                        <p>
+                            To start streamlining your transportation management, contact an OFS representative today at <a href="tel:+18002842603">(800) 284-2603</a> or <a href="mailto:ofs@onlinefreight.com?subject=Freight and Logistics Questions From Website">ofs@onlinefreight.com</a>.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 wow fadeInUp mt-2">
+                        <ul id="equip-list" class="wow fadeInUp">
+                            <li>
+                                <a data-toggle="collapse" class="collapsed" href="#equip1">Full Truckload (Van) <i class="ion-android-remove"></i></a>
+                                <div id="equip1" class="collapse" data-parent="#equip-list">
+                                    <p>
+                                        We leverage our network of over 50,000 carriers to secure the right equipment for you, when you need it, and for the price that fits your budget.
+                                        Whether you require frequent truckload shipments or just a few a year, we are committed to providing the best solutions for you.
+                                        We understand the importance of just in time (JIT) schedules and are qualified to handle the most difficult situations.
+                                        <br /><br />
+                                        OFS is able to provide you with 48’ and 53’ x 102” vans that have the following options, depending on your needs:
+                                        <ul class="equip-sub-list">
+                                            <li>Air ride</li>
+                                            <li>Team drivers</li>
+                                            <li>Driver assist/unload</li>
+                                            <li>Curtain vans</li>
+                                            <li>Vented/heated</li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a data-toggle="collapse" href="#equip2" class="collapsed">Flatbed, Over Dimensional, and Heavy Haul <i class="ion-android-remove"></i></a>
+                                <div id="equip2" class="collapse" data-parent="#equip-list">
+                                    <p>
+                                        With our expertise and exceptional service, we are equipped to handle your most complex shipments, ensuring they arrive on time and on budget.
+                                        For large freight that does not fit within the dimensions of standard truck trailers,
+                                        we offer a wide range of specialized services, including flatbed, over dimensional, and heavy haul.
+                                        We use only the most reliable carriers in the industry to handle these sensitive shipments.
+                                        Whether you need tarps, side kits, permits, or escorts, we can meet all your specialized needs.
+                                        <br /><br />
+                                        We offer equipment including:
+                                        <ul class="equip-sub-list">
+                                            <li>Flats 45', 48', and 53' x 102"</li>
+                                            <li>Drop decks, double drops, and low boys</li>
+                                            <li>Stretch trailers</li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a data-toggle="collapse" href="#equip3" class="collapsed">Temperature-controlled <i class="ion-android-remove"></i></a>
+                                <div id="equip3" class="collapse" data-parent="#equip-list">
+                                    <p>
+                                        At OFS, we realize the importance of reliable, cost-effective service when handling temperature-sensitive freight.
+                                        With our extensive experience and our wide network of carriers that specialize in refrigerated shipping, we provide you with service you can depend on.
+                                        <br /><br />
+                                        We also offer the following options to meet your unique temperature-controlled shipping needs:
+                                        <ul class="equip-sub-list">
+                                            <li>Air ride</li>
+                                            <li>Pallet Exchange</li>
+                                            <li>Driver assist/unload</li>
+                                            <li>48' & 53' x 102" space saver</li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a data-toggle="collapse" href="#equip4" class="collapsed">Less Than Truckload (LTL)/Partial Shipments <i class="ion-android-remove"></i></a>
+                                <div id="equip4" class="collapse" data-parent="#equip-list">
+                                    <p>
+                                        For your freight that does not require the use of an entire trailer,
+                                        OFS offers LTL and partial truckload shipping that helps you reduce costs without sacrificing speed and efficiency.
+                                        By working with our network of consolidators, our team secures the right carrier for your freight.
+                                        Whether you need to move one pallet or half of a truckload, we have a large
+                                        complement of carriers to provide the most competitive pricing and best service possible.
+                                        <br /><br />
+                                        Additional service options include:
+                                        <ul class="equip-sub-list">
+                                            <li>Lift gates</li>
+                                            <li>Driver assist/unload</li>
+                                            <li>Residential service</li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a data-toggle="collapse" href="#equip5" class="collapsed">Specialized Equipment <i class="ion-android-remove"></i></a>
+                                <div id="equip5" class="collapse" data-parent="#equip-list">
+                                    <p>
+                                        If you have a need for a specialized trailer or piece of equipment, we have expertise to help.
+                                        <br /><br />
+                                        We offer a wide range of solutions, including:
+                                        <ul class="equip-sub-list">
+                                            <li>Hot shot</li>
+                                            <li>Car haulers</li>
+                                            <li>Tankers</li>
+                                            <li>Belly dump/end dump</li>
+                                            <li>Boat haulers</li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a data-toggle="collapse" href="#equip6" class="collapsed">Intermodal Rail <i class="ion-android-remove"></i></a>
+                                <div id="equip6" class="collapse" data-parent="#equip-list">
+                                    <p>
+                                        For long-distance shipments that have a flexible transit schedule, OFS offers intermodal rail services.
+                                        Easily ship anywhere in the United States, Canada, and Mexico. OFS always has a train for your shipments;
+                                        our North American network includes all U.S. Class 1 railroads,
+                                        plus access to more than 100,000 dry-van and temperature-controlled intermodal containers.
+                                        <br /><br />
+                                        Intermodal trains can move one ton of freight 500 miles on a single gallon of gas—using less fuel and emitting less CO2 than trucks.
+                                        Talk with OFS, a certified EPA SmartWay partner, about over-the-road shipping alternatives that help protect the environment and simplify transportation.
+                                        <br /><br />
+                                        This cost-effective shipping method is available for:
+                                        <ul class="equip-sub-list">
+                                            <li>40', 45', or 48' containers</li>
+                                            <li>Door-to-door service</li>
+                                            <li>48' or 53' piggyback trailers</li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <a data-toggle="collapse" href="#equip7" class="collapsed">International Air and Ocean <i class="ion-android-remove"></i></a>
+                                <div id="equip7" class="collapse" data-parent="#equip-list">
+                                    <p>
+                                        OFS offers international shipping options to move your freight anywhere across the globe.
+                                        <br /><br />
+                                        Our international services include:
+                                        <ul class="equip-sub-list">
+                                            <li>Air</li>
+                                            <li>Barge</li>
+                                            <li>Container Freight</li>
+                                        </ul>
+                                    </p>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="carrier">
+            <div class="container">
+                <div class="row feature-item mt-5 pt-5">
+                    <div class="col-lg-4 wow fadeInUp">
+                        <img src="/Content/images/carrierimage.jpg" class="img-fluid img-thumbnail" alt="">
+                    </div>
+                    <div class="col-lg-8 wow fadeInUp pt-5 pt-lg-0">
+                        <h4>
+                            Why Haul for OFS?
+                        </h4>
+                        <p>
+                            OFS is a trusted name in the freight industry. Founded in 1997, OFS is backed by Echo Global Logistics, a 2-billion-dollar Fortune 1000 publicly traded company.
+                            In the over 20 years we’ve been in business, we’ve moved <a href="https://www.onlinefreight.com/offramp/Public/OpenLoads/Index"><mark>hundreds of thousands of loads</mark></a>,
+                            so we understand the importance of forging strong relationships with solid and reliable carriers.
+                            We act as true partners with our carriers, treating them with fairness and respect.
+                        </p>
+                        <p>To start growing your business with OFS, <a href="https://www.onlinefreight.com/offramp/Public/OpenLoads/Index"><mark>click here</mark></a> to view available loads or contact us at (800) 284-2603.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 wow fadeInUp">
+                        <p class="lead" style="margin-bottom:2px;">More Reasons...</p>
+                        <div class="cool-list">
+                            <div class="list-num">
+                                <h3>We offer competitive rates, quick payment options, after-hours support, and more</h3>
+                            </div>
+                            <div class="list-num">
+                                <h3>Our innovative technology tools enable you to easily find loads and check payment status and details</h3>
+                            </div>
+                            <div class="list-num">
+                                <h3>With our vast network of customers, we provide you with access to shipments that best fit your needs</h3>
+                            </div>
+                            <div class="list-num">
+                                <h3>Our many agents across the country can also secure backhaul shipments</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="agent">
+            <div class="container">
+                <div class="row feature-item mt-5 pt-5">
+                    <div class="col-lg-6 wow fadeInUp order-1 order-lg-2">
+                        <img src="/Content/images/broker2.png" class="img-fluid img-thumbnail" alt="">
+                    </div>
+
+                    <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1">
+                        <h3>Agents Wanted</h3>
+                        <p>
+                            OFS has exciting opportunities for experienced brokers and agents. As a leading third-party logistics provider, we are always interested in adding to our top-notch team.
+                            Backed by the resources and industry-leading technology of Echo Global Logistics, a 2-billion-dollar Fortune 1000 publicly traded company, OFS offers the tools to take your business to the next level.
+                        </p>
+                        <p>
+                            If you have active customers and a minimum of six months of experience as a freight broker or agent,
+                            reach out to an OFS representative to find out how to join our team.
+                        </p>
+                        <p>
+                            <a href="#">Apply online today!</a> <br /> For more information, contact an OFS representative at 1-800-284-2603 ext: 504
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 wow fadeInUp mt-2">
+                        <h3 class="popovertoggle" data-toggle="popover"
+                            title="Plan Hightlights"
+                            data-placement="right"
+                            data-content="Having set up countless customers for agents who have joined OFS, we are experts at making the transition process go smoothly. We have structured procedures and staff dedicated to working with you and your customers to take care of credit, insurance certificates, paperwork, and contracts (if required), as well as EDI (electronic data interchange). We will help you and your customers feel at ease and excited about the move to OFS.">
+                            Plan Hightlights <i class="fa fa-info-circle text-muted" style="font-size:18px;" aria-hidden="true"></i>
+                        </h3>
+
+                        <ul id="planhighlight-list" class="wow fadeInUp">
+                            <li>
+                                <a data-toggle="collapse" class="collapsed" href="#highlight1">Make More Money <i class="ion-android-remove"></i></a>
+                                <div id="highlight1" class="collapse" data-parent="#planhighlight-list">
+                                    <ul class="list-group list-group-flush list-group-small">
+                                        <li class="popovertoggle list-group-item"
+                                            data-toggle="popover" title="Top Commission Pay"
+                                            data-placement="right"
+                                            data-content="With OFS, you will receive outstanding commission pay that is on the upper end of the scale in the freight industry. We have transparent payment terms, so there are no hidden fees or charges that will significantly reduce your pay. Commissions are paid weekly, and with our exclusive TMSPro Dashboard, you are able to view and track your pay at any time.">
+                                            Top commission pay
+                                            <i class="fa fa-info-circle text-muted" style="font-size:12px; position:absolute; left:130px; top:7px;" aria-hidden="true"></i>
+                                        </li>
+                                        <li class="list-group-item">No limit on how much you can make</li>
+                                        <li class="list-group-item">Fast payment with direct deposit</li>
+                                        <li class="list-group-item">No hidden fees or charges</li>
+                                        <li class="list-group-item">No charge backs</li>
+                                        <li class="list-group-item">Paid on invoiced loads</li>
+                                    </ul>
+                                    <br />
+                                </div>
+                            </li>
+
+                            <li>
+                                <a data-toggle="collapse" href="#highlight2" class="collapsed">Have More Freedom <i class="ion-android-remove"></i></a>
+                                <div id="highlight2" class="collapse" data-parent="#planhighlight-list">
+                                    <ul class="list-group list-group-flush list-group-small">
+                                        <li class="list-group-item">Work from home or run your own office</li>
+                                        <li class="list-group-item">Take time off - our friendly, talented support staff is here to back you up</li>
+                                        <li class="popovertoggle list-group-item"
+                                            data-toggle="popover" title="No contracts locking you to length of service"
+                                            data-placement="right"
+                                            data-content="Unlike some companies that require agents to sign restrictive contracts, OFS offers agents fair contracts that do not limit their business now or in the future. Because we’re confident that you’ll be pleased with what OFS offers, our contracts do not contain a non-compete or exclusivity agreement.">
+                                            No contracts locking you to length of service
+                                            <i class="fa fa-info-circle text-muted" style="font-size:12px; position:absolute; left:260px; top:7px;" aria-hidden="true"></i>
+                                        </li>
+                                        <li class="list-group-item">No non-compete clause - your customers are yours</li>
+                                    </ul>
+                                    <br />
+                                </div>
+                            </li>
+
+                            <li>
+                                <a data-toggle="collapse" href="#highlight3" class="collapsed">Move More Freight <i class="ion-android-remove"></i></a>
+                                <div id="highlight3" class="collapse" data-parent="#planhighlight-list">
+                                    <ul class="list-group list-group-flush list-group-small">
+                                        <li class="list-group-item">Powerful, easy-to-use, proprietary software accessible anywhere</li>
+                                        <li class="list-group-item">Fast customer credit approval (no applications for your customers to fill out)</li>
+                                        <li class="list-group-item">One-click posting to multiple load board sites, including DAT, Truckstop, and PostEverywhere</li>
+                                        <li class="list-group-item">Real-time notifications when trucks become available</li>
+                                        <li class="list-group-item">Carriers receive payments quickly</li>
+                                        <li class="list-group-item">EDI offered to customers and carriers</li>
+                                        <li class="list-group-item">Leverage our great reputation to expand your network of customers and carriers</li>
+                                    </ul>
+                                    <br />
+                                </div>
+                            </li>
+
+                            <li>
+                                <a data-toggle="collapse" href="#highlight4" class="collapsed">Build Your Own Business with Our Support <i class="ion-android-remove"></i></a>
+                                <div id="highlight4" class="collapse" data-parent="#planhighlight-list">
+                                    <ul class="list-group list-group-flush list-group-small">
+                                        <li class="list-group-item">Our tools and state-of-the-art software make it easy for you to manage your own employees or agents</li>
+                                        <li class="list-group-item">We handle the headaches of billing, collections, and paying carriers so you can concentrate on growing your business</li>
+                                    </ul>
+                                    <br />
+                                </div>
+                            </li>
+
+                            <li>
+                                <a data-toggle="collapse" href="#highlight5" class="collapsed">Support Staff <i class="ion-android-remove"></i></a>
+                                <div id="highlight5" class="collapse" data-parent="#planhighlight-list">
+                                    <p class="my-2 lead">Here When You Need Us</p>
+                                    <p>
+                                        At OFS, we know that our achievements as a company would not be possible without our agents and brokers, so we provide you with the resources you need to succeed.
+                                        Our friendly, talented, and trained support staff are readily available to help you in any way necessary.
+                                        We are here to provide the support you need to accomplish your goals.
+                                    </p>
+                                    <ul class="list-group list-group-flush list-group-small">
+                                        <li class="list-group-item">Receptionist to answer and route phone calls to the correct people</li>
+                                        <li class="list-group-item">Staff to take care of your customers and freight while you are on vacation or out of the office</li>
+                                        <li class="list-group-item">Dedicated people to set up carriers</li>
+                                        <li class="list-group-item">Billing and collection departments</li>
+                                        <li class="list-group-item">Thorough training on our proprietary software and computer systems with support available when you need it</li>
+                                        <li class="list-group-item">Staff available to answer questions or support you in any way</li>
+                                    </ul>
+                                    <br />
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="row mt-3 wow fadeInUp">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p class="lead" style="margin-bottom:2px;">Top 10 Reasons to Hitch Your Trailer to OFS</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="cool-list">
+                                <div class="list-num-rev10">
+                                    <h3>Financial stability and continued growth—we have a great credit rating</h3>
+                                </div>
+                                <div class="list-num-rev10">
+                                    <h3>We invoice customers, handle collections, and pay all carriers </h3>
+                                </div>
+                                <div class="list-num-rev10">
+                                    <h3>Industry-leading technology, including our TMSPro software</h3>
+                                </div>
+                                <div class="list-num-rev10">
+                                    <h3>No exclusivity clause—you are free to work with other companies</h3>
+                                </div>
+                                <div class="list-num-rev10">
+                                    <h3>No non-compete contract—your customers are yours</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="cool-list">
+                                <div class="list-num-rev5">
+                                    <h3>Work from the comfort of your own home or office space</h3>
+                                </div>
+                                <div class="list-num-rev5">
+                                    <h3>We do the carrier setups, freeing you to move more of your freight</h3>
+                                </div>
+                                <div class="list-num-rev5">
+                                    <h3>Over 50,000 carriers in our database to help you move your loads</h3>
+                                </div>
+                                <div class="list-num-rev5">
+                                    <h3>Hassle free top commission pay with no extra charges or hidden fees</h3>
+                                </div>
+                                <div class="list-num-rev5">
+                                    <h3>The following unsolicited quotes from some of our agents</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!--==========================
+      Testimonials Section
+    ============================-->
+        <section id="testimonials">
+            <div class="container">
+
+                <header class="section-header">
+                    <h3>Agent Testimonials</h3>
+                </header>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+
+                        <div class="owl-carousel testimonials-carousel wow fadeInUp">
+
+                            <div class="testimonial-item">
+                                <span class="icon-outline"><i class="ion-ios-person"></i></span>
+                                <h3>Carrie</h3>
+                                <h4>Oregon</h4>
+                                <p>
+                                    Every day I am thankful for switching companies. It was the best choice I could have made. Thanks for finding me!
+                                </p>
+                            </div>
+
+                            <div class="testimonial-item">
+                                <span class="icon-outline"><i class="ion-ios-person"></i></span>
+                                <h3>Brim</h3>
+                                <h4>Texas</h4>
+                                <p>
+                                    It is a pleasure to work with such a good crew. I have found more people here who want to help when you need them, and it is refreshing.
+                                </p>
+                            </div>
+
+                            <div class="testimonial-item">
+                                <span class="icon-outline"><i class="ion-ios-person"></i></span>
+                                <h3>Felicia</h3>
+                                <h4>Alabama</h4>
+                                <p>
+                                    I have totally enjoyed my time with OFS and am looking forward to the future!
+                                </p>
+                            </div>
+
+                            <div class="testimonial-item">
+                                <span class="icon-outline"><i class="ion-ios-person"></i></span>
+                                <h3>Elliot</h3>
+                                <h4>Georgia</h4>
+                                <p>
+                                    I should have started to work with OFS 2 years ago.
+                                </p>
+                            </div>
+
+                            <div class="testimonial-item">
+                                <span class="icon-outline"><i class="ion-ios-person"></i></span>
+                                <h3>Stephan</h3>
+                                <h4>Texas</h4>
+                                <p>
+                                    You all provide an awesome opportunity for people like me to keep a healthy balance on life between family and work. I see clearly how my children have benefitted from my presence during the past year. I could go on and on...
+                                </p>
+                            </div>
+
+                            <div class="testimonial-item">
+                                <span class="icon-outline"><i class="ion-ios-person"></i></span>
+                                <h3>Amy</h3>
+                                <h4>South Carolina</h4>
+                                <p>
+                                    I’m just as happy working here as when I started 6 ½ years ago. Doesn’t seem like it has been that long!
+                                </p>
+                            </div>
+
+                            <div class="testimonial-item">
+                                <span class="icon-outline"><i class="ion-ios-person"></i></span>
+                                <h3>Larry</h3>
+                                <h4>Indiana</h4>
+                                <p>
+                                    These "little things" that you do have more of an impact than you may realize—at least by this agency and by me. With over 40 years in this business, they are noticed.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-lg-4"></div>
+                    <div class="col-lg-4">
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#applynow">
+                            Apply Now
+                        </button>
+                    </div>
+                    <div class="col-lg-4"></div>
+                </div>
+
+            </div>
+        </section><!-- #testimonials -->
+        <!--==========================
+      Frequently Asked Questions Section
+    ============================-->
+        <section id="faq">
+            <div class="container">
+                <header class="section-header">
+                    <h3>Frequently Asked Questions</h3>
+                </header>
+
+                <ul id="faq-list" class="wow fadeInUp">
+                    <li>
+                        <a data-toggle="collapse" class="collapsed" href="#faq1">When does OFS set up new carriers? <i class="ion-android-remove"></i></a>
+                        <div id="faq1" class="collapse" data-parent="#faq-list">
+                            <p>
+                                New carriers are set up once they are booked to haul a load for us. To view available loads,
+                                <a href="https://www.onlinefreight.com/offramp/Public/OpenLoads/Index" style="padding:5px; font-size:inherit; display: inline; position: relative;"><em>click here</em></a>.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a data-toggle="collapse" href="#faq2" class="collapsed">What are your payment terms? <i class="ion-android-remove"></i></a>
+                        <div id="faq2" class="collapse" data-parent="#faq-list">
+                            <p>
+                                Our standard policy is to mail payment within 30 days of receiving your invoice.
+                            </p>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a data-toggle="collapse" href="#faq3" class="collapsed">Does OFS provide comchecks or advances? <i class="ion-android-remove"></i></a>
+                        <div id="faq3" class="collapse" data-parent="#faq-list">
+                            <p>
+                                We do not provide comchecks or advances
+                            </p>
+                        </div>
+                    </li>
+
+                    
+
+                </ul>
+
+            </div>
+        </section><!-- #faq -->
+
+    </main>
+
+    <!-- Agent Apply Modal -->
+    <div class="modal fade" id="applynow" tabindex="-1" aria-labelledby="applynow-label" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <form action="/" id="applyform" method="get">    <div class="modal-header">
+        <h5 class="modal-title" id="applynow-label">Apply Now</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="container">
+            <div class="row">
+                <div class="col"></div>
+                <div class="col-lg-8">
+
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div class="apply-links">
+                                <img src="/Content/images/logo-banner.png" alt="" class="img-fluid" style="max-width:300px;" />
+                                <p class="mt-3">
+                                    2275 Waters Drive <br>
+                                    Mendota Heights, MN 55120<br>
+                                    United States <br>
+                                    <strong>Phone:</strong>&nbsp;&nbsp;<a href="tel:+18002842603">800.284.2603</a><br>
+                                    <strong>Fax:</strong>&nbsp;&nbsp;<a href="tel:+16514686869">651.468.6869</a><br>
+                                    <strong>Email:</strong>&nbsp;&nbsp;<a href="mailto:recruiting@onlinefreight.com?subject=I would like to become an agent!">recruiting@onlinefreight.com</a><br>
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col"></div>
+                
+
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" style="font-size:small;" data-dismiss="modal">Close</button>
+        
+    </div>
+</form>
+<!-- Page-Level Scripts -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#sendagentapp').on('click', function () {
+            $.ajax({
+                url: '../Home/AgentApply',
+                type: 'GET',
+                contentType: "application/json; charset=utf-8",
+                data: $('#applyform').serialize(),
+                cache: false,
+                async: true,
+                beforeSend: function () {
+                },
+                success: function (data) {
+                    if (data.QuoteSent === "yes") {
+                        swal({
+                            title: "Agent Application",
+                            text: "Thank you for applying to become an agent! A recruiter will contact you soon with more information.",
+                            type: "success",
+                            showCancelButton: false
+                        }, function () {
+                            var url = data.Location;
+                            window.location.href = url;
+                        });
+                    }
+                    else {
+                        swal({
+                            title: "Application Not Sent",
+                            text: data.MissingData,
+                            type: "warning",
+                            showCancelButton: false
+                        });
+                    }
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status);
+                    alert(thrownError);
+                },
+                complete: function (data) {
+                }
+            });
+        });
+    });
+</script>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Load Status Modal -->
+    <div class="modal fade" id="loadstatusview" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="applynow-label" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div id="loadstatuscontent" class="modal-content">
+                
+            </div>
+        </div>
+    </div>
+
+    <!--==========================
+    Footer
+  ============================-->
+<footer id="footer" class="section-bg">
+    <div class="footer-top">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-6">
+
+                    <div class="row">
+
+                        <div class="col-sm-6">
+
+                            <div class="footer-info">
+                                <h3>Contact Us</h3>
+                                <p>
+                                    For more information about our services, call, email, or fax to find out why OFS is the transportation company for you! Be sure to follow us on social media too.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-6">
+
+                            <div class="footer-links">
+                                <h5 style="margin-top:15px;">Online Freight Services</h5>
+                                <p>
+                                    2275 Waters Drive <br>
+                                    Mendota Heights, MN 55120<br>
+                                    United States <br>
+                                    <strong>Phone:</strong>&nbsp;&nbsp;<a href="tel:+18002842603">800.284.2603</a><br>
+                                    <strong>Fax:</strong>&nbsp;&nbsp;<a href="tel:+16514686869">651.468.6869</a><br>
+                                    <strong>Email:</strong>&nbsp;&nbsp;<a href="mailto:ofs@onlinefreight.com?subject=General Questions From Website">ofs@onlinefreight.com</a><br>
+                                </p>
+                            </div>
+
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/Online-Freight-Services-Inc-115683728484416" class="facebook"><i class="fab fa-facebook-square"></i></a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <div class="form">
+
+                        <h4>Send Us a Message</h4>
+                        <p>To connect with OFS, fill out the form below to send us an email or call our toll-free number for immediate assistance.</p>
+
+<form action="/Home/GeneralContact" id="gencontactform" method="post">                            <div class="form-group">
+                                <input class="form-control" data-val="true" data-val-required="Email Required" id="Email" name="Email" placeholder="Your Email" required="true" type="text" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" data-val="true" data-val-required="Contact Name Required" id="ContactName" name="ContactName" placeholder="Your Name" required="true" type="text" value="" />
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" data-val="true" data-val-required="Subject Required" id="Subject" name="Subject" placeholder="Subject" required="true" type="text" value="" />
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" cols="20" data-val="true" data-val-required="Message Required" id="Message" name="Message" rows="2">
+</textarea>
+                            </div>
+                            <div class="text-center"><button type="submit" title="Send Message">Send Message</button></div>
+</form>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+</footer><!-- #footer -->
+
+
+    <!-- Sweet alert -->
+    <script src="/Content/lib/sweetalert/sweetalert.min.js"></script>
+
+    <!-- Page-Level Scripts-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.popovertoggle').on('click', function () {
+                $(this).popover('toggle');
+            });
+
+            $('#getloadstatus').on('click', function () {
+                $.ajax({
+                    url: '/Home/GetLoadStatus',
+                    type: 'GET',
+                    contentType: "application/json; charset=utf-8",
+                    data: { loadid: $('#loadid').val() },
+                    cache: false,
+                    async: true,
+                    success: function (data) {
+                        $('#loadstatuscontent').html(data);
+                        $("#loadstatusview").modal('show');
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+                });
+            });
+
+            var emailsent = '';
+            if (emailsent === "sent") {
+                swal({
+                    title: "Contact Information Sent",
+                    text: "Thank you for contacting us! Your message has been sent.",
+                    type: "success",
+                    showCancelButton: false
+                });
+            }
+
+            var emailsent = '';
+            if (emailsent === "sent") {
+                swal({
+                    title: "Agent Application",
+                    text: "Thank you for applying to become an agent! A recruiter will contact you soon with more information.",
+                    type: "success",
+                    showCancelButton: false
+                });
+            }
+
+            var emailsent = '';
+            if (emailsent === "sent") {
+                swal({
+                    title: "Quote Request Sent",
+                    text: "Thank you for contacting us. Someone will be in touch soon with more information regarding your shipment request.",
+                    type: "success",
+                    showCancelButton: false
+                });
+            }
+            
+        });
+    </script>
+
+
+    <section>
+        <div class="copyright">
+            &copy; 2020 Online Freight Services, Inc.
+        </div>
+    </section>
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <script src="/Content/lib/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/Content/lib/easing/easing.min.js"></script>
+    <script src="/Content/lib/mobile-nav/mobile-nav.js"></script>
+    <script src="/Content/lib/wow/wow.min.js"></script>
+    <script src="/Content/lib/waypoints/waypoints.min.js"></script>
+    <script src="/Content/lib/counterup/counterup.min.js"></script>
+    <script src="/Content/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/Content/lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="/Content/lib/lightbox/js/lightbox.min.js"></script>
+
+    <script src="/Scripts/site.js" asp-append-version="true"></script>
+
+</body>
+</html>

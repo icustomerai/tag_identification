@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html  lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+  <head>
+      <meta charset="utf-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-cb5decbbcd8f0ae425b",applicationID:"671272117"};;(()=>{"use strict";var e,t,n={7442:(e,t,n)=>{n.d(t,{T:()=>r,p:()=>i});const r=/(iPad|iPhone|iPod)/g.test(navigator.userAgent),i=r&&Boolean("undefined"==typeof SharedWorker)},5763:(e,t,n)=>{n.d(t,{P_:()=>f,Mt:()=>p,C5:()=>s,DL:()=>m,OP:()=>j,lF:()=>_,Yu:()=>y,Dg:()=>g,CX:()=>c,GE:()=>b,sU:()=>E});var r=n(8632),i=n(9567);const o={beacon:r.ce.beacon,errorBeacon:r.ce.errorBeacon,licenseKey:void 0,applicationID:void 0,sa:void 0,queueTime:void 0,applicationTime:void 0,ttGuid:void 0,user:void 0,account:void 0,product:void 0,extra:void 0,jsAttributes:{},userAttributes:void 0,atts:void 0,transactionName:void 0,tNamePlain:void 0},a={};function s(e){if(!e)throw new Error("All info objects require an agent identifier!");if(!a[e])throw new Error("Info for ".concat(e," was never set"));return a[e]}function c(e,t){if(!e)throw new Error("All info objects require an agent identifier!");a[e]=(0,i.D)(t,o),(0,r.Qy)(e,a[e],"info")}var d=n(7056);const u=()=>{const e={blockSelector:"[data-nr-block]",maskInputOptions:{password:!0}};return{allow_bfcache:!0,privacy:{cookies_enabled:!0},ajax:{deny_list:void 0,enabled:!0,harvestTimeSeconds:10},distributed_tracing:{enabled:void 0,exclude_newrelic_header:void 0,cors_use_newrelic_header:void 0,cors_use_tracecontext_headers:void 0,allowed_origins:void 0},session:{domain:void 0,expiresMs:d.oD,inactiveMs:d.Hb},ssl:void 0,obfuscate:void 0,jserrors:{enabled:!0,harvestTimeSeconds:10},metrics:{enabled:!0},page_action:{enabled:!0,harvestTimeSeconds:30},page_view_event:{enabled:!0},page_view_timing:{enabled:!0,harvestTimeSeconds:30,long_task:!1},session_trace:{enabled:!0,harvestTimeSeconds:10},session_replay:{enabled:!1,harvestTimeSeconds:60,sampleRate:.1,errorSampleRate:.1,maskTextSelector:"*",maskAllInputs:!0,get blockClass(){return"nr-block"},get ignoreClass(){return"nr-ignore"},get maskTextClass(){return"nr-mask"},get blockSelector(){return e.blockSelector},set blockSelector(t){e.blockSelector+=",".concat(t)},get maskInputOptions(){return e.maskInputOptions},set maskInputOptions(t){e.maskInputOptions={...t,password:!0}}},spa:{enabled:!0,harvestTimeSeconds:10}}},l={};function f(e){if(!e)throw new Error("All configuration objects require an agent identifier!");if(!l[e])throw new Error("Configuration for ".concat(e," was never set"));return l[e]}function g(e,t){if(!e)throw new Error("All configuration objects require an agent identifier!");l[e]=(0,i.D)(t,u()),(0,r.Qy)(e,l[e],"config")}function p(e,t){if(!e)throw new Error("All configuration objects require an agent identifier!");var n=f(e);if(n){for(var r=t.split("."),i=0;i<r.length-1;i++)if("object"!=typeof(n=n[r[i]]))return;n=n[r[r.length-1]]}return n}const h={accountID:void 0,trustKey:void 0,agentID:void 0,licenseKey:void 0,applicationID:void 0,xpid:void 0},v={};function m(e){if(!e)throw new Error("All loader-config objects require an agent identifier!");if(!v[e])throw new Error("LoaderConfig for ".concat(e," was never set"));return v[e]}function b(e,t){if(!e)throw new Error("All loader-config objects require an agent identifier!");v[e]=(0,i.D)(t,h),(0,r.Qy)(e,v[e],"loader_config")}const y=(0,r.mF)().o;var w=n(1720),A=n(6818);const x={buildEnv:A.Re,bytesSent:{},queryBytesSent:{},customTransaction:void 0,disabled:!1,distMethod:A.gF,isolatedBacklog:!1,loaderType:void 0,maxBytes:3e4,offset:Math.floor(w._A?.performance?.timeOrigin||w._A?.performance?.timing?.navigationStart||Date.now()),onerror:void 0,origin:""+w._A.location,ptid:void 0,releaseIds:{},session:void 0,xhrWrappable:"function"==typeof w._A.XMLHttpRequest?.prototype?.addEventListener,version:A.q4},D={};function j(e){if(!e)throw new Error("All runtime objects require an agent identifier!");if(!D[e])throw new Error("Runtime for ".concat(e," was never set"));return D[e]}function E(e,t){if(!e)throw new Error("All runtime objects require an agent identifier!");D[e]=(0,i.D)(t,x),(0,r.Qy)(e,D[e],"runtime")}function _(e){return function(e){try{const t=s(e);return!!t.licenseKey&&!!t.errorBeacon&&!!t.applicationID}catch(e){return!1}}(e)}},9567:(e,t,n)=>{n.d(t,{D:()=>i});var r=n(50);function i(e,t){try{if(!e||"object"!=typeof e)return(0,r.Z)("Setting a Configurable requires an object as input");if(!t||"object"!=typeof t)return(0,r.Z)("Setting a Configurable requires a model to set its initial properties");const n=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),o=0===Object.keys(n).length?e:n;for(let a in o)if(void 0!==e[a])try{"object"==typeof e[a]&&"object"==typeof t[a]?n[a]=i(e[a],t[a]):n[a]=e[a]}catch(e){(0,r.Z)("An error occurred while setting a property of a Configurable",e)}return n}catch(e){(0,r.Z)("An error occured while setting a Configurable",e)}}},6818:(e,t,n)=>{n.d(t,{Re:()=>i,gF:()=>o,q4:()=>r});const r="1.235.0",i="PROD",o="CDN"},1117:(e,t,n)=>{n.d(t,{w:()=>o});var r=n(50);const i={agentIdentifier:"",ee:void 0};class o{constructor(e){try{if("object"!=typeof e)return(0,r.Z)("shared context requires an object as input");this.sharedContext={},Object.assign(this.sharedContext,i),Object.entries(e).forEach((e=>{let[t,n]=e;Object.keys(i).includes(t)&&(this.sharedContext[t]=n)}))}catch(e){(0,r.Z)("An error occured while setting SharedContext",e)}}}},8e3:(e,t,n)=>{n.d(t,{L:()=>u,R:()=>c});var r=n(2177),i=n(1284),o=n(4322),a=n(3325);const s={};function c(e,t){const n={staged:!1,priority:a.p[t]||0};d(e),s[e].get(t)||s[e].set(t,n)}function d(e){e&&(s[e]||(s[e]=new Map))}function u(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"feature";if(d(e),!e||!s[e].get(t))return a(t);s[e].get(t).staged=!0;const n=[...s[e]];function a(t){const n=e?r.ee.get(e):r.ee,a=o.X.handlers;if(n.backlog&&a){var s=n.backlog[t],c=a[t];if(c){for(var d=0;s&&d<s.length;++d)l(s[d],c);(0,i.D)(c,(function(e,t){(0,i.D)(t,(function(t,n){n[0].on(e,n[1])}))}))}delete a[t],n.backlog[t]=null,n.emit("drain-"+t,[])}}n.every((e=>{let[t,n]=e;return n.staged}))&&(n.sort(((e,t)=>e[1].priority-t[1].priority)),n.forEach((e=>{let[t]=e;a(t)})))}function l(e,t){var n=e[1];(0,i.D)(t[n],(function(t,n){var r=e[0];if(n[0]===r){var i=n[1],o=e[3],a=e[2];i.apply(o,a)}}))}},2177:(e,t,n)=>{n.d(t,{ee:()=>d});var r=n(8632),i=n(2210),o=n(1284),a=n(5763),s="nr@context";let c=(0,r.fP)();var d;function u(){}function l(){return new u}function f(){d.aborted=!0,d.backlog={}}c.ee?d=c.ee:(d=function e(t,n){var r={},c={},g={},p=!1;try{p=16===n.length&&(0,a.OP)(n).isolatedBacklog}catch(e){}var h={on:b,addEventListener:b,removeEventListener:y,emit:m,get:A,listeners:w,context:v,buffer:x,abort:f,aborted:!1,isBuffering:D,debugId:n,backlog:p?{}:t&&"object"==typeof t.backlog?t.backlog:{}};return h;function v(e){return e&&e instanceof u?e:e?(0,i.X)(e,s,l):l()}function m(e,n,r,i,o){if(!1!==o&&(o=!0),!d.aborted||i){t&&o&&t.emit(e,n,r);for(var a=v(r),s=w(e),u=s.length,l=0;l<u;l++)s[l].apply(a,n);var f=j()[c[e]];return f&&f.push([h,e,n,a]),a}}function b(e,t){r[e]=w(e).concat(t)}function y(e,t){var n=r[e];if(n)for(var i=0;i<n.length;i++)n[i]===t&&n.splice(i,1)}function w(e){return r[e]||[]}function A(t){return g[t]=g[t]||e(h,t)}function x(e,t){var n=j();h.aborted||(0,o.D)(e,(function(e,r){t=t||"feature",c[r]=t,t in n||(n[t]=[])}))}function D(e){return!!j()[c[e]]}function j(){return h.backlog}}(void 0,"globalEE"),c.ee=d)},5546:(e,t,n)=>{n.d(t,{E:()=>r,p:()=>i});var r=n(2177).ee.get("handle");function i(e,t,n,i,o){o?(o.buffer([e],i),o.emit(e,t,n)):(r.buffer([e],i),r.emit(e,t,n))}},4322:(e,t,n)=>{n.d(t,{X:()=>o});var r=n(5546);o.on=a;var i=o.handlers={};function o(e,t,n,o){a(o||r.E,i,e,t,n)}function a(e,t,n,i,o){o||(o="feature"),e||(e=r.E);var a=t[o]=t[o]||{};(a[n]=a[n]||[]).push([e,i])}},3239:(e,t,n)=>{n.d(t,{bP:()=>s,iz:()=>c,m$:()=>a});var r=n(1720);let i=!1,o=!1;try{const e={get passive(){return i=!0,!1},get signal(){return o=!0,!1}};r._A.addEventListener("test",null,e),r._A.removeEventListener("test",null,e)}catch(e){}function a(e,t){return i||o?{capture:!!e,passive:i,signal:t}:!!e}function s(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=arguments.length>3?arguments[3]:void 0;window.addEventListener(e,t,a(n,r))}function c(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2],r=arguments.length>3?arguments[3]:void 0;document.addEventListener(e,t,a(n,r))}},4402:(e,t,n)=>{n.d(t,{Rl:()=>a,ky:()=>s});var r=n(1720);const i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx";function o(e,t){return e?15&e[t]:16*Math.random()|0}function a(){const e=r._A?.crypto||r._A?.msCrypto;let t,n=0;return e&&e.getRandomValues&&(t=e.getRandomValues(new Uint8Array(31))),i.split("").map((e=>"x"===e?o(t,++n).toString(16):"y"===e?(3&o()|8).toString(16):e)).join("")}function s(e){const t=r._A?.crypto||r._A?.msCrypto;let n,i=0;t&&t.getRandomValues&&(n=t.getRandomValues(new Uint8Array(31)));const a=[];for(var s=0;s<e;s++)a.push(o(n,++i).toString(16));return a.join("")}},7056:(e,t,n)=>{n.d(t,{Bq:()=>r,Hb:()=>o,oD:()=>i});const r="NRBA",i=144e5,o=18e5},7894:(e,t,n)=>{function r(){return Math.round(performance.now())}n.d(t,{z:()=>r})},50:(e,t,n)=>{function r(e,t){"function"==typeof console.warn&&(console.warn("New Relic: ".concat(e)),t&&console.warn(t))}n.d(t,{Z:()=>r})},2587:(e,t,n)=>{n.d(t,{N:()=>c,T:()=>d});var r=n(2177),i=n(5546),o=n(8e3),a=n(3325);const s={stn:[a.D.sessionTrace],err:[a.D.jserrors,a.D.metrics],ins:[a.D.pageAction],spa:[a.D.spa],sr:[a.D.sessionReplay,a.D.sessionTrace]};function c(e,t){const n=r.ee.get(t);e&&"object"==typeof e&&(Object.entries(e).forEach((e=>{let[t,r]=e;void 0===d[t]&&(s[t]?s[t].forEach((e=>{r?(0,i.p)("feat-"+t,[],void 0,e,n):(0,i.p)("block-"+t,[],void 0,e,n),(0,i.p)("rumresp-"+t,[Boolean(r)],void 0,e,n)})):r&&(0,i.p)("feat-"+t,[],void 0,void 0,n),d[t]=Boolean(r))})),Object.keys(s).forEach((e=>{void 0===d[e]&&(s[e]?.forEach((t=>(0,i.p)("rumresp-"+e,[!1],void 0,t,n))),d[e]=!1)})),(0,o.L)(t,a.D.pageViewEvent))}const d={}},2210:(e,t,n)=>{n.d(t,{X:()=>i});var r=Object.prototype.hasOwnProperty;function i(e,t,n){if(r.call(e,t))return e[t];var i=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:i,writable:!0,enumerable:!1}),i}catch(e){}return e[t]=i,i}},1720:(e,t,n)=>{n.d(t,{FN:()=>a,_A:()=>o,il:()=>r,v6:()=>i});const r=Boolean("undefined"!=typeof window&&window.document),i=Boolean("undefined"!=typeof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator);let o=(()=>{if(r)return window;if(i){if("undefined"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope)return globalThis;if(self instanceof WorkerGlobalScope)return self}throw new Error('New Relic browser agent shutting down due to error: Unable to locate global scope. This is possibly due to code redefining browser global variables like "self" and "window".')})();const a=""+o.location},1284:(e,t,n)=>{n.d(t,{D:()=>r});const r=(e,t)=>Object.entries(e||{}).map((e=>{let[n,r]=e;return t(n,r)}))},4351:(e,t,n)=>{n.d(t,{P:()=>o});var r=n(2177);const i=()=>{const e=new WeakSet;return(t,n)=>{if("object"==typeof n&&null!==n){if(e.has(n))return;e.add(n)}return n}};function o(e){try{return JSON.stringify(e,i())}catch(e){try{r.ee.emit("internal-error",[e])}catch(e){}}}},3960:(e,t,n)=>{n.d(t,{K:()=>a,b:()=>o});var r=n(3239);function i(){return"undefined"==typeof document||"complete"===document.readyState}function o(e,t){if(i())return e();(0,r.bP)("load",e,t)}function a(e){if(i())return e();(0,r.iz)("DOMContentLoaded",e)}},8632:(e,t,n)=>{n.d(t,{EZ:()=>d,Qy:()=>c,ce:()=>o,fP:()=>a,gG:()=>u,mF:()=>s});var r=n(7894),i=n(1720);const o={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net"};function a(){return i._A.NREUM||(i._A.NREUM={}),void 0===i._A.newrelic&&(i._A.newrelic=i._A.NREUM),i._A.NREUM}function s(){let e=a();return e.o||(e.o={ST:i._A.setTimeout,SI:i._A.setImmediate,CT:i._A.clearTimeout,XHR:i._A.XMLHttpRequest,REQ:i._A.Request,EV:i._A.Event,PR:i._A.Promise,MO:i._A.MutationObserver,FETCH:i._A.fetch}),e}function c(e,t,n){let i=a();const o=i.initializedAgents||{},s=o[e]||{};return Object.keys(s).length||(s.initializedAt={ms:(0,r.z)(),date:new Date}),i.initializedAgents={...o,[e]:{...s,[n]:t}},i}function d(e,t){a()[e]=t}function u(){return function(){let e=a();const t=e.info||{};e.info={beacon:o.beacon,errorBeacon:o.errorBeacon,...t}}(),function(){let e=a();const t=e.init||{};e.init={...t}}(),s(),function(){let e=a();const t=e.loader_config||{};e.loader_config={...t}}(),a()}},7956:(e,t,n)=>{n.d(t,{N:()=>i});var r=n(3239);function i(e){let t=arguments.length>1&&void 0!==arguments[1]&&arguments[1],n=arguments.length>2?arguments[2]:void 0,i=arguments.length>3?arguments[3]:void 0;return void(0,r.iz)("visibilitychange",(function(){if(t)return void("hidden"==document.visibilityState&&e());e(document.visibilityState)}),n,i)}},3081:(e,t,n)=>{n.d(t,{gF:()=>o,mY:()=>i,t9:()=>r,vz:()=>s,xS:()=>a});const r=n(3325).D.metrics,i="sm",o="cm",a="storeSupportabilityMetrics",s="storeEventMetrics"},7633:(e,t,n)=>{n.d(t,{Dz:()=>i,OJ:()=>a,qw:()=>o,t9:()=>r});const r=n(3325).D.pageViewEvent,i="firstbyte",o="domcontent",a="windowload"},9251:(e,t,n)=>{n.d(t,{t:()=>r});const r=n(3325).D.pageViewTiming},5938:(e,t,n)=>{n.d(t,{W:()=>o});var r=n(5763),i=n(2177);class o{constructor(e,t,n){this.agentIdentifier=e,this.aggregator=t,this.ee=i.ee.get(e,(0,r.OP)(this.agentIdentifier).isolatedBacklog),this.featureName=n,this.blocked=!1}}},9144:(e,t,n)=>{n.d(t,{j:()=>v});var r=n(3325),i=n(5763),o=n(5546),a=n(2177),s=n(7894),c=n(8e3),d=n(3960),u=n(1720),l=n(50),f=n(3081),g=n(8632);function p(){const e=(0,g.gG)();["setErrorHandler","finished","addToTrace","inlineHit","addRelease","addPageAction","setCurrentRouteName","setPageViewName","setCustomAttribute","interaction","noticeError","setUserId"].forEach((t=>{e[t]=function(){for(var n=arguments.length,r=new Array(n),i=0;i<n;i++)r[i]=arguments[i];return function(t){for(var n=arguments.length,r=new Array(n>1?n-1:0),i=1;i<n;i++)r[i-1]=arguments[i];let o=[];return Object.values(e.initializedAgents).forEach((e=>{e.exposed&&e.api[t]&&o.push(e.api[t](...r))})),o.length>1?o:o[0]}(t,...r)}}))}var h=n(2587);function v(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{},v=arguments.length>2?arguments[2]:void 0,m=arguments.length>3?arguments[3]:void 0,{init:b,info:y,loader_config:w,runtime:A={loaderType:v},exposed:x=!0}=t;const D=(0,g.gG)();y||(b=D.init,y=D.info,w=D.loader_config),(0,i.Dg)(e,b||{}),(0,i.GE)(e,w||{}),(0,i.sU)(e,A),y.jsAttributes??={},u.v6&&(y.jsAttributes.isWorker=!0),(0,i.CX)(e,y),p();const j=function(e,t){t||(0,c.R)(e,"api");const g={};var p=a.ee.get(e),h=p.get("tracer"),v="api-",m=v+"ixn-";function b(t,n,r,o){const a=(0,i.C5)(e);return null===n?delete a.jsAttributes[t]:(0,i.CX)(e,{...a,jsAttributes:{...a.jsAttributes,[t]:n}}),A(v,r,!0,o||null===n?"session":void 0)(t,n)}function y(){}["setErrorHandler","finished","addToTrace","inlineHit","addRelease"].forEach((e=>g[e]=A(v,e,!0,"api"))),g.addPageAction=A(v,"addPageAction",!0,r.D.pageAction),g.setCurrentRouteName=A(v,"routeName",!0,r.D.spa),g.setPageViewName=function(t,n){if("string"==typeof t)return"/"!==t.charAt(0)&&(t="/"+t),(0,i.OP)(e).customTransaction=(n||"http://custom.transaction")+t,A(v,"setPageViewName",!0)()},g.setCustomAttribute=function(e,t){let n=arguments.length>2&&void 0!==arguments[2]&&arguments[2];if("string"==typeof e){if(["string","number"].includes(typeof t)||null===t)return b(e,t,"setCustomAttribute",n);(0,l.Z)("Failed to execute setCustomAttribute.\nNon-null value must be a string or number type, but a type of <".concat(typeof t,"> was provided."))}else(0,l.Z)("Failed to execute setCustomAttribute.\nName must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.setUserId=function(e){if("string"==typeof e||null===e)return b("enduser.id",e,"setUserId",!0);(0,l.Z)("Failed to execute setUserId.\nNon-null value must be a string type, but a type of <".concat(typeof e,"> was provided."))},g.interaction=function(){return(new y).get()};var w=y.prototype={createTracer:function(e,t){var n={},i=this,a="function"==typeof t;return(0,o.p)(m+"tracer",[(0,s.z)(),e,n],i,r.D.spa,p),function(){if(h.emit((a?"":"no-")+"fn-start",[(0,s.z)(),i,a],n),a)try{return t.apply(this,arguments)}catch(e){throw h.emit("fn-err",[arguments,this,"string"==typeof e?new Error(e):e],n),e}finally{h.emit("fn-end",[(0,s.z)()],n)}}}};function A(e,t,n,i){return function(){return(0,o.p)(f.xS,["API/"+t+"/called"],void 0,r.D.metrics,p),i&&(0,o.p)(e+t,[(0,s.z)(),...arguments],n?null:this,i,p),n?void 0:this}}function x(){n.e(439).then(n.bind(n,7438)).then((t=>{let{setAPI:n}=t;n(e),(0,c.L)(e,"api")})).catch((()=>(0,l.Z)("Downloading runtime APIs failed...")))}return["actionText","setName","setAttribute","save","ignore","onEnd","getContext","end","get"].forEach((e=>{w[e]=A(m,e,void 0,r.D.spa)})),g.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),(0,o.p)(f.xS,["API/noticeError/called"],void 0,r.D.metrics,p),(0,o.p)("err",[e,(0,s.z)(),!1,t],void 0,r.D.jserrors,p)},u.il?(0,d.b)((()=>x()),!0):x(),g}(e,m);return(0,g.Qy)(e,j,"api"),(0,g.Qy)(e,x,"exposed"),(0,g.EZ)("activatedFeatures",h.T),j}},3325:(e,t,n)=>{n.d(t,{D:()=>r,p:()=>i});const r={ajax:"ajax",jserrors:"jserrors",metrics:"metrics",pageAction:"page_action",pageViewEvent:"page_view_event",pageViewTiming:"page_view_timing",sessionReplay:"session_replay",sessionTrace:"session_trace",spa:"spa"},i={[r.pageViewEvent]:1,[r.pageViewTiming]:2,[r.metrics]:3,[r.jserrors]:4,[r.ajax]:5,[r.sessionTrace]:6,[r.pageAction]:7,[r.spa]:8,[r.sessionReplay]:9}}},r={};function i(e){var t=r[e];if(void 0!==t)return t.exports;var o=r[e]={exports:{}};return n[e](o,o.exports,i),o.exports}i.m=n,i.d=(e,t)=>{for(var n in t)i.o(t,n)&&!i.o(e,n)&&Object.defineProperty(e,n,{enumerable:!0,get:t[n]})},i.f={},i.e=e=>Promise.all(Object.keys(i.f).reduce(((t,n)=>(i.f[n](e,t),t)),[])),i.u=e=>(({78:"page_action-aggregate",147:"metrics-aggregate",193:"session_trace-aggregate",242:"session-manager",317:"jserrors-aggregate",348:"page_view_timing-aggregate",412:"lazy-feature-loader",439:"async-api",538:"recorder",590:"session_replay-aggregate",675:"compressor",786:"page_view_event-aggregate",873:"spa-aggregate",898:"ajax-aggregate"}[e]||e)+"."+{78:"af5d1c80",147:"7ece083a",148:"03807465",193:"27e34592",242:"2a64278a",317:"dcb6ac07",348:"1c78d061",412:"0ba331d7",439:"d1647fbb",538:"1b18459f",590:"a5e677ba",675:"ae9f91a8",786:"a7935af6",860:"e997904f",873:"5c4318f2",898:"09a31ca7"}[e]+"-1.235.0.min.js"),i.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),e={},t="NRBA:",i.l=(n,r,o,a)=>{if(e[n])e[n].push(r);else{var s,c;if(void 0!==o)for(var d=document.getElementsByTagName("script"),u=0;u<d.length;u++){var l=d[u];if(l.getAttribute("src")==n||l.getAttribute("data-webpack")==t+o){s=l;break}}s||(c=!0,(s=document.createElement("script")).charset="utf-8",s.timeout=120,i.nc&&s.setAttribute("nonce",i.nc),s.setAttribute("data-webpack",t+o),s.src=n),e[n]=[r];var f=(t,r)=>{s.onerror=s.onload=null,clearTimeout(g);var i=e[n];if(delete e[n],s.parentNode&&s.parentNode.removeChild(s),i&&i.forEach((e=>e(r))),t)return t(r)},g=setTimeout(f.bind(null,void 0,{type:"timeout",target:s}),12e4);s.onerror=f.bind(null,s.onerror),s.onload=f.bind(null,s.onload),c&&document.head.appendChild(s)}},i.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.j=680,i.p="https://js-agent.newrelic.com/",(()=>{var e={680:0,617:0};i.f.j=(t,n)=>{var r=i.o(e,t)?e[t]:void 0;if(0!==r)if(r)n.push(r[2]);else{var o=new Promise(((n,i)=>r=e[t]=[n,i]));n.push(r[2]=o);var a=i.p+i.u(t),s=new Error;i.l(a,(n=>{if(i.o(e,t)&&(0!==(r=e[t])&&(e[t]=void 0),r)){var o=n&&("load"===n.type?"missing":n.type),a=n&&n.target&&n.target.src;s.message="Loading chunk "+t+" failed.\n("+o+": "+a+")",s.name="ChunkLoadError",s.type=o,s.request=a,r[1](s)}}),"chunk-"+t,t)}};var t=(t,n)=>{var r,o,[a,s,c]=n,d=0;if(a.some((t=>0!==e[t]))){for(r in s)i.o(s,r)&&(i.m[r]=s[r]);if(c)c(i)}for(t&&t(n);d<a.length;d++)o=a[d],i.o(e,o)&&e[o]&&e[o][0](),e[o]=0},n=window.webpackChunkNRBA=window.webpackChunkNRBA||[];n.forEach(t.bind(null,0)),n.push=t.bind(null,n.push.bind(n))})();var o={};(()=>{i.r(o);var e=i(3325),t=i(5763);const n=Object.values(e.D);function r(e){const r={};return n.forEach((n=>{r[n]=function(e,n){return!1!==(0,t.Mt)(n,"".concat(e,".enabled"))}(n,e)})),r}var a=i(9144);var s=i(5546),c=i(7442),d=i(8e3),u=i(5938),l=i(3960),f=i(1720),g=i(50);class p extends u.W{constructor(e,t,n){let r=!(arguments.length>3&&void 0!==arguments[3])||arguments[3];super(e,t,n),this.auto=r,this.abortHandler,this.featAggregate,this.onAggregateImported,r&&(0,d.R)(e,n)}importAggregator(){let e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};if(this.featAggregate||!this.auto)return;const n=f.il&&!0===(0,t.Mt)(this.agentIdentifier,"privacy.cookies_enabled");let r,o;this.onAggregateImported=new Promise(((e,t)=>{r=e,o=t}));const a=async()=>{let t;try{if(n){const{setupAgentSession:e}=await Promise.all([i.e(860),i.e(242)]).then(i.bind(i,3228));t=e(this.agentIdentifier)}}catch(e){(0,g.Z)("A problem occurred when starting up session manager. This page will not start or extend any session.",e)}try{if(!this.shouldImportAgg(this.featureName,t))return void(0,d.L)(this.agentIdentifier,this.featureName);const{lazyFeatureLoader:n}=await i.e(412).then(i.bind(i,8582)),{Aggregate:o}=await n(this.featureName,"aggregate");this.featAggregate=new o(this.agentIdentifier,this.aggregator,e),r()}catch(e){(0,g.Z)("Downloading and initializing ".concat(this.featureName," failed..."),e),this.abortHandler?.(),o()}};f.il?(0,l.b)((()=>a()),!0):a()}shouldImportAgg(n,r){return n!==e.D.sessionReplay||!1!==(0,t.Mt)(this.agentIdentifier,"session_trace.enabled")&&(!!r?.isNew||!!r?.state.sessionReplay)}}var h=i(7633),v=i(7894);class m extends p{static featureName=h.t9;constructor(n,r){let i=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];if(super(n,r,h.t9,i),("undefined"==typeof PerformanceNavigationTiming||c.T)&&"undefined"!=typeof PerformanceTiming){const r=(0,t.OP)(n);r[h.Dz]=Math.max(Date.now()-r.offset,0),(0,l.K)((()=>r[h.qw]=Math.max((0,v.z)()-r[h.Dz],0))),(0,l.b)((()=>{const t=(0,v.z)();r[h.OJ]=Math.max(t-r[h.Dz],0),(0,s.p)("timing",["load",t],void 0,e.D.pageViewTiming,this.ee)}))}this.importAggregator()}}var b=i(1117),y=i(1284);class w extends b.w{constructor(e){super(e),this.aggregatedData={}}store(e,t,n,r,i){var o=this.getBucket(e,t,n,i);return o.metrics=function(e,t){t||(t={count:0});return t.count+=1,(0,y.D)(e,(function(e,n){t[e]=A(n,t[e])})),t}(r,o.metrics),o}merge(e,t,n,r,i){var o=this.getBucket(e,t,r,i);if(o.metrics){var a=o.metrics;a.count+=n.count,(0,y.D)(n,(function(e,t){if("count"!==e){var r=a[e],i=n[e];i&&!i.c?a[e]=A(i.t,r):a[e]=function(e,t){if(!t)return e;t.c||(t=x(t.t));return t.min=Math.min(e.min,t.min),t.max=Math.max(e.max,t.max),t.t+=e.t,t.sos+=e.sos,t.c+=e.c,t}(i,a[e])}}))}else o.metrics=n}storeMetric(e,t,n,r){var i=this.getBucket(e,t,n);return i.stats=A(r,i.stats),i}getBucket(e,t,n,r){this.aggregatedData[e]||(this.aggregatedData[e]={});var i=this.aggregatedData[e][t];return i||(i=this.aggregatedData[e][t]={params:n||{}},r&&(i.custom=r)),i}get(e,t){return t?this.aggregatedData[e]&&this.aggregatedData[e][t]:this.aggregatedData[e]}take(e){for(var t={},n="",r=!1,i=0;i<e.length;i++)t[n=e[i]]=D(this.aggregatedData[n]),t[n].length&&(r=!0),delete this.aggregatedData[n];return r?t:null}}function A(e,t){return null==e?function(e){e?e.c++:e={c:1};return e}(t):t?(t.c||(t=x(t.t)),t.c+=1,t.t+=e,t.sos+=e*e,e>t.max&&(t.max=e),e<t.min&&(t.min=e),t):{t:e}}function x(e){return{t:e,min:e,max:e,sos:e*e,c:1}}function D(e){return"object"!=typeof e?[]:(0,y.D)(e,j)}function j(e,t){return t}var E=i(8632),_=i(4402),k=i(4351);var T=i(7956),I=i(3239),N=i(9251);class P extends p{static featureName=N.t;constructor(e,n){let r=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,n,N.t,r),f.il&&((0,t.OP)(e).initHidden=Boolean("hidden"===document.visibilityState),(0,T.N)((()=>(0,s.p)("docHidden",[(0,v.z)()],void 0,N.t,this.ee)),!0),(0,I.bP)("pagehide",(()=>(0,s.p)("winPagehide",[(0,v.z)()],void 0,N.t,this.ee))),this.importAggregator())}}var O=i(3081);class S extends p{static featureName=O.t9;constructor(e,t){let n=!(arguments.length>2&&void 0!==arguments[2])||arguments[2];super(e,t,O.t9,n),this.importAggregator()}}new class{constructor(e){let t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:(0,_.ky)(16);this.agentIdentifier=t,this.sharedAggregator=new w({agentIdentifier:this.agentIdentifier}),this.features={},this.desiredFeatures=new Set(e.features||[]),this.desiredFeatures.add(m),Object.assign(this,(0,a.j)(this.agentIdentifier,e,e.loaderType||"agent")),this.start()}get config(){return{info:(0,t.C5)(this.agentIdentifier),init:(0,t.P_)(this.agentIdentifier),loader_config:(0,t.DL)(this.agentIdentifier),runtime:(0,t.OP)(this.agentIdentifier)}}start(){const t="features";try{const n=r(this.agentIdentifier),i=[...this.desiredFeatures];i.sort(((t,n)=>e.p[t.featureName]-e.p[n.featureName])),i.forEach((t=>{if(n[t.featureName]||t.featureName===e.D.pageViewEvent){const r=function(t){switch(t){case e.D.ajax:return[e.D.jserrors];case e.D.sessionTrace:return[e.D.ajax,e.D.pageViewEvent];case e.D.sessionReplay:return[e.D.sessionTrace];case e.D.pageViewTiming:return[e.D.pageViewEvent];default:return[]}}(t.featureName);r.every((e=>n[e]))||(0,g.Z)("".concat(t.featureName," is enabled but one or more dependent features has been disabled (").concat((0,k.P)(r),"). This may cause unintended consequences or missing data...")),this.features[t.featureName]=new t(this.agentIdentifier,this.sharedAggregator)}})),(0,E.Qy)(this.agentIdentifier,this.features,t)}catch(e){(0,g.Z)("Failed to initialize all enabled instrument classes (agent aborted) -",e);for(const e in this.features)this.features[e].abortHandler?.();const n=(0,E.fP)();return delete n.initializedAgents[this.agentIdentifier]?.api,delete n.initializedAgents[this.agentIdentifier]?.[t],delete this.sharedAggregator,n.ee?.abort(),delete n.ee?.get(this.agentIdentifier),!1}}}({features:[m,P,S],loaderType:"lite"})})(),window.NRBA=o})();</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-55949348-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-55949348-1", {"groups":"default","allow_ad_personalization_signals":false});</script>
+<link rel="canonical" href="https://www.idealease.com/" />
+<meta http-equiv="content-language" content="en-US" />
+<meta name="robots" content="index, follow" />
+<link rel="shortlink" href="https://www.idealease.com/" />
+<link rel="image_src" href="https://www.idealease.com/sites/default/files/images/ltblue-home-banner.jpg" />
+<meta name="description" content="Idealease Inc Provides solutions for private truck fleets truck rental commercial truck leasing and truck leasing in all of North America through full-service leases. Idealease Inc is your full-service lease truck rental company." />
+<meta name="abstract" content="Idealease Inc Provides solutions for private truck fleets truck rental commercial truck leasing and truck leasing in all of North America through full-service leases. Idealease Inc is your full-service lease truck rental company." />
+<meta name="keywords" content="Truck Leasing Company,Truck Rental Company,Full Service Lease,Illinois Truck Rental,Truck Leasing Illinois,Idealease Inc" />
+<meta property="og:site_name" content="Idealease, Inc." />
+<meta property="og:url" content="https://www.idealease.com/expertise-responsiveness-stability" />
+<meta property="og:title" content="Expertise | Responsiveness | Stability" />
+<meta property="og:description" content="For companies across North America who want to manage their business, not their commercial truck fleet management challenges, Idealease offers the most responsive, fully integrated truck leasing, truck rental, fleet services and dedicated maintenance solutions." />
+<meta property="og:image" content="https://www.idealease.com/sites/default/files/images/ltblue-home-banner.jpg" />
+<meta property="og:image:url" content="https://www.idealease.com/sites/default/files/images/ltblue-home-banner.jpg" />
+<meta property="og:image:secure_url" content="https://www.idealease.com/sites/default/files/images/ltblue-home-banner.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="400" />
+<meta property="og:image:alt" content="Idealease Truck Driving on the Highway" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:description" content="For companies across North America who want to manage their business, not their commercial truck fleet management challenges, Idealease offers the most responsive, fully integrated truck leasing, truck rental, fleet services and dedicated maintenance solutions." />
+<meta name="twitter:site" content="@IdealeaseInc" />
+<meta name="twitter:title" content="Expertise | Responsiveness | Stability" />
+<meta name="twitter:site:id" content="255198582" />
+<meta name="twitter:creator" content="@IdealeaseInc" />
+<meta name="twitter:creator:id" content="255198582" />
+<meta name="twitter:url" content="https://www.idealease.com/expertise-responsiveness-stability" />
+<meta name="Generator" content="Drupal 8 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "headline": "Expertise | Responsiveness | Stability",
+            "name": "Expertise | Responsiveness | Stability",
+            "description": "\u003Cp\u003EFor companies across North America who want to manage their business, not their commercial truck fleet management challenges, Idealease offers the most responsive, fully integrated truck leasing, truck rental, fleet services and dedicated maintenance solutions.\u003C/p\u003E",
+            "image": {
+                "@type": "ImageObject",
+                "representativeOfPage": "True"
+            },
+            "datePublished": "Tue, 03/11/2014 - 16:30",
+            "dateModified": "Wed, 05/04/2022 - 16:59",
+            "isAccessibleForFree": "True",
+            "author": {
+                "@type": "Organization",
+                "@id": "@idealeaseinc",
+                "name": [
+                    "Idealease",
+                    "Inc."
+                ],
+                "url": "https://www.idealease.com",
+                "sameAs": [
+                    "https://www.facebook.com/IdealeaseInc",
+                    "https://twitter.com/IdealeaseInc",
+                    "http://www.linkedin.com/company/idealease.com",
+                    "https://www.instagram.com/idealeaseinc"
+                ]
+            }
+        },
+        {
+            "@type": "WebSite",
+            "@id": "@idealease.com",
+            "name": "Idealease",
+            "url": "https://www.idealease.com",
+            "publisher": {
+                "@type": "Organization",
+                "@id": "@idealease.com",
+                "name": "Idealease Inc",
+                "url": "https://www.idealease.com",
+                "sameAs": "Idealease",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://idealease.com/themes/custom/ideal/logo.png",
+                    "width": "440",
+                    "height": "100"
+                }
+            }
+        }
+    ]
+}</script>
+<link rel="shortcut icon" href="/themes/custom/ideal/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="revision" href="https://www.idealease.com/expertise-responsiveness-stability" />
+
+        <title>Commercial Truck Leasing | Commercial Truck Rental | Full Service Lease | Truck Rental | Truck Leasing | Idealease, Inc.</title>
+    
+  <link rel="stylesheet" media="all" href="/sites/default/files/css/css_QVxTkNYuAviq3yTKoc4w2V90asP_XmSy-PUos1ooyOE.css" />
+<link rel="stylesheet" media="all" href="/sites/default/files/css/css_D2Gd-IblvflvamBa-6IQR9C4JwrQzsSruXZ2wMhZ-CI.css" />
+
+  
+<!--[if lte IE 8]>
+<script src="/sites/default/files/js/js_VtafjXmRvoUgAzqzYTA3Wrjkx9wcWhjP0G4ZnnqRamA.js"></script>
+<![endif]-->
+<script src="/sites/default/files/js/js_QHqjxhGPGgZFwOfW92tmrVpssmC1sbO0zDG4TgLmaEI.js"></script>
+
+  <link href='https://fonts.googleapis.com/css?family=Sintony:400,700|Open+Sans:400,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-55949348-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-55949348-1', { 'optimize_id': 'GTM-5XWPMSX'});
+</script>
+  </head>
+  <body  class="page-node-20 role-anonymous is-path-frontpage is-page-node-type-page expertise-responsiveness-stability">
+      
+<a href="#main-content" class="skip-link visually-hidden visually-hidden--focusable">
+      Skip to main content
+  </a>
+  
+    <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+<div class="wrap">
+      <div class="search-wrapper">
+      <button id="close-search" tabindex="0" title="Close Search"><span aria-hidden="true" role="presentation" class="fal fa-times"></span><span class="sr-only">Close Search</span></button>
+      
+
+<div class="views-exposed-form block block-views block-views-exposed-filter-blocksearch-search" data-drupal-selector="views-exposed-form-search-search" id="block-searchform">
+  
+    
+    <div class="block-content">
+    <form action="/search" method="get" id="views-exposed-form-search-search" accept-charset="UTF-8">
+  <div class="form--inline clearfix">
+  <div class="js-form-item form-item js-form-type-textfield form-type-textfield js-form-item-search form-item-search">
+      <label for="edit-search">Search</label>
+        <input data-drupal-selector="edit-search" type="text" id="edit-search" name="search" value="" size="30" maxlength="128" class="form-text" />
+
+        </div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><input data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Apply" class="button js-form-submit form-submit" />
+</div>
+
+</div>
+
+</form>
+
+  </div>
+  </div>
+
+
+    </div>
+      <header class="header" role="banner">
+      <div class="top-wrapper">
+      <div class="container clearfix">
+      
+
+<nav role="navigation" aria-labelledby="block-supplementalnavigation-menu" id="block-supplementalnavigation" class="block block-menu navigation menu--menu-supplemental-navigation">
+            
+  <h2 class="visually-hidden" id="block-supplementalnavigation-menu">Supplemental Navigation</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item menu-item--expanded">
+        <a href="/about-idealease" title="About Idealease" data-drupal-link-system-path="node/18">About</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="/about-idealease/core-values" data-drupal-link-system-path="node/852">Core Values</a>
+              </li>
+                <li class="menu-item">
+        <a href="/idealease-cares" title="Idealease CARES" data-drupal-link-system-path="node/858">Idealease CARES</a>
+              </li>
+                <li class="menu-item">
+        <a href="/about-idealease/case-studies" data-drupal-link-system-path="node/5649">Case Studies</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.idealease.com/careers">Careers</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item">
+        <a href="/about-idealease/locations" data-drupal-link-system-path="about-idealease/locations">Locations</a>
+              </li>
+                <li class="menu-item">
+        <a href="/about-idealease/news" data-drupal-link-system-path="about-idealease/news">News</a>
+              </li>
+                <li class="menu-item">
+        <a href="/about-idealease/blog" data-drupal-link-system-path="about-idealease/blog">Blog</a>
+              </li>
+                <li class="menu-item">
+        <a href="/contact-idealease" class="contact-link" title="Contact Idealease" data-drupal-link-system-path="node/19">Contact</a>
+              </li>
+                <li class="menu-item">
+        <a href="/search" class="search" data-drupal-link-system-path="search">Search</a>
+              </li>
+        </ul>
+  
+
+
+  </nav>
+
+
+      </div>
+    </div>
+    	<div class="header-wrapper">
+  		<div class="container clearfix">
+    	
+
+<div id="block-ideal-branding" class="block block-system block-system-branding-block">
+  
+    
+        <a href="/" rel="home" class="site-logo">
+      <img src="/themes/custom/ideal/logo.png" alt="Home" />
+    </a>
+      </div>
+
+
+            <div class="navigation">
+        
+
+<div id="block-mainnavigation" class="block block-superfish block-superfishmain">
+  
+    
+    <div class="block-content">
+    
+<ul id="superfish-main" class="menu sf-menu sf-main sf-horizontal sf-style-none">
+  
+<li id="main-menu-link-content49a0a5b9-623d-4c4f-8a65-b9afd57d9c1d" class="sf-depth-1 menuparent"><a href="/full-service-truck-leasing" class="long-link sf-depth-1 menuparent">Full Service Truck Leasing</a><ul><li id="main-menu-link-content96a4ce37-e386-4009-9b55-2fac215c3578" class="sf-depth-2 sf-no-children"><a href="/full-service-lease" accesskey="3" class="sf-depth-2">Full Service Lease</a></li><li id="main-menu-link-contentbec63a47-8c96-4622-aa01-b78972f1c3c1" class="sf-depth-2 sf-no-children"><a href="/full-service-truck-leasing/full-service-equity-lease" accesskey="2" class="sf-depth-2">Full Service Equity Lease</a></li><li id="main-menu-link-content7d9bc35a-06b4-4420-a2c0-21a02cfe2caa" class="sf-depth-2 sf-no-children"><a href="/full-service-truck-leasing/ownership-lease-transition" accesskey="4" class="sf-depth-2">Ownership to Lease Transition</a></li></ul></li><li id="main-menu-link-content25ec2b67-2fa7-4021-92b6-166257692de5" class="sf-depth-1 sf-no-children"><a href="/short-long-term-truck-rentals" class="short-link sf-depth-1">Truck Rental</a></li><li id="main-menu-link-content0c29353a-8bc9-47be-9645-939d83f1c127" class="sf-depth-1 menuparent"><a href="/dedicated-maintenance" class="sf-depth-1 menuparent">Dedicated Maintenance</a><ul><li id="main-menu-link-content9260c3cb-097f-4ea0-a35b-50f648745fc7" class="sf-depth-2 sf-no-children"><a href="/dedicated-maintenance/guaranteed-maintenance" class="sf-depth-2">Guaranteed Maintenance</a></li><li id="main-menu-link-contentd09a9c03-1109-4723-ba12-01a06a54699c" class="sf-depth-2 sf-no-children"><a href="/dedicated-maintenance/dedicated-facility" class="sf-depth-2">Dedicated Facility</a></li><li id="main-menu-link-content52f8c03d-0062-4fea-83cf-70bc10fc6b84" class="sf-depth-2 sf-no-children"><a href="/support-services/mobile-service" class="sf-depth-2">Mobile Service</a></li></ul></li><li id="main-menu-link-contente0136ed4-b16d-43d0-9a1f-0fe08c6b5919" class="sf-depth-1 menuparent"><a href="/support-services" class="sf-depth-1 menuparent">Support Services</a><ul><li id="main-menu-link-content8275dcf4-a350-40d7-adff-c05b3b77cb8b" class="sf-depth-2 sf-no-children"><a href="/support-services/mobile-service" class="sf-depth-2">Mobile Service</a></li><li id="main-menu-link-content1091de42-03bc-4998-8c5e-6c7d3e7f0ad0" class="sf-depth-2 sf-no-children"><a href="/support-services/roadside-assistance" class="sf-depth-2">Roadside Assistance</a></li><li id="main-menu-link-contentd98cb5fa-fe49-421d-bb41-04bbaeafd48d" class="sf-depth-2 sf-no-children"><a href="/support-services/idealease-fleet-services" class="long-link sf-depth-2">Idealease Fleet Services</a></li><li id="main-menu-link-content093121ce-c15d-4115-bf89-03396da97f0f" class="sf-depth-2 sf-no-children"><a href="/support-services/building-materials-transportation" class="sf-depth-2">Building Materials Transportation</a></li><li id="main-menu-link-contentcdd1419d-c1ff-4e9f-b66d-fb9efdad160e" class="sf-depth-2 sf-no-children"><a href="/support-services/metals-transportation" class="sf-depth-2">Metals Transportation</a></li><li id="main-menu-link-contentad4e8a1f-3e3b-447d-a24c-07f58b48a7d5" class="sf-depth-2 sf-no-children"><a href="/support-services/refrigeration-transportation" title="Refrigeration" class="sf-depth-2">Refrigeration Transportation</a></li><li id="main-menu-link-content8e627c62-3d29-4e0f-aa3f-fa6e0992ca31" class="sf-depth-2 sf-no-children"><a href="/support-services/beverage-transportation" class="sf-depth-2">Beverage Transportation</a></li></ul></li><li id="main-menu-link-content0f228f42-6920-4712-aadb-753226967042" class="sf-depth-1 menuparent"><a href="/safety-compliance" class="sf-depth-1 menuparent">Safety &amp; Compliance</a><ul><li id="main-menu-link-content44d19c1a-3b94-412e-82dd-a0b404721def" class="sf-depth-2 sf-no-children"><a href="/safety-compliance/safety-compliance-services" class="sf-depth-2">Safety &amp; Compliance Services</a></li><li id="main-menu-link-content8c8126f0-850e-4aa4-963d-c20b9d103126" class="sf-depth-2 sf-no-children"><a href="/safety-seminars" class="sf-depth-2">Safety Seminars - Webinars</a></li><li id="main-menu-link-content187c7116-22b6-48a5-9968-f5747dd67eb7" class="sf-depth-2 sf-no-children"><a href="/safety-compliance/safety-bulletins" class="sf-depth-2">Safety Bulletins</a></li><li id="main-menu-link-contentad11acd5-d021-4900-9869-70719940d0d5" class="sf-depth-2 sf-no-children"><a href="/safety-compliance/elevate" class="sf-depth-2">ELEVATE Your Drivers&#039; Performance</a></li></ul></li><li id="main-menu-link-content3b87bd1c-3b28-4e09-9003-28c0b7385a3d" class="sf-depth-1 sf-no-children"><a href="/used-trucks" class="short-link sf-depth-1">Used Trucks</a></li><li id="main-menu-link-contentf9d49f9f-441d-43c0-bf50-8898130d71d0" class="sf-depth-1 sf-no-children"><a href="/idealease-cares" class="sf-depth-1">Idealease CARES</a></li>
+</ul>
+
+  </div>
+  </div>
+
+
+        
+      </div>
+          	</div>
+    </div>
+  </header>
+        <div id="highlighted" class="wrapper">
+      
+
+<div class="views-element-container block block-views block-views-blockheader-slideshow" id="block-views-block-header-slideshow--2">
+  
+    
+    <div class="block-content">
+    <div><div class="view view-header view-id-header view-display-id-slideshow js-view-dom-id-0f86fe655c21ac9ef9964bff5e59762377deb1670b631d1412d00d498e949525">
+  
+    
+      
+      <div class="view-content">
+      <div data-blazy="" class="slick blazy slick--view slick--view--header slick--view--header--slideshow slick--skin--default slick--optionset--slideshow" id="slick-views-header-slideshow-2"><div id="slick-views-header-slideshow-2-slider" data-slick="{&quot;mobileFirst&quot;:true,&quot;adaptiveHeight&quot;:true,&quot;autoplay&quot;:true,&quot;autoplaySpeed&quot;:9000,&quot;lazyLoad&quot;:&quot;blazy&quot;,&quot;respondTo&quot;:&quot;slider&quot;,&quot;responsive&quot;:[{&quot;breakpoint&quot;:980,&quot;settings&quot;:{&quot;adaptiveHeight&quot;:true,&quot;autoplay&quot;:true,&quot;autoplaySpeed&quot;:6000,&quot;draggable&quot;:false,&quot;swipe&quot;:false,&quot;touchMove&quot;:false,&quot;waitForAnimate&quot;:false}}]}" class="slick__slider"><div class="slick__slide slide slide--0"><div class="views-field views-field-field-featured-slides default caption-outer"><div class="field-content"><div class="paragraph paragraph--type--featured-slide paragraph--view-mode--default" id="section-3"   ><div class="field field--name-field-featured-media field--type-entity-reference field--label-hidden field--count-1 field__item"><figure  class="media-image image-hero"><picture><source srcset="/sites/default/files/styles/featured_image_3_1/public/images/bridge-banner.jpg?itok=dbKyzRuv 1x" media="all and (min-width: 1441px)" type="image/jpeg"/><source srcset="/sites/default/files/styles/featured_image/public/images/bridge-banner.jpg?itok=h04D2emN 1x" media="all and (min-width: 981px) and (max-width: 1440px)" type="image/jpeg"/><source srcset="/sites/default/files/styles/large_2_1/public/images/bridge-banner.jpg?itok=LWelfjPN 1x" media="all and (min-width: 640px) and (max-width: 980px)" type="image/jpeg"/><source srcset="/sites/default/files/styles/medium_2_1/public/images/bridge-banner.jpg?itok=VfyKtTtq 1x" type="image/jpeg"/><img src="/sites/default/files/styles/featured_image_2_1/public/images/bridge-banner.jpg?itok=LeeSkcQH" alt="Truck on Bridge" typeof="foaf:Image" /></picture></figure></div><div  class="caption-wrapper"><div  class="container caption-container"><div class="field field--name-field-slide-header field--type-string field--label-hidden field--count-1 field__item">To our team and partners</div><div class="clearfix text-formatted field field--name-field-slide-caption field--type-text-long field--label-hidden field--count-1 field__item"><p>Together we can protect the health and well-being of our team and their families. All locations follow our company-wide plan and their local plans.</p></div><div class="field field--name-field-slide-link field--type-link field--label-hidden field--count-1 field__item"><a href="https://www.idealease.com/covid19-response">More Information</a></div></div></div></div></div></div></div><div class="slick__slide slide slide--1"><div class="views-field views-field-field-featured-slides default caption-outer"><div class="field-content"><div class="paragraph paragraph--type--featured-slide paragraph--view-mode--default" id="section-5"   ><div class="field field--name-field-featured-media field--type-entity-reference field--label-hidden field--count-1 field__item"><figure  class="media-image image-hero"><picture><source srcset="/sites/default/files/styles/featured_image_3_1/public/images/ltblue-home-banner.jpg?itok=oETiAQat 1x" media="all and (min-width: 1441px)" type="image/jpeg"/><source srcset="/sites/default/files/styles/featured_image/public/images/ltblue-home-banner.jpg?h=45d8d90c&amp;itok=qyKtgGFH 1x" media="all and (min-width: 981px) and (max-width: 1440px)" type="image/jpeg"/><source srcset="/sites/default/files/styles/large_2_1/public/images/ltblue-home-banner.jpg?h=c0ec9615&amp;itok=1zi5HmQP 1x" media="all and (min-width: 640px) and (max-width: 980px)" type="image/jpeg"/><source srcset="/sites/default/files/styles/medium_2_1/public/images/ltblue-home-banner.jpg?h=c0ec9615&amp;itok=hfDMH-pp 1x" type="image/jpeg"/><img src="/sites/default/files/styles/featured_image_2_1/public/images/ltblue-home-banner.jpg?h=c0ec9615&amp;itok=HFEE5M1I" alt="Idealease Truck Fleet" typeof="foaf:Image" /></picture></figure></div><div  class="caption-wrapper"><div  class="container caption-container"><div class="field field--name-field-slide-header field--type-string field--label-hidden field--count-1 field__item">Full Service Truck Leasing</div><div class="clearfix text-formatted field field--name-field-slide-caption field--type-text-long field--label-hidden field--count-1 field__item"><p><strong>A Better Alternative to Truck Ownership</strong><br /></p><p>Operating your own fleet is getting more challenging and costly every day. Get industry-leading vehicles that are spec’d for your needs and backed by superior fleet maintenance and fleet services with a full service truck lease from Idealease.</p></div><div class="field field--name-field-slide-link field--type-link field--label-hidden field--count-1 field__item"><a href="/full-service-truck-leasing">More Information</a></div></div></div></div></div></div></div></div><nav role="navigation" class="slick__arrow"><button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0">Previous</button><button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0">Next</button></nav></div>
+    </div>
+  
+          </div>
+</div>
+
+  </div>
+  </div>
+
+
+    </div>
+  
+  
+  
+
+<div data-drupal-messages-fallback class="hidden"></div>
+
+
+  
+  
+                                  
+  <div id="main" class="wrapper container">
+    <div id="content" class="layout-3col">
+      <main class="layout-3col__left-content" role="main">
+              <div id="page-title" class="wrapper">
+          
+
+<div id="block-ideal-page-title" class="block block-core block-page-title-block">
+  
+    
+    <div class="block-content">
+    
+  <h1 class="page-title"><span property="dc:title" class="field field--name-title field--type-string field--label-hidden">Expertise | Responsiveness | Stability</span>
+</h1>
+
+
+  </div>
+  </div>
+
+
+        </div>
+              <a href="#skip-link" class="visually-hidden visually-hidden--focusable" id="main-content">Back to top</a>        
+
+<article class=""  data-history-node-id="20" role="article" about="/expertise-responsiveness-stability" typeof="foaf:Document">
+    
+      <span property="dc:title" content="Expertise | Responsiveness | Stability" class="rdf-meta hidden"></span>
+
+
+  
+      
+      <div class="field field--name-field-paragraph field--type-entity-reference-revisions field--label-hidden field--count-1 field__items" class="field field--name-field-paragraph field--type-entity-reference-revisions field--label-hidden field--count-1 field__items">
+              <div class="field__item">  <div class="align-top full no_pad full_width header-left paragraph paragraph--type--row-basic paragraph--view-mode--default" id="section-2"   >
+
+          
+<div  class="content-wrapper">
+      
+            <div class="field field--name-field-column field--type-entity-reference-revisions field--label-hidden field--count-1 field__item">  <div class="paragraph paragraph--type--col-text paragraph--view-mode--default" id="section-1"   >
+
+          
+            <div class="clearfix text-formatted field field--name-field-long-text field--type-text-long field--label-hidden field--count-1 field__item"><p>For companies across North America who want to manage their business, not their commercial truck fleet management challenges, Idealease offers the most responsive, fully integrated <strong><a href="/full-service-truck-leasing" title="Truck Leasing">truck leasing</a>, <a href="/truck-rental" title="Truck Rental">truck rental</a>, <a href="/idealease-fleet-services" title="Fleet Services">fleet services</a> and <a href="/dedicated-maintenance" title="Dedicated Maintenance">dedicated maintenance</a> </strong>solutions.</p>
+<h2>We are focused on your success.</h2>
+<p>Idealease offers a safe, cost-effective and efficient alternative to commercial truck ownership through our comprehensive <strong><a href="/full-service-truck-leasing" title="Truck Leasing">truck leasing</a>, <a href="/truck-rental" title="Truck Rental">truck rental</a>, and <a href="/dedicated-maintenance" title="Dedicated Maintenance">dedicated maintenance</a> </strong>solutions. We are the industry experts at seamlessly transitioning businesses from truck ownership to full service leasing. Our responsive fleet services will help keep your business running smoothly—allowing you to focus even more attention on serving your customers and growing your business.</p>
+<p>Idealease offers stability for your business because of our unique organization structure—we are a vertically aligned distribution network of more than 430 community-based locations.</p>
+<p>We have the expertise to create transportation solutions for commercial fleets of all sizes. We employ the most seasoned and tenured <strong><a href="/full-service-truck-leasing" title="Truck Leasing">truck leasing</a> and <a href="/truck-rental" title="Truck Rental">truck rental</a></strong> professionals. They can show you how our <strong><a href="/idealease-fleet-services" title="Fleet Services">fleet services</a> </strong>and <strong><a href="/dedicated-maintenance" title="Dedicated Maintenance">dedicated maintenance</a> </strong>can help reduce the risk and costs associated with commercial truck operations and fleet management.</p>
+<p><strong>Idealease is committed to vehicle uptime. </strong>We support a fleet of more than 45,000 trucks, tractors and trailers with the most proficient, manufacturer-certified technicians, a vast parts inventory and the latest diagnostic equipment.</p>
+</div>
+      
+      </div>
+</div>
+      
+  </div>
+
+      </div>
+</div>
+          </div>
+  
+  </article>
+
+
+      </main>
+
+      
+                    <aside class="layout-3col__right-sidebar" role="complementary">
+          <div class="sidebar-wrapper">
+          
+
+<div id="block-homepagecta" class="block block-block-content block-block-contentd8bbfd8b-6666-4054-948b-05b882f4f7b7">
+  
+    
+    <div class="block-content">
+    
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field--count-1 field__item"><p><a class="button large-button" href="safety-seminar-registration" id="safety" title="Safety Seminar Signup">Safety Seminar Signup</a><a class="button large-button" href="about-idealease/locations" id="locations" title="Find a Location">Find a Location</a><a class="button large-button" href="used-trucks" id="used-trucks" title="Buy a Used Truck">Buy a Used Truck</a><a class="button large-button" href="roadside-assistance" id="roadside-assistance" title="Roadside Assistance"><span>Roadside Assistance</span><br />1-800-435-3273</a></p>
+</div>
+      
+  </div>
+  </div>
+
+
+          </div>
+          <div class="sidebar-footer"></div>
+        </aside>
+          </div>
+  </div>
+
+    	<div id="subcontent" class="wrapper">
+      
+
+<div class="views-element-container block-section lt_gray_bg block block-views block-views-blockcase-studies-case-studies-feat" id="block-case-studies-feat">
+  
+    
+    <div class="block-content">
+    <div><div class="view view-case-studies view-id-case_studies view-display-id-case_studies_feat js-view-dom-id-9d237926443b81291da208c096056d94c435053acca48cf5af21ae1f57098b8f">
+  
+    
+      <div class="view-header">
+      <div class="training-block"><h2 class="field--name-field-text-header">Training</h2>
+<div class="summary-teaser">
+<a href="https://youtu.be/VyjLcyQbyF8" target="_blank"><img src="/sites/default/files/bendix-thumbnail-crop.jpg" alt="Bendix Wingman Fusion Accident Mitigation Technology" /></a>
+<span class="summary-title-link"><h3 class="summary-title"><a href="https://youtu.be/VyjLcyQbyF8" target="_blank">Bendix Wingman Fusion Accident Mitigation Technology</a></h3></span>
+<div class="read-more"><a href="https://youtu.be/VyjLcyQbyF8" class="button" target="_blank">Watch Now</a></div>
+</div></div><h2 class="field--name-field-text-header">Case Studies</h2>
+    </div>
+      
+      <div class="view-content">
+      <div data-blazy="" class="slick blazy slick--view slick--view--case-studies slick--view--case-studies--case-studies-feat slick--optionset--carousel-2" id="slick-views-case-studies-case-studies-feat-3"><div id="slick-views-case-studies-case-studies-feat-3-slider" data-slick="{&quot;mobileFirst&quot;:true,&quot;lazyLoad&quot;:&quot;blazy&quot;,&quot;rows&quot;:0,&quot;responsive&quot;:[{&quot;breakpoint&quot;:600,&quot;settings&quot;:{&quot;autoplay&quot;:true,&quot;pauseOnHover&quot;:false,&quot;draggable&quot;:false,&quot;rows&quot;:0,&quot;slidesToShow&quot;:2,&quot;slidesToScroll&quot;:2,&quot;swipe&quot;:false,&quot;touchMove&quot;:false,&quot;waitForAnimate&quot;:false}}]}" class="slick__slider"><div class="slick__slide slide slide--0"><div data-history-node-id="5648" class="summary-teaser node node--type-case-study node--view-mode-teaser ds-1col clearfix" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><div class="field field--name-field-client field--type-string field--label-hidden field--count-1 field__item">Border States Industries</div><a href="/case-studies/timely-replacement-cycles-conserve-capital" hreflang="en"><img src="/sites/default/files/styles/medium_2_1/public/images/ltblue-home-banner.jpg?h=c0ec9615&amp;itok=hfDMH-pp" width="600" height="300" alt="Idealease Truck Fleet" typeof="foaf:Image" class="image-style-medium-2-1" /></a><span class="summary-title-link"><h3 class="summary-title"><a href="/case-studies/timely-replacement-cycles-conserve-capital" hreflang="en">Timely Replacement Cycles Conserve Capital </a></h3></span><div class="field field--name-node-link field--type-ds field--label-hidden field--count-1 field__item"><a href="/case-studies/timely-replacement-cycles-conserve-capital" hreflang="en">Read more</a></div></div></div><div class="slick__slide slide slide--1"><div data-history-node-id="5852" class="summary-teaser node node--type-case-study node--view-mode-teaser ds-1col clearfix" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><div class="field field--name-field-client field--type-string field--label-hidden field--count-1 field__item">United Distributors, Inc.</div><a href="/case-studies/full-service-leasing-and-dedicated-maintenance-keep-spirits-high" hreflang="en"><img src="/sites/default/files/styles/medium_2_1/public/images/0153rgb.jpg?h=258485e3&amp;itok=FfYGD6QT" width="600" height="300" alt="United Distributors truck" typeof="foaf:Image" class="image-style-medium-2-1" /></a><span class="summary-title-link"><h3 class="summary-title"><a href="/case-studies/full-service-leasing-and-dedicated-maintenance-keep-spirits-high" hreflang="en">Full Service Leasing and Dedicated Maintenance Keep Spirits High</a></h3></span><div class="field field--name-node-link field--type-ds field--label-hidden field--count-1 field__item"><a href="/case-studies/full-service-leasing-and-dedicated-maintenance-keep-spirits-high" hreflang="en">Read more</a></div></div></div></div><nav role="navigation" class="slick__arrow"><button type="button" data-role="none" class="slick-prev" aria-label="Previous" tabindex="0">Previous</button><button type="button" data-role="none" class="slick-next" aria-label="Next" tabindex="0">Next</button></nav></div>
+    </div>
+  
+          </div>
+</div>
+
+  </div>
+  </div>
+
+
+  	</div>
+  
+      	<div id="postscript" class="wrapper">
+      
+
+<div id="block-pardot-homepage" class="primary_bg block-section block block-block-content block-block-content184ceb8e-f667-4a0c-9ce4-065ae89339fd">
+  
+      <h2>Sign Up for Safety Bulletins</h2>
+    
+    <div class="block-content">
+    
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field--count-1 field__item"><form action="https://www2.idealease.com/l/36492/2015-07-02/23svtf" method="POST"><input name="retURL" type="hidden" value="https://www.idealease.com/thank-you-signing" />
+<div class="form-left"><label class="form-required sr-only">Email</label><input maxlength="100" name="email" required="" size="60" type="email" placeholder="Your Email (Required)" /></div>
+
+<div class="form-left"><label class="form-required sr-only">First Name</label><input maxlength="200" minlength="2" name="First Name" required="" size="60" type="text" placeholder="First Name (Required)" /></div>
+
+<div class="form-right"><label class="form-required sr-only">Last Name</label><input maxlength="200" minlength="2" name="Last Name" required="" size="60" type="text" placeholder="Last Name (Required)" /></div>
+
+<div class="form-left"><label class="form-required sr-only">Job Title</label><input maxlength="200" minlength="2" name="Job Title" required="" size="60" type="text" placeholder="Job Title (Required)" /></div>
+
+<div class="form-right"><label class="form-required sr-only">Company</label><input maxlength="200" minlength="2" name="Company Name" placeholder="Company Name (Required)" required="" size="60" type="text" /></div>
+<div class="clear"></div>
+<div class="form-actions form-clear"><input name="submit" type="submit" value="submit" /></div>
+</form>
+</div>
+      
+  </div>
+  </div>
+
+
+  	</div>
+  
+</div>
+
+<div class="footer-wrapper">
+    
+<footer class="footer " role="contentinfo">
+      <nav role="navigation" aria-labelledby="block-footer-menu" id="block-footer" class="block block-menu navigation menu--menu-footer-menu">
+            
+  <h2 class="visually-hidden" id="block-footer-menu">Footer Menu</h2>
+  
+
+        
+              <ul class="menu">
+                    <li class="menu-item menu-item--expanded">
+        <a href="/full-service-truck-leasing" title="Full Service Truck Leasing" data-drupal-link-system-path="node/1">Full Service Truck Leasing</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="/full-service-lease" title="Full Service Lease" data-drupal-link-system-path="node/2">Full Service Lease</a>
+              </li>
+                <li class="menu-item">
+        <a href="/full-service-truck-leasing/full-service-equity-lease" title="Full Service Equity Lease" data-drupal-link-system-path="node/3">Full Service Equity Lease</a>
+              </li>
+                <li class="menu-item">
+        <a href="/full-service-truck-leasing/ownership-lease-transition" title="Ownership to Lease Transition" data-drupal-link-system-path="node/4">Ownership to Lease Transition</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item menu-item--expanded">
+        <a href="/safety-compliance" title="Safety &amp; Compliance" data-drupal-link-system-path="node/10">Safety &amp; Compliance</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="/safety-compliance/safety-compliance-services" title="Safety &amp; Compliance Services" data-drupal-link-system-path="node/11">Safety &amp; Compliance Services</a>
+              </li>
+                <li class="menu-item">
+        <a href="/safety-seminars" title="Safety Seminars" data-drupal-link-system-path="node/12">Safety Seminars</a>
+              </li>
+                <li class="menu-item">
+        <a href="/safety-compliance/safety-bulletins" title="Safety Bulletins" data-drupal-link-system-path="node/349">Safety Bulletins</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.idealease.com/elevate">Elevate Your Drivers&#039; Performance</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item menu-item--expanded">
+        <a href="/dedicated-maintenance" title="Dedicated Maintenance" data-drupal-link-system-path="node/350">Dedicated Maintenance</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="/dedicated-maintenance/guaranteed-maintenance" title="Guaranteed Maintenance" data-drupal-link-system-path="node/351">Guaranteed Maintenance</a>
+              </li>
+                <li class="menu-item">
+        <a href="/dedicated-maintenance/dedicated-facility" title="Dedicated Facility" data-drupal-link-system-path="node/353">Dedicated Facility</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item menu-item--expanded">
+        <a href="/support-services" title="Support Services" data-drupal-link-system-path="node/6">Support Services</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="/support-services/idealease-fleet-services" title="Idealease Fleet Services" data-drupal-link-system-path="node/9">Idealease Fleet Services</a>
+              </li>
+                <li class="menu-item">
+        <a href="/support-services/mobile-service" title="Mobile Service" data-drupal-link-system-path="node/7">Mobile Service</a>
+              </li>
+                <li class="menu-item">
+        <a href="/support-services/roadside-assistance" title="Roadside Assistance" data-drupal-link-system-path="node/8">Roadside Assistance</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.idealease.com/building-materials-transportation">Building Materials Transportation</a>
+              </li>
+                <li class="menu-item">
+        <a href="/support-services/refrigeration-transportation" title="Refrigeration" data-drupal-link-system-path="node/860">Refrigeration Transportation</a>
+              </li>
+                <li class="menu-item">
+        <a href="https://www.idealease.com/metals-transportation">Metals Transportation</a>
+              </li>
+                <li class="menu-item">
+        <a href="/support-services/beverage-transportation" data-drupal-link-system-path="node/5704">Beverage Transportation</a>
+              </li>
+        </ul>
+  
+              </li>
+                <li class="menu-item">
+        <a href="/short-long-term-truck-rentals" title="
+	Short &amp; Long Term Truck Rentals" data-drupal-link-system-path="node/5"> 	Short &amp; Long Term Truck Rentals</a>
+              </li>
+                <li class="menu-item">
+        <a href="/used-trucks" title="Used Trucks" data-drupal-link-system-path="node/13">Used Trucks</a>
+              </li>
+                <li class="menu-item menu-item--expanded">
+        <a href="/about-idealease" title="About Idealease" data-drupal-link-system-path="node/18">About Idealease</a>
+                                <ul class="menu">
+                    <li class="menu-item">
+        <a href="/idealease-cares" data-drupal-link-system-path="node/858">Idealease CARES</a>
+              </li>
+                <li class="menu-item">
+        <a href="/careers" data-drupal-link-system-path="node/5856">Careers</a>
+              </li>
+                <li class="menu-item">
+        <a href="/about-idealease/case-studies" data-drupal-link-system-path="node/5649">Case Studies</a>
+              </li>
+                <li class="menu-item">
+        <a href="/privacy-policy" data-drupal-link-system-path="node/5963">Privacy Policy</a>
+              </li>
+        </ul>
+  
+              </li>
+        </ul>
+  
+
+
+  </nav>
+<div id="block-roadside-assistance" class="block block-block-content block-block-content77677857-0018-4453-8dbc-7f59c3f71f26">
+  
+    
+    <div class="block-content">
+    
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field--count-1 field__item"><p id="large-left">24/7</p>
+<p>Roadside Assistance<br />Call 1-800-435-3273</p>
+</div>
+      
+  </div>
+  </div>
+
+  </footer>
+
+</div>
+
+<div class="bottom-wrapper">
+  <div class="container clearfix">
+  
+
+<div id="block-copyright" class="block block-block-content block-block-contentb2fae99d-0593-4d17-9cbe-eb1b50052eb4">
+  
+    
+    <div class="block-content">
+    
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field--count-1 field__item"><h3>IDEALEASE, INC.</h3>
+<p>430 North Rand Road, North Barrington, IL 60010 | <strong>847-304-6000</strong> | <a href="http://portal.idealease.com" title="Idealease Portal">Portal</a></p>
+</div>
+      
+  </div>
+  </div>
+<div id="block-social-links" class="block block-block-content block-block-contentc68cd368-9f84-4862-a47b-202339df9bbe">
+  
+    
+    <div class="block-content">
+    
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field--count-1 field__item"><ul id="social">
+<li><a href="https://www.facebook.com/IdealeaseInc" rel="nofollow" target="_blank" title="Like Idealease on Facebook"><img src="/sites/default/files/images/facebook.png" title="Facebook" /></a></li>
+<li><a href="https://twitter.com/IdealeaseInc" rel="nofollow" target="_blank" title="Follow Idealease on Twitter"><img src="/sites/default/files/images/twitter.png" title="Twitter" /></a></li>
+<li><a href="https://vimeo.com/user43083947" rel="nofollow" target="_blank" title="Watch Idealease on Vimeo"><img src="/sites/default/files/vimeo.png" title="Vimeo" /></a></li>
+<li><a href="http://www.linkedin.com/company/idealease.com" rel="nofollow" target="_blank" title="Connect with Idealease on LinkedIn"><img src="/sites/default/files/images/linkedin.png" title="LinkedIn" /></a></li>
+<li><a href="https://www.instagram.com/idealeaseinc/?hl=en" rel="nofollow" target="_blank"><img alt="Instagram" src="/sites/default/files/images/instagram.png" title="Follow Idealease on Instagram" /></a></li>
+<li><span id="mailing-list" title="Join the Idealease Mailing List"><img src="/sites/default/files/images/email.png" title="Mailing List" /></span></li>
+</ul>
+</div>
+      
+  </div>
+  </div>
+<div id="block-pardot-footer" class="signup-footer block block-block-content block-block-content20406b36-4fa9-42a3-a389-804252d45e1f">
+  
+      <h2>Sign up for Safety Bulletins</h2>
+    
+    <div class="block-content">
+    
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field--count-1 field__item"><form action="https://www2.idealease.com/l/36492/2015-07-02/23svtf" method="POST">
+<input name="retURL" type="hidden" value="https://www.idealease.com/thank-you-signing" />
+
+<div class="form-clear"><label class="form-required">Email</label><input maxlength="100" name="email" placeholder="Email" required="" size="60" type="email" /></div>
+
+<div class="form-left"><label class="form-required">First Name</label><input maxlength="200" minlength="2" name="First Name" placeholder="First Name" required="" size="60" type="text" /></div>
+
+<div class="form-right"><label class="form-required">Last Name</label><input maxlength="200" minlength="2" name="Last Name" placeholder="Last Name" required="" size="60" type="text" /></div>
+
+<div class="form-left"><label class="form-required">Job Title</label><input maxlength="200" minlength="2" name="Job Title" placeholder="Job Title" required="" size="60" type="text" /></div>
+
+<div class="form-right"><label class="form-required">Company</label><input maxlength="200" minlength="2" name="Company Name" placeholder="Company Name" required="" size="60" type="text" /></div>
+<div class="form-actions form-clear"><input name="submit" type="submit" value="submit" /></div>
+</form></div>
+      
+  </div>
+  </div>
+
+
+  </div>
+</div>
+
+
+<div id="block-cssfixes" class="element-hidden block block-block-content block-block-content8e7ef434-aa72-4ed9-96e6-c1df8b9510ee">
+  
+    
+    <div class="block-content">
+    
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field--count-1 field__item"><style>
+.slick--optionset--carousel-2 .slide > div {
+  padding: 0 10px;
+}
+
+#block-supplementalnavigation .contextual {
+  right: -40px;
+}
+.caption > figcaption {
+  display: inline-block;
+  background: rgba(0,0,0,.125);
+  padding: 5px;
+  width: 100%;
+}
+
+figure figure {
+  margin-bottom: 0;
+}
+
+fieldset {
+    min-width: auto;
+}
+
+.view-careers .views-table th,
+.view-careers .views-table td {
+    text-align: left;
+    padding: 5px 3px;
+}
+
+.view-careers .views-table th {
+    background: #0039a6;
+    color: white;
+}
+
+.view-careers .views-table th a {
+    color: white;
+}
+
+.view-careers .views-table th a,
+.view-careers .views-table td a {
+	text-decoration: none;
+}
+
+.view-careers .views-table tr:nth-child(2n) {
+    background: rgba(224, 225, 225, 0.25);
+}
+
+#block-case-studies-feat .view {
+  overflow: hidden;
+}
+
+#block-case-studies-feat .view .training-block {
+  margin-bottom: 1em;
+}
+
+#block-case-studies-feat .view .view-content {
+  margin: 0 -10px;
+}
+
+@media (min-width: 800px) {
+  #block-case-studies-feat .view .training-block {
+    float: right;
+    width: 32%;
+    margin-bottom: 0;
+  }
+
+  #block-case-studies-feat .view .view-header > h2,
+  #block-case-studies-feat .view .view-content {
+    float: left;
+    width: 66%;
+  }
+}
+</style></div>
+      
+  </div>
+  </div>
+<div id="block-lead-forensics" class="element-hidden block block-block-content block-block-content84c03069-f2fd-47b6-8a97-730412cdf6af">
+  
+    
+    <div class="block-content">
+    
+            <div class="clearfix text-formatted field field--name-body field--type-text-with-summary field--label-hidden field--count-1 field__item"><script type="text/javascript" src="https://secure.hiss3lark.com/js/170603.js" ></script><noscript><img alt="" src="https://secure.hiss3lark.com/170603.png" style="display:none;" /></noscript></div>
+      
+  </div>
+  </div>
+
+
+
+  </div>
+
+  
+  <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/20","currentPathIsAdmin":false,"isFront":true,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"blazy\/load,classy\/base,classy\/messages,colorbox\/plain,colorbox_inline\/colorbox_inline,colorbox_load\/colorbox_load,core\/html5shiv,core\/normalize,core\/picturefill,fontawesome\/fontawesome.webfonts,google_analytics\/google_analytics,ideal\/aos,ideal\/autocomplete,ideal\/base,ideal\/box,ideal\/collapsible-fieldset,ideal\/comment,ideal\/fontawesome,ideal\/footer,ideal\/form-item,ideal\/form-table,ideal\/header,ideal\/hidden,ideal\/inline-links,ideal\/inline-sibling,ideal\/js-footer,ideal\/layouts,ideal\/nav-menu,ideal\/navbar,ideal\/pager,ideal\/print-none,ideal\/progress-bar,ideal\/progress-throbber,ideal\/resizable-textarea,ideal\/responsive-video,ideal\/skip-link,ideal\/table-drag,ideal\/wireframe,ng_lightbox\/ng_lightbox,paragraphs\/drupal.paragraphs.unpublished,slick\/slick.css,slick\/slick.easing,slick\/slick.main.default,slick\/slick.theme,superfish\/superfish,superfish\/superfish_hoverintent,superfish\/superfish_smallscreen,superfish\/superfish_supersubs,superfish\/superfish_supposition,system\/base,views\/views.module","theme":"ideal","theme_token":null},"ajaxTrustedUrl":{"\/search":true},"colorbox":{"opacity":"0.85","current":"{current} of {total}","previous":"\u00ab Prev","next":"Next \u00bb","close":"Close","maxWidth":"98%","maxHeight":"98%","fixed":true,"mobiledetect":true,"mobiledevicewidth":"480px"},"google_analytics":{"account":"UA-55949348-1","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackColorbox":true},"field_group":{"html_element":{"mode":"hero","context":"view","settings":{"element":"figure","show_label":false,"label_element":"h3","attributes":"","effect":"none","speed":"fast","id":"","classes":"media-image image-hero","label_element_classes":""}}},"superfish":{"superfish-main":{"id":"superfish-main","sf":{"animation":{"opacity":"show","height":"show"},"speed":"fast","autoArrows":false,"dropShadows":false},"plugins":{"smallscreen":{"mode":"window_width","breakpoint":1080,"title":"Menu"},"supposition":true,"supersubs":true}}},"blazy":{"loadInvisible":false,"offset":100,"saveViewportOffsetDelay":50,"validateDelay":25},"blazyIo":{"enabled":false,"disconnect":false,"rootMargin":"0px","threshold":[0]},"slick":{"accessibility":true,"adaptiveHeight":false,"autoplay":false,"autoplaySpeed":3000,"pauseOnHover":true,"pauseOnDotsHover":false,"arrows":true,"downArrow":false,"downArrowTarget":"","downArrowOffset":0,"centerMode":false,"centerPadding":"50px","dots":false,"dotsClass":"slick-dots","draggable":true,"fade":false,"focusOnSelect":false,"infinite":true,"initialSlide":0,"lazyLoad":"ondemand","mouseWheel":false,"randomize":false,"rtl":false,"rows":1,"slidesPerRow":1,"slide":"","slidesToShow":1,"slidesToScroll":1,"speed":500,"swipe":true,"swipeToSlide":false,"edgeFriction":0.35,"touchMove":true,"touchThreshold":5,"useCSS":true,"cssEase":"ease","cssEaseBezier":"","cssEaseOverride":"","useTransform":true,"easing":"linear","variableWidth":false,"vertical":false,"verticalSwiping":false,"waitForAnimate":true,"pauseOnFocus":true},"user":{"uid":0,"permissionsHash":"13b727fad2dc6637bcda58c610ef67332cdb52a1c591ad84702f00837c32aa9a"}}</script>
+<script src="/sites/default/files/js/js_FiVAX1iGHwjzRkf__kffv91C6rdjWcmySpbxrg0z_z8.js"></script>
+
+  <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-cb5decbbcd8f0ae425b","applicationID":"671272117","transactionName":"ZVRWYhBVWEtYWhcIWFwedVUWXVlWFkkCBlJtUlVVClE=","queueTime":0,"applicationTime":19,"atts":"SRNVFFhPS0U=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

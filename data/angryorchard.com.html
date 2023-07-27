@@ -1,0 +1,454 @@
+
+
+<!DOCTYPE html>
+<html lang="en" ng-app="bbcApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Description" />
+    <meta name="keywords" />
+    <meta name="title" content="Age Gate" />
+    <link href="/aofav.ico" rel="icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+                                    <title>Age Gate</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+
+        @media all and (-ms-high-contrast:none) {
+            .form-textbox, .form-textarea, input, textarea {
+                padding-bottom: 3px !important;
+                padding-top: 3px !important;
+            }
+            /* IE10 */
+            *::-ms-backdrop, .form-textbox, .form-textarea, input, textarea {
+                padding-bottom: 3px !important;
+                padding-top: 3px !important;
+            }
+            /* IE11 */
+        }
+
+        @supports (-ms-ime-align:auto) {
+            .site-content {
+                overflow-x: hidden;
+            }
+        }
+    </style>
+
+    <script type="text/javascript" src="/Presentation/AngryOrchardRedux/includes/scripts/jquery-3.2.1.min.js"></script>
+    <!-- <script src="~/Presentation/lib/bootstrap/bootstrap.min.js"></script> -->
+    <script src="/Presentation/lib/bootstrap/bootstrap-datepicker.js"></script>
+    <script src="/Presentation/lib/angular/angular.min.js"></script>
+    <script src="/Presentation/lib/angular/angular-sanitize.js"></script>
+    <script src="/Presentation/lib/bbc-shared.js"></script>
+    <script src="/Presentation/apps/app.js"></script>
+    <script src="/Presentation/AngryOrchardRedux/includes/js/app/config.js"></script>
+    <script src="/Presentation/apps/services/logservice.js"></script>
+    <script src="/Presentation/apps/services/dataservice.js"></script>
+    <script src="/Presentation/apps/services/utilityservice.js"></script>
+    <script src="/Presentation/apps/controllers/lazyloadlistcontroller.js"></script>
+    <script src="/Presentation/apps/directives/lazyloadlist.js"></script>
+    <script src="/Presentation/apps/filters/datefilter.js"></script>
+    <script src="/Presentation/apps/filters/replacefilter.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="//cloud.typenetwork.com/projects/2570/fontface.css/" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.typekit.net/gtp0fir.css">
+    <link rel="stylesheet" type="text/css" href="/Presentation/AngryOrchardRedux/includes/css/master.css">
+    <link rel="stylesheet" media="print" type="text/css" href="/Presentation/AngryOrchardRedux/includes/css/print.css">
+    <link rel="stylesheet" type="text/css" href="/Presentation/AngryOrchardRedux/includes/css/components/aos/aos.css" />
+    <link rel="stylesheet" type="text/css" href="/Presentation/AngryOrchardRedux/includes/css/dist/hamburgers.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Presentation/AngryOrchardRedux/includes/css/master.css">
+    <link href="https://s3-us-west-2.amazonaws.com/static.smartcommerce.co/assets/css/scsmartbutton.css" type="text/css" rel="stylesheet" />
+
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
+    <!-- Google analytics snippets -->
+    <!-- Google analytics snippets -->
+    <!-- Google analytics snippets -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function()
+{ (i[r].q=i[r].q||[]).push(arguments)}
+,i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-29384894-14', 'auto');
+ga('send', 'pageview');
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
+
+{'gtm.start': new Date().getTime(),event:'gtm.js'}
+);var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5GDS96T');</script>
+<!-- End Google Tag Manager -->
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5GDS96T"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- XOLA Tour Booking JS -->
+<script type="text/javascript"> (function() { var co=document.createElement("script"); co.type="text/javascript"; co.async=true; co.src="https://xola.com/checkout.js"; var s=document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(co, s); })(); </script>
+<!-- XOLA Button Style -->
+<style>
+.xola-custom {
+margin-top: 20px;
+margin-bottom: 40px;
+padding: 14px 24px;
+color: #fff;
+background: #c40000;
+cursor: pointer;
+display: block;
+width: 250px;
+text-align: center;
+}
+
+@media (max-width: 1201px) {
+
+.xola-custom {
+margin-left: auto;
+margin-right: auto;
+}
+
+}
+
+.sticky-header .nav-search .mobile-controls .find-near-me  {
+display: none;
+}
+
+</style>
+<!-- End XOLA Button Style -->
+</head>
+<script>
+    //Rose redirect to video campaign tracking w/ code
+    if (window.location.href == "http://www.angryorchard.com/rose") {
+        window.location.href = "http://www.angryorchard.com/our-ciders/rose?utm_source=TV&utm_medium=TV&utm_campaign=Rose";
+    }
+
+</script>
+<body>
+    <!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1708364586124474'); 
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" 
+src="https://www.facebook.com/tr?id=1708364586124474&ev=PageView
+&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+<!-- Twitter universal website tag code -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='//static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+// Insert Twitter Pixel ID and Standard Event data below
+twq('init','nxn8i');
+twq('track','PageView');
+</script>
+<!-- End Twitter universal website tag code -->
+    <div class="blackout"></div>
+    <!-- Header -->
+    
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/gtp0fir.css">
+    <link rel="stylesheet" type="text/css" href="/Presentation/AngryOrchardRedux/includes/css/master.css">
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+</head>
+<body class="site">
+    <section class="age-gate" data-minage="21" data-expires="365" data-cookiename="AngryOrchardAgeGate" data-serviceuri="/bbc/angryorchard/agegate/verify">
+        <div class="bg-img desktop" style="background-image: url(https://www.angryorchard.com:443//app_media/Angry-Orchard-Redux/Content/Age-Gate/age-gate-desktop-2022.file);"></div>
+        <div class="bg-img mobile" style="background-image: url(https://www.angryorchard.com:443//app_media/Angry-Orchard-Redux/Content/Age-Gate/age-gate-mobile-logo-2022.file);"></div>
+        <div class="age-gate__header">
+
+            
+
+        </div>
+
+        <div class="verification">
+            <h2 role="alert"><style>
+    @media (max-width: 768px) {
+    .mobileText {
+    text-align: left !important;
+    }
+    .desktopText {
+    display: none !important;
+    }
+    }
+
+    @media (min-width: 769px) {
+    .mobileText {
+    display: none !important;
+    }
+    .desktopText {
+    text-align: left !important;
+    }
+</style>
+
+<div class="desktopText">
+<img style="max-width: 300px;" class="logo" src="app_media/B2B8B8A208634C6DAC028C1E130FAD51.ashx" alt="Angry Orchard Hard Cider" /><br>
+Are you over 21?
+</div>
+
+<div class="mobileText">
+<!-- <img style="width: 100%;" class="logo" src="app_media/162E1578A325439EB4B9CFB31E6AE957.ashx" alt="Angry Orchard Hard Cider" /><br><br> -->
+<span style="color: #FFF !important;">Are you over 21?</span>
+</div></h2>
+            <form class="form-cont">
+                <div class="bot-cont">
+                    <button class="btn yes" onclick="ageVerify(true)">Yes</button>
+                    <button class="btn no" onclick="ageVerify(false)">No</button>
+                </div>
+                <div class="message-warning" display="hidden" role="alert">
+                    We're sorry. We take seriously our responsibility to limit website access to adults of legal drinking age. For more information, please visit <a href="http://www.responsibility.org">Responsibility.Org.</a>
+                </div>
+                <div class="copyright-text">
+                    <style>
+    @media (max-width: 768px) {
+    .mobileText {
+    color: #FFF !important;
+    text-align: center !important;
+    }
+
+.age-gate .verification .form-cont .copyright-text {
+    color: #FFF !important;
+}
+
+    .desktopText {
+    display: none !important;
+    }
+    }
+
+    @media (min-width: 769px) {
+    .mobileText {
+    display: none !important;
+    }
+    .desktopText {
+    text-align: center !important;
+    }
+</style>
+
+<div class="desktopText">
+You must be 21 or older to enter.<br>
+Angry Orchard Cider Company, LLC. Walden, NY - &copy;
+</div>
+
+<div class="mobileText">
+You must be 21 or older to enter.<br>
+Angry Orchard Cider Company, LLC. Walden, NY - &copy;
+</div> 2023
+                </div>
+            </form>
+        </div>
+    </section>
+    <script>
+        (function (window, $) {
+
+            window.bbc = window.bbc || {};
+            window.bbc.settings = { logEnabled: true };
+            window.bbc.sharedLib = window.bbc.sharedLib || {};
+
+            window.bbc.sharedLib.cookie = (function () {
+                function create(name, value, days) {
+                    var expires = "";
+                    if (days) {
+                        var date = new Date();
+                        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                        expires = "; expires=" + date.toGMTString();
+                    }
+                    document.cookie = name + "=" + value + expires + "; path=/";
+                }
+
+                function read(name) {
+                    var nameEQ = escape(name) + "=";
+                    var ca = document.cookie.split(';');
+                    for (var i = 0; i < ca.length; i++) {
+                        var c = ca[i];
+                        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                        if (c.indexOf(nameEQ) === 0) return unescape(c.substring(nameEQ.length, c.length));
+                    }
+                    return null;
+                }
+
+                return {
+                    create: create,
+                    read: read
+                }
+            })();
+
+            window.bbc.sharedLib.ajax = (function () {
+
+                function get(url) {
+                    return $.ajax({
+                        url: url,
+                        type: "GET",
+                        cache: false,
+                        processData: false
+                    });
+                }
+
+                function post(url, data, contentType) {
+                    return send(url, data, contentType, "POST");
+                }
+
+                function send(url, data, contentType, method) {
+                    return $.ajax({
+                        url: url,
+                        type: method == undefined ? "POST" : method,
+                        data: data,
+                        cache: false,
+                        processData: false,
+                        contentType: contentType == undefined
+                            ? "application/x-www-form-urlencoded; charset=UTF-8"
+                            : contentType
+                    });
+                }
+
+                return {
+                    get: get,
+                    post: post,
+                    send: send
+                }
+            })();
+        })(window, jQuery);
+
+        jQuery.validator.setDefaults({
+            debug: false,
+            errorPlacement: function (error, element) { }
+        });
+
+        function ageVerify(meetsMinimumAge) {
+            if (meetsMinimumAge === true) {
+                setAgeGateCookie();
+                location.reload();
+            }
+            else {
+                $(".message-warning").css("visibility", "visible");
+                $(".message-warning").css("display", "block");
+            }
+        }
+
+        function setAgeGateCookie() {
+            var d = new Date();
+            d.setTime(d.getTime() + (365 * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = "AngryOrchardAgeGate=true;" + expires + ";path=/";
+        }
+
+        function getAge(birthDate) {
+            var birthDate = new Date(birthDate)
+            var today = new Date();
+            var age = today.getFullYear() - birthDate.getFullYear();
+            var m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            return age;
+        }
+
+        function validateDate(dob, year, month, day) {
+            var testDate = month + "/" + day + "/" + year;
+            // First check for the pattern
+            if (!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(testDate))
+                return false;
+
+            if (Object.prototype.toString.call(dob) === "[object Date]") {
+                // it is a date
+                if (isNaN(dob.getTime())) {  // d.valueOf() could also work
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+            else {
+                return false;
+            }
+        }
+    </script>
+    <script>
+        $(function () {
+            var $ageGate = $(".age-gate");
+            var cookieName = $ageGate.attr("data-cookieName");
+
+        });
+
+        var ageInput = $(":input[type='number']");
+
+        ageInput.on("keydown",
+            function (e) {
+                if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                    (e.keyCode == 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+                    (e.keyCode == 67 && (e.ctrlKey === true || e.metaKey === true)) ||
+                    (e.keyCode == 88 && (e.ctrlKey === true || e.metaKey === true)) ||
+                    (e.keyCode >= 35 && e.keyCode <= 39)) {
+                    return;
+                }
+                if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                    e.preventDefault();
+                }
+            });
+    </script>
+</body>
+</html>
+
+    <script src="/Presentation/AngryOrchardRedux/includes/scripts/banner.js"></script>
+
+    <main class="site-content" id="main-site-content">
+        
+    </main>
+
+    <!-- Footer -->
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        <script type="text/javascript" src="/Presentation/AngryOrchardRedux/includes/scripts/jquery.easeScroll.js"></script>
+        <script type="text/javascript" src="/Presentation/AngryOrchardRedux/includes/scripts/jquery.fullpage.extensions.min.js"></script>
+        <script type="text/javascript" src="/Presentation/AngryOrchardRedux/includes/scripts/jquery.backstretch.min.js"></script>
+        <script type="text/javascript" src="/Presentation/AngryOrchardRedux/includes/scripts/slick.min.js"></script>
+        <script type="text/javascript" src="/Presentation/AngryOrchardRedux/includes/scripts/scripts.min.js"></script>
+    <!-- Add GDPR Notification Bar -->
+    
+        <div class="notification-banner">
+            <div class="inner">
+                <div class="text">
+                    <p>This website uses cookies. By using this website and its offers and continuing navigating, you accept these cookies. You can change them in your browser settings.</p>
+                </div>
+                <a href="javascript:acceptCookieAgreement();" class="btn btn-primary btn-skinny notification-close">Accept</a>
+            </div>
+        </div>
+
+<script src="/Presentation/Global/includes/js/notification-bar.js"></script>
+</body>
+</html>
+<script>    
+    //Check if Age Gate cookie is present
+    if (document.cookie.indexOf('AngryOrchardAgeGate=') > -1) {
+        //Load Cookie Agressment
+        checkCookieAgreement();
+    }
+</script>

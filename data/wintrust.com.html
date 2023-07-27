@@ -1,0 +1,2378 @@
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+
+    
+        
+        
+            <link rel="canonical" href="https://www.wintrust.com"/>
+        
+    
+         <link rel="icon" href="/content/dam/wintrust/logos/wintrust/favicon.ico" type="image/x-icon"/>
+         <link rel="shortcut icon" href="/content/dam/wintrust/logos/wintrust/favicon.ico" type="image/x-icon"/>
+         
+    
+    <script type="application/javascript">
+        
+    </script>
+    
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    
+    <title>Welcome | Wintrust</title>
+    
+    <meta name="description" content="Wintrust is a financial services company that provides exceptional customer service, while giving back to the things that matter most to our area."/>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Welcome"/>
+    <meta property="og:description" content="Wintrust is a financial services company that provides exceptional customer service, while giving back to the things that matter most to our area."/>
+    <meta name="loprofile-attribution"/>
+
+    <!-- font preloads 
+    <link rel="preload" href="/apps/wintrust/clientlibs/fonts/resources/agenda-bold.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="/apps/wintrust/clientlibs/fonts/resources/WhitneySSm-Medium-Adv.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="/apps/wintrust/clientlibs/fonts/resources/WhitneySSm-Semibold-Adv.otf" as="font" type="font/otf" crossorigin>
+    <link rel="preload" href="/apps/wintrust/clientlibs/fonts/resources/WhitneySSm-Book-Adv.otf" as="font" type="font/otf" crossorigin>
+    -->
+    
+    
+
+
+
+
+
+
+
+
+    
+
+
+<!--fontawesome (css), jquery(js, companion bootstrap version), jquery-ui (css + js), handlebars (js) -->
+
+    
+<link rel="stylesheet" href="/etc.clientlibs/wintrust/clientlibs/clientlib-base.min.css" type="text/css">
+<link rel="stylesheet" href="/etc.clientlibs/wintrust/clientlibs/vendor/jquery-ui.min.css" type="text/css">
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6115714/7561812/css/fonts.css"/>
+<link href="//cloud.typenetwork.com/projects/4738/fontface.css" rel="stylesheet" type="text/css"/>
+
+    <!-- preload Vue in page head -->
+    
+        
+    
+<script src="/etc.clientlibs/wintrust/clientlibs/vendor/vue.min.js"></script>
+
+
+
+    
+
+    
+
+
+    
+<script src="/etc.clientlibs/clientlibs/granite/jquery.min.js"></script>
+<script src="/etc.clientlibs/clientlibs/granite/utils.min.js"></script>
+
+
+
+<script type="text/javascript">
+            (function() {
+                window.ContextHub = window.ContextHub || {};
+
+                /* setting paths */
+                ContextHub.Paths = ContextHub.Paths || {};
+                ContextHub.Paths.CONTEXTHUB_PATH = "/etc/cloudsettings/default/contexthub";
+                ContextHub.Paths.RESOURCE_PATH = "\/content\/wintrust\/en\/_jcr_content\/contexthub";
+                ContextHub.Paths.SEGMENTATION_PATH = "\/etc\/segmentation\/contexthub";
+                ContextHub.Paths.CQ_CONTEXT_PATH = "";
+
+                /* setting initial constants */
+                ContextHub.Constants = ContextHub.Constants || {};
+                ContextHub.Constants.ANONYMOUS_HOME = "/home/users/Y/ix_6VHBpP5j03-uwTHNz";
+                ContextHub.Constants.MODE = "no-ui";
+            }());
+        </script><script src="/etc/cloudsettings/default/contexthub.kernel.js" type="text/javascript"></script>
+
+
+    <script type="application/javascript" src="https://www.youtube.com/iframe_api"></script>
+    <script type="application/javascript">
+        var video_obj=null;
+        var video_length=0;
+        var video_name='Movie name ' + new Date().getTime();
+
+        var players=new Array();
+        function onYouTubeIframeAPIReady() {
+
+            var playerInfoList=new Array();
+            $('.youtube-video-wrapper').each(function(){
+                var player=$(this).attr("id");
+                playerInfoList.push(player);
+            });
+
+
+            for(x=0;x<playerInfoList.length;x++){
+                players[x] = new YT.Player(playerInfoList[x], {
+                    events: {
+                        'onReady': onPlayerReady,
+                        'onStateChange': onPlayerStateChange
+                    }
+                });
+            }
+        }
+
+        function onPlayerReady(event) {
+            //console.log('*** iFrame embed onPlayerReady ', event.target);
+        }
+
+        var done = false;
+        function onPlayerStateChange(event) {
+            var player = event.target;
+            var currentTime = player.getCurrentTime() || 0;
+            video_name = player.getVideoData();
+            video_name = video_name.title;
+            video_length = player.getDuration();
+
+            if((event.data === 1 || event.data < 0) && YT.PlayerState.PLAYING === 1){
+                    if(player.getCurrentTime() === 0) {
+                        s.Media.open(video_name, video_length, 'Youtube Object Embed');
+                        s.Media.play(video_name, player.getCurrentTime());
+                        submitVideoEvent("videoStart", player);
+                    } else {
+                        s.Media.play(video_name, player.getCurrentTime());
+
+                        // Start a timer to check every second to see if we've hit any of our percentage viewed marks
+                        player.timer = setInterval(function() {
+                            checkCompletion(player, video_name);
+                        }, 1000);
+                    }
+                } else if(event.data === 2) {
+                    s.Media.stop(video_name, player.getCurrentTime());
+                    clearInterval(player.timer);
+                } else if(event.data === 3) {
+                    s.Media.stop(video_name, player.getCurrentTime());
+                } else if(event.data === 0) {
+                    s.Media.stop(video_name, player.getCurrentTime());
+                    s.Media.close(video_name);
+                    clearInterval(player.timer);
+                    submitVideoEvent("video100complete", player);
+                }
+        }
+
+        function checkCompletion(player, title) {
+            var completionPercentage = (player.getCurrentTime()*100)/player.getDuration();
+            if (completionPercentage > 25 && !player.complete25) {
+                submitVideoEvent("video25complete", player);
+                player.complete25 = true;
+            } else if (completionPercentage > 50 && !player.complete50) {
+                submitVideoEvent("video50complete", player);
+                player.complete50 = true;
+            } else if (completionPercentage > 75 && !player.complete75) {
+                submitVideoEvent("video75complete", player);
+                player.complete75 = true;
+            }
+        }
+
+        function submitVideoEvent(eventName, player) {
+            var eventDetails = {
+                "event": eventName,
+                "videoDetail": {
+                    "title": player.getVideoData().title
+                }
+            };
+            WintrustFED.sendComplexDataLayerEvent(eventDetails);
+        }
+    </script>
+        
+    
+        <script src="//assets.adobedtm.com/launch-EN652436bf7a494b77a52075260d85b950.min.js" async></script>
+    
+
+    <!-- fix for page flickering issue -->
+    <script>
+        ;(function(win, doc, style, timeout) {
+            var STYLE_ID = 'at-body-style';
+            function getParent() {
+                return doc.getElementsByTagName('head')[0];
+            }
+            function addStyle(parent, id, def) {
+                if (!parent) {
+                    return;
+                }
+                var style = doc.createElement('style');
+                style.id = id;
+                style.innerHTML = def;
+                parent.appendChild(style);
+            }
+            function removeStyle(parent, id) {
+                if (!parent) {
+                    return;
+                }
+                var style = doc.getElementById(id);
+                if (!style) {
+                    return;
+                }
+                parent.removeChild(style);
+            }
+            addStyle(getParent(), STYLE_ID, style);
+            setTimeout(function() {
+                removeStyle(getParent(), STYLE_ID);
+            }, timeout);
+        }(window, document, "body {opacity: 0 !important}", 3000));
+    </script>
+
+</head>
+    <body><body>
+	
+
+      
+      		<div>  <div class="root responsivegrid">
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="header parbase aem-GridColumn aem-GridColumn--default--12">
+
+
+
+<div data-lastmodified="2021-11-10T17:36:08.435-06:00"><div class="xfpage page basicpage"><div class="xf-content-height">
+    
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="browserbanner text aem-GridColumn aem-GridColumn--default--12">
+
+<div id="cmp-browser-banner" class="cmp-browser-banner cmp-browser-banner--hidden">
+    <div class="alert alert-warning alert-dismissible cmp-notification__alert WintrustSalmon--background-color WintrustSalmon--border-color White--color" role="alert">
+      <p><h2 style="text-align: center;"><br />
+⚠ We're sorry, we noticed the browser (Internet Explorer) you are using is outdated and no longer supported for use on our website.</h2>
+<p style="text-align: center;"> </p>
+<h3 style="text-align: center;">Please use either Google Chrome, Microsoft Edge or Safari browsers to ensure the best possible experience when using our online services.</h3>
+</p>
+    </div>
+</div>
+<script>
+var ua = window.navigator.userAgent;
+var msie = ua.indexOf("MSIE ");
+// IE check
+if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))
+{
+    // Remove cmp-browser-banner--hidden class
+    console.log('IE detected');
+    document.getElementById("cmp-browser-banner").classList.remove("cmp-browser-banner--hidden");
+}
+</script>
+</div>
+
+    
+</div>
+
+</div>
+
+</div>
+</div>
+
+	<div id="topRibbon" class="royalBlue"></div>
+
+	<header>
+		<div id="header" class="container" data-page-title="Wintrust ">
+
+			<div class="top-nav">
+				<div class="row justify-content-center">
+					<div class="col-md-5">
+						
+    <div class="d-flex justify-content-center justify-content-md-start logoImage mb-2" tabindex="0">
+        <a href="/">
+            <img src="/content/dam/wintrust/logos/wintrust/wintrust-big.png" alt="Wintrust" class="logo-width"/>
+        </a>
+    </div> 
+
+
+					</div>
+					
+					<!-- <div class="col d-flex justify-content-end align-items-center"> -->
+					<div class="col-md-7">
+						
+    <!-- top nav starts -->
+    <div class="container">
+        <div class="row top-nav-container justify-content-center justify-content-md-end">
+            <ul class="navbar-nav navbar-expand justify-content-center flex-wrap">
+                <li class="nav-item top-nav-item d-flex align-items-center justify-content-center d-md-none">
+                    <div id="nav-toggle" class="menuShowMeganav navbar-toggle collapsed d-flex align-self-center" data-target=".js-static-header-nav">
+                        
+                        <div class="nav-item-content"><a class="nav-link-focus" href="#">Menu</a></div>
+                    </div>
+                </li>
+                <li class="nav-item top-nav-item js-top-nav-item d-flex align-items-center justify-content-center cmp-homepage-login cmp-homepage-login--mobile">
+                    <div class="login d-flex align-self-center">
+                        
+                            <img src="/content/dam/wintrust/generic/nav-icons-buttons/login.png" alt="Login"/>
+                        
+                        
+                        <div class="nav-item-content h3-substitute-font"><a href="#" class="cmp-homepage-login__button nav-link-focus" role="button" aria-haspopup="true" aria-expanded="false">Login</a></div>
+                    </div>
+                </li>
+                <li class="nav-item top-nav-item js-top-nav-item d-flex align-items-center justify-content-center">
+                    <div class="find-a-bank d-flex align-self-center" aria-expanded="false">
+                        <img src="/content/dam/wintrust/generic/nav-icons-buttons/location.png" alt="Find a Bank"/>
+                        <div class="nav-item-content h3-substitute-font">
+                        	
+                        		<a class="nav-link-focus" href="#" role="button" aria-haspopup="true" aria-expanded="false">Find a Bank</a>
+                            
+                            
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item top-nav-item js-top-nav-item align-items-center justify-content-center d-none d-md-flex">
+                    <div class="search d-flex align-self-center" aria-expanded="false">
+                        <img src="/content/dam/wintrust/generic/nav-icons-buttons/search.png" alt="Search"/>
+                        <div class="nav-item-content h3-substitute-font"><a class="nav-link-focus" href="#" role="button" aria-haspopup="true" aria-expanded="false">Search</a></div>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+        <!-- top nav ends -->
+        
+        <div class="menuModalWrapper nav-modal">
+            
+            
+                <div class="find-a-bank-modal modal" role="button" aria-haspopup="false" aria-expanded="true">
+                    <h3 aria-label="Please enter your address or zip code:" aria-expanded="true">Please enter your address or zip code: </h3>
+                    <div class="search-area">
+                        <div class="input-group search-address-zipcode">
+                            <input type="text" id="find-a-bank-searchbox" class="form-control searchbox-input" placeholder="Enter address or zip code" aria-label="Enter address or zip code" tabindex="0"/>
+                            <div class="input-group-btn">
+                                <button id="find-a-bank-searchbox-submit" class="btn searchbox-submit-button" type="submit" data-resultspage="/content/wintrust/en/findus.html" aria-label="Find a Bank">
+                                    <i class="fa fa-map-marker" aria-hidden="true" title="Find a Bank"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            <div class="search-modal modal" role="button" aria-haspopup="false" aria-expanded="true">
+                <h3 aria-label="Please enter your search terms:" aria-expanded="true">Please enter your search terms:</h3>
+                <div class="search-area">
+                    <div class="input-group search-address-zipcode">
+                        <input type="text" id="searchbox" class="form-control searchbox-input" placeholder="Enter search terms" aria-label="Enter search terms" tabindex="0"/>
+                        <div class="input-group-btn">
+                            <button id="searchbox-submit" class="btn searchbox-submit-button" type="submit" data-resultspage="/content/wintrust/en/search.html" aria-label="Search">
+                                <i class="fa fa-search" aria-hidden="true" title="Search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- </div> -->
+            
+        </div>
+    </div>
+
+
+					</div>
+	
+	
+	
+					
+				</div>
+			</div>
+			
+	
+			<nav class="navbar navbar-expand-md">
+				<div class="static-header-nav js-static-header-nav collapse navbar-collapse">
+					<div class="align-self-start w-100">
+						<ul class="nav nav-justified">
+							<li class="nav-item d-md-none">
+								
+								<div class="input-group">
+									<input type="text" class="form-control" placeholder="Enter Search Terms" name="srch-term" id="srch-term"/>
+									<div class="input-group-btn">
+										<button id="mobile-searchbox-submit-button" class="btn btn-default searchbox-submit-button" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+									</div>
+								</div>
+							</li>
+							<li class="nav-item royalBlue first">
+								<a class="nav-link-focus" aria-label="Our Story" href="/our-story.html">Our Story</a>
+							</li>
+							<li class="nav-item royalBlue">
+								<a class="nav-link-focus" aria-label="Personal" href="/personal-solutions.html">Personal</a>
+							</li>
+							<li class="nav-item royalBlue">
+								<a class="nav-link-focus" aria-label="Commercial &amp; Business" href="/business-solutions.html">Commercial &amp; Business</a>
+							</li>
+							<li class="nav-item royalBlue">
+								<a class="nav-link-focus" aria-label="News &amp; Education" href="/financial-education.html">News &amp; Education</a>
+							</li>
+							<li class="nav-item royalBlue">
+								<a class="nav-link-focus" aria-label="Investor Relations" href="https://ir.wintrust.com/">Investor Relations</a>
+							</li>
+							<li aria-haspopup="true" aria-describedby="login" class="nav-item royalBlue last cmp-homepage-login cmp-homepage-login--desktop">
+								
+    <a id="js-cmp-homepage-login__tabTextAnchor" href="#" class="cmp-homepage-login__button nav-link-focus ">
+        LOGIN
+    </a>
+    <div class="cmp-homepage-login__tab-overlay WintrustBlue--border-color " style="solid" id="cmp-homepage-login__tab-overlay">
+        <a href="#" class="cmp-homepage-login__button ">
+            LOGIN
+        </a>
+        <div id="cmp-homepage-login__neck" class="WintrustBlue--border-color" style="
+                background-color: var(--White);
+            "></div>
+    </div>
+    <div class="cmp-homepage-login__border-mask White--background-color"></div>
+    <div class="cmp-homepage-login__modal White--background-color WintrustBlue--color">
+        <input type="hidden" class="js-cmp-homepage-login__config" data-tab-text="LOGIN" data-tab-active-color="WintrustBlue" data-tab-active-background-color="White" data-dropdown-options="[{&#34;header&#34;:&#34;&#34;,&#34;errorAlert&#34;:false,&#34;errorAlertText&#34;:&#34;&lt;p>We are unable to log you in at this time as our site is down. Please come back and try again shortly. Thank you!&lt;/p>\r\n&#34;,&#34;method&#34;:&#34;POST&#34;,&#34;text&#34;:&#34;Wintrust Digital Banking&#34;,&#34;path&#34;:&#34;https://www.wintrustdigitalbanking.com/d3rest/v3/login&#34;,&#34;buttonLabel&#34;:&#34;SIGN IN&#34;,&#34;footer&#34;:&#34;&lt;p>&lt;a href=\&#34;https://www.wintrustdigitalbanking.com/#pre-auth/self-enrollment\&#34;>Not Enrolled? Sign Up Now&lt;/a>&lt;/p>\r\n&#34;,&#34;target&#34;:&#34;_self&#34;,&#34;buttonWidth&#34;:&#34;width:225px;&#34;,&#34;loginButtonBackground&#34;:&#34;WintrustBlue--background-color&#34;},{&#34;header&#34;:&#34;&lt;p>The Investments/Asset Management option will open in a separate window so that you may complete your sign-in.&lt;/p>\r\n&#34;,&#34;errorAlert&#34;:false,&#34;errorAlertText&#34;:&#34;&lt;p>We are unable to log you in at this time as our site is down. Please come back and try again shortly. Thank you!&lt;/p>\r\n&#34;,&#34;method&#34;:&#34;GET&#34;,&#34;text&#34;:&#34;Investments/Asset Management&#34;,&#34;path&#34;:&#34;https://wintrust.fccaccessonline.com/&#34;,&#34;buttonLabel&#34;:&#34;GO TO ACCOUNT LOGIN&#34;,&#34;footer&#34;:&#34;&#34;,&#34;target&#34;:&#34;_blank&#34;,&#34;buttonWidth&#34;:&#34;width:300px;&#34;,&#34;loginButtonBackground&#34;:&#34;WintrustBlue--background-color&#34;},{&#34;header&#34;:&#34;&lt;p>The Trust option will open in a separate window so that you may complete your sign-in.&lt;/p>\r\n&#34;,&#34;errorAlert&#34;:false,&#34;errorAlertText&#34;:&#34;&lt;p>We are unable to log you in at this time as our site is down. Please come back and try again shortly. Thank you!&lt;/p>\r\n&#34;,&#34;method&#34;:&#34;GET&#34;,&#34;text&#34;:&#34;Trust&#34;,&#34;path&#34;:&#34;https://clientpoint.fisglobal.com/tdcb/main/UserLogon?bankNumber=8M&#34;,&#34;buttonLabel&#34;:&#34;GO TO ACCOUNT LOGIN&#34;,&#34;footer&#34;:&#34;&#34;,&#34;target&#34;:&#34;_blank&#34;,&#34;buttonWidth&#34;:&#34;width:300px;&#34;,&#34;loginButtonBackground&#34;:&#34;WintrustBlue--background-color&#34;},{&#34;header&#34;:&#34;&lt;p>The i-BusinessBanking option will open in a separate window so that you may complete your sign-in.&lt;/p>\r\n&#34;,&#34;errorAlert&#34;:false,&#34;errorAlertText&#34;:&#34;&lt;p>We are unable to log you in at this time as our site is down. Please come back and try again shortly. Thank you!&lt;/p>\r\n&#34;,&#34;method&#34;:&#34;GET&#34;,&#34;text&#34;:&#34;i-BusinessBanking&#34;,&#34;path&#34;:&#34;https://i-businessbanking.ebanking-services.com/eAM/Credential/Index?appId=beb&amp;brand=i-businessbanking&#34;,&#34;buttonLabel&#34;:&#34;GO TO ACCOUNT LOGIN&#34;,&#34;footer&#34;:&#34;&#34;,&#34;target&#34;:&#34;_blank&#34;,&#34;buttonWidth&#34;:&#34;width:300px;&#34;,&#34;loginButtonBackground&#34;:&#34;WintrustBlue--background-color&#34;},{&#34;header&#34;:&#34;&lt;p>The i-BusinessCapturePro option will open in a separate window so that you may complete your sign-in.&lt;/p>\r\n&#34;,&#34;errorAlert&#34;:false,&#34;errorAlertText&#34;:&#34;&lt;p>We are unable to log you in at this time as our site is down. Please come back and try again shortly. Thank you!&lt;/p>\r\n&#34;,&#34;method&#34;:&#34;GET&#34;,&#34;text&#34;:&#34;i-BusinessCapturePro&#34;,&#34;path&#34;:&#34;https://dlmlr8.fisglobal.com/directlinkclient/login/801087&#34;,&#34;buttonLabel&#34;:&#34;GO TO ACCOUNT LOGIN&#34;,&#34;footer&#34;:&#34;&#34;,&#34;target&#34;:&#34;_blank&#34;,&#34;buttonWidth&#34;:&#34;width:300px;&#34;,&#34;loginButtonBackground&#34;:&#34;WintrustBlue--background-color&#34;},{&#34;header&#34;:&#34;&lt;p>The i-BusinessFX option will open in a separate window so that you may complete your sign-in.&lt;/p>\r\n&#34;,&#34;errorAlert&#34;:false,&#34;errorAlertText&#34;:&#34;&lt;p>We are unable to log you in at this time as our site is down. Please come back and try again shortly. Thank you!&lt;/p>\r\n&#34;,&#34;method&#34;:&#34;GET&#34;,&#34;text&#34;:&#34;i-BusinessFX&#34;,&#34;path&#34;:&#34;https://www.ibusinessfx.com/fxipfo/PrivateLabel.do?privateLabelID=newiBusiness&#34;,&#34;buttonLabel&#34;:&#34;GO TO ACCOUNT LOGIN&#34;,&#34;footer&#34;:&#34;&#34;,&#34;target&#34;:&#34;_blank&#34;,&#34;buttonWidth&#34;:&#34;width:300px;&#34;,&#34;loginButtonBackground&#34;:&#34;WintrustBlue--background-color&#34;}]" data-empty-username-and-password-text="&lt;p>User ID and Password are required fields&lt;/p>
+" data-empty-username-text="&lt;p>User ID is a required field&lt;/p>
+" data-empty-password-text="&lt;p>Password is a required field&lt;/p>
+" data-border-style="solid" data-border-background-class="WintrustBlue--border-color" data-default-header-for-link-options="Based on your selection &lt;b>%s&lt;/b> will open in a separate window for sign in." data-is-root data-always-open-on-root="true"/>
+
+        <div id="cmp-homepage-login__modal__begin-focus" tabindex="0"></div>
+
+        <div v-if="errorMessage" class="cmp-homepage-login__error">
+            <button class="far fa-exclamation-circle"></button>
+            <span class="cmp-homepage-login__error__message" aria-label="Incorrect username or password" v-html="errorMessage"></span>
+        </div>
+
+        <div v-if="errorAlert" class="cmp-homepage-login__error">
+            <button class="far fa-exclamation-triangle"></button>
+            <span class="cmp-homepage-login__error__message" aria-label="D3 Service error" v-html="errorAlert"></span>
+        </div>
+
+        <div v-if="computedHeader" class="cmp-homepage-login__header" v-html="computedHeader"></div>
+
+        <label class="cmp-homepage-login__account-type_label" aria-label="account type label" for="cmp-homepage-login__choose-account-type__select">
+            <p>Account Login</p>
+
+        </label>
+
+        <div>
+            <select id="cmp-homepage-login__choose-account-type__select" class="form-control searchbox-input" aria-label="accountLogin" v-model="selectedIndex">
+                <option v-for="(option, index) in dropdownOptions" :value="index">{{option.text}}</option>
+            </select>
+        </div>
+
+        <div v-if="selected.method == 'POST'" class="cmp-homepage-login__form">
+            <form method="POST" :action="selected.path" :target="selected.target" @submit="onSubmit" aria-label="Login Form">
+                <label aria-label="username label" for="cmp-homepage-login__form__username" class="WintrustBlue--color">User ID</label>
+                <input name="username" v-model="username" class="form-control" type="text" aria-label="username input" id="cmp-homepage-login__form__username" :disabled="errorAlert"/>
+                <label aria-label="password label" for="cmp-homepage-login__form__password" class="WintrustBlue--color">Password</label>
+                <input name="password" v-model="password" class="form-control" aria-label="password input" type="password" id="cmp-homepage-login__form__password" :disabled="errorAlert"/>
+                <div v-if="!errorAlert" role="link" aria-label="Forgot username or password" class="cmp-homepage-login__form__forgot-username-or-password">
+                    <p><span class="WintrustBlue--color"><a title="Forgot User ID" href="https://www.wintrustdigitalbanking.com/#pre-auth/forgot-username">Forgot User ID?</a> <br />
+ <a title="Forgot Password" href="https://www.wintrustdigitalbanking.com/#pre-auth/forgot-password">Forgot Password?</a></span></p>
+
+                </div>
+                <div class="cmp-homepage-login__form__sign-in">
+                    <input :style="selected.buttonWidth" :class="selected.loginButtonBackground" class="btn font-weight-bold text-uppercase White--color text-decoration-none" type="submit" role="button" :value="selected.buttonLabel || 'SIGN IN'" :disabled="errorAlert"/>
+                </div>
+            </form>
+        </div>
+
+        <div v-if="selected.method == 'GET'" class="cmp-homepage-login__other">
+            <a :href="selected.path || '#'" :target="selected.target">
+                <button :style="selected.buttonWidth" :class="selected.loginButtonBackground" role="link" aria-label="Go to account login" class="btn font-weight-bold text-uppercase White--color text-decoration-none" :disabled="errorAlert">
+                    {{selected.buttonLabel || 'GO TO ACCOUNT LOGIN'}}
+                </button>
+            </a>
+        </div>
+
+        <div v-if="selected.footer" aria-label="login footer" class="cmp-homepage-login__footer WintrustBlue--color" v-html="selected.footer"></div>
+
+        <div class="cmp-homepage-login__mobile-footer-spacer"></div>
+        <div v-bind:class="selected.method" class="cmp-homepage-login__mobile-footer White--color">
+            <div class="cmp-homepage-login__app-container">
+                <span aria-label="Download Wintrust Mobile" class="cmp-homepage-login__form__download_text text-left">
+                    <p>DOWNLOAD WINTRUST MOBILE</p>
+
+                </span>
+            </div>
+
+            <div class="cmp-homepage-login__app-container cmp-homepage-login__footer-download-link-google" title="Download app in Google Play store">
+                <a href="https://play.google.com/store/apps/details?id=com.wintrust.production" target="_blank" style="text-decoration:none;">
+                    <img src="/content/dam/wintrust/d3/icons/google-play.png" width="225" height="x" alt="Google Play Icon"/>
+                </a>
+            </div>
+
+            <div class="cmp-homepage-login__app-container cmp-homepage-login__footer-download-link-apple" title="Download app in Apple App Store">
+                <a href="https://apps.apple.com/us/app/wintrust-digital-banking/id1619335105" target="_blank" style="text-decoration:none;">
+                    <img src="/content/dam/wintrust/d3/icons/app-store.png" width="225" height="x" alt="Apple Store Icon"/>
+                </a>
+            </div>
+        </div>
+
+        <div id="cmp-homepage-login__modal__end-focus" tabindex="0"></div>
+    </div>
+    <!-- homepagelogin clientlibs -->
+    
+        
+    
+<link rel="stylesheet" href="/etc.clientlibs/wintrust/components/winui/homepagelogin/clientlib.min.css" type="text/css">
+<script src="/etc.clientlibs/wintrust/components/winui/homepagelogin/clientlib.min.js"></script>
+
+
+
+    
+    <!-- ends -->
+
+
+							</li>
+							
+						</ul>
+					</div>
+	
+				</div>
+			</nav>
+	
+		</div>
+	</header>
+
+</div>
+<div class="speedbump parbase aem-GridColumn aem-GridColumn--default--12">
+
+<div class="modal" tabindex="-1" role="dialog" id="speedbumpModal" data-allowed-domains="https://www.wintrustbank.com,https://www.townbank.us,https://www.libertyvillebank.com,https://www.waucondabank.com,https://www.gurneebank.com,https://www.vernonhillsbank.com,https://www.mundeleinbank.com,https://www.hecommunitybank.com,https://www.palatinebank.com,https://www.hanoverparkbank.com,https://www.hinsdalebank.com,https://www.clarendonhillsbank.com,https://www.elmhurstbank.com,https://www.provisobank.com,https://www.communitybankws.com,https://www.suburbanbank.com,https://www.lemontbankandtrust.com,https://www.bankriverside.com,https://www.downersgrovebank.com,https://www.willowbrookbank.com,https://www.barringtonbank.com,https://www.wheatonbank.com,https://www.banknaperville.com,https://www.glenellynbank.com,https://www.desplainesbank.com,https://www.elkgrovebankandtrust.com,https://www.bankschaumburg.com,https://www.wooddalebank.com,https://www.rosellebankandtrust.com,https://www.bloomingdalebank.com,https://www.nscbank.com,https://www.thebeverlybank.com,https://www.hydeparkbank.net,https://www.bankpullman.com,https://www.bankevergreenpark.com,https://www.bankoaklawn.com,https://www.bankstcharles.com,https://www.elginstatebank.com,https://www.genevabt.com,https://www.aurorabankandtrust.com,https://www.crystallakebank.com,https://www.mchenrybank.com,https://www.carybank.com,https://www.bankalgonquin.com,https://www.bankatvillage.com,https://www.sbotl.com,https://www.northbrookbank.com,https://www.buffalogrovebank.com,https://www.northview.com,https://www.northbrookbank.com,https://www.deerfieldbank.com,https://www.bankglenview.com,https://www.lakeforestbank.com,https://www.bankofhwfs.com,https://www.nchicagobank.com,https://www.highlandparkbank.com,https://www.oldplanktrailbank.com,https://www.southhollandbank.com,https://www.thejolietbank.com,https://www.bankshorewood.com,https://www.bankplainfield.com,https://www.dyerbank.com,https://www.markhambank.com,https://www.orlandparkbank.com,https://www.fnbiweb.com,https://www.wintrust.com,https://www.bankbolingbrook.com,https://www.wintrustmortgage.com,https://wintrustmortgage.com,https://wintrustbank.com,https://wintrustwealth.com,https://wintrust.com,https://www.communityadvantage.com,https://www.addisonbank.com,https://www.bankevanston.com,https://wintrust.us,https://www.wintrustwealth.com,https://taleo.net,https://www.firstinsurancefunding.ca,https://www.firstinsurancefunding.com,https://www.tricom.com,https://ir.wintrust.com,https://www.firstinsurancefunding.com,https://tricom.com,https://www.wintrust.com,https://common.wintrust.us,https://images.wintrustbanks.com,https://elavon.com,https://www.wintrustlife.com,https://www.brightonparkbank.com,https://secure4.billerweb.com/wtr/index.html?unitCode=BAR,https://secure4.billerweb.com/wtr/inetSrv,https://ibanking-services.com,https://i-businessbanking.ebanking-services.com,https://zoom.wintrustmortgage.com,https://wintrustmortgage.com,https://wintrustmortgage.com,https://ethicspoint.com,https://www.waukeganbank.com,https://www.wintrustflorida.com,https://www.wintrust.com/ccpa,https://www.wintrustwealth.com,https://www.bankcountryside.com,https://www.bankoakbrook.com,https://www.bankdarien.com,https://www.burbankbank.com,http://wintrust.com,https://booknow.appointment-plus.com/d4m4eq8m/,https://wintrust.wd1.myworkdayjobs.com/Search,http://careers.wintrust.com,https://www.bankoakpark.com/,https://www.agentfinance.com/,https://www.wintrust.com/business-solutions/mid-market/lending/insurance-banking-and-premium-finance/agency-lending.html,https://author-wintrust-prod-64.adobecqms.net/editor.html/content/wintrust/en/business-solutions/mid-market/lending/insurance-banking-and-premium-finance/wintrust-agent-finance.html,https://www.rockfordbank.com/,https://wintrust-prod-65.adobecqms.net/,https://www.wintrustdigitalbanking.com/d3rest/v3/login,https://www.wintrustdigitalbanking.com/#pre-auth/forgot-username,https://www.wintrustdigitalbanking.com/#pre-auth/forgot-password,https://www.wintrustdigitalbanking.com/#pre-auth/self-enrollment,https://faq.wintrust.com/,https://demos.wintrustdigitalbanking.com/,https://www.banklombard.com/">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="modal-title">You are leaving wintrust.com</span>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div id="leaving-site">
+                <p>Attention: You are now leaving the Wintrust website.</p>
+            </div>
+            <div id="related-site">
+                <p>You are now entering a Wintrust sister page.</p>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-sm js-continue-btn font-weight-bold text-uppercase WintrustBlue--background-color White--color WintrustBlue--border-color Wintrust-button-font-family" id="leave-site-speedbump">Acknowledge</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="trusteer parbase aem-GridColumn aem-GridColumn--default--12">
+
+<div id="trusteerdialog" data-business="35274" data-enabled="true">
+    <span class="ui-state-default"><span class="ui-icon ui-icon-info"></span></span>
+</div>
+</div>
+<div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="carousel aem-GridColumn aem-GridColumn--default--12">
+
+<div class="cmp-carousel timeline-carousel pb-3 homepageloginherocarousel" role="group" aria-roledescription="carousel" data-panelcontainer="carousel" data-cmp-is="carousel" data-cmp-autoplay data-cmp-delay="30000" data-cmp-animate-slide-transitions="true" data-cmp-slide-transition-duration="450" data-homepage-login-hero-carousel-height="620">
+    <div class="cmp-carousel__content " style="height:620px;">
+        <button class="cmp-carousel__action cmp-carousel__action--previous " type="button" aria-label="Previous" data-cmp-hook-carousel="previous">
+            <span class="cmp-carousel__action-icon"></span>
+            <!--<span class="cmp-carousel__action-text">Previous</span>-->
+            <span class="fa fa-chevron-left cmp-carousel__action-text" aria-hidden="true" title="Previous"></span>
+        </button>
+        <button class="cmp-carousel__action cmp-carousel__action--next " type="button" aria-label="Next" data-cmp-hook-carousel="next">
+            <span class="cmp-carousel__action-icon"></span>
+            <!---<span class="cmp-carousel__action-text">Next</span>-->
+            <span class="fa fa-chevron-right cmp-carousel__action-text" aria-hidden="true" title="Next"></span>
+        </button>
+        <div class="cmp-carousel__item cmp-carousel__item--active" role="tabpanel" aria-label="Slide 1 of 2" data-cmp-hook-carousel="item"><div class="homepageloginherocarouselslide"><div class="cmp-homepageloginherocarouselslide">
+    <div class="cmp-homepageloginherocarouselslide__background-image" data-winui-image-height="">
+        <script>
+            var script = document.currentScript;
+            var parent = script.parentNode;
+            var homepageloginherocarousel = "homepageloginherocarousel";
+            var carouselElement = parent;
+            while (carouselElement && !carouselElement.classList.contains(homepageloginherocarousel)) {
+                carouselElement = carouselElement.parentNode;
+            }
+            if (carouselElement) {
+                var height = carouselElement.dataset.homepageLoginHeroCarouselHeight;
+                if (!height) {
+                    console.error("homepage login hero carousel slide could not find height on homepage login hero carousel");
+                    height = 620;
+                }
+                parent.dataset.winuiImageHeight = height;
+                parent.parentElement.style.height = height + "px";
+            } else {
+                console.error("homepage login hero carousel slide could not find homepage login hero carousel");
+            }
+            script.parentNode.removeChild(script);
+        </script>
+        <div data-cmp-is="image" data-cmp-extralargeImage="/content/dam/wintrust/component-imagery/hero/carousel/2023/03/maxsafe-desktop-image.png" data-cmp-largeImage="/content/dam/wintrust/component-imagery/hero/carousel/2023/03/maxsafe-desktop-image.png" data-cmp-smallImage="/content/dam/wintrust/component-imagery/hero/carousel/2023/03/maxsafe-ipad-image.png" data-cmp-mediumImage="/content/dam/wintrust/component-imagery/hero/carousel/2023/03/maxsafe-ipad-image.png" data-cmp-extraSmallImage="/content/dam/wintrust/component-imagery/hero/carousel/2023/03/maxsafe-mobile-image.png" data-cmp-src="/_jcr_content/root/responsivegrid/carousel/item_1678662235181/backgroundimage.coreimg.82{.width}.png/1678663741328/maxsafe-desktop-image.png" data-cmp-widths="575,767,991,1199,1919" data-asset="/content/dam/wintrust/component-imagery/hero/carousel/2023/03/maxsafe-desktop-image.png" data-cmp-override="true" data-title="Desktop Image" class="cmp-image" itemscope itemtype="https://schema.org/ImageObject" style="text-align:center;">
+
+    
+
+    
+        <noscript data-cmp-hook-image="noscript">
+            
+            <img src="/_jcr_content/root/responsivegrid/carousel/item_1678662235181/backgroundimage.coreimg.png/1678663741328/maxsafe-desktop-image.png" class="cmp-image__image " itemprop="contentUrl" data-cmp-hook-image="image" alt="Desktop Image"/>
+            
+        </noscript>
+    
+    
+    
+</div>
+
+    
+
+
+    </div>
+    
+    <div class="cmp-homepageloginherocarouselslide__content">
+        <div>
+            <div class="cmp-homepageloginherocarouselslide__slide-image">
+                <div data-cmp-is="image" data-cmp-extralargeImage="/content/dam/wintrust/component-imagery/hero/carousel/2023/03/MaxSafelogo-01.png" data-cmp-largeImage="/content/dam/wintrust/component-imagery/hero/carousel/2023/03/MaxSafelogo-01.png" data-cmp-smallImage="/content/dam/wintrust/component-imagery/hero/carousel/2023/03/MaxSafelogo-01.png" data-cmp-mediumImage="/content/dam/wintrust/component-imagery/hero/carousel/2023/03/MaxSafelogo-01.png" data-cmp-extraSmallImage="/content/dam/wintrust/component-imagery/hero/carousel/2023/03/MaxSafelogo-02.png" data-cmp-src="/_jcr_content/root/responsivegrid/carousel/item_1678662235181/slideimage.coreimg.82{.width}.png/1678743094036/maxsafelogo-01.png" data-cmp-widths="575,767,991,1199,1919" data-asset="/content/dam/wintrust/component-imagery/hero/carousel/2023/03/MaxSafelogo-01.png" data-cmp-override="false" data-title="Foreground Image" class="cmp-image" itemscope itemtype="https://schema.org/ImageObject" style="text-align:;">
+
+    
+
+    
+        <noscript data-cmp-hook-image="noscript">
+            
+            <img src="/_jcr_content/root/responsivegrid/carousel/item_1678662235181/slideimage.coreimg.png/1678743094036/maxsafelogo-01.png" class="cmp-image__image " itemprop="contentUrl" data-cmp-hook-image="image" alt="Foreground Image"/>
+            
+        </noscript>
+    
+    
+    
+</div>
+
+    
+
+
+            </div>
+            <div class="cmp-homepageloginherocarouselslide__slide-title">
+                
+  <div class="cmp-text " style="line-height:1em;
+  font-family: 'Agenda Bold';; font-size:40px;">
+ <p>15X THE STANDARD FDIC PROTECTION</p>
+
+</div>
+
+    
+
+
+            </div>
+            <div class="cmp-homepageloginherocarouselslide__slide-text">
+                
+  <div class="cmp-text " style="line-height:1.25em;
+  ; font-size:16px;">
+ <p>Get covered up to $3.75 million per accountholder<sup>1</sup> with a MaxSafe account<span class="White--color">.</span></p>
+<p> </p>
+<p><span class="Black--color"><span class="font_agenda_medium"><span class="White--color"><b>1. FDIC Insurance.</b> Based on current FDIC </span><a title="Understanding Deposit Insurance" href="https://www.fdic.gov/resources/deposit-insurance/understanding-deposit-insurance/"><span class="White--color"><u>deposit insurance coverage rules</u></span></a><span class="White--color">.</span></span></span></p>
+
+</div>
+
+    
+
+
+            </div>
+            <div class="cmp-homepageloginherocarouselslide__slide-button">
+                
+
+	
+    <div class="cmp-button js-cmp-button">
+        <div class="d-flex cmp-button__standardButton --btn-default" data-button-type="standardButton" data-link="/content/wintrust/en/business-solutions/mid-market/banking/maxsafe.html" data-default-action-url="https://onlineapps.ibanking-services.com/olnas/OLNASServlet/StappsApp" data-bank-id="380" data-product-id="Internal Link" v-bind:data-gclid="gclid" data-brand-locations-type="ALL" data-button-hash-1="buttonhash1" data-modal-focus-pointer="-112906797">
+            <a class="cmp-button__standardcolor btn font-weight-bold text-uppercase 
+                    White--background-color
+                    WintrustBlue--color
+                    cmp-button__standard-button-decoration
+                    White--border-color
+                    cmp-button__button-min-width cmp-button__button-font-family cmp-button__button-font-size cmp-button__button-letter-spacing" href="/business-solutions/mid-market/banking/maxsafe.html" v-on:click="sendEvent" ref="button" target="_self" role="button" data-modal-focus="-112906797">
+                <span class="cmp-button__text">OPEN AN ACCOUNT</span>
+            </a>
+        </div>
+        
+        
+    <div class="modal open-crosssell-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    
+  
+
+    
+
+
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    
+  
+
+    
+
+
+                </div>
+               <div class="view-disclosure" data-toggle="collapse" data-target=".disclosure">
+                  
+                  
+               </div>
+               <div class="disclosure collapse">
+                  
+  
+
+    
+
+
+               </div>
+                <div class="submit-button checking blue-button">
+                    
+                </div>
+                <div class="submit-button savings white-button">
+                    
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>  
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="cmp-carousel__item" role="tabpanel" aria-label="Slide 2 of 2" data-cmp-hook-carousel="item"><div class="homepageloginherocarouselslide"><div class="cmp-homepageloginherocarouselslide">
+    <div class="cmp-homepageloginherocarouselslide__background-image" data-winui-image-height="">
+        <script>
+            var script = document.currentScript;
+            var parent = script.parentNode;
+            var homepageloginherocarousel = "homepageloginherocarousel";
+            var carouselElement = parent;
+            while (carouselElement && !carouselElement.classList.contains(homepageloginherocarousel)) {
+                carouselElement = carouselElement.parentNode;
+            }
+            if (carouselElement) {
+                var height = carouselElement.dataset.homepageLoginHeroCarouselHeight;
+                if (!height) {
+                    console.error("homepage login hero carousel slide could not find height on homepage login hero carousel");
+                    height = 620;
+                }
+                parent.dataset.winuiImageHeight = height;
+                parent.parentElement.style.height = height + "px";
+            } else {
+                console.error("homepage login hero carousel slide could not find homepage login hero carousel");
+            }
+            script.parentNode.removeChild(script);
+        </script>
+        <div data-cmp-is="image" data-cmp-extralargeImage="/content/dam/wintrust/component-imagery/hero/carousel/2022/10/total-acess-checking-desktop.png" data-cmp-largeImage="/content/dam/wintrust/component-imagery/hero/carousel/2022/10/total-acess-checking-desktop-1200.png" data-cmp-smallImage="/content/dam/wintrust/component-imagery/hero/carousel/2022/10/total-acess-checking-mobile.png" data-cmp-mediumImage="/content/dam/wintrust/component-imagery/hero/carousel/2022/10/total-acess-checking-tablet.png" data-cmp-extraSmallImage="/content/dam/wintrust/component-imagery/hero/carousel/2022/10/total-acess-checking-mobile.png" data-cmp-src="/_jcr_content/root/responsivegrid/carousel/item_1666884520268/backgroundimage.coreimg.82{.width}.png/1668029466073/total-acess-checking-desktop.png" data-cmp-widths="575,767,991,1199,1919" data-asset="/content/dam/wintrust/component-imagery/hero/carousel/2022/10/total-acess-checking-desktop.png" data-cmp-override="true" data-title="300 TAC" class="cmp-image" itemscope itemtype="https://schema.org/ImageObject" style="text-align:;">
+
+    
+
+    
+        <noscript data-cmp-hook-image="noscript">
+            
+            <img src="/_jcr_content/root/responsivegrid/carousel/item_1666884520268/backgroundimage.coreimg.png/1668029466073/total-acess-checking-desktop.png" class="cmp-image__image " itemprop="contentUrl" data-cmp-hook-image="image" alt="300 TAC"/>
+            
+        </noscript>
+    
+    
+    
+</div>
+
+    
+
+
+    </div>
+    
+    <div class="cmp-homepageloginherocarouselslide__content">
+        <div>
+            <div class="cmp-homepageloginherocarouselslide__slide-image">
+                <div data-cmp-is="image" data-cmp-extralargeImage="/content/dam/wintrust/component-imagery/hero/carousel/2022/10/foreground-empty.png" data-cmp-largeImage="/content/dam/wintrust/component-imagery/hero/carousel/2022/10/foreground-empty.png" data-cmp-smallImage="/content/dam/wintrust/component-imagery/hero/carousel/2022/10/mobile-foreground.png" data-cmp-mediumImage="/content/dam/wintrust/component-imagery/hero/carousel/2022/10/tablet_foreground.png" data-cmp-extraSmallImage="/content/dam/wintrust/component-imagery/hero/carousel/2022/10/mobile-foreground.png" data-cmp-src="/_jcr_content/root/responsivegrid/carousel/item_1666884520268/slideimage.coreimg.82{.width}.png/1666886040583/mobile-foreground.png" data-cmp-widths="575,767,991,1199,1919" data-asset="/content/dam/wintrust/component-imagery/hero/carousel/2022/10/mobile-foreground.png" data-cmp-override="false" data-title="Foreground Image" class="cmp-image" itemscope itemtype="https://schema.org/ImageObject" style="text-align:;">
+
+    
+
+    
+        <noscript data-cmp-hook-image="noscript">
+            
+            <img src="/_jcr_content/root/responsivegrid/carousel/item_1666884520268/slideimage.coreimg.png/1666886040583/mobile-foreground.png" class="cmp-image__image " itemprop="contentUrl" data-cmp-hook-image="image" alt="Foreground Image"/>
+            
+        </noscript>
+    
+    
+    
+</div>
+
+    
+
+
+            </div>
+            <div class="cmp-homepageloginherocarouselslide__slide-title">
+                
+  <div class="cmp-text custom-override-styles" style="line-height:1em;
+  font-family: 'Agenda Bold';; font-size:40px;">
+ <h1><span class="White--color">GET YOUR BONUS </span></h1>
+
+</div>
+
+    
+
+
+            </div>
+            <div class="cmp-homepageloginherocarouselslide__slide-text">
+                
+  <div class="cmp-text " style="line-height:1.25em;
+  ; font-size:16px;">
+ <p>When you open a Total Access Checking account with qualifying activities. Only $100 required to open. No minimum monthly balance or monthly maintenance fees.</p>
+
+</div>
+
+    
+
+
+            </div>
+            <div class="cmp-homepageloginherocarouselslide__slide-button">
+                
+
+	
+    <div class="cmp-button js-cmp-button">
+        <div class="d-flex cmp-button__standardButton --btn-default" data-button-type="standardButton" data-link="https://www.wintrust.com/tac.html" data-default-action-url="https://onlineapps.ibanking-services.com/olnas/OLNASServlet/StappsApp" data-bank-id="380" data-product-id="Internal Link" v-bind:data-gclid="gclid" data-brand-locations-type="ALL" data-button-hash-1="buttonhash1" data-modal-focus-pointer="1279160517">
+            <a class="cmp-button__standardcolor btn font-weight-bold text-uppercase 
+                    White--background-color
+                    WintrustBlue--color
+                    cmp-button__standard-button-decoration
+                    White--border-color
+                    cmp-button__button-min-width cmp-button__button-font-family cmp-button__button-font-size cmp-button__button-letter-spacing" href="https://www.wintrust.com/tac.html" v-on:click="sendEvent" ref="button" target="_blank" role="button" data-modal-focus="1279160517">
+                <span class="cmp-button__text">OPEN AN ACCOUNT</span>
+            </a>
+        </div>
+        
+        
+    <div class="modal open-crosssell-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    
+  
+
+    
+
+
+                </h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    
+  
+
+    
+
+
+                </div>
+               <div class="view-disclosure" data-toggle="collapse" data-target=".disclosure">
+                  
+                  
+               </div>
+               <div class="disclosure collapse">
+                  
+  
+
+    
+
+
+               </div>
+                <div class="submit-button checking blue-button">
+                    
+                </div>
+                <div class="submit-button savings white-button">
+                    
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>  
+
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+        <div class="cmp-carousel__homepagelogin-indicators-and-autoplay">
+            <div class="cmp-carousel__indicators  ">
+                <ol role="tablist" aria-label="Choose a slide to display" data-cmp-hook-carousel="indicators">
+                    <li class="cmp-carousel__indicator cmp-carousel__indicator--active" role="tab" aria-label="Slide 1" data-cmp-hook-carousel="indicator">Slide1</li>
+<li class="cmp-carousel__indicator" role="tab" aria-label="Slide 2" data-cmp-hook-carousel="indicator">Slide 2</li>
+
+                </ol>
+            </div>
+            <button class="cmp-carousel__action cmp-carousel__action--pause" type="button" aria-label="Pause" data-cmp-hook-carousel="pause">
+                <span class="fa fa-pause"></span>
+            </button>
+            <button class="cmp-carousel__action cmp-carousel__action--play cmp-carousel__action--disabled" type="button" aria-label="Play" data-cmp-hook-carousel="play">
+                <span class="fa fa-play"></span> 
+            </button>
+        </div>
+
+    </div>
+
+
+    
+    
+</div>
+</div>
+<div class="new-generic-content-card parbase aem-GridColumn aem-GridColumn--default--12">
+
+
+
+<div class="js-generic-content-card genericcontent-outer container p-3" style="background-color: #fff">
+
+    <div class="generic-container">
+		<div><div class="wintrustcontainer responsivegrid section">
+
+     
+          <div>
+               <div>
+                    
+  <div id="wintrustcontainer-a50dfe9a02" class="cmp-container  White--background-color   " style="padding-top: 1rem;padding-right: 0rem;padding-bottom: 0rem;padding-left: 0rem;">
+    
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 aem-Grid--md--12 aem-Grid--sm--12 aem-Grid--lg--12 aem-Grid--xs--12 ">
+    
+    <div class="spacer aem-GridColumn--lg--12 aem-GridColumn--sm--none aem-GridColumn--offset--xs--0 aem-GridColumn--xs--none aem-GridColumn--offset--default--0 aem-GridColumn--offset--lg--0 aem-GridColumn--lg--none aem-GridColumn--default--hide aem-GridColumn--offset--sm--0 aem-GridColumn aem-GridColumn--sm--12 aem-GridColumn--offset--md--0 aem-GridColumn--default--12 aem-GridColumn--xs--12 aem-GridColumn--md--none aem-GridColumn--md--12"><div class="cmp-spacer cmp-spacer--width cmp-spacer--background-transparent " style="height: 40px;" aria-hidden="true" role="presentation">
+
+</div>
+
+</div>
+<div class="wintrustcontainer responsivegrid aem-GridColumn--sm--none aem-GridColumn--default--none aem-GridColumn--offset--xs--0 aem-GridColumn--xs--none aem-GridColumn--offset--default--0 aem-GridColumn--offset--sm--0 aem-GridColumn aem-GridColumn--sm--12 aem-GridColumn--offset--md--0 aem-GridColumn--default--6 aem-GridColumn--xs--12 aem-GridColumn--md--none aem-GridColumn--md--12">
+
+     
+          <div>
+               <div>
+                    
+  <div id="wintrustcontainer-729ee8b291" class="cmp-container  White--background-color   " style="padding-top: 0rem;padding-right: 1rem;padding-bottom: 1rem;padding-left: 1rem;">
+    
+
+
+<div class="aem-Grid aem-Grid--6 aem-Grid--default--6 aem-Grid--md--12 aem-Grid--sm--12 aem-Grid--xs--12 ">
+    
+    <div class="wintrustcontainer responsivegrid aem-GridColumn--sm--none aem-GridColumn--offset--xs--0 aem-GridColumn--offset--sm--0 aem-GridColumn aem-GridColumn--sm--12 aem-GridColumn--xs--none aem-GridColumn--offset--md--0 aem-GridColumn--default--6 aem-GridColumn--xs--12 aem-GridColumn--md--none aem-GridColumn--md--12">
+
+     
+          <div>
+               <div>
+                    
+  <div id="wintrustcontainer-a86518d547" class="cmp-container  WintrustVeryLightGray--background-color   " style="padding-top: 1rem;padding-right: 0.5rem;padding-bottom: 0rem;padding-left: 0.5rem;">
+    
+
+
+<div class="aem-Grid aem-Grid--6 aem-Grid--default--6 aem-Grid--md--12 aem-Grid--sm--12 aem-Grid--xs--12 ">
+    
+    <div class="text aem-GridColumn aem-GridColumn--sm--12 aem-GridColumn--default--6 aem-GridColumn--xs--12 aem-GridColumn--md--12">
+  <div class="cmp-text " style="line-height:1.25em;
+  ; font-size:16px;">
+ <h2 style="text-align: center;"><u><span class="WintrustBlue--color"><a href="https://www.wintrust.com/digital">WINTRUST'S NEW DIGITAL</a> <br />
+</span><span class="WintrustGreen--color"> </span></u><span class="WintrustBlue--color"><u><a href="https://www.wintrust.com/digital">BANKING IS HERE</a></u></span></h2>
+<p style="text-align: center;">Learn more about Wintrust Community Banks' new online and mobile banking tools.<br />
+ </p>
+
+</div>
+
+    
+
+</div>
+
+    
+</div>
+
+  </div>
+
+                    
+               </div>
+          </div>
+     
+
+</div>
+
+    
+</div>
+
+  </div>
+
+                    
+               </div>
+          </div>
+     
+
+</div>
+<div class="wintrustcontainer responsivegrid aem-GridColumn--sm--none aem-GridColumn--default--none aem-GridColumn--offset--xs--0 aem-GridColumn--xs--none aem-GridColumn--offset--default--0 aem-GridColumn--offset--sm--0 aem-GridColumn aem-GridColumn--sm--12 aem-GridColumn--offset--md--0 aem-GridColumn--default--6 aem-GridColumn--xs--12 aem-GridColumn--md--none aem-GridColumn--md--12">
+
+     
+          <div>
+               <div>
+                    
+  <div id="wintrustcontainer-11c5c89a00" class="cmp-container  White--background-color   " style="padding-top: 0rem;padding-right: 1rem;padding-bottom: 1rem;padding-left: 1rem;">
+    
+
+
+<div class="aem-Grid aem-Grid--6 aem-Grid--default--6 aem-Grid--md--12 aem-Grid--sm--12 aem-Grid--xs--12 ">
+    
+    <div class="wintrustcontainer responsivegrid aem-GridColumn--sm--none aem-GridColumn--offset--xs--0 aem-GridColumn--offset--sm--0 aem-GridColumn aem-GridColumn--sm--12 aem-GridColumn--xs--none aem-GridColumn--offset--md--0 aem-GridColumn--default--6 aem-GridColumn--xs--12 aem-GridColumn--md--none aem-GridColumn--md--12">
+
+     
+          <div>
+               <div>
+                    
+  <div id="wintrustcontainer-2e574662b7" class="cmp-container  WintrustVeryLightGray--background-color   " style="padding-top: 1rem;padding-right: 0.5rem;padding-bottom: 0rem;padding-left: 0.5rem;">
+    
+
+
+<div class="aem-Grid aem-Grid--6 aem-Grid--default--6 aem-Grid--md--12 aem-Grid--sm--12 aem-Grid--xs--12 ">
+    
+    <div class="text aem-GridColumn aem-GridColumn--sm--12 aem-GridColumn--default--6 aem-GridColumn--xs--12 aem-GridColumn--md--12">
+  <div class="cmp-text " style="line-height:em;
+  ; font-size:;">
+ <h2 style="text-align: center;"><a title="LIBOR FAQs" href="https://www.wintrust.com/liborfaq.html">NEED THE LATEST UPDATES</a><br />
+<a title="LIBOR FAQs" href="https://www.wintrust.com/liborfaq.html">ON LIBOR?</a></h2>
+<p style="text-align: center;">View our LIBOR FAQs page.</p>
+<p style="text-align: center;"> </p>
+
+</div>
+
+    
+
+</div>
+
+    
+</div>
+
+  </div>
+
+                    
+               </div>
+          </div>
+     
+
+</div>
+
+    
+</div>
+
+  </div>
+
+                    
+               </div>
+          </div>
+     
+
+</div>
+
+    
+</div>
+
+  </div>
+
+                    
+               </div>
+          </div>
+     
+
+</div>
+
+</div>
+	</div>
+	
+
+	
+
+
+ 
+</div>
+</div>
+<div class="herocarousel parbase aem-GridColumn--default--hide aem-GridColumn aem-GridColumn--default--12 aem-GridColumn--offset--default--0">
+<div id="hero-carousel" class="carousel slide" data-ride="carousel" data-autoplay data-slideDuration="5">
+    
+    <ol class="textimagecarousel-indicators carousel-indicators">
+        <li data-target="#hero-carousel" data-slide-to="0" class="active"></li>
+    
+        <li data-target="#hero-carousel" data-slide-to="1"></li>
+    
+        <li data-target="#hero-carousel" data-slide-to="2"></li>
+    
+        <li data-target="#hero-carousel" data-slide-to="3"></li>
+    
+        <li data-target="#hero-carousel" data-slide-to="4"></li>
+    </ol>
+    <div class="carousel-buttons">
+        <button id="playButton" type="button" class="btn btn-default btn-xs" aria-label="Play Carousel">
+            <span class="fa fa-play" aria-hidden="true" title="Play Carousel"></span>
+        </button>
+        <button id="pauseButton" type="button" class="btn btn-default btn-xs" aria-label="Pause Carousel">
+            <span class="fa fa-pause" aria-hidden="true" title="Pause Carousel"></span>
+        </button>
+    </div>
+    
+    <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active" aria-labelledby="tab-0-0">
+            <img src="/content/dam/wintrust/component-imagery/hero/carousel/2020/03/wtfc_all_coronavirus_hardship_carousel.jpg" alt="picture for the coronavirus hardship slider" role="img" aria-label="picture for the coronavirus hardship slider"/>
+            <div class="hero-carousel-caption  royalBlue">
+                <h2 aria-label="We&#39;re here for you">WE&#39;RE HERE FOR YOU</h2>
+                <p aria-label="In these uncertain times, we know our customers are being negatively impacted. We’re ready to work with your unique circumstances. ">In these uncertain times, we know our customers are being negatively impacted. We’re ready to work with your unique circumstances. </p>
+                
+                    <button type="button" class="btn primary-btn font-weight-bold text-uppercase White--color White--border-color Wintrust-button-font-family" data-click-target="/content/wintrust/en/lp/2020/wtfc-all-coronavirus-hardship">
+                        <div>LEARN MORE</div>
+                    </button>
+                
+            </div>
+        </div>
+    
+        <div class="carousel-item" aria-labelledby="tab-0-1">
+            <img src="/content/dam/wintrust/component-imagery/hero/carousel/2020/11/wtfc-best-places-to-work-carousel.jpg" alt="Best Place to work" role="img" aria-label="WE&#39;RE A TOP WORKPLACE"/>
+            <div class="hero-carousel-caption  royalBlue">
+                <h2 aria-label="WE&#39;RE A TOP WORKPLACE">WE&#39;RE A TOP WORKPLACE</h2>
+                <p aria-label="Want to experience one of Chicago’s top workplaces? Apply to join our team.">Want to experience one of Chicago’s top workplaces? Apply to join our team.</p>
+                
+                    <button type="button" class="btn primary-btn font-weight-bold text-uppercase White--color White--border-color Wintrust-button-font-family" data-click-target="/content/wintrust/en/careers" aria-label="WE&#39;RE A TOP WORKPLACE - LEARN MORE">
+                        <div>LEARN MORE</div>
+                    </button>
+                
+            </div>
+        </div>
+    
+        <div class="carousel-item" aria-labelledby="tab-0-2">
+            <img src="/content/dam/wintrust/component-imagery/hero/carousel/2020/03/wtfc_all_biz_resources.jpg" alt="WE’RE HERE FOR YOUR BUSINESS" role="img" aria-label="WE’RE HERE FOR YOUR BUSINESS"/>
+            <div class="hero-carousel-caption  royalBlue">
+                <h2 aria-label="WE’RE HERE FOR YOUR BUSINESS">WE’RE HERE FOR YOUR BUSINESS</h2>
+                <p aria-label="We’ve collected some of the resources that can help your business navigate these uncertain times. ">We’ve collected some of the resources that can help your business navigate these uncertain times. </p>
+                
+                    <button type="button" class="btn primary-btn font-weight-bold text-uppercase White--color White--border-color Wintrust-button-font-family" data-click-target="/content/wintrust/en/lp/2020/covid-19-business-resources">
+                        <div>LEARN MORE</div>
+                    </button>
+                
+            </div>
+        </div>
+    
+        <div class="carousel-item" aria-labelledby="tab-0-3">
+            <img src="/content/dam/wintrust/component-imagery/hero/carousel/2020/03/wtfc_all_maxsafe_carousel.jpg" alt="GET EXTRA DEPOSIT PROTECTION" role="img" aria-label="GET EXTRA DEPOSIT PROTECTION"/>
+            <div class="hero-carousel-caption  royalBlue">
+                <h2 aria-label="GET EXTRA DEPOSIT PROTECTION">GET EXTRA DEPOSIT PROTECTION</h2>
+                <p aria-label="When things are up in the air, ensure your deposits are protected with a MaxSafe account that offers 15 times the FDIC insurance coverage. ">When things are up in the air, ensure your deposits are protected with a MaxSafe account that offers 15 times the FDIC insurance coverage. </p>
+                
+                    <button type="button" class="btn primary-btn font-weight-bold text-uppercase White--color White--border-color Wintrust-button-font-family" data-click-target="https://www.wintrust.com/maxsafe">
+                        <div>LEARN MORE</div>
+                    </button>
+                
+            </div>
+        </div>
+    
+        <div class="carousel-item" aria-labelledby="tab-0-4">
+            <img src="/content/dam/wintrust/component-imagery/hero/carousel/2020/12/wtfc-wings-mural-1903x609.jpg" alt="THE MURAL BUILDING:" role="img" aria-label="THE MURAL BUILDING:"/>
+            <div class="hero-carousel-caption  royalBlue">
+                <h2 aria-label="THE MURAL BUILDING:">THE MURAL BUILDING:</h2>
+                <p aria-label="WINGS PROGRAM, INC.">WINGS PROGRAM, INC.</p>
+                
+                    <button type="button" class="btn primary-btn font-weight-bold text-uppercase White--color White--border-color Wintrust-button-font-family" data-click-target="/content/wintrust/en/financial-education/2020/12/the-mural-building-wings-program-inc" aria-label="THE MURAL BUILDING: - LEARN MORE">
+                        <div>LEARN MORE</div>
+                    </button>
+                
+            </div>
+        </div>
+    </div>
+    
+    <a class="carousel-control-prev" href="#hero-carousel" role="button" data-slide="prev" aria-label="Previous Slide">
+        <span class="fa fa-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#hero-carousel" role="button" data-slide="next" aria-label="Next Slide">
+        <span class="fa fa-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+</div>
+<div class="productcard parbase aem-GridColumn aem-GridColumn--default--12">
+<div class="product-card-container white">
+
+	<div class="container">
+	    <div class="row">
+	        <div class="col-md-8">
+	    		<div class="product-card-title">
+	                <div class="product-card-subtitle"><h3></h3></div>
+	                <h1>Valuable resources for you</h1>
+	                
+	                    <div class="text-separator"></div>
+	                
+	            </div>
+	    		
+	            
+	            <div class="product-card-description">As you’re navigating these unforeseen circumstances, we want you to know, we’re here to help. Below, you’ll find some helpful services we provide to support you during this challenging time.</div>
+	            
+	        </div>
+	        
+	    </div>
+
+	    <div class="row cards">
+            
+	        <div class="col-lg-4">
+	            <div class="content-tile" style="background-image:url(/content/dam/wintrust/component-imagery/product-cards-crosssell/2020/online-banking.jpg);">
+	                
+                        
+	                <div class="promo-copy">
+		                <div class="tile-title"><h4>ONLINE &amp; MOBILE BANKING</h4></div>
+		                
+		                <div class="tile-subtitle"><h2>Sophisticated banking solutions for wherever you are</h2></div>
+		                
+	                
+		                <div class="text-separator"></div>
+	                
+		                
+					</div>
+                            
+
+	                
+	                     <div class="popup royalBlue">
+	                        <div class="popup-copy">
+	                            <h4>ONLINE &amp; MOBILE BANKING</h4>
+	                            
+	                            <h2>Sophisticated banking solutions for wherever you are</h2>
+	                            
+	                            
+	                                <div class="text-separator"></div>
+	                            
+	                            <p>Access the services that help you manage your day-to-day banking needs from your home computer or mobile phone.</p>
+								
+	                            
+	                                <button type="button" class="btn primary-btn productcard  font-weight-bold text-uppercase Wintrust-button-font-family button__whiteoutline
+									WintrustBlue--transparent
+									White--color
+									White--border-color" data-click-target="/content/wintrust/en/personal-solutions/bank-with-us/online-mobile-banking.html">
+	                                    <div class="White--color">Learn more</div>
+	                                </button>
+	                            
+	                        </div>
+	                    </div> 
+	                
+	            </div>
+			</div>
+			
+
+
+
+
+
+
+
+
+
+
+
+
+            
+	        <div class="col-lg-4">
+	            <div class="content-tile" style="background-image:url(/content/dam/wintrust/component-imagery/product-cards-crosssell/2023/04/mail-fraud-icon.png);">
+	                
+                        
+	                <div class="promo-copy">
+	                	<div class="tile-title"><h4>Fraud 101</h4></div>
+	                	
+	                	<div class="tile-subtitle"><h2>How To Prepare Your Business Against Email Attacks</h2></div>
+	                	
+	                    
+	                        <div class="text-separator"></div>
+	                    
+					</div>
+                        
+                            
+	                
+	                    <div class="popup royalBlue">
+	                        <div class="popup-copy">
+	                            <h4>Fraud 101</h4>
+	                            
+	                            <h2>How To Prepare Your Business Against Email Attacks</h2>
+	                            
+	                            
+	                                <div class="text-separator"></div>
+	                            
+	                            <p></p>
+								
+	                            
+	                                <button type="button" class="btn primary-btn productcard  font-weight-bold text-uppercase Wintrust-button-font-family button__whiteoutline
+									WintrustBlue--transparent
+									White--color
+									White--border-color" data-click-target="/content/wintrust/en/financial-education/2022/09/how-to-prepare-your-business-against-email-attacks.html">
+	                                    <div class="White--color">READ MORE</div>
+	                                </button>
+	                            
+	                        </div>
+	                    </div>
+	                
+	
+	            </div>
+	        </div>
+            
+	        <div class="col-lg-4">
+	            <div class="content-tile" style="background-image:url(/content/dam/wintrust/component-imagery/product-cards-crosssell/2020/news-and-education.jpg);">
+	                
+                        
+	                <div class="promo-copy">
+	                	<div class="tile-title"><h4>News &amp; Education</h4></div>
+	                	
+	                	<div class="tile-subtitle"><h2>Online resources to help you navigate your questions</h2></div>
+	                	
+	                    
+	                        <div class="text-separator"></div>
+	                    
+					</div>
+                        
+                            
+	                
+	                    <div class="popup royalBlue">
+	                        <div class="popup-copy">
+	                            <h4>News &amp; Education</h4>
+	                            
+	                            <h2>Online resources to help you navigate your questions</h2>
+	                            
+	                            
+	                                <div class="text-separator"></div>
+	                            
+	                            <p>Informative articles and updates to help you better understand your finances. </p>
+	                            
+	
+	                            
+	                                <button type="button" class="btn primary-btn productcard  font-weight-bold text-uppercase Wintrust-button-font-family button__whiteoutline
+									WintrustBlue--transparent
+									White--color
+									White--border-color" data-click-target="/content/wintrust/en/financial-education.html">
+	                                    <div class="White--color">Learn more</div>
+	                                </button>
+	                            
+	                        </div>
+	                    </div>
+	                
+	            </div>
+	        </div>
+	    </div>
+    </div> 
+</div>
+
+</div>
+<div class="productcard parbase aem-GridColumn aem-GridColumn--default--12">
+<div class="product-card-container white">
+
+	<div class="container">
+	    <div class="row">
+	        <div class="col-md-8">
+	    		<div class="product-card-title">
+	                <div class="product-card-subtitle"><h3></h3></div>
+	                <h1>Our Services</h1>
+	                
+	                    <div class="text-separator"></div>
+	                
+	            </div>
+	    		
+	            
+	            <div class="product-card-description">We&#39;re proud to be your one-stop shop for any financial need. Whether you&#39;re looking for a personal checking account, a first savings account for your child, the tools to get you in a new home, or guidance on complex wealth management decisions, we&#39;ve got you covered. </div>
+	            
+	        </div>
+	        
+	    </div>
+
+	    <div class="row cards">
+            
+	        <div class="col-lg-4">
+	            <div class="content-tile" style="background-image:url(/content/dam/wintrust/component-imagery/product-cards-crosssell/2018/personal/tac.jpg);">
+	                
+                        
+	                <div class="promo-copy">
+		                <div class="tile-title"><h4>PERSONAL BANKING</h4></div>
+		                
+		                <div class="tile-subtitle"><h2>Financial tools to meet any need</h2></div>
+		                
+	                
+		                <div class="text-separator"></div>
+	                
+		                
+					</div>
+                            
+
+	                
+	                     <div class="popup royalBlue">
+	                        <div class="popup-copy">
+	                            <h4>PERSONAL BANKING</h4>
+	                            
+	                            <h2>Financial tools to meet any need</h2>
+	                            
+	                            
+	                                <div class="text-separator"></div>
+	                            
+	                            <p>Wintrust Community Banks are proud to offer tools to help you with any financial goal. We&#39;ve got checking accounts that allow you to say goodbye to ATM fees, savings accounts for kids and even a travel and a social club for those 50 or better!</p>
+								
+	                            
+	                                <button type="button" class="btn primary-btn productcard  font-weight-bold text-uppercase Wintrust-button-font-family button__whiteoutline
+									WintrustBlue--transparent
+									White--color
+									White--border-color" data-click-target="/content/wintrust/en/personal-solutions/bank-with-us.html">
+	                                    <div class="White--color">Learn more</div>
+	                                </button>
+	                            
+	                        </div>
+	                    </div> 
+	                
+	            </div>
+			</div>
+			
+
+
+
+
+
+
+
+
+
+
+
+
+            
+	        <div class="col-lg-4">
+	            <div class="content-tile" style="background-image:url(/content/dam/wintrust/component-imagery/product-cards-crosssell/2018/personal/mortgage.jpg);">
+	                
+                        
+	                <div class="promo-copy">
+	                	<div class="tile-title"><h4>MORTGAGE</h4></div>
+	                	
+	                	<div class="tile-subtitle"><h2>Make that dream home a reality</h2></div>
+	                	
+	                    
+	                        <div class="text-separator"></div>
+	                    
+					</div>
+                        
+                            
+	                
+	                    <div class="popup royalBlue">
+	                        <div class="popup-copy">
+	                            <h4>MORTGAGE</h4>
+	                            
+	                            <h2>Make that dream home a reality</h2>
+	                            
+	                            
+	                                <div class="text-separator"></div>
+	                            
+	                            <p>Whether you&#39;re looking for guidance on buying your first home, in search of your next house, or ready for refinancing options, Wintrust Mortgage can help.</p>
+								
+	                            
+	                                <button type="button" class="btn primary-btn productcard  font-weight-bold text-uppercase Wintrust-button-font-family button__whiteoutline
+									WintrustBlue--transparent
+									White--color
+									White--border-color" data-click-target="/content/wintrust/en/personal-solutions/buy-a-home.html">
+	                                    <div class="White--color">Learn more</div>
+	                                </button>
+	                            
+	                        </div>
+	                    </div>
+	                
+	
+	            </div>
+	        </div>
+            
+	        <div class="col-lg-4">
+	            <div class="content-tile" style="background-image:url(/content/dam/wintrust/component-imagery/product-cards-crosssell/2018/personal/wealth.jpg);">
+	                
+                        
+	                <div class="promo-copy">
+	                	<div class="tile-title"><h4>WEALTH</h4></div>
+	                	
+	                	<div class="tile-subtitle"><h2>Make the most of your money</h2></div>
+	                	
+	                    
+	                        <div class="text-separator"></div>
+	                    
+					</div>
+                        
+                            
+	                
+	                    <div class="popup royalBlue">
+	                        <div class="popup-copy">
+	                            <h4>WEALTH</h4>
+	                            
+	                            <h2>Make the most of your money </h2>
+	                            
+	                            
+	                                <div class="text-separator"></div>
+	                            
+	                            <p>Decisions about wealth can be complicated. The experts at Wintrust Wealth Management have the experience to help guide you towards solutions that will help you meet your long-term goals. </p>
+	                            
+	
+	                            
+	                                <button type="button" class="btn primary-btn productcard  font-weight-bold text-uppercase Wintrust-button-font-family button__whiteoutline
+									WintrustBlue--transparent
+									White--color
+									White--border-color" data-click-target="https://www.wintrustwealth.com/">
+	                                    <div class="White--color">Learn more</div>
+	                                </button>
+	                            
+	                        </div>
+	                    </div>
+	                
+	            </div>
+	        </div>
+	    </div>
+    </div> 
+</div>
+
+</div>
+<div class="quote-card parbase aem-GridColumn aem-GridColumn--default--12">
+
+
+
+	<a>
+		<div class="quote-card">
+                
+				<div class="quote-card-text" data-background-img="/content/wintrust/en/jcr:content/root/responsivegrid/quote_card.img.jpg/1520979179365.jpg">
+					<div class="vertical-center">
+						<h2>As a company made in this area, for this area, Wintrust and its family of true community banks is dedicated to the unique neighborhoods each serves. For more than 25 years, we&#39;ve been banks that invest in, give back to, and get to really know our communities and the people living in them. When you bank with a Wintrust Community Bank, you can be confident your money is going back into the things that matter most to you.</h2>
+						
+						<h3>- </h3>
+						
+					</div>
+				</div>
+                </div>
+	</a>
+
+
+
+</div>
+<div class="productcard parbase aem-GridColumn aem-GridColumn--default--12">
+<div class="product-card-container white">
+
+	<div class="container">
+	    <div class="row">
+	        <div class="col-md-8">
+	    		<div class="product-card-title">
+	                <div class="product-card-subtitle"><h3></h3></div>
+	                <h1>Business Solutions</h1>
+	                
+	                    <div class="text-separator"></div>
+	                
+	            </div>
+	    		
+	            
+	            <div class="product-card-description">When our local businesses do well, we all do well. That&#39;s why we&#39;re especially dedicated to your success. Whether your business is just getting off the ground, has been established for some time, is in a very general industry, or is incredibly specialized, we&#39;ve got the tools to help you meet your goals.</div>
+	            
+	        </div>
+	        
+	    </div>
+
+	    <div class="row cards">
+            
+	        <div class="col-lg-4">
+	            <div class="content-tile" style="background-image:url(/content/dam/wintrust/component-imagery/product-cards-crosssell/2018/smallbusiness/sbchecking.jpg);">
+	                
+                        
+	                <div class="promo-copy">
+		                <div class="tile-title"><h4>BUSINESS BANKING</h4></div>
+		                
+		                <div class="tile-subtitle"><h2>Support no matter where you&#39;re at</h2></div>
+		                
+	                
+		                <div class="text-separator"></div>
+	                
+		                
+					</div>
+                            
+
+	                
+	                     <div class="popup royalBlue">
+	                        <div class="popup-copy">
+	                            <h4>BUSINESS BANKING</h4>
+	                            
+	                            <h2>Support no matter where you&#39;re at</h2>
+	                            
+	                            
+	                                <div class="text-separator"></div>
+	                            
+	                            <p>Running a business is a challenge whether you&#39;re in the beginning stages or established and looking to grow. We&#39;re proud to offer a variety of tools and services to help support you wherever you are in the process.</p>
+								
+	                            
+	                                <button type="button" class="btn primary-btn productcard royalBlue font-weight-bold text-uppercase Wintrust-button-font-family button__whiteoutline
+									royalBlue--transparent
+									White--color
+									White--border-color" data-click-target="/content/wintrust/en/business-solutions/business.html">
+	                                    <div class="White--color">Learn more</div>
+	                                </button>
+	                            
+	                        </div>
+	                    </div> 
+	                
+	            </div>
+			</div>
+			
+
+
+
+
+
+
+
+
+
+
+
+
+            
+	        <div class="col-lg-4">
+	            <div class="content-tile" style="background-image:url(/content/dam/wintrust/component-imagery/product-cards-crosssell/2018/business/commerciallending1.jpg);">
+	                
+                        
+	                <div class="promo-copy">
+	                	<div class="tile-title"><h4>COMMERCIAL BANKING</h4></div>
+	                	
+	                	<div class="tile-subtitle"><h2>We can help you grow</h2></div>
+	                	
+	                    
+	                        <div class="text-separator"></div>
+	                    
+					</div>
+                        
+                            
+	                
+	                    <div class="popup royalBlue">
+	                        <div class="popup-copy">
+	                            <h4>COMMERCIAL BANKING</h4>
+	                            
+	                            <h2>We can help you grow</h2>
+	                            
+	                            
+	                                <div class="text-separator"></div>
+	                            
+	                            <p>Our commercial bankers specialize in the tools that help you run your company day-to-day and focus on your long-term goals. We&#39;re proud to offer sophisticated lending and treasury management tools with the personalized attention you deserve. </p>
+								
+	                            
+	                                <button type="button" class="btn primary-btn productcard royalBlue font-weight-bold text-uppercase Wintrust-button-font-family button__whiteoutline
+									royalBlue--transparent
+									White--color
+									White--border-color" data-click-target="/content/wintrust/en/business-solutions/mid-market.html">
+	                                    <div class="White--color">LEARN MORE</div>
+	                                </button>
+	                            
+	                        </div>
+	                    </div>
+	                
+	
+	            </div>
+	        </div>
+            
+	        <div class="col-lg-4">
+	            <div class="content-tile" style="background-image:url(/content/dam/wintrust/component-imagery/product-cards-crosssell/2018/business/assetbasedlending.jpg);">
+	                
+                        
+	                <div class="promo-copy">
+	                	<div class="tile-title"><h4> INDUSTRY SOLUTIONS</h4></div>
+	                	
+	                	<div class="tile-subtitle"><h2>Expertise across industries</h2></div>
+	                	
+	                    
+	                        <div class="text-separator"></div>
+	                    
+					</div>
+                        
+                            
+	                
+	                    <div class="popup royalBlue">
+	                        <div class="popup-copy">
+	                            <h4> INDUSTRY SOLUTIONS</h4>
+	                            
+	                            <h2>Expertise across industries</h2>
+	                            
+	                            
+	                                <div class="text-separator"></div>
+	                            
+	                            <p>At Wintrust, we don&#39;t just do one thing. We&#39;re made up of a number of companies and divisions that allow us to specialize in very specific niche industries. We&#39;re proud to offer a variety of tools to meet any need in any industry.</p>
+	                            
+	
+	                            
+	                                <button type="button" class="btn primary-btn productcard royalBlue font-weight-bold text-uppercase Wintrust-button-font-family button__whiteoutline
+									royalBlue--transparent
+									White--color
+									White--border-color" data-click-target="/content/wintrust/en/business-solutions/mid-market/specialty.html">
+	                                    <div class="White--color">Learn more</div>
+	                                </button>
+	                            
+	                        </div>
+	                    </div>
+	                
+	            </div>
+	        </div>
+	    </div>
+    </div> 
+</div>
+
+</div>
+<div class="generic-content-card parbase aem-GridColumn aem-GridColumn--default--12">
+
+
+<div class="js-generic-content-card genericcontent-outer  container d-none d-md-block p-3" style="background-color: #fff">
+	
+	<div class="generic-container">
+		<div><div class="parsys_column cq-grid-50-50"><div class="parsys_column cq-grid-50-50-c0"><div class="title parbase section">
+
+    
+  
+    
+
+    <div>
+        <h1 style="text-align:left;"> Business Highlight</h1>
+    </div>
+    
+    <div>    
+        
+        <div>
+                <div class="text-separator turquoise" style="text-align:left;"></div>
+          </div>
+        </div>
+
+
+</div>
+<div class="title parbase section">
+
+    
+  
+    
+
+    <div>
+        <h2 style="text-align:left;">Our Roots Are Here</h2>
+    </div>
+    
+    
+
+
+</div>
+<div class="text parbase section">
+<p>In 1991, Wintrust’s current CEO and one of the company’s founders, Ed Wehmer, set up shop in a northern Chicago suburb with a simple goal: to provide an alternative to the big banks. Now, more than twenty-five years and 175 locations later, we’ve stayed true to that original mission.</p>
+
+</div>
+</div><div class="parsys_column cq-grid-50-50-c1"><div class="video parbase section">
+<div class="container-fluid video-container align-content-sm-center">
+	<div class="row">
+		
+		
+			<div class="youtube embed-responsive embed-responsive-16by9">
+				<iframe id="cosmetics" title="YouTube Video" class="embed-responsive-item youtube-video-wrapper" src="//www.youtube.com/embed/sp44cckws4I?feature=emb_title&rel=0&enablejsapi=1" frameborder="0" allowfullscreen tabindex="0"></iframe>
+			</div>
+		
+		
+		
+	</div>
+</div>
+</div>
+</div></div><div style="clear:both"></div>
+</div>
+	</div>
+	
+	
+
+
+</div>
+</div>
+<div class="dynamic-location-card parbase aem-GridColumn aem-GridColumn--default--12"><input type="hidden" class="hideLocation"/>
+<input type="hidden" class="hidePhoneNumber"/>
+<input type="hidden" class="hideWebsiteLink"/>
+
+<div>
+
+<div id="location-view" class="lightGray">
+	<div class="js-dynamic-location-card dynamiclocation-outer container">
+		<div class="row vertical-align">
+			<div class="branch-location col-md-6">
+				<h3>Wherever you are</h3>
+				<h1>There's a Wintrust Community Bank Near You.</h1>
+			</div>
+			
+			<div class="col-md-3">
+				<div id="bank-logo"></div>
+			</div>
+			
+			<div class="col-md-3 set--font-size">
+				
+				
+				<!-- <div id="bank-hours-text"> </div>  -->
+				<div id="bank-street-text"> </div>
+				<div id="bank-city-state-zip-text"> </div>
+				
+                
+                <!-- Default Format  -->
+				<div id="bank-phonenumber-text2"> </div>
+				<h3 id="browser-visit-website" class="linktext" data-link-text="Visit Website"></h3>
+
+				<div class="change-location-link">
+					<h3>
+						<a href="#" onclick="return false;" aria-label="Change Location"><i class="fa fa-gear" aria-hidden="true" title="Change Location"></i>Change Location</a>
+					</h3>
+				</div>
+				<h3 id="mobile-visit-website" data-link-text="Visit Website"></h3>
+			</div>
+		
+		</div>
+	</div>
+</div>
+
+<div id="zipcode-search-view" class="hidediv">
+	<div class="d-flex justify-content-center dynamiclocation-outer lightGray">
+		<div class="d-flex flex-column justify-content-center">
+		
+			<h1>Find a Wintrust Community Bank near you</h1>
+			<div class="d-flex flex-column justify-content-center align-self-center search-area">
+				<div class="input-group search-address-zipcode">
+					<input type="text" id="searchbox-address-zipcode" class="form-control searchbox-address-zipcode-input" placeholder="Enter Zip Code"/>
+					<div class="input-group-btn">
+						<button id="location-searchbox-submit" class="btn searchbox-submit-button-zipcode" type="submit"> > </button>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+</div>
+
+
+<script>
+	$(document).ready(function () {
+	WintrustFED.Location.loadGoogleAPIScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyCF38reM2D4yceqQ01YczuNkiIm76fDu2A")
+		.then( data  => {
+			dynamicLocator();
+		})
+		.catch( err => {
+
+	});	
+});
+</script>
+</div>
+
+    
+</div>
+</div>
+<div class="footer parbase aem-GridColumn aem-GridColumn--default--12"><footer>
+    <div id="browser-footer-affinity" class="dynamic-content">
+        <div class="container">
+            <div class="col-sm-3 col-md-3">
+                <div class="nav">
+                    <h3><a href="https://www.wintrustmortgage.com/privacy-policy.html">Privacy Policy</a></h3>
+                </div>
+            </div>
+        </div>
+        <!--end container-->
+    </div>
+    <div class="copyright-affinity">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-10">
+                    All approvals are subject to underwriting guidelines. Program rates, terms, and conditions are subject
+                    to change at any time.<br/>
+                    Wintrust Mortgage is a division of Barrington Bank &amp; Trust Company, N.A., a Wintrust Community Bank
+                    NMLS #449042<br/>
+                    ©Wintrust 2023 | All Rights Reserved
+                </div>
+                <div>
+                    <div class="col-sm-2 text-right">
+                        <img class="fdicFooterImage" src="/content/dam/wintrust/generic/legal/equalhousinglender.png" alt="FDIC"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <input type="hidden" class="footerFullWidth"/>
+        <div class="d-none d-md-flex" id="browser-footer">
+            <div id="default-content" class="container">
+                <div class="row">
+                    <div class="col-sm-3 col-md-3">
+                        
+                            
+                            <h2 tabindex="0">About</h2>
+                                                    
+                            <div class="text-separator"></div>
+                            <div class="footerParagraphs">
+                                <p>We are a family of locally run community banks.</p>
+                            </div>
+                            <div class="nav d-block d-flex-md">
+                                <h3 class="footerLinks"><a href="/our-story.html">Our Story</a></h3>
+                                
+                            
+                                <h3 class="footerLinks"><a href="/findus.html">Locations</a></h3>
+                                
+                            
+                                <h3 class="footerLinks"><a href="/careers.html">Careers</a></h3>
+                                
+                            
+                                <h3 class="footerLinks"><a href="/lp/2020/diversity-inclusion.html">Diversity &amp; Inclusion</a></h3>
+                                
+                            
+                                <h3 class="footerLinks"><a href="/lp/2021/our-commitment-to-accessibility.html">Accessibility</a></h3>
+                                
+                            
+                                <h3 class="footerLinks"><a href="/findus/locations.html">Wintrust Community Banks</a></h3>
+                                
+                            </div>
+                        
+                    </div>
+                    <div class="col-sm-3 col-md-3">
+                                                
+                            
+                            <h2 tabindex="0">Get in Touch</h2>
+                             
+                            <div class="text-separator"></div>
+                            <div class="footerParagraphs">
+                                <p>We are always here to answer your questions.</p>
+                            </div>
+                            <div class="nav d-block d-flex-md">
+                                <h3 class="footerLinks"><a href="/contact-us.html">Contact Us</a></h3>
+                                
+                            
+                                <h3 class="footerLinks"><a href="/find-expert.html">Find an Expert</a></h3>
+                                
+                            </div>
+                            <div class="nav d-block d-flex-md">
+                                <a href="https://www.linkedin.com/company/wintrust-financial-corporation" class="footer-social-link" target="_blank" aria-label="linkedin"><i class="fa fa-linkedin" aria-hidden="true" title="linkedin"></i></a>
+                            
+                                <a href="https://www.facebook.com/wintrust" class="footer-social-link" target="_blank" aria-label="facebook"><i class="fa fa-facebook" aria-hidden="true" title="facebook"></i></a>
+                            
+                                <a href="https://twitter.com/wintrust" class="footer-social-link" target="_blank" aria-label="twitter"><i class="fa fa-twitter" aria-hidden="true" title="twitter"></i></a>
+                            </div>
+                        
+                    </div>
+                    <div class="col-sm-3 col-md-3">
+                                                
+                            
+                            <h2 tabindex="0">Find an Event</h2>
+                             
+                            <div class="text-separator"></div>
+                            <div class="footerParagraphs">
+                                <p>We&#39;re proud to go above and beyond banking to offer events just for you. </p>
+                            </div>
+                            <div class="nav d-block d-flex-md">
+                                <h3 class="footerLinks"><a href="/events.html">Events</a></h3>
+                                
+                            
+                                
+                                <h3 class="footerLinks">Bank on the Go</h3>
+                            </div>
+                            <div class="nav d-block d-flex-md">
+                                <a href="https://apps.apple.com/us/app/wintrust-digital-banking/id1619335105" class="footer-social-link" target="_blank" aria-label="Apple"><i class="fa fa-apple" aria-hidden="true" title="apple"></i></a>
+                            
+                                <a href="https://play.google.com/store/apps/details?id=com.wintrust.production" class="footer-social-link" target="_blank" aria-label="Android"><i class="fa fa-android" aria-hidden="true" title="android"></i></a>
+                            </div>
+                        
+                    </div>
+                    <div class="col-sm-3 col-md-3">
+                                                
+                            
+                            <h2 tabindex="0">Additional Resources</h2>
+                             
+                            <div class="text-separator"></div>
+                            <div class="footerParagraphs">
+                                <p>Find additional information about how to stay in control of your information and security. 
+
+</p>
+                            </div>
+                            <div class="nav d-block d-flex-md">
+                                <h3 class="footerLinks"><a href="/privacy-policy.html">Privacy Policy</a></h3>
+                                
+                            
+                                <h3 class="footerLinks"><a href="/privacy-policy/ca-consumer-privacy-notice.html">California Consumer Privacy Notice</a></h3>
+                                
+                            
+                                <h3 class="footerLinks"><a href="/security.html">Security</a></h3>
+                                
+                            
+                                <h3 class="footerLinks"><a href="https://faq.wintrust.com/s/">FREQUENTLY ASKED QUESTIONS</a></h3>
+                                
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!--end container-->
+        </div>
+        <!--end browser footer-->
+        <!--mobile accordion footer-->
+        <div class="d-md-none" id="mobile-footer">
+            <div class="container-fluid">
+                <div class="accordion" id="accordion-mobile">
+                    
+                        <div class="card">
+                        
+                            <a class="mobile-footer-link accordion-toggle collapsed" data-toggle="collapse" href="#footer-collapseOne">
+                        
+                        
+                                <div class="mobile-footer-header card-header">
+                                    <h2 class="card-title">
+                                        About
+                                        <i class="fa fa-plus js-card-title-icon" aria-hidden="true"></i>
+                                    </h2>								
+                                </div>
+                            </a>
+                            <div id="footer-collapseOne" class="collapse" data-parent="#accordion-mobile">
+                                <div class="card-body">
+                                    <div class="footerParagraphs">
+                                        <p>We are a family of locally run community banks.</p>
+                                    </div>
+                                    <div class="nav d-block d-flex-md">
+                                        <h3 class="footerLinks"><a href="/our-story.html">Our Story</a></h3>
+                                        
+                                        <!-- Font Awesome icons -->
+                                    
+                                        <h3 class="footerLinks"><a href="/findus.html">Locations</a></h3>
+                                        
+                                        <!-- Font Awesome icons -->
+                                    
+                                        <h3 class="footerLinks"><a href="/careers.html">Careers</a></h3>
+                                        
+                                        <!-- Font Awesome icons -->
+                                    
+                                        <h3 class="footerLinks"><a href="/lp/2020/diversity-inclusion.html">Diversity &amp; Inclusion</a></h3>
+                                        
+                                        <!-- Font Awesome icons -->
+                                    
+                                        <h3 class="footerLinks"><a href="/lp/2021/our-commitment-to-accessibility.html">Accessibility</a></h3>
+                                        
+                                        <!-- Font Awesome icons -->
+                                    
+                                        <h3 class="footerLinks"><a href="/findus/locations.html">Wintrust Community Banks</a></h3>
+                                        
+                                        <!-- Font Awesome icons -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    
+                        <div class="card">
+                        
+                            <a class="mobile-footer-link accordion-toggle collapsed" data-toggle="collapse" href="#footer-collapseTwo">
+                        
+                        
+                                <div class="mobile-footer-header card-header">
+                                    <h2 class="card-title">
+                                        Get in Touch
+                                        <i class="fa fa-plus js-card-title-icon" aria-hidden="true"></i>
+                                    </h2>								
+                                </div>
+                            </a>
+                            <div id="footer-collapseTwo" class="collapse" data-parent="#accordion-mobile">
+                                <div class="card-body">
+                                    <div class="footerParagraphs">
+                                        <p>We are always here to answer your questions.</p>
+                                    </div>
+                                    <div class="nav d-block d-flex-md">
+                                        <h3 class="footerLinks"><a href="/contact-us.html">Contact Us</a></h3>
+                                        
+                                        <!-- Font Awesome icons -->
+                                    
+                                        <h3 class="footerLinks"><a href="/find-expert.html">Find an Expert</a></h3>
+                                        
+                                        <!-- Font Awesome icons -->
+                                    </div>
+                                    <div class="nav mobile-footer-social">
+                                        <!-- Font Awesome icons -->
+                                        <div class="btn divbtn">
+                                            <a href="https://www.linkedin.com/company/wintrust-financial-corporation" target="_blank" aria-label="linkedin">
+                                                <i class="fa fa-linkedin" aria-hidden="true" title="linkedin"></i>
+                                            </a>
+                                        </div>
+                                    
+                                        <!-- Font Awesome icons -->
+                                        <div class="btn divbtn">
+                                            <a href="https://www.facebook.com/wintrust" target="_blank" aria-label="facebook">
+                                                <i class="fa fa-facebook" aria-hidden="true" title="facebook"></i>
+                                            </a>
+                                        </div>
+                                    
+                                        <!-- Font Awesome icons -->
+                                        <div class="btn divbtn">
+                                            <a href="https://twitter.com/wintrust" target="_blank" aria-label="twitter">
+                                                <i class="fa fa-twitter" aria-hidden="true" title="twitter"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    
+                        <div class="card">
+                        
+                            <a class="mobile-footer-link accordion-toggle collapsed" data-toggle="collapse" href="#footer-collapseThree">
+                        
+                        
+                        
+                                <div class="mobile-footer-header card-header">
+                                    <h2 class="card-title">
+                                        Find an Event
+                                        <i class="fa fa-plus js-card-title-icon" aria-hidden="true"></i>
+                                    </h2>
+                                </div>
+                            </a>
+                            <div id="footer-collapseThree" class="collapse" data-parent="#accordion-mobile">
+                                <div class="card-body">
+                                    <div class="footerParagraphs">
+                                        <p>We&#39;re proud to go above and beyond banking to offer events just for you. </p>
+                                    </div>
+                                    <div class="nav d-block d-flex-md">
+                                        <h3 class="footerLinks"><a href="/events.html">Events</a></h3>
+                                        
+                                    
+                                        
+                                        <h3 class="footerLinks">Bank on the Go</h3>
+                                    </div>
+                                    <div class="nav mobile-footer-social">
+                                        <!-- Font Awesome icons -->
+                                        <div class="btn divbtn">
+                                            <a href="https://apps.apple.com/us/app/wintrust-digital-banking/id1619335105" target="_blank" aria-label="Apple">
+                                                <i class="fa fa-apple" aria-hidden="true" title="apple"></i>
+                                            </a>
+                                        </div>
+                                    
+                                        <!-- Font Awesome icons -->
+                                        <div class="btn divbtn">
+                                            <a href="https://play.google.com/store/apps/details?id=com.wintrust.production" target="_blank" aria-label="Android">
+                                                <i class="fa fa-android" aria-hidden="true" title="android"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    
+
+                        <div class="card">
+                        
+                            <a class="mobile-footer-link accordion-toggle collapsed" data-toggle="collapse" href="#footer-collapseFour">
+                        
+                          
+                                <div class="mobile-footer-header card-header">
+                                    <h2 class="card-title">
+                                        Additional Resources
+                                        <i class="fa fa-plus js-card-title-icon" aria-hidden="true"></i>
+                                    </h2>
+                                </div>
+                            </a>
+                            <div id="footer-collapseFour" class="collapse in" data-parent="#accordion-mobile">
+                                <div class="card-body">
+                                    <div class="footerParagraphs">
+                                        <p>Find additional information about how to stay in control of your information and security. 
+
+</p>
+                                    </div>
+                                    <div class="nav d-block d-flex-md">
+                                        <h3 class="footerLinks"><a href="/privacy-policy.html">Privacy Policy</a></h3>
+                                        
+                                    
+                                        <h3 class="footerLinks"><a href="/privacy-policy/ca-consumer-privacy-notice.html">California Consumer Privacy Notice</a></h3>
+                                        
+                                    
+                                        <h3 class="footerLinks"><a href="/security.html">Security</a></h3>
+                                        
+                                    
+                                        <h3 class="footerLinks"><a href="https://faq.wintrust.com/s/">FREQUENTLY ASKED QUESTIONS</a></h3>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                </div>
+
+            </div>
+        </div>
+        <!--end mobile accordion footer -->
+        
+        
+        <div>
+            <div class="copyright">
+                <div id="copyright-content" class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                        <p>Banking products provided by Wintrust Financial Corp. banks.<br />
+©Wintrust 2023<br />
+All Rights Reserved | <a href="/site-map.html">Sitemap</a></p>
+
+                        </div>
+                        
+                        <div class="col-sm-6 text-right">
+                                <img class="fdicFooterImage" src="/content/dam/wintrust/generic/legal/memfdic-equalhouse.png" alt="FDIC"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         
+    
+    
+</footer>
+</div>
+
+    
+</div>
+</div>
+</div>
+			<div>
+<script>
+    var referringUrl = getReferringUrl();
+    var digitalData = window.digitalData = window.digitalData || []; 
+    digitalData.push({
+        "event": "pageView",
+        "page": {
+            "pageName":             "en",
+            "pageType":             "wintrust-static",
+            "bankCharter":          "Wintrust",
+            "pageUrl":              "https://www.wintrust.com",
+            "pageTitle":            "Wintrust ",
+            "fullUrl":              "https://www.wintrust.com" + window.location.search,
+            "fullSlug":             "en" + window.location.search,
+            "hostName":             "www.wintrust.com",
+            "referringUrl":         referringUrl,
+            "fullReferringUrl":     document.referrer,
+            "referringPageName":    getReferringPageName(),
+            "path":                 "/content/wintrust/en",
+            "primaryCategory":      "homepage",
+            "subCategory1":         "",
+            "subCategory2":         "",
+            "subCategory3":         "",
+            "gMktngID":             "AW-994954024",
+            "gEvent":               "page-load",
+            "msftEvent":            "page-load",
+            "linkedInEvent":        "page-load",
+            "pixelEvent":           "page-load",
+            "pixelID":              "33e5a7075027356d"
+        }
+    });
+    
+    function getReferringUrl() {
+        var referringUrl = document.referrer;
+        if (referringUrl) {
+            referringUrl = referringUrl.trim();
+            var queryParamIndex = referringUrl.indexOf("?");
+            if (queryParamIndex > -1) {
+                referringUrl = referringUrl.substring(0, queryParamIndex);
+            }
+        }
+        return referringUrl;
+    }
+
+    function getReferringPageName() {
+        var homePagePath = "/content/wintrust/en";
+        var referringPageName = "";
+        var refererPath = referringUrl;
+        var portNumber = window.location.port;
+
+        if (portNumber) {
+            portNumber = ":"+portNumber;
+        }
+        
+        // Added to make this work in local environment also
+        var domain = window.location.protocol+"//"+window.location.hostname+portNumber;
+        
+        if (refererPath) {
+            refererPath = refererPath.substring(0, refererPath.indexOf(".html"));
+            refererPath = refererPath.replace(domain, "");
+            
+            if (refererPath === "" || refererPath== "/" || refererPath === homePagePath) {
+                referringPageName = "homepage"
+            } else {
+                
+                // Remove '/content' path if any while working in author environment
+                refererPath = refererPath.replace((homePagePath+'/'), "");
+                refererPath = refererPath.split("/").pop();
+                
+                // Check if ':' is getting appended in publish environment and remove it.
+                var n = refererPath.indexOf(":");                
+                if (n === 0) {
+                    refererPath = refererPath.replace(":", "");
+                }
+                referringPageName = refererPath;
+            }
+        }
+        return referringPageName;
+    }
+
+
+    function sendGtagToDigitalData(eventName, detail) {
+        console.log("will call sendComplexDataLayerEvent with:");
+        var cdle = {
+            "event": eventName,
+            "detail": detail
+        };
+        console.log(cdle);
+        WintrustFED.sendComplexDataLayerEvent(cdle);
+
+    }
+
+    window._gtag = function(command, name, detail) {
+        if (command == "event")
+            sendGtagtoDigitalData(name, detail);
+    }
+    window._gtag.apply = function(_, args) {
+        window._gtag(args[0][0], args[0][1], args[0][2]);
+    }
+
+    window._dataLayer = {
+        apply: function(){},
+        push: function(args){ 
+            if (args[0] == "event"){
+                sendGtagToDigitalData(args[1], args[2]);
+            }
+        },
+        slice: function() { return []; }
+    }
+
+    window.__defineSetter__("gtag", function(){});
+    window.__defineGetter__("gtag", function(){ return window._gtag; });
+
+    window.__defineGetter__("dataLayer", function(){return window._dataLayer; });
+    window.__defineSetter__("dataLayer", function(){} );
+</script>
+</div>
+		
+	
+
+    
+<script src="/etc.clientlibs/clientlibs/granite/jquery/granite.min.js"></script>
+<script src="/etc.clientlibs/foundation/clientlibs/jquery.min.js"></script>
+<script src="/etc.clientlibs/wintrust/clientlibs/clientlib-base.min.js"></script>
+<script src="/etc.clientlibs/wintrust/clientlibs/vendor/jquery-ui.min.js"></script>
+
+
+
+
+
+
+        <div><div class="cloudservice generictracker">
+    <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-3967335-74", {"cookieDomain":"auto","allowLinker":true});ga("require", "linker");ga("linker:autoLink", ["wintrust.com","wintrustfinancial.com"]);ga("send", "pageview");
+    </script>
+</div>
+
+</div>
+</body>
+
+</body>
+</html>

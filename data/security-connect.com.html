@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
+<head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><meta name="viewport" content="width=device-width,&#32;initial-scale=1.0" />
+	<!--[if lt IE 9]>
+	  <script src="/scripts/html5shiv-3.7.3.min.js"></script>
+	<![endif]-->	
+	<title>
+	Home
+</title><link rel="shortcut&#32;icon" type="image/ico" href="/favicon.png" />
+
+	<!-- Kendo UI -->
+	<link href="/Content/kendo/styles/kendo.common-bootstrap.min.css" rel="stylesheet" /><link href="/Content/kendo/styles/kendo.bootstrap.min.css" rel="stylesheet" />
+	<!-- Font Awesome Library -->
+	<link href="/Content/font-awesome.min.css" rel="stylesheet" />
+	<!-- Bootstrap -->
+	<link href="/Content/bootstrap.min.css" rel="stylesheet" />
+
+	<!-- Custom skins -->
+	<link href="/sci.framework.web/Portal/Skin/SkinCSS.aspx?mode=bootstrap&amp;disable-ms" rel="stylesheet" />
+
+	<style type="text/css">
+		.glimpse-nowrap { z-index: 9999 !important; }
+		.waiting { position:absolute;top:0;left:0;height:100%;width:100%; }
+	</style>
+
+	
+	<!-- Custom skins -->
+	<link href="/sci.framework.web/Portal/NavPage.min.css?ver=1.1" rel="stylesheet" />
+	<link href="/sci.framework.web/Portal/Skin/SkinCSS.aspx?mode=bootstrap&disable-ms" rel="stylesheet" />
+	<link href="/sci.framework.web/Portal/Skin/SkinCSS.aspx?mode=telerik&disable-ms" rel="stylesheet" />
+	<link href="/sci.framework.web/Portal/Skin/SkinCSS.aspx?mode=custom&disable-ms" rel="stylesheet" />
+
+	<style type="text/css">
+		.RadComboBox .rcbInner, .RadComboBox .rcbActionButton { border-radius: 0 0 0 0 !important; }
+		.disableMenuClick { }
+		.footer-color, #footer-level-1 {background-color:rgb(42, 45, 51);color:rgb(129, 134, 146); }
+		.footer-margin {padding-bottom:20px;}
+		.footer-info-color, .footer-info-color:hover, .footer-info-color:focus { color:rgb(129, 134, 146) }
+		.img-linkedin { height:25px;}
+		.page-header {margin-top:0;margin-bottom:10px}
+		.page-text-size {margin-top:5px;margin-bottom:5px}
+		.wiki-content {height:550px; overflow:auto;}
+
+		@media screen and (min-width: 768px) {.modal-dialog.modal-wide  {width:75%; max-width:992px;}}
+
+		#footer-level-1 {margin-top:20px;}
+
+		.ccpa-notice {display: none;position: fixed;bottom: 20px;z-index: 10000;width: 98%;margin: 1%;padding: 20px;background: rgba(0, 0, 0, 0.9);min-height: 84px;}
+		.ccpa-notice p {color: #ffffff;font-size: 11pt;float: left;margin: 0;display: block;margin: 6px 110px 0 0;	}
+		.ccpa-notice button {border: none;width: 110px;padding: 10px;position: absolute;right: 20px;top: 36px;}
+	    #ccpa-notice-a {text-decoration: underline; color:#ffffff;}
+	    #ccpa-notice-a:hover {color:#026fd4;}
+	</style>
+
+	
+    <link href="ExternalPages.min.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        @media (max-width: 1024px) {
+            .slider-box-height {
+                min-height: 600px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .slider-box-height {
+                min-height: 450px;
+            }
+        }
+
+        .slider-box-padding {
+            padding-top:100px;
+        }
+
+        .fams-box {
+            background-image: url(Images/FAMS.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        p {
+            margin: 1em 0;
+            font-family: Arial;
+            font-size: 17px;
+            line-height: 25px;
+        }
+    </style>
+
+<link href="/Telerik.Web.UI.WebResource.axd?d=PMrIT5dOWaVYIcpFWUE4nEn0LaUJAQQAucBXLdqQa3zFeRrPwiv415KcVYgh8aWuROg8GTnMJKSkYpWgHzlYlBdvrWPI2pHp-oXLOns6qfqpCQvdTmiEBF47KtxXf5XsRJsc2qpWPwPJwb1yar5-onOEDlyYIHKI8_k9KTor9aI1&amp;t=638065735056067895&amp;compress=1&amp;_TSM_CombinedScripts_=%3BAqCOmR/U5fyia562QeUxCsXsbPMHziROudTk66PQpRZ845S3VDuE7x/+QTXzt2s4GlxMUbxQ/ujvVQUHgCoawxvfdoQk5WJRsPCwkdEWzAWQ65xwDP5YbqB5LHPJ0EsOU3lk/WoJvVrfFvhjjvk6tk6kuUfcDCFz7wGRPQYO5jQlv83hR7TSuzKES7CB1/eGmIf/0VHvy97WmL7iNXQHGnykFFrDqU2JW2WT2ispxQdyU2jBfsm7KmKX6DRlExGTRCn0tpnMVjTuytPX9/pfwIO+V3YffC38kY87SiDN+PqivUK2hOH+ptI18u+1JWRwkFj3S48102Ni/FMsEDl659qLPoF9+4ZMqcO08cf0OEKIcYFR5uS08dZu92qOPFMlo7qFetIW36mAOkBaFcaM8+41wopbAfubhcBEKZkW0NT+K+FejRmKXhSbg80tHvhg4yvo0Wn7maYg8JHDgfPSv0sJnx+86nVN33WKpddXE/Mf5QH67BtRPpwkzg0x9ijVewS5YFW14qtjOElkTy61vcOrA8DaMJX1TawCODj0aa2LD9OnJ+tJV454zMwv5mIL4PTYwwB9S4/GEBRyyFN0jq0FNAb9I6JNwKMUrdKE7fE=" type="text/css" rel="stylesheet" /></head>
+
+<body id="base">
+	<form method="post" action="/sci.framework.web/Portal/External/Home.aspx" id="aspnetForm" class="body-container">
+<div class="aspNetHidden">
+<input type="hidden" name="ctl00_ctl00_RadStyleSheetManager_TSSM" id="ctl00_ctl00_RadStyleSheetManager_TSSM" value="" />
+<input type="hidden" name="ctl00_ctl00_baseRadScriptManager_TSM" id="ctl00_ctl00_baseRadScriptManager_TSM" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="W5urDjSmDEjWcBZqxTm2mdHScHTIezQ/rGrRkq1zJ4D43VuA1c1j4993DSeICuLoC1cKDWdlqtWDMRY1YlgnqGV6oPtvkRDc1SZIYVVROerkda2kn6mi4Dtqar3WeYH4akt1lVwTVDvDSd/qkphY+oEsuTqo7d48hYHscGwWmQp/E60Y5KJYRSx1Ccn2TPT3t5YCbCNGyFbWn+sK3Vt3PqliAi88QE0f0vnDE4nAalkN9154vlFCzUAXog25YdQBwXQLSgUTg7aM1S6O8pNjmZYTjOIiN6veLpKGKQyqdetbTwoI5TiaYC0LkXA8obVDMfh7nUCwnPmTLXELgDfNz/f9faLmY0XRpzJ6HLlLfGi1/IR15+sMIQBxprgmVOyqcog5pZX+CrY49BvzO72BU905bfjYHbRmuBIKHDT/AELMdNEsDjvLNgnR87BCNO3W6SPJzyBvjIugVN/Yl/V+hYOdl6pjy30uAytECmeG+9ry6U3YqKws+tX6vVXzuYiSUecdETiNRXbqJXoiZtFsWcvgN0qvZqMa5txfF6pX7alSUM4rVNdxODMMixVcCXbk6KBFyD5Vu2Jz4duxMft6EF5zdZcnSwQ04JNRSBXK3+g4qzkZQkYEhNvHmdvt3pdHHHkDFt+xxkVIR16U4/Cgu0Ye84WFF2RET8iEFUanIPTKivfxn3k6ZCEPE0iYWbRKzqoTYKNmOuEJNowKEhBC0HKIoxw/BwWv3XzMH5aa6/ZEcFx5r/F5T8VdIj24Ej0u2XeVa6morUfQpubRw77XBxr2iCVqy3IYj2CKqYEfWIixOv9mlo3FrGu3lK8PI1k7sudODmE6Y/dJpXZFF3Ixtlc+qdnAg5/XmUL9K1Xof+wf2UTwT/J8niAnx2rWRxNoqiBxRBViGei+smmSTQQDwxdDQb7zuB4I8S3w7kikb56Tw3HjUk5GqAt+sAgpHR048dMuQkkPuVVWo9okavdIJW1TjxchoLjlyTHABowdY2h5PfCUSwP0IV31jw+7T3s2d1MGSsCvZerYC9Da6fjXAv7b6ri0hR8pwBuEBG9659E1sAN+KW13wKSx4yJ6nPz8" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZGzDGkijFZIvvIVkH5u11TH8jWgIg7YVPrCY8xWLbFTC37jBfLgKULRQe_VRaALxX18tAR9W4gHGLMPtxaQgPjLFqizdhskNKj061SSjOk_M0&amp;t=637814401746327080" type="text/javascript"></script>
+
+
+<script src="../../../Scripts/WebForms/MsAjax/MicrosoftAjax.js" type="text/javascript"></script>
+<script src="../../../Scripts/WebForms/MsAjax/MicrosoftAjaxWebForms.js" type="text/javascript"></script>
+<script src="../../../Scripts/jquery-3.6.0.min.js" type="text/javascript"></script>
+<script src="../../../Scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../../Scripts/respond.min.js" type="text/javascript"></script>
+<script src="../../../Scripts/kendo/js/kendo.all.min.js" type="text/javascript"></script>
+<script src="../../../Scripts/kendo/js/cultures/kendo.culture.en-US.min.js" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=TDVjdgRbdvNAY3tnbizUcBGm93I0IJqubic93cmugmkYS8Qk1Glo9O22qdjAbnm2Jrv7a8OfIsqYMt5OVaTQaFOYJfZ80mqSje5cES6HwsWRqGw_EYBM6pRmbPjriIlTx13YET7BFrc-u9FGDO5rz-KJfwfuDINgGYaIs-NaKYk1&amp;t=3322f07f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=mbGZm65DzNC0tMTq0ElbceC7fO9F0vqW98Ak-6ZHbqW7RUe9inxNIc7v5JO9VepZLYoLCV4Ld_xRmJTGRNaYbwTIGTPXTBpiz4X9D1WDVw2BA04pWiXxnWv3FAclrYhE1VcrM0Wr0ufCa3DYjqz8vxQnsIzNTw9D3E7MSoz5TRVtR7Hw2v9StAYPifNToseS0&amp;t=3322f07f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=KsAy8f3j_xE6DItBJxn66fQLUfDLjRKNX0tdE7C2chGQdc_PxhMmydAmQ0rXl-TYAVTUfFadFsOV_X1N5lojWg_vUC5-PajdrOw9q-GLXjaAgUIv7BjhQ44zKGelJGIVy8uErYTeZBv2qB2Zt6qp_uLXHx5nPno-GcPVj-OetIJ--Tn7mBNElkNT5lqD_U8L0&amp;t=3322f07f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=cmIcXiVJ__exjjpjrN730mKZ5IyI6ivA-Is8doCpzIWSZ_XshG6PtWml-TTwVzK1WRxUJVRVJRhhtaquU5Bzdrm4hVnNWbVYjVH2jj-o4OiT7t84Jw-Ky8KIA4xS8KFBVCe3gKAtokkwVrrIYw_gUMKVRIFzwilJIV7ZKsoQjVCpAL5J69esEnGGpocEiNyV0&amp;t=3322f07f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=sF8Y0c2qLAfpveBK9gLo7FjqJmV5C7Coz0Zhm-05D5OkXvfoePy4wrVsxkCvKLk42DhQp6diKabKDzS7pbS_xhml1tZxDRVLNkDY-__CRXwCSRc8JiiDE9wCppdPsXXQejArYUVZ3kAce-2Ldmwm04IWsCbRVLKOiXKCKoKHp9o1&amp;t=3322f07f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=uZyysmNAhs23bID72ZUaSomP4Mt_xLqmYfjGrVNPDVW5CcLF7-n1hkU_j5K-eiM5Y9mWYbuQ7ckuU4Hh2YDJCYciuP7caLY252u-0Iu-4CNgPHVVWA7c1VISsGdDTOasxJO7dGJ3Sqk1LPARkCVfDhM_n8Z9_TDXqb5knob0BgGSixZE5r42vQxu7rcXQhss7DLGppU9qZMO95hYfFrsGw2&amp;t=3322f07f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=-9rjE8XFv-zikiBdee7Rrk_YmZ6XGHM2t8uZtu7g_UTjirulcf2RPpyC_OH-mqJvx7dcs6hHPXccYjvgqP7UkO7IQQKkzQUkSffaojBq328ID6q4cnFpnGSjsZ_ryKg1Dw0KD-4Ap8Hh4GR79VAochuE-dYje8l3oaucadZUPPkvTe1zAXgmxjLVeTOHlEyV_Vy6-zq6mcTq0tXCGPuFFw2&amp;t=3322f07f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=aoSSiMnLNTC20U5L7LFIKojochbnbHA5WKi5JNKq4u5pbiAbpsTZ7mhhIbdXa0RK6SblyDRC8OVAS1aY8s1lYr62bE-8wKEL8BUajUnBgSTODOJ8jYi8zD1uZKDGooQeomhS2TboTaC3iGJI9DSnE-JmizBe83706ER5zCIMzsSYJBEay0V8wJNi55vnqb65F3yblh6X4DOXUVPejRPaqg2&amp;t=3322f07f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=eKZhdBAoDXLAsQys5JFN8gSL4AkXMGtXPKNu4oTsRbkxJ7u3P-6qV1Pz-sJuCl4tdW3prMZAs_gLbaTyK04NocL1-VGInzDBvmuh77HbkFpGZf53n5lC4TnGGqy8LLV6ORd4cOkya76X1KG8tWMTN8-kehuN8ORRPdE6991iWY2xohDl-XkStVxjeoES7X9aPEqxjLIjRCgVUsoS0pq66Q2&amp;t=3322f07f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=utaAJrK4EroNO-KNr3p19Ij6QOpKM4BEQt_Q_MRKhYnvjKVuK5kcyGOsyG14rAQ7taiE2_iAtqkL2bjimzbHg4gk5EhemOiao-UCpbTj1sw3b1xjKTCxhs9dTSV2CzXdwjczzRdLiigo53YWvzhY_lFBDFpmQkwRDms1dNE2Fbw6OtKn7px5vakWx0YILbvS0&amp;t=3322f07f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=86EhAqQjfuMKlbK4FWyenFupDQ_KJgO0OV0Ju6nrdjdvS0bYrRZAt0JsyjHQfFwJLItOpaE3iunWOcpX6WcQWScSOB8aaTlkzVZmZuBUKVhpraqLI18AL_zyv0A7CUdZhpQ8k2GM6ANJPaZUQk2cGBHpChVlzGWa1ZKxqNBlD_Mr8j-lzhvbz0RRO-mK7qGpCPOSmeAHz76A98G-RTWCEQ2&amp;t=3322f07f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=GiyGg6C7coGF_0YjOubjHV--cdRBMWDKDySP60S2J3zRUevm0SWW3HvEGoudRbEuikMEL3Xsx6LyewDdu-imo2wLGP8UDHkJmUcNWFTh02k1nfNn71P-hlnpBYqRuSOfycjunYLRUC0AdIqA9puirXIfJeqrQUkQNQepZ7ToYi2ymtFmpE9LpBqL8d5lIvO60&amp;t=3322f07f" type="text/javascript"></script>
+<script src="/ScriptResource.axd?d=q-3cNXDJebFSYKMZTGHLhOg5XvQux9REILcN4bot9LctBUm6gQoxJSj8TqCUY5kszoLNZHuJnlzE8LY9H3goLVGP5Fk2cw3EuC3HgsWBHHpw-m4oAHVO3uGXGxv8igv4rohN8N8aEi4NYDoBoGVAJ8rHdXwZdUexk-e4Kb1Ylha-v4paRSmuwjBeL6jboo8D0&amp;t=3322f07f" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="005F1B8D" />
+	<input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="NVvus6nh0fWWofB6GI+jGbZB6H0ljWupy7OSzSCvmqKx2Dh+2Ym7/qymUoBbYYDgxzMIwLIkdmN7DzFRPgZUhFCr/jG+Ysw9W68vrB60RMOs5VX0GPj32vtA2dl1SuqwO+etuKUWEcQDkgwEZJ5GpLkN0o5LHOHiPfaoyk+gJiKBwqb7D/ms7TnHr0vMZd+votWbHsFX58g0O1wrmyB5xeT9nHB84BkYC5prgS262Xyzw2exDZkuG3CGLW26Wbaa" />
+</div>
+		<script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ctl00$baseRadScriptManager', 'aspnetForm', ['tctl00$ctl00$baseBody$updStatus','','tctl00$ctl00$baseBody$updWiki','','tctl00$ctl00$updMessaging','','tctl00$ctl00$baseRadAjaxManagerSU',''], [], [], 90, 'ctl00$ctl00');
+//]]>
+</script>
+
+		<div id="ctl00_ctl00_baseRadAjaxManagerSU">
+	<span id="ctl00_ctl00_baseRadAjaxManager" style="display:none;"></span>
+</div>
+		<div id="ctl00_ctl00_baseRadAjaxLoadingPanel" class="RadAjax&#32;RadAjax_Bootstrap&#32;waiting" style="display:none;">
+	<div class="raDiv">
+
+	</div><div class="raColor&#32;raTransp">
+
+	</div>
+</div>
+
+		
+	
+	<input type="hidden" name="ctl00$ctl00$baseBody$hdnPageID" id="ctl00_ctl00_baseBody_hdnPageID" />
+	<div id="ctl00_ctl00_baseBody_divNavBar">
+	
+		<!-- Header 1st -->
+		<nav id="navbar-level-1" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-12 col-md-offset-1 col-md-10">
+						<div class="navbar-header">
+							<a class="navbar-brand" href="/sci.framework.web/Portal/External/Home.aspx">
+								<img src="/sci.framework.web/Portal/External/SCI/FAMSLogo_Hor-White_38.png" class="img-responsive sci-logo" />
+							</a>
+							<!-- Navigation bar / Upper right -->
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-Level1" >
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+						</div>
+
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-Level1">
+							<ul class="nav navbar-nav navbar-right">
+								<li>
+									<div class="navbar-form">
+										<div class="input-group">
+											<div id="ctl00_ctl00_baseBody_cbSearch" class="RadComboBox&#32;RadComboBox_Bootstrap" style="width:300px;white-space:normal;">
+		<span class="rcbInner"><input name="ctl00$ctl00$baseBody$cbSearch" type="text" class="rcbInput&#32;radPreventDecorate&#32;rcbEmptyMessage" id="ctl00_ctl00_baseBody_cbSearch_Input" value="Search&#32;this&#32;site" /><button class="rcbActionButton" tabindex="-1" type="button"><span id="ctl00_ctl00_baseBody_cbSearch_Arrow" class="p-icon&#32;p-i-arrow-60-down"></span><span class="rcbButtonText">select</span></button></span><div class="rcbSlide" style="z-index:6000;display:none;"><div id="ctl00_ctl00_baseBody_cbSearch_DropDown" class="RadComboBoxDropDown&#32;RadComboBoxDropDown_Bootstrap&#32;"><div class="rcbScroll&#32;rcbWidth"></div></div></div><input id="ctl00_ctl00_baseBody_cbSearch_ClientState" name="ctl00_ctl00_baseBody_cbSearch_ClientState" type="hidden" />
+	</div>
+											<div class="input-group-btn">
+												<a id="btnSearch" class="btn&#32;btn-primary" href="javascript:__doPostBack(&#39;ctl00$ctl00$baseBody$btnSearch&#39;,&#39;&#39;)"><i class='glyphicon glyphicon-search'></i></a>
+											</div>
+										</div>
+									</div>
+								</li>
+								
+										<li><a href="/sci.framework.web/Portal/External/Login.aspx" title="Login">Login</a></li>
+									
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Header 2nd -->
+		<nav id="navbar-level-2" class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-12 col-md-offset-1 col-md-10">
+						<div class="navbar-header">
+							<!-- Navigation bar / Upper right -->
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-Level2">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="glyphicon glyphicon-chevron-down"></span>
+							</button>
+						</div>
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-Level2">
+							<ul class="nav navbar-nav navbar-left">
+        					    
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<!-- Page Header -->
+		
+
+	
+</div>
+
+	<!-- Status -->
+	<div id="ctl00_ctl00_baseBody_updStatus">
+	
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-12 col-md-offset-1 col-md-10">
+						<div ID="pnlSuccess" class="text-center text-info">
+							<span ID="lblSuccess"></span>
+						</div>
+						<div ID="pnlDanger" class="text-center text-danger">
+							<span ID="lblDanger"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+</div>
+
+	<!-- Content -->
+	<div id="divBody" class="content-body">
+		
+    
+            <div>
+                <div class="fams-box default-font slider-boxes slider-box-height slider-box-padding">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div>
+                                <div class="col-xs-8 col-xs-offset-2">
+                                    <h2 class="text-center text-uppercase default-font">Security Connections, Inc. is now part of First&nbsp;American Mortgage&nbsp;Solutions</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <br />
+                <div class="row">
+                    <div class="col-sm-6" style="border-right:1px solid">
+                        <div class="row">
+                            <div class="col-sm-offset-3 col-sm-8">
+                                <p>As we transition our branding to First American, you can learn more about our CleanFile Solutions<sup>TM</sup> post-closing and servicing tools at:</p>
+                                <a href="http://firstam.com/mortgagesolutions/solutions/cleanfile-solutions" title="learn more" class="btn btn-primary">
+                                    <div>CLEANFILE SOLUTIONS <span class="fa fa-play" aria-hidden="true" style="font-size:xx-small"></span></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-offset-1 col-sm-10">
+                                <p style="font-weight:bold">CLIENTS</p>
+                                <p>Continue to use this link to enter our order management system</p>
+				                <a href="/sci.framework.web/Portal/External/Login.aspx" title="Quality Control Services" class="btn btn-primary">
+                                    <div>Login <span class="fa fa-play" aria-hidden="true" style="font-size:xx-small"></span></div>
+				                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-offset-3 col-sm-6" style="text-align:center">
+                        <p>Thank you for trusting us to serve your post closing, quality control & default servicing needs.  We look forward to many more years of doing business with you at First American.</p>
+                    </div>
+                </div>
+            </div>
+        
+    <!-- Scroll to top - box -->
+    <a href="#0" class="cd-top"></a>
+    <script type="text/javascript" src="ExternalPages.min.js"></script>
+
+	</div>
+
+	<!-- Footer -->
+	<div id="footer-wrapper">
+		<div id="ctl00_ctl00_baseBody_footerPanel">
+	
+			<div id="navbar-footer" class="navbar navbar-default footer-color footer-margin">
+				<div id="footer-level-1" class="small footer-color"></div>
+
+				<div id="footer-level-2" class="small footer-color">
+					<div class="row">
+						<div class="col-sm-2 col-md-offset-5">
+							<address>
+								<ul class="list-unstyled">
+									<li>1795 International Way</li>
+									<li>Idaho Falls, ID 83402</li>
+								</ul>
+							</address>
+						</div>
+						<div class="col-sm-2">
+							<ul class="list-unstyled">
+								<li>Phone: <a href="tel:+12085289895" class="footer-info-color">(208) 528-9895</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div id="footer-level-3" class="small footer-color">
+					<div class="row">
+						<div class="col-sm-12 col-md-offset-1 col-md-10">
+							<ul class="list-inline">
+								<li><a href="/sci.framework.web/Portal/External/Home.aspx" class="navbar-link">Home</a></li>
+								<li><a href="http://www.firstam.com/privacy-policy/" class="navbar-link">Privacy Statement</a></li>
+								<li><a href="http://www.firstam.com/terms-of-use/index.html" class="navbar-link">Terms of Use</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div id="footer-level-4" class="small footer-color">
+					<div class="row">
+						<div class="col-sm-12 col-md-offset-1 col-md-10">
+							<div class="clear-fix">
+								<div class="pull-left">
+									<ul class="list-inline">
+										<li>
+											<span class="footer-color">&copy; 2014-2023 First American Financial Corporation and/or its affiliates. All Rights Reserved. First American Mortgage Solutions, LLC, and its affiliates, make no express or implied warranties respecting the information presented and assume no responsibility for errors or omissions. First American, the eagle logo, and firstam.com are registered trademarks or trademarks of First American Financial Corporation and/or its affiliates. Title insurance and settlement services are provided by First American Title Insurance Company, an affiliate of First American Mortgage Solutions, LLC. A member of the First American Family of Companies (NYSE: FAF)</span>
+										</li>
+									</ul>
+								</div>
+								<div class="pull-right">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+</div>
+	</div>
+
+	<!-- Wiki -->
+	<div id="ctl00_ctl00_baseBody_updWiki">
+	
+			<div id="ctl00_ctl00_baseBody_pnlWikiModal" tabindex="-1" class="modal&#32;fade" role="dialog" aria-labelledby="wikiModal&#32;Label">
+		
+				<div class="modal-dialog modal-wide" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h1 class="modal-title" id="wikiModalLabel">Page Help</h1>
+						</div>
+						<div class="modal-body">
+							<div class="container-fluid">
+								<div class="row">
+									<div id="ctl00_ctl00_baseBody_pnlWikiContent" class="col-xs-12&#32;wiki-content">
+
+		</div>
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<div class="btn-group pull-right">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+								<input type="button" name="ctl00$ctl00$baseBody$btnWikiEdit" value="Edit" onclick="hideWiki();__doPostBack(&#39;ctl00$ctl00$baseBody$btnWikiEdit&#39;,&#39;&#39;)" id="ctl00_ctl00_baseBody_btnWikiEdit" class="btn&#32;btn-primary" />
+							</div>
+						</div>
+					</div>
+				</div>
+			
+	</div>
+		
+</div>
+
+	<!-- Appearance -->
+	<div class="modal fade" id="appearanceModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<h4 class="modal-title" id="myModalLabel">Appearance</h4>
+		  </div>
+		  <div class="modal-body">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-8 col-sm-offset-2">
+						<label class="control-label">Skin</label>
+						<select name="ctl00$ctl00$baseBody$skins" id="ctl00_ctl00_baseBody_skins" class="form-control">
+
+</select>
+					</div>
+				</div>
+			</div>
+		  </div>
+		  <div class="modal-footer">
+			<input type="button" name="ctl00$ctl00$baseBody$btnSave" value="Save" onclick="javascript:__doPostBack(&#39;ctl00$ctl00$baseBody$btnSave&#39;,&#39;&#39;)" id="ctl00_ctl00_baseBody_btnSave" class="btn&#32;btn-primary" />
+			<input type="button" name="ctl00$ctl00$baseBody$btnReset" value="Reset" onclick="javascript:__doPostBack(&#39;ctl00$ctl00$baseBody$btnReset&#39;,&#39;&#39;)" id="ctl00_ctl00_baseBody_btnReset" class="btn&#32;btn-default" />
+		  </div>
+		</div>
+	  </div>
+	</div>
+
+	<div id="ccpa-notice-block" style="display:none">
+		<div id="ccpa-notice" class="ccpa-notice" role="complementary" aria-label="CCPA Notice" style="display: block;">
+			<p><strong>PRIVACY NOTICE</strong></p>
+			<p>This website uses cookies and similar technologies to manage your sessions, manage content, and improve your website experience. To learn more about these technologies, your options, and about other categories of personal information we collect through this website and how we may use it, please see our <a id="ccpa-notice-a" target="_blank" href="https://www.firstam.com/privacy-policy/#type-of-information">privacy policy</a>.</p>
+			<button type="button" onclick="hideFACPPA();" class="btn btn-primary button">I understand</button>
+		</div>
+	</div>
+
+	<!-- Scripts -->
+	<script type="text/javascript">
+		function hideWiki() {
+			$('#ctl00_ctl00_baseBody_pnlWikiModal').modal('hide');
+		}
+
+		function showWiki() {
+			$('#ctl00_ctl00_baseBody_pnlWikiModal').modal('show');
+		}
+
+        function showFACPPA() {
+            if (!document.cookie.match(/^(.*;)?\s*FAackCCPA\s*=\s*[^;]+(.*)?$/)) {
+				$('#ccpa-notice-block').show();
+            }
+        }
+
+		function hideFACPPA() {
+            $('#ccpa-notice-block').hide();
+
+            var expire = new Date();
+            expire.setTime((new Date()).getTime() + 3600000 * 24 * 14);
+            document.cookie = "FAackCCPA" + "=" + encodeURI(true) + ";expires=" + expire.toGMTString() + ';path=/';
+		}
+
+		function statusDisplay(message, warning)
+		{
+			statusReset();
+			if (warning)
+			{
+				global_findControl('lblDanger').html(message);
+				global_findControl('pnlDanger').show();
+			}
+			else
+			{
+				global_findControl('lblSuccess').html(message);
+				global_findControl('pnlSuccess').show();
+			}
+		}
+
+		function statusReset()
+		{
+			global_findControl('pnlSuccess').hide();
+			global_findControl('pnlDanger').hide();
+		}
+
+		function global_collapseFrames() {
+			if (top.frames.length > 0 && top.document.all.frameSetMaster != null)
+				top.document.all.frameSetMaster.rows = "0,*,0";
+			if (top.location != location)
+				top.location.href = document.location.href;
+		}
+
+		function global_getBodyHeight() {
+			return $(window).height() - global_getHeaderHeight() - 20; // - global_getFooterHeight();
+		}
+
+		function global_getHeaderHeight() {
+			return $('#divBody').offset().top;
+		}
+
+		function global_getFooterHeight() {
+			return $('#footer-wrapper').outerHeight(true);
+		}
+
+		function global_FooterBottomSet() {
+			$('#navbar-footer').addClass('navbar-fixed-bottom');
+			$('body').css('padding-bottom', $('#navbar-footer').outerHeight() + "px");
+		}
+
+		function global_FooterBottomClear() {
+			$('#navbar-footer').removeClass('navbar-fixed-bottom');
+			$('body').css('padding-bottom', '0');
+		}
+
+		$(document).ready(function () {
+			global_collapseFrames();
+
+			// Adjust body tag
+			var navBar = $('#navbar-level-1');
+			$('body').css('padding-top', navBar.outerHeight() + "px");
+
+			// Fix Menu items
+			$('.dropdown-toggle').click(function () {
+				var dropdownList = $('.dropdown-menu');
+				var dropdownOffset = $(this).offset();
+				var offsetLeft = dropdownOffset.left;
+				var dropdownWidth = dropdownList.width();
+				var docWidth = $(window).width();
+
+				var subDropdown = $('.dropdown-menu').eq(1);
+				var subDropdownWidth = subDropdown.width();
+
+				var isDropdownVisible = (offsetLeft + dropdownWidth <= docWidth);
+				var isSubDropdownVisible = (offsetLeft + dropdownWidth + subDropdownWidth <= docWidth);
+
+				if (!isDropdownVisible || !isSubDropdownVisible) {
+					$('.dropdown-menu').addClass('navbar-right');
+				} else {
+					$('.dropdown-menu').removeClass('navbar-right');
+				}
+			});
+		});
+
+		$(document).ready(function () {
+			$('.disableMenuClick').click(function () {
+				return false;
+			});
+            showFACPPA();
+		});
+    </script>
+
+
+		<div id="ctl00_ctl00_updMessaging">
+	
+				<!-- Message Dialog -->
+				<div id="dialogWindow" class="modal">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								<h4 class="modal-title">
+									<label id="dialogWindowTitle"></label>
+								</h4>
+							</div>
+							<div class="modal-body">
+								<div class="container-fluid">
+									<div id="dialogWarning">
+										<div>
+
+	</div>
+										<label id="dialogMessage"></label>
+									</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			
+</div>
+
+		<script type="text/javascript">
+			function OnRequestStart() {
+				// Adjust height of RadAjaxLoadingPanel
+				global_findControl("baseRadAjaxLoadingPanel").height(document.documentElement.scrollHeight);
+			}
+
+			function Show(title, warning) {
+				$('#dialogWindowTitle').html(title);
+				$('#dialogWarning').addClass((warning ? 'text-danger' : 'text-info'));
+				$('#dialogWindow').modal('show');
+			}
+			function HideFields() {
+				if (global_ControlIDExists('dialogGrid'))
+					global_findControl('dialogGrid').hide();
+				$('#dialogMessage').hide();
+			}
+			function WindowDisplayGrid(dialogTitle, warning) {
+				HideFields();
+				if (global_ControlIDExists('dialogGrid'))
+					global_findControl('dialogGrid').show();
+				Show(dialogTitle, warning);
+			}
+			function WindowDisplayText(dialogTitle, dialogMessage, warning, redirectUrl, closeTab) {
+				HideFields();
+				$('#dialogMessage').html(dialogMessage);
+				$('#dialogMessage').show();
+				Show(dialogTitle, warning);
+
+				if (redirectUrl != null && redirectUrl.length > 0) {
+					$('#dialogWindow').on('hidden.bs.modal', function (e) {
+						window.location = redirectUrl;
+					});
+                }
+                if (closeTab) {
+                    $('#dialogWindow').on('hidden.bs.modal', function (e) {
+                        window.close();
+                    });
+                }
+			}
+
+			function global_GetRadAjaxManager()
+			{
+				return global_findAjaxControl('baseRadAjaxManager');
+			}
+
+			function global_findAjaxControl(name) {
+				var id = global_findControlID(name);
+				if (id != null)
+					return $find(id);
+
+				return null;
+			}
+
+			function global_ControlIDExists(name)
+			{
+				try
+				{
+					var control = global_findControlID(name);
+					if (control != null)
+						return true;
+				}
+				catch (ex)
+				{
+				}
+
+				return false;
+			}
+
+			function global_findControlID(name)
+			{
+				var control = $("[id$='" + name + "']");
+				if (control != null)
+					return control[0].id;
+
+				return null;
+			}
+			function global_findControl(name)
+			{
+				var id = global_findControlID(name);
+				if (id != null)
+					return $('#' + id);
+
+				return null;
+			}
+		</script>
+		<span id="version" class="hide">2018.2.0-origin-release-candidate.1+6427.Branch.origin-release-candidate.Sha.a7361d325f89569c057cf47ea53e0bd35ba2d03e</span>
+	
+
+<script type="text/javascript">
+//<![CDATA[
+window.__TsmHiddenField = $get('ctl00_ctl00_baseRadScriptManager_TSM');;(function() {
+                        function loadHandler() {
+                            var hf = $get('ctl00_ctl00_RadStyleSheetManager_TSSM');
+                            if (!hf._RSSM_init) { hf._RSSM_init = true; hf.value = ''; }
+                            hf.value += ';Telerik.Web.UI, Version=2020.2.617.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4:en-US:77834329-9f9d-4011-8eac-a82ffa414dd7:45085116:d7e35272:505983de:3920021;Telerik.Web.UI.Skins, Version=2020.2.617.45, Culture=neutral, PublicKeyToken=121fae78165ba3d4:en-US:a9236955-7261-4081-864e-785ed014ff62:ad4550ef:14f19a5b';
+                            Sys.Application.remove_load(loadHandler);
+                        };
+                        Sys.Application.add_load(loadHandler);
+                    })();Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxManager, {"_updatePanels":"","ajaxSettings":[],"clientEvents":{OnRequestStart:"OnRequestStart",OnResponseEnd:""},"defaultLoadingPanelID":"ctl00_ctl00_baseRadAjaxLoadingPanel","enableAJAX":true,"enableHistory":false,"links":[],"styles":[],"uniqueID":"ctl00$ctl00$baseRadAjaxManager","updatePanelsRenderMode":1}, null, null, $get("ctl00_ctl00_baseRadAjaxManager"));
+});
+Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadAjaxLoadingPanel, {"initialDelayTime":1500,"isSticky":true,"minDisplayTime":0,"skin":"Bootstrap","uniqueID":"ctl00$ctl00$baseRadAjaxLoadingPanel","zIndex":90000}, null, null, $get("ctl00_ctl00_baseRadAjaxLoadingPanel"));
+});
+
+var callBackFrameUrl='/WebResource.axd?d=beToSAE3vdsL1QUQUxjWddXMZDQ2zQaKOIAE434-Wa5OjjYXvRvkncgIFKlkguUP2TV57UwZNWE2UX8MHdEnes7HIqohaLfLYNWRkGM5Kr95RuSpwHI1qhznAcb3xZFU0&t=637814401746327080';
+WebForm_InitCallback();Sys.Application.add_init(function() {
+    $create(Telerik.Web.UI.RadComboBox, {"_dropDownWidth":0,"_height":0,"_maxHeight":300,"_renderMode":2,"_skin":"Bootstrap","_uniqueId":"ctl00$ctl00$baseBody$cbSearch","clientStateFieldID":"ctl00_ctl00_baseBody_cbSearch_ClientState","collapseAnimation":"{\"duration\":450}","emptyMessage":"Search this site","expandAnimation":"{\"duration\":450}","filter":1,"itemData":[],"localization":"{\"AllItemsCheckedString\":\"All items checked\",\"ItemsCheckedString\":\"items checked\",\"CheckAllString\":\"Check All\"}"}, null, null, $get("ctl00_ctl00_baseBody_cbSearch"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>

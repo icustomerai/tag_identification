@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="pingback" href="https://oakeshospital.com/xmlrpc.php" />
+
+	<script type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><style id="et-divi-open-sans-inline-css">/* Original: https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&#038;subset=latin,latin-ext&#038;display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4uaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4uaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4uaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4uaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1x4uaVc.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkWV4exg.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkWV4exg.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjWV4exg.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjWV4exg.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjWV4exg.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4uaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4uaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4uaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4uaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1x4uaVQ.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkWV4ewA.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkWV4ewA.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjWV4ewA.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjWV4ewA.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjWV4ewA.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4uaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4uaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4uaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4uaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1x4uaVI.woff2) format('woff2');}</style><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v20.9 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>CHI Oakes Hospital - Oakes, North Dakota</title>
+	<link rel="canonical" href="https://oakeshospital.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="CHI Oakes Hospital - Oakes, North Dakota" />
+	<meta property="og:url" content="https://oakeshospital.com/" />
+	<meta property="og:site_name" content="CHI Oakes Hospital" />
+	<meta property="article:publisher" content="https://www.facebook.com/OakesCommunityClinic/" />
+	<meta property="article:modified_time" content="2023-06-20T19:51:19+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="5 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://oakeshospital.com/","url":"https://oakeshospital.com/","name":"CHI Oakes Hospital - Oakes, North Dakota","isPartOf":{"@id":"https://oakeshospital.com/#website"},"datePublished":"2019-11-19T21:50:39+00:00","dateModified":"2023-06-20T19:51:19+00:00","breadcrumb":{"@id":"https://oakeshospital.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://oakeshospital.com/"]}]},{"@type":"BreadcrumbList","@id":"https://oakeshospital.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://oakeshospital.com/#website","url":"https://oakeshospital.com/","name":"CHI Oakes Hospital","description":"Imagine better health.","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://oakeshospital.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="CHI Oakes Hospital &raquo; Feed" href="https://oakeshospital.com/feed/" />
+<meta content="Divi Child v.3.25.3.1574198976" name="generator"/><link rel='stylesheet' id='mec-select2-style-css' href='https://oakeshospital.com/wp-content/plugins/modern-events-calendar-lite/assets/packages/select2/select2.min.css?ver=6.5.6' type='text/css' media='all' />
+<link rel='stylesheet' id='mec-font-icons-css' href='https://oakeshospital.com/wp-content/plugins/modern-events-calendar-lite/assets/css/iconfonts.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='mec-frontend-style-css' href='https://oakeshospital.com/wp-content/plugins/modern-events-calendar-lite/assets/css/frontend.min.css?ver=6.5.6' type='text/css' media='all' />
+<link rel='stylesheet' id='mec-tooltip-style-css' href='https://oakeshospital.com/wp-content/plugins/modern-events-calendar-lite/assets/packages/tooltip/tooltip.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='mec-tooltip-shadow-style-css' href='https://oakeshospital.com/wp-content/plugins/modern-events-calendar-lite/assets/packages/tooltip/tooltipster-sideTip-shadow.min.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='featherlight-css' href='https://oakeshospital.com/wp-content/plugins/modern-events-calendar-lite/assets/packages/featherlight/featherlight.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='mec-google-fonts-css' href='//fonts.googleapis.com/css?family=Montserrat%3A400%2C700%7CRoboto%3A100%2C300%2C400%2C700&#038;ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='mec-lity-style-css' href='https://oakeshospital.com/wp-content/plugins/modern-events-calendar-lite/assets/packages/lity/lity.min.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='mec-general-calendar-style-css' href='https://oakeshospital.com/wp-content/plugins/modern-events-calendar-lite/assets/css/mec-general-calendar.css?ver=6.2.2' type='text/css' media='all' />
+<style id='wp-block-library-theme-inline-css' type='text/css'>
+.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video{margin:0 0 1em}.wp-block-template-part.has-background{margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}body { margin: 0;--wp--style--global--content-size: 823px;--wp--style--global--wide-size: 1080px; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: underline;}.wp-element-button, .wp-block-button__link{background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;line-height: inherit;padding: calc(0.667em + 2px) calc(1.333em + 2px);text-decoration: none;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='widgetopts-styles-css' href='https://oakeshospital.com/wp-content/plugins/widget-options/assets/css/widget-options.css' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-styles-css' href='https://oakeshospital.com/wp-content/plugins/modern-events-calendar-lite/app/addons/divi/styles/style.min.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-style-parent-css' href='https://oakeshospital.com/wp-content/themes/Divi/style-static.min.css?ver=4.21.0' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-style-css' href='https://oakeshospital.com/wp-content/themes/Divi-child/style.css?ver=3.25.3.1574198976' type='text/css' media='all' />
+<script type='text/javascript' src='https://oakeshospital.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.4' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-content/plugins/modern-events-calendar-lite/assets/js/mec-general-calendar.js?ver=6.5.6' id='mec-general-calendar-script-js'></script>
+<script type='text/javascript' id='mec-frontend-script-js-extra'>
+/* <![CDATA[ */
+var mecdata = {"day":"day","days":"days","hour":"hour","hours":"hours","minute":"minute","minutes":"minutes","second":"second","seconds":"seconds","elementor_edit_mode":"no","recapcha_key":"","ajax_url":"https:\/\/oakeshospital.com\/wp-admin\/admin-ajax.php","fes_nonce":"928b62c76f","current_year":"2023","current_month":"06","datepicker_format":"yy-mm-dd&Y-m-d"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-content/plugins/modern-events-calendar-lite/assets/js/frontend.js?ver=6.5.6' id='mec-frontend-script-js'></script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-content/plugins/modern-events-calendar-lite/assets/js/events.js?ver=6.5.6' id='mec-events-script-js'></script>
+<link rel="https://api.w.org/" href="https://oakeshospital.com/wp-json/" /><link rel="alternate" type="application/json" href="https://oakeshospital.com/wp-json/wp/v2/pages/14" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://oakeshospital.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://oakeshospital.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.2.2" />
+<link rel='shortlink' href='https://oakeshospital.com/' />
+<link rel="alternate" type="application/json+oembed" href="https://oakeshospital.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Foakeshospital.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://oakeshospital.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Foakeshospital.com%2F&#038;format=xml" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #ffffff; background-image: url("https://oakeshospital.com/wp-content/uploads/2019/11/garden-bk-img.jpg"); background-position: center top; background-size: auto; background-repeat: no-repeat; background-attachment: scroll; }
+</style>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-12801353-23"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-12801353-23');
+</script>
+<script>
+// Add A Dynamic Year In Divi Footer Copyright
+ var beg_year = 2019; // Year site went live
+ var this_year = new Date(); // Get current date
+ var copyright_text = 'CHI Oakes Hospital. All Rights Reserved.';
+ var developed_by = 'Website Design and Hosting by <a href="https://www.factor360.com" target="_blank">Factor 360</a>'; // Developer info
+ 
+ this_year = this_year.getFullYear();
+ if(this_year > beg_year) {
+ var year = beg_year + ' - ' + this_year;
+ } else {
+ var year = this_year;
+ }
+ jQuery(function($){
+ $('#footer-info').html('© ' + year + ' ' + copyright_text + ' ' + developed_by );
+ });
+</script>
+<script>
+jQuery(function($){
+    $('.et_pb_accordion .et_pb_toggle_open').addClass('et_pb_toggle_close').removeClass('et_pb_toggle_open');
+
+    $('.et_pb_accordion .et_pb_toggle').click(function() {
+      $this = $(this);
+      setTimeout(function(){
+         $this.closest('.et_pb_accordion').removeClass('et_pb_accordion_toggling');
+      },700);
+    });
+});
+</script><link rel="icon" href="https://oakeshospital.com/wp-content/uploads/2021/11/chi-icon.ico" sizes="32x32" />
+<link rel="icon" href="https://oakeshospital.com/wp-content/uploads/2021/11/chi-icon.ico" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://oakeshospital.com/wp-content/uploads/2021/11/chi-icon.ico" />
+<meta name="msapplication-TileImage" content="https://oakeshospital.com/wp-content/uploads/2021/11/chi-icon.ico" />
+<style id="et-critical-inline-css">body{color:#000000}h1,h2,h3,h4,h5,h6{color:#000000}#et_search_icon:hover,.mobile_menu_bar:before,.mobile_menu_bar:after,.et_toggle_slide_menu:after,.et-social-icon a:hover,.et_pb_sum,.et_pb_pricing li a,.et_pb_pricing_table_button,.et_overlay:before,.entry-summary p.price ins,.et_pb_member_social_links a:hover,.et_pb_widget li a:hover,.et_pb_filterable_portfolio .et_pb_portfolio_filters li a.active,.et_pb_filterable_portfolio .et_pb_portofolio_pagination ul li a.active,.et_pb_gallery .et_pb_gallery_pagination ul li a.active,.wp-pagenavi span.current,.wp-pagenavi a:hover,.nav-single a,.tagged_as a,.posted_in a{color:#476da7}.et_pb_contact_submit,.et_password_protected_form .et_submit_button,.et_pb_bg_layout_light .et_pb_newsletter_button,.comment-reply-link,.form-submit .et_pb_button,.et_pb_bg_layout_light .et_pb_promo_button,.et_pb_bg_layout_light .et_pb_more_button,.et_pb_contact p input[type="checkbox"]:checked+label i:before,.et_pb_bg_layout_light.et_pb_module.et_pb_button{color:#476da7}.footer-widget h4{color:#476da7}.et-search-form,.nav li ul,.et_mobile_menu,.footer-widget li:before,.et_pb_pricing li:before,blockquote{border-color:#476da7}.et_pb_counter_amount,.et_pb_featured_table .et_pb_pricing_heading,.et_quote_content,.et_link_content,.et_audio_content,.et_pb_post_slider.et_pb_bg_layout_dark,.et_slide_in_menu_container,.et_pb_contact p input[type="radio"]:checked+label i:before{background-color:#476da7}.container,.et_pb_row,.et_pb_slider .et_pb_container,.et_pb_fullwidth_section .et_pb_title_container,.et_pb_fullwidth_section .et_pb_title_featured_container,.et_pb_fullwidth_header:not(.et_pb_fullscreen) .et_pb_fullwidth_header_container{max-width:1150px}.et_boxed_layout #page-container,.et_boxed_layout.et_non_fixed_nav.et_transparent_nav #page-container #top-header,.et_boxed_layout.et_non_fixed_nav.et_transparent_nav #page-container #main-header,.et_fixed_nav.et_boxed_layout #page-container #top-header,.et_fixed_nav.et_boxed_layout #page-container #main-header,.et_boxed_layout #page-container .container,.et_boxed_layout #page-container .et_pb_row{max-width:1310px}a{color:#fa6841}.et_secondary_nav_enabled #page-container #top-header{background-color:#0097a9!important}#et-secondary-nav li ul{background-color:#0097a9}.et_header_style_centered .mobile_nav .select_page,.et_header_style_split .mobile_nav .select_page,.et_nav_text_color_light #top-menu>li>a,.et_nav_text_color_dark #top-menu>li>a,#top-menu a,.et_mobile_menu li a,.et_nav_text_color_light .et_mobile_menu li a,.et_nav_text_color_dark .et_mobile_menu li a,#et_search_icon:before,.et_search_form_container input,span.et_close_search_field:after,#et-top-navigation .et-cart-info{color:#1e1e1e}.et_search_form_container input::-moz-placeholder{color:#1e1e1e}.et_search_form_container input::-webkit-input-placeholder{color:#1e1e1e}.et_search_form_container input:-ms-input-placeholder{color:#1e1e1e}#top-header,#top-header a,#et-secondary-nav li li a,#top-header .et-social-icon a:before{font-size:13px;font-weight:normal;font-style:normal;text-transform:uppercase;text-decoration:none}#top-menu li a,.et_search_form_container input{font-weight:bold;font-style:normal;text-transform:uppercase;text-decoration:none}.et_search_form_container input::-moz-placeholder{font-weight:bold;font-style:normal;text-transform:uppercase;text-decoration:none}.et_search_form_container input::-webkit-input-placeholder{font-weight:bold;font-style:normal;text-transform:uppercase;text-decoration:none}.et_search_form_container input:-ms-input-placeholder{font-weight:bold;font-style:normal;text-transform:uppercase;text-decoration:none}#top-menu li.current-menu-ancestor>a,#top-menu li.current-menu-item>a,#top-menu li.current_page_item>a{color:#24509a}#main-footer{background-color:#24509a}#main-footer .footer-widget h4,#main-footer .widget_block h1,#main-footer .widget_block h2,#main-footer .widget_block h3,#main-footer .widget_block h4,#main-footer .widget_block h5,#main-footer .widget_block h6{color:#476da7}.footer-widget li:before{border-color:#476da7}.bottom-nav,.bottom-nav a,.bottom-nav li.current-menu-item a{color:#ffffff}#et-footer-nav .bottom-nav li.current-menu-item a{color:#ffffff}#footer-bottom{background-color:#426da9}#footer-info,#footer-info a{color:#ffffff}#footer-bottom .et-social-icon a{color:#ffffff}body .et_pb_button{font-size:16px;background-color:#2197a8;border-width:0px!important;font-weight:bold;font-style:normal;text-transform:uppercase;text-decoration:none;}body.et_pb_button_helper_class .et_pb_button,body.et_pb_button_helper_class .et_pb_module.et_pb_button{color:#ffffff}body .et_pb_button:after{font-size:25.6px}h1,h2,h3,h4,h5,h6,.et_quote_content blockquote p,.et_pb_slide_description .et_pb_slide_title{font-weight:bold;font-style:normal;text-transform:none;text-decoration:none;letter-spacing:-1px}@media only screen and (min-width:981px){.et_header_style_left #et-top-navigation,.et_header_style_split #et-top-navigation{padding:26px 0 0 0}.et_header_style_left #et-top-navigation nav>ul>li>a,.et_header_style_split #et-top-navigation nav>ul>li>a{padding-bottom:26px}.et_header_style_split .centered-inline-logo-wrap{width:52px;margin:-52px 0}.et_header_style_split .centered-inline-logo-wrap #logo{max-height:52px}.et_pb_svg_logo.et_header_style_split .centered-inline-logo-wrap #logo{height:52px}.et_header_style_centered #top-menu>li>a{padding-bottom:9px}.et_header_style_slide #et-top-navigation,.et_header_style_fullscreen #et-top-navigation{padding:17px 0 17px 0!important}.et_header_style_centered #main-header .logo_container{height:52px}#logo{max-height:66%}.et_pb_svg_logo #logo{height:66%}.et_header_style_centered.et_hide_primary_logo #main-header:not(.et-fixed-header) .logo_container,.et_header_style_centered.et_hide_fixed_logo #main-header.et-fixed-header .logo_container{height:9.36px}.et_fixed_nav #page-container .et-fixed-header#top-header{background-color:#0097a9!important}.et_fixed_nav #page-container .et-fixed-header#top-header #et-secondary-nav li ul{background-color:#0097a9}.et-fixed-header#main-header,.et-fixed-header#main-header .nav li ul,.et-fixed-header .et-search-form{background-color:#eaeaea}.et-fixed-header #top-menu a,.et-fixed-header #et_search_icon:before,.et-fixed-header #et_top_search .et-search-form input,.et-fixed-header .et_search_form_container input,.et-fixed-header .et_close_search_field:after,.et-fixed-header #et-top-navigation .et-cart-info{color:#1e1e1e!important}.et-fixed-header .et_search_form_container input::-moz-placeholder{color:#1e1e1e!important}.et-fixed-header .et_search_form_container input::-webkit-input-placeholder{color:#1e1e1e!important}.et-fixed-header .et_search_form_container input:-ms-input-placeholder{color:#1e1e1e!important}.et-fixed-header #top-menu li.current-menu-ancestor>a,.et-fixed-header #top-menu li.current-menu-item>a,.et-fixed-header #top-menu li.current_page_item>a{color:#24509a!important}}@media only screen and (min-width:1437px){.et_pb_row{padding:28px 0}.et_pb_section{padding:57px 0}.single.et_pb_pagebuilder_layout.et_full_width_page .et_post_meta_wrapper{padding-top:86px}.et_pb_fullwidth_section{padding:0}}.js-marquee{font-weight:bold;font-size:1.2em}.mec-wrap h4{font-size:24px;line-height:1.2;margin-bottom:10px;font-weight:800}.ai1ec-title-buttons .ai1ec-btn-group{margin-left:0px}.et_pb_widget_area .et_pb_widget a{color:#FA6841}.auction-button a{display:inline-block;padding:8px 8px 8px 8px;background-color:#FA6841;border-radius:5px;width:100%;color:#ffffff!important;text-align:center;font-weight:bold}.woocommerce .woocommerce-breadcrumb{display:none}.woocommerce-MyAccount-navigation-link--downloads{display:none}.woocommerce-MyAccount-navigation-link--my-auction-setting{display:none}.woocommerce-MyAccount-navigation-link--my-auction{display:none}.woocommerce-MyAccount-navigation-link--my-auction-watchlist{display:none}.woocommerce-MyAccount-navigation-link--orders{display:none}.col2-set.u-columns{display:flex!important;flex-direction:column!important}.woocommerce .col2-set .col-1,.woocommerce-page .col2-set .col-1{float:none;width:100%;-webkit-box-ordinal-group:2;-moz-box-ordinal-group:2;-ms-flex-order:2;-webkit-order:2;order:2}.woocommerce .col2-set .col-2,.woocommerce-page .col2-set .col-2{float:none;width:100%;-webkit-box-ordinal-group:1;-moz-box-ordinal-group:1;-ms-flex-order:1;-webkit-order:1;order:1}.et-cart-info{display:none!important}.wp-caption{border:0px solid #ddd;text-align:center;background-color:transparent;margin-bottom:10px;max-width:100%;padding:0px}.et_pb_column_1_4 h4{font-size:22px;font-weight:700}.ai1ec-agenda-widget-view .ai1ec-date{border-top:0px solid #e5e5e5;background:transparent;background:-webkit-gradient(linear,0 0,0 100%,from(#f2f2f2),color-stop(1em,#f2f2f2),to(#fff));background:-webkit-linear-gradient(none);background:-moz-linear-gradient(none);background:-ms-linear-gradient(none);background:-o-linear-gradient(none);background:linear-gradient(none);background-repeat:no-repeat}#left-area ul,.comment-content ul,.entry-content ul,.et-l--body ul,.et-l--footer ul,.et-l--header ul,body.et-pb-preview #main-content .container ul{padding:0 0 15px 2em;line-height:26px;list-style-type:square}.et_pb_team_member .et_pb_team_member_image{max-width:158px;margin:0 auto;margin-bottom:15px}#top-menu li li a{width:280px;padding:6px 10px}.nav li ul{width:320px}body .gform_wrapper .gform_footer input.button,body .gform_wrapper .gform_footer input[type=submit]{color:#ffffff;padding-top:4px;padding-bottom:4px;padding-left:10px;padding-right:10px;border:1px solid rgba(114,114,114,0.4);border-radius:1px;-moz-border-radius:3px;-webkit-border-radius:3px;box-shadow:0 1px 0px rgba(114,114,114,0.3);-moz-box-shadow:0 1px 0px rgba(114,114,114,0.3);-webkit-box-shadow:0 1px 0px rgba(114,114,114,0.3);background-color:#0096d6}body .gform_wrapper .gform_footer input[type=submit]:hover{border:1px solid rgba(114,114,114,0.6);background-color:#444444}#et-secondary-nav li>ul{width:320px}.et_pb_widget img{outline:4px solid #FFFFFF;box-shadow:0px 2px 18px 0px rgba(0,0,0,0.3)}.post-date{display:block}.et_pb_bg_layout_light .et_pb_widget li a{color:#FA6841}#main-header{-webkit-box-shadow:0 0px 0 rgba(0,0,0,.0);-moz-box-shadow:0 0px 0 rgba(0,0,0,.0);box-shadow:0 0px 0 rgba(0,0,0,.0);border-bottom:solid 1px rgba(255,255,255,0.5)}.et_pb_blog_0{border:1px solid white}.et_pb_slide_image,.et_pb_slide:first-child .et_pb_slide_image img.active{-webkit-animation-duration:0s!important;animation-duration:0s!important}</style>
+<link rel="preload" as="style" id="et-core-unified-deferred-14-cached-inline-styles" href="https://oakeshospital.com/wp-content/et-cache/14/et-core-unified-deferred-14.min.css?ver=1687290680" onload="this.onload=null;this.rel='stylesheet';" /><style type="text/css">.mec-wrap, .mec-wrap div:not([class^="elementor-"]), .lity-container, .mec-wrap h1, .mec-wrap h2, .mec-wrap h3, .mec-wrap h4, .mec-wrap h5, .mec-wrap h6, .entry-content .mec-wrap h1, .entry-content .mec-wrap h2, .entry-content .mec-wrap h3, .entry-content .mec-wrap h4, .entry-content .mec-wrap h5, .entry-content .mec-wrap h6, .mec-wrap .mec-totalcal-box input[type="submit"], .mec-wrap .mec-totalcal-box .mec-totalcal-view span, .mec-agenda-event-title a, .lity-content .mec-events-meta-group-booking select, .lity-content .mec-book-ticket-variation h5, .lity-content .mec-events-meta-group-booking input[type="number"], .lity-content .mec-events-meta-group-booking input[type="text"], .lity-content .mec-events-meta-group-booking input[type="email"],.mec-organizer-item a, .mec-single-event .mec-events-meta-group-booking ul.mec-book-tickets-container li.mec-book-ticket-container label { font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;}.mec-event-content p, .mec-search-bar-result .mec-event-detail{ font-family: Roboto, sans-serif;} .mec-wrap .mec-totalcal-box input, .mec-wrap .mec-totalcal-box select, .mec-checkboxes-search .mec-searchbar-category-wrap, .mec-wrap .mec-totalcal-box .mec-totalcal-view span { font-family: "Roboto", Helvetica, Arial, sans-serif; }.mec-event-grid-modern .event-grid-modern-head .mec-event-day, .mec-event-list-minimal .mec-time-details, .mec-event-list-minimal .mec-event-detail, .mec-event-list-modern .mec-event-detail, .mec-event-grid-minimal .mec-time-details, .mec-event-grid-minimal .mec-event-detail, .mec-event-grid-simple .mec-event-detail, .mec-event-cover-modern .mec-event-place, .mec-event-cover-clean .mec-event-place, .mec-calendar .mec-event-article .mec-localtime-details div, .mec-calendar .mec-event-article .mec-event-detail, .mec-calendar.mec-calendar-daily .mec-calendar-d-top h2, .mec-calendar.mec-calendar-daily .mec-calendar-d-top h3, .mec-toggle-item-col .mec-event-day, .mec-weather-summary-temp { font-family: "Roboto", sans-serif; } .mec-fes-form, .mec-fes-list, .mec-fes-form input, .mec-event-date .mec-tooltip .box, .mec-event-status .mec-tooltip .box, .ui-datepicker.ui-widget, .mec-fes-form button[type="submit"].mec-fes-sub-button, .mec-wrap .mec-timeline-events-container p, .mec-wrap .mec-timeline-events-container h4, .mec-wrap .mec-timeline-events-container div, .mec-wrap .mec-timeline-events-container a, .mec-wrap .mec-timeline-events-container span { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important; }.mec-event-grid-minimal .mec-modal-booking-button:hover, .mec-events-timeline-wrap .mec-organizer-item a, .mec-events-timeline-wrap .mec-organizer-item:after, .mec-events-timeline-wrap .mec-shortcode-organizers i, .mec-timeline-event .mec-modal-booking-button, .mec-wrap .mec-map-lightbox-wp.mec-event-list-classic .mec-event-date, .mec-timetable-t2-col .mec-modal-booking-button:hover, .mec-event-container-classic .mec-modal-booking-button:hover, .mec-calendar-events-side .mec-modal-booking-button:hover, .mec-event-grid-yearly  .mec-modal-booking-button, .mec-events-agenda .mec-modal-booking-button, .mec-event-grid-simple .mec-modal-booking-button, .mec-event-list-minimal  .mec-modal-booking-button:hover, .mec-timeline-month-divider,  .mec-wrap.colorskin-custom .mec-totalcal-box .mec-totalcal-view span:hover,.mec-wrap.colorskin-custom .mec-calendar.mec-event-calendar-classic .mec-selected-day,.mec-wrap.colorskin-custom .mec-color, .mec-wrap.colorskin-custom .mec-event-sharing-wrap .mec-event-sharing > li:hover a, .mec-wrap.colorskin-custom .mec-color-hover:hover, .mec-wrap.colorskin-custom .mec-color-before *:before ,.mec-wrap.colorskin-custom .mec-widget .mec-event-grid-classic.owl-carousel .owl-nav i,.mec-wrap.colorskin-custom .mec-event-list-classic a.magicmore:hover,.mec-wrap.colorskin-custom .mec-event-grid-simple:hover .mec-event-title,.mec-wrap.colorskin-custom .mec-single-event .mec-event-meta dd.mec-events-event-categories:before,.mec-wrap.colorskin-custom .mec-single-event-date:before,.mec-wrap.colorskin-custom .mec-single-event-time:before,.mec-wrap.colorskin-custom .mec-events-meta-group.mec-events-meta-group-venue:before,.mec-wrap.colorskin-custom .mec-calendar .mec-calendar-side .mec-previous-month i,.mec-wrap.colorskin-custom .mec-calendar .mec-calendar-side .mec-next-month:hover,.mec-wrap.colorskin-custom .mec-calendar .mec-calendar-side .mec-previous-month:hover,.mec-wrap.colorskin-custom .mec-calendar .mec-calendar-side .mec-next-month:hover,.mec-wrap.colorskin-custom .mec-calendar.mec-event-calendar-classic dt.mec-selected-day:hover,.mec-wrap.colorskin-custom .mec-infowindow-wp h5 a:hover, .colorskin-custom .mec-events-meta-group-countdown .mec-end-counts h3,.mec-calendar .mec-calendar-side .mec-next-month i,.mec-wrap .mec-totalcal-box i,.mec-calendar .mec-event-article .mec-event-title a:hover,.mec-attendees-list-details .mec-attendee-profile-link a:hover,.mec-wrap.colorskin-custom .mec-next-event-details li i, .mec-next-event-details i:before, .mec-marker-infowindow-wp .mec-marker-infowindow-count, .mec-next-event-details a,.mec-wrap.colorskin-custom .mec-events-masonry-cats a.mec-masonry-cat-selected,.lity .mec-color,.lity .mec-color-before :before,.lity .mec-color-hover:hover,.lity .mec-wrap .mec-color,.lity .mec-wrap .mec-color-before :before,.lity .mec-wrap .mec-color-hover:hover,.leaflet-popup-content .mec-color,.leaflet-popup-content .mec-color-before :before,.leaflet-popup-content .mec-color-hover:hover,.leaflet-popup-content .mec-wrap .mec-color,.leaflet-popup-content .mec-wrap .mec-color-before :before,.leaflet-popup-content .mec-wrap .mec-color-hover:hover, .mec-calendar.mec-calendar-daily .mec-calendar-d-table .mec-daily-view-day.mec-daily-view-day-active.mec-color, .mec-map-boxshow div .mec-map-view-event-detail.mec-event-detail i,.mec-map-boxshow div .mec-map-view-event-detail.mec-event-detail:hover,.mec-map-boxshow .mec-color,.mec-map-boxshow .mec-color-before :before,.mec-map-boxshow .mec-color-hover:hover,.mec-map-boxshow .mec-wrap .mec-color,.mec-map-boxshow .mec-wrap .mec-color-before :before,.mec-map-boxshow .mec-wrap .mec-color-hover:hover, .mec-choosen-time-message, .mec-booking-calendar-month-navigation .mec-next-month:hover, .mec-booking-calendar-month-navigation .mec-previous-month:hover, .mec-yearly-view-wrap .mec-agenda-event-title a:hover, .mec-yearly-view-wrap .mec-yearly-title-sec .mec-next-year i, .mec-yearly-view-wrap .mec-yearly-title-sec .mec-previous-year i, .mec-yearly-view-wrap .mec-yearly-title-sec .mec-next-year:hover, .mec-yearly-view-wrap .mec-yearly-title-sec .mec-previous-year:hover, .mec-av-spot .mec-av-spot-head .mec-av-spot-box span, .mec-wrap.colorskin-custom .mec-calendar .mec-calendar-side .mec-previous-month:hover .mec-load-month-link, .mec-wrap.colorskin-custom .mec-calendar .mec-calendar-side .mec-next-month:hover .mec-load-month-link, .mec-yearly-view-wrap .mec-yearly-title-sec .mec-previous-year:hover .mec-load-month-link, .mec-yearly-view-wrap .mec-yearly-title-sec .mec-next-year:hover .mec-load-month-link, .mec-skin-list-events-container .mec-data-fields-tooltip .mec-data-fields-tooltip-box ul .mec-event-data-field-item a, .mec-booking-shortcode .mec-event-ticket-name, .mec-booking-shortcode .mec-event-ticket-price, .mec-booking-shortcode .mec-ticket-variation-name, .mec-booking-shortcode .mec-ticket-variation-price, .mec-booking-shortcode label, .mec-booking-shortcode .nice-select, .mec-booking-shortcode input, .mec-booking-shortcode span.mec-book-price-detail-description, .mec-booking-shortcode .mec-ticket-name, .mec-booking-shortcode label.wn-checkbox-label, .mec-wrap.mec-cart table tr td a {color: #ff5a00}.mec-skin-carousel-container .mec-event-footer-carousel-type3 .mec-modal-booking-button:hover, .mec-wrap.colorskin-custom .mec-event-sharing .mec-event-share:hover .event-sharing-icon,.mec-wrap.colorskin-custom .mec-event-grid-clean .mec-event-date,.mec-wrap.colorskin-custom .mec-event-list-modern .mec-event-sharing > li:hover a i,.mec-wrap.colorskin-custom .mec-event-list-modern .mec-event-sharing .mec-event-share:hover .mec-event-sharing-icon,.mec-wrap.colorskin-custom .mec-event-list-modern .mec-event-sharing li:hover a i,.mec-wrap.colorskin-custom .mec-calendar:not(.mec-event-calendar-classic) .mec-selected-day,.mec-wrap.colorskin-custom .mec-calendar .mec-selected-day:hover,.mec-wrap.colorskin-custom .mec-calendar .mec-calendar-row  dt.mec-has-event:hover,.mec-wrap.colorskin-custom .mec-calendar .mec-has-event:after, .mec-wrap.colorskin-custom .mec-bg-color, .mec-wrap.colorskin-custom .mec-bg-color-hover:hover, .colorskin-custom .mec-event-sharing-wrap:hover > li, .mec-wrap.colorskin-custom .mec-totalcal-box .mec-totalcal-view span.mec-totalcalview-selected,.mec-wrap .flip-clock-wrapper ul li a div div.inn,.mec-wrap .mec-totalcal-box .mec-totalcal-view span.mec-totalcalview-selected,.event-carousel-type1-head .mec-event-date-carousel,.mec-event-countdown-style3 .mec-event-date,#wrap .mec-wrap article.mec-event-countdown-style1,.mec-event-countdown-style1 .mec-event-countdown-part3 a.mec-event-button,.mec-wrap .mec-event-countdown-style2,.mec-map-get-direction-btn-cnt input[type="submit"],.mec-booking button,span.mec-marker-wrap,.mec-wrap.colorskin-custom .mec-timeline-events-container .mec-timeline-event-date:before, .mec-has-event-for-booking.mec-active .mec-calendar-novel-selected-day, .mec-booking-tooltip.multiple-time .mec-booking-calendar-date.mec-active, .mec-booking-tooltip.multiple-time .mec-booking-calendar-date:hover, .mec-ongoing-normal-label, .mec-calendar .mec-has-event:after, .mec-event-list-modern .mec-event-sharing li:hover .telegram{background-color: #ff5a00;}.mec-booking-tooltip.multiple-time .mec-booking-calendar-date:hover, .mec-calendar-day.mec-active .mec-booking-tooltip.multiple-time .mec-booking-calendar-date.mec-active{ background-color: #ff5a00;}.mec-skin-carousel-container .mec-event-footer-carousel-type3 .mec-modal-booking-button:hover, .mec-timeline-month-divider, .mec-wrap.colorskin-custom .mec-single-event .mec-speakers-details ul li .mec-speaker-avatar a:hover img,.mec-wrap.colorskin-custom .mec-event-list-modern .mec-event-sharing > li:hover a i,.mec-wrap.colorskin-custom .mec-event-list-modern .mec-event-sharing .mec-event-share:hover .mec-event-sharing-icon,.mec-wrap.colorskin-custom .mec-event-list-standard .mec-month-divider span:before,.mec-wrap.colorskin-custom .mec-single-event .mec-social-single:before,.mec-wrap.colorskin-custom .mec-single-event .mec-frontbox-title:before,.mec-wrap.colorskin-custom .mec-calendar .mec-calendar-events-side .mec-table-side-day, .mec-wrap.colorskin-custom .mec-border-color, .mec-wrap.colorskin-custom .mec-border-color-hover:hover, .colorskin-custom .mec-single-event .mec-frontbox-title:before, .colorskin-custom .mec-single-event .mec-wrap-checkout h4:before, .colorskin-custom .mec-single-event .mec-events-meta-group-booking form > h4:before, .mec-wrap.colorskin-custom .mec-totalcal-box .mec-totalcal-view span.mec-totalcalview-selected,.mec-wrap .mec-totalcal-box .mec-totalcal-view span.mec-totalcalview-selected,.event-carousel-type1-head .mec-event-date-carousel:after,.mec-wrap.colorskin-custom .mec-events-masonry-cats a.mec-masonry-cat-selected, .mec-marker-infowindow-wp .mec-marker-infowindow-count, .mec-wrap.colorskin-custom .mec-events-masonry-cats a:hover, .mec-has-event-for-booking .mec-calendar-novel-selected-day, .mec-booking-tooltip.multiple-time .mec-booking-calendar-date.mec-active, .mec-booking-tooltip.multiple-time .mec-booking-calendar-date:hover, .mec-virtual-event-history h3:before, .mec-booking-tooltip.multiple-time .mec-booking-calendar-date:hover, .mec-calendar-day.mec-active .mec-booking-tooltip.multiple-time .mec-booking-calendar-date.mec-active, .mec-rsvp-form-box form > h4:before, .mec-wrap .mec-box-title::before, .mec-box-title::before  {border-color: #ff5a00;}.mec-wrap.colorskin-custom .mec-event-countdown-style3 .mec-event-date:after,.mec-wrap.colorskin-custom .mec-month-divider span:before, .mec-calendar.mec-event-container-simple dl dt.mec-selected-day, .mec-calendar.mec-event-container-simple dl dt.mec-selected-day:hover{border-bottom-color:#ff5a00;}.mec-wrap.colorskin-custom  article.mec-event-countdown-style1 .mec-event-countdown-part2:after{border-color: transparent transparent transparent #ff5a00;}.mec-wrap.colorskin-custom .mec-box-shadow-color { box-shadow: 0 4px 22px -7px #ff5a00;}.mec-events-timeline-wrap .mec-shortcode-organizers, .mec-timeline-event .mec-modal-booking-button, .mec-events-timeline-wrap:before, .mec-wrap.colorskin-custom .mec-timeline-event-local-time, .mec-wrap.colorskin-custom .mec-timeline-event-time ,.mec-wrap.colorskin-custom .mec-timeline-event-location,.mec-choosen-time-message { background: rgba(255,90,0,.11);}.mec-wrap.colorskin-custom .mec-timeline-events-container .mec-timeline-event-date:after{ background: rgba(255,90,0,.3);}.mec-booking-shortcode button { box-shadow: 0 2px 2px rgba(255 90 0 / 27%);}.mec-booking-shortcode button.mec-book-form-back-button{ background-color: rgba(255 90 0 / 40%);}.mec-events-meta-group-booking-shortcode{ background: rgba(255,90,0,.14);}.mec-booking-shortcode label.wn-checkbox-label, .mec-booking-shortcode .nice-select,.mec-booking-shortcode input, .mec-booking-shortcode .mec-book-form-gateway-label input[type=radio]:before, .mec-booking-shortcode input[type=radio]:checked:before, .mec-booking-shortcode ul.mec-book-price-details li, .mec-booking-shortcode ul.mec-book-price-details{ border-color: rgba(255 90 0 / 27%) !important;}.mec-booking-shortcode input::-webkit-input-placeholder,.mec-booking-shortcode textarea::-webkit-input-placeholder{color: #ff5a00}.mec-booking-shortcode input::-moz-placeholder,.mec-booking-shortcode textarea::-moz-placeholder{color: #ff5a00}.mec-booking-shortcode input:-ms-input-placeholder,.mec-booking-shortcode textarea:-ms-input-placeholder {color: #ff5a00}.mec-booking-shortcode input:-moz-placeholder,.mec-booking-shortcode textarea:-moz-placeholder {color: #ff5a00}.mec-booking-shortcode label.wn-checkbox-label:after, .mec-booking-shortcode label.wn-checkbox-label:before, .mec-booking-shortcode input[type=radio]:checked:after{background-color: #ff5a00}</style></head>
+<body class="home page-template-default page page-id-14 custom-background et_pb_button_helper_class et_fixed_nav et_show_nav et_hide_primary_logo et_hide_fixed_logo et_secondary_nav_enabled et_secondary_nav_two_panels et_primary_nav_dropdown_animation_fade et_secondary_nav_dropdown_animation_fade et_header_style_left et_pb_footer_columns4 et_pb_gutter windows et_pb_gutters3 et_pb_pagebuilder_layout et_no_sidebar et_divi_theme et-db">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>	<div id="page-container">
+
+					<div id="top-header">
+			<div class="container clearfix">
+
+			
+				<div id="et-info">
+									<span id="et-info-phone">(701) 742-3291</span>
+				
+				
+				<ul class="et-social-icons">
+
+	<li class="et-social-icon et-social-facebook">
+		<a href="https://www.facebook.com/OakesCommunityClinic/" class="icon">
+			<span>Facebook</span>
+		</a>
+	</li>
+	<li class="et-social-icon et-social-rss">
+		<a href="http://oakeshospital.com/feed/" class="icon">
+			<span>RSS</span>
+		</a>
+	</li>
+
+</ul>				</div>
+
+			
+				<div id="et-secondary-menu">
+				<div class="et_duplicate_social_icons">
+								<ul class="et-social-icons">
+
+	<li class="et-social-icon et-social-facebook">
+		<a href="https://www.facebook.com/OakesCommunityClinic/" class="icon">
+			<span>Facebook</span>
+		</a>
+	</li>
+	<li class="et-social-icon et-social-rss">
+		<a href="http://oakeshospital.com/feed/" class="icon">
+			<span>RSS</span>
+		</a>
+	</li>
+
+</ul>
+							</div><ul id="et-secondary-nav" class="menu"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1003"><a href="https://oakeshospital.com/my-onecare/">My OneCare Patient Portals</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1031"><a href="https://oakeshospital.com/hospice-home-health/">Hospice/Home Health</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-1032"><a rel="privacy-policy" href="https://oakeshospital.com/privacy-policy/">Privacy Policy</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1037"><a href="https://oakeshospital.com/contact-us/">Contact Us</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2160"><a href="https://oakeshospital.com/news/">News</a></li>
+</ul>				</div>
+
+			</div>
+		</div>
+		
+	
+			<header id="main-header" data-height-onload="52">
+			<div class="container clearfix et_menu_container">
+							<div class="logo_container">
+					<span class="logo_helper"></span>
+					<a href="https://oakeshospital.com/">
+						<img src="/wp-content/uploads/2020/02/chi-oakes-hospital-logo.png" width="93" height="43" alt="CHI Oakes Hospital" id="logo" data-height-percentage="66" />
+					</a>
+				</div>
+							<div id="et-top-navigation" data-height="52" data-fixed-height="40">
+											<nav id="top-menu-nav">
+						<ul id="top-menu" class="nav"><li id="menu-item-2376" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2376"><a href="https://oakeshospital.com/covid19/">COVID-19</a></li>
+<li id="menu-item-1092" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1092"><a href="https://oakeshospital.com/who-we-are/">Who We Are</a>
+<ul class="sub-menu">
+	<li id="menu-item-1118" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1118"><a href="https://oakeshospital.com/who-we-are/mission/">Mission</a></li>
+	<li id="menu-item-1117" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1117"><a href="https://oakeshospital.com/who-we-are/leadership-team/">Leadership Team</a></li>
+	<li id="menu-item-1116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1116"><a href="https://oakeshospital.com/who-we-are/board/">Our Board</a></li>
+	<li id="menu-item-1115" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1115"><a href="https://oakeshospital.com/who-we-are/history/">History</a></li>
+</ul>
+</li>
+<li id="menu-item-1091" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1091"><a href="https://oakeshospital.com/clinic/">Clinic</a>
+<ul class="sub-menu">
+	<li id="menu-item-1142" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1142"><a href="https://oakeshospital.com/clinic/providers/">Providers</a></li>
+	<li id="menu-item-1144" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1144"><a href="https://oakeshospital.com/clinic/services/">Services</a></li>
+	<li id="menu-item-1143" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1143"><a href="https://oakeshospital.com/clinic/release-of-information/">Release of Information</a></li>
+	<li id="menu-item-1141" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1141"><a href="https://oakeshospital.com/clinic/patient-portal/">Patient Portal</a></li>
+	<li id="menu-item-1140" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1140"><a href="https://oakeshospital.com/clinic/clinic-bill-pay/">Clinic Bill Pay</a></li>
+	<li id="menu-item-2585" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2585"><a href="https://oakeshospital.com/clinic/virtual-visits/">Virtual Visits</a></li>
+</ul>
+</li>
+<li id="menu-item-1090" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1090"><a href="https://oakeshospital.com/providers/">Providers</a></li>
+<li id="menu-item-1954" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1954"><a href="https://oakeshospital.com/hospital-services/">Services</a></li>
+<li id="menu-item-1088" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1088"><a href="https://oakeshospital.com/financial/">Financial</a>
+<ul class="sub-menu">
+	<li id="menu-item-1165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1165"><a href="https://oakeshospital.com/financial/estimate-your-costs/">Estimate Your Costs</a></li>
+	<li id="menu-item-1167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1167"><a href="https://oakeshospital.com/financial/financial-assistance/">Financial Assistance</a></li>
+	<li id="menu-item-1168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1168"><a href="https://oakeshospital.com/financial/hospital-bill-pay/">Hospital Bill Pay</a></li>
+	<li id="menu-item-1878" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1878"><a href="/privacy-policy/">Patient Privacy</a></li>
+	<li id="menu-item-3560" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3560"><a href="https://oakeshospital.com/financial/price-transparency/">Price Transparency</a></li>
+</ul>
+</li>
+<li id="menu-item-1087" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1087"><a href="https://oakeshospital.com/community-benefit/">Community Benefit</a>
+<ul class="sub-menu">
+	<li id="menu-item-1178" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1178"><a href="https://oakeshospital.com/community-benefits/340b-program/">340B Program</a></li>
+	<li id="menu-item-1179" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1179"><a href="https://oakeshospital.com/community-benefits/chna/">CHNA</a></li>
+	<li id="menu-item-504131" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-504131"><a href="https://oakeshospital.com/community-benefits/daisy-award/">Daisy Award</a></li>
+	<li id="menu-item-2008" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2008"><a href="https://oakeshospital.com/community-benefits/gift-of-life-wall/">Gift of Life Wall</a></li>
+	<li id="menu-item-2019" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2019"><a href="https://oakeshospital.com/community-benefits/healing-garden/">Healing Garden</a></li>
+</ul>
+</li>
+<li id="menu-item-1086" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1086"><a href="https://oakeshospital.com/careers/">Careers</a></li>
+<li id="menu-item-1085" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1085"><a href="https://oakeshospital.com/foundation/">Foundation</a>
+<ul class="sub-menu">
+	<li id="menu-item-504015" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-504015"><a href="https://oakeshospital.com/foundation/5k-fun-run/">5K Fun Run</a></li>
+	<li id="menu-item-1193" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1193"><a href="https://oakeshospital.com/foundation/about-us/">About Us</a></li>
+	<li id="menu-item-505156" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-505156"><a href="https://oakeshospital.com/casino-night/">Casino Night</a></li>
+	<li id="menu-item-1195" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1195"><a href="https://oakeshospital.com/foundation/events/">Events</a></li>
+	<li id="menu-item-1194" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1194"><a href="https://oakeshospital.com/foundation/donate-now/">Donate Now</a></li>
+</ul>
+</li>
+</ul>						</nav>
+					
+					
+					
+					
+					<div id="et_mobile_nav_menu">
+				<div class="mobile_nav closed">
+					<span class="select_page">Select Page</span>
+					<span class="mobile_menu_bar mobile_menu_bar_toggle"></span>
+				</div>
+			</div>				</div> <!-- #et-top-navigation -->
+			</div> <!-- .container -->
+					</header> <!-- #main-header -->
+			<div id="et-main-area">
+	
+<div id="main-content">
+
+
+			
+				<article id="post-14" class="post-14 page type-page status-publish hentry">
+
+				
+					<div class="entry-content">
+					<div class="et-l et-l--post">
+			<div class="et_builder_inner_content et_pb_gutters3">
+		<div class="et_pb_section et_pb_section_0 et_pb_with_background et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_0">
+				<div class="et_pb_column et_pb_column_3_4 et_pb_column_0  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_0  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><p>Privacy Breach Notice Update, 4/6/2023.</p></div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_1  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_button_module_wrapper et_pb_button_0_wrapper et_pb_button_alignment_right et_pb_module ">
+				<a class="et_pb_button et_pb_button_0 et_pb_bg_layout_light" href="https://www.commonspirit.org/notice-of-data-security-incident" target="_blank">Learn More</a>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div class="et_pb_section et_pb_section_1 et_pb_with_background et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_2 et_pb_gutters2">
+				<div class="et_pb_column et_pb_column_1_3 et_pb_column_2  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_with_border et_pb_module et_pb_search et_pb_search_0  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<form role="search" method="get" class="et_pb_searchform" action="https://oakeshospital.com/">
+					<div>
+						<label class="screen-reader-text" for="s">Search for:</label>
+						<input type="text" name="s" placeholder="Search" class="et_pb_s" />
+						<input type="hidden" name="et_pb_searchform_submit" value="et_search_proccess" />
+						<input type="hidden" name="et_pb_search_cat" value="1" />
+						<input type="hidden" name="et_pb_include_posts" value="yes" />
+						<input type="hidden" name="et_pb_include_pages" value="yes" />
+						<input type="submit" value="Search" class="et_pb_searchsubmit">
+					</div>
+				</form>
+			</div><div class="et_pb_module et_pb_image et_pb_image_0">
+				
+				
+				
+				
+				<a href="https://oakeshospital.com/"><span class="et_pb_image_wrap "><img decoding="async" src="http://oakeshospital.com/wp-content/uploads/2020/02/chi-oakes-hospital-logo.png" alt="CHI Oakes Hospital" title="CHI Oakes Hospital" srcset="https://oakeshospital.com/wp-content/uploads/2020/02/chi-oakes-hospital-logo-e1627674292930.png 325w, https://oakeshospital.com/wp-content/uploads/2020/02/chi-oakes-hospital-logo-e1627674292930-300x57.png 300w" sizes="(max-width: 325px) 100vw, 325px" class="wp-image-1891" /></span></a>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_3 et_pb_column_3  et_pb_css_mix_blend_mode_passthrough et_pb_column_empty">
+				
+				
+				
+				
+				
+			</div><div class="et_pb_column et_pb_column_1_3 et_pb_column_4  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_with_border et_pb_module et_pb_search et_pb_search_1  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<form role="search" method="get" class="et_pb_searchform" action="https://oakeshospital.com/">
+					<div>
+						<label class="screen-reader-text" for="s">Search for:</label>
+						<input type="text" name="s" placeholder="Search" class="et_pb_s" />
+						<input type="hidden" name="et_pb_searchform_submit" value="et_search_proccess" />
+						<input type="hidden" name="et_pb_search_cat" value="1" />
+						<input type="hidden" name="et_pb_include_posts" value="yes" />
+						<input type="hidden" name="et_pb_include_pages" value="yes" />
+						<input type="submit" value="Search" class="et_pb_searchsubmit">
+					</div>
+				</form>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_3 et_pb_gutters2">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_5  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_with_border et_pb_module et_pb_search et_pb_search_2  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<form role="search" method="get" class="et_pb_searchform" action="https://oakeshospital.com/">
+					<div>
+						<label class="screen-reader-text" for="s">Search for:</label>
+						<input type="text" name="s" placeholder="Search" class="et_pb_s" />
+						<input type="hidden" name="et_pb_searchform_submit" value="et_search_proccess" />
+						<input type="hidden" name="et_pb_search_cat" value="1" />
+						<input type="hidden" name="et_pb_include_posts" value="yes" />
+						<input type="hidden" name="et_pb_include_pages" value="yes" />
+						<input type="submit" value="Search" class="et_pb_searchsubmit">
+					</div>
+				</form>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div class="et_pb_section et_pb_section_2 et_section_specialty et_section_transparent" >
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_gutters2">
+				<div class="et_pb_column et_pb_column_1_2 et_pb_column_6    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_with_border et_pb_module et_pb_slider et_pb_slider_0 et_pb_slider_fullwidth_off et_slider_auto et_slider_speed_7000">
+				<div class="et_pb_slides">
+					<div class="et_pb_slide et_pb_slide_0 et_pb_bg_layout_dark et_pb_media_alignment_center et_pb_slider_with_text_overlay et-pb-active-slide" data-slide-id="et_pb_slide_0">
+				
+				
+				<div class="et_pb_container clearfix">
+					<div class="et_pb_slider_container_inner">
+						
+						<div class="et_pb_slide_description">
+							<div class="et_pb_text_overlay_wrapper">
+					<h1 class="et_pb_slide_title"><a href="https://oakeshospital.com/hello-humankindness/">Hello Humankindness</a></h1><div class="et_pb_slide_content"><p>At CHI Oakes Hospital, we believe humankindness is at the root of all healing – providing care on a human level, courage when it’s needed the most, and a connection that is ever present among us all.</p></div>
+				</div>
+							<div class="et_pb_button_wrapper"><a class="et_pb_button et_pb_more_button" href="https://oakeshospital.com/hello-humankindness/">More Info</a></div>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+			</div>
+			<div class="et_pb_slide et_pb_slide_1 et_pb_bg_layout_dark et_pb_media_alignment_center et_pb_slider_with_text_overlay" data-slide-id="et_pb_slide_1">
+				
+				
+				<div class="et_pb_container clearfix">
+					<div class="et_pb_slider_container_inner">
+						
+						<div class="et_pb_slide_description">
+							<div class="et_pb_text_overlay_wrapper">
+					<h2 class="et_pb_slide_title"><a href="https://oakeshospital.com/covid19/">Coronavirus (COVID-19): latest updates and how to get care.</a></h2>
+				</div>
+							<div class="et_pb_button_wrapper"><a class="et_pb_button et_pb_more_button" href="https://oakeshospital.com/covid19/">More Info</a></div>
+						</div>
+					</div>
+				</div>
+				
+				
+				
+			</div>
+			<div class="et_pb_slide et_pb_slide_2 et_pb_bg_layout_dark et_pb_media_alignment_center et_pb_slider_with_text_overlay" data-slide-id="et_pb_slide_2">
+				
+				
+				<div class="et_pb_container clearfix">
+					<div class="et_pb_slider_container_inner">
+						
+						<div class="et_pb_slide_description">
+							<div class="et_pb_text_overlay_wrapper">
+					<h2 class="et_pb_slide_title">Improving your health with expertise, compassion and grace.</h2>
+				</div>
+							
+						</div>
+					</div>
+				</div>
+				
+				
+				
+			</div>
+			<div class="et_pb_slide et_pb_slide_3 et_pb_bg_layout_dark et_pb_media_alignment_center et_pb_slider_with_text_overlay" data-slide-id="et_pb_slide_3">
+				
+				
+				<div class="et_pb_container clearfix">
+					<div class="et_pb_slider_container_inner">
+						
+						<div class="et_pb_slide_description">
+							<div class="et_pb_text_overlay_wrapper">
+					<h2 class="et_pb_slide_title">Improving your health with expertise, compassion and grace.</h2>
+				</div>
+							
+						</div>
+					</div>
+				</div>
+				
+				
+				
+			</div>
+			<div class="et_pb_slide et_pb_slide_4 et_pb_bg_layout_dark et_pb_media_alignment_center et_pb_slider_with_text_overlay" data-slide-id="et_pb_slide_4">
+				
+				
+				<div class="et_pb_container clearfix">
+					<div class="et_pb_slider_container_inner">
+						
+						<div class="et_pb_slide_description">
+							<div class="et_pb_text_overlay_wrapper">
+					<h2 class="et_pb_slide_title">Improving your health with expertise, compassion and grace.</h2>
+				</div>
+							
+						</div>
+					</div>
+				</div>
+				
+				
+				
+			</div>
+			<div class="et_pb_slide et_pb_slide_5 et_pb_bg_layout_dark et_pb_media_alignment_center et_pb_slider_with_text_overlay" data-slide-id="et_pb_slide_5">
+				
+				
+				<div class="et_pb_container clearfix">
+					<div class="et_pb_slider_container_inner">
+						
+						<div class="et_pb_slide_description">
+							<div class="et_pb_text_overlay_wrapper">
+					<h2 class="et_pb_slide_title">Improving your health with expertise, compassion and grace.</h2>
+				</div>
+							
+						</div>
+					</div>
+				</div>
+				
+				
+				
+			</div>
+			<div class="et_pb_slide et_pb_slide_6 et_pb_bg_layout_dark et_pb_media_alignment_center et_pb_slider_with_text_overlay" data-slide-id="et_pb_slide_6">
+				
+				
+				<div class="et_pb_container clearfix">
+					<div class="et_pb_slider_container_inner">
+						
+						<div class="et_pb_slide_description">
+							<div class="et_pb_text_overlay_wrapper">
+					<h2 class="et_pb_slide_title">Improving your health with expertise, compassion and grace.</h2>
+				</div>
+							
+						</div>
+					</div>
+				</div>
+				
+				
+				
+			</div>
+			
+				</div>
+				
+			</div>
+			
+			</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_7   et_pb_specialty_column  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_row_inner et_pb_row_inner_0">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_inner et_pb_column_inner_0 et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_with_border et_pb_module et_pb_blurb et_pb_blurb_0 et_clickable  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_blurb_content">
+					<div class="et_pb_main_blurb_image"><a href="/foundation/donate-now/"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon">~</span></span></a></div>
+					<div class="et_pb_blurb_container">
+						<h4 class="et_pb_module_header"><a href="/foundation/donate-now/">Donate Today!</a></h4>
+						<div class="et_pb_blurb_description">Donate to CHI Oakes Hospital Foundation</div>
+					</div>
+				</div>
+			</div><div class="et_pb_with_border et_pb_module et_pb_blurb et_pb_blurb_1 et_clickable  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_blurb_content">
+					<div class="et_pb_main_blurb_image"><a href="https://chi-fargo.myonplanhealth.com/login" target="_blank"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon"></span></span></a></div>
+					<div class="et_pb_blurb_container">
+						<h4 class="et_pb_module_header"><a href="https://chi-fargo.myonplanhealth.com/login" target="_blank">Online Bill Pay</a></h4>
+						<div class="et_pb_blurb_description">Pay your hospital bills and view balances.</div>
+					</div>
+				</div>
+			</div><div class="et_pb_with_border et_pb_module et_pb_blurb et_pb_blurb_2 et_clickable  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_blurb_content">
+					<div class="et_pb_main_blurb_image"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon"></span></span></div>
+					<div class="et_pb_blurb_container">
+						<h4 class="et_pb_module_header"><span>Clinic Patient Portal</span></h4>
+						<div class="et_pb_blurb_description">Click here to access</div>
+					</div>
+				</div>
+			</div><div class="et_pb_with_border et_pb_module et_pb_blurb et_pb_blurb_3 et_clickable  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_blurb_content">
+					<div class="et_pb_main_blurb_image"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon"></span></span></div>
+					<div class="et_pb_blurb_container">
+						<h4 class="et_pb_module_header"><span>Hospital Patient Portal</span></h4>
+						<div class="et_pb_blurb_description">Click here to access</div>
+					</div>
+				</div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+			</div>
+				</div>
+				
+			</div><div class="et_pb_section et_pb_section_3 et_section_specialty" >
+				
+				
+				
+				
+				
+				<div class="et_pb_row">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_8    et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_1">
+				
+				
+				
+				
+				<a href="https://www.ivantageindex.com/top-performing-hospitals/" target="_blank"><span class="et_pb_image_wrap "><img decoding="async" loading="lazy" width="416" height="144" src="https://oakeshospital.com/wp-content/uploads/2021/03/CriticalAccess_100_Badge_2021-01.png" alt="CaringBridge - Create your Free Website" title="CriticalAccess_100_Badge_2021-01" srcset="https://oakeshospital.com/wp-content/uploads/2021/03/CriticalAccess_100_Badge_2021-01.png 416w, https://oakeshospital.com/wp-content/uploads/2021/03/CriticalAccess_100_Badge_2021-01-300x104.png 300w" sizes="(max-width: 416px) 100vw, 416px" class="wp-image-3037" /></span></a>
+			</div><div class="et_pb_module et_pb_image et_pb_image_2">
+				
+				
+				
+				
+				<a href="https://www.caringbridge.org/createwebsite" target="_blank"><span class="et_pb_image_wrap "><img decoding="async" loading="lazy" width="250" height="105" src="https://oakeshospital.com/wp-content/uploads/2019/11/caring-bridge-img.jpg" alt="CaringBridge - Create your Free Website" title="CaringBridge - Create your Free Website" class="wp-image-242" /></span></a>
+			</div><div class="et_pb_module et_pb_image et_pb_image_3">
+				
+				
+				
+				
+				<a href="http://www.donatelifemidwest.org/nd/" target="_blank"><span class="et_pb_image_wrap "><img decoding="async" loading="lazy" width="240" height="215" src="https://oakeshospital.com/wp-content/uploads/2019/11/DonateLife_ND_Badge.jpg" alt="Donate Life North Dakota Donor" title="Donate Life North Dakota Donor" class="wp-image-252" /></span></a>
+			</div>
+			</div><div class="et_pb_column et_pb_column_3_4 et_pb_column_9   et_pb_specialty_column  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_row_inner et_pb_row_inner_1">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_inner et_pb_column_inner_1 et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_blurb et_pb_blurb_4  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_blurb_content">
+					<div class="et_pb_main_blurb_image"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon"></span></span></div>
+					<div class="et_pb_blurb_container">
+						<h4 class="et_pb_module_header"><span>About CHI Oakes Hospital</span></h4>
+						
+					</div>
+				</div>
+			</div><div class="et_pb_module et_pb_text et_pb_text_1  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><strong>Oakes Community Hospital</strong>, dba CHI Oakes Hospital, is a 20-bed critical access hospital that provides various inpatient and outpatient services to approximately 14,000 people in southeastern North Dakota. It is also a 24-Hour Emergency Level V Trauma Center. The hospital building was newly-constructed in 2007, replacing a 50-year old building, and in 2010, Oakes Community Clinic was opened within the hospital building. The hospital is part of a larger values-based organization, CommonSpirit Health.</p>
+<p>CHI Oakes Hospital is ranked highly in the entire CommonSpirit Health system in the categories &#8220;likely to recommend&#8221; and &#8220;overall satisfaction.&#8221;</p>
+<p>The medical staff consists of providers that are multi-specialists in family practice, internal medicine, cardiology, sports medicine, and geriatrics. There are also a number of specialists on our courtesy staff that provide services such as cataract and general surgery. The physicians team up with the highly trained nursing staff to provide excellent patient care. Physical Therapists and our Certified Nurse Anesthetist provide additional services to meet the needs of our community.</p>
+<p>The CHI Oakes Hospital has a dynamic nursing team with excellent skills. All nurses receive ACLS Certification and cross training to all areas of the hospital.</div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row_inner et_pb_row_inner_2">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_inner et_pb_column_inner_2 et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_blurb et_pb_blurb_6  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_blurb_content">
+					<div class="et_pb_main_blurb_image"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon"></span></span></div>
+					<div class="et_pb_blurb_container">
+						<h4 class="et_pb_module_header"><span>Latest News</span></h4>
+						
+					</div>
+				</div>
+			</div><div class="et_pb_module et_pb_blog_0 et_pb_blog_grid_wrapper et_pb_bg_layout_light">
+					<div class="et_pb_blog_grid clearfix ">
+					
+					
+					
+					
+					<div class="et_pb_ajax_pagination_container">
+						<div class="et_pb_salvattore_content" data-columns>
+			<article id="post-505366" class="et_pb_post clearfix et_pb_blog_item_0_0 post-505366 post type-post status-publish format-standard has-post-thumbnail hentry category-chi-oakes-hospital">
+
+				<div class="et_pb_image_container"><a href="https://oakeshospital.com/5k-fun-run-2/" class="entry-featured-image-url"><img decoding="async" loading="lazy" src="https://oakeshospital.com/wp-content/uploads/2023/05/5K-Fun-Run-news-img-e1683660345724-400x250.jpg" alt="5K Fun Run" class="" srcset="https://oakeshospital.com/wp-content/uploads/2023/05/5K-Fun-Run-news-img-e1683660345724.jpg 479w, https://oakeshospital.com/wp-content/uploads/2023/05/5K-Fun-Run-news-img-e1683660345724-400x250.jpg 480w " sizes="(max-width:479px) 479px, 100vw "  width="400" height="250" /></a></div>
+														<h2 class="entry-title"><a href="https://oakeshospital.com/5k-fun-run-2/">5K Fun Run</a></h2>
+				
+					<p class="post-meta"><span class="published">May 9, 2023</span> | <a href="https://oakeshospital.com/category/chi-oakes-hospital/" rel="tag">CHI Oakes Hospital</a></p><div class="post-content"><div class="post-content-inner"></div><a href="https://oakeshospital.com/5k-fun-run-2/" class="more-link">read more</a></div>			
+			</article>
+				
+			<article id="post-505166" class="et_pb_post clearfix et_pb_blog_item_0_1 post-505166 post type-post status-publish format-standard has-post-thumbnail hentry category-chi-oakes-hospital tag-educational-gift-program-application">
+
+				<div class="et_pb_image_container"><a href="https://oakeshospital.com/2023-educational-gift-program-application/" class="entry-featured-image-url"><img decoding="async" loading="lazy" src="https://oakeshospital.com/wp-content/uploads/2023/02/educational-gift-img-400x250.jpg" alt="2023 Educational Gift Program Application" class="" srcset="https://oakeshospital.com/wp-content/uploads/2023/02/educational-gift-img.jpg 479w, https://oakeshospital.com/wp-content/uploads/2023/02/educational-gift-img-400x250.jpg 480w " sizes="(max-width:479px) 479px, 100vw "  width="400" height="250" /></a></div>
+														<h2 class="entry-title"><a href="https://oakeshospital.com/2023-educational-gift-program-application/">2023 Educational Gift Program Application</a></h2>
+				
+					<p class="post-meta"><span class="published">Feb 2, 2023</span> | <a href="https://oakeshospital.com/category/chi-oakes-hospital/" rel="tag">CHI Oakes Hospital</a></p><div class="post-content"><div class="post-content-inner"><p>Recognizing the need for high-quality rural health care and increasing demand for trained professionals, CHI Oakes Hospital is offering a $500...</p>
+</div><a href="https://oakeshospital.com/2023-educational-gift-program-application/" class="more-link">read more</a></div>			
+			</article>
+				
+			<article id="post-505152" class="et_pb_post clearfix et_pb_blog_item_0_2 post-505152 post type-post status-publish format-standard has-post-thumbnail hentry category-chi-oakes-hospital tag-casino-night">
+
+				<div class="et_pb_image_container"><a href="https://oakeshospital.com/go-all-in-for-chi-oakes-hospitals-casino-night/" class="entry-featured-image-url"><img decoding="async" loading="lazy" src="https://oakeshospital.com/wp-content/uploads/2023/01/Casino-Night-2023-flyer-400x250.jpg" alt="Go &#8220;All-in&#8221; for CHI Oakes Hospital&#8217;s Casino Night!" class="" srcset="https://oakeshospital.com/wp-content/uploads/2023/01/Casino-Night-2023-flyer.jpg 479w, https://oakeshospital.com/wp-content/uploads/2023/01/Casino-Night-2023-flyer-400x250.jpg 480w " sizes="(max-width:479px) 479px, 100vw "  width="400" height="250" /></a></div>
+														<h2 class="entry-title"><a href="https://oakeshospital.com/go-all-in-for-chi-oakes-hospitals-casino-night/">Go &#8220;All-in&#8221; for CHI Oakes Hospital&#8217;s Casino Night!</a></h2>
+				
+					<p class="post-meta"><span class="published">Feb 2, 2023</span> | <a href="https://oakeshospital.com/category/chi-oakes-hospital/" rel="tag">CHI Oakes Hospital</a></p><div class="post-content"><div class="post-content-inner"><p>CHI Oakes Hospital Foundation is excited to announce their 6th Annual Casino Night. This is an annual fundraising event that assists the hospital in...</p>
+</div><a href="https://oakeshospital.com/go-all-in-for-chi-oakes-hospitals-casino-night/" class="more-link">read more</a></div>			
+			</article>
+				
+			<article id="post-505145" class="et_pb_post clearfix et_pb_blog_item_0_3 post-505145 post type-post status-publish format-standard has-post-thumbnail hentry category-chi-oakes-hospital tag-mammography">
+
+				<div class="et_pb_image_container"><a href="https://oakeshospital.com/february-mammography-promotion-at-chi-oakes-hospital/" class="entry-featured-image-url"><img decoding="async" loading="lazy" src="https://oakeshospital.com/wp-content/uploads/2023/01/February-Mammography-Appointments-img-400x250.jpg" alt="February Mammography Promotion at CHI Oakes Hospital" class="" srcset="https://oakeshospital.com/wp-content/uploads/2023/01/February-Mammography-Appointments-img.jpg 479w, https://oakeshospital.com/wp-content/uploads/2023/01/February-Mammography-Appointments-img-400x250.jpg 480w " sizes="(max-width:479px) 479px, 100vw "  width="400" height="250" /></a></div>
+														<h2 class="entry-title"><a href="https://oakeshospital.com/february-mammography-promotion-at-chi-oakes-hospital/">February Mammography Promotion at CHI Oakes Hospital</a></h2>
+				
+					<p class="post-meta"><span class="published">Jan 19, 2023</span> | <a href="https://oakeshospital.com/category/chi-oakes-hospital/" rel="tag">CHI Oakes Hospital</a></p><div class="post-content"><div class="post-content-inner"><p>As we get ready to celebrate the sweethearts in our lives, CHI Oakes Hospital is encouraging people to talk to their moms, sisters, daughters, wives...</p>
+</div><a href="https://oakeshospital.com/february-mammography-promotion-at-chi-oakes-hospital/" class="more-link">read more</a></div>			
+			</article>
+				</div><div><div class="pagination clearfix">
+	<div class="alignleft"><a href="https://oakeshospital.com/page/2/?et_blog" >&laquo; Older Entries</a></div>
+	<div class="alignright"></div>
+</div></div></div>
+					</div>
+					 
+				</div>
+			</div>
+				
+				
+				
+				
+			</div>
+			</div>
+				</div>
+				
+			</div><div class="et_pb_section et_pb_section_4 et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_4 et_pb_gutters2">
+				<div class="et_pb_column et_pb_column_2_5 et_pb_column_10  et_pb_css_mix_blend_mode_passthrough et_pb_column_empty">
+				
+				
+				
+				
+				
+			</div><div class="et_pb_column et_pb_column_3_5 et_pb_column_11  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_4">
+				
+				
+				
+				
+				<a href="https://www.caringbridge.org/createwebsite" target="_blank"><span class="et_pb_image_wrap "><img decoding="async" loading="lazy" width="250" height="105" src="https://oakeshospital.com/wp-content/uploads/2019/11/caring-bridge-img.jpg" alt="CaringBridge - Create your Free Website" title="CaringBridge - Create your Free Website" class="wp-image-242" /></span></a>
+			</div><div class="et_pb_module et_pb_image et_pb_image_5">
+				
+				
+				
+				
+				<a href="http://www.donatelifemidwest.org/nd/" target="_blank"><span class="et_pb_image_wrap "><img decoding="async" loading="lazy" width="240" height="215" src="https://oakeshospital.com/wp-content/uploads/2019/11/DonateLife_ND_Badge.jpg" alt="Donate Life North Dakota Donor" title="Donate Life North Dakota Donor" class="wp-image-252" /></span></a>
+			</div><div class="et_pb_module et_pb_image et_pb_image_6">
+				
+				
+				
+				
+				<a href="/aed-grant/"><span class="et_pb_image_wrap "><img decoding="async" loading="lazy" width="250" height="105" src="https://oakeshospital.com/wp-content/uploads/2019/11/AED-img.jpg" alt="AED Equipped" title="AED Equipped" class="wp-image-249" /></span></a>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div class="et_pb_section et_pb_section_6 et_pb_with_background et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_5">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_12  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_blurb et_pb_blurb_7 et_clickable  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_blurb_content">
+					<div class="et_pb_main_blurb_image"><a href="https://goo.gl/maps/fNCcxk9BBn6qED33A" target="_blank"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon"></span></span></a></div>
+					<div class="et_pb_blurb_container">
+						<h4 class="et_pb_module_header"><a href="https://goo.gl/maps/fNCcxk9BBn6qED33A" target="_blank">CHI Oakes Hospital</a></h4>
+						<div class="et_pb_blurb_description"><p>1200 North 7th Street<br />Oakes, North Dakota 58474<br />(701) 742-3291</p></div>
+					</div>
+				</div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_13  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_blurb et_pb_blurb_8 et_clickable  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_blurb_content">
+					<div class="et_pb_main_blurb_image"><a href="https://www.facebook.com/OakesCommunityClinic/" target="_blank"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon et-pb-icon-circle"></span></span></a></div>
+					<div class="et_pb_blurb_container">
+						<h4 class="et_pb_module_header"><a href="https://www.facebook.com/OakesCommunityClinic/" target="_blank">Facebook</a></h4>
+						<div class="et_pb_blurb_description">Follow CHI Oakes Hospital on Facebook</div>
+					</div>
+				</div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_2 et_pb_column_14  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_2  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><p style="text-align: center;">Improving your health with expertise, compassion and grace.</p></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div>		</div>
+	</div>
+						</div>
+
+				
+				</article>
+
+			
+
+</div>
+
+
+			<footer id="main-footer">
+				
+
+		
+				<div id="et-footer-nav">
+					<div class="container">
+						<ul id="menu-footer-menu" class="bottom-nav"><li id="menu-item-787" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-787"><a rel="privacy-policy" href="https://oakeshospital.com/privacy-policy/">Privacy Policy</a></li>
+</ul>					</div>
+				</div>
+
+			
+				<div id="footer-bottom">
+					<div class="container clearfix">
+				<ul class="et-social-icons">
+
+	<li class="et-social-icon et-social-facebook">
+		<a href="https://www.facebook.com/OakesCommunityClinic/" class="icon">
+			<span>Facebook</span>
+		</a>
+	</li>
+	<li class="et-social-icon et-social-rss">
+		<a href="http://oakeshospital.com/feed/" class="icon">
+			<span>RSS</span>
+		</a>
+	</li>
+
+</ul><p id="footer-info">Designed by <a href="https://www.elegantthemes.com" title="Premium WordPress Themes">Elegant Themes</a> | Powered by <a href="https://www.wordpress.org">WordPress</a></p>					</div>
+				</div>
+			</footer>
+		</div>
+
+
+	</div>
+
+		<script type="text/javascript">
+				var et_link_options_data = [{"class":"et_pb_blurb_0","url":"\/foundation\/donate-now\/","target":"_self"},{"class":"et_pb_blurb_1","url":"https:\/\/chi-fargo.myonplanhealth.com\/login","target":"_blank"},{"class":"et_pb_blurb_2","url":"https:\/\/catholichealthinitiatives.followmyhealth.com\/","target":"_blank"},{"class":"et_pb_blurb_3","url":"https:\/\/chihealth.followmyhealth.com\/","target":"_blank"},{"class":"et_pb_blurb_7","url":"https:\/\/goo.gl\/maps\/fNCcxk9BBn6qED33A","target":"_blank"},{"class":"et_pb_blurb_8","url":"https:\/\/www.facebook.com\/OakesCommunityClinic\/","target":"_blank"}];
+			</script>
+	<script type="text/javascript">
+(function(a,b,c,d){
+a='https://tags.tiqcdn.com/utag/dignityhealth/commonspirit/prod/utag.js';
+b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+})();
+</script><link rel='stylesheet' id='mediaelement-css' href='https://oakeshospital.com/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=4.2.17' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-mediaelement-css' href='https://oakeshospital.com/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css' href='https://oakeshospital.com/wp-includes/css/dist/block-library/style.min.css?ver=6.2.2' type='text/css' media='none' onload="media='all'" />
+<script type='text/javascript' src='https://oakeshospital.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2' id='jquery-ui-core-js'></script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-includes/js/jquery/ui/datepicker.min.js?ver=1.13.2' id='jquery-ui-datepicker-js'></script>
+<script type='text/javascript' id='jquery-ui-datepicker-js-after'>
+jQuery(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"Close","currentText":"Today","monthNames":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthNamesShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"nextText":"Next","prevText":"Previous","dayNames":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"dayNamesShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"dayNamesMin":["S","M","T","W","T","F","S"],"dateFormat":"MM d, yy","firstDay":1,"isRTL":false});});
+</script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-content/plugins/modern-events-calendar-lite/assets/js/isotope.pkgd.min.js?ver=6.5.6' id='mec-isotope-script-js'></script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-content/plugins/modern-events-calendar-lite/assets/js/imagesload.js?ver=6.5.6' id='mec-imagesload-script-js'></script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-content/plugins/modern-events-calendar-lite/assets/js/jquery.typewatch.js?ver=6.5.6' id='mec-typekit-script-js'></script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-content/plugins/modern-events-calendar-lite/assets/packages/featherlight/featherlight.js?ver=6.5.6' id='featherlight-js'></script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-content/plugins/modern-events-calendar-lite/assets/packages/select2/select2.full.min.js?ver=6.5.6' id='mec-select2-script-js'></script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-content/plugins/modern-events-calendar-lite/assets/packages/tooltip/tooltip.js?ver=6.5.6' id='mec-tooltip-script-js'></script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-content/plugins/modern-events-calendar-lite/assets/packages/lity/lity.min.js?ver=6.5.6' id='mec-lity-script-js'></script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-content/plugins/modern-events-calendar-lite/assets/packages/colorbrightness/colorbrightness.min.js?ver=6.5.6' id='mec-colorbrightness-script-js'></script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-content/plugins/modern-events-calendar-lite/assets/packages/owl-carousel/owl.carousel.min.js?ver=6.5.6' id='mec-owl-carousel-script-js'></script>
+<script type='text/javascript' id='divi-custom-script-js-extra'>
+/* <![CDATA[ */
+var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
+var et_builder_utils_params = {"condition":{"diviTheme":true,"extraTheme":false},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"};
+var et_frontend_scripts = {"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};
+var et_pb_custom = {"ajaxurl":"https:\/\/oakeshospital.com\/wp-admin\/admin-ajax.php","images_uri":"https:\/\/oakeshospital.com\/wp-content\/themes\/Divi\/images","builder_images_uri":"https:\/\/oakeshospital.com\/wp-content\/themes\/Divi\/includes\/builder\/images","et_frontend_nonce":"6b333a4409","subscription_failed":"Please, check the fields below to make sure you entered the correct information.","et_ab_log_nonce":"36f2b5a323","fill_message":"Please, fill in the following fields:","contact_error_message":"Please, fix the following errors:","invalid":"Invalid email","captcha":"Captcha","prev":"Prev","previous":"Previous","next":"Next","wrong_captcha":"You entered the wrong number in captcha.","wrong_checkbox":"Checkbox","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"14","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"no","is_shortcode_tracking":"","tinymce_uri":"https:\/\/oakeshospital.com\/wp-content\/themes\/Divi\/includes\/builder\/frontend-builder\/assets\/vendors","accent_color":"#476da7","waypoints_options":[]};
+var et_pb_box_shadow_elements = [];
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-content/themes/Divi/js/scripts.min.js?ver=4.21.0' id='divi-custom-script-js'></script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-content/plugins/modern-events-calendar-lite/app/addons/divi/scripts/frontend-bundle.min.js?ver=1.0.0' id='divi-frontend-bundle-js'></script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-content/plugins/page-links-to/dist/new-tab.js?ver=3.3.6' id='page-links-to-js'></script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-content/themes/Divi/core/admin/js/common.js?ver=4.21.0' id='et-core-common-js'></script>
+<script type='text/javascript' id='mediaelement-core-js-before'>
+var mejsL10n = {"language":"en","strings":{"mejs.download-file":"Download File","mejs.install-flash":"You are using a browser that does not have Flash player enabled or installed. Please turn on your Flash player plugin or download the latest version from https:\/\/get.adobe.com\/flashplayer\/","mejs.fullscreen":"Fullscreen","mejs.play":"Play","mejs.pause":"Pause","mejs.time-slider":"Time Slider","mejs.time-help-text":"Use Left\/Right Arrow keys to advance one second, Up\/Down arrows to advance ten seconds.","mejs.live-broadcast":"Live Broadcast","mejs.volume-help-text":"Use Up\/Down Arrow keys to increase or decrease volume.","mejs.unmute":"Unmute","mejs.mute":"Mute","mejs.volume-slider":"Volume Slider","mejs.video-player":"Video Player","mejs.audio-player":"Audio Player","mejs.captions-subtitles":"Captions\/Subtitles","mejs.captions-chapters":"Chapters","mejs.none":"None","mejs.afrikaans":"Afrikaans","mejs.albanian":"Albanian","mejs.arabic":"Arabic","mejs.belarusian":"Belarusian","mejs.bulgarian":"Bulgarian","mejs.catalan":"Catalan","mejs.chinese":"Chinese","mejs.chinese-simplified":"Chinese (Simplified)","mejs.chinese-traditional":"Chinese (Traditional)","mejs.croatian":"Croatian","mejs.czech":"Czech","mejs.danish":"Danish","mejs.dutch":"Dutch","mejs.english":"English","mejs.estonian":"Estonian","mejs.filipino":"Filipino","mejs.finnish":"Finnish","mejs.french":"French","mejs.galician":"Galician","mejs.german":"German","mejs.greek":"Greek","mejs.haitian-creole":"Haitian Creole","mejs.hebrew":"Hebrew","mejs.hindi":"Hindi","mejs.hungarian":"Hungarian","mejs.icelandic":"Icelandic","mejs.indonesian":"Indonesian","mejs.irish":"Irish","mejs.italian":"Italian","mejs.japanese":"Japanese","mejs.korean":"Korean","mejs.latvian":"Latvian","mejs.lithuanian":"Lithuanian","mejs.macedonian":"Macedonian","mejs.malay":"Malay","mejs.maltese":"Maltese","mejs.norwegian":"Norwegian","mejs.persian":"Persian","mejs.polish":"Polish","mejs.portuguese":"Portuguese","mejs.romanian":"Romanian","mejs.russian":"Russian","mejs.serbian":"Serbian","mejs.slovak":"Slovak","mejs.slovenian":"Slovenian","mejs.spanish":"Spanish","mejs.swahili":"Swahili","mejs.swedish":"Swedish","mejs.tagalog":"Tagalog","mejs.thai":"Thai","mejs.turkish":"Turkish","mejs.ukrainian":"Ukrainian","mejs.vietnamese":"Vietnamese","mejs.welsh":"Welsh","mejs.yiddish":"Yiddish"}};
+</script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-includes/js/mediaelement/mediaelement-and-player.min.js?ver=4.2.17' id='mediaelement-core-js'></script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-includes/js/mediaelement/mediaelement-migrate.min.js?ver=6.2.2' id='mediaelement-migrate-js'></script>
+<script type='text/javascript' id='mediaelement-js-extra'>
+/* <![CDATA[ */
+var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/","classPrefix":"mejs-","stretching":"responsive","audioShortcodeLibrary":"mediaelement","videoShortcodeLibrary":"mediaelement"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-includes/js/mediaelement/wp-mediaelement.min.js?ver=6.2.2' id='wp-mediaelement-js'></script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/salvattore.js?ver=4.21.0' id='salvattore-js'></script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.fitvids.js?ver=4.21.0' id='fitvids-js'></script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.mobile.js?ver=4.21.0' id='jquery-mobile-js'></script>
+<script type='text/javascript' src='https://oakeshospital.com/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/easypiechart.js?ver=4.21.0' id='easypiechart-js'></script>
+</body>
+</html>
+
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.boldgrid.com/w3-total-cache/
+
+Page Caching using disk: enhanced 
+
+Served from: oakeshospital.com @ 2023-06-20 15:18:54 by W3 Total Cache
+-->

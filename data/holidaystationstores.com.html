@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        !function () {
+            var c = document.scripts[0],
+                s = document.createElement("script"),
+                primary = "e3c3c830-a3e7-4248-83e3-d372dcf68cc7",
+                secondary = "{'region': 'AT,BE,BG,CY,CZ,DE,DK,EE,ES,FI,FR,GB,GR,HR,HU,IE,IT,LT,LU,LV,MT,NL,PL,PT,RO,SE,SI,SK','cbid':'cded208f-b2fa-4572-bfc4-abeae260b67f'}";
+
+            s.type = "text/javascript";
+            s.id = "Cookiebot";
+            s.src = "https://consent.cookiebot.com/uc.js?cbid=" + primary;
+            s.dataset.georegions = secondary;
+            c.parentNode.insertBefore(s, c);
+        }()
+
+        !function (w, l) { w.gtag = function () { (w[l] = w[l] || []).push(arguments) } }
+            (window, "dataLayer")
+        gtag("consent", "default", {
+            ad_storage: "denied",
+            analytics_storage: "denied",
+            functionality_storage: "denied",
+            personalization_storage: "denied",
+            region: ['AT', 'BE', 'BG', 'CY', 'CZ', 'DE', 'DK', 'EE', 'ES', 'FI', 'FR', 'GB', 'GR', 'HR', 'HU', 'IE', 'IT', 'LT', 'LU', 'LV', 'MT', 'NL', 'PL', 'PT', 'RO', 'SE', 'SI', 'SK'],
+            wait_for_update: 500
+        });
+        gtag("set", "ads_data_redaction", true);
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M2ZD4MZ');</script>
+    <!-- End Google Tag Manager -->
+    <!--
+    Start of global snippet: Please do not remove
+    Place this snippet between the <head> and </head> tags on every page of your site.
+    -->
+    <!-- Global site tag (gtag.js) - Google Marketing Platform -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=DC-10286879"></script>
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1320257254805918');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=1320257254805918&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'DC-10286879');
+    </script>
+    <!-- End of global snippet: Please do not remove -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <link rel="stylesheet" href="/css/site.min.css" />
+    <script type="text/javascript" src="/js/modernizr.min.js"></script>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyAwG-k8h086zCpjdpjs0p03vamCe6qt--4&region=US&language=en"></script>
+    <script type="text/javascript">
+        function initialize() {
+            if (navigator.geolocation) {
+                //alert("Geoloc Pased")
+                navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+            } else {
+                //               alert("Geoloc Failed")
+            }
+        }
+        //Get the latitude and the longitude;
+        function successFunction(position) {
+            let mylat = position.coords.latitude;
+            let mylng = position.coords.longitude;
+            let myhref = "/Locations?lat=" + mylat + "&lng=" + mylng;
+
+            let link1 = document.getElementById("locLink");
+            if (link1 !== null && link1 !== 'undefined') {
+                link1.setAttribute("href", myhref);
+            }
+            let link2 = document.getElementById("locLink2");
+            if (link2 !== null && link2 !== 'undefined') {
+                link2.setAttribute("href", myhref);
+            }
+        }
+
+        function errorFunction() {
+            //           alert("Geolocation failed");
+        }
+    </script>
+<script type="text/javascript">!function(T,l,y){var S=T.location,k="script",D="instrumentationKey",C="ingestionendpoint",I="disableExceptionTracking",E="ai.device.",b="toLowerCase",w="crossOrigin",N="POST",e="appInsightsSDK",t=y.name||"appInsights";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:"5",version:2,config:d};function v(e,t){var n={},a="Browser";return n[E+"id"]=a[b](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(m.sv||m.version),{time:function(){var e=new Date;function t(e){var t=""+e;return 1===t.length&&(t="0"+t),t}return e.getUTCFullYear()+"-"+t(1+e.getUTCMonth())+"-"+t(e.getUTCDate())+"T"+t(e.getUTCHours())+":"+t(e.getUTCMinutes())+":"+t(e.getUTCSeconds())+"."+((e.getUTCMilliseconds()/1e3).toFixed(3)+"").slice(2,5)+"Z"}(),iKey:e,name:"Microsoft.ApplicationInsights."+e.replace(/-/g,"")+"."+t,sampleRate:100,tags:n,data:{baseData:{ver:2}}}}var h=d.url||y.src;if(h){function a(e){var t,n,a,i,r,o,s,c,u,p,l;g=!0,m.queue=[],f||(f=!0,t=h,s=function(){var e={},t=d.connectionString;if(t)for(var n=t.split(";"),a=0;a<n.length;a++){var i=n[a].split("=");2===i.length&&(e[i[0][b]()]=i[1])}if(!e[C]){var r=e.endpointsuffix,o=r?e.location:null;e[C]="https://"+(o?o+".":"")+"dc."+(r||"services.visualstudio.com")}return e}(),c=s[D]||d[D]||"",u=s[C],p=u?u+"/v2/track":d.endpointUrl,(l=[]).push((n="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",a=t,i=p,(o=(r=v(c,"Exception")).data).baseType="ExceptionData",o.baseData.exceptions=[{typeName:"SDKLoadFailed",message:n.replace(/\./g,"-"),hasFullStack:!1,stack:n+"\nSnippet failed to load ["+a+"] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: "+(S&&S.pathname||"_unknown_")+"\nEndpoint: "+i,parsedStack:[]}],r)),l.push(function(e,t,n,a){var i=v(c,"Message"),r=i.data;r.baseType="MessageData";var o=r.baseData;return o.message='AI (Internal): 99 message:"'+("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) ("+n+")").replace(/\"/g,"")+'"',o.properties={endpoint:a},i}(0,0,t,p)),function(e,t){if(JSON){var n=T.fetch;if(n&&!y.useXhr)n(t,{method:N,body:JSON.stringify(e),mode:"cors"});else if(XMLHttpRequest){var a=new XMLHttpRequest;a.open(N,t),a.setRequestHeader("Content-type","application/json"),a.send(JSON.stringify(e))}}}(l,p))}function i(e,t){f||setTimeout(function(){!t&&m.core||a()},500)}var e=function(){var n=l.createElement(k);n.src=h;var e=y[w];return!e&&""!==e||"undefined"==n[w]||(n[w]=e),n.onload=i,n.onerror=a,n.onreadystatechange=function(e,t){"loaded"!==n.readyState&&"complete"!==n.readyState||i(0,t)},n}();y.ld<0?l.getElementsByTagName("head")[0].appendChild(e):setTimeout(function(){l.getElementsByTagName(k)[0].parentNode.appendChild(e)},y.ld||0)}try{m.cookie=l.cookie}catch(p){}function t(e){for(;e.length;)!function(t){m[t]=function(){var e=arguments;g||m.queue.push(function(){m[t].apply(m,e)})}}(e.pop())}var n="track",r="TrackPage",o="TrackEvent";t([n+"Event",n+"PageView",n+"Exception",n+"Trace",n+"DependencyData",n+"Metric",n+"PageViewPerformance","start"+r,"stop"+r,"start"+o,"stop"+o,"addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"]),m.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4};var s=(d.extensionConfig||{}).ApplicationInsightsAnalytics||{};if(!0!==d[I]&&!0!==s[I]){var c="onerror";t(["_"+c]);var u=T[c];T[c]=function(e,t,n,a,i){var r=u&&u(e,t,n,a,i);return!0!==r&&m["_"+c]({message:e,url:t,lineNumber:n,columnNumber:a,error:i}),r},d.autoExceptionInstrumented=!0}return m}(y.cfg);function a(){y.onInit&&y.onInit(n)}(T[t]=n).queue&&0===n.queue.length?(n.queue.push(a),n.trackPageView({})):a()}(window,document,{
+src: "https://js.monitor.azure.com/scripts/b/ai.2.min.js", // The SDK URL Source
+crossOrigin: "anonymous", 
+cfg: { // Application Insights Configuration
+    connectionString: 'InstrumentationKey=2abd5f56-9974-4368-aa9c-3b1873da78bf;IngestionEndpoint=https://eastus2-3.in.applicationinsights.azure.com/;LiveEndpoint=https://eastus2.livediagnostics.monitor.azure.com/'
+}});</script></head>
+<body onload="initialize()">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2ZD4MZ"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <!-- Header -->
+    <div class="container GothamBookText p-0">
+        <nav class="navbar navbar-inverse navbar-fixed-top navbar-expand-lg navbar-dark HolidayBackgroundColorDark text-white p-0">
+            <div class="container-fluid">
+                <div class="row" style="width:100%;">
+                    <div class="col-lg-6">
+                        <div class="d-none d-lg-block">
+                            <a class="navbar-brand" href="https://www.circlek.com/" target="_blank">
+                                <img src="/Site/Images/Home/CircleK_top_banner.png" class="pl-4" style="width: 100%; height: auto;" alt="Holiday Stationstores, part of the Circle-K family of stores." />
+                            </a>
+                        </div>
+                        <div class="d-lg-none">
+                            <button class="navbar-toggler p-0" type="button" data-toggle="collapse" data-target=".mobileMenu">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <a class="navbar-brand p-0 col-10" href="https://www.circlek.com/" target="_blank">
+                                <img src="/Site/Images/Home/CircleK_top_banner.png" style="width: 100%; height: auto;" alt="Holiday Stationstores, part of the Circle-K family of stores." />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 align-middle">
+                        <div class="flex-row-reverse collapse navbar-collapse mobileMenu" id="navbarNavAltMarkup" style="height:100%;">
+                            <div class="nav navbar-nav" style="font-size: smaller;">
+                                <a class="nav-item nav-link" href='/Miscellaneous/Fleet'>Fleet</a>
+                                <a class="nav-item nav-link" href='/Miscellaneous/RealEstate'>Real Estate</a>
+                                <a class="nav-item nav-link" href='/Miscellaneous/Franchise'>Franchise</a>
+                                <a class="nav-item nav-link" href='/Miscellaneous/Fundraising'>Fundraising</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <nav class="navbar-inverse navbar-expand-lg navbar-light">
+            <div class="row">
+                <div class="offset-lg-1 d-none d-lg-block">
+                    <a class="navbar-brand p-1" href='/'>
+                        <img src="/Site/Images/Home/home_button.svg" style="width: 68px; height: 68px;" alt="Holiday Stationstores logo." />
+                    </a>
+                </div>
+                <div class="col-10">
+                    <div class="row GothamUltraText">
+                        <div class="collapse navbar-collapse mobileMenu" id="navbarNavAltMarkup2">
+                            <div class="navbar-nav" style="font-size: 16px; font-variant-caps: all-small-caps;">
+                                <a class="HolidayFontColorRed nav-item nav-link d-lg-none" href='/'>Home</a>
+                                <a id="locLink" class="HolidayFontColorRed nav-item nav-link " href='/Locations?lat=44.962986&amp;lng=-93.241819'>Locations</a>
+                                <a class="HolidayFontColorRed nav-item nav-link " href='/Home/Coupons'>Coupons</a>
+                                <a class="HolidayFontColorRed nav-item nav-link " href='/Menu/Overview'>Menu</a>
+                                <a class="HolidayFontColorRed nav-item nav-link " href='/Carwash/Overview'>Car&nbsp;Wash</a>
+                                <a class="HolidayFontColorRed nav-item nav-link " href='/Home/Fuel'>Fuel</a>
+                                <a class="HolidayFontColorRed nav-item nav-link " href='/CreditCard/Overview'>Credit&nbsp;Card</a>
+                                <div class="dropdown-divider">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+                                <a class="HolidayFontColorRed nav-item nav-link float-right " href='https://workwithus.circlek.com/global/en/holiday' target="_blank">Careers</a>
+                                <a class="HolidayFontColorRed nav-item nav-link float-right" href='/Home/Contact'>Contact&nbsp;Us</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowhide GothamBookText" id="navMenu">
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup3">
+                            <div class="navbar-nav" style="font-size: 12px;">
+                                <a class="nav-item nav-link " href='/Menu/Overview'>Overview</a>
+                                <a class="nav-item nav-link " href='/Menu/Coffee'>Holiday Coffee</a>
+                                <a class="nav-item nav-link " href='/Menu/Food'>Food</a>
+                                <a class="nav-item nav-link " href='/Menu/Drinks'>Drinks</a>
+                                <a class="nav-item nav-link " href='/Menu/Nutrition'>Nutrition</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rowhide GothamBookText" id="navMenu">
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup4">
+                            <div class="navbar-nav" style="font-size: 12px;">
+                                <a class="nav-item nav-link " href='/Carwash/Overview'>Overview</a>
+                                <a class="nav-item nav-link " href='/Carwash/Unlimited'>Car Wash Club - Unlimited</a>
+                                <a class="nav-item nav-link " href='/Carwash/Express'>Car Wash Club - Express</a>
+                                <a class="nav-item nav-link " href='/Locations/UnlimitedWashPass'>Car Wash Locations</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="container body-content">
+        <!-- Content -->
+<div class="row">
+    <div class="d-none d-lg-block">
+        <img src="/Site/Images/Home/home_pg_header.png" style="width: 100%; height: auto; object-fit: contain;" alt="Holiday Stationstore storefront at dusk." />
+    </div>
+    <div class="d-lg-none">
+        <img src="/Site/Images/Home/mobile_home_pg_photo.png" style="width: 100%; height: auto; object-fit: contain;" alt="Holiday Stationstore storefront at dusk." />
+        <img src="/Site/Images/Home/mobile_home_pg_header.png" style="width: 100%; height: auto; object-fit: contain;" />
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="d-none d-lg-block col-lg-10 offset-1 text-center GothamBookText" style="font-size: 20px;">
+        Convenient locations. Clean, bright stores. A wide selection of quality products.
+        Making your life a little easier every day.
+    </div>
+    <div class="d-lg-none col-lg-12 GothamBookText">
+        Convenient locations. Clean, bright stores. A wide selection of quality products.
+        Making your life a little easier every day.
+    </div>
+</div>
+<br />
+<div class="row justify-content-center">
+    <div class="col-lg-3 col-sm-10">
+        <a href='/Home/SipAndSave'>
+            <div class="d-none d-lg-block text-center p-2">
+                <img src="/Site/Images/Home/sip_save_button.png" class="img-fluid" style="width: 100%; height: auto;" alt="Sip and Save at Holiday Station Stores." />
+            </div>
+            <div class="d-lg-none text-center p-2">
+                <img src="/Site/Images/Home/sip_save_button.png" class="img-fluid" style="width: 100%; height: auto;" alt="Sip and Save at Holiday Station Stores." />
+            </div>
+        </a>
+    </div>
+
+    <div class="col-lg-3 col-sm-10">
+        <a href="https://nokidhungry.org/holidaystationstores" target="_blank" onclick="NoKidHungryClick();">
+            <div class="d-none d-lg-block text-center p-2">
+                <img src="/Site/Images/Home/NKH_button.png" class="img-fluid" style="width: 100%; height: auto;" alt="Support our partner. No kid hungry." />
+            </div>
+            <div class="d-lg-none text-center p-2">
+                <img src="/Site/Images/Home/NKH_button.png" class="img-fluid" style="width: 100%; height: auto;" alt="Support our partner. No kid hungry." />
+            </div>
+        </a>
+    </div>
+
+    <div class="col-lg-3 col-sm-10">
+        <a href='https://workwithus.circlek.com/global/en/holiday'>
+            <div class="d-none d-lg-block text-center p-2">
+                <img src="/Site/Images/Home/join_our_team_button.png" class="img-fluid" style="width: 100%; height: auto;" alt="Woman in red Holiday zip-up in a store." />
+            </div>
+            <div class="d-lg-none text-center p-2">
+                <img src="/Site/Images/Home/join_our_team_button.png" class="img-fluid" style="width: 100%; height: auto;" alt="Woman in red Holiday zip-up in a store." />
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="row justify-content-center pt-4">
+    <div class="col-lg-3 col-sm-10">
+        <a href='https://www.doordash.com/business/holiday-stationstore-410379/?utm_campaign=410379&utm_medium=website&utm_source=partner-link' target="_blank" onclick="DoordashClick();">
+            <div class="d-none d-lg-block text-center p-2">
+                <img src="/Site/Images/Home/doordash_button.png" class="img-fluid" style="width: 100%; height: auto;" alt="Click For Door Dash button." />
+            </div>
+            <div class="d-lg-none text-center p-2">
+                <img src="/Site/Images/Home/DoorDash_button_mobile@2x.png" class="img-fluid" style="width: 100%; height: auto;" alt="Click For Door Dash button." />
+            </div>
+        </a>
+    </div>
+
+    <div class="col-lg-3 col-sm-12 p-lg-2 p-2">
+        <div class="text-center HolidayBackgroundColorBlue ml-3 mr-3">
+            <div class="form-group m-0">
+                <img src="/Site/Images/Home/locations_top_button.png" class="img-fluid" style="width: 100%; height: 135px; object-fit: contain;" alt="Find your store." />
+                <div class="input-group justify-content-center">
+                    <input class="p-0" type="text" maxlength="100" id="StoreSearchText2" style="height: 40px; width: auto; font-size: 12px;" placeholder=" ZIP or CITY, ST or STORE #" />
+                    <div class="NoPrint" id="CityResults2"></div>
+                    <div class="input-group-append">
+                        <div class="border-0 p-0">
+                            <a href="#" id="FindStoreBtn" onclick="FindStore()">
+                                <img src="/Site/Images/Home/search_button.png" style="width: 40px; height: 40px;" alt="A magnifying glass search icon." />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-sm-10">
+        <a href='/Home/Coupons'>
+            <div class="d-none d-lg-block text-center p-2">
+                <img src="/Site/Images/Home/coupons_button.png" class="img-fluid" style="width: 100%; height: auto;" alt="Click For Coupons button." />
+            </div>
+            <div class="d-lg-none text-center p-2">
+                <img src="/Site/Images/Home/mobile_coupons_btn.png" class="img-fluid" style="width: 100%; height: auto;" alt="Click For Coupons button." />
+            </div>
+        </a>
+    </div>
+</div>
+
+    <!--
+    Event snippet for Awareness on http://www.holidaystationstores.com/: Please do not remove.
+    Place this snippet on pages with events you’re tracking.
+    Creation date: 05/18/2021
+    -->
+    <script>
+        gtag('event', 'conversion', {
+            'allow_custom_scripts': true,
+            'u1': 'http://www.holidaystationstores.com/',
+            'send_to': 'DC-10286879/omni-0/aware0+standard'
+        });
+    </script>
+    <noscript>
+        <img src="https://ad.doubleclick.net/ddm/activity/src=10286879;type=omni-0;cat=aware0;u1=http://www.holidaystationstores.com/;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;npa=;gdpr=${GDPR};gdpr_consent=${GDPR_CONSENT_755};ord=1?" width="1" height="1" alt="" />
+    </noscript>
+    <!-- End of event snippet: Please do not remove -->
+    <!--
+    Event snippet for Convert-DoorDash Order and Engage-No Kid Hungry on http://www.holidaystationstores.com/: Please do not remove.
+    Place this snippet on pages with events you’re tracking.
+    Creation date: 05/18/2021
+    -->
+    <script>
+        function NoKidHungryClick() {
+            gtag('event', 'conversion', {
+                'allow_custom_scripts': true,
+                'u1': 'http://www.holidaystationstores.com/',
+                'u11': 'NoKidHungryClick',
+                'send_to': 'DC-10286879/omni-0/engag000+standard'
+            });
+        };
+
+        function DoordashClick() {
+            gtag('event', 'conversion', {
+                'allow_custom_scripts': true,
+                'u1': 'http://www.holidaystationstores.com/',
+                'u11': 'DoordashClick',
+                'send_to': 'DC-10286879/omni-0/conve0+standard'
+            });
+        }
+    </script>
+    <noscript>
+        function NoKidHungryClick() {
+        <img src="https://ad.doubleclick.net/ddm/activity/src=10286879;type=omni-0;cat=engag000;u1=http://www.holidaystationstores.com/;u11=NoKidHungryClick;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;npa=;gdpr=${GDPR};gdpr_consent=${GDPR_CONSENT_755};ord=1?" width="1" height="1" alt="" />
+        };
+
+        function DoordashClick() {
+        <img src="https://ad.doubleclick.net/ddm/activity/src=10286879;type=omni-0;cat=conve0;u1=http://www.holidaystationstores.com/;u11=DoordashClick;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;npa=;gdpr=${GDPR};gdpr_consent=${GDPR_CONSENT_755};ord=1?" width="1" height="1" alt="" />
+        }
+    </noscript>
+    <!-- End of event snippet: Please do not remove -->
+
+    </div>
+    <!-- Footer -->
+    <br />
+    <footer class="container GothamBookText p-0" style="font-size: 14px;">
+        <nav class="navbar navbar-expand justify-content-center navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup-f1" aria-controls="navbarNavAltMarkup-f1" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup-f1">
+                <div class="navbar-nav mx-auto">
+                    <a class="nav-item nav-link" href="https://www.instagram.com/holidaystationstores/" target="_blank"><img src="/Site/Images/Home/Instagram.svg" width="26" height="26" alt="Instagram button." /></a>
+                    <a class="nav-item nav-link" href="https://twitter.com/HolidayStations" target="_blank"><img src="/Site/Images/Home/Twitter.svg" width="26" height="26" alt="Twitter button." /></a>
+                    <a class="nav-item nav-link" href="https://www.facebook.com/holidaystations" target="_blank"><img src="/Site/Images/Home/Facebook.svg" width="26" height="26" alt="Facebook button." /></a>
+                </div>
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand justify-content-center navbar-light bg-light">
+            <div class="nav-scroller HolidayBackgroundColorLight">
+                <nav class="nav nav-underline">
+                    <a class="nav-item nav-link GothamBookText" href='/Miscellaneous/AboutUs'>About Us</a>
+                    <a class="nav-item nav-link GothamBookText" href='https://corpo.couche-tard.com/en/investor-relations/' target="_blank">Investor Relations</a>
+                    <a class="nav-item nav-link GothamBookText" href="/ManagedContent/HSS/Miscellaneous/PrivacyPolicy.pdf" target="_blank">Privacy Policy</a>
+                    <a class="nav-item nav-link GothamBookText" href="/ManagedContent/HSS/Miscellaneous/TermsofUse.pdf" target="_blank">Terms of Use</a>
+                    <a class="nav-item nav-link GothamBookText" href="mailto:?To=customerservice@holidaystationstores.com&Subject=Website Issue&Body=Issue Details:%0A%0A%0A">Report Website Issue</a>
+                </nav>
+            </div>
+        </nav>
+        <div class="row" style="background-color: black;">
+            <div class="col-lg-12 text-center m-3">
+                <span style="color: white;">&copy;2023 Holiday Stationstores LLC.</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <script type="text/javascript" src="/js/utility.min.js"></script>
+    
+</body>
+</html>

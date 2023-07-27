@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<script type="text/javascript">
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,initializeOnLoaded:function(o){gform.domLoaded&&gform.scriptsLoaded?o():!gform.domLoaded&&gform.scriptsLoaded?window.addEventListener("DOMContentLoaded",o):document.addEventListener("gform_main_scripts_loaded",o)},hooks:{action:{},filter:{}},addAction:function(o,n,r,t){gform.addHook("action",o,n,r,t)},addFilter:function(o,n,r,t){gform.addHook("filter",o,n,r,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,n){gform.removeHook("action",o,n)},removeFilter:function(o,n,r){gform.removeHook("filter",o,n,r)},addHook:function(o,n,r,t,i){null==gform.hooks[o][n]&&(gform.hooks[o][n]=[]);var e=gform.hooks[o][n];null==i&&(i=n+"_"+e.length),gform.hooks[o][n].push({tag:i,callable:r,priority:t=null==t?10:t})},doHook:function(n,o,r){var t;if(r=Array.prototype.slice.call(r,1),null!=gform.hooks[n][o]&&((o=gform.hooks[n][o]).sort(function(o,n){return o.priority-n.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==n?t.apply(null,r):r[0]=t.apply(null,r)})),"filter"==n)return r[0]},removeHook:function(o,n,t,i){var r;null!=gform.hooks[o][n]&&(r=(r=gform.hooks[o][n]).filter(function(o,n,r){return!!(null!=i&&i!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][n]=r)}});
+</script>
+
+	<link rel="pingback" href="https://www.provise.com/xmlrpc.php" />
+
+	<script type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><style id="et-builder-googlefonts-cached-inline">/* Original: https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic&#038;subset=latin,latin-ext&#038;display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 500;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk_RkWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4uaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4uaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 500;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjr0B4uaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4uaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4uaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1x4uaVc.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkWV4exg.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkWV4exg.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 500;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk_RkWV4exg.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjWV4exg.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjWV4exg.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjWV4exg.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4uaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4uaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 500;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjr0B4uaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4uaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4uaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1x4uaVQ.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkWV4ewA.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkWV4ewA.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 500;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk_RkWV4ewA.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjWV4ewA.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjWV4ewA.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjWV4ewA.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4uaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4uaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 500;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjr0B4uaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4uaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4uaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1x4uaVI.woff2) format('woff2');}</style><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<script type="text/javascript">
+			let jqueryParams=[],jQuery=function(r){return jqueryParams=[...jqueryParams,r],jQuery},$=function(r){return jqueryParams=[...jqueryParams,r],$};window.jQuery=jQuery,window.$=jQuery;let customHeadScripts=!1;jQuery.fn=jQuery.prototype={},$.fn=jQuery.prototype={},jQuery.noConflict=function(r){if(window.jQuery)return jQuery=window.jQuery,$=window.jQuery,customHeadScripts=!0,jQuery.noConflict},jQuery.ready=function(r){jqueryParams=[...jqueryParams,r]},$.ready=function(r){jqueryParams=[...jqueryParams,r]},jQuery.load=function(r){jqueryParams=[...jqueryParams,r]},$.load=function(r){jqueryParams=[...jqueryParams,r]},jQuery.fn.ready=function(r){jqueryParams=[...jqueryParams,r]},$.fn.ready=function(r){jqueryParams=[...jqueryParams,r]};</script>
+	<!-- This site is optimized with the Yoast SEO Premium plugin v20.9 (Yoast SEO v20.9) - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Financial Planning in Tampa &amp; Clearwater | Wealth Management</title>
+	<meta name="description" content="With over 3 decades of experience, we are ready to help you step into financial freedom with a range of services personalized to your needs." />
+	<link rel="canonical" href="https://www.provise.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Home" />
+	<meta property="og:description" content="With over 3 decades of experience, we are ready to help you step into financial freedom with a range of services personalized to your needs." />
+	<meta property="og:url" content="https://www.provise.com/" />
+	<meta property="og:site_name" content="ProVise Management Group" />
+	<meta property="article:publisher" content="https://www.facebook.com/ProviseManagementGroupLlc" />
+	<meta property="article:modified_time" content="2023-04-17T19:49:04+00:00" />
+	<meta property="og:image" content="https://www.provise.com/wp-content/uploads/2020/03/Home-Banner.jpg" />
+	<meta property="og:image:width" content="1927" />
+	<meta property="og:image:height" content="938" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@pro_vise" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="8 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.provise.com/","url":"https://www.provise.com/","name":"Financial Planning in Tampa & Clearwater | Wealth Management","isPartOf":{"@id":"https://www.provise.com/#website"},"about":{"@id":"https://www.provise.com/#organization"},"primaryImageOfPage":{"@id":"https://www.provise.com/#primaryimage"},"image":{"@id":"https://www.provise.com/#primaryimage"},"thumbnailUrl":"https://www.provise.com/wp-content/uploads/2020/03/Home-Banner.jpg","datePublished":"2020-03-30T11:19:45+00:00","dateModified":"2023-04-17T19:49:04+00:00","description":"With over 3 decades of experience, we are ready to help you step into financial freedom with a range of services personalized to your needs.","breadcrumb":{"@id":"https://www.provise.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.provise.com/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.provise.com/#primaryimage","url":"https://www.provise.com/wp-content/uploads/2020/03/Home-Banner.jpg","contentUrl":"https://www.provise.com/wp-content/uploads/2020/03/Home-Banner.jpg","width":1927,"height":938,"caption":"ProVise Management Group Serves You"},{"@type":"BreadcrumbList","@id":"https://www.provise.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://www.provise.com/#website","url":"https://www.provise.com/","name":"ProVise Management Group","description":"Financial planning for your life and lifestyle","publisher":{"@id":"https://www.provise.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.provise.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://www.provise.com/#organization","name":"ProVise Management Group","url":"https://www.provise.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.provise.com/#/schema/logo/image/","url":"https://www.provise.com/wp-content/uploads/2020/03/Provise-Color.png","contentUrl":"https://www.provise.com/wp-content/uploads/2020/03/Provise-Color.png","width":1072,"height":302,"caption":"ProVise Management Group"},"image":{"@id":"https://www.provise.com/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/ProviseManagementGroupLlc","https://twitter.com/pro_vise","https://www.linkedin.com/company/provise-management-group-llc-/"]}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel="alternate" type="application/rss+xml" title="ProVise Management Group &raquo; Feed" href="https://www.provise.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="ProVise Management Group &raquo; Comments Feed" href="https://www.provise.com/comments/feed/" />
+<meta content="Divi v.4.21.0" name="generator"/><link rel='stylesheet' id='gravity_forms_theme_reset-css' href='https://www.provise.com/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-theme-reset.min.css?ver=2.7.9' type='text/css' media='all' />
+<link rel='stylesheet' id='gravity_forms_theme_foundation-css' href='https://www.provise.com/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-theme-foundation.min.css?ver=2.7.9' type='text/css' media='all' />
+<link rel='stylesheet' id='gravity_forms_theme_framework-css' href='https://www.provise.com/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-theme-framework.min.css?ver=2.7.9' type='text/css' media='all' />
+<link rel='stylesheet' id='gravity_forms_orbital_theme-css' href='https://www.provise.com/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-orbital-theme.min.css?ver=2.7.9' type='text/css' media='all' />
+<style id='wp-block-library-theme-inline-css' type='text/css'>
+.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video{margin:0 0 1em}.wp-block-template-part.has-background{margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}body { margin: 0;--wp--style--global--content-size: 823px;--wp--style--global--wide-size: 1080px; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: underline;}.wp-element-button, .wp-block-button__link{background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;line-height: inherit;padding: calc(0.667em + 2px) calc(1.333em + 2px);text-decoration: none;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='cookie-law-info-css' href='https://www.provise.com/wp-content/plugins/cookie-law-info/legacy/public/css/cookie-law-info-public.css?ver=3.0.9' type='text/css' media='all' />
+<link rel='stylesheet' id='cookie-law-info-gdpr-css' href='https://www.provise.com/wp-content/plugins/cookie-law-info/legacy/public/css/cookie-law-info-gdpr.css?ver=3.0.9' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css' href='https://www.provise.com/wp-includes/css/dashicons.min.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='rmp-menu-styles-css' href='https://www.provise.com/wp-content/uploads/rmp-menu/css/rmp-menu.css?ver=354' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-blurb-extended-styles-css' href='https://www.provise.com/wp-content/plugins/divi-blurb-extended/styles/style.min.css?ver=2.2.5' type='text/css' media='all' />
+<link rel='stylesheet' id='supreme-modules-pro-for-divi-styles-css' href='https://www.provise.com/wp-content/plugins/supreme-modules-pro-for-divi/styles/style.min.css?ver=4.8.62' type='text/css' media='all' />
+<link rel='stylesheet' id='gforms_reset_css-css' href='https://www.provise.com/wp-content/plugins/gravityforms/legacy/css/formreset.min.css?ver=2.7.9' type='text/css' media='all' />
+<link rel='stylesheet' id='gforms_formsmain_css-css' href='https://www.provise.com/wp-content/plugins/gravityforms/legacy/css/formsmain.min.css?ver=2.7.9' type='text/css' media='all' />
+<link rel='stylesheet' id='gforms_ready_class_css-css' href='https://www.provise.com/wp-content/plugins/gravityforms/legacy/css/readyclass.min.css?ver=2.7.9' type='text/css' media='all' />
+<link rel='stylesheet' id='gforms_browsers_css-css' href='https://www.provise.com/wp-content/plugins/gravityforms/legacy/css/browsers.min.css?ver=2.7.9' type='text/css' media='all' />
+<link rel='stylesheet' id='magnific-popup-css' href='https://www.provise.com/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/css/magnific_popup.css?ver=4.8.62' type='text/css' media='all' />
+<link rel='stylesheet' id='dsm-swiper-css' href='https://www.provise.com/wp-content/plugins/supreme-modules-pro-for-divi/public/css/swiper.css?ver=4.8.62' type='text/css' media='all' />
+<link rel='stylesheet' id='dsm-popup-css' href='https://www.provise.com/wp-content/plugins/supreme-modules-pro-for-divi/public/css/popup.css?ver=4.8.62' type='text/css' media='all' />
+<link rel='stylesheet' id='dsm-animate-css' href='https://www.provise.com/wp-content/plugins/supreme-modules-pro-for-divi/public/css/animate.css?ver=4.8.62' type='text/css' media='all' />
+<link rel='stylesheet' id='dsm-readmore-css' href='https://www.provise.com/wp-content/plugins/supreme-modules-pro-for-divi/public/css/readmore.css?ver=4.8.62' type='text/css' media='all' />
+<link rel='stylesheet' id='splide-style-css' href='https://www.provise.com/wp-content/plugins/provise-templates/css/splide-core.min.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='homepage-template-style-css' href='https://www.provise.com/wp-content/plugins/provise-templates/css/homepage-template.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='agsdcm-css' href='https://www.provise.com/wp-content/plugins/ds-divi-extras/css/divi.css?ver=1.1.13' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-style-pum-css' href='https://www.provise.com/wp-content/themes/Divi/style-static.min.css?ver=4.21.0' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.provise.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.4' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://www.provise.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0' id='jquery-migrate-js'></script>
+<script type='text/javascript' id='jquery-js-after'>
+jqueryParams.length&&$.each(jqueryParams,function(e,r){if("function"==typeof r){var n=String(r);n.replace("$","jQuery");var a=new Function("return "+n)();$(document).ready(a)}});
+</script>
+<script type='text/javascript' id='cookie-law-info-js-extra'>
+/* <![CDATA[ */
+var Cli_Data = {"nn_cookie_ids":[],"cookielist":[],"non_necessary_cookies":[],"ccpaEnabled":"","ccpaRegionBased":"","ccpaBarEnabled":"","strictlyEnabled":["necessary","obligatoire"],"ccpaType":"gdpr","js_blocking":"1","custom_integration":"","triggerDomRefresh":"","secure_cookies":""};
+var cli_cookiebar_settings = {"animate_speed_hide":"500","animate_speed_show":"500","background":"#0d1d41","border":"#b1a6a6c2","border_on":"","button_1_button_colour":"#61a229","button_1_button_hover":"#4e8221","button_1_link_colour":"#fff","button_1_as_button":"1","button_1_new_win":"","button_2_button_colour":"#333","button_2_button_hover":"#292929","button_2_link_colour":"#444","button_2_as_button":"","button_2_hidebar":"","button_3_button_colour":"#dedfe0","button_3_button_hover":"#b2b2b3","button_3_link_colour":"#333333","button_3_as_button":"1","button_3_new_win":"","button_4_button_colour":"#dedfe0","button_4_button_hover":"#b2b2b3","button_4_link_colour":"#333333","button_4_as_button":"1","button_7_button_colour":"#004a98","button_7_button_hover":"#003b7a","button_7_link_colour":"#fff","button_7_as_button":"1","button_7_new_win":"","font_family":"inherit","header_fix":"","notify_animate_hide":"1","notify_animate_show":"","notify_div_id":"#cookie-law-info-bar","notify_position_horizontal":"right","notify_position_vertical":"bottom","scroll_close":"","scroll_close_reload":"","accept_close_reload":"","reject_close_reload":"","showagain_tab":"","showagain_background":"#fff","showagain_border":"#000","showagain_div_id":"#cookie-law-info-again","showagain_x_position":"100px","text":"#ffffff","show_once_yn":"","show_once":"10000","logging_on":"","as_popup":"","popup_overlay":"1","bar_heading_text":"","cookie_bar_as":"banner","popup_showagain_position":"bottom-right","widget_position":"left"};
+var log_object = {"ajax_url":"https:\/\/www.provise.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.provise.com/wp-content/plugins/cookie-law-info/legacy/public/js/cookie-law-info-public.js?ver=3.0.9' id='cookie-law-info-js'></script>
+<script type='text/javascript' src='https://www.provise.com/wp-content/plugins/ds-extra-module-mate//js/frontend.js?ver=6.2.2' id='ags_extra_module_mate-js'></script>
+<script type='text/javascript' defer='defer' src='https://www.provise.com/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.7.9' id='gform_json-js'></script>
+<script type='text/javascript' id='gform_gravityforms-js-extra'>
+/* <![CDATA[ */
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https:\/\/www.provise.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/www.provise.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","version_hash":"160fd9b49dcf6fc7d87338d65f63b6ee","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gform_i18n = {"datepicker":{"days":{"monday":"Mo","tuesday":"Tu","wednesday":"We","thursday":"Th","friday":"Fr","saturday":"Sa","sunday":"Su"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_legacy_multi = {"4":"1"};
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled"},"vars":{"images_url":"https:\/\/www.provise.com\/wp-content\/plugins\/gravityforms\/images"}};
+/* ]]> */
+</script>
+<script type='text/javascript' id='gform_gravityforms-js-before'>
+
+</script>
+<script type='text/javascript' defer='defer' src='https://www.provise.com/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=2.7.9' id='gform_gravityforms-js'></script>
+<script type='text/javascript' defer='defer' src='https://www.google.com/recaptcha/api.js?hl=en&#038;ver=6.2.2#038;render=explicit' id='gform_recaptcha-js'></script>
+<script type='text/javascript' defer='defer' src='https://www.provise.com/wp-content/plugins/gravityforms/assets/js/dist/utils.min.js?ver=1329f9a0886f2ff3fb51c6f17277eb75' id='gform_gravityforms_utils-js'></script>
+<script type='text/javascript' src='https://www.provise.com/wp-content/plugins/provise-templates/js/global.js?ver=6.2.2' id='global-script-js'></script>
+<script type='text/javascript' src='https://www.provise.com/wp-content/plugins/provise-templates/js/splide.min.js?ver=6.2.2' id='splide-script-js'></script>
+<script type='text/javascript' src='https://www.provise.com/wp-content/plugins/provise-templates/js/homepage-template.js?ver=6.2.2' id='homepage-template-script-js'></script>
+<script type='text/javascript' id='agsdcm-js-extra'>
+/* <![CDATA[ */
+var EXTRA = {"ajaxurl":"https:\/\/www.provise.com\/wp-admin\/admin-ajax.php","blog_feed_nonce":"c11cbf58f0"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.provise.com/wp-content/plugins/ds-divi-extras/js/extra.js?ver=1.1.13' id='agsdcm-js'></script>
+<script type='text/javascript' src='https://www.provise.com/wp-content/plugins/ds-divi-extras/js/imagesloaded.js?ver=1.1.13' id='agsdcm-imagesloaded-js'></script>
+<link rel="https://api.w.org/" href="https://www.provise.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.provise.com/wp-json/wp/v2/pages/6" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.provise.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.provise.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.2.2" />
+<link rel='shortlink' href='https://www.provise.com/' />
+<link rel="alternate" type="application/json+oembed" href="https://www.provise.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.provise.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.provise.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.provise.com%2F&#038;format=xml" />
+<meta name="cdp-version" content="1.4.0" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<!-- Meta Pixel Code -->
+<script type="text/plain" data-cli-class="cli-blocker-script"  data-cli-script-type="analytics" data-cli-block="true"  data-cli-element-position="head">
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js?v=next');
+</script>
+<!-- End Meta Pixel Code -->
+
+      <script type="text/plain" data-cli-class="cli-blocker-script"  data-cli-script-type="analytics" data-cli-block="true"  data-cli-element-position="head">
+        var url = window.location.href + '?ob=open-bridge';
+        fbq('set', 'openbridge', '2619075958399017', url);
+      </script>
+    <script type="text/plain" data-cli-class="cli-blocker-script"  data-cli-script-type="analytics" data-cli-block="true"  data-cli-element-position="head">fbq('init', '2619075958399017', {}, {
+    "agent": "wordpress-6.2.2-3.0.12"
+})</script><script type="text/plain" data-cli-class="cli-blocker-script"  data-cli-script-type="analytics" data-cli-block="true"  data-cli-element-position="head">
+    fbq('track', 'PageView', []);
+  </script>
+<!-- Meta Pixel Code -->
+<noscript>
+<img height="1" width="1" style="display:none" alt="fbpx"
+src="https://www.facebook.com/tr?id=2619075958399017&ev=PageView&noscript=1" />
+</noscript>
+<!-- End Meta Pixel Code -->
+<meta name="google-site-verification" content="2CBgocLHYbgbgru9XlXGr4Bkw0obkSXTv9U8Fl_ethc">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TG3BZ8C');</script>
+<!-- End Google Tag Manager -->
+
+<link rel="preload" as="font" href="https://www.provise.com/wp-content/plugins/ds-divi-extras/css/core/admin/fonts/modules.ttf" type="font/ttf" crossorigin="anonymous">
+
+<!-- Google Optimize  -->
+<script src="https://www.googleoptimize.com/optimize.js?id=OPT-WR4BCMX"></script>
+
+<!-- Hotjar Tracking Code for https://www.provise.com/ -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2622980,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script><link rel="icon" href="https://www.provise.com/wp-content/uploads/2020/03/provise-icon-150x150.png" sizes="32x32" />
+<link rel="icon" href="https://www.provise.com/wp-content/uploads/2020/03/provise-icon.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.provise.com/wp-content/uploads/2020/03/provise-icon.png" />
+<meta name="msapplication-TileImage" content="https://www.provise.com/wp-content/uploads/2020/03/provise-icon.png" />
+<style id="et-divi-customizer-global-cached-inline-styles">body,.et_pb_column_1_2 .et_quote_content blockquote cite,.et_pb_column_1_2 .et_link_content a.et_link_main_url,.et_pb_column_1_3 .et_quote_content blockquote cite,.et_pb_column_3_8 .et_quote_content blockquote cite,.et_pb_column_1_4 .et_quote_content blockquote cite,.et_pb_blog_grid .et_quote_content blockquote cite,.et_pb_column_1_3 .et_link_content a.et_link_main_url,.et_pb_column_3_8 .et_link_content a.et_link_main_url,.et_pb_column_1_4 .et_link_content a.et_link_main_url,.et_pb_blog_grid .et_link_content a.et_link_main_url,body .et_pb_bg_layout_light .et_pb_post p,body .et_pb_bg_layout_dark .et_pb_post p{font-size:20px}.et_pb_slide_content,.et_pb_best_value{font-size:22px}h1,h2,h3,h4,h5,h6{color:#024a98}#main-header,#main-header .nav li ul,.et-search-form,#main-header .et_mobile_menu{background-color:rgba(255,255,255,0)}#main-header .nav li ul{background-color:#0c71c3}.nav li ul{border-color:#ffffff}.et_secondary_nav_enabled #page-container #top-header{background-color:#0c71c3!important}#et-secondary-nav li ul{background-color:#0c71c3}.et_header_style_centered .mobile_nav .select_page,.et_header_style_split .mobile_nav .select_page,.et_nav_text_color_light #top-menu>li>a,.et_nav_text_color_dark #top-menu>li>a,#top-menu a,.et_mobile_menu li a,.et_nav_text_color_light .et_mobile_menu li a,.et_nav_text_color_dark .et_mobile_menu li a,#et_search_icon:before,.et_search_form_container input,span.et_close_search_field:after,#et-top-navigation .et-cart-info{color:#ffffff}.et_search_form_container input::-moz-placeholder{color:#ffffff}.et_search_form_container input::-webkit-input-placeholder{color:#ffffff}.et_search_form_container input:-ms-input-placeholder{color:#ffffff}#top-header,#top-header a,#et-secondary-nav li li a,#top-header .et-social-icon a:before{font-size:18px;font-weight:bold;font-style:normal;text-transform:none;text-decoration:underline}#top-menu li.current-menu-ancestor>a,#top-menu li.current-menu-item>a,#top-menu li.current_page_item>a{color:#ffffff}#footer-widgets .footer-widget li:before{top:14px}#main-header{box-shadow:none}@media only screen and (min-width:981px){#logo{max-height:60%}.et_pb_svg_logo #logo{height:60%}.et_header_style_left .et-fixed-header #et-top-navigation,.et_header_style_split .et-fixed-header #et-top-navigation{padding:33px 0 0 0}.et_header_style_left .et-fixed-header #et-top-navigation nav>ul>li>a,.et_header_style_split .et-fixed-header #et-top-navigation nav>ul>li>a{padding-bottom:33px}.et_header_style_centered header#main-header.et-fixed-header .logo_container{height:66px}.et_header_style_split #main-header.et-fixed-header .centered-inline-logo-wrap{width:66px;margin:-66px 0}.et_header_style_split .et-fixed-header .centered-inline-logo-wrap #logo{max-height:66px}.et_pb_svg_logo.et_header_style_split .et-fixed-header .centered-inline-logo-wrap #logo{height:66px}.et_header_style_slide .et-fixed-header #et-top-navigation,.et_header_style_fullscreen .et-fixed-header #et-top-navigation{padding:24px 0 24px 0!important}.et_fixed_nav #page-container .et-fixed-header#top-header{background-color:#0c71c3!important}.et_fixed_nav #page-container .et-fixed-header#top-header #et-secondary-nav li ul{background-color:#0c71c3}.et-fixed-header#main-header,.et-fixed-header#main-header .nav li ul,.et-fixed-header .et-search-form{background-color:#024a98}.et-fixed-header #top-menu a,.et-fixed-header #et_search_icon:before,.et-fixed-header #et_top_search .et-search-form input,.et-fixed-header .et_search_form_container input,.et-fixed-header .et_close_search_field:after,.et-fixed-header #et-top-navigation .et-cart-info{color:#ffffff!important}.et-fixed-header .et_search_form_container input::-moz-placeholder{color:#ffffff!important}.et-fixed-header .et_search_form_container input::-webkit-input-placeholder{color:#ffffff!important}.et-fixed-header .et_search_form_container input:-ms-input-placeholder{color:#ffffff!important}.et-fixed-header #top-menu li.current-menu-ancestor>a,.et-fixed-header #top-menu li.current-menu-item>a,.et-fixed-header #top-menu li.current_page_item>a{color:#ffffff!important}}@media only screen and (min-width:1350px){.et_pb_row{padding:27px 0}.et_pb_section{padding:54px 0}.single.et_pb_pagebuilder_layout.et_full_width_page .et_post_meta_wrapper{padding-top:81px}.et_pb_fullwidth_section{padding:0}}	h1,h2,h3,h4,h5,h6{font-family:'Open Sans',Helvetica,Arial,Lucida,sans-serif}body,input,textarea,select{font-family:'Open Sans',Helvetica,Arial,Lucida,sans-serif}.bt__newsletter{background-color:#fef7db;padding:20px;position:relative;margin-top:20px}h2.subscribe-form-title{text-align:center;font:23px helvetica neue,Arial,sans-serif;line-height:1.5}p.subscribe-form-subtitle{text-align:center;font:16px helvetica neue,Arial,sans-serif;line-height:1.5}.ginput_recaptcha>div{max-width:100%!important}.gform_legacy_markup_wrapper ul.gform_fields li.gfield{padding-right:0}.gform_legacy_markup_wrapper.gform_validation_error .gform_body ul li.gfield.gfield_error:not(.gf_left_half):not(.gf_right_half){max-width:none!important}.gform_legacy_markup_wrapper div.validation_error{border-bottom:2px solid #f5463b!important;border-top:2px solid #f5463b!important}.gform_legacy_markup_wrapper .gform_validation_errors{border:1px solid #f5463b!important}.gform_legacy_markup_wrapper .gfield_error .gfield_label,.gform_legacy_markup_wrapper .validation_message,.gform_legacy_markup_wrapper .gform_validation_errors>h2{color:#f5463b!important}.gform_legacy_markup_wrapper .gfield_required{color:#f5463b!important}.opt-in-text{font:11px helvetica neue,Arial,sans-serif}#gform_submit_button_7,#gform_submit_button_8,#gform_submit_button_9{cursor:pointer;background-color:#0078c1;border:1px solid #0078c1;color:#ffffff;display:block;width:100%;margin-bottom:0;text-align:center;cursor:pointer;font-size:16px;padding:16px;line-height:1;background-image:none;box-shadow:none;border-radius:3px;text-transform:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;-webkit-transition:all .1s ease-in-out;-moz-transition:all .1s ease-in-out;-ms-transition:all .1s ease-in-out;-o-transition:all .1s ease-in-out;transition:all .1s ease-in-out}.simple-site-map{display:none}.ctct-form-embed.form_0 .ctct-form-custom .ctct-form-button{background-color:#00aeef!important;box-shadow:none!important;border:none!important;font-size:20px;max-width:150px;margin-left:auto;font-weight:500}div.ctct-form-embed form.ctct-form-custom input.ctct-form-element{background-color:#EEEEEE!important;border:none!important;box-shadow:none!important}.ctct-form-field-checkbox .ctct-input-container{display:flex;justify-content:start;align-items:baseline;gap:10px}.ctct-form-field-checkbox .ctct-input-container label{display:block!important;font-size:15px}.et_pb_menu_0_tb_header.et_pb_menu ul li a{color:#0d1d41!important}.logos__list{gap:50px 60px}#theme-builder-area--et_header_layout>.theme-builder-area-content{display:none}.mega-menu:hover .sub-menu{transition-delay:0ms!important}.mega-menu .sub-menu{transition-delay:250ms!important}.et_pb_menu .et_pb_menu__menu>nav>ul>li.mega-menu{height:fit-content}.et_pb_menu--with-logo .et_pb_menu__menu>nav>ul>li>a{padding:5px 20px 5px 5px!important;height:fit-content}li.complimentary-consultation-btn{top:unset!important}.et_pb_menu--with-logo .et_pb_menu__menu>nav>ul>li.complimentary-consultation-btn>a{padding:16px 7px 7px 7px!important;margin-top:0!important}.et_pb_menu--style-left_aligned.et_pb_text_align_right .et_pb_menu__menu>nav>ul,.et_pb_menu--style-left_aligned.et_pb_text_align_right .et_pb_menu__wrap{align-items:center}.team__member-position{line-height:1.3;margin-top:8px;margin-bottom:4px}.st__the-content ol{list-style:numbers;margin-top:8px;margin-left:40px;margin-bottom:30px}.st__the-content ol li{font-size:1.125rem;line-height:1.5}.st__the-content ol li+li{margin-top:16px}div.st__the-content ol li{font-size:1rem;line-height:1.7}.search-results #main-content,.search-no-results #main-content{margin-top:180px}.search-no-results.et-db #et-boc .et-l .et_pb_menu_0_tb_header.et_pb_menu ul li a{color:#0d1d41!important}.search-no-results.et-db #et-boc .et-l .et_pb_section_1_tb_header.et_pb_section{background:#fff!important}.menu__inline{grid-auto-flow:column!important;gap:25px!important}.et_pb_section.et_pb_section_0_tb_body.et_pb_with_background.et_section_regular.section_has_divider.et_pb_bottom_divider,.et_pb_section.et_pb_section_0_tb_body.et_pb_with_background.et_section_regular.section_has_divider.et_pb_bottom_divider,.single-post #content-area{padding-top:240px}.et_pb_section_1_tb_header.et_pb_section.pa-fixed-header{background-color:#ffffff!important}.prov-menu-alt .complimentary-consultation-btn{border:solid 2px #0d1d41}div.et_pb_menu_0_tb_header.et_pb_menu .nav li ul{background-color:#004A98!important}.et-menu-nav li.mega-menu>ul>li>a:first-child{border-bottom:none}.et-menu-nav li.mega-menu li>a{width:max-content!important}.et_pb_row.et_pb_row_1_tb_header.et_pb_gutters3.et_pb_row--with-menu{padding-top:0;padding-bottom:0}.et_pb_menu--with-logo .et_pb_menu__menu>nav>ul>li>a{padding:58px 0}.et-menu-nav li.mega-menu>ul{padding:30px 20px;position:absolute!important;left:-14.75%!important;width:100vw;display:grid;justify-content:center;grid-template-columns:repeat(3,max-content)}.et_pb_menu_inner_container.clearfix{min-height:130px}ul.sub-menu{top:130px!important}.et_pb_bottom_inside_divider{background-image:unset!important}.icons__item:nth-child(3) .icons__item-icon{margin-bottom:11px}#main-content .et_pb_section_0.et_pb_section{padding-top:240px}.complimentary-consultation-btn{background:transparent;border:solid 2px white;color:white;padding-left:10px;padding-right:10px!important;height:52px;top:38px;margin-left:16px!important}.complimentary-consultation-btn a{padding-top:7px!important;padding-bottom:7px!important}.pa-fixed-header .complimentary-consultation-btn{border:solid 2px #0d1d41}.menu__inline{display:grid;grid-template-columns:repeat(2,max-content);justify-content:end;gap:40px}#rmp_menu_trigger-14875{display:none;background-color:rgba(0,0,0,.1)}#rmp_menu_trigger-14875:focus{background-color:rgba(0,0,0,.1)}#rmp_menu_trigger-14875:hover{background-color:rgba(0,0,0,.25)}#rmp_menu_trigger-14875.is-active{background-color:rgba(0,0,0,.5)}#rmp-container-14875{max-width:unset;width:100%;top:250px;background-color:unset}#rmp-menu-wrap-14875 .rmp-menu-item-link{font-size:18px;background-color:#0C71C3;height:60px;display:flex;align-items:center}#rmp-menu-wrap-14875 .rmp-menu-current-item .rmp-menu-item-link:hover{background-color:#0d1d41}#rmp-menu-wrap-14875 .rmp-menu-current-item .rmp-menu-item-link{background-color:#0C71C3}#rmp-menu-wrap-14875 .rmp-menu-item-link:hover{background-color:#0d1d41}#rmp-menu-14875 li+li{border-top:1px solid #fff}#rmp-menu-14875 .complimentary-consultation-btn{border:none;padding:0!important;margin:0!important}#rmp-menu-14875 .complimentary-consultation-btn a{background-color:#0d1d41}#rmp-menu-wrap-14875 .rmp-submenu .rmp-menu-item-link{background-color:#0a5a9c;display:grid}#rmp-menu-wrap-14875 .rmp-submenu .rmp-menu-item-link:hover{background-color:#0d1d41}#rmp-menu-wrap-14875 .rmp-submenu-depth-1 .rmp-menu-item-link{padding-left:7%}#rmp-menu-wrap-14875 .rmp-submenu-depth-2 .rmp-menu-item-link{padding-left:9%}#rmp-menu-14875>li>a>div.rmp-menu-subarrow{top:10px}@media(min-width:1254px){.prov-menu{top:100px!important}}@media (min-width:980px) and (max-width:1253px){.prov-menu{top:85px!important}}@media(max-width:1253px){.intro__title{margin-top:60px}}@media(max-width:1201px){.complimentary-consultation-btn{top:-32px}}@media(max-width:980px){.intro__title{font-size:2rem}.et_pb_section_1_tb_header{top:130px!important}.mobile_nav.closed{display:none}button#rmp_menu_trigger-14875{display:unset;top:162px}.menu__inline{justify-content:center}.menu__note{text-align:center;padding-bottom:10px}}@media(max-width:767px){.menu__inline{grid-template-columns:max-content}.menu__top-bar{padding-top:200px}}.prov-menu{background:transparent;-webkit-transition:background-color .5s ease-out;-moz-transition:background-color .5s ease-out;-o-transition:background-color .5s ease-out;transition:background-color .5s ease-out}.pa-fixed-header{background-color:#ffffff!important;-webkit-transition:background-color .5s ease-out;-moz-transition:background-color .5s ease-out;-o-transition:background-color .5s ease-out;transition:background-color .5s ease-out}.prov-menu.pa-fixed-header .et_pb_menu__logo img{content:url('/wp-content/uploads/2021/03/Provise-Signature.png')}.prov-menu.pa-fixed-header .et_pb_menu__menu>nav>ul>li>a{color:#0d1d41!important}.footer__link{display:block;text-decoration:underline;color:#004A98;width:max-content;margin:0 auto}.blueText{color:#024a98}#top-menu li{vertical-align:top}#top-menu li a{line-height:1.2em;text-align:center}@media (min-width:980px){.desktop-hide{display:none!important}.desktop-margin{margin-bottom:-155px!important}}@media (max-width:980px){.mobile-hide{display:none!important}.mobile-row{padding-top:0px;padding-bottom:0px}.mobile-row .et_pb_column{margin-bottom:0px!important}.blocks .et_pb_column{width:100%!important}.no-mobile-border{border:none!important}}.mauto{margin:auto!important}.mobile_menu_bar:before{color:#fff}.et_mobile_menu{background:#024a98!important;background-color:#024a98!important;border-top:3px solid #024a98}sup{vertical-align:super;font-size:medium}.list li{padding-bottom:10px}#header-img{background-image:linear-gradient(180deg,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.22) 100%),url(https://www.provise.com/wp-content/uploads/2020/04/retiree.jpg)!important}#header-img.prof-bkg{background-image:linear-gradient(180deg,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.22) 100%),url(https://www.provise.com/wp-content/uploads/2020/04/Professionals-provise.jpg)!important}#header-img.retire-bkg{background-image:linear-gradient(180deg,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.22) 100%),url(https://www.provise.com/wp-content/uploads/2020/05/shutterstock_553625719.jpg)!important;background-position:center}#header-img.biz-bkg{background-image:linear-gradient(180deg,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.22) 100%),url(https://www.provise.com/wp-content/uploads/2020/04/BusinessOwners.jpg)!important}#header-img.woman-bkg{background-image:linear-gradient(180deg,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.22) 100%),url(https://www.provise.com/wp-content/uploads/2020/04/Women.jpg)!important}#header-img.phys-bkg{background-image:linear-gradient(180deg,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0.22) 100%),url(https://www.provise.com/wp-content/uploads/2020/04/Physicians.jpg)!important}@media (max-width:1395px){.blocks h2{font-size:16px!important}}.jointoday_button a{color:#0c71c3!important;font-weight:600;padding:13px 16px!important;text-transform:uppercase;border-radius:0px;-webkit-border-radius:0px;-moz-border-radius:0px;display:block;transition:all .5s ease;-webkit-transition:all .5s ease;-moz-transition:all .5s ease;border:2px solid #fff;background:#ffffff}.jointoday_button a:hover{opacity:1!important;color:#0c71c3!important;background-color:#fff}.et-fixed-header #top-menu .jointoday_button a:hover{background-color:#fff;border:2px solid #fff;box-shadow:0px 5px 20px #aab9c3;-moz-box-shadow:0px 5px 20px #aab9c3;-webkit-box-shadow:0px 5px 20px #aab9c3}.et-fixed-header #top-menu .jointoday_button a{color:#0c71c3!important;background-color:#fff;box-shadow:0px 5px 20px #d6dee4;-moz-box-shadow:0px 5px 20px #d6dee4;-webkit-box-shadow:0px 5px 20px #d6dee4;border:2px solid #fff}.et-fixed-header.et_highlight_nav #top-menu .jointoday_button a{background-color:#fff;border:2px solid #fff;animation:highlight-nav .8s ease;-webkit-animation:highlight-nav .8s ease}#main-header.et-fixed-header.et_highlight_nav #top-menu .jointoday_button a:hover{background-color:#fff;border:2px solid #fff;box-shadow:0px 5px 20px #aab9c3;-moz-box-shadow:0px 5px 20px #aab9c3;-webkit-box-shadow:0px 5px 20px #aab9c3}@-webkit-keyframes highlight-nav{0%{-webkit-transform:scale(1);transform:scale(1)}50%{-webkit-transform:scale(1.2);transform:scale(1.2)}100%{-webkit-transform:scale(1);transform:scale(1)}}@keyframes highlight-nav{0%{-webkit-transform:scale(1);transform:scale(1)}50%{-webkit-transform:scale(1.2);transform:scale(1.2)}100%{-webkit-transform:scale(1);transform:scale(1)}}@media (max-width:980px){.et_mobile_menu li{text-align:center}.et_mobile_menu li a{border-bottom:none}.et_mobile_menu li a:hover{background-color:transparent}.jointoday_button a{border-bottom:2px solid #ff641c!important}#no-background{background-image:linear-gradient(105deg,#2b87da 0%,#29c4a9 100%)!important}.et_secondary_nav_only_menu #top-header{display:block!important}#et-secondary-menu,#et-secondary-nav{display:block!important}#main-header{top:60px!important;padding-top:30px!important}#logo{max-width:200px!important}}@media (max-width:1280px){#et-top-navigation{padding-left:20px!important}#logo{max-width:200px!important}}@media (max-width:1143px){#et-top-navigation{padding-left:20px!important}#logo{max-width:150px!important}}@media (max-width:1080px){#et-top-navigation{padding-left:10px!important}#logo{max-width:120px!important}}@media (max-width:1080px){#logo{max-width:200px!important}}body .featherlight .featherlight-content{max-width:90%}.gform_wrapper input.large,.gform_wrapper select,#input_1_4{border-radius:0px;overflow:hidden;border-width:2px;padding:16px 10!important;border-color:rgba(51,51,51,0.06);width:100%}#gform_submit_button_1,#gform_submit_button_3,#gform_submit_button_4,#gform_submit_button_5{color:#fff!important;border:2px solid #ff641c;padding:15px 20px;color:#ffffff!important;border-color:#0c71c3;background-color:#0c71c3;font-size:20px;width:100%}.gform_wrapper .gform_footer{padding:16px 0 10px;margin:16px 0 0;clear:both;width:100%}.super-index{z-index:9999999!important}.et_pb_blurb_extended .et_pb_blurb_description{font-size:18px!important;line-height:20px!important}#gform_wrapper_4 .gform_footer{margin-top:0px!important}#gform_confirmation_message_4 a{color:#fff!important;text-decoration:underline!important}#et-secondary-menu{float:none;margin:auto;text-align:center!important}@media (max-width:980px){#gform_wrapper_5 div.ginput_recaptcha{transform:scale(0.680);-webkit-transform:scale(0.680);transform-origin:0 0;-webkit-transform-origin:0 0}}div.ctct-form-embed div.ctct-form-defaults{padding:0!important}#logo{max-height:60px!important;max-width:200px!important}#et-top-navigation{padding-left:0px!important}</style></head>
+<body class="home page-template page-template-homepage-template page-template-homepage-template-php page page-id-6 et-tb-has-template et-tb-has-header et-tb-has-footer et_pb_button_helper_class et_cover_background et_pb_gutter osx et_pb_gutters3 et_pb_pagebuilder_layout et_no_sidebar et_divi_theme et-db">
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>			<button type="button"  aria-controls="rmp-container-14875" aria-label="Menu Trigger" id="rmp_menu_trigger-14875"  class="rmp_menu_trigger rmp-menu-trigger-boring rmp-mobile-device-menu">
+								<span class="rmp-trigger-box">
+									<span class="responsive-menu-pro-inner"></span>
+								</span>
+					</button>
+						<div id="rmp-container-14875" class="rmp-container rmp-container rmp-slide-left">
+				<div id="rmp-menu-wrap-14875" class="rmp-menu-wrap"><ul id="rmp-menu-14875" class="rmp-menu" role="menubar" aria-label="Mobile Menu"><li id="rmp-menu-item-2073" class="mega-menu menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children rmp-menu-item rmp-menu-item-has-children rmp-menu-top-level-item" role="none"><a  href="https://www.provise.com/about-us/"  class="rmp-menu-item-link"  role="menuitem"  >About Us<div class="rmp-menu-subarrow"><span class="rmp-font-icon dashicons dashicons-arrow-down-alt2 "></span></div></a><ul aria-label="About Us"
+            role="menu" data-depth="2"
+            class="rmp-submenu rmp-submenu-depth-1"><li id="rmp-menu-item-2201" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  href="https://www.provise.com/about-us/"  class="rmp-menu-item-link"  role="menuitem"  >About ProVise</a></li><li id="rmp-menu-item-2192" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  href="https://www.provise.com/our-team/"  class="rmp-menu-item-link"  role="menuitem"  >Meet Our Team</a></li><li id="rmp-menu-item-2200" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  href="https://www.provise.com/in-the-community/"  class="rmp-menu-item-link"  role="menuitem"  >In the Community</a></li><li id="rmp-menu-item-14954" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  href="https://www.provise.com/about-us/tampa/"  class="rmp-menu-item-link"  role="menuitem"  >Tampa</a></li><li id="rmp-menu-item-14955" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  href="https://www.provise.com/clearwater/"  class="rmp-menu-item-link"  role="menuitem"  >Clearwater</a></li><li id="rmp-menu-item-2074" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  href="https://www.provise.com/recognition/"  class="rmp-menu-item-link"  role="menuitem"  >Recognition</a></li><li id="rmp-menu-item-15281" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  href="https://www.provise.com/careers/"  class="rmp-menu-item-link"  role="menuitem"  >Careers</a></li></ul></li><li id="rmp-menu-item-14859" class="mega-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children rmp-menu-item rmp-menu-item-has-children rmp-menu-top-level-item" role="none"><a  class="rmp-menu-item-link"  role="menuitem"  >Our Services<div class="rmp-menu-subarrow"><span class="rmp-font-icon dashicons dashicons-arrow-down-alt2 "></span></div></a><ul aria-label="Our Services"
+            role="menu" data-depth="2"
+            class="rmp-submenu rmp-submenu-depth-1"><li id="rmp-menu-item-2705" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  href="https://www.provise.com/financial-planning/"  class="rmp-menu-item-link"  role="menuitem"  >Financial Planning</a></li><li id="rmp-menu-item-2077" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  href="https://www.provise.com/asset-protection/"  class="rmp-menu-item-link"  role="menuitem"  >Asset Protection</a></li><li id="rmp-menu-item-2082" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  href="https://www.provise.com/retirement-plan-consulting/"  class="rmp-menu-item-link"  role="menuitem"  >Retirement Plan Consulting</a></li><li id="rmp-menu-item-2453" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  href="https://www.provise.com/retirement-planning/"  class="rmp-menu-item-link"  role="menuitem"  >Retirement Planning</a></li><li id="rmp-menu-item-2078" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  href="https://www.provise.com/estate-and-trust-planning/"  class="rmp-menu-item-link"  role="menuitem"  >Estate and Trust Planning</a></li><li id="rmp-menu-item-2083" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  href="https://www.provise.com/personal-financial-officer/"  class="rmp-menu-item-link"  role="menuitem"  >Personal Financial Officer™</a></li><li id="rmp-menu-item-2076" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  href="https://www.provise.com/wealth-management/"  class="rmp-menu-item-link"  role="menuitem"  >Wealth Management</a></li><li id="rmp-menu-item-2079" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  href="https://www.provise.com/philanthropy-charitable-giving/"  class="rmp-menu-item-link"  role="menuitem"  >Philanthropy &#038; Charitable Giving</a></li><li id="rmp-menu-item-4038" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  href="https://www.provise.com/environmental-social-and-governance/"  class="rmp-menu-item-link"  role="menuitem"  >Environmental, Social and Governance</a></li></ul></li><li id="rmp-menu-item-2276" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-top-level-item" role="none"><a  href="https://www.provise.com/news-insights/"  class="rmp-menu-item-link"  role="menuitem"  >Insights</a></li><li id="rmp-menu-item-1379" class="mega-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children rmp-menu-item rmp-menu-item-has-children rmp-menu-top-level-item" role="none"><a  class="rmp-menu-item-link"  role="menuitem"  >Resources<div class="rmp-menu-subarrow"><span class="rmp-font-icon dashicons dashicons-arrow-down-alt2 "></span></div></a><ul aria-label="Resources"
+            role="menu" data-depth="2"
+            class="rmp-submenu rmp-submenu-depth-1"><li id="rmp-menu-item-2088" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  href="https://www.provise.com/new-client-forms/"  class="rmp-menu-item-link"  role="menuitem"  >New Client Forms</a></li><li id="rmp-menu-item-2087" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  href="https://www.provise.com/hurricane-info/"  class="rmp-menu-item-link"  role="menuitem"  >Hurricane Info</a></li><li id="rmp-menu-item-2086" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  href="https://www.provise.com/helpful-resources/"  class="rmp-menu-item-link"  role="menuitem"  >Helpful Resources</a></li><li id="rmp-menu-item-2085" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  href="https://www.provise.com/form-adv-2/"  class="rmp-menu-item-link"  role="menuitem"  >Form ADV</a></li></ul></li><li id="rmp-menu-item-14948" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-top-level-item" role="none"><a  href="https://www.provise.com/contact-us/"  class="rmp-menu-item-link"  role="menuitem"  >Contact Us</a></li><li id="rmp-menu-item-9343" class="complimentary-consultation-btn menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-top-level-item" role="none"><a  href="https://www.provise.com/complimentary-consultation/"  class="rmp-menu-item-link"  role="menuitem"  >Request Consultation</a></li></ul></div>			</div>
+			<div id="page-container">
+<div id="et-boc" class="et-boc">
+			
+		<header class="et-l et-l--header">
+			<div class="et_builder_inner_content et_pb_gutters3">
+		<div class="et_pb_section et_pb_section_0_tb_header menu__top-bar et_pb_with_background et_section_regular et_pb_section--fixed" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_0_tb_header et_pb_gutters1">
+				<div class="et_pb_column et_pb_column_3_4 et_pb_column_0_tb_header menu__note  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_button_module_wrapper et_pb_button_0_tb_header_wrapper  et_pb_module ">
+				<a class="et_pb_button et_pb_button_0_tb_header et_pb_bg_layout_dark" href="https://www.provise.com/important-disclosure-information/">Important disclosure</a>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_1_tb_header menu__inline  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_blurb et_pb_blurb_0_tb_header et_clickable  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_dark">
+				
+				
+				
+				
+				<div class="et_pb_blurb_content">
+					<div class="et_pb_main_blurb_image"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon"></span></span></div>
+					<div class="et_pb_blurb_container">
+						<h4 class="et_pb_module_header"><span>800-633-3049</span></h4>
+						
+					</div>
+				</div>
+			</div><div class="et_pb_button_module_wrapper et_pb_button_1_tb_header_wrapper et_pb_button_alignment_right et_pb_module ">
+				<a class="et_pb_button et_pb_button_1_tb_header et_pb_bg_layout_light" href="https://login.bdreporting.com/Auth/provise/SignIn">Client login</a>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div><div class="et_pb_section et_pb_section_1_tb_header prov-menu et_pb_with_background et_section_regular et_pb_section--fixed et_pb_section--with-menu" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_1_tb_header et_pb_gutters3 et_pb_row--with-menu">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_2_tb_header  et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column--with-menu">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_menu et_pb_menu_0_tb_header et_pb_bg_layout_light  et_pb_text_align_right et_dropdown_animation_fade et_pb_menu--with-logo et_pb_menu--style-left_aligned">
+					
+					
+					
+					
+					<div class="et_pb_menu_inner_container clearfix">
+						<div class="et_pb_menu__logo-wrap">
+			  <div class="et_pb_menu__logo">
+				<a href="https://www.provise.com/" ><img decoding="async" loading="lazy" width="600" height="167" src="https://www.provise.com/wp-content/uploads/2020/03/provise.png" alt="Financial Planners" srcset="https://www.provise.com/wp-content/uploads/2020/03/provise.png 600w, https://www.provise.com/wp-content/uploads/2020/03/provise-480x134.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 600px, 100vw" class="wp-image-12" /></a>
+			  </div>
+			</div>
+						<div class="et_pb_menu__wrap">
+							<div class="et_pb_menu__menu">
+								<nav class="et-menu-nav"><ul id="menu-primary-menu" class="et-menu nav"><li class="mega-menu et_pb_menu_page_id-1741 menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2073"><a href="https://www.provise.com/about-us/">About Us</a>
+<ul class="sub-menu">
+	<li class="et_pb_menu_page_id-1741 menu-item menu-item-type-post_type menu-item-object-page menu-item-2201"><a href="https://www.provise.com/about-us/">About ProVise</a></li>
+	<li class="et_pb_menu_page_id-2177 menu-item menu-item-type-post_type menu-item-object-page menu-item-2192"><a href="https://www.provise.com/our-team/">Meet Our Team</a></li>
+	<li class="et_pb_menu_page_id-2194 menu-item menu-item-type-post_type menu-item-object-page menu-item-2200"><a href="https://www.provise.com/in-the-community/">In the Community</a></li>
+	<li class="et_pb_menu_page_id-6728 menu-item menu-item-type-post_type menu-item-object-page menu-item-14954"><a href="https://www.provise.com/about-us/tampa/">Tampa</a></li>
+	<li class="et_pb_menu_page_id-6612 menu-item menu-item-type-post_type menu-item-object-page menu-item-14955"><a href="https://www.provise.com/clearwater/">Clearwater</a></li>
+	<li class="et_pb_menu_page_id-1984 menu-item menu-item-type-post_type menu-item-object-page menu-item-2074"><a href="https://www.provise.com/recognition/">Recognition</a></li>
+	<li class="et_pb_menu_page_id-15187 menu-item menu-item-type-post_type menu-item-object-page menu-item-15281"><a href="https://www.provise.com/careers/">Careers</a></li>
+</ul>
+</li>
+<li class="mega-menu et_pb_menu_page_id-14859 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-14859"><a>Our Services</a>
+<ul class="sub-menu">
+	<li class="et_pb_menu_page_id-2656 menu-item menu-item-type-post_type menu-item-object-page menu-item-2705"><a href="https://www.provise.com/financial-planning/">Financial Planning</a></li>
+	<li class="et_pb_menu_page_id-1926 menu-item menu-item-type-post_type menu-item-object-page menu-item-2077"><a href="https://www.provise.com/asset-protection/">Asset Protection</a></li>
+	<li class="et_pb_menu_page_id-1947 menu-item menu-item-type-post_type menu-item-object-page menu-item-2082"><a href="https://www.provise.com/retirement-plan-consulting/">Retirement Plan Consulting</a></li>
+	<li class="et_pb_menu_page_id-2448 menu-item menu-item-type-post_type menu-item-object-page menu-item-2453"><a href="https://www.provise.com/retirement-planning/">Retirement Planning</a></li>
+	<li class="et_pb_menu_page_id-1934 menu-item menu-item-type-post_type menu-item-object-page menu-item-2078"><a href="https://www.provise.com/estate-and-trust-planning/">Estate and Trust Planning</a></li>
+	<li class="et_pb_menu_page_id-2050 menu-item menu-item-type-post_type menu-item-object-page menu-item-2083"><a href="https://www.provise.com/personal-financial-officer/">Personal Financial Officer™</a></li>
+	<li class="et_pb_menu_page_id-1916 menu-item menu-item-type-post_type menu-item-object-page menu-item-2076"><a href="https://www.provise.com/wealth-management/">Wealth Management</a></li>
+	<li class="et_pb_menu_page_id-1942 menu-item menu-item-type-post_type menu-item-object-page menu-item-2079"><a href="https://www.provise.com/philanthropy-charitable-giving/">Philanthropy &#038; Charitable Giving</a></li>
+	<li class="et_pb_menu_page_id-2501 menu-item menu-item-type-post_type menu-item-object-page menu-item-4038"><a href="https://www.provise.com/environmental-social-and-governance/">Environmental, Social and Governance</a></li>
+</ul>
+</li>
+<li class="et_pb_menu_page_id-2255 menu-item menu-item-type-post_type menu-item-object-page menu-item-2276"><a href="https://www.provise.com/news-insights/">Insights</a></li>
+<li class="mega-menu et_pb_menu_page_id-1379 menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1379"><a>Resources</a>
+<ul class="sub-menu">
+	<li class="et_pb_menu_page_id-2014 menu-item menu-item-type-post_type menu-item-object-page menu-item-2088"><a href="https://www.provise.com/new-client-forms/">New Client Forms</a></li>
+	<li class="et_pb_menu_page_id-2032 menu-item menu-item-type-post_type menu-item-object-page menu-item-2087"><a href="https://www.provise.com/hurricane-info/">Hurricane Info</a></li>
+	<li class="et_pb_menu_page_id-2026 menu-item menu-item-type-post_type menu-item-object-page menu-item-2086"><a href="https://www.provise.com/helpful-resources/">Helpful Resources</a></li>
+	<li class="et_pb_menu_page_id-2020 menu-item menu-item-type-post_type menu-item-object-page menu-item-2085"><a href="https://www.provise.com/form-adv-2/">Form ADV</a></li>
+</ul>
+</li>
+<li class="et_pb_menu_page_id-2043 menu-item menu-item-type-post_type menu-item-object-page menu-item-14948"><a href="https://www.provise.com/contact-us/">Contact Us</a></li>
+<li class="complimentary-consultation-btn et_pb_menu_page_id-8326 menu-item menu-item-type-post_type menu-item-object-page menu-item-9343"><a href="https://www.provise.com/complimentary-consultation/">Request Consultation</a></li>
+</ul></nav>
+							</div>
+							
+							
+							<div class="et_mobile_nav_menu">
+				<div class="mobile_nav closed">
+					<span class="mobile_menu_bar"></span>
+				</div>
+			</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div>		</div>
+	</header>
+	<div id="et-main-area">
+	
+<main class="homepage">
+
+    <section class="intro">
+    <div class="intro__content" style="background-image: url(https://www.provise.com/wp-content/uploads/2022/04/AdobeStock_108455030.jpg)">
+      <h1 class="intro__title">Financial planning for YOUR life and lifestyle™</h1>
+            <div class="intro__list">
+                <span class="intro__item"><img class="intro__icon" src="https://www.provise.com/wp-content/plugins/provise-templates/assets/check-icon.png"/>Fiduciaries</span>
+                <span class="intro__item"><img class="intro__icon" src="https://www.provise.com/wp-content/plugins/provise-templates/assets/check-icon.png"/>Money-back guarantee on financial plans</span>
+                <span class="intro__item"><img class="intro__icon" src="https://www.provise.com/wp-content/plugins/provise-templates/assets/check-icon.png"/>35+ Years of Experience</span>
+              </div>
+          </div>
+
+        <div class="intro__cta">
+      <div class="intro__cta-info wrap">
+        <div class="intro__cta-info-container">
+                    <p class="intro__cta-title">Are you financially prepared for retirement?</p>
+            
+                    <p class="intro__cta-content">Take our online quiz to learn how prepared you are for your golden years.</p>
+                  </div>
+
+                <a class="homepage__btn intro__cta-btn" href="https://www.provise.com/retirement-readiness-survey/" target="_blank">Take survey</a>
+              </div>
+      
+    </div>
+      </section>
+  
+    <section class="icons">
+    <div class="icons__wrapper wrap">
+            <h2 class="icons__title">Financial planning is not one big thing. It is hundreds of little things.™</h2>
+      
+            <div class="icons__content"><p>ProVise Management Group, LLC is a nationally recognized, fee-based financial planning and investment management firm with offices in Tampa and Clearwater, Florida.* With over three decades of experience, we are ready to help you step into the financial freedom you deserve with a range of financial services personalized to your needs.</p>
+</div>
+      
+            <div class="icons__list">
+                <a class="icons__item" href="https://www.provise.com/financial-planning/">
+                    <img class="icons__item-icon" src="https://www.provise.com/wp-content/uploads/2022/04/financial-planning.png" alt="Icon for Financial planning" />
+                    
+                    <h3 class="icons__item-name">Financial planning</h3>
+          
+                    <p class="icons__item-description">Financial planning is the key to financial success and stability.</p>
+          
+        </a>
+                <a class="icons__item" href="https://www.provise.com/retirement-planning/">
+                    <img class="icons__item-icon" src="https://www.provise.com/wp-content/uploads/2022/04/retirement-planning.png" alt="Icon for Retirement planning" />
+                    
+                    <h3 class="icons__item-name">Retirement planning</h3>
+          
+                    <p class="icons__item-description">Every retirement plan is personalized to each individual’s needs, goals and values.</p>
+          
+        </a>
+                <a class="icons__item" href="https://www.provise.com/wealth-management/">
+                    <img class="icons__item-icon" src="https://www.provise.com/wp-content/uploads/2022/04/wealth-management.png" alt="Icon for Wealth management" />
+                    
+                    <h3 class="icons__item-name">Wealth management</h3>
+          
+                    <p class="icons__item-description">Wealth management is a holistic approach to managing your finances.</p>
+          
+        </a>
+              </div>
+
+          </div>
+  </section>
+  
+    <section class="number">
+    <div class="number__wrapper wrap">
+      <div class="number__info">
+                <h2 class="number__title">Are you uneasy about your financial future?</h2>
+        
+                <div class="number__content"><p>Do you find yourself feeling anxious about retirement and the unexpected expenses that may come up during those golden years? If this sounds like you, reach out to one of our Tampa Bay locations and we’ll walk you through your financial roadmap and create a customized strategy specific to your current and future goals.</p>
+</div>
+                
+                <div class="number__btns">
+                    <a class="homepage__btn homepage__btn--alt number__btn" href="https://www.provise.com/about-us/tampa/">Tampa location</a>
+                    <a class="homepage__btn homepage__btn--alt number__btn" href="https://www.provise.com/clearwater/">Clearwater location</a>
+                  </div>
+              </div>
+      
+            <div class="number__data">
+                <div class="number__data-container">
+          <span class="number__data-value">77</span>
+          <span class="number__data-percentage">%</span>
+        </div>
+                
+                <p class="number__data-text">of Americans are anxious about their financial situation¹</p>
+              </div>
+          </div>
+  </section>
+  
+    <section class="cta">
+    <div class="cta__wrapper wrap">
+            <h2 class="cta__title">Our money-back guarantee on financial plans</h2>
+      
+            <div class="cta__content"><p>ProVise Management Group has been helping people make their financial goals a reality for more than 35 years.<br />
+We are so committed to client satisfaction that we offer a money-back guarantee on all written financial plans.</p>
+<p><strong>If you’re unhappy with your plan for any reason, simply return it. We’ll refund 100% of the fee.</strong><br />
+<strong>Simple as that.</strong></p>
+</div>
+      
+            <a class="homepage__btn homepage__btn--alt2 cta__button" href="https://www.provise.com/complimentary-consultation/">Request consultation</a>
+          </div>
+  </section>
+  
+    <section class="team">
+    <div class="team__wrapper wrap">
+            <h2 class="team__title">Serving Tampa Bay and beyond since 1986</h2>
+      
+            <div class="team__content"><p>At ProVise, we have an entire team of designated CERTIFIED FINANCIAL PLANNER™ professionals dedicated to advising clients on the best financial strategies to help them reach their goals.</p>
+</div>
+      
+            <div class="team__list splide">
+        <div class="splide__track">
+          <div class="splide__list">
+                        <a href="https://www.provise.com/v-raymond-ferrara-cfp/" class="team__member splide__slide">
+              <img src="https://www.provise.com/wp-content/uploads/2022/04/Ray.jpg" alt="Photo of V. Raymond Ferrara, CFP®">
+                            <div class="team__member-info">
+                                <h3 class="team__member-name">V. Raymond Ferrara, CFP®</h3>
+                      
+                                <span class="team__member-position">Executive Chair, Chief Compliance Officer</span>
+                              </div>
+                          </a>
+                        <a href="https://www.provise.com/eric-r-ebbert/" class="team__member splide__slide">
+              <img src="https://www.provise.com/wp-content/uploads/2022/04/Eric.jpg" alt="Photo of Eric R. Ebbert, CFP®, MBA">
+                            <div class="team__member-info">
+                                <h3 class="team__member-name">Eric R. Ebbert, CFP®, MBA</h3>
+                      
+                                <span class="team__member-position">CEO</span>
+                              </div>
+                          </a>
+                        <a href="https://www.provise.com/jon-brethauer/" class="team__member splide__slide">
+              <img src="https://www.provise.com/wp-content/uploads/2022/04/Jon.jpg" alt="Photo of Jon Brethauer, CFP®, AIF®, CPFA, MBA">
+                            <div class="team__member-info">
+                                <h3 class="team__member-name">Jon Brethauer, CFP®, AIF®, CPFA, MBA</h3>
+                      
+                                <span class="team__member-position">President</span>
+                              </div>
+                          </a>
+                        <a href="https://www.provise.com/nancy-croy/" class="team__member splide__slide">
+              <img src="https://www.provise.com/wp-content/uploads/2021/03/Nancy.jpg" alt="Photo of Nancy Croy Ramey, CFP®, MBA">
+                            <div class="team__member-info">
+                                <h3 class="team__member-name">Nancy Croy Ramey, CFP®, MBA</h3>
+                      
+                                <span class="team__member-position">Executive Vice President & CFO</span>
+                              </div>
+                          </a>
+                        <a href="https://www.provise.com/shane-ohara/" class="team__member splide__slide">
+              <img src="https://www.provise.com/wp-content/uploads/2021/03/Shane.jpg" alt="Photo of Shane O’Hara, CFP®">
+                            <div class="team__member-info">
+                                <h3 class="team__member-name">Shane O’Hara, CFP®</h3>
+                      
+                                <span class="team__member-position">Executive Vice President, Senior Financial Planner</span>
+                              </div>
+                          </a>
+                        <a href="https://www.provise.com/susan-washburn/" class="team__member splide__slide">
+              <img src="https://www.provise.com/wp-content/uploads/2021/03/Susan.jpg" alt="Photo of Susan Washburn, CFP®, JD">
+                            <div class="team__member-info">
+                                <h3 class="team__member-name">Susan Washburn, CFP®, JD</h3>
+                      
+                                <span class="team__member-position">Senior Financial Planner</span>
+                              </div>
+                          </a>
+                        <a href="https://www.provise.com/sandy-risgaard/" class="team__member splide__slide">
+              <img src="https://www.provise.com/wp-content/uploads/2021/03/Sandy.jpg" alt="Photo of Sandy Risgaard, CFP®">
+                            <div class="team__member-info">
+                                <h3 class="team__member-name">Sandy Risgaard, CFP®</h3>
+                      
+                                <span class="team__member-position">Senior Financial Planner</span>
+                              </div>
+                          </a>
+                        <a href="https://www.provise.com/russell-campbell/" class="team__member splide__slide">
+              <img src="https://www.provise.com/wp-content/uploads/2021/03/Russ.jpg" alt="Photo of Russell J. Campbell, CFP®, CIMA®">
+                            <div class="team__member-info">
+                                <h3 class="team__member-name">Russell J. Campbell, CFP®, CIMA®</h3>
+                      
+                                <span class="team__member-position">Senior Financial Planner</span>
+                              </div>
+                          </a>
+                        <a href="https://www.provise.com/paul-h-auslander/" class="team__member splide__slide">
+              <img src="https://www.provise.com/wp-content/uploads/2021/03/Paul.jpg" alt="Photo of Paul H. Auslander, CFP®">
+                            <div class="team__member-info">
+                                <h3 class="team__member-name">Paul H. Auslander, CFP®</h3>
+                      
+                                <span class="team__member-position">Director of Financial Planning</span>
+                              </div>
+                          </a>
+                        <a href="https://www.provise.com/steve-athanassie/" class="team__member splide__slide">
+              <img src="https://www.provise.com/wp-content/uploads/2021/03/Steve-A..jpg" alt="Photo of Steve Athanassie, CFP®, AIFA®, CPFA">
+                            <div class="team__member-info">
+                                <h3 class="team__member-name">Steve Athanassie, CFP®, AIFA®, CPFA</h3>
+                      
+                                <span class="team__member-position">Director of Private Wealth Management</span>
+                              </div>
+                          </a>
+                        <a href="https://www.provise.com/steve-csenge/" class="team__member splide__slide">
+              <img src="https://www.provise.com/wp-content/uploads/2021/03/Steve-C..jpg" alt="Photo of Stephen J. Csenge, CFP®, AIF®">
+                            <div class="team__member-info">
+                                <h3 class="team__member-name">Stephen J. Csenge, CFP®, AIF®</h3>
+                      
+                                <span class="team__member-position">Senior Financial Planner</span>
+                              </div>
+                          </a>
+                        <a href="https://www.provise.com/daniel-mannix/" class="team__member splide__slide">
+              <img src="https://www.provise.com/wp-content/uploads/2021/03/Daniel-copy.jpg" alt="Photo of Daniel Mannix, CFA®">
+                            <div class="team__member-info">
+                                <h3 class="team__member-name">Daniel Mannix, CFA®</h3>
+                      
+                                <span class="team__member-position">Portfolio Manager</span>
+                              </div>
+                          </a>
+                        <a href="https://www.provise.com/our-team/tom-harrington-2/" class="team__member splide__slide">
+              <img src="https://www.provise.com/wp-content/uploads/2021/12/Tom-Harrington.jpg" alt="Photo of Tom Harrington, CFP®, AIF®, CRPS®">
+                            <div class="team__member-info">
+                                <h3 class="team__member-name">Tom Harrington, CFP®, AIF®, CRPS®</h3>
+                      
+                                <span class="team__member-position">Retirement Plan Advisor</span>
+                              </div>
+                          </a>
+                        <a href="https://www.provise.com/oscar-skjaerpe/" class="team__member splide__slide">
+              <img src="https://www.provise.com/wp-content/uploads/2021/03/Oscar.jpg" alt="Photo of Oscar Skjaerpe, CFP®">
+                            <div class="team__member-info">
+                                <h3 class="team__member-name">Oscar Skjaerpe, CFP®</h3>
+                      
+                                <span class="team__member-position">Financial Planner</span>
+                              </div>
+                          </a>
+                        <a href="https://www.provise.com/holly-harman/" class="team__member splide__slide">
+              <img src="https://www.provise.com/wp-content/uploads/2021/03/Holly.jpg" alt="Photo of Holly Harman, FPQP™">
+                            <div class="team__member-info">
+                                <h3 class="team__member-name">Holly Harman, FPQP™</h3>
+                      
+                                <span class="team__member-position">Financial Planning Associate</span>
+                              </div>
+                          </a>
+                        <a href="https://www.provise.com/peter-seriano-cfp/" class="team__member splide__slide">
+              <img src="https://www.provise.com/wp-content/uploads/2022/07/Peter-Seriano-ProVise.jpg" alt="Photo of Peter Seriano, CFP®">
+                            <div class="team__member-info">
+                                <h3 class="team__member-name">Peter Seriano, CFP®</h3>
+                      
+                                <span class="team__member-position">Financial Planner</span>
+                              </div>
+                          </a>
+                      </div>
+        </div>
+
+        <div class="splide__arrows team__arrows">
+          <a role="button" class="splide__arrow splide__arrow--prev team__arrow-left" aria-label="Go to last slide"><img src="https://www.provise.com/wp-content/plugins/provise-templates/assets/arrow.png"></a>
+          <a role="button" class="splide__arrow splide__arrow--next team__arrow-right" aria-label="Next slide"><img src="https://www.provise.com/wp-content/plugins/provise-templates/assets/arrow.png"></a>
+        </div>
+
+      </div>
+      
+            <a class="homepage__btn homepage__btn--alt team__button" href="https://www.provise.com/our-team/">Meet the team</a>
+          </div>
+  </section>
+  
+    <section class="logos">
+    <div class="logos__wrapper wrap">
+            <h2 class="logos__title">ProVise is recognized by</h2>
+      
+            <div class="logos__list">
+                <a role="button">
+          <img class="logos__item" src="https://www.provise.com/wp-content/uploads/2022/04/Recognition-Logos-1.png" alt="Recognition Logos 1" />
+        </a>
+                        <a href="https://www.provise.com/provise-ranked-top-local-investment-firms/">
+          <img class="logos__item" src="https://www.provise.com/wp-content/uploads/2022/04/Recognition-Logos-3.png" alt="Recognition Logos 3" />
+        </a>
+                        <a role="button">
+          <img class="logos__item" src="https://www.provise.com/wp-content/uploads/2022/04/Recognition-Logos-4.png" alt="Recognition Logos 4" />
+        </a>
+                        <a role="button">
+          <img class="logos__item" src="https://www.provise.com/wp-content/uploads/2022/04/Recognition-Logos-5.png" alt="Recognition Logos 5" />
+        </a>
+                        <a role="button">
+          <img class="logos__item" src="https://www.provise.com/wp-content/uploads/2022/04/Recognition-Logos-6.png" alt="Recognition Logos 6" />
+        </a>
+                        <a role="button">
+          <img class="logos__item" src="https://www.provise.com/wp-content/uploads/2022/11/V.-Raymond-Ferrara71-e1668703841158.png" alt="V. Raymond Ferrara[71]" />
+        </a>
+                      </div>
+          </div>
+  </section>
+  
+    <section class="simple">
+    <div class="simple__wrapper wrap">
+            <h2 class="simple__title">Schedule a Complimentary Consultation with CERTIFIED FINANCIAL PLANNER™</h2>
+      
+            <a class="homepage__btn homepage__btn--alt2 simple__btn" href="https://www.provise.com/complimentary-consultation/">Schedule now</a>
+          </div>
+  </section>
+  
+</main>
+
+	<footer class="et-l et-l--footer">
+			<div class="et_builder_inner_content et_pb_gutters3"><div class="et_pb_section et_pb_section_0_tb_footer et_pb_with_background et_section_regular" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_row et_pb_row_0_tb_footer">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_0_tb_footer  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_image et_pb_image_0_tb_footer">
+				
+				
+				
+				
+				<span class="et_pb_image_wrap "><img decoding="async" loading="lazy" width="1072" height="302" src="https://www.provise.com/wp-content/uploads/2020/03/Provise-Color.png" alt="ProVise Management Group" title="" srcset="https://www.provise.com/wp-content/uploads/2020/03/Provise-Color.png 1072w, https://www.provise.com/wp-content/uploads/2020/03/Provise-Color-980x276.png 980w, https://www.provise.com/wp-content/uploads/2020/03/Provise-Color-480x135.png 480w" sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) and (max-width: 980px) 980px, (min-width: 981px) 1072px, 100vw" class="wp-image-1411" /></span>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_1_tb_footer et_pb_gutters2">
+				<div class="et_pb_column et_pb_column_1_4 et_pb_column_1_tb_footer  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_0_tb_footer  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><p><a href="https://www.provise.com/about-us/">About Us</a><br /><a href="https://www.provise.com/professionals/">Financial Planning</a><br /><a href="https://www.provise.com/wealth-management/">Wealth Management</a><br /><a href="https://www.provise.com/estate-and-trust-planning/">Estate Planning</a><br /><a href="https://www.provise.com/asset-protection/">Asset Protection</a><br /><a href="https://www.provise.com/personal-financial-officer/">Personal Financial Officer</a><br /><a href="https://www.provise.com/retirement-plan-consulting/">Retirement Plan Consulting</a><br /><a href="https://www.provise.com/contact-us/">Contact Us</a><br /><a href="https://www.provise.com/privacy-policy/">Privacy Policy</a></p></div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_2_tb_footer  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_blurb et_pb_blurb_0_tb_footer  et_pb_text_align_left  et_pb_blurb_position_top et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_blurb_content">
+					
+					<div class="et_pb_blurb_container">
+						<h4 class="et_pb_module_header"><span>Clearwater</span></h4>
+						<div class="et_pb_blurb_description">611 Druid Road East, Suite 105<br />
+Clearwater, FL 33756<br />
+Ph: 727-441-9022<br />
+Fx: 727-449-1625</div>
+					</div>
+				</div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_3_tb_footer  et_pb_css_mix_blend_mode_passthrough">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_blurb et_pb_blurb_1_tb_footer  et_pb_text_align_left  et_pb_blurb_position_top et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_blurb_content">
+					
+					<div class="et_pb_blurb_container">
+						<h4 class="et_pb_module_header"><span>Tampa</span></h4>
+						<div class="et_pb_blurb_description"><p>4350 W. Cypress Street, Suite 225<br />Tampa, FL 33607<br />Ph: 813-405-4846<br />Fx: 813-415-3407</p></div>
+					</div>
+				</div>
+			</div>
+			</div><div class="et_pb_column et_pb_column_1_4 et_pb_column_4_tb_footer  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_blurb et_pb_blurb_2_tb_footer  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_blurb_content">
+					<div class="et_pb_main_blurb_image"><a href="tel:800-633-3049"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon et-pb-icon-circle"></span></span></a></div>
+					<div class="et_pb_blurb_container">
+						<h4 class="et_pb_module_header"><a href="tel:800-633-3049">800-633-3049</a></h4>
+						
+					</div>
+				</div>
+			</div><div class="et_pb_module et_pb_blurb et_pb_blurb_3_tb_footer  et_pb_text_align_left  et_pb_blurb_position_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_blurb_content">
+					<div class="et_pb_main_blurb_image"><a href="mailto:info@provise.com"><span class="et_pb_image_wrap"><span class="et-waypoint et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon et-pb-icon-circle"></span></span></a></div>
+					<div class="et_pb_blurb_container">
+						<h4 class="et_pb_module_header"><a href="mailto:info@provise.com">info@provise.com</a></h4>
+						
+					</div>
+				</div>
+			</div><ul class="et_pb_module et_pb_social_media_follow et_pb_social_media_follow_0_tb_footer clearfix  et_pb_bg_layout_light">
+				
+				
+				
+				
+				<li
+            class='et_pb_social_media_follow_network_0_tb_footer et_pb_social_icon et_pb_social_network_link  et-social-facebook'><a
+              href='https://www.facebook.com/ProViseManagementGroupLlc'
+              class='icon et_pb_with_border'
+              title='Follow on Facebook'
+               target="_blank"><span
+                class='et_pb_social_media_follow_network_name'
+                aria-hidden='true'
+                >Follow</span></a></li><li
+            class='et_pb_social_media_follow_network_1_tb_footer et_pb_social_icon et_pb_social_network_link  et-social-twitter'><a
+              href='https://twitter.com/pro_vise'
+              class='icon et_pb_with_border'
+              title='Follow on Twitter'
+               target="_blank"><span
+                class='et_pb_social_media_follow_network_name'
+                aria-hidden='true'
+                >Follow</span></a></li><li
+            class='et_pb_social_media_follow_network_2_tb_footer et_pb_social_icon et_pb_social_network_link  et-social-linkedin'><a
+              href='https://www.linkedin.com/company/provise-management-group-llc-/?trk=top_nav_home'
+              class='icon et_pb_with_border'
+              title='Follow on LinkedIn'
+               target="_blank"><span
+                class='et_pb_social_media_follow_network_name'
+                aria-hidden='true'
+                >Follow</span></a></li><li
+            class='et_pb_social_media_follow_network_3_tb_footer et_pb_social_icon et_pb_social_network_link  et-social-instagram'><a
+              href='https://www.instagram.com/provisemanagement/'
+              class='icon et_pb_with_border'
+              title='Follow on Instagram'
+               target="_blank"><span
+                class='et_pb_social_media_follow_network_name'
+                aria-hidden='true'
+                >Follow</span></a></li>
+			</ul><div class="et_pb_button_module_wrapper et_pb_button_0_tb_footer_wrapper  et_pb_module ">
+				<a class="et_pb_button et_pb_button_0_tb_footer et_pb_bg_layout_light" href="https://www.provise.com/formcrs_03292023/" target="_blank">FORM CRS</a>
+			</div><div class="et_pb_module et_pb_text et_pb_text_1_tb_footer  et_pb_text_align_left et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><a href="https://brokercheck.finra.org/" target="_blank" rel="noopener noreferrer">Check the background of ProVise on FINRA&#8217;s BrokerCheck</a></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div><div class="et_pb_row et_pb_row_2_tb_footer">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_5_tb_footer  et_pb_css_mix_blend_mode_passthrough et-last-child">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_text et_pb_text_2_tb_footer  et_pb_text_align_center et_pb_bg_layout_light">
+				
+				
+				
+				
+				<div class="et_pb_text_inner"><p><span>¹</span>77% of Americans are anxious about their financial situation—here’s how to take control. (2021). Retrieved February 17, 2022, from <a href="https://www.cnbc.com/select/how-to-take-control-of-your-finances/">https://www.cnbc.com/select/how-to-take-control-of-your-finances/</a></p></div>
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div>		</div>
+	</footer>
+		</div>
+
+			
+		</div>
+		</div>
+
+			<!--googleoff: all--><div id="cookie-law-info-bar" data-nosnippet="true"><span><div class="cli-bar-container cli-style-v2"><div class="cli-bar-message">We use cookies on our website to give you the most relevant experience by remembering your preferences and repeat visits. By clicking “Ok”, you consent to the use of ALL the cookies.</div><div class="cli-bar-btn_container"><a id="wt-cli-accept-all-btn" role='button' data-cli_action="accept_all" class="wt-cli-element medium cli-plugin-button wt-cli-accept-all-btn cookie_action_close_header cli_action_button">Ok</a></div></div></span></div><div id="cookie-law-info-again" data-nosnippet="true"><span id="cookie_hdr_showagain">Manage consent</span></div><div class="cli-modal" data-nosnippet="true" id="cliSettingsPopup" tabindex="-1" role="dialog" aria-labelledby="cliSettingsPopup" aria-hidden="true">
+  <div class="cli-modal-dialog" role="document">
+	<div class="cli-modal-content cli-bar-popup">
+		  <button type="button" class="cli-modal-close" id="cliModalClose">
+			<svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"></path><path d="M0 0h24v24h-24z" fill="none"></path></svg>
+			<span class="wt-cli-sr-only">Close</span>
+		  </button>
+		  <div class="cli-modal-body">
+			<div class="cli-container-fluid cli-tab-container">
+	<div class="cli-row">
+		<div class="cli-col-12 cli-align-items-stretch cli-px-0">
+			<div class="cli-privacy-overview">
+				<h4>Privacy Overview</h4>				<div class="cli-privacy-content">
+					<div class="cli-privacy-content-text">This website uses cookies to improve your experience while you navigate through the website. Out of these, the cookies that are categorized as necessary are stored on your browser as they are essential for the working of basic functionalities of the website. We also use third-party cookies that help us analyze and understand how you use this website. These cookies will be stored in your browser only with your consent. You also have the option to opt-out of these cookies. But opting out of some of these cookies may affect your browsing experience.</div>
+				</div>
+				<a class="cli-privacy-readmore" aria-label="Show more" role="button" data-readmore-text="Show more" data-readless-text="Show less"></a>			</div>
+		</div>
+		<div class="cli-col-12 cli-align-items-stretch cli-px-0 cli-tab-section-container">
+												<div class="cli-tab-section">
+						<div class="cli-tab-header">
+							<a role="button" tabindex="0" class="cli-nav-link cli-settings-mobile" data-target="necessary" data-toggle="cli-toggle-tab">
+								Necessary							</a>
+															<div class="wt-cli-necessary-checkbox">
+									<input type="checkbox" class="cli-user-preference-checkbox"  id="wt-cli-checkbox-necessary" data-id="checkbox-necessary" checked="checked"  />
+									<label class="form-check-label" for="wt-cli-checkbox-necessary">Necessary</label>
+								</div>
+								<span class="cli-necessary-caption">Always Enabled</span>
+													</div>
+						<div class="cli-tab-content">
+							<div class="cli-tab-pane cli-fade" data-id="necessary">
+								<div class="wt-cli-cookie-description">
+									Necessary cookies are absolutely essential for the website to function properly. This category only includes cookies that ensures basic functionalities and security features of the website. These cookies do not store any personal information.								</div>
+							</div>
+						</div>
+					</div>
+																	<div class="cli-tab-section">
+						<div class="cli-tab-header">
+							<a role="button" tabindex="0" class="cli-nav-link cli-settings-mobile" data-target="non-necessary" data-toggle="cli-toggle-tab">
+								Non-necessary							</a>
+															<div class="cli-switch">
+									<input type="checkbox" id="wt-cli-checkbox-non-necessary" class="cli-user-preference-checkbox"  data-id="checkbox-non-necessary" checked='checked' />
+									<label for="wt-cli-checkbox-non-necessary" class="cli-slider" data-cli-enable="Enabled" data-cli-disable="Disabled"><span class="wt-cli-sr-only">Non-necessary</span></label>
+								</div>
+													</div>
+						<div class="cli-tab-content">
+							<div class="cli-tab-pane cli-fade" data-id="non-necessary">
+								<div class="wt-cli-cookie-description">
+									Any cookies that may not be particularly necessary for the website to function and is used specifically to collect user personal data via analytics, ads, other embedded contents are termed as non-necessary cookies. It is mandatory to procure user consent prior to running these cookies on your website.								</div>
+							</div>
+						</div>
+					</div>
+										</div>
+	</div>
+</div>
+		  </div>
+		  <div class="cli-modal-footer">
+			<div class="wt-cli-element cli-container-fluid cli-tab-container">
+				<div class="cli-row">
+					<div class="cli-col-12 cli-align-items-stretch cli-px-0">
+						<div class="cli-tab-footer wt-cli-privacy-overview-actions">
+						
+															<a id="wt-cli-privacy-save-btn" role="button" tabindex="0" data-cli-action="accept" class="wt-cli-privacy-btn cli_setting_save_button wt-cli-privacy-accept-btn cli-btn">SAVE &amp; ACCEPT</a>
+													</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+<div class="cli-modal-backdrop cli-fade cli-settings-overlay"></div>
+<div class="cli-modal-backdrop cli-fade cli-popupbar-overlay"></div>
+<!--googleon: all-->			<script type="text/javascript">
+			(function( $ ) {		  "use strict";		
+				$(function() {
+					$('.menu-item-type-custom > a').each(function() {
+						if ($(this).attr('href') == '#') {
+							$(this).replaceWith('<span>' + $(this).text() + '</span>');
+						}
+					});
+				});
+			}(jQuery));
+			</script>
+			    <!-- Meta Pixel Event Code -->
+    <script type='text/javascript'>
+        document.addEventListener( 'wpcf7mailsent', function( event ) {
+        if( "fb_pxl_code" in event.detail.apiResponse){
+          eval(event.detail.apiResponse.fb_pxl_code);
+        }
+      }, false );
+    </script>
+    <!-- End Meta Pixel Event Code -->
+    <div id='fb-pxl-ajax-code'></div>	<script type="text/javascript">
+				var et_link_options_data = [{"class":"et_pb_blurb_0_tb_header","url":"tel:800-633-3049","target":"_self"}];
+			</script>
+	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TG3BZ8C" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script>	
+$(document).ready(function(){
+    $(".prof").hover(function(){
+        $("#header-img").toggleClass("prof-bkg");
+    });
+});
+	
+$(document).ready(function(){
+    $(".retire").hover(function(){
+        $("#header-img").toggleClass("retire-bkg");
+    });
+});
+	
+	$(document).ready(function(){
+    $(".biz").hover(function(){
+        $("#header-img").toggleClass("biz-bkg");
+    });
+});
+	$(document).ready(function(){
+    $(".woman").hover(function(){
+        $("#header-img").toggleClass("woman-bkg");
+    });
+});
+	$(document).ready(function(){
+    $(".phys").hover(function(){
+        $("#header-img").toggleClass("phys-bkg");
+    });
+});
+	
+	
+	
+</script>
+
+
+
+<script> var _ctct_m = "7a343ecc7fec10e5d143a855d173824b"; </script>
+
+<script id="signupScript" src="//static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js" async defer></script>
+
+<script type="text/javascript">
+(function (d, t) {
+var pp = d.createElement(t), s = d.getElementsByTagName(t)[0];
+pp.src = '//app.pageproofer.com/embed/f36ec73a-6958-554b-a44a-96ee00731589';
+pp.type = 'text/javascript';
+pp.async = true;
+s.parentNode.insertBefore(pp, s);
+})(document, 'script');
+</script>
+
+<script type='text/javascript' id='rmp_menu_scripts-js-extra'>
+/* <![CDATA[ */
+var rmp_menu = {"ajaxURL":"https:\/\/www.provise.com\/wp-admin\/admin-ajax.php","wp_nonce":"c316a48cc2","menu":[{"menu_theme":"Default","theme_type":"default","theme_location_menu":"0","submenu_submenu_arrow_width":"40","submenu_submenu_arrow_width_unit":"px","submenu_submenu_arrow_height":"39","submenu_submenu_arrow_height_unit":"px","submenu_arrow_position":"right","submenu_sub_arrow_background_colour":"","submenu_sub_arrow_background_hover_colour":"","submenu_sub_arrow_background_colour_active":"","submenu_sub_arrow_background_hover_colour_active":"","submenu_sub_arrow_border_width":"","submenu_sub_arrow_border_width_unit":"px","submenu_sub_arrow_border_colour":"#1d4354","submenu_sub_arrow_border_hover_colour":"#3f3f3f","submenu_sub_arrow_border_colour_active":"#1d4354","submenu_sub_arrow_border_hover_colour_active":"#3f3f3f","submenu_sub_arrow_shape_colour":"#fff","submenu_sub_arrow_shape_hover_colour":"#fff","submenu_sub_arrow_shape_colour_active":"#fff","submenu_sub_arrow_shape_hover_colour_active":"#fff","use_header_bar":"off","header_bar_items_order":{"logo":"off","title":"on","additional content":"off","menu":"on","search":"off"},"header_bar_title":"Responsive Menu","header_bar_html_content":"","header_bar_logo":"","header_bar_logo_link":"","header_bar_logo_width":"","header_bar_logo_width_unit":"%","header_bar_logo_height":"","header_bar_logo_height_unit":"px","header_bar_height":"80","header_bar_height_unit":"px","header_bar_padding":{"top":"0px","right":"5%","bottom":"0px","left":"5%"},"header_bar_font":"","header_bar_font_size":"14","header_bar_font_size_unit":"px","header_bar_text_color":"#ffffff","header_bar_background_color":"#1d4354","header_bar_breakpoint":"8000","header_bar_position_type":"fixed","header_bar_adjust_page":"on","header_bar_scroll_enable":"off","header_bar_scroll_background_color":"#36bdf6","mobile_breakpoint":"600","tablet_breakpoint":"8000","transition_speed":"0.5","sub_menu_speed":"0.2","show_menu_on_page_load":"off","menu_disable_scrolling":"off","menu_overlay":"off","menu_overlay_colour":"rgba(0,0,0,0.7)","desktop_menu_width":"","desktop_menu_width_unit":"%","desktop_menu_positioning":"absolute","desktop_menu_side":"left","desktop_menu_to_hide":"","use_current_theme_location":"off","mega_menu":{"225":"off","227":"off","229":"off","228":"off","226":"off"},"desktop_submenu_open_animation":"none","desktop_submenu_open_animation_speed":"100ms","desktop_submenu_open_on_click":"off","desktop_menu_hide_and_show":"off","menu_name":"Mobile Menu","menu_to_use":"primary-menu","different_menu_for_mobile":"off","menu_to_use_in_mobile":"main-menu","use_mobile_menu":"on","use_tablet_menu":"on","use_desktop_menu":"off","menu_display_on":"all-pages","menu_to_hide":"","submenu_descriptions_on":"off","custom_walker":"","menu_background_colour":"","menu_depth":"5","smooth_scroll_on":"off","smooth_scroll_speed":"500","menu_font_icons":{"id":["225"],"icon":[""]},"menu_links_height":"40","menu_links_height_unit":"px","menu_links_line_height":"40","menu_links_line_height_unit":"px","menu_depth_0":"5","menu_depth_0_unit":"%","menu_font_size":"15","menu_font_size_unit":"px","menu_font":"","menu_font_weight":"normal","menu_text_alignment":"left","menu_text_letter_spacing":"","menu_word_wrap":"off","menu_link_colour":"#fff","menu_link_hover_colour":"#fff","menu_current_link_colour":"#fff","menu_current_link_hover_colour":"#fff","menu_item_background_colour":"","menu_item_background_hover_colour":"","menu_current_item_background_colour":"#6fda44","menu_current_item_background_hover_colour":"","menu_border_width":"","menu_border_width_unit":"px","menu_item_border_colour":"#1d4354","menu_item_border_colour_hover":"#1d4354","menu_current_item_border_colour":"#1d4354","menu_current_item_border_hover_colour":"#3f3f3f","submenu_links_height":"40","submenu_links_height_unit":"px","submenu_links_line_height":"40","submenu_links_line_height_unit":"px","menu_depth_side":"left","menu_depth_1":"10","menu_depth_1_unit":"%","menu_depth_2":"15","menu_depth_2_unit":"%","menu_depth_3":"20","menu_depth_3_unit":"%","menu_depth_4":"25","menu_depth_4_unit":"%","submenu_item_background_colour":"","submenu_item_background_hover_colour":"","submenu_current_item_background_colour":"","submenu_current_item_background_hover_colour":"","submenu_border_width":"","submenu_border_width_unit":"px","submenu_item_border_colour":"#1d4354","submenu_item_border_colour_hover":"#1d4354","submenu_current_item_border_colour":"#1d4354","submenu_current_item_border_hover_colour":"#3f3f3f","submenu_font_size":"13","submenu_font_size_unit":"px","submenu_font":"","submenu_font_weight":"normal","submenu_text_letter_spacing":"","submenu_text_alignment":"left","submenu_link_colour":"#fff","submenu_link_hover_colour":"#fff","submenu_current_link_colour":"#fff","submenu_current_link_hover_colour":"#fff","inactive_arrow_shape":"\u25bc","active_arrow_shape":"\u25b2","inactive_arrow_font_icon":"<span class=\"rmp-font-icon dashicons dashicons-arrow-down-alt2 \"><\/span>","active_arrow_font_icon":"<span class=\"rmp-font-icon dashicons dashicons-arrow-up-alt2 \"><\/span>","inactive_arrow_image":"","active_arrow_image":"","submenu_arrow_width":"40","submenu_arrow_width_unit":"px","submenu_arrow_height":"39","submenu_arrow_height_unit":"px","arrow_position":"right","menu_sub_arrow_shape_colour":"#fff","menu_sub_arrow_shape_hover_colour":"#fff","menu_sub_arrow_shape_colour_active":"#fff","menu_sub_arrow_shape_hover_colour_active":"#fff","menu_sub_arrow_border_width":"","menu_sub_arrow_border_width_unit":"px","menu_sub_arrow_border_colour":"#1d4354","menu_sub_arrow_border_hover_colour":"#3f3f3f","menu_sub_arrow_border_colour_active":"#1d4354","menu_sub_arrow_border_hover_colour_active":"#3f3f3f","menu_sub_arrow_background_colour":"","menu_sub_arrow_background_hover_colour":"","menu_sub_arrow_background_colour_active":"rgba(33,33,33,0.01)","menu_sub_arrow_background_hover_colour_active":"","fade_submenus":"off","fade_submenus_side":"left","fade_submenus_delay":"100","fade_submenus_speed":"500","use_slide_effect":"off","slide_effect_back_to_text":"Back","accordion_animation":"off","auto_expand_all_submenus":"off","auto_expand_current_submenus":"off","menu_item_click_to_trigger_submenu":"off","button_width":"55","button_width_unit":"px","button_height":"55","button_height_unit":"px","button_background_colour":"#1d4354","button_background_colour_hover":"#1d4354","button_background_colour_active":"#6fda44","toggle_button_border_radius":"5","button_transparent_background":"off","button_left_or_right":"right","button_position_type":"fixed","button_distance_from_side":"5","button_distance_from_side_unit":"%","button_top":"15","button_top_unit":"px","button_push_with_animation":"off","button_click_animation":"boring","button_line_margin":"5","button_line_margin_unit":"px","button_line_width":"25","button_line_width_unit":"px","button_line_height":"3","button_line_height_unit":"px","button_line_colour":"#fff","button_line_colour_hover":"#fff","button_line_colour_active":"#fff","button_font_icon":"","button_font_icon_when_clicked":"","button_image":"","button_image_when_clicked":"","button_title":"","button_title_open":"","button_title_position":"left","menu_container_columns":"","button_font":"","button_font_size":"14","button_font_size_unit":"px","button_title_line_height":"13","button_title_line_height_unit":"px","button_text_colour":"#fff","button_trigger_type_click":"on","button_trigger_type_hover":"off","button_click_trigger":"","items_order":{"title":"","additional content":"","menu":"on","search":""},"menu_title":"Responsive Menu","menu_title_link":"","menu_title_link_location":"_self","menu_title_image":"","menu_title_font_icon":"","menu_title_section_padding":{"top":"10%","right":"5%","bottom":"0%","left":"5%"},"menu_title_background_colour":"","menu_title_background_hover_colour":"","menu_title_font_size":"25","menu_title_font_size_unit":"px","menu_title_alignment":"center","menu_title_font_weight":"400","menu_title_font_family":"","menu_title_colour":"#ffffff","menu_title_hover_colour":"#fff","menu_title_image_width":"","menu_title_image_width_unit":"%","menu_title_image_height":"","menu_title_image_height_unit":"px","menu_additional_content":"Add more content here...","menu_additional_section_padding":{"top":"0%","right":"5%","bottom":"10%","left":"5%"},"menu_additional_content_font_size":"16","menu_additional_content_font_size_unit":"px","menu_additional_content_alignment":"center","menu_additional_content_colour":"#6fda44","menu_search_box_text":"Search","menu_search_box_code":"","menu_search_section_padding":{"top":"5%","right":"5%","bottom":"5%","left":"5%"},"menu_search_box_height":"45","menu_search_box_height_unit":"px","menu_search_box_border_radius":"30","menu_search_box_text_colour":"#1d4354","menu_search_box_background_colour":"#ffffff","menu_search_box_placeholder_colour":"#1d4354","menu_search_box_border_colour":"","menu_section_padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"menu_width":"75","menu_width_unit":"%","menu_maximum_width":"350","menu_maximum_width_unit":"px","menu_minimum_width":"320","menu_minimum_width_unit":"px","menu_auto_height":"off","menu_container_padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"menu_container_background_colour":"#1d4354","menu_background_image":"","animation_type":"slide","menu_appear_from":"left","animation_speed":"0.5","page_wrapper":"body","menu_close_on_body_click":"off","menu_close_on_scroll":"off","menu_close_on_link_click":"off","enable_touch_gestures":"off","hamburger_position_selector":"","menu_id":14875,"active_toggle_contents":"<span class=\"rmp-font-icon dashicons dashicons-arrow-up-alt2 \"><\/span>","inactive_toggle_contents":"<span class=\"rmp-font-icon dashicons dashicons-arrow-down-alt2 \"><\/span>"}]};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.provise.com/wp-content/plugins/responsive-menu/v4.0.0/assets/js/rmp-menu.js?ver=4.3.0' id='rmp_menu_scripts-js'></script>
+<script type='text/javascript' id='divi-custom-script-js-extra'>
+/* <![CDATA[ */
+var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
+var et_builder_utils_params = {"condition":{"diviTheme":true,"extraTheme":false},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"};
+var et_frontend_scripts = {"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};
+var et_pb_custom = {"ajaxurl":"https:\/\/www.provise.com\/wp-admin\/admin-ajax.php","images_uri":"https:\/\/www.provise.com\/wp-content\/themes\/Divi\/images","builder_images_uri":"https:\/\/www.provise.com\/wp-content\/themes\/Divi\/includes\/builder\/images","et_frontend_nonce":"f7bbffd78b","subscription_failed":"Please, check the fields below to make sure you entered the correct information.","et_ab_log_nonce":"e5f2d3e0fa","fill_message":"Please, fill in the following fields:","contact_error_message":"Please, fix the following errors:","invalid":"Invalid email","captcha":"Captcha","prev":"Prev","previous":"Previous","next":"Next","wrong_captcha":"You entered the wrong number in captcha.","wrong_checkbox":"Checkbox","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"6","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"yes","is_shortcode_tracking":"","tinymce_uri":"https:\/\/www.provise.com\/wp-content\/themes\/Divi\/includes\/builder\/frontend-builder\/assets\/vendors","accent_color":"#7EBEC5","waypoints_options":{"context":[".pum-overlay"]}};
+var et_pb_box_shadow_elements = [];
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.provise.com/wp-content/themes/Divi/js/scripts.min.js?ver=4.21.0' id='divi-custom-script-js'></script>
+<script type='text/javascript' src='https://www.provise.com/wp-content/plugins/divi-blurb-extended/scripts/frontend-bundle.min.js?ver=2.2.5' id='divi-blurb-extended-frontend-bundle-js'></script>
+<script type='text/javascript' src='https://www.provise.com/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2' id='wp-polyfill-inert-js'></script>
+<script type='text/javascript' src='https://www.provise.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='https://www.provise.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' src='https://www.provise.com/wp-includes/js/dist/dom-ready.min.js?ver=392bdd43726760d1f3ca' id='wp-dom-ready-js'></script>
+<script type='text/javascript' src='https://www.provise.com/wp-includes/js/dist/hooks.min.js?ver=4169d3cf8e8d95a3d6d5' id='wp-hooks-js'></script>
+<script type='text/javascript' src='https://www.provise.com/wp-includes/js/dist/i18n.min.js?ver=9e794f35a71bb98672ae' id='wp-i18n-js'></script>
+<script type='text/javascript' id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type='text/javascript' src='https://www.provise.com/wp-includes/js/dist/a11y.min.js?ver=ecce20f002eda4c19664' id='wp-a11y-js'></script>
+<script type='text/javascript' defer='defer' src='https://www.provise.com/wp-content/plugins/gravityforms/assets/js/dist/vendor-theme.min.js?ver=4ef53fe41c14a48b294541d9fc37387e' id='gform_gravityforms_theme_vendors-js'></script>
+<script type='text/javascript' id='gform_gravityforms_theme-js-extra'>
+/* <![CDATA[ */
+var gform_theme_config = {"common":{"form":{"honeypot":{"version_hash":"160fd9b49dcf6fc7d87338d65f63b6ee"}}},"hmr_dev":"","public_path":"https:\/\/www.provise.com\/wp-content\/plugins\/gravityforms\/assets\/js\/dist\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' defer='defer' src='https://www.provise.com/wp-content/plugins/gravityforms/assets/js/dist/scripts-theme.min.js?ver=443293948084ca0fe29518ebcd01dc6b' id='gform_gravityforms_theme-js'></script>
+<script type='text/javascript' src='https://www.provise.com/wp-content/themes/Divi/core/admin/js/common.js?ver=4.21.0' id='et-core-common-js'></script>
+<style id="et-builder-module-design-tb-14819-tb-1409-6-cached-inline-styles">.et_pb_section_0_tb_header.et_pb_section{padding-top:0px;padding-bottom:0px;background-color:#0d1d41!important}.et_pb_section_0_tb_header{width:100%;max-width:100%;position:fixed!important;top:0px;bottom:auto;left:50%;right:auto;transform:translateX(-50%)}body.logged-in.admin-bar .et_pb_section_0_tb_header{top:calc(0px + 32px)}.et_pb_row_0_tb_header.et_pb_row{padding-right:20px!important;padding-left:20px!important;padding-right:20px;padding-left:20px}.et_pb_row_0_tb_header,body #page-container .et-db #et-boc .et-l .et_pb_row_0_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_0_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_0_tb_header.et_pb_row,.et_pb_row_0_tb_header,body .pum-container .et-db #et-boc .et-l .et_pb_row_0_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_0_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_0_tb_header.et_pb_row,.et_pb_row_0_tb_header,body #page-container .et-db .pum .et-l .et_pb_row_0_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_0_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_0_tb_header.et_pb_row,.et_pb_row_0_tb_header,body .pum-container .et-db .pum .et-l .et_pb_row_0_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_0_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_0_tb_header.et_pb_row{width:100%;max-width:100%}body #page-container .et_pb_section .et_pb_button_0_tb_header,body .pum-container .et_pb_section .et_pb_button_0_tb_header{border-width:0px!important;font-size:16px;text-transform:uppercase!important;text-decoration:underline!important}body #page-container .et_pb_section .et_pb_button_0_tb_header,body #page-container .et_pb_section .et_pb_button_0_tb_header:hover,body .pum-container .et_pb_section .et_pb_button_0_tb_header,body .pum-container .et_pb_section .et_pb_button_0_tb_header:hover{padding:0.3em 1em!important}body #page-container .et_pb_section .et_pb_button_1_tb_header:before,body #page-container .et_pb_section .et_pb_button_1_tb_header:after,body .pum-container .et_pb_section .et_pb_button_1_tb_header:before,body .pum-container .et_pb_section .et_pb_button_1_tb_header:after,body #page-container .et_pb_section .et_pb_button_0_tb_header:before,body #page-container .et_pb_section .et_pb_button_0_tb_header:after,body .pum-container .et_pb_section .et_pb_button_0_tb_header:before,body .pum-container .et_pb_section .et_pb_button_0_tb_header:after{display:none!important}.et_pb_button_0_tb_header,.et_pb_button_0_tb_header:after,.et_pb_button_1_tb_header,.et_pb_button_1_tb_header:after{transition:all 300ms ease 0ms}.et_pb_blurb_0_tb_header.et_pb_blurb .et_pb_module_header,.et_pb_blurb_0_tb_header.et_pb_blurb .et_pb_module_header a{line-height:1.7em}.et_pb_blurb_0_tb_header.et_pb_blurb{padding-top:6px!important;padding-right:0px!important;padding-left:0px!important;margin-right:0px!important;margin-left:0px!important;width:100%}.et_pb_blurb_0_tb_header .et-pb-icon{font-size:32px;color:#0C71C3;font-family:ETmodules!important;font-weight:400!important}.et_pb_blurb_0_tb_header .et_pb_blurb_content,.et_pb_row_1_tb_header,body #page-container .et-db #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row,.et_pb_row_1_tb_header,body .pum-container .et-db #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row,.et_pb_row_1_tb_header,body #page-container .et-db .pum .et-l .et_pb_row_1_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row,.et_pb_row_1_tb_header,body .pum-container .et-db .pum .et-l .et_pb_row_1_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row{max-width:100%}.et_pb_button_1_tb_header_wrapper .et_pb_button_1_tb_header,.et_pb_button_1_tb_header_wrapper .et_pb_button_1_tb_header:hover{padding-top:10px!important;padding-right:30px!important;padding-bottom:10px!important;padding-left:30px!important}body #page-container .et_pb_section .et_pb_button_1_tb_header,body .pum-container .et_pb_section .et_pb_button_1_tb_header{color:#FFFFFF!important;border-width:0px!important;border-radius:0px;font-size:16px;background-color:#0C71C3}.et_pb_section_1_tb_header.et_pb_section{padding-top:0px;padding-bottom:0px;margin-top:0px;margin-bottom:0px;background-color:RGBA(255,255,255,0)!important}.et_pb_section_1_tb_header{position:fixed!important;top:47px;bottom:auto;left:50%;right:auto;transform:translateX(-50%)}body.logged-in.admin-bar .et_pb_section_1_tb_header{top:calc(47px + 32px)}.et_pb_row_1_tb_header,.et_pb_menu_0_tb_header.et_pb_menu{background-color:RGBA(255,255,255,0)}.et_pb_row_1_tb_header.et_pb_row{margin-top:0px!important}.et_pb_menu_0_tb_header.et_pb_menu ul li a,.et_pb_menu_0_tb_header.et_pb_menu ul li.current-menu-item a,.et_pb_menu_0_tb_header.et_pb_menu .nav li ul.sub-menu a{color:#FFFFFF!important}.et_pb_menu_0_tb_header.et_pb_menu .nav li ul{background-color:#0c71c3!important;border-color:RGBA(255,255,255,0)}.et_pb_menu_0_tb_header.et_pb_menu .et_mobile_menu{border-color:RGBA(255,255,255,0)}.et_pb_menu_0_tb_header.et_pb_menu .et_mobile_menu,.et_pb_menu_0_tb_header.et_pb_menu .et_mobile_menu ul{background-color:RGBA(255,255,255,0)!important}.et_pb_menu_0_tb_header .et_pb_menu_inner_container>.et_pb_menu__logo-wrap,.et_pb_menu_0_tb_header .et_pb_menu__logo-slot{width:auto;max-width:240px}.et_pb_menu_0_tb_header .et_pb_menu_inner_container>.et_pb_menu__logo-wrap .et_pb_menu__logo img,.et_pb_menu_0_tb_header .et_pb_menu__logo-slot .et_pb_menu__logo-wrap img{height:auto;max-height:none}.et_pb_menu_0_tb_header .et_pb_menu__icon.et_pb_menu__search-button,.et_pb_menu_0_tb_header .et_pb_menu__icon.et_pb_menu__close-search-button,.et_pb_menu_0_tb_header .mobile_nav .mobile_menu_bar:before,.et_pb_menu_0_tb_header .et_pb_menu__icon.et_pb_menu__cart-button{color:#7EBEC5}.et_pb_column_1_tb_header{padding-right:0px;padding-left:0px;position:static!important;top:0px;right:auto;bottom:auto;left:0px}.et_pb_column_2_tb_header{padding-right:20px;padding-left:20px}.et_pb_menu_0_tb_header.et_pb_module,.et_pb_blurb_0_tb_header.et_pb_blurb.et_pb_module{margin-left:auto!important;margin-right:0px!important}@media only screen and (max-width:980px){.et_pb_section_0_tb_header.et_pb_section{padding-top:16px;padding-bottom:20px}.et_pb_row_0_tb_header.et_pb_row{padding-top:0px!important;padding-bottom:0px!important;padding-top:0px!important;padding-bottom:0px!important}.et_pb_row_1_tb_header,body #page-container .et-db #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row,.et_pb_row_1_tb_header,body .pum-container .et-db #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row,.et_pb_row_1_tb_header,body #page-container .et-db .pum .et-l .et_pb_row_1_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row,.et_pb_row_1_tb_header,body .pum-container .et-db .pum .et-l .et_pb_row_1_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_1_tb_header.et_pb_row{width:100%}.et_pb_menu_0_tb_header{max-width:100%}}@media only screen and (max-width:767px){.et_pb_section_0_tb_header.et_pb_section{padding-top:16px;padding-bottom:20px}.et_pb_row_0_tb_header.et_pb_row{padding-top:0px!important;padding-bottom:0px!important;padding-top:0px!important;padding-bottom:0px!important}}.et_pb_section_0_tb_footer.et_pb_section{padding-top:20px;background-color:#f1f3f3!important}.et_pb_image_0_tb_footer{max-width:350px;text-align:left;margin-left:0}.et_pb_text_0_tb_footer{line-height:1.8em;line-height:1.8em}.et_pb_text_0_tb_footer.et_pb_text a,.et_pb_text_1_tb_footer.et_pb_text a{color:#0c71c3!important}.et_pb_text_0_tb_footer a{font-weight:700;font-size:14px;line-height:1.5em}.et_pb_blurb_0_tb_footer.et_pb_blurb .et_pb_module_header,.et_pb_blurb_0_tb_footer.et_pb_blurb .et_pb_module_header a,.et_pb_blurb_1_tb_footer.et_pb_blurb .et_pb_module_header,.et_pb_blurb_1_tb_footer.et_pb_blurb .et_pb_module_header a{font-weight:700;color:#0c71c3!important}.et_pb_blurb_0_tb_footer.et_pb_blurb,.et_pb_blurb_1_tb_footer.et_pb_blurb{font-size:13px}.et_pb_blurb_3_tb_footer .et_pb_main_blurb_image .et_pb_only_image_mode_wrap,.et_pb_blurb_3_tb_footer .et_pb_main_blurb_image .et-pb-icon,.et_pb_blurb_2_tb_footer .et_pb_main_blurb_image .et_pb_only_image_mode_wrap,.et_pb_blurb_2_tb_footer .et_pb_main_blurb_image .et-pb-icon{border-radius:100% 100% 100% 100%;overflow:hidden;padding-top:8px!important;padding-right:8px!important;padding-bottom:8px!important;padding-left:8px!important;background-color:#0c71c3}.et_pb_blurb_2_tb_footer .et-pb-icon,.et_pb_blurb_3_tb_footer .et-pb-icon{font-size:16px;color:#ffffff;font-family:ETmodules!important;font-weight:400!important}body #page-container .et_pb_section .et_pb_button_0_tb_footer,body .pum-container .et_pb_section .et_pb_button_0_tb_footer{color:#ffffff!important;border-color:#ffffff;background-color:#213468}.et_pb_button_0_tb_footer,.et_pb_button_0_tb_footer:after{transition:all 300ms ease 0ms}.et_pb_text_1_tb_footer a{text-decoration:underline;font-size:16px}.et_pb_text_2_tb_footer{line-height:1.5em;font-size:12px;line-height:1.5em}.et_pb_social_media_follow_network_0_tb_footer a.icon,.et_pb_social_media_follow_network_1_tb_footer a.icon,.et_pb_social_media_follow_network_2_tb_footer a.icon,.et_pb_social_media_follow_network_3_tb_footer a.icon{background-color:#666!important}@media only screen and (max-width:980px){.et_pb_image_0_tb_footer .et_pb_image_wrap img{width:auto}body #page-container .et_pb_section .et_pb_button_0_tb_footer:after,body .pum-container .et_pb_section .et_pb_button_0_tb_footer:after{display:inline-block;opacity:0}body #page-container .et_pb_section .et_pb_button_0_tb_footer:hover:after,body .pum-container .et_pb_section .et_pb_button_0_tb_footer:hover:after{opacity:1}}@media only screen and (max-width:767px){.et_pb_image_0_tb_footer .et_pb_image_wrap img{width:auto}body #page-container .et_pb_section .et_pb_button_0_tb_footer:after,body .pum-container .et_pb_section .et_pb_button_0_tb_footer:after{display:inline-block;opacity:0}body #page-container .et_pb_section .et_pb_button_0_tb_footer:hover:after,body .pum-container .et_pb_section .et_pb_button_0_tb_footer:hover:after{opacity:1}}</style>	
+	</body>
+</html>
+
+<!-- Cache served by breeze CACHE - Last modified: Sun, 25 Jun 2023 15:00:22 GMT -->

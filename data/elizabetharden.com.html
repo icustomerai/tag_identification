@@ -1,0 +1,6677 @@
+
+
+
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 7]> <html class="ie7 oldie" lang="en-US"> <![endif]-->
+<!--[if IE 8]> <html class="ie8 oldie" lang="en-US"> <![endif]-->
+
+
+
+<!--[if gt IE 8]><!--> <html lang="en-US"> <!--<![endif]-->
+<head>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="canonical" href="https://www.elizabetharden.com/"/>
+
+
+<meta charset=UTF-8>
+
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+
+<link href="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/lib/jquery/ui/jquery-ui.min.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" href="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/css/style.css" type="text/css" rel="stylesheet"/>
+
+
+
+
+
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<!--[if lt IE 9]>
+<script src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/js/lib/html5.js"></script>
+<![endif]-->
+
+<script type="text/javascript">//<!--
+/* <![CDATA[ (head-active_data.js) */
+var dw = (window.dw || {});
+dw.ac = {
+    _analytics: null,
+    _events: [],
+    _category: "",
+    _searchData: "",
+    _anact: "",
+    _anact_nohit_tag: "",
+    _analytics_enabled: "true",
+    _timeZone: "US/Eastern",
+    _capture: function(configs) {
+        if (Object.prototype.toString.call(configs) === "[object Array]") {
+            configs.forEach(captureObject);
+            return;
+        }
+        dw.ac._events.push(configs);
+    },
+	capture: function() { 
+		dw.ac._capture(arguments);
+		// send to CQ as well:
+		if (window.CQuotient) {
+			window.CQuotient.trackEventsFromAC(arguments);
+		}
+	},
+    EV_PRD_SEARCHHIT: "searchhit",
+    EV_PRD_DETAIL: "detail",
+    EV_PRD_RECOMMENDATION: "recommendation",
+    EV_PRD_SETPRODUCT: "setproduct",
+    applyContext: function(context) {
+        if (typeof context === "object" && context.hasOwnProperty("category")) {
+        	dw.ac._category = context.category;
+        }
+        if (typeof context === "object" && context.hasOwnProperty("searchData")) {
+        	dw.ac._searchData = context.searchData;
+        }
+    },
+    setDWAnalytics: function(analytics) {
+        dw.ac._analytics = analytics;
+    },
+    eventsIsEmpty: function() {
+        return 0 == dw.ac._events.length;
+    }
+};
+/* ]]> */
+// -->
+</script>
+<script type="text/javascript">//<!--
+/* <![CDATA[ (head-cquotient.js) */
+var CQuotient = window.CQuotient = {};
+CQuotient.clientId = 'aahp-ElizabethArden';
+CQuotient.realm = 'AAHP';
+CQuotient.siteId = 'ElizabethArden';
+CQuotient.instanceType = 'prd';
+CQuotient.locale = 'default';
+CQuotient.fbPixelId = '__UNKNOWN__';
+CQuotient.activities = [];
+CQuotient.cqcid='';
+CQuotient.cquid='';
+CQuotient.cqeid='';
+CQuotient.cqlid='';
+CQuotient.apiHost='api.cquotient.com';
+/* Turn this on to test against Staging Einstein */
+/* CQuotient.useTest= true; */
+CQuotient.useTest = ('true' === 'false');
+CQuotient.initFromCookies = function () {
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+	  var c = ca[i];
+	  while (c.charAt(0)==' ') c = c.substring(1,c.length);
+	  if (c.indexOf('cqcid=') == 0) {
+		CQuotient.cqcid=c.substring('cqcid='.length,c.length);
+	  } else if (c.indexOf('cquid=') == 0) {
+		  var value = c.substring('cquid='.length,c.length);
+		  if (value) {
+		  	var split_value = value.split("|", 3);
+		  	if (split_value.length > 0) {
+			  CQuotient.cquid=split_value[0];
+		  	}
+		  	if (split_value.length > 1) {
+			  CQuotient.cqeid=split_value[1];
+		  	}
+		  	if (split_value.length > 2) {
+			  CQuotient.cqlid=split_value[2];
+		  	}
+		  }
+	  }
+	}
+}
+CQuotient.getCQCookieId = function () {
+	if(window.CQuotient.cqcid == '')
+		window.CQuotient.initFromCookies();
+	return window.CQuotient.cqcid;
+};
+CQuotient.getCQUserId = function () {
+	if(window.CQuotient.cquid == '')
+		window.CQuotient.initFromCookies();
+	return window.CQuotient.cquid;
+};
+CQuotient.getCQHashedEmail = function () {
+	if(window.CQuotient.cqeid == '')
+		window.CQuotient.initFromCookies();
+	return window.CQuotient.cqeid;
+};
+CQuotient.getCQHashedLogin = function () {
+	if(window.CQuotient.cqlid == '')
+		window.CQuotient.initFromCookies();
+	return window.CQuotient.cqlid;
+};
+CQuotient.trackEventsFromAC = function (/* Object or Array */ events) {
+try {
+	if (Object.prototype.toString.call(events) === "[object Array]") {
+		events.forEach(_trackASingleCQEvent);
+	} else {
+		CQuotient._trackASingleCQEvent(events);
+	}
+} catch(err) {}
+};
+CQuotient._trackASingleCQEvent = function ( /* Object */ event) {
+	if (event && event.id) {
+		if (event.type === dw.ac.EV_PRD_DETAIL) {
+			CQuotient.trackViewProduct( {id:'', alt_id: event.id, type: 'raw_sku'} );
+		} // not handling the other dw.ac.* events currently
+	}
+};
+CQuotient.trackViewProduct = function(/* Object */ cqParamData){
+	var cq_params = {};
+	cq_params.cookieId = CQuotient.getCQCookieId();
+	cq_params.userId = CQuotient.getCQUserId();
+	cq_params.emailId = CQuotient.getCQHashedEmail();
+	cq_params.loginId = CQuotient.getCQHashedLogin();
+	cq_params.product = cqParamData.product;
+	cq_params.realm = cqParamData.realm;
+	cq_params.siteId = cqParamData.siteId;
+	cq_params.instanceType = cqParamData.instanceType;
+	cq_params.locale = CQuotient.locale;
+	
+	if(CQuotient.sendActivity) {
+		CQuotient.sendActivity(CQuotient.clientId, 'viewProduct', cq_params);
+	} else {
+		CQuotient.activities.push({activityType: 'viewProduct', parameters: cq_params});
+	}
+};
+/* ]]> */
+// -->
+</script>
+<!-- Demandware Apple Pay -->
+
+<style type="text/css">ISAPPLEPAY{display:inline}.dw-apple-pay-button,.dw-apple-pay-button:hover,.dw-apple-pay-button:active{background-color:black;background-image:-webkit-named-image(apple-pay-logo-white);background-position:50% 50%;background-repeat:no-repeat;background-size:75% 60%;border-radius:5px;border:1px solid black;box-sizing:border-box;margin:5px auto;min-height:30px;min-width:100px;padding:0}
+.dw-apple-pay-button:after{content:'Apple Pay';visibility:hidden}.dw-apple-pay-button.dw-apple-pay-logo-white{background-color:white;border-color:white;background-image:-webkit-named-image(apple-pay-logo-black);color:black}.dw-apple-pay-button.dw-apple-pay-logo-white.dw-apple-pay-border{border-color:black}</style>
+
+
+
+
+<link rel="stylesheet" href="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/css/cmio.css" />
+
+<script src="//use.typekit.net/pnd8hag.js"></script>
+<script type="text/javascript">
+try{Typekit.load(
+{ async: true }
+);}catch(e){}
+</script>
+
+
+
+
+<title>Makeup, Skincare, Perfume & Gifts | Elizabeth Arden</title>
+
+<!-- // favicon START -->
+<link rel="apple-touch-icon" sizes="57x57" href="/on/demandware.static/Sites-ElizabethArden-Site/-/default/dw35147511/images/favicon/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/on/demandware.static/Sites-ElizabethArden-Site/-/default/dwf8818b87/images/favicon/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/on/demandware.static/Sites-ElizabethArden-Site/-/default/dwd96a862b/images/favicon/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/on/demandware.static/Sites-ElizabethArden-Site/-/default/dwd5dc8d95/images/favicon/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/on/demandware.static/Sites-ElizabethArden-Site/-/default/dwed04aee9/images/favicon/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/on/demandware.static/Sites-ElizabethArden-Site/-/default/dw451d2a4b/images/favicon/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/on/demandware.static/Sites-ElizabethArden-Site/-/default/dw13ebca49/images/favicon/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/on/demandware.static/Sites-ElizabethArden-Site/-/default/dwdd4e9ce8/images/favicon/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/on/demandware.static/Sites-ElizabethArden-Site/-/default/dw8b159ecc/images/favicon/apple-touch-icon-180x180.png">
+<link rel="shortcut icon" type="image/x-icon" href="/on/demandware.static/Sites-ElizabethArden-Site/-/default/dw8047d6ac/images/favicon/favicon.ico">
+<link rel="icon" type="image/x-icon" href="/on/demandware.static/Sites-ElizabethArden-Site/-/default/dw8047d6ac/images/favicon/favicon.ico">
+<link rel="icon" type="image/png" href="/on/demandware.static/Sites-ElizabethArden-Site/-/default/dw08e11e00/images/favicon/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/on/demandware.static/Sites-ElizabethArden-Site/-/default/dw0f4c87c2/images/favicon/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/on/demandware.static/Sites-ElizabethArden-Site/-/default/dw642c8cc5/images/favicon/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/on/demandware.static/Sites-ElizabethArden-Site/-/default/dw19328a1c/images/favicon/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/on/demandware.static/Sites-ElizabethArden-Site/-/default/dw542390d3/images/favicon/manifest.json">
+<link rel="mask-icon" href="/on/demandware.static/Sites-ElizabethArden-Site/-/default/dw4440304f/images/favicon/safari-pinned-tab.svg" color="#cc0000">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="/on/demandware.static/Sites-ElizabethArden-Site/-/default/dwd3006d80/images/favicon/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!-- // favicon END -->
+
+
+
+
+
+
+
+<meta name="description" content=" Shop our cosmetics, skincare, perfume &amp; gift sets at Elizabeth Arden. Explore from wide selection of anti-aging skincare products, makeup &amp; fragrances to match your style. "/>
+<meta name="keywords" content=" beauty, beauty products, make up, makeup, skin care, skin care products, facial products, perfume, perfumes, skin products "/>
+
+<!--[if gte IE 9 | !IE]><!-->
+<script src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/lib/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+
+<!--<![endif]-->
+<!--[if lte IE 8]>
+<script src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/lib/jquery/jquery-1.11.1.min.js" type="text/javascript"></script>
+<![endif]-->
+<!--[if lte IE 8]>
+<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js" type="text/javascript"></script>
+<script src="https://cdn.rawgit.com/chuckcarpenter/REM-unit-polyfill/master/js/rem.min.js" type="text/javascript"></script>
+<![endif]-->
+
+
+
+<script type="text/javascript">
+	// ShopRunner related settings
+	var endpoint = '';
+	var protocol = document.location.protocol;
+
+	if( protocol == 'http:' ) {
+		endpoint = "https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/ShopRunner-PayrunnerAPI";
+	} else {
+		endpoint = "https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/ShopRunner-PayrunnerAPI";
+	}
+	
+	var _shoprunner_com = new Object();
+  	_shoprunner_com.enabled = true;
+	_shoprunner_com.retailerID = "EARDEN";
+    _shoprunner_com.loginValidationURL = "https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/ShopRunner-ValidateToken";
+ 	_shoprunner_com.environmentID = 2;
+
+ 	/*
+	 * ---------------------------------------- 
+	 * PayRunner Configuration
+	 *  ----------------------------------------
+	 */
+ 	_shoprunner_com.checkout = new Object();
+	_shoprunner_com.checkout.enabled = true;
+	_shoprunner_com.checkout.singleProductBuyNowEnabled = false;
+	_shoprunner_com.checkout.cartBuyNowEnabled = true;  
+	_shoprunner_com.checkout.partnerAPIEndPoint = endpoint;
+	
+	_shoprunner_com.checkout.mixedCart = "downgrade";
+</script>
+
+<script type="text/javascript" src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/js/shoprunner_init.js"></script>
+<script type="text/javascript" src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/js/pr_functions.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+if (window.jQuery) {
+jQuery(document).ready(function(){
+if(screen.width < 768){
+jQuery('#footer').append('<!--a href="/" class="full-site-link">View Full Site</a-->');
+jQuery('.full-site-link')
+.attr('href', '/on/demandware.store/Sites-ElizabethArden-Site/default/Home-FullSite')
+.click(function(e) {
+e.preventDefault();
+jQuery.ajax({
+url: '/on/demandware.store/Sites-ElizabethArden-Site/default/Home-FullSite',
+success: function(){
+window.location.reload();
+}
+});
+}
+);
+}
+});
+}
+</script>
+
+
+
+
+
+<script async type="text/javascript" id="sig-api" data-order-session-id="" src="https://cdn-scripts.signifyd.com/api/script-tag.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+    
+
+
+    
+
+
+    
+
+
+
+    
+
+
+<script type='text/javascript'>
+	var _a1as = _a1as || [];
+	_a1as.push(["init","72497"]); 
+</script>
+
+
+<script>
+    var $A1Config = {
+        key: "$2a$10$E/3V2TqbqP4nvdVPDF2bxON8lryuSn1RhsIz3XocDhDbz6BqiDCIG",
+        tenantId: "1023",
+        host: "//api8.agilone.com"
+    };
+</script>
+<script src="https://scripts.agilone.com/latest/a1.js"></script>
+
+<script>
+	var currentVisitor = $A1.Customer({
+    	SourceCustomerNumber: "",
+    	Email: ""
+	});
+</script>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="https://assets.findation.com/javascripts/w-adv-3.min.js"></script>
+<script type="text/javascript">
+window.Findation = window.Findation || {};
+initWidget = function(url) {
+Findation.init(
+document.getElementById("findation-widget-button"),
+"bd5a2ccc9402ff33e528d864decb23416aba66039b2e045c7b8871bb3153",
+{
+productUrl : url
+}
+);
+Findation.onSearchComplete = function(data) {
+if(data.recommendedShade != null){
+var recommendedShade = data.recommendedShade;
+var varients = $('.onhovercolor');
+if(varients.length > 0){
+varients.each(function () {
+var varientName = $(this).val();
+if(varientName.includes(recommendedShade)){
+$(this).closest('.swatchanchor').click();
+return false;
+}
+});
+}
+}
+}
+}
+$(document).ready(function() {
+initWidget();
+});
+</script>
+
+
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/02c5652b-6b05-48b2-aa2d-fc2abbe3258c/OtAutoBlock.js" ></script>
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-document-language="true" type="text/javascript" charset="UTF-8" data-domain-script="02c5652b-6b05-48b2-aa2d-fc2abbe3258c" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- OneTrust Cookies Consent Notice end for www.elizabetharden.com -->
+
+
+
+
+
+
+
+<link rel="alternate" hreflang="en-us" href="https://www.elizabetharden.com/" />
+<link rel="alternate" hreflang="en-gb" href="https://www.elizabetharden.co.uk/" />
+<link rel="alternate" hreflang="fr-fr" href="https://www.elizabetharden.fr/" />
+<link rel="alternate" hreflang="de-de" href="https://www.elizabetharden.de/" />
+<link rel="alternate" hreflang="es-es" href="https://www.elizabetharden.es/" />
+<link rel="alternate" hreflang="it-it" href="https://www.elizabetharden.it/home/" />
+<link rel="alternate" hreflang="x-default" href="https://www.elizabetharden.com/" />
+
+
+
+
+
+
+
+
+
+
+<script id="bfx-snippet">
+(function(e,n,o,t,a){function c(n){e[t]._apiKey=n.key;e[t]._env=n.env;e[t]._logLevel=n.logLevel;
+e[t]._mode=n.mode;e[t]._brand=n.brand;e[t]._cookieFlag=n.cookieFlag}e[t]=c;e[t].l=1*new Date;var i,l;
+i=n.createElement(o);l=n.getElementsByTagName(o)[0];i.async=1;i.src=a;l.parentNode.insertBefore(i,l);
+})(window,document,"script","bfx","https://bfx-objects.prd.borderfree.com/v1/dist/bfx.js");
+bfx({key:'e5e64560-6b50-11e9-ad43-bf13dcea1da9', env:'PROD', mode:'default', brand:'default', logLevel:'ERROR'});
+</script>
+
+<script type="text/javascript">
+function listen(eventName, eventHandler) {
+   console.log('Listening for ' + eventName + ' event.');
+   if (window.addEventListener) {
+      window.addEventListener(eventName, eventHandler, false);
+   } else if (window.attachEvent) { //IE 8 and older
+      if (eventName.indexOf('bfx') > -1) { //custom bfx events
+         window.attachEvent("onpropertychange", function (event) {
+            if (event.propertyName == eventName) {
+               eventHandler(eventHandler);
+            }
+         });
+      } else { //standard js events
+         window.attachEvent(eventName, eventHandler);
+      }
+   }
+}
+
+function clearCookies() {
+  var key = $.cookie("bfx.sessionId");
+  var bfxStorage = JSON.parse(sessionStorage.getItem(key+":merchant"));
+
+  if(bfxStorage) {
+    var bfxRedirects = bfxStorage.localizations.contextChooser.redirects;
+    for  (var redirect in bfxRedirects) {
+      if(bfxRedirects[redirect].country.code === $.cookie("bfx.country")) {
+    	  $.cookie("bfx.country", "", { domain: 'elizabetharden.com', path: '/' });
+          $.cookie("bfx.currency", "",{ domain: 'elizabetharden.com', path: '/' });
+        break;
+      }
+    }
+  }
+}
+
+listen('bfx-currency-cookieSet', function() {
+  try {
+    clearCookies();
+  } catch(error) {
+    console && console.error(error);
+  }
+});
+
+listen('bfx-contextChooser-loadEnd', function () {
+	$('#wrapper').addClass('bfx-enabled');
+  	$('#bfx-cc-wrapper').appendTo('.borderfree-content');
+});
+</script>
+
+
+
+
+
+
+
+
+
+<script type='application/ld+json'>
+{
+"@context": "https://www.schema.org",
+"@type": "Corporation",
+"name": "Elizabeth Arden",
+"url": "https://www.elizabetharden.com",
+"logo": "https://www.elizabetharden.com/on/demandware.static/Sites-ElizabethArden-Site/-/default/dw4dfde45a/images/elizabetharden-logo.png",
+"foundingDate": "2009",
+"sameAs": [
+
+"https://www.facebook.com/elizabethardenUS/",
+"https://twitter.com/ElizabethArden",
+"https://www.instagram.com/elizabetharden/",
+
+"https://www.youtube.com/user/ElizabethArdenBeauty"
+],
+"contactPoint":
+
+{ "@type": "ContactPoint", "telephone": "+1(855)289-6405", "contactType": "customer service" }
+
+}
+</script>
+
+</head>
+<body>
+
+
+
+<script type="text/javascript">dataLayer = [];</script>
+
+
+
+<script type="text/javascript">
+globalData = {"pageType":"home","pageTitle":"Home Page","pageName":"home: Home Page","pageCategory":"home","customerCountry":"IN","customerState":"DL","customerEmail":"Y1w05CNuAdihrInXyaaGqXN9fcJ_jjB-EHI=","userID":"","dwID":"","visitorLoginState":"guest","sessionId":"Y1w05CNuAdihrInXyaaGqXN9fcJ_jjB-EHI="};
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+pageData = {};
+</script>
+<script type="text/javascript">
+//Push page specific data to GTM if exists
+if (Object.keys(pageData).length !== 0) {
+if (pageData.event) {
+//Push global data to GTM
+dataLayer.push(globalData);
+dataLayer.push(pageData);
+} else {
+for (var prop in pageData) {
+if (prop && pageData.hasOwnProperty(prop)) {
+globalData[prop] = pageData[prop];
+}
+}
+dataLayer.push(globalData);
+}
+} else {
+//Push global data to GTM
+dataLayer.push(globalData);
+}
+</script>
+
+
+
+<!-- Google Tag Manager -->
+<!--us site-->
+
+      <noscript><iframe src="https://gtmss.elizabetharden.com/ns.html?id=GTM-55PQ9TX"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://gtmss.elizabetharden.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+       })(window,document,'script','dataLayer','GTM-55PQ9TX');</script>    
+
+
+<h1 class="sr-only">Elizabeth Arden Official Website - Explore and shop cosmetics, makeup, skincare, perfume & gift sets</h1>
+<div id="wrapper" class="pt_storefront">
+
+
+<header role="banner">
+<script src="https://assets.sitescdn.net/answers/v1.5/answers.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<a class="skip-to-content" href="javascript:void(0)" title="Skip navigation" aria-label="Skip navigation">SKIP BUTTON </a>
+
+<div class="header-banner hide-tablet hide-mobile">
+
+	 
+
+
+	
+
+
+<div class="header-promotion">
+
+
+5 FREE Gifts with any $75 purchase ($79 Value), Use Code: <b>SUMMER</b>. <a href="https://www.elizabetharden.com/skincare/"><u>Shop Now</u></a>
+
+
+</div> 
+	
+</div>
+<div class="top-banner">
+<button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu-outer" aria-haspopup="true" aria-label="Open navigation menu"><i class="menu-icon fa fa-bars"></i><span class="visually-hidden">Menu</span></button>
+<div class="headermainsearch hide-desktop">
+<a href="javascript:void(0)" role="button" aria-pressed="false" title="Activate search dialog" aria-label="Activate search dialog" aria-expanded="false" >Search</a>
+</div>
+<div class="primary-logo">
+
+<a href="https://www.elizabetharden.com/" title="Elizabeth Arden">
+<span class="logo"></span>
+</a>
+
+</div>
+<nav id="navigation" role="navigation" class="hide-mobile hide-tablet">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="toolbar">
+<ul class="menu-category level-1">
+
+
+
+<li class="skincare ">
+
+
+
+<a class="has-sub-level" aria-haspopup="true" aria-expanded="false" aria-label="SKIN CARE link. Press Down Arrow to Expand Sub Menu Links" href="https://www.elizabetharden.com/skincare/">
+
+<span>SKIN CARE</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+
+</a>
+
+
+
+
+
+
+<div class="level-2">
+
+<div class="level-2-syncwdth two-filter">
+
+<ul class="menu-horizontal">
+
+
+<div class="subminititle">BY CATEGORY<i class="menu-item-toggle-subcat fa fa-angle-right"></i></div>
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/skincare/view-all-skincare/">
+<div class="auto-sub-category">
+<span>All Skin Care</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/skincare/eyecare/">
+<div class="auto-sub-category">
+<span>Eye Care</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/skincare/serums-capsules/">
+<div class="auto-sub-category">
+<span>Serums</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+</div>
+</a>
+
+
+<ul class="level-3">
+
+
+<li>
+<a href="https://www.elizabetharden.com/serums-capsules/our-top-capsules/">
+<span>Ceramide Capsules</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/serums-capsules/balms-faceoils/">
+<span>Balms &amp; Face Oils</span>
+</a>
+</li>
+
+
+</ul>
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/skincare/body-care/">
+<div class="auto-sub-category">
+<span>Body Care</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/skincare/lip-care/">
+<div class="auto-sub-category">
+<span>Lip Care</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/skincare/protective/">
+<div class="auto-sub-category">
+<span>Sunscreen</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/skincare/moisturizers/">
+<div class="auto-sub-category">
+<span>Moisturizers</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/skincare/skincare-masks/">
+<div class="auto-sub-category">
+<span>Masks</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/skincare/essence/">
+<div class="auto-sub-category">
+<span>Toners & Essences</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/skincare/skincare-value-gifts-sets/">
+<div class="auto-sub-category">
+<span>Skin Care Sets</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/skincare/cleansers-toners/">
+<div class="auto-sub-category">
+<span>Cleansers</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+<div class="subcat_menubox" id="subcat_skincare" >
+<div class="subcat_menuinner">
+
+
+<div class="subcat-filter">
+<div class="subminititle">BY CONCERN<i class="menu-item-toggle-subcat fa fa-angle-right"></i></div>
+<ul>
+
+
+
+<li><a class="refineLink2" href="/skincare/loss-of-firmness/" title="Loss of Firmness"><span>Loss of Firmness</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/skin-concern-fine-lines-wrinkles/" title="Fine Lines &amp; Wrinkles"><span>Fine Lines &amp; Wrinkles</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/skin-concern-dull-skin/" title="Dull Skin"><span>Dull Skin</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/sunscreen/" title="Sun Protection"><span>Sun Protection</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/skin-brightening/" title="Dark Spots"><span>Dark Spots</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/enlarged-pores/" title="Enlarged Pores"><span>Enlarged Pores</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/dryness/" title="Dryness"><span>Dryness</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/dark-circles/" title="Dark Circles"><span>Dark Circles</span></a> </li>
+
+
+</ul>
+</div>
+
+
+<div class="subcat-filter">
+<div class="subminititle">BY COLLECTION<i class="menu-item-toggle-subcat fa fa-angle-right"></i></div>
+<ul>
+
+
+
+<li><a class="refineLink2" href="/skincare/ceramide/" title="Ceramide"><span>Ceramide</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/prevage/" title="PREVAGE&reg;"><span>PREVAGE&reg;</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/superstart/" title="SUPERSTART"><span>SUPERSTART</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/eight-hour-cream/" title="Eight Hour&reg; Cream"><span>Eight Hour&reg; Cream</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/visible-brightening/" title="Visible Brightening"><span>Visible Brightening</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/visible-difference/" title="Visible Difference"><span>Visible Difference</span></a> </li>
+
+
+</ul>
+</div>
+
+
+<div class="subcat-filter">
+<div class="subminititle">BY SERVICE<i class="menu-item-toggle-subcat fa fa-angle-right"></i></div>
+<ul>
+
+
+
+<li><a class="refineLink2" href="/virtual-store-1/" title="Virtual World"><span>Virtual World</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/skin-care-diagnostic/" title="Skin Care Diagnostic"><span>Skin Care Diagnostic</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/skin-care-quiz/" title="Ceramide Quiz"><span>Ceramide Quiz</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/skincare-masterclass/" title="Masterclasses"><span>Masterclasses</span></a> </li>
+
+
+</ul>
+</div>
+
+</div>
+</div>
+
+</div>
+
+
+<div class="banner"><style type="text/css">
+.level-2 .banner{
+display:none !important;
+}
+
+
+@media screen and (min-width: 1024px){
+.level-2{ background-color:transparent;}
+}
+
+</style></div>
+
+</div>
+
+
+</li>
+
+
+<li class="fragrance ">
+
+
+
+<a class="has-sub-level" aria-haspopup="true" aria-expanded="false" aria-label="FRAGRANCE link. Press Down Arrow to Expand Sub Menu Links" href="https://www.elizabetharden.com/fragrance/">
+
+<span>FRAGRANCE</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+
+</a>
+
+
+
+
+
+
+<div class="level-2">
+
+<div class="level-2-syncwdth one-filter">
+
+<ul class="menu-horizontal">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/fragrance/fragrance-scent/">
+<div class="auto-sub-category">
+<span>Fragrance Scent</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+</div>
+</a>
+
+
+<ul class="level-3">
+
+
+<li>
+<a href="https://www.elizabetharden.com/fragrance-scent/citrus/">
+<span>Citrus</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/fragrance-scent/floral/">
+<span>Floral</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/fragrance-scent/spicy/">
+<span>Spicy</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/fragrance-scent/woody/">
+<span>Woody</span>
+</a>
+</li>
+
+
+</ul>
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/fragrance/bath-body/">
+<div class="auto-sub-category">
+<span>Bath & Body</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+</div>
+</a>
+
+
+<ul class="level-3">
+
+
+<li>
+<a href="https://www.elizabetharden.com/bath-body/body-creams-lotions/">
+<span>Body Lotions &amp; Creams</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/bath-body/bath-shower-gels/">
+<span>Shower Gels</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/bath-body/deodorants/">
+<span>Deodorants</span>
+</a>
+</li>
+
+
+</ul>
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/fragrance/fragrance-gifts-value-sets/">
+<div class="auto-sub-category">
+<span>Perfume Sets</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+</div>
+</a>
+
+
+<ul class="level-3">
+
+
+<li>
+<a href="https://www.elizabetharden.com/fragrance-gifts-value-sets/gifts-under-50/">
+<span>Under $50</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/fragrance-gifts-value-sets/gifts-under-100/">
+<span>Under $100</span>
+</a>
+</li>
+
+
+</ul>
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/fragrance/fragrance-view-all/">
+<div class="auto-sub-category">
+<span>View All</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+</ul>
+
+<div class="subcat_menubox" id="subcat_fragrance" >
+<div class="subcat_menuinner">
+
+
+<div class="subcat-filter">
+<div class="subminititle">BY COLLECTION<i class="menu-item-toggle-subcat fa fa-angle-right"></i></div>
+<ul>
+
+
+
+<li><a class="refineLink2" href="/fragrance/my-fifth-avenue/" title="My Fifth Avenue"><span>My Fifth Avenue</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/fragrance/white-tea/" title="White Tea"><span>White Tea</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/fragrance/5th-avenue/" title="5th avenue"><span>5th avenue</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/fragrance/green-tea/" title="Green Tea"><span>Green Tea</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/fragrance/red-door/" title="Red Door"><span>Red Door</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/fragrance/sunflowers/" title="Sunflowers"><span>Sunflowers</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/fragrance/blue-grass/" title="Blue Grass"><span>Blue Grass</span></a> </li>
+
+
+
+
+
+</ul>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+
+<div class="banner"></div>
+
+</div>
+
+
+</li>
+
+
+<li class="makeup ">
+
+
+
+<a class="has-sub-level" aria-haspopup="true" aria-expanded="false" aria-label="MAKEUP link. Press Down Arrow to Expand Sub Menu Links" href="https://www.elizabetharden.com/makeup/">
+
+<span>MAKEUP</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+
+</a>
+
+
+
+
+
+
+<div class="level-2">
+
+<div class="level-2-syncwdth one-filter">
+
+<ul class="menu-horizontal">
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/makeup/face/">
+<div class="auto-sub-category">
+<span>Face</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+</div>
+</a>
+
+
+<ul class="level-3">
+
+
+<li>
+<a href="https://www.elizabetharden.com/face/foundation/">
+<span>Foundation</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/face/primer/">
+<span>Makeup Primer</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/face/concealer/">
+<span>Concealer</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/face/powder/">
+<span>Powder</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/face/blush/">
+<span>Blush &amp; Bronzers</span>
+</a>
+</li>
+
+
+</ul>
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/makeup/eyes/">
+<div class="auto-sub-category">
+<span>Eyes</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+</div>
+</a>
+
+
+<ul class="level-3">
+
+
+<li>
+<a href="https://www.elizabetharden.com/eyes/mascara/">
+<span>Mascara</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/eyes/eyeliner/">
+<span>Eyeliner</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/eyes/eyeprimer/">
+<span>Eye Shadow Primer</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/eyes/eyebrow/">
+<span>Eyebrow Makeup</span>
+</a>
+</li>
+
+
+</ul>
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/makeup/lips/">
+<div class="auto-sub-category">
+<span>Lips</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+</div>
+</a>
+
+
+<ul class="level-3">
+
+
+<li>
+<a href="https://www.elizabetharden.com/lips/lipstick/">
+<span>Lipstick</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/lips/lip-balm-and-treatment/">
+<span>Lip Balm &amp; Treatment</span>
+</a>
+</li>
+
+
+</ul>
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/makeup/makeup-new-arrivals/">
+<div class="auto-sub-category">
+<span>View All Makeup</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/makeup/value-gifts-sets/">
+<div class="auto-sub-category">
+<span>Makeup Kits</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+</ul>
+
+<div class="subcat_menubox" id="subcat_makeup" >
+<div class="subcat_menuinner">
+
+
+<div class="subcat-filter">
+<div class="subminititle">BY COLLECTION<i class="menu-item-toggle-subcat fa fa-angle-right"></i></div>
+<ul>
+
+
+
+<li><a class="refineLink2" href="/makeup/makeup-flawless-finish/" title="Flawless Finish"><span>Flawless Finish</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/makeup/beautiful-color-collection/" title="Beautiful Color"><span>Beautiful Color</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/makeup/makeup-pure-finish/" title="Pure Finish"><span>Pure Finish</span></a> </li>
+
+
+</ul>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+
+<div class="banner"></div>
+
+</div>
+
+
+</li>
+
+
+<li class="best sellers ">
+
+
+<a class="" href="https://www.elizabetharden.com/best-sellers/">
+
+<span>BEST SELLERS</span>
+
+</a>
+
+
+
+
+
+
+
+</li>
+
+
+<li class="prevage ">
+
+
+
+<a class="has-sub-level" aria-haspopup="true" aria-expanded="false" aria-label="PREVAGE link. Press Down Arrow to Expand Sub Menu Links" href="https://www.elizabetharden.com/prevage/">
+
+<span>PREVAGE<sup>&reg;</sup></span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+
+</a>
+
+
+
+
+
+
+<div class="level-2">
+
+<div class="level-2-syncwdth two-filter">
+
+<ul class="menu-vertical">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+<div class="subcat_menubox" id="subcat_prevage" >
+<div class="subcat_menuinner">
+
+<div class="subcat-filter">
+<div class="subminititle">PRODUCT TYPE<i class="menu-item-toggle-subcat fa fa-angle-right"></i></div>
+<ul>
+
+
+
+<li><a class="refineLink2" href="/prevage/creams-lotions/" title="Creams &amp; Lotions"><span>Creams &amp; Lotions</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/prevage/neck-body/" title="Neck &amp; D&eacute;collet&eacute;"><span>Neck &amp; D&eacute;collet&eacute;</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/prevage/sun-pollution-defense/" title="Pollution Defense"><span>Pollution Defense</span></a> </li>
+
+
+
+
+
+
+
+<li><a class="refineLink2" href="/prevage/prevage-kits/" title="Gift Sets"><span>Gift Sets</span></a> </li>
+
+
+</ul>
+</div>
+
+
+<div class="subcat-filter">
+<div class="subminititle">SERUMS<i class="menu-item-toggle-subcat fa fa-angle-right"></i></div>
+<ul>
+
+
+
+<li><a class="refineLink2" href="/prevage/anti-aging-face-serums/" title="Face Serums"><span>Face Serums</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/prevage/anti-aging-eye-serums/" title="Eye Serums"><span>Eye Serums</span></a> </li>
+
+
+</ul>
+</div>
+
+
+<div class="subcat-filter">
+<div class="subminititle">BY COLLECTION<i class="menu-item-toggle-subcat fa fa-angle-right"></i></div>
+<ul>
+
+
+
+<li><a class="refineLink2" href="/prevage/progressive-renewal/" title="Progressive Renewal"><span>Progressive Renewal</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/prevage/prevage-anti-aging/" title="Anti-Aging"><span>Anti-Aging</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/prevage/prevage-intensive-anti-aging/" title="Anti-aging + Intensive Repair"><span>Anti-aging + Intensive Repair</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/prevage/cleanser-essence/" title="Cleanser &amp; Essence"><span>Cleanser &amp; Essence</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/prevage/city-smart-skin-defense/" title="City Smart"><span>City Smart</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/prevage/prevage-view-all/" title="View All"><span>View All</span></a> </li>
+
+
+</ul>
+</div>
+
+
+</div>
+</div>
+
+</div>
+
+
+<div class="banner"></div>
+
+</div>
+
+
+<li class="topmore" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Press Down Arrow to Expand More Links"><span>MORE<i class="fa fa-sort-desc" aria-hidden="true"></i></span>
+<ul class="topmoresub">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a class="" href="https://www.elizabetharden.com/ceramide-collection/"><span>CERAMIDE</span></a></li>
+
+
+
+
+<li><a class="" href="https://www.elizabetharden.com/gifts/"><span>GIFTS</span></a></li>
+
+
+
+
+<li><a class="" href="https://www.elizabetharden.com/beauty-services.html"><span>BEAUTY SERVICES</span></a></li>
+
+
+
+
+<li><a class="" href="https://www.elizabetharden.com/special-offers/"><span>OFFERS</span></a></li>
+
+
+
+
+<li><a class="" href="https://www.elizabetharden.com/last-chance/"><span>Last Chance</span></a></li>
+
+
+</ul>
+</li>
+
+</li>
+
+
+<li class="ceramide-collection top-hide">
+
+
+<a class="" href="https://www.elizabetharden.com/ceramide-collection/">
+
+<span>CERAMIDE</span>
+
+</a>
+
+
+
+
+
+
+
+</li>
+
+
+<li class="gifts top-hide">
+
+
+
+<a class="has-sub-level" aria-haspopup="true" aria-expanded="false" aria-label="GIFTS link. Press Down Arrow to Expand Sub Menu Links" href="https://www.elizabetharden.com/gifts/">
+
+<span>GIFTS</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+
+</a>
+
+
+
+
+
+
+<div class="level-2">
+
+<div class="level-2-syncwdth no-filter">
+
+<ul class="menu-vertical">
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/gifts/view-all-gifts/">
+<div class="auto-sub-category">
+<span>View All Gifts</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/gifts/under-50-gifts/">
+<div class="auto-sub-category">
+<span>Gifts Under $50</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/gifts/under-100-gifts/">
+<div class="auto-sub-category">
+<span>Gifts Under $100</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/gifts/100-over-gifts/">
+<div class="auto-sub-category">
+<span>Gifts $100 & Up</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/gifts/skincare-gift/">
+<div class="auto-sub-category">
+<span>Skin Care Gifts</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/gifts/fragrance-gift/">
+<div class="auto-sub-category">
+<span>Fragrance Gifts</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/gifts/makeup-gift/">
+<div class="auto-sub-category">
+<span>Makeup Gifts</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/gifts/bath-body-gift/">
+<div class="auto-sub-category">
+<span>Bath & Body Gifts</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/gifts/online-only-exclusives/">
+<div class="auto-sub-category">
+<span>Online Exclusives</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/gifts/beauty-gift-guide/">
+<div class="auto-sub-category">
+<span>Gift Guide</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+</ul>
+
+<div class="subcat_menubox" id="subcat_gifts" >
+<div class="subcat_menuinner">
+
+
+
+
+</div>
+</div>
+
+</div>
+
+
+<div class="banner"></div>
+
+</div>
+
+
+</li>
+
+
+<li class="beauty-services top-hide">
+
+
+
+<a class="has-sub-level" aria-haspopup="true" aria-expanded="false" aria-label="BEAUTY SERVICES link. Press Down Arrow to Expand Sub Menu Links" href="https://www.elizabetharden.com/beauty-services.html">
+
+<span>BEAUTY SERVICES</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+
+</a>
+
+
+
+
+
+
+<div class="level-2">
+
+<div class="level-2-syncwdth no-filter">
+
+<ul class="menu-vertical">
+
+
+
+
+
+<li class="beauty-services">
+<a href="https://www.elizabetharden.com/virtual-store-2/">
+<div class="auto-sub-category">
+<span>Virtual World</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="beauty-services">
+<a href="https://www.elizabetharden.com/diagnose-skin-concerns.html">
+<div class="auto-sub-category">
+<span>Skin Care Diagnostic Tool</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="beauty-services">
+<a href="https://elizabetharden.jebbit.com/xep9y4zy?L=Owned+Web&utm_source=elizabetharden&utm_medium=beautyservicesavigation&utm_campaign=capsulequiz2022&utm_content=beautyservices">
+<div class="auto-sub-category">
+<span>Ceramide Capsule Quiz</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="beauty-services">
+<a href="https://www.elizabetharden.com/beauty-services/master-class/">
+<div class="auto-sub-category">
+<span>Masterclasses</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+</ul>
+
+<div class="subcat_menubox" id="subcat_beauty-services" >
+<div class="subcat_menuinner">
+
+
+
+
+</div>
+</div>
+
+</div>
+
+
+<div class="banner"></div>
+
+</div>
+
+
+</li>
+
+
+<li class="specialoffers top-hide">
+
+
+<a class="" href="https://www.elizabetharden.com/special-offers/">
+
+<span>OFFERS</span>
+
+</a>
+
+
+
+
+
+
+
+</li>
+
+
+<li class="last-chance top-hide">
+
+
+<a class="" href="https://www.elizabetharden.com/last-chance/">
+
+<span>Last Chance</span>
+
+</a>
+
+
+
+
+
+
+
+</li>
+
+</ul>
+</div>
+
+
+<!-- utility user menu -->
+<div class="menu-utility-user">
+<div class="header-checkout hide-desktop">
+<a href="/on/demandware.store/Sites-ElizabethArden-Site/default/Cart-Show" title="Checkout">
+Checkout
+</a>
+</div>
+<div class="customerservice hide-desktop">
+<a href="https://www.elizabetharden.com/customer-service-info" title="Customer Service">
+Customer Service
+</a>
+</div>
+
+
+	<div class="user-login ">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul>
+<li>
+
+
+<a class="null" href="https://www.elizabetharden.com/well-known" title="Sign In">Sign In</a>
+
+/
+
+
+<a class="null" href="https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/Account-StartRegister" title="Register">Register</a>
+
+
+
+</li>
+</ul>
+
+</div>
+
+<div class="headermainsearch hide-mobile hide-tablet">
+<a href="javascript:void(0)" role="button" aria-pressed="false" title="Activate search dialog" aria-label="Activate search dialog" aria-expanded="false">Search</a>
+</div>
+</div>
+
+
+
+
+
+<div class="navigation-banner-responsive hide-desktop">
+
+	 
+
+	
+</div>
+</nav>
+
+<div class="header-banner hide-desktop">
+
+	 
+
+
+	
+
+
+<div class="header-promotion">
+
+
+5 FREE Gifts with any $75 purchase ($79 Value), Use Code: <b>SUMMER</b>. <a href="https://www.elizabetharden.com/skincare/"><u>Shop Now</u></a>
+
+
+</div> 
+	
+</div>
+
+<div class="header-search header-searchdesktop bfx-price-container" role="dialog">
+
+<form action="/on/demandware.store/Sites-ElizabethArden-Site/default/Search-Show" method="get" name="simpleSearch">
+<fieldset>
+<label class="visually-hidden" for="q">Search Catalog</label>
+<input type="text" name="q" aria-label="Search" value="" placeholder="Search" />
+<input type="hidden" name="lang" value="default"/>
+<button type="submit" aria-label="search button"><span class="visually-hidden">Search</span></button>
+</fieldset>
+<button class="close-button" aria-label="Close"></button>
+</form>
+
+</div>
+
+<div class="store-mini">
+<div class="stores">
+<a href="https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/Stores-Find" title="Store Locator" class="store-loc-com">
+Store Locator
+</a>
+</div>
+<span class="borderfree-content"></span>
+
+<div id="mini-cart" class="bfx-price-container bfx-minicart-container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Report any requested source code -->
+
+<!-- Report the active source code -->
+
+
+
+
+<div class="mini-cart-total">
+
+<div class="mini-cart-link mini-cart-empty">
+<span class="minicart-quantity bfx-minicart-product-qty">0</span>
+</div>
+
+</div>
+
+
+
+
+
+
+
+</div>
+</div>
+</div><!-- /header -->
+<div class="sidecar-menu" id="mobile-menu-outer">
+<nav id="navigation" role="navigation" class="hide-desktop">
+<div class="header-search header-searchmobile bfx-price-container">
+
+<form action="/on/demandware.store/Sites-ElizabethArden-Site/default/Search-Show" method="get" name="simpleSearch">
+<fieldset>
+<label class="visually-hidden" for="q">Search Catalog</label>
+<input type="text" name="q" aria-label="Search" value="" placeholder="Search" />
+<input type="hidden" name="lang" value="default"/>
+<button type="submit" aria-label="search button"><span class="visually-hidden">Search</span></button>
+</fieldset>
+<button class="close-button" aria-label="Close"></button>
+</form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="toolbar">
+<ul class="menu-category level-1">
+
+
+
+<li class="skincare ">
+
+
+
+<a class="has-sub-level" aria-haspopup="true" aria-expanded="false" aria-label="SKIN CARE link. Press Down Arrow to Expand Sub Menu Links" href="https://www.elizabetharden.com/skincare/">
+
+<span>SKIN CARE</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+
+</a>
+
+
+
+
+
+
+<div class="level-2">
+
+<div class="level-2-syncwdth two-filter">
+
+<ul class="menu-horizontal">
+
+
+<div class="subminititle">BY CATEGORY<i class="menu-item-toggle-subcat fa fa-angle-right"></i></div>
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/skincare/view-all-skincare/">
+<div class="auto-sub-category">
+<span>All Skin Care</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/skincare/eyecare/">
+<div class="auto-sub-category">
+<span>Eye Care</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/skincare/serums-capsules/">
+<div class="auto-sub-category">
+<span>Serums</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+</div>
+</a>
+
+
+<ul class="level-3">
+
+
+<li>
+<a href="https://www.elizabetharden.com/serums-capsules/our-top-capsules/">
+<span>Ceramide Capsules</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/serums-capsules/balms-faceoils/">
+<span>Balms &amp; Face Oils</span>
+</a>
+</li>
+
+
+</ul>
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/skincare/body-care/">
+<div class="auto-sub-category">
+<span>Body Care</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/skincare/lip-care/">
+<div class="auto-sub-category">
+<span>Lip Care</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/skincare/protective/">
+<div class="auto-sub-category">
+<span>Sunscreen</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/skincare/moisturizers/">
+<div class="auto-sub-category">
+<span>Moisturizers</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/skincare/skincare-masks/">
+<div class="auto-sub-category">
+<span>Masks</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/skincare/essence/">
+<div class="auto-sub-category">
+<span>Toners & Essences</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/skincare/skincare-value-gifts-sets/">
+<div class="auto-sub-category">
+<span>Skin Care Sets</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/skincare/cleansers-toners/">
+<div class="auto-sub-category">
+<span>Cleansers</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+<div class="subcat_menubox" id="subcat_skincare" >
+<div class="subcat_menuinner">
+
+
+<div class="subcat-filter">
+<div class="subminititle">BY CONCERN<i class="menu-item-toggle-subcat fa fa-angle-right"></i></div>
+<ul>
+
+
+
+<li><a class="refineLink2" href="/skincare/loss-of-firmness/" title="Loss of Firmness"><span>Loss of Firmness</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/skin-concern-fine-lines-wrinkles/" title="Fine Lines &amp; Wrinkles"><span>Fine Lines &amp; Wrinkles</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/skin-concern-dull-skin/" title="Dull Skin"><span>Dull Skin</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/sunscreen/" title="Sun Protection"><span>Sun Protection</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/skin-brightening/" title="Dark Spots"><span>Dark Spots</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/enlarged-pores/" title="Enlarged Pores"><span>Enlarged Pores</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/dryness/" title="Dryness"><span>Dryness</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/dark-circles/" title="Dark Circles"><span>Dark Circles</span></a> </li>
+
+
+</ul>
+</div>
+
+
+<div class="subcat-filter">
+<div class="subminititle">BY COLLECTION<i class="menu-item-toggle-subcat fa fa-angle-right"></i></div>
+<ul>
+
+
+
+<li><a class="refineLink2" href="/skincare/ceramide/" title="Ceramide"><span>Ceramide</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/prevage/" title="PREVAGE&reg;"><span>PREVAGE&reg;</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/superstart/" title="SUPERSTART"><span>SUPERSTART</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/eight-hour-cream/" title="Eight Hour&reg; Cream"><span>Eight Hour&reg; Cream</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/visible-brightening/" title="Visible Brightening"><span>Visible Brightening</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/visible-difference/" title="Visible Difference"><span>Visible Difference</span></a> </li>
+
+
+</ul>
+</div>
+
+
+<div class="subcat-filter">
+<div class="subminititle">BY SERVICE<i class="menu-item-toggle-subcat fa fa-angle-right"></i></div>
+<ul>
+
+
+
+<li><a class="refineLink2" href="/virtual-store-1/" title="Virtual World"><span>Virtual World</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/skin-care-diagnostic/" title="Skin Care Diagnostic"><span>Skin Care Diagnostic</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/skin-care-quiz/" title="Ceramide Quiz"><span>Ceramide Quiz</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/skincare/skincare-masterclass/" title="Masterclasses"><span>Masterclasses</span></a> </li>
+
+
+</ul>
+</div>
+
+</div>
+</div>
+
+</div>
+
+
+<div class="banner"><style type="text/css">
+.level-2 .banner{
+display:none !important;
+}
+
+
+@media screen and (min-width: 1024px){
+.level-2{ background-color:transparent;}
+}
+
+</style></div>
+
+</div>
+
+
+</li>
+
+
+<li class="fragrance ">
+
+
+
+<a class="has-sub-level" aria-haspopup="true" aria-expanded="false" aria-label="FRAGRANCE link. Press Down Arrow to Expand Sub Menu Links" href="https://www.elizabetharden.com/fragrance/">
+
+<span>FRAGRANCE</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+
+</a>
+
+
+
+
+
+
+<div class="level-2">
+
+<div class="level-2-syncwdth one-filter">
+
+<ul class="menu-horizontal">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/fragrance/fragrance-scent/">
+<div class="auto-sub-category">
+<span>Fragrance Scent</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+</div>
+</a>
+
+
+<ul class="level-3">
+
+
+<li>
+<a href="https://www.elizabetharden.com/fragrance-scent/citrus/">
+<span>Citrus</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/fragrance-scent/floral/">
+<span>Floral</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/fragrance-scent/spicy/">
+<span>Spicy</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/fragrance-scent/woody/">
+<span>Woody</span>
+</a>
+</li>
+
+
+</ul>
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/fragrance/bath-body/">
+<div class="auto-sub-category">
+<span>Bath & Body</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+</div>
+</a>
+
+
+<ul class="level-3">
+
+
+<li>
+<a href="https://www.elizabetharden.com/bath-body/body-creams-lotions/">
+<span>Body Lotions &amp; Creams</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/bath-body/bath-shower-gels/">
+<span>Shower Gels</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/bath-body/deodorants/">
+<span>Deodorants</span>
+</a>
+</li>
+
+
+</ul>
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/fragrance/fragrance-gifts-value-sets/">
+<div class="auto-sub-category">
+<span>Perfume Sets</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+</div>
+</a>
+
+
+<ul class="level-3">
+
+
+<li>
+<a href="https://www.elizabetharden.com/fragrance-gifts-value-sets/gifts-under-50/">
+<span>Under $50</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/fragrance-gifts-value-sets/gifts-under-100/">
+<span>Under $100</span>
+</a>
+</li>
+
+
+</ul>
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/fragrance/fragrance-view-all/">
+<div class="auto-sub-category">
+<span>View All</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+</ul>
+
+<div class="subcat_menubox" id="subcat_fragrance" >
+<div class="subcat_menuinner">
+
+
+<div class="subcat-filter">
+<div class="subminititle">BY COLLECTION<i class="menu-item-toggle-subcat fa fa-angle-right"></i></div>
+<ul>
+
+
+
+<li><a class="refineLink2" href="/fragrance/my-fifth-avenue/" title="My Fifth Avenue"><span>My Fifth Avenue</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/fragrance/white-tea/" title="White Tea"><span>White Tea</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/fragrance/5th-avenue/" title="5th avenue"><span>5th avenue</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/fragrance/green-tea/" title="Green Tea"><span>Green Tea</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/fragrance/red-door/" title="Red Door"><span>Red Door</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/fragrance/sunflowers/" title="Sunflowers"><span>Sunflowers</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/fragrance/blue-grass/" title="Blue Grass"><span>Blue Grass</span></a> </li>
+
+
+
+
+
+</ul>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+
+<div class="banner"></div>
+
+</div>
+
+
+</li>
+
+
+<li class="makeup ">
+
+
+
+<a class="has-sub-level" aria-haspopup="true" aria-expanded="false" aria-label="MAKEUP link. Press Down Arrow to Expand Sub Menu Links" href="https://www.elizabetharden.com/makeup/">
+
+<span>MAKEUP</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+
+</a>
+
+
+
+
+
+
+<div class="level-2">
+
+<div class="level-2-syncwdth one-filter">
+
+<ul class="menu-horizontal">
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/makeup/face/">
+<div class="auto-sub-category">
+<span>Face</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+</div>
+</a>
+
+
+<ul class="level-3">
+
+
+<li>
+<a href="https://www.elizabetharden.com/face/foundation/">
+<span>Foundation</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/face/primer/">
+<span>Makeup Primer</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/face/concealer/">
+<span>Concealer</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/face/powder/">
+<span>Powder</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/face/blush/">
+<span>Blush &amp; Bronzers</span>
+</a>
+</li>
+
+
+</ul>
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/makeup/eyes/">
+<div class="auto-sub-category">
+<span>Eyes</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+</div>
+</a>
+
+
+<ul class="level-3">
+
+
+<li>
+<a href="https://www.elizabetharden.com/eyes/mascara/">
+<span>Mascara</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/eyes/eyeliner/">
+<span>Eyeliner</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/eyes/eyeprimer/">
+<span>Eye Shadow Primer</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/eyes/eyebrow/">
+<span>Eyebrow Makeup</span>
+</a>
+</li>
+
+
+</ul>
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/makeup/lips/">
+<div class="auto-sub-category">
+<span>Lips</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+</div>
+</a>
+
+
+<ul class="level-3">
+
+
+<li>
+<a href="https://www.elizabetharden.com/lips/lipstick/">
+<span>Lipstick</span>
+</a>
+</li>
+
+
+
+<li>
+<a href="https://www.elizabetharden.com/lips/lip-balm-and-treatment/">
+<span>Lip Balm &amp; Treatment</span>
+</a>
+</li>
+
+
+</ul>
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/makeup/makeup-new-arrivals/">
+<div class="auto-sub-category">
+<span>View All Makeup</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/makeup/value-gifts-sets/">
+<div class="auto-sub-category">
+<span>Makeup Kits</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+</ul>
+
+<div class="subcat_menubox" id="subcat_makeup" >
+<div class="subcat_menuinner">
+
+
+<div class="subcat-filter">
+<div class="subminititle">BY COLLECTION<i class="menu-item-toggle-subcat fa fa-angle-right"></i></div>
+<ul>
+
+
+
+<li><a class="refineLink2" href="/makeup/makeup-flawless-finish/" title="Flawless Finish"><span>Flawless Finish</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/makeup/beautiful-color-collection/" title="Beautiful Color"><span>Beautiful Color</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/makeup/makeup-pure-finish/" title="Pure Finish"><span>Pure Finish</span></a> </li>
+
+
+</ul>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+
+<div class="banner"></div>
+
+</div>
+
+
+</li>
+
+
+<li class="best sellers ">
+
+
+<a class="" href="https://www.elizabetharden.com/best-sellers/">
+
+<span>BEST SELLERS</span>
+
+</a>
+
+
+
+
+
+
+
+</li>
+
+
+<li class="prevage ">
+
+
+
+<a class="has-sub-level" aria-haspopup="true" aria-expanded="false" aria-label="PREVAGE link. Press Down Arrow to Expand Sub Menu Links" href="https://www.elizabetharden.com/prevage/">
+
+<span>PREVAGE<sup>&reg;</sup></span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+
+</a>
+
+
+
+
+
+
+<div class="level-2">
+
+<div class="level-2-syncwdth two-filter">
+
+<ul class="menu-vertical">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+<div class="subcat_menubox" id="subcat_prevage" >
+<div class="subcat_menuinner">
+
+<div class="subcat-filter">
+<div class="subminititle">PRODUCT TYPE<i class="menu-item-toggle-subcat fa fa-angle-right"></i></div>
+<ul>
+
+
+
+<li><a class="refineLink2" href="/prevage/creams-lotions/" title="Creams &amp; Lotions"><span>Creams &amp; Lotions</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/prevage/neck-body/" title="Neck &amp; D&eacute;collet&eacute;"><span>Neck &amp; D&eacute;collet&eacute;</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/prevage/sun-pollution-defense/" title="Pollution Defense"><span>Pollution Defense</span></a> </li>
+
+
+
+
+
+
+
+<li><a class="refineLink2" href="/prevage/prevage-kits/" title="Gift Sets"><span>Gift Sets</span></a> </li>
+
+
+</ul>
+</div>
+
+
+<div class="subcat-filter">
+<div class="subminititle">SERUMS<i class="menu-item-toggle-subcat fa fa-angle-right"></i></div>
+<ul>
+
+
+
+<li><a class="refineLink2" href="/prevage/anti-aging-face-serums/" title="Face Serums"><span>Face Serums</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/prevage/anti-aging-eye-serums/" title="Eye Serums"><span>Eye Serums</span></a> </li>
+
+
+</ul>
+</div>
+
+
+<div class="subcat-filter">
+<div class="subminititle">BY COLLECTION<i class="menu-item-toggle-subcat fa fa-angle-right"></i></div>
+<ul>
+
+
+
+<li><a class="refineLink2" href="/prevage/progressive-renewal/" title="Progressive Renewal"><span>Progressive Renewal</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/prevage/prevage-anti-aging/" title="Anti-Aging"><span>Anti-Aging</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/prevage/prevage-intensive-anti-aging/" title="Anti-aging + Intensive Repair"><span>Anti-aging + Intensive Repair</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/prevage/cleanser-essence/" title="Cleanser &amp; Essence"><span>Cleanser &amp; Essence</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/prevage/city-smart-skin-defense/" title="City Smart"><span>City Smart</span></a> </li>
+
+
+
+
+<li><a class="refineLink2" href="/prevage/prevage-view-all/" title="View All"><span>View All</span></a> </li>
+
+
+</ul>
+</div>
+
+
+</div>
+</div>
+
+</div>
+
+
+<div class="banner"></div>
+
+</div>
+
+
+<li class="topmore" tabindex="0" aria-haspopup="true" aria-expanded="false" aria-label="Press Down Arrow to Expand More Links"><span>MORE<i class="fa fa-sort-desc" aria-hidden="true"></i></span>
+<ul class="topmoresub">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a class="" href="https://www.elizabetharden.com/ceramide-collection/"><span>CERAMIDE</span></a></li>
+
+
+
+
+<li><a class="" href="https://www.elizabetharden.com/gifts/"><span>GIFTS</span></a></li>
+
+
+
+
+<li><a class="" href="https://www.elizabetharden.com/beauty-services.html"><span>BEAUTY SERVICES</span></a></li>
+
+
+
+
+<li><a class="" href="https://www.elizabetharden.com/special-offers/"><span>OFFERS</span></a></li>
+
+
+
+
+<li><a class="" href="https://www.elizabetharden.com/last-chance/"><span>Last Chance</span></a></li>
+
+
+</ul>
+</li>
+
+</li>
+
+
+<li class="ceramide-collection top-hide">
+
+
+<a class="" href="https://www.elizabetharden.com/ceramide-collection/">
+
+<span>CERAMIDE</span>
+
+</a>
+
+
+
+
+
+
+
+</li>
+
+
+<li class="gifts top-hide">
+
+
+
+<a class="has-sub-level" aria-haspopup="true" aria-expanded="false" aria-label="GIFTS link. Press Down Arrow to Expand Sub Menu Links" href="https://www.elizabetharden.com/gifts/">
+
+<span>GIFTS</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+
+</a>
+
+
+
+
+
+
+<div class="level-2">
+
+<div class="level-2-syncwdth no-filter">
+
+<ul class="menu-vertical">
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/gifts/view-all-gifts/">
+<div class="auto-sub-category">
+<span>View All Gifts</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/gifts/under-50-gifts/">
+<div class="auto-sub-category">
+<span>Gifts Under $50</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/gifts/under-100-gifts/">
+<div class="auto-sub-category">
+<span>Gifts Under $100</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/gifts/100-over-gifts/">
+<div class="auto-sub-category">
+<span>Gifts $100 & Up</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/gifts/skincare-gift/">
+<div class="auto-sub-category">
+<span>Skin Care Gifts</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/gifts/fragrance-gift/">
+<div class="auto-sub-category">
+<span>Fragrance Gifts</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/gifts/makeup-gift/">
+<div class="auto-sub-category">
+<span>Makeup Gifts</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/gifts/bath-body-gift/">
+<div class="auto-sub-category">
+<span>Bath & Body Gifts</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/gifts/online-only-exclusives/">
+<div class="auto-sub-category">
+<span>Online Exclusives</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="">
+<a href="https://www.elizabetharden.com/gifts/beauty-gift-guide/">
+<div class="auto-sub-category">
+<span>Gift Guide</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+</ul>
+
+<div class="subcat_menubox" id="subcat_gifts" >
+<div class="subcat_menuinner">
+
+
+
+
+</div>
+</div>
+
+</div>
+
+
+<div class="banner"></div>
+
+</div>
+
+
+</li>
+
+
+<li class="beauty-services top-hide">
+
+
+
+<a class="has-sub-level" aria-haspopup="true" aria-expanded="false" aria-label="BEAUTY SERVICES link. Press Down Arrow to Expand Sub Menu Links" href="https://www.elizabetharden.com/beauty-services.html">
+
+<span>BEAUTY SERVICES</span>
+
+<i class="menu-item-toggle fa fa-angle-right"></i>
+
+
+</a>
+
+
+
+
+
+
+<div class="level-2">
+
+<div class="level-2-syncwdth no-filter">
+
+<ul class="menu-vertical">
+
+
+
+
+
+<li class="beauty-services">
+<a href="https://www.elizabetharden.com/virtual-store-2/">
+<div class="auto-sub-category">
+<span>Virtual World</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="beauty-services">
+<a href="https://www.elizabetharden.com/diagnose-skin-concerns.html">
+<div class="auto-sub-category">
+<span>Skin Care Diagnostic Tool</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="beauty-services">
+<a href="https://elizabetharden.jebbit.com/xep9y4zy?L=Owned+Web&utm_source=elizabetharden&utm_medium=beautyservicesavigation&utm_campaign=capsulequiz2022&utm_content=beautyservices">
+<div class="auto-sub-category">
+<span>Ceramide Capsule Quiz</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+
+
+<li class="beauty-services">
+<a href="https://www.elizabetharden.com/beauty-services/master-class/">
+<div class="auto-sub-category">
+<span>Masterclasses</span>
+
+</div>
+</a>
+
+
+</li>
+
+
+
+</ul>
+
+<div class="subcat_menubox" id="subcat_beauty-services" >
+<div class="subcat_menuinner">
+
+
+
+
+</div>
+</div>
+
+</div>
+
+
+<div class="banner"></div>
+
+</div>
+
+
+</li>
+
+
+<li class="specialoffers top-hide">
+
+
+<a class="" href="https://www.elizabetharden.com/special-offers/">
+
+<span>OFFERS</span>
+
+</a>
+
+
+
+
+
+
+
+</li>
+
+
+<li class="last-chance top-hide">
+
+
+<a class="" href="https://www.elizabetharden.com/last-chance/">
+
+<span>Last Chance</span>
+
+</a>
+
+
+
+
+
+
+
+</li>
+
+</ul>
+</div>
+
+
+<!-- utility user menu -->
+<div class="menu-utility-user">
+<div class="header-checkout hide-desktop">
+<a href="https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/Cart-Show" title="Checkout">
+Checkout
+</a>
+</div>
+<div class="customerservice hide-desktop">
+<a href="https://www.elizabetharden.com/customer-service-info" title="Help">
+Help
+</a>
+</div>
+
+<div class="user-login">
+
+	<div class="user-login ">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul>
+<li>
+
+
+<a class="null" href="https://www.elizabetharden.com/well-known" title="Sign In">Sign In</a>
+
+/
+
+
+<a class="null" href="https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/Account-StartRegister" title="Register">Register</a>
+
+
+
+</li>
+</ul>
+
+</div>
+
+</div>
+<div class="stores">
+<a href="https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/Stores-Find" title="Store Locator" class="store-loc-com">
+Store Locator
+</a>
+</div>
+<div class="headermainsearch hide-mobile hide-tablet">
+<a href="javascript:void(0)" role="button" aria-pressed="false" title="Activate search dialog" aria-label="Activate search dialog" aria-expanded="false">Search</a>
+</div>
+</div>
+
+
+
+
+
+<div class="navigation-banner-responsive hide-desktop">
+
+	 
+
+	
+</div>
+</nav>
+<div class="sidecar_overlay hide"></div>
+</div>
+</header>
+
+
+<div id="main" role="main">
+
+
+<!-- +1.888.553.XXXX --><!--This phone is a requirement to support existing Gomez monitor of SiteGenesis. Demadware customers can remove this.-->
+<div id="oc"></div>
+<div class="homepage-banner global-slider">
+
+	 
+
+
+	
+
+<div class="html-slot-container">
+
+
+
+</div> 
+	
+</div>
+<div id="search-result-items">
+
+	 
+
+	
+</div>
+<div class="watch-video">
+
+	 
+
+
+	
+
+
+
+
+
+
+
+<!-- // Content Asset: home_slot3_20230620-JUNE START -->
+
+<div class="home-slot3">
+    <div class="free-shipping-bar">
+      <p>A little treat for you: <span>Free shipping on all orders</span></p>
+    </div>
+
+      <!-- .full-banner .ceramide-capsules -->
+      <div class="row full-banner ceramide-capsules top-message">
+        <a aria-label="link to shop our capsules"
+            href="https://www.elizabetharden.com/serums-capsules/our-top-capsules/">
+            <picture>
+                <source media="(max-width: 767px)"
+                    srcset="https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dweb8b2b0b/images/homepage/topbanner/060123_CeramideFocus-hp-banner-m-640x640.jpg" />
+                <source media="(min-width: 768px) and (max-width: 1023px)"
+                    srcset="https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dw9f4b78cc/images/homepage/topbanner/060123_CeramideFocus-hp-banner-t-768x345.jpg, https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dw43a56166/images/homepage/topbanner/060123_CeramideFocus-hp-banner-t-2x-1536x690.jpg 2x" />
+                <img alt="Ceramide Capsule Collection on on a light blue background with large faint bubbles"
+                    src="https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dw301e4f4c/images/homepage/topbanner/060123_CeramideFocus-hp-banner-d-1200x500.jpg"
+                    srcset="https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dw301e4f4c/images/homepage/topbanner/060123_CeramideFocus-hp-banner-d-1200x500.jpg, https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dwb002fcc4/images/homepage/topbanner/060123_CeramideFocus-hp-banner-d-2x-2400x1000.jpg 2x" />
+            </picture>
+        </a>
+  
+        <div class="banner-message">
+            <h2><span class> PURE.<br> POTENT.<br> PRECISE.</span></h2>
+            <p>Discover Ceramide Capsule Serums<br> for every skin concern.</p>
+            <div class="button"><a href="https://www.elizabetharden.com/serums-capsules/our-top-capsules/">Shop Capsules</a></div>
+        </div>
+    </div>
+
+  
+    <div class="row">
+      <div class="gifts-tab-container">
+        <!-- 3 square tabs .gifts-tab-container Start-->
+        <div class="item">
+          <a href="https://www.elizabetharden.com/skincare/view-all-skincare/">
+            <img alt="Shop Skincare" src="https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dwae25533d/images/homepage/topbanner/2023-jan-hp-hpo-skincare-d.jpg" />
+            <div class="item-name">
+              <div class="button"><span class="hide-tablet">Shop</span> Skin Care</div>
+            </div>
+          </a>
+        </div>
+  
+        <div class="item hide-mobile">
+          <a href="https://www.elizabetharden.com/best-sellers/">
+            <img alt="Elizabeth Arden Best sellers"
+              src="https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dwff50c797/images/homepage/topbanner/2023-jan-hp-hpo-bestsellers-d.jpg" />
+            <div class="item-name">
+              <div class="button"><span class="hide-tablet">Shop</span> Best sellers</div>
+            </div>
+          </a>
+        </div>
+  
+        <div class="item">
+          <a href="https://www.elizabetharden.com/fragrance/fragrance-scent/">
+            <img alt="White Tea Fragrance Colleciton" src="https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dw003cbcf7/images/homepage/topbanner/2023-jan-hp-hpo-fragrance-d.jpg" />
+            <div class="item-name">
+              <div class="button"><span class="hide-tablet">Shop</span> Fragrance</div>
+            </div>
+          </a>
+        </div>
+  
+  
+      </div><!-- 3 square tabs .gifts-tab-container End-->
+    </div>
+  
+        <!-- .full-banner .obsess-banner -->
+        <div class="row full-banner obsess-banner top-message">
+            <a href="https://www.elizabetharden.com/virtual-store-2/">
+              <picture>
+                <source media="(max-width: 767px)" srcset="https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dw9dc73b99/images/homepage/topbanner/230510-obsess-homepage-m-640x550px.jpg" />
+                <source media="(min-width: 768px) and (max-width: 1023px)" srcset="https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dwd22632cd/images/homepage/topbanner/230510-obsess-homepage-t-768x345px.jpg, https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dw6c717c25/images/homepage/topbanner/230510-obsess-homepage-t2x-1536x690px.jpg 2x" />
+                <img alt="Store lobby for the Elizabeth Arden Virtual Store" src="https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dwccf56884/images/homepage/topbanner/230510-obsess-homepage-d-1200x500px.jpg"
+                  srcset="https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dwccf56884/images/homepage/topbanner/230510-obsess-homepage-d-1200x500px.jpg, https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dw8825d099/images/homepage/topbanner/230510-obsess-homepage-d2x-2400x1000px.jpg 2x" />
+              </picture>
+            
+          
+            <div class="banner-message">
+              <h2>Experience the Virtual World of Elizabeth Arden</h2>
+              <p><span class="headline-sm-cap">Discover</span> the best skincare products for you with our quiz</p>
+                <p><span class="headline-sm-cap">Explore</span> the Red Door Spa for skincare tips and tricks</p>
+                <p><span class="headline-sm-cap">Play</span> our Ceramide Capsule game for an exclusive <b>30% DISCOUNT</b></p>
+            <div class="button" role="button"><a href="https://www.elizabetharden.com/virtual-store-2/">Enter Now</a></div>
+        
+            </div>
+    </a>
+          </div>
+
+     <!-- .full-banner .summer-skincare -->
+     <div class="row full-banner summer-skincare top-message">
+        <a href="https://www.elizabetharden.com/skincare/protective/"
+           aria-label="link to shop our top-selling SPF skincare">
+           <picture>
+               <source media="(max-width: 767px)" srcset="https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dwe0a5ee4a/images/homepage/topbanner/060123_SummerSkincare-hp-banner-m-640x640.jpg" />
+               <source media="(min-width: 768px) and (max-width: 1023px)" srcset="https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dw473b7a19/images/homepage/topbanner/060123_SummerSkincare-hp-banner-t-768x345.jpg, https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dw213b570b/images/homepage/topbanner/060123_SummerSkincare-hp-banner-t-2x-1536x690.jpg 2x" />
+               <img alt="White Tea Eau Fraiche fragrance bottle on green foliage background" src="https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dwcce2dbf5/images/homepage/topbanner/060123_SummerSkincare-hp-banner-d-1200x500.jpg"
+                 srcset="https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dwcce2dbf5/images/homepage/topbanner/060123_SummerSkincare-hp-banner-d-1200x500.jpg, https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dw3a94d5cd/images/homepage/topbanner/060123_SummerSkincare-hp-banner-d-2x-2400x1000.jpg 2x" />
+             </picture>
+         </a>
+         <div class="banner-message">
+             <h2><span>Ready, Set, <br> Summer Skincare!</span></h2>
+             <p>Protect your skin and prevent visible signs of aging with our top-selling SPF skincare essentials.</p>
+             <div class="button outline"><a href="https://www.elizabetharden.com/skincare/protective/">Shop Now</a>
+           </div>
+     
+     </div>
+     </div>  
+  </div>
+  
+  <style type="text/css">
+    .homepage-banner>div:nth-child(1) {
+      display: none;
+    }
+  
+    .home-slot3 {
+      width: 100%;
+      position: relative;
+      font-size: 12px;
+    }
+  
+    .home-slot3 .free-shipping-bar {
+      border-top: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+margin-bottom:0.25rem;
+    }
+  
+    .home-slot3 .free-shipping-bar p {
+      color: #000;
+      font-size: 1.083em;
+      text-transform: capitalize;
+      margin: 0.5rem 0;
+    }
+  
+    .home-slot3 .free-shipping-bar p span {
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+  
+    .home-slot3 .row {
+      /*margin-top: 1.667em;*/
+      position: relative;
+    }
+  
+    .home-slot3 a.full-link {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 50;
+      top: 0;
+      left: 0;
+    }
+    .home-slot3 a:hover {
+      color: inherit;
+    }
+  
+    .home-slot3 .banner-message {
+      color: #000;
+      background-color: transparent;
+      bottom: inherit;
+    }
+  
+    .home-slot3 .banner-message h2 {
+      text-transform: uppercase;
+      font-size: 2rem;
+      line-height: 1em;
+      font-weight: normal;
+    }
+  
+    .home-slot3 .banner-message h3 {
+      font: 1.500em/2em akzidenz-grotesk-extended, sans-serif;
+      text-transform: uppercase;
+      margin: 10px 0 20px;
+    }
+  
+    .home-slot3 .banner-message p {
+      font-size: 1rem;
+      width: 100%;
+      line-height: 1.3em;
+      padding: 0;
+      margin: .8em 0 0;
+    }
+  
+    .home-slot3 .banner-message .allCaps{
+      text-transform: uppercase;
+    }
+    .home-slot3 .banner-message .button {
+      border: 1px solid #000;
+      background-color: transparent;
+      position: relative;
+      z-index: 51;
+      padding: 10px 20px 9px;
+      font-size: 14px;
+      text-transform: uppercase;
+      margin: 1.563em 0 0;
+    }
+  
+    .home-slot3 .banner-message .button a {
+      color: #000;
+    }
+  
+    .home-slot3 .banner-message p a {
+      text-decoration: underline;
+    }
+  
+    .home-slot3 .banner-message p a:hover {
+      color: #000;
+    }
+    .home-slot3 .full-banner .banner-message .button.outline-btn{
+       border:1px solid #000;
+  
+    }
+    .home-slot3 .full-banner .banner-message .button.outline-btn a{
+      color: #000;
+    }
+    .home-slot3 .full-banner .banner-message .button.white-btn{
+       border:1px solid #fff;
+  
+    }
+    .home-slot3 .full-banner .banner-message .button.white-btn a{
+      color: #fff;
+    }
+    .home-slot3 .row {
+      margin: 10px 0;
+    }
+  
+    .home-slot3 .row.top-message {
+      margin: 0;
+    }
+  
+    .home-slot3 .row:last-of-type {
+      margin-bottom: 0;
+    }
+  
+    .home-slot3 .full-banner {
+      position: relative;
+    }
+  
+    .home-slot3 .full-banner .banner-message {
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      width: 24rem;
+      text-align: left;
+    }
+  
+    .legalFootnote{
+      position: absolute;
+      right: 1%;
+      bottom: 1.5%;
+    }
+    .legalFootnote p{
+      font-size: .563rem;
+    }
+  
+    /* summer-skincare */
+  
+      .home-slot3 .full-banner.summer-skincare .banner-message{
+        left: 75%;
+        width: 27rem;
+          transform: translate(-50%, -50%);
+          text-align: center;
+      }
+      .home-slot3 .full-banner.summer-skincare .banner-message h2{
+        text-transform: unset;
+      }
+      .home-slot3 .full-banner.summer-skincare .banner-message h2 span{
+        text-transform: uppercase;
+        font-style: italic;
+      }
+      .home-slot3 .full-banner.summer-skincare .banner-message p{
+        width: 80%;
+        margin: 1rem auto 0;
+      }
+  
+
+    /* obsess-banner */
+  
+    .home-slot3 .full-banner.obsess-banner .banner-message {
+      text-align: left;
+        left: 58%;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 28rem;
+    }
+  
+    .home-slot3 .full-banner.obsess-banner .banner-message h2{
+      /* font-size: 2rem; */
+          line-height: 1em;
+          margin-bottom: 1rem;
+          text-transform: capitalize;
+        }
+  .home-slot3 .full-banner.obsess-banner .banner-message h2 span{
+          font-style: italic;
+          text-transform: none;
+  }
+    
+  .home-slot3 .full-banner.obsess-banner .banner-message p{
+        margin: .25rem 0 0;
+        width: 90%;
+      }
+      .home-slot3 .full-banner.obsess-banner .banner-message p:first-child{
+        margin: 1rem 0 0;
+      }
+  .home-slot3 .full-banner.obsess-banner .banner-message h2 span.headline-sm-cap{
+    text-transform: uppercase;
+      font-size: 1rem;
+      font-style: none;
+      display: block;
+  }
+  .home-slot3 .full-banner.obsess-banner .banner-message p span.headline-sm-cap{
+    text-transform: uppercase;
+      font-weight: 500;
+  }
+  .home-slot3 .full-banner.obsess-banner .banner-message .button {
+      border:none;
+      background-color: #c41726;
+    }
+  
+  .home-slot3 .full-banner.obsess-banner .banner-message .button a {
+      color: #fff;
+    }
+
+      /* caps-offer*/
+
+  .home-slot3 .full-banner.caps-offer .banner-message {
+    left: 27%;
+    transform: translate(-50%, -50%);
+    width: 30rem;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+  }
+  .home-slot3 .full-banner.caps-offer .banner-message h2{
+      text-transform: unset;
+    }
+.home-slot3 .full-banner.caps-offer .banner-message p span{
+    font-weight:500;
+    font-style:italic;
+    }
+  
+    /* .thin-banner */
+  
+    .home-slot3 .full-banner.thin-banner .banner-message img {
+      width: 45%;
+    }
+  
+    .home-slot3 .full-banner .banner-message {
+      left: 60%;
+      text-align: center;
+    }
+  
+    .home-slot3 .full-banner.thin-banner .banner-message p {
+      margin: .2em 0 0;
+    }
+  
+    .home-slot3 .full-banner.thin-banner .banner-message .button {
+      margin: 1em 0 0;
+    }
+  
+    .home-slot3 .full-banner.thin-banner .banner-message .button {
+      border: 1px solid #000;
+      background-color: transparent;
+    }
+  
+    .home-slot3 .full-banner.thin-banner .banner-message .button a {
+      color: #000;
+    }
+  
+    /* gifts-tab-container */
+    .gifts-tab-container {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: row;
+      flex-direction: row;
+      text-align: left;
+      margin: 50px auto 50px;
+      flex-flow: nowrap;
+      align-self: flex-start;
+      justify-content: center;
+    }
+  
+    .gifts-tab-container .item {
+      width: 26%;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+  
+    .gifts-tab-container .item .item-name p {
+      text-align: center;
+      font-size: 16px;
+      line-height: 20px;
+      margin: 20px auto 0;
+      text-transform: uppercase;
+    }
+  
+    .gifts-tab-container .item:nth-of-type(2n) {
+      margin: 0 40px;
+    }
+  
+    .gifts-tab-container .item .item-name {
+      margin-top: 20px;
+    }
+  
+    .gifts-tab-container .item .button {
+      background-color: transparent;
+      border-color: #000;
+      color: #000;
+    }
+  
+    .gifts-tab-container .item .button:hover {
+      color: #000;
+    }
+  
+    @media screen and (min-width: 1024px) and (max-width: 1199px) {
+  
+      .home-slot3 .row {
+        margin: 20px 0;
+      }
+  
+      .home-slot3 .row:first-of-type {
+        margin: 0;
+      }
+  
+      .home-slot3 .full-banner .banner-message {
+        width: 48%;
+      }
+      .home-slot3 .full-banner.obsess-banner .banner-message {
+        left: 56%;
+}
+      /* thin-banner */
+      .home-slot3 .full-banner.thin-banner .banner-message.right-copy img {
+        width: 45%;
+      }
+  
+      .home-slot3 .full-banner.thin-banner .banner-message.right-copy {
+        left: 53%;
+      }
+  
+  
+    }
+  
+    @media screen and (max-width: 1023px) {
+      .global-slider {
+        display: inherit;
+      }
+  
+      .home-slot3 .full-banner.thin-banner .banner-message.right-copy img {
+        width: 35%;
+      }
+  
+      .home-slot3 .full-banner .banner-message,
+      .home-slot3 .full-banner.summer-skincare .banner-message  {
+        position: relative;
+        top: 0;
+        transform: none;
+        left: 0;
+      }
+  
+      .home-slot3 .full-banner .banner-message.left-copy,
+      .home-slot3 .full-banner .banner-message.right-copy {
+        left: 0;
+      }
+  
+      .home-slot3 .full-banner.thin-banner .banner-message.right-copy {
+        position: absolute;
+        margin: 0 auto;
+        top: 60%;
+        transform: translateY(-50%);
+      }
+  
+      .home-slot3 .full-banner.thin-banner .banner-message.right-copy .button {
+        margin: 1em 0 0;
+      }
+  
+    }
+  
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+      .home-slot3 .row {
+        margin: 70px 0;
+      }
+      .home-slot3 .full-banner .banner-message p{font-size: .875rem}
+  
+      .home-slot3 .row.thin-banner {
+        margin: 10px 0 70px;
+      }
+  
+      .home-slot3 .row:first-of-type {
+        margin: 0;
+      }
+      /* caps-offer */
+    .home-slot3 .full-banner.caps-offer .banner-message {
+  width: 24rem;
+    }
+  
+      /* .summer-skincare & obsess-banner */
+      .home-slot3 .full-banner.summer-skincare .banner-message,
+      .home-slot3 .full-banner.obsess-banner .banner-message{
+        position: absolute;
+        margin: 0 auto;
+        top: 50%;
+      }
+  
+  
+        .home-slot3 .full-banner.summer-skincare .banner-message {
+            width: 24rem;
+            transform: translateY(-50%);
+            left: 47%;
+        }
+        .home-slot3 .full-banner.summer-skincare .banner-message p{
+        width: 100%;
+      }
+
+   /* obsess-banner */
+  
+   .home-slot3 .full-banner.obsess-banner .banner-message {
+          left: 60%;
+          transform: translateY(-50%);
+          width: 20rem;
+    }
+  
+    .home-slot3 .full-banner.obsess-banner .banner-message h2 span.headline-sm-cap{
+      margin-bottom: .25rem;
+    }
+  
+      .home-slot3 .row:first-of-type {
+        margin: 0;
+      }
+  
+      .home-slot3 .row:last-of-type {
+        margin: 0 0 30px;
+      }
+  
+      .home-slot3 .full-banner .banner-message {
+        width: 50%;
+        color: #000;
+      }
+  
+      .home-slot3 .full-banner.thin-banner .banner-message.right-copy {
+        left: 56%;
+        top: 50%;
+        width: 39%;
+      }
+  
+      .home-slot3 .full-banner.thin-banner .banner-message.right-copy img {
+        width: 50%;
+      }
+  
+      .home-slot3 .full-banner.thin-banner .banner-message.right-copy p {
+        margin: .2em 0 0;
+      }
+  
+      .home-slot3 .banner-message h2 {
+        font-size: 1.625rem;
+      }
+  
+      .gifts-tab-container .item {
+        width: 28%;
+      }
+      
+  
+    }
+  
+    @media screen and (max-width: 767px) {
+  
+  
+      .home-slot3 {
+        display: block;
+      }
+  
+      .home-slot3 .free-shipping-bar p span {
+        display: block;
+      }
+  
+      .home-slot3 .banner-message,
+      .watch-video-image {
+        display: block;
+        width: 100%;
+      }
+  
+      .home-slot3 .banner-message {
+        top: 0;
+        left: 0;
+        position: static;
+        text-align: center;
+        width: 100%;
+        transform: none;
+        padding-top: 0;
+      }
+  
+      .legalFootnote {
+          position: static;
+          transform: none;
+          top: 0;
+          left: 0;
+          margin: 0 auto 1rem;
+          text-align: center;
+        }
+  
+      .home-slot3 .banner-message p {
+        font-size: 0.875rem;
+        line-height: inherit;
+      }
+  
+      .home-slot3 .banner-message h2,
+      .home-slot3 .full-banner #bonus.banner-message h2{
+        font-size: 1.25rem;
+        line-height: 1em;
+        width: 100%;
+        margin: 0 0 10px;
+      }
+  
+  .home-slot3 .full-banner.obsess-banner .banner-message h2{}
+  
+      .home-slot3 .banner-message h3.subheader,
+      .home-slot3 .banner-message h4 {
+        font-size: 1.5em;
+        width: 100%;
+        line-height: 20px;
+        color: #000;
+      }
+  
+      .home-slot3 .banner-message .button {
+        font-size: 1.083em;
+        padding: 10px 30px 9px;
+        margin-top: 1rem;
+      }
+  
+      .home-slot3 .row:first-of-type,
+      .home-slot3 .row {
+        margin: 0;
+      }
+  
+      .pt_storefront .watch-video {
+        float: none;
+        font-size: inherit;
+      }
+  
+      .home-slot3 .full-banner .banner-message {
+        width: 80%;
+        margin: 20px auto 25px;
+        text-align: center;
+        color: #000;
+      }
+      .home-slot3 .full-banner.summer-skincare .banner-message .button,
+      .home-slot3 .full-banner .banner-message .button.white-btn{
+       border:1px solid #000;
+  
+    }
+    .home-slot3 .full-banner .banner-message .button.white-btn a,
+    .home-slot3 .full-banner.summer-skincare .banner-message .button a{
+      color: #000;
+    }
+  
+  
+      /* .banner-message */
+      .home-slot3 .full-banner #bonus.banner-message,
+      .home-slot3 .full-banner.caps-offer .banner-message,
+      .home-slot3 .full-banner.obsess-banner .banner-message,
+      .home-slot3 .full-banner.summer-skincare .banner-message {
+        position: relative;
+        top: 0;
+        transform: none;
+        left: 0;
+        width: 90%;
+        margin: 20px auto 25px;
+        text-align: center;
+        padding: 0;
+        color: #000;
+      }
+      .home-slot3 .full-banner.obsess-banner .banner-message{
+        background-color: #e5d5c8;
+        padding: 20px 0 25px;
+        margin: 0 auto;
+      }
+      .home-slot3 .full-banner.obsess-banner{
+        background-color: #e5d5c8;
+      }
+      .home-slot3 .full-banner.obsess-banner .banner-message p{
+        margin: .5rem auto 0;
+ text-align: center;
+      }
+      .home-slot3 .full-banner.thin-banner {
+        background-color: #fae17d;
+        padding: 20px 0 25px;
+        margin: 0 auto 25px;
+      }
+  
+      .home-slot3 .full-banner.thin-banner .banner-message.right-copy img {
+        width: 50%;
+      }
+  
+      .home-slot3 .full-banner.thin-banner .banner-message.right-copy {
+        top: 0;
+        left: 0;
+        position: static;
+        transform: none;
+        width: 95%;
+      }
+  
+      .home-slot3 .full-banner .banner-message.right-copy.row2nd {
+        text-align: center;
+      }
+  
+      .home-slot3 .full-banner.thin-banner .banner-message.right-copy .button {
+        margin: 1em 0 0;
+      }
+  
+      .home-slot3 .full-banner.thin-banner .banner-message.right-copy p {
+        margin: .2em 0 0;
+      }
+  
+      .gifts-tab-container {
+        margin: 0 auto 2.5em;
+        flex-flow: wrap;
+        align-self: flex-start;
+        justify-content: center;
+      }
+  
+      .gifts-tab-container .item {
+        width: 45%;
+        margin: 10px auto 10px;
+      }
+  
+      .gifts-tab-container .item:nth-of-type(2n) {
+        margin: 10px auto 10px;
+      }
+  
+      .gifts-tab-container .item:last-of-type {
+        margin: 10px auto 10px;
+      }
+  
+      .gifts-tab-container .item p {
+        margin-bottom: 20px;
+      }
+  
+      .gifts-tab-container .item .item-name .button span {
+        display: block;
+      }
+  
+      .gifts-tab-container .item .item-name p {
+        font-size: 18px;
+      }
+  
+  
+    }
+  
+    @media screen and (min-width: 480px) and (max-width: 767px) {
+  
+      .watch-video-image .hide-lg-mobile,
+      .home-slot3 .banner-message .hide-lg-mobile {
+        display: none;
+      }
+    }
+  
+    @media screen and (max-width: 479px) {
+  
+      .home-slot3 .two-up .banner-message p {
+        margin: 20px auto;
+      }
+  
+      .home-slot3 .full-banner .banner-message {
+        width: 85%;
+      }
+  
+      .watch-video-image .hide-sm-mobile,
+      .home-slot3 .banner-message .hide-sm-mobile,
+      .hide-sm-mobile {
+        display: none;
+      }
+    }
+  </style>
+   <!-- .ceramide-capsules -->
+   <style type="text/css">
+    /* ceramide-capsules */
+  
+    /* change here to move .ceramide-capsules copy */
+    .home-slot3 .full-banner.ceramide-capsules .banner-message {
+        left: 63%;
+        transform: translateY(-50%);
+        width: 24rem;
+        text-align: center;
+    }
+  
+    .home-slot3 .full-banner.ceramide-capsules .banner-message p {
+        margin: 1rem 0 0;
+    }
+  
+    .home-slot3 .full-banner.ceramide-capsules .banner-message h2 {
+      margin-bottom: .5rem;
+      text-transform: capitalize;
+    }
+    .home-slot3 .full-banner.ceramide-capsules .banner-message h2 span {
+        font-style: italic;
+        display: block;
+        text-transform: uppercase;
+    }
+  
+    @media screen and (min-width: 1024px) and (max-width: 1199px) {
+  
+        .home-slot3 .full-banner.ceramide-capsules .banner-message {
+            left: 61%;
+        }
+    }
+  
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        /* .ceramide-capsules */
+  
+        .home-slot3 .full-banner.ceramide-capsules .banner-message p{
+            font-size: .938rem;
+        }
+  
+        .home-slot3 .full-banner.ceramide-capsules .banner-message {
+        left: 60%;
+        top:50%;
+        transform: translateY(-50%);
+        width: 19rem;
+        position: absolute;
+    }
+  
+    }
+    @media screen and (max-width: 767px) {
+  
+        .home-slot3 .full-banner.ceramide-capsules .banner-message p {
+            font-size: 0.875rem;
+            line-height: inherit;
+        }
+  
+        .home-slot3 .full-banner.ceramide-capsules .banner-message {
+            position: relative;
+            top: 0;
+            transform: none;
+            left: 0;
+            width: 90%;
+            margin: 20px auto 25px;
+            text-align: center;
+        }
+  
+        /* .ceramide-capsules */
+        .home-slot3 .full-banner.ceramide-capsules .banner-message h2 {
+            text-transform: uppercase;
+            font-size: 1.25rem;
+            margin-bottom: .5rem;
+        }
+  
+    }
+  
+  </style>
+
+ 
+	
+</div>
+<div class="grand-entrance global-bottom-banner">
+
+	 
+
+
+	
+
+
+
+
+
+
+
+<!--// home4-20230615-SUMMER START-->
+
+<div class="offers-banner">
+  <h2>Offers for you...</h2>
+  <p class="hide-mobile">Explore our daily offers to receive complimentary gifts and more</p>
+<div class="offers-listing-container">
+        <div class="item">
+                <a href="https://www.elizabetharden.com/special-offers/">
+                    <picture>
+                        <img alt="6 piece Gift" src="https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dw2c923d69/images/offer-landing/20230615_asset-brief-hpo-m-640.jpg" />
+                    </picture>
+                    <div class="item-name">
+                        <p>5 Free Gifts with $75 Orders</p>
+                        </div>
+                </a>
+            </div>
+        <div class="item">
+                <a href="https://www.elizabetharden.com/special-offers/">
+                    <picture>
+                        <img alt= "Free PREVAGE® EYE Serum (0.17oz) on a blue background" src="https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dw3c7aff07/images/offer-landing/20230615-sitewide-picks-plpo-m-640.jpg" />
+                    </picture>
+                    <div class="item-name">
+                        <p> FREE PREVAGE® EYE Serum with any $95 order</p>
+                        </div>
+                </a>
+            </div>
+ <div class="item hide-mobile">
+              <a href="https://www.elizabetharden.com/afterpay.html">
+              <picture>
+                  <img alt="Afterpay" src="https://www.elizabetharden.com/on/demandware.static/-/Sites-ElizabethArden-Library/default/dw3860f16e/images/homepage/topbanner/AfterPay_Day_HP_Offer_HPO-D-640-2.jpg" />
+              </picture>
+                  <div class="item-name">
+                      <p>Afterpay now available</p>
+                      </div>
+              </a>
+          </div>
+
+</div>
+
+<p class="hide-desktop hide-tablet"><a href="https://www.elizabetharden.com/special-offers/">See more offers</a></p>
+</div>
+<style type="text/css">
+    .global-bottom-banner .offers-banner .button {
+        background-color: #000;
+    }
+    
+    .global-bottom-banner .offers-banner .button a {
+        color: #fff;
+    }
+    
+    .global-bottom-banner .offers-banner a {
+        margin: 0px auto;
+    }
+    
+    .global-bottom-banner .offers-banner {
+        text-align: center;
+        margin: 50px auto 0;
+        bottom: inherit;
+        position: relative;
+    }
+    
+    .global-bottom-banner .offers-banner h2 {
+        margin-bottom: 0.5rem;
+        font-size: 2.250rem;
+        padding: 0;
+        line-height: 1rem;
+        margin: 0 0 0.625rem;
+    }
+    
+    .global-bottom-banner .offers-banner p {
+        margin: 0.938rem 0;
+        font-size: 1.125rem;
+        width: 100%;
+    }
+    
+    .global-bottom-banner .offers-banner p:last-of-type {
+        margin-bottom: 0;
+    }
+    
+    .global-bottom-banner .offers-banner a:hover {
+        color: #000;
+    }
+    
+    .global-bottom-banner .offers-banner .offers-listing-container {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        text-align: left;
+        margin: 50px auto 1rem;
+        flex-flow: nowrap;
+        align-self: flex-start;
+        justify-content: center;
+    }
+    
+    .global-bottom-banner .offers-banner .offers-listing-container .item {
+        width: 26%;
+        text-align: center;
+        padding-bottom: 10px;
+    }
+    
+    .global-bottom-banner .offers-banner .offers-listing-container .item .item-name p {
+        text-align: center;
+        font-size: 1rem;
+        line-height: 1.250rem;
+        margin: 1.250rem auto 0;
+        text-transform: uppercase;
+    }
+    
+    .global-bottom-banner .offers-banner .offers-listing-container .item:nth-of-type(2n) {
+        margin: 0 2.5rem;
+    }
+    
+    .home-slot3 .row.top-message {
+        margin-bottom: 0.5rem;
+    }
+    
+    @media screen and (min-width: 1024px) and (max-width: 1199px) {}
+    
+    @media screen and (min-width: 768px) and (max-width: 1023px) {}
+    
+    @media screen and (max-width: 767px) {
+        .global-bottom-banner .offers-banner picture>img {
+            width: 100%;
+            height: auto;
+            line-height: 0;
+            vertical-align: bottom;
+        }
+        .global-bottom-banner .offers-banner h2 {
+            font-size: 1.25rem;
+            line-height: 26px;
+            width: 95%;
+            margin: 0 auto 10px;
+        }
+        .global-bottom-banner .offers-banner p {
+            width: 95%;
+            margin: 0px auto 10px;
+            font-size: 1rem;
+            line-height: 1.125rem;
+            font-weight: 400;
+            text-decoration: underline;
+        }
+        .global-bottom-banner .offers-banner .offers-listing-container .item .item-name p {
+            font-size: 0.75rem;
+            line-height: 0.875rem;
+        }
+        .global-bottom-banner .offers-banner .button {
+            background-color: #fff;
+        }
+        .global-bottom-banner .offers-banner .button a {
+            color: #000;
+        }
+        .global-bottom-banner .offers-banner {
+            margin: 1rem auto;
+        }
+        .global-bottom-banner .offers-banner .offers-listing-container {
+            text-align: left;
+            margin: 2rem auto 0;
+            flex-flow: wrap;
+            align-self: flex-start;
+            justify-content: center;
+        }
+        .global-bottom-banner .offers-banner .offers-listing-container .item {
+            width: 45%;
+            margin: 0.625rem auto;
+        }
+        .global-bottom-banner .offers-banner .offers-listing-container .item:nth-of-type(2n) {
+            margin: 0.625rem auto;
+        }
+        .global-bottom-banner .offers-banner .offers-listing-container .item:last-of-type {
+            margin: 0.625rem auto;
+        }
+        .global-bottom-banner .offers-banner .offers-listing-container .item p {
+            margin-bottom: 20px;
+            text-decoration: none;
+        }
+    }
+</style>
+<!--// home4-20230615-SUMMER END-->
+
+ 
+	
+</div>
+<div class="liz-images">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	 
+
+
+	
+
+<div class="html-slot-container">
+
+
+<div class="cat-landing-slotbottom4">
+<h2>@ElizabethArden</h2>
+<script>
+$( document ).ready(function() {
+	// Instafeed Replacement
+	var instagramAPI = "https://learnmore.elizabetharden.com/ws/instagram/",
+		d = new Date();
+	$.getJSON( instagramAPI, {
+		datetime: d.getTime(),
+		source: "db",
+		limit: 6,
+		username: "elizabetharden"
+	})
+	.done(function( data ) {
+		$.each( data.data, function( i, item ) {
+			var thisBlock = '<a href="' + item.permalink + '" target="_blank"><img src="' + ( item.thumbnail_url ? item.thumbnail_url : item.media_url ) + '.webp"  height="293" width="293" alt=" Elizabeth Arden Instagram" /></a>';
+			$(thisBlock).appendTo( "#instafeed" );
+			if ( i === 6 ) {
+				return false;
+			}
+		});
+	});
+if($(window).width() < 1023){
+if($(window).width() < 767){
+$("#instafeed").find("img").css({"width":150,"height":150});
+}
+}
+});
+</script>
+<div id="instafeed"></div>
+</div>
+<style>
+.cat-landing-slotbottom4 h2 {
+text-align: center;
+color: #000000;
+font-size: 36px;
+font-weight: normal;
+margin-bottom: 17px;
+margin-top: 3%;
+ font-family: "akzidenz-grotesk-extended";
+}
+#instafeed img {
+     opacity: 1;
+    transition: opacity .40s ease-in-out;
+     -webkit-transition: opacity .40s ease-in-out;
+     -moz-transition: opacity .40s ease-in-out;
+     -o-transition: opacity .40s ease-in-out;
+ }
+#instafeed .slick-list{padding-bottom: 20px;}
+#instafeed img:hover {
+     opacity: 0.75;
+ }
+@media screen and (max-width: 767px) {
+.cat-landing-slotbottom4 h2{
+font-size: 20px;
+}
+}
+</style>
+
+
+</div> 
+	
+
+</div>
+<div class="watch-video-bottom">
+
+	 
+
+	
+</div>
+
+
+
+
+
+
+<div id="browser-check">
+<noscript>
+<div class="browser-compatibility-alert">
+<i class="fa fa-exclamation-triangle fa-2x pull-left"></i>
+<p class="browser-error">Your browser's Javascript functionality is turned off. Please turn it on so that you can experience the full capabilities of this site.</p>
+</div>
+</noscript>
+</div>
+
+<div class="browsercontainer hide">
+<div class="browserversion">
+Your browser is out of date. For the best and most secure experience in our catalog, Please update <a href="https://support.microsoft.com/en-us/help/17621/internet-explorer-downloads" target="_blank">your browser</a>.
+</div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<input type = "hidden" id="march-on-page-clicks" value = "1"/>
+<div id="footer">
+<footer role="contentinfo">
+<div class="footer-container">
+
+	 
+
+
+	
+
+
+
+ 
+	
+<input type="hidden" id="delayWelcomePopup" value ="5000.0" class="delayWelcomePopup"/>
+<div class="emailsignup">
+<div class="footer-itemsignup">
+
+<div class="h3tag">Sign up for emails and special offers from Elizabeth Arden</div>
+<div id="email-alert-signup" class="email-subscribefooter">
+<input type="text" aria-label="Sign up for special offers" aria-placeholder="Enter email address" id="email-alert-address" class="input-text email email-alert-address required" placeholder="Enter email address" value="" name="dwfrm_emailsubscribe_email" aria-invalid="false">
+<input type="hidden" id="emailsouceid" name="dwfrm_emailsubscribe_emailSource" value ="Website - Footer Signup Page" class="emailsouceid"/>
+<input type="submit" name="home-email" value="Submit" title="Submit" class="emailalertbutton"/>
+</div>
+
+</div>
+
+
+
+<div class="form-row  label-inline form-indent">
+
+
+
+<div class="field-wrapper">
+<input class="input-checkbox " type="checkbox"  id="dwfrm_profile_customer_addtoemaillistfooter" name="dwfrm_profile_customer_addtoemaillistfooter" value="true" maxlength="2147483647" ><span class="custom-icon"></span>
+</div>
+
+
+<label for="dwfrm_profile_customer_addtoemaillistfooter"><span>By submitting your email, you agree to receive advertising emails from Elizabeth Arden. Please review our <a href="https://www.elizabetharden.com/privacy-and-policy.html" class="privacy-policy js-pplink-registerpage" style="color:#C41726;"}">Privacy Policy</a></span></label>
+
+
+
+<div class="form-caption"></div>
+
+</div>
+
+<input type="hidden" class="js-privacypolicy_link" value="/privacy-and-policy.html"/>
+<div class="emailsignup_success">
+<span>Thank You &amp; Welcome!</span>
+<span class="secondmsg">Your inbox just got more beautiful.</span>
+<div class="shopping">
+<input type="submit" name="footer-shopping" value="Start Shopping" title="Start Shopping" class="footer-startshopping"/>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-containerlinks">
+<div class="footerlinks">
+<div class="footer-item footer-about">
+
+
+
+
+
+
+
+
+
+
+
+<div class="content-asset"><!-- dwMarker="content" dwContentID="f28ca42a7a09f43334f440e7ca" -->
+<div class="footer-items">ABOUT US</div>
+
+<ul class="menu-footer menu pipe">
+	<li><a href="https://www.elizabetharden.com/about-us.html" >Elizabeth Arden Story</a></li>
+        <li><a href="https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/Stores-Find" class="store-loc-com">Find a Store</a></li>
+        <li><a href="https://corporate.elizabetharden.com/human-resources" target="_blank">Careers</a></li>
+       <li><a href="https://corporate.elizabetharden.com/" target="_blank">Corporate Info</a></li>
+       <!--li><a href="https://corporate.elizabetharden.com/investor-relations/">Investor Relations</a></li-->
+	
+</ul>
+<!-- END: footer_about -->
+</div> <!-- End content-asset -->
+
+
+
+
+
+</div>
+<div class="footer-item footer-support">
+
+
+
+
+
+
+
+
+
+
+
+<div class="content-asset"><!-- dwMarker="content" dwContentID="d91b9ab2fb6bc9665c6d522940" -->
+<div class="footer-items">ASSISTANCE</div>
+
+<ul class="menu-footer menu pipe">
+	<li class="footer-myAccount"><a href="https://www.elizabetharden.com/well-known" title="My Account">My Account</a></li>
+	<li class="footer-orderstatus"><a href="https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/Order-History" title="Order Status">Order Status</a></li>
+    <li><a href="https://www.elizabetharden.com/shipping-option-cost.html" title="Shipping &amp; Delivery">Shipping &amp; Delivery</a></li>
+	<li><a href="https://www.elizabetharden.com/return-instruction.html" title="Returns">Returns</a></li>
+	<li><a href="http://www.elizabetharden.com/share.html?traffic_source=site_footer" title="Get $25 Off">Get $25 Off</a></li>
+	<li class="footer-wishlist"><a href="https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/Wishlist-Show" title="Wish List">Wish List</a></li>
+    <li><a href="https://www.elizabetharden.com/afterpay.html" title="Afterpay">Afterpay</a></li>
+</ul>
+<!-- END: footer_support -->
+</div> <!-- End content-asset -->
+
+
+
+
+
+</div>
+<div class="footer-item footer-contact">
+
+
+
+
+
+
+
+
+
+
+
+<div class="content-asset"><!-- dwMarker="content" dwContentID="9c319f4a64d2019128e4861f99" -->
+<div class="footer-items">CONTACT US</div>
+
+<ul class="menu-footer menu pipe">
+	<li><a href="https://www.elizabetharden.com/contact-us.html">Customer Care</a></li>
+	<li><a href="https://www.elizabetharden.com/faq/faq.html">FAQs</a></li>
+	<li><div id="BeautyChat"></div></li>
+	<li>Text Us: 1-954-613-6983</li>
+
+</ul>
+<!-- END: footer-account -->
+
+    <style>
+#footer .footer-containerlinks .menu-footer li{color:#ffff;}
+    </style>
+</div> <!-- End content-asset -->
+
+
+
+
+
+</div>
+<div class="footer-item footer-responsivecallcenter hide-desktop">
+
+
+
+
+
+
+
+
+
+
+
+<div class="content-asset"><!-- dwMarker="content" dwContentID="dcea13c97844f77718dfffe0ad" -->
+<div id="LPABCButton"></div>
+
+<hr/ class="mobile-contact">
+<style>
+hr.mobile-contact{margin-top:1.5em; color:#ffff;}
+</style>
+</div> <!-- End content-asset -->
+
+
+
+
+
+</div>
+<div class="footer-item footer-socialmedia">
+
+
+
+
+
+
+
+
+
+
+
+<div class="content-asset"><!-- dwMarker="content" dwContentID="9efd2e2fead02a70ee6189a5bd" -->
+<div class="footer-items">Follow Us</div>
+
+<div class="social-links">
+                <a class="facebookicon" alt="Facebook" href="https://www.facebook.com/elizabetharden/" target="_blank" aria-label="link to Elizabeth Arden on Facebook"><i class="fa fa-facebook"></i></a>
+                <a class="twittericon" alt="Twitter" href="https://twitter.com/ElizabethArden" target="_blank" aria-label="link to Elizabeth Arden on Twitter"><i class="fa fa-twitter"></i></a>
+                <a class="youtube" alt="youtube" href="https://www.youtube.com/user/ElizabethArdenBeauty" target="_blank" aria-label="link to Elizabeth Arden on YouTube"><i class="fa fa-youtube-play"></i></a>
+                 <a class="instagram" alt="camara" href="https://www.instagram.com/elizabetharden/" target="_blank" aria-label="link to Elizabeth Arden on Instagram"><i class="fa fa-instagram"></i></a>           
+</div>
+<style>
+#footer .footer-container, 
+#footer #email-alert-signup input.emailalertbutton,
+.header-banner .header-promotion {background-color: #000;}
+.header-banner .header-promotion, .header-banner .header-promotion a{color: #fff;}
+
+/*-- hide Skin Care Diagnostic bkgrd image --*/
+.pt_skin-care #questions .active-slide{
+background-image:none !important;
+}
+
+#BVRRContainer .bv-cv2-cleanslate .bv-core-container-256 .bv-content-actions-container{
+    padding: 0 !important;
+}
+/*-- Gifts dropdown menu --*/
+.menu-category.level-1 > li.gifts a.has-sub-level span{
+
+}
+
+.menu-category.level-1 > li.last-chance a span{
+color:#c41726;
+font-weight:500;
+}
+li.gifts .level-2-syncwdth ul.menu-vertical>li {
+ margin-bottom:0px;
+
+}
+li.gifts .level-2-syncwdth ul.menu-vertical {
+ padding:0;
+ width: 33%;
+}
+
+.level-1 > li .level-2 .no-filter .menu-vertical > li a span{font-size:1.1em;}
+.level-1 > li .level-2 ul li a span,
+.level-1 > li .level-2 .no-filter .menu-vertical > li a{font-size:1.15em;}
+/* slider arrows 
+
+.slick-next, .slick-prev{
+font-size:inherit;
+}
+*/
+
+.pdp-main #BVRRContainer .bv-cv2-cleanslate div{text-align: left !important;}
+
+.best-sellers .best-sellers-images .product-tile .product-pricing, 
+.best-sellers .best-sellers-images .product-tile .grid-tile .product-tile .product-short-description{
+display: inherit;
+}
+
+/*-- Curalate Heading --*/
+#crl8-homepage-carousel div[role="heading"], div[id^="crl8"] div[role="heading"]{
+font-weight:400 !important;
+}
+
+#crl8-product-carousel{
+margin-bottom: 1.25rem;
+}
+#crl8-product-carousel .ekPMKn{
+margin-bottom: .75rem;
+}
+@media screen and (max-width: 1023px){
+#footer .footer-containerlinks .footerlinks .footer-item.footer-socialmedia .social-links a:last-child{
+float: none;
+}
+
+@media screen and (max-width: 767px){
+/*[data-bv-show="rating_summary"] .bv_main_container .bv_stars_component_container .bv_stars_button_container, [data-bv-show="rating_summary"] .bv_main_container .bv_main_container_row_flex{padding-right: 0 !important;}*/
+[data-bv-show="rating_summary"] .bv_main_container .bv_main_container_row_flex:last-child{padding-right: 0 !important;}
+[data-bv-show="rating_summary"]{text-align: center !important;}
+[data-bv-show="rating_summary"] .bv_main_container{justify-content: center;}
+#footer .footer-containerlinks .footerlinks .footer-item.footer-socialmedia .social-links a {font-size: 2.2em;}
+}
+
+@media screen and (max-width:736px){
+#BVRRContainer .bv-cv2-cleanslate [class*="bv-core-container-"] .bv-write-review-container,
+#BVRRContainer .bv-cv2-cleanslate [class*="bv-core-container-"] .bv-write-review-container{float: none !important; margin-left: 0% !important;}
+#BVRRContainer .bv-cv2-cleanslate [class*="bv-core-container-"] .bv-action-bar button{margin-top: 13% !important;}
+#BVRRContainer .bv-cv2-cleanslate [class*="bv-core-container-"] .bv-action-bar{padding-bottom: 5px !important;}
+}
+
+@media screen and (max-width:767px){
+ .pdp-main #BVRRContainer .bv-cv2-cleanslate div{text-align:left !important;}
+ .pdp-main #BVRRSummaryContainer {display:block !important;}
+ .pdp-main #BVRRSummaryContainer .bv-cv2-cleanslate, 
+ .pdp-main #BVRRSummaryContainer .bv-cv2-cleanslate div{display:block !important; text-align: center !important;}
+}
+
+
+</style>
+</div> <!-- End content-asset -->
+
+
+
+
+
+</div>
+<div class="footertermsprivacy">
+<div class="countryselect">
+
+
+
+
+
+
+
+
+
+
+
+<div class="content-asset"><!-- dwMarker="content" dwContentID="bbd19cfdf500581eadc6174a2a" -->
+<p><select class="country-store custom-select"aria-label="Select a Country">
+<option value="https://www.elizabetharden.com.au/">Australia</option>
+<option value="https://www.elizabetharden.at/">Austria</option>
+<option value="https://www.elizabetharden.ca/">Canada</option>
+<option value="https://www.elizabetharden.hk/">China, Hong Kong SAR</option>
+<option value="https://china.elizabetharden.com/">China, Shanghai</option>
+<option value="https://www.elizabetharden.tw/">China, Taiwan, Taipei</option>
+<option value="https://www.elizabetharden.dk/">Denmark</option>
+<option value="https://www.elizabetharden.fr/">France</option>
+<option value="https://www.elizabetharden.de/">Germany</option>
+<option value="https://www.elizabetharden.it/">Italy</option>
+<option value="https://www.elizabetharden.co.kr/">Korea</option>
+<option value="https://www.elizabetharden.co.nz/">New Zealand</option>
+<option value="https://www.elizabetharden.no/">Norway</option>
+<option value="https://www.elizabetharden.sg/">Singapore</option>
+<option value="https://www.elizabetharden.co.za/">South Africa</option>
+<option value="https://www.elizabetharden.com.es/">Spain</option>
+<option value="https://www.elizabetharden.se/">Sweden</option>
+<option value="https://www.elizabetharden.co.uk/">United Kingdom</option>
+<option value="https://www.elizabetharden.com/" selected="selected">United States</option> </select></p>
+<style type="text/css">#footer .emailsignup{
+    font-size: 13px;
+}
+</style>
+</div> <!-- End content-asset -->
+
+
+
+
+
+</div>
+<div class="footer-responsivelinks hide-desktop">
+
+
+
+
+
+
+
+
+
+
+
+<div class="content-asset"><!-- dwMarker="content" dwContentID="37012fa5ddb3a34c15860fd5ac" -->
+<ul class="menu-footer menu pipe footermob hide-tablet">
+
+	<li><a href="https://www.elizabetharden.com/contact-us.html" title="Go to Contact Us">Contact Us</a></li>
+	<li><a href="https://www.elizabetharden.com/customer-service-info" title="Go to Customer Service">Customer Service</a></li>
+	<li><a href="https://www.elizabetharden.com/faq/faq.html" title="Go to FAQs">FAQs</a></li>
+	<li><a href="https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/Stores-Find" title="Go to Locate a Store" class="store-loc-com">Locate a Store</a></li>
+</ul>
+
+<ul class="menu-footer menu pipe footertab hide-mobile">
+	<li><a href="https://www.elizabetharden.com/contact-us.html" title="Go to Contact Us">Contact Us</a></li>
+	<li><a href="https://www.elizabetharden.com/well-known" title="Go to My Account">My Account</a></li>
+	<li><a href="https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/Stores-Find" title="Go to Locate a Store" class="store-loc-com">Locate a Store</a></li>
+	<li><a href="https://www.elizabetharden.com/faq/faq.html" title="Go to FAQs">FAQs</a></li>
+	<li><a href="https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/Order-History" title="Go to Order Status">Order Status</a></li>
+	<li><a href="https://www.elizabetharden.com/terms.html" title="Go to Terms &amp; Conditions">Terms &amp; Conditions</a></li>
+	<li><a href="https://www.elizabetharden.com/shipping-option-cost.html" title="Go to Shipping &amp; Delivery">Shipping &amp; Delivery</a></li>
+	<li><a href="https://corporate.elizabetharden.com/human-resources" title="Go to Careers">Careers</a></li>
+	<li><a href="https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/Wishlist-Show" title="Go to Wish List">Wish List</a></li>
+	<li><a href="https://www.elizabetharden.com/return-instruction.html" title="Go to Returns &amp; Exchanges">Returns &amp; Exchanges</a></li>
+	<li><a href="https://corporate.elizabetharden.com/" title="Go to Corporate Info">Corporate Info</a></li>
+	<li><a href="https://www.elizabetharden.com/privacy-policy.html" title="Go to Privacy Policy">Privacy Policy</a></li>
+	<!--li><a href="https://corporate.elizabetharden.com/investor-relations/" title="Go to Investor Relations">Investor Relations</a></li-->
+</ul>
+
+<style>
+  @media screen and (max-width: 768px){
+#footer .footer-containerlinks .menu-footer li{
+line-height: 2rem;
+}
+#footer .footer-containerlinks .menu-footer a{
+padding: 0.9rem;
+}
+}
+
+  @media screen and (min-width: 480px) and (max-width: 766px){
+
+#footer .footer-containerlinks .menu-footer li{
+line-height: 2.5rem;
+}
+}
+</style>
+</div> <!-- End content-asset -->
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="content-asset"><!-- dwMarker="content" dwContentID="bfDcwiaagOnaEaaad6Obaww4UL" -->
+<!-- // Content: footer-copy START -->
+
+<div class="copyrightnew">
+<a href="https://www.elizabetharden.com/web-accessibility.html"  title="Web Accessibility" value="Web Accessibility"><span style="color:#FFFFFF;">Web Accessibility</span></a>&nbsp;<span style="">|&nbsp;</span>&nbsp;<a href="https://www.elizabetharden.com/terms.html" title="Terms Of Use" value="Terms Of Use"><span style="color:#FFFFFF;">Terms Of Use</span></a>&nbsp;<span style="">|&nbsp;</span><a href="https://www.elizabetharden.com/privacy-and-policy.html" style="" title="Privacy Policy" value="Privacy Policy"><span style="color:#FFFFFF;">Privacy Policy</span></a>&nbsp;<span style="">|&nbsp;</span><a href="https://www.elizabetharden.com/exercise-privacy-rights.html" style="" title="Data Subject Access Request" value="Data Subject Access Request"><span style="color:#FFFFFF;">Exercise Your Privacy Rights</span></a> <br>&copy;<script type="text/javascript">
+var theDate=new Date()
+document.write(theDate.getFullYear())
+</script> Elizabeth Arden. All Rights Reserved.&nbsp;</div>
+
+
+<!-- SG.101.1.2 -->
+<style type="text/css">
+
+/* h1 sr-only class */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+/* OneTrust CSS START */
+#talkable-offer iframe{transform:translateX(65px);}
+@media screen and (max-width: 428px){#talkable-offer iframe{transform:translate(0,-50px);}}
+.ot-floating-button__back.custom-persistent-icon button.ot-floating-button__close svg{transform:translateX(-13px)}
+.ot-floating-button__front.custom-persistent-icon button.ot-floating-button__open{outline:none!important}
+/* OneTrust CSS END */
+
+.copyrightnew{
+	margin: .2em;
+	text-align: right;
+}
+.copyrightnew a{ text-decoration: underline;}
+
+.pdp-main .product-info ul li{
+    list-style: circle;
+}
+.pdp-main .product-info ul {
+    margin-left: 30px;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 15px;
+}
+ @media screen and (max-width: 1023px) {
+.copyrightnew{
+	margin: 0 .2em;
+	text-align: center;
+}
+}
+    @media screen and (max-width: 767px) {
+.copyrightnew{line-height:1.6em;}
+}
+
+</style>
+
+<!-- Merchant Tools >  Content >  Content > footer-copy -->
+<!-- Free Shipping in response to COVID-19 -->
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "Offer",
+	"name": "Free Shipping",
+	"description": "Free Shipping on all orders",
+	"eligibleRegion": {
+		"@type": "Country",
+		"name": "US"
+	}
+}
+</script>
+
+<!-- // Content: footer-copy END -->
+</div> <!-- End content-asset -->
+
+
+
+
+
+</div>
+</div>
+</div>
+</footer>
+</div><!-- /footer -->
+
+
+
+
+
+
+
+
+<!--[if lte IE 8]>
+<script src="//cdn.rawgit.com/weblinc/media-match/master/media.match.min.js" type="text/javascript"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/3.4.0/es5-shim.min.js"></script>
+<![endif]-->
+<!--[if IE 9]>
+<script src="//cdn.rawgit.com/paulirish/matchMedia.js/master/matchMedia.js" type="text/javascript"></script>
+<script src="//cdn.rawgit.com/paulirish/matchMedia.js/master/matchMedia.addListener.js" type="text/javascript"></script>
+<![endif]-->
+<script type="text/javascript">
+/** Browser version checking for IE Broswer Issue*/
+var onEscapeFlag=true;
+if(navigator.appName.indexOf("Internet Explorer") != -1) {
+var badBrowserVersion=(
+navigator.appVersion.indexOf("MSIE 9")!=-1 ||
+navigator.appVersion.indexOf("MSIE 8")!=-1 ||
+navigator.appVersion.indexOf("MSIE 7")!=-1 ||
+navigator.appVersion.indexOf("MSIE 6")!=-1 ||
+navigator.appVersion.indexOf("MSIE 5")!=-1 ||
+navigator.appVersion.indexOf("MSIE 4")!=-1 ||
+navigator.appVersion.indexOf("MSIE 3")!=-1 ||
+navigator.appVersion.indexOf("MSIE 2")!=-1 ||
+navigator.appVersion.indexOf("MSIE 1")!=-1
+);
+if(badBrowserVersion){
+if(badBrowserVersion){
+if(navigator.appVersion.indexOf("MSIE 10") == 17){
+$('.browsercontainer').addClass('hide');
+$('.browsercontainer').closest('body').css('overflow','visible');
+}else{
+$('.browsercontainer').removeClass('hide');
+$('.signup-dialog').css('z-index','10');
+$('#dwfrm_emailsignup_email').attr('disabled','true');
+$('.browsercontainer').closest('body').css('overflow','hidden');
+$('.browsercontainer').height($(window).height());
+onEscapeFlag = false;
+}
+}
+}
+}
+</script>
+<script type="text/javascript">
+
+(function(){
+window.Constants = {"AVAIL_STATUS_IN_STOCK":"IN_STOCK","AVAIL_STATUS_PREORDER":"PREORDER","AVAIL_STATUS_BACKORDER":"BACKORDER","AVAIL_STATUS_NOT_AVAILABLE":"NOT_AVAILABLE"};
+window.Resources = {"I_AGREE":"I Agree","CLOSE":"Close","NO_THANKS":"No, thanks","OK":"OK","ARE_YOU_HUMAN":"Are you a Human Being?","SHIP_QualifiesFor":"This shipment qualifies for","CC_LOAD_ERROR":"Couldn't load credit card!","REG_ADDR_ERROR":"Could Not Load Address","BONUS_PRODUCT":"Bonus Product","BONUS_PRODUCTS":"Bonus Products","SELECT_BONUS_PRODUCTS":"Select Bonus Products","SELECT_BONUS_PRODUCT":"product.selectbonusproduct","BONUS_PRODUCT_MAX":"The maximum number of bonus products has been selected. Please remove one in order to add additional bonus products.","BONUS_PRODUCT_TOOMANY":"You have selected too many bonus products. Please change the quantity.","SIMPLE_SEARCH":"Search","SUBSCRIBE_EMAIL_DEFAULT":"Email Address","CURRENCY_SYMBOL":"$","MISSINGVAL":"Please enter {0}","SERVER_ERROR":"Server connection failed!","MISSING_LIB":"jQuery is undefined.","BAD_RESPONSE":"Bad response - parser error!","INVALID_PHONE":"Please specify a valid phone number.","INVALID_COUNTRY":"This field is required.","REMOVE":"Remove","QTY":"Qty","EMPTY_IMG_ALT":"Remove","COMPARE_BUTTON_LABEL":"Compare Items","COMPARE_CONFIRMATION":"This will remove the first product added for comparison. Is that OK?","COMPARE_REMOVE_FAIL":"Unable to remove item from list","COMPARE_ADD_FAIL":"Unable to add item to list","ADD_TO_CART_FAIL":"Unable to add item '{0}' to cart","REGISTRY_SEARCH_ADVANCED_CLOSE":"Close Advanced Search","GIFT_CERT_INVALID":"Invalid gift certificate code.","GIFT_CERT_BALANCE":"Your current gift certificate balance is","GIFT_CERT_AMOUNT_INVALID":"Gift Certificate can only be purchased with a minimum of 5 and maximum of 5000","GIFT_CERT_MISSING":"Please enter a gift certificate code.","INVALID_OWNER":"This appears to be a credit card number. Please enter the name of the card holder.","COUPON_CODE_MISSING":"Please enter a coupon code.","COOKIES_DISABLED":"Your browser is currently not set to accept cookies. Please turn this functionality on or check if you have another program set to block cookies.","BML_AGREE_TO_TERMS":"You must agree to the terms and conditions","CHAR_LIMIT_MSG":"You have {0} characters left out of {1}","CONFIRM_DELETE":"Do you want to remove this {0}?","CONFIRM_DELETE_CREDITCARD":"confirm.delete.creditcard","TITLE_GIFTREGISTRY":"gift registry","TITLE_ADDRESS":"address","TITLE_CREDITCARD":"credit card","SERVER_CONNECTION_ERROR":"Server connection failed!","IN_STOCK_DATE":"Expected ship date {0}.","ITEM_STATUS_NOTAVAILABLE":"This item is currently not available.","INIFINITESCROLL":"Show All","STORE_NEAR_YOU":"What's available at a store near you","SELECT_STORE":"Select Store","SELECTED_STORE":"Selected Store","PREFERRED_STORE":"Preferred Store","SET_PREFERRED_STORE":"Set Preferred Store","ENTER_ZIP":"Enter ZIP Code","INVALID_ZIP":"Please enter a valid Zip code","SEARCH":"Search","CHANGE_LOCATION":"Change Location","CONTINUE_WITH_STORE":"Continue with preferred store","CONTINUE":"Continue","SEE_MORE":"See More Stores","SEE_LESS":"See Fewer Stores","QUICK_VIEW":"QUICKSHOP","QUICK_VIEW_POPUP":"Product Quick View","TLS_WARNING":"We value your security!<br/>We detected that you are using an outdated browser.<br/>Update you browser to continue a secure shopping experience.","VALIDATE_REQUIRED":"This field is required.","VALIDATE_REMOTE":"Please fix this field.","VALIDATE_EMAIL":"Please enter a valid email address.","VALIDATE_FOOTER_ERROR":"Please check the box to agree with our privacy policy.","VALIDATE_PRIVACY":"Please check the box to agree with our privacy policy.","VALIDATE_EMAILEXISTED":"entered email address already exists.","VALIDATE_URL":"Please enter a valid URL.","VALIDATE_DATE":"Please enter a valid date.","VALIDATE_DATEISO":"Please enter a valid date ( ISO ).","VALIDATE_NUMBER":"Please enter a valid number.","VALIDATE_DIGITS":"Please enter only digits.","VALIDATE_CREDITCARD":"Please enter a valid credit card number.","VALIDATE_EQUALTO":"Please enter the same value again.","VALIDATE_MAXLENGTH":"Please enter no more than {0} characters.","VALIDATE_MINLENGTH":"Please enter at least {0} characters.","VALIDATE_RANGELENGTH":"Please enter a value between {0} and {1} characters long.","VALIDATE_RANGE":"Please enter a value between {0} and {1}.","VALIDATE_MAX":"Please enter a value less than or equal to {0}.","VALIDATE_MIN":"Please enter a value greater than or equal to {0}.","VALIDATE_QTYMAX":"Please enter a value less than or equal to","VALIDATE_QTYMIN":"Please enter a value greater than or equal to 1.","STORE_ZIP":"Your Zipcode or City,State","CHANGE_DATE_PICKER":"Change Ship Date","INVALID_CVN":"Invalid Security Code","NO_SEARCH_RESULTS":"Sorry, but we couldn't find any results for your search","INVALID_INPUT":"Please enter Valid Zipcode or City,State","ITEMS_ADDED_TEXT_MOBILE":"Items added to your bag","ADYEN_CC_VALIDATE":"Please enter a valid credit card information.","IN_STOCK":"In Stock","QTY_IN_STOCK":"{0} Item(s) in Stock","PREORDER":"Pre-Order item.","QTY_PREORDER":"{0} item(s) are available for pre-order.","REMAIN_PREORDER":"The remaining items are available for pre-order.","BACKORDER":"Back Order item.","QTY_BACKORDER":"Back order {0} item(s)","REMAIN_BACKORDER":"The remaining items are available on back order.","NOT_AVAILABLE":"This item is currently not available.","REMAIN_NOT_AVAILABLE":"The remaining items are currently not available. Please adjust the quantity."};
+window.Urls = {"appResources":"/on/demandware.store/Sites-ElizabethArden-Site/default/Resources-Load","pageInclude":"/on/demandware.store/Sites-ElizabethArden-Site/default/Page-Include","pageShow":"/on/demandware.store/Sites-ElizabethArden-Site/default/Page-Show","continueUrl":"https://www.elizabetharden.com/","staticPath":"/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/","addGiftCert":"/on/demandware.store/Sites-ElizabethArden-Site/default/GiftCert-Purchase","minicartGC":"/on/demandware.store/Sites-ElizabethArden-Site/default/GiftCert-ShowMiniCart","addProduct":"/on/demandware.store/Sites-ElizabethArden-Site/default/Cart-AddProduct","addAllDTSProducts":"/on/demandware.store/Sites-ElizabethArden-Site/default/Cart-AddAllDTSToCart","minicart":"/on/demandware.store/Sites-ElizabethArden-Site/default/Cart-MiniAddProduct","cartShow":"/on/demandware.store/Sites-ElizabethArden-Site/default/Cart-Show","giftRegAdd":"https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/Address-GetAddressDetails?addressID=","paymentsList":"https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/PaymentInstruments-List","addressesList":"https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/Address-List","wishlistAddress":"https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/Wishlist-SetShippingAddress","deleteAddress":"/on/demandware.store/Sites-ElizabethArden-Site/default/Address-Delete","getProductUrl":"/on/demandware.store/Sites-ElizabethArden-Site/default/Product-Show","getBonusProducts":"/on/demandware.store/Sites-ElizabethArden-Site/default/Product-GetBonusProducts","addBonusProduct":"/on/demandware.store/Sites-ElizabethArden-Site/default/Cart-AddBonusProduct","getSetItem":"/on/demandware.store/Sites-ElizabethArden-Site/default/Product-GetSetItem","productDetail":"/on/demandware.store/Sites-ElizabethArden-Site/default/Product-Detail","getAvailability":"/on/demandware.store/Sites-ElizabethArden-Site/default/Product-GetAvailability","removeImg":"/on/demandware.static/Sites-ElizabethArden-Site/-/default/dw272697b0/images/icon_remove.gif","searchsuggest":"/on/demandware.store/Sites-ElizabethArden-Site/default/Search-GetSuggestions","productNav":"/on/demandware.store/Sites-ElizabethArden-Site/default/Product-Productnav","summaryRefreshURL":"/on/demandware.store/Sites-ElizabethArden-Site/default/COBilling-UpdateSummary","billingSelectCC":"https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/COBilling-SelectCreditCard","updateAddressDetails":"https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/COShipping-UpdateAddressDetails","updateAddressDetailsBilling":"https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/COBilling-UpdateAddressDetails","shippingMethodsJSON":"https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/COShipping-GetApplicableShippingMethodsJSON","shippingMethodsList":"https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/COShipping-UpdateShippingMethodList","selectShippingMethodsList":"https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/COShipping-SelectShippingMethod","resetPaymentForms":"/on/demandware.store/Sites-ElizabethArden-Site/default/COBilling-ResetPaymentForms","compareShow":"/on/demandware.store/Sites-ElizabethArden-Site/default/Compare-Show","compareAdd":"/on/demandware.store/Sites-ElizabethArden-Site/default/Compare-AddProduct","compareRemove":"/on/demandware.store/Sites-ElizabethArden-Site/default/Compare-RemoveProduct","compareEmptyImage":"/on/demandware.static/Sites-ElizabethArden-Site/-/default/dwa5ee0371/images/comparewidgetempty.png","giftCardCheckBalance":"https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/COBilling-GetGiftCertificateBalance","redeemGiftCert":"https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/COBilling-RedeemGiftCertificateJson","addCoupon":"https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/Cart-AddCouponJson","storesInventory":"/on/demandware.store/Sites-ElizabethArden-Site/default/StoreInventory-Inventory","setPreferredStore":"/on/demandware.store/Sites-ElizabethArden-Site/default/StoreInventory-SetPreferredStore","getPreferredStore":"/on/demandware.store/Sites-ElizabethArden-Site/default/StoreInventory-GetPreferredStore","setStorePickup":"/on/demandware.store/Sites-ElizabethArden-Site/default/StoreInventory-SetStore","setZipCode":"/on/demandware.store/Sites-ElizabethArden-Site/default/StoreInventory-SetZipCode","getZipCode":"/on/demandware.store/Sites-ElizabethArden-Site/default/StoreInventory-GetZipCode","billing":"/on/demandware.store/Sites-ElizabethArden-Site/default/COBilling-Start","setSessionCurrency":"/on/demandware.store/Sites-ElizabethArden-Site/default/Currency-SetSessionCurrency","addEditAddress":"/on/demandware.store/Sites-ElizabethArden-Site/default/COShippingMultiple-AddEditAddressJSON","cookieHint":"/on/demandware.store/Sites-ElizabethArden-Site/default/Page-Include?cid=cookie_hint","rateLimiterReset":"/on/demandware.store/Sites-ElizabethArden-Site/default/RateLimiter-HideCaptcha","footeremailsignup":"/on/demandware.store/Sites-ElizabethArden-Site/default/ExactTargetEmailSignUp-Footer","zoomImageProduct":"/on/demandware.store/Sites-ElizabethArden-Site/default/Product-GetZoomImage","updateLineValue":"/on/demandware.store/Sites-ElizabethArden-Site/default/Subscriptions-UpdateLineValue","submitCoupon":"/on/demandware.store/Sites-ElizabethArden-Site/default/Cart-SubmitForm","diagnosticskinresults":"/on/demandware.store/Sites-ElizabethArden-Site/default/DiagnosticsTool-SkinCareResults","diagnosticsaveresults":"/on/demandware.store/Sites-ElizabethArden-Site/default/DiagnosticsTool-SaveResults","getStates":"/on/demandware.store/Sites-ElizabethArden-Site/default/COBilling-GetStates","updateState":"/on/demandware.store/Sites-ElizabethArden-Site/default/COBilling-UpdateState","findbyZipCity":"/stores","updateYear":"/on/demandware.store/Sites-ElizabethArden-Site/default/COBilling-UpdateYear","storesFind":"/on/demandware.store/Sites-ElizabethArden-Site/default/Stores-Find","giftBoxProduct":"/on/demandware.store/Sites-ElizabethArden-Site/default/Cart-GiftboxProduct","removeGiftWrap":"/on/demandware.store/Sites-ElizabethArden-Site/default/Cart-RemoveGiftWrap","cookielaw":"/on/demandware.store/Sites-ElizabethArden-Site/default/Cookie-Law","clearcartinternational":"/on/demandware.store/Sites-ElizabethArden-Site/default/ClearCartInternational-AbandonInternationalCart"};
+window.SitePreferences = {"LISTING_INFINITE_SCROLL":true,"LISTING_REFINE_SORT":true,"STORE_PICKUP":false,"COOKIE_HINT":false,"CHECK_TLS":false,"ADYEN_SF_ENABLED":true,"AFTERPAY_PORTAL":"https://portal.afterpay.com/afterpay.js","AFTERPAY_MIN_AMOUNT":1,"AFTERPAY_ENABLE":true,"ENABLE_FINDATION":true,"ENABLE_AGILE_ONE":true};
+//PREVAIL-Window Properties
+window.isSPCEnabled = false;
+window.isCyberSourceEnabled = false;
+window.isAVSEnabled = true;
+window.isEventTrackingEnabled = false;
+window.isGoogleAnalyticsEnabled = false;
+window.isGTMEnabled = true;
+window.isEmailSubscriptionEnabled = false;
+window.isBISNEnabled = null;
+window.ACCEPT_COOKIES = false;
+window.COOKIE_EXPIRATION = 14;
+}());
+</script>
+<script type="text/javascript">
+
+(function(){
+window.SessionAttributes = {"SHOW_CAPTCHA":null};
+window.User = {"zip":null,"storeId":null};
+}());
+</script>
+
+
+<script src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/lib/jquery/ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/lib/jquery/jquery.jcarousel.min.js" type="text/javascript"></script>
+<script src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/lib/jquery/jquery.validate.min.js" type="text/javascript"></script>
+<script src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/lib/jquery/jquery.cookie.js" type="text/javascript"></script>
+<script src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/lib/jquery/jquery.zoom.min.js" type="text/javascript"></script>
+<script src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/lib/jquery/underscore.js" type="text/javascript"></script>
+<script src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/lib/jquery/slick.js" type="text/javascript"></script>
+<script src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/lib/jquery/selectbox/jquery.selectbox-0.2.js" type="text/javascript"></script>
+<script src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/lib/jquery/pinchzoom.js" type="text/javascript"></script>
+<script src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/lib/jquery/modernizr.js" type="text/javascript"></script>
+<script src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/js/app.js" type="text/javascript"></script>
+
+
+<script>pageContext = {"title":"Storefront","type":"storefront","ns":"storefront"};</script>
+<script>
+var meta = "Shop our cosmetics, skincare, perfume &amp; gift sets at Elizabeth Arden. Explore from wide selection of anti-aging skincare products, makeup &amp; fragrances to match your style.";
+var keywords = "beauty, beauty products, make up, makeup, skin care, skin care products, facial products, perfume, perfumes, skin products";
+</script>
+
+
+<script type="text/javascript" src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/js/edutl.js"></script>
+<script type="text/javascript">
+storeSREDID();
+</script>
+
+
+
+<script type="text/javascript" src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/js/pr_actions.js"></script>
+<script type="text/javascript" src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/js/pr_functions.js"></script>
+<script type="text/javascript" src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/js/sr_actions.js"></script>
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type='text/javascript'>
+	_a1as.push(['track']);
+	_a1as.push(['clear']);
+</script>
+
+<script type='text/javascript'>
+	(function() { 
+	var a1s = document.createElement('script');  
+	a1s.type = 'text/javascript';  
+	a1s.async = true;  
+	a1s.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'tr-1.agilone.com/tr-as.js';  
+	var a1ss = document.getElementsByTagName('script')[0];  
+	a1ss.parentNode.insertBefore(a1s, a1ss); 
+	})(); 
+</script>
+
+<!-- Twitter universal website tag code -->
+
+<!-- End Twitter universal website tag code -->
+
+
+
+
+
+
+</div><!-- /wrapper -->
+<!-- Demandware Analytics code 1.0 (body_end-analytics-tracking-asynch.js) -->
+<script type="text/javascript">//<!--
+/* <![CDATA[ */
+function trackPage() {
+    try{
+        var trackingUrl = "https://www.elizabetharden.com/on/demandware.store/Sites-ElizabethArden-Site/default/__Analytics-Start";
+        var dwAnalytics = dw.__dwAnalytics.getTracker(trackingUrl);
+        if (typeof dw.ac == "undefined") {
+            dwAnalytics.trackPageView();
+        } else {
+            dw.ac.setDWAnalytics(dwAnalytics);
+        }
+    }catch(err) {};
+}
+/* ]]> */
+// -->
+</script>
+<script type="text/javascript" src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/internal/jscript/dwanalytics-22.2.js" async="async" onload="trackPage()"></script>
+<!-- Demandware Active Data (body_end-active_data.js) -->
+<script src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/internal/jscript/dwac-21.7.js" type="text/javascript" async="async"></script><!-- CQuotient Activity Tracking (body_end-cquotient.js) -->
+<script src="https://cdn.cquotient.com/js/v2/gretel.min.js" type="text/javascript" async="async"></script>
+<!-- Demandware Apple Pay -->
+<script type="text/javascript">//<!--
+/* <![CDATA[ */
+if (!window.dw) dw = {};
+dw.applepay = {"action":{"cancel":"https:\/\/www.elizabetharden.com\/on\/demandware.store\/Sites-ElizabethArden-Site\/default\/__SYSTEM__ApplePay-Cancel","getRequest":"https:\/\/www.elizabetharden.com\/on\/demandware.store\/Sites-ElizabethArden-Site\/default\/__SYSTEM__ApplePay-GetRequest","onshippingcontactselected":"https:\/\/www.elizabetharden.com\/on\/demandware.store\/Sites-ElizabethArden-Site\/default\/__SYSTEM__ApplePay-ShippingContactSelected","onpaymentmethodselected":"https:\/\/www.elizabetharden.com\/on\/demandware.store\/Sites-ElizabethArden-Site\/default\/__SYSTEM__ApplePay-PaymentMethodSelected","onvalidatemerchant":"https:\/\/www.elizabetharden.com\/on\/demandware.store\/Sites-ElizabethArden-Site\/default\/__SYSTEM__ApplePay-ValidateMerchant","onpaymentauthorized":"https:\/\/www.elizabetharden.com\/on\/demandware.store\/Sites-ElizabethArden-Site\/default\/__SYSTEM__ApplePay-PaymentAuthorized","prepareBasket":"https:\/\/www.elizabetharden.com\/on\/demandware.store\/Sites-ElizabethArden-Site\/default\/__SYSTEM__ApplePay-PrepareBasket","onshippingmethodselected":"https:\/\/www.elizabetharden.com\/on\/demandware.store\/Sites-ElizabethArden-Site\/default\/__SYSTEM__ApplePay-ShippingMethodSelected"},"inject":{"directives":[{"css":"dw-apple-pay-button","query":"ISAPPLEPAY","action":"replace","copy":true},{"css":"dw-apple-pay-button dw-apple-pay-mini-cart ","query":".mini-cart-totals","action":"append"},{"css":"dw-apple-pay-button dw-apple-pay-cart ","query":"button[name=dwfrm_cart_checkoutCart]","action":"after","style":{"ref":"this","attr":["width","margin"]}}]}};
+/* ]]> */
+// -->
+</script>
+<script type="text/javascript" src="/on/demandware.static/Sites-ElizabethArden-Site/-/default/v1687665764708/internal/jscript/applepay.js" async="true"></script>
+</body>
+</html>

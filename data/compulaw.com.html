@@ -1,0 +1,479 @@
+<html>
+<head>
+<title>CompuLaw - legal calendar software with court rules</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="description" content="Compulaw is the leader in court rules based legal calendar and docket software">
+<!-- start of date / time -->
+<script type ="text/javascript">
+window.location="http://www.aderant.com/solutions-calendaring-compulaw/";
+</script> 
+<script language=javascript>
+function dispDate(dateVal) {
+DaystoAdd=dateVal
+TodaysDate = new Date();
+TodaysDay = new Array('Sunday', 'Monday', 'Tuesday','Wednesday', 'Thursday', 'Friday', 'Saturday');
+TodaysMonth = new Array('January', 'February', 'March','April', 'May','June', 'July', 'August', 'September','October', 'November', 'December');
+DaysinMonth = new Array('31', '28', '31', '30', '31', '30', '31', '31', '30', '31', '30', '31');
+function LeapYearTest (Year) {
+if (((Year % 400)==0) || (((Year % 100)!=0) && (Year % 4)==0)) {
+return true;
+}
+else {
+return false;
+}
+}
+CurrentYear = TodaysDate.getYear();
+if (CurrentYear < 2000) 
+CurrentYear = CurrentYear + 1900;
+currentMonth = TodaysDate.getMonth();
+DayOffset = TodaysDate.getDay();
+currentDay = TodaysDate.getDate();
+month = TodaysMonth[currentMonth];
+if (month == 'February') {
+if (((CurrentYear % 4)==0) && ((CurrentYear % 100)!=0) || ((CurrentYear % 400)==0)) {
+DaysinMonth[1] = 29;
+}
+else {
+DaysinMonth[1] = 28;
+}
+}
+days = DaysinMonth[currentMonth];
+currentDay += DaystoAdd;
+if (currentDay > days) {
+if (currentMonth == 11) {
+currentMonth = 0;
+month = TodaysMonth[currentMonth];
+CurrentYear = CurrentYear + 1
+}
+else {
+month =
+TodaysMonth[currentMonth+1];
+}
+currentDay = currentDay - days;
+}
+DayOffset += DaystoAdd;
+function offsettheDate (offsetCurrentDay) {
+if (offsetCurrentDay > 6) {
+offsetCurrentDay -= 6;
+DayOffset = TodaysDay[offsetCurrentDay-1];
+offsettheDate(offsetCurrentDay-1);
+}
+else {
+DayOffset = TodaysDay[offsetCurrentDay];
+return true;
+}
+}
+offsettheDate(DayOffset);TheDate = DayOffset + ', ';
+TheDate += month + ' ';
+TheDate += currentDay + ', '; 
+if (CurrentYear<100) CurrentYear="19" + CurrentYear;
+TheDate += CurrentYear;
+document.write(' '+TheDate);
+}
+</script>
+<!-- end of date / time -->
+
+<link rel=stylesheet href="css/claw-stylesheet.css" type="text/css">
+<style type="text/css">
+<!--
+body {
+	background-color: #BFBFBF;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-image: url(images/background.jpeg);
+}
+.style4 {font-size: xx-small}
+.style5 {color: #CC0000}
+.style6 {
+	list-style-type: square;
+}
+.style8 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 24px;
+	letter-spacing: -0.25pt;
+	word-spacing: 0.5pt;
+}
+.style10 {
+	text-align: left;
+}
+.style11 {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: x-small;
+}
+.style12 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 24px;
+	color: #000000;
+	letter-spacing: -0.25pt;
+	word-spacing: 0.5pt;
+}
+.style14 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 14px;
+	font-style: italic;
+}
+.style15 {
+	text-align: right;
+}
+.style18 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	text-decoration: none;
+	color: #666666;
+}
+.style19 {
+	color: #666666;
+}
+.style21 {
+	border: 2px solid #666666;
+	background-color: #E2E9F5;
+}
+.style23 {
+	line-height: 115%;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: large;
+	color: #666666;
+	letter-spacing: -0.25pt;
+	word-spacing: 0.5pt;
+	text-align: left;
+}
+.style26 {
+	line-height: 115%;
+	font-family: Georgia;
+	font-size: large;
+	color: #666666;
+	letter-spacing: -0.25pt;
+	word-spacing: 0.5pt;
+	text-align: center;
+}
+.style28 {
+	line-height: 115%;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: large;
+	color: #666666;
+	letter-spacing: -0.25pt;
+	word-spacing: 0.5pt;
+	text-align: center;
+}
+.style29 {
+	line-height: 115%;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: small;
+	color: #999999;
+	letter-spacing: -0.25pt;
+	word-spacing: 0.5pt;
+	text-align: left;
+}
+.style30 {
+	line-height: 115%;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: small;
+	color: #666666;
+	letter-spacing: -0.25pt;
+	word-spacing: 0.5pt;
+	text-align: left;
+}
+.style32 {
+	color: #666666;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+.style33 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 24px;
+	color: #999999;
+	letter-spacing: -0.25pt;
+	word-spacing: 0.5pt;
+	text-align: left;
+}
+.style34 {
+	line-height: 115%;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: small;
+	color: #666666;
+	letter-spacing: -0.25pt;
+	word-spacing: 0.5pt;
+	text-align: right;
+}
+.style35 {
+	text-align: center;
+}
+.style36 {
+	vertical-align: bottom;
+}
+.auto-style1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	color: #666666;
+	text-align: left;
+}
+.auto-style2 {
+	border-width: 0px;
+}
+.auto-style3 {
+	color: #663300;
+	text-decoration: underline;
+}
+-->
+</style>
+</head>
+<table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td width="200"><a href="index.htm"><img src="images/head-banner-claw.jpg" width="200" height="60" border="0"></a></td>
+    <td valign="top" background="images/head-banner.jpg"><table width="540" height="45" border="0" align="right" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="350" valign="bottom" class="style33"><sub><font color="#FFFFFF">
+		  <em>The
+              Court Rules Company</em></font></sub></td>
+          <td width="175" valign="bottom" class="navigation-lower"><div align="right">| <a href="support/register.htm">client login</a> |</div>
+          </td>
+          <td width="10"></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><img src="images/copper-strip-50.gif" width="750" height="5" border="0"></td>
+  </tr>
+</table>
+<table width="750" height="20" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" class="tablebottomborder-dark">
+  <tr valign="middle">
+    <td width="10" align="right" class="navigation-top"></td>
+    <td width="725" align="right" class="navigation-top"><div align="left">| <a href="index.htm">Home</a> | <a href="vision.htm">products</a> | <a href="rules/rules.htm">rules</a> | <a href="vision_support_options.htm">support
+          &amp; Training</a> | <a href="news.htm">news & articles</a> | <a href="shows.htm">Trade
+          shows</a> | <a href="rules-integration-partners.htm">partners</a> | <a href="about.htm">about
+          us</a> | <a href="contact.htm">contact</a> |</div></td>
+    <td width="10" align="right" class="navbar-top"></td>
+  </tr>
+</table>
+
+<div align="center">
+  <table width="750" height="20" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#E6E6E6">
+    <tr>
+      <td width="10" height="20" class="navigation-lower"></td>
+      <td height="20" align="left" class="navigation-lower">| 
+	  <script language=javascript>
+      dispDate(0)
+      </script> 
+| </td>
+      <td width="10" height="20" align="right" class="navbar-top"></td>
+    </tr>
+  </table>
+    </div>
+<table width="750" border="0" align="center" cellpadding="10" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td valign="top">
+	<table style="width: 100%">
+		<tr>
+			<td class="style12" colspan="2"><strong class="body-heading">What is 
+			the leading cause of malpractice claims?</strong></td>
+		</tr>
+		<tr>
+			<td class="style18" style="width: 4%; height: 18px;"><strong>a.</strong></td>
+			<td class="style18" style="width: 50%; height: 18px;"><strong>Breach of 
+			attorney-client or other fiduciary duty?</strong></td>
+		</tr>
+		<tr>
+			<td class="style18" style="width: 4%"><strong>b.</strong></td>
+			<td class="style18" style="width: 50%"><strong>Failure to disclose 
+			or address conflicts of interest?</strong></td>
+		</tr>
+		<tr>
+			<td class="style18" style="width: 4%"><strong>c.</strong></td>
+			<td class="style18" style="width: 50%"><strong>Improper accounting 
+			for trust account and general or personal funds?</strong></td>
+		</tr>
+		<tr>
+			<td class="style18" style="width: 4%"><strong>d.</strong></td>
+			<td class="style18" style="width: 50%"><strong>Failure to 
+			communicate with clients in a timely fashion?</strong></td>
+		</tr>
+	</table>
+	<table style="width: 100%">
+		<tr>
+			<td><span class="style18">Answer: None of the above!<br></span></td>
+		</tr>
+		<tr>
+			<td style="width: 100%; height: 10;" class="style35" valign="bottom">
+			<img alt="Accent line" class="style36" height="5" src="images/accent_line_brown.jpg" width="230"></td>
+		</tr>
+	</table>
+	<table cellspacing="1" style="width: 100%">
+		<tr>
+			<td><span class="style14">
+			Calendar/deadlines-related errors are the leading cause of 
+			malpractice actions against lawyers</span>.</td>
+		</tr>
+		<tr>
+			<td class="style15"><span class="body-font">American Bar Association 
+			survey,<br>&nbsp;&quot;Profile of Malpractice Claims&quot;</span></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+		</tr>
+	</table>
+	<table cellpadding="8" cellspacing="0" class="style21" style="width: 100%">
+		<tr class="body-heading">
+			<td class="style23" colspan="2" style="mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">
+			<em>CompuLaw</em> is trusted by</td>
+		</tr>
+		<tr class="body-heading">
+			<td class="style26" style="mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; width: 26;">
+			&#9642;</td>
+			<td class="style29" style="mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">
+			<p class="style32">More than 75% of the largest firms in the U.S.</p>
+			</td>
+		</tr>
+		<tr class="body-heading">
+			<td class="style28" style="mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; width: 26;">
+			&#9642;</td>
+			<td class="style29" style="mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">
+			<p class="style19">More than 100,000 lawyers in firms of all sizes</p>
+			</td>
+		</tr>
+		<tr class="body-heading">
+			<td class="style28" style="mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; width: 26;">
+			&#9642;<br></td>
+			<td class="style30" style="mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA">
+			<p>Large firms, medium firms and small firms... </p>
+			</td>
+		</tr>
+		<tr class="body-heading">
+			<td class="style28" style="mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; width: 26; height: 26px;">
+			</td>
+			<td class="style34" style="mso-ascii-theme-font: minor-latin; mso-fareast-font-family: Calibri; mso-fareast-theme-font: minor-latin; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: &quot;Times New Roman&quot;; mso-bidi-theme-font: minor-bidi; mso-ansi-language: EN-US; mso-fareast-language: EN-US; mso-bidi-language: AR-SA; height: 26px;">
+			<em><strong>Why not your firm?&nbsp;</strong></em></td>
+		</tr>
+	</table>
+    </td>
+    <td width="380" valign="top">
+	<TABLE height="51" border=0 cellPadding=10 cellSpacing=0 style="width: 100%;" class="tableborder-red">
+      <TBODY>
+        <TR>
+          <TD colspan="5" style="width: 371px">
+		  <p class="body-subheading style5" style="height: 72px; width: 366px;">
+		  <a href="news.htm">ADERANT compulaw further expands court rules 
+		  databases offering</a><br><br>
+		  <a href="news.htm">aderant compulaw collaborate&trade; 2.0<span class="auto-style3"> 
+		  enhances sharepoint functionality</span></a> <br></p>
+			</TD>
+        </TR>
+      </TBODY>
+    </TABLE>
+    <table width="100%" border="0" cellpadding="10" cellspacing="0">
+        <tr>
+          <td class="body-subheading">            
+		  <img alt="CompuLaw Headquarters" height="81" src="images/panorama-compulaw-hq%20-%20small%20-%20label.jpg" width="360">&nbsp;</td>
+        </tr>
+      </table>      
+      <table width="100%" cellpadding="0" cellspacing="0" class="tableborder-red">
+        <tr>
+          <td class="style8" style="height: 45">            &nbsp;            <em>CompuLaw</em> in the News</td>
+        </tr>
+        <tr>
+          <td width="200" style="width: 316">
+		  <ul class="style6">
+			  <li><a class="body-subheading" href="articles/DLA_Piper_LTN_March_2010.pdf">DLA 
+			  Piper - Selecting a Calendar for 3,500 Attorneys</a></li>
+		  </ul>
+			</td>
+        </tr>
+        <tr>
+          <td width="200" style="width: 369px">
+		  <ul class="style6">
+			  <li><a class="body-subheading" href="articles/Sheppard%20Mullin%20LM%20Aug%202009.pdf" target="_blank">Sheppard 
+			  Mullin - Carefree Court Calendaring </a></li>
+		  </ul>
+			</td>
+        </tr>
+        <tr>
+          <td width="200" style="width: 369px">
+		  <ul class="style6">
+			  <li><a href="articles/055081050910CompuLaw.pdf" target="_blank" class="body-subheading">Sutherland Utilizes CompuLaw Vision to Automate Litigation Calendaring</a></li>
+		  </ul>
+			</td>
+        </tr>
+        <tr>
+          <td width="200" style="width: 369px">
+		  <ul class="style6">
+			  <li>&nbsp;<a class="body-subheading" href="articles/Scott%208%2017%2009.pdf" target="_blank">Disaster 
+			  Recovery and Your Court Calendar</a></li>
+		  </ul>
+			</td>
+        </tr>
+        <tr>
+          <td width="200" style="width: 369">&nbsp;<span class="style11"> <a href="articles.htm">More 
+		  articles</a></span></td>
+        </tr>
+      </table>      
+      <table width="100%" border="0" cellpadding="0" cellspacing="5" style="height: 68px">
+        <tr>
+          <td class="style10">
+		  <span class="body-subheading">
+		  <a class="body-subheading" href="sales/CompuLaw_Version_10.pdf">Vision 
+		  Version 10 Brochure</a><br><br>To schedule your online demo, click
+		  <a href="webdemo.htm">here</a>.
+          </span></td>
+        </tr>
+      </table>
+      <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="63%" align="center"><div align="center" class="body-subheading">
+              <div class="auto-style1" style="width: 376px"><a href="http://www.deadlines.com" target="_blank">
+		  <img src="images/deadline-logo-red-box.gif" width="119" height="48" border="0" align="middle" style="float: left"></a><br>Deadlines.com &#8212; automated rules 
+				  based legalcalendaring for smaller firms.</div>
+          </div></td>
+          <td width="37%">&nbsp;</td>
+        </tr>
+    </table>      </td>
+  </tr>
+</table>
+<div align="center">
+  <table width="750" height="50" border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" class="tablebottomborder-dark">
+    <tr>
+      <td colspan="5"><div align="center"><img src="images/horizbar-gray-730.gif" width="730" height="1"></div>
+      </td>
+    </tr>
+    <tr>
+      <td width="10"></td>
+      <td width="365" valign="top"><a href="http://www.adobe.com/products/acrobat/readstep2.html" target="_blank"><img src="images/get_adobe_reader.gif" width="112" height="33" border="0"></a><span class="privacy-terms-conditinos"><br>
+        </span><span class="footer">* Get the new   PDF reader (free) </span> </td>
+      <td width="20" class="privacy-terms-conditinos">&nbsp;</td>
+      <td width="341" align="right">&nbsp;</td>
+      <td width="14">&nbsp;</td>
+    </tr>
+  </table>
+  <table width="750" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="10" height="20" align="left" class="navigation-lower"></td>
+      <td width="675" height="20" align="left" class="navigation-lower">| <a href="privacy.htm">privacy
+          policy</a> | <a href="termsofuse.htm">terms &amp; conditions</a> |</td>
+      <td width="10" height="20" align="right" class="navbar-top"></td>
+    </tr>
+  </table>
+  <table width="750" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" class="tablebottomborder-dark">
+    <tr>
+      <td width="740" height="20" valign="middle" class="navigation-lower"><div align="right">Protect
+          your clients. Protect your firm. Use CompuLaw.</div></td>
+      <td width="10" valign="middle" class="privacy-terms-conditinos">&nbsp;</td>
+    </tr>
+  </table>
+    <div align="center" class="footer"></div>    <div align="center" class="footer"><br>
+Copyright &copy; 2011 ADERANT Holdings, Inc. All rights reserved.<br>
+<br>
+    </div>
+  </div>
+</div>
+<script id="googlecode1" type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script id="googlecode2" type="text/javascript">
+var pageTracker = _gat._getTracker("UA-3321094-2");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script></body>
+</html>

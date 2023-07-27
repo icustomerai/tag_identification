@@ -1,0 +1,2550 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes"/>
+    <title>IT Support | Seattle | Bellevue | IT Solutions | Net-Tech</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Monda:wght@400;700&#038;family=Play:wght@400;700&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Monda:wght@400;700&#038;family=Play:wght@400;700&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Monda:wght@400;700&#038;family=Play:wght@400;700&#038;display=swap" /></noscript><style id="rocket-critical-css">ul{box-sizing:border-box}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.aligncenter{clear:both}</style>
+        <link rel="pingback" href="https://www.net-tech.com/xmlrpc.php" />
+        <link data-minify="1" href="https://www.net-tech.com/wp-content/cache/min/1/wp-content/themes/phoenix/bootstrap/css/bootstrap.min.css?ver=1685567992" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  rel="preload" />
+    <link data-minify="1" href="https://www.net-tech.com/wp-content/cache/min/1/wp-content/themes/phoenix/fontawesome-pro/css/all.min.css?ver=1685567992" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  rel="preload" />
+    <link href="https://www.net-tech.com/wp-content/themes/phoenix/fontawesome-pro/css/v4-shims.min.css?v=5.11.2-pro" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  rel="preload" />
+
+	
+    <!--[if IE 7]>
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome-ie7.min.css" rel="stylesheet" />
+    <![endif]-->
+        <link rel="shortcut icon" href="https://www.net-tech.com/wp-content/uploads/2018/12/cropped-favicon-nettech-services-inc.png" type="image/x-icon" />
+    <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v20.9 - https://yoast.com/wordpress/plugins/seo/ -->
+	<meta name="description" content="IT support that expertly manages your hardware, software and service that remains affordable, scalable and standardized." />
+	<link rel="canonical" href="https://www.net-tech.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="IT Support | Seattle | Bellevue | IT Solutions | Net-Tech" />
+	<meta property="og:description" content="IT support that expertly manages your hardware, software and service that remains affordable, scalable and standardized." />
+	<meta property="og:url" content="https://www.net-tech.com/" />
+	<meta property="og:site_name" content="Network Technology Services Inc." />
+	<meta property="article:modified_time" content="2023-04-22T06:40:00+00:00" />
+	<meta property="og:image" content="https://www.net-tech.com/wp-content/uploads/2017/08/Net-Tech_Logo.png" />
+	<meta property="og:image:width" content="321" />
+	<meta property="og:image:height" content="110" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="7 minutes" />
+	<meta name="google-site-verification" content="jLwWHnn-x5ucvVwqG-cc1XZDQE5RJlBF1qb88V-fXCo" />
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//scripts.iconnode.com' />
+<link rel='dns-prefetch' href='//v0.wordpress.com' />
+<link rel='dns-prefetch' href='//c0.wp.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Network Technology Services Inc. &raquo; Feed" href="https://www.net-tech.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Network Technology Services Inc. &raquo; Comments Feed" href="https://www.net-tech.com/comments/feed/" />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v8.15 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+		<!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
+					<!-- No UA code set -->
+				<!-- / Google Analytics by MonsterInsights -->
+		<link data-minify="1" rel='preload'  href='https://www.net-tech.com/wp-content/cache/min/1/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-videopress/build/block-editor/blocks/video/view.css?ver=1685567992' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link data-minify="1" rel='preload'  href='https://www.net-tech.com/wp-content/cache/min/1/c/6.2.2/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=1685567992' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link data-minify="1" rel='preload'  href='https://www.net-tech.com/wp-content/cache/min/1/c/6.2.2/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=1685567992' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link data-minify="1" rel='preload'  href='https://www.net-tech.com/wp-content/cache/min/1/c/6.2.2/wp-includes/css/classic-themes.min.css?ver=1685567992' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link data-minify="1" rel='preload'  href='https://www.net-tech.com/wp-content/cache/min/1/wp-content/plugins/wooslider/assets/css/flexslider.css?ver=1685567992' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<link data-minify="1" rel='preload'  href='https://www.net-tech.com/wp-content/cache/min/1/wp-content/plugins/wooslider/assets/css/style.css?ver=1685567992' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type='text/css' media='all' />
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://c0.wp.com/c/6.2.2/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js'></script>
+<script type="rocketlazyloadscript" data-minify="1"   data-rocket-type='text/javascript' data-rocket-src='https://www.net-tech.com/wp-content/cache/min/1/c/6.2.2/wp-includes/js/jquery/jquery-migrate.min.js?ver=1685567993' id='jquery-migrate-js'></script>
+<script type="rocketlazyloadscript" data-minify="1"   data-rocket-type='text/javascript' data-rocket-src='https://www.net-tech.com/wp-content/cache/min/1/wp-content/plugins/stop-user-enumeration/frontend/js/frontend.js?ver=1685567993' id='stop-user-enumeration-js'></script>
+<script data-minify="1"   type='text/javascript' src='https://www.net-tech.com/wp-content/cache/min/1/80386.js?ver=1685567993' id='whatconverts-tracking-script-js'></script>
+<link rel="https://api.w.org/" href="https://www.net-tech.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.net-tech.com/wp-json/wp/v2/pages/9433" /><link rel='shortlink' href='https://www.net-tech.com/' />
+
+<!-- Schema & Structured Data For WP v1.15.1 - -->
+<script type="application/ld+json" class="saswp-schema-markup-output">
+[{"@context":"https://schema.org/","@graph":[{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"What We Offer","url":"https://www.net-tech.com/what-we-offer/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"Total Care Cloud - IT Subscription Program","url":"/total-care-cloud/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"Total Care Demo","url":"https://www.net-tech.com/?page_id=6467"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"IaaS: Infrastructure as a Service (IaaS)","url":"https://www.net-tech.com/what-we-offer/infrastructure-as-a-service-iaas/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"IT Security","url":"https://www.net-tech.com/what-we-offer/it-security/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"Industries","url":"https://www.net-tech.com/industries/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"Resources","url":"https://www.net-tech.com/resources/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"PTO FAQ’s","url":"https://www.net-tech.com/what-we-offer/faqs/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"Blog","url":"https://www.net-tech.com/blog/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"About Us","url":"https://www.net-tech.com/about-us/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"Contact Us","url":"https://www.net-tech.com/contact-us/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"Non-Profit","url":"https://www.net-tech.com/industries/non-profit-it-support/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"Staffing & Recruiting","url":"https://www.net-tech.com/industries/staffing-recruiting/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"Accounting Firms","url":"https://www.net-tech.com/industries/accounting-firms-it-support/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"Healthcare","url":"https://www.net-tech.com/industries/healthcare-it-support/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"Wealth Management","url":"https://www.net-tech.com/industries/wealth-management-it-support/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"Construction","url":"https://www.net-tech.com/industries/construction-it-support/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"Property Management","url":"https://www.net-tech.com/industries/property-management-it-support/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"IT Glossary","url":"https://www.net-tech.com/resources/it-glossary/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"Books","url":"https://www.net-tech.com/resources/books/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"My Best Practice: INFOSEC","url":"https://www.net-tech.com/resources/books/infosec-book/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"My Best Practice: PTO","url":"https://www.net-tech.com/resources/books/pto-book/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"Guides","url":"https://www.net-tech.com/resources/guides/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"Case Studies","url":"https://www.net-tech.com/resources/case-studies/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"Careers","url":"https://www.net-tech.com/about-us/careers/"},{"@context":"https://schema.org/","@type":"SiteNavigationElement","@id":"https://www.net-tech.com#Main Nav","name":"Testimonials","url":"https://www.net-tech.com/about-us/testimonials/"}]},
+
+{"@context":"https://schema.org/","@type":"WebSite","@id":"https://www.net-tech.com#website","headline":"Network Technology Services Inc.","name":"Network Technology Services Inc.","description":"IT support that expertly manages your hardware, software and service that remains affordable, scalable and standardized.","url":"https://www.net-tech.com","potentialAction":{"@type":"SearchAction","target":"https://www.net-tech.com?s={search_term_string}","query-input":"required name=search_term_string"}},
+
+{"@context":"https://schema.org/","@type":"professionalservice","@id":"Net Tech","url":"https://www.net-tech.com/","name":"Net Tech","description":"Net-Tech has a proven record of providing excellent IT services and solutions to businesses since 1983. With certification from a team of IT professionals, we are dedicated to ensuring your organization&#039;s infrastructure is up-to-date through one reliable and systematic IT solution.","address":{"@type":"PostalAddress","streetAddress":"2100 124th Ave NE Ste 112","addressLocality":"Bellevue","addressRegion":"Washington","postalCode":"98005","addressCountry":""},"telephone":"8777132831","openingHours":["Monday to Friday:\r\n9AM-5PM"],"image":"https://www.net-tech.com/wp-content/uploads/2021/02/logo-net-tech.jpg","additionalType":"","priceRange":"$","servesCuisine":"","areaServed":[],"founder":[],"employee":[],"makesOffer":{"@type":"Offer","@id":"#service","itemOffered":{"@type":"Service","name":"","url":"","areaServed":[]}},"sameAs":["https://www.facebook.com/NetworkTechnologyServices/","https://twitter.com/_Net_Tech_","https://www.pinterest.com/nettechsolutionsandservices/","https://www.linkedin.com/company/net-tech-com/"],"hasMenu":"","hasMap":""},
+
+{"@context":"https://schema.org/","@type":"Organization","@id":"https://www.net-tech.com#Organization","name":"Network Technology Services Inc.","url":"https://www.net-tech.com","sameAs":[]}]
+</script>
+
+<link rel="icon" href="https://www.net-tech.com/wp-content/uploads/2018/12/cropped-favicon-nettech-services-inc-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://www.net-tech.com/wp-content/uploads/2018/12/cropped-favicon-nettech-services-inc-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.net-tech.com/wp-content/uploads/2018/12/cropped-favicon-nettech-services-inc-180x180.png" />
+<meta name="msapplication-TileImage" content="https://www.net-tech.com/wp-content/uploads/2018/12/cropped-favicon-nettech-services-inc-270x270.png" />
+<link data-minify="1" rel="preload"  href="https://www.net-tech.com/wp-content/cache/min/1/wp-content/themes/phoenix/css/main.css?ver=1685567992" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type="text/css" media="all" />
+<link data-minify="1" rel="preload"  href="https://www.net-tech.com/wp-content/cache/min/1/wp-content/themes/phoenix-child/style.css?ver=1685567992" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  type="text/css" media="all" />
+<style>
+h1, h2, h3, h4, h5, h6 { font-family: ; color: #001a37; }
+input, button, select, textarea, body { font-family: ; }
+body { color: #445b78;}
+.body-background { }
+a { color: #b42a30; }
+.segment1 { color:#445b78;background-color: #ffffff;}
+.segment1 h1, .segment1 h2, .segment1 h3, .segment1 h4, .segment1 h5, .segment1 h6 { color: #001a37; }
+.segment2 { color: #445b78;background-color: #f6f8fc;}
+.segment2 h1, .segment2 h2, .segment2 h3, .segment2 h4, .segment2 h5, .segment2 h6 { color: #001a37; }
+.segment3 { color: #ffffff;background-color: #50729b;}
+.segment3 h1, .segment3 h2, .segment3 h3, .segment3 h4, .segment3 h5, .segment3 h6 { color: #ffffff; }
+.segment4 { color: #ffffff;background-color: #0e2848;}
+.segment4 h1, .segment4 h2, .segment4 h3, .segment4 h4, .segment4 h5, .segment4 h6 { color: #ffffff; }
+.segment5 { color: #ffffff;background-color: #001a37;}
+.segment5 h1, .segment5 h2, .segment5 h3, .segment5 h4, .segment5 h5, .segment5 h6 { color: #ffffff; }
+.accent { color: #b42a30; }
+/* Tablets */
+@media (max-width: 768px) {
+body {}
+}
+/* Landscape phones and down */
+@media (max-width: 480px) {
+body {}
+}
+</style><link rel="preload" type="text/css"  href="https://www.net-tech.com/?custom-css=45ade16bb7" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  /><!-- hook code snippet header -->
+<style>
+div[role="complementary"] .inner {
+	padding-top: 12px;
+}
+div[role="complementary"] .inner ul li a.current-page {
+	font-weight: 600;
+	color: #9d262b !important;
+}
+div[role="complementary"] .inner a:hover {
+	text-decoration: none;
+}
+div[role="complementary"] aside > h3 {
+	margin-top: 0;
+}
+
+.content {
+	padding-top: 10px;
+}
+.content > .col-md-9 {
+	padding-right: 40px;
+}
+
+@media (max-width: 991px) {
+    .content > .col-md-9 {
+    	padding-right: 30px;
+    }
+}
+@media (max-width: 767px) {
+    .content > .col-md-9 {
+    	padding-right: 15px;
+    }
+}
+</style><style>
+/* example https://ecommerce.pi.bypronto.com/services/innerpage-service-index-design-d/innerpage-service-detail-design-d/ */
+
+/* sidebar */
+div[role="complementary"]{
+  width: 20%;
+}
+
+div[role="complementary"] .inner {
+  border: 0 none;
+  border-radius: 0;
+}
+
+div[role="complementary"] aside > h3:hover, 
+div[role="complementary"] div > h3:hover {
+  background: none;
+}
+
+div[role="complementary"] aside > h3, 
+div[role="complementary"] div > h3 {
+  background-color: transparent;
+  border-bottom: 0 none;
+  border-top: 0 none;
+  padding: 0;
+}
+
+div[role="complementary"] aside > .nav-tabs, 
+div[role="complementary"] div > ul {
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0;
+  border: 0;
+}
+
+div[role="complementary"] .flexnav a.current-page {
+  color: #b42a30 !important; /* edit this property for active page */
+}
+
+.sidebar-content .nav.nav-tabs.nav-stacked a,
+div[role="complementary"] .widget > ul > li > a{
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: 0 none;
+  padding: 7px 0;
+  color: #333;
+}
+
+.sidebar-content .nav.nav-tabs.nav-stacked a:hover,
+div[role="complementary"] .widget > ul > li > a:hover,
+.sidebar-content .nav.nav-tabs.nav-stacked a:active,
+div[role="complementary"] .widget > ul > li > a:active,
+.sidebar-content .nav.nav-tabs.nav-stacked a:focus,
+div[role="complementary"] .widget > ul > li > a:focus  {
+  color: #b42a30; /* edit this property for recent post widget */
+  text-decoration: none;
+}
+
+div[role="complementary"] div ul {
+  padding-left: 0;
+}
+
+div[role="complementary"] .inner ul ul {
+  font-size: 12px;
+  margin-left: 30px;
+  list-style: outside none none;
+}
+
+div[role="complementary"] .inner ul ul li a {
+  border-top: 0 none !important;
+  display: inline;
+  color: #666;
+}
+
+div[role="complementary"] .inner ul ul li a::before {
+  content: "";
+  display: block;
+  font-family: fontawesome;
+  height: 0;
+  left: -1em;
+  position: relative;
+  width: 0;
+}
+
+div[role="complementary"] .inner ul ul li {
+  margin: 5px 0;
+  overflow: visible;
+}
+
+div[role="complementary"] .widget-title::after, 
+div[role="complementary"] h3::after {
+  background: #b42a30 none repeat scroll 0 0; /*edit this property for underline color */
+  content: "";
+  display: block;
+  height: 1px;
+  margin-top: 10px;
+  width: 26px;
+}
+
+div[role="complementary"] .widget-title {
+  color: #000; /* edit this property to dark color */
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+div[role="complementary"] .widget-title a {
+  color: #000; /* edit this property to dark color */
+}
+
+div[role="complementary"] .product-categories {
+  font-size: 12px;
+  list-style: outside none none;
+  margin-top: 20px;
+  padding: 0;
+}
+
+div[role="complementary"] .well {
+  background-color: #f2f2f2;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+div[role="complementary"] > .inner > .search-widget:first-child {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border-radius: 0;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+div[role="complementary"] > .inner > .search-widget:first-child .navbar-search .search-query {
+  border: 1px solid #ccc;
+  border-radius: 0;
+  box-shadow: none;
+  font-weight: lighter;
+}
+
+div[role=complementary] div form > select,
+div[role="complementary"] div > select {
+  margin: 10px 0;
+  width: 100%;
+}
+
+div[role="complementary"] .inner div > div, 
+div[role="complementary"] .inner div > p {
+  margin: 0;
+}
+
+div[role="complementary"] div > ul > li {
+  border: 0 none;
+  padding: 5px 0;
+}
+
+.sidebar-content .nav.nav-tabs.nav-stacked .parent ul a.selected, 
+.sidebar-content .nav li li a:hover, 
+div[role="complementary"] div > ul > li:hover {
+  background-color: transparent;
+  border: 0 none !important;
+}
+
+/* Custom Recent Posts Widget */
+
+div[role="complementary"] h3::after {
+    display: none;
+}
+div[role="complementary"] .inner div>div *,
+.single-post div[role="complementary"] .inner div>div * {
+    font-size: 15px;
+}
+.single-post div[role="complementary"] .inner div>div * {
+    font-size: 15px !important;
+}
+div[role="complementary"] .inner div>div * {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 0 none;
+    padding: 0;
+    color: #333;
+}
+div[role="complementary"] .inner div>div *:hover {
+    color: #932227;
+    transition: .1s;
+}
+div[role="complementary"] .inner div> .textwidget {
+    margin-bottom: 10px;
+}
+div[role="complementary"] .inner div> .textwidget {
+    margin-top: 8px !important;
+}
+div[role="complementary"] .inner div> .textwidget article {
+    margin-bottom: 0;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+}
+
+@media  (max-width: 991px) {
+  div[role="complementary"] {
+  width: 30%;
+  }
+}
+@media (max-width: 767px) {
+  div[role="complementary"] {
+  width: 100%;
+  }
+}
+</style><style>
+html {
+    height: auto;
+}
+ #mobile-menu:not( .mm-menu ) {
+    display: none;
+}
+ #ham-toggle {
+    padding: 0;
+    float: right;
+}
+ 
+@media (max-width: 991px) {
+    #ham-toggle {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        z-index: 9999;
+    }
+    nav[role='navigation'] ul,
+    nav[role='navigation'] select{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #wpadminbar {
+        position: absolute;
+        top: -46px;
+    }
+}
+</style><style>
+.inner-masthead {
+    min-height: 350px;
+    text-align: center;
+    position: relative;
+}
+
+.inner-masthead > div{
+    position: static;
+}
+
+.title-masthead {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   min-width: 100%;
+}
+
+.title-masthead h1 {
+    font-size: 72px;
+    font-weight: 700;
+    /* text-transform: uppercase; */
+}
+
+@media  (max-width: 991px) {
+    .title-masthead h1 {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 767px) {
+  .inner-masthead {
+    min-height: 250px;
+  }
+  .title-masthead h1 {
+    font-size: 36px;
+   }
+}
+</style><style>
+
+.single-design-a .well-blog>article>h1,
+.well-blog>article>h1{
+    font-size: 36px;
+    font-weight: 300;
+    margin-top: 30px;
+}
+
+.single-design-a .well-blog>article>footer,
+.well-blog>article>footer {
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.single-design-a .well-blog article + hr,
+.well-blog article + hr{
+    display: none;
+}
+
+.single-design-a .well-blog,
+.well-blog{
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.single-design-a div#disqus_thread,
+div#disqus_thread{
+    width: 100%;
+}
+</style><style>
+.wheel-services-box {
+    display: none;
+}
+.superior {
+    display: block;
+}
+.wheel-services-box > h2 {
+    color: #59739a;
+    font-size: 24px;
+}
+.wheel-services-box > p {
+    font-size: 18px;
+}
+.circle-img-box {
+    position: relative;     
+    min-height: 450px;
+    height: 100%;
+    cursor: pointer;
+}
+.circle-img-box .main-circle {
+    position: absolute;
+    z-index: 99;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.circle-img-box .services-1 {
+    position: absolute;
+    bottom: 69px;
+    left: 51px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+.circle-img-box .services-1:hover,
+.circle-img-box .services-1:active,
+.circle-img-box .services-1:focus,
+.circle-img-box .services-1.active {
+    bottom: 59px;
+    left: 40px;
+    transform: scale(1.1);
+}
+.circle-img-box .services-2 {
+    position: absolute;
+    left: 51px;
+    top: 73px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+.circle-img-box .services-2:hover,
+.circle-img-box .services-2:active,
+.circle-img-box .services-2:focus,
+.circle-img-box .services-2.active {
+    left: 41px;
+    top: 65px;
+    transform: scale(1.1);
+}
+.circle-img-box .services-3 {
+    position: absolute;
+    top: 3px;
+    left: 119px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+.circle-img-box .services-3:hover,
+.circle-img-box .services-3:active,
+.circle-img-box .services-3:focus,
+.circle-img-box .services-3.active {
+    top: -9px;
+    left: 114px;
+    transform: scale(1.1);
+}
+
+.circle-img-box .services-4 {
+    position: absolute;
+    bottom: 0px;
+    left: 123px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+.circle-img-box .services-4:hover,
+.circle-img-box .services-4:active,
+.circle-img-box .services-4:focus,
+.circle-img-box .services-4.active {
+    bottom: -9px;
+    left: 116px;
+    transform: scale(1.1);
+}
+
+.circle-img-box .services-5 {
+    position: absolute;
+    right: 121px;
+    bottom: 0px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+.circle-img-box .services-5:hover,
+.circle-img-box .services-5:active,
+.circle-img-box .services-5:focus,
+.circle-img-box .services-5.active {
+    right: 114px;
+    bottom: -10px;
+    transform: scale(1.1);
+}
+.circle-img-box .services-6 {
+    position: absolute;
+    bottom: 69px;
+    right: 50px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+.circle-img-box .services-6:hover,
+.circle-img-box .services-6:active,
+.circle-img-box .services-6:focus,
+.circle-img-box .services-6.active {
+    bottom: 62px;
+    right: 43px;
+    transform: scale(1.1);
+}
+.circle-img-box .services-7 {
+    position: absolute;
+    top: 73px;
+    right: 50px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+.circle-img-box .services-7:hover,
+.circle-img-box .services-7:active,
+.circle-img-box .services-7:focus,
+.circle-img-box .services-7.active {
+    top: 66px;
+    right: 44px;
+    transform: scale(1.1);
+}
+.circle-img-box .services-8 {
+    position: absolute;
+    top: 3px;
+    right: 122px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+.circle-img-box .services-8:hover,
+.circle-img-box .services-8:active,
+.circle-img-box .services-8:focus,
+.circle-img-box .services-8.active {
+    top: -4px;
+    right: 116px;
+    transform: scale(1.1);
+}
+.blue-btn {
+         min-width: 280px;
+        font-size: 15px;
+        padding: 15px;
+        background: #50729B;
+        border: none;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .circle-img-box .services-1 {
+        bottom: 69px;
+        left: 45px;
+    }
+    .circle-img-box .services-1:hover,
+    .circle-img-box .services-1:active,
+    .circle-img-box .services-1:focus,
+    .circle-img-box .services-1.active {
+        left: 32px;
+        bottom: 61px;
+    }
+    .circle-img-box .services-2 {
+        left: 47px;
+        top: 73px;
+    }
+    .circle-img-box .services-2:hover,
+    .circle-img-box .services-2:active,
+    .circle-img-box .services-2:focus,
+    .circle-img-box .services-2.active {
+        left: 33px;
+    }
+    .circle-img-box .services-3 {
+        top: 3px;
+        left: 112px;
+    }
+    .circle-img-box .services-3:hover,
+    .circle-img-box .services-3:active,
+    .circle-img-box .services-3:focus,
+    .circle-img-box .services-3.active {
+        top: -6px;
+        left: 107px;
+    }
+
+    .circle-img-box .services-4 {
+        bottom: 0px;
+        left: 112px;
+    }
+    .circle-img-box .services-4:hover,
+    .circle-img-box .services-4:active,
+    .circle-img-box .services-4:focus,
+    .circle-img-box .services-4.active {
+        bottom: -9px;
+        left: 106px;
+    }
+
+    .circle-img-box .services-5 {
+        right: 111px;
+        bottom: 0px;
+    }
+    .circle-img-box .services-5:hover,
+    .circle-img-box .services-5:active,
+    .circle-img-box .services-5:focus,
+    .circle-img-box .services-5.active {
+        right: 106px;
+        bottom: -9px;
+    }
+    .circle-img-box .services-6 {
+        bottom: 69px;
+        right: 46px;
+    }
+    .circle-img-box .services-6:hover,
+    .circle-img-box .services-6:active,
+    .circle-img-box .services-6:focus,
+    .circle-img-box .services-6.active {
+        bottom: 63px;
+        right: 36px;
+    }
+    .circle-img-box .services-7 {
+        top: 73px;
+        right: 45px;
+    }
+    .circle-img-box .services-7:hover,
+    .circle-img-box .services-7:active,
+    .circle-img-box .services-7:focus,
+    .circle-img-box .services-7.active {
+        bottom: -8px;
+        right: 34px;
+    }
+    .circle-img-box .services-8 {
+        top: 3px;
+        right: 110px;
+    }
+    .circle-img-box .services-8:hover,
+    .circle-img-box .services-8:active,
+    .circle-img-box .services-8:focus,
+    .circle-img-box .services-8.active {
+        top: -5px;
+        right: 105px;
+    }
+}
+
+@media (max-width: 991px) {
+    .circle-img-box .services-1 {
+        bottom: 69px;
+        left: -21px;
+    }
+    .circle-img-box .services-1:hover,
+    .circle-img-box .services-1:active,
+    .circle-img-box .services-1:focus,
+    .circle-img-box .services-1.active {
+        bottom: 63px;
+        left: -28px;
+    }
+    .circle-img-box .services-2 {
+        left: -20px;
+        top: 73px;
+    }
+    .circle-img-box .services-2:hover,
+    .circle-img-box .services-2:active,
+    .circle-img-box .services-2:focus,
+    .circle-img-box .services-2.active {
+        left: -27px;
+        top: 67px;
+    }
+    .circle-img-box .services-3 {
+        top: 3px;
+        left: 46px;
+    }
+    .circle-img-box .services-3:hover,
+    .circle-img-box .services-3:active,
+    .circle-img-box .services-3:focus,
+    .circle-img-box .services-3.active {
+        top: -5px;
+        left: 42px;
+    }
+
+    .circle-img-box .services-4 {
+        bottom: 0px;
+        left: 46px;
+    }
+    .circle-img-box .services-4:hover,
+    .circle-img-box .services-4:active,
+    .circle-img-box .services-4:focus,
+    .circle-img-box .services-4.active {
+        bottom: -8px;
+        left: 40px;
+    }
+
+    .circle-img-box .services-5 {
+        right: 48px;
+        bottom: 0px;
+    }
+    .circle-img-box .services-5:hover,
+    .circle-img-box .services-5:active,
+    .circle-img-box .services-5:focus,
+    .circle-img-box .services-5.active {
+        right: 45px;
+        bottom: -8px;
+    }
+    .circle-img-box .services-6 {
+        bottom: 69px;
+        right: -19px;
+    }
+    .circle-img-box .services-6:hover,
+    .circle-img-box .services-6:active,
+    .circle-img-box .services-6:focus,
+    .circle-img-box .services-6.active {
+        bottom: 65px;
+        right: -23px;
+        transform: scale(1.05);
+    }
+    .circle-img-box .services-7 {
+        top: 73px;
+        right: -19px;
+    }
+    .circle-img-box .services-7:hover,
+    .circle-img-box .services-7:active,
+    .circle-img-box .services-7:focus,
+    .circle-img-box .services-7.active {
+        top: 68px;
+        right: -23px;
+        transform: scale(1.05);
+    }
+    .circle-img-box .services-8 {
+        top: 3px;
+        right: 47px;
+    }
+    .circle-img-box .services-8:hover,
+    .circle-img-box .services-8:active,
+    .circle-img-box .services-8:focus,
+    .circle-img-box .services-8.active {
+        top: -4px;
+        right: 42px;
+    }
+}
+
+@media (max-width: 767px) {
+    .wheel-services-box {
+        display: block !important;
+        max-width: 450px;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    .wheel-services-box > h2 {
+        font-size: 18px;
+    }
+    .wheel-services-box > p {
+        font-size: 16px;
+    }
+}
+</style>
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Net-Tech",
+  "image": "https://pronto-core-cdn.prontomarketing.com/2/wp-content/uploads/cache/2021/01/business-people-working-together-with-computer-sm/259210492.jpg",
+  "@id": "",
+  "url": "https://www.net-tech.com/",
+  "telephone": "877-713-2831",
+  "priceRange": "$$$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2100 124th Ave NE Ste 112",
+    "addressLocality": "Bellevue",
+    "addressRegion": "WA",
+    "postalCode": "98005",
+    "addressCountry": "US"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 47.629080,
+    "longitude": -122.174320
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "sameAs": [
+    "https://www.facebook.com/pages/Net-Tech/160964280627936",
+    "https://twitter.com/_Net_Tech_",
+    "https://www.linkedin.com/company/net-tech-com/"
+  ] 
+}
+</script><script type="rocketlazyloadscript"> 
+
+jQuery('img').filter(function() {
+  return !this.alt;
+}).attr('alt', 'Network Technology Services Inc.');
+
+</script><style>
+.apex-services {
+    margin-top: 70px;
+    margin-bottom: 90px;
+    position: relative;
+}
+.apex-services > div {
+    position: static !important;
+}
+.wheel-services-box {
+    max-width: 350px;
+    padding-left: 80px;
+    position: absolute;
+}
+.wheel-services-box > h2 {
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 0;
+}
+.wheel-services-box p {
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.wheel-services-box .svg-img-border {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.wheel-services-box.backup .svg-img-border,
+.wheel-services-box.security .svg-img-border,
+.wheel-services-box.employee .svg-img-border,
+.wheel-services-box.cloud .svg-img-border {
+    position: static;
+}
+
+.wheel-services-box.hardware {
+    top: 0%;
+    right: 5%;
+}
+
+.wheel-services-box.backup {
+    top: 25%;
+    right: 5%;
+    padding-left: 0;
+    max-width: 256px;
+}
+
+.wheel-services-box.software {
+    bottom: -22%;
+    right: 5%;
+}
+.wheel-services-box.remote-workforce {
+    bottom: -12%;
+    left: 7%;
+}
+
+.wheel-services-box.security {
+    top: 28%;
+    left: 7%;
+    padding-left: 0;
+    max-width: 270px;
+}
+
+.wheel-services-box.superior {
+    top: -3%;
+    left: 5%;
+    max-width: 310px;
+}
+
+
+/** Cloud**/
+
+.wheel-services-box.backup {
+    right: 3%;
+    top: 3%;
+}
+
+.wheel-services-box.employee  {
+    top: 50%;
+    right: 0%;
+    max-width: 400px;
+}
+
+.wheel-services-box.remote-workforce {
+    bottom: -28%;
+    right: -3%;
+    max-width: 500px;
+}
+.page-id-12046 .wheel-services-box.software  {
+    left: 10%;
+    bottom: -29%;
+}
+.wheel-services-box.cloud {
+    bottom: 8%;
+    left: -2%;
+}
+.wheel-services-box.security {
+    top: -3%;
+    left: -2%;
+}
+
+.wheel-services-box.superior {
+    top: -11%;
+    left: 4%;
+}
+
+.wheel-services-box.hardware {
+    top: -5%;
+    right: 12px;
+    max-width: 400px;
+}
+
+
+@media (max-width: 1200px) {
+    .wheel-services-box {
+        padding-left: 0;
+        max-width: 30vw;
+    }
+    .wheel-services-box .svg-img-border {
+        position: static;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .apex-services > div:nth-child(1) {
+        width: 58.333333333333336%;
+    }
+    .apex-services > div:nth-child(2) {
+        width: 41.66666666666667%;
+    }
+    .wheel-services-box {
+        position: static;
+        padding-left: 20px;
+    }
+}
+
+
+@media  (max-width: 991px) {
+    .wheel-services-box {
+        position: static;
+        padding-left: 20px !important;
+    }
+    .circle-img-box {
+        min-width: 400px;
+    }
+    .circle-img-box [class*="services-"]:hover {
+        transform: scale(1);
+    }
+    /** Cloud **/
+    /*.page-id-6519 .apex-services {*/
+    /*    margin-top: 0px;*/
+    /*    margin-bottom: 20px;*/
+    /*    max-width: 738px;*/
+    /*    position: relative;*/
+    /*    margin: auto;*/
+    /*    transform: scale(0.7);*/
+    /*}*/
+/*.page-id-6519 .wheel-services-box.superior {*/
+/*    top: -22%;*/
+/*    left: -11%;*/
+/*}*/
+/*.page-id-6519 .wheel-services-box.security {*/
+/*    top: -12%;*/
+/*    left: -14vw;*/
+/*    max-width: 28vw;*/
+/*}*/
+/*.page-id-6519 .wheel-services-box.cloud {*/
+/*    bottom: 2%;*/
+/*    left: -20%;*/
+/*    max-width: 31vw;*/
+/*}*/
+/*.page-id-6519 .wheel-services-box.software {*/
+/*    left: -11%;*/
+/*    bottom: -18%;*/
+/*    max-width: 35vw;*/
+/*}*/
+/*.page-id-6519 .wheel-services-box.remote-workforce {*/
+/*    bottom: -18%;*/
+/*    right: -24vw;*/
+/*    max-width: 38vw;*/
+/*}*/
+/*.page-id-6519 .wheel-services-box.employee {*/
+/*    top: 45%;*/
+/*    right: -22vw;*/
+/*    max-width: 33vw;*/
+/*}*/
+/*.page-id-6519 .wheel-services-box.backup {*/
+/*    right: -17vw;*/
+/*    top: 3%;*/
+/*    max-width: 28vw;*/
+/*}*/
+/*.page-id-6519 .wheel-services-box.hardware {*/
+/*    top: -24%;*/
+/*    right: -22vw;*/
+/*    max-width: 36vw;*/
+/*}*/
+}
+
+@media (max-width: 767px) {
+    .wheel-services-box {
+        max-width: 100%;
+        position: static;
+    }
+    .apex-services {
+        max-width: 100%;
+        transform: scale(1);
+    }
+    .wheel-services-box {
+        max-width: 100% !important;
+    }
+}
+</style><!-- Global site tag (gtag.js) - Google Analytics -->
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=UA-24602737-1"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-24602737-1');
+</script>
+
+<!-- Google tag (gtag.js) -->
+<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-ZE4QM0ETDV"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZE4QM0ETDV');
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Google Tag Manager -->
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-59RQRXJ');</script>
+<!-- End Google Tag Manager --><style>
+.wistia {
+    background-color: #000;
+    margin-bottom: 30px;
+    position: relative;
+    padding-top: 56.25%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.wistia img {
+    width: 100%;
+    top: 0; /* Change this for different ratio than 16:9 */
+    left: 0;
+    opacity: 0.7;
+}
+.wistia .play-button {
+    width: 90px;
+    height: 60px;
+    background-color: #AC2A30;
+    box-shadow: 0 0 30px rgba( 0,0,0,0.6 );
+    z-index: 1;
+    opacity: 0.8;
+    border-radius: 6px;
+}
+.wistia .play-button:before {
+    content: "";
+    border-style: solid;
+    border-width: 15px 0 15px 26.0px;
+    border-color: transparent transparent transparent #fff;
+}
+.wistia img,
+.wistia .play-button {
+    cursor: pointer;
+}
+.wistia img,
+.wistia iframe,
+.wistia .play-button,
+.wistia .play-button:before {
+    position: absolute;
+}
+.wistia .play-button,
+.wistia .play-button:before {
+    top: 50%;
+    left: 50%;
+    transform: translate3d( -50%, -50%, 0 );
+}
+.wistia iframe {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+</style>
+<!-- end hook code snippet header -->
+<script type="rocketlazyloadscript">
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script>    <!--[if lt IE 9]>
+        <script src="https://www.net-tech.com/assets/crossdomain/respond.min.js"></script>
+        <link href="https://www.net-tech.com/assets/crossdomain/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+        <link href="https://www.net-tech.com/assets/nocdn/crossite/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+        <script src="https://www.net-tech.com/assets/nocdn/crossite/respond.proxy.js"></script>
+        <script src="https://www.net-tech.com/wp-content/themes/phoenix/js/html5.js" type="text/javascript"></script>
+    <![endif]-->
+<!---Per Page CSS --->
+<style type="text/css">
+.hpr2-section02a h3 {
+    font-size: 20px;
+}
+.hpr2-section02a hr {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.hpr2-section02a .cost-icon img {
+    margin-right: 40px;
+}
+.hpr2-banner .font-custom1 {
+    margin: 10px auto;
+    -webkit-animation-name: display-bg;
+    animation-name: display-bg;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+}
+.hpr2-banner .font-custom1:nth-child(2) {
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s;
+}
+.hpr2-banner .font-custom1:nth-child(3) {
+    -webkit-animation-delay: 5s;
+    animation-delay: 5s;
+}
+@-webkit-keyframes display-bg {
+    0% {
+        background: rgba(180, 42, 48, 0);
+    }
+    100% {
+        background: rgba(180, 42, 48, 1);
+    }
+}
+@keyframes display-bg {
+    0% {
+        background: rgba(180, 42, 48, 0);
+    }
+    100% {
+        background: rgba(180, 42, 48, 1);
+    }
+}
+.btn {
+    font-size: 15px;
+}
+
+.btn-lg {
+    padding: 15px 25px;
+}
+
+.text-initial {
+    text-transform: initial;
+}
+
+#title_color {
+    transition: background-color 0.5s;
+}
+
+.hpr2-banner .banner-curve {
+    background-image: url(/wp-content/uploads/2023/01/img-banner-curve-lightblue.svg);
+}
+
+.hpr2-section04a .it_subscription {
+    border: 1px solid #445b78;
+}
+
+.hpr2-section04a .it_subscription th {
+    border: 1px solid #445b78;
+    width: 50%;
+}
+.hpr2-section04a .it_subscription td {
+    border-left: 1px solid #445b78;
+    border-right: 1px solid #445b78;
+    border-top: 0;
+    border-bottom: 0;
+    padding: 20px 10px;
+}
+
+.hpr2-section04a .it_subscription thead {
+    background: #445b78;
+}
+.hpr2-section04a .it_subscription thead th {
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.hpr2-section04a .it_subscription tr:nth-child(even) {
+    background-color: #e0eaff;
+}
+
+.hpr2-section05a {
+    background-image: url("/wp-content/uploads/2023/01/vector-decoration.svg");
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-attachment: scroll;
+}
+
+.hpr2-section05a.lazy {
+    background-image: none;
+}
+
+.hpr2-section05a .item-wrap {
+    margin: 0 -15px;
+}
+
+.hpr2-section05a .item-wrap .item {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(25% - 30px);
+    flex: 0 0 calc(25% - 30px);
+    margin: 15px;
+    background-color: #001a37;
+    transition: background-color 0.4s;
+}
+
+.hpr2-section05a .item-wrap .item:hover {
+    background-color: #738eaf;
+}
+
+.hpr2-section05a .item-wrap .item a br,
+.hpr2-section05a .item-wrap .item p {
+    display: none;
+}
+
+.hpr2-section05a .item-wrap .item h5 {
+    font-size: 20px;
+}
+
+.hpr2-section05a .item-wrap .item a:hover {
+    text-decoration: none;
+}
+
+.hpr2-section05a .item-wrap picture.aligncenter,
+.hpr2-section05a .item-wrap picture.aligncenter img {
+    margin-top: 0 !important;
+}
+
+.hpr2-section06a .collapse-item {
+    border-bottom: 1px solid #f7f7f7;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.hpr2-section06a .col-title h5 {
+    margin-bottom: 0;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.hpr2-section06a .collapse-item:first-child {
+    padding-top: 0px;
+}
+
+.hpr2-section06a .collapse-item:last-child {
+    border-bottom: 0px;
+}
+
+.hpr2-section06a .collapse-item .col-icon {
+    margin-right: 20px;
+}
+
+.hpr2-section06a .collapse-item .col-title {
+    padding-top: 15px;
+}
+
+.hpr2-section06a .collapse-item .col-title p {
+    margin-bottom: 0;
+}
+
+.hpr2-section06a .collapse-item .col-title p br {
+    display: none;
+}
+
+.hpr2-section06a .collapse-item .col-content {
+    width: 82%;
+}
+
+.hpr2-section06a .collapse-item .col-text {
+    padding-top: 10px;
+}
+.hpr2-section06a .collapse-item .col-title > a + p {
+    position: relative;
+}
+.hpr2-section06a .collapse-item .col-title > a + p > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.hpr2-section07a {
+    background-image: url("/wp-content/uploads/2023/01/img-how-to-get-started-with-better-IT-support-from-net-tech-r1.png");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center right;
+}
+
+.hpr2-section07a.lazy {
+    background-image: none;
+}
+
+.hpr2-section07a .timeline .item:after {
+    content: "";
+    height: 83px;
+    border-right: 1px solid #c5cdd5;
+    position: absolute;
+    left: 10px;
+    bottom: -60px;
+}
+
+.hpr2-section07a .timeline .item img {
+    width: 64px;
+    height: 64px;
+    margin-right: 20px;
+}
+
+.hpr2-section07a .btn {
+    min-width: 290px;
+}
+
+.hpr2-section09a .wistia {
+    margin-bottom: 10px;
+}
+
+.hpr2-section09a p.lead {
+    color: #50729b;
+}
+
+/* Full width Fixes */
+
+.hp-fullwidth-sideimg picture img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.hp-fullwidth-info-box {
+    padding: 50px;
+}
+
+/* END Full width Fixes */
+
+@media (min-width: 1501px) {
+    .hpr2-section07a .hp-fullwidth-box > div {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.33%;
+        flex: 0 0 33.33%;
+    }
+}
+
+@media (max-width: 1199px) {
+    .hpr2-banner .font-custom1 {
+        font-size: 60px;
+    }
+
+    .hpr2-section05a .item-wrap .item {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(33.33% - 30px);
+        flex: 0 0 calc(33.33% - 30px);
+    }
+
+    .hpr2-section05a .item-wrap .item img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+    .hpr2-section06a .collapse-item .col-content {
+        width: 78%;
+    }
+
+    .hpr2-section07a {
+        background-position: 130% 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .hpr2-section08a .row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 991px) {
+    .hpr2-banner .font-custom1 {
+        font-size: 48px;
+    }
+    .hpr2-section02a .col-md-4 {
+        margin-bottom: 40px;
+    }
+
+    .hpr2-section02a .col-md-4:last-child {
+        margin-bottom: 0;
+    }
+    .hpr2-section02a .cost-icon {
+        margin-top: 40px;
+    }
+
+    .hpr2-section05a .item-wrap .item {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(50% - 30px);
+        flex: 0 0 calc(50% - 30px);
+    }
+
+    .hpr2-section07a {
+        background-image: none;
+    }
+
+    .hpr2-section07a .row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+    }
+
+    .hpr2-section07a .visible-sm img {
+        margin-bottom: 40px;
+    }
+
+    .hpr2-section06a .main-img img,
+    .hpr2-section08a img {
+        margin: 0 auto 40px auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .hpr2-banner {
+        padding-top: 200px !important;
+        padding-bottom: 200px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .hpr2-banner .font-custom1 {
+        font-size: 32px;
+    }
+
+    h2,
+    h2.h1 {
+        font-size: 28px;
+    }
+
+    .hpr2-section05a .item-wrap .item {
+        max-width: 265px;
+        margin: 0 auto 30px auto;
+    }
+
+    .hpr2-section05a .item-wrap .item:last-child {
+        margin-bottom: 0;
+    }
+
+    .hpr2-section05a .item-wrap .item h5 {
+        padding-bottom: 10px;
+    }
+
+    .hpr2-section06a .collapse-item {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    .hpr2-section06a .collapse-item .col-content {
+        width: 67%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hpr2-section07a .timeline .item:after {
+        height: 105px;
+        bottom: -67px;
+    }
+    .hpr2-section07a .timeline .item:nth-child(2):after {
+        height: 90px;
+        bottom: -67px;
+    }
+}
+
+@media (max-width: 390px) {
+    .hpr2-section07a .timeline .item:after {
+        height: 163px;
+        bottom: -76px;
+    }
+    .hpr2-section07a .timeline .item:nth-child(2):after {
+        height: 119px;
+        bottom: -74px;
+    }
+}
+
+</style>
+</head>
+
+<body class="home page-template page-template-template-fullwidth page-template-template-fullwidth-php page page-id-9433 group-blog">
+  <div>
+    <div>
+      <div class="page-wrap">
+<header id="header"><div class="segment5 space-mini top-nav top-nav-r2 xs-text-center" ><div class="container"><div class="row">
+<div class="col-md-12 flex-box flex-row-reverse align-items-center flex-wrap">
+<div class="email"><a href="mailto:geninfo@net-tech.com" rel="noopener" target="_blank" aria-label="Sending Email"><i class="fa fa-envelope-o"></i></a></div>
+<div class="phone"><span><i class="fa fa-phone accent"></i> 425-452-8324</span></div>
+<div><ul id="menu-top-nav" class="horizontal list-unstyled"><li id="menu-item-4613" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4613"><a href="https://www.net-tech.com/support-center/">Support Center</a></li>
+<li id="menu-item-4614" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4614"><a target="_blank" href="https://manage.net-tech.com/v4_6_release/services/system_io/customerportal/portal.html?company=nettech">Client Portal</a></li>
+</ul></div>
+</div>
+</div></div></div><div class="segment1 space-mini main-header main-header-r2 xs-text-center header-shadow" ><div class="container"><button id="ham-toggle" class="hamburger hamburger--collapse hidden-lg hidden-md" type="button">
+<span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+<div id="mobile-menu"><div><ul id="menu-main-nav-r3" class="list-unstyled"><li id="menu-item-10942" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10942"><a href="/what-we-offer/">What We Offer</a><ul class="sub-menu list-unstyled">	<li id="menu-item-10943" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10943"><a href="/total-care-cloud/">Total Care Cloud &#8211; IT Subscription Program (PTO)</a></li>
+	<li id="menu-item-12467" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12467"><a href="https://www.net-tech.com/total-care/">Total Care &#8211; Managed IT Service (MSP)</a></li>
+	<li id="menu-item-10945" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10945"><a href="https://www.net-tech.com/what-we-offer/infrastructure-as-a-service-iaas/">Infrastructure as a Service (IaaS)</a></li>
+	<li id="menu-item-10946" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10946"><a href="https://www.net-tech.com/what-we-offer/it-security/">IT Security</a>	<ul class="sub-menu list-unstyled">		<li id="menu-item-10947" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10947"><a href="/what-we-offer/it-security/security-assessment/">Security Assessment</a></li>
+		<li id="menu-item-11355" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11355"><a href="/what-we-offer/it-security/it-compliance/">IT Compliance</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-10950" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10950"><a href="https://www.net-tech.com/industries/">Industries</a><ul class="sub-menu list-unstyled">	<li id="menu-item-10358" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10358"><a href="https://www.net-tech.com/industries/non-profit-it-support/">Non-Profit</a></li>
+	<li id="menu-item-10895" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10895"><a href="https://www.net-tech.com/industries/staffing-recruiting/">Staffing &#038; Recruiting</a></li>
+	<li id="menu-item-10561" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10561"><a href="https://www.net-tech.com/industries/accounting-firms-it-support/">Accounting Firms</a></li>
+	<li id="menu-item-4919" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4919"><a href="https://www.net-tech.com/industries/healthcare-it-support/">Healthcare</a></li>
+	<li id="menu-item-10490" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10490"><a href="https://www.net-tech.com/industries/wealth-management-it-support/">Wealth Management</a></li>
+	<li id="menu-item-10811" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10811"><a href="https://www.net-tech.com/industries/construction-it-support/">Construction</a></li>
+	<li id="menu-item-4923" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4923"><a href="https://www.net-tech.com/industries/property-management-it-support/">Property Management</a></li>
+</ul>
+</li>
+<li id="menu-item-10951" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10951"><a href="https://www.net-tech.com/resources/">Resources</a><ul class="sub-menu list-unstyled">	<li id="menu-item-10952" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10952"><a href="https://www.net-tech.com/what-we-offer/faqs/">PTO FAQ’s</a></li>
+	<li id="menu-item-10953" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10953"><a href="/category/videos/">Videos</a></li>
+	<li id="menu-item-10956" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10956"><a href="https://www.net-tech.com/resources/it-glossary/">IT Glossary</a></li>
+	<li id="menu-item-10962" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10962"><a href="https://www.net-tech.com/resources/books/">Books</a>	<ul class="sub-menu list-unstyled">		<li id="menu-item-10961" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10961"><a href="https://www.net-tech.com/resources/books/infosec-book/">My Best Practice: INFOSEC</a></li>
+		<li id="menu-item-10960" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10960"><a href="https://www.net-tech.com/resources/books/pto-book/">My Best Practice: PTO</a></li>
+	</ul>
+</li>
+	<li id="menu-item-10963" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10963"><a href="https://www.net-tech.com/resources/guides/">Guides</a></li>
+	<li id="menu-item-10964" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10964"><a href="https://www.net-tech.com/resources/case-studies/">Case Studies</a></li>
+</ul>
+</li>
+<li id="menu-item-10954" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10954"><a href="https://www.net-tech.com/blog/">Blog</a></li>
+<li id="menu-item-11563" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11563"><a href="https://www.net-tech.com/about-us/">About Us</a><ul class="sub-menu list-unstyled">	<li id="menu-item-12217" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12217"><a href="https://www.net-tech.com/about-us/careers/">Careers</a></li>
+	<li id="menu-item-11531" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11531"><a href="https://www.net-tech.com/about-us/testimonials/">Testimonials</a></li>
+</ul>
+</li>
+</ul></div></div>
+<div class="row flex-box justify-content-center align-items-center xs-no-flexbox">
+<div class="col-md-3 col-sm-5"> 
+<a href="/">
+<img width="264" height="54" src="/wp-content/uploads/2018/12/logo-net-tech.jpg" alt="logo" class="brand img-responsive"> 
+</a>
+</div>
+<div class="col-md-9 col-sm-7 flex-box justify-content-end align-items-center">
+<nav class="" role="navigation"><ul id="menu-main-nav-r3-1" class="nav nav-bar-underline"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10942 dropdown"><a href="/what-we-offer/" class="dropdown-toggle disabled" data-toggle="dropdown">What We Offer <b class="caret"></b></a>
+<ul class="dropdown-menu">
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10943"><a href="/total-care-cloud/">Total Care Cloud &#8211; IT Subscription Program (PTO)</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12467"><a href="https://www.net-tech.com/total-care/">Total Care &#8211; Managed IT Service (MSP)</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10945"><a href="https://www.net-tech.com/what-we-offer/infrastructure-as-a-service-iaas/">Infrastructure as a Service (IaaS)</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10946 dropdown-submenu"><a href="https://www.net-tech.com/what-we-offer/it-security/" class="dropdown-toggle disabled" data-toggle="dropdown">IT Security</a>
+	<ul class="dropdown-menu">
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10947"><a href="/what-we-offer/it-security/security-assessment/">Security Assessment</a></li>
+		<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11355"><a href="/what-we-offer/it-security/it-compliance/">IT Compliance</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10950 dropdown"><a href="https://www.net-tech.com/industries/" class="dropdown-toggle disabled" data-toggle="dropdown">Industries <b class="caret"></b></a>
+<ul class="dropdown-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10358"><a href="https://www.net-tech.com/industries/non-profit-it-support/">Non-Profit</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10895"><a href="https://www.net-tech.com/industries/staffing-recruiting/">Staffing &#038; Recruiting</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10561"><a href="https://www.net-tech.com/industries/accounting-firms-it-support/">Accounting Firms</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4919"><a href="https://www.net-tech.com/industries/healthcare-it-support/">Healthcare</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10490"><a href="https://www.net-tech.com/industries/wealth-management-it-support/">Wealth Management</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10811"><a href="https://www.net-tech.com/industries/construction-it-support/">Construction</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4923"><a href="https://www.net-tech.com/industries/property-management-it-support/">Property Management</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10951 dropdown"><a href="https://www.net-tech.com/resources/" class="dropdown-toggle disabled" data-toggle="dropdown">Resources <b class="caret"></b></a>
+<ul class="dropdown-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10952"><a href="https://www.net-tech.com/what-we-offer/faqs/">PTO FAQ’s</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10953"><a href="/category/videos/">Videos</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10956"><a href="https://www.net-tech.com/resources/it-glossary/">IT Glossary</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10962 dropdown-submenu"><a href="https://www.net-tech.com/resources/books/" class="dropdown-toggle disabled" data-toggle="dropdown">Books</a>
+	<ul class="dropdown-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10961"><a href="https://www.net-tech.com/resources/books/infosec-book/">My Best Practice: INFOSEC</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10960"><a href="https://www.net-tech.com/resources/books/pto-book/">My Best Practice: PTO</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10963"><a href="https://www.net-tech.com/resources/guides/">Guides</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10964"><a href="https://www.net-tech.com/resources/case-studies/">Case Studies</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10954"><a href="https://www.net-tech.com/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11563 dropdown"><a href="https://www.net-tech.com/about-us/" class="dropdown-toggle disabled" data-toggle="dropdown">About Us <b class="caret"></b></a>
+<ul class="dropdown-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12217"><a href="https://www.net-tech.com/about-us/careers/">Careers</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11531"><a href="https://www.net-tech.com/about-us/testimonials/">Testimonials</a></li>
+</ul>
+</li>
+</ul></nav>
+<a class="btn btn-primary btn-lg btn-help" href="/contact-us/">GET HELP NOW</a>
+</div>
+</div></div></div></header>
+    <section class="space-huge hp-banner hpr2-banner segment relative" data-vide-bg="/wp-content/uploads/video-banner/bg-banner-r1-video" data-vide-options="loop: true;">
+<div class="container">
+<div class="row">
+<div class="col-md-12 text-center">
+<h2 class="font-custom1 bold font-white title_color">Our IT Subscription Program </h1>
+<h2 class="font-custom1 bold font-white title_color">Outperforms Traditional </h1>
+<h1 class="font-custom1 bold font-white title_color">Managed IT Services</h1>
+<p><a class="btn btn-primary btn-huge text-initial" href="/contact-us/">Let's get started</a>
+</div>
+</div>
+</div>
+<div class="banner-curve"></div>
+</section>
+<section class="segment2 hpr2-section02a space-large">
+<div class="container">
+<div class="row">
+<div class="col-md-12 text-center">
+<h2 class="h1">Eliminate IT Confusion and Costs</h2>
+<p>Stop downtime and faulty IT before they damage your organization.</p>
+</div>
+</div>
+<div class="row margin-top-20">
+<div class="col-md-6">
+<picture decoding="async" class="aligncenter img-responsive" heigh="534">
+<source type="image/webp" srcset="/wp-content/uploads/2023/03/img-s2-Eliminate-IT-Confusion-and-Costs.jpg.webp"/>
+<img width="485" height="534" decoding="async" src="/wp-content/uploads/2023/03/img-s2-Eliminate-IT-Confusion-and-Costs.jpg" heigh="534" alt="Confusion-and-Costs"/>
+</picture>
+
+</div>
+<div class="col-md-6 xs-text-center">
+<div class="cost-icon flex-box align-items-center xs-no-flexbox">
+<img width="67" height="67" decoding="async" src="/wp-content/uploads/2023/03/ic-01-organizations-experience-downtime.svg" class="xs-aligncenter img-responsive" alt="experience-downtime"></p>
+<h3><span class="accent bold">76%</span> of organizations experience downtime that leads to data loss.</h3>
+</div>
+<hr>
+<div class="cost-icon flex-box align-items-center xs-no-flexbox">
+<img width="67" height="67" decoding="async" src="/wp-content/uploads/2023/03/ic-02-The-costs-of-IT-downtime.svg" class="xs-aligncenter img-responsive" alt="IT-downtime"></p>
+<h3>The costs of IT downtime for SMBs range from <span class="accent bold">$137 - $427</span> per minute.</h3>
+</div>
+<hr>
+<div class="cost-icon flex-box align-items-center xs-no-flexbox">
+<img width="67" height="67" decoding="async" src="/wp-content/uploads/2023/03/ic-03-Over-60-of-outages-cost.svg" class="xs-aligncenter img-responsive" alt="outages-cost"></p>
+<h3>Over <span class="accent bold">60%</span> of outages cost more than $100,000.</h3>
+</div>
+<hr>
+<div class="cost-icon flex-box align-items-center xs-no-flexbox">
+<img width="67" height="67" decoding="async" src="/wp-content/uploads/2023/03/ic-04-The-average-internal-IT-employee-costs.svg" class="xs-aligncenter img-responsive" alt="costs"></p>
+<h3>The average internal IT employee costs organizations over <span class="bold accent">$8,600</span> per month.</h3>
+</div>
+<hr>
+<div class="cost-icon flex-box align-items-center xs-no-flexbox">
+<img width="67" height="67" decoding="async" src="/wp-content/uploads/2023/03/ic-05-spend-an-average-of-250-per-user.svg" class="xs-aligncenter img-responsive" alt="user"></p>
+<h3>Companies spend an average of <span class="bold accent">$250</span> per user or computer per month on IT support.</h3>
+</div>
+</div>
+</div>
+<div class="row margin-top-60">
+<div class="col-md-12 text-center">
+<p>Don’t allow downtime to impact employee productivity and derail your organization. <br />Get the IT support you need to reduce and stop these interruptions before they occur.</p>
+<p class="margin-top-60 text-center"><a class="btn btn-primary btn-lg text-initial" href="/contact-us/">Get a Competitive Advantage Now</a></p>
+</div>
+</div>
+</div>
+</section>
+<section class="segment1 hpr2-section04a space-medium">
+<div class="container">
+<div class="row margin-top-60">
+<div class="col-md-12">
+<a href="/managed-it-services-free-report/" target="_blank" rel="noopener"><picture decoding="async" class="aligncenter img-responsive" heigh="200">
+<source type="image/webp" srcset="/wp-content/uploads/2023/03/img-banner-ads-managed-IT-services.jpg.webp"/>
+<img width="1000" height="200" decoding="async" src="/wp-content/uploads/2023/03/img-banner-ads-managed-IT-services.jpg" heigh="200" alt="IT-service"/>
+</picture>
+</a>
+</div>
+</div>
+<div class="row flex-box align-items-center flex-wrap sm-no-flexbox margin-top-60 margin-bottom-40">
+<div class="col-md-5 col-lg-5 col-sm-12 col-xs-12 sideLeft flex-box justify-content-center align-items-center">
+<div class="innerContent">
+<h2 class="margin-bottom-40 sm-text-center">Why an IT Subscription Program Beats Managed IT Services​</h2>
+<p class="sm-text-center">A <strong>surprise bill</strong> lands on your desk for an IT problem that should never have happened in the first place. An employee approaches you with a <strong>tech problem you had last month – it’s happening again.</strong> You find yourself picking up the phone and calling your managed IT services provider more often than you ever expected.</p>
+<p class="sm-text-center">Our team at Net-Tech thinks <strong>this approach to IT support is outdated and unsustainable.</strong> We provide an IT subscription program that covers all of your IT needs at one predictable cost. Whether it’s making sure your systems work, increasing your cybersecurity measures or offering long-term tech strategic guidance, Net-Tech has the expertise to make your IT goals a reality.</p>
+</div>
+</div>
+<div class="col-md-7">
+<div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;">
+<div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><iframe src="https://fast.wistia.net/embed/iframe/jvezrx4s5z?seo=false&videoFoam=true" title="94PROJ - Animated Explainer Video FINAL" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe></div>
+</div>
+<p><script data-minify="1" src="https://www.net-tech.com/wp-content/cache/min/1/assets/external/E-v1.js?ver=1685567993" async></script>
+</div>
+</div>
+<div class="row margin-top-20">
+<div class="col-md-12 sm-text-center">
+<a class="btn btn-primary btn-lg text-initial" href="/contact-us/">Get Reliable, Stress-Free Tech</a></p>
+</div>
+</div>
+</div>
+</section>
+<section class="segment1 hpr2-section03a hpr2-section04a space-medium">
+<div class="container">
+<div class="row text-center">
+<h2 class="h1 margin-bottom-0">Choose an IT Subscription Program, <br class="vidible-sm">Not Just a Service</h2>
+<p>Don’t rely on partial solutions for complex technology needs. Here’s how managed IT services stack up to our IT subscription program.</p>
+</div>
+<div class="row margin-top-20 flex-box align-items-center sm-no-flexbox">
+<div class="col-md-9 col-lg-6 col-sm-10 col-sm-12 sideRight relative">
+<div class="circle-img-box hidden-sm hidden-xs">
+<img width="140" height="140" decoding="async" src="/wp-content/uploads/2020/10/img-IT-subscription.svg" class="main-circle aligncenter" alt="outages-cost"><br />
+<img width="150" height="154" decoding="async" class="services-3" src="/wp-content/uploads/2020/10/img-IT-superior.svg" alt="superior" /><br />
+<img width="150" height="154" decoding="async" class="services-8" src="/wp-content/uploads/2020/10/img-IT-Hardware.svg" alt="hardware" /><br />
+<img width="154" height="150" decoding="async" class="services-7" src="/wp-content/uploads/2020/10/img-IT-Backup.svg" alt="backup" /><br />
+<img width="153" height="150" decoding="async" class="services-6" src="/wp-content/uploads/2020/10/img-IT-employee.svg" alt="employee" /><br />
+<img width="150" height="154" decoding="async" class="services-5" src="/wp-content/uploads/2020/10/img-IT-Remote-Workforce.svg" alt="remote-workforce" /><br />
+<img width="150" height="154" decoding="async" class="services-4" src="/wp-content/uploads/2020/10/img-IT-Software-LOB.svg" alt="software" /><br />
+<img width="154" height="150" decoding="async" class="services-1" src="/wp-content/uploads/2020/10/img-IT-cloud.svg" alt="cloud" /><br />
+<img width="153" height="150" decoding="async" class="services-2" src="/wp-content/uploads/2020/10/img-IT-Security.svg" alt="security" /></div>
+<div class="ciecle-mobile visible-sm visible-xs"><img decoding="async" loading="lazy" class="img-responsive aligncenter" src="/wp-content/uploads/2023/01/img-it-subscription-program.svg" alt="IT Subscription Program" width="455" height="441" /></div>
+</div>
+<div class="col-md-6 col-lg-6">
+<table class="table it_subscription">
+<thead>
+<tr>
+<th>Managed IT Services</th>
+<th>IT Subscription Program</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reacts to problems with your tech</td>
+<td>Uses proactive planning to reduce or eliminate tech problems</td>
+</tr>
+<tr>
+<td>Focuses on the here and now</td>
+<td>Collaborates with you to plan for your goals and objectives 3-4 years in the future</td>
+</tr>
+<tr>
+<td>Bills you for additional projects and hour</td>
+<td>No surprise bills - you can expect one predictable IT cost</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="row margin-bottom-60">
+<div class="col-md-12">
+<p class="margin-top-40 text-center"><a class="btn btn-primary btn-lg text-initial" href="/contact-us/">Get Started with Better IT Today</a> <a class="btn btn-primary btn-custom btn-lg text-initial" href="/total-care-cloud/">Discover More About Our IT Subscription Program</a></p>
+</div>
+</div>
+</div>
+</section>
+<section class="segment3 hpr2-section05a lazy space-large">
+<div class="container">
+<div class="row">
+<div class="col-md-12 text-center">
+<h2>The Right IT Support for Your Industry</h2>
+<p>Each industry has its own set of IT priorities and needs. Healthcare organizations need to be confident that systems are compliant with all HIPAA and local guidelines. Construction companies need advanced support across worksites. No matter what your needs are, Net-Tech can help. Since 1983, we have provided IT support to Seattle organizations.</p>
+<p class="bold margin-top-40">We support organizations in the following industries:</p>
+</div>
+<div class="col-md-12 item-wrap flex-box flex-wrap justify-content-center xs-no-flexbox">
+<div class="item">
+<a href="/industries/non-profit-it-support/"><br />
+<picture decoding="async" class="img-responsive aligncenter">
+<source type="image/webp" srcset="/wp-content/uploads/2023/01/img-non-profits-r1.jpg.webp"/>
+<img width="261" height="201" decoding="async" src="/wp-content/uploads/2023/01/img-non-profits-r1.jpg" alt="IT-service"/>
+</picture>
+</p>
+<h5 class="text-center">Non-Profits</h5>
+<p></a>
+</div>
+<div class="item">
+<a href="/industries/staffing-recruiting/"><br />
+<picture decoding="async" class="img-responsive aligncenter">
+<source type="image/webp" srcset="/wp-content/uploads/2023/01/img-staffing-and-recruting-r1.jpg.webp"/>
+<img width="261" height="201" decoding="async" src="/wp-content/uploads/2023/01/img-staffing-and-recruting-r1.jpg" alt="IT-service"/>
+</picture>
+</p>
+<h5 class="text-center">Staffing and Recruiting</h5>
+<p></a>
+</div>
+<div class="item">
+<a href="/industries/accounting-firms-it-support/"><br />
+<picture decoding="async" class="img-responsive aligncenter">
+<source type="image/webp" srcset="/wp-content/uploads/2023/01/img-accounting-firms-r1.jpg.webp"/>
+<img width="261" height="201" decoding="async" src="/wp-content/uploads/2023/01/img-accounting-firms-r1.jpg" alt="IT-service"/>
+</picture>
+</p>
+<h5 class="text-center">Accounting Firms</h5>
+<p></a>
+</div>
+<div class="item">
+<a href="/industries/healthcare-it-support/"><br />
+<picture decoding="async" class="img-responsive aligncenter">
+<source type="image/webp" srcset="/wp-content/uploads/2023/01/img-healthcare-r1.jpg.webp"/>
+<img width="261" height="201" decoding="async" src="/wp-content/uploads/2023/01/img-healthcare-r1.jpg" alt="IT-service"/>
+</picture>
+</p>
+<h5 class="text-center">Healthcare</h5>
+<p></a>
+</div>
+<div class="item">
+<a href="/industries/wealth-management-it-support/"><br />
+<picture decoding="async" class="img-responsive aligncenter">
+<source type="image/webp" srcset="/wp-content/uploads/2023/01/img-wealth-management-r1.jpg.webp"/>
+<img width="261" height="201" decoding="async" src="/wp-content/uploads/2023/01/img-wealth-management-r1.jpg" alt="IT-service"/>
+</picture>
+</p>
+<h5 class="text-center">Wealth Management</h5>
+<p></a>
+</div>
+<div class="item">
+<a href="/industries/construction-it-support/"><br />
+<picture decoding="async" class="img-responsive aligncenter">
+<source type="image/webp" srcset="/wp-content/uploads/2023/01/img-construction-r1.jpg.webp"/>
+<img width="261" height="201" decoding="async" src="/wp-content/uploads/2023/01/img-construction-r1.jpg" alt="IT-service"/>
+</picture>
+</p>
+<h5 class="text-center">Construction</h5>
+<p></a>
+</div>
+<div class="item">
+<a href="/industries/property-management-it-support/"><br />
+<picture decoding="async" class="img-responsive aligncenter">
+<source type="image/webp" srcset="/wp-content/uploads/2023/01/img-property-management-r1.jpg.webp"/>
+<img width="261" height="201" decoding="async" src="/wp-content/uploads/2023/01/img-property-management-r1.jpg" alt="IT-service"/>
+</picture>
+</p>
+<h5 class="text-center">Property Management</h5>
+<p></a>
+</div>
+</div>
+<div class="col-md-12 text-center margin-top-40">
+<a class="btn btn-primary btn-lg text-initial" href="/about-us/testimonials/">Explore Our Client Success</a>
+</div>
+</div>
+</div>
+</section>
+<section class="segment1 hpr2-section06a space-large">
+<div class="container">
+<div class="row">
+<div class="col-md-6 sm-text-center">
+<h2 class="h1">Robust IT Services Options from Net-Tech</h2>
+<p>No two organizations are exactly alike. Net-Tech wants you to reach your business goals, and choosing the right level of IT support is key. We offer several IT subscription solutions to choose from so that you pay for the IT services that you need – no more and no less.</p>
+<p><picture decoding="async" class="img-responsive main-img">
+<source type="image/webp" srcset="/wp-content/uploads/2023/01/img-robust-IT-services-options-from-net-tech-r1.jpg.webp"/>
+<img width="485" height="397" decoding="async" src="/wp-content/uploads/2023/01/img-robust-IT-services-options-from-net-tech-r1.jpg" alt="IT-service"/>
+</picture>
+
+</div>
+<div class="col-md-6">
+<div class="collapse-item flex-box flex-wrap">
+<div class="col-icon">
+<img width="78" height="78" decoding="async" src="/wp-content/uploads/2023/01/ic-total-care-cloud.svg" class="img-responsive" alt="IT-service">
+</div>
+<div class="col-content">
+<div class="col-title flex-box flex-wrap justify-content-between">
+<a data-toggle="collapse" href="#total_care_cloud" aria-expanded="false" aria-controls="total_care_cloud"></p>
+<h5 class="accent">TOTAL CARE CLOUD</h5>
+<p></a><br />
+<i class="fas fa-minus"></i>
+</div>
+<div class="col-text collapse in" id="total_care_cloud">
+<p>Our most comprehensive solution includes our security framework, on-site support, backup and disaster recovery, long-term tech strategy, all the hardware your organization needs and more.</p>
+<p class="accent text-right"><a href="/total-care-cloud/"><strong>Read More</strong> <i class="fa fa-arrow-right fa-1x" style="color: #B42A30;"></i></a></p>
+</div>
+</div>
+<p><!-- col-content -->
+</div>
+<p><!-- collapse-item --></p>
+<div class="collapse-item flex-box flex-wrap">
+<div class="col-icon">
+<img width="78" height="78" decoding="async" src="/wp-content/uploads/2023/01/ic-total-care.svg" class="img-responsive" alt="IT-service">
+</div>
+<div class="col-content">
+<div class="col-title flex-box flex-wrap justify-content-between">
+<a data-toggle="collapse" href="#total_care" aria-expanded="false" aria-controls="total_care"></p>
+<h5 class="accent">TOTAL CARE</h5>
+<p></a><br />
+<i class="fas fa-plus"></i>
+</div>
+<div class="col-text collapse" id="total_care">
+<p>Total Care is ideal for organizations that can comfortably make IT decisions but need a partner to execute strategy. We partner with you to achieve your IT goals.</p>
+<p class="accent text-right"><a href="/total-care/"><strong>Read More</strong> <i class="fa fa-arrow-right fa-1x" style="color: #B42A30;"></i></a></p>
+</div>
+</div>
+<p><!-- col-content -->
+</div>
+<p><!-- collapse-item --></p>
+<div class="collapse-item flex-box flex-wrap">
+<div class="col-icon">
+<img width="78" height="78" decoding="async" src="/wp-content/uploads/2023/01/ic-infrastructure-as-a-services-iaas.svg" class="img-responsive" alt="IT-service">
+</div>
+<div class="col-content">
+<div class="col-title flex-box flex-wrap justify-content-between">
+<a data-toggle="collapse" href="#iaas" aria-expanded="false" aria-controls="iaas"></p>
+<h5 class="accent">INFRASTRUCTURE AS <br class="visible-xs">A SERVICE (IAAS)</h5>
+<p></a><br />
+<i class="fas fa-plus"></i>
+</div>
+<div class="col-text collapse" id="iaas">
+<p>Simplify your building management systems while also reducing your risk. With IaaS, Net-Tech provides and implements the framework that allows your building teams to work more efficiently.</p>
+<p class="accent text-right"><a href="/what-we-offer/infrastructure-as-a-service-iaas/"><strong>Read More</strong> <i class="fa fa-arrow-right fa-1x" style="color: #B42A30;"></i></a></p>
+</div>
+</div>
+<p><!-- col-content -->
+</div>
+<p><!-- collapse-item --></p>
+<div class="collapse-item flex-box flex-wrap">
+<div class="col-icon">
+<img width="78" height="78" decoding="async" src="/wp-content/uploads/2023/01/ic-it-security.svg" class="img-responsive" alt="IT-service">
+</div>
+<div class="col-content">
+<div class="col-title flex-box flex-wrap justify-content-between">
+<a data-toggle="collapse" href="#it_security" aria-expanded="false" aria-controls="it_security"></p>
+<h5 class="accent">IT SECURITY</h5>
+<p></a><br />
+<i class="fas fa-plus"></i>
+</div>
+<div class="col-text collapse" id="it_security">
+<p>Protect your organization from constantly changing security threats. IT security includes critical infrastructure, cloud security, staff training, multifactor authentication and more tools to defend your data.</p>
+<p class="accent text-right"><a href="/what-we-offer/it-security/"><strong>Read More</strong> <i class="fa fa-arrow-right fa-1x" style="color: #B42A30;"></i></a></p>
+</div>
+</div>
+<p><!-- col-content -->
+</div>
+<p><!-- collapse-item --></p>
+<div class="collapse-item flex-box flex-wrap">
+<div class="col-icon">
+<img width="78" height="78" decoding="async" src="/wp-content/uploads/2023/01/ic-compliance.svg" class="img-responsive" alt="IT-service">
+</div>
+<div class="col-content">
+<div class="col-title flex-box flex-wrap justify-content-between">
+<a data-toggle="collapse" href="#it_compliance" aria-expanded="false" aria-controls="it_compliance"></p>
+<h5 class="accent">IT COMPLIANCE</h5>
+<p></a><br />
+<i class="fas fa-plus"></i>
+</div>
+<div class="col-text collapse" id="it_compliance">
+<p>Never worry about your audits and benefit from lower insurance rates, including cyber insurance. We will put the processes in place to ensure you are in compliance daily, not just at crunch time.</p>
+<p class="accent text-right"><a href="/what-we-offer/it-security/it-compliance/"><strong>Read More</strong> <i class="fa fa-arrow-right fa-1x" style="color: #B42A30;"></i></a></p>
+</div>
+</div>
+<p><!-- col-content --></p>
+</div>
+<p><!-- collapse-item --></p>
+</div>
+</div>
+</div>
+</section>
+<section class="segment1 hpr2-section07a lazy space-large">
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<h2 class="sm-text-center">How to Get Started with Better IT Support from Net-Tech</h2>
+<p class="sm-text-center">Net-Tech goes beyond the managed IT services Seattle organizations require by offering comprehensive IT support. Our approach takes your organization from break-fix solutions to a solid long-term IT strategy.</p>
+<div class="timeline">
+<div class="item flex-box align-items-center">
+<h5 class="bold">01</h5>
+<p class="margin-0"><img width="64" height="64" decoding="async" src="/wp-content/uploads/2023/01/ic-step-01-speak-with-us.svg" alt="schedule an assessment" /></p>
+<p class="margin-0">Speak with us to learn about what our IT subscription program provides. We are more than an internal IT team or an MSP. We are your IT department that already has the expertise your organization needs for successful tech.</p>
+</div>
+<div class="item flex-box align-items-center">
+<h5 class="bold">02</h5>
+<p class="margin-0"><img width="64" height="64" decoding="async" src="/wp-content/uploads/2023/01/ic-step-02-subscribe-and-receive-proven-systems.svg" alt="you subscribe" /></p>
+<p class="margin-0">Subscribe and receive proven systems, new computers every 3 years, security as a service and more, according to your organization’s needs.</p>
+</div>
+<div class="item flex-box align-items-center">
+<h5 class="bold">03</h5>
+<p class="margin-0"><img width="64" height="64" decoding="async" src="/wp-content/uploads/2023/01/ic-step-03-step-back-and-let-us-take-care-of-your-tech.svg" alt="Migrate your Data" /></p>
+<p class="margin-0">Step back and let us take care of your technology. We manage your systems and adjust them as new tech is released and old tech evolves.</p>
+</div>
+</div>
+<p class="text-center margin-top-40"><a class="btn btn-primary btn-lg text-initial" href="/contact-us/">Get Started Now</a></p>
+</div>
+<div class="col-md-6 visible-sm visible-xs">
+<picture decoding="async" class="img-responsive aligncenter">
+<source type="image/webp" srcset="/wp-content/uploads/2023/01/img-how-to-get-started-with-better-IT-support-from-net-tech-mobile-r1.jpg.webp"/>
+<img width="485" height="511" decoding="async" src="/wp-content/uploads/2023/01/img-how-to-get-started-with-better-IT-support-from-net-tech-mobile-r1.jpg" alt="IT-service"/>
+</picture>
+
+</div>
+</div>
+</div>
+</section>
+<section class="segment2 hpr2-section08a space-large">
+<div class="container">
+<div class="row">
+<div class="col-md-6">
+<h2 class="h1 sm-text-center">Intentional Change is Our Difference</h2>
+<p><picture decoding="async" class="img-responsive main-img">
+<source type="image/webp" srcset="/wp-content/uploads/2023/01/img-intentional-change-is-our-difference-1.jpg.webp"/>
+<img width="522" height="380" decoding="async" src="/wp-content/uploads/2023/01/img-intentional-change-is-our-difference-1.jpg" alt="IT-service"/>
+</picture>
+
+</div>
+<div class="col-md-6 sm-text-center">
+<p><span class="accent"><a href="/total-care-cloud/" target="_blank" rel="noopener">Total Care Cloud</a></span>, our IT subscription program, takes a long-term view of your technology. As a Professional Technology Organization (PTO), we intentionally plan change with goals, objectives and outcomes laid out to measure progress. Our program typically looks 48 months ahead for planning, whereas typical MSP service plans only look ahead 12 to 18 months.​</p>
+<p>Our goal is to understand your needs, so we can align them with your network capabilities to continually improve your IT experience without major capital expenditures. Here at Net-Tech, we don’t simply “take the keys” to your network, we sit down with you to make sure your goals and objectives are supported by your IT infrastructure.</p>
+<p>While a “take the keys” approach may address your current needs, it doesn’t allow for scalability. With a Net-Tech <span class="accent">IT subscription program</span>, your IT support is built around enabling business growth and achieving your objectives, so your network is continuously evolving to meet your ever-changing needs.</p>
+<p><a class="btn btn-primary btn-lg text-initial" href="/contact-us/">Get Reliable, Stress-Free Tech</a>
+</div>
+</div>
+</div>
+</section>
+<section class="segment1 hpr2-section09a space-large">
+<div class="container">
+<div class="row flex-box flex-wrap align-items-center sm-no-flexbox">
+<div class="col-md-4 sm-text-center">
+<h2 class="h1">Testimonials</h2>
+</div>
+<div class="col-md-4 videoItem col-sm-12">
+<div class="wistia" data-embed="s2xg61p3sp" data-thumb="76319f2df5403562ecca63189a6f9e02">
+<div class="play-button"></div>
+</div>
+<div class="margin-top-20">
+<p class="lead uppercase">Why United Way of Kings County Chose Net-Tech</p>
+<p class="text-right"><a class="bold" href="/united-way-of-kings-county-trains-for-an-it-solutions-victory/">Read More <i class="fas fa-arrow-right"></i></a></p>
+</div>
+</div>
+<div class="col-md-4 videoItem col-sm-12">
+<div class="wistia" data-embed="525zr57tun" data-thumb="2b7e401ce0a657ee0374e9b76c4dd095">
+<div class="play-button"></div>
+</div>
+<div class="margin-top-20">
+<p class="lead uppercase">Focus on your mission; we’ll support your IT</p>
+<p class="text-right"><a class="bold" href="https://www.net-tech.com/total-care-cloud/">Read More <i class="fas fa-arrow-right"></i></a></p>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-8 col-md-offset-4 col-sm-12">
+<p class="text-center margin-top-40"><a class="btn btn-primary btn-lg text-initial" href="/testimonials">View More Testimonials</a></p>
+</div>
+</div>
+</div>
+</section>
+
+<!--Footer-->
+</div><footer id="footer"><div class="segment5 space-small main-footer main-footer-r2 xs-text-center" ><div class="container"><div class="row margin-vertical-60 no-mobile-margin-vertical">
+<div class="col-md-3 col-sm-12 margin-bottom-20">
+<h3 class="sm-text-center">Net-Tech</h3>
+<div  ><address   ><ul class="fa-ul"><li><i class="fa fa-map-marker fa-1x fa-li accent"></i><span >2100 124th Ave NE <br> Ste 112</span><br><span >Bellevue</span>, <span >WA</span> <span >98005</span><br></li><li class="margin-top-10"><i class="fa fa-phone fa-1x fa-li accent"></i>Phone:  <span >425-452-8324</span></li><li><i class="fa fa-print fa-1x fa-li accent"></i>Fax:  <span >425-484-8324</span></li></ul></address></div>
+<div class="social-footer">
+<a href="https://www.facebook.com/pages/Net-Tech/160964280627936" target="_blank"><span class="fa-stack fa-1x"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-inverse fa-stack-1x"></i></span></a>
+<a href="https://twitter.com/_Net_Tech_" target="_blank"><span class="fa-stack fa-1x"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-inverse fa-stack-1x"></i></span></a>
+<a href="https://www.linkedin.com/company/net-tech-com/" target="_blank"><span class="fa-stack fa-1x"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-linkedin fa-inverse fa-stack-1x"></i></span></a>
+<a href="https://www.net-tech.com/feed/" target="_blank"><span class="fa-stack fa-1x"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-rss fa-inverse fa-stack-1x"></i></span></a>
+</div>
+</div>
+
+<div class="col-md-4 col-md-offset-1 col-sm-12">
+<div id="map-1495875111" class="google-map margin-bottom-20"></div><div  ><address   ></address></div><script type="rocketlazyloadscript" data-rocket-type="text/javascript">var map;jQuery(document).ready(function($){map = new GMaps({div: "#map-1495875111",lat: 47.6290705,lng: -122.1743256,width: "100%",height: "300px"});map.setOptions({ scrollwheel: false });map.addMarker({lat: 47.6290705,lng: -122.1743256,title: "Net-Tech",infoWindow: {content: "Net-Tech"}});});</script>
+</div>
+
+<div class="col-md-3 col-md-offset-1 col-sm-12">
+<h3 class="font-custom3 sm-text-center">What We Offer</h3>
+<ul class="footer-nav">
+	<li><a href="/total-care-cloud/">PTO – IT subscription program</a></li>
+	<li><a href="/total-care/">Total Care – MSP service</a></li>
+	<li><a href="/what-we-offer/infrastructure-as-a-service-iaas/">IaaS – Infrastructure as a Service</a></li>
+	<li><a href="/what-we-offer/it-security/">IT Security</a></li>
+</ul>
+
+<h3 class="font-custom3 sm-text-center"">Email Newsletter</h3>
+<form id="subForm" class="campaignmonitor" method="post" action="https://prontomarketing.createsend.com/t/r/s/cofl/">
+<input name="cm-cofl-cofl" type="text" class="form-control">
+<input value="Learn more" class="btn btn-primary margin-top-10" id="mc_signup_submit" type="submit">
+</form>
+<p class="margin-top-10 hide sm-text-center"">Enter your email address to receive monthly updates about our latest news, events and free technology resources for your small business!</p>
+</div>
+</div>
+
+<hr>
+
+<div class="row margin-vertical-10 xs-text-center">
+<div class="col-md-6 col-sm-7 col-xs-12">
+&copy;2023 Network Technology Services, Inc. DBA Net-Tech. All Rights Reserved.
+</div>
+<div class="col-md-6 col-sm-5 col-xs-12">
+<div><ul id="menu-bottom-footer" class="horizontal list-unstyled pull-right xs-list-center"><li id="menu-item-6122" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6122"><a href="https://www.net-tech.com/cookies-policy/">Cookies Policy</a></li>
+<li id="menu-item-4670" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4670"><a href="https://www.net-tech.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-4671" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4671"><a target="_blank" href="https://www.prontomarketing.com/">Website by Pronto</a></li>
+</ul></div>
+</div>
+</div></div></div></footer>    </div>
+  </div>
+<script type="rocketlazyloadscript" data-minify="1"   data-rocket-type='text/javascript' data-rocket-src='https://www.net-tech.com/wp-content/cache/min/1/wp-content/plugins/jetpack/modules/sharedaddy/sharing.js?ver=1685567993' id='sharing-js-fe-js'></script>
+<script type="rocketlazyloadscript" data-minify="1"   data-rocket-type='text/javascript' data-rocket-src='https://www.net-tech.com/wp-content/cache/min/1/wp-content/plugins/pronto-sidebar-navigation/js/jquery.flexnav.js?ver=1685567993' id='flexnav-script-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.net-tech.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-minify="1"   data-rocket-type='text/javascript' data-rocket-src='https://www.net-tech.com/wp-content/cache/min/1/wp-content/themes/phoenix/js/skip-link-focus-fix.js?ver=1685567993' id='skip-link-focus-fix-js'></script>
+<script type="rocketlazyloadscript" data-minify="1"   data-rocket-type='text/javascript' data-rocket-src='https://www.net-tech.com/wp-content/cache/min/1/wp-content/plugins/pronto-lead-insights/js/lip.js?ver=1685567993' id='lip_script-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://maps.google.com/maps/api/js?key=AIzaSyD2qqGFctMyyCLiuVldmz16kUKAP1RZwhk&#038;ver=6.2.2' id='maps-api-js'></script>
+<script type="rocketlazyloadscript" data-minify="1"   data-rocket-type='text/javascript' data-rocket-src='https://www.net-tech.com/wp-content/cache/min/1/wp-content/plugins/pronto-locations-manager/js/gmaps.js?ver=1685567993' id='gmaps-js'></script>
+<!-- hook code snippet footer -->
+<script type="rocketlazyloadscript">
+jQuery(document).ready(function($){
+    var myVar = setInterval(function(){ check() }, 500);
+    
+    function check() {
+        var blog = $(".hp-blog .row-condensed footer");
+        if (blog.length > 0) {
+            category();
+            stop();
+        }
+    }
+    
+    function stop() {
+        clearInterval(myVar);
+    }
+    
+    function category() {
+        var blog = $(".hp-blog .row-condensed");
+        blog.each(function() {
+            var category = $(this).find("footer span a").text();
+            $(this).find("h3[] a span").prepend("<strong>" + category + ": </strong>");
+            $(this).find("footer").html("");
+        });
+        
+    }
+})
+</script><link data-minify="1" href="https://www.net-tech.com/wp-content/cache/min/1/wp-content/themes/phoenix/js/jQuery.mmenu-master/dist/hamburgers.css?ver=1685567993" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  rel="preload" />
+<link data-minify="1" href="https://www.net-tech.com/wp-content/cache/min/1/wp-content/themes/phoenix/js/jQuery.mmenu-master/dist/jquery.mmenu.all.css?ver=1685567993" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  rel="preload" />
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.net-tech.com/wp-content/cache/min/1/wp-content/themes/phoenix/js/jQuery.mmenu-master/dist/jquery.mmenu.all.js?ver=1685567993"></script>
+<script type="rocketlazyloadscript">
+var $ = jQuery.noConflict();
+$( document ).ready(function(){
+    var $menu = $("#mobile-menu").mmenu({
+        "slidingSubmenus": false,
+        offCanvas : {
+            position: 'right'
+        },
+        "extensions": [
+            "theme-dark"
+        ]
+    });
+    var $icon = $("#ham-toggle");
+    var API = $menu.data("mmenu");
+   
+    $icon.on("click", function() {
+        API.open();
+    });
+   
+    API.bind("open:finish", function() {
+        setTimeout(function() {
+            $icon.addClass("is-active");
+        }, 100);
+    });
+    API.bind("close:finish", function() {
+        setTimeout(function() {
+            $icon.removeClass("is-active");
+        }, 100);
+    });
+});
+</script><script type="rocketlazyloadscript">
+var $ = jQuery.noConflict();
+$(document).ready(function(){
+    $('body').append('<div id="topcontrol" style="position: fixed; bottom: 0px; right: 0px; opacity: 1; cursor: pointer; opacity: 0;"><div id="scrolltotop"></div></div>');
+   
+    var _duration= 800;
+    var _ease= 0;
+    $("[rel=jumpdown]").click(function(e){
+        e.preventDefault();
+   
+        $("body, html").animate({
+            scrollTop: $( $(this).attr('href') ).offset().top - $( '#header' ).outerHeight()
+            }, 800);
+    });
+   
+    if ( window.location.hash.length > 0 ) {
+        $("body, html").animate({
+            scrollTop: $( window.location.hash ).offset().top
+        }, 800);
+    }
+   
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {
+        scrollFunction()
+    };
+   
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            $('#topcontrol').css('opacity','1');
+        } else {
+            $('#topcontrol').css('opacity','0');
+        }
+    }
+   
+    // When the user clicks on the button, scroll to the top of the document
+    $('#topcontrol').on('click',function(){
+        $("html, body").animate({ scrollTop: 0 }, 800);
+    });
+});
+</script><script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.net-tech.com/wp-content/cache/min/1/wp-content/uploads/video-banner/jquery.vide.js?ver=1685567993"></script>
+<script type="rocketlazyloadscript">
+$(document).ready(function(){
+    var is_safari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    if (is_safari) {
+        $('.hp-banner video').attr('src','/wp-content/uploads/video-banner/bg-banner-r1-video.mp4').css('opacity','1').css('visibility','visible');
+    }
+});
+</script><script type="rocketlazyloadscript">
+jQuery(document).ready(function(){
+    var main_nav_arr = ["What We Offer","Industries","Resources"]; //Array of menu items which have no link.
+    //Disable menu item link in main navigation, burger menu, sidebar menu and widget title on sidebar.
+    //If there is no burger menu on this site, please remove .mm-panel > ul > li from the selector below.
+ 
+    $('nav[role=navigation] > ul.nav > li.dropdown, .mm-panel > ul > li, .menu-widget ul.nav-stacked > li, .menu-widget .widget-title').each(function(){
+     for(var i = 0; i < main_nav_arr.length; i++){
+       if( main_nav_arr[i].replace(/\s/g,'').toLowerCase() == $(this).children('a').last().text().replace(/\s/g,'').toLowerCase() ) {
+         $(this).children('a').last().removeAttr('href');
+         break;
+       }
+     }
+   });  
+ 
+   
+    //Disable menu item link in option on mobile and tablet.
+    //if there is burger menu, please remove this code below.
+    var check_select_main_nav = setInterval(function(){
+      if($('nav[role=navigation] select').length > 0){
+        $('nav[role=navigation] select > option').each(function(){
+          for(var i = 0; i < main_nav_arr.length; i++){
+            if( $(this).text().replace(/\s/g,'').toLowerCase() == main_nav_arr[i].replace(/\s/g,'').toLowerCase() ){
+              $(this).attr('disabled', 'disabled');
+            }
+          }
+        });
+        clearInterval(check_select_main_nav);
+      }
+    }, 500);
+});
+</script><script type="rocketlazyloadscript" data-rocket-type="text/javascript" data-rocket-src="https://rp544.infusionsoft.com/app/webTracking/getTrackingCode"></script>
+<script type="rocketlazyloadscript">
+  var elem = document.getElementById('menu-item-4671');
+  elem.parentNode.removeChild(elem);
+</script><script type="rocketlazyloadscript">
+$("div.comments").remove();
+</script><script type="rocketlazyloadscript">
+    $(document).ready(function () {
+
+        /**** Auto Loop ****/
+        var max_circle = $('.circle-img-box img').length
+        var counter = 1;
+
+        $($('.circle-img-box img')[counter]).addClass('active')
+        var autoLoopEvery2Second;
+        function playLoop() {
+            autoLoopEvery2Second = setInterval(activeWheel, 2000);
+        }
+
+        function activeWheel() {
+            var wheelServiceBoxCurrentClass = $($('.circle-img-box img')[counter]).attr('alt')
+           
+            console.log(counter)
+
+            // Active current 
+            $($('.circle-img-box img')[counter]).addClass('active');
+            $(".wheel-services-box."+ wheelServiceBoxCurrentClass ).show();
+            
+            // Deactive previous
+            $($('.circle-img-box img')[counter - 1]).removeClass('active');
+            $('.wheel-services-box:not(.' + wheelServiceBoxCurrentClass + ')').hide();
+
+            
+            // Next Element
+            if (counter < max_circle) {
+                counter++
+            } else {
+                counter = 1
+                activeWheel()
+            }
+            
+        }
+        playLoop();
+        
+        /********************/
+        
+         $('.circle-img-box img').on('mouseenter', function(e){
+            clearInterval(autoLoopEvery2Second);
+            $('.circle-img-box img').removeClass('active');
+            $(this).addClass('active');
+            var className = $(this).attr('alt');
+             if ( className !="superior"){
+                $('.wheel-services-box').hide();
+                $("."+className).show();
+
+             } else {
+                  $('.wheel-services-box').hide();
+                  $('.superior').show();
+             }
+             e.preventDefault();
+        });
+        
+        $('.circle-img-box img').on('mouseleave', function(e){
+            $(this).removeClass('active');
+            playLoop();
+        });
+
+    }); 
+    
+$(document).ready(function () {
+    $('.fulltext').hide();
+
+    $('.readmore.nonprofit').click(function (event) {
+        event.preventDefault();
+        $(this).parent().find('.fulltext').slideToggle('slow');
+        $(this).text($(this).text() == '...Read less' ? '...Read more' : '...Read less');
+    });
+    $('.readmore.healthcare').click(function (event) {
+        event.preventDefault();
+        $(this).parent().find('.fulltext').slideToggle('slow');
+        $(this).text($(this).text() == '...Read less' ? '...Read more' : '...Read less');
+    });
+     $('.readmore.accounting').click(function (event) {
+        event.preventDefault();
+        $(this).parent().find('.fulltext').slideToggle('slow');
+        $(this).text($(this).text() == '...Read less' ? '...Read more' : '...Read less');
+    });
+     $('.readmore.staffing').click(function (event) {
+        event.preventDefault();
+        $(this).parent().find('.fulltext').slideToggle('slow');
+        $(this).text($(this).text() == '...Read less' ? '...Read more' : '...Read less');
+    });
+    $('.readmore.contruction').click(function (event) {
+        event.preventDefault();
+        $(this).parent().find('.fulltext').slideToggle('slow');
+        $(this).text($(this).text() == '...Read less' ? '...Read more' : '...Read less');
+    });
+    $('.readmore.wealth').click(function (event) {
+        event.preventDefault();
+        $(this).parent().find('.fulltext').slideToggle('slow');
+        $(this).text($(this).text() == '...Read less' ? '...Read more' : '...Read less');
+    });
+     $('.readmore.property').click(function (event) {
+        event.preventDefault();
+        $(this).parent().find('.fulltext').slideToggle('slow');
+        $(this).text($(this).text() == '...Read less' ? '...Read more' : '...Read less');
+    });
+});
+    
+</script><script type="rocketlazyloadscript">
+
+$( document ).ready(function() {
+ 
+    $('.hpr2-section04 .collapse, .hpr2-section06a .collapse').on('shown.bs.collapse', function(){
+        $(this).parent().find(".fas").removeClass("fa-plus").addClass("fa-minus");
+    }).on('hidden.bs.collapse', function(){
+        $(this).parent().find(".fas").removeClass("fa-minus").addClass("fa-plus");
+    });
+
+    // var title_Timeout = setTimeout(title_color, 2000);
+
+    // function title_color() {
+    //     $('#title_color').css('background-color', '#b42a30');
+    // }
+ 
+});
+
+</script><script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+document.addEventListener("DOMContentLoaded", function() {
+  var lazyloadImages;    
+
+  if ("IntersectionObserver" in window) {
+    lazyloadImages = document.querySelectorAll(".lazy");
+    var imageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var image = entry.target;
+          image.classList.remove("lazy");
+          imageObserver.unobserve(image);
+        }
+      });
+    });
+
+    lazyloadImages.forEach(function(image) {
+      imageObserver.observe(image);
+    });
+  } else {  
+    var lazyloadThrottleTimeout;
+    lazyloadImages = document.querySelectorAll(".lazy");
+    
+    function lazyload () {
+      if(lazyloadThrottleTimeout) {
+        clearTimeout(lazyloadThrottleTimeout);
+      }    
+
+      lazyloadThrottleTimeout = setTimeout(function() {
+        var scrollTop = window.pageYOffset;
+        lazyloadImages.forEach(function(img) {
+            if(img.offsetTop < (window.innerHeight + scrollTop)) {
+              img.src = img.dataset.src;
+              img.classList.remove('lazy');
+            }
+        });
+        if(lazyloadImages.length == 0) { 
+          document.removeEventListener("scroll", lazyload);
+          window.removeEventListener("resize", lazyload);
+          window.removeEventListener("orientationChange", lazyload);
+        }
+      }, 20);
+    }
+
+    document.addEventListener("scroll", lazyload);
+    window.addEventListener("resize", lazyload);
+    window.addEventListener("orientationChange", lazyload);
+  }
+})
+</script><script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+( function() {
+
+var wistia = document.querySelectorAll( ".wistia" );
+
+for (var i = 0; i < wistia.length; i++) {
+
+var source = "https://embed-ssl.wistia.com/deliveries/"+ wistia[i].dataset.thumb +".jpg";
+
+var image = new Image();
+image.src = source;
+image.addEventListener( "load", function() {
+wistia[ i ].appendChild( image );
+}( i ) );
+
+wistia[i].addEventListener( "click", function() {
+
+var iframe = document.createElement( "iframe" );
+
+    iframe.setAttribute( "frameborder", "0" );
+    iframe.setAttribute( "allowfullscreen", "" );
+    iframe.setAttribute( "mozallowfullscreen", "" );
+    iframe.setAttribute( "webkitallowfullscreen", "" );
+    iframe.setAttribute( "oallowfullscreen", "" );
+    iframe.setAttribute( "msallowfullscreen", "" );
+    iframe.setAttribute( "src", "//fast.wistia.net/embed/iframe/"+ this.dataset.embed +"?videoFoam=true" );
+
+    this.innerHTML = "";
+    this.appendChild( iframe );
+} );    
+};
+
+} )();
+</script>
+<!-- end hook code snippet footer -->
+<!--Javascript-->
+<script type="rocketlazyloadscript" data-rocket-src="https://www.net-tech.com/wp-content/themes/phoenix/bootstrap/js/bootstrap.min.js"></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://www.net-tech.com/wp-content/cache/min/1/wp-content/themes/phoenix/js/main.js?ver=1685567993"></script>
+<script>"use strict";function wprRemoveCPCSS(){var preload_stylesheets=document.querySelectorAll('link[data-rocket-async="style"][rel="preload"]');if(preload_stylesheets&&0<preload_stylesheets.length)for(var stylesheet_index=0;stylesheet_index<preload_stylesheets.length;stylesheet_index++){var media=preload_stylesheets[stylesheet_index].getAttribute("media")||"all";if(window.matchMedia(media).matches)return void setTimeout(wprRemoveCPCSS,200)}var elem=document.getElementById("rocket-critical-css");elem&&"remove"in elem&&elem.remove()}window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link data-minify="1" href="https://www.net-tech.com/wp-content/cache/min/1/wp-content/themes/phoenix/bootstrap/css/bootstrap.min.css?ver=1685567992" rel="stylesheet" /><link data-minify="1" href="https://www.net-tech.com/wp-content/cache/min/1/wp-content/themes/phoenix/fontawesome-pro/css/all.min.css?ver=1685567992" rel="stylesheet" /><link href="https://www.net-tech.com/wp-content/themes/phoenix/fontawesome-pro/css/v4-shims.min.css?v=5.11.2-pro" rel="stylesheet" /><link data-minify="1" rel='stylesheet' id='jetpack-videopress-video-block-view-css' href='https://www.net-tech.com/wp-content/cache/min/1/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-videopress/build/block-editor/blocks/video/view.css?ver=1685567992' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='mediaelement-css' href='https://www.net-tech.com/wp-content/cache/min/1/c/6.2.2/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css?ver=1685567992' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='wp-mediaelement-css' href='https://www.net-tech.com/wp-content/cache/min/1/c/6.2.2/wp-includes/js/mediaelement/wp-mediaelement.min.css?ver=1685567992' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='classic-theme-styles-css' href='https://www.net-tech.com/wp-content/cache/min/1/c/6.2.2/wp-includes/css/classic-themes.min.css?ver=1685567992' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='wooslider-flexslider-css' href='https://www.net-tech.com/wp-content/cache/min/1/wp-content/plugins/wooslider/assets/css/flexslider.css?ver=1685567992' type='text/css' media='all' /><link data-minify="1" rel='stylesheet' id='wooslider-common-css' href='https://www.net-tech.com/wp-content/cache/min/1/wp-content/plugins/wooslider/assets/css/style.css?ver=1685567992' type='text/css' media='all' /><link data-minify="1" rel="stylesheet" id="main-css" href="https://www.net-tech.com/wp-content/cache/min/1/wp-content/themes/phoenix/css/main.css?ver=1685567992" type="text/css" media="all" /><link data-minify="1" rel="stylesheet" id="style-css" href="https://www.net-tech.com/wp-content/cache/min/1/wp-content/themes/phoenix-child/style.css?ver=1685567992" type="text/css" media="all" /><link rel="stylesheet" type="text/css" id="wp-custom-css" href="https://www.net-tech.com/?custom-css=45ade16bb7" /><link data-minify="1" href="https://www.net-tech.com/wp-content/cache/min/1/wp-content/themes/phoenix/js/jQuery.mmenu-master/dist/hamburgers.css?ver=1685567993" rel="stylesheet" /><link data-minify="1" href="https://www.net-tech.com/wp-content/cache/min/1/wp-content/themes/phoenix/js/jQuery.mmenu-master/dist/jquery.mmenu.all.css?ver=1685567993" rel="stylesheet" /></noscript></body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

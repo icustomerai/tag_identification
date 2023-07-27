@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="The leading provider of on-demand software for the auto industry in the United States" />
+	<meta name="keywords" content=" desking, Special finance, Menu selling, Aftermarket, Compliance, Electronic contracting, Finance, F&I, Auto sales, Inventory management, Used cars, Vehicle valuation, Bookout, DMS,  Dealer management system, DMS, credit                         application, credit bureau, automotive financing" />
+	<meta name="rating" content="General" />
+	<meta name="language" content="english, EN" />
+	<meta name="robots" content="index, follow" />
+	<meta name="revisit-after" content="5 Day" />
+	<meta name="author" content="www.dealertrack.com" />
+	<meta name="copyright" content="2015" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dealertrack Technologies Login</title>
+	<link rel="stylesheet" type="text/css" href="siteminderagent/dmspages/generic_login.css">
+		<script src="siteminderagent/dmspages/jquery-1.11.1.min.js" type="text/javascript"></script>
+		<script src="siteminderagent/dmspages/jquery.cookie.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			// Only enable the form button once the page has fully loaded to prevent
+			// the issue of a user being able to submit before the IP Address has been set
+			$('.login--panel-form-button').removeAttr('disabled');
+			//hide the login form before process the cookies
+            		document.body.style.display = 'none'
+			if($.cookie('SMSESSION') === '' || $.cookie('SMSESSION') === 'undefined' || $.cookie('SMSESSION') === 'LOGGEDOFF')
+			{
+				handleRedirection();
+			}
+			else
+			{	
+				// Don't terminate session if user come with deeplink. DE330359 vs US1079316
+				var target = QueryString('TARGET');
+				if (target === undefined || !target.toLowerCase().includes("deeplink")) {
+					terminateBridgeSession();
+				}
+				setTimeout(function () { handleRedirection(); }, 2000);
+			}   			
+		});
+	</script>
+	<script type="text/javascript">
+		/****************************************** IMPORTANT! ***********************************************/
+		/*                                                                                                  */
+		/*		This script MUST be on the page itself because the SiteMinder target variable can only        */
+		/*		be accessed while on the page itself                                                          */
+		/*                                                                                                  */
+		/****************************************************************************************************/
+		/**
+			 * @function isRoot
+			 * Function used to determine if the current target (set by SiteMinder) is the root
+			 * page.  I.E. no path for example, www.dealertrack.com.
+			 * @param {string} currentTarget - The target set by SiteMinder
+		*/
+		function isRoot(currentTarget) {
+			if (typeof currentTarget !== 'undefined') {
+				var hostStartIndex = currentTarget.indexOf('//'),
+					hostEndIndex = currentTarget.indexOf('/', hostStartIndex + '//'.length),
+					path = currentTarget.slice(hostEndIndex + 1);
+
+				if (hostEndIndex === -1) {
+					return false;
+				}
+
+				if (path === '') {
+					return true;
+				}
+				else {
+					return false;
+				}
+			}
+
+			return false;
+		}
+
+		/**
+			* @function redirectSSOLogout
+			* Function used to redirect the login page to the sso logout page for SSO partner users
+		*/
+		function redirectSSOLogout() {
+			//if SSOPartner(like Toyota etc.) cookie exists with value then redirect user to ssologout.aspx
+			if (typeof $.cookie('SSOPartner') == 'string' && $.cookie('SSOPartner').length > 0) {
+				window.location = '/public/ssologout.aspx';
+			}
+		}
+
+		//build img tag to logout bridge session
+		function terminateBridgeSession() {
+			var img = new Image(1, 1);
+			img.src = getBridgeLogoutUrl();
+			img.id = 'logoutImg'
+			img.style.display = "none";
+            document.getElementById('sharedlogout').appendChild(img);
+		}
+
+		//get logout URL to perform Bridge logout
+		function getBridgeLogoutUrl() {
+			var logoutUrl = ""
+			if (window.location.hostname.indexOf('dvt1') > -1 || window.location.hostname.indexOf('dvi1') > -1 || window.location.hostname.indexOf('dev') > -1) {
+				logoutUrl = 'https://signin.coxautoinc.com/logout?bridge_env=DEV&bridge_solution=DTCOM';
+			} else if (window.location.hostname.indexOf('qa') > -1 || window.location.hostname.indexOf('uat1') > -1) {
+				logoutUrl = 'https://signin.coxautoinc.com/logout?bridge_env=QA&bridge_solution=DTCOM';
+			} else {
+				logoutUrl = 'https://signin.coxautoinc.com/logout?bridge_solution=DTCOM';
+			}
+			return logoutUrl
+		}
+
+		/**
+			  * @function redirectPage
+			  * Function used to redirect the login page to the home page when the request
+			  * is for the root page.
+		 */
+		function redirectPage() {
+			var target = 'http://www.dealertrack.com/',
+				targetIsRoot = isRoot(target),
+				environment = 'production';
+
+			if (window.location.hostname.indexOf('dvt1') > -1) {
+				environment = 'dvt1';
+			} else if (window.location.hostname.indexOf('dvi1') > -1) {
+				environment = 'dvi1';
+			} else if (window.location.hostname.indexOf('dev') > -1) {
+				environment = 'dvi1';
+			} else if (window.location.hostname.indexOf('qa') > -1) {
+				environment = 'qa';
+			} else if (window.location.hostname.indexOf('uat1') > -1) {
+				environment = 'uat1';
+			} else if (window.location.hostname.indexOf('dr') > -1) {
+				environment = 'dr';
+			} else if (window.location.hostname.indexOf('pa') > -1) {
+				environment = 'dr';
+			} else if (window.location.hostname.indexOf('local') > -1
+				|| window.location.hostname.indexOf('karbyn') > -1) {
+				environment = 'testing';
+			}
+
+			// JSON must use double quotes
+			var redirectMap = {
+				"dvt1": "http://us.dvt1.dealertrack.com/content/dealertrack/en.html",
+				"dvi1": "//us-dev.dealertrack.com",
+				"qa": "//us-qa.dealertrack.com",
+				"uat1": "//us-qa.dealertrack.com",
+				"production": "//us.dealertrack.com",
+				"dr": "//us-dr.dealertrack.com",
+				"pa": "//us-dr.dealertrack.com",
+				"testing": "//us-qa.dealertrack.com"
+			};
+
+			var redirectUrl = redirectMap[environment];
+
+			if (targetIsRoot === true) {
+				window.location = (typeof redirectUrl !== 'undefined') ? redirectUrl : '/default1.aspx';
+			}
+		}		
+
+		function getBridge20Environment() {
+			var ssoenvironment = "sso."
+			if (window.location.hostname.indexOf('dvt1') > -1) {
+				ssoenvironment = 'sso.dvt1.';
+			} else if (window.location.hostname.indexOf('dvi1') > -1) {
+				ssoenvironment = 'sso.dvi1.';
+			} else if (window.location.hostname.indexOf('dev') > -1) {
+				ssoenvironment = 'sso.dvi1.';
+			} else if (window.location.hostname.indexOf('qa') > -1) {
+				ssoenvironment = 'sso-qa.';
+			} else if (window.location.hostname.indexOf('uat1') > -1) {
+				ssoesnvironment = 'sso-qa.';
+			}
+			return ssoenvironment
+		}
+
+		function QueryString(key) {
+			//Get the full querystring  
+			fullQs = window.location.search.substring(1);
+			//Break it down into an array of name-value pairs  
+			qsParamsArray = fullQs.split("&");
+			//Loop through each name-value pair and   
+			//return value in there is a match for the given key  
+			for (i = 0; i < qsParamsArray.length; i++) {
+				strKey = qsParamsArray[i].split("=");
+				if (strKey[0] == key) {
+					return strKey[1];
+				}
+			}
+	    }
+
+		function handleRedirection() {
+			if (window.top != window.self) {
+				window.top.location = window.self.location;
+			}
+
+			if ($.cookie('fusion_prod_cd') !== 'DDS' && 'http://www.dealertrack.com/'.toUpperCase().indexOf('AHFCTOOLKIT.COM') === -1) {
+				redirectPage();
+			}
+
+			redirectSSOLogout();
+			// core domain redirection logic
+			var target = 'http://www.dealertrack.com/';
+			var redirectToMarketingPage = 'false';
+			var authReason = '0';
+
+			// Redirect user to error page whenever DDS website returning non zero and non 4 authreasons
+			if (target.toUpperCase().indexOf('DDS.') > -1 && (parseInt(authReason) > 0 && parseInt(authReason) !== 4)) {
+				window.location.href = "AccessDenied.aspx";
+			}
+			else {
+				if (typeof target !== 'undefined') {
+					var hostStartIndex = target.indexOf('//');
+					var hostEndIndex = target.indexOf('/', hostStartIndex + '//'.length);
+					var path = target.slice(hostEndIndex + 1);
+					if (hostEndIndex === -1) {
+						redirectToMarketingPage = 'false';
+					}
+					if (path === '') {
+						redirectToMarketingPage = 'true';
+					}
+					else {
+						redirectToMarketingPage = 'false';
+					}
+					// Redirect to Common Core Sign-in page always for DDS
+					if (target.toUpperCase().indexOf('DDS.') > -1 || target.toUpperCase().indexOf('AHFCTOOLKIT.COM') > -1) {
+						redirectToMarketingPage = 'false';
+					}
+				}
+
+				//Partner SSO
+				var partnerSSOLogout = 'N';
+				if (typeof $.cookie('SSOPartner') == 'string' && $.cookie('SSOPartner').length > 0) {
+					partnerSSOLogout = 'Y';
+				}
+				if (($.cookie('Bookmark_Toggle') == 'true') && (typeof $.cookie('authn_prefill_loginid') == 'undefined' || $.cookie('authn_prefill_loginid') == '') && target.indexOf('/login/dtlogin') == -1 && redirectToMarketingPage == 'false' && target.indexOf('/login/routing.aspx') == -1 && partnerSSOLogout == 'N') {
+					var bridge20environment = getBridge20Environment();
+					var bridge20redirecturl = 'https://' + bridge20environment + 'dealertrack.com' + '/affwebservices/public/oauthtokenconsumer/Dealertrack-oAuthClient?AuthzServerID=Dealertrack-oAuthZserver';
+					window.location.href = bridge20redirecturl;
+				}
+				else if ($.cookie('Bookmark_Toggle') == 'true' && ((target.toUpperCase().indexOf('ADMIN.') > -1 && target.toUpperCase().indexOf('AHFCTOOLKIT.COM') > -1) || (target.toUpperCase().indexOf('SPID=DTCOM-AHFC-') > -1))) {
+					var domainEnv = getBridge20Environment();
+					var csiLoginUrl = 'https://' + domainEnv + 'dealertrack.com' + '/affwebservices/public/oauthtokenconsumer/Dealertrack-oAuthClient?AuthzServerID=Dealertrack-oAuthZserver';
+					window.location.href = csiLoginUrl;
+				}
+				else {
+					if ($.cookie('fusion_prod_cd') !== 'DDS' && target.toUpperCase().indexOf('AHFCTOOLKIT.COM') === -1 && isRoot(target) === true) {
+                        			document.body.style.display = 'none'
+					}
+					else
+					{
+						//display the backdoor login form if the cookies are not present 
+						document.body.style.display = 'block'
+					}
+				}
+			}
+		}
+	</script>
+
+
+</head>
+<body>
+	<!-- The following element is needed for csi logout -->
+	<div id="sharedlogout" style="display:none"></div>
+		
+</body>
+</html>
+ 

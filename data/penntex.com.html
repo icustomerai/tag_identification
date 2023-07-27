@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PennTex.com - Site Name Reserved</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="robots" content="nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="csrf-token" content="ZbxDqUBB4leCSAEOto92WqvC9gdmZi7CeTfu74yJ" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Stardos+Stencil:wght@700&display=swap" rel="stylesheet">
+                        <link rel="stylesheet" href="/assets/js/vendor/bootstrap/css/bootstrap.min.css?v=2">
+                    <link rel="stylesheet" href="/assets/css/search.css?v=2">
+                <link rel="stylesheet" href="/assets/css/fs2.css?v=1">
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,500,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style type="text/css">
+        .loader {
+            border: 16px solid #f3f3f3;
+            /* Light grey */
+            border-top: 16px solid #1BA691;
+            /* Blue */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            margin: 0 auto;
+        }
+
+        .suffixmatch {
+            text-transform: uppercase;
+        }
+
+        @keyframes  spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .wp-text-link:hover {
+            text-decoration:none;
+        }
+
+        @-webkit-keyframes spaceboots {
+  0% {
+    -webkit-transform: translate(2px, 1px) rotate(0deg);
+  }
+  10% {
+    -webkit-transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    -webkit-transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    -webkit-transform: translate(0px, 2px) rotate(0deg);
+  }
+  40% {
+    -webkit-transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    -webkit-transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    -webkit-transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    -webkit-transform: translate(2px, 1px) rotate(-1deg);
+  }
+  80% {
+    -webkit-transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    -webkit-transform: translate(2px, 2px) rotate(0deg);
+  }
+  100% {
+    -webkit-transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+.shake {
+  -webkit-animation-name: spaceboots;
+  -webkit-animation-duration: 0.8s;
+  -webkit-transform-origin: 50% 50%;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+
+        #overlay {
+            position: fixed;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 999999;
+            cursor: pointer;
+        }
+
+        #video_t {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 50px;
+            color: white;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+
+        .opacity-0 {
+            opacity: 0
+        }
+
+        .opacity-1 {
+            opacity: 1
+        }
+
+        @media  screen and (max-width: 480px) {
+            .wrapper {
+                display: flex;
+                justify-content: center;
+                width: auto;
+                position: relative;
+            }
+        }
+
+        video[poster] {
+            object-fit: cover;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        ::-webkit-scrollbar-track:horizontal {
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: lightgreen;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:horizontal {
+            background: #1BA691;
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #1BA691;
+        }
+
+        .sw a,
+        .sw a:visited {
+            color: #1BA691;
+        }
+
+        .sw a:hover {
+            background-color: #1BA691;
+        }
+
+        .t_color a,
+        .t_color a:visited {
+            padding: 10px;
+            color: white;
+        }
+
+        .t_color a:hover {
+            padding: 10px;
+            color: white;
+            background-color: #1BA691;
+        }
+
+        .box {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 20px;
+            color: lightgreen;
+        }
+
+        .sp_green{
+            color: lightgreen !important;
+        }
+
+        .walink,
+        .walink:visited {
+            color: #fff;
+        }
+
+        .wp-rectangle {
+            padding: 9px 5px 9px 5px;
+            border-radius: 10px;
+            background: #1BA691;
+            color: white;
+            border: 0px solid white;
+            text-decoration: none;
+        }
+
+        .wp-rectangle:hover {
+            /*background-color:#4DCB5B;*/
+            background: #1BA691;
+            color: white;
+            border: 0px solid white;
+            text-decoration: none;
+            animation: bounce;
+            animation-duration: 2s;
+        }
+
+        .swtoggle {
+            color: lightgreen !important;
+            border-radius: 10px;
+        }
+
+        @media (pointer: coarse),
+        (hover: none) {
+            [title]:focus::after {
+                content: attr(title);
+                color: #000;
+                background-color: #fff;
+                margin-top: 20px;
+                border: 1px solid;
+                width: fit-content;
+                padding: 3px;
+            }
+        }
+
+        .shakes {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        .shakes:hover {
+            background: #36BE4A;
+            box-shadow: 0 0 20px #36BE4A;
+            /* Start the shake animation and make the animation last for 0.5 seconds
+animation: shake 0.5s; */
+            /* When the animation is finished, start again */
+            /* animation-iteration-count: infinite; */
+        }
+
+        @keyframes  shake {
+            0% {
+                transform: translate(1px, 1px) rotate(0deg);
+            }
+
+            10% {
+                transform: translate(-1px, -2px) rotate(-1deg);
+            }
+
+            20% {
+                transform: translate(-3px, 0px) rotate(1deg);
+            }
+
+            30% {
+                transform: translate(3px, 2px) rotate(0deg);
+            }
+
+            40% {
+                transform: translate(1px, -1px) rotate(1deg);
+            }
+
+            50% {
+                transform: translate(-1px, 2px) rotate(-1deg);
+            }
+
+            60% {
+                transform: translate(-3px, 1px) rotate(0deg);
+            }
+
+            70% {
+                transform: translate(3px, 1px) rotate(-1deg);
+            }
+
+            80% {
+                transform: translate(-1px, -1px) rotate(1deg);
+            }
+
+            90% {
+                transform: translate(1px, 2px) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(1px, -2px) rotate(-1deg);
+            }
+        }
+
+        .offer_form input[type="text"] {
+            background-color: black;
+            color: lightgreen;
+            font-weight: bold;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .offer_form ::placeholder {
+            color: lightgreen;
+            font-size: 20px;
+            opacity: 1;
+        }
+
+        .offer_form :-ms-input-placeholder {
+            color: lightgreen;
+            font-size: 20px;
+        }
+
+        .offer_form ::-ms-input-placeholder {
+            color: lightgreen;
+            font-size: 20px;
+        }
+
+        .video {
+            border: 0px solid black;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .wrapper>div {
+            width: 200px;
+            height: 280px;
+            position: relative;
+        }
+
+        .playpause {
+            width: 55px;
+            height: 72px;
+            bottom: 0;
+            right: 5px;
+            cursor: pointer;
+            position: absolute;
+        }
+
+        svg.arrow {
+            width: 36px;
+            height: 72px;
+            filter: drop-shadow(2px 2px 2px rgba(173, 255, 241, 0.81));
+            position: relative;
+            animation: 3s ease 0s infinite beat;
+        }
+
+        .line1 {
+            fill: hsla(170, 100%, 33%, 1);
+            filter: url(#shadow);
+            -webkit-filter: url(#shadow);
+            -webkit-animation: light-pulse 3s infinite;
+            -moz-animation: light-pulse 3s infinite;
+            animation: light-pulse 3s infinite;
+        }
+
+        @keyframes  beat {
+
+            0%,
+            50%,
+            100% {
+                transform: scale(1, 1);
+            }
+
+            30%,
+            80% {
+                transform: scale(0.92, 0.95);
+            }
+        }
+
+        @keyframes  light-pulse {
+            1% {
+                fill: hsl(170, 100%, 33%);
+            }
+
+            50% {
+                fill: hsl(170, 100%, 88%);
+            }
+
+            100% {
+                fill: hsl(170, 100%, 33%);
+            }
+        }
+
+        @-webkit-keyframes light-pulse {
+            1% {
+                fill: hsl(170, 100%, 33%);
+            }
+
+            50% {
+                fill: hsl(170, 100%, 88%);
+            }
+
+            100% {
+                fill: hsl(170, 100%, 33%);
+            }
+        }
+
+        svg.arrow .line1 {
+            filter: brightness(1);
+        }
+
+        .subscribe-container {
+            padding: 10px;
+        }
+
+        .subscribe-container h5 {
+            color: #fff;
+        }
+
+        .subscribe-container .input-group {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .subscribe-container input[type=email] {
+            display: table-cell;
+            color: lightgreen;
+            width: 250px;
+            height: 34px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            background-image: none;
+            background-color: #0a0a0a;
+            border: 1px solid #3a3a3a;
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            margin: 0;
+        }
+
+        .subscribe-container .input-group-btn {
+            display: table-cell;
+            position: relative;
+            font-size: 0;
+            white-space: nowrap;
+            vertical-align: middle;
+            height: 34px;
+        }
+
+        .subscribe-container .btn {
+            margin: 0;
+            border-radius: 0 4px 4px 0 !important;
+            -moz-border-radius: 0 4px 4px 0 !important;
+            -webkit-border-radius: 0 4px 4px 0 !important;
+            color: #fff;
+            background-color: #1BA691;
+            border: 1px solid #156F61;
+            z-index: 2;
+            margin-left: -1px;
+        }
+
+        .alert-success {
+            color: #fff;
+            font-size: 2rem;
+            padding: 10px;
+            background-color: rgba(20, 217, 152, 0.5);
+        }
+
+        .p-0 {
+            padding: 0
+        }
+
+        .border-0 {
+            border: none
+        }
+
+        .rounded {
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px
+        }
+
+    </style>
+    <style type="text/css">
+        .offer_form input {
+            height: 35px;
+            border: none;
+            border-radius: 10px;
+            padding: 5px 10px;
+        }
+
+        .offer_form button {
+            border: none;
+            background: none;
+            margin-top: 5px;
+        }
+
+        .bincontainer {
+            margin-top: 10px;
+        }
+
+        .leftcontainer {
+            padding-left: 0 !important
+        }
+
+        .close-modal {
+            top: 1.5px !important;
+            right: 1.5px !important;
+        }
+
+        .jquery-modal {
+            z-index: 1000 !important;
+        }
+
+        .LDS_Button {
+            background-color: #1BA691;
+            border-radius: 10px;
+            border: none;
+            color: white;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+        }
+
+        .d-none {
+            display: none
+        }
+
+    /* video popup styling */
+        .video-wrapper {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 9999;
+            background-color: rgba(0,0,0,0.4);
+            overflow-y: auto;
+        }
+
+        .popup-video {
+            max-width: 400px;
+            margin: 30px auto;
+            background-color: #fff;
+        }
+
+        blockquote {
+            padding: 12px 0;
+        }
+        .close-btns {
+            padding: 5px 10px;
+            float: right;
+            font-size: 21px;
+            font-weight: 700;
+            color: #000;
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .popup-video {
+                max-width: 350px;
+            }
+            .tiktok-embed {
+                width: 300px !important;
+                min-width: 300px !important;
+                margin: 10px auto !important;
+            }
+            .close-btns {
+                padding: 10px;
+                width: 100%;
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+    /* video popup styling end */
+
+    </style>
+</head>
+
+<body id="page-penntex-com" class="page themedef">
+    <section id="section-content-main" class="section-wrapper">
+        <!-- <div id="overlay">
+            <div id="video_t">
+            <center>
+            <img src="/assets/images/close.png" height="30px" width="30px" style ="margin-left:83%" onclick="off()">
+            <video style="object-fit:contain;" height="400px"   controls playsinline>
+            <iframe preload="metadata" src="https://www.tiktok.com/@davelahoti/video/7159659382756773166?is_from_webapp=v1&item_id=7159659382756773166&web_id=7158594208407569962">
+
+            </iframe>
+
+            </center>
+            </div>
+        </div> -->
+
+        <!-- <div id= "overlay">
+        <div id="video_t">
+        <center>
+        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@davelahoti/video/7159659382756773166" data-video-id="7159659382756773166" data-embed-from="oembed" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@davelahoti" href="https://www.tiktok.com/@davelahoti?refer=embed">@davelahoti</a> <p></p> <a target="_blank" title="♬ original sound - DAVE LAHOTI" href="https://www.tiktok.com/music/original-sound-7159659371927145259?refer=embed">♬ original sound - DAVE LAHOTI</a> </section> </blockquote>
+        </center>
+    </div>
+    </div> -->
+
+        <div class="container-fluid padding-0 fullheight">
+            <div class="row bg-cover-center banner1">
+                <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 padding-0 main-intro" style="background-color:rgba(0,0,0,0.4); display:block; overflow:auto;">
+                    <div class="headline-wrap">
+                        <div class="btable">
+                            <div class="btable-cell">
+                                <div class="leftcontainer" style="text-align:center">
+                                     <div class="pane-logo">
+                                            <h1 id="sitename" class="sitename-white" data="PennTex.com">
+                                                <span class="box">PennTex.com</span>
+                                            </h1>
+                                        </div>
+                                        <div class="wf-widget-siteinfo">
+                                                                                    </div>
+                                        <h4 class="sitename-white">
+                                            <span class="wp-offer-text" style="font-size:20px;">
+                                                                                                    Site Name Reserved
+                                                    <br>
+                                                    For The Right Organization Who
+                                                    <br>
+                                                    Will Reward Us Appropriately
+                                                    <br>
+                                                    To Be Discussed Via Video Call
+                                                                                            </span>
+                                        </h4>
+
+                                                                                      
+                                                
+                                                  <h4 class="sitename-white" style="margin-top:22px;">
+                                                    <span class="wp-offer-text" style="font-size:20px;"></span>
+                                                  </h4>
+                                                <div style="margin-top:25px;">
+                                                    <!-- <span class="wp-offer-text" style="color:#fff;font-size:20px;">Powered by <span class="wp-rectangle"><img src="/assets/images/whatsapp3.png" width="40px">WhatsApp</span></span> -->
+                                                </div>
+
+                                                                                                    <div style="">
+                                                   
+
+                                                        <div class="wrapper video-container" style="margin-top:10px;">
+                                                            <div>
+                                                                <video class="video" id="myAudio" width="200" height="280" poster="/assets/images/Dave1.jpg" playsinline>
+                                                                                                                                            <source src="http://play.videoo.com/bvotb.webm" type="video/webm">
+                                                                                                                                            <source src="http://play.videoo.com/bvotb.mp4" type="video/mp4">
+                                                                                                                                    </video>
+                                                                <div class="playpause">
+                                                                    <img style="margin-top:15px; margin-right:10px; border-radius:50%;" src="/assets/images/animi_wp.gif" width="55px" height="55px">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="bincontainer offerform" style="margin-bottom: unset !important; margin-top: 35px !important; padding-top: unset !important;" id="offer_form" style="display:none">
+                                                            <a style="text-decoration:none;" href="https://wa.me/17144775000?text=Dear FutureSpark,%0a%0aI feel that I'm/We're the Right Organization for the PennTex.com site name because ____________________, and I would like to determine the right mutual arrangement to acquire it by having a video call discussion with you.%0a%0aPlease call me to discuss.%0a%0aSincerely,%0aProspective Operator" method="get" target="_blank"><span class="wp-text-link" style="color:lightgreen;font-size:20px;text-decoration:none;"><b>Connect Via <span class="wp-rectangle"><img src="/assets/images/animi_wp.gif" width="35px"> WhatsApp</span></b></span></a>
+                                                            <form action="" method="post" class="offer_form" autocomplete="off">
+                                                            </form>
+                                                        </div>
+
+                                                    </div>
+                                                 <br>
+
+                                                <a href="https://leandomainsearch.com/search/?q=PennTex" target="_blank">
+                                                    <span class="LDS_Button" style="margin-top:15px;">Unregistered Alternatives</span>
+                                                </a>
+                                                                                                    <div class="subscribe-container" id="subscribe_container" style="margin-top:10px; display:none">
+    <h5>Subscribe to Newsletter</h5>
+    <form id="subscription" action="/subscribe" method="post">
+        <div class="input-group">
+            <input type="hidden" name="_token" value="ZbxDqUBB4leCSAEOto92WqvC9gdmZi7CeTfu74yJ">            <input id="subscription-email" type="email" name="email" required class="form-input email"
+                placeholder="E-mail">
+            <span class="input-group-btn">
+                <button type="submit" class="btn btn-default" style="">SUBSCRIBE</button>
+            </span>
+            <input type="hidden" name="domain" value="PennTex.com">
+        </div>
+    </form>
+</div>
+                                                                                                <!-- <textarea class="amounttext form-control" style="font-weight:bold; border :none; background-color:black;color:lightgreen !important;width:300px;height:100px;resize:none;margin:12px 0 0;outline:none;font-size:16px;display:inline;" readonly></textarea> -->
+                                </div><!-- leftcontainer -->
+                            </div>
+                        </div><!-- banner-table & banner-tbl-cell -->
+                    </div><!-- headline-wrap -->
+                </div><!-- main-intro -->
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 main-aside" style="background-color:rgb(0,0,0);">
+                                            <div id="swlist">
+                            <div class="sw-intro btable">
+                                <div class="btable-cell">
+                                    <p><a href="#swlist" class="page-scroll"><span class="sitename-white">13+
+                                                Public Site Names Start With:</span>
+                                            <br />
+                                            <span class="font-large sitename-white" style="color:lightgreen !important;">PennTex</span>
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="sw" style="background-color:rgba(0,0,0,0.4) !important; color:#1BA691 !important; border:none !important;">
+                                <a href="http://penntexcapital.com" target="open" class="lk-similar" title="penntexcapital.com"><span class="dnfront">PennTex</span><span class="kwmatch ">Capital</span>.com<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntexchemicals.com" target="open" class="lk-similar" title="penntexchemicals.com"><span class="dnfront">PennTex</span><span class="kwmatch ">Chemicals</span>.com<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntexconstruction.com" target="open" class="lk-similar" title="penntexconstruction.com"><span class="dnfront">PennTex</span><span class="kwmatch ">Construction</span>.com<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntexcorp.com" target="open" class="lk-similar" title="penntexcorp.com"><span class="dnfront">PennTex</span><span class="kwmatch ">Corp</span>.com<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntexenergy.com" target="open" class="lk-similar" title="penntexenergy.com"><span class="dnfront">PennTex</span><span class="kwmatch ">Energy</span>.com<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntexholdings.com" target="open" class="lk-similar" title="penntexholdings.com"><span class="dnfront">PennTex</span><span class="kwmatch ">Holdings</span>.com<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntexinc.net" target="open" class="lk-similar" title="penntexinc.net"><span class="dnfront">PennTex</span><span class="kwmatch ">Inc</span>.net<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntexland.com" target="open" class="lk-similar" title="penntexland.com"><span class="dnfront">PennTex</span><span class="kwmatch ">Land</span>.com<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntexusa.com" target="open" class="lk-similar" title="penntexusa.com"><span class="dnfront">PennTex</span><span class="kwmatch suffixmatch">Usa</span>.com<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntexventures.com" target="open" class="lk-similar" title="penntexventures.com"><span class="dnfront">PennTex</span><span class="kwmatch ">Ventures</span>.com<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntexautomatics.com" target="open" class="lk-similar" title="penntexautomatics.com"><span class="dnfront">PennTex</span><span class="kwmatch dic-word">Automatics</span>.com<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntexindus.com" target="open" class="lk-similar" title="penntexindus.com"><span class="dnfront">PennTex</span><span class="kwmatch dic-word">Indus</span>.com<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntexplastics.com" target="open" class="lk-similar" title="penntexplastics.com"><span class="dnfront">PennTex</span><span class="kwmatch dic-word">Plastics</span>.com<i class="fa fa-external-link" aria-hidden="true"></i></a><p class="showother"><span class="swtoggle">VIEW ALL</span></p><div class="othersw"><a href="http://penn-textile-solutions.com" target="open" class="lk-similar" title="penn-textile-solutions.com"><span class="dnfront">Penn-Tex</span><span class="dnrear ">tile-solutions</span>.com<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntexconst.com" target="open" class="lk-similar" title="penntexconst.com"><span class="dnfront">PennTex</span><span class="dnrear ">const</span>.com<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntexcs.com" target="open" class="lk-similar" title="penntexcs.com"><span class="dnfront">PennTex</span><span class="dnrear ">cs</span>.com<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntexdentallab.com" target="open" class="lk-similar" title="penntexdentallab.com"><span class="dnfront">PennTex</span><span class="dnrear ">dentallab</span>.com<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntext.com" target="open" class="lk-similar" title="penntext.com"><span class="dnfront">PennTex</span><span class="dnrear ">t</span>.com<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntext.net" target="open" class="lk-similar" title="penntext.net"><span class="dnfront">PennTex</span><span class="dnrear ">t</span>.net<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntext.org" target="open" class="lk-similar" title="penntext.org"><span class="dnfront">PennTex</span><span class="dnrear ">t</span>.org<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntext.us" target="open" class="lk-similar" title="penntext.us"><span class="dnfront">PennTex</span><span class="dnrear ">t</span>.us<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntextdirect.com" target="open" class="lk-similar" title="penntextdirect.com"><span class="dnfront">PennTex</span><span class="dnrear ">tdirect</span>.com<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntextilesolutions.com" target="open" class="lk-similar" title="penntextilesolutions.com"><span class="dnfront">PennTex</span><span class="dnrear ">tilesolutions</span>.com<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntextprint.com" target="open" class="lk-similar" title="penntextprint.com"><span class="dnfront">PennTex</span><span class="dnrear ">tprint</span>.com<i class="fa fa-external-link" aria-hidden="true"></i></a><br/><a href="http://penntextspartan.com" target="open" class="lk-similar" title="penntextspartan.com"><span class="dnfront">PennTex</span><span class="dnrear ">tspartan</span>.com<i class="fa fa-external-link" aria-hidden="true"></i></a></div> </div>
+                        </div>
+                                    </div><!-- main-aside -->
+            </div>
+        </div>
+    </section>
+    <div class="modal" id="md1">
+        <form action="" method="post"> <input type="hidden" name="_token" value="ZbxDqUBB4leCSAEOto92WqvC9gdmZi7CeTfu74yJ"> <div class="form-group">
+                <label>Company/Employer Name:</label>
+                <input type="text" class="form-control" name="company_name" required>
+            </div>
+            <div class="form-group">
+                <label>First Name:</label>
+                <input type="text" class="form-control" name="firstname" required>
+            </div>
+            <div class="form-group">
+                <label>Last Name:</label>
+                <input type="text" class="form-control" name="lastname" required>
+            </div>
+            <div class="form-group">
+                <label>E-mail:</label>
+                <input type="email" class="form-control" name="email" required>
+            </div>
+            <input type="hidden" name="lid" value="0">
+            <button class="p-0 border-0" id="whatsapp_api"><img src="/assets/images/whatsapp2.png" class="rounded" width="125px"></button>
+        </form>
+    </div>
+
+    
+                        <script type="text/javascript" src="/assets/js/vendor/jquery.js"></script>
+                    <script type="text/javascript" src="/assets/js/vendor/bootstrap/js/bootstrap.min.js"></script>
+                <script src="/assets/js/base64.js"></script>
+    <script type="text/javascript" src="/assets/vendor/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="/assets/vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script type="text/javascript" src="/assets/js/numbers2words.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css">
+    <script>
+        var WF = {"sld":"penntex"}
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#domain_search").hide();
+            $("#offer_form").hide();
+            $("#wp_offer_text").hide();
+            $("#subscribe_container").hide();
+            $("#myaudio_new").hide();
+            $('.amounttext').hide();
+        });
+    </script>
+    <script type="text/javascript">
+        var aud = document.getElementById("myAudio");
+        aud.onended = function() {
+            // alert("The audio has ended");
+            $("#domain_search").show();
+            $("#offer_form").show();
+            $("#wp_offer_text").show();
+            $("#subscribe_container").show();
+            $("#myaudio_new").show();
+            //$('.10bucks').hide();
+        };
+    </script>
+    <script>
+        $(document).ready(function() {
+            $(".dic-word").closest("a").attr('style', 'color:#337ab7')
+        })
+        var return_sec = 'aHR0cHM6Ly9hcGkud2hhdHNhcHAuY29tL3NlbmQ/cGhvbmU9KzE3MTQ0Nzc1MDAwJnRleHQ9';
+        var return_dec = Base64.decode(return_sec)
+
+
+        $('.video').parent().click(function() {
+            if ($(this).children(".video").get(0).paused) {
+                $(this).children(".video").get(0).play();
+                $(this).children(".playpause").fadeOut();
+            } else {
+                $(this).children(".video").get(0).pause();
+                $(this).children(".playpause").fadeIn();
+            }
+        });
+
+        $(".offer_form input").on("keypress", function(event) {
+            return ((event.charCode != 8 && event.charCode == 0) || (event.charCode >= 48 && event.charCode <= 57))
+        })
+
+        $(".offer_form input").on("input", function() {
+            var regexp = /[^0-9]/g;
+            if ($(this).val().match(regexp)) {
+                $(this).val($(this).val().replace(regexp, ''));
+            }
+        });
+
+        $(".offer_form input").on("input", function() {
+            // if (/^0/.test(this.value)) {
+            //   this.value = this.value.replace(/^0/, "")
+            // }
+        })
+
+        $("input[name=company_name]").on("keypress", function(e) {
+            if (!(/[a-zA-Z0-9 ]/i.test(String.fromCharCode(e.keyCode)))) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        $("input[name=company_name]").on("input", function() {
+            var regexp = /[^a-zA-Z0-9 ]/g;
+            if ($(this).val().match(regexp)) {
+                $(this).val($(this).val().replace(regexp, ''));
+            }
+        });
+
+        $("input[name=firstname]").keypress(function(e) {
+            if (!(/[A-Za-z ]/i.test(String.fromCharCode(e.keyCode)))) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        $("input[name=firstname]").on("input", function() {
+            var regexp = /[^A-Za-z ]/g;
+            if ($(this).val().match(regexp)) {
+                $(this).val($(this).val().replace(regexp, ''));
+            }
+        });
+
+        $("input[name=lastname]").keypress(function(e) {
+            if (!(/[A-Za-z ]/i.test(String.fromCharCode(e.keyCode)))) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        $("input[name=lastname]").on("input", function() {
+            var regexp = /[^A-Za-z ]/g;
+            if ($(this).val().match(regexp)) {
+                $(this).val($(this).val().replace(regexp, ''));
+            }
+        });
+
+
+        $("input[name=email]").keypress(function(e) {
+            if ((/[ ]/i.test(String.fromCharCode(e.keyCode)))) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        var baseUrl = '//www.penntex.com';
+
+        $(function() {
+
+            $('.red_wp').click(function() {
+                //   $("#md1").modal();
+                $('[data-toggle="popover"]').popover({
+                    trigger: "hover",
+                    placement: "bottom",
+                    html: true,
+                    content: function() {
+                        return $('#popoverContent').html();
+                    }
+                })
+
+            });
+
+            return return_dec + encodeURIComponent(text)
+        });
+
+        function open() {
+            $(this).html('<span class="swtoggle">VIEW LESS</span>');
+            $('.othersw').fadeIn("slow");
+            $(this).one("click", close);
+        }
+
+        function close() {
+            $(this).html('<span class="swtoggle">VIEW ALL</span>');
+            $('.othersw').fadeOut("slow");
+            $(this).one("click", open);
+        }
+
+        function detectmobile() {
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                // some code..
+            } else {
+                // $(".offerform").html("<span style='color:white; font-size:18px;text-align:center;font-weight:bold'>Visit Again From Your SmartPhone<br><i class='fa fa-mobile' aria-hidden='true' style='font-size:80px'></i></span>");
+            }
+        }
+        var vidPlayed = false;
+
+        $(document).ready(function() {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $('.10bucks').hide();
+
+            $('.showother').one("click", open);
+            $('body').append('<a id="ss" href="" target="_blank"><span style="display:none">x</span></a>');
+
+            $('.video').on('canplay', function() {
+                $('.playpause').removeClass('opacity-0');
+            });
+
+            $('.video').on('ended', function() {
+                $('.playpause').fadeIn();
+            });
+
+            $('.video').on('play', function() {
+                vidPlayed = true;
+            });
+
+            setTimeout(() => {
+                $('.playpause').removeClass('opacity-0');
+            }, 3000)
+        });
+
+        $(".leandomains").on("click", function(e) {
+            $('.leansearchbutton').toggle();
+            $('.10bucks').toggle();
+            return;
+        });
+
+        $(document).on("click", ".page-scroll", function(e) {
+            var l = $(this);
+            if ($(this).hasClass("scrolled")) {
+                $(this).removeClass('scrolled');
+                $("html, body").stop().animate({
+                    scrollTop: 0
+                }, 1250, "easeInOutExpo"), e.preventDefault();
+            } else {
+                $(this).addClass('scrolled');
+                $("html, body").stop().animate({
+                    scrollTop: $(l.attr("href")).offset().top
+                }, 1250, "easeInOutExpo"), e.preventDefault();
+            }
+        });
+
+        var translator = new T2W("EN_US");
+        const uppercaseWords = str => str.replace(/^(.)|\s+(.)/g, c => c.toUpperCase());
+
+        $(".offer_form input").on("keyup change input", function() {
+            if ($(this).val() == "" || isNaN($(this).val())) {
+                $(".amounttext").val('')
+                $('.amounttext').hide();
+
+            } else {
+                var amounttext = uppercaseWords(translator.toWords(parseInt($(this).val())));
+                $(".amounttext").val(amounttext);
+            }
+            $('.amounttext').show();
+
+        })
+
+        //var wplink = "";
+        var amnt = 0;
+        var text = "";
+
+
+        $.fn.digits = function() {
+            return this.each(function() {
+                $(this).text($(this).text().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"));
+            })
+        }
+
+        function capitalize(str) {
+            strVal = '';
+            str = str.split(' ');
+
+            for (var chr = 0; chr < str.length; chr++) {
+                strVal += str[chr].substring(0, 1).toUpperCase() + str[chr].substring(1, str[chr].length) + ' '
+            }
+            return strVal
+        }
+
+        function getLink(signature) {
+            var amnt = $(".offer_form input").val();
+            var amnttext = amnt.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+            var templ = 'Dear Owner,\n\nI would like to determine the right mutual price for the PennTex.com site name by having a general video call discussion with you.\n\nPlease call me to discuss.\n\nSincerely,\n%name%';
+            var data = {
+                amount: amnttext,
+                name: signature
+            };
+            var text = templ.replace(
+                /%(\w*)%/g,
+                function(m, key) {
+                    return data.hasOwnProperty(key) ? data[key] : "";
+                }
+            );
+
+            return return_dec + encodeURIComponent(text)
+        }
+
+        $(".offer_form").on("submit", function(e) {
+            e.preventDefault();
+            var amnt = $(".offer_form input").val();
+            var amnttext = amnt.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+
+            //if (!vidPlayed) {
+            //alert("Please watch Video before submitting your offer");
+            //return false;
+            //}
+
+            if ((amnt.substr(amnt.length - 2) != "00") || amnt >= 1000000) {
+                if (!confirm(amnttext + " USD")) {
+                    return false;
+                }
+            }
+
+            $.post("/save-offer", "_token=ZbxDqUBB4leCSAEOto92WqvC9gdmZi7CeTfu74yJ&amount=" + amnt)
+                .done(function(response) {
+                    if (response == "ok") {
+                        window.location.href = getLink('Prospective Buyer'); // wplink;
+                    } else if (response != "false") {
+                        //if(confirm("Your assessment is: "+amnttext+" USD")) {
+                        $("#md1 input[name=lid]").val(response)
+                        // $("#md1").modal();
+                        //}
+                    } else {
+                        $(".offer_form").remove();
+                        $(".amounttext").remove();
+                        $(".wp-offer-text").remove();
+                    }
+                })
+        })
+
+        $('#subscription').on("submit", function(e) {
+            let form = e.target;
+            let email = $('#subscription-email').val();
+
+            if (validateEmail(email)) {
+                return true;
+            } else {
+                alert("Please enter valid email address");
+                return false;
+            }
+        });
+
+        function validateEmail(email) {
+            const re =
+                /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+    </script>
+    <script type="text/javascript">
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+        document.onkeydown = function(e) {
+            if (event.keyCode == 123) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'S'.charCodeAt(0)) {
+                return false;
+            }
+        }
+
+        function off() {
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+    <!-- popup js  -->
+
+    <script>
+       $(document).ready(function(){
+      $(".close-btns").click(function(){
+        $(".video-wrapper").hide();
+      });
+      });
+    </script>
+    <!-- popup js end -->
+    <!--foo bar-->
+</body>
+
+</html>

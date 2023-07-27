@@ -1,0 +1,2371 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />		
+	<style>
+		.wpcf7-submit{
+			display:none;
+		}
+		.recaptcha-btn{
+			display:block;
+		}
+		.grecaptcha-badge {display: none;} 
+	</style>
+	<script type="text/javascript">
+		var contactform = [];
+		var checkIfCalled = true;
+		var renderGoogleInvisibleRecaptchaFront = function() {
+			// prevent form submit from enter key
+			jQuery("input[name=_wpcf7]").attr("class","formid");
+				jQuery('.wpcf7-form').on('keyup keypress', "input", function(e) {
+				  var keyCode = e.keyCode || e.which;
+				  if (keyCode === 13) {
+					e.preventDefault();
+					return false;
+				  }
+				});
+
+			jQuery('.wpcf7-submit').each(function(index){
+
+				var checkexclude = 0;
+				var form = jQuery(this).closest('.wpcf7-form');
+				var value = jQuery(form).find(".formid").val();
+				// check form exclude from invisible recaptcha
+								if(checkexclude == 0){
+					// Hide the form orig submit button
+					form.find('.wpcf7-submit').hide();
+
+					// Fetch class and value of orig submit button
+					btnClasses = form.find('.wpcf7-submit').attr('class');
+					btnValue = form.find('.wpcf7-submit').attr('value');
+
+					// Add custom button and recaptcha holder
+
+					form.find('.wpcf7-submit').after('<input type="button" id="wpcf-custom-btn-'+index+'" class="'+btnClasses+'  recaptcha-btn recaptcha-btn-type-css" value="'+btnValue+'" title="'+btnValue+'" >');
+					form.append('<div class="recaptcha-holder" id="recaptcha-holder-'+index+'"></div>');
+					// Recaptcha rendenr from here
+					var holderId = grecaptcha.render('recaptcha-holder-'+index,{
+								'sitekey':'6LeerJgUAAAAAKIUbNX44RIwJJMvg6RdB3XMmktP',
+								'size': 'invisible',
+								'badge' : 'bottomright', // possible values: bottomright, bottomleft, inline
+								'callback' : function (recaptchaToken) {
+									//console.log(recaptchaToken);
+									var response=jQuery('#recaptcha-holder-'+index).find('.g-recaptcha-response').val();
+									//console.log(response);
+									//Remove old response and store new respone
+									jQuery('#recaptcha-holder-'+index).parent().find(".respose_post").remove();
+									jQuery('#recaptcha-holder-'+index).after('<input type="hidden" name="g-recaptcha-response"  value="'+response+'" class="respose_post">')
+									grecaptcha.reset(holderId);
+
+									if(typeof customCF7Validator !== 'undefined'){
+										if(!customCF7Validator(form)){
+											return;
+										}
+									}
+									// Call default Validator function
+									else if(contactFormDefaultValidator(form)){
+										return;
+									}
+									else{
+										// hide the custom button and show orig submit button again and submit the form
+										jQuery('#wpcf-custom-btn-'+index).hide();
+										form.find('input[type=submit]').show();
+										form.find("input[type=submit]").click();
+										form.find('input[type=submit]').hide();
+										jQuery('#wpcf-custom-btn-'+index).attr('style','');
+									}
+								}
+						},false);
+
+					// action call when click on custom button
+					jQuery('#wpcf-custom-btn-'+index).click(function(event){
+						event.preventDefault();
+						// Call custom validator function
+						if(typeof customCF7Validator == 'function'){
+							if(!customCF7Validator(form)){
+								return false;
+							}
+						}
+						// Call default Validator function
+						else if(contactFormDefaultValidator(form)){
+							return false;
+						}
+						else if(grecaptcha.getResponse(holderId) != ''){
+							grecaptcha.reset(holderId);
+						}
+						else{
+							// execute the recaptcha challenge
+							grecaptcha.execute(holderId);
+						}
+					});
+				}
+			});
+		}
+	</script><script  src="https://www.google.com/recaptcha/api.js?onload=renderGoogleInvisibleRecaptchaFront&render=explicit" async defer></script><meta name='robots' content='max-image-preview:large' />
+<link rel="alternate" hreflang="en" href="https://www.phyn.com" />
+<link rel="alternate" hreflang="fr" href="https://www.phyn.com/fr/" />
+<link rel="alternate" hreflang="fi" href="https://www.phyn.com/fi/" />
+<link rel="alternate" hreflang="de" href="https://www.phyn.com/de/" />
+<link rel="alternate" hreflang="es" href="https://www.phyn.com/es/" />
+<link rel="alternate" hreflang="se" href="https://www.phyn.com/se/" />
+<link rel="alternate" hreflang="dk" href="https://www.phyn.com/dk/" />
+<link rel="alternate" hreflang="x-default" href="https://www.phyn.com" />
+
+	<!-- This site is optimized with the Yoast SEO Premium plugin v15.7 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Phyn | Water Leak Detector | Water Usage Monitoring System</title>
+	<meta name="description" content="Protect your home and track your water usage by the fixture. Phyn is on a mission to create the best water leak detector and water usage monitoring system." />
+	<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+	<link rel="canonical" href="https://www.phyn.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Phyn | Water Leak Detector | Water Usage Monitoring System" />
+	<meta property="og:description" content="Protect your home and track your water usage by the fixture. Phyn is on a mission to create the best water leak detector and water usage monitoring system." />
+	<meta property="og:url" content="https://www.phyn.com/" />
+	<meta property="og:site_name" content="Phyn Smart Home Water Leak Detector" />
+	<meta property="article:publisher" content="https://www.facebook.com/phyntech/" />
+	<meta property="article:modified_time" content="2022-12-19T06:40:32+00:00" />
+	<meta property="og:image" content="https://www.phyn.com/wp-content/uploads/1280_home_header_1_play-1.svg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@Phyn" />
+	<meta name="twitter:label1" content="Est. reading time">
+	<meta name="twitter:data1" content="11 minutes">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://www.phyn.com/#website","url":"https://www.phyn.com/","name":"Phyn Smart Home Water Leak Detector","description":"","potentialAction":[{"@type":"SearchAction","target":"https://www.phyn.com/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://www.phyn.com/#primaryimage","inLanguage":"en-US","url":"https://www.phyn.com/wp-content/uploads/1280_home_header_1_play-1.svg","width":62,"height":62},{"@type":"WebPage","@id":"https://www.phyn.com/#webpage","url":"https://www.phyn.com/","name":"Phyn | Water Leak Detector | Water Usage Monitoring System","isPartOf":{"@id":"https://www.phyn.com/#website"},"primaryImageOfPage":{"@id":"https://www.phyn.com/#primaryimage"},"datePublished":"2019-10-11T18:19:13+00:00","dateModified":"2022-12-19T06:40:32+00:00","description":"Protect your home and track your water usage by the fixture. Phyn is on a mission to create the best water leak detector and water usage monitoring system.","inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.phyn.com/"]}]}]}</script>
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link rel="alternate" type="application/rss+xml" title="Phyn Smart Home Water Leak Detector &raquo; Feed" href="https://www.phyn.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Phyn Smart Home Water Leak Detector &raquo; Comments Feed" href="https://www.phyn.com/comments/feed/" />
+<link rel='stylesheet' id='dce-dynamic-visibility-style-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/dynamic-visibility-for-elementor//assets/css/dynamic-visibility.css?ver=5.0.4' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css' href='https://phyn.wpenginepowered.com/wp-includes/css/dist/block-library/style.min.css?ver=6.2.2' type='text/css' media='all' />
+<style id='safe-svg-svg-icon-style-inline-css' type='text/css'>
+.safe-svg-cover .safe-svg-inside{display:inline-block;max-width:100%}.safe-svg-cover svg{height:100%;max-height:100%;max-width:100%;width:100%}
+
+</style>
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://phyn.wpenginepowered.com/wp-includes/css/classic-themes.min.css?ver=6.2.2' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--theme-primary: #0073e5;--wp--preset--color--theme-secondary: #0073e5;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 12px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 20px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 18px;--wp--preset--font-size--larger: 24px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='wpml-blocks-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/sitepress-multilingual-cms/dist/css/blocks/styles.css?ver=4.6.3' type='text/css' media='all' />
+<link rel='stylesheet' id='eae-css-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/addon-elements-for-elementor-page-builder/assets/css/eae.min.css?ver=1.12.2' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-4-shim-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/v4-shims.min.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='font-awesome-5-all-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/elementor/assets/lib/font-awesome/css/all.min.css?ver=1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='vegas-css-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/addon-elements-for-elementor-page-builder/assets/lib/vegas/vegas.min.css?ver=2.4.0' type='text/css' media='all' />
+<link rel='stylesheet' id='cookie-law-info-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/cookie-law-info/legacy/public/css/cookie-law-info-public.css?ver=3.0.9' type='text/css' media='all' />
+<link rel='stylesheet' id='cookie-law-info-gdpr-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/cookie-law-info/legacy/public/css/cookie-law-info-gdpr.css?ver=3.0.9' type='text/css' media='all' />
+<link rel='stylesheet' id='widgetopts-styles-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/widget-options/assets/css/widget-options.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wpml-legacy-horizontal-list-0-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/legacy-list-horizontal/style.min.css?ver=1' type='text/css' media='all' />
+<link rel='stylesheet' id='wpml-menu-item-0-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/menu-item/style.min.css?ver=1' type='text/css' media='all' />
+<style id='wpml-menu-item-0-inline-css' type='text/css'>
+.wpml-ls-slot-10, .wpml-ls-slot-10 a, .wpml-ls-slot-10 a:visited{background-color:#ffffff;color:#444444;}.wpml-ls-slot-10:hover, .wpml-ls-slot-10:hover a, .wpml-ls-slot-10 a:hover{color:#000000;background-color:#eeeeee;}.wpml-ls-slot-10.wpml-ls-current-language, .wpml-ls-slot-10.wpml-ls-current-language a, .wpml-ls-slot-10.wpml-ls-current-language a:visited{color:#444444;background-color:#ffffff;}.wpml-ls-slot-10.wpml-ls-current-language:hover, .wpml-ls-slot-10.wpml-ls-current-language:hover a, .wpml-ls-slot-10.wpml-ls-current-language a:hover{color:#000000;background-color:#eeeeee;}.wpml-ls-slot-10.wpml-ls-current-language .wpml-ls-slot-10, .wpml-ls-slot-10.wpml-ls-current-language .wpml-ls-slot-10 a, .wpml-ls-slot-10.wpml-ls-current-language .wpml-ls-slot-10 a:visited{background-color:#ffffff;color:#444444;}.wpml-ls-slot-10.wpml-ls-current-language .wpml-ls-slot-10:hover, .wpml-ls-slot-10.wpml-ls-current-language .wpml-ls-slot-10:hover a, .wpml-ls-slot-10.wpml-ls-current-language .wpml-ls-slot-10 a:hover {color:#000000;background-color:#eeeeee;}
+#mega-menu-wrap-secondary #mega-menu-secondary a.mega-menu-link > img.wpml-ls-flag, #mega-menu-wrap-secondary #mega-menu-secondary a.mega-menu-link > img.iclflag { vertical-align: middle!important; }
+</style>
+<link rel='stylesheet' id='megamenu-css' href='https://phyn.wpenginepowered.com/wp-content/uploads/maxmegamenu/style_en.css?ver=7a390b' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css' href='https://phyn.wpenginepowered.com/wp-includes/css/dashicons.min.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='megamenu-fontawesome5-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/megamenu-pro/icons/fontawesome5/css/all.min.css?ver=2.1' type='text/css' media='all' />
+<link rel='stylesheet' id='cms-navigation-style-base-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/wpml-cms-nav/res/css/cms-navigation-base.css?ver=1.5.5' type='text/css' media='screen' />
+<link rel='stylesheet' id='cms-navigation-style-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/wpml-cms-nav/res/css/cms-navigation.css?ver=1.5.5' type='text/css' media='screen' />
+<link rel='stylesheet' id='genesis-sample-fonts-css' href='https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C400i%2C600%2C700&#038;display=swap&#038;ver=3.1.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-icons-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css?ver=5.20.0' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-frontend-legacy-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/elementor/assets/css/frontend-legacy.min.css?ver=3.13.2' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-frontend-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=3.13.2' type='text/css' media='all' />
+<link rel='stylesheet' id='swiper-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/elementor/assets/lib/swiper/css/swiper.min.css?ver=5.3.6' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-27296-css' href='https://phyn.wpenginepowered.com/wp-content/uploads/elementor/css/post-27296.css?ver=1683834078' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-pro-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/elementor-pro/assets/css/frontend.min.css?ver=3.13.1' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-global-css' href='https://phyn.wpenginepowered.com/wp-content/uploads/elementor/css/global.css?ver=1683834080' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-18419-css' href='https://phyn.wpenginepowered.com/wp-content/uploads/elementor/css/post-18419.css?ver=1683834070' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-21309-css' href='https://phyn.wpenginepowered.com/wp-content/uploads/elementor/css/post-21309.css?ver=1683834070' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-42176-css' href='https://phyn.wpenginepowered.com/wp-content/uploads/elementor/css/post-42176.css?ver=1683834071' type='text/css' media='all' />
+<link rel='stylesheet' id='simple-social-icons-font-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/simple-social-icons/css/style.css?ver=3.0.2' type='text/css' media='all' />
+<link rel='stylesheet' id='ecs-styles-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/ele-custom-skin/assets/css/ecs-style.css?ver=3.1.7' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-28907-css' href='https://phyn.wpenginepowered.com/wp-content/uploads/elementor/css/post-28907.css?ver=1593382664' type='text/css' media='all' />
+<link rel='stylesheet' id='elementor-post-29160-css' href='https://phyn.wpenginepowered.com/wp-content/uploads/elementor/css/post-29160.css?ver=1593384452' type='text/css' media='all' />
+<link rel='stylesheet' id='wppb_stylesheet-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/profile-builder/assets/css/style-front-end.css?ver=3.9.4' type='text/css' media='all' />
+<!--n2css--><script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.4' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/cf7-invisible-recaptcha/js/cf7_invisible_recaptcha.js?ver=1.2.3' id='cf7_invisible_recaptcha_functions-js'></script>
+<script type='text/javascript' id='cookie-law-info-js-extra'>
+/* <![CDATA[ */
+var Cli_Data = {"nn_cookie_ids":[],"cookielist":[],"non_necessary_cookies":[],"ccpaEnabled":"","ccpaRegionBased":"","ccpaBarEnabled":"","strictlyEnabled":["necessary","obligatoire"],"ccpaType":"gdpr","js_blocking":"","custom_integration":"","triggerDomRefresh":"","secure_cookies":""};
+var cli_cookiebar_settings = {"animate_speed_hide":"500","animate_speed_show":"500","background":"#FFF","border":"#b1a6a6c2","border_on":"","button_1_button_colour":"#ffffff","button_1_button_hover":"#cccccc","button_1_link_colour":"#283dcd","button_1_as_button":"","button_1_new_win":"","button_2_button_colour":"#333","button_2_button_hover":"#292929","button_2_link_colour":"#444","button_2_as_button":"","button_2_hidebar":"","button_3_button_colour":"#000","button_3_button_hover":"#000000","button_3_link_colour":"#fff","button_3_as_button":"1","button_3_new_win":"","button_4_button_colour":"#000","button_4_button_hover":"#000000","button_4_link_colour":"#fff","button_4_as_button":"1","button_7_button_colour":"#61a229","button_7_button_hover":"#4e8221","button_7_link_colour":"#fff","button_7_as_button":"1","button_7_new_win":"","font_family":"inherit","header_fix":"","notify_animate_hide":"1","notify_animate_show":"","notify_div_id":"#cookie-law-info-bar","notify_position_horizontal":"right","notify_position_vertical":"bottom","scroll_close":"","scroll_close_reload":"","accept_close_reload":"","reject_close_reload":"","showagain_tab":"","showagain_background":"#fff","showagain_border":"#000","showagain_div_id":"#cookie-law-info-again","showagain_x_position":"100px","text":"#000","show_once_yn":"","show_once":"10000","logging_on":"","as_popup":"","popup_overlay":"1","bar_heading_text":"","cookie_bar_as":"banner","popup_showagain_position":"bottom-right","widget_position":"left"};
+var log_object = {"ajax_url":"https:\/\/www.phyn.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/cookie-law-info/legacy/public/js/cookie-law-info-public.js?ver=3.0.9' id='cookie-law-info-js'></script>
+<script type='text/javascript' id='ecs_ajax_load-js-extra'>
+/* <![CDATA[ */
+var ecs_ajax_params = {"ajaxurl":"https:\/\/www.phyn.com\/wp-admin\/admin-ajax.php","posts":"{\"error\":\"\",\"m\":\"\",\"p\":\"18419\",\"post_parent\":\"\",\"subpost\":\"\",\"subpost_id\":\"\",\"attachment\":\"\",\"attachment_id\":0,\"name\":\"\",\"pagename\":\"\",\"page_id\":\"18419\",\"second\":\"\",\"minute\":\"\",\"hour\":\"\",\"day\":0,\"monthnum\":0,\"year\":0,\"w\":0,\"category_name\":\"\",\"tag\":\"\",\"cat\":\"\",\"tag_id\":\"\",\"author\":\"\",\"author_name\":\"\",\"feed\":\"\",\"tb\":\"\",\"paged\":0,\"meta_key\":\"\",\"meta_value\":\"\",\"preview\":\"\",\"s\":\"\",\"sentence\":\"\",\"title\":\"\",\"fields\":\"\",\"menu_order\":\"\",\"embed\":\"\",\"category__in\":[],\"category__not_in\":[],\"category__and\":[],\"post__in\":[],\"post__not_in\":[],\"post_name__in\":[],\"tag__in\":[],\"tag__not_in\":[],\"tag__and\":[],\"tag_slug__in\":[],\"tag_slug__and\":[],\"post_parent__in\":[],\"post_parent__not_in\":[],\"author__in\":[],\"author__not_in\":[],\"search_columns\":[],\"facetwp\":false,\"ignore_sticky_posts\":false,\"suppress_filters\":false,\"cache_results\":true,\"update_post_term_cache\":true,\"update_menu_item_cache\":false,\"lazy_load_term_meta\":true,\"update_post_meta_cache\":true,\"post_type\":\"\",\"posts_per_page\":6,\"nopaging\":false,\"comments_per_page\":\"50\",\"no_found_rows\":false,\"order\":\"DESC\"}"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/ele-custom-skin/assets/js/ecs_ajax_pagination.js?ver=3.1.7' id='ecs_ajax_load-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/ele-custom-skin/assets/js/ecs.js?ver=3.1.7' id='ecs-script-js'></script>
+<link rel="https://api.w.org/" href="https://www.phyn.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.phyn.com/wp-json/wp/v2/pages/18419" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.phyn.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.phyn.com/wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='https://www.phyn.com/' />
+<link rel="alternate" type="application/json+oembed" href="https://www.phyn.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.phyn.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.phyn.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.phyn.com%2F&#038;format=xml" />
+<meta name="generator" content="WPML ver:4.6.3 stt:65,1,18,4,3,2,64;" />
+<link rel="pingback" href="https://www.phyn.com/xmlrpc.php" />
+
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-56QG9GT');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-112011350-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-112011350-1');
+</script>
+
+<meta name="generator" content="Elementor 3.13.2; features: a11y_improvements, additional_custom_breakpoints; settings: css_print_method-external, google_font-enabled, font_display-auto">
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><link rel="icon" href="https://phyn.wpenginepowered.com/wp-content/uploads/cropped-fav-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://phyn.wpenginepowered.com/wp-content/uploads/cropped-fav-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://phyn.wpenginepowered.com/wp-content/uploads/cropped-fav-180x180.png" />
+<meta name="msapplication-TileImage" content="https://www.phyn.com/wp-content/uploads/cropped-fav-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			/* Float classes */
+.float-r {
+	float: right;
+}
+.float-r p{
+	margin:0px;
+}
+.float-l {
+	float: left;
+}
+.float-l p{
+	margin:0px;
+}
+.margin-a {
+	margin: auto;
+}
+.margin-a p {
+	margin: 0px;
+}
+
+/*from svg width*/
+.elementor-button svg {
+	height: auto !important;
+	width: auto !important;
+}
+/* Remove link underlines & make link colors black - szd */
+
+a:link {
+  text-decoration: none;
+	color: black;
+}
+
+a:visited {
+	color: black;
+}
+
+/* Bg color to white - szd */
+body {
+  background-color: white;
+}
+
+/* Global header height adjustment & global top+bottom margin fix - szd */
+.home, .page-template-default, .page-template {
+	margin-top:0px;
+	margin-bottom:0px;
+}
+.wrap, .site-header {
+height: 60px!important;
+}
+
+nav#genesis-nav-primary.nav-primary.genesis-responsive-menu {
+	height:60px!important;
+}
+
+#mega-menu-wrap-primary #mega-menu-primary > li.mega-menu-item > a.mega-menu-link {
+    line-height:35px!important;
+    height: 45px!important;
+}
+
+/* Mega menu flyout position fix - szd */
+.mega-sub-menu {
+	top:60px!important;
+}
+
+/* Product page Features header toggle - szd */
+#sub-pdt .eicon-menu-bar:before {
+	font-family:PhynPhont!important;
+	font-weight:100;
+	font-size:16px;
+    content: 'Features '!important;
+}
+
+#sub-pdt .eicon-menu-bar:after {
+	font-family:'dashicons'!important;
+	font-size:16px;
+	content: "\f347";
+}
+
+/* Top of page gap adjustment 
+.site-inner {
+    padding: 0px 30px 0 30px!important;
+}
+*/
+
+/* Hides the first accordion item auto pop-out - szd 
+.elementor-accordion .elementor-accordion-item:first-child {
+    display: none;
+}
+*/
+
+/* Dropdown menu width adjustment - szd */
+.mega-sub-menu {
+    width: 275px!important;
+}
+.elementor-menu-toggle {
+	background-color:#fff;
+}
+.elementor-nav-menu--dropdown {
+  position: absolute;
+  z-index: 1;
+  top: 30px;
+	right: 0px;
+}
+
+/* Footer padding adjustment - szd */
+.site-footer {
+	padding-top:0px!important;
+	padding-bottom:0px!important
+}
+
+/* Default Phyn Phont integration - szd */
+@font-face {
+ font-family: PhynPhont;  
+ src: url(https://phyn.wpenginepowered.com/wp-content/uploads/GT-Walsheim-Regular.woff);  
+ font-weight: normal;  
+}
+h1,h2,h3,h4,h5,h6,body {
+	font-family: PhynPhont;
+}
+
+/* cookie notice padding - szd  */
+#cookie-law-info-bar {
+	font-size: 11pt!important;
+	padding: 10px 20px 10px 20px!important;
+	text-align: left!important;
+	line-height: 16px!important;
+}
+
+/* Product page button */
+.product-link-button {
+    display: inline-block;
+    background-color: #283dcd;
+    font-family: PhynPhont;
+    color: #ffffff !important;
+    font-size: 12px;
+    padding: 12px 24px;
+    width: auto;
+    position: relative;
+    border-radius: 32px;
+    font-weight: bold;
+    text-decoration: none !important;
+}
+
+/* submit button - txt */
+.elementor-button-text {
+padding-top: 12px;
+}
+.elementor-button-icon svg{
+	width: 100px;
+}
+
+/* FacetWP custom search field - szd */
+.facetwp-search {
+    border-radius: 37px!important;
+    border-top-left-radius: 37px !important;
+    border-top-right-radius: 37px !important;
+    border-bottom-right-radius: 37px !important;
+    border-bottom-left-radius: 37px !important;
+    border: 1px solid #e6e6e6!important;
+    padding: 5px 10px!important;
+    height: 74px!important;
+    width: 100%!important;
+    font-family: inherit!important;
+    font-size: 24px!important;
+        padding-left: calc(80px / 3)!important;
+    padding-right: calc(80px / 3)!important;
+    box-shadow: 0 -7px 16px 0 rgba(0,0,0,.03), 0 7px 12px 0 rgba(0,0,0,.05)!important;
+}
+
+.facetwp-btn:before {
+    padding-right: 40px!important;
+}
+
+/* Previous FacetWP search styling
+input.facetwp-search {
+    border-radius: 10px;
+    border: 1px solid #e6e6e6;
+    padding: 5px 10px;
+	height: 37px;
+    width: 275px;
+    font-family: inherit;
+    font-size: 16px;
+}
+*/
+
+
+/* FacetWP dropdowns - szd */
+select.facetwp-hierarchy_select {
+    font-family: inherit!important;
+    font-size: 16px!important;  
+	height: 37px!important;
+    background-color: #fff!important;
+    margin-right: 40px!important;
+    width: 230px!important;
+}
+
+/* Help post pagination padding - szd */
+.elementor-pagination {
+    padding-top: 35px;
+}
+
+/* Remove date + author meta data from help posts - szd
+.entry-meta {
+	display:none!important;
+}
+*/
+
+/* Invert WPML menu flyout - szd */
+
+.elementor-nav-menu--main .elementor-nav-menu ul {
+	bottom:60px;
+  position:absolute;
+	background-color: #fff;
+	box-shadow: 0 26px 18px 0 rgba(0,0,0,.04), 0 0 5px 0 rgba(0,0,0,.04);
+	font-weight: 100;
+}
+	
+/* Invert WPML flyout arrow - szd */
+.sub-arrow {
+	padding: 10px 10px 10px 10px;
+	transform:rotate(180deg);
+}
+
+.elementor-nav-menu--indicator-angle .elementor-nav-menu .sub-arrow i:before {
+    	font-family:'dashicons'!important;
+	font-size:15px;
+	padding:5px 5px 5px 5px;
+	content: "\f347";
+}
+
+.elementor-widget-accordion .elementor-accordion .elementor-tab-title {
+	border-bottom-color:lightgray!important;
+  border-bottom-width:1px!important;  
+	border-bottom-style: solid!important;
+}
+
+/* FacetWP EU Help Post results styling - szd */
+.help-post-rows {
+	    box-shadow: 0 -7px 16px 0 rgba(0,0,0,.03), 0 7px 12px 0 rgba(0,0,0,.05);
+    width: 100%;
+    margin-top: 20px;
+		margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    padding-left: 50px;
+	  padding-right: 50px;
+		padding-top: 50px;
+ 		padding-bottom: 50px;
+}
+
+.fwpl-item.el-d3s84f, .fwpl-item.el-d3s84f a {
+    padding: 0px 0px 20px 0px!important;
+		font-size: 24px!important;
+		font-weight: 100!important;
+}
+
+.fwpl-item.el-a9qrg, .fwpl-item.el-a9qrg a {
+    padding: 0px 0px 10px 0px;
+}
+
+.facetwp-page {
+ 		padding: 0px 16px!important;
+    margin-right: 16px!important;
+}
+
+.facetwp-pager-label {
+  	word-spacing: 16px!important;  
+}
+		</style>
+		<style type="text/css">/** Mega Menu CSS: fs **/</style>
+</head>
+<body class="home page-template-default page page-id-18419 wp-custom-logo wp-embed-responsive mega-menu-secondary mega-menu-primary header-full-width full-width-content genesis-title-hidden genesis-breadcrumbs-hidden genesis-singular-image-hidden genesis-footer-widgets-hidden has-no-blocks elementor-default elementor-kit-27296 elementor-page elementor-page-18419">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.498039215686" /><feFuncG type="table" tableValues="0 0.498039215686" /><feFuncB type="table" tableValues="0 0.498039215686" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.549019607843 0.988235294118" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.717647058824 0.254901960784" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.278431372549" /><feFuncB type="table" tableValues="0.592156862745 0.278431372549" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.647058823529" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.780392156863 1" /><feFuncG type="table" tableValues="0 0.949019607843" /><feFuncB type="table" tableValues="0.352941176471 0.470588235294" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.650980392157 0.403921568627" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.447058823529 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.0980392156863 1" /><feFuncG type="table" tableValues="0 0.662745098039" /><feFuncB type="table" tableValues="0.847058823529 0.419607843137" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>		<div data-elementor-type="header" data-elementor-id="21309" class="elementor elementor-21309 elementor-location-header">
+					<div class="elementor-section-wrap">
+								<header class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-60ff3694 elementor-section-content-middle elementor-section-stretched elementor-section-full_width elementor-section-height-min-height elementor-section-height-default elementor-section-items-middle" data-id="60ff3694" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;,&quot;sticky&quot;:&quot;top&quot;,&quot;sticky_on&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;],&quot;sticky_offset&quot;:0,&quot;sticky_effects_offset&quot;:0}">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-9c41a8c" data-id="9c41a8c" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-2497fa6 elementor-widget elementor-widget-theme-site-logo elementor-widget-image" data-id="2497fa6" data-element_type="widget" data-widget_type="theme-site-logo.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+								<a href="https://www.phyn.com">
+			<img width="221" height="44" src="https://phyn.wpenginepowered.com/wp-content/uploads/footer_logo.png" class="attachment-full size-full wp-image-7499" alt="" loading="lazy" />				</a>
+										</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-a47cd41" data-id="a47cd41" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-ee9dfc7 elementor-widget elementor-widget-text-editor" data-id="ee9dfc7" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><div id="mega-menu-wrap-primary" class="mega-menu-wrap"><div class="mega-menu-toggle"><div class="mega-toggle-blocks-left"></div><div class="mega-toggle-blocks-center"></div><div class="mega-toggle-blocks-right"><div class='mega-toggle-block mega-html-block mega-toggle-block-1' id='mega-toggle-block-1'><a href="/get-phyn"><font color="black">Get Phyn</a></font></div><div class='mega-toggle-block mega-menu-toggle-block mega-toggle-block-2' id='mega-toggle-block-2' tabindex='0'><span class='mega-toggle-label' role='button' aria-expanded='false'><span class='mega-toggle-label-closed'></span><span class='mega-toggle-label-open'></span></span></div></div></div><ul id="mega-menu-primary" class="mega-menu max-mega-menu mega-menu-horizontal mega-no-js" data-event="hover_intent" data-effect="fade_up" data-effect-speed="200" data-effect-mobile="disabled" data-effect-speed-mobile="0" data-mobile-force-width="body" data-second-click="close" data-document-click="collapse" data-vertical-behaviour="standard" data-breakpoint="1024" data-unbind="true" data-mobile-state="collapse_all" data-hover-intent-timeout="300" data-hover-intent-interval="100"><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-17744' id='mega-menu-item-17744'><a class="mega-menu-link" aria-haspopup="true" aria-expanded="false" tabindex="0">Products<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-has-icon mega-icon-left mega-has-description mega-menu-item-36263' id='mega-menu-item-36263'><a class="mega-custom-icon mega-menu-link" href="https://www.phyn.com/smart-water-sensor/"><span class="mega-description-group"><span class="mega-menu-title">Phyn</span><span class="mega-menu-description">Smart Water Sensor</span></span></a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-has-icon mega-icon-left mega-has-description mega-menu-item-17745' id='mega-menu-item-17745'><a class="mega-custom-icon mega-menu-link" href="https://www.phyn.com/smart-water-assistant/"><span class="mega-description-group"><span class="mega-menu-title">Phyn</span><span class="mega-menu-description">Smart Water Assistant</span></span></a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-has-icon mega-icon-left mega-has-description mega-menu-item-17747' id='mega-menu-item-17747'><a class="mega-custom-icon mega-menu-link" href="https://www.phyn.com/plus-smart-water-assistant/"><span class="mega-description-group"><span class="mega-menu-title">Phyn Plus (2nd Gen)</span><span class="mega-menu-description">Smart Water Assistant + Shutoff</span></span></a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-has-icon mega-icon-left mega-has-description mega-menu-item-38759' id='mega-menu-item-38759'><a class="mega-custom-icon mega-menu-link" href="https://www.phyn.com/phyn-plus-1st-gen/"><span class="mega-description-group"><span class="mega-menu-title">Phyn Plus (1st Gen)</span><span class="mega-menu-description">Smart Water Assistant + Shutoff</span></span></a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-has-icon mega-icon-left mega-menu-item-25824' id='mega-menu-item-25824'><a class="mega-custom-icon mega-menu-link" href="https://www.phyn.com/phyn-xl-15/">Phyn XL 1.5</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-has-icon mega-icon-left mega-menu-item-25805' id='mega-menu-item-25805'><a class="mega-custom-icon mega-menu-link" href="https://www.phyn.com/phyn-xl-2/">Phyn XL 2</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-has-icon mega-icon-left mega-has-description mega-menu-item-17746' id='mega-menu-item-17746'><a class="mega-custom-icon mega-menu-link" href="https://www.phyn.com/dashboard/"><span class="mega-description-group"><span class="mega-menu-title">Phyn</span><span class="mega-menu-description">Dashboard</span></span></a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-18317' id='mega-menu-item-18317'><a class="mega-menu-link" href="https://www.phyn.com/products/">All Phyn Products</a></li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-11998' id='mega-menu-item-11998'><a title="						" class="mega-menu-link" href="https://www.phyn.com/technology/" tabindex="0">Technology</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-11999' id='mega-menu-item-11999'><a title="						" class="mega-menu-link" href="https://www.phyn.com/mission/" tabindex="0">Mission</a></li><li class='mega-menu-item mega-menu-item-type-custom mega-menu-item-object-custom mega-menu-item-has-children mega-align-bottom-left mega-menu-flyout mega-menu-item-18394' id='mega-menu-item-18394'><a class="mega-menu-link" aria-haspopup="true" aria-expanded="false" tabindex="0">Installation<span class="mega-indicator"></span></a>
+<ul class="mega-sub-menu">
+<li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-18395' id='mega-menu-item-18395'><a class="mega-menu-link" href="https://www.phyn.com/swa-installation/">Smart Water Assistant</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-menu-item-29132' id='mega-menu-item-29132'><a class="mega-menu-link" href="https://www.phyn.com/installation/">Phyn Plus</a></li></ul>
+</li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-menu-item-20378' id='mega-menu-item-20378'><a class="mega-menu-link" href="https://www.phyn.com/help-center/" tabindex="0">Help Center</a></li><li class='mega-menu-item mega-menu-item-type-post_type mega-menu-item-object-page mega-align-bottom-left mega-menu-flyout mega-hide-on-mobile mega-menu-item-10354' id='mega-menu-item-10354'><a class="mega-menu-link" href="https://www.phyn.com/get-phyn/" tabindex="0">Get Phyn</a></li></ul></div></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</header>
+							</div>
+				</div>
+		<div class="content-sidebar-wrap"><main class="content" id="genesis-content"><article class="post-18419 page type-page status-publish entry" aria-label="Homepage"><div class="entry-content">		<div data-elementor-type="wp-page" data-elementor-id="18419" class="elementor elementor-18419">
+						<div class="elementor-inner">
+				<div class="elementor-section-wrap">
+									<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-7d33a101 elementor-section-stretched elementor-section-full_width elementor-section-height-min-height elementor-section-height-default elementor-section-items-middle" data-id="7d33a101" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;video&quot;,&quot;background_video_link&quot;:&quot;https:\/\/vimeo.com\/248399470&quot;,&quot;background_play_on_mobile&quot;:&quot;yes&quot;}">
+								<div class="elementor-background-video-container">
+													<div class="elementor-background-video-embed"></div>
+												</div>
+								<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3832996d" data-id="3832996d" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-18e6f38c elementor-widget elementor-widget-heading" data-id="18e6f38c" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-xxl">Speak the Language of Water</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-dd3225c elementor-widget elementor-widget-text-editor" data-id="dd3225c" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>Protect your home from leaks. Conserve water. Save money.</p>					</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-5cc147bd elementor-widget elementor-widget-image" data-id="5cc147bd" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+													<a href="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJ0eXBlIjoidmlkZW8iLCJ2aWRlb1R5cGUiOiJ2aW1lbyIsInVybCI6Imh0dHBzOlwvXC9wbGF5ZXIudmltZW8uY29tXC92aWRlb1wvMjQ5MDAwNjk1P2g9MDNkMTM4YmNlNSN0PSJ9">
+							<img decoding="async" width="62" height="62" src="https://phyn.wpenginepowered.com/wp-content/uploads/1280_home_header_1_play-1.svg" class="attachment-large size-large wp-image-20583" alt="" loading="lazy" />								</a>
+														</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-455a328c elementor-align-center elementor-widget elementor-widget-button" data-id="455a328c" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJ0eXBlIjoidmlkZW8iLCJ2aWRlb1R5cGUiOiJ2aW1lbyIsInVybCI6Imh0dHBzOlwvXC9wbGF5ZXIudmltZW8uY29tXC92aWRlb1wvMjQ5MDAwNjk1P2g9MzcxODM5MTI4I3Q9In0%3D" class="elementor-button-link elementor-button elementor-size-md" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">PLAY VIDEO</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-d132576 elementor-section-full_width elementor-section-content-middle elementor-section-height-default elementor-section-height-default" data-id="d132576" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-40a6e9d" data-id="40a6e9d" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-9c006dc elementor-widget__width-auto elementor-widget elementor-widget-button" data-id="9c006dc" data-element_type="widget" data-widget_type="button.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-button-wrapper">
+			<a href="https://www.phyn.com/careers/#positions" class="elementor-button-link elementor-button elementor-size-lg" role="button">
+						<span class="elementor-button-content-wrapper">
+						<span class="elementor-button-text">We're Hiring</span>
+		</span>
+					</a>
+		</div>
+				</div>
+				</div>
+				<div class="elementor-element elementor-element-4a9e42a elementor-widget__width-auto elementor-widget elementor-widget-text-editor" data-id="4a9e42a" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>Join our growing team and help protect our most precious resource. #speakwater</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-41aae108 elementor-section-stretched elementor-section-full_width elementor-section-content-middle elementor-section-height-default elementor-section-height-default" data-id="41aae108" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-d363ddd" data-id="d363ddd" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-17535b15 elementor-widget elementor-widget-heading" data-id="17535b15" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">The Most Accurate Leak Detection Solution</h2>		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-56ddf058" data-id="56ddf058" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-68bfcbee elementor-widget elementor-widget-text-editor" data-id="68bfcbee" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<span style="color: #ffffff;">In a recent third party study, Phyn Plus was found to be the most reliably accurate whole home leak detection solution across multiple flow thresholds.</span>
+<strong><span style="color: #ffffff;"><a style="color: #ffffff;" href="https://phyndev.wpengine.com/wp-content/uploads/SNWA-Final-Review-on-Leak-Detection-Device-Performance-Testing.pdf">Read the full report &gt;</a></span></strong>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-6e106ac6 elementor-section-stretched elementor-section-full_width elementor-section-content-top elementor-hidden-mobile elementor-section-height-default elementor-section-height-default" data-id="6e106ac6" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-716ead96" data-id="716ead96" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-10f41eb8 elementor-widget elementor-widget-image" data-id="10f41eb8" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+													<a href="https://www.phyn.com/plus-smart-water-assistant/">
+							<img decoding="async" width="756" height="756" src="https://phyn.wpenginepowered.com/wp-content/uploads/Home-Phyn-Plus-V2-Hero1-Square-Desktop@2x-1.jpg" class="attachment-large size-large wp-image-38763" alt="" loading="lazy" srcset="https://phyn.wpenginepowered.com/wp-content/uploads/Home-Phyn-Plus-V2-Hero1-Square-Desktop@2x-1.jpg 756w, https://phyn.wpenginepowered.com/wp-content/uploads/Home-Phyn-Plus-V2-Hero1-Square-Desktop@2x-1-75x75.jpg 75w" sizes="(max-width: 756px) 100vw, 756px" />								</a>
+														</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-1926ddde elementor-widget elementor-widget-text-editor" data-id="1926ddde" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<table style="border-collapse: collapse; width: 100%; height: 57px;"><tbody><tr style="height: 57px;"><td style="width: 75%; height: 57px;"><span style="font-size: 14pt;">Phyn Plus (2nd Gen)</span></td><td style="width: 25%; text-align: right; height: 57px;"><span style="font-size: 14pt;">$579</span></td></tr></tbody></table>					</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-5d62d1c float-l elementor-widget elementor-widget-text-editor" data-id="5d62d1c" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>Smart Water Assistant + Shutoff</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-330fd589" data-id="330fd589" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-78ff9f49 elementor-widget elementor-widget-image" data-id="78ff9f49" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+													<a href="https://www.phyn.com/phyn-plus-1st-gen/">
+							<img decoding="async" width="1024" height="1024" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_1.03.2-1-1-1.jpg" class="attachment-large size-large wp-image-38771" alt="" loading="lazy" srcset="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_1.03.2-1-1-1.jpg 1024w, https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_1.03.2-1-1-1-768x768.jpg 768w, https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_1.03.2-1-1-1-75x75.jpg 75w" sizes="(max-width: 1024px) 100vw, 1024px" />								</a>
+														</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-e1b1a57 elementor-widget elementor-widget-text-editor" data-id="e1b1a57" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<table style="border-collapse: collapse; width: 100%; height: 57px;"><tbody><tr style="height: 57px;"><td style="width: 75%; height: 57px;"><span style="font-size: 14pt;">Phyn Plus (1st Gen)</span></td><td style="width: 25%; text-align: right; height: 57px;"><span style="font-size: 14pt;">$699</span></td></tr></tbody></table>					</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-373e40bd float-l elementor-widget elementor-widget-text-editor" data-id="373e40bd" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>Smart Water Assistant + Shutoff</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-42a15a58" data-id="42a15a58" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-30fe09ca elementor-widget elementor-widget-image" data-id="30fe09ca" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+													<a href="https://www.phyn.com/smart-water-assistant/">
+							<img decoding="async" width="1024" height="1024" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_1.03.1-1-1-1.jpg" class="attachment-large size-large wp-image-38779" alt="" loading="lazy" srcset="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_1.03.1-1-1-1.jpg 1024w, https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_1.03.1-1-1-1-768x768.jpg 768w, https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_1.03.1-1-1-1-75x75.jpg 75w" sizes="(max-width: 1024px) 100vw, 1024px" />								</a>
+														</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-6676327 elementor-widget elementor-widget-text-editor" data-id="6676327" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<table style="border-collapse: collapse; width: 100%; height: 57px;"><tbody><tr style="height: 57px;"><td style="width: 75%; height: 57px;"><span style="font-size: 14pt;">Phyn</span></td><td style="width: 25%; text-align: right; height: 57px;"><span style="font-size: 14pt;">$299</span></td></tr></tbody></table>					</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-4b09a3f7 float-l elementor-widget elementor-widget-text-editor" data-id="4b09a3f7" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>Smart Water Assistant</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-3ba8f664" data-id="3ba8f664" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-457a2d21 elementor-widget elementor-widget-image" data-id="457a2d21" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+													<a href="https://www.phyn.com/smart-water-sensor/">
+							<img decoding="async" width="1024" height="1024" src="https://phyn.wpenginepowered.com/wp-content/uploads/1280_products_section_3.1-square-lg-1.jpg" class="attachment-large size-large wp-image-38787" alt="" loading="lazy" srcset="https://phyn.wpenginepowered.com/wp-content/uploads/1280_products_section_3.1-square-lg-1.jpg 1024w, https://phyn.wpenginepowered.com/wp-content/uploads/1280_products_section_3.1-square-lg-1-768x768.jpg 768w, https://phyn.wpenginepowered.com/wp-content/uploads/1280_products_section_3.1-square-lg-1-75x75.jpg 75w" sizes="(max-width: 1024px) 100vw, 1024px" />								</a>
+														</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-62a5dcd0 elementor-widget elementor-widget-text-editor" data-id="62a5dcd0" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<table style="border-collapse: collapse; width: 100%; height: 57px;"><tbody><tr style="height: 57px;"><td style="width: 75%; height: 57px;"><span style="font-size: 14pt;">Phyn </span></td><td style="width: 25%; text-align: right; height: 57px;"><span style="font-size: 14pt;">$49.99</span></td></tr></tbody></table>					</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-103aff90 float-l elementor-widget elementor-widget-text-editor" data-id="103aff90" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>Smart Water Sensor</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-56c6d39 elementor-section-stretched elementor-section-full_width elementor-section-content-top elementor-hidden-desktop elementor-hidden-tablet elementor-section-height-default elementor-section-height-default" data-id="56c6d39" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-3d37cd42" data-id="3d37cd42" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-297a2f89 elementor-widget elementor-widget-image" data-id="297a2f89" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+													<a href="https://www.phyn.com/plus-smart-water-assistant/">
+							<img decoding="async" width="678" height="1086" src="https://phyn.wpenginepowered.com/wp-content/uploads/Home-Phyn-Plus-V2-Hero1-Square-Mobile@2x-1.jpg" class="attachment-large size-large wp-image-38795" alt="" loading="lazy" />								</a>
+														</div>
+						</div>
+				</div>
+				<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-5be59591 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="5be59591" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-527de667" data-id="527de667" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-4b8edc6e elementor-widget elementor-widget-text-editor" data-id="4b8edc6e" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				Phyn Plus (2nd Gen)					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-4c60e219" data-id="4c60e219" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-613394fb elementor-widget elementor-widget-text-editor" data-id="613394fb" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>$579</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-384e5c8c elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="384e5c8c" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-446117c9" data-id="446117c9" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-d9205ad elementor-widget elementor-widget-text-editor" data-id="d9205ad" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				Smart Water Assistant + Shutoff					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-54b18578" data-id="54b18578" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-916e969 elementor-widget elementor-widget-image" data-id="916e969" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+													<a href="https://www.phyn.com/phyn-plus-1st-gen/">
+							<img decoding="async" width="500" height="800" src="https://phyn.wpenginepowered.com/wp-content/uploads/500_home_section_1.03.2-1-2-1.jpg" class="attachment-large size-large wp-image-38569" alt="" loading="lazy" />								</a>
+														</div>
+						</div>
+				</div>
+				<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-4d848888 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4d848888" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-144e103d" data-id="144e103d" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-6a97375 elementor-widget elementor-widget-text-editor" data-id="6a97375" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				Phyn Plus (1st Gen)					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-761fb854" data-id="761fb854" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-2360d11d elementor-widget elementor-widget-text-editor" data-id="2360d11d" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				$699					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-47ea1b04 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="47ea1b04" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-190709f3" data-id="190709f3" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-59ad5240 elementor-widget elementor-widget-text-editor" data-id="59ad5240" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				Smart Water Assistant + Shutoff					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-2ee29870" data-id="2ee29870" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-f02fcee elementor-widget elementor-widget-image" data-id="f02fcee" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+													<a href="https://www.phyn.com/smart-water-assistant/">
+							<img decoding="async" width="500" height="800" src="https://phyn.wpenginepowered.com/wp-content/uploads/500_home_section_1.03.1-1-1-1.jpg" class="attachment-large size-large wp-image-38803" alt="" loading="lazy" />								</a>
+														</div>
+						</div>
+				</div>
+				<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-abfc80 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="abfc80" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-faf8847" data-id="faf8847" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-5843e425 elementor-widget elementor-widget-text-editor" data-id="5843e425" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				Phyn					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-74450488" data-id="74450488" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-682ede0a elementor-widget elementor-widget-text-editor" data-id="682ede0a" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				$299					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-4ec462cc elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4ec462cc" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-335f4f77" data-id="335f4f77" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-410dd19c elementor-widget elementor-widget-text-editor" data-id="410dd19c" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>Smart Water Assistant</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-68177118" data-id="68177118" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-7a18f58 elementor-widget elementor-widget-image" data-id="7a18f58" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+													<a href="https://www.phyn.com/smart-water-sensor/">
+							<img decoding="async" width="500" height="733" src="https://phyn.wpenginepowered.com/wp-content/uploads/360-psws-header-1.2-1.jpg" class="attachment-large size-large wp-image-38811" alt="" loading="lazy" />								</a>
+														</div>
+						</div>
+				</div>
+				<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-4a9a01bd elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4a9a01bd" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-ad70124" data-id="ad70124" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-6320da42 elementor-widget elementor-widget-text-editor" data-id="6320da42" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				Phyn					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-145b2b4a" data-id="145b2b4a" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-a0acc32 elementor-widget elementor-widget-text-editor" data-id="a0acc32" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>$49.99</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-57fefa15 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="57fefa15" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-398cb9b4" data-id="398cb9b4" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-521052ff elementor-widget elementor-widget-text-editor" data-id="521052ff" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				Smart Water Sensor					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-7a5d16a4 elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="7a5d16a4" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-51d89e63" data-id="51d89e63" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-5bbf8017 elementor-section-height-min-height elementor-section-full_width elementor-section-height-default" data-id="5bbf8017" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-4358aa65" data-id="4358aa65" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-71403339 elementor-widget elementor-widget-heading" data-id="71403339" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Homes are 10x more likely to be damaged by a water leak than by fire. It costs $9,600 on average to fix water leak damage.</h2>		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-4adf2e36 elementor-section-full_width elementor-hidden-tablet elementor-section-height-default elementor-section-height-default" data-id="4adf2e36" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-16 elementor-inner-column elementor-element elementor-element-3cd40a1f" data-id="3cd40a1f" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-676e64af elementor-widget elementor-widget-image" data-id="676e64af" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="80" height="80" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_2_0_2-2.jpg" class="attachment-large size-large wp-image-38827" alt="" loading="lazy" srcset="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_2_0_2-2.jpg 80w, https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_2_0_2-2-75x75.jpg 75w" sizes="(max-width: 80px) 100vw, 80px" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-16 elementor-inner-column elementor-element elementor-element-7d016cb9" data-id="7d016cb9" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-4ad63566 elementor-widget elementor-widget-text-editor" data-id="4ad63566" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				The average home leaks 10,000 gallons of water a year. The average load of laundry uses 32 gallons.					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-16 elementor-inner-column elementor-element elementor-element-8dd5e44" data-id="8dd5e44" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-21af8303 elementor-widget elementor-widget-image" data-id="21af8303" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="80" height="80" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_2_0_3-2.jpg" class="attachment-large size-large wp-image-38835" alt="" loading="lazy" srcset="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_2_0_3-2.jpg 80w, https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_2_0_3-2-75x75.jpg 75w" sizes="(max-width: 80px) 100vw, 80px" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-16 elementor-inner-column elementor-element elementor-element-6b16911b" data-id="6b16911b" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-62e7623b elementor-widget elementor-widget-text-editor" data-id="62e7623b" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				Together U.S. households waste over 1 trillion gallons of water every year. That could provide water for 11 million + homes.					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-16 elementor-inner-column elementor-element elementor-element-7c9978e" data-id="7c9978e" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-241f4b2e elementor-widget elementor-widget-image" data-id="241f4b2e" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="80" height="80" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_2_0_4-2.jpg" class="attachment-large size-large wp-image-38843" alt="" loading="lazy" srcset="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_2_0_4-2.jpg 80w, https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_2_0_4-2-75x75.jpg 75w" sizes="(max-width: 80px) 100vw, 80px" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-16 elementor-inner-column elementor-element elementor-element-d108571" data-id="d108571" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-7aee344e elementor-widget elementor-widget-text-editor" data-id="7aee344e" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				Globally, two out of every three people face a shortage of clean water. Together we can do something about it. 					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-206b9a45 elementor-section-full_width elementor-hidden-desktop elementor-hidden-phone elementor-section-height-default elementor-section-height-default" data-id="206b9a45" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-23849f7" data-id="23849f7" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-5f54f1d7 elementor-widget elementor-widget-image" data-id="5f54f1d7" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="80" height="80" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_2_0_2-2.jpg" class="attachment-large size-large wp-image-38827" alt="" loading="lazy" srcset="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_2_0_2-2.jpg 80w, https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_2_0_2-2-75x75.jpg 75w" sizes="(max-width: 80px) 100vw, 80px" />														</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-28604a74 elementor-widget elementor-widget-text-editor" data-id="28604a74" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				The average home leaks 10,000 gallons of water a year. The average load of laundry uses 32 gallons.					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-22506673" data-id="22506673" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-5962e33 elementor-widget elementor-widget-image" data-id="5962e33" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="80" height="80" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_2_0_3-2.jpg" class="attachment-large size-large wp-image-38835" alt="" loading="lazy" srcset="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_2_0_3-2.jpg 80w, https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_2_0_3-2-75x75.jpg 75w" sizes="(max-width: 80px) 100vw, 80px" />														</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-2b0f342e elementor-widget elementor-widget-text-editor" data-id="2b0f342e" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				Together U.S. households waste over 1 trillion gallons of water every year. That could provide water for 11 million + homes.					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-72042930" data-id="72042930" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-4548a0a5 elementor-widget elementor-widget-image" data-id="4548a0a5" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="80" height="80" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_2_0_4-2.jpg" class="attachment-large size-large wp-image-38843" alt="" loading="lazy" srcset="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_2_0_4-2.jpg 80w, https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_2_0_4-2-75x75.jpg 75w" sizes="(max-width: 80px) 100vw, 80px" />														</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-42cb0d0e elementor-widget elementor-widget-text-editor" data-id="42cb0d0e" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				Globally, two out of every three people face a shortage of clean water. Together we can do something about it. 					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-3f33cdae elementor-section-stretched elementor-section-full_width elementor-section-height-min-height elementor-section-content-middle elementor-hidden-tablet elementor-hidden-phone elementor-section-height-default elementor-section-items-middle" data-id="3f33cdae" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7ef88687" data-id="7ef88687" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-2e46e57e elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="2e46e57e" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-a98a124" data-id="a98a124" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-5136664e elementor-widget elementor-widget-heading" data-id="5136664e" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Learn to speak the language of water</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-47b340c9 elementor-widget elementor-widget-text-editor" data-id="47b340c9" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				When you flush a toilet or water your lawn, the pressure in your plumbing system changes. Phyn measures microscopic water pressure changes in high definition—240 times a second—to recognize the unique “voice” of each fixture in your home. So when you run a faucet, Phyn knows it’s a faucet. And if that faucet leaks, Phyn lets you know.					</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-6754c7b3 elementor-widget elementor-widget-text-editor" data-id="6754c7b3" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<span style="color: #ffffff;"><a style="color: #ffffff;" href="https://www.phyn.com/technology/" rel="noopener">See how Phyn works  <img decoding="async" class="alignnone size-medium wp-image-26773" role="img" src="https://phyndev.wpengine.com/wp-content/uploads/button_arrow_right_white.svg" alt="" width="9" height="15" /></a></span>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-203aa025" data-id="203aa025" data-element_type="column">
+			<div class="elementor-column-wrap">
+							<div class="elementor-widget-wrap">
+								</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-132f4705 elementor-section-stretched elementor-section-full_width elementor-section-height-min-height elementor-section-content-middle elementor-hidden-desktop elementor-section-height-default elementor-section-items-middle" data-id="132f4705" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-295fc0a9" data-id="295fc0a9" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-3c785f7d elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="3c785f7d" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-5122740d" data-id="5122740d" data-element_type="column">
+			<div class="elementor-column-wrap">
+							<div class="elementor-widget-wrap">
+								</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-38fe5991" data-id="38fe5991" data-element_type="column">
+			<div class="elementor-column-wrap">
+							<div class="elementor-widget-wrap">
+								</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-602dad74 elementor-hidden-desktop elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="602dad74" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-6d30bae3" data-id="6d30bae3" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-193001d8 elementor-widget elementor-widget-heading" data-id="193001d8" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Learn to speak the language of water.</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-3d431ddf elementor-widget elementor-widget-text-editor" data-id="3d431ddf" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				When you flush a toilet or water your lawn, the pressure in your plumbing system changes. Phyn measures microscopic water pressure changes in high definition—240 times a second—to recognize the unique “voice” of each fixture in your home. So when you run a faucet, Phyn knows it’s a faucet. And if that faucet leaks, Phyn lets you know.					</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-5f649b79 elementor-widget elementor-widget-text-editor" data-id="5f649b79" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<span style="color: #000000;"><a style="color: #000000;" href="https://www.phyn.com/technology/" rel="noopener">See how Phyn works &gt;</a></span>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-5bcec3d6 elementor-section-stretched elementor-section-full_width elementor-section-content-middle elementor-section-height-min-height elementor-section-height-default elementor-section-items-middle" data-id="5bcec3d6" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-wider">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-5d02b664" data-id="5d02b664" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-4d8a62b6 elementor-hidden-phone elementor-widget elementor-widget-image" data-id="4d8a62b6" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="711" height="457" src="https://phyn.wpenginepowered.com/wp-content/uploads/1280_home_section_4_1-2-2.svg" class="attachment-large size-large wp-image-38868" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-62a2877a elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-image" data-id="62a2877a" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="463" height="430" src="https://phyn.wpenginepowered.com/wp-content/uploads/500_home_section_4_1-1-2.svg" class="attachment-large size-large wp-image-38876" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-262e5d8c elementor-widget elementor-widget-spacer" data-id="262e5d8c" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+				</div>
+				</div>
+				<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-2565c099 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="2565c099" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-6b93f711" data-id="6b93f711" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-b7e9a30 elementor-widget elementor-widget-text-editor" data-id="b7e9a30" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>Water is the first thing we look for when we discover a new planet. But for most of us, it’s the last thing on our minds. And yet, it’s the only thing we can’t live without. Phyn shows us how we are using, and wasting water, and gives us the tools to address issues before they start.</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-33716712" data-id="33716712" data-element_type="column">
+			<div class="elementor-column-wrap">
+							<div class="elementor-widget-wrap">
+								</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-5a0723c8 elementor-section-stretched elementor-section-full_width elementor-section-content-middle elementor-hidden-desktop elementor-section-height-default elementor-section-height-default" data-id="5a0723c8" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-7fb6f067" data-id="7fb6f067" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-670fb4eb elementor-widget elementor-widget-heading" data-id="670fb4eb" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Stop worrying about hidden water leaks</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-216199b9 elementor-widget elementor-widget-text-editor" data-id="216199b9" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				Phyn alerts you to all types of leaks and stops them before they become expensive problems &#8211; from pinhole and drip leaks happening behind your walls to frozen pipe bursts in your attic.					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-2ea2c083 elementor-section-stretched elementor-section-full_width elementor-section-content-middle elementor-section-height-min-height elementor-hidden-desktop elementor-section-height-default elementor-section-items-middle" data-id="2ea2c083" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-55a06f94" data-id="55a06f94" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-column-wrap">
+							<div class="elementor-widget-wrap">
+								</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-5ae61617 elementor-section-stretched elementor-section-full_width elementor-section-content-middle elementor-hidden-desktop elementor-section-height-default elementor-section-height-default" data-id="5ae61617" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-11fa251e" data-id="11fa251e" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-4228d223 elementor-widget elementor-widget-text-editor" data-id="4228d223" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><span style="color: #ffffff;">Phyn detects</span></p>					</div>
+						</div>
+				</div>
+				<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-6cec32a6 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="6cec32a6" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-narrow">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-50347103" data-id="50347103" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-30f6e871 elementor-widget elementor-widget-image" data-id="30f6e871" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="28" height="30" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_5_1_1-3.svg" class="attachment-large size-large wp-image-38900" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-3f00694" data-id="3f00694" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-3f93f251 elementor-widget elementor-widget-text-editor" data-id="3f93f251" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><span style="color: #ffffff; font-size: 12pt;">Toilet flapper leaks</span></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-1569dc09" data-id="1569dc09" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-11bf4454 elementor-widget elementor-widget-image" data-id="11bf4454" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="25" height="34" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_5_1_2-2.svg" class="attachment-large size-large wp-image-38908" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-3877b23d" data-id="3877b23d" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-b3ce7d0 elementor-widget elementor-widget-text-editor" data-id="b3ce7d0" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><span style="color: #ffffff; font-size: 12pt;">Supply line leaks</span></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-70c57220" data-id="70c57220" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-1de6ef6 elementor-widget elementor-widget-image" data-id="1de6ef6" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="28" height="33" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_5_1_3-2.svg" class="attachment-large size-large wp-image-38916" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-4f849bb9" data-id="4f849bb9" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-5e6d87ae elementor-widget elementor-widget-text-editor" data-id="5e6d87ae" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><span style="color: #ffffff; font-size: 12pt;">Water left on</span></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-4389542f" data-id="4389542f" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-ec3bb86 elementor-widget elementor-widget-image" data-id="ec3bb86" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="28" height="30" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_5_1_4-2.svg" class="attachment-large size-large wp-image-38924" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-5be6c290" data-id="5be6c290" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-4c57a7c7 elementor-widget elementor-widget-text-editor" data-id="4c57a7c7" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><span style="color: #ffffff; font-size: 12pt;">Catastrophic leaks</span></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-4c59ecf0 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="4c59ecf0" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-narrow">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-78a5dfeb" data-id="78a5dfeb" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-7f76cdcf elementor-widget elementor-widget-image" data-id="7f76cdcf" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="32" height="32" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_5_1_5-2.svg" class="attachment-large size-large wp-image-38932" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-71ac2228" data-id="71ac2228" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-3703ab16 elementor-widget elementor-widget-text-editor" data-id="3703ab16" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><span style="color: #ffffff; font-size: 12pt;">Frozen pipes</span></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-579465e7" data-id="579465e7" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-7d9aa706 elementor-widget elementor-widget-image" data-id="7d9aa706" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="26" height="32" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_5_1_6-2.svg" class="attachment-large size-large wp-image-38940" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-4cad6911" data-id="4cad6911" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-2b5bdff7 elementor-widget elementor-widget-text-editor" data-id="2b5bdff7" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><span style="color: #ffffff; font-size: 12pt;">Pinhole leaks*</span></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-583dea8d" data-id="583dea8d" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-1577d4e3 elementor-widget elementor-widget-image" data-id="1577d4e3" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="26" height="32" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_5_1_7-2.svg" class="attachment-large size-large wp-image-38948" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-34677662" data-id="34677662" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-31b0814d elementor-widget elementor-widget-text-editor" data-id="31b0814d" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><span style="color: #ffffff; font-size: 12pt;">Drip leaks*</span></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-5ac58e58" data-id="5ac58e58" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-5d9b61ef elementor-widget elementor-widget-image" data-id="5d9b61ef" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="28" height="26" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_5_1_8-2.svg" class="attachment-large size-large wp-image-38956" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-785ee020" data-id="785ee020" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-61ad37e5 elementor-widget elementor-widget-text-editor" data-id="61ad37e5" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><span style="color: #ffffff; font-size: 12pt;">Unusual usage</span></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-89aa026 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="89aa026" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-narrow">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-7242d0d8" data-id="7242d0d8" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-39a115ae elementor-widget elementor-widget-text-editor" data-id="39a115ae" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p style="text-align: left;"><span style="color: #ffffff; font-size: 8pt;">*detected via Phyn&#8217;s Plumbing Check feature</span></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-6e022ae7 elementor-section-stretched elementor-section-full_width elementor-section-content-middle elementor-hidden-tablet elementor-hidden-phone elementor-section-height-default elementor-section-height-default" data-id="6e022ae7" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3a5df4e1" data-id="3a5df4e1" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-65734896 elementor-widget elementor-widget-heading" data-id="65734896" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Stop worrying about hidden water leaks</h2>		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-408a7f40 elementor-section-stretched elementor-section-full_width elementor-section-content-middle elementor-hidden-tablet elementor-hidden-phone elementor-section-height-min-height elementor-section-height-default elementor-section-items-middle" data-id="408a7f40" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-a710bb6" data-id="a710bb6" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-column-wrap">
+							<div class="elementor-widget-wrap">
+								</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-7672491b elementor-section-stretched elementor-section-full_width elementor-section-content-middle elementor-hidden-tablet elementor-hidden-phone elementor-section-height-default elementor-section-height-default" data-id="7672491b" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-53555fd0" data-id="53555fd0" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-1548001f elementor-widget elementor-widget-text-editor" data-id="1548001f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				Phyn alerts you to all types of leaks and stops them before they become expensive problems &#8211; from pinhole and drip leaks happening behind your walls to frozen pipe bursts in your attic.					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-786f9203" data-id="786f9203" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-437b78a2 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="437b78a2" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-narrow">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-3a53d572" data-id="3a53d572" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-39d967ea elementor-widget elementor-widget-image" data-id="39d967ea" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="28" height="30" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_5_1_1-3.svg" class="attachment-large size-large wp-image-38900" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-3bc162f9" data-id="3bc162f9" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-1f2c508a elementor-widget elementor-widget-text-editor" data-id="1f2c508a" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><span style="color: #ffffff; font-size: 12pt;">Toilet flapper leaks</span></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-305c968f" data-id="305c968f" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-7abeaa0c elementor-widget elementor-widget-image" data-id="7abeaa0c" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="25" height="34" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_5_1_2-2.svg" class="attachment-large size-large wp-image-38908" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-3df14f1c" data-id="3df14f1c" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-6590973a elementor-widget elementor-widget-text-editor" data-id="6590973a" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><span style="color: #ffffff; font-size: 12pt;">Supply line leaks</span></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-3bb2118a" data-id="3bb2118a" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-7dd0a730 elementor-widget elementor-widget-image" data-id="7dd0a730" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="28" height="33" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_5_1_3-2.svg" class="attachment-large size-large wp-image-38916" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-46f5e801" data-id="46f5e801" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-313226bc elementor-widget elementor-widget-text-editor" data-id="313226bc" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><span style="color: #ffffff; font-size: 12pt;">Water left on</span></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-4f581e80" data-id="4f581e80" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-7d8c435a elementor-widget elementor-widget-image" data-id="7d8c435a" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="28" height="30" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_5_1_4-2.svg" class="attachment-large size-large wp-image-38924" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-439d90cd" data-id="439d90cd" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-7f063baf elementor-widget elementor-widget-text-editor" data-id="7f063baf" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><span style="color: #ffffff; font-size: 12pt;">Catastrophic leaks</span></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-6e921c9 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="6e921c9" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-narrow">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-1571a3c8" data-id="1571a3c8" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-667800bc elementor-widget elementor-widget-image" data-id="667800bc" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="32" height="32" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_5_1_5-2.svg" class="attachment-large size-large wp-image-38932" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-12602221" data-id="12602221" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-2f54f3f9 elementor-widget elementor-widget-text-editor" data-id="2f54f3f9" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><span style="color: #ffffff; font-size: 12pt;">Frozen pipes</span></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-dc10cb8" data-id="dc10cb8" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-7e41587a elementor-widget elementor-widget-image" data-id="7e41587a" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="26" height="32" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_5_1_6-2.svg" class="attachment-large size-large wp-image-38940" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-4836d73b" data-id="4836d73b" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-23c5d0ae elementor-widget elementor-widget-text-editor" data-id="23c5d0ae" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><span style="color: #ffffff; font-size: 12pt;">Pinhole leaks*</span></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-51c27323" data-id="51c27323" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-4f34736b elementor-widget elementor-widget-image" data-id="4f34736b" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="26" height="32" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_5_1_7-2.svg" class="attachment-large size-large wp-image-38948" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-22eb22d6" data-id="22eb22d6" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-18d4aca1 elementor-widget elementor-widget-text-editor" data-id="18d4aca1" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><span style="color: #ffffff; font-size: 12pt;">Drip leaks*</span></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-7957e046" data-id="7957e046" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-7e3afcf2 elementor-widget elementor-widget-image" data-id="7e3afcf2" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="28" height="26" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_5_1_8-2.svg" class="attachment-large size-large wp-image-38956" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-12 elementor-inner-column elementor-element elementor-element-16cf2ff1" data-id="16cf2ff1" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-b22a1fc elementor-widget elementor-widget-text-editor" data-id="b22a1fc" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><span style="color: #ffffff; font-size: 12pt;">Unusual usage</span></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-inner-section elementor-element elementor-element-4eec18d3 elementor-section-full_width elementor-section-height-default elementor-section-height-default" data-id="4eec18d3" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-narrow">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-6a93082c" data-id="6a93082c" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-58001b08 no-space elementor-widget elementor-widget-text-editor" data-id="58001b08" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p style="text-align: left;"><span style="color: #ffffff; font-size: 8pt;">*detected via Phyn&#8217;s Plumbing Check feature</span></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-1399bd26 elementor-section-full_width elementor-section-stretched elementor-reverse-tablet elementor-reverse-mobile elementor-section-height-default elementor-section-height-default" data-id="1399bd26" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-7d52c0b7" data-id="7d52c0b7" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-43693a55 elementor-widget elementor-widget-heading" data-id="43693a55" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Unparalleled water insights</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-40bfd0ca elementor-widget elementor-widget-text-editor" data-id="40bfd0ca" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				Get the information you need to make better choices about your water use. Spot trends of how much your showers, faucets and more are using.					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-6f31d238" data-id="6f31d238" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-44284d19 elementor-widget elementor-widget-image" data-id="44284d19" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="898" height="758" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_6-2.jpg" class="attachment-large size-large wp-image-38964" alt="" loading="lazy" srcset="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_6-2.jpg 898w, https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_6-2-768x648.jpg 768w" sizes="(max-width: 898px) 100vw, 898px" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-7628b5a elementor-section-full_width elementor-section-stretched elementor-section-height-default elementor-section-height-default" data-id="7628b5a" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-735b3835" data-id="735b3835" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-5785b895 elementor-widget elementor-widget-image" data-id="5785b895" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="898" height="758" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_7-2.jpg" class="attachment-large size-large wp-image-38972" alt="" loading="lazy" srcset="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_7-2.jpg 898w, https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_7-2-768x648.jpg 768w" sizes="(max-width: 898px) 100vw, 898px" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-3f94ec3" data-id="3f94ec3" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-30cb3d0b elementor-widget elementor-widget-heading" data-id="30cb3d0b" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Get more life out of your plumbing</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-6b1a7dd0 elementor-widget elementor-widget-text-editor" data-id="6b1a7dd0" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				A healthy plumbing system means fewer leaks. Phyn’s “Plumbing Check” gives you and your plumber the diagnostic tools to keep your home watertight.					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-5a3ecb7 elementor-section-full_width elementor-section-stretched elementor-section-height-default elementor-section-height-default" data-id="5a3ecb7" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-7e089016" data-id="7e089016" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-1773603a elementor-widget elementor-widget-heading" data-id="1773603a" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Great for the environment, and the wallet</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-57a1478f elementor-widget elementor-widget-text-editor" data-id="57a1478f" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				Phyn homeowners typically save up to 10% on their water bills by finding and stopping leaks. Some insurance companies also offer policy discounts for having Phyn in your home. Check with your provider before purchasing.					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-4974d558" data-id="4974d558" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-4e090471 elementor-widget elementor-widget-image" data-id="4e090471" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="722" height="130" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_8-1-2.jpg" class="attachment-full size-full wp-image-38980" alt="" loading="lazy" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-2b447356 elementor-section-stretched elementor-section-full_width elementor-section-content-middle elementor-section-height-default elementor-section-height-default" data-id="2b447356" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
+						<div class="elementor-container elementor-column-gap-no">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-3095f9ef" data-id="3095f9ef" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-686303c0 elementor-widget elementor-widget-image" data-id="686303c0" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+												<img decoding="async" width="898" height="758" src="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_11-3.jpg" class="attachment-large size-large wp-image-38996" alt="" loading="lazy" srcset="https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_11-3.jpg 898w, https://phyn.wpenginepowered.com/wp-content/uploads/768_home_section_11-3-768x648.jpg 768w" sizes="(max-width: 898px) 100vw, 898px" />														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-2dd30a68" data-id="2dd30a68" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-26be6d33 elementor-widget elementor-widget-heading" data-id="26be6d33" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-xl">Phyn is helping the city of Santa Fe #Speakwater</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-787e29c1 elementor-widget elementor-widget-text-editor" data-id="787e29c1" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><span style="color: #000000; font-weight: 400;"><a style="color: #000000;" href="https://www.phyn.com/press/the-city-of-santa-fe-and-phyn-partner-to-help-local-businesses-conserve-water/">Learn more </a> </span><a href="https://phyndev.wpengine.com/wp-content/uploads/button_arrow_right_black.svg"><img decoding="async" loading="lazy" class="alignnone size-medium wp-image-23830" role="img" src="https://phyndev.wpengine.com/wp-content/uploads/button_arrow_right_black.svg" alt="" width="9" height="15" /></a></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+									</div>
+			</div>
+					</div>
+		</div></article></main></div>		<div data-elementor-type="footer" data-elementor-id="42176" class="elementor elementor-42176 elementor-location-footer">
+					<div class="elementor-section-wrap">
+								<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-214e8c59 elementor-section-full_width elementor-section-stretched elementor-section-height-default elementor-section-height-default" data-id="214e8c59" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-35616fae" data-id="35616fae" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-76baa8b elementor-widget elementor-widget-text-editor" data-id="76baa8b" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><span style="font-size: 24pt;">#SpeakWater with Phyn</span></p><p>Access the latest news and all things Phyn, including exclusive offers only through the Phyn newsletter</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-7ec7ab8d" data-id="7ec7ab8d" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-133a6acf elementor-widget elementor-widget-html" data-id="133a6acf" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+			<div class="klaviyo-form-SagQzv"></div>		</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-d631f07 elementor-section-full_width elementor-section-stretched elementor-section-height-default elementor-section-height-default" data-id="d631f07" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-bcfee8b" data-id="bcfee8b" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-1e2cfbc6 elementor-widget elementor-widget-heading" data-id="1e2cfbc6" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Company</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-76502e47 elementor-widget elementor-widget-text-editor" data-id="76502e47" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><a href="/careers/">Careers</a></p><p> </p><p><a href="/press-center/">Press</a></p><p> </p><p><a href="/terms/">Terms</a></p><p> </p><p><a href="/privacy-policy/">Privacy Policy</a></p><p> </p><p><a href="/warranty/">Warranty</a></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-672c2288" data-id="672c2288" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-77662b75 elementor-widget elementor-widget-heading" data-id="77662b75" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Products</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-63b87fe3 elementor-widget elementor-widget-text-editor" data-id="63b87fe3" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><a href="/plus-smart-water-assistant/">Phyn Plus</a></p><p> </p><p><a href="/smart-water-assistant/">Phyn Smart Water Assistant</a></p><p> </p><p><a href="/smart-water-sensor/">Phyn Smart Water Sensor</a></p><p> </p><p><a href="/dashboard/">Phyn Dashboard</a></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-7e3bb70b" data-id="7e3bb70b" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-2393aada elementor-widget elementor-widget-heading" data-id="2393aada" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Business</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-b3fc9eb elementor-widget elementor-widget-text-editor" data-id="b3fc9eb" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><a href="/become-a-partner/">Become a Partner</a></p><p> </p><p><a href="/insurance/">Insurance</a></p><p> </p><p><a href="/property-management/">Property Management</a></p><p> </p><p><a href="/builders/">Builders</a></p><p> </p><p><a href="/utilities/">Utilities</a></p><p> </p><p><a href="/plumbers/">Plumbers</a></p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+				<div class="has_eae_slider elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-2a191eed" data-id="2a191eed" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-301d35c6 elementor-widget elementor-widget-heading" data-id="301d35c6" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">Contact</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-5530f207 elementor-widget elementor-widget-text-editor" data-id="5530f207" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p><a href="/help-center/">Help Center</a></p><p> </p><p><a href="/contact-us/">Contact Us</a></p>					</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-2f57c006 elementor-widget elementor-widget-heading" data-id="2f57c006" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+			<h2 class="elementor-heading-title elementor-size-default">App</h2>		</div>
+				</div>
+				<div class="elementor-element elementor-element-2b9c17e3 elementor-widget elementor-widget-image" data-id="2b9c17e3" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+													<a href="https://apps.apple.com/us/app/phyn/id1338894928" target="_blank">
+							<img width="119" height="40" src="https://phyn.wpenginepowered.com/wp-content/uploads/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" class="attachment-large size-large wp-image-42128" alt="" loading="lazy" />								</a>
+														</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-63b69b61 elementor-widget elementor-widget-image" data-id="63b69b61" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-image">
+													<a href="https://play.google.com/store/apps/details?id=com.phyn">
+							<img width="564" height="168" src="https://phyn.wpenginepowered.com/wp-content/uploads/google-play-badge-2.jpg" class="attachment-full size-full wp-image-42136" alt="" loading="lazy" />								</a>
+														</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-1220d140 elementor-section-full_width elementor-section-stretched elementor-section-height-default elementor-section-height-default" data-id="1220d140" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-33ec43e4" data-id="33ec43e4" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-3fdd0702 e-grid-align-mobile-center elementor-shape-rounded elementor-grid-0 e-grid-align-center elementor-widget elementor-widget-social-icons" data-id="3fdd0702" data-element_type="widget" data-widget_type="social-icons.default">
+				<div class="elementor-widget-container">
+					<div class="elementor-social-icons-wrapper elementor-grid">
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon- elementor-repeater-item-81c478c" href="https://www.instagram.com/phyn/" target="_blank">
+						<span class="elementor-screen-only"></span>
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><style type="text/css">	.st0{fill:none;stroke:#000000;}</style><path class="st0" d="M15.5,19.7H8.5c-2.2,0-4-1.8-4-4v-7c0-2.2,1.8-4,4-4h7.1c2.2,0,4,1.8,4,4v7C19.5,17.9,17.7,19.7,15.5,19.7z"></path><circle class="st0" cx="12" cy="12.2" r="3.7"></circle><circle cx="16.2" cy="7.6" r="1"></circle></svg>					</a>
+				</span>
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon- elementor-repeater-item-ccebe35" href="https://www.linkedin.com/company/phyn/" target="_blank">
+						<span class="elementor-screen-only"></span>
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><g>	<path d="M7.1,5.5c1.2,0,2.1,0.8,2.1,2c0,1.1-0.9,2-2.1,2h0C5.9,9.5,5,8.6,5,7.5C5,6.3,5.9,5.5,7.1,5.5 M15.9,9.6  c2.4,0,3.9,1.6,3.9,4.4v5.5h-3.9v-5.2c0-1.1-0.3-1.5-1.1-1.5c-0.5,0-0.9,0.3-1.1,0.8c0,0.1-0.1,0.3-0.1,0.5v5.4H9.8l0-2.6l0-2.3  l0-4.4l0-0.5h3.9v0.5l0,0C14.2,9.8,14.9,9.6,15.9,9.6 M9,9.8v9.7H5.2V9.8H9 M7.1,4.5C5.3,4.5,4,5.8,4,7.5c0,0.6,0.2,1.1,0.4,1.6  C4.3,9.3,4.2,9.5,4.2,9.8v9.7c0,0.6,0.4,1,1,1H9c0.1,0,0.3,0,0.4-0.1c0.1,0,0.2,0.1,0.4,0.1h3.9c0.6,0,1-0.4,1-1v-5.4  c0-0.1,0-0.2,0-0.2c0.1-0.1,0.1-0.1,0.2-0.1c0,0.1,0.1,0.2,0.1,0.5v5.2c0,0.6,0.4,1,1,1h3.9c0.6,0,1-0.4,1-1V14  c0-3.3-1.9-5.4-4.9-5.4c-0.7,0-1.3,0.1-1.8,0.3c-0.1-0.1-0.3-0.1-0.4-0.1H10c0.2-0.4,0.3-0.8,0.3-1.3C10.2,5.7,8.9,4.5,7.1,4.5  L7.1,4.5z"></path></g></svg>					</a>
+				</span>
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon- elementor-repeater-item-993ef04" href="https://www.facebook.com/phyntech/" target="_blank">
+						<span class="elementor-screen-only"></span>
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><style type="text/css">	.st0{fill:none;stroke:#000000;}</style><path class="st0" d="M10,13.6H8v-3.5H10V8.8C10,6.4,11.4,5,13.6,5c0.7,0,1.5,0.1,1.9,0.1L16,5.2v3.2l-1.8,0c-0.6,0-0.7,0.1-0.7,0.7 v1.1h2.5l-0.4,3.5h-2V20H10L10,13.6L10,13.6z"></path></svg>					</a>
+				</span>
+							<span class="elementor-grid-item">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon- elementor-repeater-item-1fe064d" href="https://twitter.com/phyn" target="_blank">
+						<span class="elementor-screen-only"></span>
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="Layer_1" x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve"><g>	<path d="M20.4,5.7L20.4,5.7 M20.4,5.7L20,6.9c-0.1,0.3-0.2,0.5-0.3,0.8l0.1-0.1l1.5-0.6l-0.9,1.3c-0.4,0.6-0.9,1.2-1.5,1.6l0,0  l0,0.2c0,5.1-4,9.6-9.7,9.6c-1.9,0-3.7-0.5-5.2-1.5l-1.7-1.1l2,0.2c0.2,0,0.5,0,0.7,0c1,0,1.9-0.2,2.8-0.7  c-1.1-0.4-1.9-1.2-2.2-2.3l-0.2-0.8l0.2,0C4.8,13,4.4,12,4.4,11v-0.8l0.5,0.3C4.6,9.9,4.4,9.3,4.4,8.7c0-0.7,0.2-1.3,0.5-1.9  l0.3-0.6l0.4,0.5c1.4,1.7,3.5,2.9,5.8,3.1c0-0.1,0-0.1,0-0.2c0-2,1.7-3.7,3.7-3.7c0,0,0,0,0,0c0.9,0,1.8,0.3,2.5,1  c0.6-0.1,1.2-0.4,1.7-0.7L20.4,5.7 M20.4,4.7C20.4,4.7,20.4,4.7,20.4,4.7C20.4,4.7,20.4,4.7,20.4,4.7L20.4,4.7  c-0.2,0-0.4,0.1-0.5,0.1l-1,0.6c-0.3,0.2-0.6,0.3-0.9,0.4C17.1,5.3,16.2,5,15.2,5c-2.3,0-4.2,1.6-4.6,3.7C9,8.4,7.5,7.5,6.5,6.2  L6.1,5.7C5.9,5.4,5.6,5.3,5.3,5.3c0,0-0.1,0-0.1,0c-0.3,0-0.6,0.2-0.8,0.5L4.1,6.4C3.7,7.1,3.4,7.9,3.4,8.7c0,0.3,0,0.7,0.1,1  C3.5,9.8,3.4,10,3.4,10.2V11c0,1,0.3,2,0.9,2.8c0,0,0,0.1,0,0.1l0.2,0.8c0.2,0.6,0.5,1.2,0.9,1.7c-0.2,0-0.4,0-0.5,0  c-0.2,0-0.4,0-0.6,0l-2-0.2c0,0-0.1,0-0.1,0c-0.4,0-0.8,0.3-0.9,0.7c-0.2,0.4,0,0.9,0.4,1.2L3.5,19c1.7,1.1,3.7,1.7,5.8,1.7  c5.9,0,10.5-4.5,10.7-10.3c0.5-0.5,1-1,1.4-1.5l0.9-1.3c0.2-0.4,0.2-0.9-0.1-1.2c-0.2-0.2-0.4-0.3-0.7-0.4c0-0.1,0-0.1,0-0.2  C21.4,5.2,21,4.7,20.4,4.7L20.4,4.7C20.4,4.7,20.4,4.7,20.4,4.7L20.4,4.7z"></path></g></svg>					</a>
+				</span>
+					</div>
+				</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+				<section class="has_eae_slider elementor-section elementor-top-section elementor-element elementor-element-70fe73d6 elementor-section-full_width elementor-section-stretched elementor-section-height-default elementor-section-height-default" data-id="70fe73d6" data-element_type="section" data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+							<div class="elementor-row">
+					<div class="has_eae_slider elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-5859703b" data-id="5859703b" data-element_type="column">
+			<div class="elementor-column-wrap elementor-element-populated">
+							<div class="elementor-widget-wrap">
+						<div class="elementor-element elementor-element-25fc4efc elementor-widget elementor-widget-text-editor" data-id="25fc4efc" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+								<div class="elementor-text-editor elementor-clearfix">
+				<p>© 2022 Phyn LLC All Rights Reserved</p>					</div>
+						</div>
+				</div>
+						</div>
+					</div>
+		</div>
+								</div>
+					</div>
+		</section>
+							</div>
+				</div>
+		
+<!--
+The IP2Location Redirection is using IP2Location LITE geolocation database. Please visit https://lite.ip2location.com for more information.
+e8782fa4ada2df4f9b7663ea7b2a5c686bdfde61
+-->
+<!--googleoff: all--><div id="cookie-law-info-bar" data-nosnippet="true"><span>This website uses cookies to give you the best possible user experience. By continuing to use the website without changing your browser settings you agree to the use of cookies. For further information on cookies, please read our  privacy policy. <a role='button' data-cli_action="accept" id="cookie_action_close_header" class="cli-plugin-main-button cookie_action_close_header cli_action_button wt-cli-accept-btn">Accept</a></span></div><div id="cookie-law-info-again" data-nosnippet="true"><span id="cookie_hdr_showagain">Privacy &amp; Cookies Policy</span></div><div class="cli-modal" data-nosnippet="true" id="cliSettingsPopup" tabindex="-1" role="dialog" aria-labelledby="cliSettingsPopup" aria-hidden="true">
+  <div class="cli-modal-dialog" role="document">
+	<div class="cli-modal-content cli-bar-popup">
+		  <button type="button" class="cli-modal-close" id="cliModalClose">
+			<svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"></path><path d="M0 0h24v24h-24z" fill="none"></path></svg>
+			<span class="wt-cli-sr-only">Close</span>
+		  </button>
+		  <div class="cli-modal-body">
+			<div class="cli-container-fluid cli-tab-container">
+	<div class="cli-row">
+		<div class="cli-col-12 cli-align-items-stretch cli-px-0">
+			<div class="cli-privacy-overview">
+				<h4>Privacy Overview</h4>				<div class="cli-privacy-content">
+					<div class="cli-privacy-content-text">This website uses cookies to improve your experience while you navigate through the website. Out of these cookies, the cookies that are categorized as necessary are stored on your browser as they are essential for the working of basic functionalities of the website. We also use third-party cookies that help us analyze and understand how you use this website. These cookies will be stored in your browser only with your consent. You also have the option to opt-out of these cookies. But opting out of some of these cookies may have an effect on your browsing experience.</div>
+				</div>
+				<a class="cli-privacy-readmore" aria-label="Show more" role="button" data-readmore-text="Show more" data-readless-text="Show less"></a>			</div>
+		</div>
+		<div class="cli-col-12 cli-align-items-stretch cli-px-0 cli-tab-section-container">
+												<div class="cli-tab-section">
+						<div class="cli-tab-header">
+							<a role="button" tabindex="0" class="cli-nav-link cli-settings-mobile" data-target="necessary" data-toggle="cli-toggle-tab">
+								Necessary							</a>
+															<div class="wt-cli-necessary-checkbox">
+									<input type="checkbox" class="cli-user-preference-checkbox"  id="wt-cli-checkbox-necessary" data-id="checkbox-necessary" checked="checked"  />
+									<label class="form-check-label" for="wt-cli-checkbox-necessary">Necessary</label>
+								</div>
+								<span class="cli-necessary-caption">Always Enabled</span>
+													</div>
+						<div class="cli-tab-content">
+							<div class="cli-tab-pane cli-fade" data-id="necessary">
+								<div class="wt-cli-cookie-description">
+									Necessary cookies are absolutely essential for the website to function properly. This category only includes cookies that ensures basic functionalities and security features of the website. These cookies do not store any personal information.								</div>
+							</div>
+						</div>
+					</div>
+																	<div class="cli-tab-section">
+						<div class="cli-tab-header">
+							<a role="button" tabindex="0" class="cli-nav-link cli-settings-mobile" data-target="non-necessary" data-toggle="cli-toggle-tab">
+								Non-necessary							</a>
+															<div class="cli-switch">
+									<input type="checkbox" id="wt-cli-checkbox-non-necessary" class="cli-user-preference-checkbox"  data-id="checkbox-non-necessary" checked='checked' />
+									<label for="wt-cli-checkbox-non-necessary" class="cli-slider" data-cli-enable="Enabled" data-cli-disable="Disabled"><span class="wt-cli-sr-only">Non-necessary</span></label>
+								</div>
+													</div>
+						<div class="cli-tab-content">
+							<div class="cli-tab-pane cli-fade" data-id="non-necessary">
+								<div class="wt-cli-cookie-description">
+									Any cookies that may not be particularly necessary for the website to function and is used specifically to collect user personal data via analytics, ads, other embedded contents are termed as non-necessary cookies. It is mandatory to procure user consent prior to running these cookies on your website.								</div>
+							</div>
+						</div>
+					</div>
+										</div>
+	</div>
+</div>
+		  </div>
+		  <div class="cli-modal-footer">
+			<div class="wt-cli-element cli-container-fluid cli-tab-container">
+				<div class="cli-row">
+					<div class="cli-col-12 cli-align-items-stretch cli-px-0">
+						<div class="cli-tab-footer wt-cli-privacy-overview-actions">
+						
+															<a id="wt-cli-privacy-save-btn" role="button" tabindex="0" data-cli-action="accept" class="wt-cli-privacy-btn cli_setting_save_button wt-cli-privacy-accept-btn cli-btn">SAVE &amp; ACCEPT</a>
+													</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+<div class="cli-modal-backdrop cli-fade cli-settings-overlay"></div>
+<div class="cli-modal-backdrop cli-fade cli-popupbar-overlay"></div>
+<!--googleon: all--><script type="text/javascript"> 
+jQuery(document).ready(function() {
+    jQuery('#btn-back').on('click', function() {
+      window.history.go(-1); 
+      return false;
+    });
+});
+</script><style type="text/css" media="screen"></style><link rel='stylesheet' id='fwpcl-front-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/facetwp-conditional-logic/assets/css/front.css?ver=1.3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='e-animations-css' href='https://phyn.wpenginepowered.com/wp-content/plugins/elementor/assets/lib/animations/animations.min.css?ver=3.13.2' type='text/css' media='all' />
+<script type='text/javascript' id='eae-main-js-extra'>
+/* <![CDATA[ */
+var eae = {"ajaxurl":"https:\/\/www.phyn.com\/wp-admin\/admin-ajax.php","current_url":"aHR0cHM6Ly93d3cucGh5bi5jb20v","breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600}};
+var eae_editor = {"plugin_url":"https:\/\/www.phyn.com\/wp-content\/plugins\/addon-elements-for-elementor-page-builder\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/addon-elements-for-elementor-page-builder/assets/js/eae.min.js?ver=1.12.2' id='eae-main-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/elementor/assets/lib/font-awesome/js/v4-shims.min.js?ver=1.0' id='font-awesome-4-shim-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/addon-elements-for-elementor-page-builder/assets/js/animated-main.min.js?ver=1.0' id='animated-main-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/addon-elements-for-elementor-page-builder/assets/js/particles.min.js?ver=2.0.0' id='eae-particles-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/addon-elements-for-elementor-page-builder/assets/lib/magnific.min.js?ver=1.1.0' id='wts-magnific-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/addon-elements-for-elementor-page-builder/assets/lib/vegas/vegas.min.js?ver=2.4.0' id='vegas-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.7.6' id='swv-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/www.phyn.com\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.7.6' id='contact-form-7-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-includes/js/hoverIntent.min.js?ver=1.10.2' id='hoverIntent-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/themes/genesis/lib/js/menu/superfish.min.js?ver=1.7.10' id='superfish-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/themes/genesis/lib/js/menu/superfish.args.min.js?ver=3.4.0' id='superfish-args-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/themes/genesis/lib/js/skip-links.min.js?ver=3.4.0' id='skip-links-js'></script>
+<script type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=6Le2trQUAAAAADmoVgp3h97s94LPxTSfUhamuC1m&#038;ver=3.0' id='google-recaptcha-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2' id='wp-polyfill-inert-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11' id='regenerator-runtime-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wpcf7-recaptcha-js-extra'>
+/* <![CDATA[ */
+var wpcf7_recaptcha = {"sitekey":"6Le2trQUAAAAADmoVgp3h97s94LPxTSfUhamuC1m","actions":{"homepage":"homepage","contactform":"contactform"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=5.7.6' id='wpcf7-recaptcha-js'></script>
+<script type='text/javascript' id='megamenu-js-extra'>
+/* <![CDATA[ */
+var megamenu = {"timeout":"300","interval":"100"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/megamenu/js/maxmegamenu.js?ver=3.2.2' id='megamenu-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/megamenu-pro/assets/public.js?ver=2.1' id='megamenu-pro-js'></script>
+<script type='text/javascript' id='fwpcl-front-js-extra'>
+/* <![CDATA[ */
+var FWPCL = {"rulesets":[]};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/facetwp-conditional-logic/assets/js/front.js?ver=1.3.0' id='fwpcl-front-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.13.1' id='elementor-pro-webpack-runtime-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.13.2' id='elementor-webpack-runtime-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.13.2' id='elementor-frontend-modules-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-includes/js/dist/hooks.min.js?ver=4169d3cf8e8d95a3d6d5' id='wp-hooks-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-includes/js/dist/i18n.min.js?ver=9e794f35a71bb98672ae' id='wp-i18n-js'></script>
+<script type='text/javascript' id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type='text/javascript' id='elementor-pro-frontend-js-before'>
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/www.phyn.com\/wp-admin\/admin-ajax.php","nonce":"5ca47e54fa","urls":{"assets":"https:\/\/www.phyn.com\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/www.phyn.com\/wp-json\/"},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/www.phyn.com\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+</script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.13.1' id='elementor-pro-frontend-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/elementor/assets/lib/waypoints/waypoints.min.js?ver=4.0.2' id='elementor-waypoints-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.2' id='jquery-ui-core-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/elementor/assets/lib/swiper/swiper.min.js?ver=5.3.6' id='swiper-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/elementor/assets/lib/share-link/share-link.min.js?ver=3.13.2' id='share-link-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js?ver=4.9.0' id='elementor-dialog-js'></script>
+<script type='text/javascript' id='elementor-frontend-js-before'>
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":768,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":767,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}}},"version":"3.13.2","is_static":false,"experimentalFeatures":{"a11y_improvements":true,"additional_custom_breakpoints":true,"theme_builder_v2":true,"landing-pages":true,"page-transitions":true,"notes":true,"loop":true,"form-submissions":true,"e_scroll_snap":true},"urls":{"assets":"https:\/\/www.phyn.com\/wp-content\/plugins\/elementor\/assets\/"},"swiperClass":"swiper-container","settings":{"page":[],"editorPreferences":[]},"kit":{"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":18419,"title":"Phyn%20%7C%20Water%20Leak%20Detector%20%7C%20Water%20Usage%20Monitoring%20System","excerpt":"","featuredImage":false}};
+</script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.13.2' id='elementor-frontend-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/elementor-pro/assets/js/preloaded-elements-handlers.min.js?ver=3.13.1' id='pro-preloaded-elements-handlers-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/elementor/assets/js/preloaded-modules.min.js?ver=3.13.2' id='preloaded-modules-js'></script>
+<script type='text/javascript' src='https://phyn.wpenginepowered.com/wp-content/plugins/elementor-pro/assets/lib/sticky/jquery.sticky.min.js?ver=3.13.1' id='e-sticky-js'></script>
+<script type='text/javascript' src='https://kit.fontawesome.com/168930ca96.js?ver=3.13.1' id='font-awesome-pro-js'></script>
+<script>var FWP_HTTP = FWP_HTTP || {}; FWP_HTTP.lang = 'en';</script>
+</body>
+</html>

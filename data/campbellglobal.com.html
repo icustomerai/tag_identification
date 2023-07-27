@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/js/libs/modernizr-3.6.0.min.js"></script>
+    
+    <title>Timberland Investment – sustainable, natural resource investment management</title>
+    <meta name="description" content="Campbell Global brings more than three decades of experience and leadership to sustainable timberland and natural resource investment management" /> 
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700|Oswald:400,300" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.min.css?v=638212358380000000">
+        
+    
+
+    <!--[if lte IE 7]><link rel="stylesheet" href="/css/ie.min.css"><![endif]-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.10/es5-shim.min.js" integrity="sha256-uK1n14nhBO5BLhn2zIXiks+xfK0AtMk613D2R9qbKXI=" crossorigin="anonymous"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    
+    
+
+</head>
+<body>
+    
+
+
+
+
+<header>
+    <a href="/"><img src="/images/logo.png?v=638212358400000000" alt="Campbell Global" id="logo" /></a>
+</header>
+
+<nav>
+    
+<ul id="utility_nav">
+    <li><a href="/recreation/" >RECREATION</a></li>
+    <li><a href="/contact/" >CONTACT</a></li>
+
+        <li><a href="/login/" >LOGIN</a></li>
+</ul>
+
+    <div id="main_nav_wrapper" class="clear_fix">
+    <div id="main_nav" ng-app="TcgNav" ng-controller="TcgNavCtrl" ng-init="mainNav='None'">
+        <button id="mobile_nav_toggle" class="mobilenav" ng-click="mobileDisplayExpanded=!mobileDisplayExpanded"></button>
+        <ul ng-show="showPrimaryNav()">
+            <li class="mobilenav"><a href="/">HOME</a></li>
+            <li ng-class="{selected:isActive('AboutUs')}" ng-mouseleave="hoverArea=null" ng-mouseover="hoverArea='AboutUs'">
+                <button ng-click="selectMobileNav('AboutUs')" class="mobilenav">&nbsp; <span ng-bind="getCollapseExpandIndicator('AboutUs')"></span></button>
+                <a href="/about">ABOUT US</a>
+                <ul class="secondary_nav ng-hide mobilenav" ng-class="{selected:isHovered('AboutUs')}" ng-show="isHovered('AboutUs')">
+                    <li><a href="/about">A GLOBAL LEADER</a></li>
+                    <li><a href="/about/what-we-believe">WHAT WE BELIEVE</a></li>
+                    <li><a href="/about/how-we-are-different">HOW WE ARE DIFFERENT</a></li>
+                    <li><a href="/about/social-impact">SOCIAL IMPACT</a></li>
+                    <li><a href="/about/our-mission-and-values">MISSION AND VALUES</a></li>
+                    <li><a href="/about/grow-the-good">GROW THE GOOD</a></li>
+                    <li><a href="/about/careers">CAREERS</a></li>
+                    <li><a href="/about/news">IN THE NEWS</a></li>
+                </ul>
+            </li>
+            <li ng-class="{selected:isActive('ForestInvesting')}" class="children_visible" ng-mouseleave="hoverArea=null" ng-mouseover="hoverArea='ForestInvesting'">
+                <button ng-click="selectMobileNav('ForestInvesting')" class="mobilenav">&nbsp; <span ng-bind="getCollapseExpandIndicator('ForestInvesting')"></span></button>
+                <a href="/forest-investing">FOREST INVESTING</a>
+                 <ul class="secondary_nav ng-hide" ng-show="isHovered('ForestInvesting')">
+                     <li><a href="/forest-investing">INVESTMENT MANAGEMENT</a></li>
+                    <li><a href="/forest-investing/forest-management">FOREST MANAGEMENT</a></li>
+                     <li><a href="/forest-investing/timber-primer">TIMBER PRIMER</a></li>
+                 </ul>
+            </li>
+            <li ng-class="{selected:isActive('Sustainability')}" class="children_visible" ng-mouseleave="hoverArea=null" ng-mouseover="hoverArea='Sustainability'">
+                <button ng-click="selectMobileNav('Sustainability')" class="mobilenav">&nbsp; <span ng-bind="getCollapseExpandIndicator('Sustainability')"></span></button>
+                <a href="/sustainability">SUSTAINABILITY</a>
+                <ul class="secondary_nav ng-hide" ng-show="isHovered('Sustainability')">
+                    <li><a href="/sustainability">RESPONSIBLE INVESTMENT</a></li>
+                    <li><a href="/sustainability/esg">ESG</a></li>
+                    <li><a href="/sustainability/carbon-footprint">CARBON FOOTPRINT</a></li>
+                    <li><a href="/sustainability/forest-certification">FOREST CERTIFICATION</a></li>
+                </ul>
+            </li>
+            <li ng-class="{selected:isActive('MeetTheTeam')}" class="children_visible" ng-mouseleave="hoverArea=null" ng-mouseover="hoverArea='MeetTheTeam'">
+                <button ng-click="selectMobileNav('MeetTheTeam')" class="mobilenav">&nbsp; <span ng-bind="getCollapseExpandIndicator('MeetTheTeam')"></span></button>
+                <a href="/meet-the-team/people-executive">MEET THE TEAM</a>
+                <ul class="secondary_nav ng-hide" ng-show="isHovered('MeetTheTeam')">
+                    <li><a href="/meet-the-team/people-executive">EXECUTIVE PERSONNEL</a></li>
+                    <li><a href="/meet-the-team/people-key">SENIOR PERSONNEL</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+    
+</nav>
+
+<section id="content_wrapper_outer">
+    
+    <a id="slider_offsite_link" href="http://www.example.com" style="display:none;"></a>
+    <div id="sliderApp" class="bootstrap cg-homepage__carousel">
+        <!-- override the template for custom functionality -->
+        <script type="text/ng-template" id="uib/template/carousel/carousel.html">
+            <div class="carousel" ng-swipe-right="prev()" ng-swipe-left="next()">
+                <div class="carousel-inner" ng-transclude></div>
+                <div class="indicators">
+                    <ol class="carousel-indicators" ng-show="slides.length > 1">
+                        <li ng-repeat="slide in slides | orderBy:indexOfSlide track by $index" ng-class="{active: isActive(slide)}" ng-click="select(slide);pause()"></li>
+                    </ol>
+                </div>
+            </div>
+        </script>
+        <script type="text/ng-template" id="uib/template/carousel/slide.html">
+            <div class="text-center cg-homepage__carousel-item" ng-transclude></div>
+        </script>
+        <!-- end override template -->
+        <div ng-controller="CarouselDemoCtrl" class="slider" style="background-image: url('/images/2021-edits/PNW_5.jpg');">
+            <div class="carousel-caption">
+                <h1>Ingenuity Built on Integrity.</h1>
+                <h2>Dynamic Approaches.</h2>
+                <h2>Lasting Values.</h2>
+            </div>
+            <div uib-carousel interval="myInterval" active="active">
+                <div uib-slide ng-repeat="slide in slides track by $index" index="$index">
+                    <img ng-src="{{slide.src}}" style="margin:auto;">
+                    
+                    <div class="cg-homepage__carousel-footer">
+                        <h3>{{slide.h3}}</h3>
+                        <a ng-href="{{slide.more}}" ng-click="onClickLearnMore($event, slide)">LEARN MORE</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="home_content_wrapper_inner">
+        <article id="home_content">
+            
+
+
+
+
+
+
+
+
+                 
+
+        </article>
+        
+<footer>
+
+    
+
+    <div>Copyright &copy; 2023 Campbell Global, LLC</div>
+
+    <ul class="footer_nav">
+        <li><a href="/legal">Legal</a></li>
+        <li><a href="/contact/">Contact Us</a></li>
+        <li><a href="https://www.linkedin.com/company/campbell-group/">
+            <img width="110" src="/images/2021-edits/linkedin-cg.png?v=638212358400000000" alt="LinkedIn" /></a></li>
+    </ul>
+
+</footer>
+
+    </section>
+</section>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular-resource.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular-route.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular-sanitize.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.10/angular-animate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+
+    <script src="/js/nav/tcgNav.min.js"></script>
+    <script src="/js/nav/controllers/tcgNavController.min.js"></script>
+    <script src="/js/leaving_site/leaving.min.js"></script>
+    <script src="/js/leaving_site/controllers/leavingCtrl.min.js"></script>
+    <script src="/js/site.min.js?v=05262017"></script>
+    
+    
+    <script src="/js/slider/slider.min.js?v=20181001"></script>
+    <script src="/js/slider/controllers/SliderController.min.js?v=20181001"></script>
+
+
+</body>
+</html>

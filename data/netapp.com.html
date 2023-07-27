@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+// akam-sw.js install script version 1.3.6
+"serviceWorker"in navigator&&"find"in[]&&function(){var e=new Promise(function(e){"complete"===document.readyState||!1?e():(window.addEventListener("load",function(){e()}),setTimeout(function(){"complete"!==document.readyState&&e()},1e4))}),n=window.akamServiceWorkerInvoked,r="1.3.6";if(n)aka3pmLog("akam-setup already invoked");else{window.akamServiceWorkerInvoked=!0,window.aka3pmLog=function(){window.akamServiceWorkerDebug&&console.log.apply(console,arguments)};function o(e){(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"sm.sw.s":e,"sm.sw.v":r}])}var i="/akam-sw.js",a=new Map;navigator.serviceWorker.addEventListener("message",function(e){var n,r,o=e.data;if(o.isAka3pm)if(o.command){var i=(n=o.command,(r=a.get(n))&&r.length>0?r.shift():null);i&&i(e.data.response)}else if(o.commandToClient)switch(o.commandToClient){case"enableDebug":window.akamServiceWorkerDebug||(window.akamServiceWorkerDebug=!0,aka3pmLog("Setup script debug enabled via service worker message"),v());break;case"boomerangMQ":o.payload&&(window.BOOMR_mq=window.BOOMR_mq||[]).push(o.payload)}aka3pmLog("akam-sw message: "+JSON.stringify(e.data))});var t=function(e){return new Promise(function(n){var r,o;r=e.command,o=n,a.has(r)||a.set(r,[]),a.get(r).push(o),navigator.serviceWorker.controller&&(e.isAka3pm=!0,navigator.serviceWorker.controller.postMessage(e))})},c=function(e){return t({command:"navTiming",navTiming:e})},s=null,m={},d=function(){var e=i;return s&&(e+="?othersw="+encodeURIComponent(s)),function(e,n){return new Promise(function(r,i){aka3pmLog("Registering service worker with URL: "+e),navigator.serviceWorker.register(e,n).then(function(e){aka3pmLog("ServiceWorker registration successful with scope: ",e.scope),r(e),o(1)}).catch(function(e){aka3pmLog("ServiceWorker registration failed: ",e),o(0),i(e)})})}(e,m)},g=navigator.serviceWorker.__proto__.register;if(navigator.serviceWorker.__proto__.register=function(n,r){return n.includes(i)?g.call(this,n,r):(aka3pmLog("Overriding registration of service worker for: "+n),s=new URL(n,window.location.href),m=r,navigator.serviceWorker.controller?new Promise(function(n,r){var o=navigator.serviceWorker.controller.scriptURL;if(o.includes(i)){var a=encodeURIComponent(s);o.includes(a)?(aka3pmLog("Cancelling registration as we already integrate other SW: "+s),navigator.serviceWorker.getRegistration().then(function(e){n(e)})):e.then(function(){aka3pmLog("Unregistering existing 3pm service worker"),navigator.serviceWorker.getRegistration().then(function(e){e.unregister().then(function(){return d()}).then(function(e){n(e)}).catch(function(e){r(e)})})})}else aka3pmLog("Cancelling registration as we already have akam-sw.js installed"),navigator.serviceWorker.getRegistration().then(function(e){n(e)})}):g.call(this,n,r))},navigator.serviceWorker.controller){var u=navigator.serviceWorker.controller.scriptURL;u.includes("/akam-sw.js")||u.includes("/akam-sw-preprod.js")||u.includes("/threepm-sw.js")||(aka3pmLog("Detected existing service worker. Removing and re-adding inside akam-sw.js"),s=new URL(u,window.location.href),e.then(function(){navigator.serviceWorker.getRegistration().then(function(e){m={scope:e.scope},e.unregister(),d()})}))}else e.then(function(){window.akamServiceWorkerPreprod&&(i="/akam-sw-preprod.js"),d()});if(window.performance){var w=window.performance.timing,l=w.responseEnd-w.responseStart;c(l)}e.then(function(){t({command:"pageLoad"})});var k=!1;function v(){window.akamServiceWorkerDebug&&!k&&(k=!0,aka3pmLog("Initializing debug functions at window scope"),window.aka3pmInjectSwPolicy=function(e){return t({command:"updatePolicy",policy:e})},window.aka3pmDisableInjectedPolicy=function(){return t({command:"disableInjectedPolicy"})},window.aka3pmDeleteInjectedPolicy=function(){return t({command:"deleteInjectedPolicy"})},window.aka3pmGetStateAsync=function(){return t({command:"getState"})},window.aka3pmDumpState=function(){aka3pmGetStateAsync().then(function(e){aka3pmLog(JSON.stringify(e,null,"\t"))})},window.aka3pmInjectTiming=function(e){return c(e)},window.aka3pmUpdatePolicyFromNetwork=function(){return t({command:"pullPolicyFromNetwork"})})}v()}}();</script>
+<script>
+        !function () {
+            if ('PerformanceLongTaskTiming' in window) {
+                var g = window.__tti = { e: [] };
+                g.o = new PerformanceObserver(function (l) { g.e = g.e.concat(l.getEntries()) });
+                g.o.observe({ entryTypes: ['longtask'] })
+            }
+        }();
+    </script>
+    <script>
+        // set build number as JS variable for tracking performance over time in mPulse
+        const buildVer = "1.0.8571.42579";
+        const lang = "en";
+    </script>
+    <!-- Do not execute any jQuery code until jQuery is loaded.
+     If you need to add jQuery code in components or inline, wrap it in
+    jQuery(function () { ..code goes here...  }); and it will execute after jQuery is loaded-->
+    <script>
+        window.jQueryQ = window.jQueryQ || [];
+        window.$ = window.jQuery = function () {
+            window.jQueryQ.push(arguments);
+        };
+    </script>
+    <script>
+      /** Global vars shared between Masthead and Search **/
+      /** Search Token generated from server by calling Coveo search API **/
+      const searchToken = "eyJhbGciOiJIUzI1NiJ9.eyJ2OCI6dHJ1ZSwib3JnYW5pemF0aW9uIjoibmV0YXBwcHJvZHVjdGlvbm81czN2emtwIiwidXNlcklkcyI6W3sidHlwZSI6IlVzZXIiLCJuYW1lIjoiYW5vbnltb3VzQGNvdmVvLmNvbSIsInByb3ZpZGVyIjoiRW1haWwgU2VjdXJpdHkgUHJvdmlkZXIifV0sInJvbGVzIjpbInF1ZXJ5RXhlY3V0b3IiXSwiZXhwIjoxNjg3NzIyMDY1LCJpYXQiOjE2ODc2MzU2NjV9.EQIERgvl1QjnH-SSd-rNvsdoJ91xaqZVCy0DdPRQ-14";
+      let cond = false;
+      /** Org ID differnt production **/
+      var organizationId;
+      if (cond) {
+          organizationId = "netappproductiono5s3vzkp";
+      } else {
+          organizationId = "netappproductiono5s3vzkp";
+      }
+      const envOrgId = organizationId;
+    </script>
+    <script>
+        //remove heading tags from cookie banner
+        const cookieLaw = {}; function OptanonWrapper() { let e = document.querySelectorAll("#onetrust-banner-sdk h1, #onetrust-banner-sdk h2, #onetrust-banner-sdk h3, #onetrust-banner-sdk h4, #onetrust-banner-sdk h5"), t = document.querySelectorAll("#onetrust-pc-sdk h1, #onetrust-pc-sdk h2, #onetrust-pc-sdk h3, #onetrust-pc-sdk h4, #onetrust-pc-sdk h5"); e.forEach(e => { cookieLaw.replaceTag(e) }), t.forEach(e => { cookieLaw.replaceTag(e) }) } cookieLaw.replaceTag = function (e) { let t = e, r = t.id, a = e.nodeName, n = document.createElement("div"); switch ("ot-category-title" === r && (n = document.createElement("span")), n.setAttribute("role", "heading"), a) { case "H2": n.setAttribute("aria-level", "2"); break; case "H3": n.setAttribute("aria-level", "3"); break; case "H4": n.setAttribute("aria-level", "4") }if (t && t.hasAttributes()) { let s = t.attributes; for (let o = s.length - 1; o >= 0; o--)n.setAttribute(s[o].name, s[o].value) } t && t.firstChild && (n.appendChild(t.firstChild), t.parentNode.replaceChild(n, t)) };</script>
+    <!--conditional rendering for Coveo -->
+        <link rel="stylesheet" href="/static/css/coveo-searchbox.min.css?v=638229590820000000">
+    <link rel="stylesheet" href="/static/css/critical.min.css?v=638229590820000000">
+    <link rel="stylesheet" href="/static/css/non-critical.min.css?v=638229590820000000" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="/static/css/utility.min.css?v=638229590820000000">
+        <style>
+        /* This style is required to show 'Chat' beneath 'Cookie notification' */
+        .drift-conductor-item {
+            z-index: 999 !important;
+        }
+        /* OneTrust styles for heading updates */
+        #onetrust-pc-sdk #ot-category-title {
+            color: #000 !important;
+        }
+
+        #onetrust-pc-sdk .ot-accordion-layout .ot-cat-header {
+            color: #000 !important;
+        }
+    </style>
+    <!-- OneTrust Cookies Consent Notice start for netapp.com -->
+        <script defer src="https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js"></script>
+        <script defer src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" data-document-language="true" charset="UTF-8" data-domain-script="72570c5c-fe30-465f-b0e0-b77f7fb4ae34"></script>
+
+    <!-- OneTrust Cookies Consent Notice end for netapp.com -->
+    <script defer src="/static/js/jquery.min.js?v=638229590820000000"></script>
+    <script defer src="/static/js/lazy-load.min.js?v=638229590820000000"></script>
+    <script defer src="/static/js/a11y-dialog.min.js?v=638229590820000000"></script>
+    <script defer src="/static/js/hammer.min.js?v=638229590820000000"></script>
+    <script defer src="/static/js/index.min.js?v=638229590820000000"></script>
+            <script defer class="coveo-script" src="https://static.cloud.coveo.com/searchui/v2.9659/js/CoveoJsSearch.Lazy.min.js"></script>
+        <script defer src="/static/js/load-drift.min.js?v=638229590820000000"></script>
+    <script defer src="/static/js/adobe-analytics.min.js?v=638229590820000000"></script>
+    <!-- Adobe DTM/Launch -->
+        <script defer src="//assets.adobedtm.com/60287eadf1ee/29b76ec16604/launch-145d1b654f79.min.js"></script>
+        
+    
+    
+
+
+
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!-- PageSeoMetadata View -->
+        <meta name="AssetType" content="Webpage" />
+    <meta name="pageNavigationOption" content="None" />
+    <meta name="inputTo" content="Site Map" />
+
+    <!-- PageSeoMetadata Partial View -->
+    <title >Data Storage &amp; Data Management Solutions | NetApp</title>
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en-US" />
+    <meta name="description" content="Modernize your on-premises data storage and simplify your hybrid or multicloud data management processes with NetApp–the industry leader in security and innovation. Customize your data storage to fit your business needs." />
+
+
+    <meta property="og:description" content="Modernize your on-premises data storage and simplify your hybrid or multicloud data management processes with NetApp–the industry leader in security and innovation. Customize your data storage to fit your business needs." />
+    <meta property="og:title" content="Data Storage &amp; Data Management Solutions | NetApp" />
+    <meta property="og:image" content="https://www.netapp.com/media/homepage-social-share-1024x512_tcm19-81688.png" />
+    <meta property="og:url" content="https://www.netapp.com/" />
+    <!-- Twitter tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="twitter:title" content="Data Storage &amp; Data Management Solutions | NetApp" />
+    <meta name="twitter:description" content="Modernize your on-premises data storage and simplify your hybrid or multicloud data management processes with NetApp–the industry leader in security and innovation. Customize your data storage to fit your business needs." />
+    <!-- Twitter card image -->
+    <meta name="twitter:image" content="https://www.netapp.com/media/homepage-social-share-1024x512_tcm19-81688.png" />
+
+    <meta name="twitter:image:alt" content="NetApp AFF&#160;C-Series hardware on a blue background" />
+<script type="application/ld+json">
+        {
+        "@context":"http://schema.org",
+        "@type":"webSite",
+        "image": "https://www.netapp.com/",
+        "author": "NetApp",
+        "datePublished": "2019",
+        "mainEntityOfPage":{
+        "@type":"WebPage",
+        "@id":"https://www.netapp.com/"
+        },
+        "headline":"Data Management Solutions for the Cloud",
+        "publisher":{
+        "@type":"Organization",
+        "name":"NetApp",
+        "logo":{
+        "@type":"ImageObject",
+        "url":"https://www.netapp.com/media/na_logo_black_rgb_reg-mark_tcm19-21014.jpg "
+        },
+        "description":"Modernize your data management systems and simplify cloud data storage with NetApp – the world’s leader in data management solutions. "
+        }
+        }
+    </script>
+<script type="application/ld+json">
+ { "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "NetApp",
+ "legalName" : "NetApp",
+ "url": "https://www.netapp.com",
+ "logo": "https://www.netapp.com/media/na_logo_black_rgb_reg-mark_tcm19-21014.jpg",
+ "foundingDate": "1992",
+ "founders": [
+ {
+ "@type": "Person",
+ "name": "George Kurian"
+ } ],
+ "address": {
+ "@type": "PostalAddress",
+ "streetAddress": "1395 Crossman Ave",
+ "addressLocality": "Sunnyvale",
+ "addressRegion": "CA",
+ "postalCode": "94089",
+ "addressCountry": "USA"
+ },
+ "contactPoint": {
+ "@type": "ContactPoint",
+ "contactType": "central number",
+ "telephone": "[+1 408 822 6000]"
+ },
+ "sameAs": [ 
+ "https://www.facebook.com/NetApp",
+ "https://https://en.wikipedia.org/wiki/NetApp",
+ "https://twitter.com/netapp",
+ "https://www.linkedin.com/company/netapp",
+ "https://www.youtube.com/user/NetAppTV",
+ "https://www.slideshare.net/NetApp"
+ ]}
+</script>
+
+
+
+
+
+
+        <link rel="canonical" href="https://www.netapp.com/" />
+
+    
+    <link rel="alternate" href="https://www.netapp.com/de/" hreflang="de" />
+    <link rel="alternate" href="https://www.netapp.com/es/" hreflang="es" />
+    <link rel="alternate" href="https://www.netapp.com/fr/" hreflang="fr" />
+    <link rel="alternate" href="https://www.netapp.com/it/" hreflang="it" />
+    <link rel="alternate" href="https://www.netapp.com/ja/" hreflang="ja" />
+    <link rel="alternate" href="https://www.netapp.com/ko/" hreflang="ko" />
+    <link rel="alternate" href="https://www.netapp.com/zh-hans/" hreflang="zh-hans" />
+    <link rel="alternate" href="https://www.netapp.com/zh-hant/" hreflang="zh-hant" />
+    <link rel="alternate" href="https://www.netapp.com/" hreflang="en" />
+    <link rel="alternate" href="https://www.netapp.com/" hreflang="x-default" />
+
+<script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"false","rua.texp":"norulematch"}]);</script>
+                              <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="6FSMF-C9TB6-XLEBP-V5VVN-JCRY5",function(){function e(){if(!r){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,o.appendChild(e),r=!0}}function t(e){r=!0;var n,t,a,i,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(o,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",i=(a.frameElement||a).style,i.width=0,i.height=0,i.border=0,i.display="none",o.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void 0;",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=14,window.BOOMR.url=n+"6FSMF-C9TB6-XLEBP-V5VVN-JCRY5";var i=document.currentScript||document.getElementsByTagName("script")[0],o=i.parentNode,r=!1,d=document.createElement("link");if(d.relList&&"function"==typeof d.relList.supports&&d.relList.supports("preload")&&"as"in d)window.BOOMR.snippetMethod="p",d.href=window.BOOMR.url,d.rel="preload",d.as="script",d.addEventListener("load",e),d.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!r)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),o.appendChild(d);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="slccfgqxh5xmgzeymhpa-f-6bec8aeb8-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"36","ak.cp":"85238","ak.ai":parseInt("158315",10),"ak.ol":"0","ak.cr":801,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"150a170b","ak.r":37688,"ak.a2":n,"ak.m":"","ak.n":"essl","ak.bpcip":"146.196.34.0","ak.cport":64408,"ak.gh":"23.63.110.191","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"reno","ak.t":"1687708126","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==lF0DYo2k6ZUmsWEt6PANiSGe+KrMjZ/laSJUtgShM8QHC+r7t4Wku5KHoX/cezuW9DGhGJRMR0upswmo4fBcM9X2IjuMOtsCmDVnAH2cPB2cYqAvez7IvIPyPFPUTdteCZe/TwO+HIaVM++dE1B5Owg3LVg+3M91n2I4CP7fD8QsExKFZ62MfUuMXgoGHkrQH2WAQCvY4YUTcHULutb+rKc5ukzsZe4ENuocUyVN2UQP8jQvZBsnmyUUZNRiKD2orncPzPYninAlzfTML0Ut7WGKgb56Sc390Xd0qLCo6Y0ruroNIaSXJIA3BFhyy+WRBC4Z61l9CvxQ8s//nVV87I3bJ3Jqa1fViEeDCBoZn+oOvTKVPupKZVbGCm8xpzgZwDnKIwgJB7WFjD9JatTjcqX2qmMzosHBSd9bForqSPY=","ak.pv":"533","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+<body>
+        <script>
+        ntapDevice = 'desktop';
+        ntapIsMobile = 'False';
+    </script>
+
+<n-page>
+        
+<n-notifications-region typeof="Region" resource="GlobalNotification">
+    
+<n-main-content-region typeof="Region" resource="Main">
+    
+</n-main-content-region>
+
+    
+</n-notifications-region>
+    
+    <n-header-region id="nHeaderRegion">
+        <div class="n-masthead-secondary">
+            
+    
+    
+
+<!-- TopHat Component Start-->
+    <nav class="n-secondary-nav" aria-label="Secondary navigation">
+        <ul prefix="tri: http://www.sdl.com/web/schemas/core" typeof="tri:TopHat">
+                            <li>
+                                <a href="https://bluexp.netapp.com/" target="_self" rel="nofollow"  >BlueXP Login</a>
+                            </li>
+                            <li>
+                                <a href="https://www.netapp.tv/" target="_self"   >NetApp TV</a>
+                            </li>
+        </ul>
+    </nav>
+<!-- TopHat Component End -->
+
+
+
+            
+
+<nav class="n-secondary-nav-utilities" aria-label="Secondary navigation utilities" typeof="Region" resource="Nav-Utilities">
+    <ul>
+        <li class="n-masthead-login-button-container">
+                
+
+        <a class="nav-icon-button" href="/utility/login/" title="Login" aria-label="Login">
+            <svg class="icon--person" aria-hidden="true">
+                <use xlink:href="/static/images/sprite.svg#person"></use>
+            </svg>
+        </a>
+
+        </li>
+        <li>
+            
+    
+    
+
+
+<div class="n-language-selector">
+    <button class="nav-icon-button" data-language-selector="navigation" aria-expanded="false" title="Language" aria-label="Language">
+        <svg class="icon--language" aria-hidden="true">
+            <use xlink:href="/static/images/sprite.svg#language"></use>
+        </svg>
+    </button>
+    <div class="n-ls-panel" data-language-panel="navigation" aria-expanded="true" aria-hidden="false" role="navigation">
+        <span class="n-ls-header" role="heading" aria-level="3">Language</span>
+
+            <nav aria-label="Language selector">
+                <ul>
+                            <li>
+                                <a href="/">English</a>
+                            </li>
+                            <li>
+                                <a href="/ja/">日本語</a>
+                            </li>
+                            <li>
+                                <a href="/ko/">한국어</a>
+                            </li>
+                            <li>
+                                <a href="/zh-hans/">简体中文</a>
+                            </li>
+                            <li>
+                                <a href="/zh-hant/">繁體中文</a>
+                            </li>
+                            <li>
+                                <a href="/de/">Deutsch</a>
+                            </li>
+                            <li>
+                                <a href="/es/">Espa&#241;ol</a>
+                            </li>
+                            <li>
+                                <a href="/fr/">Fran&#231;ais</a>
+                            </li>
+                            <li>
+                                <a href="/it/">Italiano</a>
+                            </li>
+                </ul>
+            </nav>
+                    <div class="n-ls-footer">
+                <a class="cta cta--link" href="/company/contact-us/" title="See your global contact list">
+                    See your global contacts
+                    <svg aria-hidden="true">
+                        <use xlink:href="/static/images/sprite.svg#"></use>
+                    </svg>
+                </a>
+            </div>
+    </div>
+</div>
+
+
+        </li>
+    </ul>
+</nav>
+        </div>
+
+        
+        
+
+    <div class="n-masthead-container" >
+        <!-- START n-masthead -->
+        <div class="n-masthead n-masthead-new" data-n-hamburger-threshold="1340">
+
+            <!-- ESB -->
+    
+    <div class="n-masthead__property-mark">
+      <a href="https://www.netapp.com/" title="NetApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1008 181.536" class="netapp-logo">
+  <path fill="#0067C5" d="M0 0v147.978h69.062V59.187h39.462v88.791h69.048V0z"></path>
+  <path fill="#010101" d="M256.498.021h29.832l68.817 91.481V.021h31.898v147.937h-27.477l-71.159-93.403v93.411h-31.913L256.498.021zm146.066 92.327c0 34.43 24.973 58.139 58.786 58.139 20.335 0 35.446-7.979 45.908-21.004l-18.23-16.16c-8.81 8.199-16.571 11.562-27.265 11.562-14.3 0-24.342-7.559-27.497-22.037h78.266c.244-2.926.43-5.898.43-8.377 0-31.912-17.207-61.078-54.743-61.078-32.749 0-55.641 26.438-55.641 58.516v.439m31.247-9.455c2.507-14.453 11.121-23.932 24.379-23.932 13.401 0 21.812 9.639 23.69 23.932h-48.069zm99.045 33.149c0 26.027 13.216 33.793 32.694 33.793 10.707 0 18.512-2.518 25.225-6.51v-25.621c-4.632 2.559-9.87 4.041-15.766 4.041-7.106 0-10.268-3.596-10.268-10.943V62.743h26.456v-27.27h-26.456V6.726h-31.888v28.748H519.44v27.27h13.427l.003 53.298m225.878 65.494h31.866v-48.26c7.558 9.008 18.054 16.783 35.046 16.783 26.678 0 51.229-20.564 51.229-58.154v-.4c0-37.566-24.962-58.117-51.229-58.117-16.562 0-27.271 7.738-35.046 18.235V35.477h-31.866v146.059zm86.194-89.629c0 18.889-12.576 31.086-27.469 31.086-14.896 0-27.271-12.402-27.271-31.086v-.402c0-18.679 12.388-31.05 27.271-31.05 14.893 0 27.469 12.371 27.469 31.05v.402m44.912 89.629h31.895v-48.26c7.543 9.008 18.045 16.783 35.066 16.783 26.627 0 51.186-20.564 51.186-58.154v-.4c0-37.566-24.961-58.117-51.186-58.117-16.584 0-27.297 7.738-35.066 18.235V35.477h-31.895v146.059zm86.265-89.629c0 18.889-12.619 31.086-27.52 31.086-14.855 0-27.271-12.402-27.271-31.086v-.402c0-18.679 12.412-31.05 27.271-31.05 14.899 0 27.52 12.371 27.52 31.05v.402m-377.165 56.056h32.938l13.438-32.975h58.239l13.524 32.975h33.666L689.376.006h-29.051l-61.371 147.957zm55.965-61.459l19.534-47.701 19.513 47.701h-39.047z"></path>
+</svg>
+
+        
+        <!-- <div class="n-masthead__property-moniker"><div>Support</div></div> -->
+      </a>
+    </div>
+    
+    <div class="n-masthead__search">
+      <div class="coveo-standalone-search-box">
+        <div id="standaloneSearchbox" data-pipeline="NetApp Marketing Search Pipeline" class="">
+          <div class='CoveoAnalytics' data-search-hub="NetApp Marketing Search Hub"></div>
+          <div class="coveo-search-section"></div>
+          <!-- Setting `data-enable-omnibox` and `data-enable-query-suggest-addon` to `true` is not necessary in version 2.x -->
+          <div class="CoveoSearchbox" data-enable-omnibox="true" data-enable-wildcards='true' data-trigger-query-on-clear='true' data-enable-query-syntax='true' role='search' data-placeholder="What are you looking for?"></div>
+        </div>
+      </div>
+    </div>
+    
+   
+
+            
+
+    <nav aria-label="Primary navigation">
+        <ul class="n-masthead__primary-navigation">
+            
+
+<li>
+    <a href="#">
+        <span role="heading" aria-level="1">
+Solutions &amp; Products        </span>
+        <svg class="icon mobile" aria-hidden="true"><use xlink:href="/static/images/sprite.svg#arrow_forward"></use></svg>
+        <svg class="icon desktop" aria-hidden="true"><use xlink:href="/static/images/sprite.svg#chevron_right"></use></svg>
+    </a>
+
+    <div class="n-mega-menu">
+        <a class="return-button" href="#" title="Solutions &amp; Products">
+            <svg class="icon back" aria-hidden="true"><use xlink:href="/static/images/sprite.svg#arrow_back"></use></svg>
+            Solutions &amp; Products
+        </a>
+
+        <!--Embedded CTA List-->
+        <div class="n-mega-menu__primary-navigation">
+                        <section>
+                            
+
+    <div class="n-mega-menu__subsection-heading" role="heading" aria-level="2">What are you solving?</div>
+    <ul>
+                    <li>
+                        <a href="/data-management/"  title="Data Management">
+                            <span role="heading" aria-level="3">Data Management</span><br>
+                            <span>Maintain complete control over your data</span>
+                            <svg aria-hidden="true">
+                                <use xlink:href="/static/images/sprite.svg#data_management"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/cyber-resilience/"  title="Cyber Resilience">
+                            <span role="heading" aria-level="3">Cyber Resilience</span><br>
+                            <span>Protect and secure your sensitive company data</span>
+                            <svg aria-hidden="true">
+                                <use xlink:href="/static/images/sprite.svg#data_protection"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/artificial-intelligence/"  title="Artificial Intelligence">
+                            <span role="heading" aria-level="3">Artificial Intelligence</span><br>
+                            <span>Enable efficient data collection and workloads</span>
+                            <svg aria-hidden="true">
+                                <use xlink:href="/static/images/sprite.svg#artificial_intelligence"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/enterprise-applications/"  title="Enterprise Applications">
+                            <span role="heading" aria-level="3">Enterprise Applications</span><br>
+                            <span>Modernize and migrate apps, improve quality, reduce risk</span>
+                            <svg aria-hidden="true">
+                                <use xlink:href="/static/images/sprite.svg#enterprise_apps"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/devops-solutions/"  title="DevOps">
+                            <span role="heading" aria-level="3">DevOps</span><br>
+                            <span>Reduce friction, accelerate development and productivity</span>
+                            <svg aria-hidden="true">
+                                <use xlink:href="/static/images/sprite.svg#devops"></use>
+                            </svg>
+                        </a>
+                    </li>
+    </ul>
+
+                        </section>
+                        <section>
+                            
+
+    <div class="n-mega-menu__subsection-heading" role="heading" aria-level="2">Where are you building?</div>
+    <ul>
+                    <li>
+                        <a href="/data-storage/"  title="On-Premises Storage">
+                            <span role="heading" aria-level="3">On-Premises Storage</span><br>
+                            <span>Modernize and simplify your storage environment</span>
+                            <svg aria-hidden="true">
+                                <use xlink:href="/static/images/sprite.svg#data_storage"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/hybrid-cloud/"  title="Hybrid Cloud">
+                            <span role="heading" aria-level="3">Hybrid Cloud</span><br>
+                            <span>Unify your data environment from core to cloud</span>
+                            <svg aria-hidden="true">
+                                <use xlink:href="/static/images/sprite.svg#hybrid_cloud"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/cloud-services/"  title="Cloud">
+                            <span role="heading" aria-level="3">Cloud</span><br>
+                            <span>Simplify your cloud management landscape</span>
+                            <svg aria-hidden="true">
+                                <use xlink:href="/static/images/sprite.svg#cloud_services"></use>
+                            </svg>
+                        </a>
+                    </li>
+                            <li class="n-mega-menu__small-item">
+                              <a href="/aws/" target = "_self" title="AWS">AWS</a>
+                            </li>
+                            <li class="n-mega-menu__small-item">
+                              <a href="/google-cloud/" target = "_self" title="Google Cloud">Google Cloud</a>
+                            </li>
+                            <li class="n-mega-menu__small-item">
+                              <a href="/azure/" target = "_self" title="Microsoft Azure">Microsoft Azure</a>
+                            </li>
+    </ul>
+
+                        </section>
+        </div>
+        <!--Additional Links -->
+
+
+
+            <n-button-group>
+                    <ul class="n-mega-menu__secondary-navigation">
+                            <li>
+                                
+<!-- CTA -->
+
+    <a class="cta cta--link" href="/bluexp/" target="_self"   title="BlueXP">
+        <n-xpm-text  >BlueXP</n-xpm-text>
+            <svg aria-hidden="true" >
+                <use xlink:href="/static/images/sprite.svg#arrow_forward"></use>
+            </svg>
+            </a>
+
+                            </li>
+                            <li>
+                                
+<!-- CTA -->
+
+    <a class="cta cta--link" href="/services/" target="_self"   title="View services">
+        <n-xpm-text  >View services</n-xpm-text>
+            <svg aria-hidden="true" >
+                <use xlink:href="/static/images/sprite.svg#arrow_forward"></use>
+            </svg>
+            </a>
+
+                            </li>
+                            <li>
+                                
+<!-- CTA -->
+
+    <a class="cta cta--link" href="/products-a-z/" target="_self"   title="View products A-Z">
+        <n-xpm-text  >View products A-Z</n-xpm-text>
+            <svg aria-hidden="true" >
+                <use xlink:href="/static/images/sprite.svg#arrow_forward"></use>
+            </svg>
+            </a>
+
+                            </li>
+
+                    </ul>
+            </n-button-group>
+    </div>
+</li>
+<li class="n-masthead__simpler">
+
+    <a href="#">
+        <span role="heading" aria-level="1">
+            Explore NetApp
+        </span>
+            <svg class="icon mobile" aria-hidden="true"><use xlink:href=/static/images/sprite.svg#arrow_forward></use></svg>
+                    <svg class="icon desktop" aria-hidden="true"><use xlink:href="/static/images/sprite.svg#chevron_right"></use></svg>
+    </a>
+    <div class="n-mega-menu">
+                <a class="return-button" href="#" title="Explore NetApp">
+                    <svg class="icon back" aria-hidden="true">
+                        <use xlink:href="/static/images/sprite.svg#arrow_back"></use>
+                    </svg>
+                    Explore NetApp
+                </a>
+
+        <div>
+                <section class="n-mega-menu__callout">
+                    <a href="/evolved-cloud/" target = "_self" title="The evolved Cloud">
+
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="evolved cloud image" data-src="/media/evolved-cloud-nav_tcm19-78396.jpg" />
+                        <span role="heading" aria-level="2">
+                            Discover the evolved cloud
+                            <svg aria-hidden="true">
+                                <use xlink:href=/static/images/sprite.svg#arrow_forward></use>
+                            </svg>
+                        </span>
+                        <p>Imagine a better hybrid multicloud experience. Break down silos, create consistence, and unite your clouds and data centers.</p>
+                    </a>
+                </section>
+
+                <section class="n-mega-menu__primary-navigation">
+                        <div class="n-mega-menu__subsection-heading" role="heading" aria-level="2">Built for you</div>
+                            <ul class="n-mega-menu__simple-list">
+                                        <li>
+                                            <a href="/industries/"  title="Industries we serve">Industries we serve</a>
+                                        </li>
+                                        <li>
+                                            <a href="/customer-experience/"  title="Customer experience">Customer experience</a>
+                                        </li>
+                                        <li>
+                                            <a href="/customers/#t=CustomerStories&sort=relevancy&f:@facet_language_mktg=[English]"  title="Success stories">Success stories</a>
+                                        </li>
+                            </ul>
+                        <div class="n-mega-menu__subsection-heading" role="heading" aria-level="2">About NetApp</div>
+                            <ul class="n-mega-menu__simple-list">
+                                        <li>
+                                            <a href="/company/"  title="Company story">Company story</a>
+                                        </li>
+                                        <li>
+                                            <a href="/partners/#become"  title="Become a partner">Become a partner</a>
+                                        </li>
+                                        <li>
+                                            <a href="/company/contact-us/"  title="Contact NetApp">Contact NetApp</a>
+                                        </li>
+                            </ul>
+                </section>
+        </div>
+    </div>
+</li><li class="n-masthead__simpler">
+
+    <a href="#">
+        <span role="heading" aria-level="1">
+            How to Buy
+        </span>
+            <svg class="icon mobile" aria-hidden="true"><use xlink:href=/static/images/sprite.svg#arrow_forward></use></svg>
+                    <svg class="icon desktop" aria-hidden="true"><use xlink:href="/static/images/sprite.svg#chevron_right"></use></svg>
+    </a>
+    <div class="n-mega-menu">
+                <a class="return-button" href="#" title="How to Buy">
+                    <svg class="icon back" aria-hidden="true">
+                        <use xlink:href="/static/images/sprite.svg#arrow_back"></use>
+                    </svg>
+                    How to Buy
+                </a>
+
+        <div>
+                <section class="n-mega-menu__callout">
+                    <a href="/services/keystone/" target = "_self" title="Storage as a service">
+
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" data-src="/media/how-to-buy--keystone_tcm19-76712.png" />
+                        <span role="heading" aria-level="2">
+                            Storage as a service
+                            <svg aria-hidden="true">
+                                <use xlink:href=/static/images/sprite.svg#arrow_forward></use>
+                            </svg>
+                        </span>
+                        <p>NetApp Keystone gives you flexible pay-as-you-go cloud consumption models whether you’re on-premises or in the cloud.</p>
+                    </a>
+                </section>
+
+                <section class="n-mega-menu__primary-navigation">
+                        <div class="n-mega-menu__subsection-heading" role="heading" aria-level="2">Ready to Try?</div>
+                            <ul class="n-mega-menu__simple-list">
+                                        <li>
+                                            <a href="/test-drives/"  title="Test drive a product">Test drive a product</a>
+                                        </li>
+                                        <li>
+                                            <a href="/how-to-buy/trials-test-drives/"  title="Start a free trial">Start a free trial</a>
+                                        </li>
+                            </ul>
+                        <div class="n-mega-menu__subsection-heading" role="heading" aria-level="2">Ready to buy?</div>
+                            <ul class="n-mega-menu__simple-list">
+                                        <li>
+                                            <a href="/forms/sales-contact/"  title="Contact sales">Contact sales</a>
+                                        </li>
+                                        <li>
+                                            <a href="/partners/partner-connect/#t=Partners&sort=%40partnerweight%20descending&layout=card&f:@facet_language_mktg=[English]"  title="Connect with a partner">Connect with a partner</a>
+                                        </li>
+                            </ul>
+                </section>
+        </div>
+    </div>
+</li><li class="n-masthead__simpler">
+
+    <a href="#">
+        <span role="heading" aria-level="1">
+            Support &amp; Training
+        </span>
+            <svg class="icon mobile" aria-hidden="true"><use xlink:href=/static/images/sprite.svg#arrow_forward></use></svg>
+                    <svg class="icon desktop" aria-hidden="true"><use xlink:href="/static/images/sprite.svg#chevron_right"></use></svg>
+    </a>
+    <div class="n-mega-menu">
+                <a class="return-button" href="#" title="Support &amp; Training">
+                    <svg class="icon back" aria-hidden="true">
+                        <use xlink:href="/static/images/sprite.svg#arrow_back"></use>
+                    </svg>
+                    Support &amp; Training
+                </a>
+
+        <div>
+                <section class="n-mega-menu__callout">
+                    <a href="https://community.netapp.com/" target = "_self" title="Join our community">
+
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="" data-src="/media/support--community_tcm19-76714.png" />
+                        <span role="heading" aria-level="2">
+                            Join our community
+                            <svg aria-hidden="true">
+                                <use xlink:href=/static/images/sprite.svg#arrow_forward></use>
+                            </svg>
+                        </span>
+                        <p>Get involved with the best community around. NetApp and customers helping each other find answers through discussion threads.</p>
+                    </a>
+                </section>
+
+                <section class="n-mega-menu__primary-navigation">
+                        <div class="n-mega-menu__subsection-heading" role="heading" aria-level="2">Get Help</div>
+                            <ul class="n-mega-menu__simple-list">
+                                        <li>
+                                            <a href="https://mysupport.netapp.com/site/"  title="Technical support">Technical support</a>
+                                        </li>
+                                        <li>
+                                            <a href="/services/support/"  title="Support services">Support services</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://netappgssc.service-now.com/csm/" target = "blank" rel="noopener noreferrer" title="Keystone support">Keystone support</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://kb.netapp.com/"  title="Knowledge base">Knowledge base</a>
+                                        </li>
+                                        <li>
+                                            <a href="https://mysupport.netapp.com/site/downloads/"  title="Downloads">Downloads</a>
+                                        </li>
+                            </ul>
+                        <div class="n-mega-menu__subsection-heading" role="heading" aria-level="2">Education &amp; Training</div>
+                            <ul class="n-mega-menu__simple-list">
+                                        <li>
+                                            <a href="/support-and-training/netapp-learning-services/"  title="Training &amp; certifications">Training &amp; certifications</a>
+                                        </li>
+                                        <li>
+                                            <a href="/support-and-training/documentation/"  title="Product documentation">Product documentation</a>
+                                        </li>
+                            </ul>
+                </section>
+        </div>
+    </div>
+</li>
+        </ul>
+    </nav>
+
+
+<div role="navigation">
+    
+
+
+
+<ul class="n-masthead__secondary-navigation--mobile" aria-label="Secondary mobile navigation">
+                    <li><a href="https://bluexp.netapp.com/" target="_self" rel="nofollow" title="BlueXP Login">BlueXP Login</a></li>
+                    <li><a href="https://www.netapp.tv/" target="_self"  title="NetApp TV">NetApp TV</a></li>
+            <li class="n-language-selector-list-item">
+            <a id="n-language-selector-for-mobile" href="#" title="Language">Language</a>
+        </li>
+</ul>
+</div>
+
+
+
+
+
+
+
+<a class="CoveoSearchButton coveo-accessible-button" role="button" aria-label="Search" tabindex="0">
+    <span class="coveo-search-button"></span>
+</a>
+<a class="n-masthead__hamburger-button" href="#" title=Menu-title>
+    <span class="n-masthead__hamburger-button-text">Menu</span>
+    <div class="n-hamburger n-hamburger--squeeze">
+        <div class="n-hamburger-box">
+            <div class="n-hamburger-inner"></div>
+        </div>
+    </div>
+</a>
+
+
+
+            
+        </div>
+    </div>
+
+
+    </n-header-region>
+
+
+
+        
+            
+
+            <n-hero-region typeof="Region" resource="Hero">
+    <!-- NextGenESB View -->
+
+
+<div prefix="tri: http://www.sdl.com/web/schemas/core" typeof="tri:PartnerSyndicationContent">
+    <section data-ntap-analytics-region="Hero">
+  <n-hero-takeover n-theme="light-with-accented-cta">
+    <n-primary>
+      <n-content>
+        <header>
+          <h1><span>Life’s too short</span><br><span>for data hacks.</span>
+          <svg class="underscore" width="411" height="23" viewBox="0 0 411 23" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M410.632 3.28304C406.909 3.89004 403.201 4.87252 399.459 5.05252C375.466 6.2225 351.469 7.29677 327.468 8.26061C288.685 9.81066 249.898 11.2576 211.12 12.7116C208.075 12.8239 204.673 13.52 203.655 9.47833C203.536 9.0041 201.571 8.63351 200.498 8.70302C167.057 10.8213 133.605 12.704 100.2 15.2633C77.0813 17.029 54.0585 20.0372 30.9431 21.8692C22.1031 22.5694 13.1148 21.572 4.20462 21.2352C2.88146 21.1829 1.59513 20.4873 0.289249 20.0876L0.241466 19.0054C1.64993 18.5891 3.01576 17.9461 4.44406 17.7945C33.4323 14.7221 62.4221 11.6865 91.4214 8.68001C101.94 7.58858 112.473 6.62932 122.991 5.53053C158.352 1.83006 193.843 0.89742 229.36 0.915223C249.564 0.930451 269.762 1.52873 289.957 2.06075C291.965 2.11225 293.881 3.58411 295.893 4.26983C297.101 4.6812 298.417 5.10997 299.67 5.06937C336.014 4.04747 372.355 2.96667 408.704 1.9076C409.291 1.88909 409.892 2.0322 410.482 2.09467C410.54 2.49044 410.598 2.8862 410.657 3.28196L410.632 3.28304Z" fill="#65D097"/>
+          </svg>
+          </h1>
+          <h2>Lock down your data with NetApp. We’ve got security that’s tougher than a titanium vault and guaranteed data recovery that’ll make Houdini jealous.</h2>
+        </header>
+        <a class="cta" href="/cyber-resilience/ransomware-protection/" title="Industry-leading guarantee">
+          Industry-leading guarantee
+          <svg aria-hidden="true">
+            <use xlink:href="/static/images/sprite.svg#arrow_forward"></use>
+          </svg>
+        </a>
+      </n-content>
+    </n-primary>
+    <n-secondary>
+      <picture>
+          <source media="(max-width: 767px)" srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" >
+          <img src="/media/asa-aff-group-hp_tcm19-86680.png" alt="ASA AFF group hardware" >
+      </picture>
+    </n-secondary>
+  </n-hero-takeover>
+</section>
+</div>
+
+
+</n-hero-region>
+                                    
+
+<n-main-content-region typeof="Region" resource="OneColumn">
+    <!-- ESB -->
+<script>
+    let styleTakeover = document.createElement('style');
+    styleTakeover.type = 'text/css';
+    styleTakeover.textContent =`@keyframes n-fade-in{0%{opacity:0}to{opacity:1}}@keyframes n-wipe-in-right{0%{-webkit-clip-path:inset(0 100% 0 0);clip-path:inset(0 100% 0 0)}to{-webkit-clip-path:inset(0 0 0 0);clip-path:inset(0 0 0 0)}}@keyframes n-wipe-in-out{0%{-webkit-clip-path:inset(0 100% 0 0);clip-path:inset(0 100% 0 0)}2.5%,77.55%{-webkit-clip-path:inset(0 0 0 0);clip-path:inset(0 0 0 0)}80%,to{-webkit-clip-path:inset(0 0 0 100%);clip-path:inset(0 0 0 100%)}}:root{--js-md-breakpoint-width:768;--js-lg-breakpoint-width:1024}n-hero-takeover{grid-auto-rows:minmax(167px,auto);background:#fff;display:grid;grid-template-columns:repeat(2,1fr);background:linear-gradient(98.53deg,#d6e7fb 19.24%,#dfece2 88.97%);display:block;height:auto;position:relative}n-hero-takeover>*{padding:56px 45px;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;-ms-flex-pack:center;justify-content:center;text-align:center}@media (min-width:500px){n-hero-takeover{grid-auto-rows:minmax(21px,auto)}}@media (min-width:768px){n-hero-takeover{grid-auto-rows:minmax(20px,auto)}}@media (min-width:1024px){n-hero-takeover{grid-auto-rows:minmax(20px,auto)}}@media (min-width:1440px){n-hero-takeover{grid-auto-rows:minmax(20px,auto)}}@media (min-width:1921px){n-hero-takeover{grid-auto-rows:minmax(392px,auto)}}n-hero-takeover n-primary{grid-column:1/3;grid-row:2/3;padding:32px;z-index:1}n-hero-takeover n-primary header{margin:0 auto 16px;max-width:650px}n-hero-takeover n-primary h1{font-size:40px;text-align:start;font-style:normal;font-family:Beatrice,"Helvetica Neue",Arial,sans-serif;padding:0;color:#111e50;font-weight:600;line-height:48px;position:relative;z-index:0}n-hero-takeover n-primary h1 span{display:inline-block;animation-delay:.3s!important}n-hero-takeover n-primary h1 svg{display:none}@media (min-width:390px){n-hero-takeover n-primary h1 svg{animation:10s ease-out n-wipe-in-out;animation-iteration-count:infinite;animation-delay:.9s;animation-fill-mode:both;bottom:-5px;display:block;left:calc(50vw - 124px - 8px);position:absolute;transform:rotate(2deg);width:248px;z-index:-1}}@media (min-width:390px) and (prefers-reduced-motion){n-hero-takeover n-primary h1 svg{animation:none}}n-hero-takeover n-primary .cta,n-hero-takeover n-primary h1 span,n-hero-takeover n-primary h2{animation:.5s ease-out n-fade-in;animation-fill-mode:backwards}n-hero-takeover n-primary h2,n-hp-card-band>* h3,n-hp-card-band>* h4{font-size:18px;line-height:24px;text-align:start;color:#000;font-style:normal;font-family:"Helvetica Neue",Arial,sans-serif}n-hero-takeover n-primary h2{font-weight:400;animation-delay:1.2s}n-hero-takeover n-primary h1,n-hero-takeover n-primary h2{margin-top:0;text-align:center}n-hero-takeover n-primary p{text-align:center}n-hero-takeover n-primary .cta{animation-delay:1.8s;margin:16px auto 0}n-hero-takeover n-secondary{display:none;padding:8px 32px 44px}@media (min-width:500px){n-hero-takeover{height:auto}n-hero-takeover n-primary{padding:40px}n-hero-takeover n-secondary{padding:0 40px 40px}}@media (min-width:768px){n-hero-takeover{display:grid;grid-template-columns:repeat(5,1fr);margin-bottom:100px;min-height:420px}n-hero-takeover n-primary,n-hero-takeover n-primary n-content{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column}n-hero-takeover n-primary{grid-column:1/6;grid-row:1/3;background:0 0;padding:72px 44px 0}n-hero-takeover n-primary n-content{-ms-flex:1;flex:1;-ms-flex-pack:center;justify-content:center}n-hero-takeover n-primary n-eyebrow{margin-top:2rem}n-hero-takeover n-primary h1{font-size:56px;text-align:start;font-style:normal;font-family:Beatrice,"Helvetica Neue",Arial,sans-serif;padding:0;color:#111e50;font-weight:600;line-height:64px;margin-bottom:16px;text-align:center}n-hero-takeover n-primary h1 svg{left:calc(50% - 175px + 44px);width:350px}n-hero-takeover n-primary h2{line-height:26px}n-hero-takeover n-secondary{grid-column:1/6;-ms-flex-align:center;align-items:center;display:block;padding-bottom:0;position:relative;top:-16px}n-hero-takeover n-secondary picture::after{background:#ccc;border-radius:50%;content:'';display:block;filter:blur(4px);height:12px;left:10%;position:absolute;top:220%;width:80%}n-hero-takeover n-secondary img{animation:.5s ease-out n-fade-in;animation-delay:2.4s;animation-fill-mode:backwards;-o-object-fit:contain;object-fit:contain;position:relative;top:64px;z-index:1}n-hero-takeover n-secondary::after,n-hero-takeover n-secondary::before,n-hero-takeover::after{bottom:-40px;content:'';display:block;height:40px;left:0;position:absolute;width:100%}n-hero-takeover n-secondary::before{background:#fff}n-hero-takeover n-secondary::after{background:linear-gradient(98.53deg,#d6e7fb 19.24%,#dfece2 88.97%);border-radius:48% 52% 48% 52%/0 0 100% 100%}n-hero-takeover::after{background:#fff;bottom:-100px;height:100px;z-index:-1}}@media (min-width:1024px){n-hero-takeover n-primary{padding-top:105px}n-hero-takeover n-primary header{max-width:700px}n-hero-takeover n-primary h1{font-size:75px;line-height:81px}n-hero-takeover n-primary h1 svg{bottom:-2px;left:calc(50% - 185px + 44px);transform:rotate(2deg) scale(1.15);width:initial}n-hero-takeover n-primary h2{font-size:20px;line-height:30px}n-hero-takeover n-secondary picture::after{left:15%;top:200%;width:70%}n-hero-takeover n-secondary img{margin:0 auto;max-width:1024px;top:68px}}@media (min-width:1440px){n-hero-takeover n-secondary picture::after{left:20%;top:200%;width:60%}}@media (min-width:1921px){n-hero-takeover{grid-auto-rows:minmax(20px,auto)}n-hero-takeover n-secondary picture::after{left:25%;top:200%;width:50%}}n-hp-card-band{display:grid;grid-template-columns:repeat(1,1fr);background-color:#fff;padding:20px 0 50px}n-hp-card-band .n-hp-card-band-item,n-hp-card-band>*{display:block;padding:40px 32px 0;text-decoration:none}n-hp-card-band .n-hp-card-band-item:hover .cta,n-hp-card-band .n-hp-card-band-item:hover .cta svg,n-hp-card-band>:hover .cta,n-hp-card-band>:hover .cta svg{opacity:.7}n-hp-card-band>*{background:#fff;display:-ms-flexbox;display:flex}n-hp-card-band>* h3,n-hp-card-band>* h4{font-weight:700;margin-bottom:16px}n-hp-card-band>* p{color:#000;margin-top:0}n-hp-card-band>* .cta--link:hover{color:initial}n-hp-card-band>* .cta--link:hover svg{fill:initial}@media (min-width:768px){n-hp-card-band{display:grid;grid-template-columns:repeat(2,1fr);border-top:0;padding-bottom:0}n-hp-card-band>*{border-color:#b7e3ff;min-height:244px}n-hp-card-band .n-hp-card-band-item,n-hp-card-band>*{-ms-flex-align:start;align-items:flex-start;-ms-flex-pack:start;justify-content:flex-start;padding:40px 20px}n-hp-card-band .cta{margin-top:0}}@media (min-width:1024px){n-hp-card-band{display:grid;grid-template-columns:repeat(4,1fr);padding:0}n-hp-card-band .n-hp-card-band-item,n-hp-card-band>*{padding:48px 28px}}@media (min-width:1440px){n-hp-card-band{padding:0 56px}n-hp-card-band .n-hp-card-band-item,n-hp-card-band>*{padding:76px 28px 64px}}@media (min-width:1921px){n-hp-card-band>*{min-height:272px}n-hp-card-band .n-hp-card-band-item,n-hp-card-band>*{padding:64px 56px}}.cta,.cta--link,.cta--link svg,blockquote,h3,h4,p{transition:all .2s ease-out}img{transition:all .4s ease-out}n-hp-section-header{padding:60px 16px 24px}n-hp-section-header h3{font-size:26px;line-height:32px;text-align:start;color:#000;font-style:normal;font-weight:500;font-family:Beatrice,"Helvetica Neue",Arial,sans-serif;text-align:center!important}n-hp-customers .n-hp-customers-item,n-hp-section-header p{line-height:24px;text-align:start;color:#000;font-weight:400;font-family:"Helvetica Neue",Arial,sans-serif}n-hp-section-header p{font-size:18px;font-style:normal;text-align:center!important}n-card-band-full-images,n-hp-section-header{background-color:#fff;display:block}.n-card-band-full-images-item{display:block;height:440px;padding-top:40px;position:relative;text-decoration:none}.n-card-band-full-images-item n-primary{color:#fff;display:block;position:relative;z-index:1}.n-card-band-full-images-item n-primary h4{color:#fff;margin-left:16px;margin-right:16px;text-align:center!important}.n-card-band-full-images-item n-primary h4,n-hp-get-started-takeover h3{font-size:22px;line-height:28px;text-align:start;font-style:normal;font-weight:500;font-family:Beatrice,"Helvetica Neue",Arial,sans-serif}.n-card-band-full-images-item n-primary p{margin-bottom:0;margin-left:16px;margin-right:16px;text-align:center!important}.n-card-band-full-images-item n-primary .cta{color:#fff;display:block;margin:0 auto}.n-card-band-full-images-item n-primary .cta svg,n-hp-get-started-takeover .cta svg{fill:#fff;margin-left:4px;top:6px}.n-card-band-full-images-item n-secondary{bottom:0;left:0;position:absolute;right:0;top:0}.n-card-band-full-images-item:hover n-primary .cta{color:#fff;opacity:.7}.n-card-band-full-images-item:hover n-primary .cta svg{fill:#fff;opacity:.7}.n-card-band-full-images-item:hover n-secondary img{transform:scale(1.05)}n-hp-customers{display:block;padding:72px 16px 24px}n-hp-customers .n-hp-customers-item{font-size:16px;display:block;font-style:italic;text-align:center;text-decoration:none;margin-bottom:76px}n-hp-customers .n-hp-customers-item:hover blockquote{opacity:.6}n-hp-customers .n-hp-customers-item:last-child{margin-bottom:24px}n-hp-customers n-content{display:block;margin:0 auto;max-width:290px}n-hp-customers img{margin:0 auto 8px;height:36px;max-width:180px;-o-object-fit:contain;object-fit:contain}n-hp-customers n-secondary{display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center}n-hp-customers n-secondary .cta--link{margin:36px 0 0;padding-right:0}n-hp-get-started-takeover{background:linear-gradient(99.15deg,#46ace6 -4.29%,#1e4a93 65.89%);display:block;color:#fff;padding:60px 0 20px}n-hp-get-started-takeover p{font-size:18px;line-height:24px;text-align:start;font-style:normal;font-weight:400;font-family:"Helvetica Neue",Arial,sans-serif}n-hp-get-started-takeover h3,n-hp-get-started-takeover p{color:#fff;margin-left:16px;margin-right:16px;text-align:center!important}n-hp-get-started-takeover ul{margin-top:20px}n-hp-get-started-takeover .cta{color:#fff;display:block;margin:0 auto;padding-bottom:16px;padding-top:16px}n-hp-get-started-takeover .cta svg:first-of-type{margin-left:0;margin-right:4px}n-hp-get-started-takeover .cta:hover{color:#fff;opacity:.7}n-hp-get-started-takeover .cta:hover svg{fill:#fff;opacity:.7}n-hp-get-started-takeover .cta:visited{color:#fff!important}n-hp-get-started-takeover .cta--chat{opacity:1;transition:all .5s cubic-bezier(.65,0,.35,1)}n-hp-get-started-takeover .cta--chat[aria-hidden=true]{opacity:0;visibility:hidden}@media (min-width:500px){.n-card-band-full-images-item{height:640px}.n-card-band-full-images-item n-secondary{overflow:hidden}.n-card-band-full-images-item n-secondary img{height:700px;position:relative;top:-60px}}@media (min-width:768px){.n-card-band-full-images-item{height:700px}.n-card-band-full-images-item n-primary .cta svg,n-hp-get-started-takeover .cta svg{top:7px}.n-card-band-full-images-item n-secondary img{height:850px;top:-150px}n-hp-customers{padding-bottom:28px}n-hp-customers n-primary{display:-ms-flexbox;display:flex;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;margin:0 auto;max-width:1080px}n-hp-customers n-primary>*{-ms-flex-positive:1;flex-grow:1}n-hp-customers n-secondary .cta--link{margin:0}n-hp-get-started-takeover h3,n-hp-get-started-takeover p{margin-left:auto;margin-right:auto;max-width:600px}n-hp-get-started-takeover .cta{padding-bottom:12px;padding-top:12px}}@media (min-width:1024px){n-hp-section-header{padding:80px 5% 24px}.n-card-band-full-images-item n-primary h4,n-hp-get-started-takeover h3,n-hp-section-header h3{text-align:start;font-style:normal;font-weight:500;font-family:Beatrice,"Helvetica Neue",Arial,sans-serif}n-hp-section-header h3{font-size:32px;line-height:44px;color:#000;text-align:center}n-card-band-full-images{display:grid;grid-template-columns:repeat(3,1fr);grid-gap:10px}.n-card-band-full-images-item{height:485px;padding-top:50px}.n-card-band-full-images-item n-primary h4,n-hp-get-started-takeover h3{font-size:24px;line-height:32px;color:#fff}.n-card-band-full-images-item n-secondary img{height:100%;position:static;top:initial}n-hp-customers{padding-bottom:68px;padding-top:96px}n-hp-get-started-takeover{padding:80px 0}n-hp-get-started-takeover h3{font-size:28px}n-hp-get-started-takeover ul{display:-ms-flexbox;display:flex;margin:20px auto 0!important;width:-moz-fit-content;width:fit-content}n-hp-get-started-takeover ul li{margin-right:40px}n-hp-get-started-takeover ul li:last-of-type{margin-right:0}}@media (min-width:1440px){n-hp-section-header{padding:80px 19% 24px}.n-card-band-full-images-item{height:525px}.n-card-band-full-images-item n-secondary img{height:560px;position:relative;top:-35px}}@media (min-width:1921px){.n-card-band-full-images-item{height:575px}.n-card-band-full-images-item n-secondary img{height:625px;position:relative;top:-50px}}`;
+    document.head.appendChild(styleTakeover);
+</script>
+<!-- NextGenESB View -->
+
+
+<div prefix="tri: http://www.sdl.com/web/schemas/core" typeof="tri:PartnerSyndicationContent">
+    <section>
+  <n-hp-section-header>
+      <n-content>
+        <h3>A suite of products and solutions that work together</h3>
+        <p>Enable seamless storage, effortless data management and unparalleled ransomware protection, safeguarding your most <span style="white-space:nowrap">business-critical</span> operations from core infrastructure to all major cloud providers.</p>
+      </n-content>
+  </n-hp-section-header>
+</section>
+</div>
+
+<!-- NextGenESB View -->
+
+
+<div prefix="tri: http://www.sdl.com/web/schemas/core" typeof="tri:PartnerSyndicationContent">
+    <section>
+  <n-card-band-full-images>
+    <a class="n-card-band-full-images-item" href="/data-storage/">
+      <n-primary>
+        <n-content>
+          <h4>On-premises storage</h4>
+          <p>Modernize and consolidate your data center.</p>
+          <span class="cta cta--link">
+            Browse
+            <svg aria-hidden="true">
+              <use xlink:href="/static/images/sprite.svg#arrow_forward"></use>
+            </svg>
+          </span>
+        </n-content>
+      </n-primary>
+      <n-secondary>
+        <img src="/media/ASA-Group-Home-060523-card-full_tcm19-86694.jpg" alt="ASA group image">
+      </n-secondary>
+    </a>
+    <a class="n-card-band-full-images-item" href="/cloud-services/">
+      <n-primary>
+        <n-content>
+          <h4>Cloud storage</h4>
+          <p>Build and manage within every cloud.</p>
+          <span class="cta cta--link">
+            Browse
+            <svg aria-hidden="true">
+              <use xlink:href="/static/images/sprite.svg#arrow_forward"></use>
+            </svg>
+          </span>
+        </n-content>
+      </n-primary>
+      <n-secondary>
+        <img src="/media/AFF-all-hero-full-web-card-full_tcm19-86695.jpg" alt="Cloud services image">
+      </n-secondary>
+    </a>
+    <a class="n-card-band-full-images-item" href="https://spot.io/">
+      <n-primary>
+        <n-content>
+          <h4>Cloud operations</h4>
+          <p>Deploy, scale, and optimize in the cloud.</p>
+          <span class="cta cta--link">
+            Browse
+            <svg aria-hidden="true">
+              <use xlink:href="/static/images/sprite.svg#arrow_forward"></use>
+            </svg>
+          </span>
+        </n-content>
+      </n-primary>
+      <n-secondary>
+        <img src="/media/cloud2-card-full_tcm19-86696.jpg" alt="Cloud operations image">
+      </n-secondary>
+    </a>
+  </n-card-band-full-images>
+</section>
+</div>
+
+<!-- NextGenESB View -->
+
+
+<div prefix="tri: http://www.sdl.com/web/schemas/core" typeof="tri:PartnerSyndicationContent">
+    <section>
+  <n-hp-customers>
+    <n-primary>
+      <a class="n-hp-customers-item" href="/google-cloud/" title="Google Cloud">
+        <n-content>
+          <img src="/media/Google-Cloud-logo_tcm19-86683.png" alt="Google Cloud logo">
+          <blockquote>“The work we are doing together… has been <strong>breakthrough work.</strong>”</blockquote>
+        </n-content>
+      </a>
+      <a class="n-hp-customers-item" href="/aws/" title="Amazon Web Services">
+        <n-content>
+          <img src="/media/Amazon-Web-Services-logo_tcm19-86681.png" alt="AWS logo">
+          <blockquote>“With NetApp… we meet the <strong>customer on their journey,</strong> where they are.”</blockquote>
+        </n-content>
+      </a>
+      <a class="n-hp-customers-item" href="/azure/" title="Microsoft Azure">
+        <n-content>
+          <img src="/media/Microsoft-Azure-logo_tcm19-86684.png" alt="Microsoft Azure logo">
+          <blockquote>“It’s great to have… the <strong>synergies</strong> of our two companies.”</blockquote>
+        </n-content>
+      </a>
+      <a class="n-hp-customers-item" href="/partnerships/porsche-motorsports/ " title="TAG Heuer Porsche Formula E Team">
+        <n-content>
+          <img src="/media/porsche-logo_tcm19-86874.png" alt="TAG Heuer Porsche Formula E Team logo" style="height:60px;">
+          <blockquote> “We can now move <strong>huge amounts of data at high speed.</strong>” </blockquote>
+        </n-content>
+      </a>
+      <a class="n-hp-customers-item" href="/customers/st-lukes/" title="St. Luke's">
+        <n-content>
+          <img src="/media/St-Lukes-logo_tcm19-86686.png" alt="St. Luke's logo" style="height:60px; padding-bottom: 4px; padding-top:20px;">
+          <blockquote>“We can <strong>better support</strong> our organization, providers, and patients.”</blockquote>
+        </n-content>
+      </a>
+      <a class="n-hp-customers-item" href="/customers/sheela-foam-e-series-customer-story/" title="Sheela Foam">
+        <n-content>
+          <img src="/media/Sheela-Foam-logo_tcm19-86685.png" alt="Sheela-Foam logo" style="height:60px; padding-top:24px;">
+          <blockquote>“NetApp systems… <strong>helps everyone</strong> at Sheela Foam sleep better.”</blockquote>
+        </n-content>
+      </a>
+    </n-primary>
+    <n-secondary>
+      <a class="cta cta--link" href="/customers/" title="Hear more from NetApp customers">
+        Hear more from NetApp customers
+        <svg aria-hidden="true">
+          <use xlink:href="/static/images/sprite.svg#arrow_forward"></use>
+        </svg>
+      </a>
+    </n-secondary>
+  </n-hp-customers>
+</section>
+</div>
+
+<!-- NextGenESB View -->
+
+
+<div prefix="tri: http://www.sdl.com/web/schemas/core" typeof="tri:PartnerSyndicationContent">
+    <section>
+  <n-hp-get-started-takeover>
+    <n-content>
+      <h3>Get started with NetApp</h3>
+      <p>Explore NetApp products and solutions on your terms, with live support and chat always available when you need it.</p>
+      <ul class="unstyled">
+        <li>
+          <a class="cta cta--link" href="/support-and-training/netapp-learning-services/learning-services-offerings/">
+            <svg width="23" height="18" viewBox="0 0 23 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M11.5014 17.4266L4.70096 14.051V8.05103L0.301758 5.82623L11.5014 0.22583L22.701 5.82623V13.8266H20.4762V6.97583L18.3018 8.05103V14.051L11.5014 17.4266ZM11.5014 8.92583L17.751 5.82623L11.5014 2.72663L5.25176 5.82623L11.5014 8.92583ZM11.5014 14.9006L16.0518 12.6266V9.20063L11.5014 11.4266L6.95096 9.20063V12.6266L11.5014 14.9006Z" fill="white"/>
+            </svg>
+            Browse learning center
+            <svg aria-hidden="true">
+              <use xlink:href="/static/images/sprite.svg#arrow_forward"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a class="cta cta--link" href="/how-to-buy/trials-test-drives/">
+            <svg width="19" height="21" viewBox="0 0 19 21" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M11.8992 16.8262C11.2328 16.8262 10.666 16.593 10.1988 16.1266C9.73242 15.6594 9.49922 15.0926 9.49922 14.4262C9.49922 13.7598 9.73242 13.193 10.1988 12.7258C10.666 12.2594 11.2328 12.0262 11.8992 12.0262C12.5656 12.0262 13.1324 12.2594 13.5996 12.7258C14.066 13.193 14.2992 13.7598 14.2992 14.4262C14.2992 15.0926 14.066 15.6594 13.5996 16.1266C13.1324 16.593 12.5656 16.8262 11.8992 16.8262ZM0.624023 20.9014V3.15098H4.69922V0.750977H6.82442V3.15098H12.174V0.750977H14.2992V3.15098H18.3744V20.9014H0.624023ZM3.07442 18.451H15.924V9.62618H3.07442V18.451ZM3.07442 7.82618H15.924V5.60138H3.07442V7.82618Z" fill="white"/>
+            </svg>
+            Test drive a product
+            <svg aria-hidden="true">
+              <use xlink:href="/static/images/sprite.svg#arrow_forward"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a class="cta cta--link cta--chat" href="#chat-contact-sales" aria-hidden="true">
+            <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M0.200195 17.1266V0.97583H16.1506V12.9014H4.4998L0.200195 17.1266ZM4.825 18.551V15.0014H18.2506V5.55143H21.8002V22.6766L17.6746 18.551H4.825ZM13.4002 3.72623H2.9506V10.751L3.5506 10.151H13.4002V3.72623Z" fill="white"/>
+            </svg>
+            Chat with our team
+            <svg aria-hidden="true">
+              <use xlink:href="/static/images/sprite.svg#arrow_forward"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </n-content>
+  </n-hp-get-started-takeover>
+</section>
+</div>
+
+<!-- NextGenESB View -->
+
+
+<div prefix="tri: http://www.sdl.com/web/schemas/core" typeof="tri:PartnerSyndicationContent">
+    <section>
+  <n-hp-card-band>
+    <a class="n-hp-card-band-item" href="https://mysupport.netapp.com/site/downloads">
+      <n-content>
+        <h4>Downloads</h4>
+        <p>Download up-to-date software and other updates for your NetApp products.</p>
+        <span class="cta cta--link" >
+          Browse resources
+          <svg aria-hidden="true">
+            <use xlink:href="/static/images/sprite.svg#arrow_forward"></use>
+          </svg>
+        </span>
+      </n-content>
+    </a>
+    <a class="n-hp-card-band-item" href="/support-and-training/documentation/">
+      <n-content>
+        <h4>Documentation</h4>
+        <p>Technical product documentation for all of the NetApp offerings, from data storage to cloud.</p>
+        <span class="cta cta--link" >
+          Get technical
+          <svg aria-hidden="true">
+            <use xlink:href="/static/images/sprite.svg#arrow_forward"></use>
+          </svg>
+        </span>
+      </n-content>
+    </a>
+    <a class="n-hp-card-band-item" href="https://community.netapp.com/t5/Products-and-Services/ct-p/products-and-solutions">
+      <n-content>
+        <h4>Troubleshooting</h4>
+        <p>Having trouble with a NetApp product? Browse articles that may help your problem-solving.</p>
+        <span class="cta cta--link" >
+          Start searching
+          <svg aria-hidden="true">
+            <use xlink:href="/static/images/sprite.svg#arrow_forward"></use>
+          </svg>
+        </span>
+      </n-content>
+    </a>
+    <a class="n-hp-card-band-item" href="/support-and-training/netapp-learning-services/">
+      <n-content>
+        <h4>Training</h4>
+        <p>Certifications and career advancements for data and IT professionals.</p>
+        <span class="cta cta--link" >
+          Explore training
+          <svg aria-hidden="true">
+            <use xlink:href="/static/images/sprite.svg#arrow_forward"></use>
+          </svg>
+        </span>
+      </n-content>
+    </a>
+  </n-hp-card-band>
+</section>
+</div>
+
+<!-- ESB -->
+<script>
+$(function(){}),document.addEventListener("DOMContentLoaded",function(){let t=!1,e=setInterval(function(){null!=window.drift&&(clearInterval(e),t=!0,n.forEach(t=>{t.removeAttribute("aria-hidden")}))},500),n=document.querySelectorAll(".cta--chat")});
+</script>
+
+</n-main-content-region>
+                    <n-footer-region>
+    
+<n-main-content-region typeof="Region" resource="Main">
+    
+
+
+<n-footer-new-design role="contentinfo">
+    <n-footer-upper-container>
+        <n-footer-logo-container>
+            <div class="n-footer-logo">
+                <svg width="117" height="22" xmlns="http://www.w3.org/2000/svg">
+                    <g fill="#FFF" fill-rule="evenodd">
+                        <path d="M113.198 10.983v-.05c0-2.23-1.484-3.71-3.24-3.71-1.752 0-3.213 1.48-3.213 3.71v.05c0 2.233 1.461 3.714 3.213 3.714 1.756 0 3.24-1.456 3.24-3.714zm-10.16-6.745h3.758v1.93c.914-1.253 2.176-2.18 4.127-2.18 3.09 0 6.031 2.458 6.031 6.946v.05c0 4.49-2.891 6.947-6.03 6.947-2.004 0-3.24-.928-4.128-2.007v5.767h-3.759V4.238zM28.432.002h3.513l8.107 10.932V.002h3.758v17.68h-3.238l-8.38-11.163V17.68h-3.76zM54.98 9.906c-.22-1.707-1.21-2.86-2.79-2.86-1.56 0-2.574 1.133-2.87 2.86h5.66zm-9.343 1.129v-.052c0-3.836 2.695-6.994 6.553-6.994 4.423 0 6.45 3.485 6.45 7.297 0 .3-.023.653-.05 1.003h-9.221c.373 1.73 1.557 2.634 3.24 2.634 1.261 0 2.174-.402 3.213-1.38l2.149 1.93c-1.234 1.556-3.015 2.508-5.411 2.508-3.981 0-6.923-2.833-6.923-6.946zM60.986 13.866V7.497h-1.581v-3.26h1.581V.806h3.755v3.433h3.118v3.26h-3.118v5.743c0 .877.374 1.305 1.213 1.305.69 0 1.309-.175 1.855-.48v3.061c-.792.478-1.71.778-2.97.778-2.297 0-3.853-.928-3.853-4.039M97.749 10.983v-.05c0-2.23-1.484-3.71-3.237-3.71-1.755 0-3.213 1.48-3.213 3.71v.05c0 2.233 1.458 3.714 3.213 3.714 1.753 0 3.237-1.456 3.237-3.714zM87.592 4.238h3.756v1.93c.915-1.253 2.174-2.18 4.128-2.18 3.092 0 6.032 2.458 6.032 6.946v.05c0 4.49-2.892 6.947-6.032 6.947-2.001 0-3.24-.928-4.128-2.007v5.767h-3.756V4.238zM79.962 10.335l-2.298-5.697-2.3 5.697h4.598zM76 0h3.42l7.232 17.681h-3.967l-1.593-3.94h-6.86l-1.583 3.94h-3.88L76.001 0zM0 .002v17.68h8.133V7.073h4.648V17.68h8.133V.002z" />
+                    </g>
+                </svg>
+            </div>
+        </n-footer-logo-container>
+        <n-footer-content-container>
+            <section class="n-footer-primary">
+                <div class="n-footer-logo">
+                    <svg width="117" height="22" xmlns="http://www.w3.org/2000/svg">
+                        <g fill="#FFF" fill-rule="evenodd">
+                            <path d="M113.198 10.983v-.05c0-2.23-1.484-3.71-3.24-3.71-1.752 0-3.213 1.48-3.213 3.71v.05c0 2.233 1.461 3.714 3.213 3.714 1.756 0 3.24-1.456 3.24-3.714zm-10.16-6.745h3.758v1.93c.914-1.253 2.176-2.18 4.127-2.18 3.09 0 6.031 2.458 6.031 6.946v.05c0 4.49-2.891 6.947-6.03 6.947-2.004 0-3.24-.928-4.128-2.007v5.767h-3.759V4.238zM28.432.002h3.513l8.107 10.932V.002h3.758v17.68h-3.238l-8.38-11.163V17.68h-3.76zM54.98 9.906c-.22-1.707-1.21-2.86-2.79-2.86-1.56 0-2.574 1.133-2.87 2.86h5.66zm-9.343 1.129v-.052c0-3.836 2.695-6.994 6.553-6.994 4.423 0 6.45 3.485 6.45 7.297 0 .3-.023.653-.05 1.003h-9.221c.373 1.73 1.557 2.634 3.24 2.634 1.261 0 2.174-.402 3.213-1.38l2.149 1.93c-1.234 1.556-3.015 2.508-5.411 2.508-3.981 0-6.923-2.833-6.923-6.946zM60.986 13.866V7.497h-1.581v-3.26h1.581V.806h3.755v3.433h3.118v3.26h-3.118v5.743c0 .877.374 1.305 1.213 1.305.69 0 1.309-.175 1.855-.48v3.061c-.792.478-1.71.778-2.97.778-2.297 0-3.853-.928-3.853-4.039M97.749 10.983v-.05c0-2.23-1.484-3.71-3.237-3.71-1.755 0-3.213 1.48-3.213 3.71v.05c0 2.233 1.458 3.714 3.213 3.714 1.753 0 3.237-1.456 3.237-3.714zM87.592 4.238h3.756v1.93c.915-1.253 2.174-2.18 4.128-2.18 3.092 0 6.032 2.458 6.032 6.946v.05c0 4.49-2.892 6.947-6.032 6.947-2.001 0-3.24-.928-4.128-2.007v5.767h-3.756V4.238zM79.962 10.335l-2.298-5.697-2.3 5.697h4.598zM76 0h3.42l7.232 17.681h-3.967l-1.593-3.94h-6.86l-1.583 3.94h-3.88L76.001 0zM0 .002v17.68h8.133V7.073h4.648V17.68h8.133V.002z" />
+                        </g>
+                    </svg>
+                </div>
+                        <div class="n-footer-item n-footer-item-left-align">
+                            <div class="n-footer-label-container">
+                                <div class="n-footer-label">Website</div>
+                                <div class="n-footer-label-divider"></div>
+                                <div class="n-footer-label-mark"></div>
+                            </div>
+                            <ul class="n-footer-content">
+                                        <li  >
+                                            <a href="/data-fabric/" target="_self" >
+                                                Data Fabric
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="/industries/" target="_self" >
+                                                Industries
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="/customers/" target="_self" >
+                                                Customer stories
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="/how-to-buy/" target="_self" >
+                                                How to buy
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="https://spot.io/" target="_self" >
+                                                Spot by NetApp
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="/products-a-z/" target="_self" >
+                                                Products A-Z
+                                            </a>
+                                        </li>
+                            </ul>
+                        </div>
+                        <div class="n-footer-item">
+                            <div class="n-footer-label-container">
+                                <div class="n-footer-label">Support</div>
+                                <div class="n-footer-label-divider"></div>
+                                <div class="n-footer-label-mark"></div>
+                            </div>
+                            <ul class="n-footer-content">
+                                        <li  >
+                                            <a href="/support-and-training/" target="_self" >
+                                                Support &amp; training
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="https://kb.netapp.com/" target="_blank" rel="noopener noreferrer">
+                                                Knowledge base
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="/knowledge-center/" target="_self" >
+                                                Knowledge center
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="/support-and-training/documentation/" target="_self" >
+                                                Documentation
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="https://community.netapp.com/" target="_blank" rel="noopener noreferrer">
+                                                Community
+                                            </a>
+                                        </li>
+                            </ul>
+                        </div>
+                        <div class="n-footer-item">
+                            <div class="n-footer-label-container">
+                                <div class="n-footer-label">Offerings</div>
+                                <div class="n-footer-label-divider"></div>
+                                <div class="n-footer-label-mark"></div>
+                            </div>
+                            <ul class="n-footer-content">
+                                        <li  >
+                                            <a href="/company/" target="_self" >
+                                                Company
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="/partners/" target="_self" >
+                                                Partners
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="/company/careers/" target="_self" >
+                                                Careers
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="https://investors.netapp.com/" target="_blank" rel="noopener noreferrer">
+                                                Investors
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="/company/trust-center/" target="_self" >
+                                                Trust center
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="/company/quality-certifications/" target="_self" >
+                                                Quality certifications
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="/esg/" target="_self" >
+                                                Environmental, social &amp; governance
+                                            </a>
+                                        </li>
+                            </ul>
+                        </div>
+                        <div class="n-footer-item">
+                            <div class="n-footer-label-container">
+                                <div class="n-footer-label">NetApp</div>
+                                <div class="n-footer-label-divider"></div>
+                                <div class="n-footer-label-mark"></div>
+                            </div>
+                            <ul class="n-footer-content">
+                                        <li  >
+                                            <a href="/newsroom/" target="_self" >
+                                                Newsroom
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="https://www.netapp.tv/" target="_self" >
+                                                NetApp TV
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="/company/events/" target="_self" >
+                                                Events
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="/blog/" target="_self" >
+                                                Blog
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="/company/executive-briefing-center/" target="_self" >
+                                                Executive briefing
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="/newsroom/netapp-apache-log4j-response/" target="_self" >
+                                                Apache Log4j response
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="/newsroom/netapp-response-ukraine-situation/" target="_self" >
+                                                Ukraine situation response
+                                            </a>
+                                        </li>
+                            </ul>
+                        </div>
+                        <div class="n-footer-item">
+                            <div class="n-footer-label-container">
+                                <div class="n-footer-label">Engage</div>
+                                <div class="n-footer-label-divider"></div>
+                                <div class="n-footer-label-mark"></div>
+                            </div>
+                            <ul class="n-footer-content">
+                                        <li  >
+                                            <a href="/company/contact-us/" target="_self" >
+                                                Contact us
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="https://listening.netapp.com/jfe/form/SV_dcilAAaRGF9r95A" target="_blank" rel="noopener noreferrer">
+                                                Site feedback
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="https://www.netapp.com/company/legal/accessibility/" target="_self" >
+                                                Accessibility
+                                            </a>
+                                        </li>
+                                        <li  >
+                                            <a href="/utility/subscribe/" target="_self" >
+                                                Email subscriptions
+                                            </a>
+                                        </li>
+                            </ul>
+                        </div>
+            </section>
+        </n-footer-content-container>
+    </n-footer-upper-container>
+    <n-footer-down-container>
+        <n-footer-copyright-container>
+            <ul class="n-footer-copyright">
+                <li>&#169; <span class="n-footer-copyright-year">2023</span> NetApp</li>
+            </ul>
+        </n-footer-copyright-container>
+        <n-footer-bottom-container>
+            <section class="n-footer-secondary">
+                    <ul class="n-footer-utility">
+                                <li  >
+                                    <a href="/company/legal/terms-of-use/" target="_self"  >Terms of use</a>
+                                </li>
+                                <li  >
+                                    <a href="/company/legal/privacy-policy/" target="_self"  >Privacy policy</a>
+                                </li>
+                                <li  >
+                                    <a href="/company/legal/cookie-policy/" target="_self"  >Cookie policy</a>
+                                </li>
+                                <li  >
+                                    <a target="_self"  class= ot-sdk-show-settings>Cookie Settings</a>
+                                </li>
+                                <li  >
+                                    <a href="/company/legal/slavery-human-trafficking/" target="_self"  >Modern Slavery Statement</a>
+                                </li>
+                                <li  >
+                                    <a href="/company/legal/" target="_self"  >Legal</a>
+                                </li>
+                    </ul>
+                                    <div class="n-footer-social n-social-selector">
+                        <button class="nav-icon-button n-footer-social-button" data-social-selector="footer">
+                            <span>Follow Us</span>
+                            <svg class="n-chevron-up n-chevron-show" aria-hidden="true">
+                                <use xlink:href="/static/images/sprite.svg#chevron_up"></use>
+                            </svg>
+                            <svg class="n-chevron-down n-chevron-hide" aria-hidden="true">
+                                <use xlink:href="/static/images/sprite.svg#chevron_down"></use>
+                            </svg>
+                        </button>
+
+                        <div class="n-ss-panel n-ss-fallback" role="menu" aria-hidden="false" data-social-panel="navigation">
+                            <div class="n-ss-header">Follow Us</div>
+                            <nav>
+                                    <ul>
+                                                <li>
+                                                    <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/NetApp">
+                                                        <svg class="icon--facebook" aria-label="Facebook">
+                                                            <use xlink:href="/static/images/sprite.svg#facebook"></use>
+                                                        </svg>
+                                                        <span>Facebook</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/company/netapp">
+                                                        <svg class="icon--linkedin" aria-label="LinkedIn">
+                                                            <use xlink:href="/static/images/sprite.svg#linkedin"></use>
+                                                        </svg>
+                                                        <span>LinkedIn</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/netapp">
+                                                        <svg class="icon--twitter" aria-label="Twitter">
+                                                            <use xlink:href="/static/images/sprite.svg#twitter"></use>
+                                                        </svg>
+                                                        <span>Twitter</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/user/NetAppTV">
+                                                        <svg class="icon--youtube" aria-label="YouTube">
+                                                            <use xlink:href="/static/images/sprite.svg#youtube"></use>
+                                                        </svg>
+                                                        <span>YouTube</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a target="_blank" rel="noopener noreferrer" href="https://www.slideshare.net/NetApp">
+                                                        <svg class="icon--slideshare" aria-label="SlideShare">
+                                                            <use xlink:href="/static/images/sprite.svg#slideshare"></use>
+                                                        </svg>
+                                                        <span>SlideShare</span>
+                                                    </a>
+                                                </li>
+                                    </ul>
+                            </nav>
+                        </div>
+
+                    </div>
+
+            </section>
+        </n-footer-bottom-container>
+    </n-footer-down-container>
+</n-footer-new-design>
+
+
+
+</n-main-content-region>
+
+    
+</n-footer-region>
+        
+    </n-page>
+
+
+
+    <div id="drift-facade-wrapper" aria-label="Open chat with NetApp in the Drift Widget messenger">
+        <img class="drift-facade-icon" src="https://www.netapp.com/media/drift-icon-shadow_tcm19-70572.png" alt="Drift chat loading">
+    </div>
+
+    <script type="application/json" id="n-footnotes-data">
+        { "Notes": "Footnotes", "Back": "Back up", "TranslationDisclaimer": "Many pages on this website have been translated for your convenience using machine translation.  Reasonable efforts have been made to provide an accurate translation, however, no automated translation is perfect nor is it intended to replace human translators.    The official text is the English version of the website. Any discrepancies or differences created in the translation are not binding and have no legal effect for compliance or enforcement purposes. If any questions arise related to the accuracy of the information contained in the translated website, please refer to the English version of the website which is the official version." }
+    </script>
+
+    <script>
+      /** Initialize Masthead Searchbox component **/
+      document.addEventListener('DOMContentLoaded', function () {
+        var searchBoxRoot = document.getElementById("standaloneSearchbox");
+        var localizationPath = "";
+
+        var searchPageURL = localizationPath != "" ? localizationPath + "/search" : "/search";
+
+        Coveo.SearchEndpoint.configureCloudV2Endpoint(envOrgId, searchToken);
+
+        Coveo.initSearchbox(
+            searchBoxRoot, searchPageURL
+        );
+      });
+    </script>
+
+    <!-- Execute jQuery dependent code after jQuery is loaded-->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            jQuery(function () {
+                jQuery.each(window.jQueryQ || [], function (i, a) {
+                    setTimeout(function () {
+                        jQuery.apply(this, a);
+                    }, 0);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

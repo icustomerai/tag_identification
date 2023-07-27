@@ -1,0 +1,2009 @@
+<!doctype html>
+<html lang="en-CA">
+<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" type="image/svg" href="https://telefilm.ca/wp-content/themes/tel11799-telefilm.ca/assets_src/images/favicon.svg">
+	<link rel="icon" type="image/png" href="https://telefilm.ca/wp-content/themes/tel11799-telefilm.ca/assets_src/images/favicon.png">
+	<meta name="msapplication-TileColor" content="#FFD32C">
+	<meta name="theme-color" content="#000000">
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<link rel="alternate" hreflang="en-ca" href="https://telefilm.ca/en" />
+<link rel="alternate" hreflang="fr-ca" href="https://telefilm.ca/fr" />
+<link rel="alternate" hreflang="x-default" href="https://telefilm.ca/en" />
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer>
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+	<!-- This site is optimized with the Yoast SEO plugin v20.8 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Telefilm Canada | Partner of choice</title>
+<link rel="preload" as="font" href="https://telefilm.ca/wp-content/themes/tel11799-telefilm.ca/webfonts/Fonts/5664150/800da3b0-675f-465f-892d-d76cecbdd5b1.woff2" crossorigin>
+<link rel="preload" as="font" href="https://telefilm.ca/wp-content/themes/tel11799-telefilm.ca/webfonts/Fonts/5350357/309da216-437b-473f-b4f5-419c9e6787ff.woff2" crossorigin>
+<link rel="preload" as="font" href="https://telefilm.ca/wp-content/themes/tel11799-telefilm.ca/webfonts/Fonts/5664103/240c57a0-fdce-440d-9ce3-85e0cb56f470.woff2" crossorigin>
+<link rel="preload" as="font" href="https://telefilm.ca/wp-content/themes/tel11799-telefilm.ca/webfonts/Fonts/5664093/08b57253-2e0d-4c12-9c57-107f6c67bc49.woff2" crossorigin>
+	<meta name="description" content="Passionate about Canadian content, we work to finance, develop, and promote the Canadian audiovisual industry of today and tomorrow." />
+	<link rel="canonical" href="https://telefilm.ca/en" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Telefilm Canada | Partner of choice" />
+	<meta property="og:description" content="Passionate about Canadian content, we work to finance, develop, and promote the Canadian audiovisual industry of today and tomorrow." />
+	<meta property="og:url" content="https://telefilm.ca/en" />
+	<meta property="og:site_name" content="Telefilm Canada" />
+	<meta property="article:publisher" content="https://www.facebook.com/TelefilmCanada/" />
+	<meta property="article:modified_time" content="2023-02-02T14:32:24+00:00" />
+	<meta property="og:image" content="https://telefilm.ca/wp-content/uploads/2022/07/Yoast-Image-Facebook-New-Website.png" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@Telefilm_Canada" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="2 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://telefilm.ca/en","url":"https://telefilm.ca/en","name":"Telefilm Canada | Partner of choice","isPartOf":{"@id":"https://telefilm.ca/en/#website"},"about":{"@id":"https://telefilm.ca/en/#organization"},"primaryImageOfPage":{"@id":"https://telefilm.ca/en#primaryimage"},"image":{"@id":"https://telefilm.ca/en#primaryimage"},"thumbnailUrl":"https://telefilm.ca/wp-content/uploads/2022/07/Yoast-Image-Facebook-New-Website.png","datePublished":"2021-12-15T17:51:31+00:00","dateModified":"2023-02-02T14:32:24+00:00","description":"Passionate about Canadian content, we work to finance, develop, and promote the Canadian audiovisual industry of today and tomorrow.","breadcrumb":{"@id":"https://telefilm.ca/en#breadcrumb"},"inLanguage":"en-CA","potentialAction":[{"@type":"ReadAction","target":["https://telefilm.ca/en"]}]},{"@type":"ImageObject","inLanguage":"en-CA","@id":"https://telefilm.ca/en#primaryimage","url":"https://telefilm.ca/wp-content/uploads/2022/07/Yoast-Image-Facebook-New-Website.png","contentUrl":"https://telefilm.ca/wp-content/uploads/2022/07/Yoast-Image-Facebook-New-Website.png","width":1200,"height":630,"caption":"Icon of a maple leaf that takes up two-thirds of the rectangle. The colour gradient goes from red, to yellow, to orange and white."},{"@type":"BreadcrumbList","@id":"https://telefilm.ca/en#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://telefilm.ca/en/#website","url":"https://telefilm.ca/en/","name":"Telefilm Canada","description":"","publisher":{"@id":"https://telefilm.ca/en/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://telefilm.ca/en/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-CA"},{"@type":"Organization","@id":"https://telefilm.ca/en/#organization","name":"Telefilm Canada","url":"https://telefilm.ca/en/","logo":{"@type":"ImageObject","inLanguage":"en-CA","@id":"https://telefilm.ca/en/#/schema/logo/image/","url":"https://telefilm.ca/wp-content/uploads/2022/07/TELEFILM_logo_RGB_gradientEN2.png","contentUrl":"https://telefilm.ca/wp-content/uploads/2022/07/TELEFILM_logo_RGB_gradientEN2.png","width":3563,"height":1201,"caption":"Telefilm Canada"},"image":{"@id":"https://telefilm.ca/en/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/TelefilmCanada/","https://twitter.com/Telefilm_Canada","https://www.instagram.com/telefilm_canada/","https://www.linkedin.com/company/telefilm-canada/","https://www.youtube.com/user/telefilmcanada"]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//static.addtoany.com' />
+<link rel='dns-prefetch' href='//kit.fontawesome.com' />
+<link rel='dns-prefetch' href='//cdn-cookieyes.com' />
+<link rel='dns-prefetch' href='//www.googletagmanager.com' />
+<link rel='dns-prefetch' href='//fast.fonts.net' />
+
+<style id='description-list-block-description-list-style-inline-css'>
+.wp-block-description-list-block-description-list.is-style-indent-start dd,.wp-block-description-list-block-description-list.is-style-indent-start dt,.wp-block-description-list-block-description-list.is-style-indent-start-40 dd,.wp-block-description-list-block-description-list.is-style-indent-start-40 dt,.wp-block-description-list-block-description-list.is-style-regular dd,.wp-block-description-list-block-description-list.is-style-regular dt{margin:0;padding:0}.wp-block-description-list-block-description-list.is-style-indent-start dt,.wp-block-description-list-block-description-list.is-style-indent-start-40 dt,.wp-block-description-list-block-description-list.is-style-regular dt{float:unset}.wp-block-description-list-block-description-list.is-style-indent-start dd{-webkit-margin-start:unset;margin-inline-start:unset}.wp-block-description-list-block-description-list.is-style-indent-start-40 dd{-webkit-margin-start:40px;margin-inline-start:40px}@media only screen and (min-width:480px){.wp-block-description-list-block-description-list.is-style-grid,.wp-block-description-list-block-description-list.is-style-grid-1-2,.wp-block-description-list-block-description-list.is-style-grid-1-4{display:grid}.wp-block-description-list-block-description-list.is-style-grid dd,.wp-block-description-list-block-description-list.is-style-grid dt,.wp-block-description-list-block-description-list.is-style-grid-1-2 dd,.wp-block-description-list-block-description-list.is-style-grid-1-2 dt,.wp-block-description-list-block-description-list.is-style-grid-1-4 dd,.wp-block-description-list-block-description-list.is-style-grid-1-4 dt{margin:0;padding:0}}@media only screen and (min-width:320px){.wp-block-description-list-block-description-list.is-style-grid{grid-template-columns:auto auto}.wp-block-description-list-block-description-list.is-style-grid-1-2{grid-template-columns:1fr 2fr}.wp-block-description-list-block-description-list.is-style-grid-1-4{grid-template-columns:1fr 4fr}}
+
+</style>
+<link rel='stylesheet' id='recherche-overhead-css' href='https://telefilm.ca/wp-content/themes/tel11799-telefilm.ca/includes/modules/recherche/blocks/recherche-overhead/recherche-overhead.min.css?ver=6.2.2' media='all' />
+<link data-minify="1" rel='stylesheet' id='wpml-blocks-css' href='https://telefilm.ca/wp-content/cache/min/1/wp-content/plugins/sitepress-multilingual-cms/dist/css/blocks/styles.css?ver=1686769375' media='all' />
+<link rel='stylesheet' id='theme-font-css' href='https://telefilm.ca/wp-content/themes/tel11799-telefilm.ca/assets_dist/css/webfont.css?ver=1.1.2' media='all' />
+<link rel='stylesheet' id='theme-styles-css' href='https://telefilm.ca/wp-content/themes/tel11799-telefilm.ca/assets_dist/css/styles.css?ver=1.1.2' media='all' />
+<link rel='stylesheet' id='theme-layout-css' href='https://telefilm.ca/wp-content/themes/tel11799-telefilm.ca/assets_dist/css/layout.css?ver=1.1.2' media='all' />
+<link rel='stylesheet' id='addtoany-css' href='https://telefilm.ca/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.16' media='all' />
+<style id='rocket-lazyload-inline-css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://telefilm.ca/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}.wp-embed-responsive .wp-has-aspect-ratio .rll-youtube-player{position:absolute;padding-bottom:0;width:100%;height:100%;top:0;bottom:0;left:0;right:0}
+</style>
+<script src='https://telefilm.ca/wp-includes/js/jquery/jquery.min.js?ver=3.6.4' id='jquery-core-js' defer></script>
+<script src='https://telefilm.ca/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0' id='jquery-migrate-js' defer></script>
+<script id='wpml-cookie-js-extra'>
+var wpml_cookies = {"wp-wpml_current_language":{"value":"en","expires":1,"path":"\/"}};
+var wpml_cookies = {"wp-wpml_current_language":{"value":"en","expires":1,"path":"\/"}};
+</script>
+<script src='https://telefilm.ca/wp-content/plugins/sitepress-multilingual-cms/res/js/cookies/language-cookie.js?ver=4.6.3' id='wpml-cookie-js' defer></script>
+<script id='addtoany-core-js-before'>
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};a2a_localize = {
+	Share: "Share",
+	Save: "Save",
+	Subscribe: "Subscribe",
+	Email: "Email",
+	Bookmark: "Bookmark",
+	ShowAll: "Show All",
+	ShowLess: "Show less",
+	FindServices: "Find service(s)",
+	FindAnyServiceToAddTo: "Instantly find any service to add to",
+	PoweredBy: "Powered by",
+	ShareViaEmail: "Share via email",
+	SubscribeViaEmail: "Subscribe via email",
+	BookmarkInYourBrowser: "Bookmark in your browser",
+	BookmarkInstructions: "Press Ctrl+D or \u2318+D to bookmark this page",
+	AddToYourFavorites: "Add to your favourites",
+	SendFromWebOrProgram: "Send from any email address or email program",
+	EmailProgram: "Email program",
+	More: "More&#8230;",
+	ThanksForSharing: "Thanks for sharing!",
+	ThanksForFollowing: "Thanks for following!"
+};
+
+a2a_config.icon_color="transparent,#ffffff";
+</script>
+<script type="rocketlazyloadscript" async data-rocket-src='https://static.addtoany.com/menu/page.js' id='addtoany-core-js'></script>
+<script async src='https://telefilm.ca/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.1' id='addtoany-jquery-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://kit.fontawesome.com/cd98369da2.js?ver=1.1.2' id='fontawesome-js' defer></script>
+<script id='theme-main-js-extra'>
+var vars_ajax = {"home":"https:\/\/telefilm.ca\/en","loading_img":"<img title=\"loader\" src=\"https:\/\/telefilm.ca\/wp-content\/themes\/tel11799-telefilm.ca\/assets\/images\/loader.svg\">","nonce":"aba4917d80","ajaxurl":"https:\/\/telefilm.ca\/wp-admin\/admin-ajax.php"};
+</script>
+<script src='https://telefilm.ca/wp-content/themes/tel11799-telefilm.ca/assets_dist/js/main.js?ver=1.1.2' id='theme-main-js' defer></script>
+<script src='https://telefilm.ca/wp-content/themes/tel11799-telefilm.ca/assets_dist/js/layout.js?ver=1.1.2' id='theme-header-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://cdn-cookieyes.com/client_data/ba627436c56fb7c99a7afa8a/script.js?ver=6.2.2' id='cookie-yes-js' defer></script>
+
+<!-- Google Analytics snippet added by Site Kit -->
+<script type="rocketlazyloadscript" data-rocket-src='https://www.googletagmanager.com/gtag/js?id=UA-306512-8' id='google_gtagjs-js' async></script>
+<script id='google_gtagjs-js-after'>
+window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag('set', 'linker', {"domains":["telefilm.ca"]} );
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "UA-306512-8", {"anonymize_ip":true});
+gtag("config", "G-PYK69QTN6C");
+</script>
+
+<!-- End Google Analytics snippet added by Site Kit -->
+<link rel="https://api.w.org/" href="https://telefilm.ca/en/wp-json/" /><link rel="alternate" type="application/json" href="https://telefilm.ca/en/wp-json/wp/v2/pages/34" /><link rel="alternate" type="application/json+oembed" href="https://telefilm.ca/en/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftelefilm.ca%2Fen" />
+<link rel="alternate" type="text/xml+oembed" href="https://telefilm.ca/en/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftelefilm.ca%2Fen&#038;format=xml" />
+<meta name="generator" content="WPML ver:4.6.3 stt:1,4;" />
+<meta name="generator" content="Site Kit by Google 1.101.0" />
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<!-- GTM Container placement set to automatic -->
+<script data-cfasync="false" data-pagespeed-no-defer type="text/javascript">
+	var dataLayer_content = {"pagePostType":"frontpage","pagePostType2":"single-page","pagePostAuthor":"activis"};
+	dataLayer.push( dataLayer_content );
+</script>
+<script type="rocketlazyloadscript" data-cfasync="false">
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.'+'js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K8QN88');
+</script>
+<!-- End Google Tag Manager -->
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->    <script type="text/javascript">
+                var ajaxurl =
+        'https://telefilm.ca/wp-admin/admin-ajax.php';
+                var bloginfourl =
+        'https://telefilm.ca/en';
+                var template_dir =
+        'https://telefilm.ca/wp-content/themes/tel11799-telefilm.ca';
+            </script>
+    		<style id="wp-custom-css">
+			
+.post-password-form input[type=password]
+ {
+    height:43px;
+}
+.post-password-form input[type=submit] {
+    align-items: center;
+    background-color: transparent;
+    border: 0.125rem solid transparent;
+    border-radius: 0.5rem;
+    color: #000;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 1rem;
+    font-weight: 400;
+    gap: 0.75rem;
+    justify-content: center;
+    line-height: 1.25;
+    padding: 0.625rem 0.875rem;
+    text-align: center;
+    text-decoration: none;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    vertical-align: middle;
+    background-color: #ffd32c;
+    border-color: #ffd32c;
+    color: #000;
+}
+.post-password-form input[type=submit]:hover{
+     background-color: #ffc01a;
+     border-color: #ffc01a;
+     color: #000;
+ }
+		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+</head>
+
+<body data-barba="wrapper" class="home page-template-default page page-id-34 wp-embed-responsive">
+	<div data-barba="container" data-barba-namespace="site">
+		
+<!-- GTM Container placement set to automatic -->
+<!-- Google Tag Manager (noscript) -->
+				<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8QN88" height="0" width="0" style="display:none;visibility:hidden" aria-hidden="true"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->	
+    <div class="gradiant-bar"></div>
+<div class="alignfull recherche-overhead">
+<div class="wp-block-group recherche-overhead__wrapper container">
+    <form role="search" method="get" action="https://telefilm.ca/en" class="wp-block-search__no-button is-style-transparent alignwide wp-block-search" data-swpparentel=".recherche-overhead .recherche-overhead__results"><label for="wp-block-search__input-1" class="wp-block-search__label screen-reader-text">Search</label><div class="wp-block-search__inside-wrapper "><input type="search" id="wp-block-search__input-1" class="wp-block-search__input" name="s" value="" placeholder="Type a keyword" required></div></form>
+    
+    <button type="button" class="recherche-overhead__close icon icon--circled icon--interactive-alpha"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 1.41L8.59 0L5 3.59L1.41 0L0 1.41L3.59 5L0 8.59L1.41 10L5 6.41L8.59 10L10 8.59L6.41 5L10 1.41Z" fill="black"/></svg></button>
+    
+    
+    <div class="wp-block-group recherche-overhead__results recherche-overhead__results--hidden alignfull">
+    </div>
+    
+    </div>
+    
+    
+    <style>
+    .recherche-overhead .searchwp-live-search-no-min-chars:after {
+        content: "Complete your search";
+    }
+    </style>
+    </div><header id="header_site" class="bg-black">
+    <div class="container bg-black h-100 d-flex px-4 p-lg-0">
+        <div id="logo">
+            <a href="https://telefilm.ca/en">
+                                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20225%2040'%3E%3C/svg%3E"
+                     alt="Telefilm Canada" width="225px" height="40px" data-lazy-src="https://telefilm.ca/wp-content/themes/tel11799-telefilm.ca/assets_src/images/Logo-Telefilm.svg"/><noscript><img src="https://telefilm.ca/wp-content/themes/tel11799-telefilm.ca/assets_src/images/Logo-Telefilm.svg"
+                     alt="Telefilm Canada" width="225px" height="40px"/></noscript>
+            </a>
+        </div>
+
+        <a class="sr-only sr-only-focusable" href="#main">Skip Navigation Links</a>
+        <nav aria-label="Main Menu" class="h-100">
+            <div class="main_menu order-2 order-lg-1">
+                <ul class="level_1 container px-4 p-lg-0">
+                                            <li class="level_1">
+                            <div class="links_level_1"  data-barba-prevent="all">
+                                <a href="https://telefilm.ca/en/who-we-are"
+                                   class=" parent_menu item_menu ">
+                                    Who we are                                </a>
+                                                                    <a href="#"
+                                       class="view_sub_menu parent_menu item_menu d-xl-none ">
+                                                <span>
+                                              <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1.7019 13.0103L7.71231 6.99991L1.70191 0.989502L0.287691 2.40372L4.88388 6.99991L0.287689 11.5961L1.7019 13.0103Z"
+          fill="currentColor"/>
+</svg>
+                                            </span>
+
+                                    </a>
+                                                            </div>
+                            <div class="header_submenu bg-black">
+                                <div class="container px-4  p-lg-0 d-block d-xl-flex">
+                                    <div class="d-none d-xl-block menu__intro is-style-primary">
+                                                                                    <p class="menuintro-title">
+                                                Who we are                                            </p>
+                                                                                                                            <p class="menuintro-desc">
+                                                Comprised of some 200 passionate professionals, we support the dynamic companies and creative talent behind Canadian content, always with an eye to equity, inclusion and sustainability.                                            </p>
+                                        
+                                        <a class="btn menuintro-btn wp-block-button__link text-black"
+                                           href="https://telefilm.ca/en/who-we-are">
+                                            Learn more                                            <i aria-label="Who we are" class="icon far fa-angle-right"> </i>
+                                        </a>
+
+
+                                    </div>
+                                    <div class="menu__sub-menu">
+                                                                                    <ul class="level_2 d-block d-xl-flex">
+                                                <div class="links_level_1 d-xl-none">
+                                                    <a href="#"
+                                                       class=" back_menu parent_menu item_menu ">
+                                                                    <span>
+                                                                        <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M9.94974 1.92886L8.53553 0.514648L0.0502472 8.99993L8.53553 17.4852L9.94974 16.071L2.87868 8.99993L9.94974 1.92886Z"
+          fill="currentColor"/>
+</svg>
+                                                                    </span>
+                                                    </a>
+                                                    <a href="https://telefilm.ca/en/who-we-are"
+                                                       class=" parent_menu item_menu ">
+                                                        Who we are                                                    </a>
+
+                                                </div>
+                                                                                                        <div class="col-menu level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/who-we-are/about-us"
+                                                                   class=" parent_menu item_menu ">
+                                                                    About us                                                                </a>
+                                                                                                                                    <a href="#"
+                                                                       class="view_sub_menu d-xl-none parent_menu item_menu ">
+                                                                    <span>
+                                                                        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1.7019 13.0103L7.71231 6.99991L1.70191 0.989502L0.287691 2.40372L4.88388 6.99991L0.287689 11.5961L1.7019 13.0103Z"
+          fill="currentColor"/>
+</svg>
+                                                                    </span>
+                                                                    </a>
+                                                                                                                            </div>
+
+                                                                                                                            <ul class="level_3">
+                                                                                                                                            <li class="level_3">
+                                                                            <a href="https://telefilm.ca/en/who-we-are/about-us/board-of-directors"
+                                                                               class="item_menu ">Board of Directors</a>
+                                                                        </li>
+
+                                                                                                                                            <li class="level_3">
+                                                                            <a href="https://telefilm.ca/en/who-we-are/about-us/executive-leadership-team"
+                                                                               class="item_menu ">Executive Leadership team</a>
+                                                                        </li>
+
+                                                                                                                                            <li class="level_3">
+                                                                            <a href="https://telefilm.ca/en/who-we-are/about-us/service-charter"
+                                                                               class="item_menu ">Service Charter</a>
+                                                                        </li>
+
+                                                                                                                                            <li class="level_3">
+                                                                            <a href="https://telefilm.ca/en/who-we-are/about-us/strategic-plan"
+                                                                               class="item_menu ">Strategic Plan</a>
+                                                                        </li>
+
+                                                                                                                                    </ul>
+                                                                                                                    </div>
+
+                                                                                                            <div class="col-menu level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/who-we-are/our-engagement"
+                                                                   class=" parent_menu item_menu ">
+                                                                    Our engagements                                                                </a>
+                                                                                                                                    <a href="#"
+                                                                       class="view_sub_menu d-xl-none parent_menu item_menu ">
+                                                                    <span>
+                                                                        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1.7019 13.0103L7.71231 6.99991L1.70191 0.989502L0.287691 2.40372L4.88388 6.99991L0.287689 11.5961L1.7019 13.0103Z"
+          fill="currentColor"/>
+</svg>
+                                                                    </span>
+                                                                    </a>
+                                                                                                                            </div>
+
+                                                                                                                            <ul class="level_3">
+                                                                                                                                            <li class="level_3">
+                                                                            <a href="https://telefilm.ca/en/who-we-are/our-engagement/guiding-principles-on-harassment"
+                                                                               class="item_menu ">Guiding principles on harassment</a>
+                                                                        </li>
+
+                                                                                                                                            <li class="level_3">
+                                                                            <a href="https://telefilm.ca/en/who-we-are/our-engagement/pan-canadian-consultation"
+                                                                               class="item_menu ">Pan-Canadian Consultation</a>
+                                                                        </li>
+
+                                                                                                                                            <li class="level_3">
+                                                                            <a href="https://telefilm.ca/en/who-we-are/our-engagement/indigenous-working-group"
+                                                                               class="item_menu ">Indigenous Working Group</a>
+                                                                        </li>
+
+                                                                                                                                            <li class="level_3">
+                                                                            <a href="https://telefilm.ca/en/who-we-are/our-engagement/gender-parity-action-plan"
+                                                                               class="item_menu ">Gender Parity Action Plan</a>
+                                                                        </li>
+
+                                                                                                                                            <li class="level_3">
+                                                                            <a href="https://telefilm.ca/en/who-we-are/our-engagement/equity-diversity-and-inclusion"
+                                                                               class="item_menu ">Equity, Diversity and Inclusion Action Plan</a>
+                                                                        </li>
+
+                                                                                                                                            <li class="level_3">
+                                                                            <a href="https://telefilm.ca/en/who-we-are/our-engagement/accessibility-plan"
+                                                                               class="item_menu ">Accessibility plan</a>
+                                                                        </li>
+
+                                                                                                                                            <li class="level_3">
+                                                                            <a href="https://telefilm.ca/en/who-we-are/our-engagement/environmental-sustainability"
+                                                                               class="item_menu ">Environmental Sustainability</a>
+                                                                        </li>
+
+                                                                                                                                    </ul>
+                                                                                                                    </div>
+
+                                                                                                            <div class="col-menu level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/who-we-are/careers"
+                                                                   class=" parent_menu item_menu ">
+                                                                    Careers                                                                </a>
+                                                                                                                            </div>
+
+                                                                                                                    </div>
+
+                                                                                                            <div class=" level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/who-we-are/directories"
+                                                                   class=" parent_menu item_menu ">
+                                                                    Directories                                                                </a>
+                                                                                                                            </div>
+
+                                                                                                                    </div>
+
+                                                                                                            <div class=" level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/who-we-are/transparency"
+                                                                   class=" parent_menu item_menu ">
+                                                                    Transparency                                                                </a>
+                                                                                                                            </div>
+
+                                                                                                                    </div>
+
+                                                                                                            <div class=" level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/who-we-are/news-room"
+                                                                   class=" parent_menu item_menu ">
+                                                                    Newsroom                                                                </a>
+                                                                                                                            </div>
+
+                                                                                                                    </div>
+
+                                                                                                            <div class="col-menu level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/who-we-are/contact-us"
+                                                                   class=" parent_menu item_menu ">
+                                                                    Contact                                                                </a>
+                                                                                                                            </div>
+
+                                                                                                                    </div>
+
+                                                                                                </ul>
+                                                                                                                    </div>
+                                </div>
+                                <a href="#" class="btn_close d-none d-xl-flex" tabindex="-1">
+                                    <span class="sr-only sr-only-focusable">Close menu</span>
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M25.3334 8.54675L23.4534 6.66675L16 14.1201L8.54669 6.66675L6.66669 8.54675L14.12 16.0001L6.66669 23.4534L8.54669 25.3334L16 17.8801L23.4534 25.3334L25.3334 23.4534L17.88 16.0001L25.3334 8.54675Z"
+          fill="currentColor"/>
+</svg>
+                                </a>
+                            </div>
+
+                        </li>
+                                            <li class="level_1">
+                            <div class="links_level_1"  data-barba-prevent="all">
+                                <a href="https://telefilm.ca/en/we-finance-and-support"
+                                   class=" parent_menu item_menu ">
+                                    We Finance and Support                                </a>
+                                                                    <a href="#"
+                                       class="view_sub_menu parent_menu item_menu d-xl-none ">
+                                                <span>
+                                              <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1.7019 13.0103L7.71231 6.99991L1.70191 0.989502L0.287691 2.40372L4.88388 6.99991L0.287689 11.5961L1.7019 13.0103Z"
+          fill="currentColor"/>
+</svg>
+                                            </span>
+
+                                    </a>
+                                                            </div>
+                            <div class="header_submenu bg-black">
+                                <div class="container px-4  p-lg-0 d-block d-xl-flex">
+                                    <div class="d-none d-xl-block menu__intro is-style-primary">
+                                                                                    <p class="menuintro-title">
+                                                We Finance and Support                                            </p>
+                                                                                                                            <p class="menuintro-desc">
+                                                We support diverse talent and creators at all stages of a feature film, from development, to production and post-production, to marketing to audiences both at home and abroad.                                            </p>
+                                        
+                                        <a class="btn menuintro-btn wp-block-button__link text-black"
+                                           href="https://telefilm.ca/en/we-finance-and-support">
+                                            Learn more                                            <i aria-label="We Finance and Support" class="icon far fa-angle-right"> </i>
+                                        </a>
+
+
+                                    </div>
+                                    <div class="menu__sub-menu">
+                                                                                    <ul class="level_2 d-block d-xl-flex">
+                                                <div class="links_level_1 d-xl-none">
+                                                    <a href="#"
+                                                       class=" back_menu parent_menu item_menu ">
+                                                                    <span>
+                                                                        <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M9.94974 1.92886L8.53553 0.514648L0.0502472 8.99993L8.53553 17.4852L9.94974 16.071L2.87868 8.99993L9.94974 1.92886Z"
+          fill="currentColor"/>
+</svg>
+                                                                    </span>
+                                                    </a>
+                                                    <a href="https://telefilm.ca/en/we-finance-and-support"
+                                                       class=" parent_menu item_menu ">
+                                                        We Finance and Support                                                    </a>
+
+                                                </div>
+                                                                                                        <div class="col-menu level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/we-finance-and-support/how-to-apply"
+                                                                   class=" parent_menu item_menu ">
+                                                                    How to apply                                                                </a>
+                                                                                                                            </div>
+
+                                                                                                                    </div>
+
+                                                                                                            <div class=" level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/we-finance-and-support/indigenous-initiatives"
+                                                                   class=" parent_menu item_menu ">
+                                                                    Indigenous Initiatives                                                                </a>
+                                                                                                                            </div>
+
+                                                                                                                    </div>
+
+                                                                                                            <div class=" level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/we-finance-and-support/project-financing-advisory-committees"
+                                                                   class=" parent_menu item_menu ">
+                                                                    Advisory Committee                                                                </a>
+                                                                                                                            </div>
+
+                                                                                                                    </div>
+
+                                                                                                            <div class="col-menu level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/we-finance-and-support/our-programs"
+                                                                   class=" parent_menu item_menu ">
+                                                                    Programs                                                                </a>
+                                                                                                                                    <a href="#"
+                                                                       class="view_sub_menu d-xl-none parent_menu item_menu ">
+                                                                    <span>
+                                                                        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1.7019 13.0103L7.71231 6.99991L1.70191 0.989502L0.287691 2.40372L4.88388 6.99991L0.287689 11.5961L1.7019 13.0103Z"
+          fill="currentColor"/>
+</svg>
+                                                                    </span>
+                                                                    </a>
+                                                                                                                            </div>
+
+                                                                                                                            <ul class="level_3">
+                                                                                                                                            <li class="level_3">
+                                                                            <a href="https://telefilm.ca/en/we-finance-and-support/our-programs/feature-films"
+                                                                               class="item_menu ">Feature films</a>
+                                                                        </li>
+
+                                                                                                                                            <li class="level_3">
+                                                                            <a href="https://telefilm.ca/en/we-finance-and-support/our-programs/festivals-activities-and-cinemas"
+                                                                               class="item_menu ">Festivals, activities and cinemas</a>
+                                                                        </li>
+
+                                                                                                                                            <li class="level_3">
+                                                                            <a href="https://telefilm.ca/en/we-finance-and-support/our-programs/international-programs"
+                                                                               class="item_menu ">International programs</a>
+                                                                        </li>
+
+                                                                                                                                            <li class="level_3">
+                                                                            <a href="https://telefilm.ca/en/we-finance-and-support/our-programs/temporary-support"
+                                                                               class="item_menu ">Temporary support</a>
+                                                                        </li>
+
+                                                                                                                                    </ul>
+                                                                                                                    </div>
+
+                                                                                                            <div class="col-menu level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/we-finance-and-support/coproductions"
+                                                                   class=" parent_menu item_menu ">
+                                                                    Coproductions                                                                </a>
+                                                                                                                                    <a href="#"
+                                                                       class="view_sub_menu d-xl-none parent_menu item_menu ">
+                                                                    <span>
+                                                                        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1.7019 13.0103L7.71231 6.99991L1.70191 0.989502L0.287691 2.40372L4.88388 6.99991L0.287689 11.5961L1.7019 13.0103Z"
+          fill="currentColor"/>
+</svg>
+                                                                    </span>
+                                                                    </a>
+                                                                                                                            </div>
+
+                                                                                                                            <ul class="level_3">
+                                                                                                                                            <li class="level_3">
+                                                                            <a href="https://telefilm.ca/en/we-finance-and-support/coproductions/submit-a-coproduction-recommendation-application"
+                                                                               class="item_menu ">Coproduction recommendation submission</a>
+                                                                        </li>
+
+                                                                                                                                            <li class="level_3">
+                                                                            <a href="https://telefilm.ca/en/we-finance-and-support/coproductions/statistics-on-coproduction"
+                                                                               class="item_menu ">Statistics on coproduction</a>
+                                                                        </li>
+
+                                                                                                                                            <li class="level_3">
+                                                                            <a href="https://telefilm.ca/en/we-finance-and-support/coproductions/international-treaties-and-memorandums-of-understanding"
+                                                                               class="item_menu ">International treaties</a>
+                                                                        </li>
+
+                                                                                                                                    </ul>
+                                                                                                                    </div>
+
+                                                                                                            <div class="col-menu level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/we-finance-and-support/program-deadline"
+                                                                   class=" parent_menu item_menu ">
+                                                                    Deadlines                                                                </a>
+                                                                                                                            </div>
+
+                                                                                                                    </div>
+
+                                                                                                </ul>
+                                                                                                                            <div class="separator d-none d-xl-block">
+                                            </div>
+                                            <div class="popular_content d-none d-xl-block">
+                                                                                                    <a class="menu_popular"
+                                                       href="https://telefilm.ca/en/we-finance-and-support/program-deadline">
+                                                                                                                    <img width="301" height="301" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20301%20301'%3E%3C/svg%3E"
+                                                                 alt="Menu - Deadlines" data-lazy-src="https://telefilm.ca/wp-content/uploads/2022/05/program-deadline-10.png"/><noscript><img width="301" height="301" src="https://telefilm.ca/wp-content/uploads/2022/05/program-deadline-10.png"
+                                                                 alt="Menu - Deadlines"/></noscript>
+                                                                                                                <span>Deadlines</span>
+                                                    </a>
+                                                                                            </div>
+                                                                            </div>
+                                </div>
+                                <a href="#" class="btn_close d-none d-xl-flex" tabindex="-1">
+                                    <span class="sr-only sr-only-focusable">Close menu</span>
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M25.3334 8.54675L23.4534 6.66675L16 14.1201L8.54669 6.66675L6.66669 8.54675L14.12 16.0001L6.66669 23.4534L8.54669 25.3334L16 17.8801L23.4534 25.3334L25.3334 23.4534L17.88 16.0001L25.3334 8.54675Z"
+          fill="currentColor"/>
+</svg>
+                                </a>
+                            </div>
+
+                        </li>
+                                            <li class="level_1">
+                            <div class="links_level_1"  data-barba-prevent="all">
+                                <a href="https://telefilm.ca/en/we-promote"
+                                   class=" parent_menu item_menu ">
+                                    We Promote                                </a>
+                                                                    <a href="#"
+                                       class="view_sub_menu parent_menu item_menu d-xl-none ">
+                                                <span>
+                                              <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1.7019 13.0103L7.71231 6.99991L1.70191 0.989502L0.287691 2.40372L4.88388 6.99991L0.287689 11.5961L1.7019 13.0103Z"
+          fill="currentColor"/>
+</svg>
+                                            </span>
+
+                                    </a>
+                                                            </div>
+                            <div class="header_submenu bg-black">
+                                <div class="container px-4  p-lg-0 d-block d-xl-flex">
+                                    <div class="d-none d-xl-block menu__intro is-style-primary">
+                                                                                    <p class="menuintro-title">
+                                                We Promote                                            </p>
+                                                                                                                            <p class="menuintro-desc">
+                                                We are the talent behind the talent. Through our promotional initiatives and partnerships with key players around the world, we propel Canadian storytelling to new heights.                                             </p>
+                                        
+                                        <a class="btn menuintro-btn wp-block-button__link text-black"
+                                           href="https://telefilm.ca/en/we-promote">
+                                            Learn more                                            <i aria-label="We Promote" class="icon far fa-angle-right"> </i>
+                                        </a>
+
+
+                                    </div>
+                                    <div class="menu__sub-menu">
+                                                                                    <ul class="level_2 d-block d-xl-flex">
+                                                <div class="links_level_1 d-xl-none">
+                                                    <a href="#"
+                                                       class=" back_menu parent_menu item_menu ">
+                                                                    <span>
+                                                                        <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M9.94974 1.92886L8.53553 0.514648L0.0502472 8.99993L8.53553 17.4852L9.94974 16.071L2.87868 8.99993L9.94974 1.92886Z"
+          fill="currentColor"/>
+</svg>
+                                                                    </span>
+                                                    </a>
+                                                    <a href="https://telefilm.ca/en/we-promote"
+                                                       class=" parent_menu item_menu ">
+                                                        We Promote                                                    </a>
+
+                                                </div>
+                                                                                                        <div class="col-menu level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/we-promote/our-initiatives"
+                                                                   class=" parent_menu item_menu ">
+                                                                    Our initiatives                                                                </a>
+                                                                                                                            </div>
+
+                                                                                                                    </div>
+
+                                                                                                            <div class="col-menu level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/we-promote/festival-circuit"
+                                                                   class=" parent_menu item_menu ">
+                                                                    Festival circuit                                                                </a>
+                                                                                                                            </div>
+
+                                                                                                                    </div>
+
+                                                                                                            <div class=" level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/we-promote/market-circuit"
+                                                                   class=" parent_menu item_menu ">
+                                                                    Market circuit                                                                </a>
+                                                                                                                            </div>
+
+                                                                                                                    </div>
+
+                                                                                                            <div class=" level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/we-promote/calls-for-entry"
+                                                                   class=" parent_menu item_menu ">
+                                                                    Calls for entry                                                                </a>
+                                                                                                                            </div>
+
+                                                                                                                    </div>
+
+                                                                                                            <div class="col-menu level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/we-promote/canada-pavilion"
+                                                                   class=" parent_menu item_menu ">
+                                                                    Canada Pavilion                                                                </a>
+                                                                                                                            </div>
+
+                                                                                                                    </div>
+
+                                                                                                </ul>
+                                                                                                                    </div>
+                                </div>
+                                <a href="#" class="btn_close d-none d-xl-flex" tabindex="-1">
+                                    <span class="sr-only sr-only-focusable">Close menu</span>
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M25.3334 8.54675L23.4534 6.66675L16 14.1201L8.54669 6.66675L6.66669 8.54675L14.12 16.0001L6.66669 23.4534L8.54669 25.3334L16 17.8801L23.4534 25.3334L25.3334 23.4534L17.88 16.0001L25.3334 8.54675Z"
+          fill="currentColor"/>
+</svg>
+                                </a>
+                            </div>
+
+                        </li>
+                                            <li class="level_1">
+                            <div class="links_level_1"  data-barba-prevent="all">
+                                <a href="https://telefilm.ca/en/we-partner"
+                                   class=" parent_menu item_menu ">
+                                    We Partner                                </a>
+                                                                    <a href="#"
+                                       class="view_sub_menu parent_menu item_menu d-xl-none ">
+                                                <span>
+                                              <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1.7019 13.0103L7.71231 6.99991L1.70191 0.989502L0.287691 2.40372L4.88388 6.99991L0.287689 11.5961L1.7019 13.0103Z"
+          fill="currentColor"/>
+</svg>
+                                            </span>
+
+                                    </a>
+                                                            </div>
+                            <div class="header_submenu bg-black">
+                                <div class="container px-4  p-lg-0 d-block d-xl-flex">
+                                    <div class="d-none d-xl-block menu__intro is-style-primary">
+                                                                                    <p class="menuintro-title">
+                                                We Partner                                            </p>
+                                                                                                                            <p class="menuintro-desc">
+                                                As a Partner of Choice, Telefilm brings together industry key players to foster the creation of content and the promotion of Canadian talent.
+
+                                            </p>
+                                        
+                                        <a class="btn menuintro-btn wp-block-button__link text-black"
+                                           href="https://telefilm.ca/en/we-partner">
+                                            Learn more                                            <i aria-label="We Partner" class="icon far fa-angle-right"> </i>
+                                        </a>
+
+
+                                    </div>
+                                    <div class="menu__sub-menu">
+                                                                                    <ul class="level_2 d-block d-xl-flex">
+                                                <div class="links_level_1 d-xl-none">
+                                                    <a href="#"
+                                                       class=" back_menu parent_menu item_menu ">
+                                                                    <span>
+                                                                        <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M9.94974 1.92886L8.53553 0.514648L0.0502472 8.99993L8.53553 17.4852L9.94974 16.071L2.87868 8.99993L9.94974 1.92886Z"
+          fill="currentColor"/>
+</svg>
+                                                                    </span>
+                                                    </a>
+                                                    <a href="https://telefilm.ca/en/we-partner"
+                                                       class=" parent_menu item_menu ">
+                                                        We Partner                                                    </a>
+
+                                                </div>
+                                                                                                        <div class="col-menu level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/we-partner/why-we-partner"
+                                                                   class=" parent_menu item_menu ">
+                                                                    Why We Partner                                                                </a>
+                                                                                                                            </div>
+
+                                                                                                                    </div>
+
+                                                                                                            <div class=" level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/we-partner/talent-fund"
+                                                                   class=" parent_menu item_menu ">
+                                                                    The Talent Fund                                                                </a>
+                                                                                                                            </div>
+
+                                                                                                                    </div>
+
+                                                                                                            <div class="col-menu level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/we-partner/business-intelligence-and-research"
+                                                                   class=" parent_menu item_menu ">
+                                                                    Business Intelligence and Research                                                                </a>
+                                                                                                                            </div>
+
+                                                                                                                    </div>
+
+                                                                                                            <div class=" level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/we-partner/study"
+                                                                   class=" parent_menu item_menu ">
+                                                                    Studies                                                                </a>
+                                                                                                                            </div>
+
+                                                                                                                    </div>
+
+                                                                                                            <div class="col-menu level_2">
+                                                            <div class="links_level_2 ">
+                                                                <a href="https://telefilm.ca/en/we-partner/filming-in-canada"
+                                                                   class=" parent_menu item_menu ">
+                                                                    Filming in Canada                                                                </a>
+                                                                                                                                    <a href="#"
+                                                                       class="view_sub_menu d-xl-none parent_menu item_menu ">
+                                                                    <span>
+                                                                        <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M1.7019 13.0103L7.71231 6.99991L1.70191 0.989502L0.287691 2.40372L4.88388 6.99991L0.287689 11.5961L1.7019 13.0103Z"
+          fill="currentColor"/>
+</svg>
+                                                                    </span>
+                                                                    </a>
+                                                                                                                            </div>
+
+                                                                                                                            <ul class="level_3">
+                                                                                                                                            <li class="level_3">
+                                                                            <a href="https://telefilm.ca/en/we-partner/filming-in-canada/public-funding-credits-and-certification"
+                                                                               class="item_menu ">Public Funding, Credits and Certification</a>
+                                                                        </li>
+
+                                                                                                                                            <li class="level_3">
+                                                                            <a href="https://telefilm.ca/en/we-partner/filming-in-canada/shooting-locations"
+                                                                               class="item_menu ">Shooting Locations</a>
+                                                                        </li>
+
+                                                                                                                                            <li class="level_3">
+                                                                            <a href="https://telefilm.ca/en/we-partner/filming-in-canada/industry-resources"
+                                                                               class="item_menu ">Industry Resources</a>
+                                                                        </li>
+
+                                                                                                                                    </ul>
+                                                                                                                    </div>
+
+                                                                                                </ul>
+                                                                                                                    </div>
+                                </div>
+                                <a href="#" class="btn_close d-none d-xl-flex" tabindex="-1">
+                                    <span class="sr-only sr-only-focusable">Close menu</span>
+                                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M25.3334 8.54675L23.4534 6.66675L16 14.1201L8.54669 6.66675L6.66669 8.54675L14.12 16.0001L6.66669 23.4534L8.54669 25.3334L16 17.8801L23.4534 25.3334L25.3334 23.4534L17.88 16.0001L25.3334 8.54675Z"
+          fill="currentColor"/>
+</svg>
+                                </a>
+                            </div>
+
+                        </li>
+                                    </ul>
+            </div>
+
+            <div class="quick_menu order-1 order-lg-2">
+                <ul>
+                    <li class="login">
+                        
+                        <a href="https://telefilm.ca/en/log-in" >
+                            Dialogue                        </a>
+                    </li>
+                    <li class="lang_switcher">
+                        
+<div class="wpml-ls-statics-shortcode_actions wpml-ls wpml-ls-legacy-list-horizontal">
+	<ul><li class="wpml-ls-slot-shortcode_actions wpml-ls-item wpml-ls-item-fr wpml-ls-first-item wpml-ls-last-item wpml-ls-item-legacy-list-horizontal">
+				<a href="https://telefilm.ca/fr" class="wpml-ls-link">
+                    <span class="wpml-ls-native" lang="fr">FR</span></a>
+			</li></ul>
+</div>
+                    </li>
+                    <li class="search">
+                        <a href="#" class="search_button js-open-recherche-overhead">
+                            <span class="sr-only sr-only-focusable">Search menu</span>
+                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M11.8764 9.97687C13.5464 7.63367 13.3302 4.35958 11.228 2.25736C8.88485 -0.0857866 5.08586 -0.0857863 2.74271 2.25736C0.399565 4.6005 0.399565 8.39949 2.74271 10.7426C4.84494 12.8449 8.11902 13.061 10.4622 11.3911L16.1777 17.1066L17.592 15.6924L11.8764 9.97687ZM9.81378 3.67157C11.3759 5.23367 11.3759 7.76633 9.81378 9.32843C8.25168 10.8905 5.71902 10.8905 4.15692 9.32843C2.59483 7.76633 2.59483 5.23367 4.15692 3.67157C5.71902 2.10948 8.25168 2.10948 9.81378 3.67157Z"
+          fill="currentColor"/>
+</svg>
+                        </a>
+                    </li>
+                    <li class="burger_menu d-xl-none">
+                                <span class="icon_burger">
+                                <svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 2.66667V0H24V2.66667H0Z" fill="currentColor"/>
+    <path d="M0 9.33333H24V6.66667H0V9.33333Z" fill="currentColor"/>
+    <path d="M0 16H24V13.3333H0V16Z" fill="currentColor"/>
+</svg>
+                                </span>
+                        <span class="icon_close">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M25.3334 8.54675L23.4534 6.66675L16 14.1201L8.54669 6.66675L6.66669 8.54675L14.12 16.0001L6.66669 23.4534L8.54669 25.3334L16 17.8801L23.4534 25.3334L25.3334 23.4534L17.88 16.0001L25.3334 8.54675Z"
+          fill="currentColor"/>
+</svg>
+                                </span>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+</header>
+<main class="lang-en l-front-page" id="main">
+         <!-- wp:cover {"url":"https://telefilm.ca/wp-content/uploads/2022/07/Rectangle-302.jpg"} -->
+<div class="wp-block-cover act-cover">
+    <img width="750" height="1290" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20750%201290'%3E%3C/svg%3E" class="wp-block-cover__image-background" alt="" decoding="async" data-object-fit="cover" data-lazy-srcset="https://telefilm.ca/wp-content/uploads/2022/07/Rectangle-302-750x1290.jpg 750w, https://telefilm.ca/wp-content/uploads/2022/07/Rectangle-302-1536x447.jpg 1536w" data-lazy-sizes="(min-width: 640px) 100vw, 250px" data-lazy-src="https://telefilm.ca/wp-content/uploads/2022/07/Rectangle-302-750x1290.jpg" /><noscript><img width="750" height="1290" src="https://telefilm.ca/wp-content/uploads/2022/07/Rectangle-302-750x1290.jpg" class="wp-block-cover__image-background" alt="" decoding="async" data-object-fit="cover" srcset="https://telefilm.ca/wp-content/uploads/2022/07/Rectangle-302-750x1290.jpg 750w, https://telefilm.ca/wp-content/uploads/2022/07/Rectangle-302-1536x447.jpg 1536w" sizes="(min-width: 640px) 100vw, 250px" /></noscript>    <div class="wp-block-cover__inner-container">
+        <!-- wp:group -->
+        <div class="wp-block-group">
+            <!-- wp:heading {"level":1} -->
+            <h1> Bringing <strong>Canadian creativity</strong> to the <strong>world</strong></h1>
+            <!-- /wp:heading -->
+
+                    </div>
+        <!-- /wp:group -->
+    </div>
+</div>
+<!-- /wp:cover -->    <div class="container">
+        <div class="l-front-page__scroll">
+            <span class="icon icon--svg icon--stroke icon-mouse icon--size-7 text-white" aria-labelledby="alt_scroll">
+                <title id="alt_scroll">Descendez pour plus de contenu</title>
+                <svg width="24" height="41" viewBox="0 0 24 41" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="1" y="1" width="22" height="39" rx="11" stroke="white" stroke-width="2"/>
+                <rect x="11" y="7" width="2" height="8" rx="1" fill="white"/>
+            </svg>
+        </span>
+        </div>
+        <div class="act-tabs">
+    <div class="nav act-tabs__nav" id="news" role="tablist">
+              <button class="act-tabs__nav-item active" id="releases-tab" data-bs-toggle="tab" data-bs-target="#releases" type="button" role="tab" aria-controls="releases" aria-selected="true">
+          News releases        </button>
+              <button class="act-tabs__nav-item " id="advisories-tab" data-bs-toggle="tab" data-bs-target="#advisories" type="button" role="tab" aria-controls="advisories" aria-selected="false">
+          Industry advisories        </button>
+              <button class="act-tabs__nav-item " id="key-dates-tab" data-bs-toggle="tab" data-bs-target="#key-dates" type="button" role="tab" aria-controls="key-dates" aria-selected="false">
+          Key dates        </button>
+              <button class="act-tabs__nav-item " id="calls-for-entries-tab" data-bs-toggle="tab" data-bs-target="#calls-for-entries" type="button" role="tab" aria-controls="calls-for-entries" aria-selected="false">
+          Calls for entries        </button>
+    </div>    <div class="l-front-page__text-resizer">
+        <div class="act-text-resizer">
+    <button aria-label="Increase text size" type="button" title="Increase text size" class="btn btn-white" data-text-resizer-trigger="up"><span class="act-text-resizer__up">A</span></button>
+    <button aria-label="Decrease text size" type="button" title="Decrease text size" class="btn btn-white" data-text-resizer-trigger="down"><span class="act-text-resizer__down">A</span></button>
+</div>    </div>
+    <div class="act-share-floating-buttons">
+    <button type="button" title="Partager" class="act-share-floating-buttons__trigger"
+    data-bs-toggle="collapse" data-bs-target="#share-fe6367e187cd" aria-expanded="false" aria-controls="share-fe6367e187cd"><span aria-label="Partager" class="icon far fa-share-nodes"></span></button>
+    <div id="share-fe6367e187cd" class="collapse act-share-floating-buttons__wrapper">
+        <div class="addtoany_shortcode"><div class="a2a_kit a2a_kit_size_32 addtoany_list" data-a2a-url="https://telefilm.ca/en" data-a2a-title="Home"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Ftelefilm.ca%2Fen&amp;linkname=Home" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=https%3A%2F%2Ftelefilm.ca%2Fen&amp;linkname=Home" title="LinkedIn" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Ftelefilm.ca%2Fen&amp;linkname=Home" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_copy_link" href="https://www.addtoany.com/add_to/copy_link?linkurl=https%3A%2F%2Ftelefilm.ca%2Fen&amp;linkname=Home" title="Copy Link" rel="nofollow noopener" target="_blank"></a><a class="a2a_dd addtoany_share_save addtoany_share" href="https://www.addtoany.com/share"></a></div></div>    </div>
+</div>    <div class="act-tabs__tabs tab-content" id="newsContent">
+      <div class="act-tabs__tab tab-pane fade show active" id="releases" role="tabpanel" aria-labelledby="releases-tab">
+        <!-- wp:group -->
+<div class="wp-block-group act-card act-card--media-right-60 is-style-boxed-secondary">
+
+<!-- wp:group {"className":"act-card__title"} -->
+<div class="wp-block-group act-card__title">
+    <h2 class="h4">Telefilm Canada selects 12 feature-length films in the English market under the Production Program</h2>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__meta"} -->
+<div class="wp-block-group act-card__meta">
+    April 18, 2023    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__text"} -->
+<div class="wp-block-group act-card__text">
+    Telefilm Canada is announcing its commitment to 12 feature-length films in the English market under the Production Program (as part of the latest...    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__link"} -->
+<div class="wp-block-group act-card__link">
+    <a class="btn btn-primary" href="https://telefilm.ca/en/telefilm-canada-selects-12-feature-length-films-in-the-english-market-under-the-production-program">Read more<i aria-label="Read more" class="icon far fa-angle-right"></i></a>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__media"} -->
+<div class="wp-block-group act-card__media">
+    <!-- wp:image {"width":,"height":,"sizeSlug":"large","linkDestination":"none","className":"is-style-default"} -->
+<figure class="wp-block-image act-image size-large is-resized is-style-default">
+                        </figure>
+<!-- /wp:image -->
+    
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group --><!-- wp:columns -->
+<ul class="wp-block-columns act-columns act-columns--count-3 is-style-default">
+            <!-- wp:column {"className":"is-style-default"} -->
+        <li class="wp-block-column is-style-default">
+            <!-- wp:group -->
+<div class="wp-block-group act-card act-card--side-meta act-card--full-box-link act-card--cover act-card--is-event is-style-boxed">
+
+<!-- wp:group {"className":"act-card__title"} -->
+<div class="wp-block-group act-card__title">
+    <h2 class="h3">Telefilm Canada announces its commitment to six Indigenous projects for fiscal year 2023-2024 </h2>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__meta"} -->
+<div class="wp-block-group act-card__meta">
+    <div class="act-date act-date--one-column act-date--day-emphasis ">
+    <span class="act-date__day">12</span>
+    <span class="act-date__month">June</span>
+    <span class="act-date__year">2023</span>
+    </div>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__link"} -->
+<div class="wp-block-group act-card__link">
+    <a href="https://telefilm.ca/en/telefilm-canada-announces-its-commitment-to-six-indigenous-projects-for-fiscal-year-2023-2024"><span class="sr-only sr-only-focusable">Read more</span><i aria-label="Read more" class="icon far fa-arrow-right"></i></a>    
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->        </li>
+        <!-- /wp:column -->
+            <!-- wp:column {"className":"is-style-default"} -->
+        <li class="wp-block-column is-style-default">
+            <!-- wp:group -->
+<div class="wp-block-group act-card act-card--side-meta act-card--full-box-link act-card--cover act-card--is-event is-style-boxed">
+
+<!-- wp:group {"className":"act-card__title"} -->
+<div class="wp-block-group act-card__title">
+    <h2 class="h3">Telefilm Canada announces production funding for 32 feature-length films in both the English and French markets </h2>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__meta"} -->
+<div class="wp-block-group act-card__meta">
+    <div class="act-date act-date--one-column act-date--day-emphasis ">
+    <span class="act-date__day">05</span>
+    <span class="act-date__month">June</span>
+    <span class="act-date__year">2023</span>
+    </div>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__link"} -->
+<div class="wp-block-group act-card__link">
+    <a href="https://telefilm.ca/en/telefilm-canada-announces-production-funding-for-32-feature-length-films-in-both-the-english-and-french-market"><span class="sr-only sr-only-focusable">Read more</span><i aria-label="Read more" class="icon far fa-arrow-right"></i></a>    
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->        </li>
+        <!-- /wp:column -->
+            <!-- wp:column {"className":"is-style-default"} -->
+        <li class="wp-block-column is-style-default">
+            <!-- wp:group -->
+<div class="wp-block-group act-card act-card--side-meta act-card--full-box-link act-card--cover act-card--is-event is-style-boxed">
+
+<!-- wp:group {"className":"act-card__title"} -->
+<div class="wp-block-group act-card__title">
+    <h2 class="h3">Telefilm Canada announces funding for 25 medium to large-scale film festivals</h2>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__meta"} -->
+<div class="wp-block-group act-card__meta">
+    <div class="act-date act-date--one-column act-date--day-emphasis ">
+    <span class="act-date__day">10</span>
+    <span class="act-date__month">May</span>
+    <span class="act-date__year">2023</span>
+    </div>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__link"} -->
+<div class="wp-block-group act-card__link">
+    <a href="https://telefilm.ca/en/telefilm-canada-announces-funding-for-25-medium-to-large-scale-film-festivals"><span class="sr-only sr-only-focusable">Read more</span><i aria-label="Read more" class="icon far fa-arrow-right"></i></a>    
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->        </li>
+        <!-- /wp:column -->
+    </ul>
+<!-- /wp:columns -->
+<!-- wp:buttons {"contentJustification":"center"} -->
+<div class="wp-block-buttons is-content-justification-center act-button act-button--outline-centered"><!-- wp:button {"className":"has-large-font-size is-style-outline-secondary"} -->
+<div class="wp-block-button has-custom-width has-large-font-size is-style-outline-secondary"><a class="wp-block-button__link" href="https://telefilm.ca/en/news-releases">All news releases<i aria-label="All news releases" class="icon far far fa-angle-right"> </i></a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->    </div>
+    <div class="act-tabs__tab tab-pane fade " id="advisories" role="tabpanel" aria-labelledby="advisories-tab">
+        <!-- wp:group -->
+<div class="wp-block-group act-card act-card--media-right-60 is-style-boxed-secondary">
+
+<!-- wp:group {"className":"act-card__title"} -->
+<div class="wp-block-group act-card__title">
+    <h2 class="h4">Sustainability Plan required for applicants selected for all production funding programs</h2>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__meta"} -->
+<div class="wp-block-group act-card__meta">
+    May 16, 2023    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__text"} -->
+<div class="wp-block-group act-card__text">
+    A Sustainability Plan is now required from partners of all production funding programs prior to principal photography.&nbsp; An easy-to-use...    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__link"} -->
+<div class="wp-block-group act-card__link">
+    <a class="btn btn-primary" href="https://telefilm.ca/en/sustainability-plan-required-for-applicants-selected-for-production-program-funding">Read more<i aria-label="Read more" class="icon far fa-angle-right"></i></a>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__media"} -->
+<div class="wp-block-group act-card__media">
+    <!-- wp:image {"width":,"height":,"sizeSlug":"large","linkDestination":"none","className":"is-style-default"} -->
+<figure class="wp-block-image act-image size-large is-resized is-style-default">
+            <img width="1024" height="538" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201024%20538'%3E%3C/svg%3E" class="attachment-large size-large" alt="" decoding="async" data-lazy-srcset="https://telefilm.ca/wp-content/uploads/2023/03/iNDUSTRY-ADVISORY-1024x538.png 1024w, https://telefilm.ca/wp-content/uploads/2023/03/iNDUSTRY-ADVISORY-300x158.png 300w, https://telefilm.ca/wp-content/uploads/2023/03/iNDUSTRY-ADVISORY-768x403.png 768w, https://telefilm.ca/wp-content/uploads/2023/03/iNDUSTRY-ADVISORY.png 1200w" data-lazy-sizes="(max-width: 1024px) 100vw, 1024px" data-lazy-src="https://telefilm.ca/wp-content/uploads/2023/03/iNDUSTRY-ADVISORY-1024x538.png" /><noscript><img width="1024" height="538" src="https://telefilm.ca/wp-content/uploads/2023/03/iNDUSTRY-ADVISORY-1024x538.png" class="attachment-large size-large" alt="" decoding="async" srcset="https://telefilm.ca/wp-content/uploads/2023/03/iNDUSTRY-ADVISORY-1024x538.png 1024w, https://telefilm.ca/wp-content/uploads/2023/03/iNDUSTRY-ADVISORY-300x158.png 300w, https://telefilm.ca/wp-content/uploads/2023/03/iNDUSTRY-ADVISORY-768x403.png 768w, https://telefilm.ca/wp-content/uploads/2023/03/iNDUSTRY-ADVISORY.png 1200w" sizes="(max-width: 1024px) 100vw, 1024px" /></noscript>            </figure>
+<!-- /wp:image -->
+    
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group --><!-- wp:columns -->
+<ul class="wp-block-columns act-columns act-columns--count-3 is-style-default">
+            <!-- wp:column {"className":"is-style-default"} -->
+        <li class="wp-block-column is-style-default">
+            <!-- wp:group -->
+<div class="wp-block-group act-card act-card--side-meta act-card--full-box-link act-card--cover act-card--is-event is-style-boxed">
+
+<!-- wp:group {"className":"act-card__title"} -->
+<div class="wp-block-group act-card__title">
+    <h2 class="h3">Telefilm Canada reopens the Development Program for fiscal year 2023-2024 </h2>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__meta"} -->
+<div class="wp-block-group act-card__meta">
+    <div class="act-date act-date--one-column act-date--day-emphasis ">
+    <span class="act-date__day">14</span>
+    <span class="act-date__month">June</span>
+    <span class="act-date__year">2023</span>
+    </div>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__link"} -->
+<div class="wp-block-group act-card__link">
+    <a href="https://telefilm.ca/en/telefilm-canada-reopens-the-development-program-for-fiscal-year-2023-2024"><span class="sr-only sr-only-focusable">Read more</span><i aria-label="Read more" class="icon far fa-arrow-right"></i></a>    
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->        </li>
+        <!-- /wp:column -->
+            <!-- wp:column {"className":"is-style-default"} -->
+        <li class="wp-block-column is-style-default">
+            <!-- wp:group -->
+<div class="wp-block-group act-card act-card--side-meta act-card--full-box-link act-card--cover act-card--is-event is-style-boxed">
+
+<!-- wp:group {"className":"act-card__title"} -->
+<div class="wp-block-group act-card__title">
+    <h2 class="h3">The Production Program’s second opening period is now closing on June 15, 2023</h2>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__meta"} -->
+<div class="wp-block-group act-card__meta">
+    <div class="act-date act-date--one-column act-date--day-emphasis ">
+    <span class="act-date__day">07</span>
+    <span class="act-date__month">June</span>
+    <span class="act-date__year">2023</span>
+    </div>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__link"} -->
+<div class="wp-block-group act-card__link">
+    <a href="https://telefilm.ca/en/the-production-programs-second-opening-period-is-now-closing-on-june-15-2023"><span class="sr-only sr-only-focusable">Read more</span><i aria-label="Read more" class="icon far fa-arrow-right"></i></a>    
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->        </li>
+        <!-- /wp:column -->
+            <!-- wp:column {"className":"is-style-default"} -->
+        <li class="wp-block-column is-style-default">
+            <!-- wp:group -->
+<div class="wp-block-group act-card act-card--side-meta act-card--full-box-link act-card--cover act-card--is-event is-style-boxed">
+
+<!-- wp:group {"className":"act-card__title"} -->
+<div class="wp-block-group act-card__title">
+    <h2 class="h3">Opening dates for the Industry Initiatives Stream of the Promotion Program</h2>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__meta"} -->
+<div class="wp-block-group act-card__meta">
+    <div class="act-date act-date--one-column act-date--day-emphasis ">
+    <span class="act-date__day">03</span>
+    <span class="act-date__month">May</span>
+    <span class="act-date__year">2023</span>
+    </div>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__link"} -->
+<div class="wp-block-group act-card__link">
+    <a href="https://telefilm.ca/en/opening-dates-for-the-industry-initiatives-stream-of-the-promotion-program"><span class="sr-only sr-only-focusable">Read more</span><i aria-label="Read more" class="icon far fa-arrow-right"></i></a>    
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->        </li>
+        <!-- /wp:column -->
+    </ul>
+<!-- /wp:columns -->
+<!-- wp:buttons {"contentJustification":"center"} -->
+<div class="wp-block-buttons is-content-justification-center act-button act-button--outline-centered"><!-- wp:button {"className":"has-large-font-size is-style-outline-secondary"} -->
+<div class="wp-block-button has-custom-width has-large-font-size is-style-outline-secondary"><a class="wp-block-button__link" href="https://telefilm.ca/en/industry-advisories">All industry advisories<i aria-label="All industry advisories" class="icon far far fa-angle-right"> </i></a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->    </div>
+    <div class="act-tabs__tab tab-pane fade " id="key-dates" role="tabpanel" aria-labelledby="key-dates-tab">
+        <!-- wp:columns -->
+<ul class="wp-block-columns act-columns act-columns--count-4 is-style-default">
+            <!-- wp:column {"className":"is-style-default"} -->
+        <li class="wp-block-column is-style-default">
+            <!-- wp:group -->
+<div class="wp-block-group act-card act-card--full-box-link act-card--cover act-card--hide-meta-text-on-focus is-style-boxed">
+
+<!-- wp:group {"className":"act-card__title"} -->
+<div class="wp-block-group act-card__title">
+    <h3>Medium to Large-Scale Festivals Program</h3>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__meta"} -->
+<div class="wp-block-group act-card__meta">
+    <div class="act-key-date">
+    <div class="act-key-date__tag">
+        <div>Key dates</div>
+    </div>
+            <div class="act-key-date__item">
+            <div class="act-key-date__label">
+                <strong>Opening</strong>
+            </div>
+            <div class="act-key-date__value">
+                June 27, 2023 8:00 AM EDT            </div>
+        </div>
+        </div>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__text"} -->
+<div class="wp-block-group act-card__text">
+    For festivals with start dates between April 1, 2024, and September 30, 2024.    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__link"} -->
+<div class="wp-block-group act-card__link">
+    <a href="https://telefilm.ca/en/programmes/medium-to-large-scale-festivals-program"><span class="sr-only sr-only-focusable">Read more</span><i class="icon far fa-arrow-right" aria-label="Read more"></i></a>    
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->        </li>
+        <!-- /wp:column -->
+            <!-- wp:column {"className":"is-style-default"} -->
+        <li class="wp-block-column is-style-default">
+            <!-- wp:group -->
+<div class="wp-block-group act-card act-card--full-box-link act-card--cover act-card--hide-meta-text-on-focus is-style-boxed">
+
+<!-- wp:group {"className":"act-card__title"} -->
+<div class="wp-block-group act-card__title">
+    <h3>Medium to Large-Scale Festivals Program</h3>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__meta"} -->
+<div class="wp-block-group act-card__meta">
+    <div class="act-key-date">
+    <div class="act-key-date__tag">
+        <div>Key dates</div>
+    </div>
+                <div class="act-key-date__item">
+            <div class="act-key-date__label">
+            <strong>Closing</strong>
+        </div>
+            <div class="act-key-date__value">
+            July 24, 2023 11:59 PM EDT        </div>
+    </div>
+    </div>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__text"} -->
+<div class="wp-block-group act-card__text">
+    For festivals with start dates between April 1, 2024, and September 30, 2024.    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__link"} -->
+<div class="wp-block-group act-card__link">
+    <a href="https://telefilm.ca/en/programmes/medium-to-large-scale-festivals-program"><span class="sr-only sr-only-focusable">Read more</span><i class="icon far fa-arrow-right" aria-label="Read more"></i></a>    
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->        </li>
+        <!-- /wp:column -->
+            <!-- wp:column {"className":"is-style-default"} -->
+        <li class="wp-block-column is-style-default">
+            <!-- wp:group -->
+<div class="wp-block-group act-card act-card--full-box-link act-card--cover act-card--hide-meta-text-on-focus is-style-boxed">
+
+<!-- wp:group {"className":"act-card__title"} -->
+<div class="wp-block-group act-card__title">
+    <h3>Development Program</h3>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__meta"} -->
+<div class="wp-block-group act-card__meta">
+    <div class="act-key-date">
+    <div class="act-key-date__tag">
+        <div>Key dates</div>
+    </div>
+            <div class="act-key-date__item">
+            <div class="act-key-date__label">
+                <strong>Opening</strong>
+            </div>
+            <div class="act-key-date__value">
+                September 18, 2023 8:00 AM EST            </div>
+        </div>
+        </div>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__text"} -->
+<div class="wp-block-group act-card__text">
+    All streams.    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__link"} -->
+<div class="wp-block-group act-card__link">
+    <a href="https://telefilm.ca/en/programmes/development-program"><span class="sr-only sr-only-focusable">Read more</span><i class="icon far fa-arrow-right" aria-label="Read more"></i></a>    
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->        </li>
+        <!-- /wp:column -->
+            <!-- wp:column {"className":"is-style-default"} -->
+        <li class="wp-block-column is-style-default">
+            <!-- wp:group -->
+<div class="wp-block-group act-card act-card--full-box-link act-card--cover act-card--hide-meta-text-on-focus is-style-boxed">
+
+<!-- wp:group {"className":"act-card__title"} -->
+<div class="wp-block-group act-card__title">
+    <h3>Development Program</h3>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__meta"} -->
+<div class="wp-block-group act-card__meta">
+    <div class="act-key-date">
+    <div class="act-key-date__tag">
+        <div>Key dates</div>
+    </div>
+                <div class="act-key-date__item">
+            <div class="act-key-date__label">
+            <strong>Closing</strong>
+        </div>
+            <div class="act-key-date__value">
+            October 10, 2023 11:59 PM EST        </div>
+    </div>
+    </div>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__text"} -->
+<div class="wp-block-group act-card__text">
+    All streams.    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__link"} -->
+<div class="wp-block-group act-card__link">
+    <a href="https://telefilm.ca/en/programmes/development-program"><span class="sr-only sr-only-focusable">Read more</span><i class="icon far fa-arrow-right" aria-label="Read more"></i></a>    
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->        </li>
+        <!-- /wp:column -->
+    </ul>
+<!-- /wp:columns -->
+<!-- wp:columns -->
+<ul class="wp-block-columns act-columns act-columns--count-4 is-style-default">
+            <!-- wp:column {"className":"is-style-default"} -->
+        <li class="wp-block-column is-style-default">
+            <!-- wp:group -->
+<div class="wp-block-group act-card act-card--full-box-link act-card--cover act-card--hide-meta-text-on-focus is-style-boxed">
+
+<!-- wp:group {"className":"act-card__title"} -->
+<div class="wp-block-group act-card__title">
+    <h3>General Admission Festivals Program</h3>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__meta"} -->
+<div class="wp-block-group act-card__meta">
+    <div class="act-key-date">
+    <div class="act-key-date__tag">
+        <div>Key dates</div>
+    </div>
+            <div class="act-key-date__item">
+            <div class="act-key-date__label">
+                <strong>Opening</strong>
+            </div>
+            <div class="act-key-date__value">
+                October 30, 2023 8:00 AM EDT            </div>
+        </div>
+        </div>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__text"} -->
+<div class="wp-block-group act-card__text">
+    For festivals starting between April 1, 2024, and September 30, 2024.    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__link"} -->
+<div class="wp-block-group act-card__link">
+    <a href="https://telefilm.ca/en/programmes/general-admission-festivals-program"><span class="sr-only sr-only-focusable">Read more</span><i class="icon far fa-arrow-right" aria-label="Read more"></i></a>    
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->        </li>
+        <!-- /wp:column -->
+            <!-- wp:column {"className":"is-style-default"} -->
+        <li class="wp-block-column is-style-default">
+            <!-- wp:group -->
+<div class="wp-block-group act-card act-card--full-box-link act-card--cover act-card--hide-meta-text-on-focus is-style-boxed">
+
+<!-- wp:group {"className":"act-card__title"} -->
+<div class="wp-block-group act-card__title">
+    <h3>General Admission Festivals Program</h3>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__meta"} -->
+<div class="wp-block-group act-card__meta">
+    <div class="act-key-date">
+    <div class="act-key-date__tag">
+        <div>Key dates</div>
+    </div>
+                <div class="act-key-date__item">
+            <div class="act-key-date__label">
+            <strong>Closing</strong>
+        </div>
+            <div class="act-key-date__value">
+            November 03, 2023 11:59 PM EST        </div>
+    </div>
+    </div>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__text"} -->
+<div class="wp-block-group act-card__text">
+    For festivals starting between April 1, 2024, and September 30, 2024.    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__link"} -->
+<div class="wp-block-group act-card__link">
+    <a href="https://telefilm.ca/en/programmes/general-admission-festivals-program"><span class="sr-only sr-only-focusable">Read more</span><i class="icon far fa-arrow-right" aria-label="Read more"></i></a>    
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->        </li>
+        <!-- /wp:column -->
+            <!-- wp:column {"className":"is-style-default"} -->
+        <li class="wp-block-column is-style-default">
+            <!-- wp:group -->
+<div class="wp-block-group act-card act-card--full-box-link act-card--cover act-card--hide-meta-text-on-focus is-style-boxed">
+
+<!-- wp:group {"className":"act-card__title"} -->
+<div class="wp-block-group act-card__title">
+    <h3>Promotion Program &#8211; Industry Initiatives Stream</h3>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__meta"} -->
+<div class="wp-block-group act-card__meta">
+    <div class="act-key-date">
+    <div class="act-key-date__tag">
+        <div>Key dates</div>
+    </div>
+            <div class="act-key-date__item">
+            <div class="act-key-date__label">
+                <strong>Opening</strong>
+            </div>
+            <div class="act-key-date__value">
+                November 06, 2023 8:00 AM EDT            </div>
+        </div>
+        </div>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__text"} -->
+<div class="wp-block-group act-card__text">
+    For activities starting between April 1, 2024 and September 30, 2024    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__link"} -->
+<div class="wp-block-group act-card__link">
+    <a href="https://telefilm.ca/en/programmes/industry-initiative"><span class="sr-only sr-only-focusable">Read more</span><i class="icon far fa-arrow-right" aria-label="Read more"></i></a>    
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->        </li>
+        <!-- /wp:column -->
+            <!-- wp:column {"className":"is-style-default"} -->
+        <li class="wp-block-column is-style-default">
+            <!-- wp:group -->
+<div class="wp-block-group act-card act-card--full-box-link act-card--cover act-card--hide-meta-text-on-focus is-style-boxed">
+
+<!-- wp:group {"className":"act-card__title"} -->
+<div class="wp-block-group act-card__title">
+    <h3>Promotion Program &#8211; Industry Initiatives Stream</h3>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__meta"} -->
+<div class="wp-block-group act-card__meta">
+    <div class="act-key-date">
+    <div class="act-key-date__tag">
+        <div>Key dates</div>
+    </div>
+                <div class="act-key-date__item">
+            <div class="act-key-date__label">
+            <strong>Closing</strong>
+        </div>
+            <div class="act-key-date__value">
+            November 24, 2023 11:59 PM EST        </div>
+    </div>
+    </div>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__text"} -->
+<div class="wp-block-group act-card__text">
+    For activities starting between April 1, 2024 and September 30, 2024    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__link"} -->
+<div class="wp-block-group act-card__link">
+    <a href="https://telefilm.ca/en/programmes/industry-initiative"><span class="sr-only sr-only-focusable">Read more</span><i class="icon far fa-arrow-right" aria-label="Read more"></i></a>    
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->        </li>
+        <!-- /wp:column -->
+    </ul>
+<!-- /wp:columns -->
+<!-- wp:buttons {"contentJustification":"center"} -->
+<div class="wp-block-buttons is-content-justification-center act-button act-button--outline-centered"><!-- wp:button {"className":"has-large-font-size is-style-outline-secondary"} -->
+<div class="wp-block-button has-custom-width has-large-font-size is-style-outline-secondary"><a class="wp-block-button__link" href="https://telefilm.ca/en/we-finance-and-support/program-deadline">All key dates<i aria-label="All key dates" class="icon far far fa-angle-right"> </i></a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->    </div>
+    <div class="act-tabs__tab tab-pane fade " id="calls-for-entries" role="tabpanel" aria-labelledby="calls-for-entries-tab">
+        <!-- wp:columns -->
+<ul class="wp-block-columns act-columns act-columns--count-3 is-style-default">
+            <!-- wp:column {"className":"is-style-default"} -->
+        <li class="wp-block-column is-style-default">
+            <!-- wp:group -->
+<div class="wp-block-group act-card act-card--full-box-link act-card--cover act-card--switch-meta-text-on-focus is-style-boxed">
+
+<!-- wp:group {"className":"act-card__title"} -->
+<div class="wp-block-group act-card__title">
+    <h3>38th Mar del Plata International Film Festival</h3>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__meta"} -->
+<div class="wp-block-group act-card__meta">
+    Mar del Plata, Argentina<br/>November 2 to 12, 2023    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__text"} -->
+<div class="wp-block-group act-card__text">
+    Deadline for submissions : <br/>July 31, 2023    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__link"} -->
+<div class="wp-block-group act-card__link">
+    <a href="https://telefilm.ca/en/appel-inscription/38th-mar-del-plata-international-film-festival"><span class="sr-only sr-only-focusable">Read more</span><i aria-label="Read more" class="icon far fa-arrow-right"></i></a>    
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->        </li>
+        <!-- /wp:column -->
+            <!-- wp:column {"className":"is-style-default"} -->
+        <li class="wp-block-column is-style-default">
+            <!-- wp:group -->
+<div class="wp-block-group act-card act-card--full-box-link act-card--cover act-card--switch-meta-text-on-focus is-style-boxed">
+
+<!-- wp:group {"className":"act-card__title"} -->
+<div class="wp-block-group act-card__title">
+    <h3>35th Palm Springs International Film Festival</h3>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__meta"} -->
+<div class="wp-block-group act-card__meta">
+    Palm Springs, United States<br/>January 4 to 15, 2024    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__text"} -->
+<div class="wp-block-group act-card__text">
+    Regular deadline : <br/>June 15, 2023    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__link"} -->
+<div class="wp-block-group act-card__link">
+    <a href="https://telefilm.ca/en/appel-inscription/35th-palm-springs-international-film-festival"><span class="sr-only sr-only-focusable">Read more</span><i aria-label="Read more" class="icon far fa-arrow-right"></i></a>    
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->        </li>
+        <!-- /wp:column -->
+            <!-- wp:column {"className":"is-style-default"} -->
+        <li class="wp-block-column is-style-default">
+            <!-- wp:group -->
+<div class="wp-block-group act-card act-card--full-box-link act-card--cover act-card--switch-meta-text-on-focus is-style-boxed">
+
+<!-- wp:group {"className":"act-card__title"} -->
+<div class="wp-block-group act-card__title">
+    <h3>18th Forum de Namur at the Festival International du Film Francophone de Namur  </h3>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__meta"} -->
+<div class="wp-block-group act-card__meta">
+    Namur, Belgium<br/>September 30 to October 4, 2023    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__text"} -->
+<div class="wp-block-group act-card__text">
+    Deadline to submit : <br/>June 30, 2023    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__link"} -->
+<div class="wp-block-group act-card__link">
+    <a href="https://telefilm.ca/en/appel-inscription/18th-forum-de-namur-at-the-festival-international-du-film-francophone-de-namur"><span class="sr-only sr-only-focusable">Read more</span><i aria-label="Read more" class="icon far fa-arrow-right"></i></a>    
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->        </li>
+        <!-- /wp:column -->
+    </ul>
+<!-- /wp:columns -->
+<!-- wp:columns -->
+<ul class="wp-block-columns act-columns act-columns--count-3 is-style-default">
+            <!-- wp:column {"className":"is-style-default"} -->
+        <li class="wp-block-column is-style-default">
+            <!-- wp:group -->
+<div class="wp-block-group act-card act-card--full-box-link act-card--cover act-card--switch-meta-text-on-focus is-style-boxed">
+
+<!-- wp:group {"className":"act-card__title"} -->
+<div class="wp-block-group act-card__title">
+    <h3>21st Big Sky Documentary Film Festival</h3>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__meta"} -->
+<div class="wp-block-group act-card__meta">
+    Missoula, United States<br/>February 16 to 25, 2024    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__text"} -->
+<div class="wp-block-group act-card__text">
+    Early bird deadline : <br/>June 30, 2023    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__link"} -->
+<div class="wp-block-group act-card__link">
+    <a href="https://telefilm.ca/en/appel-inscription/21st-big-sky-documentary-film-festival"><span class="sr-only sr-only-focusable">Read more</span><i aria-label="Read more" class="icon far fa-arrow-right"></i></a>    
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->        </li>
+        <!-- /wp:column -->
+            <!-- wp:column {"className":"is-style-default"} -->
+        <li class="wp-block-column is-style-default">
+            <!-- wp:group -->
+<div class="wp-block-group act-card act-card--full-box-link act-card--cover act-card--switch-meta-text-on-focus is-style-boxed">
+
+<!-- wp:group {"className":"act-card__title"} -->
+<div class="wp-block-group act-card__title">
+    <h3>46th Clermont-Ferrand Short Film Festival </h3>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__meta"} -->
+<div class="wp-block-group act-card__meta">
+    Clermont-Ferrand, France<br/>February 2 to 10, 2024    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__text"} -->
+<div class="wp-block-group act-card__text">
+    Deadline for films completed in 2022 (produced between Oct 1 – Dec 31, 2022) : <br/>July 11, 2023    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__link"} -->
+<div class="wp-block-group act-card__link">
+    <a href="https://telefilm.ca/en/appel-inscription/46th-clermont-ferrand-short-film-festival"><span class="sr-only sr-only-focusable">Read more</span><i aria-label="Read more" class="icon far fa-arrow-right"></i></a>    
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->        </li>
+        <!-- /wp:column -->
+            <!-- wp:column {"className":"is-style-default"} -->
+        <li class="wp-block-column is-style-default">
+            <!-- wp:group -->
+<div class="wp-block-group act-card act-card--full-box-link act-card--cover act-card--switch-meta-text-on-focus is-style-boxed">
+
+<!-- wp:group {"className":"act-card__title"} -->
+<div class="wp-block-group act-card__title">
+    <h3>20th Marrakech International Film Festival </h3>    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__meta"} -->
+<div class="wp-block-group act-card__meta">
+    Marrakech, Morocco<br/>November 24 to December 2, 2023    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__text"} -->
+<div class="wp-block-group act-card__text">
+    Deadline to submit : <br/>July 28, 2023    
+</div>
+<!-- /wp:group -->
+<!-- wp:group {"className":"act-card__link"} -->
+<div class="wp-block-group act-card__link">
+    <a href="https://telefilm.ca/en/appel-inscription/20th-marrakech-international-film-festival"><span class="sr-only sr-only-focusable">Read more</span><i aria-label="Read more" class="icon far fa-arrow-right"></i></a>    
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->        </li>
+        <!-- /wp:column -->
+    </ul>
+<!-- /wp:columns -->
+<!-- wp:buttons {"contentJustification":"center"} -->
+<div class="wp-block-buttons is-content-justification-center act-button act-button--outline-centered"><!-- wp:button {"className":"has-large-font-size is-style-outline-secondary"} -->
+<div class="wp-block-button has-custom-width has-large-font-size is-style-outline-secondary"><a class="wp-block-button__link" href="https://telefilm.ca/en/appel-inscription">All calls for entries<i aria-label="All calls for entries" class="icon far far fa-angle-right"> </i></a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->    </div>
+  </div></div>
+        <div class="editor-content">
+<div class="wp-block-columns act-2-col-ctas act-2-col-ctas--boxed">
+<div class="wp-block-column is-vertically-aligned-top is-style-boxed">
+<p class="has-h-4-font-size"><strong>Funding Programs</strong></p>
+
+
+
+<h2 class="wp-block-heading is-style-little-spacing" id="cta-encadres-sur-2-colonnes"><strong>Find a funding program for your project.</strong></h2>
+
+
+
+<div class="wp-block-buttons">
+<div class="wp-block-button has-custom-font-size is-style-primary has-large-font-size"><a class="wp-block-button__link wp-element-button" href="https://telefilm.ca/en/we-finance-and-support/our-programs" target="_self" rel="noopener"><strong>View our programs</strong> <i class="icon fa fa-angle-right" aria-hidden="true"> </i></a></div>
+</div>
+</div>
+
+
+
+<div class="wp-block-column is-style-boxed">
+<p class="has-h-4-font-size"><strong>Dialogue</strong></p>
+
+
+
+<h2 class="wp-block-heading is-style-little-spacing" id="dialogue"><strong>Submit or access an application online.</strong></h2>
+
+
+
+<div class="wp-block-buttons">
+<div class="wp-block-button has-custom-font-size has-large-font-size"><a class="wp-block-button__link wp-element-button" href="https://telefilm.ca/en/log-in" target="_self" rel="noopener"><strong>Login</strong><i class="icon fa fa-angle-right" aria-hidden="true" style="font-size: 1rem; display: inline !important;"> </i></a></div>
+</div>
+</div>
+</div>
+
+
+
+<div class="wp-block-columns act-call-to-action act-call-to-action--boxed-secondary is-style-boxed-secondary">
+<div class="wp-block-column" style="flex-basis:38%">
+<p class="has-h-4-font-size"><strong>Careers</strong></p>
+
+
+
+<h2 class="wp-block-heading is-style-little-spacing" id="cta-encadre-primaire-avec-contenu"><strong>Talent. We finance it. We recruit it.</strong></h2>
+
+
+
+<p>Telefilm has many varied roles &#8211; from financial analysts, to IT systems developers, to project managers, to support services.</p>
+
+
+
+<div class="wp-block-buttons">
+<div class="wp-block-button has-custom-width wp-block-button__width-100 has-custom-font-size is-style-primary has-large-font-size"><a class="wp-block-button__link wp-element-button" href="https://telefilm.ca/en/who-we-are/careers"><strong>Search jobs and opportunities</strong> <i class="icon far fa-arrow-right" aria-hidden="true">  </i></a></div>
+</div>
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:62%">
+<figure class="wp-block-image aligncenter size-large is-style-default"><img decoding="async" width="1024" height="678" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201024%20678'%3E%3C/svg%3E" alt="" class="wp-image-95564" data-lazy-srcset="https://telefilm.ca/wp-content/uploads/2022/06/D7K_7977-1-1024x678.jpg 1024w, https://telefilm.ca/wp-content/uploads/2022/06/D7K_7977-1-300x199.jpg 300w, https://telefilm.ca/wp-content/uploads/2022/06/D7K_7977-1-768x509.jpg 768w, https://telefilm.ca/wp-content/uploads/2022/06/D7K_7977-1-1536x1017.jpg 1536w, https://telefilm.ca/wp-content/uploads/2022/06/D7K_7977-1-2048x1356.jpg 2048w" data-lazy-sizes="(min-width: 640px) 100vw, 250px" data-lazy-src="https://telefilm.ca/wp-content/uploads/2022/06/D7K_7977-1-1024x678.jpg" /><noscript><img decoding="async" width="1024" height="678" src="https://telefilm.ca/wp-content/uploads/2022/06/D7K_7977-1-1024x678.jpg" alt="" class="wp-image-95564" srcset="https://telefilm.ca/wp-content/uploads/2022/06/D7K_7977-1-1024x678.jpg 1024w, https://telefilm.ca/wp-content/uploads/2022/06/D7K_7977-1-300x199.jpg 300w, https://telefilm.ca/wp-content/uploads/2022/06/D7K_7977-1-768x509.jpg 768w, https://telefilm.ca/wp-content/uploads/2022/06/D7K_7977-1-1536x1017.jpg 1536w, https://telefilm.ca/wp-content/uploads/2022/06/D7K_7977-1-2048x1356.jpg 2048w" sizes="(min-width: 640px) 100vw, 250px" /></noscript></figure>
+</div>
+</div>
+
+
+
+<div class="wp-block-columns act-call-to-action act-call-to-action--boxed-secondary is-style-boxed">
+<div class="wp-block-column" style="flex-basis:38%">
+<p class="has-h-4-font-size"><strong>The Talent Fund</strong></p>
+
+
+
+<h2 class="wp-block-heading is-style-little-spacing" id="cta-encadre-primaire-avec-contenu"><strong>Ten years of the Talent Fund. </strong></h2>
+
+
+
+<p>The Talent Fund is celebrating its tenth year of supporting the next generation of emerging filmmakers and content creators in Canada.</p>
+
+
+
+<div class="wp-block-buttons">
+<div class="wp-block-button has-custom-width wp-block-button__width-100 has-custom-font-size is-style-secondary has-large-font-size"><a class="wp-block-button__link wp-element-button" href="https://thetalentfund.ca/"><strong>Ignite filmmaking careers</strong><i class="icon far fa-arrow-up-right-from-square" aria-hidden="true"> </i></a></div>
+</div>
+</div>
+
+
+
+<div class="wp-block-column" style="flex-basis:62%">
+<p></p>
+
+
+
+<p></p>
+
+
+
+<p></p>
+
+
+
+<figure class="wp-block-image aligncenter size-full is-resized is-style-default"><img decoding="async" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20507%2050'%3E%3C/svg%3E" alt="Talent Fund ten years anniversary logo" class="wp-image-94198" width="507" height="50" data-lazy-srcset="https://telefilm.ca/wp-content/uploads/2022/06/22-TalentFund10-Logo-03.png 676w, https://telefilm.ca/wp-content/uploads/2022/06/22-TalentFund10-Logo-03-300x29.png 300w" data-lazy-sizes="(min-width: 640px) 100vw, 250px" data-lazy-src="https://telefilm.ca/wp-content/uploads/2022/06/22-TalentFund10-Logo-03.png" /><noscript><img decoding="async" src="https://telefilm.ca/wp-content/uploads/2022/06/22-TalentFund10-Logo-03.png" alt="Talent Fund ten years anniversary logo" class="wp-image-94198" width="507" height="50" srcset="https://telefilm.ca/wp-content/uploads/2022/06/22-TalentFund10-Logo-03.png 676w, https://telefilm.ca/wp-content/uploads/2022/06/22-TalentFund10-Logo-03-300x29.png 300w" sizes="(min-width: 640px) 100vw, 250px" /></noscript></figure>
+</div>
+</div>
+
+
+
+<div class="wp-block-group act-card act-card--media-left act-card--programs is-style-boxed">
+<div class="wp-block-group act-card__title">
+<div class="wp-block-group is-style-default act-heading">
+<p class="act-heading__heading has-h-4-font-size"><strong><strong>Creative and Cultural Industry Initiative</strong></strong></p>
+
+
+
+<h2 class="wp-block-heading is-style-little-spacing"><strong><strong><strong><strong>Financing solutions, advisory services, business management articles and tools… and more.</strong></strong></strong></strong></h2>
+</div>
+</div>
+
+
+
+<div class="wp-block-group act-card__text">
+<p>BDC and Telefilm Canada have partnered to identify and develop entrepreneur’s growth potential, and spearhead joint initiatives to support businesses in the creative and cultural industries.</p>
+</div>
+
+
+
+<div class="wp-block-group act-card__link">
+<div class="wp-block-buttons act-button">
+<div class="wp-block-button has-custom-width wp-block-button__width-100 has-custom-font-size is-style-secondary has-normal-font-size"><a class="wp-block-button__link wp-element-button" href="https://www.bdc.ca/en/industries/creative-cultural" target="_blank" rel="noreferrer noopener"><strong><strong><strong>Visit bdc.ca to learn more</strong></strong></strong><i class="icon far fa-arrow-up-right-from-square" aria-hidden="true">  </i></a></div>
+</div>
+</div>
+
+
+
+<div class="wp-block-group act-card__media">
+<figure class="wp-block-image size-full act-image act-image--cover size-thumbnail is-resized is-style-cover"><img decoding="async" width="500" height="301" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20301'%3E%3C/svg%3E" alt="" class="wp-image-137254" data-lazy-srcset="https://telefilm.ca/wp-content/uploads/2023/01/BDC-Logo-1-1.png 500w, https://telefilm.ca/wp-content/uploads/2023/01/BDC-Logo-1-1-300x181.png 300w" data-lazy-sizes="(min-width: 640px) 100vw, 250px" data-lazy-src="https://telefilm.ca/wp-content/uploads/2023/01/BDC-Logo-1-1.png" /><noscript><img decoding="async" width="500" height="301" src="https://telefilm.ca/wp-content/uploads/2023/01/BDC-Logo-1-1.png" alt="" class="wp-image-137254" srcset="https://telefilm.ca/wp-content/uploads/2023/01/BDC-Logo-1-1.png 500w, https://telefilm.ca/wp-content/uploads/2023/01/BDC-Logo-1-1-300x181.png 300w" sizes="(min-width: 640px) 100vw, 250px" /></noscript></figure>
+</div>
+</div>
+</div>    </div>
+    </main>
+<div id="smoothup">
+    <svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12.7929 7.20711L13.5 6.5L6.99996 -2.84126e-07L0.499977 6.5L1.20708 7.20711L6.50001 1.91416L6.5 24L7.5 24L7.50001 1.91425L12.7929 7.20711Z"
+          fill="currentColor"/>
+</svg>
+</div>
+<footer>
+    <section id="newsletter">
+        <div class="container  px-4 p-lg-0">
+
+            <form class="sign_newsletter h-100" method="post" novalidate>
+                <h2>Stay informed</h2>
+                <div>
+                    <label for="mail_news"
+                           class="sr-only sr-only-focusable">Email address</label>
+                    <input id="mail_news" type="text" name="email" value=""
+                           placeholder="Email address" required/>
+                    <span class="validation_error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path
+                                    d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256s256-114.6 256-256S397.4 0 256 0zM232 152C232 138.8 242.8 128 256 128s24 10.75 24 24v128c0 13.25-10.75 24-24 24S232 293.3 232 280V152zM256 400c-17.36 0-31.44-14.08-31.44-31.44c0-17.36 14.07-31.44 31.44-31.44s31.44 14.08 31.44 31.44C287.4 385.9 273.4 400 256 400z"/></svg>PLEASE ENTER A VALID EMAIL ADDRESS</span>
+                </div>
+                <button type="submit" class="btn  btn-secondary wp-block-button__link "
+                        name="inscription_infolettre">
+                    Subscribe                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+     xmlns="http://www.w3.org/2000/svg">
+    <path d="M13.5 10.0503L8.55025 15L7.13604 13.5858L10.6716 10.0503L7.13604 6.51472L8.55025 5.1005L13.5 10.0503Z"
+          fill="currentColor"/>
+    <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M0 10C4.82823e-07 4.47715 4.47715 -4.82823e-07 10 0C15.5228 4.82823e-07 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 -4.82823e-07 15.5228 0 10ZM2 10C2 5.58172 5.58172 2 10 2C14.4183 2 18 5.58172 18 10C18 14.4183 14.4183 18 10 18C5.58172 18 2 14.4183 2 10Z"
+          fill="currentColor"/>
+</svg>
+
+                </button>
+            </form>        </div>
+    </section>
+    <section id="footer">
+        <nav aria-label="Footer"
+             class="container  px-4 p-lg-0 d-block d-lg-flex flex-wrap flex-xl-nowrap">
+            <!--<div class=" logo_bottom order-1">
+                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20155%2040'%3E%3C/svg%3E" alt="telefilm Canada" width="155" height="40" data-lazy-src="https://telefilm.ca/wp-content/themes/tel11799-telefilm.ca/assets_src/images/logo_bottom.svg" /><noscript><img src="https://telefilm.ca/wp-content/themes/tel11799-telefilm.ca/assets_src/images/logo_bottom.svg" alt="telefilm Canada" width="155" height="40" /></noscript>
+
+            </div>-->
+            <div class="footer_nav order-3 order-lg-2 d-flex">
+                <div class=" d-none d-lg-block main_footer_menu">
+                    <ul class="menu_footer">
+                                                    <li><a href="https://telefilm.ca/en/who-we-are">Who we are</a></li>
+                                                    <li><a href="https://telefilm.ca/en/we-finance-and-support">We Finance and Support</a></li>
+                                                    <li><a href="https://telefilm.ca/en/we-promote">We Promote</a></li>
+                                                    <li><a href="https://telefilm.ca/en/we-partner">We Partner</a></li>
+                                            </ul>
+                </div>
+                <div class=" d-none d-lg-block  menu_footer">
+                    <div class="menu-footer-container"><ul id="menu-footer" class="menu"><li id="menu-item-5539" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5539"><a href="https://telefilm.ca/en/who-we-are/careers">Careers</a></li>
+<li id="menu-item-5489" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5489"><a href="https://telefilm.ca/en/who-we-are/news-room">News</a></li>
+<li id="menu-item-5488" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5488"><a href="https://telefilm.ca/en/who-we-are/contact-us">Contact</a></li>
+<li id="menu-item-94647" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-94647"><a href="https://telefilm.ca/en/who-we-are/news-room/logos-and-brand-guidelines">Logos and brand guidelines</a></li>
+</ul></div>                </div>
+            </div>
+            <div class="social-contact order-2 order-lg-3">
+                <ul>
+                    <li>
+                                                <a href="https://www.facebook.com/telefilmcanada" class="fb" title="Facebook" target="_blank">
+                            <i class="fa-brands fa-facebook"
+                               aria-label="Visiter Téléfilm sur Facebook"></i>
+                            <span class="sr-only sr-only-focusable">Open in a new tab</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/Telefilm_Canada" class="tw" title="Twitter" target="_blank">
+                            <i class="fa fa-twitter"
+                               aria-label="Visiter Téléfilm sur Twitter"></i>
+                            <span class="sr-only sr-only-focusable">Open in a new tab</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/Telefilm_Canada/" class="ig" title="Instagram"
+                           target="_blank">
+                            <i class="fa fa-instagram"
+                               aria-label="Visiter Téléfilm sur Instagram"></i>
+                            <span class="sr-only sr-only-focusable">Open in a new tab</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://ca.linkedin.com/company/telefilm-canada" class="ln" title="Linkedin"
+                           target="_blank">
+                            <i class="fa fa-linkedin"
+                               aria-label="Visiter Téléfilm sur Linkedin"></i>
+                            <span class="sr-only sr-only-focusable">Open in a new tab</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.youtube.com/user/TelefilmCanada" class="yt" title="Youtube" target="_blank">
+                            <i class="fa fa-youtube"
+                               aria-label="Visiter Téléfilm sur Youtube"></i>
+                            <span class="sr-only sr-only-focusable">Open in a new tab</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+        <div class="separator container-xl"></div>
+        <div class="container  px-4 p-lg-0 d-block d-xl-flex">
+            <nav aria-label="Bottom of footer" class=" footer-bottom ">
+                <div class="menu-bottom-container"><ul id="menu-bottom" class="menu"><li id="menu-item-96164" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-96164"><a href="https://telefilm.ca/en/legal/legal-notes-page">Legal notes</a></li>
+</ul></div>            </nav>
+            <div class="footer-bottom copyright">
+                <img alt="Gouvernement du Canada"
+                     src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20120%2029'%3E%3C/svg%3E"
+                     alt="Canada" width="120" height="29" data-lazy-src="https://telefilm.ca/wp-content/themes/tel11799-telefilm.ca/assets_src/images/canada.svg"/><noscript><img alt="Gouvernement du Canada"
+                     src="https://telefilm.ca/wp-content/themes/tel11799-telefilm.ca/assets_src/images/canada.svg"
+                     alt="Canada" width="120" height="29"/></noscript>
+                &copy;2023 Telefilm Canada. All rights reserved.
+            </div>
+        </div>
+
+
+    </section>
+</footer>
+</div> <!-- [data-barba="container"] -->
+        <style>
+            .searchwp-live-search-results {
+                opacity: 0;
+                transition: opacity .25s ease-in-out;
+                -moz-transition: opacity .25s ease-in-out;
+                -webkit-transition: opacity .25s ease-in-out;
+                height: 0;
+                overflow: hidden;
+                z-index: 9999995; /* Exceed SearchWP Modal Search Form overlay. */
+                position: absolute;
+                display: none;
+            }
+
+            .searchwp-live-search-results-showing {
+                display: block;
+                opacity: 1;
+                height: auto;
+                overflow: auto;
+            }
+
+            .searchwp-live-search-no-results {
+                padding: 3em 2em 0;
+                text-align: center;
+            }
+
+            .searchwp-live-search-no-min-chars:after {
+                content: "Continue typing";
+                display: block;
+                text-align: center;
+                padding: 2em 2em 0;
+            }
+        </style>
+                <script type="rocketlazyloadscript">
+            var _SEARCHWP_LIVE_AJAX_SEARCH_BLOCKS = true;
+            var _SEARCHWP_LIVE_AJAX_SEARCH_ENGINE = 'default';
+            var _SEARCHWP_LIVE_AJAX_SEARCH_CONFIG = 'default';
+        </script>
+        <script src='https://telefilm.ca/wp-content/themes/tel11799-telefilm.ca/includes/modules/recherche/blocks/recherche-overhead/recherche-overhead.min.js?ver=6.2.2' id='recherche-overhead-js' defer></script>
+<script src='https://telefilm.ca/wp-content/themes/tel11799-telefilm.ca/includes/modules/text-resizer/text-resizer.js?ver=1.0' id='text-resizer-js' defer></script>
+<script id='swp-live-search-client-js-extra'>
+var searchwp_live_search_params = [];
+searchwp_live_search_params = {"ajaxurl":"https:\/\/telefilm.ca\/wp-admin\/admin-ajax.php","origin_id":34,"config":{"default":{"engine":"default","input":{"delay":300,"min_chars":3},"results":{"position":"bottom","width":"auto","offset":{"x":0,"y":5}},"spinner":{"lines":12,"length":8,"width":3,"radius":8,"scale":1,"corners":1,"color":"#424242","fadeColor":"transparent","speed":1,"rotate":0,"animation":"searchwp-spinner-line-fade-quick","direction":1,"zIndex":2000000000,"className":"spinner","top":"50%","left":"50%","shadow":"0 0 1px transparent","position":"absolute"}}},"msg_no_config_found":"No valid SearchWP Live Search configuration found!","aria_instructions":"When autocomplete results are available use up and down arrows to review and enter to go to the desired page. Touch device users, explore by touch or with swipe gestures."};;
+</script>
+<script src='https://telefilm.ca/wp-content/plugins/searchwp-live-ajax-search/assets/javascript/dist/script.min.js?ver=1.7.5' id='swp-live-search-client-js' defer></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://telefilm.ca/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script></body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html lang="en-US">
+			<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+			
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<link rel="preload" href="https://h6a8m2f3.rocketcdn.me/wp-content/themes/dunnedwards/assets/fonts/Raleway-Regular/Raleway-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+<link rel="preload" href="https://h6a8m2f3.rocketcdn.me/wp-content/themes/dunnedwards/assets/fonts/Raleway-SemiBold/Raleway-SemiBold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+<link rel="preload" href="https://h6a8m2f3.rocketcdn.me/wp-content/themes/dunnedwards/assets/fonts/Raleway-Bold/Raleway-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+<link rel="preload" href="https://h6a8m2f3.rocketcdn.me/wp-content/themes/dunnedwards/assets/fonts/Raleway-Medium/Raleway-Medium.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
+<link rel="preload" as="image" href="https://h6a8m2f3.rocketcdn.me/wp-content/themes/dunnedwards/assets/img/logo/logo.webp">
+
+  
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QA/wD/AP+gvaeTAAAAB3RJTUUH5QUMDi4VZC/QlAAABj9JREFUWMPtlktslNcVx3/38c3LMx4yM57xeDz4AY4x1BibYGxwMAkNbdVKVVuFRVUVVVX33XTVSll00WXVLvuQuugmUhFSVdFFRROeCU8bmxI7QJwCfo2N356Z77vffLcLUlQUiFpSKRt+23vuOUf3nvM/B17wgi8Y9TnvJ4AwYJ7XgXgO+2wxLr+0t9E5vLNBD0uEvLVozl6fM+9+vB6MA/NA8P9MQGtBc2dK7+/PO4f25PRQd4OzfWdGxzJ1CiFgcTNgYtFUxhf8j26UzMVLM+bMxJL/vhdwH/CeJ4G6LSHRvifnDO3J6te6G/TexrgqbolIJwgsi5WA5YqlbCwWiDmCVFSQjkq0EqxWA39+I5i+ueiPjJTMu6Pz5tzDqr0NrD8rAQGkclG5qz/vDO3O6te70ro74ojM9HpNjpd8biz6TK/XWHMtVd/i2ycdKQERLagPCwpxRXdGsyeraa5X1tRYmljyb42XzDuXZ825+xvBOLAABKK1Xh3bn9eDffnQ0O6ss2P7FhW/vWR4+4MKf79nmN4ICCzPREqJEIJarfbpMwH5OsmRljDHuiLsTGumVmvlsZK5OzJnzl+cNu+Lnw/F3R/tiYUa4ooHazV+cXGdv85GqIWTzM08wPf9ZwaPRqO0t7fT0tLCtWvXKJVKWPuUbIVgS1jynY4QPz0Yp/UlzdJmwG9GNn25tV45uaRmbN5w7OQyf5iwNG3r4vvf+y7Hjx9HiGfXaXNzM0opzp8/TyaToa2t7al2jbkc2a3b+P14hTdPrnB12iOdUBQSSqlvd0Teaoor8cNTq1yYNoTCYfa98gqjo6MMDg5ijCEIArLZLIVCgXw+TyQSoVwu09zcTLFYBKCvrw/f90kkEhQKBTo6Oujs7CSdTtPb24vrulhr+XBulZsLPl9rDzO1UkNLAX/6oMJ7c5aBgQFyuRxCCKampjh9+jTDw8P09PTgui6pVAqlFCMjIyQSCVpbWzl16hRHjx4lFosxODiI53n4vo8QAs/ziMVieJ6H67okk0lmZmZ4b8bw9q0K2ahEmwAuz3pIJ0yxWGR1dZXJyUkQkktXrnFrYpJYJMz6+gZOKARYypubeJ5HXTxOoVhkdHSU0Rs3AEG16iIERCJh1jc2icViKCmolMsIIRBCYK3l6qzhSEsILQAtBdXyBidOnMBai7WW3qxmsN1hpVrh5B2PrpRiX0pzasojGkBzVDL9jys01knGSoYdKYUSgoPNDmtuwNkHhm80h4jqDc4+MNxberJLpHjU+1JLOFAIoQQEQfC4inuzDo4U9OZC5Osk+/MOqahiqBCiLakYyDu0JSU/6Y+xK6MZLobZMJa+xhARLUlFJIeKIZZdWHXtp4IfKIQIKYEMLHyrM8JX28JP6q+EHWlNzVoiStCUUMxuBryc1mj5yMYP4PKs4ZvbwyTDgqm1GpMPfcYWfMYXff5y16WlXrK1/smZ9/rWEG92RQksSCtgS53il1+u5yutocfSuOIG/PZGmbcubBLWIIGqb4lIiGmBCSzWwviCz2jJJ1cnsRb8wBLYR99qahZhYW9WP5bbw8UQv3ojSSahsID42UDdyvHdsfpiUok11/LrK5v8bqyMqVk2DVRrllREoIRgoRJQTEiq/iPprfgWJWHTQFNc8vFqjWJCsuxa/AD6shotBXdWfEwAP+iO8uN9dSRCkqkVv/bHm5WSaIjKV3el1eD+ptChnpzT25nSuVU3UH++U+VvUx53Vmq4tc/Q4s9AS2hPKt5oC/P19jD1YWk+XPLvXZ8zl0//0719d6U2+58yFwkr2rozun+gKXSoI6WG0hG5dc2zkanVGjcXfO6u+DysWirGYj556n8XlSMFUf1oKrYnFTszmtakok6L8pJr79x+6J+9MO2dmViuXQ0s94EB4OCzdFYBjbvSqmd31jnSndEHXk7rHemoTMa0EF5g2fAslU9GYkQLEo5EKygbaxfLwfLkQ//W+KJ/bnTenL69UhsHFnlyUYkD9f/NQiKA+saY7Opu0MP9eefV7ganb2eDzrW/pKUAPlr2g5sL/vxYyVy9PGvOji/4Z0qVYIKnzP+nOf9fCTuSbT0Z3d+Xdw4LkNfnzDujC/4lE3AXcJ+rYJ4TxedfbF/wgi+WfwHIfpn69WvNAQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMS0wNS0xMlQxNDo0NjoyMSswMDowMCEb5UQAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjEtMDUtMTJUMTQ6NDY6MjErMDA6MDBQRl34AAAAV3pUWHRSYXcgcHJvZmlsZSB0eXBlIGlwdGMAAHic4/IMCHFWKCjKT8vMSeVSAAMjCy5jCxMjE0uTFAMTIESANMNkAyOzVCDL2NTIxMzEHMQHy4BIoEouAOoXEXTyQjWVAAAAAElFTkSuQmCC">
+
+
+
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KSQJGD');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Optimize -->
+<script type="rocketlazyloadscript" src="https://www.googleoptimize.com/optimize.js?id=OPT-PJJ6S8L" defer></script>
+<!-- End Optimize -->
+
+
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v19.9 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Dunn-Edwards - Paint Stores, Exterior &amp; Interior Painting Supplies, Colors &amp; Design Inspiration</title><link rel="stylesheet" href="https://h6a8m2f3.rocketcdn.me/wp-content/cache/min/1/8fcbec53d2985c168fd8bc7cad3c20ba.css" media="all" data-minify="1" />
+	<meta name="description" content="An industry leader since 1925 and one of nation’s largest manufacturers and distributors of architectural, industrial and high performance paints and paint supplies." />
+	<link rel="canonical" href="https://www.dunnedwards.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Dunn-Edwards - Paint Stores, Exterior &amp; Interior Painting Supplies, Colors &amp; Design Inspiration" />
+	<meta property="og:description" content="An industry leader since 1925 and one of nation’s largest manufacturers and distributors of architectural, industrial and high performance paints and paint supplies." />
+	<meta property="og:url" content="https://www.dunnedwards.com/" />
+	<meta property="og:site_name" content="Dunn-Edwards Paints" />
+	<meta property="article:modified_time" content="2023-06-20T13:46:42+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.dunnedwards.com/","url":"https://www.dunnedwards.com/","name":"Dunn-Edwards - Paint Stores, Exterior & Interior Painting Supplies, Colors & Design Inspiration","isPartOf":{"@id":"https://www.dunnedwards.com/#website"},"datePublished":"2021-04-21T12:50:01+00:00","dateModified":"2023-06-20T13:46:42+00:00","description":"An industry leader since 1925 and one of nation’s largest manufacturers and distributors of architectural, industrial and high performance paints and paint supplies.","breadcrumb":{"@id":"https://www.dunnedwards.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.dunnedwards.com/"]}]},{"@type":"BreadcrumbList","@id":"https://www.dunnedwards.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://www.dunnedwards.com/#website","url":"https://www.dunnedwards.com/","name":"Dunn-Edwards Paints","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.dunnedwards.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//h6a8m2f3.rocketcdn.me' />
+
+<link href='https://h6a8m2f3.rocketcdn.me' rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Dunn-Edwards Paints &raquo; Feed" href="https://www.dunnedwards.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Dunn-Edwards Paints &raquo; Comments Feed" href="https://www.dunnedwards.com/comments/feed/" />
+
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='shortlink' href='https://www.dunnedwards.com/' />
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">var ajaxurl = "https://www.dunnedwards.com/wp-admin/admin-ajax.php";</script>		<style type="text/css" id="wp-custom-css">
+			.fancy-box-content-text p {
+    margin: 1.4rem 0;
+}		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+					</head>
+	
+	<body class="home page-template-default page page-id-1227" data-template="base.twig">
+    
+				<!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSQJGD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+		
+		<div id="skiptocontent">
+			<a href="#content" id="skipper">Skip to content</a>
+		</div>
+		<!-- Main Header start -->
+		<header class="main-header">
+							<div class="main-header-top">
+    <div class="main-header-links">
+        <ul>
+                                                                <li class="main-header-dura">
+                        <a href="https://dunnedwardsdura.com/pages/about-us?utm_medium=website&utm_source=de&utm_campaign=dura&utm_content=header%20small%20logo" title="Opens in a new tab" target="_blank">
+                            <span class="dura-heading">Proudly presenting</span>
+                            <img width="2500" height="986" class="dura-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202500%20986'%3E%3C/svg%3E" alt="Proudly presenting Dura" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/02/dura-R-transparent.png" /><noscript><img width="2500" height="986" class="dura-image" src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/02/dura-R-transparent.png" alt="Proudly presenting Dura" /></noscript>
+                        </a>
+                    </li>
+                                        <li>
+                <a href="https://www.dunnedwards.com/find-a-store/" title="Find a store">Find a store</a>
+            </li>
+            <li>
+                <a href="https://www.dunnedwards.com/contact-us/" title="Contact">Contact</a>
+            </li>
+            <li>
+                <a class="main-header-cart-icon" href="https://www.dunnedwards.com/colors/color-samples-orders" aria-label="cart icon">
+                    <span class="main-header-shop-icon">
+                        <svg><use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#cart"></use></svg>
+                    </span>
+                    <span id='color_samples_order_quantity_wp_desk'></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+		<div class="header-mobile-bar">
+		<ul>
+			<li>
+				<a href="https://www.dunnedwards.com/find-a-store/" title="Find a store">Find a store</a>
+			</li>
+
+			<li>
+				<a href="https://www.dunnedwards.com/users/login/" aria-label="Account log in">Account log in</a>
+			</li>
+		</ul>
+	</div>
+</div>				<div class="main-header-bottom">
+    <div class="main-header-logo">
+        <a href="/" rel="home" aria-label="header logo">
+                        <img class="exclude-lazy" loading="eager" width="120px" height="75px" importance="high"
+                 src="https://h6a8m2f3.rocketcdn.me/wp-content/themes/dunnedwards/assets/img/logo/logo.webp" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/themes/dunnedwards/assets/img/logo/logo.png'" alt="Dunn-Edwards Paints and Stores" />
+        </a>
+    </div>
+    
+    <nav><ul><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9054"><a href="https://www.dunnedwards.com/colors/">Colors</a>
+<ul class="submenu">
+<div class="submenu-inner"><div class="submenu-item submenu-content"><div class="submenu-title"><a aria-label="Explore our colors" href="https://www.dunnedwards.com/colors/"  class="link-item link-item--s">Explore our colors</a></div><div class="submenu-colors"><ul><li><a aria-label="See All Colors" href="https://www.dunnedwards.com/colors/collections/perfect-palette/" ><div class="submenu-colors-img"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20150'%3E%3C/svg%3E" width="150px" height="150px" alt="With 2,006 Perfect Palette® colors from which to choose, you're sure to find more than a few that spark your imagination! Dunn-Edwards" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/06/Perfect-Pallette-Circle-Primary_menu.png" /><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/06/Perfect-Pallette-Circle-Primary_menu.png" width="150px" height="150px" alt="With 2,006 Perfect Palette® colors from which to choose, you're sure to find more than a few that spark your imagination! Dunn-Edwards" /></noscript></div><p>See All Colors</p></a></li><li><a aria-label="Perfect Palette®" href="https://www.dunnedwards.com/colors/collections/perfect-palette/" ><div class="submenu-colors-img"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20150'%3E%3C/svg%3E" width="150px" height="150px" alt="With 2,006 Perfect Palette® colors from which to choose, you're sure to find more than a few that spark your imagination! Dunn-Edwards" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/06/Perfect-Pallette-Circle_menu.png" /><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/06/Perfect-Pallette-Circle_menu.png" width="150px" height="150px" alt="With 2,006 Perfect Palette® colors from which to choose, you're sure to find more than a few that spark your imagination! Dunn-Edwards" /></noscript></div><p>Perfect Palette®</p></a></li><li><a aria-label="Instant Designer" href="https://www.dunnedwards.com/colors/collections/instant-designer/" ><div class="submenu-colors-img"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20150'%3E%3C/svg%3E" width="150px" height="150px" alt="Icon" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/06/instant-designer.png" /><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/06/instant-designer.png" width="150px" height="150px" alt="Icon" /></noscript></div><p>Instant Designer</p></a></li><li><a aria-label="New Neutrals" href="https://www.dunnedwards.com/colors/collections/new-neutrals/" ><div class="submenu-colors-img"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20150'%3E%3C/svg%3E" width="150px" height="150px" alt="A close up of a bowl on a table" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/new-neutrals-circle.png" /><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/new-neutrals-circle.png" width="150px" height="150px" alt="A close up of a bowl on a table" /></noscript></div><p>New Neutrals</p></a></li><li><a aria-label="Front Door" href="https://www.dunnedwards.com/colors/collections/front-door-limited-edition-color/" ><div class="submenu-colors-img"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20150'%3E%3C/svg%3E" width="150px" height="150px" alt="A large brown dog standing next to a sign" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/05/front-door-circle.png" /><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/05/front-door-circle.png" width="150px" height="150px" alt="A large brown dog standing next to a sign" /></noscript></div><p>Front Door</p></a></li></ul></div></div><div class="submenu-item"><div class="submenu-title"><span>Color Resources</span></div><div class="submenu-nav"><ul><li><a aria-label="Order Color Samples" href="https://www.dunnedwards.com/colors/color-samples-orders/" >Order Color Samples</a></li><li><a aria-label="Download Digital Color Swatches" href="https://www.dunnedwards.com/colors/download-color-swatches/" >Download Digital Color Swatches</a></li><li><a aria-label="Professional Color Consultation" href="https://www.dunnedwards.com/colors/color-consultation/" >Professional Color Consultation</a></li><li><a aria-label="Color Trends" href="https://www.dunnedwards.com/colors/color-trends/" >Color Trends</a></li><li><a aria-label="Color of The Year" href="https://www.dunnedwards.com/colors/color-of-the-year/" >Color of The Year</a></li></ul></div></div><div class="submenu-item"><div class="submenu-title"><span>Color Tools</span></div><div class="submenu-nav"><ul><li><a aria-label="Paint Calculator" href="https://www.dunnedwards.com/explore/how-to/project-planner/" >Paint Calculator</a></li><li><a aria-label="Specs+Spaces® Design Blog" href="https://www.dunnedwards.com/pros/specs/" >Specs+Spaces® Design Blog</a></li><li><a aria-label="Dunn-Edwards InstaColor®" href="https://www.dunnedwards.com/colors/instacolor/" >Dunn-Edwards InstaColor®</a></li><li><a aria-label="Color Visualization Tool" href="https://www.dunnedwards.com/colors/instacolor/web/" >Color Visualization Tool</a></li><li><a aria-label="Color-Ark® Pro" href="https://www.dunnedwards.com/colors/color-ark-pro/" >Color-Ark® Pro</a></li><li><a aria-label="Color-Ark® Home" href="https://www.dunnedwards.com/colors/color-ark-home/" >Color-Ark® Home</a></li></ul></div></div></div></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9053"><a href="https://www.dunnedwards.com/products/">Products</a>
+<ul class="submenu">
+<div class="submenu-inner products-megamenu"><div class="submenu-item"><div class="submenu-title"><a aria-label="Discover our products" href="https://www.dunnedwards.com/products/"  class="link-item link-item--s">Discover our products</a></div><div class="submenu-products"><ul><li><a aria-label="Interior paints &amp; coatings" href="https://www.dunnedwards.com/products-filter/interior-paints-and-coatings/" ><div class="submenu-products-img"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%" height="auto" alt="EXQUISITE Interior Matte Paint Can" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/06/EXQT10-_-search.png" /><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/06/EXQT10-_-search.png" width="100%" height="auto" alt="EXQUISITE Interior Matte Paint Can" /></noscript></div><p>Interior paints &amp; coatings</p></a></li><li><a aria-label="Exterior paints &amp; coatings" href="https://www.dunnedwards.com/products-filter/exterior-paints-and-coatings/" ><div class="submenu-products-img"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%" height="auto" alt="EVERSHIELD Exterior 100% Acrylic Velvet Paint Can" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/06/EVSH20_search.png" /><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/06/EVSH20_search.png" width="100%" height="auto" alt="EVERSHIELD Exterior 100% Acrylic Velvet Paint Can" /></noscript></div><p>Exterior paints &amp; coatings</p></a></li><li><a aria-label="Industrial &amp; high-performance coatings" href="https://www.dunnedwards.com/products-filter/industrial-and-high-performance-paints-and-coatings/" ><div class="submenu-products-img"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%" height="auto" alt="A coffee mug" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/06/ENCT30_search.png" /><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/06/ENCT30_search.png" width="100%" height="auto" alt="A coffee mug" /></noscript></div><p>Industrial &amp; high-performance coatings</p></a></li></ul></div></div><div class="submenu-item"><div class="submenu-title"><span>Learn More</span></div><div class="submenu-nav"><ul><li><a aria-label="Products" href="https://www.dunnedwards.com/products-filter/interior-paints-and-coatings/?subcategory=paints-interior" >Products</a></li><li><a aria-label="Paint &amp; Sundries Digital Catalog" href="https://issuu.com/dunn-edwards/docs/english_catalog_11-3-22_pages" target="_blank">Paint &amp; Sundries Digital Catalog</a></li><li><a aria-label="Coatings Reference Guide" href="https://issuu.com/dunn-edwards/docs/coatings_guide_pgs_5-17" target="_blank">Coatings Reference Guide</a></li><li><a aria-label="Case Studies" href="https://www.dunnedwards.com/case-studies/" >Case Studies</a></li><li><a aria-label="Specification Guides" href="https://www.dunnedwards.com/products/specification-guide/" >Specification Guides</a></li><li><a aria-label="Technical Bulletins" href="https://www.dunnedwards.com/technical-bulletins/" >Technical Bulletins</a></li><li><a aria-label="Certifications and Conformance" href="https://www.dunnedwards.com/products/conformance-and-certifications/" >Certifications and Conformance</a></li><li><a aria-label="Dunn-Edwards DURA" href="https://dunnedwardsdura.com/pages/about-us?utm_medium=website&#038;utm_source=de&#038;utm_campaign=dura&#038;utm_content=product_menu" target="_blank">Dunn-Edwards DURA</a></li></ul></div></div><div class="submenu-item submenu-content"><a aria-label="Learn more about SOLID-COLOR STAIN" href="https://www.dunnedwards.com/product/solid-color/" class="submenu-product-img" target="_blank"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%" height="auto" alt="Solid- Color Promo" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/05/Solid-Color-Promo2.jpg" /><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/05/Solid-Color-Promo2.jpg" width="100%" height="auto" alt="Solid- Color Promo" /></noscript></a></div></div></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9055"><a href="https://www.dunnedwards.com/about/environment/">Environment</a>
+<ul class="submenu">
+<div class="submenu-inner justify-content-start"><div class="submenu-item submenu-content-env"><div class="submenu-environment"><div class="submenu-environment-content common-text"><div class="submenu-environment-text"><span class="h2">What makes Dunn-Edwards paint greener?</span><p>It&#039;s not only the performance we put into our paint, but also what we leave out. Dunn-Edwards constantly seeks to reduce or avoid the use of harmful ingredients.</p><p><a aria-label="Our Green Legacy" href="https://www.dunnedwards.com/about/environment/" class="link-item link-item--s" >Our Green Legacy</a></p></div></div><a aria-label="Our LEED® gold certified paint factory" href="https://www.youtube.com/watch?v=P53kQqIzoBw" target="_blank" class="submenu-environment-img"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%" height="auto" alt="A sign on the side of a building" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/05/environment-menu-factory_3.jpg" /><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/05/environment-menu-factory_3.jpg" width="100%" height="auto" alt="A sign on the side of a building" /></noscript><div class="submenu-environment-desc blue-button"><p>Our LEED® gold certified paint factory</p></div></a></div></div><div class="submenu-item"><div class="submenu-title"><span>Learn more</span></div><div class="submenu-nav"><ul><li><a aria-label="Why Dunn-Edwards?" href="https://www.dunnedwards.com/about/why-dunn-edwards/" >Why Dunn-Edwards?</a></li><li><a aria-label="Case Studies" href="https://www.dunnedwards.com/case-studies/" >Case Studies</a></li><li><a aria-label="Painting Green Articles" href="https://www.dunnedwards.com/pros/specs/painting-green/" >Painting Green Articles</a></li><li><a aria-label="Certifications And Conformance" href="https://www.dunnedwards.com/products/conformance-and-certifications/" >Certifications And Conformance</a></li></ul></div></div></div></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-23550"><a href="https://www.dunnedwards.com/explore/dream-it/">Explore</a>
+<ul class="submenu">
+<div class="submenu-inner submenu-explore"><div class="submenu-item"><div class="submenu-title"><a aria-label="Start Exploring" href="https://www.dunnedwards.com/explore/dream-it/" class="link-item link-item--s" >Start Exploring</a></div><div class="submenu-nav"><ul><li><a aria-label="Dream It" href="https://www.dunnedwards.com/explore/dream-it/" >Dream It</a></li><li><a aria-label="How-To Do It" href="https://www.dunnedwards.com/explore/how-to/" >How-To Do It</a></li><li><a aria-label="Share It" href="https://www.dunnedwards.com/explore/share-it/" >Share It</a></li></ul></div></div><div class="submenu-item"><div class="submenu-title"><span>Get Inspired</span></div><div class="submenu-nav"><ul><li><a aria-label="Inspiration Image Galleries" href="https://www.dunnedwards.com/explore/dream-it/" >Inspiration Image Galleries</a></li><li><a aria-label="How-To Videos" href="https://www.dunnedwards.com/explore/how-to/videos/" >How-To Videos</a></li><li><a aria-label="Color Trends" href="https://www.dunnedwards.com/colors/color-trends/" >Color Trends</a></li><li><a aria-label="How-To Brochures" href="https://www.dunnedwards.com/explore/how-to/how-to-brochures/" >How-To Brochures</a></li><li><a aria-label="Color Of The Year" href="https://www.dunnedwards.com/colors/color-of-the-year/" >Color Of The Year</a></li><li><a aria-label="Choosing A Painting Contractor" href="https://www.dunnedwards.com/explore/how-to/choose-a-painting-contractor" >Choosing A Painting Contractor</a></li></ul></div></div><div class="submenu-item submenu-content"><div class="submenu-environment"><div class="submenu-environment-content common-text"><div class="submenu-environment-text"><span class="h2">Need Kitchen Color Inspiration?</span><p>The classic white kitchen aesthetic remains a perennial favorite but - inspired by a new-found optimism, the heart of the home is ready for color!</p><p><a aria-label="Check out our gallery" href="https://www.dunnedwards.com/explore/dream-it/kitchen/" class="link-item link-item--s" >Check out our gallery</a></p></div></div><div class="submenu-environment-img"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%" height="auto" alt="A kitchen with a dining table" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/05/explore-menu5.jpg" /><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/05/explore-menu5.jpg" width="100%" height="auto" alt="A kitchen with a dining table" /></noscript></div></div></div></div></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9057"><a href="https://www.dunnedwards.com/pro-resources/">Professionals</a>
+<ul class="submenu">
+<div class="submenu-inner submenu-professionals"><div class="submenu-item"><div class="submenu-title"><a aria-label="Explore by profession" href="https://www.dunnedwards.com/pro-resources/" class="link-item link-item--s" >Explore by profession</a></div><div class="submenu-nav"><ul><li><a aria-label="Architects and Specifiers" href="https://www.dunnedwards.com/pro-resources/architects/" >Architects and Specifiers</a></li><li><a aria-label="Education" href="https://www.dunnedwards.com/pro-resources/education/" >Education</a></li><li><a aria-label="Builders and Developers" href="https://www.dunnedwards.com/pro-resources/builders-and-developers/" >Builders and Developers</a></li><li><a aria-label="Government Agencies" href="https://www.dunnedwards.com/pro-resources/government-agencies/" >Government Agencies</a></li><li><a aria-label="Commercial Contractors" href="https://www.dunnedwards.com/pro-resources/commercial-contractors/" >Commercial Contractors</a></li><li><a aria-label="Interior Designers" href="https://www.dunnedwards.com/pro-resources/interior-designers/" >Interior Designers</a></li><li><a aria-label="Dealers" href="https://www.dunnedwards.com/pro-resources/dealers/" >Dealers</a></li><li><a aria-label="Property Managers" href="https://www.dunnedwards.com/pro-resources/community-and-property-managers/" >Property Managers</a></li><li><a aria-label="Design Student" href="https://www.dunnedwards.com/pro-resources/emerging-professionals/" >Design Student</a></li><li><a aria-label="Residential Contractors" href="https://www.dunnedwards.com/pro-resources/residential-contractors/" >Residential Contractors</a></li></ul></div></div><div class="submenu-item learn-more"><div class="submenu-title"><span>Learn More</span></div><div class="submenu-nav"><ul><li><a aria-label="Professional Blog" href="https://www.dunnedwards.com/pros/specs/" >Professional Blog</a></li><li><a aria-label="Case Studies" href="https://www.dunnedwards.com/case-studies/" >Case Studies</a></li><li><a aria-label="Credit Services" href="https://www.dunnedwards.com/credit-services/" >Credit Services</a></li><li><a aria-label="Account Application" href="https://www.dunnedwards.com/accounts/apply-for-purchasing-account/" >Account Application</a></li><li><a aria-label="Find A Store" href="https://www.dunnedwards.com/find-a-store/" >Find A Store</a></li></ul></div></div><div class="submenu-item submenu-content"><div class="submenu-environment"><div class="submenu-environment-content common-text"><div class="submenu-environment-text"><span class="h2">Contact A Rep</span><p>As your paint partner, our priority is to ensure you have every tool, product, and service for all your paint projects. Search for a Dunn-Edwards representative if you would like to be contacted.</p><p><a aria-label="Get Started" href="https://www.dunnedwards.com/contact-rep/" class="link-item link-item--s" >Get Started</a></p></div></div><div class="submenu-environment-img"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%" height="auto" alt="A woman sitting in front of a window" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/05/Menu-Rep3.jpg" /><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/05/Menu-Rep3.jpg" width="100%" height="auto" alt="A woman sitting in front of a window" /></noscript></div></div></div></div></li>
+</ul>
+</li>
+</ul></nav>
+    <div class="main-header-btns">
+        <a href="https://www.dunnedwards.com/accounts/favorites/" aria-label="favorite icon">
+            <span class="sr-only">favorite icon</span>
+            <svg><use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#favorite" v-bind="{ 'xlink:href': 'https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#favorite' }"></use></svg>
+        </a>
+        <div class="main-header-user-wrapper">
+            <a href="https://www.dunnedwards.com/users/login/" aria-label="user icon" class="account-menu-link">
+                <span class="sr-only">user icon</span>
+                <svg><use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#user" v-bind="{ 'xlink:href': 'https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#user' }" ></use></svg>
+            </a>
+            <div class="main-header-user">
+                <div class="user-actions">
+                    <ul>
+                        <li>
+                            <a href="https://www.dunnedwards.com/users/login/">
+                                <div>
+                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2030%2030'%3E%3C/svg%3E" width="30" height="30" alt="" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/themes/dunnedwards/assets/img/icons/user.svg"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/themes/dunnedwards/assets/img/icons/user.svg" width="30" height="30" alt=""></noscript>
+                                </div>
+                                <div><p>My Account</p></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.dunnedwards.com/colors/color-ark-pro/">
+                                <div>
+                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2030%2030'%3E%3C/svg%3E" width="30" height="30" alt="" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/themes/dunnedwards/assets/img/icons/home.svg"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/themes/dunnedwards/assets/img/icons/home.svg" width="30" height="30" alt=""></noscript>
+                                </div>
+                                <div><p>Color-Ark Pro</p></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-method="delete" href="https://www.dunnedwards.com/users/logout">
+                                <div>
+                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2030%2030'%3E%3C/svg%3E" width="30" height="30" alt="" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/themes/dunnedwards/assets/img/icons/logout.svg"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/themes/dunnedwards/assets/img/icons/logout.svg" width="30" height="30" alt=""></noscript>
+                                </div>
+                                <div><p>Log Out</p></div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <a href="javascript:;" class="main-header-btns-search" aria-label="search icon"
+           onclick="mainHeaderSearch(event)" onkeypress="mainHeaderSearch(event)">
+            <span class="sr-only">search icon</span>
+            <svg>
+                <use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#search" class="main-header-btns-search--search"></use>
+                <use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#close" class="main-header-btns-search--close"></use>
+            </svg>
+        </a>
+    </div>
+
+            <div class="submenu submenu-search">
+            <div class="submenu-inner">
+                <form method="get" action="/" role="search">
+                    <label for="submenu-search" class="sr-only">submenu search</label>
+                    <input type="text" id="submenu-search" name="s" placeholder="Search…">
+                    <button type="submit" title="submenu search" aria-label="search inside submenu" id="search-submenu-submit">
+                        <svg><use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#search"></use></svg>
+                    </button>
+                </form>
+            </div>
+            <div class="submenu-inner">
+            		                <div class="submenu-item submenu-search-nav">
+	                    <div class="submenu-title">
+	                        <span>Popular searches</span>
+	                    </div>
+	                    <div class="submenu-nav">
+	                        <ul>
+	                        			                            <li>
+		                                <a href="/?s=Terra Rosa">Terra Rosa</a>
+		                            </li>
+	                       				                            <li>
+		                                <a href="/?s=Decoglo">Decoglo</a>
+		                            </li>
+	                       				                            <li>
+		                                <a href="/?s=Exquisite">Exquisite</a>
+		                            </li>
+	                       				                            <li>
+		                                <a href="/?s=Swiss Coffee">Swiss Coffee</a>
+		                            </li>
+	                       				                            <li>
+		                                <a href="/?s=Everest">Everest</a>
+		                            </li>
+	                       				                            <li>
+		                                <a href="/?s=Art and Craft">Art and Craft</a>
+		                            </li>
+	                       				                            <li>
+		                                <a href="/?s=Classic White">Classic White</a>
+		                            </li>
+	                       				                            <li>
+		                                <a href="/?s=Aristoshield">Aristoshield</a>
+		                            </li>
+	                       			                            
+	                        </ul>
+	                    </div>
+	                </div>
+	                            <div class="submenu-item submenu-item--colors">
+                                            <div class="submenu-title">
+                            <span>Trending colors</span>
+                        </div>
+                    
+                                            <div class="submenu-search-colors">
+                            <ul>
+                                                                                                            <li>
+                                            <a class="submenu-color-link" href="https://www.dunnedwards.com/colors/browser/de5096/" aria-label="Terra Rosa | DE5096" >
+                                                <span class="submenu-search-colors-color" style="background-color: #bb6569"></span>
+                                                <span class="submenu-search-colors-name">Terra Rosa | DE5096</span>
+                                            </a>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a class="submenu-color-link" href="https://www.dunnedwards.com/colors/browser/det682/" aria-label="Art and Craft | DET682" >
+                                                <span class="submenu-search-colors-color" style="background-color: #896956"></span>
+                                                <span class="submenu-search-colors-name">Art and Craft | DET682</span>
+                                            </a>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a class="submenu-color-link" href="https://www.dunnedwards.com/colors/browser/det577/" aria-label="Big Sur Blue Jade | DET577" >
+                                                <span class="submenu-search-colors-color" style="background-color: #3F6E8E"></span>
+                                                <span class="submenu-search-colors-name">Big Sur Blue Jade | DET577</span>
+                                            </a>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a class="submenu-color-link" href="https://www.dunnedwards.com/colors/browser/det432/" aria-label="Rose de Mai | DET432" >
+                                                <span class="submenu-search-colors-color" style="background-color: #cb8e81"></span>
+                                                <span class="submenu-search-colors-name">Rose de Mai | DET432</span>
+                                            </a>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a class="submenu-color-link" href="https://www.dunnedwards.com/colors/browser/de5048/" aria-label="Pink Punch | DE5048" >
+                                                <span class="submenu-search-colors-color" style="background-color: #d04a70"></span>
+                                                <span class="submenu-search-colors-name">Pink Punch | DE5048</span>
+                                            </a>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a class="submenu-color-link" href="https://www.dunnedwards.com/colors/browser/de5020/" aria-label="Mahogany Cherry | DE5020" >
+                                                <span class="submenu-search-colors-color" style="background-color: #82495a"></span>
+                                                <span class="submenu-search-colors-name">Mahogany Cherry | DE5020</span>
+                                            </a>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a class="submenu-color-link" href="https://www.dunnedwards.com/colors/browser/det625/" aria-label="Reclaimed Wood | DET625" >
+                                                <span class="submenu-search-colors-color" style="background-color: #bab6ab"></span>
+                                                <span class="submenu-search-colors-name">Reclaimed Wood | DET625</span>
+                                            </a>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a class="submenu-color-link" href="https://www.dunnedwards.com/colors/browser/de5382/" aria-label="Golden Appeal | DE5382" >
+                                                <span class="submenu-search-colors-color" style="background-color: #e6be59"></span>
+                                                <span class="submenu-search-colors-name">Golden Appeal | DE5382</span>
+                                            </a>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a class="submenu-color-link" href="https://www.dunnedwards.com/colors/browser/de5494/" aria-label="Even Growth | DE5494" >
+                                                <span class="submenu-search-colors-color" style="background-color: #b2aa7a"></span>
+                                                <span class="submenu-search-colors-name">Even Growth | DE5494</span>
+                                            </a>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a class="submenu-color-link" href="https://www.dunnedwards.com/colors/browser/de6123/" aria-label="Trail Dust | DE6123" >
+                                                <span class="submenu-search-colors-color" style="background-color: #bfaa97"></span>
+                                                <span class="submenu-search-colors-name">Trail Dust | DE6123</span>
+                                            </a>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a class="submenu-color-link" href="https://www.dunnedwards.com/colors/browser/det545/" aria-label="Blue Tapestry | DET545" >
+                                                <span class="submenu-search-colors-color" style="background-color: #475c62"></span>
+                                                <span class="submenu-search-colors-name">Blue Tapestry | DET545</span>
+                                            </a>
+                                        </li>
+                                                                                                                                                <li>
+                                            <a class="submenu-color-link" href="https://www.dunnedwards.com/colors/browser/det697/" aria-label="Nomad | DET697" >
+                                                <span class="submenu-search-colors-color" style="background-color: #5b4e4b"></span>
+                                                <span class="submenu-search-colors-name">Nomad | DET697</span>
+                                            </a>
+                                        </li>
+                                                                                                </ul>
+                        </div>
+                                    </div>
+                <div class="submenu-item">
+                                            <div class="submenu-title">
+                            <span>Products</span>
+                        </div>
+                    
+                                            <div class="submenu-products">
+                            <ul>
+                                                                    <li>
+                                        <a aria-label="Interior paints & coatings" href="https://www.dunnedwards.com/products-filter/interior-paints-and-coatings/" >
+                                            <div class="submenu-products-img">
+                                                                                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%" height="auto" alt="EXQUISITE Interior Matte Paint Can"
+                                                         onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/06/EXQT10-_-search.png'" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/06/EXQT10-_-search.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/06/EXQT10-_-search.webp" width="100%" height="auto" alt="EXQUISITE Interior Matte Paint Can"
+                                                         onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/06/EXQT10-_-search.png'"></noscript>
+                                                                                            </div>
+                                            <p>Interior paints & coatings</p>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a aria-label="Exterior paints & coatings" href="https://www.dunnedwards.com/products-filter/exterior-paints-and-coatings/" >
+                                            <div class="submenu-products-img">
+                                                                                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%" height="auto" alt="EVERSHIELD Exterior 100% Acrylic Velvet Paint Can"
+                                                         onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/06/EVSH20_search.png'" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/06/EVSH20_search.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/06/EVSH20_search.webp" width="100%" height="auto" alt="EVERSHIELD Exterior 100% Acrylic Velvet Paint Can"
+                                                         onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/06/EVSH20_search.png'"></noscript>
+                                                                                            </div>
+                                            <p>Exterior paints & coatings</p>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a aria-label="Industrial & high-performance coatings" href="https://www.dunnedwards.com/products-filter/industrial-and-high-performance-paints-and-coatings/" >
+                                            <div class="submenu-products-img">
+                                                                                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%" height="auto" alt="A coffee mug"
+                                                         onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/06/ENCT30_search.png'" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/06/ENCT30_search.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/06/ENCT30_search.webp" width="100%" height="auto" alt="A coffee mug"
+                                                         onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/06/ENCT30_search.png'"></noscript>
+                                                                                            </div>
+                                            <p>Industrial & high-performance coatings</p>
+                                        </a>
+                                    </li>
+                                                            </ul>
+                        </div>
+                                    </div>
+            </div>
+        </div>
+	
+    <div class="main-header-shop">
+        <a class="main-header-cart-icon" href="https://www.dunnedwards.com/colors/color-samples-orders" aria-label="cart icon">
+            <span class="main-header-shop-icon">
+                <svg><use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#cart"></use></svg>
+            </span>
+            <span id='color_samples_order_quantity_wp_mob'></span>
+        </a>
+
+        <div class="popup-container">
+            <a class="shop-link" href="#">                 <span class="main-header-shop-text">SHOP</span>
+            </a>
+
+                            <div class="popup-body popup-bottom">
+                    <div class="popup-bottom-close">
+                        <svg>
+                            <use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#close"></use>
+                        </svg>
+                    </div>
+                                            <div class="popup-body-title">Select shopping experience to find products and pricing</div>
+                                        <div class="submenu-inner submenu-shop">
+                        <div class="submenu-item">
+                            <a href="https://shop.dunnedwards.com?utm_source=de&utm_medium=website&utm_campaign=shopify_navigation&utm_content=consumer_image_header" target="_blank" class="submenu-item-image" aria-label="">
+                                                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%" height="auto" alt="A person standing in front of a window" role="presentation" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/08/consumers.png"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/08/consumers.png" width="100%" height="auto" alt="A person standing in front of a window" role="presentation"></noscript>
+                                                                                                    <div class="submenu-item-title submenu-item-title-xs">Consumer</div>
+                                                            </a>
+                        </div>
+                        <div class="submenu-item">
+                            <a href="https://www.dunnedwards.com/users/login/" class="submenu-item-image" aria-label="">
+                                                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%" height="auto" alt="A man standing in front of a door" role="presentation" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/08/professionals-1.png"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/08/professionals-1.png" width="100%" height="auto" alt="A man standing in front of a door" role="presentation"></noscript>
+                                                                                                    <div class="submenu-item-title submenu-item-title-xs">Professional</div>
+                                                            </a>
+                        </div>
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+    <div class="burger-menu" tabindex="0" onclick="burgerMenu(event)" onkeypress="burgerMenu(event)">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+	
+    
+</div>
+				<div class="mobile-menu">
+    <div class="mobile-menu-nav">
+	    <ul><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9054"><a href="https://www.dunnedwards.com/colors/">Colors</a>
+<div class="mobile-menu-arrow" tabindex="0" onclick="mobileMenuArrow(event)" onkeypress="mobileMenuArrow(event)">
+
+<svg>
+
+<use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#arrow"></use>
+
+</svg>
+
+</div>
+
+<div class="mobile-menu-submenu">
+
+<div class="mobile-menu-head">
+
+<div class="mobile-menu-back">
+
+<a aria-label="go back to main menu" href="javascript:;" onclick="mobileMenuBack(event)" onkeypress="mobileMenuBack(event)">
+
+<svg>
+
+<use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#arrow"></use>
+
+</svg>
+
+</a>
+
+</div>
+
+<div class="mobile-menu-title">
+
+<p>Colors</p>
+
+</div>
+
+</div>
+
+<ul>
+<li class="flex-wrap"><a aria-label="Explore our colors" href="https://www.dunnedwards.com/colors/" >Explore our colors</a><ul class="three-depth-level"><li><a aria-label="See All Colors" href="https://www.dunnedwards.com/colors/collections/perfect-palette/" >See All Colors</a><li><li><a aria-label="Perfect Palette®" href="https://www.dunnedwards.com/colors/collections/perfect-palette/" >Perfect Palette®</a><li><li><a aria-label="Instant Designer" href="https://www.dunnedwards.com/colors/collections/instant-designer/" >Instant Designer</a><li><li><a aria-label="New Neutrals" href="https://www.dunnedwards.com/colors/collections/new-neutrals/" >New Neutrals</a><li><li><a aria-label="Front Door" href="https://www.dunnedwards.com/colors/collections/front-door-limited-edition-color/" >Front Door</a><li></ul></li><li class="flex-wrap"><a aria-label="Color Resources" href="#" >Color Resources</a><ul class="three-depth-level"><li><a aria-label="Order Color Samples" href="https://www.dunnedwards.com/colors/color-samples-orders/" >Order Color Samples</a><li><li><a aria-label="Download Digital Color Swatches" href="https://www.dunnedwards.com/colors/download-color-swatches/" >Download Digital Color Swatches</a><li><li><a aria-label="Professional Color Consultation" href="https://www.dunnedwards.com/colors/color-consultation/" >Professional Color Consultation</a><li><li><a aria-label="Color Trends" href="https://www.dunnedwards.com/colors/color-trends/" >Color Trends</a><li><li><a aria-label="Color of The Year" href="https://www.dunnedwards.com/colors/color-of-the-year/" >Color of The Year</a><li></ul></li><li class="flex-wrap"><a aria-label="Color Tools" href="#" >Color Tools</a><ul class="three-depth-level"><li><a aria-label="Paint Calculator" href="https://www.dunnedwards.com/explore/how-to/project-planner/" >Paint Calculator</a><li><li><a aria-label="Specs+Spaces® Design Blog" href="https://www.dunnedwards.com/pros/specs/" >Specs+Spaces® Design Blog</a><li><li><a aria-label="Dunn-Edwards InstaColor®" href="https://www.dunnedwards.com/colors/instacolor/" >Dunn-Edwards InstaColor®</a><li><li><a aria-label="Color Visualization Tool" href="https://www.dunnedwards.com/colors/instacolor/web/" >Color Visualization Tool</a><li><li><a aria-label="Color-Ark® Pro" href="https://www.dunnedwards.com/colors/color-ark-pro/" >Color-Ark® Pro</a><li><li><a aria-label="Color-Ark® Home" href="https://www.dunnedwards.com/colors/color-ark-home/" >Color-Ark® Home</a><li></ul></li></li>
+</ul>
+</div>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9053"><a href="https://www.dunnedwards.com/products/">Products</a>
+<div class="mobile-menu-arrow" tabindex="0" onclick="mobileMenuArrow(event)" onkeypress="mobileMenuArrow(event)">
+
+<svg>
+
+<use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#arrow"></use>
+
+</svg>
+
+</div>
+
+<div class="mobile-menu-submenu">
+
+<div class="mobile-menu-head">
+
+<div class="mobile-menu-back">
+
+<a aria-label="go back to main menu" href="javascript:;" onclick="mobileMenuBack(event)" onkeypress="mobileMenuBack(event)">
+
+<svg>
+
+<use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#arrow"></use>
+
+</svg>
+
+</a>
+
+</div>
+
+<div class="mobile-menu-title">
+
+<p>Products</p>
+
+</div>
+
+</div>
+
+<ul>
+<li class="flex-wrap"><a aria-label="Discover our products" href="https://www.dunnedwards.com/products/" >Discover our products</a><ul class="three-depth-level"><li><a aria-label="Interior paints &amp; coatings" href="https://www.dunnedwards.com/products-filter/interior-paints-and-coatings/" >Interior paints &amp; coatings</a></li><li><a aria-label="Exterior paints &amp; coatings" href="https://www.dunnedwards.com/products-filter/exterior-paints-and-coatings/" >Exterior paints &amp; coatings</a></li><li><a aria-label="Industrial &amp; high-performance coatings" href="https://www.dunnedwards.com/products-filter/industrial-and-high-performance-paints-and-coatings/" >Industrial &amp; high-performance coatings</a></li></ul></li><li class="flex-wrap"><a aria-label="Learn More" href="#" >Learn More</a><ul class="three-depth-level"><li><a aria-label="Products" href="https://www.dunnedwards.com/products-filter/interior-paints-and-coatings/?subcategory=paints-interior" >Products</a></li><li><a aria-label="Paint &amp; Sundries Digital Catalog" href="https://issuu.com/dunn-edwards/docs/english_catalog_11-3-22_pages" target="_blank">Paint &amp; Sundries Digital Catalog</a></li><li><a aria-label="Coatings Reference Guide" href="https://issuu.com/dunn-edwards/docs/coatings_guide_pgs_5-17" target="_blank">Coatings Reference Guide</a></li><li><a aria-label="Case Studies" href="https://www.dunnedwards.com/case-studies/" >Case Studies</a></li><li><a aria-label="Specification Guides" href="https://www.dunnedwards.com/products/specification-guide/" >Specification Guides</a></li><li><a aria-label="Technical Bulletins" href="https://www.dunnedwards.com/technical-bulletins/" >Technical Bulletins</a></li><li><a aria-label="Certifications and Conformance" href="https://www.dunnedwards.com/products/conformance-and-certifications/" >Certifications and Conformance</a></li><li><a aria-label="Dunn-Edwards DURA" href="https://dunnedwardsdura.com/pages/about-us?utm_medium=website&#038;utm_source=de&#038;utm_campaign=dura&#038;utm_content=product_menu" target="_blank">Dunn-Edwards DURA</a></li></ul></li></li>
+</ul>
+</div>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9055"><a href="https://www.dunnedwards.com/about/environment/">Environment</a>
+<div class="mobile-menu-arrow" tabindex="0" onclick="mobileMenuArrow(event)" onkeypress="mobileMenuArrow(event)">
+
+<svg>
+
+<use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#arrow"></use>
+
+</svg>
+
+</div>
+
+<div class="mobile-menu-submenu">
+
+<div class="mobile-menu-head">
+
+<div class="mobile-menu-back">
+
+<a aria-label="go back to main menu" href="javascript:;" onclick="mobileMenuBack(event)" onkeypress="mobileMenuBack(event)">
+
+<svg>
+
+<use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#arrow"></use>
+
+</svg>
+
+</a>
+
+</div>
+
+<div class="mobile-menu-title">
+
+<p>Environment</p>
+
+</div>
+
+</div>
+
+<ul>
+<li><a aria-label="Our Green Legacy" href="https://www.dunnedwards.com/about/environment/" >Our Green Legacy</a><li><li><a aria-label="Why Dunn-Edwards?" href="https://www.dunnedwards.com/about/why-dunn-edwards/" >Why Dunn-Edwards?</a><li><li><a aria-label="Case Studies" href="https://www.dunnedwards.com/case-studies/" >Case Studies</a><li><li><a aria-label="Painting Green Articles" href="https://www.dunnedwards.com/pros/specs/painting-green/" >Painting Green Articles</a><li><li><a aria-label="Certifications And Conformance" href="https://www.dunnedwards.com/products/conformance-and-certifications/" >Certifications And Conformance</a><li></li>
+</ul>
+</div>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-23550"><a href="https://www.dunnedwards.com/explore/dream-it/">Explore</a>
+<div class="mobile-menu-arrow" tabindex="0" onclick="mobileMenuArrow(event)" onkeypress="mobileMenuArrow(event)">
+
+<svg>
+
+<use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#arrow"></use>
+
+</svg>
+
+</div>
+
+<div class="mobile-menu-submenu">
+
+<div class="mobile-menu-head">
+
+<div class="mobile-menu-back">
+
+<a aria-label="go back to main menu" href="javascript:;" onclick="mobileMenuBack(event)" onkeypress="mobileMenuBack(event)">
+
+<svg>
+
+<use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#arrow"></use>
+
+</svg>
+
+</a>
+
+</div>
+
+<div class="mobile-menu-title">
+
+<p>Explore</p>
+
+</div>
+
+</div>
+
+<ul>
+<li class="flex-wrap"><a aria-label="Start Exploring" href="https://www.dunnedwards.com/explore/dream-it/" >Start Exploring</a><ul class="three-depth-level"><li><a aria-label="Dream It" href="https://www.dunnedwards.com/explore/dream-it/" >Dream It</a><li><li><a aria-label="How-To Do It" href="https://www.dunnedwards.com/explore/how-to/" >How-To Do It</a><li><li><a aria-label="Share It" href="https://www.dunnedwards.com/explore/share-it/" >Share It</a><li></ul></li><li class="flex-wrap"><a aria-label="Get Inspired" href="#" >Get Inspired</a><ul class="three-depth-level"><li><a aria-label="Inspiration Image Galleries" href="https://www.dunnedwards.com/explore/dream-it/" >Inspiration Image Galleries</a><li><li><a aria-label="How-To Videos" href="https://www.dunnedwards.com/explore/how-to/videos/" >How-To Videos</a><li><li><a aria-label="Color Trends" href="https://www.dunnedwards.com/colors/color-trends/" >Color Trends</a><li><li><a aria-label="How-To Brochures" href="https://www.dunnedwards.com/explore/how-to/how-to-brochures/" >How-To Brochures</a><li><li><a aria-label="Color Of The Year" href="https://www.dunnedwards.com/colors/color-of-the-year/" >Color Of The Year</a><li><li><a aria-label="Choosing A Painting Contractor" href="https://www.dunnedwards.com/explore/how-to/choose-a-painting-contractor" >Choosing A Painting Contractor</a><li><li><a aria-label="Check out our gallery" href="https://www.dunnedwards.com/explore/dream-it/kitchen/" >Check out our gallery</a><li></ul></li></li>
+</ul>
+</div>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-9057"><a href="https://www.dunnedwards.com/pro-resources/">Professionals</a>
+<div class="mobile-menu-arrow" tabindex="0" onclick="mobileMenuArrow(event)" onkeypress="mobileMenuArrow(event)">
+
+<svg>
+
+<use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#arrow"></use>
+
+</svg>
+
+</div>
+
+<div class="mobile-menu-submenu">
+
+<div class="mobile-menu-head">
+
+<div class="mobile-menu-back">
+
+<a aria-label="go back to main menu" href="javascript:;" onclick="mobileMenuBack(event)" onkeypress="mobileMenuBack(event)">
+
+<svg>
+
+<use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#arrow"></use>
+
+</svg>
+
+</a>
+
+</div>
+
+<div class="mobile-menu-title">
+
+<p>Professionals</p>
+
+</div>
+
+</div>
+
+<ul>
+<li><a aria-label="Explore by profession" href="https://www.dunnedwards.com/pro-resources/" >Explore by profession</a><li><li><a aria-label="Create an account" href="https://www.dunnedwards.com/users/register/">Create an account</a><li></li>
+</ul>
+</div>
+</li>
+</ul>
+
+        <div class="main-header-user">
+            <div class="user-actions">
+                <ul>
+                    <li>
+                        <a href="https://www.dunnedwards.com/users/login/">
+                            <div>
+                                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2026%2026'%3E%3C/svg%3E" width="26" height="26" alt="" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/themes/dunnedwards/assets/img/icons/user.svg"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/themes/dunnedwards/assets/img/icons/user.svg" width="26" height="26" alt=""></noscript>
+                            </div>
+                            <div><p>My Account</p></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.dunnedwards.com/colors/color-ark-pro/">
+                            <div>
+                                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2026%2026'%3E%3C/svg%3E" width="26" height="26" alt="" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/themes/dunnedwards/assets/img/icons/home.svg"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/themes/dunnedwards/assets/img/icons/home.svg" width="26" height="26" alt=""></noscript>
+                            </div>
+                            <div><p>Color-Ark Pro</p></div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.dunnedwards.com/users/logout">
+                            <div>
+                                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2026%2026'%3E%3C/svg%3E" width="26" height="26" alt="" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/themes/dunnedwards/assets/img/icons/logout.svg"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/themes/dunnedwards/assets/img/icons/logout.svg" width="26" height="26" alt=""></noscript>
+                            </div>
+                            <div><p>Log Out</p></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="mobile-menu-footer">
+        <div class="mobile-menu-btns">
+            <a href="https://www.dunnedwards.com/accounts/favorites/" aria-label="favorite">
+                <span class="sr-only">favorite</span>
+                <svg><use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#favorite"></use></svg>
+            </a>
+            <a href="https://www.dunnedwards.com/users/login/" aria-label="user" class="open-close-user account-menu-link">
+                <span class="sr-only">user</span>
+                <svg><use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#user"></use></svg>
+            </a>
+        </div>
+        <div class="mobile-menu-links">
+			                <a href="https://www.dunnedwards.com/contact-us/" title="Contact">Contact</a>
+			
+            <a href="#" class="open-button" onclick="openPopUp()" title="Shop">Shop</a>
+        </div>
+    </div>
+
+          <div class="mobile-menu-footer-dura">
+                                    <a href="https://dunnedwardsdura.com/pages/about-us?utm_medium=website&utm_source=de&utm_campaign=dura&utm_content=header%20small%20logo" title="Opens in a new tab" target="_blank">
+                    <span class="dura-heading">Proudly presenting</span>
+                    <img width="2500" height="986" class="dura-image" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202500%20986'%3E%3C/svg%3E" alt="Proudly presenting Dura" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/02/dura-R-transparent.png"><noscript><img width="2500" height="986" class="dura-image" src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/02/dura-R-transparent.png" alt="Proudly presenting Dura"></noscript>
+                </a>
+                 </div>
+    
+</div>					</header>
+
+		<!-- Announcement banner -->
+								
+		
+		<section id="content" role="main">
+							
+				<section data-component-key="tallHero"          class="tall-hero-component hero mh-700 hero-slider ">
+        <div class="slider-wrapper">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+                                  
+            <div class="hero-slide swiper-slide middle-text">
+              <div class="hero-slide-bg">
+                <picture>
+                  <source srcset="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/DE_2024_Trends_Home_Page_2560x1160-780x0-c-default.webp" type="image/webp" media="(max-width: 767px)">
+                  <source srcset="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/DE_2024_Trends_Home_Page_2560x1160-780x0-c-default.jpg" media="(max-width: 767px)">
+                  <img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/DE_2024_Trends_Home_Page_2560x1160.webp" alt="A person looking at the camera" class="exclude-lazy"
+                       onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/DE_2024_Trends_Home_Page_2560x1160.jpg'" role="presentation"
+                       width="100%" height="auto" loading="eager" importance="high">
+                </picture>
+              </div>
+              
+              <div class="container">
+                                  <div class="hero-text">
+                    <h1 style="margin-bottom: 0">A NEW BEGINNING</h1>
+<p>2024 COLOR + DESIGN</p>
+
+                  </div>
+                
+                                  <div class="hero-btn">
+                    <a href="https://www.dunnedwards.com/colors/color-trends/color-trends-2024/"  class="button">SEE THE FUTURE</a>
+                  </div>
+                              </div>
+            </div>
+  
+                                              
+            <div class="hero-slide swiper-slide middle-text">
+              <div class="hero-slide-bg">
+                <picture>
+                  <source data-lazy-srcset="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/Instant-Designer-hero-collection-page-e1685052791467-780x0-c-default.webp" type="image/webp" media="(max-width: 767px)">
+                  <source data-lazy-srcset="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/Instant-Designer-hero-collection-page-e1685052791467-780x0-c-default.jpg" media="(max-width: 767px)">
+                  <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" alt="A living room" class="exclude-lazy"
+                       onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/Instant-Designer-hero-collection-page-e1685052791467.jpg'" role="presentation"
+                       width="100%" height="auto"  importance="high" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/Instant-Designer-hero-collection-page-e1685052791467.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/Instant-Designer-hero-collection-page-e1685052791467.webp" alt="A living room" class="exclude-lazy"
+                       onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/Instant-Designer-hero-collection-page-e1685052791467.jpg'" role="presentation"
+                       width="100%" height="auto"  importance="high"></noscript>
+                </picture>
+              </div>
+              
+              <div class="container">
+                                  <div class="hero-text">
+                    <p>READY, SET, BEAUTIFUL</p>
+<h1>INSTANT DESIGNER COLLECTION</h1>
+
+                  </div>
+                
+                                  <div class="hero-btn">
+                    <a href="https://www.dunnedwards.com/colors/instant-designer/"  class="button">View The Experience</a>
+                  </div>
+                              </div>
+            </div>
+  
+                                              
+            <div class="hero-slide swiper-slide middle-text">
+              <div class="hero-slide-bg">
+                <picture>
+                  <source data-lazy-srcset="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/solid-color-hero-homepage-780x0-c-default.webp" type="image/webp" media="(max-width: 767px)">
+                  <source data-lazy-srcset="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/solid-color-hero-homepage-780x0-c-default.jpg" media="(max-width: 767px)">
+                  <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" alt="" class="exclude-lazy"
+                       onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/solid-color-hero-homepage.jpg'" role="presentation"
+                       width="100%" height="auto"  importance="high" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/solid-color-hero-homepage.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/solid-color-hero-homepage.webp" alt="" class="exclude-lazy"
+                       onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/solid-color-hero-homepage.jpg'" role="presentation"
+                       width="100%" height="auto"  importance="high"></noscript>
+                </picture>
+              </div>
+              
+              <div class="container">
+                                  <div class="hero-text">
+                    <p>EXTERIOR</p>
+<h2>SOLID-COLOR</h2>
+<p>DECK, FENCE &amp; SIDING STAIN</p>
+
+                  </div>
+                
+                                  <div class="hero-btn">
+                    <a href="https://www.dunnedwards.com/product/solid-color/"  class="button">LEARN MORE</a>
+                  </div>
+                              </div>
+            </div>
+  
+                                              
+            <div class="hero-slide swiper-slide top-text">
+              <div class="hero-slide-bg">
+                <picture>
+                  <source data-lazy-srcset="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/new-neutral-hero-color-page-scaled-1-780x0-c-default.webp" type="image/webp" media="(max-width: 767px)">
+                  <source data-lazy-srcset="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/new-neutral-hero-color-page-scaled-1-780x0-c-default.jpg" media="(max-width: 767px)">
+                  <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" alt="A vase of flowers sitting on a bed" class="exclude-lazy"
+                       onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/new-neutral-hero-color-page-scaled-1.jpg'" role="presentation"
+                       width="100%" height="auto"  importance="high" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/new-neutral-hero-color-page-scaled-1.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/new-neutral-hero-color-page-scaled-1.webp" alt="A vase of flowers sitting on a bed" class="exclude-lazy"
+                       onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/new-neutral-hero-color-page-scaled-1.jpg'" role="presentation"
+                       width="100%" height="auto"  importance="high"></noscript>
+                </picture>
+              </div>
+              
+              <div class="container">
+                                  <div class="hero-text">
+                    <p>INTRODUCING THE</p>
+<h1>NEW NEUTRALS COLLECTION</h1>
+<p>MAKE AN UNDERSTATEMENT</p>
+
+                  </div>
+                
+                                  <div class="hero-btn">
+                    <a href="https://www.dunnedwards.com/colors/collections/new-neutrals/"  class="button">LEARN MORE</a>
+                  </div>
+                              </div>
+            </div>
+  
+                                              
+            <div class="hero-slide swiper-slide middle-text">
+              <div class="hero-slide-bg">
+                <picture>
+                  <source data-lazy-srcset="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/03/EPP-Hero2-scaled-780x0-c-default.webp" type="image/webp" media="(max-width: 767px)">
+                  <source data-lazy-srcset="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/03/EPP-Hero2-scaled-780x0-c-default.jpg" media="(max-width: 767px)">
+                  <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" alt="A bedroom with a large mirror" class="exclude-lazy"
+                       onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/03/EPP-Hero2-scaled.jpg'" role="presentation"
+                       width="100%" height="auto"  importance="high" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/03/EPP-Hero2-scaled.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/03/EPP-Hero2-scaled.webp" alt="A bedroom with a large mirror" class="exclude-lazy"
+                       onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/03/EPP-Hero2-scaled.jpg'" role="presentation"
+                       width="100%" height="auto"  importance="high"></noscript>
+                </picture>
+              </div>
+              
+              <div class="container">
+                                  <div class="hero-text">
+                    <p><span style="color: black">THE EMERGING PROFESSIONALS DESIGN COMPETITION IS OPEN NOW THROUGH AUGUST 15,2023</span></p>
+<h2 style="color: black">CALLING ALL STUDENTS!</h2>
+
+                  </div>
+                
+                                  <div class="hero-btn">
+                    <a href="https://www.dunnedwards.com/about/epp_design_competition/"  class="button">LEARN MORE</a>
+                  </div>
+                              </div>
+            </div>
+  
+                                              
+            <div class="hero-slide swiper-slide middle-text">
+              <div class="hero-slide-bg">
+                <picture>
+                  <source data-lazy-srcset="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/10/Terra_Rosa-_Hero_Homepage-780x0-c-default.webp" type="image/webp" media="(max-width: 767px)">
+                  <source data-lazy-srcset="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/10/Terra_Rosa-_Hero_Homepage-780x0-c-default.jpg" media="(max-width: 767px)">
+                  <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" alt="Terra Rosa Hero Image" class="exclude-lazy"
+                       onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/10/Terra_Rosa-_Hero_Homepage.jpg'" role="presentation"
+                       width="100%" height="auto"  importance="high" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/10/Terra_Rosa-_Hero_Homepage.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/10/Terra_Rosa-_Hero_Homepage.webp" alt="Terra Rosa Hero Image" class="exclude-lazy"
+                       onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/10/Terra_Rosa-_Hero_Homepage.jpg'" role="presentation"
+                       width="100%" height="auto"  importance="high"></noscript>
+                </picture>
+              </div>
+              
+              <div class="container">
+                                  <div class="hero-text">
+                    <p>INTRODUCING DUNN-EDWARDS 2023 COLOR OF THE YEAR</p>
+<h1>Terra Rosa</h1>
+
+                  </div>
+                
+                                  <div class="hero-btn">
+                    <a href="https://www.dunnedwards.com/colors/color-of-the-year/terra-rosa-2023/"  class="button">SEE THE FUTURE</a>
+                  </div>
+                              </div>
+            </div>
+  
+                                              
+            <div class="hero-slide swiper-slide middle-text">
+              <div class="hero-slide-bg">
+                <picture>
+                  <source data-lazy-srcset="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/05/DE_Front_Door_Web_1470x730-780x0-c-default.webp" type="image/webp" media="(max-width: 767px)">
+                  <source data-lazy-srcset="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/05/DE_Front_Door_Web_1470x730-780x0-c-default.jpg" media="(max-width: 767px)">
+                  <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" alt="A dog looking at the camera" class="exclude-lazy"
+                       onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/05/DE_Front_Door_Web_1470x730.jpg'" role="presentation"
+                       width="100%" height="auto"  importance="high" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/05/DE_Front_Door_Web_1470x730.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/05/DE_Front_Door_Web_1470x730.webp" alt="A dog looking at the camera" class="exclude-lazy"
+                       onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/05/DE_Front_Door_Web_1470x730.jpg'" role="presentation"
+                       width="100%" height="auto"  importance="high"></noscript>
+                </picture>
+              </div>
+              
+              <div class="container">
+                                  <div class="hero-text">
+                    <p>DUNN-EDWARDS<sup>®</sup></p>
+<h2>FRONT DOOR LIMITED EDITION COLOR COLLECTION</h2>
+<p>LIFE IS A-DOOR-ABLE</p>
+
+                  </div>
+                
+                                  <div class="hero-btn">
+                    <a href="https://www.dunnedwards.com/colors/collections/front-door-limited-edition-color/"  class="button">Get Inspired</a>
+                  </div>
+                              </div>
+            </div>
+  
+                              </div>
+      </div>
+
+      <button type="button" class="slider-nav slider-nav-prev" aria-label="previous item">
+        <svg>
+          <use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#arrow"></use>
+        </svg>
+      </button>
+
+      <button type="button" class="slider-nav slider-nav-next" aria-label="next item">
+        <svg>
+          <use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#arrow"></use>
+        </svg>
+      </button>
+
+      <div class="hero-footer">
+        <button type="button" class="hero-auto hero-pause"><span class="sr-only">Pause button</span></button>
+        <div class="hero-pagination"></div>
+              </div>
+    </div>
+  </section>				<section data-component-key="regularBox"
+                  class="section regular-box per-row-4    short-images">
+    <div class="container">
+        
+                    <div class="regular-box-list">
+                                                                                                                        <div class="regular-box-item regular-box-content--no_bg">
+                                            <a href="https://www.dunnedwards.com/case-studies/" title=""                            class="regular-box-img " aria-label="regular box icon Case Studies">
+                            
+                                                                                                                                                                            
+                                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20233'%3E%3C/svg%3E" width="400px" height="233px"
+                                    alt="A large brick building"
+                                    class="exclude-lazy"
+                                    onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/06/UPS-Homepage-1-400x0-c-default.jpg'" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/06/UPS-Homepage-1-400x0-c-default.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/06/UPS-Homepage-1-400x0-c-default.webp" width="400px" height="233px"
+                                    alt="A large brick building"
+                                    class="exclude-lazy"
+                                    onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/06/UPS-Homepage-1-400x0-c-default.jpg'"></noscript>
+                                                    </a>
+
+                        <div class="regular-box-content"
+                             style="background-color: transparent">
+                                                            <h2>
+                                                                        <a href="https://www.dunnedwards.com/case-studies/" aria-label="Case Studies"
+                                                                              class="link-item" 
+                                        title="">
+                                        Case Studies
+                                    </a>
+                                </h2>
+                            
+                                                            <p >From residential and retail, to commercial and corporate — Dunn-Edwards has the Southwest covered. So why are we the #1 choice of professionals? Read our case studies!</p>
+                                                    </div>
+                    </div>
+                                                                                                                        <div class="regular-box-item regular-box-content--no_bg">
+                                            <a href="https://www.dunnedwards.com/careers/" title=""                            class="regular-box-img " aria-label="regular box icon A Job and a Future">
+                            
+                                                                                                                                                                            
+                                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20233'%3E%3C/svg%3E" width="400px" height="233px"
+                                    alt="A man standing next to a laptop"
+                                    class="exclude-lazy"
+                                    onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/06/employee-hero2-1-scaled-e1687474391459-400x0-c-default.jpg'" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/06/employee-hero2-1-scaled-e1687474391459-400x0-c-default.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/06/employee-hero2-1-scaled-e1687474391459-400x0-c-default.webp" width="400px" height="233px"
+                                    alt="A man standing next to a laptop"
+                                    class="exclude-lazy"
+                                    onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/06/employee-hero2-1-scaled-e1687474391459-400x0-c-default.jpg'"></noscript>
+                                                    </a>
+
+                        <div class="regular-box-content"
+                             style="background-color: transparent">
+                                                            <h2>
+                                                                        <a href="https://www.dunnedwards.com/careers/" aria-label="A Job and a Future"
+                                                                              class="link-item" 
+                                        title="">
+                                        A Job and a Future
+                                    </a>
+                                </h2>
+                            
+                                                            <p >Starting your career? Looking for a new challenge? Opportunity awaits at Dunn-Edwards. Discover the benefits of joining our team -- we can't wait to meet you!</p>
+                                                    </div>
+                    </div>
+                                                                                                                        <div class="regular-box-item regular-box-content--no_bg">
+                                                                                    <a href="https://dunnedwardsdura.com/pages/about-us?utm_medium=website&#038;utm_source=de&#038;utm_campaign=dura&#038;utm_content=homepage_module" title="Opens in a new tab" target="_blank"                           class="regular-box-img " aria-label="regular box icon Dunn-Edwards DURA">
+                            
+                                                                                                                                                                            
+                                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20233'%3E%3C/svg%3E" width="400px" height="233px"
+                                    alt="Website"
+                                    class="exclude-lazy"
+                                    onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/dura-homepage_sm-400x0-c-default.jpg'" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/dura-homepage_sm-400x0-c-default.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/dura-homepage_sm-400x0-c-default.webp" width="400px" height="233px"
+                                    alt="Website"
+                                    class="exclude-lazy"
+                                    onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/05/dura-homepage_sm-400x0-c-default.jpg'"></noscript>
+                                                    </a>
+
+                        <div class="regular-box-content"
+                             style="background-color: transparent">
+                                                            <h2>
+                                                                        <a href="https://dunnedwardsdura.com/pages/about-us?utm_medium=website&#038;utm_source=de&#038;utm_campaign=dura&#038;utm_content=homepage_module" aria-label="Dunn-Edwards DURA"
+                                       target="_blank"                                       class="link-item" 
+                                        title="Opens in a new tab">
+                                        Dunn-Edwards DURA
+                                    </a>
+                                </h2>
+                            
+                                                            <p >Meet our online sub-brand that offers an expertly curated palette of 210 colors and provides support tools and services to simplify the process of selecting the right paint color and sheen: online!</p>
+                                                    </div>
+                    </div>
+                                                                                                                        <div class="regular-box-item regular-box-content--no_bg">
+                                            <a href="https://www.dunnedwards.com/about/history/" title="Opens in a new tab"                            class="regular-box-img " aria-label="regular box icon History">
+                            
+                                                                                                                                                                            
+                                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20400%20233'%3E%3C/svg%3E" width="400px" height="233px"
+                                    alt="A group of people posing for a photo"
+                                    class="exclude-lazy"
+                                    onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/06/history-Homepage-400x0-c-default.jpg'" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/06/history-Homepage-400x0-c-default.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/06/history-Homepage-400x0-c-default.webp" width="400px" height="233px"
+                                    alt="A group of people posing for a photo"
+                                    class="exclude-lazy"
+                                    onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/06/history-Homepage-400x0-c-default.jpg'"></noscript>
+                                                    </a>
+
+                        <div class="regular-box-content"
+                             style="background-color: transparent">
+                                                            <h2>
+                                                                        <a href="https://www.dunnedwards.com/about/history/" aria-label="History"
+                                                                              class="link-item" 
+                                        title="Opens in a new tab">
+                                        History
+                                    </a>
+                                </h2>
+                            
+                                                            <p >Since 1925, Dunn-Edwards has been dedicated to providing exceptional paints and services at a reasonable price. Learn how we got here.</p>
+                                                    </div>
+                    </div>
+                            </div>
+            </div>
+</section>
+				    <section data-component-key="fancyBoxWithCta"  class="section about-colors pt-1">
+        <div class="container">
+                            <h2>WE KNOW COLOR</h2>
+            
+            
+            <div class="about-colors-list per-row-2">
+                                    <div data-bg="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/07/homepage_huefor-you_625X432.jpg" class="about-colors-item imgbg rocket-lazyload"
+                             style="" role="presentation">
+
+                                                <div class="about-colors-content "
+                            style="background-color: #FBE573">
+                            <div class="about-colors-inner">
+                                <div class="about-colors-text">
+                                                                            <h3 class="caption-2">THE HUE FOR YOU</h3>
+                                    
+                                                                            <p>Colors evoke a range of feelings and affect our mood. Yet, it can be difficult to decide. Our Professional Color Advisors provide color consultations in-store, online, or now in the comfort of your home.</p>
+                                                                    </div>
+
+                                                                    <div class="about-colors-btn">
+                                        <a href="https://www.dunnedwards.com/colors/color-consultation/"  class="button">Find Your Hue <span class="sr-only">about THE HUE FOR YOU</span></a>
+                                    </div>
+                                                            </div>
+                                                            <div class="about-colors-footer">
+                                    <a href="https://www.dunnedwards.com/colors/browser/de5410/">Golden Glitter | DE5410</a>
+<a href="javascript:;" class="favorite-link" data-type="color" data-key="DE5410" aria-label="favorites">
+  <svg>
+    <use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#favorite" class="favorite-link-inactive"></use>
+    <use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#favorite-active" class="favorite-link-active"></use>
+  </svg>
+</a>
+                                </div>
+                            
+                                                            <div class="about-colors-decor">
+                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20120%20145'%3E%3C/svg%3E" width="120px" height="145px"
+                                         alt="Chart, sunburst chart" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/02/fan-deck.png'" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/02/fan-deck.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/02/fan-deck.webp" width="120px" height="145px"
+                                         alt="Chart, sunburst chart" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/02/fan-deck.png'"></noscript>
+                                </div>
+                                                    </div>
+
+                                            </div>
+                                    <div data-bg="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/06/Color-Trend-2023-Color-Page.jpg" class="about-colors-item imgbg rocket-lazyload"
+                             style="" role="presentation">
+
+                                                <div class="about-colors-content "
+                            style="background-color: #88D9D8">
+                            <div class="about-colors-inner">
+                                <div class="about-colors-text">
+                                                                            <h3 class="caption-2">LATEST TRENDS</h3>
+                                    
+                                                                            <p>Color surrounds us, and it takes just a moment of inspiration to discover the hues that reflect our world. Quickly, others see it as well… and a trend is born.</p>
+                                                                    </div>
+
+                                                                    <div class="about-colors-btn">
+                                        <a href="https://www.dunnedwards.com/colors/color-trends/"  class="button">Explore <span class="sr-only">about LATEST TRENDS</span></a>
+                                    </div>
+                                                            </div>
+                                                            <div class="about-colors-footer">
+                                    <a href="https://www.dunnedwards.com/colors/browser/de5730/">Island Oasis | DE5730</a>
+<a href="javascript:;" class="favorite-link" data-type="color" data-key="DE5730" aria-label="favorites">
+  <svg>
+    <use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#favorite" class="favorite-link-inactive"></use>
+    <use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#favorite-active" class="favorite-link-active"></use>
+  </svg>
+</a>
+                                </div>
+                            
+                                                    </div>
+
+                                            </div>
+                            </div>
+            
+        </div>
+    </section>
+				<div data-component-key="contentPlusInfoBox"  class="section content-info-box ">
+  <div class="container 1">
+    
+    <div class="layout-row justify-content-between flex-wrap">
+      <div class="content-info-box-content">
+        <h2 style="text-align: left">PROFESSIONALS</h2>
+<p style="text-align: left"><span data-sheets-formula-bar-text-style="font-size:15px;color:#000000;font-weight:normal;text-decoration:none;font-family:'docs-Barlow';font-style:normal;text-decoration-skip-ink:none;">We value our pro partners and &#8212; whether you paint, design, plan, manage, build, or carry our products &#8212; we have the tools you need to thrive.</span></p>
+<p style="text-align: left">
+              </div>
+
+	            <div class="content-info-box-info">
+                            <div class="content-info-box-inner" >
+                  <h3 class="caption-3" style="text-align: left">Create a Dunn-Edwards PRO account</h3>
+<p style="text-align: left">Sign up today for an account to unlock a variety of features only available to professionals.</p>
+<p style="text-align: left"><a class="button" href="https://www.dunnedwards.com/users/login/">GET STARTED</a></p>
+
+                                    </div>
+                      </div>
+	      </div>
+  </div>
+</div>				<div data-component-key="fancyBoxMixt"  class="section text-img text-img--text-center text-img--separated  ">
+    <div class="container">
+                    <h2>CUSTOMER APPRECIATION VIDEO</h2>
+                <div class="text-img-inner">
+            <div class="text-img-content" style="background-color:#f4f4f5">
+                                    <div class="text-img-text"><h2>A heartfelt message of thanks from our employees</h2>
+<p>Sure, we make the paint. We work hard to ensure you get the right color and the best quality. But why do we do it? We do it because we care about you – our customers. Without our loyal customers, our business wouldn’t thrive. Please take a minute to allow Dunn-Edwards employees to give you a sincere thank you – from the paint lab to the executive suite.</p>
+</div>
+                
+                            </div>
+
+            <div class="text-img-img">
+                                                                    <a href="https://www.youtube.com/watch?v=CjX-U8MLI9g&enablejsapi=1" aria-label="component media fancy box" data-fancybox>
+                                                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201080%20720'%3E%3C/svg%3E" width="1080" height="720" alt="Image with dunn edwards logo" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/07/appreciation.jpg'" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/07/appreciation.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/07/appreciation.webp" width="1080" height="720" alt="Image with dunn edwards logo" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/07/appreciation.jpg'"></noscript>
+                                                            </a>
+                                        
+                            </div>
+        </div>
+    </div>
+</div>
+				<div data-component-key="regularBoxCarousel"  class="section content-carousel regular-box-carousel ">
+  <div class="slider-wrapper">
+    
+    
+    <button type="button" class="slider-control slider-control-prev" aria-label="Previous slide">
+        <svg>
+          <use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#arrow"></use>
+        </svg>
+      </button>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+                      <div class="content-carousel-item swiper-slide ">
+                              <a href="https://www.dunnedwards.com/pro-resources/architects/"  class="content-carousel-img" aria-label="carousel item">
+                  <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%" height="auto"
+                       alt="A group of people in a pool" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-architects-1.jpg'" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-architects-1.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-architects-1.webp" width="100%" height="auto"
+                       alt="A group of people in a pool" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-architects-1.jpg'"></noscript>
+                </a>
+              
+              <div class="content-carousel-content" >
+                                  <h2>
+                    <a href="https://www.dunnedwards.com/pro-resources/architects/"  class="link-item" >ARCHITECTS</a>
+                  </h2>
+                
+                              </div>
+            </div>
+                      <div class="content-carousel-item swiper-slide ">
+                              <a href="https://www.dunnedwards.com/pro-resources/builders-and-developers/"  class="content-carousel-img" aria-label="carousel item">
+                  <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%" height="auto"
+                       alt="Smiling engineer shaking hands at construction site with happy architect. Handshake between cheerful african construction manager with businessman at bulding site. Team of workers with architects and contractor conclude an agreement with safety uniform." onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/06/Builders-Hero-1.jpg'" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/06/Builders-Hero-1.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/06/Builders-Hero-1.webp" width="100%" height="auto"
+                       alt="Smiling engineer shaking hands at construction site with happy architect. Handshake between cheerful african construction manager with businessman at bulding site. Team of workers with architects and contractor conclude an agreement with safety uniform." onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/06/Builders-Hero-1.jpg'"></noscript>
+                </a>
+              
+              <div class="content-carousel-content" >
+                                  <h2>
+                    <a href="https://www.dunnedwards.com/pro-resources/builders-and-developers/"  class="link-item" >BUILDERS AND DEVELOPERS</a>
+                  </h2>
+                
+                              </div>
+            </div>
+                      <div class="content-carousel-item swiper-slide ">
+                              <a href="https://www.dunnedwards.com/pro-resources/commercial-contractors/"  class="content-carousel-img" aria-label="carousel item">
+                  <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%" height="auto"
+                       alt="A close up of a tower" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/04/commercial-contractor-building-scaled.jpg'" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/04/commercial-contractor-building-scaled.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/04/commercial-contractor-building-scaled.webp" width="100%" height="auto"
+                       alt="A close up of a tower" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/04/commercial-contractor-building-scaled.jpg'"></noscript>
+                </a>
+              
+              <div class="content-carousel-content" >
+                                  <h2>
+                    <a href="https://www.dunnedwards.com/pro-resources/commercial-contractors/"  class="link-item" >COMMERCIAL CONTRACTORS</a>
+                  </h2>
+                
+                              </div>
+            </div>
+                      <div class="content-carousel-item swiper-slide ">
+                              <a href="https://www.dunnedwards.com/pro-resources/dealers/"  class="content-carousel-img" aria-label="carousel item">
+                  <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%" height="auto"
+                       alt="A store front at day" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/03/820x455-dealers2.jpg'" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/03/820x455-dealers2.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/03/820x455-dealers2.webp" width="100%" height="auto"
+                       alt="A store front at day" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/03/820x455-dealers2.jpg'"></noscript>
+                </a>
+              
+              <div class="content-carousel-content" >
+                                  <h2>
+                    <a href="https://www.dunnedwards.com/pro-resources/dealers/"  class="link-item" >DEALERS</a>
+                  </h2>
+                
+                              </div>
+            </div>
+                      <div class="content-carousel-item swiper-slide ">
+                              <a href="https://www.dunnedwards.com/pro-resources/emerging-professionals/"  class="content-carousel-img" aria-label="carousel item">
+                  <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%" height="auto"
+                       alt="Smiling Art Student lying on Floor" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/01/EPP-Girl.jpg'" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/01/EPP-Girl.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/01/EPP-Girl.webp" width="100%" height="auto"
+                       alt="Smiling Art Student lying on Floor" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2023/01/EPP-Girl.jpg'"></noscript>
+                </a>
+              
+              <div class="content-carousel-content" >
+                                  <h2>
+                    <a href="https://www.dunnedwards.com/pro-resources/emerging-professionals/"  class="link-item" >DESIGN STUDENT</a>
+                  </h2>
+                
+                              </div>
+            </div>
+                      <div class="content-carousel-item swiper-slide ">
+                              <a href="https://www.dunnedwards.com/pro-resources/education/"  class="content-carousel-img" aria-label="carousel item">
+                  <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%" height="auto"
+                       alt="A large brick building" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-education.jpg'" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-education.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-education.webp" width="100%" height="auto"
+                       alt="A large brick building" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-education.jpg'"></noscript>
+                </a>
+              
+              <div class="content-carousel-content" >
+                                  <h2>
+                    <a href="https://www.dunnedwards.com/pro-resources/education/"  class="link-item" >EDUCATION</a>
+                  </h2>
+                
+                              </div>
+            </div>
+                      <div class="content-carousel-item swiper-slide ">
+                              <a href="https://www.dunnedwards.com/pro-resources/government-agencies/"  class="content-carousel-img" aria-label="carousel item">
+                  <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%" height="auto"
+                       alt="A large building" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-government.jpg'" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-government.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-government.webp" width="100%" height="auto"
+                       alt="A large building" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-government.jpg'"></noscript>
+                </a>
+              
+              <div class="content-carousel-content" >
+                                  <h2>
+                    <a href="https://www.dunnedwards.com/pro-resources/government-agencies/"  class="link-item" >GOVERNMENT AGENCIES</a>
+                  </h2>
+                
+                              </div>
+            </div>
+                      <div class="content-carousel-item swiper-slide ">
+                              <a href="https://www.dunnedwards.com/pro-resources/interior-designers/"  class="content-carousel-img" aria-label="carousel item">
+                  <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%" height="auto"
+                       alt="A living room filled with furniture and a lamp" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-interior-designers.jpg'" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-interior-designers.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-interior-designers.webp" width="100%" height="auto"
+                       alt="A living room filled with furniture and a lamp" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-interior-designers.jpg'"></noscript>
+                </a>
+              
+              <div class="content-carousel-content" >
+                                  <h2>
+                    <a href="https://www.dunnedwards.com/pro-resources/interior-designers/"  class="link-item" >INTERIOR DESIGNERS</a>
+                  </h2>
+                
+                              </div>
+            </div>
+                      <div class="content-carousel-item swiper-slide ">
+                              <a href="https://www.dunnedwards.com/pro-resources/community-and-property-managers/"  class="content-carousel-img" aria-label="carousel item">
+                  <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%" height="auto"
+                       alt="A group of people in front of a house" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-property-Managers.jpg'" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-property-Managers.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-property-Managers.webp" width="100%" height="auto"
+                       alt="A group of people in front of a house" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-property-Managers.jpg'"></noscript>
+                </a>
+              
+              <div class="content-carousel-content" >
+                                  <h2>
+                    <a href="https://www.dunnedwards.com/pro-resources/community-and-property-managers/"  class="link-item" >PROPERTY MANAGERS</a>
+                  </h2>
+                
+                              </div>
+            </div>
+                      <div class="content-carousel-item swiper-slide ">
+                              <a href="https://www.dunnedwards.com/pro-resources/residential-contractors/"  class="content-carousel-img" aria-label="carousel item">
+                  <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%200'%3E%3C/svg%3E" width="100%" height="auto"
+                       alt="A large brick building with grass in front of a house" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-residential.jpg'" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-residential.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-residential.webp" width="100%" height="auto"
+                       alt="A large brick building with grass in front of a house" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/12/820x455-residential.jpg'"></noscript>
+                </a>
+              
+              <div class="content-carousel-content" >
+                                  <h2>
+                    <a href="https://www.dunnedwards.com/pro-resources/residential-contractors/"  class="link-item" >RESIDENTIAL CONTRACTORS</a>
+                  </h2>
+                
+                              </div>
+            </div>
+                  </div>
+      </div>
+
+      <button type="button" class="slider-control slider-control-next" aria-label="Next slide">
+        <svg>
+          <use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#arrow"></use>
+        </svg>
+      </button>
+	    </div>
+</div>				<div data-component-key="iconsBanner"  class="section perks " style="color: #fff">
+    <div class="container">
+        
+        <div style="background-color: #bf9ce2;"             class="perks-inner text-black">
+
+                            <h2 class="h5">Membership Has Its Perks. Sign Up Today.</h2>
+            
+                            <div class="perks-list">
+                                            <div class="perks-item">
+                                                            <div class="perks-icon">
+                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%2040'%3E%3C/svg%3E" width="40px" height="40px" alt="Icon" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/04/group-9@3x.png"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/04/group-9@3x.png" width="40px" height="40px" alt="Icon"></noscript>
+                                </div>
+                            
+                                                            <div class="perks-text">
+                                    <p>Pros: Apply for a purchasing account to access an array of services and tools</p>
+                                </div>
+                                                    </div>
+                                            <div class="perks-item">
+                                                            <div class="perks-icon">
+                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%2040'%3E%3C/svg%3E" width="40px" height="40px" alt="Icon" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/04/group-13@3x.png"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/04/group-13@3x.png" width="40px" height="40px" alt="Icon"></noscript>
+                                </div>
+                            
+                                                            <div class="perks-text">
+                                    <p>Pros: Take advantage of our business-boosting information and guidance</p>
+                                </div>
+                                                    </div>
+                                            <div class="perks-item">
+                                                            <div class="perks-icon">
+                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%2040'%3E%3C/svg%3E" width="40px" height="40px" alt="Shape, arrow" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/04/combined-shape-copy-4@3x.png"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/04/combined-shape-copy-4@3x.png" width="40px" height="40px" alt="Shape, arrow"></noscript>
+                                </div>
+                            
+                                                            <div class="perks-text">
+                                    <p>Consumers: Save your favorite color, products and articles in one convenient place</p>
+                                </div>
+                                                    </div>
+                                            <div class="perks-item">
+                                                            <div class="perks-icon">
+                                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%2040'%3E%3C/svg%3E" width="40px" height="40px" alt="Icon" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/04/group-6@3x.png"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/04/group-6@3x.png" width="40px" height="40px" alt="Icon"></noscript>
+                                </div>
+                            
+                                                            <div class="perks-text">
+                                    <p>Consumers: Use Color-Ark Home to store your project details - including color and type of paint</p>
+                                </div>
+                                                    </div>
+                                    </div>
+            
+                            <div class="perks-btn">
+                    <a href="https://www.dunnedwards.com/users/login/"  class="button">learn more</a>
+                </div>
+                    </div>
+    </div>
+</div>				                
+<div data-component-key="fancyBox"      class="section fancy-box-content fancy-box-content--first-l ">
+    <div class="container">
+                                  <h2>INSPIRATION IS EVERYWHERE</h2>
+                    
+        <div class="fancy-box-content-list">
+                                    
+                                                                                                        
+                                                                                                                                                                                                                                    
+                                                                <div class="fancy-box-content-item ">
+                            <div class="fancy-box-content-bg">
+                                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20730%20410'%3E%3C/svg%3E" width="730" height="410"
+                                    alt="graffiti" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/04/bee-graffiti_article.jpg'" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/04/bee-graffiti_article.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/04/bee-graffiti_article.webp" width="730" height="410"
+                                    alt="graffiti" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2022/04/bee-graffiti_article.jpg'"></noscript>
+                                                            </div>
+
+                                                            <div class="fancy-box-content-content text-black" style="background-color: #8ed568">
+                                    <a href="https://www.dunnedwards.com/pros/blog/upcycled-paint-leaves-mark-on-a-hidden-farm-in-las-arlington-heights-neighborhood/"                                        class="link-item text-black" style="background-color: #8ed568" aria-label="Upcycled Paint Project Blossoms at L.A. Mini Farm">Upcycled Paint Project Blossoms at L.A. Mini Farm</a>
+                                </div>
+                                                    </div>
+                                                                                                                                                                                                                                                            
+                                                                <div class="fancy-box-content-item ">
+                            <div class="fancy-box-content-bg">
+                                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20780%20433'%3E%3C/svg%3E" width="780" height="433"
+                                    alt="A living room filled with furniture and a flat screen tv" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/10/ACCENT-4.jpg'" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/10/ACCENT-4.webp"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/10/ACCENT-4.webp" width="780" height="433"
+                                    alt="A living room filled with furniture and a flat screen tv" onerror="this.onerror=null; this.src='https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/10/ACCENT-4.jpg'"></noscript>
+                                                            </div>
+
+                                                            <div class="fancy-box-content-content text-black" style="background-color: #f78b84">
+                                    <a href="https://www.dunnedwards.com/pros/blog/luxe-living-at-los-diegos-highlighting-the-latest-raskind-remodel/"                                        class="link-item text-black" style="background-color: #f78b84" aria-label="Luxe Living at Los Diegos: Highlighting the Latest Raskind Remodel">Luxe Living at Los Diegos: Highlighting the Latest Raskind Remodel</a>
+                                </div>
+                                                    </div>
+                                                        </div>
+    </div>
+</div>				<div data-component-key="boxedContentWithCta"      class="section boxed-content mb-12">   <!-- 'pb-18' is optional -->
+    <div class="container">
+                    <div class="boxed-content-list">
+                                    <div class="boxed-content-item">
+                                                    <div class="boxed-content-icon">
+                                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2057%2050'%3E%3C/svg%3E" width="57px" height="50px" alt="A close up of a sign" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/07/group-19.png"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/07/group-19.png" width="57px" height="50px" alt="A close up of a sign"></noscript>
+                            </div>
+                        
+                                                    <h2 class="caption-1">COLOR ADVISORS</h2>
+                        
+                                                    <p>Inspiration can happen in a moment, but with so many choices, making a decision can be challenging. Our Professional Color Advisors are here to help with your color selection process!</p>
+                        
+                        
+                                                                                                                        <div class="boxed-content-btn mt-4">
+                                        <a href="https://www.dunnedwards.com/colors/color-consultation/" class="button" aria-label="Learn More">Learn More</a>
+                                    </div>
+                                                                                                        </div>
+                                    <div class="boxed-content-item">
+                                                    <div class="boxed-content-icon">
+                                <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2057%2050'%3E%3C/svg%3E" width="57px" height="50px" alt="A close up of a sign" data-lazy-src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/04/group-16.png"><noscript><img src="https://h6a8m2f3.rocketcdn.me/wp-content/uploads/2021/04/group-16.png" width="57px" height="50px" alt="A close up of a sign"></noscript>
+                            </div>
+                        
+                                                    <h2 class="caption-1">Find a Store</h2>
+                        
+                                                    <p>Dunn-Edwards products are sold in 149 company stores and 90 dealers across Arizona, California, Nevada, New Mexico Kentucky, Montana, Oregon, Texas, Utah and Wyoming.
+</p>
+                        
+                        
+                                                                                                                        <div class="boxed-content-btn mt-4">
+                                        <a href="https://www.dunnedwards.com/find-a-store/" class="button" aria-label="Visit Us">Visit Us</a>
+                                    </div>
+                                                                                                        </div>
+                            </div>
+            </div>
+</div>	
+		</section>
+
+					<!-- Main Footer start -->
+<footer class="main-footer">
+    <div class="container">
+        <div class="main-footer-top">
+            <div class="layout-row flex-wrap">
+  <div class="main-footer-top-item">
+    <div class="main-footer-top-title" id="newsletter">
+      <span>Sign up for our newsletter</span>
+    </div>
+    <div class="main-footer-desc">
+      <p>Get the latest color trends and design inspirations. Unsubscribe at any time.</p>
+    </div>
+    <div class="hubspot-sign-up"></div>
+  </div>
+
+      <div class="main-footer-top-item">
+      <div class="main-footer-top-title">
+        <p>Follow us</p>
+      </div>
+      <div class="main-footer-socials">
+        <ul>
+                      <li>
+              <a href="https://instagram.com/dunnedwards/" target="_blank" aria-label="instagram">
+                <svg>
+                  <use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#instagram"></use>
+                </svg>
+              </a>
+            </li>
+                                <li>
+              <a href="https://www.facebook.com/dunnedwards" target="_blank" aria-label="facebook">
+                <svg>
+                  <use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+                                <li>
+              <a href="https://www.pinterest.com/dunnedwards/" target="_blank" aria-label="pinterest">
+                <svg>
+                  <use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#pinterest"></use>
+                </svg>
+              </a>
+            </li>
+                                      <li>
+                    <a href="https://www.tiktok.com/@dunnedwardsofficial" target="_blank" aria-label="tikTok">
+                        <svg>
+                            <use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#tikTok"></use>
+                        </svg>
+                    </a>
+                </li>
+                                  <li>
+              <a href="https://twitter.com/DunnEdwards" target="_blank" aria-label="twitter">
+                <svg>
+                  <use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+                                      <li>
+                    <a href="https://open.spotify.com/user/sbzzjf5v6u8gugxyaidulkj73?si=c04f391695644eb8" target="_blank" aria-label="spotify">
+                        <svg>
+                            <use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#spotify"></use>
+                        </svg>
+                    </a>
+                </li>
+                                  <li>
+              <a href="https://www.linkedin.com/company/dunn-edwards-corporation" target="_blank" aria-label="linkedin">
+                <svg>
+                  <use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+                                <li>
+              <a href="https://www.youtube.com/user/dunnedwards" target="_blank" aria-label="youtube">
+                <svg>
+                  <use xlink:href="https://www.dunnedwards.com/wp-content/themes/dunnedwards/dist/svg/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+                  </ul>
+      </div>
+    </div>
+  </div>        </div>
+        <div class="main-footer-middle">
+            <div class="layout-row flex-wrap">
+            <div class="main-footer-menu">
+            <div class="main-footer-menu-title  menu-item menu-item-type-custom menu-item-object-custom menu-item-224 menu-item-has-children">
+                <a href="https://www.dunnedwards.com/colors/" >Colors</a>
+                <div class="main-footer-menu-open"></div>
+            </div>
+                            <div class="main-footer-menu-list">
+                    <ul>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-239">
+                                <a href="https://www.dunnedwards.com/colors/" >Colors</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-241">
+                                <a href="https://www.dunnedwards.com/colors/color-samples-orders/" >Order Color Samples</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-244">
+                                <a href="https://www.dunnedwards.com/colors/color-consultation/" >Professional Color Consultation</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-246">
+                                <a href="https://www.dunnedwards.com/colors/color-trends/" >Color Trends</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-242">
+                                <a href="https://www.dunnedwards.com/pros/specs/" >specs+spaces® Design Blog</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-240">
+                                <a href="https://www.dunnedwards.com/colors/instacolor/" >Dunn-Edwards InstaColor®</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-245">
+                                <a href="https://www.dunnedwards.com/colors/download-color-swatches/" >Download Color Swatches</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-243">
+                                <a href="https://www.dunnedwards.com/colors/color-ark-pro/" >Color Archives</a>
+                            </li>
+                                            </ul>
+                </div>
+                    </div>
+            <div class="main-footer-menu">
+            <div class="main-footer-menu-title  menu-item menu-item-type-custom menu-item-object-custom menu-item-223 menu-item-has-children">
+                <a href="https://www.dunnedwards.com/products/" >Products</a>
+                <div class="main-footer-menu-open"></div>
+            </div>
+                            <div class="main-footer-menu-list">
+                    <ul>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-228">
+                                <a href="https://www.dunnedwards.com/products-filter/interior-paints-and-coatings/" >Interior Paints & Primers</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-229">
+                                <a href="https://www.dunnedwards.com/products-filter/exterior-paints-and-coatings/" >Exterior Paints & Primers</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-230">
+                                <a href="https://www.dunnedwards.com/products-filter/industrial-and-high-performance-paints-and-coatings/" >Industrial & High Performance</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-31117">
+                                <a href="https://www.dunnedwards.com/products/documentation/" >Documents & Certificates</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-29507">
+                                <a href="https://issuu.com/dunn-edwards/docs/coatings_guide_pgs_5-17" >Coatings Reference Guide</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-29508">
+                                <a href="https://issuu.com/dunn-edwards/docs/english_catalog_11-3-22_pages" >Paints & Sundries Catalog - English</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-29527">
+                                <a href="https://issuu.com/dunn-edwards/docs/spanish_catalog_11-3-22_pages" >Paints & Sundries Catalog - Spanish</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-233">
+                                <a href="https://www.dunnedwards.com/products/specification-guide/" >Specification Guide</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-234">
+                                <a href="https://www.dunnedwards.com/technical-bulletins/" >Technical Bulletins</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-231">
+                                <a href="https://www.dunnedwards.com/our-suppliers/" >Our Suppliers</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-235">
+                                <a href="https://www.dunnedwards.com/products/conformance-and-certifications/" >Certifications & Conformance</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-236">
+                                <a href="https://www.dunnedwards.com/products/lifetime-warranty/" >Lifetime Warranty</a>
+                            </li>
+                                            </ul>
+                </div>
+                    </div>
+            <div class="main-footer-menu">
+            <div class="main-footer-menu-title  menu-item menu-item-type-custom menu-item-object-custom menu-item-225 menu-item-has-children">
+                <a href="https://www.dunnedwards.com/explore/how-to/" >How To</a>
+                <div class="main-footer-menu-open"></div>
+            </div>
+                            <div class="main-footer-menu-list">
+                    <ul>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-247">
+                                <a href="https://www.dunnedwards.com/explore/how-to/choosing-color/" >Choosing Color</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-248">
+                                <a href="https://www.dunnedwards.com/explore/how-to/selecting-gloss/" >Selecting Gloss</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-251">
+                                <a href="https://www.dunnedwards.com/explore/how-to/project-planner/" >Paint Calculator</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-252">
+                                <a href="https://www.dunnedwards.com/explore/how-to/paint-problem-solver/" >Paint Problem Solver</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-250">
+                                <a href="https://www.dunnedwards.com/explore/how-to/videos/" >Videos</a>
+                            </li>
+                                            </ul>
+                </div>
+                    </div>
+            <div class="main-footer-menu">
+            <div class="main-footer-menu-title  menu-item menu-item-type-custom menu-item-object-custom menu-item-226 menu-item-has-children">
+                <a href="https://www.dunnedwards.com/about/history/" >About Us</a>
+                <div class="main-footer-menu-open"></div>
+            </div>
+                            <div class="main-footer-menu-list">
+                    <ul>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-253">
+                                <a href="https://www.dunnedwards.com/about/history/" >History</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-263">
+                                <a href="https://www.dunnedwards.com/about/made-in-the-usa/" >Made in the U.S.A.</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-254">
+                                <a href="https://www.dunnedwards.com/about/why-dunn-edwards/" >Why Dunn-Edwards</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-256">
+                                <a href="https://www.dunnedwards.com/about/environment/" >Environment</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-255">
+                                <a href="https://www.dunnedwards.com/case-studies/" >Case Studies</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-260">
+                                <a href="https://www.dunnedwards.com/careers/" >Careers</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-257">
+                                <a href="https://www.dunnedwards.com/press-releases/in-the-news/" >Newsroom</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-258">
+                                <a href="https://www.dunnedwards.com/about/events/" >Events</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-259">
+                                <a href="https://www.dunnedwards.com/about/newsletters/" >Newsletter</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-29266">
+                                <a href="https://www.cognitoforms.com/DunnEdwardsCorporation/DunnEdwardsDonationRequestForm" >Donations</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-262">
+                                <a href="https://www.dunnedwards.com/contact-us/" >Contact Us</a>
+                            </li>
+                                            </ul>
+                </div>
+                    </div>
+            <div class="main-footer-menu">
+            <div class="main-footer-menu-title  menu-item menu-item-type-custom menu-item-object-custom menu-item-227 menu-item-has-children">
+                <a href="https://www.dunnedwards.com/full-store-list/" >Directory</a>
+                <div class="main-footer-menu-open"></div>
+            </div>
+                            <div class="main-footer-menu-list">
+                    <ul>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-264">
+                                <a href="https://www.dunnedwards.com/find-a-store/" >Find a Store</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-265">
+                                <a href="https://www.dunnedwards.com/full-store-list/" >Store List</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-266">
+                                <a href="https://www.dunnedwards.com/usa-dealers-store-list/" >Find a Dealer</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-267">
+                                <a href="https://www.dunnedwards.com/find-painting-contractors/" >Find a Paint Pro</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-268">
+                                <a href="https://www.dunnedwards.com/contact-rep/" >Contact a Pro Rep</a>
+                            </li>
+                                                    <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-30992">
+                                <a href="https://www.dunnedwards.com/sitemap/" >Sitemap</a>
+                            </li>
+                                            </ul>
+                </div>
+                    </div>
+    </div>        </div>
+        <div class="main-footer-bottom">
+            <div class="layout-row">
+    <div class="main-footer-links">
+        <ul>
+                        <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-21859">
+                <a href="https://www.dunnedwards.com/vendor-information/" >Vendor Information</a>
+            </li>
+                        <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-21858">
+                <a href="https://www.dunnedwards.com/privacy-policy/" >Privacy Policy</a>
+            </li>
+                        <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-21857">
+                <a href="https://www.dunnedwards.com/ca-privacy-notice/" >CA Privacy Notice</a>
+            </li>
+                        <li class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-21856">
+                <a href="https://www.dunnedwards.com/terms-of-use/" >Terms of Use</a>
+            </li>
+                        <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-30602">
+                <a href="https://www.dunnedwards.com/social-media-policy/" >Social Media Policy</a>
+            </li>
+                    </ul>
+        <ul>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-217">
+                    <a href="https://www.dunnedwards.com/mobile-terms-of-use/" >Mobile Messaging</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-218">
+                    <a href="https://www.dunnedwards.com/web-accessibility/" >Web Accessibility</a>
+                </li>
+                            <li class=" menu-item menu-item-type-custom menu-item-object-custom menu-item-24668">
+                    <a href="https://de-production-media.s3.amazonaws.com/loft/167/DunnEdwards_StatementCaliforniaTransparencySupplyChains_Act2.pdf" target="_blank">CA Supply Chains Act</a>
+                </li>
+                    </ul>
+    </div>
+    <div class="copyright">
+        <p>© 2023 Dunn-Edwards Corporation. All rights reserved.</p>
+    </div>
+</div>        </div>
+    </div>
+    <button class="to-top" type="button">
+        <span class="sr-only">Go to top</span>
+    </button>
+</footer>
+<!-- Main Footer end -->
+
+
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/accounts\/api\/favorites\/|\/colors\/collections\/perfect-palette\/|\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.dunnedwards.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://h6a8m2f3.rocketcdn.me/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script>		
+		<div id="header-overlay"></div>
+		<div id="fixed-overlay"></div>
+
+				<div class="modal fade" id="modalFavorites" tabindex="-1" role="dialog" aria-labelledby="modalFavoritesLabel" aria-hidden="true">
+    <div class="modal-credit-services modal-small modal-dialog modal-dialog-centered modal-dialog-scrollable"
+         role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalFavoritesLabel">Please log in</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>To save and access favorites, please <a href="https://www.dunnedwards.com/users/login/">login</a>.</p>
+            </div>
+        </div>
+    </div>
+</div>
+		<script type="rocketlazyloadscript" src="https://h6a8m2f3.rocketcdn.me/wp-content/themes/dunnedwards/dist/js/libs.min.js" defer></script>
+		<script type="rocketlazyloadscript" src="https://h6a8m2f3.rocketcdn.me/wp-content/themes/dunnedwards/dist/js/main.min.js" defer></script>
+		
+		<script type="rocketlazyloadscript" data-minify="1" data-rocket-type="text/javascript" src="https://h6a8m2f3.rocketcdn.me/wp-content/cache/min/1/pages/scripts/0094/8225.js?ver=1687172073" async="async" ></script>
+
+		<!--[if lte IE 8]>
+			<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+		<![endif]-->
+		<script type="rocketlazyloadscript" charset="utf-8" data-rocket-type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript">window.addEventListener('DOMContentLoaded', function() {
+			$(document).ready(function() {
+				hbspt.forms.create({
+					region           : "na1",
+					portalId         : "6537909",
+					formId           : "19216e1f-a462-45ea-9d83-b6058987b198",
+					cssClass         : "main-footer-row",
+					target           : ".hubspot-sign-up",
+					submitButtonClass: "button",
+					onFormReady: function($form) {
+						$form[0].reset();
+					}
+				});
+        			});
+		});</script>
+
+		
+		
+				
+			</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

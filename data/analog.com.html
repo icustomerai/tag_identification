@@ -1,0 +1,1416 @@
+﻿
+
+
+
+<!DOCTYPE html>
+<!--[if IE 7]>		   <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>		   <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9]>		   <html class="no-js lt-ie10" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<!-- fe0b44f2-bafb-4e1d-bb29-3cfd969bac86|p|w -->
+<head>
+
+
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="follow, index" />
+    <title>Mixed-signal and digital signal processing ICs | Analog Devices</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Analog Devices is a global leader in the design and manufacturing of analog, mixed signal, and DSP integrated circuits to help solve the toughest engineering challenges." />
+    <meta name="viewport" id="adiviewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="analog devices, adi, digital signal processing, analog, dsp integrated circuits" />
+    <meta name="breadcrumb" content="Home" />
+    <meta name="pageInfoType" content="Home" />
+    <meta name="verify-v1" content="EH6D19wZGxG0dpmm3/iUbsWFvGU/hZp9p5Vs5UuoIXI=" />
+    <meta name="y_key" content="fdd5bc59ae0e6340" />
+    <meta name="msvalidate.01" content="381E86BC7EF76D19F9365D26D8BFCD35" />
+    <meta name="baidu-site-verification" content="cSddD8r1N7" />
+    <meta name="yandex-verification" content="86a60d9bcaab43f0" />
+    <meta name="google-site-verification" content="aVOSmh5Dsd1VpzYMM3a_ZvOQcjP9G5GDlvU-atf48ss" />
+        <link rel="canonical" href="https://www.analog.com/en/index.html">
+                <link rel="alternate" hreflang=x-default href="https://www.analog.com/en/index.html" />
+                <link rel="alternate" hreflang=en-US href="https://www.analog.com/en/index.html" />
+                <link rel="alternate" hreflang=zh-Hans-CN href="https://www.analog.com/cn/index.html" />
+                <link rel="alternate" hreflang=ja-JP href="https://www.analog.com/jp/index.html" />
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    
+
+
+<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,400i,500,500i,600,600i,700,700i|Barlow:300,300i,400,400i,500,500i,600,600i,700,700i|Inter&display=swap" rel="stylesheet">
+<link href="https://assets.analog.com/css/bootstrap.css" rel="stylesheet" media="all" />
+<link href="https://assets.analog.com/css/vendor.css" rel="stylesheet" media="all" />
+<link href="https://assets.analog.com/css/global.css" rel="stylesheet" media="all" />
+<link href="https://assets.analog.com/css/print.css" rel="stylesheet" media="print" />
+    <link href="https://assets.analog.com/lib/css/components.css" rel="stylesheet">
+
+    <script>
+        var isForceDesktopCookie = (document.cookie.indexOf("forcedesktopview") > -1) ? document.cookie.substring(document.cookie.indexOf("forcedesktopview"),
+            (document.cookie.indexOf(";", document.cookie.indexOf("forcedesktopview")) > -1) ?
+                document.cookie.indexOf(";", document.cookie.indexOf("forcedesktopview")) : document.cookie.length) : "";
+
+        isForceDesktopCookie = (isForceDesktopCookie) ? isForceDesktopCookie.split("=")[1] : '';
+
+        if (isForceDesktopCookie) {
+            var mvp = document.getElementById('adiviewport');
+            mvp.setAttribute('content', 'width=1024');
+        }
+    </script>
+
+
+<script src="https://assets.analog.com/js/adi/modernizr.js" type="text/javascript"></script>
+
+            <link rel="preload" href="https://assets.analog.com/lib/css/home.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+            <noscript><link rel="stylesheet" href="https://assets.analog.com/lib/css/home.css"></noscript>
+
+
+
+        <script src="https://assets.analog.com/lib/scripts/page-home.js" type="text/javascript"></script>
+
+    <script src="https://assets.analog.com/js/adi/vendor.js" type="text/javascript"></script>
+
+
+
+    
+        <script>
+            var datalayer = {"device":{"browser":"","type":""},"page":{"details":{"part":{"applicableParts":null,"categories":null,"id":"{DF300DF4-E134-49C7-82E6-5AF72F5CFA65}","lifeCycle":null,"markets":null,"name":"home","type":"Home Page"}},"meta":{"breadcrumbs":null,"id":"{DF300DF4-E134-49C7-82E6-5AF72F5CFA65}","journey":null,"language":"en","pathname":"/en/index.html","persona":null,"publishDate":null,"title":"Mixed-signal and digital signal processing ICs | Analog Devices","taxonomy":null,"type":"Home"}},"user":{"cart":{"purchaseID":"","sampleID":"","transactionID":""},"email":"","loggedIn":false,"blocked":false,"memberStatus":false}}
+        </script>
+</head>
+<body class="home"  >
+
+        <ol class="list-inline nbm hide">
+
+        </ol>
+
+
+    
+ <div class="saveToMyAnalog visible-xs"><button id="myAnalogWidgetBtn" class="widget-Btn" name="myAnalog"></button></div><header id="header" data-braze="true" data-assets-path="https://assets.analog.com" data-IsNonCore="False" data-commerce-cn="true" data-commerce-ww="true" data-do-not-replace="false"><i class="fa fa-spinner fa-spin"></i><script> var adiHData = { subDomains: [{"key":"analogdialogue","label":"<strong>Analog</strong>Dialogue","url":"https://www.analog.com/en/analog-dialogue.html"},{"key":"EZ","label":"<strong>Engineer</strong>Zone","url":"https://ez.analog.com"},{"key":"wiki","label":"<strong>Wiki</strong>","url":"https://wiki.analog.com/"},{"key":"careers","label":"<strong>Careers</strong>","url":"https://www.analog.com/en/about-adi/careers.html"}], locales: [{"code":"en","label":"English"},{"code":"cn","label":"简体中文"},{"code":"jp","label":"日本語"}], regions: [{"label":"India","url":"https://www.analog.com/en/landing-pages/001/india-welcome.html"},{"label":"Korea","url":"https://www.analog.com/en/landing-pages/001/korea-welcome.html"},{"label":"Singapore","url":"https://www.analog.com/en/landing-pages/001/singapore-welcome.html"},{"label":"Taiwan","url":"https://www.analog.com/en/landing-pages/001/taiwan-welcome.html"}], paths: { careers: "https://careers.analog.com", crossReference: "https://www.analog.com/cpsearch/CrossReferenceSearch.aspx", fail: "/client/Home/GetNavigationContent?navigation={tab}&amp;languageCode={lang}", manifest: "/cdp/adicommon/versionconfig.json?host={host}", myAnalog: "https://my.analog.com", search: "https://www.analog.com/en/search.html", adiRoot: "https://www.analog.com", autoSearch: "https://www.analog.com/en/client/Search/GetPredictiveSearchResultsJson", legacyCart: "https://shoppingcart.analog.com/ShoppingCartPage.aspx?locale={lang}", maximStore: "https://www.maximintegrated.com/en/storefront/storefront.html?login=force" }, labels: {"sampleCenter":"Sample Center","languages":"Languages","designCenter":"Design Center","clear":"Clear","noItemsInCart":"There are no items in your cart","company":"Company","myAnalog":"MyAnalog","rmb":"¥ Yuan Cart","support":"Support","close":"Close","applications":"Applications","careers":"<strong>Careers</strong>","back":"Back","education":"Education","samples":"Samples","viewAll":"View All","cartsProcessedSeparately":"Your $USD and ¥RMB carts must be processed individually","region":"Region","usd":"$ USD Cart","itemCount":"{count} Items","quantity":"Quantity","products":"Products","viewCart":"View Cart","shoppingCart":"Shopping Cart","orderMaximProducts":"Quickly order Maxim Integrated products in production or prototype quantities.","maximStorefront":"Maxim Store Front","crossReference":"Cross Reference Search","search":"Search"}, menu: {"Company":{"path":"/company","label":"Company","order":1,"qaElement":"link_company"},"MyAnalog":{"path":"/MyAnalog","label":"myAnalog","order":2,"qaElement":"link_myAnalog"},"Products":{"path":"/product-category","label":"Products","order":3,"qaElement":"link_products"},"Applications":{"path":"/applications","label":"Applications","order":4,"qaElement":"link_applications"},"Design Center":{"path":"/design-center","label":"Design Center","order":5,"qaElement":"link_designcenter"},"Education":{"path":"/education","label":"Education","order":6,"qaElement":"link_education"},"Support":{"path":"/support","label":"Support","order":7,"qaElement":"link_support"}} } </script></header><div class="container"><div class="socialmediawidget socialmediawidget-main visible-desktop SavetoAnalog"><ul class="clearfix visible-lg visible-md"><li class="link print" onclick="window.print();return false;"><a href="#" name="Print"> Print </a></li><li class="saveToMyAnalog"><button id="myAnalogWidgetBtn" class="widget-Btn" name="myAnalog"></button></li></ul><div id="myAnalog-widget" style="display:none"></div><script id="template-save-to-myAnalog-prelogin" type="text/x-handlebars-template"><div class="saveToMyAnalog widget"><div class="authenticate"><p class="message">{{message}}</p><button class="btn btn-primary">{{loginToMyAnalog}}</button><div class="other actions"><span>{{dontHaveAnAccount}}</span>&nbsp; <a href={{registerLink}}>{{registerNow}}</a></div></div></div></script><script id="template-save-to-myAnalog-postlogin" type="text/x-handlebars-template"><div class="saveToMyAnalog widget"><div class="saveTo createProject"><div class="tab-header"><ul><li data-tab="saveToWidget" class="active">{{saveTo}}</li><li data-tab="createProject">{{newProject}}</li></ul><span class="helper-text">* {{required}}</span></div> {{#if RESOURCES}} <div class="selected-resources" id="selectedResources"><span class="count">0</span><span> {{selected}}</span></div> {{/if}} <div class="save-to-widget tab active" id="saveToWidget"> {{#if PST}} <label>* {{saveModelsTo}}</label> {{/if}} {{#if PDP}} <label>* <span class="productLabel">{{saveTo}}</span><span>{{saveProductTo}}</span></label> {{/if}} {{#if RESOURCES}} <label>* {{saveResourceTo}}</label> {{/if}} <div class="select-product dropdown"><div class="selected-value"><span>myAnalog</span><img class="angle down" alt="down" src="https://assets.analog.com/images/myanalog/data-arrow-open.svg" loading="lazy" /><img class="angle up" alt="up" src="https://assets.analog.com/images/myanalog/data-arrow-open.svg" loading="lazy" /></div><ul class="hide"><li>myAnalog</li> {{#if projects}} {{#each projects}} <li id="{{ id }}">{{ title }}</li> {{/each}} {{/if}} </ul><div class="validation-message" style="display:none"></div></div></div><div class="create-new-item-widget tab" id="createProject"><div class="input-control"><label>* {{createNewProject}}</label><input type="text" placeholder="{{projectName}}" id="newProjectTitle" maxlength="128" /><div class="validation-message" style="display:none"></div></div><div class="add item active"><button class="outline-button"><img class="plus-icon" src="https://assets.analog.com/images/myanalog/plus.svg" alt="add" loading="lazy" />{{addDescription}} </button><textarea id="projectDescription"></textarea><div class="validation-message" style="display:none"></div></div></div> {{#if PST}} <div class="pst-table-name"><div class="input-control"><label>* {{tableName}}</label><input type="text" placeholder="{{enterTableName}}" id="pstTableName" /><div class="validation-message" style="display:none"></div></div><div class="add item active"><button class="outline-button"><img class="plus-icon" src="https://assets.analog.com/images/myAnalog/plus.svg" alt="add" loading="lazy" />{{addNote}} </button><textarea id="tableNote"></textarea><div class="validation-message" style="display:none"></div></div></div> {{/if}} {{#if RESOURCES}} <div class="add item active"><button class="outline-button"><img class="plus-icon" src="https://assets.analog.com/images/myAnalog/plus.svg" alt="add" loading="lazy" />{{addNote}}</button><textarea id="resourceNote"></textarea><div class="validation-message" style="display:none"></div></div> {{/if}} {{#if PST}} <div class="widget-footer single btn"><button class="btn btn-primary pst" id="saveProductToMyanalog">{{savePST}}</button></div> {{/if}} {{#if PDP}} <div class="widget-footer single btn"><button class="btn btn-primary pdp" id="saveProductToMyanalog"><span class="productLabel">{{saveProduct}}</span><span>{{save}}</span></button></div> {{/if}} {{#if RESOURCES}} <div class="widget-footer single btn"><button class="btn btn-primary resource" id="saveProductToMyanalog">{{saveResource}}</button></div> {{/if}} </div><div class="saved info hide" id="savedInfo"><h5><span>{{savedTo}}</span><img class="saved-myAnalog-logo" alt="myAnalog" src="https://assets.analog.com/images/myanalog/myAnalog-logo.svg" loading="lazy" /></h5><div class="saved-message"> {{#if PDP }} <h5><span class="productLabel">{{productSavedTo}}</span><span>{{resourceSavedTo}}</span> " <span id="savedTo"></span>" </h5> {{/if}} {{#if PST }} <h5>{{tableSavedTo}} "<span id="savedTo"></span>"</h5> {{/if}} {{#if RESOURCES }} <h5>{{resourceSavedTo}} "<span id="savedTo"></span>"</h5> {{/if}} {{#if PDP }} <div class="pcn-notification"><div class="switch"><input type="checkbox" class="toggle" name="PCNPDNNotification" id="pcnNotify" /><label for="pcnNotify"></label></div><span><label for="pcnNotify">{{ turnOnPCNNotification }}</label></span></div> {{/if}} </div></div><div class="widget-footer single hide" id="mySavedFooter"><a href="#" target="_blank"><img class="share-icon" src="https://assets.analog.com/images/myanalog/link.svg" alt="share-icon" loading="lazy" /> {{#if PDP}} <span class="productLabel">{{viewMySavedProducts}}</span><span>{{viewMySavedResources}}</span> {{/if}} {{#if PST}} <span>{{viewMySavedProducts}}</span> {{/if}} {{#if RESOURCES}} <span>{{viewMySavedResources}}</span> {{/if}} </a></div></div></script></div></div><div class="breadcrumb adicrumb visible-desktop" name="adi_breadcrumb" aria-label="breadcrumb"><div class="container"><ol class="list-inline nbm"><li><a href="https://www.analog.com/en/index.html" class="home" alt="Home" title="Home"></a></li></ol></div></div><script id="template-save-to-myAnalog-postlogin" type="text/x-handlebars-template"><div class="saveToMyAnalog widget"><div class="saveTo createProject"><div class="tab-header"><ul><li data-tab="saveToWidget" class="active">{{saveTo}}</li><li data-tab="createProject">{{newProject}}</li></ul><span class="helper-text">* {{required}}</span></div> {{#if RESOURCES}} <div class="selected-resources" id="selectedResources"><span class="count">0</span><span> {{selected}}</span></div> {{/if}} <div class="save-to-widget tab active" id="saveToWidget"> {{#if PST}} <label>* {{saveModelsTo}}</label> {{/if}} {{#if PDP}} <label> *<span class="productLabel">{{saveTo}}</span><span>{{saveProductTo}}</span></label> {{/if}} {{#if RESOURCES}} <label>* {{saveResourceTo}}</label> {{/if}} <div class="select-product dropdown"><div class="selected-value"><span>myAnalog</span><img class="angle down" alt="down" src="https://assets.analog.com/images/myanalog/data-arrow-open.svg" loading="lazy" /><img class="angle up" alt="up" src="https://assets.analog.com/images/myanalog/data-arrow-open.svg" loading="lazy" /></div><ul class="hide"><li>myAnalog</li> {{#if projects}} {{#each projects}} <li id="{{ id }}">{{ title }}</li> {{/each}} {{/if}} </ul><div class="validation-message" style="display:none"></div></div></div><div class="create-new-item-widget tab" id="createProject"><div class="input-control"><label>* {{createNewProject}}</label><input type="text" placeholder="{{projectName}}" id="newProjectTitle" maxlength="128" /><div class="validation-message" style="display:none"></div></div><div class="add item active"><button class="outline-button"><img class="plus-icon" src="https://assets.analog.com/images/myanalog/plus.svg" alt="add" loading="lazy" /> {{addDescription}} </button><textarea id="projectDescription"></textarea><div class="validation-message" style="display:none"></div></div></div> {{#if PST}} <div class="pst-table-name"><div class="input-control"><label>* {{tableName}}</label><input type="text" placeholder="{{enterTableName}}" id="pstTableName" /><div class="validation-message" style="display:none"></div></div><div class="add item active"><button class="outline-button"><img class="plus-icon" src="https://assets.analog.com/images/myAnalog/plus.svg" alt="add" loading="lazy" /> {{addNote}} </button><textarea id="tableNote"></textarea><div class="validation-message" style="display:none"></div></div></div> {{/if}} {{#if RESOURCES}} <div class="add item active"><button class="outline-button"><img class="plus-icon" src="https://assets.analog.com/images/myAnalog/plus.svg" alt="add" loading="lazy" /> {{addNote}} </button><textarea id="resourceNote"></textarea><div class="validation-message" style="display:none"></div></div> {{/if}} {{#if PST}} <div class="widget-footer single btn"><button class="btn btn-primary pst" id="saveProductToMyanalog">{{savePST}}</button></div> {{/if}} {{#if PDP}} <div class="widget-footer single btn"><button class="btn btn-primary pdp" id="saveProductToMyanalog"><span class="productLabel">{{saveProduct}}</span><span>{{save}}</span></button></div> {{/if}} {{#if RESOURCES}} <div class="widget-footer single btn"><button class="btn btn-primary resource" id="saveProductToMyanalog">{{saveResource}}</button></div> {{/if}} </div><div class="saved info hide" id="savedInfo"><h5><span>{{savedTo}}</span><img class="saved-myAnalog-logo" alt="myAnalog" src="https://assets.analog.com/images/myanalog/myAnalog-logo.svg" loading="lazy" /></h5><div class="saved-message"> {{#if PDP }} <h5><span class="productLabel">{{productSavedTo}}</span><span>{{resourceSavedTo}}</span> "<span id="savedTo"></span>" </h5> {{/if}} {{#if PST }} <h5> {{tableSavedTo}} "<span id="savedTo"></span>" </h5> {{/if}} {{#if RESOURCES }} <h5> {{resourceSavedTo}} "<span id="savedTo"></span>" </h5> {{/if}} {{#if PDP }} <div class="pcn-notification"><div class="switch"><input type="checkbox" class="toggle" name="PCNPDNNotification" id="pcnNotify" /><label for="pcnNotify"></label></div><span><label for="pcnNotify">{{ turnOnPCNNotification }}</label></span></div> {{/if}} </div></div><div class="widget-footer single hide" id="mySavedFooter"><a href="#" target="_blank"><img class="share-icon" src="https://assets.analog.com/images/myanalog/link.svg" alt="share-icon" loading="lazy" /> {{#if PDP}} <span class="productLabel">{{viewMySavedProducts}}</span><span>{{viewMySavedResources}}</span> {{/if}} {{#if PST}} <span>{{viewMySavedProducts}}</span> {{/if}} {{#if RESOURCES}} <span>{{viewMySavedResources}}</span> {{/if}} </a></div></div></script>
+
+
+    <noscript>Enable javascript</noscript>
+    <div class="content" role="main">
+
+        
+
+        
+
+
+
+        <div>
+
+
+
+
+
+
+
+<div class="row visible-desktop">
+
+
+    </div>
+<div id="myPageContainer" data-ezuser="lallison" data-ezcount="100"> </div>
+        <style>
+            .tabbedCarouselPromo__slideContentMediaContainer .productVideoFloat:not( :empty ) {
+                margin-top: 110px;
+            }
+        </style>
+        <!-- Desktop Layout-->
+        <section class="tabbedCarouselPromo tabbedCarouselPromo__desktop">
+            <!-- slide container -->
+            <div class="carouselPromoSlides tabbed-carousel owl-carousel">
+                    <!-- Slide (default) -->
+                    <div class="carouselPromoSlides__carouselSlide__heroKnockedOut item" style="background-image: url(https://www.analog.com/-/media/analog/en/home/new-carousel/2023/battery-powered-desktop.jpg?la=en&amp;imgver=1);">
+                        <div class="slideContent container tabbedCarouselPromo__slideContent">
+                            <div class="row tabbedCarouselPromo__slideContent__row">
+                                <div class="col-xs-12 col-md-8">
+                                        <div class="carouselPromoSlides__carouselSlide__heroKnockedOut--subBrandLogoInvisible"></div>
+
+                                    <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__promoTitle">
+                                        <h1>
+POWER YOU CAN TRUST                                        </h1>
+                                    </div>
+                                    <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__promoTitleTag">
+                                        <p>
+ADI’s industrial, battery-powered solutions ensure safe and efficient performance in emerging industrial applications such as cobots, field instruments, industrial sensors, and more.                                         </p>
+                                    </div>
+                                    <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__ctaButton">
+                                                <a href="https://www.analog.com/en/products/landing-pages/001/industrial-battery-powered-solutions.html" target="">
+                                                    EXPLORE BATTERY-POWERED SOLUTIONS
+                                                </a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-4 tabbedCarouselPromo__slideContentMediaContainer">
+                                        <div class="productImageFloat"></div>
+                                                                            <div class="productVideoFloat"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide (default) -->
+                    <div class="carouselPromoSlides__carouselSlide__heroKnockedOut item" style="background-image: url(https://www.analog.com/-/media/analog/en/home/new-carousel/2022/02-myanalog.jpg?la=en&amp;imgver=1);">
+                        <div class="slideContent container tabbedCarouselPromo__slideContent">
+                            <div class="row tabbedCarouselPromo__slideContent__row">
+                                <div class="col-xs-12 col-md-8">
+                                        <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__subBrandLogo">
+                                           <img src="https://www.analog.com/-/media/analog/en/home/new-carousel/2022/myanalog-logo-white.svg?la=en&amp;imgver=1"
+                                                     alt="myAnalog Logo" />
+                                        </div>
+
+                                    <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__promoTitle">
+                                        <h1>
+PLUG IN TO<br>MYANALOG                                        </h1>
+                                    </div>
+                                    <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__promoTitleTag">
+                                        <p>
+Get the full Analog.com experience. Create a myAnalog account for easy order management, access to our dedicated support resources and forums, collaboration tools, personalized content curation, and more.                                        </p>
+                                    </div>
+                                    <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__ctaButton">
+                                                <a href="https://my.analog.com/en/app/registration?returnUrl=https://my.analog.com/en" target="">
+                                                    LOG IN OR CREATE AN ACCOUNT TODAY
+                                                </a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-4 tabbedCarouselPromo__slideContentMediaContainer">
+                                        <div class="productImageFloat"></div>
+                                                                            <div class="productVideoFloat"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide (default) -->
+                    <div class="carouselPromoSlides__carouselSlide__heroKnockedOut item" style="background-image: url(https://www.analog.com/-/media/analog/en/home/new-carousel/2023/cleantech-desktop.jpg?la=en&amp;imgver=1);">
+                        <div class="slideContent container tabbedCarouselPromo__slideContent">
+                            <div class="row tabbedCarouselPromo__slideContent__row">
+                                <div class="col-xs-12 col-md-8">
+                                        <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__subBrandLogo">
+                                           <img src="https://www.analog.com/-/media/analog/en/home/new-carousel/2022/signals-plus-logo-white.svg?la=en&amp;imgver=1"
+                                                     alt="Signals+ Logo" />
+                                        </div>
+
+                                    <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__promoTitle">
+                                        <h1>
+THE FUTURE OF<br>ENERGY, CLEANTECH,<br>AND SUSTAINABILITY                                         </h1>
+                                    </div>
+                                    <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__promoTitleTag">
+                                        <p>
+Advances in electrification, renewable energy, and enhanced motor efficiency all help with decarbonization efforts. What other technology initiatives lie ahead in the push for greater sustainability?                                        </p>
+                                    </div>
+                                    <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__ctaButton">
+                                                <a href="https://www.analog.com/en/signals/articles/future-of-energy-cleantech-sustainability.html" target="">
+                                                    READ MORE ON SIGNALS+
+                                                </a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-4 tabbedCarouselPromo__slideContentMediaContainer">
+                                        <div class="productImageFloat"></div>
+                                                                            <div class="productVideoFloat"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide (default) -->
+                    <div class="carouselPromoSlides__carouselSlide__heroKnockedOut item" style="background-image: url(https://www.analog.com/-/media/analog/en/home/new-carousel/2023/fae-careers-desktop.jpg?la=en&amp;imgver=1);">
+                        <div class="slideContent container tabbedCarouselPromo__slideContent">
+                            <div class="row tabbedCarouselPromo__slideContent__row">
+                                <div class="col-xs-12 col-md-8">
+                                        <div class="carouselPromoSlides__carouselSlide__heroKnockedOut--subBrandLogoInvisible"></div>
+
+                                    <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__promoTitle">
+                                        <h1>
+FIELD APPLICATION ENGINEER CAREERS AT ANALOG DEVICES                                        </h1>
+                                    </div>
+                                    <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__promoTitleTag">
+                                        <p>
+FAEs are the voice of the customer to all of ADI and are the tip of the technology solutions spear. Come build your career at ADI and be the catalyst for customer success and global impact.                                        </p>
+                                    </div>
+                                    <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__ctaButton">
+                                                <a href="https://www.analog.com/en/about-adi/careers/fae-careers-at-adi.html" target="">
+                                                    LEARN ABOUT FAE JOBS AT ADI
+                                                </a>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-4 tabbedCarouselPromo__slideContentMediaContainer">
+                                        <div class="productImageFloat"></div>
+                                                                            <div class="productVideoFloat"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <!-- /slide container -->
+                <!-- tab container -->
+                <div class="tabbedCarouselPromo__carouselTabs">
+                    <ul class="tabbedCarouselPromo__carouselTabs__nav container">
+                            <!-- tab -->
+                            <li class="tabbedCarouselPromo__carouselTabs__nav__navItem active">
+                                <a class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab url" href="#battery-powered">
+                                    <p class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab__titleTag">
+                                        <span>
+Industrial Battery-Powered Solutions                                        </span>
+                                    </p>
+                                    <p class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab__title">
+Power You Can Trust                                    </p>
+                                </a>
+                            </li>
+                            <!-- tab -->
+                            <li class="tabbedCarouselPromo__carouselTabs__nav__navItem">
+                                <a class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab url" href="#plug-in-to-myanalog">
+                                    <p class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab__titleTag">
+                                        <span>
+Get the Full ADI Experience                                        </span>
+                                    </p>
+                                    <p class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab__title">
+myAnalog                                    </p>
+                                </a>
+                            </li>
+                            <!-- tab -->
+                            <li class="tabbedCarouselPromo__carouselTabs__nav__navItem">
+                                <a class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab url" href="#cleantech">
+                                    <p class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab__titleTag">
+                                        <span>
+What Is Energy’s Future?                                        </span>
+                                    </p>
+                                    <p class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab__title">
+Energy Sustainability                                    </p>
+                                </a>
+                            </li>
+                            <!-- tab -->
+                            <li class="tabbedCarouselPromo__carouselTabs__nav__navItem">
+                                <a class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab url" href="#field-applications-engineer">
+                                    <p class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab__titleTag">
+                                        <span>
+Be an FAE with Impact                                        </span>
+                                    </p>
+                                    <p class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab__title">
+FAE Jobs at ADI                                    </p>
+                                </a>
+                            </li>
+                        <!-- tab -->
+                    </ul>
+                </div>
+                <!-- /tab container -->
+        </section>
+        <!-- Mobile Layout-->
+        <section class="tabbedCarouselPromo tabbedCarouselPromo__mobile">
+            <!-- slide container -->
+            <div class="carouselPromoSlides tabbed-carousel-mobile owl-carousel">
+                    <!-- Slide (default) -->
+                    <div class="carouselPromoSlides__carouselSlide__heroKnockedOut item" style="background-image: url(https://www.analog.com/-/media/analog/en/home/new-carousel/2023/battery-powered-mobile.jpg?la=en&amp;imgver=1);">
+                        <div class="slideContent container tabbedCarouselPromo__slideContent">
+                                <div class="carouselPromoSlides__carouselSlide__heroKnockedOut--subBrandLogoInvisible"></div>
+
+                            <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__promoTitle">
+                                <h1>
+POWER YOU CAN TRUST                                </h1>
+                            </div>
+                            <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__promoTitleTag">
+                                <p>
+ADI’s industrial, battery-powered solutions ensure safe and efficient performance in emerging industrial applications such as cobots, field instruments, industrial sensors, and more.                                 </p>
+                            </div>
+                            <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__ctaButton">
+                                        <a href="https://www.analog.com/en/products/landing-pages/001/industrial-battery-powered-solutions.html" target="">
+                                            EXPLORE BATTERY-POWERED SOLUTIONS
+                                        </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide (default) -->
+                    <div class="carouselPromoSlides__carouselSlide__heroKnockedOut item" style="background-image: url(https://www.analog.com/-/media/analog/en/home/new-carousel/2022/02-myanalog-mobile2.jpg?la=en&amp;imgver=1);">
+                        <div class="slideContent container tabbedCarouselPromo__slideContent">
+                                <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__subBrandLogo">
+                                    <img src="https://www.analog.com/-/media/analog/en/home/new-carousel/2022/myanalog-logo-white.svg?la=en&amp;imgver=1"
+                                             alt="myAnalog Logo" />
+                                </div>
+
+                            <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__promoTitle">
+                                <h1>
+PLUG IN TO MYANALOG                                </h1>
+                            </div>
+                            <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__promoTitleTag">
+                                <p>
+Get the full Analog.com experience. Create a myAnalog account for easy order management, access to our dedicated support resources and forums, collaboration tools, personalized content curation, and more.                                </p>
+                            </div>
+                            <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__ctaButton">
+                                        <a href="https://my.analog.com/en/app/registration?returnUrl=https://my.analog.com/en" target="">
+                                            LOG IN OR CREATE AN ACCOUNT TODAY
+                                        </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide (default) -->
+                    <div class="carouselPromoSlides__carouselSlide__heroKnockedOut item" style="background-image: url(https://www.analog.com/-/media/analog/en/home/new-carousel/2023/cleantech-mobile.jpg?la=en&amp;imgver=1);">
+                        <div class="slideContent container tabbedCarouselPromo__slideContent">
+                                <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__subBrandLogo">
+                                    <img src="https://www.analog.com/-/media/analog/en/home/new-carousel/2022/signals-plus-logo-white.svg?la=en&amp;imgver=1"
+                                             alt="Signals+ Logo" />
+                                </div>
+
+                            <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__promoTitle">
+                                <h1>
+THE FUTURE OF ENERGY, CLEANTECH, AND SUSTAINABILITY                                 </h1>
+                            </div>
+                            <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__promoTitleTag">
+                                <p>
+Advances in electrification, renewable energy, and enhanced motor efficiency all help with decarbonization efforts. What other technology initiatives lie ahead in the push for greater sustainability?                                </p>
+                            </div>
+                            <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__ctaButton">
+                                        <a href="https://www.analog.com/en/signals/articles/future-of-energy-cleantech-sustainability.html" target="">
+                                            READ MORE ON SIGNALS+
+                                        </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide (default) -->
+                    <div class="carouselPromoSlides__carouselSlide__heroKnockedOut item" style="background-image: url(https://www.analog.com/-/media/analog/en/home/new-carousel/2023/fae-careers-mobile.jpg?la=en&amp;imgver=1);">
+                        <div class="slideContent container tabbedCarouselPromo__slideContent">
+                                <div class="carouselPromoSlides__carouselSlide__heroKnockedOut--subBrandLogoInvisible"></div>
+
+                            <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__promoTitle">
+                                <h1>
+FIELD APPLICATION ENGINEER CAREERS AT ANALOG DEVICES                                </h1>
+                            </div>
+                            <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__promoTitleTag">
+                                <p>
+FAEs are the voice of the customer to all of ADI and are the tip of the technology solutions spear. Come build your career at ADI and be the catalyst for customer success and global impact.                                </p>
+                            </div>
+                            <div class="carouselPromoSlides__carouselSlide__heroKnockedOut__ctaButton">
+                                        <a href="https://www.analog.com/en/about-adi/careers/fae-careers-at-adi.html" target="">
+                                            LEARN ABOUT FAE JOBS AT ADI
+                                        </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <!-- /slide container -->
+                <!-- tab container -->
+                <div class="tabbedCarouselPromo__carouselTabs">
+                    <ul class="tabbedCarouselPromo__carouselTabs__nav container">
+                            <!-- tab -->
+                            <li class="tabbedCarouselPromo__carouselTabs__nav__navItem active">
+                                <a class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab url" href="#mob-battery-powered">
+                                    <p class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab__titleTag">
+                                        <span>
+Industrial Battery-Powered Solutions                                        </span>
+                                    </p>
+                                    <p class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab__title">
+Power You Can Trust                                    </p>
+                                </a>
+                            </li>
+                            <!-- tab -->
+                            <li class="tabbedCarouselPromo__carouselTabs__nav__navItem">
+                                <a class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab url" href="#mob-plug-in-to-myanalog">
+                                    <p class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab__titleTag">
+                                        <span>
+Get the Full ADI Experience                                        </span>
+                                    </p>
+                                    <p class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab__title">
+myAnalog                                    </p>
+                                </a>
+                            </li>
+                            <!-- tab -->
+                            <li class="tabbedCarouselPromo__carouselTabs__nav__navItem">
+                                <a class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab url" href="#mob-cleantech">
+                                    <p class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab__titleTag">
+                                        <span>
+What Is Energy’s Future?                                        </span>
+                                    </p>
+                                    <p class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab__title">
+Energy Sustainability                                    </p>
+                                </a>
+                            </li>
+                            <!-- tab -->
+                            <li class="tabbedCarouselPromo__carouselTabs__nav__navItem">
+                                <a class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab url" href="#mob-field-applications-engineer">
+                                    <p class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab__titleTag">
+                                        <span>
+Be an FAE with Impact                                        </span>
+                                    </p>
+                                    <p class="tabbedCarouselPromo__carouselTabs__nav__navItem__tab__title">
+FAE Jobs at ADI                                    </p>
+                                </a>
+                            </li>
+                        <!-- tab -->
+                    </ul>
+                </div>
+                <!-- /tab container -->
+        </section>
+
+        <section class="adiHome__designTools">
+            <div class="adiHome__designTools__features__application__transition">
+                <div class="adiHome__designTools__features__application__transition__image"></div>
+                <div class="adiHome__designTools__features__application__transition__cover"></div>
+            </div>
+            <div class="adiHome__designTools__billboard">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                            <h2 class="adiHome__designTools__billboard__heading">Design Tools</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                            <p class="adiHome__designTools__billboard__copy">
+                                Optimize and simulate your designs using lab-accurate models to simplify your product selection process.
+                            </p>
+                                <a href="https://www.analog.com/en/design-center/design-tools-and-calculators.html" target="" class="adiHome__designTools__billboard__cta">View All Design Tools</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="adiHome__designTools__features">
+                <div class="container">
+                    <div class="adiHome__designTools__features__container">
+                        <div class="adiHome__designTools__features__controlContainer">
+
+                            <section class="adiHome__designTools__features__controls">
+                                    <button class="adiHome__designTools__features__controls__application adiHome__designTools__features__controls__application--active" data-id="1" data-sliding-image="https://www.analog.com/-/media/analog/en/home/new-tools/power-icon2.jpg?la=en&amp;imgver=1">
+                                        <span class="adiHome__designTools__features__controls__application__category">Circuit Design</span>
+                                        <span class="adiHome__designTools__features__controls__application__name">LTspice<sup>&reg;</sup></span>
+                                    </button>
+                                    <button class="adiHome__designTools__features__controls__application " data-id="2" data-sliding-image="https://www.analog.com/-/media/analog/en/home/new-tools/power-icon2.jpg?la=en&amp;imgver=1">
+                                        <span class="adiHome__designTools__features__controls__application__category">Power Management</span>
+                                        <span class="adiHome__designTools__features__controls__application__name">LTpowerCAD<sup>&reg;</sup></span>
+                                    </button>
+                                    <button class="adiHome__designTools__features__controls__application " data-id="3" data-sliding-image="https://www.analog.com/-/media/analog/en/home/new-tools/amp-icon2.jpg?la=en&amp;imgver=1">
+                                        <span class="adiHome__designTools__features__controls__application__category">Amplifier & Linear</span>
+                                        <span class="adiHome__designTools__features__controls__application__name">Noise Tool</span>
+                                    </button>
+
+                            </section>
+
+                        </div>
+                        <div class="adiHome__designTools__features__applicationContainer">
+                                <article class="adiHome__designTools__features__application adiHome__designTools__features__application--active" data-id="1" data-type="power">
+                                    <div class="adiHome__designTools__features__application__image">
+                                            <img src="https://www.analog.com/-/media/analog/en/home/new-tools/ltspice-slide.jpg?la=en&amp;imgver=1" loading="lazy" />
+                                    </div>
+                                    <div class="adiHome__designTools__features__application__details">
+                                        <span class="adiHome__designTools__features__application__details__name">LTspice<sup>&reg;</sup></span>
+                                        <p class="adiHome__designTools__features__application__details__summary">SPICE simulator software with a graphical schematic capture interface.</p>
+                                            <a href="https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html" target="" class="adiHome__designTools__features__application__details__cta">Download</a>
+                                    </div>
+                                </article>
+                                <article class="adiHome__designTools__features__application " data-id="2" data-type="driver">
+                                    <div class="adiHome__designTools__features__application__image">
+                                            <img src="https://www.analog.com/-/media/analog/en/home/new-tools/ltpowercad-slide.jpg?la=en&amp;imgver=1" loading="lazy" />
+                                    </div>
+                                    <div class="adiHome__designTools__features__application__details">
+                                        <span class="adiHome__designTools__features__application__details__name">LTpowerCAD<sup>&reg;</sup></span>
+                                        <p class="adiHome__designTools__features__application__details__summary">A complete design tool to ease the challenges of power supply design.</p>
+                                            <a href="https://www.analog.com/en/design-center/ltpowercad.html" target="" class="adiHome__designTools__features__application__details__cta">Learn more</a>
+                                    </div>
+                                </article>
+                                <article class="adiHome__designTools__features__application " data-id="3" data-type="converter">
+                                    <div class="adiHome__designTools__features__application__image">
+                                            <img src="https://www.analog.com/-/media/analog/en/home/new-tools/noise-tool-slide.jpg?la=en&amp;imgver=1" loading="lazy" />
+                                    </div>
+                                    <div class="adiHome__designTools__features__application__details">
+                                        <span class="adiHome__designTools__features__application__details__name">Noise Tool</span>
+                                        <p class="adiHome__designTools__features__application__details__summary">Design, simulate, and calculate key metrics of your precision signal chain.</p>
+                                            <a href="https://beta-tools.analog.com/noise/" target="_blank" class="adiHome__designTools__features__application__details__cta">Try it now</a>
+                                    </div>
+                                </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </section>
+    <div class="newPopularProduct">
+        <div class="container newPopularProducts__container">
+            <!-- Main title -->
+            <div class="newPopularProducts__title col-xs-12">
+                <h1 class="newPopularProducts__title__text">
+New Products and Designs                </h1>
+            </div>
+
+            <!-- Tabs -->
+            <div class="newPopularProducts__tabs col-xs-12">
+                <div class="btn-pref btn-group newPopularProducts__tabs__btn__group" role="group" aria-label="...">
+                    <div class="btn-group newPopularProducts__tab" role="group">
+                        <button type="button" id="new__products" class="newPopularProducts__tab__btn newPopularProducts__tab__btnPrimary"
+                                href="#newProducts" data-toggle="tab">
+New                        </button>
+                    </div>
+                    <div class="btn-group newPopularProducts__tab" role="group">
+                        <button type="button" id="popular__products" class="newPopularProducts__tab__btn newPopularProducts__tab__btnDefault"
+                                href="#popularProducts" data-toggle="tab">
+Popular                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Area -->
+            <div class="newPopularProducts__content">
+                <div class="tab-content">
+                    <!-- New Products Tab -->
+                    <div class="tab-pane fade in active" id="newProducts">
+                        <!-- New Products tab container -->
+                        <div class="newPopularProducts__newProducts">
+                                <!-- New Products Cards Container -->
+                                <div class="newPopularProducts__newProductsCardsContainer col-xs-11 col-md-12">
+                                        <div class="newPopularProducts__newProductsCardContainer col-sm-4 col-lg-2">
+                                            <div class="newPopularProducts__newProductsCard">
+                                                <a href="https://www.analog.com/en/products/ltp8800-1a.html" class="newPopularProducts__newProductsCard__title text-primary">
+                                                    LTP8800-1A
+                                                </a>
+                                                <div class="newPopularProducts__newProductsCard__descriptionContainer">
+                                                    <a href="https://www.analog.com/en/products/ltp8800-1a.html" class="newPopularProducts__newProductsCard__description">
+                                                        150A DC/DC μModule Regulator with PMBus Interface
+                                                    </a>
+                                                    <div class="newPopularProducts__newProductsCard__border"></div>
+                                                    <a href="/en/product-category/umodule-buck-regulators.html" class="newPopularProducts__newProductsCard__subdescription">
+                                                        µModule Buck Regulators
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="newPopularProducts__newProductsCardContainer col-sm-4 col-lg-2">
+                                            <div class="newPopularProducts__newProductsCard">
+                                                <a href="https://www.analog.com/en/products/max77859.html" class="newPopularProducts__newProductsCard__title text-primary">
+                                                    MAX77859
+                                                </a>
+                                                <div class="newPopularProducts__newProductsCard__descriptionContainer">
+                                                    <a href="https://www.analog.com/en/products/max77859.html" class="newPopularProducts__newProductsCard__description">
+                                                        2.5V to 22V Input, 7.8A Switching Current High-Efficiency Buck-Boost Converter for USB-PD/PPS Applications
+                                                    </a>
+                                                    <div class="newPopularProducts__newProductsCard__border"></div>
+                                                    <a href="/en/product-category/internal-power-switch-buck-boost.html" class="newPopularProducts__newProductsCard__subdescription">
+                                                        Internal Power Switch Buck-Boost Regulators
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="newPopularProducts__newProductsCardContainer col-sm-4 col-lg-2">
+                                            <div class="newPopularProducts__newProductsCard">
+                                                <a href="https://www.analog.com/en/products/admv9613.html" class="newPopularProducts__newProductsCard__title text-primary">
+                                                    ADMV9613
+                                                </a>
+                                                <div class="newPopularProducts__newProductsCard__descriptionContainer">
+                                                    <a href="https://www.analog.com/en/products/admv9613.html" class="newPopularProducts__newProductsCard__description">
+                                                        60 GHz Millimeterwave Short Data Link
+                                                    </a>
+                                                    <div class="newPopularProducts__newProductsCard__border"></div>
+                                                    <a href="/en/product-category/microwave-mmwave-tx-rx.html" class="newPopularProducts__newProductsCard__subdescription">
+                                                        Microwave and mmWave Tx/Rx
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="newPopularProducts__newProductsCardContainer col-sm-4 col-lg-2">
+                                            <div class="newPopularProducts__newProductsCard">
+                                                <a href="https://www.analog.com/en/products/admv9623.html" class="newPopularProducts__newProductsCard__title text-primary">
+                                                    ADMV9623
+                                                </a>
+                                                <div class="newPopularProducts__newProductsCard__descriptionContainer">
+                                                    <a href="https://www.analog.com/en/products/admv9623.html" class="newPopularProducts__newProductsCard__description">
+                                                        60 GHz Millimeterwave Short Data Link
+                                                    </a>
+                                                    <div class="newPopularProducts__newProductsCard__border"></div>
+                                                    <a href="/en/product-category/microwave-mmwave-tx-rx.html" class="newPopularProducts__newProductsCard__subdescription">
+                                                        Microwave and mmWave Tx/Rx
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="newPopularProducts__newProductsCardContainer col-sm-4 col-lg-2">
+                                            <div class="newPopularProducts__newProductsCard">
+                                                <a href="https://www.analog.com/en/products/max20356.html" class="newPopularProducts__newProductsCard__title text-primary">
+                                                    MAX20356
+                                                </a>
+                                                <div class="newPopularProducts__newProductsCard__descriptionContainer">
+                                                    <a href="https://www.analog.com/en/products/max20356.html" class="newPopularProducts__newProductsCard__description">
+                                                        Wearable Power-Management Solution
+                                                    </a>
+                                                    <div class="newPopularProducts__newProductsCard__border"></div>
+                                                    <a href="/en/product-category/pmic.html" class="newPopularProducts__newProductsCard__subdescription">
+                                                        PMIC (DC/DC, PowerPath, and Battery Charger)
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="newPopularProducts__newProductsCardContainer col-sm-4 col-lg-2">
+                                            <div class="newPopularProducts__newProductsCard">
+                                                <a href="https://www.analog.com/en/products/adg1408l.html" class="newPopularProducts__newProductsCard__title text-primary">
+                                                    ADG1408L
+                                                </a>
+                                                <div class="newPopularProducts__newProductsCard__descriptionContainer">
+                                                    <a href="https://www.analog.com/en/products/adg1408l.html" class="newPopularProducts__newProductsCard__description">
+                                                        4 Ω RON, 8-Channel iCMOS Multiplexers with 1.2 V and 1.8 V JEDEC Logic Compliance
+                                                    </a>
+                                                    <div class="newPopularProducts__newProductsCard__border"></div>
+                                                    <a href="/en/product-category/dual-supply-analog-switches-multiplexers.html" class="newPopularProducts__newProductsCard__subdescription">
+                                                        Dual-Supply Analog Switches and Multiplexers
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+
+                                <div class="newPopularProducts__newReferenceDesignsCardsTitle col-xs-12">
+                                    <h2>
+NEW REFERENCE DESIGNS                                    </h2>
+                                </div>
+                                <div class="newPopularProducts__newReferenceDesignsCardsContainer col-xs-11 col-md-12">
+
+                                        <a href="/en/design-center/reference-designs/circuits-from-the-lab/CN0584.html" class="newPopularProducts__newReferenceDesignsCardContainer col-sm-6 col-md-4">
+                                            <div class="newPopularProducts__newReferenceDesignsCard">
+                                                <div class="newPopularProducts__newReferenceDesignsCard__img__container">
+                                                    <img height="90" 
+                                                         width="100" 
+                                                         class="newPopularProducts__newReferenceDesignsCard__img"
+                                                         src="/-/media/analog/en/reference-circuits/cn0584/cn0584_01.gif?la=en&amp;imgver=1&amp;hash=35ddcd57c80418a7125e73d39b15aebf"
+                                                         alt="Figure 1. Simplified Block Diagram">
+                                                </div>
+                                                <div class="newPopularProducts__newReferenceDesignsCard__descriptionContainer">
+                                                    <h3 class="newPopularProducts__newReferenceDesignsCard__title">
+                                                        CN0584
+                                                    </h3>
+                                                    <div class="newPopularProducts__newReferenceDesignsCard__description">
+                                                        Precision Low Latency Development Kit
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="/en/design-center/reference-designs/circuits-from-the-lab/CN0585.html" class="newPopularProducts__newReferenceDesignsCardContainer col-sm-6 col-md-4">
+                                            <div class="newPopularProducts__newReferenceDesignsCard">
+                                                <div class="newPopularProducts__newReferenceDesignsCard__img__container">
+                                                    <img height="90" 
+                                                         width="100" 
+                                                         class="newPopularProducts__newReferenceDesignsCard__img"
+                                                         src="/-/media/analog/en/reference-circuits/cn0585/cn0585_01.gif?la=en&amp;imgver=1&amp;hash=6a0a3b79110da04a845721f842ac6aa6"
+                                                         alt="Figure 1. CN0585 Simplified Block Diagram">
+                                                </div>
+                                                <div class="newPopularProducts__newReferenceDesignsCard__descriptionContainer">
+                                                    <h3 class="newPopularProducts__newReferenceDesignsCard__title">
+                                                        CN0585
+                                                    </h3>
+                                                    <div class="newPopularProducts__newReferenceDesignsCard__description">
+                                                        Quad Channel, Low Latency, Data Acquisition and Signal Generation Module
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="/en/design-center/reference-designs/circuits-from-the-lab/CN0518.html" class="newPopularProducts__newReferenceDesignsCardContainer col-sm-6 col-md-4">
+                                            <div class="newPopularProducts__newReferenceDesignsCard">
+                                                <div class="newPopularProducts__newReferenceDesignsCard__img__container">
+                                                    <img height="90" 
+                                                         width="100" 
+                                                         class="newPopularProducts__newReferenceDesignsCard__img"
+                                                         src="/-/media/analog/en/reference-circuits/cn0518/cn0518_01.gif?la=en&amp;imgver=1&amp;hash=130a438d361adb452dd28f4997701904"
+                                                         alt="Figure 1. CN0518 Simplified Block Diagram">
+                                                </div>
+                                                <div class="newPopularProducts__newReferenceDesignsCard__descriptionContainer">
+                                                    <h3 class="newPopularProducts__newReferenceDesignsCard__title">
+                                                        CN0518
+                                                    </h3>
+                                                    <div class="newPopularProducts__newReferenceDesignsCard__description">
+                                                        USB-Powered, 915 MHz RF Low Noise Amplifier Receiver with Overpower Protection Circuit
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <a href="/en/design-center/reference-designs/circuits-from-the-lab/CN0521.html" class="newPopularProducts__newReferenceDesignsCardContainer col-sm-6 col-md-4">
+                                            <div class="newPopularProducts__newReferenceDesignsCard">
+                                                <div class="newPopularProducts__newReferenceDesignsCard__img__container">
+                                                    <img height="90" 
+                                                         width="100" 
+                                                         class="newPopularProducts__newReferenceDesignsCard__img"
+                                                         src="/-/media/analog/en/reference-circuits/cn0521/cn0521_01.gif?la=en&amp;imgver=1&amp;hash=042af91449ebdb00b8f1513be9edf92d"
+                                                         alt="Figure 1. CN0521 Simplified Block Diagram">
+                                                </div>
+                                                <div class="newPopularProducts__newReferenceDesignsCard__descriptionContainer">
+                                                    <h3 class="newPopularProducts__newReferenceDesignsCard__title">
+                                                        CN0521
+                                                    </h3>
+                                                    <div class="newPopularProducts__newReferenceDesignsCard__description">
+                                                        USB-Powered, 2.4 GHz RF Low Noise Amplifier Receiver with Overpower Protection Circuit
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                </div>
+                        </div>
+                        <div class="newPopularProducts__viewAllBtn__container col-xs-12">
+                            <a role="button" aria-label="View all new products" id="all__new__products" class="newPopularProducts__viewAllbtn" href="https://www.analog.com/en/products/landing-pages/new-products-listing.html">
+                                <div class="newPopularProducts__viewAllbtn__text">
+VIEW ALL NEW PRODUCTS                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Popular Products Tab -->
+                    <div class="tab-pane fade in" id="popularProducts">
+                        <div class="newPopularProducts__newProducts">
+                                <div class="newPopularProducts__newProductsCardsContainer col-xs-11 col-md-12">
+                                        <div class="newPopularProducts__newProductsCardContainer col-sm-4 col-lg-2">
+                                            <div class="newPopularProducts__newProductsCard">
+                                                <a href="https://www.analog.com/en/products/admv8526.html" class="newPopularProducts__newProductsCard__title text-primary">
+                                                    ADMV8526
+                                                </a>
+                                                <div class="newPopularProducts__newProductsCard__descriptionContainer">
+                                                    <a href="https://www.analog.com/en/products/admv8526.html" class="newPopularProducts__newProductsCard__description">
+                                                        1.25 GHz to 2.60 GHz Digitally Tunable Band-Pass Filter
+                                                    </a>
+                                                    <a href="/en/product-category/digital-tunable-filters.html" class="newPopularProducts__newProductsCard__subdescription">
+                                                        Digital Tunable Filters
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="newPopularProducts__newProductsCardContainer col-sm-4 col-lg-2">
+                                            <div class="newPopularProducts__newProductsCard">
+                                                <a href="https://www.analog.com/en/products/ltm4658.html" class="newPopularProducts__newProductsCard__title text-primary">
+                                                    LTM4658
+                                                </a>
+                                                <div class="newPopularProducts__newProductsCard__descriptionContainer">
+                                                    <a href="https://www.analog.com/en/products/ltm4658.html" class="newPopularProducts__newProductsCard__description">
+                                                        Low V<sub>IN</sub>, High Efficiency 10A Step-Down DC/DC &mu;Module Regulator
+                                                    </a>
+                                                    <a href="/en/product-category/umodule-buck-regulators.html" class="newPopularProducts__newProductsCard__subdescription">
+                                                        µModule Buck Regulators
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="newPopularProducts__newProductsCardContainer col-sm-4 col-lg-2">
+                                            <div class="newPopularProducts__newProductsCard">
+                                                <a href="https://www.analog.com/en/products/max22200.html" class="newPopularProducts__newProductsCard__title text-primary">
+                                                    MAX22200
+                                                </a>
+                                                <div class="newPopularProducts__newProductsCard__descriptionContainer">
+                                                    <a href="https://www.analog.com/en/products/max22200.html" class="newPopularProducts__newProductsCard__description">
+                                                        36V, 1A Octal Integrated Serial-Controlled Solenoid and Motor Driver
+                                                    </a>
+                                                    <a href="/en/product-category/dc-motor-drivers.html" class="newPopularProducts__newProductsCard__subdescription">
+                                                        DC Motor Drivers
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="newPopularProducts__newProductsCardContainer col-sm-4 col-lg-2">
+                                            <div class="newPopularProducts__newProductsCard">
+                                                <a href="https://www.analog.com/en/products/adin2111.html" class="newPopularProducts__newProductsCard__title text-primary">
+                                                    ADIN2111
+                                                </a>
+                                                <div class="newPopularProducts__newProductsCard__descriptionContainer">
+                                                    <a href="https://www.analog.com/en/products/adin2111.html" class="newPopularProducts__newProductsCard__description">
+                                                        Low Complexity, 2-Port Ethernet Switch with Integrated 10BASE-T1L PHYs
+                                                    </a>
+                                                    <a href="/en/product-category/industrial-ethernet-physical-layer-devices.html" class="newPopularProducts__newProductsCard__subdescription">
+                                                        Industrial Ethernet Physical Layer Devices
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="newPopularProducts__newProductsCardContainer col-sm-4 col-lg-2">
+                                            <div class="newPopularProducts__newProductsCard">
+                                                <a href="https://www.analog.com/en/products/ltc3337.html" class="newPopularProducts__newProductsCard__title text-primary">
+                                                    LTC3337
+                                                </a>
+                                                <div class="newPopularProducts__newProductsCard__descriptionContainer">
+                                                    <a href="https://www.analog.com/en/products/ltc3337.html" class="newPopularProducts__newProductsCard__description">
+                                                        Primary Battery SOH Monitor with Precision Coulomb Counter
+                                                    </a>
+                                                    <a href="/en/product-category/battery-fuel-gauge-and-coulomb-counter.html" class="newPopularProducts__newProductsCard__subdescription">
+                                                        Battery Fuel Gauge and Coulomb Counter
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="newPopularProducts__newProductsCardContainer col-sm-4 col-lg-2">
+                                            <div class="newPopularProducts__newProductsCard">
+                                                <a href="https://www.analog.com/en/products/max31888.html" class="newPopularProducts__newProductsCard__title text-primary">
+                                                    MAX31888
+                                                </a>
+                                                <div class="newPopularProducts__newProductsCard__descriptionContainer">
+                                                    <a href="https://www.analog.com/en/products/max31888.html" class="newPopularProducts__newProductsCard__description">
+                                                        ±0.25°C Accurate 1-Wire Temperature Sensor
+                                                    </a>
+                                                    <a href="/en/product-category/1wire-temperature-sensors.html" class="newPopularProducts__newProductsCard__subdescription">
+                                                        1-Wire Temperature Sensors
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                                            <div class="newPopularProducts__newReferenceDesignsCardsTitle col-xs-12">
+                                    <h2>
+POPULAR REFERENCE DESIGNS                                    </h2>
+                                </div>
+                                <div class="newPopularProducts__newReferenceDesignsCardsContainer col-xs-11 col-md-12">
+<a href="https://www.analog.com/en/design-center/reference-designs/circuits-from-the-lab/cn0548.html" class="newPopularProducts__newReferenceDesignsCardContainer col-sm-6 col-md-4">
+                                            <div class="newPopularProducts__newReferenceDesignsCard">
+                                                <div class="newPopularProducts__newReferenceDesignsCard__img__container">
+                                                        <img height="90"
+                                                             width="100"
+                                                             class="newPopularProducts__newReferenceDesignsCard__img"
+                                                             src="https://www.analog.com/-/media/analog/en/reference-circuits/cn0548/cn0548_01_1024.gif?la=en&amp;imgver=1"
+                                                             alt="Figure 1. CN0548 Block Diagram">
+                                                </div>
+                                                <div class="newPopularProducts__newReferenceDesignsCard__descriptionContainer">
+                                                    <h3 class="newPopularProducts__newReferenceDesignsCard__title">
+                                                        CN0548
+                                                    </h3>
+                                                    <div class="newPopularProducts__newReferenceDesignsCard__description">
+                                                        Isolated High Voltage, High Current, Measurement Module
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+<a href="https://www.analog.com/en/design-center/reference-designs/circuits-from-the-lab/cn0531.html" class="newPopularProducts__newReferenceDesignsCardContainer col-sm-6 col-md-4">
+                                            <div class="newPopularProducts__newReferenceDesignsCard">
+                                                <div class="newPopularProducts__newReferenceDesignsCard__img__container">
+                                                        <img height="90"
+                                                             width="100"
+                                                             class="newPopularProducts__newReferenceDesignsCard__img"
+                                                             src="https://www.analog.com/-/media/analog/en/reference-circuits/cn0531/cn0531_01_1024.gif?imgver=3"
+                                                             alt="EVAL-CN0531-PMDZ Simplified Block Diagram">
+                                                </div>
+                                                <div class="newPopularProducts__newReferenceDesignsCard__descriptionContainer">
+                                                    <h3 class="newPopularProducts__newReferenceDesignsCard__title">
+                                                        CN0531
+                                                    </h3>
+                                                    <div class="newPopularProducts__newReferenceDesignsCard__description">
+                                                        Programmable 20-Bit, Linear, Precision, Bipolar &plusmn; 5V DC Voltage Source
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+<a href="https://www.analog.com/en/design-center/reference-designs/maxrefdes104.html" class="newPopularProducts__newReferenceDesignsCardContainer col-sm-6 col-md-4">
+                                            <div class="newPopularProducts__newReferenceDesignsCard">
+                                                <div class="newPopularProducts__newReferenceDesignsCard__img__container">
+                                                        <img height="90"
+                                                             width="100"
+                                                             class="newPopularProducts__newReferenceDesignsCard__img"
+                                                             src="https://www.analog.com/-/media/analog/en/reference-design-maxim-images/maxrefdes104/maxrefdes104.jpg?la=en&amp;imgver=1"
+                                                             alt="Health Sensor Platform 3.0">
+                                                </div>
+                                                <div class="newPopularProducts__newReferenceDesignsCard__descriptionContainer">
+                                                    <h3 class="newPopularProducts__newReferenceDesignsCard__title">
+                                                        MAXREFDES104
+                                                    </h3>
+                                                    <div class="newPopularProducts__newReferenceDesignsCard__description">
+                                                        Health Sensor Platform 3.0
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+<a href="https://www.analog.com/en/design-center/reference-designs/circuits-from-the-lab/cn0549.html" class="newPopularProducts__newReferenceDesignsCardContainer col-sm-6 col-md-4">
+                                            <div class="newPopularProducts__newReferenceDesignsCard">
+                                                <div class="newPopularProducts__newReferenceDesignsCard__img__container">
+                                                        <img height="90"
+                                                             width="100"
+                                                             class="newPopularProducts__newReferenceDesignsCard__img"
+                                                             src="https://www.analog.com/-/media/analog/en/reference-circuits/cn0549/cn0549_00_1024.gif?la=en&amp;imgver=2"
+                                                             alt="CN-0549 System Block Diagram">
+                                                </div>
+                                                <div class="newPopularProducts__newReferenceDesignsCard__descriptionContainer">
+                                                    <h3 class="newPopularProducts__newReferenceDesignsCard__title">
+                                                        CN0549
+                                                    </h3>
+                                                    <div class="newPopularProducts__newReferenceDesignsCard__description">
+                                                        Condition-Based Monitoring Development Platform
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                </div>
+                            <div class="newPopularProducts__viewAllBtn__container col-xs-12">
+                                <a role="button" aria-label="View all new products" class="newPopularProducts__viewAllbtn" href="https://www.analog.com/en/products/landing-pages/new-products-listing.html">
+                                    <div class="newPopularProducts__viewAllbtn__text">
+VIEW ALL NEW PRODUCTS                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" id="pageType" value="HPP" name='327db2d0-9a4f-4ece-9a40-dd5a2d673f5d' />
+    <div id="mw-hppContainer" class="mw-hppContainer" itemscope itemtype="http://schema.org/Product">
+
+        <section id="mw-homePromo" class="mw-homePromo ">
+
+                    <div class="home-hero-bg visible-desktop">
+                        <div data-class="img-responsive">
+                            <img height="350" width="100%" alt="SUV driving through mountains using advanced driver assistance systems." class="img-responsive" title="" src="https://www.analog.com/-/media/analog/en/home/new-stacked-banners/2023/gmsl-spot-top-desktop-1.jpg?la=en&amp;imgver=1" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="home-hero-bg visible-phone">
+                        <div data-class="img-responsive">
+                            <img alt="SUV driving through mountains using advanced driver assistance systems." class="img-responsive" title="" src="https://www.analog.com/-/media/analog/en/home/new-stacked-banners/2023/gmsl-spot-top-mobile-1.jpg?la=en&amp;imgver=1" loading="lazy">
+                        </div>
+                    </div>
+                <div class="container">
+                    <div class="row home-hero-area fontLight col-md-6 col-sm-12 ">
+                        <div class="title">
+                                <!-- this element always present, only gets "visible-desktop" class when no mobile heading present -->
+                                <span class="text-highlights visible-desktop">
+                                    GMSL™: High-Speed, High-Res Video Links<br>for the Car and Beyond
+                                </span>
+                                <!-- this element only included when mobile heading added through sitecore -->
+                                    <span class="text-highlights visible-phone">
+                                        GMSL™: High-Speed, High-Res Video Links for the Car and Beyond
+                                    </span>
+                        </div>
+                            <div class="description rte visible-desktop">
+                                Gigabit Multimedia Serial Link™ (GMSL) high-speed video links are elevating the driving experience and improving road safety through reliable transport of high-res video throughout the car. But cars are just the beginning, GMSL has potential applications in safety, autonomy, and more.
+                            </div>
+                            <div class="description rte visible-phone">
+                                <p>&nbsp;</p>
+                            </div>
+
+                            <a href="https://www.analog.com/en/applications/technology/gigabit-multimedia-serial-link.html" class="link-learn-more" target="" name="External, See What’s Possible with GMSL, 00000000-0000-0000-0000-000000000000">
+                                See What’s Possible with GMSL
+                            </a>
+                    </div>
+                </div>
+        </section>
+    </div>
+
+    <input type="hidden" id="pageType" value="HPP" name='d53e84b5-3b1f-4779-accf-3e97b93c3143' />
+    <div id="mw-hppContainer" class="mw-hppContainer" itemscope itemtype="http://schema.org/Product">
+
+        <section id="mw-homePromo" class="mw-homePromo ">
+
+                    <div class="home-hero-bg visible-desktop">
+                        <div data-class="img-responsive">
+                            <img height="350" width="100%" alt="SUV driving through mountains using advanced driver assistance systems." class="img-responsive" title="" src="https://www.analog.com/-/media/analog/en/home/new-stacked-banners/2023/gmsl-spot-bot-desktop-2.jpg?la=en&amp;imgver=1" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="home-hero-bg visible-phone">
+                        <div data-class="img-responsive">
+                            <img alt="SUV driving through mountains using advanced driver assistance systems." class="img-responsive" title="" src="https://www.analog.com/-/media/analog/en/home/new-stacked-banners/2023/gmsl-spot-bot-mobile-2.jpg?la=en&amp;imgver=1" loading="lazy">
+                        </div>
+                    </div>
+                <div class="container">
+                    <div class="row home-hero-area fontLight col-md-6 col-sm-12 ">
+                        <div class="title">
+                                <!-- this element always present, only gets "visible-desktop" class when no mobile heading present -->
+                                <span class="text-highlights visible-desktop">
+                                    Video: Building Safer, Smarter Cars for<br>Tomorrow with GMSL
+                                </span>
+                                <!-- this element only included when mobile heading added through sitecore -->
+                                    <span class="text-highlights visible-phone">
+                                        Video: Building Safer, Smarter Cars for Tomorrow with GMSL
+                                    </span>
+                        </div>
+                            <div class="description rte visible-desktop">
+                                High-speed SerDes links bring infotainment, ADAS, and telematics to life in the car of the future. Watch the video to see how Gigabit Multimedia Serial Link (GMSL) enables a new generation of vehicles that are safer, more autonomous, and more enjoyable to drive.
+                            </div>
+                            <div class="description rte visible-phone">
+                                <p>&nbsp;</p>
+                            </div>
+
+                            <a href="https://www.analog.com/en/education/education-library/videos/6313214457112.html" class="link-learn-more" target="" name="External, Watch the Video, 00000000-0000-0000-0000-000000000000">
+                                Watch the Video
+                            </a>
+                    </div>
+                </div>
+        </section>
+    </div>
+
+    <!--Check if page is homepage-->
+    <!--Check for left nav compatibilty-->
+        <div class="row adi__blue__bg">
+            <div class="container">
+                <section data-type="personalized-content" class="articles row " data-personalizedcontent="homepage_v44">
+
+                                <article class="col-md-4 col-sm-12">
+                                    <a href="https://www.analog.com/en/analog-dialogue/articles/simplify-your-usb-c-pd-design-using-a-standalone-pd-controller.html" >
+                                        <span class="img-container">
+                                                <img class="overlay" src="https://www.analog.com/-/media/analog/en/home/new-spotlights/2023/dialogue-623.jpg?la=en&amp;imgver=1" alt="Cell phone with fully charged battery icon on screen, and a USB type-C cable." loading="lazy" />
+                                                                                            <img class="banner" src="https://www.analog.com/-/media/analog/en/home/new-spotlights/2023/dialogue-623.jpg?la=en&amp;imgver=1" alt="Cell phone with fully charged battery icon on screen, and a USB type-C cable." loading="lazy" />
+                                                                                    </span>
+                                        <h3 class="title">How to Simplify USB-C Design under New PD Specifications</h3>
+                                        <div class="description">
+                                            <p>The USB power delivery (PD) specification dramatically expands the catalog of devices that can be charged through a USB cable—but not without new challenges. See how an integrated, standalone PD controller can simplify design by managing power negotiations without firmware development.</p>
+                                        </div>
+                                    </a>
+                                </article>
+                                <article class="col-md-4 col-sm-12">
+                                    <a href="https://www.analog.com/en/landing-pages/001/IMS.html" >
+                                        <span class="img-container">
+                                                <img class="overlay" src="https://www.analog.com/-/media/analog/en/home/new-spotlights/2023/ims-623.jpg?la=en&amp;imgver=1" alt="Large satellite dish with star trails in the night sky behind it." loading="lazy" />
+                                                                                            <img class="banner" src="https://www.analog.com/-/media/analog/en/home/new-spotlights/2023/ims-623.jpg?la=en&amp;imgver=1" alt="Large satellite dish with star trails in the night sky behind it." loading="lazy" />
+                                                                                    </span>
+                                        <h3 class="title">Join ADI in Person at IMS 2023</h3>
+                                        <div class="description">
+                                            <p>We’re looking forward to a packed week of presentations, forums, and demos showcasing our latest system-level solutions for communications, instrumentation, aerospace, and defense applications. Don’t miss the grand unveiling of the industry’s most complete, high speed processing platform. </p>
+                                        </div>
+                                    </a>
+                                </article>
+                                <article class="col-md-4 col-sm-12">
+                                    <a href="https://www.analog.com/en/company/environment-social-governance.html" >
+                                        <span class="img-container">
+                                                <img class="overlay" src="https://www.analog.com/-/media/analog/en/home/new-spotlights/2022/esg-spot.jpg?la=en&amp;imgver=1" alt="esg-spot" loading="lazy" />
+                                                                                            <img class="banner" src="https://www.analog.com/-/media/analog/en/home/new-spotlights/2022/esg-spot.jpg?la=en&amp;imgver=1" alt="esg-spot" loading="lazy" />
+                                                                                    </span>
+                                        <h3 class="title">Environment, Social, and Governance</h3>
+                                        <div class="description">
+                                            <p>At Analog Devices, our products serve to improve people’s lives and better the planet. We are committed to using our technology, people, and voice to protect the planet and improve quality of life to drive positive change for future generations.</p>
+                                        </div>
+                                    </a>
+                                </article>
+                </section>
+            </div>
+        </div>
+        <!--Check if page is homepage-->
+        <div class="row bg-grey homepage-carousel-main " name='Carousel_Analog_Signals_6faeaaa5-9c40-49b3-b9a8-d7859dd5c1b9'>
+            <div class="container col-md-12 clearfix">
+
+                <div class=''>
+                    <div class="clearfix padding-top-spacing-16">
+                        <h2 class="pull-left">
+                            Analog News
+                    </h2>
+
+                </div>
+                <div class="carousel-container video-resource-container clearfix" data-target="#6faeaaa5-9c40-49b3-b9a8-d7859dd5c1b9">
+                    <div class="static-carousel" data-slides="3"
+                         data-autoplay="false" data-carouselnav="true" data-autoplayspeed="5" data-defaultvideoindex="0" data-pauseonhover="False" data-animationspeed="600">
+
+
+                        <div class="tile-slider owl-carousel owl-theme slides slides-layout-2" data-items="4">
+                                    <div class="sliderItem">
+                                        <div>
+                                            <span class="header4">
+                                                Press Releases
+                                                    <span class="date">
+                                                        JUN 13 2023
+                                                    </span>
+                                            </span>
+                                            <a href="https://www.analog.com/en/about-adi/news-room/press-releases/2023/6-13-2023-adi-announces-apollo-mxfe-advanced-software-defined-signal-processing.html" class="slide-title" target="_blank" name='6-13-2023-adi-announces-apollo-mxfe-advanced-software-defined-signal-processing_ea5cbe6b-8160-43fe-a2b8-d0e4f9ab7f46'  ><h3>Analog Devices Announces Apollo MxFE&trade; Advanced Software-Defined Signal Processing Solution for Aerospace & Defense, Instrumentation, and Next-Generation Wireless Communications</h3></a>
+
+                                        </div>
+                                    </div>
+                                    <div class="sliderItem">
+                                        <div>
+                                            <span class="header4">
+                                                Press Releases
+                                                    <span class="date">
+                                                        JUN 9 2023
+                                                    </span>
+                                            </span>
+                                            <a href="https://www.analog.com/en/about-adi/news-room/press-releases/2023/6-9-2023-adi-participate-in-the-nasdaq-international-investor-conference.html" class="slide-title" target="_blank" name='6-9-2023-adi-participate-in-the-nasdaq-international-investor-conference_538fa1d0-77c5-4ef9-8ccc-25077c4e3da0'  ><h3>Analog Devices to Participate in the NASDAQ International Investor Conference</h3></a>
+
+                                        </div>
+                                    </div>
+                                    <div class="sliderItem">
+                                        <div>
+                                            <span class="header4">
+                                                Press Releases
+                                                    <span class="date">
+                                                        JUN 5 2023
+                                                    </span>
+                                            </span>
+                                            <a href="https://www.analog.com/en/about-adi/news-room/press-releases/2023/6-5-2023-adi-appoints-stephen-jennings-board-of-directors.html" class="slide-title" target="_blank" name='6-5-2023-adi-appoints-stephen-jennings-board-of-directors_75cb72fd-5269-4d7a-b6ad-7cb8b2f14298'  ><h3>Analog Devices Appoints Stephen Jennings to its Board of Directors</h3></a>
+
+                                        </div>
+                                    </div>
+                                    <div class="sliderItem">
+                                        <div>
+                                            <span class="header4">
+                                                Press Releases
+                                                    <span class="date">
+                                                        JUN 2 2023
+                                                    </span>
+                                            </span>
+                                            <a href="https://www.analog.com/en/about-adi/news-room/press-releases/2023/6-2-2023-adi-participate-stifel-2023-cross-sector-insight-conference.html" class="slide-title" target="_blank" name='6-2-2023-adi-participate-stifel-2023-cross-sector-insight-conference_04325e17-07d8-46f0-a615-bc7983271637'  ><h3>Analog Devices to Participate in the Stifel 2023 Cross Sector Insight Conference</h3></a>
+
+                                        </div>
+                                    </div>
+                                    <div class="sliderItem">
+                                        <div>
+                                            <span class="header4">
+                                                Press Releases
+                                                    <span class="date">
+                                                        MAY 24 2023
+                                                    </span>
+                                            </span>
+                                            <a href="https://www.analog.com/en/about-adi/news-room/press-releases/2023/5-24-23-adi-reports-record-2ndQ-fiscal-2023-revenue.html" class="slide-title" target="_blank" name='5-24-23-adi-reports-record-2ndQ-fiscal-2023-revenue_614366e5-abfb-4376-8426-96b0fc5b15d6'  ><h3>Analog Devices Reports Record Revenue for the Second Quarter Fiscal 2023</h3></a>
+
+                                        </div>
+                                    </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript">		
+   
+if(typeof MutationObserver !== 'undefined' && MutationObserver)
+     {
+          //Select the target node 
+	  var homepageCarouselTarget = document.getElementsByClassName("homepage-carousel-main"); 
+
+	  // create an observer instance
+	  var homepageObserver = new MutationObserver(function(mutations) 
+          {
+                 var carouselCount = 0;
+                 $(".homepage-carousel-main").each(function () {
+                    if (carouselCount % 2 === 0) { $(this).addClass("bg-grey"); }
+                    else { $(this).removeClass("bg-grey"); }
+                    carouselCount++;
+                });
+                  
+               homepageObserver.disconnect();
+	  });
+		 
+	  // configuration of the observer:
+	  var homepageObserverConfig = { attributes: true };
+		 
+	  // pass in the target node, as well as the observer options
+          homepageObserver.observe(homepageCarouselTarget[homepageCarouselTarget.length-1], homepageObserverConfig );
+     }
+</script><script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "WebSite",
+"url": "https://www.analog.com/en/index.html",
+"potentialAction": {
+"@type": "SearchAction",
+"target": "https://www.analog.com/en/search.html?q={search_term_string}",
+"query-input": "required name=search_term_string"
+}
+}
+</script>
+
+</div>
+
+
+        <div class="special-content">
+            <li class="dropdown dropdown-region">
+                    <a href="#" data-toggle="dropdown" name='Region_7fe452b3-5379-47e8-aa31-5b3ddffd9ec6'>
+
+                        <span data-toggle="dropdown" class="region"></span>
+                        <span class="arrow-down-transparent"></span>
+                    </a>
+
+        <div class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+        <ul>
+                <li><strong>Region</strong></li>
+                                <li>
+                        <a tabindex="-1" href="https://www.analog.com/en/landing-pages/001/india-welcome.html" target="" title="" name='India_d28fd230-86d1-43a5-a921-270db9a11aef'>India</a>
+                    </li>
+                    <li>
+                        <a tabindex="-1" href="https://www.analog.com/en/landing-pages/001/korea-welcome.html" target="" title="" name='Korea_154f8b08-52bc-4468-a8e2-90eae4f85b44'>Korea</a>
+                    </li>
+                    <li>
+                        <a tabindex="-1" href="https://www.analog.com/en/landing-pages/001/singapore-welcome.html" target="" title="" name='Singapore_13a09ebe-e404-43e9-a609-c21f2b2da0a9'>Singapore</a>
+                    </li>
+                    <li>
+                        <a tabindex="-1" href="https://www.analog.com/en/landing-pages/001/taiwan-welcome.html" target="" title="" name='Taiwan_3146147e-7236-4692-b1a8-18240f3e01e0'>Taiwan</a>
+                    </li>
+
+        </ul>
+        <ul class="setLang">
+                    <li>
+                        <strong>Languages</strong>
+                    </li>
+                                    <li>
+                                            <a tabindex="-1" href="https://www.analog.com/en/index.html" title="English" name='English_e33369c5-cf6f-415c-a408-fcf42c2a6c19'><strong>English</strong></a>
+                                        </li>
+                                    <li>
+                                            <a tabindex="-1" href="https://www.analog.com/cn/index.html" title="简体中文" name='Chinese_42e59427-ab8e-4088-8e78-b229a94f639d'>简体中文</a>
+                                    </li>
+                                    <li>
+                                            <a tabindex="-1" href="https://www.analog.com/jp/index.html" title="日本語" name='Japanese_36645878-0d31-42ed-80fd-4101c6c03573'>日本語</a>
+                                    </li>
+
+        </ul>
+
+        </div>
+
+
+
+            </li>
+        </div>
+
+</div>
+<iframe id="ifrmPrint" style="width: 0pt; height: 0pt; border: none;" title="Print window"></iframe>
+<iframe id="trackVisitor" class="track-visitor-class" src="/TrackExternal.aspx" title="Visitor Tracking"></iframe>
+<label for="itemId" class="hidden"></label>
+<input type="hidden" id="itemId" name="itemId" value="df300df4-e134-49c7-82e6-5af72f5cfa65" />
+
+
+
+
+    <footer class="adi-f">
+        <div class="adi-f__container">
+            <div class="adi-f__stats adi-f__grid adi-f__grid--stats">
+                <div>
+                    
+    <div class="adi-f__stats__container">
+            <a href="https://www.analog.com/en/about-adi.html" class="adi-f__stats__stat">
+                <div class="adi-f__stats__stat__number">~25,000</div>
+                <div class="adi-f__stats__stat__label">Problem Solvers</div>
+            </a>
+            <a href="https://www.analog.com/en/about-adi.html" class="adi-f__stats__stat">
+                <div class="adi-f__stats__stat__number">6,400+</div>
+                <div class="adi-f__stats__stat__label">Patents Worldwide</div>
+            </a>
+            <a href="https://www.analog.com/en/about-adi.html" class="adi-f__stats__stat">
+                <div class="adi-f__stats__stat__number">125,000</div>
+                <div class="adi-f__stats__stat__label">Customers</div>
+            </a>
+            <a href="https://www.analog.com/en/landing-pages/001/future-turns-fifty.html" class="adi-f__stats__stat">
+                <div class="adi-f__stats__stat__number">55+</div>
+                <div class="adi-f__stats__stat__label">Years</div>
+            </a>
+    </div>
+    <div class="adi-f__stats__pointer">
+        <div class="adi-f__stats__pointer__lines"></div>
+        <div class="adi-f__stats__pointer__label">
+            Analog Devices. Dedicated to accelerating human breakthroughs that enrich lives and the world around us.
+        </div>
+    </div>
+
+
+
+                </div>
+
+<div class="adi-f__callout">
+<h3 class="adi-f__callout__heading">Ahead of What's Possible</h3>    <p class="adi-f__callout__content">
+Analog Devices empowers the Intelligent Edge with the world’s most innovative analog, digital, & software solutions, to accelerate breakthroughs that benefit society and the planet.</p>
+<a class="adi-f__callout__content" href="https://www.analog.com/en/signals.html">See the Innovations</a>
+</div>
+            </div>          
+        </div>
+    </footer>
+
+
+
+
+
+ <a class="backtotop" href="#header">&nbsp;</a><footer class="adi-f" data-session=https://analogb2c.b2clogin.com/tfp/analogb2c.onmicrosoft.com/b2c_1a_adi_signuporsigninsocial/oauth2/v2.0/authorize?client_id=63aa5bf0-fc9b-4ab2-8f60-ad90b639eb32&amp;nonce=0c6ead94-f4e4-42bf-b761-fe32f97aa7bb&amp;redirect_uri=https://my.analog.com/app/session-exist&amp;scope=https://analogb2c.onmicrosoft.com/myanalog/read&amp;response_type=code&amp;prompt=none><div id="cookie-consent-container" class="modal fade" role="dialog" data-id="gdpr-consent"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h4 class="modal-title"><img src=https://assets.analog.com/images/en/ADI_Logo_AWP.png alt="ADI" loading="lazy" height="38" width="96.188"> Cookie Consent </h4></div><div class="modal-body"><div class="short-description"><p>By clicking “Accept All”, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts. Visitors have the right to withdraw their consent. For additional information you may view the <a href="#" data-id="cookie-details">cookie details</a>. Read more about our <a href="https://www.analog.com/en/about-adi/legal-and-risk-oversight/data-privacy/privacy-policy.html#cookies">privacy policy</a>.</p><a href="#" class="btn btn-success" data-id="consent"><em class="fa fa-check"></em> Accept All </a></div><div class="long-description"><a href="#" class="btn btn-success" data-id="consent"><i class="fa fa-check"></i> Accept All </a><p><strong>Analog Devices is in the process of updating our website. After we finish updating our website, you will be able to set your cookie preferences.</strong></p><dl><dt>Strictly Necessary Cookies: (Always Active)</dt><dd> These cookies are necessary for the website to function and cannot be switched off in our systems. They are usually only set in response to actions made by you which amount to a request for services, such as setting your privacy preferences, logging in or filling in forms. You can set your browser to block or alert you about these cookies, but some parts of the site will not then work. These cookies do not store any personally identifiable information. </dd><dt>Functional Cookies:</dt><dd> These cookies enable the website to provide enhanced functionality and personalization. They may be set by us or by third party providers whose services we have added to our pages. If you do not allow these cookies then some or all of these services may not function properly. </dd><dt>Performance Cookies:</dt><dd> These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They help us to know which pages are the most and least popular and see how visitors move around the site. All information these cookies collect is aggregated and therefore anonymous. If you do not allow these cookies we will not know when you have visited our site, and will not be able to monitor its performance. </dd><dt>Targeting Cookies:</dt><dd> These cookies may be set through our site by Analog Devices and our service providers. They may be used by Analog Devices to build a profile of your interests and show you relevant content on our site. They do not store directly personal information, but are based on uniquely identifying your browser and internet device. If you do not allow these cookies, you will experience reduced relevant content. </dd></dl><a href="#" class="btn btn-link" data-id="decline">Decline cookies</a></div></div></div></div></div><div class="adi-f__container"><div class="adi-f__meta adi-f__grid adi-f__grid--meta"><div class="adi-f__meta__desktop-view"><button class="adi-f__meta__header" id="btn-force-desktop-view" aria-label="Desktop View"> Desktop View </button></div><div class="adi-f__meta__social"><div class="adi-f__meta__header"> Social <i class="adi-f__meta__header__toggle"></i></div><ul class="adi-f__meta__list"><li class="adi-f__meta__list__item"><a href="https://ez.analog.com" class="adi-f__meta__list__item__link adi-f__meta__list__item__link--ez" target="_blank" title="Join Analog Devices on EngineerZone"></a></li><li class="adi-f__meta__list__item"><a href="https://www.instagram.com/analogdevices/?hl=en" class="adi-f__meta__list__item__link adi-f__meta__list__item__link--instagram" target="_blank" title="Follow us on Instagram"><i class="fab fa-instagram"></i></a></li><li class="adi-f__meta__list__item adi-f__meta__list__item--no-zh"><a href="https://www.facebook.com/AnalogDevicesInc" class="adi-f__meta__list__item__link adi-f__meta__list__item__link--facebook" target="_blank" title="Visit Analog Devices on Facebook"><i class="fab fa-facebook-f"></i></a></li><li class="adi-f__meta__list__item adi-f__meta__list__item--no-zh"><a href="https://twitter.com/#!/adi_news" class="adi-f__meta__list__item__link adi-f__meta__list__item__link--twitter" target="_blank" title="Follow Analog Devices on Twitter"><i class="fab fa-twitter"></i></a></li><li class="adi-f__meta__list__item"><a href="https://www.linkedin.com/company/3450" class="adi-f__meta__list__item__link adi-f__meta__list__item__link--linkedin" target="_blank" title="Join Analog Devices on LinkedIn"><i class="fab fa-linkedin-in"></i></a></li><li class="adi-f__meta__list__item adi-f__meta__list__item--no-zh"><a href="https://www.youtube.com/user/AnalogDevicesInc" class="adi-f__meta__list__item__link adi-f__meta__list__item__link--youtube" target="_blank" title="View Analog Devices on YouTube"><i class="fab fa-youtube"></i></a></li></ul></div><div class="adi-f__meta__quick-links"><div class="adi-f__meta__header"> Quick Links <i class="adi-f__meta__header__toggle"></i></div><ul class="adi-f__meta__list"><li class="adi-f__meta__list__item"><a href="https://www.analog.com/en/about-adi.html" class="adi-f__meta__list__item__link" title="About ADI">About ADI</a></li><li class="adi-f__meta__list__item"><a href="https://www.analog.com/en/signals.html" class="adi-f__meta__list__item__link" title="">ADI Signals+</a></li><li class="adi-f__meta__list__item"><a href="https://www.analog.com/en/analog-dialogue.html" class="adi-f__meta__list__item__link" title="Analog Dialogue">Analog Dialogue</a></li><li class="adi-f__meta__list__item"><a href="https://www.analog.com/en/about-adi/careers.html" class="adi-f__meta__list__item__link" title="Careers">Careers</a></li><li class="adi-f__meta__list__item"><a href="https://www.analog.com/en/about-adi/contact-us.html" class="adi-f__meta__list__item__link" title="Contact us">Contact us</a></li><li class="adi-f__meta__list__item"><a href="https://investor.analog.com/" class="adi-f__meta__list__item__link" title="Investor Relations">Investor Relations</a></li><li class="adi-f__meta__list__item"><a href="https://www.analog.com/en/about-adi/news-room.html" class="adi-f__meta__list__item__link" title="News Room">News Room</a></li><li class="adi-f__meta__list__item"><a href="https://www.analog.com/en/about-adi/quality-reliability.html" class="adi-f__meta__list__item__link" title="Quality &amp; Reliability">Quality &amp; Reliability</a></li><li class="adi-f__meta__list__item"><a href="https://www.analog.com/en/about-adi/corporate-information/sales-distribution.html" class="adi-f__meta__list__item__link" title="Sales &amp; Distributors">Sales &amp; Distribution</a></li><li class="adi-f__meta__list__item"><a href="https://www.analog.com/en/about-adi/incubators.html" class="adi-f__meta__list__item__link" title="">Incubators</a></li></ul></div><!--[if gt IE 8]><!--><!--<![endif]--><div class="adi-f__meta__languages"><div class="adi-f__meta__header"> Languages </div><ul class="adi-f__meta__list"><li class="adi-f__meta__list__item"><a href="https://www.analog.com/en/" class="adi-f__meta__list__item__link" title="English">English</a></li><li class="adi-f__meta__list__item"><a href="https://www.analog.com/cn/" class="adi-f__meta__list__item__link" title="简体中文">简体中文</a></li><li class="adi-f__meta__list__item"><a href="https://www.analog.com/jp/" class="adi-f__meta__list__item__link" title="日本語">日本語</a></li></ul></div><div class="adi-f__meta__newsletters"><div class="adi-f__meta__header"> Newsletter </div><p> Interested in the latest news and articles about ADI products, design tools, training and events? Subscribe today! </p><a class="adi-f__meta__newsletters__cta" name='Newsletter_Sign Up_b24a4bad-d9d0-4b9a-bb7d-149bf3a624cf' href="https://my.analog.com/en/app/subscriptions">Sign Up</a></div></div><div class="adi-f__legal adi-f__grid adi-f__grid--legal"><img class="adi-f__legal__logo" src="https://assets.analog.com/images/footer-logo.svg" alt="Analog Logo" loading="lazy" width="100" height="28.313"><div class="adi-f__legal__copyright"> &copy;1995 - 2023 Analog Devices, Inc. All Rights Reserved </div><a class="adi-f__legal__icp" id="CN-ICP-number" href="https://beian.miit.gov.cn"> 沪ICP备09046653号-1 </a><ul class="adi-f__legal__sitemap"><li class="adi-f__legal__sitemap__item"><a class="adi-f__legal__sitemap__item__link" href="https://www.analog.com/en/sitemap.html" target="_blank" title="Sitemap">Sitemap</a></li><li class="adi-f__legal__sitemap__item"><a class="adi-f__legal__sitemap__item__link" href="https://www.analog.com/en/about-adi/legal-and-risk-oversight.html" target="_blank" title="Legal">Legal</a></li><li class="adi-f__legal__sitemap__item"><a class="adi-f__legal__sitemap__item__link" href="https://www.analog.com/en/about-adi/legal-and-risk-oversight/accessibility-statement.html" target="_blank" title="Accessibility">Accessibility</a></li><li class="adi-f__legal__sitemap__item"><a class="adi-f__legal__sitemap__item__link" href="https://www.analog.com/en/about-adi/legal-and-risk-oversight/data-privacy/privacy-policy.html" target="_blank" title="Privacy Policy">Privacy Policy</a></li><li class="adi-f__legal__sitemap__item"><a class="adi-f__legal__sitemap__item__link" href="https://www.analog.com/en/landing-pages/001/privacy-settings.html" target="_blank" title="Privacy Settings">Privacy Settings</a></li></ul></div></div><dialog class="adi-f__modal"><form method="dialog" class="adi-f__modal__content"><menu class="adi-f__modal__controls"><button value="cancel" class="adi-f__modal__controls__close">×</button></menu><img class="adi-f__modal__qr-code" src="https://assets.analog.com/images/zh/weixin-qr-code.jpg" alt="" loading="lazy" height="258" width="258"></form></dialog><script type="text/javascript"> var ADIAssetsPath = "https://assets.analog.com"; var cookiesToDelete = [ { "Domain": ".analog.com", "Cookie": [ "__qca", "bCrumbs", "FedAuthentication", "s_cc", "s_dfa", "s_fid", "s_gad", "s_gpv", "s_invisit", "s_lv", "s_ptc", "s_sq", "s_vi", "s_vnum", "es_visited", "AdiSessionAuthCookie", "AdiSecureDlCookie" ] }, { "Domain": ".investor.analog.com", "Cookie": [ "ADI_BRIEFCASE" ] }, { "Domain": "careers.analog.com", "Cookie": [ "in_ref", "Per_UniqueID", "PLAY_SESSION", "VISITED_COUNTRY", "VISITED_LANG", "ext_trk", "_gat_UA-84784380-31" ] }, { "Domain": "ez.analog.com", "Cookie": [ "X-JCAPI-Token", "JSESSIONID" ] }, { "Domain": "form.analog.com", "Cookie": [ "AdiSessionAuthCookie", "FedAuth1", "ASP.NET_SessionId", "AlteonP", "_sdsat_DevQaOrProd", "AdiSessionAuthCookie", "_sdsat_Membership Status", "_sdsat_Email Address" ] }, { "Domain": "sdk.analog.com", "Cookie": [ "dmdbase", "_sdsat_DevQaOrProd", "_sdsat_Membership Status", "_sdsat_Email Address", "AdiSessionAuthCookie", "FedAuth1" ] }, { "Domain": "webuseradmin.analog.com", "Cookie": [ "ASP.NET_SessionId" ] }, { "Domain": "wiki.analog.com", "Cookie": [ "DokuWiki", "DW<hash>", "DOKU_PREFS" ] }, { "Domain": "www.analog.com", "Cookie": [ "__atuvc", "__atuvs", "_sdsat_Email Address", "_sdsat_Membership Status", "dmdbase", "sc.ASP.NET_SESSIONID", "sc.Status", "SC_ANALYTICS_GLOBAL_COOKIE", "_sdsat_DevQaOrProd", "ASP.NET_SessionId" ] } ]; </script></footer> 
+
+
+
+
+
+    <script>
+            var datalayer = {"device":{"browser":"","type":""},"page":{"details":{"part":{"applicableParts":null,"categories":null,"id":"{DF300DF4-E134-49C7-82E6-5AF72F5CFA65}","lifeCycle":null,"markets":null,"name":"home","type":"Home Page"}},"meta":{"breadcrumbs":["{DF300DF4-E134-49C7-82E6-5AF72F5CFA65}"],"id":"{DF300DF4-E134-49C7-82E6-5AF72F5CFA65}","journey":null,"language":"en","pathname":"/en/index.html","persona":null,"publishDate":null,"title":"Mixed-signal and digital signal processing ICs | Analog Devices","taxonomy":null,"type":"Home"}},"user":{"cart":{"purchaseID":"","sampleID":"","transactionID":""},"email":"","loggedIn":false,"blocked":false,"memberStatus":false}}
+    </script>
+
+
+              <script type="text/javascript">
+
+                (function (d) {
+                    var scripts = [];
+                   scripts.push("//assets.adobedtm.com/bc68b7886092/2a726ea8b70d/launch-a4a6d55de309.min.js");
+
+            function loadScript(src) {
+                var script = d.createElement('script');
+                script.src = src;
+                script.async = true;
+                d.body.appendChild(script);
+            }
+
+            function loadScripts() {
+                scripts.forEach(loadScript);
+            }
+
+            window.addEventListener('load', loadScripts, false);
+
+        })(document);
+              </script>
+
+
+<script id="image-modal-template" type="text/x-handlebars-template">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="image-label">{{{title}}}</h4>
+    </div>
+    <div class="modal-body">
+        <ul class="control-icons">
+            <li>
+                {{#if data_download}}
+                <a class="downloadimagelink" href="{{data_download}}" download="{{data_download}}">
+                    <span id="downbutton" class="icon-download"></span>
+                </a>
+                {{else}}
+                <a class="downloadimagelink" href="{{src}}" download="{{src}}">
+                    <span id="downbutton" class="icon-download"></span>
+                </a>
+                {{/if}}
+            </li>
+            <li><a class="print pull-right"><span class="icon-print"></span></a></li>
+        </ul>
+        <br />
+        <img alt="{{{title}}}" class="img-responsive" title="{{{title}}}" src="{{src}}" loading="lazy" />
+        <br />
+    </div>
+
+</script>
+<div class="modal fade product-modal" id="image-modal" tabindex="-1" role="dialog" aria-labelledby="product-modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content"></div>
+    </div>
+</div>
+<div class="modal" id="adi-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade product-modal modal-video-window" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">Modal title</h4>
+            </div>
+            <div class="modal-body">
+            </div>
+        </div>
+    </div>
+</div>
+<script id="html5Videoplayer" type="text/x-handlebars-template">
+    <div class="deferred-video-player"
+         data-account="{{accountid}}"
+         data-application-id
+         data-controls
+         data-embed="{{embed}}"
+         data-player="{{playerid}}"
+         data-video-id="{{videoid}}">
+        <i class="fa fa-spinner fa-spin fa-2x"></i>
+    </div>
+</script>
+
+
+<link href="https://assets.analog.com/css/vendor.css" rel="stylesheet">
+<script src="https://assets.analog.com/js/adi/global.js" type="text/javascript"></script>
+
+
+
+<!--Added as part of Sitecore Forms Changes-->
+
+<input id="MediaFramework_ItemId" name="MediaFramework_ItemId" type="hidden" value="DF300DF4E13449C782E65AF72F5CFA65">
+<script type="text/javascript"  src="/sB3PJYnE2/L/T/TQGhQ9fTnmmVoHF0/z5Q7XJXSQL/RHlsbHcVUgI/dzVF/SgAbYnk"></script></body>
+</html>
+

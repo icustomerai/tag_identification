@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SynQuest Labs, Inc.</title>
+    
+    <script src="/js/jquery-3.2.1.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js">
+    </script>
+
+
+
+<script type="text/javascript">!function(T,l,y){var S=T.location,k="script",D="instrumentationKey",C="ingestionendpoint",I="disableExceptionTracking",E="ai.device.",b="toLowerCase",w="crossOrigin",N="POST",e="appInsightsSDK",t=y.name||"appInsights";(y.name||T[e])&&(T[e]=t);var n=T[t]||function(d){var g=!1,f=!1,m={initialize:!0,queue:[],sv:"5",version:2,config:d};function v(e,t){var n={},a="Browser";return n[E+"id"]=a[b](),n[E+"type"]=a,n["ai.operation.name"]=S&&S.pathname||"_unknown_",n["ai.internal.sdkVersion"]="javascript:snippet_"+(m.sv||m.version),{time:function(){var e=new Date;function t(e){var t=""+e;return 1===t.length&&(t="0"+t),t}return e.getUTCFullYear()+"-"+t(1+e.getUTCMonth())+"-"+t(e.getUTCDate())+"T"+t(e.getUTCHours())+":"+t(e.getUTCMinutes())+":"+t(e.getUTCSeconds())+"."+((e.getUTCMilliseconds()/1e3).toFixed(3)+"").slice(2,5)+"Z"}(),iKey:e,name:"Microsoft.ApplicationInsights."+e.replace(/-/g,"")+"."+t,sampleRate:100,tags:n,data:{baseData:{ver:2}}}}var h=d.url||y.src;if(h){function a(e){var t,n,a,i,r,o,s,c,u,p,l;g=!0,m.queue=[],f||(f=!0,t=h,s=function(){var e={},t=d.connectionString;if(t)for(var n=t.split(";"),a=0;a<n.length;a++){var i=n[a].split("=");2===i.length&&(e[i[0][b]()]=i[1])}if(!e[C]){var r=e.endpointsuffix,o=r?e.location:null;e[C]="https://"+(o?o+".":"")+"dc."+(r||"services.visualstudio.com")}return e}(),c=s[D]||d[D]||"",u=s[C],p=u?u+"/v2/track":d.endpointUrl,(l=[]).push((n="SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details)",a=t,i=p,(o=(r=v(c,"Exception")).data).baseType="ExceptionData",o.baseData.exceptions=[{typeName:"SDKLoadFailed",message:n.replace(/\./g,"-"),hasFullStack:!1,stack:n+"\nSnippet failed to load ["+a+"] -- Telemetry is disabled\nHelp Link: https://go.microsoft.com/fwlink/?linkid=2128109\nHost: "+(S&&S.pathname||"_unknown_")+"\nEndpoint: "+i,parsedStack:[]}],r)),l.push(function(e,t,n,a){var i=v(c,"Message"),r=i.data;r.baseType="MessageData";var o=r.baseData;return o.message='AI (Internal): 99 message:"'+("SDK LOAD Failure: Failed to load Application Insights SDK script (See stack for details) ("+n+")").replace(/\"/g,"")+'"',o.properties={endpoint:a},i}(0,0,t,p)),function(e,t){if(JSON){var n=T.fetch;if(n&&!y.useXhr)n(t,{method:N,body:JSON.stringify(e),mode:"cors"});else if(XMLHttpRequest){var a=new XMLHttpRequest;a.open(N,t),a.setRequestHeader("Content-type","application/json"),a.send(JSON.stringify(e))}}}(l,p))}function i(e,t){f||setTimeout(function(){!t&&m.core||a()},500)}var e=function(){var n=l.createElement(k);n.src=h;var e=y[w];return!e&&""!==e||"undefined"==n[w]||(n[w]=e),n.onload=i,n.onerror=a,n.onreadystatechange=function(e,t){"loaded"!==n.readyState&&"complete"!==n.readyState||i(0,t)},n}();y.ld<0?l.getElementsByTagName("head")[0].appendChild(e):setTimeout(function(){l.getElementsByTagName(k)[0].parentNode.appendChild(e)},y.ld||0)}try{m.cookie=l.cookie}catch(p){}function t(e){for(;e.length;)!function(t){m[t]=function(){var e=arguments;g||m.queue.push(function(){m[t].apply(m,e)})}}(e.pop())}var n="track",r="TrackPage",o="TrackEvent";t([n+"Event",n+"PageView",n+"Exception",n+"Trace",n+"DependencyData",n+"Metric",n+"PageViewPerformance","start"+r,"stop"+r,"start"+o,"stop"+o,"addTelemetryInitializer","setAuthenticatedUserContext","clearAuthenticatedUserContext","flush"]),m.SeverityLevel={Verbose:0,Information:1,Warning:2,Error:3,Critical:4};var s=(d.extensionConfig||{}).ApplicationInsightsAnalytics||{};if(!0!==d[I]&&!0!==s[I]){var c="onerror";t(["_"+c]);var u=T[c];T[c]=function(e,t,n,a,i){var r=u&&u(e,t,n,a,i);return!0!==r&&m["_"+c]({message:e,url:t,lineNumber:n,columnNumber:a,error:i}),r},d.autoExceptionInstrumented=!0}return m}(y.cfg);function a(){y.onInit&&y.onInit(n)}(T[t]=n).queue&&0===n.queue.length?(n.queue.push(a),n.trackPageView({})):a()}(window,document,{
+src: "https://js.monitor.azure.com/scripts/b/ai.2.min.js", // The SDK URL Source
+crossOrigin: "anonymous", 
+cfg: { // Application Insights Configuration
+    connectionString: 'InstrumentationKey=7b730da0-91a8-4729-b68b-550e3075962b'
+}});</script></head>
+<body>
+    <div b-qosieg03lc id="divLoader" class="LockOn">
+
+    </div>
+    <!-- Top Header Starts -->
+    <div b-qosieg03lc class="container-fluid bg-1">
+        <div b-qosieg03lc class="">
+            <div b-qosieg03lc class="row">
+                <div b-qosieg03lc class="col-md-12">
+                    <section b-qosieg03lc class="top-header">
+                        <ul b-qosieg03lc>
+                            <li b-qosieg03lc>
+                                <span b-qosieg03lc><img src="/images/icons/phone.svg"> </span>
+                                <a b-qosieg03lc href="#">1-877-435-8676</a>
+                            </li>
+                            <li b-qosieg03lc>
+                                <span b-qosieg03lc><img src="/images/icons/email.svg"> </span>
+                                <a b-qosieg03lc href="mailto:info@synquestlabs.com">info@synquestlabs.com</a>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Main Header Starts -->
+    <div b-qosieg03lc class="container-fluid bg-4 shadow-1">
+        <div b-qosieg03lc class="pad-r-0">
+            <header class="row pad-r-0">
+                <div b-qosieg03lc class="col-md-6 col-9 pad-r-0">
+                    <a class="navbar-brand" href="/"><img src="/images/synquest_logo.gif" class="img-fluid" alt="Logo"></a>
+                </div>
+                <div b-qosieg03lc class="text-right-1 col-3 d-inline-block d-sm-none pad-r-0">
+                    <button b-qosieg03lc class="navbar-toggler pad-r-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span b-qosieg03lc class="navbar-toggler-icon"><i b-qosieg03lc class="fas fa-bars"></i></span>
+                    </button>
+                </div>
+                <div b-qosieg03lc class="col-md-6">
+                    <nav b-qosieg03lc class="navbar navbar-expand-sm navbar-light p-0">
+                        <div b-qosieg03lc class="container-fluid mx-0 px-0">
+                            <div b-qosieg03lc class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                                <ul b-qosieg03lc class="navbar-nav">
+                                    <li b-qosieg03lc class="nav-item dropdown">
+                                        <a b-qosieg03lc class="nav-link dropdown-toggle active" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Research
+                                        </a>
+                                        <ul b-qosieg03lc class="dropdown-menu my-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <li b-qosieg03lc><a class="dropdown-item" href="/Home/OneLakhTwentyThousandPlusCompounds?menuid=12"> 100,000+ Compounds</a></li>
+                                            <li b-qosieg03lc><a class="dropdown-item" href="/Home/ThirtyThousandPlusInventory?menuid=13">30,000+  In Inventory</a></li>
+                                            <li b-qosieg03lc><a class="dropdown-item" href="/Home/FluorineSpecialists?menuid=22">Fluorine Specialists</a></li>
+                                            <li b-qosieg03lc><a class="dropdown-item" href="/Home/PourableGases?menuid=14"> Pourable Gases</a></li>
+                                        </ul>
+                                    </li>
+                                    <li b-qosieg03lc class="nav-item dropdown">
+                                        <a b-qosieg03lc class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Custom
+                                        </a>
+                                        <ul b-qosieg03lc class="dropdown-menu my-menu custom-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <li b-qosieg03lc><a class="dropdown-item" href="/Home/OneTwentyPlusYearsOfPhDChemistry?menuid=15">120+ Years of Phd Chemistry</a></li>
+                                            <li b-qosieg03lc><a class="dropdown-item" href="/Home/ResearchToScaleUp?menuid=16">Research to Scale Up</a></li>
+                                            <li b-qosieg03lc><a class="dropdown-item" href="/Home/ProofOfConcept?menuid=17">Proof Of Concept</a></li>
+                                        </ul>
+                                    </li>
+                                    <li b-qosieg03lc class="nav-item dropdown">
+                                        <a b-qosieg03lc class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Services
+                                        </a>
+                                        <ul b-qosieg03lc class="dropdown-menu my-menu custom-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <li b-qosieg03lc><a class="dropdown-item" href="/Home/Analytical?menuid=18">Analytical</a></li>
+                                            <li b-qosieg03lc><a class="dropdown-item" href="/Home/Purification?menuid=19">Purification</a></li>
+                                            <li b-qosieg03lc><a class="dropdown-item" href="/Home/Packaging?menuid=20">Packaging</a></li>
+                                            <li b-qosieg03lc><a class="dropdown-item" href="/Home/Sourcing?menuid=21">Sourcing</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+        </div>
+    </div>
+
+    
+    <!-- Hero Section Starts -->
+    <div b-qosieg03lc class="container-fluid bg-4 py-80 mt-2">
+        <div b-qosieg03lc class="row">
+            <div b-qosieg03lc class="col-md-3 mx-0">
+                <div b-qosieg03lc class="tab-menu">
+                    <ul b-qosieg03lc id="ulCategory" class="navbar-nav highlightNav">
+                        <li b-qosieg03lc><a class="aBtn" href="/">Chemical Search</a></li>
+                        <li b-qosieg03lc><a class="aBtn" href="/Home/MarvinEditor">Substructure Search</a></li>
+                        <li b-qosieg03lc><a class="aBtn" href="/Home/ViewQuote">Request A Quote</a></li>
+                        <li b-qosieg03lc><a class="aBtn" href="/Home/StartAPO">Start A PO</a></li>
+                        <li b-qosieg03lc><a class="aBtn" href="/Home/ViewTechSupport">Ask A Question</a></li>
+                        <li b-qosieg03lc><a class="aBtn" href="/Home/ViewFeedback">Give Us Feedback</a></li>
+                        <li b-qosieg03lc><a class="aBtn" href="/Home/ChemicalServices">Chemical Services</a></li>
+                        <li b-qosieg03lc><a class="aBtn" href="/Home/ServiceSupport">Service & Support</a></li>
+                        <li b-qosieg03lc><a href="/Home/AboutSynquest">About SynQuest Labs</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div b-qosieg03lc class="col-md-9">
+                <div b-qosieg03lc class="bg-2 " id="render">
+                    
+
+
+<div class="pt-40"></div>
+<h1 class="dark-headline text-center">Quick Search</h1>
+<form method="get" action="/Product/SearchResults">
+    <div id="searchboxarea" class="search-box-parent">
+        <a target="_blank" href="https://synquestprodstorage.blob.core.windows.net/instruction/SearchInstructions.pdf"><img src="/images//question.svg" /></a>
+        <div class="search-box">
+            <input type="search" name="SearchText" placeholder="Search Catalog" id="srchtext" class="search-catalog" autofocus>
+            
+            <span id="spnsrchtext" class="error_message" style="display:none">Please ask your Question</span>
+        </div>
+        <div class="select-box">
+            <select name="SearchName" class="select-catalog" id="srchtype">
+                <option selected>--Select--</option>
+                <option value="1" selected>ALL</option>
+                <option value="2">CAS No</option>
+                <option value="3">Chemical Name</option>
+            </select>
+            <span id="spnsrchtype" class="error_message" style="display:none">Please ask your Question</span>
+        </div>
+        <div class="search-button">
+            <button class="select-catalog-btn" id="AspSearchButton" type="submit">Search<span><img src="/images/icons/search_white.svg" alt="" /></span></button>
+        </div>
+    </div>
+
+</form>
+
+<div class="home-banner-image">
+    <img src="/images/chemical_001.svg" alt="" class="img-fluid">
+</div>
+
+
+
+    <script>
+        $(document).ready(function () {
+            var input = document.getElementById("searchboxarea");
+            input.addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    event.preventDefault();
+                    document.getElementById("AspSearchButton").click();
+                }
+            });
+        });
+    </script>
+
+
+                </div>
+                
+
+    <!-- Search Category Starts -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="category-search-parent shadow-1 bg-3 mt-80">
+                <div class="category-search">
+                    <p><span><img src="/images/icons/substructure-search.png" alt="" class="img-fluid"></span> Substructure Search</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Flourine Chemistry Specialists Starts -->
+    <div class="container-fluid py-80">
+        <div class="row">
+            <div class="col-lg-5 col-md-12">
+                <img src="/images/fluorine-chemistry.png" alt="" class="img-fluid">
+            </div>
+            <div class="col-lg-7 col-md-12">
+                <h2 class="dark-subtitle mt-phone-30 mt-md-30">Fluorine <span class="light-subtitle">Chemistry</span> Specialists</h2>
+                <p>SynQuest specializes in fluorinated organic and inorganic chemicals, providing a creative and innovative range of building blocks, reagents and compressed and liquefied gases. We offer chemical services designed to expedite your research from conception to pilot quantities. We have 5200 in chemicals in stock and can custom manufacture to your specifications.</p>
+            </div>
+        </div>
+    </div>
+
+
+            </div>
+        </div>
+    </div>
+    
+    <!-- Technical Supports Starts -->
+    <div class="container-fluid bg-3 py-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <h2 class="dark-subtitle"><span class="light-subtitle">Technical</span> Support</h2>
+                    <p class="pr-80 pb-phone-30">Our scientists are always here to assist. To discuss applications or product specific questions regarding any SynQuest product give us a call or fill out the contact form below. Our priority is to accelerate your success.</p>
+                </div>
+                <div class="col-md-5">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <input id="formtype" type="hidden" value="0" />
+                            <label for="name" class="form-label">Name<span class="star">*</span></label>
+                            <input type="text" class="form-control" id="name">
+                            <span id="Fname" class="error_message" style="display:none">Please enter Name</span>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="company" class="form-label">Company<span class="star">*</span></label>
+                            <input type="text" class="form-control" id="company">
+                            <span id="Fcompany" class="error_message" style="display:none">Please enter Company</span>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email<span class="star">*</span></label>
+                            <input type="email" class="form-control" id="email">
+                            <span id="Femail" class="error_message" style="display:none">Please enter Email Address</span>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="phone" class="form-label">Phone<span class="star">*</span></label>
+                            <input type="tel" class="form-control" id="phoneno">
+                            <span id="Fphoneno" class="error_message" style="display:none">Please enter Phone No</span>
+                        </div>
+                        <div class="col-12">
+                            <label for="questions" class="form-label">Question(s)<span class="star">*</span></label>
+                            <textarea class="form-control" placeholder="Leave a comment here" id="question" style="height: 100px"></textarea>
+                            <span id="Fquestion" class="error_message" style="display:none">Please ask your Question</span>
+                        </div>
+                        <div class="col-12 text-r">
+                            <input type="submit" id="btnTech" name="submit" value="Submit" class="btn-01" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+                        <a class="twitter-timeline" data-width="800" data-height="250" data-chrome="noheader" style="font-size:smaller"
+                       data-theme="light" href="https://twitter.com/SynQuestLabs?ref_src=twsrc%5Etfw">Tweets by SynQuestLabs</a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div b-qosieg03lc class="container-fluid bg-5 py-80">
+        <div b-qosieg03lc class="container">
+            <footer b-qosieg03lc>
+                <div b-qosieg03lc class="row">
+                    <div b-qosieg03lc class="col-lg-3 col-md-6">
+                        <ul b-qosieg03lc class="list-1 address">
+                            <li b-qosieg03lc><span b-qosieg03lc><i b-qosieg03lc class="fas fa-phone-alt"></i></span><a b-qosieg03lc href="#">Toll free:  1-877-4-FLUORO (1-877-435-8676)</a></li>
+                            <li b-qosieg03lc><span b-qosieg03lc><i b-qosieg03lc class="fas fa-envelope"></i></span><a b-qosieg03lc href="mailto:info@synquestlabs.com">info@synquestlabs.com</a></li>
+                            <li b-qosieg03lc><span b-qosieg03lc><i b-qosieg03lc class="fas fa-map-marker-alt"></i></span><a b-qosieg03lc href="#">SynQuest Laboratories, Inc.<br b-qosieg03lc>13201 Rachael Blvd, Rt 2054, Alachua FL 32615 USA</a></li>
+                        </ul>
+                    </div>
+                    <div b-qosieg03lc class="col-lg-3 col-md-6">
+                        <ul b-qosieg03lc class="list-1">
+                            <h6 b-qosieg03lc class="light-premable fh-style">Chemical Services</h6>
+                            <li b-qosieg03lc><a href="/Home/ResearchChemicalCatalog?menuid=1">Research Chemicals Catalog</a></li>
+                            <li b-qosieg03lc><a href="/Home/CustomSynthesisManufacturing?menuid=2">Custom Synthesis & Manufacturing</a></li>
+                            <li b-qosieg03lc><a href="/Home/BulkChemical?menuid=3">Bulk Chemicals</a></li>
+                        </ul>
+                    </div>
+                    <div b-qosieg03lc class="col-lg-3 col-md-6">
+                        <ul b-qosieg03lc class="list-1">
+                            <h6 b-qosieg03lc class="light-premable fh-style">Service & Supports</h6>
+                            <li b-qosieg03lc><a href="/Home/CustomerSupport?menuid=4">Customer Support</a></li>
+                            <li b-qosieg03lc><a href="/Home/ViewTechSupport">Technical Support</a></li>
+                            <li b-qosieg03lc><a href="/Home/CustomerSupport?menuid=5">Literature Center</a></li>
+                        </ul>
+                    </div>
+                    <div b-qosieg03lc class="col-lg-3 col-md-6">
+                        <ul b-qosieg03lc class="list-1">
+                            <h6 b-qosieg03lc class="light-premable fh-style">About Synquest Lab</h6>
+                            <li b-qosieg03lc><a href="/Home/CompanyProfile?menuid=6">Company Profile</a></li>
+                            <li b-qosieg03lc><a b-qosieg03lc href="https://synquestprodstorage.blob.core.windows.net/pdf/capabilityStatement.pdf" target="_blank">Capability Statement</a></li>
+                            <li b-qosieg03lc><a href="/Home/ConferenceAndExhibition?menuid=7">Conferences and Exhibitions</a></li>
+                            <li b-qosieg03lc><a href="/Home/Career?menuid=8">Careers</a></li>
+                            <li b-qosieg03lc><a href="/Home/CorporatePartners?menuid=9">Corporate Partners</a></li>
+                            <li b-qosieg03lc><a href="/Home/ContactUs?menuid=10">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- Sub Footer -->
+    <div b-qosieg03lc class="container-fluid subfooter">
+        <div b-qosieg03lc class="row">
+            <div b-qosieg03lc class="col-md-12">
+                <p b-qosieg03lc class="text-center text-white">Copyrights © 2010 SynQuest Laboratories | Contact Us | Central Glass Co., LTD.</p>
+            </div>
+        </div>
+    </div>
+    
+
+    
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="/js/custom/Common.js"></script>
+<script src="/js/custom/Home.js"></script>
+<script src="/js/custom/Products.js"></script>
+
+</html>

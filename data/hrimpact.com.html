@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+
+<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+<meta http-equiv='X-UA-Compatible' content='IE=edge' />
+<script>
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,initializeOnLoaded:function(o){gform.domLoaded&&gform.scriptsLoaded?o():!gform.domLoaded&&gform.scriptsLoaded?window.addEventListener("DOMContentLoaded",o):document.addEventListener("gform_main_scripts_loaded",o)},hooks:{action:{},filter:{}},addAction:function(o,n,r,t){gform.addHook("action",o,n,r,t)},addFilter:function(o,n,r,t){gform.addHook("filter",o,n,r,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,n){gform.removeHook("action",o,n)},removeFilter:function(o,n,r){gform.removeHook("filter",o,n,r)},addHook:function(o,n,r,t,i){null==gform.hooks[o][n]&&(gform.hooks[o][n]=[]);var e=gform.hooks[o][n];null==i&&(i=n+"_"+e.length),gform.hooks[o][n].push({tag:i,callable:r,priority:t=null==t?10:t})},doHook:function(n,o,r){var t;if(r=Array.prototype.slice.call(r,1),null!=gform.hooks[n][o]&&((o=gform.hooks[n][o]).sort(function(o,n){return o.priority-n.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==n?t.apply(null,r):r[0]=t.apply(null,r)})),"filter"==n)return r[0]},removeHook:function(o,n,t,i){var r;null!=gform.hooks[o][n]&&(r=(r=gform.hooks[o][n]).filter(function(o,n,r){return!!(null!=i&&i!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][n]=r)}});
+</script>
+
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v20.9 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Human Resource Services - HR Impact, Inc.</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Open%20Sans%3A700%2C300%2C400%7CRoboto%3A700%7CMontserrat%3A700&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open%20Sans%3A700%2C300%2C400%7CRoboto%3A700%7CMontserrat%3A700&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open%20Sans%3A700%2C300%2C400%7CRoboto%3A700%7CMontserrat%3A700&#038;display=swap" /></noscript>
+	<meta name="description" content="HR Impact, Inc. provides services designed to help you effectively and appropriately administer Human Resources functions. Find more." />
+	<link rel="canonical" href="https://e3c.afd.myftpupload.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Human Resource Services - HR Impact, Inc." />
+	<meta property="og:description" content="HR Impact, Inc. provides services designed to help you effectively and appropriately administer Human Resources functions. Find more." />
+	<meta property="og:url" content="https://e3c.afd.myftpupload.com/" />
+	<meta property="og:site_name" content="HR Impact, Inc." />
+	<meta property="article:modified_time" content="2023-03-23T02:23:26+00:00" />
+	<meta property="og:image" content="https://e3c.afd.myftpupload.com/wp-content/uploads/2023/02/hero.jpg" />
+	<meta property="og:image:width" content="1920" />
+	<meta property="og:image:height" content="815" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://e3c.afd.myftpupload.com/","url":"https://e3c.afd.myftpupload.com/","name":"Human Resource Services - HR Impact, Inc.","isPartOf":{"@id":"https://e3c.afd.myftpupload.com/#website"},"about":{"@id":"https://e3c.afd.myftpupload.com/#organization"},"primaryImageOfPage":{"@id":"https://e3c.afd.myftpupload.com/#primaryimage"},"image":{"@id":"https://e3c.afd.myftpupload.com/#primaryimage"},"thumbnailUrl":"https://hrimpact.com/wp-content/uploads/2023/02/hero.jpg","datePublished":"2023-02-09T21:09:08+00:00","dateModified":"2023-03-23T02:23:26+00:00","description":"HR Impact, Inc. provides services designed to help you effectively and appropriately administer Human Resources functions. Find more.","breadcrumb":{"@id":"https://e3c.afd.myftpupload.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://e3c.afd.myftpupload.com/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://e3c.afd.myftpupload.com/#primaryimage","url":"https://hrimpact.com/wp-content/uploads/2023/02/hero.jpg","contentUrl":"https://hrimpact.com/wp-content/uploads/2023/02/hero.jpg","width":1920,"height":815,"caption":"HR Impact, Inc."},{"@type":"BreadcrumbList","@id":"https://e3c.afd.myftpupload.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://e3c.afd.myftpupload.com/#website","url":"https://e3c.afd.myftpupload.com/","name":"HR Impact, Inc.","description":"Keeping the HUMAN In Human Resources","publisher":{"@id":"https://e3c.afd.myftpupload.com/#organization"},"alternateName":"HR Impact, Inc.","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://e3c.afd.myftpupload.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://e3c.afd.myftpupload.com/#organization","name":"HR Impact, Inc.","alternateName":"HR Impact, Inc.","url":"https://e3c.afd.myftpupload.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://e3c.afd.myftpupload.com/#/schema/logo/image/","url":"https://hrimpact.com/wp-content/uploads/2023/02/logo.png","contentUrl":"https://hrimpact.com/wp-content/uploads/2023/02/logo.png","width":291,"height":78,"caption":"HR Impact, Inc."},"image":{"@id":"https://e3c.afd.myftpupload.com/#/schema/logo/image/"}}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="HR Impact, Inc. &raquo; Feed" href="https://hrimpact.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="HR Impact, Inc. &raquo; Comments Feed" href="https://hrimpact.com/comments/feed/" />
+<link rel="preload" href="https://hrimpact.com/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/webfonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://hrimpact.com/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://hrimpact.com/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='https://hrimpact.com/wp-includes/css/dist/block-library/style.min.css?ver=6.2.2' media='all' />
+<style id='wp-block-library-theme-inline-css'>
+.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video{margin:0 0 1em}.wp-block-template-part.has-background{margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+</style>
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://hrimpact.com/wp-includes/css/classic-themes.min.css?ver=6.2.2' media='all' />
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='font-awesome-5-css' href='https://hrimpact.com/wp-content/plugins/bb-plugin/fonts/fontawesome/5.15.4/css/all.min.css?ver=2.6.3' media='all' />
+<link rel='stylesheet' id='jquery-swiper-css' href='https://hrimpact.com/wp-content/plugins/bbpowerpack/assets/css/swiper.min.css?ver=4.4.6' media='all' />
+<link rel='stylesheet' id='fl-builder-layout-20-css' href='https://hrimpact.com/wp-content/uploads/bb-plugin/cache/20-layout.css?ver=506004ff7e71cc17b506337fbe5d0046' media='all' />
+<link rel='stylesheet' id='uabb-animate-css' href='https://hrimpact.com/wp-content/plugins/bb-ultimate-addon/modules/info-list/css/animate.css' media='all' />
+<link rel='stylesheet' id='fl-builder-layout-bundle-4ad6892f4bc84f13cf43c67e16389e4b-css' href='https://hrimpact.com/wp-content/uploads/bb-plugin/cache/4ad6892f4bc84f13cf43c67e16389e4b-layout-bundle.css?ver=2.6.3-1.4.5.1' media='all' />
+<link rel='stylesheet' id='wp-components-css' href='https://hrimpact.com/wp-includes/css/dist/components/style.min.css?ver=6.2.2' media='all' />
+<link rel='stylesheet' id='godaddy-styles-css' href='https://hrimpact.com/wp-content/plugins/coblocks/includes/Dependencies/GoDaddy/Styles/build/latest.css?ver=2.0.2' media='all' />
+<link rel='stylesheet' id='jquery-magnificpopup-css' href='https://hrimpact.com/wp-content/plugins/bb-plugin/css/jquery.magnificpopup.min.css?ver=2.6.3' media='all' />
+<link rel='stylesheet' id='base-4-css' href='https://hrimpact.com/wp-content/themes/bb-theme/css/base-4.min.css?ver=1.7.12.1' media='all' />
+<link rel='stylesheet' id='fl-automator-skin-css' href='https://hrimpact.com/wp-content/uploads/bb-theme/skin-6421d16d8da18.css?ver=1.7.12.1' media='all' />
+<link rel='stylesheet' id='pp-animate-css' href='https://hrimpact.com/wp-content/plugins/bbpowerpack/assets/css/animate.min.css?ver=3.5.1' media='all' />
+
+<script type="rocketlazyloadscript" src='https://hrimpact.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.4' id='jquery-core-js' defer></script>
+<script type="rocketlazyloadscript" src='https://hrimpact.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0' id='jquery-migrate-js' defer></script>
+<script type="rocketlazyloadscript" src='https://hrimpact.com/wp-includes/js/imagesloaded.min.js?ver=6.2.2' id='imagesloaded-js' defer></script>
+<script src='https://hrimpact.com/wp-content/plugins/wp-smush-pro/app/assets/js/smush-lazy-load.min.js?ver=3.13.1' id='smush-lazy-load-js' defer></script>
+<link rel="https://api.w.org/" href="https://hrimpact.com/wp-json/" /><link rel="alternate" type="application/json" href="https://hrimpact.com/wp-json/wp/v2/pages/20" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://hrimpact.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://hrimpact.com/wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='https://hrimpact.com/' />
+<link rel="alternate" type="application/json+oembed" href="https://hrimpact.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fhrimpact.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://hrimpact.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fhrimpact.com%2F&#038;format=xml" />
+		<script type="rocketlazyloadscript">
+			var bb_powerpack = {
+				ajaxurl: 'https://hrimpact.com/wp-admin/admin-ajax.php',
+				search_term: '',
+				callback: function() {}
+			};
+		</script>
+				<script>
+			document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );
+		</script>
+		<link rel="icon" href="https://hrimpact.com/wp-content/uploads/2023/02/fav.png" sizes="32x32" />
+<link rel="icon" href="https://hrimpact.com/wp-content/uploads/2023/02/fav.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://hrimpact.com/wp-content/uploads/2023/02/fav.png" />
+<meta name="msapplication-TileImage" content="https://hrimpact.com/wp-content/uploads/2023/02/fav.png" />
+		<style id="wp-custom-css">
+			/*-------------------------------
+            TYPOGRAPHY 
+--------------------------------*/
+body p, 
+.entry-content p, 
+.entry-content ul li,  
+.entry-content ul,  
+.entry-content a, 
+.pp-sub-heading p {
+
+
+}
+a:focus {
+    outline: none;
+}
+p:last-child, 
+.uabb-infobox-content .uabb-infobox-text p:last-child{
+        margin-bottom:0px;
+        padding-bottom:0px;
+}
+.pp-button-wrap,
+.pp-social-icons,
+.pp-dual-button-content,
+.fl-module-icon .fl-module-content,
+.uabb-creative-menu-mobile-toggle-container{
+        line-height:0;
+}
+.pp-button-wrap a,
+.pp-dual-button a{
+        line-height:1.65;
+}
+
+
+
+
+/*--------------------------------
+            HEADER 
+---------------------------------*/
+/*---
+  Media queries? Y/N
+---*/
+
+
+/*-------------------------------
+            NAVIGATION
+--------------------------------*/
+/*---
+  Media queries? Y/N
+---*/
+.uabb-creative-menu .menu.uabb-creative-menu-horizontal ul.sub-menu > li a span.uabb-menu-toggle {
+    float: none;
+}
+.uabb-creative-menu-mobile-toggle.hamburger{
+        padding:0px;
+}
+.uabb-creative-menu-mobile-toggle.hamburger:focus{
+        outline:0px;
+}
+
+
+/*--------------------------------
+            BUTTONS
+----------------------------------*/
+/*---
+  Media queries? Y/N
+---*/
+a.button, 
+span.fl-button-text, 
+span.uabb-button-text.uabb-creative-button-text, 
+.gform_button.button, 
+a.fl-button {
+
+
+}
+
+
+/*----------------------------------
+            FOOTER
+---------------------------------*/
+/*---
+  Media queries? Y/N
+---*/
+footer ul li a {
+        display: inline-block;
+}
+
+
+/*------------------------------
+            BB MODULES
+---------------------------------*/
+
+
+/*---
+  MODULE NAME
+  Description of section
+  Media queries? Y/N
+---*/
+.gform_wrapper.gravity-theme .gfield_description 
+{ 
+font-size:17px !important; 
+ 
+} 
+.gform_wrapper.gravity-theme .instruction { 
+font-size: 17px !important; 
+}
+.gform_wrapper.gravity-theme .gform_footer, .gform_wrapper.gravity-theme .gform_page_footer { 
+padding-bottom: 10px !important;} 
+
+.gform_wrapper.gravity-theme .ginput_container_address span {
+	flex: 0 0 100% !important;}
+/*------------------------------
+            PAGE SPECIFIC 
+---------------------------------*/
+
+
+/*---
+  PAGE NAME
+  Description of section
+  Media queries? Y/N
+---*/
+/*Benefit*/
+.benefit .uabb-infobox-content .uabb-infobox-text p {
+    padding: 0 0 0px;
+}
+
+/*---
+  Contact
+  Description of section
+  Media queries? Y/N
+---*/
+.contact-page-form .pp-gf-inner {
+    margin-top: 18px;
+}
+.contact-page-form .gform_confirmation_message{
+        margin-top:0px;
+        margin-bottom:20px;
+}
+.contact-page-form .gform_submission_error{
+        font-size:17px !important;
+}
+
+div#sticky-img {
+    position: sticky;
+    top: 0;
+    padding-top: 20px;
+}
+/*-------------------------------
+        LARGE SCREENS ONLY
+---------------------------------*/
+@media only screen and (min-width:1300px) and (max-width: 1500px)  {
+ #h1-row > .fl-row-content-wrap {
+	background-size: 100%;
+}
+	
+#slide .pp-image-carousel .pp-carousel-image-container {
+    background-size: contain;
+}
+
+	.fl-col.fl-node-xwb9j26zmokp.\31 2345 {
+    width: 66%;
+}
+	
+	.fl-col.fl-node-shnx7avj0g8b.\31 2345 {
+    width: 66%;
+}
+	
+	
+}
+
+
+@media screen and (min-width: 769px) {
+/*footer*/
+	#f-info .uabb-info-list-content-wrapper .uabb-info-list-icon { 
+margin-bottom: 0px!important; 
+} 
+	
+#c-info .uabb-info-list-wrapper.uabb-info-list-top li .uabb-info-list-content {
+    margin: 5px;
+	}
+	
+div#service-2 .pp-heading-content .pp-heading .heading-title {
+    margin-top: 10px;
+    margin-bottom: 38px;
+}
+	.ser-col .fl-col-content{position:relative;}
+	.ser-col .pp-button-wrap{
+position:absolute;
+bottom:30px;
+}
+
+}
+
+
+/*-------------------------------
+        LAPTOP SCREEN - 1280
+---------------------------------*/
+
+
+@media screen and (max-width: 1280px){ 
+
+.fl-col.fl-node-xwb9j26zmokp.\31 2345 {
+    width: 62%;
+}
+
+	.fl-col.fl-node-shnx7avj0g8b.\31 2345 {
+    width: 62%;
+}
+
+}
+
+/*-------------------------------
+      IPAD PRO SCREENS - 1024
+---------------------------------*/
+
+
+@media screen and (max-width: 1024px){ 
+
+	.fl-node-a32w7vbde85p > .fl-col-content {
+    padding-bottom: 29px;
+    padding-top: 70px;
+}
+
+	.fl-col.fl-node-xwb9j26zmokp.\31 2345 {
+    width: 45% !important;
+}
+
+	.fl-col.fl-node-shnx7avj0g8b.\31 2345 {
+    width: 45%;
+}
+
+}
+
+
+/*--------------------------------
+    TABLET SCREENS AND SMALLER
+--------------------------------*/
+
+
+@media screen and (max-width: 768px){ 
+.fl-builder-content[data-overlay="1"]:not(.fl-theme-builder-header-sticky) {
+  position: relative;
+}
+.fl-col-small {
+  max-width: 100%;
+}
+.contact-info  .uabb-info-list-content-wrapper.uabb-info-list-left .uabb-info-list-icon {
+    margin-bottom:5px;
+}
+.contact-page-form .gform_footer.top_label .gform_button.button{
+        line-height: 1 !important;
+}
+.uabb-creative-menu-mobile-toggle:focus { 
+outline: none; 
+}
+/*footer*/
+	#f-info .uabb-info-list-content-wrapper .uabb-info-list-icon { 
+margin-bottom: 3px; 
+} 
+	
+#c-info .uabb-info-list-content-wrapper .uabb-info-list-icon { 
+margin-bottom: 3px; 
+} 
+	
+	/* To remove the pipeline in footer menu */ 
+#f-menu .fl-menu li { 
+border-top: 0px solid transparent;} 
+ 
+/* menu to inline */ 
+#f-menu ul#menu-main-2{ 
+display:inline-block; } 
+ 
+#f-menu .fl-menu .menu { 
+display: inline-block; 
+} 
+ 
+/* To remove Extended Link */ 
+#f-menu .menu > li.current-menu-item > a, .menu > li > a{ 
+display: inline-block; 
+} 
+#f-menu-head .uabb-creative-menu .menu > li > .uabb-has-submenu-container a span.menu-item-text > span.uabb-menu-toggle {
+     float: inherit;
+}
+	.uabb-creative-menu a { 
+display: inline-block; 
+line-height: 1; 
+text-decoration: none; 
+} 
+		.hero-row .fl-row-content-wrap::after{
+		background:none;
+	}
+	.fl-bg-video{
+		display:none;
+	}
+	/*contact page*/
+	#f-info .uabb-info-list-wrapper.uabb-info-list-top li .uabb-info-list-content{
+		margin:0px!important;
+	}
+	/*hero-text*/
+	#hero-text div.uabb-infobox-title{
+		color: #262223!important;
+	}
+	#hero-text .uabb-infobox-text.uabb-text-editor{
+		color:#585858!important;
+	}
+	
+ #our-service > .fl-row-content-wrap {
+	background-image:none !important;
+	 background-color:#000000 !important;
+}
+	
+#pay-bg > .fl-row-content-wrap {
+	background-image:none !important;
+	 background-color:#000000 !important;
+}
+	
+.fl-builder-top-edge-layer .fl-shape-content .fl-shape {
+    fill: #000000 !important;
+	height:0px;
+}
+	
+#design-bg > .fl-row-content-wrap {
+	background-image:none !important;
+}
+	
+#col-bg > .fl-col-content {
+	background-image:none !important;
+}
+	
+#hero-row > .fl-row-content-wrap:after { 
+background: none; 
+}
+	
+#hero-text .uabb-separator {
+    border-top: 1px solid #000000;
+	width: 100%;}
+	
+#c-info .uabb-info-list-wrapper.uabb-info-list-top li .uabb-info-list-content {
+	margin: 0px;}
+	
+#ece-search .uabb-infobox-content .uabb-infobox-text p {
+    padding: 0px 0px 2px !important;
+}
+	
+#list ul { 
+width:100%; 
+column-count:2;
+float:left; 
+}
+
+}
+
+
+/*-------------------------------
+        MOBILE SCREENS ONLY
+---------------------------------*/
+
+
+@media screen and (max-width: 480px) {
+#hero-text .uabb-infobox-title {
+    font-size: 38px;
+}
+	
+#list ul { 
+width:100%; 
+column-count:1;
+float:left; 
+}
+	
+	
+#about-us-home.fl-col > .fl-col-content {
+    margin-top: 185px;
+}
+
+}		</style>
+		</head>
+<body class="home page-template-default page page-id-20 fl-builder fl-theme-builder-header fl-theme-builder-header-header fl-theme-builder-footer fl-theme-builder-footer-footer fl-framework-base-4 fl-preset-default fl-full-width fl-scroll-to-top fl-search-active" itemscope="itemscope" itemtype="https://schema.org/WebPage">
+<a aria-label="Skip to content" class="fl-screen-reader-text" href="#fl-main-content">Skip to content</a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><div class="fl-page">
+	<header class="fl-builder-content fl-builder-content-1073 fl-builder-global-templates-locked" data-post-id="1073" data-type="header" data-sticky="0" data-sticky-on="" data-sticky-breakpoint="medium" data-shrink="0" data-overlay="0" data-overlay-bg="transparent" data-shrink-image-height="50px" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader"><div class="fl-row fl-row-full-width fl-row-bg-photo fl-node-gvti29w07fj5" data-node="gvti29w07fj5">
+	<div class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-itafbequw9hc fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="itafbequw9hc">
+			<div class="fl-col fl-node-9zkv6bf8edtn fl-col-small fl-visible-desktop-medium" data-node="9zkv6bf8edtn">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-uabb-advanced-menu fl-node-i019cve6ysp3" data-node="i019cve6ysp3">
+	<div class="fl-module-content fl-node-content">
+			<div class="uabb-creative-menu
+	 uabb-creative-menu-accordion-collapse	uabb-menu-default">
+		<div class="uabb-creative-menu-mobile-toggle-container"><div class="uabb-creative-menu-mobile-toggle hamburger" tabindex="0"><div class="uabb-svg-container"><svg version="1.1" class="hamburger-menu" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+<rect class="uabb-hamburger-menu-top" width="50" height="10"/>
+<rect class="uabb-hamburger-menu-middle" y="20" width="50" height="10"/>
+<rect class="uabb-hamburger-menu-bottom" y="40" width="50" height="10"/>
+</svg>
+</div></div></div>			<div class="uabb-clear"></div>
+					<ul id="menu-main" class="menu uabb-creative-menu-horizontal uabb-toggle-arrows"><li id="menu-item-21" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-20 current_page_item uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/"><span class="menu-item-text">Home</span></a></li>
+<li id="menu-item-23" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/about/"><span class="menu-item-text">About</span></a></li>
+<li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uabb-has-submenu uabb-creative-menu uabb-cm-style"><div class="uabb-has-submenu-container"><a href="https://hrimpact.com/services/"><span class="menu-item-text">Services<span class="uabb-menu-toggle"></span></span></a></div>
+<ul class="sub-menu">
+	<li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/hr-outsourcing-co-sourcing/"><span class="menu-item-text">HR Outsourcing/Co-Sourcing</span></a></li>
+	<li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/general-hr-consulting/"><span class="menu-item-text">General HR Consulting</span></a></li>
+	<li id="menu-item-31" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/employee-benefits/"><span class="menu-item-text">Employee Benefits</span></a></li>
+	<li id="menu-item-33" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/employee-compensation/"><span class="menu-item-text">Employee Compensation</span></a></li>
+	<li id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/payroll-administration/"><span class="menu-item-text">Payroll Administration</span></a></li>
+	<li id="menu-item-37" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/executive-search/"><span class="menu-item-text">Executive Search</span></a></li>
+</ul>
+</li>
+</ul>	</div>
+
+		</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-rojkefiy1l8n fl-col-small" data-node="rojkefiy1l8n">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-image fl-node-g70y6s41rhmi" data-node="g70y6s41rhmi">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-photo-container">
+	<div class="pp-photo pp-photo-align-center pp-photo-align-responsive-left" itemscope itemtype="http://schema.org/ImageObject">
+		<div class="pp-photo-content">
+			<div class="pp-photo-content-inner">
+								<a href="https://hrimpact.com" target="_self" itemprop="url">
+									<img decoding="async"   alt="HR Impact, Inc." itemprop="image" height="78" width="291" title="HR Impact, Inc." data-src="https://hrimpact.com/wp-content/uploads/2023/02/logo.png" class="pp-photo-img wp-image-45 size-full lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="HR Impact, Inc." itemprop="image" height="78" width="291" title="HR Impact, Inc." data-src="https://hrimpact.com/wp-content/uploads/2023/02/logo.png" class="pp-photo-img wp-image-45 size-full lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async" class="pp-photo-img wp-image-45 size-full" src="https://hrimpact.com/wp-content/uploads/2023/02/logo.png" alt="HR Impact, Inc." itemprop="image" height="78" width="291" title="HR Impact, Inc."  /></noscript></noscript>
+					<div class="pp-overlay-bg"></div>
+													</a>
+							</div>
+					</div>
+	</div>
+</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-lvd1jgkxs47f fl-col-small" data-node="lvd1jgkxs47f">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-uabb-advanced-menu fl-node-zucf7lyk6dtw fl-visible-desktop-medium" data-node="zucf7lyk6dtw">
+	<div class="fl-module-content fl-node-content">
+			<div class="uabb-creative-menu
+	 uabb-creative-menu-accordion-collapse	uabb-menu-default">
+		<div class="uabb-creative-menu-mobile-toggle-container"><div class="uabb-creative-menu-mobile-toggle hamburger" tabindex="0"><div class="uabb-svg-container"><svg version="1.1" class="hamburger-menu" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+<rect class="uabb-hamburger-menu-top" width="50" height="10"/>
+<rect class="uabb-hamburger-menu-middle" y="20" width="50" height="10"/>
+<rect class="uabb-hamburger-menu-bottom" y="40" width="50" height="10"/>
+</svg>
+</div></div></div>			<div class="uabb-clear"></div>
+					<ul id="menu-menu-right" class="menu uabb-creative-menu-horizontal uabb-toggle-none"><li id="menu-item-1092" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/testimonials/"><span class="menu-item-text">Testimonials</span></a></li>
+<li id="menu-item-1091" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/contact/"><span class="menu-item-text">Contact</span></a></li>
+</ul>	</div>
+
+	<div class="uabb-creative-menu-mobile-toggle-container"><div class="uabb-creative-menu-mobile-toggle hamburger" tabindex="0"><div class="uabb-svg-container"><svg version="1.1" class="hamburger-menu" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+<rect class="uabb-hamburger-menu-top" width="50" height="10"/>
+<rect class="uabb-hamburger-menu-middle" y="20" width="50" height="10"/>
+<rect class="uabb-hamburger-menu-bottom" y="40" width="50" height="10"/>
+</svg>
+</div></div></div>			<div class="uabb-creative-menu
+			 uabb-creative-menu-accordion-collapse			off-canvas">
+				<div class="uabb-clear"></div>
+				<div class="uabb-off-canvas-menu uabb-menu-left"> <div class="uabb-menu-close-btn">×</div>						<ul id="menu-menu-right-1" class="menu uabb-creative-menu-horizontal uabb-toggle-none"><li id="menu-item-1092" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/testimonials/"><span class="menu-item-text">Testimonials</span></a></li>
+<li id="menu-item-1091" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/contact/"><span class="menu-item-text">Contact</span></a></li>
+</ul>				</div>
+			</div>
+				</div>
+</div>
+<div id="f-menu-head" class="fl-module fl-module-uabb-advanced-menu fl-node-4aeowy2p36gx fl-visible-mobile" data-node="4aeowy2p36gx">
+	<div class="fl-module-content fl-node-content">
+			<div class="uabb-creative-menu
+	 uabb-creative-menu-accordion-collapse	uabb-menu-default">
+		<div class="uabb-creative-menu-mobile-toggle-container"><div class="uabb-creative-menu-mobile-toggle hamburger" tabindex="0"><div class="uabb-svg-container"><svg version="1.1" class="hamburger-menu" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+<rect class="uabb-hamburger-menu-top" width="50" height="10"/>
+<rect class="uabb-hamburger-menu-middle" y="20" width="50" height="10"/>
+<rect class="uabb-hamburger-menu-bottom" y="40" width="50" height="10"/>
+</svg>
+</div></div></div>			<div class="uabb-clear"></div>
+					<ul id="menu-main-menu" class="menu uabb-creative-menu-horizontal uabb-toggle-arrows"><li id="menu-item-1108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-20 current_page_item uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/"><span class="menu-item-text">Home</span></a></li>
+<li id="menu-item-1107" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/about/"><span class="menu-item-text">About</span></a></li>
+<li id="menu-item-1106" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uabb-has-submenu uabb-creative-menu uabb-cm-style"><div class="uabb-has-submenu-container"><a href="https://hrimpact.com/services/"><span class="menu-item-text">Services<span class="uabb-menu-toggle"></span></span></a></div>
+<ul class="sub-menu">
+	<li id="menu-item-1105" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/hr-outsourcing-co-sourcing/"><span class="menu-item-text">HR Outsourcing/Co-Sourcing</span></a></li>
+	<li id="menu-item-1104" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/general-hr-consulting/"><span class="menu-item-text">General HR Consulting</span></a></li>
+	<li id="menu-item-1103" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/employee-benefits/"><span class="menu-item-text">Employee Benefits</span></a></li>
+	<li id="menu-item-1102" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/employee-compensation/"><span class="menu-item-text">Employee Compensation</span></a></li>
+	<li id="menu-item-1101" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/payroll-administration/"><span class="menu-item-text">Payroll Administration</span></a></li>
+	<li id="menu-item-1100" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/executive-search/"><span class="menu-item-text">Executive Search</span></a></li>
+</ul>
+</li>
+<li id="menu-item-1099" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/testimonials/"><span class="menu-item-text">Testimonials</span></a></li>
+<li id="menu-item-1098" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/contact/"><span class="menu-item-text">Contact</span></a></li>
+</ul>	</div>
+
+	<div class="uabb-creative-menu-mobile-toggle-container"><div class="uabb-creative-menu-mobile-toggle hamburger" tabindex="0"><div class="uabb-svg-container"><svg version="1.1" class="hamburger-menu" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" viewBox="0 0 50 50">
+<rect class="uabb-hamburger-menu-top" width="50" height="10"/>
+<rect class="uabb-hamburger-menu-middle" y="20" width="50" height="10"/>
+<rect class="uabb-hamburger-menu-bottom" y="40" width="50" height="10"/>
+</svg>
+</div></div></div>			<div class="uabb-creative-menu
+			 uabb-creative-menu-accordion-collapse			off-canvas">
+				<div class="uabb-clear"></div>
+				<div class="uabb-off-canvas-menu uabb-menu-right"> <div class="uabb-menu-close-btn">×</div>						<ul id="menu-main-menu-1" class="menu uabb-creative-menu-horizontal uabb-toggle-arrows"><li id="menu-item-1108" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-20 current_page_item uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/"><span class="menu-item-text">Home</span></a></li>
+<li id="menu-item-1107" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/about/"><span class="menu-item-text">About</span></a></li>
+<li id="menu-item-1106" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uabb-has-submenu uabb-creative-menu uabb-cm-style"><div class="uabb-has-submenu-container"><a href="https://hrimpact.com/services/"><span class="menu-item-text">Services<span class="uabb-menu-toggle"></span></span></a></div>
+<ul class="sub-menu">
+	<li id="menu-item-1105" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/hr-outsourcing-co-sourcing/"><span class="menu-item-text">HR Outsourcing/Co-Sourcing</span></a></li>
+	<li id="menu-item-1104" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/general-hr-consulting/"><span class="menu-item-text">General HR Consulting</span></a></li>
+	<li id="menu-item-1103" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/employee-benefits/"><span class="menu-item-text">Employee Benefits</span></a></li>
+	<li id="menu-item-1102" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/employee-compensation/"><span class="menu-item-text">Employee Compensation</span></a></li>
+	<li id="menu-item-1101" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/payroll-administration/"><span class="menu-item-text">Payroll Administration</span></a></li>
+	<li id="menu-item-1100" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/executive-search/"><span class="menu-item-text">Executive Search</span></a></li>
+</ul>
+</li>
+<li id="menu-item-1099" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/testimonials/"><span class="menu-item-text">Testimonials</span></a></li>
+<li id="menu-item-1098" class="menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style"><a href="https://hrimpact.com/contact/"><span class="menu-item-text">Contact</span></a></li>
+</ul>				</div>
+			</div>
+				</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</header><div class="uabb-js-breakpoint" style="display: none;"></div>	<div id="fl-main-content" class="fl-page-content" itemprop="mainContentOfPage" role="main">
+
+		
+<div class="fl-content-full container">
+	<div class="row">
+		<div class="fl-content col-md-12">
+			<article class="fl-post post-20 page type-page status-publish has-post-thumbnail hentry" id="fl-post-20" itemscope="itemscope" itemtype="https://schema.org/CreativeWork">
+
+			<div class="fl-post-content clearfix" itemprop="text">
+		<div class="fl-builder-content fl-builder-content-20 fl-builder-content-primary fl-builder-global-templates-locked" data-post-id="20"><div class="fl-row fl-row-full-width fl-row-bg-none fl-node-svpbozyg7u61 fl-visible-mobile" data-node="svpbozyg7u61">
+	<div class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-lda94kmi2z3j" data-node="lda94kmi2z3j">
+			<div class="fl-col fl-node-2y5dprsfz6hn" data-node="2y5dprsfz6hn">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-video fl-node-mse275r1adzg fl-visible-mobile" data-node="mse275r1adzg">
+	<div class="fl-module-content fl-node-content">
+		
+<div class="pp-video-wrapper pp-video-source-hosted pp-aspect-ratio-219">
+		<div class="pp-fit-aspect-ratio">
+			<video class="pp-video-player" src="https://hrimpact.com/wp-content/uploads/2023/02/uVQAJanXlGsGdJbk7.mp4" autoplay="" webkit-playsinline="" playsinline="" controls="" poster="https://hrimpact.com/wp-content/uploads/2023/02/hero.jpg" preload="none"></video>
+			</div>
+</div>
+
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div id="hero-row bg-white" class="fl-row fl-row-full-width fl-row-bg-video fl-node-0uvi5whl6jmx fl-row-custom-height fl-row-align-center fl-row-bg-overlay hero-row" data-node="0uvi5whl6jmx">
+	<div class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+					<div class="fl-bg-video" data-video-mobile="no" data-width="1080" data-height="608" data-fallback="https://hrimpact.com/wp-content/uploads/2023/02/hero.jpg" data-mp4="https://hrimpact.com/wp-content/uploads/2023/02/uVQAJanXlGsGdJbk7.mp4" data-mp4-type="video/mp4"  data-webm-type="video/webm" >
+			</div>
+			
+
+				<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-nuaveswx8t0g" data-node="nuaveswx8t0g">
+			<div class="fl-col fl-node-bs1tdiqlhjxz" data-node="bs1tdiqlhjxz">
+	<div class="fl-col-content fl-node-content"><div id="hero-text" class="fl-module fl-module-info-box fl-node-ye73aoq6vjt8 fl-animation fl-slide-in-up" data-node="ye73aoq6vjt8" data-animation-delay="0" data-animation-duration="1">
+	<div class="fl-module-content fl-node-content">
+		<div class="uabb-module-content uabb-infobox infobox-center infobox-responsive-center ">
+	<div class="uabb-infobox-left-right-wrap">
+	<div class="uabb-infobox-content">
+			<div class='uabb-infobox-title-wrap'><div class="uabb-infobox-title">Keeping the HUMAN In Human Resources</div></div><div class="uabb-infobox-separator"><div class="uabb-module-content uabb-separator-parent">
+	<div class="uabb-separator"></div>
+</div>
+</div>			<div class="uabb-infobox-text-wrap">
+				<div class="uabb-infobox-text uabb-text-editor"><p>Administering the Functions of Human Resources, Payroll, and Employee Benefits for over 20 Years</p>
+</div><div class="uabb-infobox-button">
+<div class="uabb-module-content uabb-button-wrap uabb-creative-button-wrap uabb-button-width-auto uabb-creative-button-width-auto">
+			<a href="/services/" target="_self"  class="uabb-button ast-button uabb-creative-button uabb-creative-default-btn   "  role="button" aria-label="Explore Our Services">
+							<span class="uabb-button-text uabb-creative-button-text">Explore Our Services</span>
+							
+						
+		</a>
+	</div>
+
+
+
+
+</div>			</div>
+						</div>	</div>
+</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div id="h1-row" class="fl-row fl-row-full-width fl-row-bg-photo fl-node-hztsgfqdrwui fl-row-custom-height fl-row-align-center" data-node="hztsgfqdrwui">
+	<div class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-1r7k94gxme8v fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="1r7k94gxme8v">
+			<div class="fl-col fl-node-3h9kd0z2c4nb fl-col-small fl-visible-desktop-medium" data-node="3h9kd0z2c4nb">
+	<div class="fl-col-content fl-node-content"></div>
+</div>
+			<div id="about-us-home" class="fl-col fl-node-xqmyhnwobetv fl-col-small" data-node="xqmyhnwobetv">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-heading fl-node-ujsmep15g06w fl-animation fl-fade-right" data-node="ujsmep15g06w" data-animation-delay="0" data-animation-duration="1">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-heading-content">
+		<div class="pp-heading  pp-left">
+		
+		<h1 class="heading-title">
+
+			
+			<span class="title-text pp-primary-title">ABOUT US</span>
+
+			
+			
+		</h1>
+
+		
+	</div>
+
+			<div class="pp-sub-heading">
+			<p>We provide services designed to help your organization effectively and appropriately administer Human Resources functions while offering employees the tools and programs that are attractive, <strong>efficient</strong>, <strong>effective</strong>, and <strong>consistent</strong> with the overall business strategy and corporate culture.</p>		</div>
+	
+	</div>
+	</div>
+</div>
+<div class="fl-module fl-module-pp-smart-button fl-node-sv9ebrzgymcl fl-animation fl-slide-in-up" data-node="sv9ebrzgymcl" data-animation-delay="0" data-animation-duration="1">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-button-wrap pp-button-width-auto">
+	<a href="https://hrimpact.com/about/#team" target="_self" class="pp-button" role="button" aria-label="Meet Our Team">
+						<span class="pp-button-text">Meet Our Team</span>
+					</a>
+</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div id="our-service" class="fl-row fl-row-full-width fl-row-bg-photo fl-node-o789wmj5h3rq fl-row-custom-height fl-row-align-center fl-row-overlap-top" data-node="o789wmj5h3rq">
+	<div class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-3hk7a2yjrzmp fl-col-group-custom-width" data-node="3hk7a2yjrzmp">
+			<div class="fl-col fl-node-j7eyqizf6s4g fl-col-small fl-visible-desktop-medium" data-node="j7eyqizf6s4g">
+	<div class="fl-col-content fl-node-content"></div>
+</div>
+			<div class="fl-col fl-node-a32w7vbde85p fl-col-small" data-node="a32w7vbde85p">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-heading fl-node-bd8cfsjwioy9 fl-animation fl-slide-in-down" data-node="bd8cfsjwioy9" data-animation-delay="0" data-animation-duration="1">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-heading-content">
+		<div class="pp-heading  pp-center">
+		
+		<h2 class="heading-title">
+
+			
+			<span class="title-text pp-primary-title">OUR SERVICES</span>
+
+			
+			
+		</h2>
+
+		
+	</div>
+
+			<div class="pp-sub-heading">
+			<p>We offer a full suite of human resources-related consulting and brokerage services, focusing on six particular areas:</p>		</div>
+	
+	</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-khen2usjqaiy fl-col-small fl-visible-desktop-medium" data-node="khen2usjqaiy">
+	<div class="fl-col-content fl-node-content"></div>
+</div>
+	</div>
+
+<div class="fl-col-group fl-node-byhle6jk0of5 fl-col-group-equal-height fl-col-group-align-top fl-col-group-custom-width" data-node="byhle6jk0of5">
+			<div class="fl-col fl-node-64ncy5j72t9w fl-col-small fl-animation fl-fade-left ser-col" data-node="64ncy5j72t9w" data-animation-delay="0" data-animation-duration="1">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-image fl-node-cwn1tzrepgim" data-node="cwn1tzrepgim">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-photo-container">
+	<div class="pp-photo pp-photo-align-left pp-photo-align-responsive-center" itemscope itemtype="http://schema.org/ImageObject">
+		<div class="pp-photo-content">
+			<div class="pp-photo-content-inner">
+									<img decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/02/1.png" alt="HR Impact, Inc." itemprop="image" height="119" width="117" title="HR Impact, Inc." class="pp-photo-img wp-image-4955 size-full no-lazyload" />
+					<div class="pp-overlay-bg"></div>
+												</div>
+					</div>
+	</div>
+</div>
+	</div>
+</div>
+<div class="fl-module fl-module-pp-heading fl-node-wlg05txu1sme" data-node="wlg05txu1sme">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-heading-content">
+		<div class="pp-heading  pp-left">
+		
+		<h3 class="heading-title">
+
+			
+			<span class="title-text pp-primary-title">Human Resources Outsourcing/Co-sourcing</span>
+
+			
+			
+		</h3>
+
+		
+	</div>
+
+			<div class="pp-sub-heading">
+			<p>The resources department, or any of the various HR disciplines, is on an outsourced platform. We provide permanent and temporary (long-term or short-term) outsourcing solutions to meet your needs best.</p>		</div>
+	
+	</div>
+	</div>
+</div>
+<div class="fl-module fl-module-pp-smart-button fl-node-1pbrl5sztik9" data-node="1pbrl5sztik9">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-button-wrap pp-button-width-auto">
+	<a href="/hr-outsourcing-co-sourcing/" target="_self" class="pp-button" role="button" aria-label="Learn More">
+						<span class="pp-button-text">Learn More</span>
+					</a>
+</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-1duwfqmceha8 fl-col-small fl-animation fl-slide-in-up ser-col" data-node="1duwfqmceha8" data-animation-delay="0" data-animation-duration="1">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-image fl-node-63ui0lhgk9vb" data-node="63ui0lhgk9vb">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-photo-container">
+	<div class="pp-photo pp-photo-align-left pp-photo-align-responsive-center" itemscope itemtype="http://schema.org/ImageObject">
+		<div class="pp-photo-content">
+			<div class="pp-photo-content-inner">
+									<img decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/02/2.png" alt="HR Impact, Inc." itemprop="image" height="119" width="117" title="HR Impact, Inc." class="pp-photo-img wp-image-4956 size-full no-lazyload" />
+					<div class="pp-overlay-bg"></div>
+												</div>
+					</div>
+	</div>
+</div>
+	</div>
+</div>
+<div id="service-2" class="fl-module fl-module-pp-heading fl-node-5vj8nk04fois" data-node="5vj8nk04fois">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-heading-content">
+		<div class="pp-heading  pp-left">
+		
+		<h3 class="heading-title">
+
+			
+			<span class="title-text pp-primary-title">General HR Consulting</span>
+
+			
+			
+		</h3>
+
+		
+	</div>
+
+			<div class="pp-sub-heading">
+			<p>Consulting services can include compliance, employee and management training and development, employee relations and communications, strategic assessments, general administration, and more.</p>
+		</div>
+	
+	</div>
+	</div>
+</div>
+<div class="fl-module fl-module-pp-smart-button fl-node-dyn1brv8ipgw" data-node="dyn1brv8ipgw">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-button-wrap pp-button-width-auto">
+	<a href="/general-hr-consulting/" target="_self" class="pp-button" role="button" aria-label="Learn More">
+						<span class="pp-button-text">Learn More</span>
+					</a>
+</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-082j5u6wnhes fl-col-small fl-animation fl-slide-in-right ser-col" data-node="082j5u6wnhes" data-animation-delay="0" data-animation-duration="1">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-image fl-node-d5t1fbrx4epu" data-node="d5t1fbrx4epu">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-photo-container">
+	<div class="pp-photo pp-photo-align-left pp-photo-align-responsive-center" itemscope itemtype="http://schema.org/ImageObject">
+		<div class="pp-photo-content">
+			<div class="pp-photo-content-inner">
+									<img decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/02/4.png" alt="HR Impact, Inc." itemprop="image" height="119" width="117" title="HR Impact, Inc." class="pp-photo-img wp-image-4958 size-full no-lazyload" />
+					<div class="pp-overlay-bg"></div>
+												</div>
+					</div>
+	</div>
+</div>
+	</div>
+</div>
+<div id="service-2" class="fl-module fl-module-pp-heading fl-node-wzvp9lntsk7b" data-node="wzvp9lntsk7b">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-heading-content">
+		<div class="pp-heading  pp-left">
+		
+		<h3 class="heading-title">
+
+			
+			<span class="title-text pp-primary-title">Employee Benefits</span>
+
+			
+			
+		</h3>
+
+		
+	</div>
+
+			<div class="pp-sub-heading">
+			<p>We can customize a solution to help you provide your employees with cost-effective, competitive benefit programs, from traditional health and welfare benefits to unique, cutting-edge programs.</p>		</div>
+	
+	</div>
+	</div>
+</div>
+<div class="fl-module fl-module-pp-smart-button fl-node-elhbui1567d8" data-node="elhbui1567d8">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-button-wrap pp-button-width-auto">
+	<a href="/employee-benefits/" target="_self" class="pp-button" role="button" aria-label="Learn More">
+						<span class="pp-button-text">Learn More</span>
+					</a>
+</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+
+<div class="fl-col-group fl-node-lpmifxjrb3dq fl-col-group-equal-height fl-col-group-align-top fl-col-group-custom-width" data-node="lpmifxjrb3dq">
+			<div class="fl-col fl-node-ax8hyqok6i2d fl-col-small fl-animation fl-slide-in-left ser-col" data-node="ax8hyqok6i2d" data-animation-delay="0" data-animation-duration="1">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-image fl-node-y1mfzsld0pbu" data-node="y1mfzsld0pbu">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-photo-container">
+	<div class="pp-photo pp-photo-align-left pp-photo-align-responsive-center" itemscope itemtype="http://schema.org/ImageObject">
+		<div class="pp-photo-content">
+			<div class="pp-photo-content-inner">
+									<img decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/02/3.png" alt="HR Impact, Inc." itemprop="image" height="119" width="117" title="HR Impact, Inc." class="pp-photo-img wp-image-4957 size-full no-lazyload" />
+					<div class="pp-overlay-bg"></div>
+												</div>
+					</div>
+	</div>
+</div>
+	</div>
+</div>
+<div id="service-2" class="fl-module fl-module-pp-heading fl-node-rfp32cih904x" data-node="rfp32cih904x">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-heading-content">
+		<div class="pp-heading  pp-left">
+		
+		<h3 class="heading-title">
+
+			
+			<span class="title-text pp-primary-title">Employee Compensation</span>
+
+			
+			
+		</h3>
+
+		
+	</div>
+
+			<div class="pp-sub-heading">
+			<p>We help you implement highly effective and innovative programs that will best reward employees while supporting the overall business objectives.</p>		</div>
+	
+	</div>
+	</div>
+</div>
+<div class="fl-module fl-module-pp-smart-button fl-node-uhxvcif20skm" data-node="uhxvcif20skm">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-button-wrap pp-button-width-auto">
+	<a href="/employee-compensation/" target="_self" class="pp-button" role="button" aria-label="Learn More">
+						<span class="pp-button-text">Learn More</span>
+					</a>
+</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-o5tqjsa7yx8e fl-col-small fl-animation fl-slide-in-up ser-col" data-node="o5tqjsa7yx8e" data-animation-delay="0" data-animation-duration="1">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-image fl-node-oalrgnmj8pe3" data-node="oalrgnmj8pe3">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-photo-container">
+	<div class="pp-photo pp-photo-align-left pp-photo-align-responsive-center" itemscope itemtype="http://schema.org/ImageObject">
+		<div class="pp-photo-content">
+			<div class="pp-photo-content-inner">
+									<img decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/02/5.png" alt="HR Impact, Inc." itemprop="image" height="119" width="117" title="HR Impact, Inc." class="pp-photo-img wp-image-4959 size-full no-lazyload" />
+					<div class="pp-overlay-bg"></div>
+												</div>
+					</div>
+	</div>
+</div>
+	</div>
+</div>
+<div id="service-2" class="fl-module fl-module-pp-heading fl-node-eobi0phcwfl4" data-node="eobi0phcwfl4">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-heading-content">
+		<div class="pp-heading  pp-left">
+		
+		<h3 class="heading-title">
+
+			
+			<span class="title-text pp-primary-title">Payroll Administration</span>
+
+			
+			
+		</h3>
+
+		
+	</div>
+
+			<div class="pp-sub-heading">
+			<p>We ensure that payroll services are provided with a solid foundation of customer service, innovation, and a proven process.</p>		</div>
+	
+	</div>
+	</div>
+</div>
+<div class="fl-module fl-module-pp-smart-button fl-node-w0qep3497ozs" data-node="w0qep3497ozs">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-button-wrap pp-button-width-auto">
+	<a href="/payroll-administration/" target="_self" class="pp-button" role="button" aria-label="Learn More">
+						<span class="pp-button-text">Learn More</span>
+					</a>
+</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-ltyrihpxs05e fl-col-small fl-animation fl-slide-in-right ser-col" data-node="ltyrihpxs05e" data-animation-delay="0" data-animation-duration="1">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-image fl-node-ky4c3fvaurs6" data-node="ky4c3fvaurs6">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-photo-container">
+	<div class="pp-photo pp-photo-align-left pp-photo-align-responsive-center" itemscope itemtype="http://schema.org/ImageObject">
+		<div class="pp-photo-content">
+			<div class="pp-photo-content-inner">
+									<img decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/02/6.png" alt="HR Impact, Inc." itemprop="image" height="119" width="117" title="HR Impact, Inc." class="pp-photo-img wp-image-4960 size-full no-lazyload" />
+					<div class="pp-overlay-bg"></div>
+												</div>
+					</div>
+	</div>
+</div>
+	</div>
+</div>
+<div id="service-2" class="fl-module fl-module-pp-heading fl-node-zkabfm6ydhix" data-node="zkabfm6ydhix">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-heading-content">
+		<div class="pp-heading  pp-left">
+		
+		<h3 class="heading-title">
+
+			
+			<span class="title-text pp-primary-title">Executive Search</span>
+
+			
+			
+		</h3>
+
+		
+	</div>
+
+			<div class="pp-sub-heading">
+			<p>We find appropriate talent and team with you to place the right candidates. We handle senior-level searches and never simultaneously take on more than a few assignments. This approach allows us to expend the appropriate resources necessary to provide the greatest opportunity for successful and rewarding matches.</p>		</div>
+	
+	</div>
+	</div>
+</div>
+<div class="fl-module fl-module-pp-smart-button fl-node-43b17fap0ndu" data-node="43b17fap0ndu">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-button-wrap pp-button-width-auto">
+	<a href="/executive-search/" target="_self" class="pp-button" role="button" aria-label="Learn More">
+						<span class="pp-button-text">Learn More</span>
+					</a>
+</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-none fl-node-d32rlq7sf0n5" data-node="d32rlq7sf0n5">
+	<div class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-qin3f70bp4eg" data-node="qin3f70bp4eg">
+			<div class="fl-col fl-node-5nhf2szitk70 fl-col-has-cols" data-node="5nhf2szitk70">
+	<div class="fl-col-content fl-node-content">
+<div class="fl-col-group fl-node-p01zvbswu57d fl-col-group-nested fl-col-group-custom-width" data-node="p01zvbswu57d">
+			<div class="fl-col fl-node-eab79owpgxf5 fl-col-small fl-visible-desktop-medium" data-node="eab79owpgxf5">
+	<div class="fl-col-content fl-node-content"></div>
+</div>
+			<div class="fl-col fl-node-6mc8ogpary4k fl-col-small" data-node="6mc8ogpary4k">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-heading fl-node-ozshlknw61m3 fl-animation fl-slide-in-down" data-node="ozshlknw61m3" data-animation-delay="0" data-animation-duration="1">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-heading-content">
+		<div class="pp-heading  pp-center">
+		
+		<h2 class="heading-title">
+
+			
+			<span class="title-text pp-primary-title">Clients</span>
+
+			
+			
+		</h2>
+
+		
+	</div>
+
+			<div class="pp-sub-heading">
+			<p>A client list speaks volumes about the capability and credibility of a Human Resources service provider. Below is a partial list of organizations that HR Impact partnered with and supported.</p>		</div>
+	
+	</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-sktvdbgyo2iw fl-col-small fl-visible-desktop-medium" data-node="sktvdbgyo2iw">
+	<div class="fl-col-content fl-node-content"></div>
+</div>
+	</div>
+<div id="slide" class="fl-module fl-module-pp-image-carousel fl-node-otjdlmriw5su fl-animation fl-slide-in-up" data-node="otjdlmriw5su" data-animation-delay="0" data-animation-duration="1">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-image-carousel-wrapper">
+		<div class="pp-image-carousel swiper-container pp-carousel-navigation-outside" role="region" aria-label="Slider">
+		<div class="swiper-wrapper">
+							<div class="pp-image-carousel-item swiper-slide" role="group" aria-label="Slide 1">
+					
+					
+										<div class="pp-carousel-image-container">
+						<figure class="swiper-slide-inner">
+															<img width="300" height="200" decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/03/1_0015_Layer-1.jpg" alt="" class="swiper-slide-image no-lazyload" />
+													</figure>
+					</div>
+					
+					
+									</div>
+								<div class="pp-image-carousel-item swiper-slide" role="group" aria-label="Slide 2">
+					
+					
+										<div class="pp-carousel-image-container">
+						<figure class="swiper-slide-inner">
+															<img width="300" height="200" decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/03/1_0014_Atvivo.jpg" alt="" class="swiper-slide-image no-lazyload" />
+													</figure>
+					</div>
+					
+					
+									</div>
+								<div class="pp-image-carousel-item swiper-slide" role="group" aria-label="Slide 3">
+					
+					
+										<div class="pp-carousel-image-container">
+						<figure class="swiper-slide-inner">
+															<img width="300" height="200" decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/03/1_0013_Blockboard.jpg" alt="" class="swiper-slide-image no-lazyload" />
+													</figure>
+					</div>
+					
+					
+									</div>
+								<div class="pp-image-carousel-item swiper-slide" role="group" aria-label="Slide 4">
+					
+					
+										<div class="pp-carousel-image-container">
+						<figure class="swiper-slide-inner">
+															<img width="300" height="200" decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/03/1_0012_DG.jpg" alt="" class="swiper-slide-image no-lazyload" />
+													</figure>
+					</div>
+					
+					
+									</div>
+								<div class="pp-image-carousel-item swiper-slide" role="group" aria-label="Slide 5">
+					
+					
+										<div class="pp-carousel-image-container">
+						<figure class="swiper-slide-inner">
+															<img width="300" height="200" decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/03/1_0011_Dylans.jpg" alt="" class="swiper-slide-image no-lazyload" />
+													</figure>
+					</div>
+					
+					
+									</div>
+								<div class="pp-image-carousel-item swiper-slide" role="group" aria-label="Slide 6">
+					
+					
+										<div class="pp-carousel-image-container">
+						<figure class="swiper-slide-inner">
+															<img width="300" height="200" decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/03/1_0000_WWE.jpg" alt="" class="swiper-slide-image no-lazyload" />
+													</figure>
+					</div>
+					
+					
+									</div>
+								<div class="pp-image-carousel-item swiper-slide" role="group" aria-label="Slide 7">
+					
+					
+										<div class="pp-carousel-image-container">
+						<figure class="swiper-slide-inner">
+															<img width="300" height="200" decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/03/1_0001_TPC.jpg" alt="" class="swiper-slide-image no-lazyload" />
+													</figure>
+					</div>
+					
+					
+									</div>
+								<div class="pp-image-carousel-item swiper-slide" role="group" aria-label="Slide 8">
+					
+					
+										<div class="pp-carousel-image-container">
+						<figure class="swiper-slide-inner">
+															<img width="300" height="200" decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/03/1_0002_Supreme.jpg" alt="" class="swiper-slide-image no-lazyload" />
+													</figure>
+					</div>
+					
+					
+									</div>
+								<div class="pp-image-carousel-item swiper-slide" role="group" aria-label="Slide 9">
+					
+					
+										<div class="pp-carousel-image-container">
+						<figure class="swiper-slide-inner">
+															<img width="300" height="200" decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/03/1_0003_RMHNY.jpg" alt="" class="swiper-slide-image no-lazyload" />
+													</figure>
+					</div>
+					
+					
+									</div>
+								<div class="pp-image-carousel-item swiper-slide" role="group" aria-label="Slide 10">
+					
+					
+										<div class="pp-carousel-image-container">
+						<figure class="swiper-slide-inner">
+															<img width="300" height="200" decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/03/1_0004_Pronovias.jpg" alt="" class="swiper-slide-image no-lazyload" />
+													</figure>
+					</div>
+					
+					
+									</div>
+								<div class="pp-image-carousel-item swiper-slide" role="group" aria-label="Slide 11">
+					
+					
+										<div class="pp-carousel-image-container">
+						<figure class="swiper-slide-inner">
+															<img width="300" height="200" decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/03/1_0005_PMR.jpg" alt="" class="swiper-slide-image no-lazyload" />
+													</figure>
+					</div>
+					
+					
+									</div>
+								<div class="pp-image-carousel-item swiper-slide" role="group" aria-label="Slide 12">
+					
+					
+										<div class="pp-carousel-image-container">
+						<figure class="swiper-slide-inner">
+															<img width="300" height="200" decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/03/1_0006_pma-logo.jpg" alt="" class="swiper-slide-image no-lazyload" />
+													</figure>
+					</div>
+					
+					
+									</div>
+								<div class="pp-image-carousel-item swiper-slide" role="group" aria-label="Slide 13">
+					
+					
+										<div class="pp-carousel-image-container">
+						<figure class="swiper-slide-inner">
+															<img width="300" height="200" decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/03/1_0007_NYCA.jpg" alt="" class="swiper-slide-image no-lazyload" />
+													</figure>
+					</div>
+					
+					
+									</div>
+								<div class="pp-image-carousel-item swiper-slide" role="group" aria-label="Slide 14">
+					
+					
+										<div class="pp-carousel-image-container">
+						<figure class="swiper-slide-inner">
+															<img width="300" height="200" decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/03/1_0008_Melius.jpg" alt="" class="swiper-slide-image no-lazyload" />
+													</figure>
+					</div>
+					
+					
+									</div>
+								<div class="pp-image-carousel-item swiper-slide" role="group" aria-label="Slide 15">
+					
+					
+										<div class="pp-carousel-image-container">
+						<figure class="swiper-slide-inner">
+															<img width="300" height="200" decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/03/1_0009_JG.jpg" alt="" class="swiper-slide-image no-lazyload" />
+													</figure>
+					</div>
+					
+					
+									</div>
+								<div class="pp-image-carousel-item swiper-slide" role="group" aria-label="Slide 16">
+					
+					
+										<div class="pp-carousel-image-container">
+						<figure class="swiper-slide-inner">
+															<img width="300" height="200" decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/03/1_0010_illy.jpg" alt="" class="swiper-slide-image no-lazyload" />
+													</figure>
+					</div>
+					
+					
+									</div>
+								<div class="pp-image-carousel-item swiper-slide" role="group" aria-label="Slide 17">
+					
+					
+										<div class="pp-carousel-image-container">
+						<figure class="swiper-slide-inner">
+															<img width="300" height="200" decoding="async"  src="https://hrimpact.com/wp-content/uploads/2023/03/1_0013_Blockboard-1.jpg" alt="HR Impact, Inc" class="swiper-slide-image no-lazyload" />
+													</figure>
+					</div>
+					
+					
+									</div>
+						</div>
+
+					
+						<!-- pagination -->
+			<div class="swiper-pagination" data-captions="[&quot;Slide 1&quot;,&quot;Slide 2&quot;,&quot;Slide 3&quot;,&quot;Slide 4&quot;,&quot;Slide 5&quot;,&quot;Slide 6&quot;,&quot;Slide 7&quot;,&quot;Slide 8&quot;,&quot;Slide 9&quot;,&quot;Slide 10&quot;,&quot;Slide 11&quot;,&quot;Slide 12&quot;,&quot;Slide 13&quot;,&quot;Slide 14&quot;,&quot;Slide 15&quot;,&quot;Slide 16&quot;,&quot;Slide 17&quot;]"></div>
+						</div>
+	</div>	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</div><div class="uabb-js-breakpoint" style="display: none;"></div>	</div><!-- .fl-post-content -->
+	
+</article>
+
+<!-- .fl-post -->
+		</div>
+	</div>
+</div>
+
+
+	</div><!-- .fl-page-content -->
+	<footer class="fl-builder-content fl-builder-content-91 fl-builder-global-templates-locked" data-post-id="91" data-type="footer" itemscope="itemscope" itemtype="http://schema.org/WPFooter"><div class="fl-row fl-row-full-width fl-row-bg-none fl-node-d9ms451zrg6i" data-node="d9ms451zrg6i">
+	<div class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-full-width fl-node-content">
+		
+<div class="fl-col-group fl-node-eligtmado6f7" data-node="eligtmado6f7">
+			<div class="fl-col fl-node-xfnuohqg7932" data-node="xfnuohqg7932">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-image fl-node-oxz7543gvkjw fl-visible-mobile" data-node="oxz7543gvkjw">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-photo-container">
+	<div class="pp-photo pp-photo-align-center pp-photo-align-responsive-default" itemscope itemtype="http://schema.org/ImageObject">
+		<div class="pp-photo-content">
+			<div class="pp-photo-content-inner">
+								<a href="https://goo.gl/maps/Dz2TYQCFLnxEE6DK9" target="_blank" itemprop="url" rel="noopener" >
+									<img width="574" height="150" decoding="async"   alt="HR Impact, Inc." itemprop="image" data-srcset="https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-5.jpg 574w, https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-5-300x78.jpg 300w"  title="HR Impact, Inc." data-src="https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-5.png" data-sizes="(max-width: 574px) 100vw, 574px" class="pp-photo-img wp-image-1134 lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img width="574" height="150" decoding="async" class="pp-photo-img wp-image-1134" src="https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-5.png" alt="HR Impact, Inc." itemprop="image" srcset="https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-5.jpg 574w, https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-5-300x78.jpg 300w" sizes="(max-width: 574px) 100vw, 574px" title="HR Impact, Inc."  /></noscript>
+					<div class="pp-overlay-bg"></div>
+													</a>
+							</div>
+					</div>
+	</div>
+</div>
+	</div>
+</div>
+<div class="fl-module fl-module-pp-image fl-node-42f7wb8l5nzs fl-visible-medium" data-node="42f7wb8l5nzs">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-photo-container">
+	<div class="pp-photo pp-photo-align-center pp-photo-align-responsive-default" itemscope itemtype="http://schema.org/ImageObject">
+		<div class="pp-photo-content">
+			<div class="pp-photo-content-inner">
+								<a href="https://goo.gl/maps/Dz2TYQCFLnxEE6DK9" target="_blank" itemprop="url" rel="noopener" >
+									<img decoding="async"   alt="HR Impact, Inc." itemprop="image" height="192" width="958" data-srcset="https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-4.png 958w, https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-4-300x60.png 300w, https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-4-768x154.png 768w"  title="HR Impact, Inc." data-src="https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-4.png" data-sizes="(max-width: 958px) 100vw, 958px" class="pp-photo-img wp-image-1133 size-full lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async" class="pp-photo-img wp-image-1133 size-full" src="https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-4.png" alt="HR Impact, Inc." itemprop="image" height="192" width="958" srcset="https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-4.png 958w, https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-4-300x60.png 300w, https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-4-768x154.png 768w" sizes="(max-width: 958px) 100vw, 958px" title="HR Impact, Inc."  /></noscript>
+					<div class="pp-overlay-bg"></div>
+													</a>
+							</div>
+					</div>
+	</div>
+</div>
+	</div>
+</div>
+<div class="fl-module fl-module-pp-image fl-node-xrwt70d41b29 fl-visible-desktop" data-node="xrwt70d41b29">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-photo-container">
+	<div class="pp-photo pp-photo-align-center pp-photo-align-responsive-default" itemscope itemtype="http://schema.org/ImageObject">
+		<div class="pp-photo-content">
+			<div class="pp-photo-content-inner">
+								<a href="https://goo.gl/maps/Dz2TYQCFLnxEE6DK9" target="_blank" itemprop="url" rel="noopener" >
+									<img decoding="async"   alt="HR Impact, Inc." itemprop="image" height="248" width="1899" data-srcset="https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-3.png 1899w, https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-3-300x39.png 300w, https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-3-1024x134.png 1024w, https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-3-768x100.png 768w, https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-3-1536x201.png 1536w"  title="HR Impact, Inc." data-src="https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-3.png" data-sizes="(max-width: 1899px) 100vw, 1899px" class="pp-photo-img wp-image-1132 size-full lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async" class="pp-photo-img wp-image-1132 size-full" src="https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-3.png" alt="HR Impact, Inc." itemprop="image" height="248" width="1899" srcset="https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-3.png 1899w, https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-3-300x39.png 300w, https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-3-1024x134.png 1024w, https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-3-768x100.png 768w, https://hrimpact.com/wp-content/uploads/2021/08/Screenshot-3-1536x201.png 1536w" sizes="(max-width: 1899px) 100vw, 1899px" title="HR Impact, Inc."  /></noscript>
+					<div class="pp-overlay-bg"></div>
+													</a>
+							</div>
+					</div>
+	</div>
+</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+
+<div class="fl-col-group fl-node-9jgepc0b8k5i" data-node="9jgepc0b8k5i">
+			<div class="fl-col fl-node-57ugt1exdo0v" data-node="57ugt1exdo0v">
+	<div class="fl-col-content fl-node-content"></div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-color fl-node-6127455582f2c footer-row" data-node="6127455582f2c">
+	<div class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-6127455582f2d fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="6127455582f2d">
+			<div id="foot-1" class="fl-col fl-node-6127455582f30 fl-col-small fl-col-has-cols" data-node="6127455582f30">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-image fl-node-a1gdny93sf6o" data-node="a1gdny93sf6o">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-photo-container">
+	<div class="pp-photo pp-photo-align-left pp-photo-align-responsive-center" itemscope itemtype="http://schema.org/ImageObject">
+		<div class="pp-photo-content">
+			<div class="pp-photo-content-inner">
+								<a href="https://hrimpact.com" target="_self" itemprop="url">
+									<img decoding="async"   alt="HR Impact, Inc." itemprop="image" height="78" width="291" title="HR Impact, Inc." data-src="https://hrimpact.com/wp-content/uploads/2023/02/logo.png" class="pp-photo-img wp-image-45 size-full lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async"   alt="HR Impact, Inc." itemprop="image" height="78" width="291" title="HR Impact, Inc." data-src="https://hrimpact.com/wp-content/uploads/2023/02/logo.png" class="pp-photo-img wp-image-45 size-full lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async" class="pp-photo-img wp-image-45 size-full" src="https://hrimpact.com/wp-content/uploads/2023/02/logo.png" alt="HR Impact, Inc." itemprop="image" height="78" width="291" title="HR Impact, Inc."  /></noscript></noscript>
+					<div class="pp-overlay-bg"></div>
+													</a>
+							</div>
+					</div>
+	</div>
+</div>
+	</div>
+</div>
+
+<div class="fl-col-group fl-node-6notsgpur1hw fl-col-group-nested fl-col-group-equal-height fl-col-group-align-center" data-node="6notsgpur1hw">
+			<div class="fl-col fl-node-93zfdspkx0ir fl-col-small" data-node="93zfdspkx0ir">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-smart-button fl-node-h6q2fwogln4j" data-node="h6q2fwogln4j">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-button-wrap pp-button-width-auto">
+	<a href="/contact/" target="_self" class="pp-button" role="button" aria-label="Contact Us">
+						<span class="pp-button-text">Contact Us</span>
+					</a>
+</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-xwb9j26zmokp 12345" data-node="xwb9j26zmokp">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-social-icons fl-node-dws3zouh8cv7" data-node="dws3zouh8cv7">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-social-icons pp-social-icons-horizontal">
+	<span class="pp-social-icon" itemscope itemtype="https://schema.org/Organization">
+		<link itemprop="url" href="https://hrimpact.com">
+		<a itemprop="sameAs" href="https://www.linkedin.com/company/hr-impact/" target="_blank" title="LinkedIn" aria-label="LinkedIn" role="button" rel="noopener noreferrer external" >
+							<i class="fab fa-linkedin-in"></i>
+					</a>
+	</span>
+	</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+</div>
+</div>
+			<div id="foot-2" class="fl-col fl-node-6127455582f2e fl-col-small" data-node="6127455582f2e">
+	<div class="fl-col-content fl-node-content"><div id="f-info" class="fl-module fl-module-info-list fl-node-6127480381043" data-node="6127480381043">
+	<div class="fl-module-content fl-node-content">
+		
+<div class="uabb-module-content uabb-info-list">
+	<ul class="uabb-info-list-wrapper uabb-info-list-left">
+		<li class="uabb-info-list-item info-list-item-dynamic0"><div class="uabb-info-list-content-wrapper fl-clearfix uabb-info-list-left"><div class="uabb-info-list-icon info-list-icon-dynamic0"><div class="uabb-module-content uabb-imgicon-wrap">				<span class="uabb-icon-wrap">
+			<span class="uabb-icon">
+				<i class="fas fa-map-marker-alt"></i>
+			</span>
+		</span>
+	
+		</div></div><div class="uabb-info-list-content uabb-info-list-left info-list-content-dynamic0"><h3 class="uabb-info-list-title"></h3 ><div class="uabb-info-list-description uabb-text-editor info-list-description-dynamic0"><p><a href="https://goo.gl/maps/W3kAfbQa25FdvQaj8" target="_blank" rel="noopener">7 Reuten Drive, Suite L<br />
+Closter, New Jersey 07624</a></p>
+</div></div></div><div class="uabb-info-list-connector uabb-info-list-left"></div></li><li class="uabb-info-list-item info-list-item-dynamic1"><div class="uabb-info-list-content-wrapper fl-clearfix uabb-info-list-left"><div class="uabb-info-list-icon info-list-icon-dynamic1"><div class="uabb-module-content uabb-imgicon-wrap">				<span class="uabb-icon-wrap">
+			<span class="uabb-icon">
+				<i class="fas fa-phone-alt"></i>
+			</span>
+		</span>
+	
+		</div></div><div class="uabb-info-list-content uabb-info-list-left info-list-content-dynamic1"><h3 class="uabb-info-list-title"></h3 ><div class="uabb-info-list-description uabb-text-editor info-list-description-dynamic1"><p><a href="tel:+12017507070">(201) 750-7070</a></p></div></div></div><div class="uabb-info-list-connector uabb-info-list-left"></div></li><li class="uabb-info-list-item info-list-item-dynamic2"><div class="uabb-info-list-content-wrapper fl-clearfix uabb-info-list-left"><div class="uabb-info-list-icon info-list-icon-dynamic2"><div class="uabb-module-content uabb-imgicon-wrap">				<span class="uabb-icon-wrap">
+			<span class="uabb-icon">
+				<i class="fas fa-envelope"></i>
+			</span>
+		</span>
+	
+		</div></div><div class="uabb-info-list-content uabb-info-list-left info-list-content-dynamic2"><h3 class="uabb-info-list-title"></h3 ><div class="uabb-info-list-description uabb-text-editor info-list-description-dynamic2"><p><a href="/cdn-cgi/l/email-protection#2c45424a436c445e45415c4d4f58024f4341"><span class="__cf_email__" data-cfemail="4c05222a230c041e05213c2d2f38622f2321">[email&#160;protected]</span></a></p>
+</div></div></div><div class="uabb-info-list-connector uabb-info-list-left"></div></li>	</ul>
+</div>
+	</div>
+</div>
+</div>
+</div>
+			<div id="foot-3" class="fl-col fl-node-6127455582f32 fl-col-small fl-col-has-cols" data-node="6127455582f32">
+	<div class="fl-col-content fl-node-content">
+<div class="fl-col-group fl-node-vfucbl4q2a68 fl-col-group-nested fl-col-group-custom-width" data-node="vfucbl4q2a68">
+			<div class="fl-col fl-node-qls485v7dgxy" data-node="qls485v7dgxy">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-pp-image fl-node-hn895dcyotwz" data-node="hn895dcyotwz">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-photo-container">
+	<div class="pp-photo pp-photo-align-right pp-photo-align-responsive-center" itemscope itemtype="http://schema.org/ImageObject">
+		<div class="pp-photo-content">
+			<div class="pp-photo-content-inner">
+									<img decoding="async"   alt="Using our talent, to help you with yours" itemprop="image" height="171" width="500" data-srcset="https://hrimpact.com/wp-content/uploads/2021/08/GearReference1.png 500w, https://hrimpact.com/wp-content/uploads/2021/08/GearReference1-300x103.png 300w"  title="Using our talent, to help you with yours" data-src="https://hrimpact.com/wp-content/uploads/2021/08/GearReference1.png" data-sizes="(max-width: 500px) 100vw, 500px" class="pp-photo-img wp-image-1122 size-full lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async" class="pp-photo-img wp-image-1122 size-full" src="https://hrimpact.com/wp-content/uploads/2021/08/GearReference1.png" alt="Using our talent, to help you with yours" itemprop="image" height="171" width="500" srcset="https://hrimpact.com/wp-content/uploads/2021/08/GearReference1.png 500w, https://hrimpact.com/wp-content/uploads/2021/08/GearReference1-300x103.png 300w" sizes="(max-width: 500px) 100vw, 500px" title="Using our talent, to help you with yours"  /></noscript>
+					<div class="pp-overlay-bg"></div>
+												</div>
+					</div>
+	</div>
+</div>
+	</div>
+</div>
+<div class="fl-module fl-module-pp-image fl-node-ntqdgmx1syu0" data-node="ntqdgmx1syu0">
+	<div class="fl-module-content fl-node-content">
+		<div class="pp-photo-container">
+	<div class="pp-photo pp-photo-align-right pp-photo-align-responsive-center" itemscope itemtype="http://schema.org/ImageObject">
+		<div class="pp-photo-content">
+			<div class="pp-photo-content-inner">
+									<img decoding="async"   alt="Accredited Business" itemprop="image" height="300" width="820" data-srcset="https://hrimpact.com/wp-content/uploads/2021/08/bbb-logo.jpg 820w, https://hrimpact.com/wp-content/uploads/2021/08/bbb-logo-300x110.jpg 300w, https://hrimpact.com/wp-content/uploads/2021/08/bbb-logo-768x281.jpg 768w"  title="Accredited Business" data-src="https://hrimpact.com/wp-content/uploads/2021/08/bbb-logo.jpg" data-sizes="(max-width: 820px) 100vw, 820px" class="pp-photo-img wp-image-1123 size-full lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img decoding="async" class="pp-photo-img wp-image-1123 size-full" src="https://hrimpact.com/wp-content/uploads/2021/08/bbb-logo.jpg" alt="Accredited Business" itemprop="image" height="300" width="820" srcset="https://hrimpact.com/wp-content/uploads/2021/08/bbb-logo.jpg 820w, https://hrimpact.com/wp-content/uploads/2021/08/bbb-logo-300x110.jpg 300w, https://hrimpact.com/wp-content/uploads/2021/08/bbb-logo-768x281.jpg 768w" sizes="(max-width: 820px) 100vw, 820px" title="Accredited Business"  /></noscript>
+					<div class="pp-overlay-bg"></div>
+												</div>
+					</div>
+	</div>
+</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-color fl-node-43kn8lb0ravq footer-copyright" data-node="43kn8lb0ravq">
+	<div class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-buer9jw0sl3z fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="buer9jw0sl3z">
+			<div class="fl-col fl-node-7aw9ux320zvt" data-node="7aw9ux320zvt">
+	<div class="fl-col-content fl-node-content"><div id="f-menu" class="fl-module fl-module-menu fl-node-4gsftzoanh36" data-node="4gsftzoanh36">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-menu">
+		<div class="fl-clear"></div>
+	<nav aria-label="Menu" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement"><ul id="menu-footer" class="menu fl-menu-horizontal fl-toggle-none"><li id="menu-item-1090" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-20 current_page_item"><a href="https://hrimpact.com/">Home</a></li><li id="menu-item-1089" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://hrimpact.com/about/">About</a></li><li id="menu-item-1088" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://hrimpact.com/services/">Services</a></li><li id="menu-item-1087" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://hrimpact.com/hr-outsourcing-co-sourcing/">HR Outsourcing/Co-Sourcing</a></li><li id="menu-item-1086" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://hrimpact.com/general-hr-consulting/">General HR Consulting</a></li><li id="menu-item-1085" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://hrimpact.com/employee-benefits/">Employee Benefits</a></li><li id="menu-item-1084" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://hrimpact.com/employee-compensation/">Employee Compensation</a></li><li id="menu-item-1083" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://hrimpact.com/payroll-administration/">Payroll Administration</a></li><li id="menu-item-1082" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://hrimpact.com/executive-search/">Executive Search</a></li><li id="menu-item-1081" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://hrimpact.com/testimonials/">Testimonials</a></li><li id="menu-item-5375" class="menu-item menu-item-type-post_type menu-item-object-page"><a href="https://hrimpact.com/contact/">Contact</a></li></ul></nav></div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+<div class="fl-row fl-row-full-width fl-row-bg-color fl-node-xji0w8szam6o footer-copyright" data-node="xji0w8szam6o">
+	<div class="fl-row-content-wrap">
+		<div class="uabb-row-separator uabb-top-row-separator" >
+</div>
+						<div class="fl-row-content fl-row-fixed-width fl-node-content">
+		
+<div class="fl-col-group fl-node-2w10oejz45yu fl-col-group-equal-height fl-col-group-align-center fl-col-group-custom-width" data-node="2w10oejz45yu">
+			<div class="fl-col fl-node-ik63vs9brytf fl-col-small" data-node="ik63vs9brytf">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-rich-text fl-node-jeg3i2s0qan4" data-node="jeg3i2s0qan4">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<p>© 2023, HR Impact, Inc. All Rights Reserved.</p>
+</div>
+	</div>
+</div>
+</div>
+</div>
+			<div class="fl-col fl-node-quje61c9wtsb fl-col-small" data-node="quje61c9wtsb">
+	<div class="fl-col-content fl-node-content"><div class="fl-module fl-module-rich-text fl-node-3ly0cdezuqsr" data-node="3ly0cdezuqsr">
+	<div class="fl-module-content fl-node-content">
+		<div class="fl-rich-text">
+	<div align="right"><a href="https://www.godaddy.com/websites/web-design" target="_blank" rel="nofollow noopener"><img decoding="async" src="//nebula.wsimg.com/aadc63d8e8dbd533470bdc4e350bc4af?AccessKeyId=B7351D786AE96FEF6EBB&amp;disposition=0&amp;alloworigin=1" alt="GoDaddy Web Design" /></a></div>
+</div>
+	</div>
+</div>
+</div>
+</div>
+	</div>
+		</div>
+	</div>
+</div>
+</footer><div class="uabb-js-breakpoint" style="display: none;"></div>	</div><!-- .fl-page -->
+<a href="#" id="fl-to-top"><span class="sr-only">Scroll To Top</span><i class="fas fa-chevron-up" aria-hidden="true"></i></a><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="rocketlazyloadscript" src='https://hrimpact.com/wp-content/plugins/bb-plugin/js/jquery.waypoints.min.js?ver=2.6.3' id='jquery-waypoints-js' defer></script>
+<script type="rocketlazyloadscript" src='https://hrimpact.com/wp-content/plugins/bbpowerpack/assets/js/swiper.jquery.min.js?ver=4.4.6' id='jquery-swiper-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://hrimpact.com/wp-content/cache/min/1/wp-content/uploads/bb-plugin/cache/20-layout.js?ver=1685644305' id='fl-builder-layout-20-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://hrimpact.com/wp-content/cache/min/1/wp-content/plugins/coblocks/dist/js/coblocks-animation.js?ver=1685643502' id='coblocks-animation-js' defer></script>
+<script id='coblocks-tinyswiper-initializer-js-extra'>
+var coblocksTinyswiper = {"carouselPrevButtonAriaLabel":"Previous","carouselNextButtonAriaLabel":"Next","sliderImageAriaLabel":"Image"};
+</script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://hrimpact.com/wp-content/cache/min/1/wp-content/plugins/coblocks/dist/js/coblocks-tinyswiper-initializer.js?ver=1685643502' id='coblocks-tinyswiper-initializer-js' defer></script>
+<script type="rocketlazyloadscript" src='https://hrimpact.com/wp-content/plugins/bb-plugin/js/jquery.ba-throttle-debounce.min.js?ver=2.6.3' id='jquery-throttle-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" src='https://hrimpact.com/wp-content/cache/min/1/wp-content/uploads/bb-plugin/cache/d333b52be14af695692dc83b80d8bb68-layout-bundle.js?ver=1685644305' id='fl-builder-layout-bundle-d333b52be14af695692dc83b80d8bb68-js' defer></script>
+<script type="rocketlazyloadscript" id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script id='rocket-preload-links-js-extra'>
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/hrimpact.com","onHoverDelay":"100","rateThrottle":"3"};
+</script>
+<script type="rocketlazyloadscript" id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" src='https://hrimpact.com/wp-content/plugins/bb-plugin/js/jquery.magnificpopup.min.js?ver=2.6.3' id='jquery-magnificpopup-js' defer></script>
+<script id='fl-automator-js-extra'>
+var themeopts = {"medium_breakpoint":"1025","mobile_breakpoint":"769"};
+</script>
+<script type="rocketlazyloadscript" src='https://hrimpact.com/wp-content/themes/bb-theme/js/theme.min.js?ver=1.7.12.1' id='fl-automator-js' defer></script>
+		<script type="rocketlazyloadscript">'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'}),_trfd.push({'ap':'wpaas'},{'server':'55891bfe-6b0f-99a4-48f5-b2077160168c.secureserver.net'},{'pod':'P3NLWPPOD12'},{'storage':'p3cephmah006pod12_data05'},{'xid':'44979220'},{'wp':'6.2.2'},{'php':'8.0.27'},{'loggedin':'0'},{'cdn':'1'},{'builder':'beaver-builder'},{'theme':'bb-theme'},{'wds':'0'},{'wp_alloptions_count':'230'},{'wp_alloptions_bytes':'64945'})</script>
+		<script type="rocketlazyloadscript">window.addEventListener('click', function (elem) { var _elem$target, _elem$target$dataset, _window, _window$_trfq; return (elem === null || elem === void 0 ? void 0 : (_elem$target = elem.target) === null || _elem$target === void 0 ? void 0 : (_elem$target$dataset = _elem$target.dataset) === null || _elem$target$dataset === void 0 ? void 0 : _elem$target$dataset.eid) && ((_window = window) === null || _window === void 0 ? void 0 : (_window$_trfq = _window._trfq) === null || _window$_trfq === void 0 ? void 0 : _window$_trfq.push(["cmdLogEvent", "click", elem.target.dataset.eid]));});</script>
+		<script type="rocketlazyloadscript" data-minify="1" src='https://hrimpact.com/wp-content/cache/min/1/tcc/tcc_l.combined.1.0.6.min.js?ver=1685643502' defer></script>
+		<script type="rocketlazyloadscript" data-minify="1" src='https://hrimpact.com/wp-content/cache/min/1/traffic-assets/js/tccl-tti.min.js?ver=1685643502' onload="window.tti.calculateTTI()" defer></script>
+		</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1687481558 -->

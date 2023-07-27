@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="naver-site-verification" content="" />
+
+		
+	
+<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=UA-63775941-1"></script>
+<script type="rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-63775941-1', { 'anonymize_ip': true });
+	gtag('config', 'AW-934129879');
+</script>
+	
+		<!-- Google Tag Manager -->
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5BQ7TF3');</script>
+<!-- End Google Tag Manager -->
+	
+				<!--[if lte IE 8]>
+			<link href='https://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+			<link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+			<link href='https://fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css'>
+			<link href='https://fonts.googleapis.com/css?family=Roboto:500' rel='stylesheet' type='text/css'>
+			<link href='https://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'>
+			<link href='https://fonts.googleapis.com/css?family=Roboto:100italic' rel='stylesheet' type='text/css'>
+			<link href='https://fonts.googleapis.com/css?family=Roboto:300italic' rel='stylesheet' type='text/css'>
+			<link href='https://fonts.googleapis.com/css?family=Roboto:400italic' rel='stylesheet' type='text/css'>
+			<link href='https://fonts.googleapis.com/css?family=Roboto:500italic' rel='stylesheet' type='text/css'>
+			<link href='https://fonts.googleapis.com/css?family=Roboto:700italic' rel='stylesheet' type='text/css'>
+		<![endif]-->
+
+		<title>Top Nondestructive Testing (NDT) &amp; Inspection Solutions Company | Zetec</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C100%2C300%2C500%2C700%2C100italic%2C300italic%2C400italic%2C500italic%2C700italic&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C100%2C300%2C500%2C700%2C100italic%2C300italic%2C400italic%2C500italic%2C700italic&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C100%2C300%2C500%2C700%2C100italic%2C300italic%2C400italic%2C500italic%2C700italic&#038;display=swap" /></noscript>
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="https://www.zetec.com/xmlrpc.php">
+
+		<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<link rel="alternate" hreflang="en-us" href="https://www.zetec.com" />
+<link rel="alternate" hreflang="fr-fr" href="https://www.zetec.com/fr/" />
+<link rel="alternate" hreflang="es-es" href="https://www.zetec.com/es/" />
+<link rel="alternate" hreflang="ko-kr" href="https://www.zetec.com/ko/" />
+<link rel="alternate" hreflang="x-default" href="https://www.zetec.com" />
+
+<!-- Social Warfare v4.3.0 https://warfareplugins.com - BEGINNING OF OUTPUT -->
+<style>
+	@font-face {
+		font-family: "sw-icon-font";
+		src:url("https://www.zetec.com/wp-content/plugins/social-warfare/assets/fonts/sw-icon-font.eot?ver=4.3.0");
+		src:url("https://www.zetec.com/wp-content/plugins/social-warfare/assets/fonts/sw-icon-font.eot?ver=4.3.0#iefix") format("embedded-opentype"),
+		url("https://www.zetec.com/wp-content/plugins/social-warfare/assets/fonts/sw-icon-font.woff?ver=4.3.0") format("woff"),
+		url("https://www.zetec.com/wp-content/plugins/social-warfare/assets/fonts/sw-icon-font.ttf?ver=4.3.0") format("truetype"),
+		url("https://www.zetec.com/wp-content/plugins/social-warfare/assets/fonts/sw-icon-font.svg?ver=4.3.0#1445203416") format("svg");
+		font-weight: normal;
+		font-style: normal;
+		font-display:block;
+	}
+</style>
+<!-- Social Warfare v4.3.0 https://warfareplugins.com - END OF OUTPUT -->
+
+
+	<!-- This site is optimized with the Yoast SEO plugin v19.10 - https://yoast.com/wordpress/plugins/seo/ -->
+	<meta name="description" content="Zetec delivers top nondestructive testing (NDT) solutions that ensure better inspection results for eddy current &amp; ultrasonic technologies." />
+	<link rel="canonical" href="https://www.zetec.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Top Nondestructive Testing (NDT) &amp; Inspection Solutions Company | Zetec" />
+	<meta property="og:description" content="Zetec delivers top nondestructive testing (NDT) solutions that ensure better inspection results for eddy current &amp; ultrasonic technologies." />
+	<meta property="og:url" content="https://www.zetec.com/" />
+	<meta property="og:site_name" content="Zetec" />
+	<meta property="article:modified_time" content="2021-02-05T17:12:25+00:00" />
+	<meta property="og:image" content="https://www.zetec.com/wp-content/uploads/2018/09/map_image-300x210.jpg" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="2 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://www.zetec.com/","url":"https://www.zetec.com/","name":"Top Nondestructive Testing (NDT) & Inspection Solutions Company | Zetec","isPartOf":{"@id":"https://www.zetec.com/ko/#website"},"about":{"@id":"https://www.zetec.com/ko/#organization"},"primaryImageOfPage":{"@id":"https://www.zetec.com/#primaryimage"},"image":{"@id":"https://www.zetec.com/#primaryimage"},"thumbnailUrl":"https://www.zetec.com/wp-content/uploads/2018/09/map_image-300x210.jpg","datePublished":"2015-04-20T16:00:15+00:00","dateModified":"2021-02-05T17:12:25+00:00","description":"Zetec delivers top nondestructive testing (NDT) solutions that ensure better inspection results for eddy current & ultrasonic technologies.","breadcrumb":{"@id":"https://www.zetec.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://www.zetec.com/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.zetec.com/#primaryimage","url":"https://www.zetec.com/wp-content/uploads/2018/09/map_image.jpg","contentUrl":"https://www.zetec.com/wp-content/uploads/2018/09/map_image.jpg","width":350,"height":245,"caption":"Global nondestructive testing (NDT) Facilities Map"},{"@type":"BreadcrumbList","@id":"https://www.zetec.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://www.zetec.com/ko/#website","url":"https://www.zetec.com/ko/","name":"Zetec","description":"The inspection advantage.","publisher":{"@id":"https://www.zetec.com/ko/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://www.zetec.com/ko/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://www.zetec.com/ko/#organization","name":"Zetec","url":"https://www.zetec.com/ko/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://www.zetec.com/ko/#/schema/logo/image/","url":"https://www.zetec.com/wp-content/uploads/2015/05/zetec-logo.png","contentUrl":"https://www.zetec.com/wp-content/uploads/2015/05/zetec-logo.png","width":376,"height":216,"caption":"Zetec"},"image":{"@id":"https://www.zetec.com/ko/#/schema/logo/image/"}}]}</script>
+	<meta name="msvalidate.01" content="6714321DD46891F5B3E6E4D995274D75" />
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//cdnjs.cloudflare.com' />
+<link rel='dns-prefetch' href='//netdna.bootstrapcdn.com' />
+<link rel='dns-prefetch' href='//www.gstatic.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Zetec &raquo; Feed" href="https://www.zetec.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Zetec &raquo; Comments Feed" href="https://www.zetec.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Zetec &raquo; Home Comments Feed" href="https://www.zetec.com/home/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link data-minify="1" rel='stylesheet' id='social-warfare-block-css-css' href='https://www.zetec.com/wp-content/cache/min/1/wp-content/plugins/social-warfare/assets/js/post-editor/dist/blocks.style.build.css?ver=1669716325' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css' href='https://www.zetec.com/wp-includes/css/dist/block-library/style.min.css?ver=6.2.2' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='uji_countdown_2020-uji-style-css-css' href='https://www.zetec.com/wp-content/cache/min/1/wp-content/plugins/uji-countdown/dist/blocks.style.build.css?ver=1669716325' type='text/css' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://www.zetec.com/wp-includes/css/classic-themes.min.css?ver=6.2.2' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link data-minify="1" rel='stylesheet' id='contact-form-7-css' href='https://www.zetec.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=1669716325' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='cookie-law-info-css' href='https://www.zetec.com/wp-content/cache/min/1/wp-content/plugins/cookie-law-info/legacy/public/css/cookie-law-info-public.css?ver=1669716325' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='cookie-law-info-gdpr-css' href='https://www.zetec.com/wp-content/cache/min/1/wp-content/plugins/cookie-law-info/legacy/public/css/cookie-law-info-gdpr.css?ver=1669716325' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='dashicons-css' href='https://www.zetec.com/wp-content/cache/min/1/wp-includes/css/dashicons.min.css?ver=1669716325' type='text/css' media='all' />
+<link rel='stylesheet' id='wpcf7-redirect-script-frontend-css' href='https://www.zetec.com/wp-content/plugins/wpcf7-redirect/build/css/wpcf7-redirect-frontend.min.css?ver=6.2.2' type='text/css' media='all' />
+<link rel='stylesheet' id='wpml-legacy-dropdown-0-css' href='//www.zetec.com/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/legacy-dropdown/style.min.css?ver=1' type='text/css' media='all' />
+<style id='wpml-legacy-dropdown-0-inline-css' type='text/css'>
+.wpml-ls-statics-shortcode_actions, .wpml-ls-statics-shortcode_actions .wpml-ls-sub-menu, .wpml-ls-statics-shortcode_actions a {border-color:#cdcdcd;}.wpml-ls-statics-shortcode_actions a {color:#444444;background-color:#ffffff;}.wpml-ls-statics-shortcode_actions a:hover,.wpml-ls-statics-shortcode_actions a:focus {color:#000000;background-color:#eeeeee;}.wpml-ls-statics-shortcode_actions .wpml-ls-current-language>a {color:#444444;background-color:#ffffff;}.wpml-ls-statics-shortcode_actions .wpml-ls-current-language:hover>a, .wpml-ls-statics-shortcode_actions .wpml-ls-current-language>a:focus {color:#000000;background-color:#eeeeee;}
+</style>
+<link rel='stylesheet' id='wpml-menu-item-0-css' href='//www.zetec.com/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/menu-item/style.min.css?ver=1' type='text/css' media='all' />
+<style id='wpml-menu-item-0-inline-css' type='text/css'>
+.menu-item-language-current .sub-menu{visibility:hidden; width:150px; background: linear-gradient(to bottom, #f9f9f9 0%, whitesmoke 29%, #e9e9e9 70%, #e6e6e6 100%);} .menu-item-language-current .sub-menu .menu-item-language a {padding-right:0; background-image:none;} .menu-item-language-current .sub-menu .menu-item-language{float:none; padding-top:3px;} .menu-item-language-current .sub-menu .menu-item-language::before{display:none;} .menu-item-language-current:hover .sub-menu{visibility:visible;} .menu-item-language-current{width:140px; height:17px; z-index:9999;}
+</style>
+<link rel='stylesheet' id='social_warfare-css' href='https://www.zetec.com/wp-content/plugins/social-warfare/assets/css/style.min.css?ver=4.3.0' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='zetec-style-css' href='https://www.zetec.com/wp-content/cache/min/1/wp-content/themes/zetec/style.css?ver=1669716325' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='fontawesome-css' href='https://www.zetec.com/wp-content/cache/min/1/font-awesome/3.2.1/css/font-awesome.min.css?ver=1669716325' type='text/css' media='all' />
+<!--[if IE 7]>
+<link rel='stylesheet' id='fontawesome-ie-css' href='//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome-ie7.min.css?ver=1.3.9' type='text/css' media='all' />
+<![endif]-->
+		<style>
+			/* Accessible for screen readers but hidden from view */
+			.fa-hidden { position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden; }
+			.rtl .fa-hidden { left:10000px; }
+			.fa-showtext { margin-right: 5px; }
+		</style>
+		<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.zetec.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.4' id='jquery-core-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.zetec.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0' id='jquery-migrate-js' defer></script>
+<script type='text/javascript' id='cookie-law-info-js-extra'>
+/* <![CDATA[ */
+var Cli_Data = {"nn_cookie_ids":[],"cookielist":[],"non_necessary_cookies":[],"ccpaEnabled":"","ccpaRegionBased":"","ccpaBarEnabled":"","strictlyEnabled":["necessary","obligatoire"],"ccpaType":"gdpr","js_blocking":"","custom_integration":"","triggerDomRefresh":"","secure_cookies":""};
+var cli_cookiebar_settings = {"animate_speed_hide":"500","animate_speed_show":"500","background":"#fff","border":"#444","border_on":"","button_1_button_colour":"#000","button_1_button_hover":"#000000","button_1_link_colour":"#fff","button_1_as_button":"1","button_1_new_win":"","button_2_button_colour":"#333","button_2_button_hover":"#292929","button_2_link_colour":"#686868","button_2_as_button":"","button_2_hidebar":"","button_3_button_colour":"#000","button_3_button_hover":"#000000","button_3_link_colour":"#fff","button_3_as_button":"1","button_3_new_win":"","button_4_button_colour":"#000","button_4_button_hover":"#000000","button_4_link_colour":"#fff","button_4_as_button":"1","button_7_button_colour":"#61a229","button_7_button_hover":"#4e8221","button_7_link_colour":"#fff","button_7_as_button":"1","button_7_new_win":"","font_family":"inherit","header_fix":"","notify_animate_hide":"1","notify_animate_show":"","notify_div_id":"#cookie-law-info-bar","notify_position_horizontal":"right","notify_position_vertical":"bottom","scroll_close":"","scroll_close_reload":"","accept_close_reload":"","reject_close_reload":"","showagain_tab":"1","showagain_background":"#fff","showagain_border":"#000","showagain_div_id":"#cookie-law-info-again","showagain_x_position":"100px","text":"#000","show_once_yn":"","show_once":"10000","logging_on":"","as_popup":"","popup_overlay":"1","bar_heading_text":"","cookie_bar_as":"banner","popup_showagain_position":"bottom-right","widget_position":"left"};
+var log_object = {"ajax_url":"https:\/\/www.zetec.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.zetec.com/wp-content/cache/min/1/wp-content/plugins/cookie-law-info/legacy/public/js/cookie-law-info-public.js?ver=1669716325' id='cookie-law-info-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.google.com/jsapi' id='jsapifull-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='//www.zetec.com/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/legacy-dropdown/script.min.js?ver=1' id='wpml-legacy-dropdown-0-js' defer></script>
+<link rel="https://api.w.org/" href="https://www.zetec.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.zetec.com/wp-json/wp/v2/pages/20" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.zetec.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.zetec.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.2.2" />
+<link rel='shortlink' href='https://www.zetec.com/' />
+<link rel="alternate" type="application/json+oembed" href="https://www.zetec.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.zetec.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.zetec.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.zetec.com%2F&#038;format=xml" />
+<meta name="generator" content="WPML ver:4.5.14 stt:1,4,29,2;" />
+<script type="rocketlazyloadscript" language="javascript" data-rocket-type="text/javascript">
+			 var style = document.createElement("style");
+			 style.type = "text/css";
+			 style.id = "antiClickjack";
+			 if ("cssText" in style){
+			   style.cssText = "body{display:none !important;}";
+			 }else{
+			   style.innerHTML = "body{display:none !important;}";
+			}
+			document.getElementsByTagName("head")[0].appendChild(style);
+
+			if (top === self) {
+			 var antiClickjack = document.getElementById("antiClickjack");
+			 antiClickjack.parentNode.removeChild(antiClickjack);
+			} else {
+			 top.location = self.location;
+			}
+		  </script><!-- site-navigation-element Schema optimized by Schema Pro --><script type="application/ld+json">{"@context":"https:\/\/schema.org","@graph":[{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Industries","url":"https:\/\/www.zetec.com\/industries\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Aerospace","url":"https:\/\/www.zetec.com\/industries\/aerospace-solutions\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Automotive","url":"https:\/\/www.zetec.com\/industries\/automotive-solutions\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Manufacturing","url":"https:\/\/www.zetec.com\/industries\/manufacturing\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Heavy Manufacturing","url":"https:\/\/www.zetec.com\/heavy-manufacturing-solutions\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Metallurgical Flaw Detection","url":"https:\/\/www.zetec.com\/industries\/manufacturing\/metallurgical-flaw-detection\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Pipe, Tube and Other Steel","url":"https:\/\/www.zetec.com\/pipe-tube-steel-product-solutions\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Military and Defense","url":"https:\/\/www.zetec.com\/industries\/military-defense-solutions\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Oil and Gas","url":"https:\/\/www.zetec.com\/industries\/oil-gas\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Upstream","url":"https:\/\/www.zetec.com\/industries\/oil-gas\/oil-gas-upstream-solutions\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Midstream","url":"https:\/\/www.zetec.com\/industries\/oil-gas\/oil-gas-midstream-solutions\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Downstream","url":"https:\/\/www.zetec.com\/industries\/oil-gas\/oil-gas-downstream-solutions\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Power Generation","url":"https:\/\/www.zetec.com\/industries\/power-generation\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Nuclear","url":"https:\/\/www.zetec.com\/nuclear-solutions\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Fossil","url":"https:\/\/www.zetec.com\/fossil-solutions\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Wind Energy","url":"https:\/\/www.zetec.com\/industries\/power-generation\/ndt-wind-energy\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Railway","url":"https:\/\/www.zetec.com\/industries\/railway-solutions\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Transportation","url":"https:\/\/www.zetec.com\/industries\/transportation\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Products","url":"https:\/\/www.zetec.com\/products\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Ultrasound","url":"https:\/\/www.zetec.com\/products\/ultrasound\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Instrumentation","url":"https:\/\/www.zetec.com\/products\/eddy-current\/eddy-current-instrumentation\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"TOPAZ\u00ae 16:  Portable Value","url":"https:\/\/www.zetec.com\/products\/ultrasound\/instrumentation\/topaz16\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"TOPAZ\u00ae 32:  Portable Performance","url":"https:\/\/www.zetec.com\/products\/ultrasound\/instrumentation\/topaz32\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"TOPAZ\u00ae 64: Portable Intelligence","url":"https:\/\/www.zetec.com\/products\/ultrasound\/instrumentation\/topaz64\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Emerald\u2122: Integrated Intelligence","url":"https:\/\/www.zetec.com\/products\/ultrasound\/instrumentation\/emerald-system\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Quartz: Scalable Performance","url":"https:\/\/www.zetec.com\/products\/ultrasound\/instrumentation\/quartz\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Dynaray\u00ae: Ultra Performance","url":"https:\/\/www.zetec.com\/products\/ultrasound\/instrumentation\/dynaray-dynaray-lite\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Zircon\u00ae: Rugged","url":"https:\/\/www.zetec.com\/products\/ultrasound\/instrumentation\/zircon\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Z-Scan UT: Conventional UT","url":"https:\/\/www.zetec.com\/products\/ultrasound\/instrumentation\/z-scan-ut\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Software","url":"https:\/\/www.zetec.com\/products\/eddy-current\/software-ec\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Ultravision\u00ae 3","url":"https:\/\/www.zetec.com\/products\/ultrasound\/software-ut\/ultravision3\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"UltraVision\u00ae Touch","url":"https:\/\/www.zetec.com\/products\/ultrasound\/software-ut\/ultravision-touch\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Scanners","url":"https:\/\/www.zetec.com\/products\/mechanical-systems\/scanners\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"NDT PaintBrush\u2122 Corrosion Scanner","url":"https:\/\/www.zetec.com\/products\/mechanical-systems\/scanners\/ndtpaintbrush\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"NDT Sweeper\u2122 Scanner","url":"https:\/\/www.zetec.com\/products\/mechanical-systems\/scanners\/ndt-sweeper\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"ElbowFlex\u2122 Scanner","url":"https:\/\/www.zetec.com\/products\/mechanical-systems\/scanners\/elbowflex-scanner\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"WELD Crawler\u00ae Scanner","url":"https:\/\/www.zetec.com\/products\/mechanical-systems\/scanners\/weld-crawler\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"LATITUDE System","url":"https:\/\/www.zetec.com\/products\/mechanical-systems\/scanners\/latitude\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"FlexTrack\u2122 Aerospace Scanner","url":"https:\/\/www.zetec.com\/products\/mechanical-systems\/scanners\/flextrack\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Motor Controllers","url":"https:\/\/www.zetec.com\/products\/mechanical-systems\/scanners\/motor-controllers\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"ZMC2","url":"https:\/\/www.zetec.com\/products\/mechanical-systems\/scanners\/motor-controllers\/zmc2\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"ZMC4","url":"https:\/\/www.zetec.com\/products\/mechanical-systems\/scanners\/motor-controllers\/zmc4\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"MPS Series Pipe Scanner","url":"https:\/\/www.zetec.com\/products\/mechanical-systems\/scanners\/mps-series-overview\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Probes & Wedges","url":"https:\/\/www.zetec.com\/products\/ultrasound\/ut-probes-wedges-and-accessories\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Eddy Current","url":"https:\/\/www.zetec.com\/products\/eddy-current\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"MIZ\u00ae-21C: Affordable and Advanced Handheld","url":"https:\/\/www.zetec.com\/products\/eddy-current\/eddy-current-instrumentation\/miz-21c\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"MIZ\u00ae-200: Surface and Tubing","url":"https:\/\/www.zetec.com\/products\/eddy-current\/eddy-current-instrumentation\/miz-200\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"MIZ\u00ae-85iD: Modular Tubing","url":"https:\/\/www.zetec.com\/products\/eddy-current\/eddy-current-instrumentation\/miz-85id\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"MIZ\u00ae-80iD: Integrated Tubing","url":"https:\/\/www.zetec.com\/products\/mechanical-systems\/probe-delivery\/miz-80id\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"MIZ\u00ae-28: HX Tubing","url":"https:\/\/www.zetec.com\/products\/eddy-current\/eddy-current-instrumentation\/miz-28\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"InSite: Manufacturing","url":"https:\/\/www.zetec.com\/products\/eddy-current\/eddy-current-instrumentation\/insite-ht-ct\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Eddynet\u00ae PC: Steam Generator","url":"https:\/\/www.zetec.com\/products\/eddy-current\/software-ec\/eddynet-pc-products\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"RevospECT\u00ae Pro: Steam Generator Auto Analysis","url":"https:\/\/www.zetec.com\/products\/eddy-current\/software-ec\/revospect-pro\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"RevospECT\u00ae HX Pro: Heat Exchanger Auto Analysis","url":"https:\/\/www.zetec.com\/products\/eddy-current\/software-ec\/revospect-hx-pro\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Velocity\u00ae","url":"https:\/\/www.zetec.com\/products\/eddy-current\/software-ec\/velocity\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"UltraVision\u00ae ET","url":"https:\/\/www.zetec.com\/products\/eddy-current\/software-ec\/ultravision-et\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Probes","url":"https:\/\/www.zetec.com\/products\/eddy-current\/probes\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Surface Array","url":"https:\/\/www.zetec.com\/products\/eddy-current\/probes\/surface-array-probes\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Tubing Array","url":"https:\/\/www.zetec.com\/products\/eddy-current\/probes\/tubing-array-probes\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Tubing Rotating","url":"https:\/\/www.zetec.com\/products\/eddy-current\/probes\/tubing-rotating-probes\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Tubing Bobbin","url":"https:\/\/www.zetec.com\/products\/eddy-current\/probes\/tubing-bobbin-probes\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Handheld","url":"https:\/\/www.zetec.com\/products\/eddy-current\/probes\/handheld-probes\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Calibration Standards","url":"https:\/\/www.zetec.com\/products\/eddy-current\/probes\/calibration-standards\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Probe to Instrument Adapters","url":"https:\/\/www.zetec.com\/products\/eddy-current\/probes\/probe-to-instrument-adapters\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Probe Delivery","url":"https:\/\/www.zetec.com\/products\/mechanical-systems\/probe-delivery\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"ZR-100 Robot","url":"https:\/\/www.zetec.com\/products\/mechanical-systems\/probe-delivery\/zr-100\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"SM-23G Remote Inspection Robot","url":"https:\/\/www.zetec.com\/products\/mechanical-systems\/probe-delivery\/sm-23g\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"MIZ\u00ae-80iD Integrated System","url":"https:\/\/www.zetec.com\/products\/mechanical-systems\/probe-delivery\/miz-80id\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"10D Probe Pusher","url":"https:\/\/www.zetec.com\/products\/mechanical-systems\/probe-delivery\/10d\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"High Speed 3D Probe Pusher","url":"https:\/\/www.zetec.com\/products\/mechanical-systems\/probe-delivery\/high-speed-3d\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Solutions","url":"https:\/\/www.zetec.com\/solutions\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Weld Inspection","url":"https:\/\/www.zetec.com\/weld-inspection-and-test-procedures\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Weld Inspection Crawler","url":"https:\/\/www.zetec.com\/products\/mechanical-systems\/scanners\/weld-crawler\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Corrosion \/ Thickness Mapping","url":"https:\/\/www.zetec.com\/products\/mechanical-systems\/scanners\/ndtpaintbrush\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Surface Inspection","url":"https:\/\/www.zetec.com\/eddy-current-surface-array-solution\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Composite Material Inspection","url":"https:\/\/www.zetec.com\/composite-material-inspection\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Custom Solutions","url":"https:\/\/www.zetec.com\/services\/consulting-engineering-services\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Heat Exchanger Tube Inspection","url":"https:\/\/www.zetec.com\/heat-exchanger-tube-inspection\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Industrial Inspection and Analysis","url":"https:\/\/www.zetec.com\/industrial-inspection-and-analysis\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Tubing Inspections","url":"https:\/\/www.zetec.com\/tubing-inspection-ndt\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Bolt Inspection","url":"https:\/\/www.zetec.com\/bolt-inspection\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Automating NDT Methods","url":"https:\/\/www.zetec.com\/automating-ndt-methods\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Services","url":"https:\/\/www.zetec.com\/services\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Training","url":"https:\/\/www.zetec.com\/services\/training\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Formal ECT Courses","url":"https:\/\/www.zetec.com\/services\/training\/formal-ect-courses\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Product Training","url":"https:\/\/www.zetec.com\/services\/training\/product-training\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Consulting &#038; Engineering","url":"https:\/\/www.zetec.com\/services\/consulting-engineering-services\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"After Market NDT Services","url":"https:\/\/www.zetec.com\/services\/after-market-services\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Calibration &#038; Repair","url":"https:\/\/www.zetec.com\/services\/after-market-services\/calibration-repair\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Complete Care Plans","url":"https:\/\/www.zetec.com\/services\/after-market-services\/zetec-complete-care-plans\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Rental Equipment","url":"https:\/\/www.zetec.com\/services\/after-market-services\/rental-equipment-list\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Service Status","url":"https:\/\/www.zetec.com\/services\/after-market-services\/service-status\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Inspection Services","url":"https:\/\/www.zetec.com\/services\/inspection-services\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"RevospECT\u00ae Inspection Services","url":"https:\/\/www.zetec.com\/services\/inspection-services\/revospect-inspection-services\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Onsite Support","url":"https:\/\/www.zetec.com\/services\/inspection-services\/onsite-support\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Blog","url":"https:\/\/www.zetec.com\/blog\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Learn","url":"https:\/\/www.zetec.com\/resources\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Webinars","url":"https:\/\/www.zetec.com\/resources\/webinars\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"White Papers & Application Notes","url":"https:\/\/www.zetec.com\/resources\/white-papers\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Success Stories","url":"https:\/\/www.zetec.com\/resources\/success-stories\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Videos","url":"https:\/\/www.zetec.com\/resources\/zetec-videos-on-youtube\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Insight Articles","url":"https:\/\/www.zetec.com\/resources\/insight-articles\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Nondestructive Testing Overview","url":"https:\/\/www.zetec.com\/resources\/nondestructive-testing-overview\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Ultrasonic Testing Overview","url":"https:\/\/www.zetec.com\/resources\/ultrasonic-testing-overview\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Upgrading NDT Equipment","url":"https:\/\/www.zetec.com\/resources\/upgrading-ndt-equipment\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Total Focusing Method (TFM) Resources","url":"https:\/\/www.zetec.com\/resources\/total-focusing-method\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"News &#038; Events","url":"https:\/\/www.zetec.com\/news-events\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"About Zetec","url":"https:\/\/www.zetec.com\/about-zetec\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Buy","url":"https:\/\/www.zetec.com\/how-to-buy\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Nuclear Steam Generator","url":"https:\/\/www.zetec.com\/sales-team\/"},{"@context":"https:\/\/schema.org","@type":"SiteNavigationElement","id":"site-navigation","name":"Contact","url":"https:\/\/www.zetec.com\/contact-us\/"}]}</script><!-- / site-navigation-element Schema optimized by Schema Pro --> 		<!-- custom css styles -->
+ 		<style type="text/css">
+ 			.zbrand	tbody tr:nth-child(even) {
+   background-color: #cfd4d8;
+}			
+
+.zbrand table, td {
+   border: 0px solid black;
+    padding: 5px;
+}
+		
+.zbrand th {
+    border-bottom: 1px solid #6a737b;
+    padding: 5px 5px 0px 5px;
+	font: bold ;
+}
+
+.zbrand2 th {
+    border-bottom: 1px solid #6a737b;
+    padding: 5px 5px 0px 5px;
+	font: bold ;
+}
+
+.swp_share_link {
+	color: #fff !important;
+}
+
+#post-grid-19138 .item .layer-media {
+    overflow: hidden;
+}
+
+#blog-sidebar {
+float: left;
+width: 26.7%;
+}
+
+aside {
+width: auto !important;
+}
+
+.aside-section h3 {
+margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+#blog-sidebar {
+display: none;
+}
+} 		</style>
+
+ 	 		<!-- custom analytics code -->
+ 		<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+ 			 		</script>
+ 		
+ 	<style type="text/css">.saboxplugin-wrap{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;border:1px solid #eee;width:100%;clear:both;display:block;overflow:hidden;word-wrap:break-word;position:relative}.saboxplugin-wrap .saboxplugin-gravatar{float:left;padding:0 20px 20px 20px}.saboxplugin-wrap .saboxplugin-gravatar img{max-width:100px;height:auto;border-radius:0;}.saboxplugin-wrap .saboxplugin-authorname{font-size:18px;line-height:1;margin:20px 0 0 20px;display:block}.saboxplugin-wrap .saboxplugin-authorname a{text-decoration:none}.saboxplugin-wrap .saboxplugin-authorname a:focus{outline:0}.saboxplugin-wrap .saboxplugin-desc{display:block;margin:5px 20px}.saboxplugin-wrap .saboxplugin-desc a{text-decoration:underline}.saboxplugin-wrap .saboxplugin-desc p{margin:5px 0 12px}.saboxplugin-wrap .saboxplugin-web{margin:0 20px 15px;text-align:left}.saboxplugin-wrap .sab-web-position{text-align:right}.saboxplugin-wrap .saboxplugin-web a{color:#ccc;text-decoration:none}.saboxplugin-wrap .saboxplugin-socials{position:relative;display:block;background:#fcfcfc;padding:5px;border-top:1px solid #eee}.saboxplugin-wrap .saboxplugin-socials a svg{width:20px;height:20px}.saboxplugin-wrap .saboxplugin-socials a svg .st2{fill:#fff; transform-origin:center center;}.saboxplugin-wrap .saboxplugin-socials a svg .st1{fill:rgba(0,0,0,.3)}.saboxplugin-wrap .saboxplugin-socials a:hover{opacity:.8;-webkit-transition:opacity .4s;-moz-transition:opacity .4s;-o-transition:opacity .4s;transition:opacity .4s;box-shadow:none!important;-webkit-box-shadow:none!important}.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-color{box-shadow:none;padding:0;border:0;-webkit-transition:opacity .4s;-moz-transition:opacity .4s;-o-transition:opacity .4s;transition:opacity .4s;display:inline-block;color:#fff;font-size:0;text-decoration:inherit;margin:5px;-webkit-border-radius:0;-moz-border-radius:0;-ms-border-radius:0;-o-border-radius:0;border-radius:0;overflow:hidden}.saboxplugin-wrap .saboxplugin-socials .saboxplugin-icon-grey{text-decoration:inherit;box-shadow:none;position:relative;display:-moz-inline-stack;display:inline-block;vertical-align:middle;zoom:1;margin:10px 5px;color:#444;fill:#444}.clearfix:after,.clearfix:before{content:' ';display:table;line-height:0;clear:both}.ie7 .clearfix{zoom:1}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-twitch{border-color:#38245c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-addthis{border-color:#e91c00}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-behance{border-color:#003eb0}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-delicious{border-color:#06c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-deviantart{border-color:#036824}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-digg{border-color:#00327c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-dribbble{border-color:#ba1655}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-facebook{border-color:#1e2e4f}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-flickr{border-color:#003576}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-github{border-color:#264874}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-google{border-color:#0b51c5}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-googleplus{border-color:#96271a}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-html5{border-color:#902e13}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-instagram{border-color:#1630aa}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-linkedin{border-color:#00344f}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-pinterest{border-color:#5b040e}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-reddit{border-color:#992900}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-rss{border-color:#a43b0a}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-sharethis{border-color:#5d8420}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-skype{border-color:#00658a}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-soundcloud{border-color:#995200}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-spotify{border-color:#0f612c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-stackoverflow{border-color:#a95009}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-steam{border-color:#006388}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-user_email{border-color:#b84e05}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-stumbleUpon{border-color:#9b280e}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-tumblr{border-color:#10151b}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-twitter{border-color:#0967a0}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-vimeo{border-color:#0d7091}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-windows{border-color:#003f71}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-whatsapp{border-color:#003f71}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-wordpress{border-color:#0f3647}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-yahoo{border-color:#14002d}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-youtube{border-color:#900}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-xing{border-color:#000202}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-mixcloud{border-color:#2475a0}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-vk{border-color:#243549}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-medium{border-color:#00452c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-quora{border-color:#420e00}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-meetup{border-color:#9b181c}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-goodreads{border-color:#000}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-snapchat{border-color:#999700}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-500px{border-color:#00557f}.saboxplugin-socials.sabox-colored .saboxplugin-icon-color .sab-mastodont{border-color:#185886}.sabox-plus-item{margin-bottom:20px}@media screen and (max-width:480px){.saboxplugin-wrap{text-align:center}.saboxplugin-wrap .saboxplugin-gravatar{float:none;padding:20px 0;text-align:center;margin:0 auto;display:block}.saboxplugin-wrap .saboxplugin-gravatar img{float:none;display:inline-block;display:-moz-inline-stack;vertical-align:middle;zoom:1}.saboxplugin-wrap .saboxplugin-desc{margin:0 10px 20px;text-align:center}.saboxplugin-wrap .saboxplugin-authorname{text-align:center;margin:10px 0 20px}}body .saboxplugin-authorname a,body .saboxplugin-authorname a:hover{box-shadow:none;-webkit-box-shadow:none}a.sab-profile-edit{font-size:16px!important;line-height:1!important}.sab-edit-settings a,a.sab-profile-edit{color:#0073aa!important;box-shadow:none!important;-webkit-box-shadow:none!important}.sab-edit-settings{margin-right:15px;position:absolute;right:0;z-index:2;bottom:10px;line-height:20px}.sab-edit-settings i{margin-left:5px}.saboxplugin-socials{line-height:1!important}.rtl .saboxplugin-wrap .saboxplugin-gravatar{float:right}.rtl .saboxplugin-wrap .saboxplugin-authorname{display:flex;align-items:center}.rtl .saboxplugin-wrap .saboxplugin-authorname .sab-profile-edit{margin-right:10px}.rtl .sab-edit-settings{right:auto;left:0}img.sab-custom-avatar{max-width:75px;}.saboxplugin-wrap {margin-top:0px; margin-bottom:0px; padding: 0px 0px }.saboxplugin-wrap .saboxplugin-authorname {font-size:18px; line-height:25px;}.saboxplugin-wrap .saboxplugin-desc p, .saboxplugin-wrap .saboxplugin-desc {font-size:14px !important; line-height:21px !important;}.saboxplugin-wrap .saboxplugin-web {font-size:14px;}.saboxplugin-wrap .saboxplugin-socials a svg {width:18px;height:18px;}</style>			<style id="wpsp-style-frontend"></style>
+			<link rel="icon" href="https://www.zetec.com/wp-content/uploads/2019/12/cropped-Zetec_Wave_Web-32x32.jpg" sizes="32x32" />
+<link rel="icon" href="https://www.zetec.com/wp-content/uploads/2019/12/cropped-Zetec_Wave_Web-192x192.jpg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://www.zetec.com/wp-content/uploads/2019/12/cropped-Zetec_Wave_Web-180x180.jpg" />
+<meta name="msapplication-TileImage" content="https://www.zetec.com/wp-content/uploads/2019/12/cropped-Zetec_Wave_Web-270x270.jpg" />
+		<style type="text/css" id="wp-custom-css">
+			#content p, #content ul li, .info-box-text-wrapper {
+	font-size: 1.15em;
+}
+
+.home #content p, .home .info-box-text-wrapper {
+	font-size: 1em;
+}
+
+.page-template-page_category .info-box-text-wrapper {
+	font-size: 0.85em;
+}
+
+.indent_list {
+	margin-left: 30px !important;
+}
+
+
+		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript>
+	    <!--[if gte IE 9]>
+	        <style type="text/css">
+	            .gradient {
+	                filter: none;
+	            }
+	        </style>
+	    <![endif]-->
+
+	    <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+	    	// add a global variables that will trigger javascript interactions
+	    	// by default they are false. Markup for interactive widgets
+	    	// will set to true, then the javascript can be called when all the
+	    	// JS loads at the bottom of the page. 
+	    	// This keeps us from having to load jQuery or other javascript at
+	    	// the top of the page.
+	    	var isFormPage = false;
+	    	var hasCarousel = false;
+	    	var hasRotator = false;
+	    	var hasVideo = false;
+	    	var hasFAQ = false;
+	    </script>
+
+	</head>
+
+
+	<body class="home page-template page-template-page_home page-template-page_home-php page page-id-20 wp-schema-pro-2.7.3 group-blog">
+		<!--
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+		-->
+		<div class="wrapper">
+		
+			<header>
+                <div class="top-header">
+                    <div class="container">
+                        <!-- #top-menu -->
+
+						<nav id="top-navigation" class="horizontal-nav top-nav"><ul id="menu-top-nav" class="menu"><li id="menu-item-wpml-ls-2-en" class="menu-item-language menu-item-language-current menu-item wpml-ls-slot-2 wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-menu-item wpml-ls-first-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-has-children menu-item-wpml-ls-2-en"><a title="English" href="https://www.zetec.com"><span class="wpml-ls-native" lang="en">English</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-wpml-ls-2-fr" class="menu-item-language menu-item wpml-ls-slot-2 wpml-ls-item wpml-ls-item-fr wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-2-fr"><a title="Français" href="https://www.zetec.com/fr/"><span class="wpml-ls-native" lang="fr">Français</span></a></li>
+	<li id="menu-item-wpml-ls-2-es" class="menu-item-language menu-item wpml-ls-slot-2 wpml-ls-item wpml-ls-item-es wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-2-es"><a title="Español" href="https://www.zetec.com/es/"><span class="wpml-ls-native" lang="es">Español</span></a></li>
+	<li id="menu-item-wpml-ls-2-ko" class="menu-item-language menu-item wpml-ls-slot-2 wpml-ls-item wpml-ls-item-ko wpml-ls-menu-item wpml-ls-last-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-2-ko"><a title="한국어" href="https://www.zetec.com/ko/"><span class="wpml-ls-native" lang="ko">한국어</span></a></li>
+</ul>
+</li>
+<li id="menu-item-23945" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23945"><a href="https://www.zetec.com/about-zetec/careers/">Careers</a></li>
+</ul></nav>
+                        <!-- .logo -->
+                        <div class="logo">
+                            <div class="logo-image">
+                                	<a href="https://www.zetec.com">
+                                	<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Zetec | Leading NDT Solutions" data-lazy-src="https://www.zetec.com/wp-content/uploads/2015/05/zetec-logo.png"><noscript><img src="https://www.zetec.com/wp-content/uploads/2015/05/zetec-logo.png" alt="Zetec | Leading NDT Solutions"></noscript>									</a>
+                            </div>
+                        </div>
+                        <div class="clear">&nbsp;</div>
+
+                    </div>
+                </div><!-- end .top-header -->
+
+                <!-- mega-nav start -->
+                <div class="mega-nav">
+                	<div class="container">
+
+                    	
+<a href="#" class="search-button">search</a>
+<div class="search-form">  
+    <div class="search-form-row">
+        <form role="search" method="get" id="searchform" class="searchform" action="https://www.zetec.com/">
+            <input type="text"  value="" name="s" id="s" value="" placeholder="Search Zetec">
+            <input type="hidden" name="lang" value="en"/>
+            <button id="searchsubmit" type="submit">go</button>
+        </form>
+    </div>
+</div>
+
+
+
+                		<a href="#" class="menu-button">Menu</a>
+                		<nav id="primary-navigation" class="horizontal-nav primary-nav"><ul id="menu-primary-nav" class="menu"><li id="menu-item-72" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-72"><a href="https://www.zetec.com/industries/">Industries</a>
+<ul class="sub-menu">
+	<li id="menu-item-36384" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-36384"><a href="https://www.zetec.com/industries/aerospace-solutions/">Aerospace</a></li>
+	<li id="menu-item-14661" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14661"><a href="https://www.zetec.com/industries/automotive-solutions/">Automotive</a></li>
+	<li id="menu-item-77" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-77"><a href="https://www.zetec.com/industries/manufacturing/">Manufacturing</a>
+	<ul class="sub-menu">
+		<li id="menu-item-14664" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14664"><a href="https://www.zetec.com/heavy-manufacturing-solutions/">Heavy Manufacturing</a></li>
+		<li id="menu-item-51508" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51508"><a href="https://www.zetec.com/industries/manufacturing/metallurgical-flaw-detection/">Metallurgical Flaw Detection</a></li>
+		<li id="menu-item-14663" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14663"><a href="https://www.zetec.com/pipe-tube-steel-product-solutions/">Pipe, Tube and Other Steel</a></li>
+	</ul>
+</li>
+	<li id="menu-item-43535" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43535"><a href="https://www.zetec.com/industries/military-defense-solutions/">Military and Defense</a></li>
+	<li id="menu-item-92" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-92"><a href="https://www.zetec.com/industries/oil-gas/">Oil and Gas</a>
+	<ul class="sub-menu">
+		<li id="menu-item-14658" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14658"><a href="https://www.zetec.com/industries/oil-gas/oil-gas-upstream-solutions/">Upstream</a></li>
+		<li id="menu-item-14659" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14659"><a href="https://www.zetec.com/industries/oil-gas/oil-gas-midstream-solutions/">Midstream</a></li>
+		<li id="menu-item-14660" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14660"><a href="https://www.zetec.com/industries/oil-gas/oil-gas-downstream-solutions/">Downstream</a></li>
+	</ul>
+</li>
+	<li id="menu-item-78" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-78"><a href="https://www.zetec.com/industries/power-generation/">Power Generation</a>
+	<ul class="sub-menu">
+		<li id="menu-item-23580" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23580"><a href="https://www.zetec.com/nuclear-solutions/">Nuclear</a></li>
+		<li id="menu-item-23581" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23581"><a href="https://www.zetec.com/fossil-solutions/">Fossil</a></li>
+		<li id="menu-item-48042" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48042"><a href="https://www.zetec.com/industries/power-generation/ndt-wind-energy/">Wind Energy</a></li>
+	</ul>
+</li>
+	<li id="menu-item-14657" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14657"><a href="https://www.zetec.com/industries/railway-solutions/">Railway</a></li>
+	<li id="menu-item-31374" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-31374"><a href="https://www.zetec.com/industries/transportation/">Transportation</a></li>
+</ul>
+</li>
+<li id="menu-item-70" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-70"><a href="https://www.zetec.com/products/">Products</a>
+<ul class="sub-menu">
+	<li id="menu-item-157" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-157"><a href="https://www.zetec.com/products/ultrasound/">Ultrasound</a>
+	<ul class="sub-menu">
+		<li id="menu-item-372" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-372"><a href="https://www.zetec.com/products/ultrasound/instrumentation/">Instrumentation</a>
+		<ul class="sub-menu">
+			<li id="menu-item-5348" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5348"><a href="https://www.zetec.com/products/ultrasound/instrumentation/topaz16/">TOPAZ® 16:  Portable Value</a></li>
+			<li id="menu-item-705" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-705"><a href="https://www.zetec.com/products/ultrasound/instrumentation/topaz32/">TOPAZ® 32:  Portable Performance</a></li>
+			<li id="menu-item-10618" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10618"><a href="https://www.zetec.com/products/ultrasound/instrumentation/topaz64/">TOPAZ® 64: Portable Intelligence</a></li>
+			<li id="menu-item-52441" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52441"><a href="https://www.zetec.com/products/ultrasound/instrumentation/emerald-system/">Emerald™: Integrated Intelligence</a></li>
+			<li id="menu-item-3535" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3535"><a href="https://www.zetec.com/products/ultrasound/instrumentation/quartz/">Quartz: Scalable Performance</a></li>
+			<li id="menu-item-740" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-740"><a href="https://www.zetec.com/products/ultrasound/instrumentation/dynaray-dynaray-lite/">Dynaray®: Ultra Performance</a></li>
+			<li id="menu-item-716" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-716"><a href="https://www.zetec.com/products/ultrasound/instrumentation/zircon/">Zircon®: Rugged</a></li>
+			<li id="menu-item-2807" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2807"><a href="https://www.zetec.com/products/ultrasound/instrumentation/z-scan-ut/">Z-Scan UT: Conventional UT</a></li>
+		</ul>
+</li>
+		<li id="menu-item-1346" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1346"><a href="https://www.zetec.com/products/ultrasound/software-ut/">Software</a>
+		<ul class="sub-menu">
+			<li id="menu-item-2808" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2808"><a href="https://www.zetec.com/products/ultrasound/software-ut/ultravision3/">Ultravision® 3</a></li>
+			<li id="menu-item-3186" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3186"><a href="https://www.zetec.com/products/ultrasound/software-ut/ultravision-touch/">UltraVision® Touch</a></li>
+		</ul>
+</li>
+		<li id="menu-item-6963" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6963"><a href="https://www.zetec.com/products/mechanical-systems/scanners/">Scanners</a>
+		<ul class="sub-menu">
+			<li id="menu-item-6965" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6965"><a href="https://www.zetec.com/products/mechanical-systems/scanners/ndtpaintbrush/">NDT PaintBrush™ Corrosion Scanner</a></li>
+			<li id="menu-item-26876" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26876"><a href="https://www.zetec.com/products/mechanical-systems/scanners/ndt-sweeper/">NDT Sweeper™ Scanner</a></li>
+			<li id="menu-item-50260" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50260"><a href="https://www.zetec.com/products/mechanical-systems/scanners/elbowflex-scanner/">ElbowFlex™ Scanner</a></li>
+			<li id="menu-item-6964" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6964"><a href="https://www.zetec.com/products/mechanical-systems/scanners/weld-crawler/">WELD Crawler® Scanner</a></li>
+			<li id="menu-item-21101" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-21101"><a href="https://www.zetec.com/products/mechanical-systems/scanners/latitude/">LATITUDE System</a></li>
+			<li id="menu-item-24344" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-24344"><a href="https://www.zetec.com/products/mechanical-systems/scanners/flextrack/">FlexTrack™ Aerospace Scanner</a></li>
+			<li id="menu-item-6969" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6969"><a href="https://www.zetec.com/products/mechanical-systems/scanners/motor-controllers/">Motor Controllers</a>
+			<ul class="sub-menu">
+				<li id="menu-item-6966" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6966"><a href="https://www.zetec.com/products/mechanical-systems/scanners/motor-controllers/zmc2/">ZMC2</a></li>
+				<li id="menu-item-6967" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6967"><a href="https://www.zetec.com/products/mechanical-systems/scanners/motor-controllers/zmc4/">ZMC4</a></li>
+			</ul>
+</li>
+			<li id="menu-item-6968" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6968"><a href="https://www.zetec.com/products/mechanical-systems/scanners/mps-series-overview/">MPS Series Pipe Scanner</a></li>
+		</ul>
+</li>
+		<li id="menu-item-1348" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1348"><a href="https://www.zetec.com/products/ultrasound/ut-probes-wedges-and-accessories/">Probes &#038; Wedges</a></li>
+	</ul>
+</li>
+	<li id="menu-item-159" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-159"><a href="https://www.zetec.com/products/eddy-current/">Eddy Current</a>
+	<ul class="sub-menu">
+		<li id="menu-item-510" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-510"><a href="https://www.zetec.com/products/eddy-current/eddy-current-instrumentation/">Instrumentation</a>
+		<ul class="sub-menu">
+			<li id="menu-item-14591" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14591"><a href="https://www.zetec.com/products/eddy-current/eddy-current-instrumentation/miz-21c/">MIZ®-21C: Affordable and Advanced Handheld</a></li>
+			<li id="menu-item-3707" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3707"><a href="https://www.zetec.com/products/eddy-current/eddy-current-instrumentation/miz-200/">MIZ®-200: Surface and Tubing</a></li>
+			<li id="menu-item-2590" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2590"><a href="https://www.zetec.com/products/eddy-current/eddy-current-instrumentation/miz-85id/">MIZ®-85iD: Modular Tubing</a></li>
+			<li id="menu-item-7446" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7446"><a href="https://www.zetec.com/products/mechanical-systems/probe-delivery/miz-80id/">MIZ®-80iD: Integrated Tubing</a></li>
+			<li id="menu-item-566" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-566"><a href="https://www.zetec.com/products/eddy-current/eddy-current-instrumentation/miz-28/">MIZ®-28: HX Tubing</a></li>
+			<li id="menu-item-7789" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7789"><a href="https://www.zetec.com/products/eddy-current/eddy-current-instrumentation/insite-ht-ct/">InSite: Manufacturing</a></li>
+		</ul>
+</li>
+		<li id="menu-item-371" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-371"><a href="https://www.zetec.com/products/eddy-current/software-ec/">Software</a>
+		<ul class="sub-menu">
+			<li id="menu-item-663" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-663"><a href="https://www.zetec.com/products/eddy-current/software-ec/eddynet-pc-products/">Eddynet® PC: Steam Generator</a></li>
+			<li id="menu-item-4342" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4342"><a href="https://www.zetec.com/products/eddy-current/software-ec/revospect-pro/">RevospECT® Pro: Steam Generator Auto Analysis</a></li>
+			<li id="menu-item-19053" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19053"><a href="https://www.zetec.com/products/eddy-current/software-ec/revospect-hx-pro/">RevospECT® HX Pro: Heat Exchanger Auto Analysis</a></li>
+			<li id="menu-item-661" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-661"><a href="https://www.zetec.com/products/eddy-current/software-ec/velocity/">Velocity®</a></li>
+			<li id="menu-item-6655" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6655"><a href="https://www.zetec.com/products/eddy-current/software-ec/ultravision-et/">UltraVision® ET</a></li>
+		</ul>
+</li>
+		<li id="menu-item-160" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-160"><a href="https://www.zetec.com/products/eddy-current/probes/">Probes</a>
+		<ul class="sub-menu">
+			<li id="menu-item-6133" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6133"><a href="https://www.zetec.com/products/eddy-current/probes/surface-array-probes/">Surface Array</a></li>
+			<li id="menu-item-375" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-375"><a href="https://www.zetec.com/products/eddy-current/probes/tubing-array-probes/">Tubing Array</a></li>
+			<li id="menu-item-374" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-374"><a href="https://www.zetec.com/products/eddy-current/probes/tubing-rotating-probes/">Tubing Rotating</a></li>
+			<li id="menu-item-1732" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1732"><a href="https://www.zetec.com/products/eddy-current/probes/tubing-bobbin-probes/">Tubing Bobbin</a></li>
+			<li id="menu-item-823" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-823"><a href="https://www.zetec.com/products/eddy-current/probes/handheld-probes/">Handheld</a></li>
+			<li id="menu-item-1734" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1734"><a href="https://www.zetec.com/products/eddy-current/probes/calibration-standards/">Calibration Standards</a></li>
+			<li id="menu-item-1733" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1733"><a href="https://www.zetec.com/products/eddy-current/probes/probe-to-instrument-adapters/">Probe to Instrument Adapters</a></li>
+		</ul>
+</li>
+		<li id="menu-item-6970" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6970"><a href="https://www.zetec.com/products/mechanical-systems/probe-delivery/">Probe Delivery</a>
+		<ul class="sub-menu">
+			<li id="menu-item-6971" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6971"><a href="https://www.zetec.com/products/mechanical-systems/probe-delivery/zr-100/">ZR-100 Robot</a></li>
+			<li id="menu-item-16564" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16564"><a href="https://www.zetec.com/products/mechanical-systems/probe-delivery/sm-23g/">SM-23G Remote Inspection Robot</a></li>
+			<li id="menu-item-6972" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6972"><a href="https://www.zetec.com/products/mechanical-systems/probe-delivery/miz-80id/">MIZ®-80iD Integrated System</a></li>
+			<li id="menu-item-6973" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6973"><a href="https://www.zetec.com/products/mechanical-systems/probe-delivery/10d/">10D Probe Pusher</a></li>
+			<li id="menu-item-6974" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6974"><a href="https://www.zetec.com/products/mechanical-systems/probe-delivery/high-speed-3d/">High Speed 3D Probe Pusher</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-71" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-71"><a href="https://www.zetec.com/solutions/">Solutions</a>
+<ul class="sub-menu">
+	<li id="menu-item-52447" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-52447"><a href="https://www.zetec.com/weld-inspection-and-test-procedures/">Weld Inspection</a>
+	<ul class="sub-menu">
+		<li id="menu-item-46390" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46390"><a href="https://www.zetec.com/products/mechanical-systems/scanners/weld-crawler/">Weld Inspection Crawler</a></li>
+	</ul>
+</li>
+	<li id="menu-item-46391" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46391"><a href="https://www.zetec.com/products/mechanical-systems/scanners/ndtpaintbrush/">Corrosion / Thickness Mapping</a></li>
+	<li id="menu-item-46392" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46392"><a href="https://www.zetec.com/eddy-current-surface-array-solution/">Surface Inspection</a></li>
+	<li id="menu-item-46394" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46394"><a href="https://www.zetec.com/composite-material-inspection/">Composite Material Inspection</a></li>
+	<li id="menu-item-46393" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46393"><a href="https://www.zetec.com/services/consulting-engineering-services/">Custom Solutions</a></li>
+	<li id="menu-item-46832" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46832"><a href="https://www.zetec.com/heat-exchanger-tube-inspection/">Heat Exchanger Tube Inspection</a></li>
+	<li id="menu-item-51296" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51296"><a href="https://www.zetec.com/industrial-inspection-and-analysis/">Industrial Inspection and Analysis</a></li>
+	<li id="menu-item-48677" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48677"><a href="https://www.zetec.com/tubing-inspection-ndt/">Tubing Inspections</a></li>
+	<li id="menu-item-50796" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50796"><a href="https://www.zetec.com/bolt-inspection/">Bolt Inspection</a></li>
+	<li id="menu-item-51883" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51883"><a href="https://www.zetec.com/automating-ndt-methods/">Automating NDT Methods</a></li>
+</ul>
+</li>
+<li id="menu-item-69" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-69"><a href="https://www.zetec.com/services/">Services</a>
+<ul class="sub-menu">
+	<li id="menu-item-165" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-165"><a href="https://www.zetec.com/services/training/">Training</a>
+	<ul class="sub-menu">
+		<li id="menu-item-6731" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6731"><a href="https://www.zetec.com/services/training/formal-ect-courses/">Formal ECT Courses</a></li>
+		<li id="menu-item-960" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-960"><a href="https://www.zetec.com/services/training/product-training/">Product Training</a></li>
+	</ul>
+</li>
+	<li id="menu-item-166" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-166"><a href="https://www.zetec.com/services/consulting-engineering-services/">Consulting &#038; Engineering</a></li>
+	<li id="menu-item-167" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-167"><a href="https://www.zetec.com/services/after-market-services/">After Market NDT Services</a>
+	<ul class="sub-menu">
+		<li id="menu-item-1401" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1401"><a href="https://www.zetec.com/services/after-market-services/calibration-repair/">Calibration &#038; Repair</a></li>
+		<li id="menu-item-10862" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10862"><a href="https://www.zetec.com/services/after-market-services/zetec-complete-care-plans/">Complete Care Plans</a></li>
+		<li id="menu-item-10863" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10863"><a href="https://www.zetec.com/services/after-market-services/rental-equipment-list/">Rental Equipment</a></li>
+		<li id="menu-item-2527" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2527"><a href="https://www.zetec.com/services/after-market-services/service-status/">Service Status</a></li>
+	</ul>
+</li>
+	<li id="menu-item-168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-168"><a href="https://www.zetec.com/services/inspection-services/">Inspection Services</a>
+	<ul class="sub-menu">
+		<li id="menu-item-2188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2188"><a href="https://www.zetec.com/services/inspection-services/revospect-inspection-services/">RevospECT® Inspection Services</a></li>
+		<li id="menu-item-2189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2189"><a href="https://www.zetec.com/services/inspection-services/onsite-support/">Onsite Support</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-19561" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19561"><a href="https://www.zetec.com/blog/">Blog</a></li>
+<li id="menu-item-16849" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-16849"><a href="https://www.zetec.com/resources/">Learn</a>
+<ul class="sub-menu">
+	<li id="menu-item-23625" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23625"><a href="https://www.zetec.com/resources/webinars/">Webinars</a></li>
+	<li id="menu-item-23624" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23624"><a href="https://www.zetec.com/resources/white-papers/">White Papers &#038; Application Notes</a></li>
+	<li id="menu-item-23626" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23626"><a href="https://www.zetec.com/resources/success-stories/">Success Stories</a></li>
+	<li id="menu-item-23826" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-23826"><a href="https://www.zetec.com/resources/zetec-videos-on-youtube/">Videos</a></li>
+	<li id="menu-item-38756" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38756"><a href="https://www.zetec.com/resources/insight-articles/">Insight Articles</a></li>
+	<li id="menu-item-34476" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-34476"><a href="https://www.zetec.com/resources/nondestructive-testing-overview/">Nondestructive Testing Overview</a></li>
+	<li id="menu-item-43276" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-43276"><a href="https://www.zetec.com/resources/ultrasonic-testing-overview/">Ultrasonic Testing Overview</a></li>
+	<li id="menu-item-38990" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-38990"><a href="https://www.zetec.com/resources/upgrading-ndt-equipment/">Upgrading NDT Equipment</a></li>
+	<li id="menu-item-46696" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46696"><a href="https://www.zetec.com/resources/total-focusing-method/">Total Focusing Method (TFM) Resources</a></li>
+	<li id="menu-item-50369" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50369"><a href="https://www.zetec.com/news-events/">News &#038; Events</a></li>
+	<li id="menu-item-65362" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-65362"><a href="https://www.zetec.com/about-zetec/">About Zetec</a></li>
+</ul>
+</li>
+<li id="menu-item-4713" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4713"><a href="https://www.zetec.com/how-to-buy/">Buy</a>
+<ul class="sub-menu">
+	<li id="menu-item-611" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-611"><a href="https://www.zetec.com/sales-team/">Nuclear Steam Generator</a></li>
+</ul>
+</li>
+<li id="menu-item-6716" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6716"><a href="https://www.zetec.com/contact-us/">Contact</a></li>
+</ul></nav>
+						<div class="clear">&nbsp;</div>
+                	</div>
+               	</div><!-- end .mega-nav -->
+
+            </header>
+
+
+
+
+
+
+
+	<div id="content" class="index">
+		
+		
+ 
+  
+  
+   
+
+    <div class="hero-banners">
+
+        <ul class="hero-rotator bxslider">
+<li>
+<div class="hero-image-wrapper">
+<div class="hero-image">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://www.zetec.com/wp-content/uploads/2021/06/Hompage_Banner_-MIZ-21C_Depth.jpg" /><noscript><img src="https://www.zetec.com/wp-content/uploads/2021/06/Hompage_Banner_-MIZ-21C_Depth.jpg" /></noscript>
+</div>
+</div>
+<div class="hero-banners-text-row">
+<div class="container">
+<div class="hero-banners-text">
+<strong>Inspect</br>
+More Areas,</br>
+More Productively</br>
+</strong>
+</div>
+<div class="cta-button">
+<a href="https://www.zetec.com/products/eddy-current/eddy-current-instrumentation/miz-21c/">
+<span>LEARN MORE</span>
+</a>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="hero-image-wrapper">
+<div class="hero-image">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://www.zetec.com/wp-content/uploads/2021/06/Emerald_Web_Banner-1-1.jpg" /><noscript><img src="https://www.zetec.com/wp-content/uploads/2021/06/Emerald_Web_Banner-1-1.jpg" /></noscript>
+</div>
+</div>
+<div class="hero-banners-text-row">
+<div class="container">
+<div class="hero-banners-text">
+<strong>Unleash</br>
+Inspection</br>
+Performance</strong>
+</div>
+<div class="cta-button">
+<a href="https://www.zetec.com/products/ultrasound/instrumentation/emerald-system/">
+<span>LEARN MORE</span>
+</a>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="hero-image-wrapper">
+<div class="hero-image">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://www.zetec.com/wp-content/uploads/2021/12/Hompage_Banner_SurfXTape_new.jpg" /><noscript><img src="https://www.zetec.com/wp-content/uploads/2021/12/Hompage_Banner_SurfXTape_new.jpg" /></noscript>
+</div>
+</div>
+<div class="hero-banners-text-row">
+<div class="container">
+<div class="hero-banners-text">
+<strong>Quickly Inspect<br>
+Countless<br>
+Materials and<br>
+Geometries</strong>
+</div>
+<div class="cta-button">
+<a href="https://www.zetec.com/products/eddy-current/probes/surface-array-probes/surf-x-array-probe/">
+<span>LEARN MORE</span>
+</a>
+</div>
+</div>
+</div>
+</li>
+<li>
+<div class="hero-image-wrapper">
+<div class="hero-image">
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" data-lazy-src="https://www.zetec.com/wp-content/uploads/2021/06/TOPAZ64_Hompage_Banner_ENGLISH-2019-1_1.jpg" /><noscript><img src="https://www.zetec.com/wp-content/uploads/2021/06/TOPAZ64_Hompage_Banner_ENGLISH-2019-1_1.jpg" /></noscript>
+</div>
+</div>
+<div class="hero-banners-text-row">
+<div class="container">
+<div class="hero-banners-text">
+<strong>Experience<br>
+Ultra-Intelligent,<br>
+Ultra-Accurate</br>
+Inspections</strong>
+</div>
+<div class="cta-button">
+<a href="https://www.zetec.com/products/ultrasound/instrumentation/topaz64/">
+<span>LEARN MORE</span>
+</a>
+</div>
+</div>
+</div>
+</li>
+</ul>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+    var hasRotator = true;
+</script>
+
+    </div>
+
+
+
+
+ 
+  
+  
+   
+
+
+
+
+
+			
+		<div class="container">
+			<div class="medium-box">
+
+				<!-- solutions/products tiles -->
+				
+	<ul class="info-box">
+
+		<!-- solutions -->
+		<li>
+			<div class="info-box-item">
+
+				<div class="info-box-image">
+                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://www.zetec.com/wp-content/uploads/2020/06/MIZ-21C_Fire-Cracking-in-Steel-Mill-Rollers_Feb2020_Productivity3.jpg"><noscript><img src="https://www.zetec.com/wp-content/uploads/2020/06/MIZ-21C_Fire-Cracking-in-Steel-Mill-Rollers_Feb2020_Productivity3.jpg" alt=""></noscript>
+                </div>
+
+                <div class="info-box-text">
+                    <div class="info-box-text-wrapper">
+                        <h3></h3>
+                        <p>An eddy current testing (ECT) instrument should be a complete platform that delivers inspection productivity with a focus on portability, ease of use, the ability to upgrade and low total cost of ownership.</p>                        <p>
+                            <a href="https://www.zetec.com/what-to-look-for-in-a-handheld-eddy-current-instrument/" class="cta-button">Read Article</a>
+                        </p>
+                    </div>
+                </div>
+
+			</div>
+		</li>
+
+
+		<!-- products -->
+		<li>
+			<div class="info-box-item">
+
+				<div class="info-box-image">
+                    <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" data-lazy-src="https://www.zetec.com/wp-content/uploads/2021/01/HTHA_TOPAZ64_Nucleom1c.jpg"><noscript><img src="https://www.zetec.com/wp-content/uploads/2021/01/HTHA_TOPAZ64_Nucleom1c.jpg" alt=""></noscript>
+                </div>
+
+                <div class="info-box-text">
+                    <div class="info-box-text-wrapper">
+                        <h3></h3>
+                        <p>Advanced focusing techniques in phased array ultrasonic testing (PAUT) can make a difference. With the right instrument, technicians can make faster, more accurate inspections virtually anywhere the job takes them.</p>                        <p>
+                            <a href="https://www.zetec.com/how-fmc-and-tfm-work-together-for-more-effective-ultrasonic-inspections/" class="cta-button">Read Article</a>
+                        </p>
+                    </div>
+                </div>
+
+			</div>
+		</li>
+
+	</ul>
+			</div>
+
+			<!-- news/industries -->
+			<div class="column-row">
+
+				
+<div class="column">
+    <h3>New at Zetec</h3>
+
+    <ul class="info-box news-box">
+
+    	
+    	    	            	
+
+                                            <li>
+                    <p>
+                        <!--<strong>January 11, 2022&nbsp;—</strong>-->
+                        Zetec is now an integral part of Eddyfi/NDT and adds its NDT solutions to the group&#8217;s product portfolio. Québec, Canada, January 11, 2022 — Eddyfi/NDT announces today that it has completed the transaction leading to the full acquisition of Zetec, previously a subsidiary of Roper Technologies, Inc. (NYSE: ROP), and that all closing conditions have [&hellip;]                        <a href="https://www.zetec.com/news/eddyfi-ndt-completes-transaction-and-officially-acquires-zetec/">Read more</a>
+                    </p>
+                </li>
+                            
+    	            	
+
+                                            <li>
+                    <p>
+                        <!--<strong>November 8, 2021&nbsp;—</strong>-->
+                        Zetec Inc. published a new webinar on an innovative approach to measuring wall thickness and detecting flow accelerated corrosion (FAC) in pipe elbows used in oil and gas and other industrial applications. The 20-minute webinar highlights an inspection technique using a powerful integrated phased array ultrasonic testing (PAUT) instrument and a manual scanner with a [&hellip;]                        <a href="https://www.zetec.com/news/zetec-posts-webinar-on-an-innovative-approach-to-detecting-corrosion-in-pipe-elbows/">Read more</a>
+                    </p>
+                </li>
+                            
+    	            	
+
+                                            <li>
+                    <p>
+                        <!--<strong>November 2, 2021&nbsp;—</strong>-->
+                        Zetec Inc. will feature its latest eddy current testing (ET) and phased array ultrasonic testing (PAUT) inspection technologies as well as present two new technical papers at the 2021 ASNT (American Society for Nondestructive Testing) Annual Conference in Phoenix from Nov. 15-18. Zetec product experts and engineers will be at Booth 222 to demonstrate the [&hellip;]                        <a href="https://www.zetec.com/news/zetec-to-showcase-eddy-current-and-paut-solutions-at-2021-asnt-annual-conference/">Read more</a>
+                    </p>
+                </li>
+                            
+    	    	
+    	    	
+
+     </ul>
+</div>
+				
+<div class="column">
+	<h3>Customer Successes</h3>
+	<ul class="info-box">
+
+					<li>
+				<div class="info-box-image">
+					<a href="https://www.zetec.com/metalogic-inspection-services-an-advanced-inspection-approach/">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Metalogic" data-lazy-src="https://www.zetec.com/wp-content/uploads/2020/10/Metalogic-Logo-FC_home_web.jpg"><noscript><img src="https://www.zetec.com/wp-content/uploads/2020/10/Metalogic-Logo-FC_home_web.jpg" alt="Metalogic"></noscript>
+					</a>
+				</div>
+				<div class="info-box-text">
+					<h4><a href="https://www.zetec.com/metalogic-inspection-services-an-advanced-inspection-approach/">Metalogic</a></h4>
+					<p>
+						Metalogic used Zetec TOPAZ instruments as part of its advanced, proprietary inspection approach.						<a href="https://www.zetec.com/metalogic-inspection-services-an-advanced-inspection-approach/">Learn More</a>
+					</p>
+				</div>
+			</li>
+					<li>
+				<div class="info-box-image">
+					<a href="https://www.zetec.com/composite-material-inspections-sensor-networks/">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Sensor Networks" data-lazy-src="https://www.zetec.com/wp-content/uploads/2020/06/logo-sensor-networks_orig.jpg"><noscript><img src="https://www.zetec.com/wp-content/uploads/2020/06/logo-sensor-networks_orig.jpg" alt="Sensor Networks"></noscript>
+					</a>
+				</div>
+				<div class="info-box-text">
+					<h4><a href="https://www.zetec.com/composite-material-inspections-sensor-networks/">Sensor Networks</a></h4>
+					<p>
+						Sensor Networks used TOPAZ phased array UT instruments to simplify composite inspections.						<a href="https://www.zetec.com/composite-material-inspections-sensor-networks/">Learn More</a>
+					</p>
+				</div>
+			</li>
+					<li>
+				<div class="info-box-image">
+					<a href="https://www.zetec.com/more-productive-ndt-inspection-services-techcorr/">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Techcorr" data-lazy-src="https://www.zetec.com/wp-content/uploads/2020/06/logo_Techcorr_web_final.jpg"><noscript><img src="https://www.zetec.com/wp-content/uploads/2020/06/logo_Techcorr_web_final.jpg" alt="Techcorr"></noscript>
+					</a>
+				</div>
+				<div class="info-box-text">
+					<h4><a href="https://www.zetec.com/more-productive-ndt-inspection-services-techcorr/">Techcorr</a></h4>
+					<p>
+						TechCorr used TOPAZ phased array UT instruments to boost inspection productivity by 20%.						<a href="https://www.zetec.com/more-productive-ndt-inspection-services-techcorr/">Learn More</a>
+					</p>
+				</div>
+			</li>
+					<li>
+				<div class="info-box-image">
+					<a href="https://www.zetec.com/dissimilar-metal-weld-inspections-versa-integrity-group/">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Versa Integrity Group" data-lazy-src="https://www.zetec.com/wp-content/uploads/2020/06/Versa-Integrity_Web_Final.png"><noscript><img src="https://www.zetec.com/wp-content/uploads/2020/06/Versa-Integrity_Web_Final.png" alt="Versa Integrity Group"></noscript>
+					</a>
+				</div>
+				<div class="info-box-text">
+					<h4><a href="https://www.zetec.com/dissimilar-metal-weld-inspections-versa-integrity-group/">Versa Integrity Group</a></h4>
+					<p>
+						Versa used Zetec solutions to handle the challenging inspection of dissimilar-metal (DM) welds.						<a href="https://www.zetec.com/dissimilar-metal-weld-inspections-versa-integrity-group/">Learn More</a>
+					</p>
+				</div>
+			</li>
+					<li>
+				<div class="info-box-image">
+					<a href="https://www.zetec.com/nde-technology-heat-exchanger-inspections/">
+						<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="NDE Technology" data-lazy-src="https://www.zetec.com/wp-content/uploads/2021/02/NDE-Tech_Logo_Web.png"><noscript><img src="https://www.zetec.com/wp-content/uploads/2021/02/NDE-Tech_Logo_Web.png" alt="NDE Technology"></noscript>
+					</a>
+				</div>
+				<div class="info-box-text">
+					<h4><a href="https://www.zetec.com/nde-technology-heat-exchanger-inspections/">NDE Technology</a></h4>
+					<p>
+						NDE Technology automates heat exchanger inspections with RevospECT HX Pro software.						<a href="https://www.zetec.com/nde-technology-heat-exchanger-inspections/">Learn More</a>
+					</p>
+				</div>
+			</li>
+		
+	</ul>
+</div>
+
+			</div>
+			<div class="clear">&nbsp;</div>
+
+		</div>
+
+	</div><!-- end #content -->
+
+
+
+
+
+
+			<footer>
+
+				<!-- addition by Venture Arts -->
+
+			<div id="footer-sidebar" class="secondary">
+				<div id="footer-sidebar1" class="container">
+								</div>
+			</div>
+
+			<!-- end addition -->
+
+			
+
+				<!-- brand pillars -->
+                <div class="top-footer">
+                    <div class="container">
+
+                    	
+						<div class="messaging-pillars"><ul id="menu-brand-pillars" class="menu"><li id="menu-item-291" class="pillar-experience menu-item menu-item-type-custom menu-item-object-custom menu-item-291"><a href="https://www.zetec.com/about-zetec/the-zetec-advantage/industry-leading-expertise/">Results-Driven Expertise</a></li>
+<li id="menu-item-293" class="pillar-innovation menu-item menu-item-type-custom menu-item-object-custom menu-item-293"><a href="https://www.zetec.com/about-zetec/the-zetec-advantage/customer-centric-innovation/">Customer-First Innovation</a></li>
+<li id="menu-item-292" class="pillar-solutions menu-item menu-item-type-custom menu-item-object-custom menu-item-292"><a href="https://www.zetec.com/about-zetec/the-zetec-advantage/complete-solutions/">Leading-Edge Solutions</a></li>
+<li id="menu-item-294" class="pillar-manufacturing menu-item menu-item-type-custom menu-item-object-custom menu-item-294"><a href="https://www.zetec.com/about-zetec/the-zetec-advantage/world-class-manufacturing/">World-Class Quality</a></li>
+</ul></div>                        <div class="clear">&nbsp;</div>
+                    </div> 
+                </div>
+
+                <!-- footer nav -->
+                <div class="container">
+                    <div class="bottom-nav">
+
+                    	<!-- #footer-menu -->
+						<nav id="footer-navigation" class="horizontal-nav footer-nav"><ul id="menu-footer-nav" class="menu"><li id="menu-item-68" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-68"><a href="https://www.zetec.com/about-zetec/">Company</a>
+<ul class="sub-menu">
+	<li id="menu-item-18542" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18542"><a href="https://www.zetec.com/about-zetec/">About Zetec</a></li>
+	<li id="menu-item-1153" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1153"><a href="https://www.zetec.com/about-zetec/history/">History</a></li>
+	<li id="menu-item-1159" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1159"><a href="https://www.zetec.com/about-zetec/zetec-leadership-team/">Leadership Team</a></li>
+	<li id="menu-item-237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-237"><a href="https://www.zetec.com/about-zetec/quality-compliance/">Quality</a></li>
+	<li id="menu-item-1918" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1918"><a href="https://www.zetec.com/about-zetec/careers/">Careers</a></li>
+</ul>
+</li>
+<li id="menu-item-18811" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-18811"><a href="https://www.zetec.com/about-zetec/the-inspection-advantage/">Discover</a>
+<ul class="sub-menu">
+	<li id="menu-item-40597" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40597"><a href="https://www.zetec.com/industries/">Industries</a></li>
+	<li id="menu-item-18810" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18810"><a href="https://www.zetec.com/products/">Products</a></li>
+	<li id="menu-item-18812" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-18812"><a href="https://www.zetec.com/resources/">Resources</a></li>
+	<li id="menu-item-3303" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3303"><a href="https://www.zetec.com/news-events">News &#038; Events</a></li>
+	<li id="menu-item-19687" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19687"><a href="https://www.zetec.com/blog/">Blog</a></li>
+</ul>
+</li>
+<li id="menu-item-181" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-181"><a href="https://www.zetec.com/portals/">Portals</a>
+<ul class="sub-menu">
+	<li id="menu-item-3406" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3406"><a href="https://zetecinc.sharepoint.com/">Channel Partners: ZIP</a></li>
+	<li id="menu-item-1504" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1504"><a href="https://ssplicensing.zetec.com/">Software ILDS</a></li>
+</ul>
+</li>
+<li id="menu-item-217" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-217"><a href="https://www.zetec.com/legal/">Legal</a>
+<ul class="sub-menu">
+	<li id="menu-item-3089" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3089"><a href="https://www.zetec.com/legal/our-trademarks/">Trademarks &#038; Patents</a></li>
+	<li id="menu-item-1486" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-1486"><a rel="privacy-policy" href="https://www.zetec.com/legal/privacy-policy/">Privacy Policy</a></li>
+	<li id="menu-item-15779" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15779"><a href="https://www.zetec.com/legal/global-privacy-statement/">Global Privacy Statement</a></li>
+	<li id="menu-item-4189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4189"><a href="https://www.zetec.com/legal/human-rights-policy/">Human Rights Policy</a></li>
+	<li id="menu-item-4583" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4583"><a href="https://www.zetec.com/legal/terms-and-conditions/">Terms &#038; Conditions</a></li>
+</ul>
+</li>
+<li id="menu-item-66" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-66"><a href="https://www.zetec.com/contact-us/">Contact</a>
+<ul class="sub-menu">
+	<li id="menu-item-6537" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6537"><a href="https://www.zetec.com/how-to-buy/">How to Buy</a></li>
+	<li id="menu-item-29432" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29432"><a href="https://www.zetec.com/contact-us/">Questions &#038; Inquiries</a></li>
+	<li id="menu-item-41247" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41247"><a href="https://www.zetec.com/remote-application-solution-support/">Remote Application Support</a></li>
+	<li id="menu-item-41761" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41761"><a href="https://www.zetec.com/remote-ndt-demonstration/">Remote NDT Demonstration</a></li>
+	<li id="menu-item-6717" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6717"><a href="https://www.zetec.com/contact-us/">Customer Service</a></li>
+</ul>
+</li>
+<li id="menu-item-4055" class="menu-item menu-item-type-custom menu-item-object-custom social-icon linkedin menu-item-4055"><a href="http://linkedin.com/company/zetec"><i class='icon-2x icon-linkedin '></i><span class='fa-hidden'>LinkedIn</span></a></li>
+<li id="menu-item-6855" class="menu-item menu-item-type-custom menu-item-object-custom social-icon twitter menu-item-6855"><a href="http://twitter.com/ZetecNDT"><i class='icon-2x icon-twitter '></i><span class='fa-hidden'>Twitter</span></a></li>
+<li id="menu-item-4108" class="menu-item menu-item-type-custom menu-item-object-custom social-icon youtube menu-item-4108"><a href="https://www.youtube.com/ZetecNDT"><i class='icon-2x icon-youtube '></i><span class='fa-hidden'>YouTube</span></a></li>
+<li id="menu-item-15633" class="menu-item menu-item-type-custom menu-item-object-custom social-icon facebook menu-item-15633"><a href="https://www.facebook.com/zetecndt/"><i class='icon-2x icon-facebook '></i><span class='fa-hidden'>Facebook</span></a></li>
+</ul></nav>
+                    </div>
+                    <div class="copy">
+                        <ul>
+                            <li><p>&copy;&nbsp;2022&nbsp;Zetec, Inc. All rights reserved. All trademarks are the property of their respective owners.</p></li>
+                        </ul>
+                    </div>
+                    <div class="clear">&nbsp;</div>
+                </div> 
+
+            </footer>
+
+		</div><!-- end .wrapper -->
+
+        <!--googleoff: all--><div id="cookie-law-info-bar" data-nosnippet="true"><span>By continuing to browse or clicking “Accept All Cookies” you agree to the storing of first- &amp; third-party cookies on your device to enhance navigation, analyze site usage, &amp; assist in marketing efforts. <a href="https://www.zetec.com/legal/privacy-policy/#cookies" id="CONSTANT_OPEN_URL" target="_blank" class="cli-plugin-main-link" style="display:inline-block">Cookies Policy</a> <a role='button' data-cli_action="accept" id="cookie_action_close_header" class="small cli-plugin-button cli-plugin-main-button cookie_action_close_header cli_action_button wt-cli-accept-btn" style="display:inline-block">Accept all cookies</a> </span></div><div id="cookie-law-info-again" style="display:none" data-nosnippet="true"><span id="cookie_hdr_showagain">Privacy and data access policy</span></div><div class="cli-modal" data-nosnippet="true" id="cliSettingsPopup" tabindex="-1" role="dialog" aria-labelledby="cliSettingsPopup" aria-hidden="true">
+  <div class="cli-modal-dialog" role="document">
+	<div class="cli-modal-content cli-bar-popup">
+		  <button type="button" class="cli-modal-close" id="cliModalClose">
+			<svg class="" viewBox="0 0 24 24"><path d="M19 6.41l-1.41-1.41-5.59 5.59-5.59-5.59-1.41 1.41 5.59 5.59-5.59 5.59 1.41 1.41 5.59-5.59 5.59 5.59 1.41-1.41-5.59-5.59z"></path><path d="M0 0h24v24h-24z" fill="none"></path></svg>
+			<span class="wt-cli-sr-only">Close</span>
+		  </button>
+		  <div class="cli-modal-body">
+			<div class="cli-container-fluid cli-tab-container">
+	<div class="cli-row">
+		<div class="cli-col-12 cli-align-items-stretch cli-px-0">
+			<div class="cli-privacy-overview">
+				<h4>Privacy Overview</h4>				<div class="cli-privacy-content">
+					<div class="cli-privacy-content-text">This website uses cookies to improve your experience while you navigate through the website. Out of these, the cookies that are categorized as necessary are stored on your browser as they are essential for the working of basic functionalities of the website. We also use third-party cookies that help us analyze and understand how you use this website. These cookies will be stored in your browser only with your consent. You also have the option to opt-out of these cookies. But opting out of some of these cookies may affect your browsing experience.</div>
+				</div>
+				<a class="cli-privacy-readmore" aria-label="Show more" role="button" data-readmore-text="Show more" data-readless-text="Show less"></a>			</div>
+		</div>
+		<div class="cli-col-12 cli-align-items-stretch cli-px-0 cli-tab-section-container">
+												<div class="cli-tab-section">
+						<div class="cli-tab-header">
+							<a role="button" tabindex="0" class="cli-nav-link cli-settings-mobile" data-target="necessary" data-toggle="cli-toggle-tab">
+								Necessary							</a>
+															<div class="wt-cli-necessary-checkbox">
+									<input type="checkbox" class="cli-user-preference-checkbox"  id="wt-cli-checkbox-necessary" data-id="checkbox-necessary" checked="checked"  />
+									<label class="form-check-label" for="wt-cli-checkbox-necessary">Necessary</label>
+								</div>
+								<span class="cli-necessary-caption">Always Enabled</span>
+													</div>
+						<div class="cli-tab-content">
+							<div class="cli-tab-pane cli-fade" data-id="necessary">
+								<div class="wt-cli-cookie-description">
+									Necessary cookies are absolutely essential for the website to function properly. This category only includes cookies that ensures basic functionalities and security features of the website. These cookies do not store any personal information.								</div>
+							</div>
+						</div>
+					</div>
+																	<div class="cli-tab-section">
+						<div class="cli-tab-header">
+							<a role="button" tabindex="0" class="cli-nav-link cli-settings-mobile" data-target="non-necessary" data-toggle="cli-toggle-tab">
+								Non-necessary							</a>
+															<div class="cli-switch">
+									<input type="checkbox" id="wt-cli-checkbox-non-necessary" class="cli-user-preference-checkbox"  data-id="checkbox-non-necessary" checked='checked' />
+									<label for="wt-cli-checkbox-non-necessary" class="cli-slider" data-cli-enable="Enabled" data-cli-disable="Disabled"><span class="wt-cli-sr-only">Non-necessary</span></label>
+								</div>
+													</div>
+						<div class="cli-tab-content">
+							<div class="cli-tab-pane cli-fade" data-id="non-necessary">
+								<div class="wt-cli-cookie-description">
+									Any cookies that may not be particularly necessary for the website to function and is used specifically to collect user personal data via analytics, ads, other embedded contents are termed as non-necessary cookies. It is mandatory to procure user consent prior to running these cookies on your website.								</div>
+							</div>
+						</div>
+					</div>
+										</div>
+	</div>
+</div>
+		  </div>
+		  <div class="cli-modal-footer">
+			<div class="wt-cli-element cli-container-fluid cli-tab-container">
+				<div class="cli-row">
+					<div class="cli-col-12 cli-align-items-stretch cli-px-0">
+						<div class="cli-tab-footer wt-cli-privacy-overview-actions">
+						
+															<a id="wt-cli-privacy-save-btn" role="button" tabindex="0" data-cli-action="accept" class="wt-cli-privacy-btn cli_setting_save_button wt-cli-privacy-accept-btn cli-btn">SAVE &amp; ACCEPT</a>
+													</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+<div class="cli-modal-backdrop cli-fade cli-settings-overlay"></div>
+<div class="cli-modal-backdrop cli-fade cli-popupbar-overlay"></div>
+<!--googleon: all--><link rel='stylesheet' id='short-pixel-bar.min.css-css' href='https://www.zetec.com/wp-content/plugins/shortpixel-image-optimiser/res/css/short-pixel-bar.min.css?ver=4.22.6' type='text/css' media='all' />
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.zetec.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=1669716325' id='swv-js' defer></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/www.zetec.com\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.zetec.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1669716325' id='contact-form-7-js' defer></script>
+<script type='text/javascript' id='wpcf7-redirect-script-js-extra'>
+/* <![CDATA[ */
+var wpcf7r = {"ajax_url":"https:\/\/www.zetec.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.zetec.com/wp-content/cache/min/1/wp-content/plugins/wpcf7-redirect/build/js/wpcf7r-fe.js?ver=1669716325' id='wpcf7-redirect-script-js' defer></script>
+<script type='text/javascript' id='social_warfare_script-js-extra'>
+/* <![CDATA[ */
+var socialWarfare = {"addons":[],"post_id":"20","variables":{"emphasizeIcons":false,"powered_by_toggle":false,"affiliate_link":"https:\/\/warfareplugins.com"},"floatBeforeContent":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.zetec.com/wp-content/plugins/social-warfare/assets/js/script.min.js?ver=4.3.0' id='social_warfare_script-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/www.zetec.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.zetec.com/wp-content/cache/min/1/wp-content/themes/zetec/js/modernizr.custom.09154.js?ver=1669716325' id='modernizr-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.zetec.com/wp-content/cache/min/1/wp-content/themes/zetec/js/respond.js?ver=1669716325' id='respond-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.zetec.com/wp-content/cache/min/1/ajax/libs/bxslider/4.2.15/jquery.bxslider.js?ver=1669716326' id='boxslider-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.zetec.com/wp-content/cache/min/1/wp-content/themes/zetec/js/jquery.placeholder.js?ver=1669716326' id='placeholder-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.zetec.com/wp-content/themes/zetec/js/jquery.selectbox.min.js?ver=20120206' id='selectbox-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.zetec.com/wp-content/cache/min/1/wp-content/themes/zetec/js/jquery.fancybox.js?ver=1669716326' id='fancybox-js' defer></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.zetec.com/wp-content/cache/min/1/wp-content/themes/zetec/js/main.js?ver=1669716326' id='main-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.zetec.com/wp-includes/js/comment-reply.min.js?ver=6.2.2' id='comment-reply-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=6LeqZY0UAAAAACQSNMgq65KfLGJbLsl6k22pNwUq&#038;ver=3.0' id='google-recaptcha-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.zetec.com/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2' id='wp-polyfill-inert-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.zetec.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11' id='regenerator-runtime-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.zetec.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wpcf7-recaptcha-js-extra'>
+/* <![CDATA[ */
+var wpcf7_recaptcha = {"sitekey":"6LeqZY0UAAAAACQSNMgq65KfLGJbLsl6k22pNwUq","actions":{"homepage":"homepage","contactform":"contactform"}};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.zetec.com/wp-content/cache/min/1/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=1669716326' id='wpcf7-recaptcha-js' defer></script>
+<script type="rocketlazyloadscript" src="https://www.zetec.com/wp-content/plugins/shortpixel-image-optimiser/res/js/jquery.knob.min.js?ver=6.2.2" defer="defer" data-rocket-type="text/javascript"></script>
+<script type='text/javascript' id='shortpixel-js-extra'>
+/* <![CDATA[ */
+var _spTr = {"optimizeWithSP":"Optimize with ShortPixel","redoLossy":"Re-optimize Lossy","redoGlossy":"Re-optimize Glossy","redoLossless":"Re-optimize Lossless","restoreOriginal":"Restore Originals","changeMLToListMode":"In order to access the ShortPixel Optimization actions and info, please change to {0}List View{1}List View{2}Dismiss{3}","alertOnlyAppliesToNewImages":"This type of optimization will apply to new uploaded images. Images that were already processed will not be re-optimized unless you restart the bulk process.","areYouSureStopOptimizing":"Are you sure you want to stop optimizing the folder {0}?","reducedBy":"Reduced by","bonusProcessing":"Bonus processing","plusXthumbsOpt":"+{0} thumbnails optimized","plusXretinasOpt":"+{0} Retina images optimized","optXThumbs":"Optimize {0} thumbnails","reOptimizeAs":"Reoptimize {0}","restoreBackup":"Restore backup","getApiKey":"Get API Key","extendQuota":"Extend Quota","check__Quota":"Check\u00a0\u00a0Quota","retry":"Retry","thisContentNotProcessable":"This content is not processable.","imageWaitOptThumbs":"Image waiting to optimize thumbnails","pleaseDoNotSetLesserSize":"Please do not set a {0} less than the {1} of the largest thumbnail which is {2}, to be able to still regenerate all your thumbnails in case you'll ever need this.","pleaseDoNotSetLesser1024":"Please do not set a {0} less than 1024, to be able to still regenerate all your thumbnails in case you'll ever need this.","confirmBulkRestore":"Are you sure you want to restore from backup all the images in your Media Library optimized with ShortPixel?","confirmBulkCleanup":"Are you sure you want to cleanup the ShortPixel metadata info for the images in your Media Library optimized with ShortPixel? This will make ShortPixel 'forget' that it optimized them and will optimize them again if you re-run the Bulk Optimization process.","confirmBulkCleanupPending":"Are you sure you want to cleanup the pending metadata?","alertDeliverWebPAltered":"Warning: Using this method alters the structure of the rendered HTML code (IMG tags get included in PICTURE tags),\nwhich in some rare cases can lead to CSS\/JS inconsistencies.\n\nPlease test this functionality thoroughly after activating!\n\nIf you notice any issue, just deactivate it and the HTML will will revert to the previous state.","alertDeliverWebPUnaltered":"This option will serve both WebP and the original image using the same URL, based on the web browser capabilities, please make sure you're serving the images from your server and not using a CDN which caches the images.","originalImage":"Original image","optimizedImage":"Optimized image","loading":"Loading..."};
+var ShortPixelConstants = [{"STATUS_SUCCESS":1,"STATUS_EMPTY_QUEUE":0,"STATUS_ERROR":-1,"STATUS_FAIL":-2,"STATUS_QUOTA_EXCEEDED":-3,"STATUS_SKIP":-4,"STATUS_NO_KEY":-6,"STATUS_RETRY":-7,"STATUS_QUEUE_FULL":-404,"STATUS_MAINTENANCE":-500,"STATUS_SEARCHING":-8,"WP_PLUGIN_URL":"https:\/\/www.zetec.com\/wp-content\/plugins\/shortpixel-image-optimiser","WP_ADMIN_URL":"https:\/\/www.zetec.com\/wp-admin\/","API_IS_ACTIVE":true,"DEFAULT_COMPRESSION":1,"MEDIA_ALERT":"todo","FRONT_BOOTSTRAP":1,"AJAX_URL":"https:\/\/www.zetec.com\/wp-admin\/admin-ajax.php","BULK_SECRET":"bendph"}];
+var ShortPixelActions = {"nonce_check_quota":"d61cdcc5eb"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.zetec.com/wp-content/plugins/shortpixel-image-optimiser/res/js/shortpixel.min.js?ver=4.22.6' id='shortpixel-js' defer></script>
+<script type="rocketlazyloadscript" src="https://www.zetec.com/wp-content/plugins/shortpixel-image-optimiser/res/js/jquery.tooltip.min.js?ver=6.2.2" defer="defer" data-rocket-type="text/javascript"></script>
+<script type="rocketlazyloadscript" src="https://www.zetec.com/wp-content/plugins/shortpixel-image-optimiser/res/js/punycode.min.js?ver=6.2.2" defer="defer" data-rocket-type="text/javascript"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript"> var swp_nonce = "d2e3dc1fcb";function parentIsEvil() { var html = null; try { var doc = top.location.pathname; } catch(err){ }; if(typeof doc === "undefined") { return true } else { return false }; }; if (parentIsEvil()) { top.location = self.location.href; };var url = "https://www.zetec.com/";if(url.indexOf("stfi.re") != -1) { var canonical = ""; var links = document.getElementsByTagName("link"); for (var i = 0; i < links.length; i ++) { if (links[i].getAttribute("rel") === "canonical") { canonical = links[i].getAttribute("href")}}; canonical = canonical.replace("?sfr=1", "");top.location = canonical; console.log(canonical);};var swpFloatBeforeContent = false; var swp_ajax_url = "https://www.zetec.com/wp-admin/admin-ajax.php"; var swp_post_id = "20";var swpClickTracking = false;</script>			<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="wpsp-script-frontend"></script>
+			<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.zetec.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+_linkedin_partner_id = "65988";
+window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script><script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+(function(){var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})();
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=65988&fmt=gif" />
+</noscript>
+
+	</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

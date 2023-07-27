@@ -1,0 +1,360 @@
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<title>[B1] Samsung Securities</title>
+	<link rel="shortcut icon" href="data:image/x-icon;" type="image/x-icon">
+	<link rel="stylesheet" href="/eng/css/base.css">
+	<link rel="stylesheet" href="/eng/css/comp.css">
+	<link rel="stylesheet" href="/eng/css/main.css">
+	<script src="/eng/js/lib/jquery.min.2.2.4.js"></script>
+	<script src="/published/xcms/frontMenu/data/EC/FnMenu.data.js"></script>
+	<script src="/eng/js/dev.js"></script>
+	<script>
+		var ga_menuCode = 'MAIN'; 
+		var ga_menuName = ' - MAIN'; 
+		$(document).ready(function(){
+			$('#on-off-switch').on('click', function(){
+				if($(this).is(':checked')){
+					location.href='https://www.samsungsecurities.co.kr/kor/main.do';
+				}else{
+					location.href='https://www.samsungsecurities.com/eng/main.do';
+				}
+			});
+			
+			//gnb 메뉴 생성
+			$(cateList).each(function(ic, oc){
+				var $gnbMenuUl = $('#gnbMenuUl');
+				html='<li><a href="javascript:void(0);" class="menu-tit">'+oc.TITLE+'</a><ul class="menu">';
+				$(depthList1).each(function(i1, o1){
+					if(oc.SEQ == o1.PARENT_SEQ){
+						if(o1.CHILD_CNT > 0){
+							html+='<li><a href="javascript:void(0);" class="more">'+o1.TITLE+'</a>';
+							html+='<ul class="menu-detail">';
+							$(depthList2).each(function(i2, o2){
+								if(o1.SEQ == o2.PARENT_SEQ){
+									html+='<li><a href="'+o2.URL+'">'+o2.TITLE+'</a></li>';	
+								}
+							});
+							html+='</ul></li>';
+						}else{
+							html+='<li><a href="'+o1.URL+'">'+o1.TITLE+'</a></li>';	
+						}
+					}
+				});
+				html+='</ul></li>';
+				$gnbMenuUl.append(html);
+			});
+		});
+	</script>
+	<script src="/eng/js/ga.js"></script>
+</head>
+<body>
+<!-- skip -->
+<div class="skip-nav">
+	<a href="#gnb">Go to the main menu</a>
+	<a href="#fullpage">Go to main content</a>
+</div>
+<!-- wrap -->
+<div id="wrap" class="main">
+	<!-- header -->
+	<header>
+		<div class="head-gnb">
+			<h1><a href="/eng/main.do"><img src="/eng/img/com/logo-a.png" alt="Samsung Securities"></a></h1>
+			<button type="button" class="btn-menu"><span class="hide">menu view</span></button>
+			<div class="language">
+				<button type="button" onclick="javascript:location.href='https://www.samsungsecurities.co.kr/kor/main.do'"><span>KR</span></button>
+				<button type="button" class="active-color"><span>EN</span></button>
+			</div>
+			<!-- 모바일 -->
+			<div class="toggle-group">
+				<input type="checkbox" name="on-off-switch" id="on-off-switch"  title="go to Samsung Securities korea or english site">
+				<label for="on-off-switch"  tabindex="0">
+					<span class="aural"><em class="hide">mobile</em></span>
+				</label>
+				<div class="onoffswitch pull-right" aria-hidden="true">
+					<div class="onoffswitch-label">
+						<div class="onoffswitch-inner"></div>
+						<div class="onoffswitch-switch"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 메뉴 -->
+		<div class="gnb-menu" id="gnb">
+			<div class="inner">
+				<ul class="menu-wrap" id="gnbMenuUl"></ul>
+			</div>
+			<div class="box"><button type="button" class="btn-menu-close"><span class="hide">menu close</span></button></div>
+		</div>
+		<div class="dim"></div>
+	</header>
+	<!-- //header -->
+	<!-- container -->
+	<div id="fullpage">
+		<!-- 키비주얼 -->
+		<div id="section-1" class="section section1">
+			<div class="mainVisual">
+				<div class="main-bg"></div>
+				<div class="section-tit">
+					<div class="section-type01 " data-aos="fade-up">
+						<p class="s-tit">GROW TOGETHER</p>
+						<h2 class="main-tit" id="section-2-tit"><span>Growing together with</span><br /><span class="yellow blue">Samsung Securities</span></h2>
+						<!-- <p class="main-sub-tit">We will continue to grow with you, helping to improve your life through investment.</p> -->
+					</div>
+				</div>
+				<div class="tb-bg"></div>
+				<div class="videoArea">
+					<video id="mainMovie" muted="true" autoplay loop preload="auto" data-keepplaying muted playsinline>
+						<source src="/video/main.mp4" type="video/mp4">
+					</video>
+				</div>
+			</div>
+			<!-- next section -->
+			<div class="move-scroll">
+				<button class="scroll" onclick="location.href='#page2'"><span>next</span></button>
+			</div>
+		</div>
+		<!-- BUSINESS -->
+		<div id="section-2" class="section section2">
+			<div class="section-tit" id="section-2-tit">
+				<div class="inner">
+					<h2 class="sec-tit1">BUSINESS</h2>
+					<h3 class="sec-tit2">Optimal financial solutions<br/>to grow your assets</h3>
+					<!-- <p class="sec-tit3">'Putting the customer first,' we will leverage novel insights and stand-out solutions<br/>to grow your assets.</p> -->
+					<ul class="section-item">
+						<li class="item01"><a href="/eng/company/retail.do"><span>Channel Sales</span></a></li>
+						<li class="item02"><a href="/eng/company/ib.do"><span>Digital</span></a></li>
+						<li class="item03"><a href="/eng/company/trading.do"><span>S&T</span></a></li>
+						<li class="item04"><a href="/eng/company/investment.do"><span>IB</span></a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- next section -->
+			<div class="move-scroll">
+				<button class="scroll"  onclick="location.href='#page3'">next</button>
+			</div>
+		</div>
+		<!-- VALUE -->
+		<div id="section-3" class="section section3">
+			<div class="section-tit" id="section-3-tit">
+				<div class="inner">
+					<h2 class="sec-tit1">ENABLING PEOPLE</h2>
+					<h3 class="sec-tit2">Moving toward a better world with<br/><span style="color: #1e73e3;font-weight:700;">Samsung Securities</span></h3>
+					<!-- <p class="sec-tit3">We will fulfill our responsibilities as a corporate citizen with sincerity and<br/>compassion to improve the lives of all members of society.</p> -->
+					<ul class="section-item col2">
+						<li class="item01"><a href="/eng/business/economy.do"><span>Key<br/>Programs</span></a></li>
+						<li class="item04"><a href="/eng/business/volunteers.do"><span>Nanumi<br/>Volunteers</span></a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- next section -->
+			<div class="move-scroll">
+				<button class="scroll"  onclick="location.href='#page4'">next</button>
+			</div>
+		</div>
+		<!-- 투자정보 -->
+		<div id="section-4" class="section section4">
+			<div class="section-tit" id="section-4-tit">
+				<div class="inner">
+					<h2 class="sec-tit1">INVESTOR RELATIONS</h2>
+					<h3 class="sec-tit2">Transparent management<br>to increase shareholder value</h3>
+					<!-- <p class="sec-tit3">As Korea’s leading financial investment company, we will be relentless in<br/>overcoming challenges and spearheading change.</p> -->
+				</div>
+			</div>
+			<!-- 재무정보 -->
+			<div class="fina-area">
+				<div class="inner">
+					<div class="left">
+						<div class="in-box">
+							<!-- 타이틀 -->
+							<div class="head">
+								<h4 class="tit">Financials & Reports</h4>
+								<a href="/eng/invest/annual_report.do?tabCode=1" class="btn-more"><span class="blind">More</span></a>
+							</div>
+							<!-- 목록 -->
+							<div class="body">
+								<ul class="list">
+									
+			                    	<li>
+			                    		<a href="javascript:commonDownload('/common.do?cmd=down&saveKey=kor.finance&fnName=', 'SamsungSecIR_CY2023 Q1_Earnings_en.xlsx');" title="[Quarterly Report] FY2023 Q1 Quarterly Report (Financial Statements)">
+				                    		<span class="sub-tit">[Quarterly Report] FY2023 Q1 Quarterly Report (Financial Statements)</span>
+				                    		<span class="date">2023-05-11</span>
+				                    	</a>
+				                    	<button type="button" class="btn-down" onclick="javascript:commonDownload('/common.do?cmd=down&saveKey=kor.finance&fnName=', 'SamsungSecIR_CY2023 Q1_Earnings_en.xlsx');">
+				                    		<span>Download</span>
+				                    	</button>
+									</li>
+									
+			                    	<li>
+			                    		<a href="javascript:commonDownload('/common.do?cmd=down&saveKey=kor.finance&fnName=', 'SamsungSecIR_1Q23_eng_final.pdf');" title="[Quarterly Report] FY2023 Q1 Quarterly Report (Earnings Release)">
+				                    		<span class="sub-tit">[Quarterly Report] FY2023 Q1 Quarterly Report (Earnings Release)</span>
+				                    		<span class="date">2023-05-11</span>
+				                    	</a>
+				                    	<button type="button" class="btn-down" onclick="javascript:commonDownload('/common.do?cmd=down&saveKey=kor.finance&fnName=', 'SamsungSecIR_1Q23_eng_final.pdf');">
+				                    		<span>Download</span>
+				                    	</button>
+									</li>
+									
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="right">
+						<div class="in-box">
+							<ul class="link-area">
+								<li class="ct"><!-- <a href="/eng/invest/notice.do" class="link ico02" title="Company Notice"><span>Company Notice</span></a> --></li>
+								<li class="rt"><a href="/eng/invest/ir.do" class="link ico03" title="IR Information"><span>IR Calendar</span></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<!-- footer -->
+		<div id="section-5" class="section section5">
+			
+<footer>
+	<div class="inner">
+		<div class="foot-cont">
+			<ul class="item">
+				<li><a href="https://www.samsungpop.com" class="first" target="_blank" title="New Window Open Tab">Clients</a></li>
+				<li><a href="/eng/contactus.do">Contact us</a></li>
+				<li><a href="/download/eng/pdf/privacy_policy.pdf" target="_blank" title="pdf file new window open">Privacy Policy</a></li>
+				<li><a href="/eng/conditions.do">Terms and Conditions</a></li>
+				<!-- <li><a href="/eng/privacy_policy.do" class="bold">Privacy Policy</a></li> -->
+				<li><a href="/eng/sitemap.do">Sitemap</a></li>
+				<li class="last"><a href="https://www.edk.kr/data/data/index2.jsp?memberFk=37" target="_blank">ESG DATA</a></li>
+			</ul>
+			<!-- <div class="family">
+				<button type="button" class="fm-up">Family Site</button>
+				<ul class="site-li">
+					<li><a href="https://www.samsungpop.com/" target="_blank" title="new window open">samsungpop</a></li>
+					<li><a href="https://english.samsungpop.com/" target="_blank" title="new window open">samsung POP_English</a></li>
+					<li><a href="/eng/main.do" target="_blank" title="new window open">Company Introduction_Korea</a></li>
+				</ul>
+			</div> -->
+		</div>
+		<div class="foot-addr">
+			<div class="addr">
+				<p class="top">06620 11, Seocho-daero 74-gil, Seocho-gu, Seoul, Republic of Korea<span><em class="bar fir"></em>CEO & President : Seok Hoon Chang<em class="bar"></em>Corporate Registration Number : 202-81-48588</span></p>
+				<p class="bot">Copyright (c) 2020 Samsung securities. All rights reserved.</p>
+			</div>
+			<div class="sns">
+				<a href="https://www.facebook.com/withSamsungPOP" target="_blank" title="new window open" class="ico-sns"><img src="/eng/img/com/icon-fb.png" alt="facebook" /></a>
+				<a href="http://blog.naver.com/samsung_fn" target="_blank" title="new window open" class="ico-sns"><img src="/eng/img/com/icon-n.png" alt="blog" /></a>
+				<a href="https://www.youtube.com/user/samsungpop" target="_blank" title="new window open" class="ico-sns"><img src="/eng/img/com/icon-utu.png" alt="youtube" /></a>
+				<!-- <a href="http://www.webwatch.or.kr/Situation/WA_Situation.html?MenuCD=110" target="_blank" title="goverment-authorized certification organization : WebWatch, Inc" class="dp-webmark"><img src="/kor/img/com/webmark.png" border="0" alt="Web Accessibility Quality Certification Mark by Ministry of Science and ICT"/></a> -->
+				<span class="footer_logo"><img src="/eng/img/com/footer_logo.png" border="0" alt="samsung Financial Networks logo"/></span>
+			</div>
+		</div>
+	</div>
+</footer>
+
+		</div>
+	</div>
+	<!-- //container -->
+</div>
+<!-- //wrap -->
+<script src="/eng/js/main.js"></script>
+<script src="/eng/js/lib/fullpage.js"></script>
+<script src="/eng/js/lib/TweenMax.min.js"></script>
+<script>
+	var firstload = false;
+	var uaInfo = navigator.userAgent.toLowerCase();
+	var myFullpage = new fullpage('#fullpage', {
+		v2compatible: true,
+		verticalCentered: true,
+		anchors: ['page1', 'page2', 'page3', 'page4'],
+		navigation: true,
+		scrollingSpeed: 1300,
+		easingcss3: 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+		onLeave: function(index, nextIndex, direction){
+			TweenMax.to( $(".section-tit") , .5, {y:100, alpha:0, ease: Linear.easeInOut});
+		}, 
+		afterLoad: function(anchorLink, index){
+			deleteLog = true;
+			if(index != "4"){
+				TweenMax.to( $(".section-tit") , 0, {alpha:0, ease: Linear.easeInOut});
+				TweenMax.to( $(".section-tit") , .5, {y:0, alpha:1, ease: Linear.easeInOut});
+			}
+			
+			var ios = false;
+			if(uaInfo.indexOf('iphone') > -1 || uaInfo.indexOf('ipad') > -1 || uaInfo.indexOf('ipod') > -1){
+				ios = true;
+			}
+			
+			if(index == "1"){
+				$("#fp-nav li a").attr("title", "");
+				$("#fp-nav li:nth-child(1) a").attr("title", "selected");
+				if(firstload && !ios ){
+					$("#section-1").attr("tabindex", "0");
+					$("#section-1-tit").focus();
+				}
+				firstload = true;
+			}else if(index == "2"){
+				$("#fp-nav li a").attr("title", "");
+				$("#fp-nav li:nth-child(2) a").attr("title", "selected");
+				if(firstload && !ios ){
+					$("#section-2").attr("tabindex", "0");
+					$("#section-2-tit").focus();
+				}
+				firstload = true;
+			}else if(index == "3"){
+				$("#fp-nav li a").attr("title", "");
+				$("#fp-nav li:nth-child(3) a").attr("title", "selected");
+				if(firstload && !ios ){
+					$("#section-3").attr("tabindex", "0");
+					$("#section-3-tit").focus();
+				}
+				firstload = true;
+			}else if(index == "4"){
+				$("#fp-nav li a").attr("title", "");
+				$("#fp-nav li:nth-child(4) a").attr("title", "selected");
+				if(firstload && !ios ){
+					$("#section-4").attr("tabindex", "0");
+					$("#section-4-tit").focus();
+				}
+				firstload = true;
+			}else if(index == "5"){
+				$("#fp-nav li a").attr("title", "");
+				$("#fp-nav li:nth-child(5) a").attr("title", "selected");
+			}
+		}
+	});
+	
+	$(document).ready(function(){
+		/* $("#section-1 .move-scroll .scroll").keydown(function(e){
+			var code = e.keyCode;
+			
+			if(code == 13){
+				$("#section-2").attr("tabindex", "0");
+				$("#section-2").focus();
+			}
+		}); */	
+		
+		$(".move-scroll .scroll, .fina-area .link-area li:last-child a").keydown(function(e){
+			var code = e.keyCode;
+			
+			if(code == 9){
+				$("#fp-nav ul").attr("tabindex", "0");
+				$("#fp-nav ul").focus();
+			}
+		});	
+	});
+</script>
+</body>
+</html>

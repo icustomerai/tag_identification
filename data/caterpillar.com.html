@@ -1,0 +1,3142 @@
+
+
+
+<!DOCTYPE HTML>
+<html lang="en" xml:lang="en">
+    <head>
+    <meta charset="UTF-8"/>
+    <meta name="template" content="subsidiary-homepage-template"/>
+    
+
+    
+    
+<link rel="stylesheet" href="/etc.clientlibs/deg/clientlibs/clientlib-dependencies.min.5d18fc177c2b9da2d8bc26f6a27fdd3a.css" type="text/css">
+<script src="/etc.clientlibs/deg/clientlibs/clientlib-dependencies.min.b9c250c8012a99b24c6fd43304d18278.js"></script>
+
+
+
+
+
+    
+<link rel="stylesheet" href="/etc.clientlibs/deg/clientlibs/clientlib-base.min.5974f09218da3987b9dc6d18921f528b.css" type="text/css">
+
+
+
+
+
+
+
+
+    
+    
+    
+
+    
+
+    
+    
+    
+
+    
+
+<!-- START Custom code-->
+
+
+<!-- OneTrust Cookies Consent Notice start -->
+<script type="text/javascript">OnetrustActiveGroups='';</script>
+<script src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" type="text/javascript" charset="UTF-8" data-domain-script="60105155-36a5-43e4-8e00-43d4d3e7ddf4"></script>
+<script type="text/javascript">function OptanonWrapper() { }</script>
+<script type="text/javascript">var timesRun=0; let interval = setInterval(function () {
+    if (window["OnetrustActiveGroups"] != ''|| timesRun == 3) {
+      clearInterval(interval);
+    }timesRun+=1;
+  }, 300);</script>
+<!-- OneTrust Cookies Consent Notice end -->
+
+
+<!-- ue2laempublishaserverp01 -->
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+<script>
+	var currentPage = "/content/caterpillarDotCom/en",isPerkins = 'false', isCatdotcom = 'false';
+    window._cat_drl_loc_sev_url = "dealerlocator.cat.com";
+    window._cat_drl_loc_search_dist = "";
+    window._cat_drl_loc_max_results = "";
+	window._addPath_vanity = "";
+	window.defaultUnitType = "metric";
+		window._cat_drl_loc_app_id = "uUX6JpD189P7sfDr";
+    window._cat_drl_loc_app_url = "dealerlocator.cat.com";
+    window._bing_key= "";	
+    window._helios_dls_url = "";
+    if(currentPage.indexOf("/content/wwwperkins") === 0){
+    	isPerkins='true';
+    }
+	if (currentPage.indexOf("/content/catdotcom") === 0) {
+    	isCatdotcom = 'true';
+	} 
+    var currentLocaleString = "en";
+	Granite.I18n.setLocale(currentLocaleString);
+</script>
+
+<script>
+    // Added method to fetch the cookie value (needed for Datalayer push on page load)
+    function getCookieVal(name){
+        var arr = null,
+            reg = new RegExp('(^| )' + name + '=([^;]+)');
+        if(arr = document.cookie.match(reg)){
+            return unescape(arr[2]);
+        } else {
+            return null;
+        }
+    }
+
+    var catRecId = '',
+        userId = '',
+        userGAInfo = '';
+
+	var dataLayer = window.dataLayer || [],
+	  siteID = 'caterpillardotcom' == "" ? null : 'caterpillardotcom',
+	  templateID = 'subsidiary-homepage-template' == "" ? null : 'subsidiary-homepage-template',
+	  templateBase = 'deg' == "" ? null : 'deg',
+	  adiBu = '' == "" ? null : '',
+	  adiApp = '' == "" ? null : '',
+	  adiContType = '' == "" ? null : '',
+	  adiInd = '' == "" ? null : '',
+	  adiAud = '' == "" ? null : '',
+	  adiAudgoal = '' == "" ? null : '',
+	  adiPripgkpi = '' == "" ? null : '',
+	  adiSecpgkpi = '' == "" ? null : '',
+	  dealerCode = '' == "" ? null : '',
+	  dealerName = '' == "" ? null : '',
+	  lastPublishedDate = '2023-06-22T10:59:40.994-05:00' == "" ? null : '2023-06-22T10:59:40.994-05:00',
+	  b2cDataLayerFlag = false,
+	  campaignFlag = false;
+
+	var favDealer = JSON.parse(localStorage.getItem("favorite_dealer"));
+	var dealerId = null,
+		dealerCode = null,
+		dealerName = null,
+		dealerLocationName = null;
+	if(favDealer) {
+		dealerId = favDealer.dealerId;
+		dealerCode = favDealer.dealerCode;
+		dealerName = favDealer.dealerName;
+		dealerLocationName = favDealer.dealerLocationName;
+	}
+
+	// Get the RecId, UserId and GAInfo from the cookie
+
+	setTimeout(function(){
+		userId = null != getCookieVal('CWSID') ? getCookieVal('CWSID') : '';
+		catRecId = null != getCookieVal('RECID') ? getCookieVal('RECID') : '';
+
+        dataLayer.push({
+            'catRecId' : catRecId,
+            'userId' : userId
+        });
+
+		includeGAInfoDatalayerValues();
+
+	}, 3400);
+
+	function includeGAInfoDatalayerValues(){
+		if(typeof OnetrustActiveGroups !== 'undefined' && OnetrustActiveGroups.includes("C0002")) {
+			if((typeof isPingAccessEnabledFlag !== 'undefined' && isPingAccessEnabledFlag) ||
+			   (typeof isGAInfoEnabledFlag !== 'undefined' && isGAInfoEnabledFlag)) {
+
+				userGAInfo = null != getCookieVal('GAInfo') ? JSON.parse(getCookieVal('GAInfo')) : '';
+
+				if(userGAInfo){
+					dataLayer.push({
+						'affClass' : userGAInfo.affClass,
+						'affCode' : userGAInfo.affCode,
+						'topLvlOrgCode' : userGAInfo.topLvlOrgCode
+					});
+				}
+			}
+		}
+	}
+
+	dataLayer.push({
+		'zipCode': sessionStorage.getItem('bcpZip'),
+		'siteID': siteID,
+        'dealerId' : dealerId,
+        'dealerCode' : dealerCode,
+        'dealerName' : dealerName,
+        'dealerLocationName' : dealerLocationName,
+		'templateID': templateID,
+		'templateBase': templateBase,
+		'adiBu'	: adiBu,
+		'adiApp' : adiApp,
+		'adiContType' : adiContType,
+		'adiInd' : adiInd,
+		'adiAud' : adiAud,
+        'adiAudgoal' : adiAudgoal,
+        'adiPripgkpi' : adiPripgkpi,
+        'adiSecpgkpi' : adiSecpgkpi,
+        'storeID' : dealerCode,
+		'storeCode' : dealerCode,
+		'storeName' : dealerName,
+		'lastPubDate' : lastPublishedDate,
+		'campaignFlag' : campaignFlag
+      	});
+	if(b2cDataLayerFlag){
+	    if(getCookieVal('li_aemgainfo')){
+	        var aemgainfo = JSON.parse(getCookieVal('li_aemgainfo'));
+	        var dataLayer = window.dataLayer || [];
+	        dataLayer.push({
+	            'event':'b2cloaded',
+	            'companyID' : aemgainfo.companyID,
+	            'hem' : aemgainfo.hem,
+	            'loginID' : aemgainfo.loginID,
+	            'catRecId' : aemgainfo.catRecId,
+	            'affClass' : aemgainfo.affClass,
+	            'affCode' : aemgainfo.affCode,
+	            'b2cdealerCode' : aemgainfo.b2cdealerCode,
+	            'topLvlOrgCode' : aemgainfo.topLvlOrgCode,
+	            'b2cObjectID' : aemgainfo.b2cObjectID,
+	            'b2cUserType' : aemgainfo.b2cUserType
+	        })
+	    }
+	    else{
+	    	document.cookie = 'li_aemgainfo = {"companyID":"","hem":"","loginID":"","catRecId":"","affClass":"","affCode":"","b2cdealerCode":"","topLvlOrgCode":"","b2cObjectID":"","b2cUserType":""}'+ '; path=/; Secure; SameSite=Lax';
+	        var dataLayer = window.dataLayer || [];
+	        dataLayer.push({
+	            'event':'b2cloaded',
+	            'companyID' : "",
+	            'hem' : "",
+	            'loginID' : "",
+	            'catRecId' : "",
+	            'affClass' : "",
+	            'affCode' : "",
+	            'b2cdealerCode' : "",
+	            'topLvlOrgCode' : "",
+	            'b2cObjectID' : "",
+	            'b2cUserType' : ""
+	        })
+	    }
+	}
+
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5RP9FXB');</script>
+<!-- End Google Tag Manager -->
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="keywords"/>
+<meta name="twitter:card" content="summary_large_image"/>
+
+
+
+
+<!-- Open Group tagging : Social network (OpenGraph) metatag values -->
+
+
+
+<meta property="og:site_name" content="https://www.caterpillar.com/en.html"/>
+
+
+
+<!-- Page Tag list -->
+
+<!-- Blog Tag list -->
+
+<!-- Blog Tag list End -->
+
+<!-- Published Date to metatag for blogCards -->
+
+
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href='/content/dam/favicons/favicon.ico'/>
+
+
+
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href='/content/dam/favicons/catdotcomFavicon.png/_jcr_content/renditions/cq5dam.thumbnail.57.57.png'/>
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href='/content/dam/favicons/catdotcomFavicon.png/_jcr_content/renditions/cq5dam.thumbnail.72.72.png'/>
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href='/content/dam/favicons/catdotcomFavicon.png/_jcr_content/renditions/cq5dam.thumbnail.114.114.png'/>
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href='/content/dam/favicons/catdotcomFavicon.png/_jcr_content/renditions/cq5dam.thumbnail.144.144.png'/>
+
+
+<meta name="description" content="Caterpillar is the world’s leading manufacturer of construction and mining equipment, diesel and natural gas engines, industrial turbines and diesel-electric locomotives."/>
+
+
+
+
+    
+    
+
+    
+    
+    
+    
+
+
+
+<title>Caterpillar | Caterpillar Inc</title>
+<link rel="canonical" href='https://www.caterpillar.com/en.html'/>    
+<link rel="stylesheet" href="/content/caterpillarDotCom/en/_jcr_content.editable-whitelabel-v2.css"/>
+</head>
+    <body class="page basicpage auth" data-offset="84">
+		
+          <style id="antiClickjack">
+            body{display:none !important;}
+          </style>
+        
+        
+        
+            
+
+
+
+            
+
+
+<div class="root responsivegrid">
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="experienceFragment experiencefragment aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+  
+    
+ 
+
+    
+
+
+
+<div class="xf-content-height">
+    
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="cookie aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+
+
+
+
+    
+    
+<link rel="stylesheet" href="/etc.clientlibs/deg/components/content/general/cookie/v3/cookie/clientlibs/site.min.69e5ada82fd8961440a6019cea9f98b0.css" type="text/css">
+
+
+
+    
+    
+<script src="/etc.clientlibs/deg/components/content/general/cookie/v3/cookie/clientlibs/site.min.28a4a31c2c40028b49342900147b82ba.js"></script>
+
+
+
+
+
+<div class="ot-cookie-banner" style="display:none;">
+    
+        <input type="hidden" id="locale-page-publish" value="en_"/>
+    
+
+    
+</div></div>
+<div class="header aem-GridColumn aem-GridColumn--default--12">
+<!-- HTML  -->
+
+<div class="skip-search-crawl d-print-none">
+  <header class="mega--nav tfn header auth-track">
+    
+    
+    
+    
+    
+    
+    <input type="hidden" id="exp-fragment-resource" data-azure-path="/content/caterpillarDotCom/en"/>
+    <div style="display: none;" id="isDealer"></div>
+    <div style="display: none;" id="dealerPage"></div>
+    <div class="container container--mega-nav">
+      <div class="row">
+        <div class="col">
+          
+          
+
+
+
+<a href="#" onclick="" class="menu-toggle" data-open-label="menu" data-close-label="close" aria-label="Menu" style="display: none;"><span></span></a>
+<a href="/en.html" class="logo">
+	<picture>
+              <source media="(min-width: 1023px)" srcset="https://s7d2.scene7.com/is/image/Caterpillar/CM20220222-5c3c2-280a8?fmt=png-alpha"/>
+              <img src="https://s7d2.scene7.com/is/image/Caterpillar/CM20220222-5c3c2-280a8?fmt=png-alpha" alt="Caterpillar Logo"/>
+              <img class="logo--print" src="https://s7d2.scene7.com/is/image/Caterpillar/CM20220222-5c3c2-280a8?fmt=png-alpha" alt="Caterpillar Logo"/>
+	</picture>
+</a>
+
+
+    
+
+
+          
+          <div class="mega-mobile">
+            <nav class="top--nav">
+              <!-- setting class 'active' enables underline -->
+              <ul>
+                <li>
+                  
+                  <a href="/en/company.html" class="toplink mobile-drawer" data-mega-drawer="mega-company">Company</a>
+                  <!-- <div class="mega-drawer" id="mega-products" style="height: auto; overflow: visible; visibility: visible; display: block;"> -->
+                  <div class="mega-drawer" id="mega-company">
+                    <div class="inner">
+                      <div class="container">
+                        
+                        <div class="row">
+       					<div class="col-lg-12 col-md-12 mobile--drawer mobile--drawer-single">
+                        <div class="mega--content open">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <a href="/en/company.html" class="cat-follow mega--drawer-back mega--content__header mega--back">Company</a>
+                              <hr/>
+                            </div>
+                            <div class="col-lg-8">
+                              <ul class="link--cols four">
+                                <li class="only-mobile"><a href="/en/company.html" class="mega-nav-subheading">All Company</a></li>
+                                <li><a href="/en/company/strategy-purpose.html">Strategy &amp; Purpose</a></li>
+<li><a href="/en/company/governance.html">Governance</a></li>
+<li><a href="/en/company/history.html">History</a></li>
+<li><a href="/en/company/caterpillar-foundation.html">Caterpillar Foundation</a></li>
+<li><a href="/en/company/code-of-conduct.html">Code of Conduct</a></li>
+<li><a href="/en/company/sustainability.html">Sustainability</a></li>
+<li><a href="/en/company/diversity-inclusion.html">Diversity &amp; Inclusion</a></li>
+<li><a href="/en/company/innovation.html">Innovation</a></li>
+<li><a href="/en/company/political-engagement-redirect.html">Political Engagement</a></li>
+<li><a href="/en/company/global-footprint.html">Global Locations</a></li>
+<li><a href="/en/company/visitors-center.html">Visitors Center &amp; Museum</a></li>
+<li><a href="/en/company/working-together.html">Working Together</a></li>
+
+                              </ul>
+                            </div>
+                            <div class="col-lg-4">
+                              
+                              <div class="link--block">
+                                <div class="link--item">
+                                  <a href="/en/news/caterpillar-faq.html">
+                                    <div class="item--left">                                      
+                                      <img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20210816-53339-4f758?$cc-s$&fmt=pjpeg" alt="Frequently Asked Questions (FAQs)"/>
+                                    </div>
+                                    <div class="item--right">
+                                      <p class="item__title">Frequently Asked Questions (FAQs)</p>
+                                      <p>Find a list of Frequently Asked Questions (FAQs) about Caterpillar and our brands. Answers include investor information.</p>
+                                    </div>
+                                  </a>
+                                </div>
+<div class="link--item">
+                                  <a href="/en/company/working-together/caterpillar-at-a-glance.html">
+                                    <div class="item--left">                                      
+                                      <img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20190813-307cb-b84d3?$cc-s$&fmt=pjpeg" alt="Caterpillar at a Glance"/>
+                                    </div>
+                                    <div class="item--right">
+                                      <p class="item__title">Caterpillar at a Glance</p>
+                                      <p>Understand Caterpillar at a glance through resources including our Caterpillar fact sheet, our corporate profile, and more.</p>
+                                    </div>
+                                  </a>
+                                </div>
+
+                              </div>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      	</div>
+                      	</div>
+                      </div>
+                    </div>
+                  </div></li>
+
+              
+                <li>
+                  
+                  <a href="/en/brands.html" class="toplink mobile-drawer" data-mega-drawer="mega-brands">Brands</a>
+                  <!-- <div class="mega-drawer" id="mega-products" style="height: auto; overflow: visible; visibility: visible; display: block;"> -->
+                  <div class="mega-drawer" id="mega-brands">
+                    <div class="inner">
+                      <div class="container">
+                        
+                        <div class="row">
+       					<div class="col-lg-12 col-md-12 mobile--drawer mobile--drawer-single">
+                        <div class="mega--content open">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <a href="/en/brands.html" class="cat-follow mega--drawer-back mega--content__header mega--back">Brands</a>
+                              <hr/>
+                            </div>
+                            <div class="col-lg-8">
+                              <ul class="link--cols four">
+                                <li class="only-mobile"><a href="/en/brands.html" class="mega-nav-subheading">All Brands</a></li>
+                                <li><a href="/en/brands/cat.html">Cat</a></li>
+<li><a href="/en/brands/cat-financial.html">Cat Financial</a></li>
+<li><a href="/en/brands/cat-reman.html">Cat Reman</a></li>
+<li><a href="/en/brands/cat-rental-store.html">Cat Rental Store</a></li>
+<li><a href="/en/brands/cat-lift-trucks.html">Cat Lift Trucks</a></li>
+<li><a href="/en/brands/anchor-coupling.html">Anchor</a></li>
+<li><a href="/en/brands/asiatrak.html">AsiaTrak</a></li>
+<li><a href="/en/brands/fg-wilson.html">FG Wilson</a></li>
+<li><a href="/en/brands/hindustan.html">Hindustan</a></li>
+<li><a href="/en/brands/mak.html">MaK</a></li>
+<li><a href="/en/brands/mwm.html">MWM</a></li>
+<li><a href="/en/brands/perkins.html">Perkins</a></li>
+<li><a href="/en/brands/progress-rail.html">Progress Rail</a></li>
+<li><a href="/en/brands/sem.html">SEM</a></li>
+<li><a href="/en/brands/solar-turbines.html">Solar Turbines</a></li>
+<li><a href="/en/brands/spm.html">SPM Oil &amp; Gas</a></li>
+<li><a href="/en/brands/turner-powertrain-systems.html">Turner Powertrain Systems</a></li>
+
+                              </ul>
+                            </div>
+                            <div class="col-lg-4">
+                              
+                              <div class="link--block">
+                                <div class="link--item">
+                                  <a href="/en/brands/cat/merchandise.html">
+                                    <div class="item--left">                                      
+                                      <img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20171110-54033-27512?$cc-s$&fmt=pjpeg" alt="Caterpillar Merchandise"/>
+                                    </div>
+                                    <div class="item--right">
+                                      <p class="item__title">Caterpillar Merchandise</p>
+                                      <p>Cat® hats, boots, shoes, bags, models, phones, watches – and so much more. Appreciation for the brand extends far beyond those who use our equipment.</p>
+                                    </div>
+                                  </a>
+                                </div>
+<div class="link--item">
+                                  <a href="/en/brands/cat/products.html">
+                                    <div class="item--left">                                      
+                                      <img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/C772755?$cc-s$&fmt=pjpeg" alt="Cat® Products &amp; Services"/>
+                                    </div>
+                                    <div class="item--right">
+                                      <p class="item__title">Cat® Products &amp; Services</p>
+                                      <p>Cat® product offerings include articulated trucks, backhoe loaders, dozers, engines, excavators, generators, motor graders, skid steer loaders and wheel loaders.</p>
+                                    </div>
+                                  </a>
+                                </div>
+
+                              </div>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      	</div>
+                      	</div>
+                      </div>
+                    </div>
+                  </div></li>
+
+              
+                <li>
+                  
+                  <a href="/en/investors.html" class="toplink mobile-drawer" data-mega-drawer="mega-investors">Investors</a>
+                  <!-- <div class="mega-drawer" id="mega-products" style="height: auto; overflow: visible; visibility: visible; display: block;"> -->
+                  <div class="mega-drawer" id="mega-investors">
+                    <div class="inner">
+                      <div class="container">
+                        
+                        <div class="row">
+       					<div class="col-lg-12 col-md-12 mobile--drawer mobile--drawer-single">
+                        <div class="mega--content open">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <a href="/en/investors.html" class="cat-follow mega--drawer-back mega--content__header mega--back">Investors</a>
+                              <hr/>
+                            </div>
+                            <div class="col-lg-8">
+                              <ul class="link--cols four">
+                                <li class="only-mobile"><a href="/en/investors.html" class="mega-nav-subheading">All Investors</a></li>
+                                <li><a href="/en/investors/stock-information.html">Stock Information</a></li>
+<li><a href="/en/investors/financial-information.html">Financial Information</a></li>
+<li><a href="/en/investors/shareholder-services.html">Shareholder Services</a></li>
+<li><a href="/en/investors/events-presentations.html">Events &amp; Presentations</a></li>
+<li><a href="/en/investors/quarterly-results.html">Quarterly Financial Results</a></li>
+<li><a href="/en/investors/reports.html">Caterpillar Reports</a></li>
+<li><a href="/en/investors/sec-filings.html">SEC Filings</a></li>
+<li><a href="/en/investors/governance.html">Governance</a></li>
+
+                              </ul>
+                            </div>
+                            <div class="col-lg-4">
+                              
+                              <div class="link--block">
+                                <div class="link--item">
+                                  <a href="/en/news/corporate-press-releases.html">
+                                    <div class="item--left">                                      
+                                      <img class="lazyload" data-src="http://s7d2.scene7.com/is/image/Caterpillar/CM20181009-47398-05120?$cc-s$&fmt=pjpeg" alt="Corporate Press Releases"/>
+                                    </div>
+                                    <div class="item--right">
+                                      <p class="item__title">Corporate Press Releases</p>
+                                      <p>Read corporate press releases and news announcements distributed by Caterpillar Inc.</p>
+                                    </div>
+                                  </a>
+                                </div>
+<div class="link--item">
+                                  <a href="/en/company/governance.html">
+                                    <div class="item--left">                                      
+                                      <img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20210104-4883e-e3414?$cc-s$&fmt=pjpeg" alt="Governance"/>
+                                    </div>
+                                    <div class="item--right">
+                                      <p class="item__title">Governance</p>
+                                      <p>Our leaders are committed to supporting customers and driving profitable growth.</p>
+                                    </div>
+                                  </a>
+                                </div>
+
+                              </div>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      	</div>
+                      	</div>
+                      </div>
+                    </div>
+                  </div></li>
+
+              
+                <li>
+                  
+                  <a href="/en/news.html" class="toplink mobile-drawer" data-mega-drawer="mega-news">News</a>
+                  <!-- <div class="mega-drawer" id="mega-products" style="height: auto; overflow: visible; visibility: visible; display: block;"> -->
+                  <div class="mega-drawer" id="mega-news">
+                    <div class="inner">
+                      <div class="container">
+                        
+                        <div class="row">
+       					<div class="col-lg-12 col-md-12 mobile--drawer mobile--drawer-single">
+                        <div class="mega--content open">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <a href="/en/news.html" class="cat-follow mega--drawer-back mega--content__header mega--back">News</a>
+                              <hr/>
+                            </div>
+                            <div class="col-lg-8">
+                              <ul class="link--cols four">
+                                <li class="only-mobile"><a href="/en/news.html" class="mega-nav-subheading">All News</a></li>
+                                <li><a href="/en/news/caterpillarNews.html">Feature Stories</a></li>
+<li><a href="/en/news/corporate-press-releases.html">Corporate Press Releases</a></li>
+<li><a href="/en/news/media-information.html">Media Information</a></li>
+<li><a href="/en/news/social-media.html">Social Media</a></li>
+<li><a href="/en/news/caterpillar-faq.html">Frequently Asked Questions (FAQs)</a></li>
+<li><a href="/en/news/publications.html">Caterpillar Publications</a></li>
+
+                              </ul>
+                            </div>
+                            <div class="col-lg-4">
+                              
+                              <div class="link--block">
+                                <div class="link--item">
+                                  <a href="/en/investors/reports.html">
+                                    <div class="item--left">                                      
+                                      <img class="lazyload" data-src="http://s7d2.scene7.com/is/image/Caterpillar/CM20180212-34824-13273?$cc-s$&fmt=pjpeg" alt="Caterpillar Reports"/>
+                                    </div>
+                                    <div class="item--right">
+                                      <p class="item__title">Caterpillar Reports</p>
+                                      <p>Find the latest Annual, Sustainability, Diversity &amp; Inclusion and Lobbying Reports.</p>
+                                    </div>
+                                  </a>
+                                </div>
+<div class="link--item">
+                                  <a href="/en/company/strategy-purpose/industries.html">
+                                    <div class="item--left">                                      
+                                      <img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20130723-46879-48608?$cc-s$&fmt=pjpeg" alt="Industries We Serve"/>
+                                    </div>
+                                    <div class="item--right">
+                                      <p class="item__title">Industries We Serve</p>
+                                      <p>Construction, mining, energy and rail. The industries we serve are essential in our modern world.</p>
+                                    </div>
+                                  </a>
+                                </div>
+
+                              </div>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      	</div>
+                      	</div>
+                      </div>
+                    </div>
+                  </div></li>
+
+              
+                <li>
+                  
+                  <a href="/en/careers.html" class="toplink mobile-drawer" data-mega-drawer="mega-careers">Careers</a>
+                  <!-- <div class="mega-drawer" id="mega-products" style="height: auto; overflow: visible; visibility: visible; display: block;"> -->
+                  <div class="mega-drawer" id="mega-careers">
+                    <div class="inner">
+                      <div class="container">
+                        
+                        <div class="row">
+       					<div class="col-lg-12 col-md-12 mobile--drawer mobile--drawer-single">
+                        <div class="mega--content open">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <a href="/en/careers.html" class="cat-follow mega--drawer-back mega--content__header mega--back">Careers</a>
+                              <hr/>
+                            </div>
+                            <div class="col-lg-8">
+                              <ul class="link--cols four">
+                                <li class="only-mobile"><a href="/en/careers.html" class="mega-nav-subheading">All Careers</a></li>
+                                <li><a href="/en/careers/careersnews.html">Working at Caterpillar</a></li>
+<li><a href="/en/careers/career-areas.html">Career Areas</a></li>
+<li><a href="/en/careers/diversity-inclusion.html">Diversity &amp; Inclusion</a></li>
+
+                              </ul>
+                            </div>
+                            <div class="col-lg-4">
+                              
+                              <div class="link--block">
+                                <div class="link--item">
+                                  <a href="/en/careers/apply-now.html">
+                                    <div class="item--left">                                      
+                                      <img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20220307-35d8c-8235e?$cc-s$&fmt=pjpeg" alt="Search for Jobs"/>
+                                    </div>
+                                    <div class="item--right">
+                                      <p class="item__title">Search for Jobs</p>
+                                      <p>There are big jobs to be done worldwide, and that work is powered by our people. Join the team.</p>
+                                    </div>
+                                  </a>
+                                </div>
+
+                              </div>
+                              
+                            </div>
+                          </div>
+                        </div>
+                      	</div>
+                      	</div>
+                      </div>
+                    </div>
+                  </div></li>
+
+              </ul>
+              <div class="mega--util">
+                
+                
+                
+                
+
+
+
+	<div class="tfn floating-system-notification">
+		
+		<!-- same example as above but showing a single component system message success -->
+		<div class="container" id="floating-success-notification">
+			<div class="system-notification-holder">
+				<div class="notification-message success">
+					<div class="icon-holder">
+						<i class="material-icons" id="floating-success-material-icon" aria-hidden="true"></i>
+					</div>
+					<div class="content-holder">
+						<a tabindex="0" onclick="" class="close" aria-label="close notification"><i class="material-icons">close</i></a>
+						<p class="title" id="floating-success-message-title"></p>
+						<p class="info" id="floating-success-message"></p>
+						<div class="action-holder">
+							<a href="" class="action action-close">OK</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+	</div>
+
+
+    
+
+
+
+
+    
+<script src="/etc.clientlibs/deg/components/structure/systemNotifications/v2/systemNotifications/clientlibs/site.min.296bd0075633a0ad74e2e7fb27ff96c4.js"></script>
+
+
+
+                
+                
+
+
+
+
+    <a class=" tfn language-selector toplink mobile-drawer" href="#" data-mega-drawer="mega-languagelinks"><i class="material-icons">language</i>English</a>
+    <div class="mega-drawer util--drawer" id="mega-languagelinks">
+       <div class="inner">
+            <div class="container">
+              <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12 mobile--header">
+                                <a onclick="" class="mega--back" tabindex="0">Select a Language</a>
+                      </div>
+                      <div class="col-lg-2 col-md-12 mobile--links">
+                        <ul class="mega--sidelinks">
+                            
+                                <li class="current"><a href="/en.html">English</a></li>
+                            
+                            
+                        
+                            
+                            
+                                <li><a href="/de.html">Deutsch</a></li>
+                            
+                        
+                            
+                            
+                                <li><a href="/es.html">Español</a></li>
+                            
+                        
+                            
+                            
+                                <li><a href="/fr.html">Français</a></li>
+                            
+                        
+                            
+                            
+                                <li><a href="/it.html">Italiano</a></li>
+                            
+                        
+                            
+                            
+                                <li><a href="/hu.html">Magyar</a></li>
+                            
+                        
+                            
+                            
+                                <li><a href="/nl.html">Nederlands</a></li>
+                            
+                        
+                            
+                            
+                                <li><a href="/pl.html">Polski</a></li>
+                            
+                        
+                            
+                            
+                                <li><a href="/pt.html">Português</a></li>
+                            
+                        
+                            
+                            
+                                <li><a href="/ru.html">Русский</a></li>
+                            
+                        
+                            
+                            
+                                <li><a href="/zh.html">中文</a></li>
+                            
+                        
+                            
+                            
+                                <li><a href="/ja.html">日本語</a></li>
+                            
+                        </ul>
+                      </div>
+              </div>
+            </div>
+      </div>
+    </div>
+
+
+                
+
+              </div>
+            </nav>
+          </div>
+          
+          
+          <ul class="utility--links">
+            <li><a href="#" onclick="" role="button" class="search-toggle search auth-track" id="utility_links_search">
+                <i class="material-icons" id="utility_links_search_icon" aria-hidden="true">search</i><span>Search</span>
+              </a></li>
+            
+
+            
+            
+
+
+
+	<div class="tfn floating-system-notification">
+		
+		<!-- same example as above but showing a single component system message success -->
+		<div class="container" id="floating-success-notification">
+			<div class="system-notification-holder">
+				<div class="notification-message success">
+					<div class="icon-holder">
+						<i class="material-icons" id="floating-success-material-icon" aria-hidden="true"></i>
+					</div>
+					<div class="content-holder">
+						<a tabindex="0" onclick="" class="close" aria-label="close notification"><i class="material-icons">close</i></a>
+						<p class="title" id="floating-success-message-title"></p>
+						<p class="info" id="floating-success-message"></p>
+						<div class="action-holder">
+							<a href="" class="action action-close">OK</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+	</div>
+
+
+    
+
+
+
+
+    
+
+
+
+            
+            
+            
+            <li class="utility--links__dropdown utility--links__locale">
+
+
+		<div class="drop--menu tfn language-selector">
+              <a href="#" role="button" class="dropdown-button" aria-expanded="false" aria-controls="language-selector-dropdown">
+                <i class="material-icons">language</i>
+                <span aria-hidden="true">English</span>
+              </a>
+              <ul class="menu--content" id="language-selector-dropdown" aria-label="menu">
+				
+					<li class="current"><a href="/en.html">English</a></li>
+                
+                
+              
+				
+                
+
+					<li><a href="/de.html">Deutsch</a></li>
+                
+              
+				
+                
+
+					<li><a href="/es.html">Español</a></li>
+                
+              
+				
+                
+
+					<li><a href="/fr.html">Français</a></li>
+                
+              
+				
+                
+
+					<li><a href="/it.html">Italiano</a></li>
+                
+              
+				
+                
+
+					<li><a href="/hu.html">Magyar</a></li>
+                
+              
+				
+                
+
+					<li><a href="/nl.html">Nederlands</a></li>
+                
+              
+				
+                
+
+					<li><a href="/pl.html">Polski</a></li>
+                
+              
+				
+                
+
+					<li><a href="/pt.html">Português</a></li>
+                
+              
+				
+                
+
+					<li><a href="/ru.html">Русский</a></li>
+                
+              
+				
+                
+
+					<li><a href="/zh.html">中文</a></li>
+                
+              
+				
+                
+
+					<li><a href="/ja.html">日本語</a></li>
+                
+              </ul>
+         </div>
+
+
+
+</li>
+            
+            
+
+            
+            
+            
+            
+            
+          </ul>
+          <div class="search-wrap" style="display: none;">
+            
+
+
+
+
+    
+<link rel="stylesheet" href="/etc.clientlibs/deg/components/structure/search/v1/search/clientlibs/site.min.7ea43d628062d274409239af092e2700.css" type="text/css">
+
+
+	
+	
+	<a href="#" aria-hidden="true"></a>
+	<form action="/en/search/search-results.html" class="search-inner search siteSearchForm" id="search" name="search" method="GET">
+		<i class="material-icons" id="siteSearchForm_search_icon">search</i>
+		<label for="searchInput" class="sr-only">Search</label>
+        
+        
+         
+        <input type="search" class="input-large search-input" id="searchInput" name="search" placeholder="What are you looking for?" autocomplete="off" onkeyup="newSearchAutoSuggestHeader(this, 'search');"/>
+        
+
+		<input type="hidden" name="pagePath" id="pagePath" value="/content/caterpillarDotCom/en"/>
+        <input type="hidden" id="newSearchEnabled" value="true"/>
+		
+		<input type="submit" class="hidden" value="Search"/>
+		<a href="#" onclick="" class="search-close" role="button" aria-label="close">&#215;</a>
+		<div id="searchsearchInputSuggBox" class="suggestionBox col-7 col-lg-10 col-md-8 col-sm-6 col-xs-6" style="display:none">
+        
+       
+        
+          <div class="sug" onclick="selAndSubmitAutoComplete('#globalSearchResults #globalSearchInput', 'truck');return false;">
+            <a href="">Pavers</a>
+          </div>
+          <div class="sug" onclick="selAndSubmitAutoComplete('#globalSearchResults #globalSearchInput', 'trucks');return false;">
+            <a href="">Ashpalt pavers</a>
+          </div>
+          <div class="sug" onclick="selAndSubmitAutoComplete('#globalSearchResults #globalSearchInput', 'trucking');return false;">
+            <a href="">Paving</a>
+          </div>
+          <div class="sug" onclick="selAndSubmitAutoComplete('#globalSearchResults #globalSearchInput', 'trucksworthy');return false;">
+            <a href="">Pavement</a>
+          </div>
+        
+
+		 <!-- end existing aem autosuggest -->
+      </div>
+	</form>
+
+
+    
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+
+
+ <script src="https://maps.googleapis.com/maps/api/js?v=3&client=gme-caterpillarinc&language=en&libraries=places"></script> 
+
+
+
+    
+</div>
+<div class="javascript auth-track aem-GridColumn aem-GridColumn--default--12">
+<div style="background-image:url(/content/dam/caterpillarDotCom/header-gradient.png); background-repeat:repeat-x;">&nbsp;
+</div>
+</div>
+
+    
+</div>
+
+</div>
+  
+
+
+</div>
+
+    
+</div>
+</div>
+<div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <section class="carousel auth-track carousel--hero aem-GridColumn aem-GridColumn--default--12">
+    
+<link rel="stylesheet" href="/etc.clientlibs/deg/components/content/container/carousel/v2/carousel/clientlibs/site.min.23a3b9aaba7088731a6cfa9cffa21407.css" type="text/css">
+
+
+
+
+	<!-- /*standard carousel display start*/ -->
+	<!-- /*Condition to check for standard carouself has been modified to check for both conditions to avoid affecting existing authored components in live site*/ -->
+	
+		
+		
+			
+				<div class="carousel_play">
+					<button id="heroPlayPause" class="heroPlayPause" aria-label="Stop Automatic Slideshow"><i role="button" class="material-icons" aria-hidden="true">pause</i></button>
+				</div>
+				<div class="carousel__wrapper">
+					<div role="tabpanel" class="cmp-carousel__item cmp-carousel__item--active" data-cmp-hook-carousel="item"><div class="teaser auth-track media-youtube teaser--hero teaser--has-gradient">
+
+
+
+
+    
+<link rel="stylesheet" href="/etc.clientlibs/deg/components/content/general/teaser/v4/teaser/clientlibs/site.min.9ed713ab156d363f7aeeab72e6e39be1.css" type="text/css">
+
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 col-12 teaser__text-wrap">
+			<div class="inner">
+			    
+			      <p class="teaser-date" style="display: none;">2023-06-20</p>
+			    	
+
+				
+					<h2>Mining the Future: Caterpillar’s Holistic Energy Transition Approach</h2>
+				
+				
+
+				<span class="accent-bar"></span>
+				
+				
+				
+				
+					<p class="teaser-blog-content">
+						How the transformation will impact people, processes, infrastructure and technology.
+					</p>
+				
+					
+				
+					
+   
+      <a class="button button-primary button-sm teaserDefaultButtonText" href="/en/news/caterpillarNews/2023/holistic-energy-transition-approach.html" target="_self">
+      <i class="material-icons" aria-hidden="true">call</i>Full Story</a>
+      
+      
+         <input type="hidden" id="gatedFlag" value="false"/>
+      
+      <input type="hidden" id="loggedInText"/>
+      <input type="hidden" id="loggedOutText"/>
+   
+
+				
+			</div>
+		</div>
+		<div class="col-lg-6 col-12 teaser__img-wrap">
+		
+			
+				<figure class="figure_teaserBackgroundImage">
+                <picture>
+                    <source media="(min-width: 992px)" srcset="https://s7d2.scene7.com/is/image/Caterpillar/CM20230510-f578a-ac5da"/>
+					<img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20230510-f578a-ac5da" alt="Electric Mining Truck" data-object-fit="cover"/>
+                </picture>
+                </figure>
+			
+
+            
+			   <figure class="figure_teaserBackgroundImgCheckerboard">
+					 <picture>
+                    <source media="(min-width: 992px)" srcset="https://s7d2.scene7.com/is/image/Caterpillar/CM20230510-f578a-ac5da"/>
+					<img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20230510-f578a-ac5da" alt="Electric Mining Truck" data-object-fit="cover"/>
+                </picture>
+				</figure>
+				
+
+           <div class="teaser-multimedia__slide-media"> 
+            	
+			 	
+		     
+		  </div>
+	   </div>
+	</div>
+</div>
+
+
+
+    
+<script src="/etc.clientlibs/deg/components/content/general/teaser/v4/teaser/clientlibs/site.min.0ad855f2cb55defabb9c1def976b34a5.js"></script>
+
+
+
+
+
+
+    
+
+</div>
+</div>
+<div role="tabpanel" class="cmp-carousel__item" data-cmp-hook-carousel="item"><div class="teaser auth-track media-youtube teaser--hero teaser--has-gradient">
+
+
+
+
+    
+
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 col-12 teaser__text-wrap">
+			<div class="inner">
+			    
+			      <p class="teaser-date" style="display: none;">2023-05-15</p>
+			    	
+
+				
+					<h2>4 Ways We’re Transforming Equipment Operations</h2>
+				
+				
+
+				<span class="accent-bar"></span>
+				
+				
+				
+				
+					<p class="teaser-blog-content">
+						Caterpillar engineers are giving operators the tools they need to succeed.
+					</p>
+				
+					
+				
+					
+   
+      <a class="button button-primary button-sm teaserDefaultButtonText" href="/en/news/caterpillarNews/2023/transforming-equipment-operations.html" target="_self">
+      <i class="material-icons" aria-hidden="true">call</i>Full Story</a>
+      
+      
+         <input type="hidden" id="gatedFlag" value="false"/>
+      
+      <input type="hidden" id="loggedInText"/>
+      <input type="hidden" id="loggedOutText"/>
+   
+
+				
+			</div>
+		</div>
+		<div class="col-lg-6 col-12 teaser__img-wrap">
+		
+			
+				<figure class="figure_teaserBackgroundImage">
+                <picture>
+                    <source media="(min-width: 992px)" srcset="https://s7d2.scene7.com/is/image/Caterpillar/CM20210420-84a89-ce4fe"/>
+					<img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20210420-84a89-ce4fe" alt="Operator using Cat Machine" data-object-fit="cover"/>
+                </picture>
+                </figure>
+			
+
+            
+			   <figure class="figure_teaserBackgroundImgCheckerboard">
+					 <picture>
+                    <source media="(min-width: 992px)" srcset="https://s7d2.scene7.com/is/image/Caterpillar/CM20210420-84a89-ce4fe"/>
+					<img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20210420-84a89-ce4fe" alt="Operator using Cat Machine" data-object-fit="cover"/>
+                </picture>
+				</figure>
+				
+
+           <div class="teaser-multimedia__slide-media"> 
+            	
+			 	
+		     
+		  </div>
+	   </div>
+	</div>
+</div>
+
+
+
+    
+
+
+
+
+
+
+    
+
+</div>
+</div>
+<div role="tabpanel" class="cmp-carousel__item" data-cmp-hook-carousel="item"><div class="teaser auth-track media-youtube teaser--hero teaser--has-gradient">
+
+
+
+
+    
+
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 col-12 teaser__text-wrap">
+			<div class="inner">
+			    
+			      <p class="teaser-date" style="display: none;">2023-06-22</p>
+			    	
+
+				
+					<h2>Caterpillar Announces Executive Officer Retirement</h2>
+				
+				
+
+				<span class="accent-bar"></span>
+				
+				
+				
+				
+					<p class="teaser-blog-content">
+						Caterpillar Inc. (NYSE: CAT) announced today Chief Legal Officer and General Counsel Suzette M. Long will retire on December 31, 2023, following a distinguished 18-year career at the company.
+					</p>
+				
+					
+				
+					
+   
+      <a class="button button-primary button-sm teaserDefaultButtonText" href="/en/news/corporate-press-releases/h/executive-officer-retirement.html" target="_self">
+      <i class="material-icons" aria-hidden="true">call</i>View Release</a>
+      
+      
+         <input type="hidden" id="gatedFlag" value="false"/>
+      
+      <input type="hidden" id="loggedInText"/>
+      <input type="hidden" id="loggedOutText"/>
+   
+
+				
+			</div>
+		</div>
+		<div class="col-lg-6 col-12 teaser__img-wrap">
+		
+			
+				<figure class="figure_teaserBackgroundImage">
+                <picture>
+                    <source media="(min-width: 992px)" srcset="/content/dam/caterpillarDotCom/062123_PressRelease_3500x1500C.png"/>
+					<img class="lazyload" data-src="/content/dam/caterpillarDotCom/062123_PressRelease_3500x1500C.png" alt="Suzette Long and Derek Owen" data-object-fit="cover"/>
+                </picture>
+                </figure>
+			
+
+            
+			   <figure class="figure_teaserBackgroundImgCheckerboard">
+					 <picture>
+                    <source media="(min-width: 992px)" srcset="/content/dam/caterpillarDotCom/062123_PressRelease_3500x1500C.png"/>
+					<img class="lazyload" data-src="/content/dam/caterpillarDotCom/062123_PressRelease_3500x1500C.png" alt="Suzette Long and Derek Owen" data-object-fit="cover"/>
+                </picture>
+				</figure>
+				
+
+           <div class="teaser-multimedia__slide-media"> 
+            	
+			 	
+		     
+		  </div>
+	   </div>
+	</div>
+</div>
+
+
+
+    
+
+
+
+
+
+
+    
+
+</div>
+</div>
+<div role="tabpanel" class="cmp-carousel__item" data-cmp-hook-carousel="item"><div class="teaser auth-track media-youtube teaser--hero teaser--has-gradient">
+
+
+
+
+    
+
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 col-12 teaser__text-wrap">
+			<div class="inner">
+			    	
+
+				
+					<h2>Safely Home. Everyone. Every Day.</h2>
+				
+				
+
+				<span class="accent-bar"></span>
+				
+				
+				
+				
+					<p class="teaser-blog-content">
+						Our safety-focused products &amp; services help our customers run safely.
+					</p>
+				
+					
+				
+					
+   
+      <a class="button button-primary button-sm teaserDefaultButtonText" href="https://www.cat.com/en_US/support/safety.html" target="_blank">
+      <i class="material-icons" aria-hidden="true">call</i>Visit Cat.com</a>
+      
+      
+         <input type="hidden" id="gatedFlag" value="false"/>
+      
+      <input type="hidden" id="loggedInText"/>
+      <input type="hidden" id="loggedOutText"/>
+   
+
+				
+			</div>
+		</div>
+		<div class="col-lg-6 col-12 teaser__img-wrap">
+		
+			
+				<figure class="figure_teaserBackgroundImage">
+                <picture>
+                    <source media="(min-width: 992px)" srcset="https://s7d2.scene7.com/is/image/Caterpillar/CM20200902-7af4a-e4e1f"/>
+					<img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20200902-7af4a-e4e1f" alt="Man in safety vest" data-object-fit="cover"/>
+                </picture>
+                </figure>
+			
+
+            
+			   <figure class="figure_teaserBackgroundImgCheckerboard">
+					 <picture>
+                    <source media="(min-width: 992px)" srcset="https://s7d2.scene7.com/is/image/Caterpillar/CM20200902-7af4a-e4e1f"/>
+					<img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20200902-7af4a-e4e1f" alt="Man in safety vest" data-object-fit="cover"/>
+                </picture>
+				</figure>
+				
+
+           <div class="teaser-multimedia__slide-media"> 
+            	
+			 	
+		     
+		  </div>
+	   </div>
+	</div>
+</div>
+
+
+
+    
+
+
+
+
+
+
+    
+
+</div>
+</div>
+<div role="tabpanel" class="cmp-carousel__item" data-cmp-hook-carousel="item"><div class="teaser auth-track media-youtube teaser--hero teaser--has-gradient">
+
+
+
+
+    
+
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 col-12 teaser__text-wrap">
+			<div class="inner">
+			    
+			      <p class="teaser-date" style="display: none;">2023-06-20</p>
+			    	
+
+				
+					<h2>Caterpillar Named to USA Today’s Inaugural List of America’s Climate Leaders 2023</h2>
+				
+				
+
+				<span class="accent-bar"></span>
+				
+				
+				
+				
+					<p class="teaser-blog-content">
+						Recognizing companies’ efforts to reduce greenhouse gas emissions.
+					</p>
+				
+					
+				
+					
+   
+      <a class="button button-primary button-sm teaserDefaultButtonText" href="/en/news/caterpillarNews/2023/usa-today-climate-leaders-2023.html" target="_self">
+      <i class="material-icons" aria-hidden="true">call</i>Full Story</a>
+      
+      
+         <input type="hidden" id="gatedFlag" value="false"/>
+      
+      <input type="hidden" id="loggedInText"/>
+      <input type="hidden" id="loggedOutText"/>
+   
+
+				
+			</div>
+		</div>
+		<div class="col-lg-6 col-12 teaser__img-wrap">
+		
+			
+				<figure class="figure_teaserBackgroundImage">
+                <picture>
+                    <source media="(min-width: 992px)" srcset="https://s7d2.scene7.com/is/image/Caterpillar/CM20230519-d9a9f-45723"/>
+					<img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20230519-d9a9f-45723" alt="Men walking in front of solar panels" data-object-fit="cover"/>
+                </picture>
+                </figure>
+			
+
+            
+			   <figure class="figure_teaserBackgroundImgCheckerboard">
+					 <picture>
+                    <source media="(min-width: 992px)" srcset="https://s7d2.scene7.com/is/image/Caterpillar/CM20230519-d9a9f-45723"/>
+					<img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20230519-d9a9f-45723" alt="Men walking in front of solar panels" data-object-fit="cover"/>
+                </picture>
+				</figure>
+				
+
+           <div class="teaser-multimedia__slide-media"> 
+            	
+			 	
+		     
+		  </div>
+	   </div>
+	</div>
+</div>
+
+
+
+    
+
+
+
+
+
+
+    
+
+</div>
+</div>
+
+				</div>
+				<div class="carousel__pagination">
+					<div class="carousel__pagination__wrapper"></div>
+				</div>
+			
+		
+			
+		
+	
+	<!-- /*standard carousel display end*/ -->	
+	
+	<!-- /* Film Strip Carousel - Simple start */ -->
+	
+	
+	<!-- /* Film Strip Carousel - Detailed start */ -->
+	
+
+
+
+    
+<script src="/etc.clientlibs/deg/components/content/container/carousel/v2/carousel/clientlibs/site.min.aefebaeecebe58877d932794cabd7fe7.js"></script>
+
+
+
+
+    
+</section>
+<div class="section-container section-container--centered section-padding-none aem-GridColumn aem-GridColumn--default--12">
+
+    
+    
+    
+    <div id="container-4ef4363454" class="cmp-container" style="background-color:#f8f8f8;">
+         <div class="section-container__inner">
+        
+        <div class="editorial-card editorial-card--wrapper auth-track editorial-card--4-col editorial-card--h-centered section-padding">
+
+
+
+    
+
+
+
+
+  
+ 
+  <div class="editorial-card__item">
+  
+      <a href="/en/brands.html" target="_self">
+        <div class="editorial-card__item--img-wrap">
+          <figure>
+            <img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20190412-971af-1792e" alt="cat machine" data-object-fit="cover"/>
+          </figure>
+        </div>
+        <div class="editorial-card__item--text-wrap">
+          <div class="inner">
+            <div class="inner__left">
+				
+								
+            </div>
+            <div class="inner__right">
+              <h2>Products &amp; Services</h2>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  <div class="editorial-card__item">
+  
+      <a href="/en/company.html" target="_self">
+        <div class="editorial-card__item--img-wrap">
+          <figure>
+            <img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20210304-e12bd-f7a7b" alt="2 men in front of Cat Machine" data-object-fit="cover"/>
+          </figure>
+        </div>
+        <div class="editorial-card__item--text-wrap">
+          <div class="inner">
+            <div class="inner__left">
+				
+								
+            </div>
+            <div class="inner__right">
+              <h2>About Caterpillar</h2>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  <div class="editorial-card__item">
+  
+      <a href="/en/careers.html" target="_self">
+        <div class="editorial-card__item--img-wrap">
+          <figure>
+            <img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20210304-d43f4-1f39a" alt="employees in meeting" data-object-fit="cover"/>
+          </figure>
+        </div>
+        <div class="editorial-card__item--text-wrap">
+          <div class="inner">
+            <div class="inner__left">
+				
+								
+            </div>
+            <div class="inner__right">
+              <h2>Career Opportunities</h2>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  <div class="editorial-card__item">
+  
+      <a href="/en/company/sustainability.html" target="_self">
+        <div class="editorial-card__item--img-wrap">
+          <figure>
+            <img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20210427-090bf-c0f33" alt="cat machine" data-object-fit="cover"/>
+          </figure>
+        </div>
+        <div class="editorial-card__item--text-wrap">
+          <div class="inner">
+            <div class="inner__left">
+				
+								
+            </div>
+            <div class="inner__right">
+              <h2>Sustainability</h2>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+
+
+
+
+    
+<link rel="stylesheet" href="/etc.clientlibs/deg/components/content/general/editorialCard/v4/editorialCard/clientlibs/site.min.a862dd42ae3717893773c33b1d0e7a22.css" type="text/css">
+<script src="/etc.clientlibs/deg/components/content/general/editorialCard/v4/editorialCard/clientlibs/site.min.0611df8969c86a7cfafb3f0653cb352e.js"></script>
+
+
+</div>
+
+        
+         </div>
+    </div>
+
+</div>
+<div class="section-container section-container--centered aem-GridColumn aem-GridColumn--default--12">
+
+    
+    
+    
+    <div id="container-af378737c6" class="cmp-container">
+         <div class="section-container__inner">
+        
+        <div class="responsivegrid">
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="responsivegrid aem-GridColumn--default--none aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--offset--default--0">
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="deg-title section-padding-no-bottom aem-GridColumn--default--none aem-GridColumn aem-GridColumn--default--12 aem-GridColumn--offset--default--0">
+<div class="title auth-track">
+	<div class="container">
+		<div class="title__wrapper">
+			<h4>Quick Links</h4>
+			<span class="accent-bar"></span>
+			
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="texteditor auth-track rte text section-padding-none aem-GridColumn--default--none aem-GridColumn aem-GridColumn--default--12 aem-GridColumn--offset--default--0">
+<div id="rte-2ecd5283d5" class="cmp-text">
+    <h5><a href="/en/careers.html" class="cat-follow" style="color: rgb(0,0,0);">Apply for Jobs</a></h5>
+<h5><a href="/en/company/strategy-purpose.html" class="cat-follow" style="color: rgb(0,0,0);">Explore Our Strategy</a></h5>
+<h5><a href="/en/company/global-footprint.html" class="cat-follow" style="color: rgb(0,0,0);">Find Locations</a></h5>
+<h5><a href="/en/investors.html" class="cat-follow" style="color: rgb(0,0,0);" target="_blank">Invest in Caterpillar</a></h5>
+<h5><a href="/en/news.html" class="cat-follow" style="color: rgb(0,0,0);">Read Latest News</a></h5>
+<h5><a href="/en/company/working-together/caterpillar-at-a-glance.html" class="cat-follow" style="color: rgb(0,0,0);">Caterpillar At A Glance</a></h5>
+<h5><a href="/en/news/caterpillar-faq.html" class="cat-follow" style="color: rgb(0,0,0);">Caterpillar FAQs</a></h5>
+<h5><a href="/en/news/social-media.html" class="cat-follow" style="color: rgb(0,0,0);">Find us on Social</a></h5>
+<div> </div>
+
+</div>
+
+    
+
+</div>
+
+    
+</div>
+</div>
+<section class="carousel auth-track carousel--promo section-padding-no-bottom aem-GridColumn--default--none aem-GridColumn--default--9 aem-GridColumn aem-GridColumn--offset--default--0">
+    
+
+
+
+
+	<!-- /*standard carousel display start*/ -->
+	<!-- /*Condition to check for standard carouself has been modified to check for both conditions to avoid affecting existing authored components in live site*/ -->
+	
+		
+		
+			
+				<div class="carousel_play">
+					<button id="heroPlayPause" class="heroPlayPause" aria-label="Stop Automatic Slideshow"><i role="button" class="material-icons" aria-hidden="true">pause</i></button>
+				</div>
+				<div class="carousel__wrapper">
+					<div role="tabpanel" class="cmp-carousel__item cmp-carousel__item--active" data-cmp-hook-carousel="item"><div class="teaser auth-track media-youtube teaser--full-width teaser--right teaser--has-gradient teaser--no-accent-bar section-padding-none">
+
+
+
+
+    
+
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 col-12 teaser__text-wrap">
+			<div class="inner">
+			    
+			      <p class="teaser-date" style="display: none;">2023-04-28</p>
+			    	
+
+				
+					<h2>Sustainability</h2>
+				
+				
+
+				<span class="accent-bar"></span>
+				
+				
+				
+				
+					<p class="teaser-blog-content">
+						We’re committed to building a better, more sustainable world.
+					</p>
+				
+					
+				
+					
+   
+      <a class="button button-primary button-sm teaserDefaultButtonText" href="/en/company/sustainability.html" target="_self">
+      <i class="material-icons" aria-hidden="true">call</i>See More</a>
+      
+      
+         <input type="hidden" id="gatedFlag" value="false"/>
+      
+      <input type="hidden" id="loggedInText"/>
+      <input type="hidden" id="loggedOutText"/>
+   
+
+				
+			</div>
+		</div>
+		<div class="col-lg-6 col-12 teaser__img-wrap">
+		
+			
+				<figure class="figure_teaserBackgroundImage">
+                <picture>
+                    <source media="(min-width: 992px)" srcset="https://s7d2.scene7.com/is/image/Caterpillar/CM20190418-b5101-89253"/>
+					<img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20190418-b5101-89253" alt="Cat Dozer in forest" data-object-fit="cover"/>
+                </picture>
+                </figure>
+			
+
+            
+			   <figure class="figure_teaserBackgroundImgCheckerboard">
+					 <picture>
+                    <source media="(min-width: 992px)" srcset="https://s7d2.scene7.com/is/image/Caterpillar/CM20190418-b5101-89253"/>
+					<img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20190418-b5101-89253" alt="Cat Dozer in forest" data-object-fit="cover"/>
+                </picture>
+				</figure>
+				
+
+           <div class="teaser-multimedia__slide-media"> 
+            	
+			 	
+		     
+		  </div>
+	   </div>
+	</div>
+</div>
+
+
+
+    
+
+
+
+
+
+
+    
+
+</div>
+</div>
+<div role="tabpanel" class="cmp-carousel__item" data-cmp-hook-carousel="item"><div class="teaser auth-track media-youtube teaser--full-width teaser--has-gradient teaser--no-accent-bar section-padding-none">
+
+
+
+
+    
+
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 col-12 teaser__text-wrap">
+			<div class="inner">
+			    
+			      <p class="teaser-date" style="display: none;">2023-01-18</p>
+			    	
+
+				
+					<h2>Our Purpose</h2>
+				
+				
+
+				<span class="accent-bar"></span>
+				
+				
+				
+				
+					<p class="teaser-blog-content">
+						Our products and services have helped improve the lives of people around the world.
+					</p>
+				
+					
+				
+					
+   
+      <a class="button button-primary button-sm teaserDefaultButtonText" href="/en/company/strategy-purpose/purpose.html" target="_self">
+      <i class="material-icons" aria-hidden="true">call</i>Explore our Purpose</a>
+      
+      
+         <input type="hidden" id="gatedFlag" value="false"/>
+      
+      <input type="hidden" id="loggedInText"/>
+      <input type="hidden" id="loggedOutText"/>
+   
+
+				
+			</div>
+		</div>
+		<div class="col-lg-6 col-12 teaser__img-wrap">
+		
+			
+				<figure class="figure_teaserBackgroundImage">
+                <picture>
+                    <source media="(min-width: 992px)" srcset="https://s7d2.scene7.com/is/image/Caterpillar/CM20160127-27447-53563"/>
+					<img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20160127-27447-53563" alt="Cat Excavator Digging" data-object-fit="cover"/>
+                </picture>
+                </figure>
+			
+
+            
+			   <figure class="figure_teaserBackgroundImgCheckerboard">
+					 <picture>
+                    <source media="(min-width: 992px)" srcset="https://s7d2.scene7.com/is/image/Caterpillar/CM20160127-27447-53563"/>
+					<img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20160127-27447-53563" alt="Cat Excavator Digging" data-object-fit="cover"/>
+                </picture>
+				</figure>
+				
+
+           <div class="teaser-multimedia__slide-media"> 
+            	
+			 	
+		     
+		  </div>
+	   </div>
+	</div>
+</div>
+
+
+
+    
+
+
+
+
+
+
+    
+
+</div>
+</div>
+<div role="tabpanel" class="cmp-carousel__item" data-cmp-hook-carousel="item"><div class="teaser auth-track media-youtube teaser--full-width teaser--has-gradient teaser--no-accent-bar section-padding-none">
+
+
+
+
+    
+
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 col-12 teaser__text-wrap">
+			<div class="inner">
+			    
+			      <p class="teaser-date" style="display: none;">2023-04-24</p>
+			    	
+
+				
+					<h2>Our History</h2>
+				
+				
+
+				<span class="accent-bar"></span>
+				
+				
+				
+				
+					<p class="teaser-blog-content">
+						When customers choose our products, services and solutions today, they also gain nearly 100 years of experience and expertise.<br />
+
+					</p>
+				
+					
+				
+					
+   
+      <a class="button button-primary button-sm teaserDefaultButtonText" href="/en/company/history.html" target="_self">
+      <i class="material-icons" aria-hidden="true">call</i>Explore our History</a>
+      
+      
+         <input type="hidden" id="gatedFlag" value="false"/>
+      
+      <input type="hidden" id="loggedInText"/>
+      <input type="hidden" id="loggedOutText"/>
+   
+
+				
+			</div>
+		</div>
+		<div class="col-lg-6 col-12 teaser__img-wrap">
+		
+			
+				<figure class="figure_teaserBackgroundImage">
+                <picture>
+                    <source media="(min-width: 992px)" srcset="https://s7d2.scene7.com/is/image/Caterpillar/CM20200417-730f3-e0989"/>
+					<img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20200417-730f3-e0989" alt="Historic Timeline on Machine" data-object-fit="cover"/>
+                </picture>
+                </figure>
+			
+
+            
+			   <figure class="figure_teaserBackgroundImgCheckerboard">
+					 <picture>
+                    <source media="(min-width: 992px)" srcset="https://s7d2.scene7.com/is/image/Caterpillar/CM20200417-730f3-e0989"/>
+					<img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20200417-730f3-e0989" alt="Historic Timeline on Machine" data-object-fit="cover"/>
+                </picture>
+				</figure>
+				
+
+           <div class="teaser-multimedia__slide-media"> 
+            	
+			 	
+		     
+		  </div>
+	   </div>
+	</div>
+</div>
+
+
+
+    
+
+
+
+
+
+
+    
+
+</div>
+</div>
+<div role="tabpanel" class="cmp-carousel__item" data-cmp-hook-carousel="item"><div class="teaser auth-track media-youtube teaser--full-width teaser--has-gradient teaser--no-accent-bar section-padding-none">
+
+
+
+
+    
+
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 col-12 teaser__text-wrap">
+			<div class="inner">
+			    
+			      <p class="teaser-date" style="display: none;">2022-09-15</p>
+			    	
+
+				
+					<h2>The Caterpillar Foundation</h2>
+				
+				
+
+				<span class="accent-bar"></span>
+				
+				
+				
+				
+					<p class="teaser-blog-content">
+						Building resilient communities that thrive in tomorrow’s world.
+					</p>
+				
+					
+				
+					
+   
+      <a class="button button-primary button-sm teaserDefaultButtonText" href="/en/company/caterpillar-foundation.html" target="_self">
+      <i class="material-icons" aria-hidden="true">call</i>Explore Our Impact</a>
+      
+      
+         <input type="hidden" id="gatedFlag" value="false"/>
+      
+      <input type="hidden" id="loggedInText"/>
+      <input type="hidden" id="loggedOutText"/>
+   
+
+				
+			</div>
+		</div>
+		<div class="col-lg-6 col-12 teaser__img-wrap">
+		
+			
+				<figure class="figure_teaserBackgroundImage">
+                <picture>
+                    <source media="(min-width: 992px)" srcset="https://s7d2.scene7.com/is/image/Caterpillar/CM20200304-a5efb-37773"/>
+					<img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20200304-a5efb-37773" alt="Hands holding globe" data-object-fit="cover"/>
+                </picture>
+                </figure>
+			
+
+            
+			   <figure class="figure_teaserBackgroundImgCheckerboard">
+					 <picture>
+                    <source media="(min-width: 992px)" srcset="https://s7d2.scene7.com/is/image/Caterpillar/CM20200304-a5efb-37773"/>
+					<img class="lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20200304-a5efb-37773" alt="Hands holding globe" data-object-fit="cover"/>
+                </picture>
+				</figure>
+				
+
+           <div class="teaser-multimedia__slide-media"> 
+            	
+			 	
+		     
+		  </div>
+	   </div>
+	</div>
+</div>
+
+
+
+    
+
+
+
+
+
+
+    
+
+</div>
+</div>
+
+				</div>
+				<div class="carousel__pagination">
+					<div class="carousel__pagination__wrapper"></div>
+				</div>
+			
+		
+			
+		
+	
+	<!-- /*standard carousel display end*/ -->	
+	
+	<!-- /* Film Strip Carousel - Simple start */ -->
+	
+	
+	<!-- /* Film Strip Carousel - Detailed start */ -->
+	
+
+
+
+    
+
+
+
+
+    
+</section>
+
+    
+</div>
+</div>
+
+        
+         </div>
+    </div>
+
+</div>
+<div class="section-container section-container--centered section-padding-none aem-GridColumn aem-GridColumn--default--12">
+
+    
+    
+    
+    <div id="container-5449399fcc" class="cmp-container">
+         <div class="section-container__inner">
+        
+        <div class="responsivegrid">
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="responsivegrid aem-GridColumn--default--none aem-GridColumn--default--9 aem-GridColumn aem-GridColumn--offset--default--0">
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="deg-title section-padding-none aem-GridColumn aem-GridColumn--default--12">
+<div class="title auth-track">
+	<div class="container">
+		<div class="title__wrapper">
+			<h4>Latest News</h4>
+			<span class="accent-bar"></span>
+			
+		</div>
+	</div>
+</div>
+
+</div>
+<div class="list list__row auth-track list--links list--links-publication list--links-standard section-padding-none aem-GridColumn--default--none aem-GridColumn aem-GridColumn--default--12 aem-GridColumn--offset--default--0">
+
+    
+<link rel="stylesheet" href="/etc.clientlibs/deg/components/content/general/list/v6/list/clientlibs/site.min.533384037f2cefc9b0faf15c5ba0baee.css" type="text/css">
+
+
+
+
+
+    <div class="container">
+        <div class="list__filter-col"></div>
+        <div class="list__list-col">
+            <div class="list__wrapper">
+                           
+                <input type="text" data-list-per-page="5" data-filter-by-name="Filter By" hidden/>
+                
+                
+                <ul class="list__items row ">
+                    
+                    
+					
+
+                    <li class="list__item col-3">
+                    	
+                        
+						
+                        <a target="_self" class="list__item-content  " href="/en/news/corporate-press-releases/h/executive-officer-retirement.html" data-position="1">
+
+                            
+                           <figure>
+                                <img class="list__item-image lazyload" data-src="/content/dam/caterpillarDotCom/062123_PressRelease_3500x1500C.png" alt="Excavator and people on jobsite at sunrise"/>
+                                <figcaption>
+                                    <dl class="list__item-specs">
+                                        
+                                    </dl>
+                                </figcaption>
+                            </figure>
+                            <div class="list__item-text">
+                                <span class="accent-bar"></span>
+                                
+                                
+                                	<h3 class="list__name"><span>2023-06-21</span> Caterpillar Announces Executive Officer Retirement</h3>
+                                    <h4>June 21, 2023</h4>
+                                	<p>Caterpillar Inc. (NYSE: CAT) announced today Chief Legal Officer and General Counsel Suzette M. Long will retire on December 31, 2023, following a distinguished 18-year career at the company.</p>
+                                    <span class="cat-follow">View Release</span>
+                                    
+                                    
+                                
+                            </div>
+                            <div class="list__item-footer">
+                                <span class="button button-primary">View</span>
+                            </div>
+                            <!-- filter section / always hidden -->
+                            
+                        </a>
+                    </li>
+                
+                    
+                    
+					
+
+                    <li class="list__item col-3">
+                    	
+                        
+						
+                        <a target="_self" class="list__item-content  " href="/en/news/caterpillarNews/2023/2023-shareholder-meeting.html" data-position="2">
+
+                            
+                           <figure>
+                                <img class="list__item-image lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20210112-8bc19-90977" alt="Jim Umpleby"/>
+                                <figcaption>
+                                    <dl class="list__item-specs">
+                                        
+                                    </dl>
+                                </figcaption>
+                            </figure>
+                            <div class="list__item-text">
+                                <span class="accent-bar"></span>
+                                
+                                
+                                	<h3 class="list__name"><span>2023-06-16</span> Caterpillar Holds 2023 Annual Shareholder Meeting</h3>
+                                    <h4>June 16, 2023</h4>
+                                	<p>Read Chairman and CEO Jim Umpleby’s remarks.</p>
+                                    <span class="cat-follow">Full Story</span>
+                                    
+                                    
+                                
+                            </div>
+                            <div class="list__item-footer">
+                                <span class="button button-primary">View</span>
+                            </div>
+                            <!-- filter section / always hidden -->
+                            
+                        </a>
+                    </li>
+                
+                    
+                    
+					
+
+                    <li class="list__item col-3">
+                    	
+                        
+						
+                        <a target="_self" class="list__item-content  " href="/en/news/corporate-press-releases/h/caterpillar-increases-dividend-june2023.html" data-position="3">
+
+                            
+                           <figure>
+                                <img class="list__item-image lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20200922-f923a-15c7e " alt="Man driving mini HEX"/>
+                                <figcaption>
+                                    <dl class="list__item-specs">
+                                        
+                                    </dl>
+                                </figcaption>
+                            </figure>
+                            <div class="list__item-text">
+                                <span class="accent-bar"></span>
+                                
+                                
+                                	<h3 class="list__name"><span>2023-06-14</span> Caterpillar Inc. Increases Dividend</h3>
+                                    <h4>June 14, 2023</h4>
+                                	<p>The Board of Directors of Caterpillar Inc. (NYSE: CAT) voted today to raise the quarterly dividend by ten cents, an 8% increase, to one dollar and thirty cents ($1.30) per share of common stock, payable August 18, 2023, to shareholders of record at the close of business on July 20, 2023.</p>
+                                    <span class="cat-follow">View Release</span>
+                                    
+                                    
+                                
+                            </div>
+                            <div class="list__item-footer">
+                                <span class="button button-primary">View</span>
+                            </div>
+                            <!-- filter section / always hidden -->
+                            
+                        </a>
+                    </li>
+                
+                    
+                    
+					
+
+                    <li class="list__item col-3">
+                    	
+                        
+						
+                        <a target="_self" class="list__item-content  " href="/en/news/caterpillarNews/2023/keith-barrett-memory-lane.html" data-position="4">
+
+                            
+                           <figure>
+                                <img class="list__item-image lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20230519-f3838-31286" alt="Collage of vintage construction equipment photos"/>
+                                <figcaption>
+                                    <dl class="list__item-specs">
+                                        
+                                    </dl>
+                                </figcaption>
+                            </figure>
+                            <div class="list__item-text">
+                                <span class="accent-bar"></span>
+                                
+                                
+                                	<h3 class="list__name"><span>2023-06-06</span> Travel Down Memory Lane with a Special Cat® Customer</h3>
+                                    <h4>June 06, 2023</h4>
+                                	<p>Pictures worth 1,000 words.</p>
+                                    <span class="cat-follow">Full Story</span>
+                                    
+                                    
+                                
+                            </div>
+                            <div class="list__item-footer">
+                                <span class="button button-primary">View</span>
+                            </div>
+                            <!-- filter section / always hidden -->
+                            
+                        </a>
+                    </li>
+                
+                    
+                    
+					
+
+                    <li class="list__item col-3">
+                    	
+                        
+						
+                        <a target="_self" class="list__item-content  " href="/en/news/caterpillarNews/2023/biodiversity.html" data-position="5">
+
+                            
+                           <figure>
+                                <img class="list__item-image lazyload" data-src="https://s7d2.scene7.com/is/image/Caterpillar/CM20230519-6ef08-64582 " alt="Lake surrounded by forest"/>
+                                <figcaption>
+                                    <dl class="list__item-specs">
+                                        
+                                    </dl>
+                                </figcaption>
+                            </figure>
+                            <div class="list__item-text">
+                                <span class="accent-bar"></span>
+                                
+                                
+                                	<h3 class="list__name"><span>2023-06-05</span> Biodiversity: Variety is the Spice of Life</h3>
+                                    <h4>June 05, 2023</h4>
+                                	<p>Caterpillar Foundation is supporting sustainability through biodiversity funding.</p>
+                                    <span class="cat-follow">Full Story</span>
+                                    
+                                    
+                                
+                            </div>
+                            <div class="list__item-footer">
+                                <span class="button button-primary">View</span>
+                            </div>
+                            <!-- filter section / always hidden -->
+                            
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    
+
+
+    
+<script src="/etc.clientlibs/deg/components/content/general/list/v6/list/clientlibs/site.min.b821310499adf79ef56b5ed169fff8ca.js"></script>
+
+
+</div>
+<div class="texteditor auth-track rte text aem-GridColumn aem-GridColumn--default--12">
+<div id="rte-f53b2855c0" class="cmp-text">
+    <p>     </p>
+
+</div>
+
+    
+
+</div>
+<div class="teaser auth-track media-youtube teaser--tile-text teaser--tile teaser--no-accent-bar section-padding-no-top aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+    
+
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-6 col-12 teaser__text-wrap">
+			<div class="inner">
+			    
+			      <p class="teaser-date" style="display: none;">2023-06-22</p>
+			    	
+
+				
+					<h2></h2>
+				
+				
+
+				<span class="accent-bar"></span>
+				
+				
+				
+				
+				
+					<p></p>				
+					
+				
+					
+   
+      <a class="button button-primary button-sm teaserDefaultButtonText" href="/en/news.html" target="_self">
+      <i class="material-icons" aria-hidden="true">call</i>More News</a>
+      
+      
+         <input type="hidden" id="gatedFlag" value="false"/>
+      
+      <input type="hidden" id="loggedInText"/>
+      <input type="hidden" id="loggedOutText"/>
+   
+
+				
+			</div>
+		</div>
+		<div class="col-lg-6 col-12 teaser__img-wrap">
+		
+			
+
+            	
+
+           <div class="teaser-multimedia__slide-media"> 
+            	
+			 	
+		     
+		  </div>
+	   </div>
+	</div>
+</div>
+
+
+
+    
+
+
+
+
+
+
+    
+
+</div>
+
+    
+</div>
+</div>
+<div class="section-container section-container--centered section-padding-none aem-GridColumn--default--none aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--offset--default--0">
+
+    
+    
+    
+    <div id="container-c2e14ef656" class="cmp-container">
+         <div class="section-container__inner">
+        
+        
+        
+         </div>
+    </div>
+
+</div>
+
+    
+</div>
+</div>
+<div class="socialMedia auth-track section-padding">
+
+    
+<script src="/etc.clientlibs/deg/components/content/general/socialMedia/v3/socialMedia/clientlibs/site.min.39a662495f286a0c4880803524259fee.js"></script>
+
+
+
+
+
+
+
+
+
+    
+<link rel="stylesheet" href="/etc.clientlibs/deg/components/content/general/socialMedia/v3/socialMedia/clientlibs/site.min.33d79f0a58ec19d2ff7523702cd8a8c7.css" type="text/css">
+
+
+
+
+
+<div class="social__media-component social-colored-icons">
+
+<div class="social-media">
+      <div class="container">
+         <h2>Follow Caterpillar on Social Media</h2>
+         
+            <ul class="social-media__ul-list">
+               
+                  <li>
+                     <a href="https://www.facebook.com/caterpillarinc/" title="Facebook" class="social-media__link social-icon-facebook" target="_blank">
+                        
+
+                        
+                           <span class="social-media__text">Facebook</span>
+                        
+                     </a>
+                  </li>
+               
+                  <li>
+                     <a href="http://www.linkedin.com/company/caterpillar-inc" title="LinkedIn" class="social-media__link social-icon-linkedin" target="_blank">
+                        
+
+                        
+                           <span class="social-media__text">LinkedIn</span>
+                        
+                     </a>
+                  </li>
+               
+                  <li>
+                     <a href="https://twitter.com/caterpillarinc" title="Twitter" class="social-media__link social-icon-twitter" target="_blank">
+                        
+
+                        
+                           <span class="social-media__text">Twitter</span>
+                        
+                     </a>
+                  </li>
+               
+                  <li>
+                     <a href="https://www.instagram.com/caterpillarinc/" title="Instagram" class="social-media__link social-icon-instagram" target="_blank">
+                        
+
+                        
+                           <span class="social-media__text">Instagram</span>
+                        
+                     </a>
+                  </li>
+               
+                  <li>
+                     <a href="https://www.youtube.com/channel/UCetJvfhHNboF_Tl3auMOs5w" title="Youtube" class="social-media__link social-icon-youtube" target="_blank">
+                        
+
+                        
+                           <span class="social-media__text">Youtube</span>
+                        
+                     </a>
+                  </li>
+               
+            </ul>
+         
+      </div>
+	</div>
+</div>
+
+<!--common cookie warning -->
+
+<div class="cookie-warning social-warning socialmediacookie" style="display:none;">
+	<div class="inner">
+		<i aria-hidden="true" class="material-icons">warning</i>
+		<div class="info">
+			<span class="h3">Social Media</span>
+			<span class="h3">Cookies are required</span>
+			<p>To enable this feature, you must accept the use of targeting, functional, and performance cookies.</p>
+		</div>
+		<a href="#" class="cookie-settings">Cookie Settings</a>
+	</div>
+</div>
+
+</div>
+
+        
+         </div>
+    </div>
+
+</div>
+
+    
+</div>
+</div>
+<div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="experienceFragment experiencefragment aem-GridColumn aem-GridColumn--default--12">
+
+
+
+
+  
+    
+ 
+
+    
+
+
+
+<div class="xf-content-height">
+    
+
+
+<div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+    
+    <div class="footer aem-GridColumn aem-GridColumn--default--12">
+
+    
+<script src="/etc.clientlibs/deg/components/structure/footer/v2/footer/clientlibs/site.min.9a28febffba13bdd543d36b64dceae61.js"></script>
+<script src="/etc.clientlibs/deg/components/structure/footer/v1/footer/clientlibs/site.min.4ed9be0b4f0d2f50de5d6bbfd9a64a07.js"></script>
+
+
+
+<div class="foot-nav auth-track tfn d-print-none">
+    <div class="foot-nav-top">
+        <div class="container">
+            <div class="row order-lg-2">
+                <div class="col-md col-sm-12 col-12">
+                	
+
+
+
+
+    
+    
+    <div class="texteditor auth-track rte text">
+<div id="rte-db290f9044" class="cmp-text">
+    <h5>Company</h5>
+<ul>
+<li><a href="/en/company/strategy-purpose.html">Strategy &amp; Purpose</a></li>
+<li><a href="/en/company/governance.html">Governance</a></li>
+<li><a href="/en/company/history.html">History</a></li>
+<li><a href="/en/company/caterpillar-foundation.html">Caterpillar Foundation</a></li>
+<li><a href="/en/company/code-of-conduct.html">Code of Conduct</a></li>
+<li><a href="/en/company/sustainability.html">Sustainability</a></li>
+<li><a href="/en/company/innovation.html">Innovation</a></li>
+<li><a href="/en/company/global-footprint.html">Global Locations</a></li>
+<li><a href="/en/company/visitors-center.html">Visitors Center &amp; Museum</a></li>
+</ul>
+
+</div>
+
+    
+
+</div>
+
+
+                
+                </div>
+                <div class="col-md col-sm-12 col-12">
+                    
+
+
+
+
+    
+    
+    <div class="texteditor auth-track rte text">
+<div id="rte-08a283c4b1" class="cmp-text">
+    <h5>Investors</h5>
+<ul>
+<li><a href="/en/investors/stock-information.html">Stock Information</a></li>
+<li><a href="/en/investors/financial-information.html">Financial Information</a></li>
+<li><a href="/en/investors/shareholder-services.html">Shareholder Services</a></li>
+<li><a href="/en/investors/events-presentations.html">Events &amp; Presentations</a></li>
+<li><a href="/en/investors/quarterly-results.html">Quarterly Financial Results</a></li>
+<li><a href="/en/investors/reports.html">Annual Report &amp; Sustainability Report</a></li>
+<li><a href="/en/investors/sec-filings.html">SEC Filings </a></li>
+<li><a href="/en/company/governance.html">Governance</a></li>
+</ul>
+
+</div>
+
+    
+
+</div>
+
+
+               
+                </div>
+                <div class="col-md col-sm-12 col-12">
+                   
+
+
+
+
+    
+    
+    <div class="texteditor auth-track rte text">
+<div id="rte-e36090b950" class="cmp-text">
+    <h5>News</h5>
+<ul>
+<li><a href="/en/news/caterpillarNews.html">News &amp; Features</a></li>
+<li><a href="/en/news/corporate-press-releases.html">Corporate Press Releases</a></li>
+<li><a href="/en/news/media-information.html">Media Information</a></li>
+<li><a href="/en/news/social-media.html">Social Media</a></li>
+<li><a href="/en/news/caterpillar-faq.html">Caterpillar FAQs</a></li>
+</ul>
+<h5>Careers</h5>
+<ul>
+<li><a href="/en/careers/why-caterpillar.html">Why Caterpillar?</a></li>
+<li><a href="/en/careers/career-areas.html">Career Areas</a></li>
+<li><a href="/en/careers/why-caterpillar/diversity-inclusion.html">Diversity &amp; Inclusion</a></li>
+<li><a href="/en/careers/apply-now.html">Search &amp; Apply</a></li>
+<li><a href="https://cat.wd5.myworkdayjobs.com/CaterpillarCareers/login" target="_blank">Candidate Login</a></li>
+</ul>
+
+</div>
+
+    
+
+</div>
+
+
+                 
+                </div>
+                <div class="col-md col-sm-12 col-12">
+                    
+
+
+
+
+    
+    
+    <div class="texteditor auth-track rte text">
+<div id="rte-af13f007f4" class="cmp-text">
+    <h5>Working Together</h5>
+<ul>
+<li><a href="https://catatwork.cat.com/" target="_blank">Employees</a></li>
+<li><a href="/en/company/working-together/retirees-alumni.html">Retirees &amp; Alumni</a><br />
+</li>
+<li><a href="/en/company/working-together/sponsorships.html">Sponsorships</a></li>
+<li><a href="/en/company/working-together/suppliers.html">Suppliers</a><br />
+</li>
+<li><a href="/en/company/innovation/caterpillar-ventures.html">Caterpillar Ventures</a></li>
+<li><a href="/en/brands/cat/licensing.html">Licensing</a></li>
+</ul>
+<p> </p>
+<h5>Cat® Products &amp; Services</h5>
+<ul>
+<li><a href="http://www.cat.com/en_US/products.html" target="_blank">Products</a><br />
+</li>
+<li><a href="http://parts.cat.com/" target="_blank">Parts</a></li>
+<li><a href="http://www.cat.com/en_US/support.html" target="_blank">Support</a></li>
+<li><a href="https://www.caterpillar.com/en/brands/cat/merchandise.html">Merchandise</a></li>
+<li><a href="https://www.cat.com/en_US/support/dealer-locator.html" target="_blank">Locate a Dealer</a></li>
+</ul>
+
+</div>
+
+    
+
+</div>
+
+
+               
+                </div>
+                <div class="col-md col-sm-12 col-12">
+                    
+
+
+
+
+                 
+                </div>
+                <div class="col-md col-sm-12 col-12">
+                    
+
+
+
+
+       
+                </div>
+            </div>
+            <div class="row order-lg-1">
+                <div class="col-12 col-lg-6 language-wrapper">
+                    <span id="edit-region-mobile">
+
+
+
+
+    
+    
+    <div class="socialMedia auth-track">
+
+    
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+<div class="social__media-component social-colored-icons">
+
+<div class="social-media">
+      <div class="container">
+         
+         
+            <ul class="social-media__ul-list">
+               
+                  <li>
+                     <a href="https://www.facebook.com/caterpillarinc" title="facebook" class="social-media__link social-icon-facebook" target="_blank">
+                        
+
+                        
+                           <span class="social-media__text">facebook</span>
+                        
+                     </a>
+                  </li>
+               
+                  <li>
+                     <a href="https://www.linkedin.com/company/caterpillar-inc" title="linkedin" class="social-media__link social-icon-linkedin" target="_blank">
+                        
+
+                        
+                           <span class="social-media__text">linkedin</span>
+                        
+                     </a>
+                  </li>
+               
+                  <li>
+                     <a href="https://twitter.com/CaterpillarInc" title="twitter" class="social-media__link social-icon-twitter" target="_blank">
+                        
+
+                        
+                           <span class="social-media__text">twitter</span>
+                        
+                     </a>
+                  </li>
+               
+                  <li>
+                     <a href="https://www.youtube.com/caterpillarinc/" title="youtube" class="social-media__link social-icon-youtube" target="_blank">
+                        
+
+                        
+                           <span class="social-media__text">youtube</span>
+                        
+                     </a>
+                  </li>
+               
+                  <li>
+                     <a href="https://www.instagram.com/caterpillarinc/" title="instagram" class="social-media__link social-icon-instagram" target="_blank">
+                        
+
+                        
+                           <span class="social-media__text">instagram</span>
+                        
+                     </a>
+                  </li>
+               
+            </ul>
+         
+      </div>
+	</div>
+</div>
+
+<!--common cookie warning -->
+
+<div class="cookie-warning social-warning socialmediacookie" style="display:none;">
+	<div class="inner">
+		<i aria-hidden="true" class="material-icons">warning</i>
+		<div class="info">
+			<span class="h3">Social Media</span>
+			<span class="h3">Cookies are required</span>
+			<p>To enable this feature, you must accept the use of targeting, functional, and performance cookies.</p>
+		</div>
+		<a href="#" class="cookie-settings">Cookie Settings</a>
+	</div>
+</div>
+
+</div>
+
+
+</span>
+                </div>
+                <div class="col-12 col-lg-6 socials-wrapper social-media__footer">
+                    
+
+
+
+
+ 
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="foot-nav-bottom">
+        <div class="container"> 
+        		
+
+
+
+
+    
+    
+    <div class="texteditor auth-track rte text">
+<div id="rte-425a5fae93" class="cmp-text">
+    <div class="row"><div class="col-12"><h5>Caterpillar Brands</h5>
+</div>
+<div class="col-md-2 col-sm-6 col-6"><ul>
+<li><a href="https://www.caterpillar.com/en/brands/cat.html" target="_blank">Cat</a></li>
+<li><a href="/en/brands/cat-financial.html" target="_blank">Cat Financial</a></li>
+<li><a href="https://www.caterpillar.com/en/brands/cat-reman.html" target="_blank">Cat Reman</a></li>
+<li><a href="https://www.catrentalstore.com/" target="_blank">The Cat Rental Store</a></li>
+</ul>
+</div>
+<div class="col-md-2 col-sm-6 col-6"><ul>
+<li><a href="https://www.caterpillar.com/en/brands/cat-lift-trucks.html" target="_blank">Cat Lift Trucks</a></li>
+<li><a href="https://anchorfluidsystems.com/" target="_blank">Anchor</a></li>
+<li><a href="https://www.caterpillar.com/en/brands/asiatrak.html" target="_blank">AsiaTrak</a></li>
+<li><a href="https://www.fgwilson.com/" target="_blank">FG Wilson</a></li>
+</ul>
+</div>
+<div class="col-md-2 col-sm-6 col-6"><ul>
+<li><a href="https://www.caterpillar.com/en/brands/hindustan.html" target="_blank">Hindustan</a></li>
+<li><a href="https://www.cat.com/en_US/by-industry/marine.html" target="_blank">MaK</a></li>
+<li><a href="https://www.mwm.net/mwm-chp-gas-engines-gensets-cogeneration/" target="_blank">MWM</a></li>
+</ul>
+</div>
+<div class="col-md-2 col-sm-6 col-6"><ul>
+<li><a href="https://www.perkins.com/" target="_blank">Perkins</a></li>
+<li><a href="https://www.progressrail.com/" target="_blank">Progress Rail</a></li>
+<li><a href="https://www.semmachinery.com/" target="_blank">SEM</a></li>
+</ul>
+</div>
+<div class="col-md-2 col-sm-6 col-6"><ul>
+<li><a href="https://www.caterpillar.com/en/brands/solar-turbines.html" target="_blank">Solar Turbines</a></li>
+<li><a href="https://www.caterpillar.com/en/brands/spm.html" target="_blank">SPM Oil &amp; Gas</a></li>
+<li><a href="https://www.caterpillar.com/en/brands/turner-powertrain-systems.html" target="_blank">Turner Powertrain Systems</a></li>
+</ul>
+</div>
+<div class="col-12 foot-nav-end"><hr />
+
+<ul>
+<li><a href="https://www.caterpillar.com/en/company.html">About Caterpillar</a></li>
+<li><a href="https://www.caterpillar.com/en/company/visitors-center.html">Visit Caterpillar</a></li>
+<li><a href="/sitemap-all.html">Site Map</a></li>
+<li><a class="ot-sdk-show-settings">Cookie Settings</a></li>
+<li><a href="https://www.caterpillar.com/en/legal-notices.html">Legal</a></li>
+<li><a href="https://www.caterpillar.com/en/legal-notices/privacy-notice.html">Privacy</a></li>
+<li><a href="/en/contact.html">Contact</a></li>
+<li><a href="https://www.cat.com/en_US.html" target="_blank">Cat.com</a></li>
+</ul>
+<ul>
+<li><a>English</a></li>
+<li><a>© 2023 Caterpillar. All Rights Reserved.</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+
+    
+
+</div>
+
+
+	
+
+        </div>
+    </div>
+     
+</div>
+
+
+    
+<script src="/etc.clientlibs/deg/components/content/media/cookiePolicy/clientlibs/site.min.405d02a027bf3cc5dd1177b51d92bbe5.js"></script>
+
+
+
+
+
+
+
+
+</div>
+
+    
+</div>
+
+</div>
+  
+
+
+</div>
+
+    
+</div>
+</div>
+
+    
+</div>
+</div>
+
+
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5RP9FXB" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->   
+     
+
+            
+    
+    
+
+
+    
+<script src="/etc.clientlibs/deg/clientlibs/clientlib-base.min.c49cd23774a1440e53564b73e4ff12c9.js"></script>
+
+
+
+
+
+
+
+    <script type="text/javascript">
+    if (self === top) {
+        var antiClickjack = document.getElementById("antiClickjack");
+        if(antiClickjack!=null){
+            antiClickjack.parentNode.removeChild(antiClickjack);
+        }
+    } else {
+        top.location = self.location;
+    }
+    </script>
+
+
+    
+
+    
+
+    
+    
+    
+
+            
+
+            
+        
+    </body>
+</html>

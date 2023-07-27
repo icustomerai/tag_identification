@@ -1,0 +1,887 @@
+
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+<link href="/-/media/feature/experience-accelerator/bootstrap/bootstrap/styles/bootstrap.css?rev=-1&hash=2D423171AA5BF60E427B179BBD5C58E5" rel="stylesheet" /><link href="/-/media/base-themes/core-libraries/styles/mediaelementplayer.css?rev=-1&hash=090318C5B7051518DA70D5853901B2C2" rel="stylesheet" /><link href="/-/media/base-themes/core-libraries/styles/mediaelementplayer-legacy.css?rev=-1&hash=EC128E183063C955785376CB1775CC1F" rel="stylesheet" /><link href="/-/media/base-themes/core-libraries/styles/font-awesomemin.css?rev=-1&hash=E49150CC38D36AAF3D695419143D41AC" rel="stylesheet" /><link href="/-/media/base-themes/core-libraries/styles/fullcalendar.css?rev=-1&hash=0D89FF7E24AA2F01B600DFE70EFE0131" rel="stylesheet" /><link href="/-/media/base-themes/core-libraries/styles/jquerymcustomscrollbar.css?rev=-1&hash=B343485D4BAAF24A5AC50380C8D78578" rel="stylesheet" /><link href="/-/media/base-themes/core-libraries/styles/jquery-ui.css?rev=-1&hash=9A026F62563761274E4BEF53771A8A6A" rel="stylesheet" /><link href="/-/media/base-themes/main-theme/styles/author.css?rev=-1&hash=74C0B948BF08FEAAF373A78BBCB2AE8E" rel="stylesheet" /><link href="/-/media/base-themes/main-theme/styles/core.css?rev=-1&hash=D02879A03206232281E2044CD64E53BE" rel="stylesheet" /><link href="/-/media/base-themes/main-theme/styles/file-type-icons.css?rev=-1&hash=EC8690C4FC44380795E180403B3EC1DD" rel="stylesheet" /><link href="/-/media/base-themes/main-theme/styles/grayscale-mode.css?rev=-1&hash=6CD36AD212C5EF12C8A4F357E68FC9A3" rel="stylesheet" /><link href="/-/media/base-themes/main-theme/styles/reset.css?rev=-1&hash=E56A853582C4CBE21D3730E6A80C4625" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/accessibility_global.css?rev=bab2043315674fdcb7b3613381abf386&hash=4469E297B08DB994AC873C31B335D3F3" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-accordion.css?rev=20f69e80315b4a05af2ae48483524074&hash=79146CE98B6C3FD0A2890273C7916667" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-archive.css?rev=615b6f1ce5ad4d93a0af17ebe4da9183&hash=560984DF10FC6739F5BE7548167AC23E" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-breadcrumb.css?rev=4c75dd814fd8478f9df6a18306a9557c&hash=EC63993515B65A29D75ECC64F32B9269" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-carousel.css?rev=062d52837c194e5a8bd75d1670d81222&hash=8316530B6BC1C47A33B8539DAE111685" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-column-splitter.css?rev=f12255f54dca4fbd8624428c0e0988c7&hash=E212228A9AA7B35B74961CE3796E0229" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-container.css?rev=a61d0bbed6a948e88544107cba594ce4&hash=A984F58BE27F1CA674E72EE290F269EA" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-divider.css?rev=902d1320952a4579afd0c636cb1343eb&hash=9395915C8C51E53C7700C4DF9DE860BF" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-event-list.css?rev=268c3b4ac0cb47cf8bd0ddd3fc808fbb&hash=C94B662BC3AD91D7A2E00C7F55C964FE" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-facebook-comments.css?rev=e1db78fceace46cfa6a5f093c9e39694&hash=996B4DD11625F636726F57175B15AF1A" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-feed.css?rev=daab3cb19a154ba9b56f8711c0ae7309&hash=AF16DB9D1CD6D9D5627E9E8421033FB7" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-field-editor.css?rev=30878b931ff2478f9b84954837fd4f2f&hash=E5FCE943895D7940B6B85A20BFA8D09B" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-file-list.css?rev=952d8c5cbe6c40079688132bcdbccadc&hash=8BC39359A00447557996263E2838AD72" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-flash.css?rev=8ca4130824e7475192dd040144acc430&hash=8B3E2EE50995B594947875D06CD4E25F" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-flip.css?rev=b43f542573ae4c5bb9cc3d324da6c66f&hash=4F516A0F1404A555F39922DD6D3790C9" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-forms.css?rev=07a43252b2b24a9ab72bda6fa9f99953&hash=4797FA73BA9F2D5FBFB0DFB0A9B3B674" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-fullcalendar.css?rev=7835e705bb8a40608a00442bcae369f4&hash=2B770E5ECDE58B1BAFC90E7CDC1182F6" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-galleria.css?rev=572944dbdd0a4ddd9600b7cdc7898d6c&hash=DEEA97F2CCA3B55A1FAFF387E94A48F6" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-iframe.css?rev=134c5f3742554e07bb62e9e53f956af4&hash=AF59384CD3D15C932EDCD600E7057DA8" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-image.css?rev=48501f3758184c29acce6639d808d621&hash=82B851BEEA756F19CF34BD9E826E3CAC" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-language-selector.css?rev=e92d6ae571324dc98fb8ed8999785ed7&hash=41078E5E0AA8BF218C4B921D0C604A9B" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-link.css?rev=b123853ce78b4bdea188104de463f23e&hash=3E3C88708052F6EAA0CACC9870ECA5EA" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-login.css?rev=3b7f43e34611494eb820f5268d9a5263&hash=F7976C0ED8852D413BB40D64F275408C" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-logout.css?rev=dcab544c73164d24a4a3d2725bdb6d64&hash=21F96C7A46FA0D9226F9D6D497729D7F" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-map.css?rev=a2ad667f545c42d194f420603ccbb2b3&hash=4473D83359F249CF0B30DAFF6E862BA0" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-media-link.css?rev=801bf25756614c5385118a13a2476013&hash=8A5EA0AEC24195B923B97192E03ED6A4" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-navigation.css?rev=38c3b101cf694e06b5c95df4a69407b6&hash=2F9AD7696610553A21616574EC52D919" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-page-list.css?rev=6c79f0ab085c4831aecc3e7ae68d9aae&hash=87AEB2920B36AB54C9C3C98F3C56D9E6" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-pagination.css?rev=b44ce09806004853945b4998c1f681d3&hash=5B466BAF6F8CE10914E45312B80B7093" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-playlist.css?rev=ca86f14415af4edc9d09951cd730b0c0&hash=751657BE09B79A4791AF5FE5AA0D9957" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-promo.css?rev=db74a6bd1c9c40b89517be83ef6edadf&hash=A58FAC631F6FEB47F269BCADB7C44DE2" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-search-other.css?rev=79199c82e21a4d238163ba0a4732fec6&hash=1E832DB6F9B3B270F9843FBCD37DCBB2" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-search-results.css?rev=f5c85ba7bbd243418c5c4547db643a99&hash=9D0B74BEB64D1715B2A61655D883E021" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-site-selector.css?rev=46d69fad3636442d85e19ffbbbd004ad&hash=5D05FF9479A019CABDD9F3905DD4BB80" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-social-media-share.css?rev=41cea3c1ef5a470689b1e179cfdc6c5e&hash=22AE6D20FCE733151C9E1FB064E2CD80" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-tabs.css?rev=8c147c5fe37a4902b9eb1e52e195a27c&hash=926CC3C61C9402123A5A61C8E6607182" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-tag-cloud.css?rev=40ab3a86550a49ce8afd9db5bb716d06&hash=252E9EC50302DED30CC1943755C9324F" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-tag-list.css?rev=b96770a70d88449fb2e0d8d33ac3d884&hash=2D4A20E772BB6EA406C342FB09FDC505" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-title.css?rev=0c4ec5dca15c4493886368c1764a93ef&hash=365AEE456B0EBCBDAA06CDCC8142C45F" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-toggle.css?rev=ada6fd50274845ffab09e8ab1c9ce507&hash=5C0FB257E8FB9AF8FEB35A8A65BADE0F" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-twitter.css?rev=af586dda13f34409904234dd67438877&hash=EDA8CBD83E98CABCFEE364259F2234E9" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/component-video.css?rev=6e93cad05bfb4748aecfd8ad7086f95d&hash=FD0131C969FBC73D095ED2F20DD263A1" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/custom/custom/styles/privacy-warning.css?rev=51b2140650d94f7ebda6da4c3621d5d7&hash=F3AF03F65AD25B50952643C87AAF1004" rel="stylesheet" /><link href="/-/media/themes/selectmedical/outpatients/selectphysicaltherapy/selectphysicaltherapy/styles/pre-optimized-min.css?rev=15df9009563c40eab3473089a4c2495c&t=20150515T071943:635672711833756301Z&hash=8AA2517CD59995C0C3A273ABCBBDA360" rel="stylesheet" />
+
+    
+    
+
+
+    <title>Industry-leading physical therapy | Select Physical Therapy</title>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese' rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <script>
+	(function (w, d, s, l, i) {
+		w[l] = w[l] || []; w[l].push({
+			'gtm.start':
+				new Date().getTime(), event: 'gtm.js'
+		}); var f = d.getElementsByTagName(s)[0],
+			j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+				'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+		})(window, document, 'script', 'dataLayer', 'GTM-5JBMBCH');</script>
+
+
+
+
+    <link href="/-/media/project/selectmedical/outpatients/shared/spt_favicon.svg?rev=9d2fa8e2736d46d2b80ab04cf6a8f8d9&amp;t=20211230001259" rel="shortcut icon" />
+
+
+
+<meta property="og:title"  content="Industry-leading physical therapy | Select Physical Therapy" /><meta property="og:url"  content="https://www.selectphysicaltherapy.com/" />
+
+
+<meta  name="description" content="Physical therapy experts. Hand, neck, back, spine. Specialty women’s health and sports rehabilitation. In-home therapy services and outpatient centers near you." />
+
+
+<meta property="twitter:title"  content="Industry-leading physical therapy | Select Physical Therapy" /><meta property="twitter:card"  content="summary_large_image" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+</head>
+<body class="default-device out-patient bodyclass">
+    
+	<noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5JBMBCH"
+				style="display:none;visibility:hidden" title="Google Tag Manager key">
+			Google Tag Manager key
+		</iframe>
+	</noscript>
+
+
+<div class="component link accessibility-policy-parent">
+    <div class="component-content">
+
+<div class="field-link"><a href="#content" data-variantitemid="{6D381F4B-B796-4781-AFCB-4C55D7A7296C}" data-variantfieldname="Link" class="accessibility-policy-link">Skip to main content</a></div>    </div>
+</div>
+
+<div class="component link accessibility-policy-parent">
+    <div class="component-content">
+
+<div class="field-link"><a href="https://www.selectmedical.com/accessibility/" rel="noopener noreferrer" data-variantitemid="{043C6EC4-CE53-49D3-90C0-9A5DD9C32D9F}" data-variantfieldname="Link" class="accessibility-policy-link" target="_blank">Click to view our Accessibility Policy and contact us with accessibility-related questions</a></div>    </div>
+</div>
+    
+<!-- #wrapper -->
+<div id="wrapper">
+    <!-- #header -->
+    <header>
+        <div id="header" class="container">
+            <div class="row">
+                
+
+
+
+<div class="component container out-patient">
+    <div class="component-content" >
+
+
+<div class="row component column-splitter">
+        <div class=" op-header-left">
+            
+<div class="component image file-type-icon-media-link responsive-image header-logo">
+    <div class="component-content">
+<a title="logo" href="/"><img src="/-/media/project/selectmedical/outpatients/shared/logo---select-physical-therapy.png?h=77&amp;iar=0&amp;w=181&amp;rev=6333d4504d974dd9ae329b95778dba20&amp;t=20191101121844&amp;hash=60819DD9DEBF419DCB4C18F5DCBA7DD8" alt="Select Physical Therapy Logo" width="181" height="77" data-variantitemid="{782755EA-2CB5-4A03-BAD8-40A3F34BCBEB}" data-variantfieldname="Image" /></a>    </div>
+</div>
+
+        </div>
+        <div class=" op-header-right">
+            
+<div class="component link-list quick-links col-xs-12">
+    <div class="component-content">
+        
+                <ul>
+                <li class="item0 odd first">
+<div class="field-link"><a href="/contact/acquisitions-and-partnerships/" data-variantitemid="{75FFE9F2-AD47-4392-920D-9D588B1B4337}" data-variantfieldname="Link">Acquisitions and Partnerships</a></div>                </li>
+                <li class="item1 even">
+<div class="field-link"><a href="/contact/request-an-appointment/" data-variantitemid="{0EC4FEFF-CB52-4424-9EA6-118A352D35EC}" data-variantfieldname="Link">Request an Appointment</a></div>                </li>
+                <li class="item2 odd">
+<div class="field-link"><a href="/pay-my-bill/" data-variantitemid="{AC7FB090-CDFE-42EB-BF78-34EC83527A82}" data-variantfieldname="Link">Pay My Bill</a></div>                </li>
+                <li class="item3 even">
+<div class="field-link"><a href="/contact/find-a-location/" data-variantitemid="{30E7CEF1-774C-443F-AE58-185E938EF02A}" data-variantfieldname="Link">Find a Location</a></div>                </li>
+                <li class="item4 odd last">
+<div class="field-link"><a href="https://careers.selectmedical.com/discover-our-brands/outpatient-rehabilitation/select-physical-therapy/" data-variantitemid="{4868445E-089C-458D-9EB3-2E3AE839FCE9}" data-variantfieldname="Link">Search Careers</a></div>                </li>
+        </ul>
+    </div>
+</div>
+<div class="component primary-navigation">
+    <div class="component-content">
+        <a class="mobile-menu-nav fa fa-navicon" role="button" aria-label="Main Menu" href="#"></a>
+        <div class="modal-background"></div>
+            <div class="mobile-nav">
+                <ul>
+                    <li class="mobile-menu-header">
+                        <span>Menu</span><a href="#" class="mobile-close fa fa-close" role="button" aria-label="Close Menu"></a>
+                    </li>
+                                                <li class="toplink-container">
+                                <a href="#" class="submenu-toplink">
+                                    <span>
+Injury Finder                                    </span>
+                                </a>
+                                <div class="submenu-dropdown">
+                                        <div class="submenu-columns">
+                                                <div class="submenu-column">
+                                                        <div class="submenu-label">
+                                                            <div class="submenu-content">
+                                                                <ul>
+    <li><a href="/injury-finder/">Injury Finder</a></li>
+    <li><a href="/injury-finder/back/">Back</a></li>
+    <li><a href="/injury-finder/head/">Head</a></li>
+    <li><a href="/injury-finder/hip/">Hip</a></li>
+    <li><a href="/injury-finder/neck/">Neck</a></li>
+    <li><a href="/injury-finder/leg/">Leg</a></li>
+    <li><a href="/injury-finder/shoulder/">Shoulder</a></li>
+    <li><a href="/injury-finder/knee/">Knee</a></li>
+    <li><a href="/injury-finder/arm/">Arm</a></li>
+    <li><a href="/injury-finder/ankle/">Ankle</a></li>
+    <li><a href="/injury-finder/hand/">Hand</a></li>
+    <li><a href="/injury-finder/foot/">Foot</a></li>
+</ul>
+                                                            </div>
+                                                            <div class="submenu-featured-content">
+                                                                <div class="text-column">
+                                                                    Pain should not be something you deal with. You're in pain or discomfort and trying to understand what's happening. We treat many common injuries and conditions, from aches and strains to sprains and fractures. Let us help you identify what hurts and get on the road to recovery!
+                                                                </div>
+                                                                
+                                                                <div class="read-more-container">
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                            </li>
+                            <li class="toplink-container">
+                                <a href="#" class="submenu-toplink">
+                                    <span>
+Our Services                                    </span>
+                                </a>
+                                <div class="submenu-dropdown">
+                                        <div class="submenu-columns">
+                                                <div class="submenu-column">
+                                                        <div class="submenu-label">
+                                                            <div class="submenu-content">
+                                                                <ul>
+    <li><a href="/services/">Our Services</a></li>
+    <li><a href="/services/specialty-services/">Specialty Services</a></li>
+    <li><a href="/services/hand-therapy/">Hand Therapy</a></li>
+    <li><a href="/services/occupational-therapy/">Occupational Therapy</a></li>
+    <li><a href="/services/sports-medicine/">Sports Medicine</a></li>
+    <li><a href="/services/workstrategies/">WorkStrategies</a></li>
+    <li><a href="/services/pediatric-therapy/">Pediatric Therapy</a></li>
+    <li><a href="/services/prosthetics-and-orthotics/">Prosthetics and Orthotics</a></li>
+    <li><a href="/services/physical-therapy/">Physical Therapy</a></li>
+    <li><a href="/services/corevia-pelvic-health/">CoreVia Pelvic Health</a></li>
+</ul>
+<p>&nbsp;</p>
+                                                            </div>
+                                                            <div class="submenu-featured-content">
+                                                                <div class="text-column">
+                                                                    Our highly trained clinical team offers a variety of services to help you on your healing journey. We are your trusted choice to get you back to the activities that matter most to you, today!
+                                                                </div>
+                                                                
+                                                                <div class="read-more-container">
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                            </li>
+                            <li class="toplink-container">
+                                <a href="#" class="submenu-toplink">
+                                    <span>
+Your Experience                                    </span>
+                                </a>
+                                <div class="submenu-dropdown">
+                                        <div class="submenu-columns">
+                                                <div class="submenu-column">
+                                                        <div class="submenu-label">
+                                                            <div class="submenu-content">
+                                                                <ul>
+    <li><a href="/your-experience/">Your Experience</a></li>
+    <li><a href="/your-experience/complimentary-consultation/">Complimentary Consultation</a></li>
+    <li><a href="/your-experience/insurance-and-patient-responsibilties/">Insurance and Patient Responsibilities</a></li>
+    <li><a href="/your-experience/care-delivery/">Care Delivery</a></li>
+</ul>
+<p>&nbsp;</p>
+                                                            </div>
+                                                            <div class="submenu-featured-content">
+                                                                <div class="text-column">
+                                                                    If you're injured, tired of not being able to move normally or experiencing aches and pains, let our licensed clinical experts help you get back to the things you love. Our compassion and expert care will help you improve your quality of life.
+                                                                </div>
+                                                                
+                                                                <div class="read-more-container">
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                            </li>
+                            <li class="toplink-container">
+                                <a href="#" class="submenu-toplink">
+                                    <span>
+Why Choose Us                                    </span>
+                                </a>
+                                <div class="submenu-dropdown">
+                                        <div class="submenu-columns">
+                                                <div class="submenu-column">
+                                                        <div class="submenu-label">
+                                                            <div class="submenu-content">
+                                                                <ul>
+    <li><a href="/why-choose-us/">Why Choose Us</a></li>
+    <li><a href="/why-choose-us/sports-partnerships/">Sports Partnerships</a></li>
+    <li><a href="/why-choose-us/mission/">Mission</a></li>
+    <li><a href="/why-choose-us/our-expertise-and-outcomes/">Our Expertise and Outcomes</a></li>
+    <li><a href="/why-choose-us/success-stories/">Success Stories</a></li>
+    <li><a href="/why-choose-us/news-blog/">News and Blog</a></li>
+</ul>
+                                                            </div>
+                                                            <div class="submenu-featured-content">
+                                                                <div class="text-column">
+                                                                    
+                                                                </div>
+                                                                
+                                                                <div class="read-more-container">
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                            </li>
+                            <li class="toplink-container">
+                                <a href="#" class="submenu-toplink">
+                                    <span>
+Refer a Patient                                    </span>
+                                </a>
+                                <div class="submenu-dropdown">
+                                        <div class="submenu-columns">
+                                                <div class="submenu-column">
+                                                        <div class="submenu-label">
+                                                            <div class="submenu-content">
+                                                                <ul>
+    <li><a href="/refer-a-patient/">Refer a Patient</a></li>
+    <li><a href="/refer-a-patient/clinicians/">Clinicians</a></li>
+    <li><a href="/refer-a-patient/workers-compensation/">Workers' Compensation</a></li>
+</ul>
+                                                            </div>
+                                                            <div class="submenu-featured-content">
+                                                                <div class="text-column">
+                                                                    Whether you're trusting us with one of your patients or helping a workers compensation patient through their medical journey, we welcome the opportunity to partner with you to provide outstanding care to your patients and employees.
+                                                                </div>
+                                                                
+                                                                <div class="read-more-container">
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                            </li>
+                            <li class="toplink-container">
+                                <a href="#" class="submenu-toplink">
+                                    <span>
+Clinical Education                                    </span>
+                                </a>
+                                <div class="submenu-dropdown">
+                                        <div class="submenu-columns">
+                                                <div class="submenu-column">
+                                                        <div class="submenu-label">
+                                                            <div class="submenu-content">
+                                                                <ul>
+    <li><a href="/clinician-education/">Clinical Education</a></li>
+    <li><a href="/clinician-education/residency-programs/">Residency &amp; Fellowship Programs</a></li>
+    <li><a href="/clinician-education/manual-therapy-certification/">Manual Therapy Certification</a></li>
+    <li><a href="/clinician-education/student-clinical-affiliations/">Student Clinical Affiliations</a> </li>
+</ul>
+                                                            </div>
+                                                            <div class="submenu-featured-content">
+                                                                <div class="text-column">
+                                                                    <p>Best practices in rehabilitation are constantly evolving.  We are committed to ensuring that our clinicians have access to the most comprehensive, evidence-informed training programs in the industry. </p>
+<p><em><strong>Alan Evans</strong>, P.T., DPT, vice president, clinical education</em></p>
+                                                                </div>
+                                                                <img src="/-/media/project/selectmedical/outpatients/selectphysicaltherapy/alan-evans-head-shot.jpg?h=128&amp;iar=0&amp;w=128&amp;rev=9cf54eca5b4841ff8f4a9f4a7e26cce1&amp;t=20221212151602&amp;hash=29DFF7B0B60F0B3C27D3F3053FEEC952" alt="&quot;&quot;" width="128" height="128" />
+                                                                <div class="read-more-container">
+
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                            </li>
+                </ul>
+                <div class="quick-links-mobile"></div>
+            </div>
+    </div>
+</div>
+
+
+<div class="component search-box global-search-box" data-properties='{"endpoint":"//sxa/search/results/","suggestionEndpoint":"//sxa/search/suggestions/","suggestionsMode":"","resultPage":"/search/","targetSignature":"","v":"{0A4C6DF4-6CB0-4B86-954C-BA895374085D}","s":"{2C698FAD-11C6-4526-88F2-0A739841AD49}","p":0,"searchResultsSignature":"","itemid":"{6D86CDAF-1C25-4DD5-8C53-4BB73BC7A479}"}'>
+	<div class="component-content">
+		<form action="." onsubmit="return false;">
+		
+				<label for="textBoxSearch">
+					
+				</label>
+				<input type="search" class="search-box-input" autocomplete="off" name="textBoxSearch" placeholder="Search" aria-label="Search" />
+					<button class="search-box-button-with-redirect" type="submit">
+						Search
+					</button>
+		</form>
+	</div>
+</div>
+
+        </div>
+</div>    </div>
+</div>
+
+<div class="row component column-splitter">
+        <div class="">
+            
+        </div>
+        <div class="">
+            
+        </div>
+</div>
+            </div>
+        </div>
+    </header>
+    <!-- /#header -->
+    <!-- #content -->
+    <main>
+        <div id="content" class="container">
+            <div class="row">
+                
+
+<div class="component content hero">
+    <div class="component-content">
+<div class="hero-lg"><img src="/-/media/project/selectmedical/outpatients/selectphysicaltherapy/op-multi-website-hero-image-runnersb.jpg?rev=2de1f193c9414f1ba983be468113e4de&t=20230522184630&w=1900&hash=05580E5AA960FFD6DA78C1388EC1BA07" alt="Woman and man running along the side of a road at sunrise." sizes="(max-width: 768px) 768px, 1900px" srcset="/-/media/project/selectmedical/outpatients/selectphysicaltherapy/op-multi-website-hero-image-runnersb.jpg?rev=2de1f193c9414f1ba983be468113e4de&amp;t=20230522184630&amp;w=768&amp;hash=1502741F53F7CD830F3D764054B353F7 768w,/-/media/project/selectmedical/outpatients/selectphysicaltherapy/op-multi-website-hero-image-runnersb.jpg?rev=2de1f193c9414f1ba983be468113e4de&amp;t=20230522184630&amp;w=+1900&amp;hash=0EFB70B06ED30F635118D8A5831CB845  1900w" /></div><div class="hero-sm"></div><div class="hero-inner"><div class="field-herocontent"><div class="hero-heading">The Power of Physical Therapy</div>
+<p>Helping you to get back to life and the things you enjoy</p>
+<p><a href="/contact/request-an-appointment/">Request an Appointment</a></p></div></div>    </div>
+</div>
+
+
+
+
+<div class="component container col-xs-12 bg-light-gray-full cta-bar out-patient">
+    <div class="component-content" >
+
+
+<div class="row component column-splitter">
+        <div class="col-xs-12 col-sm-4">
+                <div class="component promo col-xs-12 icon-map op-icon">
+        <div class="component-content">
+<a href="/contact/find-a-location/"><div class="cta-section"><span class="cta-text field-promotext"><p>Find a Location</p></span></div></a>        </div>
+    </div>
+
+        </div>
+        <div class="col-xs-12 col-sm-4">
+                <div class="component promo col-xs-12 icon-calendar op-icon">
+        <div class="component-content">
+<a href="/contact/request-an-appointment/"><div class="cta-section"><span class="cta-text field-promotext">Request an Appointment</span></div></a>        </div>
+    </div>
+
+        </div>
+        <div class="col-xs-12 col-sm-4">
+                <div class="component promo col-xs-12 icon-chat op-icon">
+        <div class="component-content">
+<a href="/your-experience/complimentary-consultation/"><div class="cta-section"><span class="cta-text field-promotext">Complimentary Consultation</span></div></a>        </div>
+    </div>
+
+        </div>
+        <div class="col-xs-6">
+                <div class="component promo col-xs-12 icon-briefcase op-icon">
+        <div class="component-content">
+<a href="https://careers.selectmedical.com/discover-our-brands/outpatient-rehabilitation/select-physical-therapy/"><div class="cta-section"><span class="cta-text field-promotext">Search Careers</span></div></a>        </div>
+    </div>
+
+        </div>
+</div>    </div>
+</div>
+
+
+<div class="component container col-xs-12 out-patient">
+    <div class="component-content" >
+
+
+
+<div class="component container col-xs-12">
+    <div class="component-content" >
+
+
+<div class="row component column-splitter">
+        <div class="col-xs-12 col-md-2">
+            
+        </div>
+        <div class="col-xs-12 col-md-8">
+            
+
+    <div class="component rich-text col-xs-12">
+        <div class="component-content">
+<h1 style="text-align: center;">Outpatient Physical Therapy</h1>
+<p>We’re part of the largest physical therapy network in the U.S. With almost 2,000 outpatient physical therapy centers and 7,000-plus licensed therapists, we’re a leader in physical therapy excellence.</p>
+<p>We’re also your partner in wellness. We offer occupational and hand therapy, sports medicine, workplace injury treatment and prevention, and specialized rehabilitation services.</p>
+<p>Our focus every day is on exceptional patient care. Your health and wellness goals are our goals. We help you maintain your health or recover your health to get back to the activities and life that you love.</p>        </div>
+    </div>
+
+        </div>
+        <div class="col-xs-12 col-md-2">
+            
+        </div>
+</div>    </div>
+</div>	<div class="component spotlight-sections spotlight-sections--outpatient col-xs-12 image-component-center">
+		<div class="component-content">
+	<div class="component spotlight spotlight spotlight--outpatient col-xs-12">
+		<div class="component-content">
+<div class="col-xs-12 col-md-4 field-spotlightimage"><img src="/-/media/project/selectmedical/outpatients/shared/pelvic-treatment-365x326.jpg?h=326&amp;iar=0&amp;w=365&amp;rev=0428736d268a4d1787aa88625c8c0867&amp;t=20230503184130&amp;hash=0C129C3840CBB4C5163E697C8F5696FC" alt="Woman doing pelvic exercises" width="365" height="326" data-variantitemid="{9C1D2501-FA6A-49B3-A7B3-3C64EF66C320}" data-variantfieldname="SpotlightImage" /></div><div class="col-xs-12 col-md-8"><div class="field-spotlighttitle">Introducing CoreVia Pelvic Health</div><div class="field-spotlightdescription">CoreVia Pelvic Health is a specialized program providing care – and relief – to men, women and children. Our patients have access to specially trained and highly skilled pelvic health physical therapists.</div><div class="field-spotlightlink"><a href="/services/corevia-pelvic-health/" data-variantitemid="{9C1D2501-FA6A-49B3-A7B3-3C64EF66C320}" data-variantfieldname="SpotlightLink">Learn more about CoreVia</a></div></div>		</div>
+	</div>
+		</div>
+	</div>
+
+<div class="component link-list conditions-panel-button-centers">
+	<div class="component-content">
+		<h2 class="conditions-panel-title">Where Do You Need Attention? </h2>
+		<div class="conditions-panel-title-description"><p>Choose the area of your injury or pain from the below options.</p></div>
+				<ul class="row">
+				<li class="item0 odd first conditions-panel-li col-md-3 col-sm-6 col-xs-12">
+<div class="field-link"><a href='/injury-finder/head/'><img src='/-/media/project/selectmedical/outpatients/selectphysicaltherapy/body-pain-icons/bodypain_icons-01_head.png?rev=c17ed2ba6ec14b93b70a6046a14300a6&t=20230113213344' alt=""></img>Head</a></div>				</li>
+				<li class="item1 even conditions-panel-li col-md-3 col-sm-6 col-xs-12">
+<div class="field-link"><a href='/injury-finder/neck/'><img src='/-/media/project/selectmedical/outpatients/selectphysicaltherapy/body-pain-icons/bodypain_icons-02_neck.png?rev=225dfc2308284cf7a7c979512917c6eb&t=20200926031811' alt=""></img>Neck</a></div>				</li>
+				<li class="item2 odd conditions-panel-li col-md-3 col-sm-6 col-xs-12">
+<div class="field-link"><a href='/injury-finder/shoulder/'><img src='/-/media/project/selectmedical/outpatients/selectphysicaltherapy/body-pain-icons/bodypain_icons-03_shoulder.png?rev=957a9648533641ba97bc7fda864cc1db&t=20200926031811' alt=""></img>Shoulder</a></div>				</li>
+				<li class="item3 even conditions-panel-li col-md-3 col-sm-6 col-xs-12">
+<div class="field-link"><a href='/injury-finder/arm/'><img src='/-/media/project/selectmedical/outpatients/selectphysicaltherapy/body-pain-icons/bodypain_icons-04_arm.png?rev=7ac35429836a42709e76f4a7e31ad98f&t=20200926031811' alt=""></img>Arm</a></div>				</li>
+				<li class="item4 odd conditions-panel-li col-md-3 col-sm-6 col-xs-12">
+<div class="field-link"><a href='/injury-finder/hand/'><img src='/-/media/project/selectmedical/outpatients/selectphysicaltherapy/body-pain-icons/bodypain_icons-05_hand.png?rev=8fb8ef536d2d41cc906c0fe61d5772a5&t=20200926031811' alt=""></img>Hand</a></div>				</li>
+				<li class="item5 even conditions-panel-li col-md-3 col-sm-6 col-xs-12">
+<div class="field-link"><a href='/injury-finder/back/'><img src='/-/media/project/selectmedical/outpatients/selectphysicaltherapy/body-pain-icons/bodypain_icons-06_back.png?rev=86f94a085a9049169f8921be088a80cd&t=20200926031811' alt=""></img>Back</a></div>				</li>
+				<li class="item6 odd conditions-panel-li col-md-3 col-sm-6 col-xs-12">
+<div class="field-link"><a href='/injury-finder/hip/'><img src='/-/media/project/selectmedical/outpatients/selectphysicaltherapy/body-pain-icons/bodypain_icons-08_hip.png?rev=8c2a1f23426b46f1ac9a070baa56326b&t=20200926031812' alt=""></img>Hip</a></div>				</li>
+				<li class="item7 even conditions-panel-li col-md-3 col-sm-6 col-xs-12">
+<div class="field-link"><a href='/injury-finder/leg/'><img src='/-/media/project/selectmedical/outpatients/selectphysicaltherapy/body-pain-icons/bodypain_icons-09_leg.png?rev=b538620631894fa9ac7c3ebba7846ed0&t=20200926031811' alt=""></img>Leg</a></div>				</li>
+				<li class="item8 odd conditions-panel-li col-md-3 col-sm-6 col-xs-12">
+<div class="field-link"><a href='/injury-finder/knee/'><img src='/-/media/project/selectmedical/outpatients/selectphysicaltherapy/body-pain-icons/bodypain_icons-10_knee.png?rev=3c8f0ed11a1946b5a38129406246e340&t=20200926031811' alt=""></img>Knee</a></div>				</li>
+				<li class="item9 even conditions-panel-li col-md-3 col-sm-6 col-xs-12">
+<div class="field-link"><a href='/injury-finder/ankle/'><img src='/-/media/project/selectmedical/outpatients/selectphysicaltherapy/body-pain-icons/bodypain_icons-11_ankle.png?rev=0c0d67a14ec94fb5bdb1ed2a88dcae90&t=20200926031811' alt=""></img>Ankle</a></div>				</li>
+				<li class="item10 odd last conditions-panel-li col-md-3 col-sm-6 col-xs-12">
+<div class="field-link"><a href='/injury-finder/foot/'><img src='/-/media/project/selectmedical/outpatients/selectphysicaltherapy/body-pain-icons/bodypain_icons-12_foot.png?rev=567d2b0979e84078a8572b8b2fa9aed7&t=20200926031811' alt=""></img>Foot</a></div>				</li>
+		</ul>
+	</div>
+</div>
+	<div class="component spotlight-sections spotlight-sections--outpatient col-xs-12">
+		<div class="component-content">
+    <div class="component content-highlight-panel panel-image-on-left col-xs-12">
+        <div class="component-content">
+<div class="col-xs-6 image-content"><div class="field-promoicon"><img src="/-/media/project/selectmedical/outpatients/novacare/highlight1.jpg?h=501&amp;iar=0&amp;w=596&amp;rev=29fd215171ee4a0991c7cb534f6794c0&amp;t=20220808164548&amp;hash=4D36AF9692F32E11FEED4917B7A90517" alt="Young dark-haired female therapist standing next to an older female patient using a walker." width="596" height="501" data-variantitemid="{76865886-3345-406F-ACEC-97FC4DFB85DD}" data-variantfieldname="PromoIcon" /></div></div><div class="col-xs-6 text-content"><div class="field-promotext"><p>THE PATIENT EXPERIENCE</p></div><div class="field-promotext3"><img src="/-/media/project/selectmedical/outpatients/novacare/highlight1.jpg?h=501&amp;iar=0&amp;w=596&amp;rev=29fd215171ee4a0991c7cb534f6794c0&amp;t=20220808164548&amp;hash=4D36AF9692F32E11FEED4917B7A90517" alt="Young dark-haired female therapist standing next to an older female patient using a walker." width="596" height="501" data-variantitemid="{76865886-3345-406F-ACEC-97FC4DFB85DD}" data-variantfieldname="PromoIcon" /><h3 class="mobile-header field-promotext2">Your trusted therapy partner</h3><p> Select Physical Therapy&nbsp;is a leader in outpatient physical therapy, sports medicine, women's health, COVID recovery and specialty therapies.</p>
+<p>Our therapists listen and personalize your care to help you achieve your goals. We'll work together to help you heal and stay healthy.&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></div><div class="field-promolink"><a href="/your-experience/" data-variantitemid="{76865886-3345-406F-ACEC-97FC4DFB85DD}" data-variantfieldname="PromoLink">Learn more about therapy</a></div></div>        </div>
+    </div>
+
+
+
+<div class="component card-carousel" data-properties='{&quot;timeout&quot;:2147483647,&quot;isPauseEnabled&quot;:true,&quot;transition&quot;:&quot;BasicTransition&quot;}'>
+	<div class="component-content">
+        <div class="card-carousel-header">
+                <h2>Patient success stories</h2>
+            <div></div>
+        </div>
+			<div data-id="divCarousel_0419f1cc-41af-4a4b-ba68-9daf09269d63" class="carousel-inner">
+				<div class="background">					
+				</div>
+				<ul class="slides">
+						<li class="slide"  >
+	<div class="component card-carousel-slide text-center">
+		<div class="component-content">
+<div class="col-12">    <div class="component card-carousel-card col-xs-auto">
+        <div class="component-content">
+<a href="/why-choose-us/success-stories/"><div class="card-carousel-card-container"><div class="card-carousel-card-image field-promoicon"><img src="/-/media/project/selectmedical/outpatients/selectphysicaltherapy/success-stories/success-story-spt-coltin.jpg?h=378&amp;iar=0&amp;w=475&amp;rev=5e9ffff47fde4b26a92c652c2b98b853&amp;t=20230113213328&amp;hash=10D2E3A6FCB6F10538D8CF047E8E1A61" alt="Coltin, standing at the track in his BMX outfit." width="475" height="378" data-variantitemid="{15B0FE4D-5403-4EAC-A070-4093E05DA6DA}" data-variantfieldname="PromoIcon" /></div><div class="card-carousel-card-text-container"><div class="card-carousel-card-description field-promotext2">"The treatment helped me return to the activity I really enjoy, BMX."</div><div class="card-carousel-card-link field-promotext3">Read Coltin's Story</div></div></div></a>        </div>
+    </div>
+    <div class="component card-carousel-card col-xs-auto">
+        <div class="component-content">
+<a href="/why-choose-us/success-stories/"><div class="card-carousel-card-container"><div class="card-carousel-card-image field-promoicon"><img src="/-/media/project/selectmedical/outpatients/selectphysicaltherapy/success-stories/david-glastetter.jpg?h=378&amp;iar=0&amp;w=475&amp;rev=6d1b995b4bb44fa680eed634f484a501&amp;t=20221212151602&amp;hash=7F19ECC2AEF2E316E12B59355CA56B63" alt="Man sitting in a wheelchair outside on a summer day." width="475" height="378" data-variantitemid="{89DABE4F-69F6-478D-B288-CFF544421BB9}" data-variantfieldname="PromoIcon" /></div><div class="card-carousel-card-text-container"><div class="card-carousel-card-description field-promotext2">&ldquo;Every day I had physical therapy, it gave me hope and confidence that I would walk again and regain my life back,&rdquo;</div><div class="card-carousel-card-link field-promotext3">Read Dave's Story</div></div></div></a>        </div>
+    </div>
+    <div class="component card-carousel-card col-xs-auto">
+        <div class="component-content">
+<a href="/why-choose-us/success-stories/"><div class="card-carousel-card-container"><div class="card-carousel-card-image field-promoicon"><img src="/-/media/project/selectmedical/outpatients/selectphysicaltherapy/success-stories/success-story-phillip.jpg?h=640&amp;iar=0&amp;w=480&amp;rev=c8885f1d306e4984a02e4a7308a5d73f&amp;t=20221212151601&amp;hash=D4AAB2F0265D9C3F39F32A76B81F96DC" alt="Female therapist helping seated male patient raise his arm." width="480" height="640" data-variantitemid="{281B520E-FF52-4CB4-B256-018128316DF5}" data-variantfieldname="PromoIcon" /></div><div class="card-carousel-card-text-container"><div class="card-carousel-card-description field-promotext2"><span>&ldquo;I had a life-threatening case of COVID-19&hellip; I have more energy and feel more focused.&rdquo;</span></div><div class="card-carousel-card-link field-promotext3">Read Phillip's Story</div></div></div></a>        </div>
+    </div>
+</div>		</div>
+	</div>
+						</li>
+				</ul>
+
+
+			</div>
+	</div>
+</div>
+		</div>
+	</div>
+
+
+
+<div class="component container">
+    <div class="component-content" >
+<div class="statistics-container">
+	<div class="component-content">
+        <div class="statistics-left-content">
+<h2>We’re a network of outpatient physical rehabilitation experts</h2>
+            <a href="/why-choose-us/#sitecore:item:InternalLinkTreeview_5FAD857E832848FF9BE1EE318A8A3E41" role="button">See all our brands</a>
+        </div>
+
+		<div class="statistics-slides">		
+			
+<div class="statistics-slide  statistics-slide-3">
+	<div class="statistics-slide-icon-wrapper"><img src="/-/media/project/selectmedical/outpatients/selectphysicaltherapy/homepage/building-icon.jpg?h=70&amp;iar=0&amp;w=64&amp;rev=78efeceb207d4201b826788ee78f660a&amp;t=20230509203129&amp;hash=629BFBA40F564D1D8BD9AC85617537B3" class="statistics-slide-icon" alt="" width="64" height="70" /></div>
+	<span class="statistics-slide-head statistics-slide-3">1,900+</span>
+	<p>&#160;centers with a wide range of physical therapy services&#160;</p>
+</div>
+
+
+<div class="statistics-slide  statistics-slide-3">
+	<div class="statistics-slide-icon-wrapper"><img src="/-/media/project/selectmedical/outpatients/selectphysicaltherapy/homepage/globe-icon.jpg?h=70&amp;iar=0&amp;w=64&amp;rev=c49e20a3be1548dabe4f7fbb303202fa&amp;t=20230509203138&amp;hash=2F2FBBDF47E4F1F98AEF695644C84008" class="statistics-slide-icon" alt="" width="64" height="70" /></div>
+	<span class="statistics-slide-head statistics-slide-3">40</span>
+	<p>states with our centers, serving a community near you</p>
+</div>
+
+
+<div class="statistics-slide  statistics-slide-3">
+	<div class="statistics-slide-icon-wrapper"><img src="/-/media/project/selectmedical/outpatients/selectphysicaltherapy/homepage/person-icon.jpg?h=70&amp;iar=0&amp;w=64&amp;rev=ddc1055300b24683b9820c63a7aebdbe&amp;t=20230509203135&amp;hash=00F1CA0BF9D405FDA84EAAAE683D890C" class="statistics-slide-icon" alt="" width="64" height="70" /></div>
+	<span class="statistics-slide-head statistics-slide-3">500+</span>
+	<p>partnerships with professional, college and high school sports organizations</p>
+</div>
+
+			
+		</div>
+	</div>
+</div>
+    </div>
+</div>
+
+
+<div class="component container">
+    <div class="component-content" >
+
+<div class="component snippet">
+    <div class="component-content">
+            <div class="snippet-inner">
+                <div class="snippet-container">
+
+
+
+<div class="snippet">
+
+
+
+<div class="component container col-xs-12 location-cards-container">
+    <div class="component-content" >
+
+
+
+<div class="component row-splitter">
+        <div class="container-fluid col-xs-12">
+            <div class="row">
+                
+
+    <div class="component rich-text col-xs-12">
+        <div class="component-content">
+<h3>Locations near you</h3>        </div>
+    </div>
+
+
+<div class="row component column-splitter">
+        <div class="col-xs-12 col-sm-2 location-cards-search col-xs-12">
+            
+
+<div class="component location-filter facet-distance col-xs-12" data-properties='{"endpoint":"//sxa/search/results/","f":"Distance","p":0,"myLocationText":"My Location","mode":"Mixed","searchResultsSignature":"locations-cards","key":"AIzaSyAU7iuLVR0WjvI8ns-Tq0iz1dZCmvcfl2o"}'>
+    <div class="component-content">
+            <input type="text" class="location-search-box-input" autocomplete="off" name="textBoxLocationSearch" placeholder="Enter Address, City, State, or Zip" />
+    </div>
+</div>
+
+        </div>
+        <div class="col-xs-12 col-sm-9 location-cards-facets col-xs-12">
+            
+
+        </div>
+</div>
+            </div>
+        </div>
+        <div class="container-fluid col-xs-12">
+            <div class="row">
+                
+
+
+<div class="component search-results col-xs-12 location-cards-list" data-class-variant="" data-properties='{&quot;endpoint&quot;:&quot;//sxa/search/results/&quot;,&quot;v&quot;:&quot;{4D923F69-C162-4741-B2AA-DB9BC39093FF}&quot;,&quot;s&quot;:&quot;{A07F1984-B5BC-4E80-90F4-B48D191F4029}&quot;,&quot;l&quot;:&quot;&quot;,&quot;p&quot;:4,&quot;defaultSortOrder&quot;:&quot;&quot;,&quot;sig&quot;:&quot;locations-cards&quot;,&quot;itemid&quot;:&quot;{6D86CDAF-1C25-4DD5-8C53-4BB73BC7A479}&quot;,&quot;autoFireSearch&quot;:false}' aria-live="polite">
+        <div class="component-content">
+            
+            <div class="no-results" style="display: none">
+                Nothing Found Near You
+                
+            </div>
+            <div class="progress"></div>
+        </div>
+</div>
+            </div>
+        </div>
+        <div class=" location-cards-view-all container-fluid col-xs-12">
+            <div class="row">
+                
+
+<div class="component link col-xs-12">
+    <div class="component-content">
+
+<div class="field-link"><a href="/contact/find-a-location/" data-variantitemid="{1B917740-23D7-493A-827A-ED1BF0AD30A8}" data-variantfieldname="Link">View more locations</a></div>    </div>
+</div>
+            </div>
+        </div>
+</div>    </div>
+</div></div>
+
+                </div>
+            </div>    
+    </div>
+</div>
+    </div>
+</div>
+
+    <div class="component rich-text col-xs-12">
+        <div class="component-content">
+<div style="width: 100%; margin: 60px 0px 30px 0px;">
+<h2 style="text-align: center;"><span style="background-color: #ffffff; color: #000000;">Read Our Updated <a href="https://www.selectphysicaltherapy.com/coronavirus-covid-19/">COVID-19 Protocols</a>.</span>
+</h2>
+</div>        </div>
+    </div>
+
+
+
+<div class="component container bg-light-gray-full">
+    <div class="component-content" >
+    <div class="component promo disruptor">
+        <div class="component-content">
+<div class="disruptor-title field-promotext">Take the next step</div><div class="disruptor-button-section"><div class="disruptor-button1 field-buttonlink1"><a href="/contact/request-an-appointment/" data-variantitemid="{56B119A2-176F-4EF3-B3C6-428009B71CA7}" data-variantfieldname="buttonLink1">Request an appointment</a></div><div class="disruptor-button2 field-buttonlink2"><a href="/contact/find-a-location/" data-variantitemid="{56B119A2-176F-4EF3-B3C6-428009B71CA7}" data-variantfieldname="buttonLink2">Find a location</a></div></div>        </div>
+    </div>
+    </div>
+</div>
+
+
+<div class="component container">
+    <div class="component-content" >
+    </div>
+</div>    </div>
+</div>
+            </div>
+        </div>
+    </main>
+    <!-- /#content -->
+    <!-- #footer -->
+    <footer>
+        <div id="footer" class="container">
+            <div class="row">
+                
+
+
+
+<div class="component container col-xs-12 green-dark-gradient bg-gray-light-gradient-full">
+    <div class="component-content" >
+
+
+
+<div class="component container col-xs-12">
+    <div class="component-content" >
+
+<div class="component dropdown link-list col-xs-12 col-sm-4 contacts">
+	<div class="component-content">
+		<button class="btn btn-default dropdown-toggle" type="button" id="b2ABFB96881214232BF6423CA954B6395" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			Contact Us
+			<span class="caret" aria-hidden="true"></span>
+		</button>
+				<ul class="dropdown-menu" aria-labelledby="b2ABFB96881214232BF6423CA954B6395">
+                    <li class="item0 odd first">
+<a href="/contact/">General Inquiries</a>				    </li>
+                    <li class="item1 even">
+<a href="/contact/request-an-appointment/">Request an Appointment</a>				    </li>
+                    <li class="item2 odd">
+<a href="/contact/billing-inquiry/">Billing Inquiries</a>				    </li>
+                    <li class="item3 even">
+<a href="/contact/acquisitions-and-partnerships/">Acquisitions and Partnerships</a>				    </li>
+                    <li class="item4 odd last">
+<a href="/contact/work-health-contact/">Work Health Contact</a>				    </li>
+		</ul>
+	</div>
+</div>
+    </div>
+</div>
+
+
+<div class="component container col-xs-12 col-sm-6 contacts">
+    <div class="component-content" >
+
+<div class="component link-list col-xs-12 address">
+    <div class="component-content">
+        
+                <ul>
+                <li class="item0 odd first">
+<div class="field-link"><a href="/services/" data-variantitemid="{CAEDE2B6-B2B8-4813-9AEA-5B7F873420EE}" data-variantfieldname="Link">Our Services</a></div>                </li>
+                <li class="item1 even">
+<div class="field-link"><a href="/why-choose-us/" data-variantitemid="{2428AAE2-C4E9-4FDB-B6DF-306F4F757EAF}" data-variantfieldname="Link">Why Choose Us</a></div>                </li>
+                <li class="item2 odd">
+<div class="field-link"><a href="/refer-a-patient/" data-variantitemid="{A04682A1-5967-4DC1-84CE-EB813D294C89}" data-variantfieldname="Link">Refer a Patient</a></div>                </li>
+                <li class="item3 even">
+<div class="field-link"><a href="/clinician-education/" data-variantitemid="{EEC848E2-F4E7-420B-86AE-8E2AC89F6CCE}" data-variantfieldname="Link">Clinician Education</a></div>                </li>
+                <li class="item4 odd last">
+<div class="field-link"><a href="https://careers.selectmedical.com/discover-our-brands/outpatient-rehabilitation/select-physical-therapy/" data-variantitemid="{BF4863C6-7808-44EB-ACBA-54172D56A0E7}" data-variantfieldname="Link">Search Careers</a></div>                </li>
+        </ul>
+    </div>
+</div>
+
+
+    <div class="component rich-text col-xs-12 address">
+        <div class="component-content">
+<a href="tel:8003318840">(800) 331-8840</a>        </div>
+    </div>
+
+<div class="component link-list social col-xs-12">
+    <div class="component-content">
+        
+                <ul>
+                <li class="item0 odd first">
+
+    <a href="https://www.facebook.com/SelectPTS" aria-label="facebook" rel="noopener noreferrer" class="facebook" target="_blank">
+
+        <span class="sr-only">facebook</span>
+        <span class="icon" aria-hidden="true"></span>
+</a>                </li>
+                <li class="item1 even last">
+
+    <a href="https://twitter.com/select_pt" aria-label="Twitter" rel="noopener noreferrer" class="twitter" target="_blank">
+
+        <span class="sr-only">Twitter</span>
+        <span class="icon" aria-hidden="true"></span>
+</a>                </li>
+        </ul>
+    </div>
+</div>
+    </div>
+</div>
+
+
+<div class="component container col-xs-12 col-sm-6 page-links">
+    <div class="component-content" >
+
+<div class="component link-list col-xs-12">
+    <div class="component-content">
+        
+                <ul>
+                <li class="item0 odd first">
+<div class="field-link"><a href="/legal/" data-variantitemid="{BAD20E77-2B50-4718-84CA-46DE32285093}" data-variantfieldname="Link">Legal</a></div>                </li>
+                <li class="item1 even">
+<div class="field-link"><a href="/privacy-policy/" data-variantitemid="{5F663CBA-8F64-4BAC-8CBF-07C197A838EB}" data-variantfieldname="Link">Privacy Policy</a></div>                </li>
+                <li class="item2 odd">
+<div class="field-link"><a href="/notice-of-privacy-practices/" data-variantitemid="{6F0046A3-F0F0-454E-A8F8-5CEF8C3553C8}" data-variantfieldname="Link">Notice of Privacy Practices</a></div>                </li>
+                <li class="item3 even">
+<div class="field-link"><a href="https://www.selectmedical.com/language-services-accessibility/" rel="noopener noreferrer" data-variantitemid="{0FBD4356-2C6B-4EC0-8F1F-12F0EA9E1EA6}" data-variantfieldname="Link" target="_blank">Language Services Accessibility</a></div>                </li>
+                <li class="item4 odd">
+<div class="field-link"><a href="https://www.selectmedical.com/eeo-and-accommodation/" rel="noopener noreferrer" data-variantitemid="{4B015179-5AD6-4A68-8B96-471C0A7AC92B}" data-variantfieldname="Link" target="_blank">EEO and Accommodation</a></div>                </li>
+                <li class="item5 even">
+<div class="field-link"><a href="https://www.selectmedical.com/ca-consumer-privacy-requests" rel="noopener noreferrer" data-variantitemid="{257DA705-A297-475B-B5DB-745227F93EC1}" data-variantfieldname="Link" target="_blank">CA Consumer Privacy Requests</a></div>                </li>
+                <li class="item6 odd">
+<div class="field-link"><a href="https://www.selectmedical.com/medical-record-access-request/?type=outpatient%20physical%20therapy" rel="noopener noreferrer" data-variantitemid="{FCA6249E-21C6-48CB-9DEE-2AAD21036DBE}" data-variantfieldname="Link" target="_blank">Cures Act Request</a></div>                </li>
+                <li class="item7 even">
+<div class="field-link"><a href="/no-surprises-act/" data-variantitemid="{F49A85EC-06AC-4083-8E0E-0F25AACEF0D6}" data-variantfieldname="Link">No Surprises Act</a></div>                </li>
+                <li class="item8 odd last">
+<div class="field-link"><a href="https://www.selectmedical.com/accessibility/" data-variantitemid="{D65A4E36-173F-40C0-8962-3F044819AB44}" data-variantfieldname="Link">Accessibility Policy</a></div>                </li>
+        </ul>
+    </div>
+</div>
+
+<div class="component link-list col-xs-12">
+    <div class="component-content">
+        
+                <ul>
+        </ul>
+    </div>
+</div>
+    </div>
+</div>
+
+
+<div class="component container col-xs-12 copyright">
+    <div class="component-content" >
+
+<div class="component drop-down-with-list">
+	<div class="component-content">
+			        <div class="copyright-row">
+<span class="field-copy-right-text">&#169; </span><span Sitecore.XA.Foundation.MarkupDecorator.Extensions.RenderingMarkupBuilder>2023</span><span class="field-copy-right-company">&nbsp;Select Physical Therapy, a division of Select Medical. All Rights Reserved.</span>					</div>
+					<ul>
+										</ul>
+	</div>
+</div>
+
+<div class="modal fade" id="video-modal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<div class="modal-title" id="videoModalLabel">Video Player</div>
+			</div>
+			<div class="modal-body">
+				<iframe frameborder="0" title="Video Player" webkitallowfullscreen mozallowfullscreen allowfullscreen>
+					<!-- Alt content if the browser does not support iframes-->
+					Your browser does not support iframes.
+				</iframe>
+			    <video autoPlay controls/>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="form-search-modal" tabindex="-1" role="dialog" aria-labelledby="formSearchModalLabel">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<div class="modal-title" id="formSearchModalLabel">Search Locations - <span id="form-search-type"></span></div>
+			</div>
+			<div class="modal-body clearfix"></div>
+		</div>
+	</div>
+</div>
+    </div>
+</div>    </div>
+</div>
+            </div>
+        </div>
+    </footer>
+    <!-- /#footer -->
+</div>
+<!-- /#wrapper -->
+
+    
+
+
+
+
+    <script src="/-/media/base-themes/core-libraries/scripts/ie-origin-fix.js?rev=-1&hash=E93F0BB8E84B3302D74D6F9D969B9279"></script><script src="/-/media/base-themes/core-libraries/scripts/xaquery.js?rev=9267f03c59854a2cb3f9461d229573d8&hash=F479A035F8CA9C8A2F8E9AE7A0D128A0"></script><script src="/-/media/base-themes/core-libraries/scripts/moment.js?rev=-1&hash=C6742A00819A9547DBC6F4D3AEB5E8DB"></script><script src="/-/media/base-themes/core-libraries/scripts/lo-dash.js?rev=b44f988956564c8bace3b45a4c98b7a8&hash=123D372419F9E07C258D37557B6E2BDC"></script><script src="/-/media/base-themes/core-libraries/scripts/modernizr.js?rev=-1&hash=F3DBA5A5926A19EBC55E517A70663B5F"></script><script src="/-/media/base-themes/core-libraries/scripts/galleria-161.js?rev=-1&hash=7AF406E098F201E9026D6E154D1E200E"></script><script src="/-/media/base-themes/core-libraries/scripts/fullcalendar.js?rev=-1&hash=73FE78A0A24710E67E172422BE39A4E7"></script><script src="/-/media/base-themes/core-libraries/scripts/gcal.js?rev=-1&hash=64376A8AFD5538C82CCA84B6579D50B0"></script><script src="/-/media/base-themes/core-libraries/scripts/jqueryuitouch-punchmin.js?rev=-1&hash=8513002ABD68512282325B87D49CD561"></script><script src="/-/media/base-themes/core-libraries/scripts/hammer.js?rev=-1&hash=ED91120F2F1EFFEB1C23FE4210646203"></script><script src="/-/media/base-themes/core-libraries/scripts/backbone-min.js?rev=-1&hash=D2D4E3EEAFC70358362E969DDEBF68B9"></script><script src="/-/media/base-themes/core-libraries/scripts/typeahead.js?rev=b4ec85af918d454d8c35a323a2be066c&hash=042C4BDE471D888F1FFDE2C0B9DFB447"></script><script src="/-/media/base-themes/core-libraries/scripts/jquerymcustomscrollbar.js?rev=-1&hash=5169398CD1D211D04A9E30DE39E80395"></script><script src="/-/media/base-themes/core-libraries/scripts/flash-polyfill.js?rev=-1&hash=98585AE7B3F59FEB0E98940FAF87DD88"></script><script src="/-/media/base-themes/core-libraries/scripts/mediaelement-and-player.js?rev=-1&hash=3380BEFC822B2761D2A4D460274B916E"></script><script src="/-/media/base-themes/core-libraries/scripts/dailymotion.js?rev=-1&hash=F8C5E227FB2F6420D8EDA57078310600"></script><script src="/-/media/base-themes/core-libraries/scripts/facebook.js?rev=-1&hash=537737381152ABC8EE25776AD62C3DF7"></script><script src="/-/media/base-themes/core-libraries/scripts/soundcloud.js?rev=-1&hash=54DB1CB0AA4F40F973519C2BFEA9935B"></script><script src="/-/media/base-themes/core-libraries/scripts/twitch.js?rev=-1&hash=A2A93CEE1E4EFF5271A7F06D416E82FE"></script><script src="/-/media/base-themes/core-libraries/scripts/vimeo.js?rev=-1&hash=82E82B1C54F58413EF39E02EE7F5A2B4"></script><script src="/-/media/base-themes/xa-api/scripts/xa.js?rev=-1&hash=EEAAB521B20956F74D9A9BBCB50F691E"></script><script src="/-/media/base-themes/main-theme/scripts/observer.js?rev=-1&hash=15053A083ECFC9D24745DA879C4CA42B"></script><script src="/-/media/base-themes/main-theme/scripts/partial-design-highlight.js?rev=-1&hash=C75C0B1FD3CC2845CECC391FD4C69A3E"></script><script src="/-/media/base-themes/google-maps-js-connector/scripts/google-maps-connector.js?rev=-1&hash=D413A1D1AE7FAE3C7AF4E4AC6ECC6AE1"></script><script src="/-/media/base-themes/maps/scripts/component-location-service.js?rev=28406e465fcd4f2b87e1520aa1ff3b5f&hash=0E182C19C44085207BDC1E4FF18277E7"></script><script src="/-/media/base-themes/maps/scripts/component-map.js?rev=c6356702c9504a9e9b061e592d888dc0&hash=2C8DFC307FE5A5797E085A67E99FBD04"></script><script src="/-/media/base-themes/searchtheme/scripts/component-location-service.js?rev=0a71635e38d841bb9035d31907a45fb0&hash=E415FC3BD557FE1BC2111F0FAD7F940E"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search.js?rev=8da27f27188c4b048e406b2c4c52cde6&hash=8533927B70E274F007FCAB460810733F"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-ajax.js?rev=-1&hash=CD82CDC34A720153509A3A09A19B9EAE"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-base-model.js?rev=-1&hash=B1E88BB79DF58D3360744E4ACEFB8777"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-base-view.js?rev=-1&hash=011E955AB640CCE93DA27C58FCE0024A"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-box.js?rev=5890f1af18814797b6ebd4da312a38a2&hash=EDFCDDD38F924682BFC44F33EFC16EC0"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-facet-data.js?rev=8d9957ea027d4a69be734f72ace127d3&hash=320DF954B8E2F3322D32C4066A92973B"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-facet-summary.js?rev=-1&hash=5B25567C6A955D4B0A82CA1C4C5C5DE6"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-facet-dropdown.js?rev=-1&hash=5A75F346C247505E241C6E970E30B3BD"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-facet-managed-range.js?rev=-1&hash=A86E5C17961DB84D34C09901D0368A34"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-facet-range-slider.js?rev=-1&hash=C64088B7DB8F31941D561C6BB18F2171"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-facet-slider.js?rev=-1&hash=4CC3630134BB33752B361B3B4318FF3B"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-load-more.js?rev=-1&hash=07CAE190786F0ABCDB17A8F5D8590EBA"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-location-filter.js?rev=04bac948a8b64ae0b2c13c23f581ce28&hash=E2A799106BDCD0811CF032EE1BAD4A6F"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-page-selector.js?rev=-1&hash=274AF888AB408A9503C4B3E35CB62532"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-page-size.js?rev=-1&hash=CB6AB30BF9F0F3C489398569B75D1609"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-parameters.js?rev=-1&hash=8EE981678CCAF41C16CDFA2A243E6834"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-query.js?rev=1c515ff5c6d64b03b16035ece1e70a2f&hash=D205637D34F7C45749BAB7F7085758C9"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-radius-filter.js?rev=-1&hash=FCA8DE8F10B50345B4EBD466FD252AB6"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-results.js?rev=b6a44cb42d6244d3923f6e41402e48f8&hash=1E10E7BC55D4E51F642778A531D7E3B0"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-results-count.js?rev=-1&hash=F47670FF8C5EE463AE6C38AB5B0F6E82"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-results-filter.js?rev=11f9d4156a54421aaf5d8ffb2d038fdb&hash=3A809138F64C39BD23B47B3D32B9CA43"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-sort.js?rev=-1&hash=AA0C02D5D24BF726D192EB0F39EF9FAC"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-url.js?rev=10c61479b99948d187e90624d4f80080&hash=81577CE588C1341529093C9E63078592"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-variant-filter.js?rev=-1&hash=C4A7B4A1933868A3A015776E2003947B"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-service.js?rev=-1&hash=40FE562C53ACC19F90AC4A4AABD293A5"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-router.js?rev=cb216cf91ed949cebcd80f511586dd3e&hash=E3BA0C4D9905917FE67064BEE8A43EDC"></script><script src="/-/media/base-themes/searchtheme/scripts/component-search-facet-daterange.js?rev=-1&hash=A1D150D2B779C38722FEC6EA14E9CB43"></script><script src="/-/media/base-themes/components-theme/scripts/accessibility.js?rev=-1&hash=004036C84AEF80EA1CAF349BF54B98AF"></script><script src="/-/media/base-themes/components-theme/scripts/component-accordions.js?rev=-1&hash=289939AD7EA64B9992E03A47B1489B2F"></script><script src="/-/media/base-themes/components-theme/scripts/component-archive.js?rev=-1&hash=F336A38FB0838CA3A09771E551E27920"></script><script src="/-/media/base-themes/components-theme/scripts/component-breadcrumb.js?rev=-1&hash=D368E0D6D77DE293BB33CB0A27D75801"></script><script src="/-/media/base-themes/components-theme/scripts/component-carousel.js?rev=-1&hash=96992D40396954F43C0EAEDB29B3C228"></script><script src="/-/media/base-themes/components-theme/scripts/component-container.js?rev=-1&hash=70C89E87FDD2A701691CFD7E88EE5CC1"></script><script src="/-/media/base-themes/components-theme/scripts/component-disqus.js?rev=-1&hash=643E0439FECEC8B426A41A8A7FFE727F"></script><script src="/-/media/base-themes/components-theme/scripts/component-facebook.js?rev=-1&hash=4830F1749FDB87BE07A0D02478FAF466"></script><script src="/-/media/base-themes/components-theme/scripts/component-flash.js?rev=-1&hash=441D7C10A61644A0DD39ABDC9118BCA3"></script><script src="/-/media/base-themes/components-theme/scripts/component-flip.js?rev=-1&hash=5C7528C5EBC429D54AC1CF745334F967"></script><script src="/-/media/base-themes/components-theme/scripts/component-fullcalendar.js?rev=-1&hash=D854A0A940C5C9A17875B2CF6C08B53D"></script><script src="/-/media/base-themes/components-theme/scripts/component-galleria.js?rev=-1&hash=A5704B583D44FC791A1AF126637D356D"></script><script src="/-/media/base-themes/components-theme/scripts/component-language-selector.js?rev=-1&hash=68938428ED233228117D8EFCA166DE49"></script><script src="/-/media/base-themes/components-theme/scripts/component-navigation.js?rev=-1&hash=686322AD2D0BF14CAC0E17845D923D06"></script><script src="/-/media/base-themes/components-theme/scripts/component-overlay.js?rev=-1&hash=845986B2B2DCD880F71D0EB0C2F71265"></script><script src="/-/media/base-themes/components-theme/scripts/component-snippet.js?rev=-1&hash=A9400A9F0B154C6F60D84D08C3FA2FE4"></script><script src="/-/media/base-themes/components-theme/scripts/component-social.js?rev=-1&hash=F522AC8B320DCEDC19D26C879091FC05"></script><script src="/-/media/base-themes/components-theme/scripts/component-tabs.js?rev=c1619ff3b0984139af1e26ff427583a1&hash=FB62C123A21C73DE95FA8E9457CF9168"></script><script src="/-/media/base-themes/components-theme/scripts/component-toggle.js?rev=-1&hash=58CF5CE1DF54246D08BB373DAA3530EE"></script><script src="/-/media/base-themes/components-theme/scripts/component-video.js?rev=d7e96eccd915408783164f0c4c7927b1&hash=CE481C92B9DC3C896CEB99E93F8A44B6"></script><script src="/-/media/base-themes/components-theme/scripts/component-video-playlist.js?rev=-1&hash=4C7A2D24283CCA18EBBF7CE5720C1A79"></script><script src="/-/media/base-themes/components-theme/scripts/details-polyfill.js?rev=-1&hash=471F6F4CFB754AF14CDEBC8B4DA57F46"></script><script src="/-/media/base-themes/components-theme/scripts/fixheight.js?rev=-1&hash=4E0EDF7E362FD119416754187341742E"></script><script src="/-/media/base-themes/components-theme/scripts/search-fixheight.js?rev=-1&hash=B90CD7251C3FCE5DDB82B4BC3041D7F9"></script><script src="/-/media/base-themes/resolve-conflicts/scripts/resolveconflicts.js?rev=-1&hash=29CBC05A21EC075B84CEA9B498168789"></script><script src="/-/media/themes/selectmedical/outpatients/custom/custom/scripts/0-masonry.js?rev=d2df0c22be894e9a9efe24102a0f12b0&hash=CA37ACCD2F4E000529305D32AA0202C2"></script><script src="/-/media/themes/selectmedical/outpatients/custom/custom/scripts/1-moment.js?rev=09fc818076b94a838a8ce31833fec18b&hash=C0819CCA9F7F22BF7A0D788A037C7733"></script><script src="/-/media/themes/selectmedical/outpatients/custom/custom/scripts/3-jquery-migrate.js?rev=6144526b273e4caa82288a6a8b7a93f2&hash=4018F4B520EDEF4276FA2A928CD77B92"></script><script src="/-/media/themes/selectmedical/outpatients/custom/custom/scripts/4-jquery-mobile-swipe.js?rev=a9886fcc7169492fb029b5c3221a5572&hash=CA9B5E4BA4A1A72A0F728CD0F03772FA"></script><script src="/-/media/themes/selectmedical/outpatients/custom/custom/scripts/5-picturefill.js?rev=0237e0568c3a4059b3854d09c6f281be&hash=976AA4E7E243837DB95C0E3EBFB10600"></script><script src="/-/media/themes/selectmedical/outpatients/custom/custom/scripts/component-form.js?rev=72948954af6046dc904dd63db8fbee0c&hash=2A7F88522BFA32B5CC444BC31938E83B"></script><script src="/-/media/themes/selectmedical/outpatients/selectphysicaltherapy/selectphysicaltherapy/scripts/pre-optimized-min.js?rev=5db2f0f15735479f94f525102088702d&t=20150515T071943:635672711833756301Z&hash=DE7DCA387EDD141F82C8B3FACF62A049"></script>    <!-- /#wrapper -->
+</body>
+</html>

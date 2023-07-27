@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Tri-anim Health Services</title>
+		<script type="text/javascript">
+		/*<![CDATA[*/
+		
+		var ACC = { config: { } };
+		
+		
+
+			ACC.user = {
+				isLoggedIn: false,
+				email:""
+			};
+
+			
+		
+		/*]]>*/
+	</script><script type="text/javascript" src="/ths/_ui/shared/js/analyticsmediator.js?v=202306221729"></script>
+
+<script type="text/javascript">
+/* Google Analytics */
+
+var googleAnalyticsTrackingId = 'UA-3145587-10';
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', googleAnalyticsTrackingId]);
+
+
+		_gaq.push(['_trackPageview']);
+	
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+
+function trackAddToCart_google(productCode, quantityAdded) {
+	_gaq.push(['_trackEvent', 'Cart', 'AddToCart', productCode, quantityAdded]);
+}
+
+function trackUpdateCart(productCode, initialQuantity, newQuantity) {
+	if (initialQuantity != newQuantity) {
+		if (initialQuantity > newQuantity) {
+			_gaq.push(['_trackEvent', 'Cart', 'RemoveFromCart', productCode, initialQuantity - newQuantity]);
+		} else {
+			_gaq.push(['_trackEvent', 'Cart', 'AddToCart', productCode, newQuantity - initialQuantity]);
+		}
+	}
+}
+
+function trackRemoveFromCart(productCode, initialQuantity) {
+	_gaq.push(['_trackEvent', 'Cart', 'RemoveFromCart', productCode, initialQuantity]);
+}
+
+window.mediator.subscribe('trackAddToCart', function(data) {
+	if (data.productCode && data.quantity)
+	{
+		trackAddToCart_google(data.productCode, data.quantity);
+	}
+});
+
+window.mediator.subscribe('trackUpdateCart', function(data) {
+	if (data.productCode && data.initialCartQuantity && data.newCartQuantity)
+	{
+		trackUpdateCart(data.productCode, data.initialCartQuantity, data.newCartQuantity);
+	}
+});
+
+window.mediator.subscribe('trackRemoveFromCart', function(data) {
+	if (data.productCode && data.initialCartQuantity)
+	{
+		trackRemoveFromCart(data.productCode, data.initialCartQuantity);
+	}
+});
+</script>
+<script>
+
+function gaAddToCartMetric(data) {
+	
+	window.dataLayer = window.dataLayer || [];
+		  window.dataLayer.push(data);
+};
+
+function GACreateMetric() {
+	 window.dataLayer = window.dataLayer || [];
+     window.dataLayer.push({'event': 'createAccountSubmit'});
+};
+
+function GAJoinRewards(thisEvent) {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({'event': thisEvent});
+};
+
+function GALoginStatus(thisEvent) {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({'loginStatus': thisEvent});
+  
+  if( ACC.user.isLoggedIn ){window.dataLayer.push({'userId': ACC.user.userId});}
+  
+};
+
+	if( ACC.user.isLoggedIn ) {
+		GALoginStatus("logged-in" );
+	} else {
+		GALoginStatus("logged-out");
+	}
+
+
+function trackAddToCart_ga(modificationData){
+	window.dataLayer = window.dataLayer || [];
+	dataLayer.push({ ecommerce: null });
+	 window.dataLayer.push({
+		  'event': 'add_to_cart',
+		    'ecommerce':  {
+		        'items': modificationData
+		   }
+		});
+}
+window.mediator.subscribe('trackAddToCart', function(data) {
+	trackAddToCart_ga(data.modificationData
+	);		
+});
+
+</script><script type="text/javascript">
+
+  /* Bloomreach Pixels */
+
+    var pageID = "Homepage";
+    var br_data = br_data || {};
+    br_data.acct_id = "6670";
+    br_data.title = 
+                          "Tri-anim Health Services"
+                        ;
+    br_data.view_id = "";
+    
+    br_data.tms = "";
+    
+        br_data.ptype = "homepage";
+      
+    
+  (  function() {
+    var brtrk = document.createElement('script');
+    brtrk.type = 'text/javascript';
+    brtrk.async = true;
+    brtrk.src = "//cdn.brcdn.com/v1/br-trk-6670.js";
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(brtrk, s);
+    })();
+
+    function bRAddToCartPDP (data) {
+      data.forEach(element =>{
+        
+            BrTrk.getTracker().logEvent('cart', 'click-add', {'prod_id': element.productCode, 'sku' : element.productCode});
+          
+      })
+    }
+
+    function bRAddToCartQuickOrder (data) {
+      var obj = JSON.parse(data);
+      for (var item in obj.cartEntries){
+        BrTrk.getTracker().logEvent('cart', 'click-add', {'prod_id': obj.cartEntries[item].product.code, 'sku' : obj.cartEntries[item].product.code});
+      }
+    }
+
+    function brSearchEvent (term) {
+      var searchData = {};
+      searchData["q"] = term;
+      searchData["catalogs"] = [{ "name" : "tri_anim" }];
+      BrTrk.getTracker().logEvent("suggest", "submit",searchData,{},true);
+    }
+
+    function bRSuggestionEvent (aq,q) {
+      var searchData = {};
+      searchData["aq"] = aq;
+      searchData["q"] = q;
+      searchData["catalogs"] = [{ "name" : "tri_anim" }];
+      BrTrk.getTracker().logEvent("suggest","click", searchData, {},true);
+    }
+
+    function brProductRecommendationViewEvent (wid,wtype,customerId) {
+      var widget_view_data = {};
+      widget_view_data.wrid = customerId;
+      widget_view_data.wid = wid;
+      widget_view_data.wty = wtype;
+      setTimeout(() => {
+        BrTrk.getTracker().logEvent('widget', 'widget-view', widget_view_data, true)
+      }, 2000);
+    }
+    
+    function brProductRecommendationClickEvent (wid,wtype,itemId,customerId) {
+      var widget_data = {}
+      widget_data.wrid = customerId;
+      widget_data.wid = wid;
+      widget_data.wty = wtype
+      widget_data.item_id = itemId
+      BrTrk.getTracker().logEvent('widget','widget-click', widget_data,true)
+    }
+
+
+  </script> 
+<script type="text/javascript">
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-K8HGQWD');
+    </script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+	<meta name="keywords">
+<meta name="description" content="Since 1975, Tri-anim has proudly provided innovative respiratory, anesthesia, critical care and neonatal care products to facilities nationwide.">
+<link rel="canonical" href="https://www.tri-anim.com/ths/"/>
+	<link rel="shortcut icon" type="image/x-icon" media="all" href="/ths/_ui/responsive/theme-trianim/images/favicon.ico" />
+		<link rel="stylesheet" type="text/css" media="all" href="/ths/wro/all_responsive.css?v=202306221729"/>
+		<link rel="stylesheet" type="text/css" media="all" href="/ths/wro/trianim_responsive.css?v=202306221729"/>
+		<link rel="stylesheet" type="text/css" media="all" href="/ths/wro/addons_responsive.css?v=202306221729" />
+		<link rel="stylesheet" type="text/css" media="all" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="/ths/_ui/responsive/common/js/css/jqtree.css?v=202306221729"/>
+<link rel="stylesheet" type="text/css" media="all" href="/ths/_ui/responsive/common/js/css/expanded_panels.css?v=202306221729"/>
+
+<style type="text/css">
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+		body {
+			font-family: "Roboto", "Open Sans", Helvetica, Arial, sans-serif;
+		}
+	}
+</style>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+                              <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="DZHRH-6BZEQ-S8D75-SDTC4-AEBY9",function(){function e(){if(!o){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,i.parentNode.appendChild(e),o=!0}}function t(e){o=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(i.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",i.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(_){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"DZHRH-6BZEQ-S8D75-SDTC4-AEBY9";var i=document.currentScript||document.getElementsByTagName("script")[0],o=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!o)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),i.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="",a="slccfgqxh5xxwzezc4qq-f-0bb2ad7dd-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,o={"ak.v":"36","ak.cp":"1430549","ak.ai":parseInt("875136",10),"ak.ol":"0","ak.cr":6958,"ak.ipv":4,"ak.proto":"http/1.1","ak.rid":"28aff75b","ak.r":37689,"ak.a2":n,"ak.m":"b","ak.n":"essl","ak.bpcip":"146.196.34.0","ak.cport":63544,"ak.gh":"23.63.111.119","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"bbr","ak.t":"1687754529","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==Rr1pg7j7wFOGRYF/2/VpMsNp/AMhLbX9sgJHJkMJCW4DVntpzn5+XZH7j4ixX+aAyNdrqZqgbSjZ3mHmRV21PCTtf7BBsRmGrxFi7gnV99szjK6QOf/nNt7Ip1K1IvTkQhOzfxV5X/+Mk3pdhRKDMzNb8GP5XOcjRHqlb7QM3eV8Hsy8usLJcnRyV0KU3TEAJaAZD66VSFKG5G1pAUAkE4xouiFqr9zwblFjjbvTxnvSiBWs98voolCijPLzcvePCSITd1deLk4082FbD/9MuJ+nemgSvHZpvcAQQ9vcg93n8NiA9xtxUGj/UJkF73/6K6bdG85NoWWskfmOgrSGn7NqtDq9HVmwULUMLDChog927pUMnVuI8nnG1t1PMhQAyyLr2dC/C4OzfCM/cSmaqYLkLUIsxYIweAZALf0lHak=","ak.pv":"4","ak.dpoabenc":"","ak.tf":i};if(""!==t)o["ak.ruds"]=t;var r={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))o["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(o)},rv:function(){var e=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:o,akDNSPreFetchDomain:a,init:function(){if(!r.i){var e=BOOMR.subscribe;e("before_beacon",r.av,null,null),e("onbeacon",r.rv,null,null),r.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+
+<body class="page-homepage pageType-ContentPage template-pages-layout-landingLayout3Page pageLabel-homepage smartedit-page-uid-homepage smartedit-page-uuid-eyJpdGVtSWQiOiJob21lcGFnZSIsImNhdGFsb2dJZCI6InRyaWFuaW1Db250ZW50Q2F0YWxvZyIsImNhdGFsb2dWZXJzaW9uIjoiT25saW5lIn0= smartedit-catalog-version-uuid-trianimContentCatalog/Online  language-en">
+	<noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8HGQWD"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+<div id="main-wrapper">
+			<div class="branding-mobile hidden-md hidden-lg">
+				<div class="js-mobile-logo image-container">
+					</div>
+			</div>
+			<main data-currency-iso-code="USD">
+
+				<div class="yCmsContentSlot container">
+</div><header class="js-mainHeader">
+	<div class="top-header hidden-xs hidden-sm">
+	<div class="large-container">
+		<div class="top-header-contact-info">
+		    Customer Care: 800.874.2646 | <a href="mailTo:customercare@tri-anim.com"> customercare@tri-anim.com</a>
+        </div>
+    </div>
+</div>
+<nav class="mid-navigation-bar">
+		<div class="large-container">
+			<div class="mid-navigation-bar-row row">
+				<div class="desktop-logo-container">
+					<div class="nav__left js-site-logo logo">
+						<div class="yCmsComponent yComponentWrapper">
+<div class="banner__component simple-banner">
+<div class="logoForPrintPreView display-none">
+<img loading="lazy" src="/ths/_ui/responsive/common/images/TRIANIM_Logo_RGB.png"/>
+</div>
+	<a href="/ths/"><img loading="lazy" title="TRIANIM_Header_logo.png"
+				alt="TRIANIM_Header_logo.png" src="/ths/medias/TRIANIM-Header-logo.png?context=bWFzdGVyfGltYWdlc3wzODEzfGltYWdlL3BuZ3xpbWFnZXMvaDEyL2hhNS84OTk1MDk3MzEzMzEwLnBuZ3w5NzE1NWNlOTBiYzUyNjM3Mjk0MTE1ZDgxMmNhNzRhNjgzMzVmYjIyMWE2NGMwN2YyMDNmNTU0NDMxMDlhOWFi"></a>
+		</div>
+</div></div>
+				</div>
+				<div class="desktop-site-search-container">
+					<div class="site-search">
+						<div class="yCmsComponent">
+<div class="ui-front">
+	<form name="search_form_SearchBox" method="get"
+		action="/ths/search/">
+
+		<div class="input-group">
+			<input type="text" id="js-site-search-input"
+					class="form-control js-site-search-input" name="text" value=""
+          maxlength="100" placeholder="Search product name, item#, or keyword"
+					autocapitalize="off" autocomplete="off" spellcheck="false" autocorrect="off"
+					data-options='{"autocompleteUrl" : "/ths/search/autocomplete/SearchBox","minCharactersBeforeRequest" : "3","waitTimeBeforeRequest" : "500","displayProductImages" : true, "type" : "site-search"}'>
+			<input type="hidden" name="categoryCode" id="js-site-search-category-code"
+				    
+							value=""
+						
+			/>
+			<span class="header-search-clear-icon js-header-search-clear"></span>
+
+			<span class="input-group-btn"> <button class="btn btn-link js_search_button" type="submit" disabled="true">
+						<span class="glyphicon glyphicon-search"></span>
+					</button>
+				</span>
+		</div>
+	</form>
+
+</div>
+</div></div>
+				</div>
+				<div class="desktop-main-navigation-container">
+					<div class="my-account-container">
+						<div class="nav__right">
+							<ul class="nav__links nav__links--account">
+								<li class="liOffcanvas">
+											<div class="icon-user as-guest"></div>
+											<div class="guest-welcome">
+
+												<span class="guest-hello">
+														Hello,
+													</span>
+
+													<a href="/ths/login">
+														Sign in</a>
+												</div>
+										</li>
+									</ul>
+
+						</div>
+							
+	<div class="hidden-xs js-secondaryNavAccount collapse" id="accNavComponentDesktopOne">
+		<ul class="nav__links">
+
+		</ul>
+	</div>
+	<div class="hidden-xs hidden-sm js-secondaryNavCompany collapse" id="accNavComponentDesktopTwo">
+		<ul class="nav__links js-nav__links">
+
+		</ul>
+	</div></div>
+					
+					<div  class="shipping-to-container-dummy"></div>
+					</div>
+			   <div class="yCmsContentSlot componentContainer pull-right">
+<div class="yCmsComponent">
+<div class="nav-cart">
+	<a 	href="/ths/cart"
+		class="mini-cart-link-container js-mini-cart-link"
+		data-mini-cart-url="/ths/cart/rollover/MiniCart"
+		data-mini-cart-refresh-url="/ths/cart/miniCart/SUBTOTAL"
+		data-mini-cart-name="Cart"
+		data-mini-cart-empty-name="Empty Cart"
+		data-mini-cart-items-text="Items"
+		>
+		<div class="mini-cart-icon-block">
+				<div class="mini-cart-icon">
+				</div>
+				<div class="mini-cart-total-number js-mini-cart-count">
+					<span>
+						0</span>
+				</div>
+			</div>
+			<div class="mini-cart-sum-block">
+				<div class="mini-cart-sum-title">
+					Cart</div>
+				<div class="mini-cart-sum-price js-mini-cart-price">
+					$0.00</div>
+
+			</div>
+		</a>
+
+
+
+
+</div>
+<div class="mini-cart-container js-mini-cart-container"></div></div></div></div>
+        </div>
+	</nav>
+
+	
+	<div class="bottom-navigation-bar">
+		<div class="large-container">
+
+			<div class="yCmsContentSlot  product-navigation-bar bottom-navigation-slot pull-left no-space">
+<div class="yCmsComponent  pull-left product-navigation-bar-item navigation-slot-item">
+<div class="nav-category-list js-nav-category-list display-none NAVcompONENT item nav-dropdown-item">
+        <div class="nav-category-list-menu-header nav-dropdown-item-head">
+            <span>Products</span>
+        </div>
+        <nav class="nav-category-list__child-wrap hidden-visibility nav-dropdown-item-body">
+            <ul class="category-list-container">
+                    
+                <li class="category-item">
+                        <a href="/ths/airway-management/c/1" > 
+                            <span class="title">Airway Management</span>
+                            <span class="category-item-icon"></span>
+                        </a>
+                        <div class="subcategory-container">
+                                <ul class="subcategory-list-container">
+                                    <li class="subcategory-item">
+                                            <a href="/ths/airway-training/c/200" >
+                                                <span class="title">Airway Training</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/cricothyrotomy/c/201" >
+                                                <span class="title">Cricothyrotomy</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/cuff-pressure-management/c/202" >
+                                                <span class="title">Cuff Pressure Management</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/et-tube-securement-devices/c/204" >
+                                                <span class="title">ET Tube Securement Devices</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/ett-accessories/c/404" >
+                                                <span class="title">ETT Accessories</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/endotracheal-tubes/c/203" >
+                                                <span class="title">Endotracheal Tubes</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/laryngoscopes/c/205" >
+                                                <span class="title">Laryngoscopes</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/nasal-oral-airways/c/206" >
+                                                <span class="title">Nasal & Oral Airways</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/stylets-introducers/c/207" >
+                                                <span class="title">Stylets & Introducers</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/suction-catheters/c/208" >
+                                                <span class="title">Suction Catheters</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/suction-regulators/c/209" >
+                                                <span class="title">Suction Regulators</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/suction-supplies/c/210" >
+                                                <span class="title">Suction Supplies</span>
+                                            </a>
+                                        </li>
+                                        </ul>
+                                                <ul class="subcategory-list-container">
+                                            <li class="subcategory-item">
+                                            <a href="/ths/suction-units/c/211" >
+                                                <span class="title">Suction Units</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/supraglottic-airways/c/212" >
+                                                <span class="title">Supraglottic Airways</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/tracheostomy-supplies/c/214" >
+                                                <span class="title">Tracheostomy Supplies</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/tracheostomy-tubes/c/213" >
+                                                <span class="title">Tracheostomy Tubes</span>
+                                            </a>
+                                        </li>
+                                        </ul>
+                                
+
+
+
+
+
+
+    
+        <a href="https://www.tri-anim.com/ths/curaview" class="subcategory-logo right" data-logo-position="right">
+        <img src="https://cdn.tri-anim.com/ths/categories/THS_mega-menu_CuraView_FO_8954314457118.jpg">
+        </a>
+    
+    
+
+
+</div>
+                        </li>
+                <li class="category-item">
+                        <a href="/ths/anesthesia-solutions/c/2" > 
+                            <span class="title">Anesthesia Solutions</span>
+                            <span class="category-item-icon"></span>
+                        </a>
+                        <div class="subcategory-container">
+                                <ul class="subcategory-list-container">
+                                    <li class="subcategory-item">
+                                            <a href="/ths/adapters-connectors-circuits/c/217" >
+                                                <span class="title">Adapters, Connectors & Circuits</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/anesthesia-bags/c/215" >
+                                                <span class="title">Anesthesia Bags</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/anesthesia-masks/c/216" >
+                                                <span class="title">Anesthesia Masks</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/co2-absorbents/c/219" >
+                                                <span class="title">CO2 Absorbents</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/capnography-etco2-monitoring/c/218" >
+                                                <span class="title">Capnography / EtCO2 Monitoring</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/epidural-needle-guidance/c/220" >
+                                                <span class="title">Epidural & Needle Guidance</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/eye-tooth-protectors/c/221" >
+                                                <span class="title">Eye & Tooth Protectors</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/heat-moisture-exchangers-hme-/c/222" >
+                                                <span class="title">Heat Moisture Exchangers (HME)</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/iv-adjuncts/c/223" >
+                                                <span class="title">IV Adjuncts</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/nerve-stimulators-blocks/c/224" >
+                                                <span class="title">Nerve Stimulators & Blocks</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/patient-monitoring/c/225" >
+                                                <span class="title">Patient Monitoring</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/patient-positioning/c/312" >
+                                                <span class="title">Patient Positioning</span>
+                                            </a>
+                                        </li>
+                                        </ul>
+                                
+
+
+
+
+
+
+    
+        <a href="https://www.tri-anim.com/ths/rivanna" class="subcategory-logo right" data-logo-position="right">
+        <img src="https://cdn.tri-anim.com/ths/categories/THS_mega-menu_Rivanna_Accuro_8954314719262.jpg">
+        </a>
+    
+    
+
+
+</div>
+                        </li>
+                <li class="category-item">
+                        <a href="/ths/diagnostics-monitoring/c/3" > 
+                            <span class="title">Diagnostics & Monitoring</span>
+                            <span class="category-item-icon"></span>
+                        </a>
+                        <div class="subcategory-container">
+                                <ul class="subcategory-list-container">
+                                    <li class="subcategory-item">
+                                            <a href="/ths/arterial-blood-gas-sampling/c/226" >
+                                                <span class="title">Arterial Blood Gas Sampling</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/blood-pressure-equipment/c/227" >
+                                                <span class="title">Blood Pressure Equipment</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/capnography-etco2-monitoring/c/218" >
+                                                <span class="title">Capnography / EtCO2 Monitoring</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/ekg-equipment/c/229" >
+                                                <span class="title">EKG Equipment</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/head-injury-assessment-tools/c/311" >
+                                                <span class="title">Head Injury Assessment Tools</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/pressure-manometers/c/230" >
+                                                <span class="title">Pressure Manometers</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/pulse-ox-accessories/c/232" >
+                                                <span class="title">Pulse Ox Accessories</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/pulse-ox-sensors-probes/c/233" >
+                                                <span class="title">Pulse Ox Sensors & Probes</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/pulse-oximeters/c/231" >
+                                                <span class="title">Pulse Oximeters</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/sleep-lab-equipment/c/234" >
+                                                <span class="title">Sleep Lab Equipment</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/spirometers-accessories/c/235" >
+                                                <span class="title">Spirometers & Accessories</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/stethoscopes/c/236" >
+                                                <span class="title">Stethoscopes</span>
+                                            </a>
+                                        </li>
+                                        </ul>
+                                                <ul class="subcategory-list-container">
+                                            <li class="subcategory-item">
+                                            <a href="/ths/temperature-probes-covers-strips/c/237" >
+                                                <span class="title">Temperature Probes, Covers & Strips</span>
+                                            </a>
+                                        </li>
+                                        </ul>
+                                
+
+
+
+
+
+
+    
+        <a href="https://www.tri-anim.com/ths/brainscope" class="subcategory-logo right" data-logo-position="right">
+        <img src="https://cdn.tri-anim.com/ths/categories/THS_mega-menu_Brainscope_8973315145758.jpg">
+        </a>
+    
+    
+
+
+</div>
+                        </li>
+                <li class="category-item">
+                        <a href="/ths/lung-management/c/5" > 
+                            <span class="title">Lung Management</span>
+                            <span class="category-item-icon"></span>
+                        </a>
+                        <div class="subcategory-container">
+                                <ul class="subcategory-list-container">
+                                    <li class="subcategory-item">
+                                            <a href="/ths/chest-percussors/c/258" >
+                                                <span class="title">Chest Percussors</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/lung-expansion/c/253" >
+                                                <span class="title">Lung Expansion</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/opep-therapy/c/257" >
+                                                <span class="title">OPEP Therapy</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/pep-therapy/c/256" >
+                                                <span class="title">PEP Therapy</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/peak-flow-meters/c/254" >
+                                                <span class="title">Peak Flow Meters</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/respirometers/c/255" >
+                                                <span class="title">Respirometers</span>
+                                            </a>
+                                        </li>
+                                        </ul>
+                                
+
+
+
+
+
+
+    
+        <a href="https://www.tri-anim.com/ths/aeroverse" class="subcategory-logo right" data-logo-position="right">
+        <img src="https://cdn.tri-anim.com/ths/categories/THS_mega-menu_Monaghan_Aeroverse%20%281%29_8960593231902.jpg">
+        </a>
+    
+    
+
+
+</div>
+                        </li>
+                <li class="category-item">
+                        <a href="/ths/medication-delivery/c/6" > 
+                            <span class="title">Medication Delivery</span>
+                            <span class="category-item-icon"></span>
+                        </a>
+                        <div class="subcategory-container">
+                                <ul class="subcategory-list-container">
+                                    <li class="subcategory-item">
+                                            <a href="/ths/aerosol-masks/c/259" >
+                                                <span class="title">Aerosol Masks</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/asthma-education-kits/c/260" >
+                                                <span class="title">Asthma Education Kits</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/continuous-nebulizers/c/261" >
+                                                <span class="title">Continuous Nebulizers</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/high-performance-nebulizers/c/262" >
+                                                <span class="title">High-Performance Nebulizers</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/mdi-spacers/c/263" >
+                                                <span class="title">MDI Spacers</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/nebulizer-accessories/c/264" >
+                                                <span class="title">Nebulizer Accessories</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/small-volume-nebulizers/c/265" >
+                                                <span class="title">Small Volume Nebulizers</span>
+                                            </a>
+                                        </li>
+                                        </ul>
+                                </div>
+                        </li>
+                <li class="category-item">
+                        <a href="/ths/neonatal-care/c/7" > 
+                            <span class="title">Neonatal Care</span>
+                            <span class="category-item-icon"></span>
+                        </a>
+                        <div class="subcategory-container">
+                                <ul class="subcategory-list-container">
+                                    <li class="subcategory-item">
+                                            <a href="/ths/comforting-solutions/c/266" >
+                                                <span class="title">Comforting Solutions</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/endotracheal-tubes-accessories/c/267" >
+                                                <span class="title">Endotracheal Tubes & Accessories</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/heel-lancets/c/268" >
+                                                <span class="title">Heel Lancets</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/laryngoscope-blades-handles/c/269" >
+                                                <span class="title">Laryngoscope Blades & Handles</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/monitoring/c/271" >
+                                                <span class="title">Monitoring</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/nasal-cpap/c/272" >
+                                                <span class="title">Nasal CPAP</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/oxygen-delivery/c/274" >
+                                                <span class="title">Oxygen Delivery</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/phototherapy-masks-eye-shields/c/273" >
+                                                <span class="title">Phototherapy Masks & Eye Shields</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/resusitation-ventilation/c/275" >
+                                                <span class="title">Resusitation & Ventilation</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/skin-barriers/c/277" >
+                                                <span class="title">Skin Barriers</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/suction-secretion-clearance/c/276" >
+                                                <span class="title">Suction & Secretion Clearance</span>
+                                            </a>
+                                        </li>
+                                        </ul>
+                                
+
+
+
+
+
+
+    
+        <a href="http://viewer.zmags.com/publication/b88c966b#/b88c966b/1" class="subcategory-logo right" data-logo-position="right">
+        <img src="https://cdn.tri-anim.com/ths/categories/THS_mega-menu_Neonatal_Care_Catalog_8954315505694.jpg">
+        </a>
+    
+    
+
+
+</div>
+                        </li>
+                <li class="category-item">
+                        <a href="/ths/non-invasive-ventilation/c/8" > 
+                            <span class="title">Non-invasive Ventilation</span>
+                            <span class="category-item-icon"></span>
+                        </a>
+                        <div class="subcategory-container">
+                                <ul class="subcategory-list-container">
+                                    <li class="subcategory-item">
+                                            <a href="/ths/medication-delivery/c/278" >
+                                                <span class="title">Medication Delivery</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/non-invasive-accessories/c/281" >
+                                                <span class="title">Non-invasive Accessories</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/non-invasive-ventilation-circuits/c/280" >
+                                                <span class="title">Non-invasive Ventilation Circuits</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/non-invasive-ventilation-masks/c/279" >
+                                                <span class="title">Non-invasive Ventilation Masks</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/portable-cpap-systems/c/282" >
+                                                <span class="title">Portable CPAP Systems</span>
+                                            </a>
+                                        </li>
+                                        </ul>
+                                
+
+
+
+
+
+
+    
+        <a href="https://www.tri-anim.com/ths/reddyport/reddyport-moisturizer-pack/p/17-RP-MPK-1-CS" class="subcategory-logo right" data-logo-position="right">
+        <img src="https://cdn.tri-anim.com/ths/categories/11-THS_mega-menu_ReddyPort_MoisturePack_HPB_8973666484254.jpg">
+        </a>
+    
+    
+
+
+</div>
+                        </li>
+                <li class="category-item">
+                        <a href="/ths/oxygen-high-flow-delivery/c/4" > 
+                            <span class="title">Oxygen & High Flow Delivery</span>
+                            <span class="category-item-icon"></span>
+                        </a>
+                        <div class="subcategory-container">
+                                <ul class="subcategory-list-container">
+                                    <li class="subcategory-item">
+                                            <a href="/ths/blenders-accessories/c/238" >
+                                                <span class="title">Blenders & Accessories</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/concentrators-compressors/c/239" >
+                                                <span class="title">Concentrators & Compressors</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/cylinder-carts-accessories/c/240" >
+                                                <span class="title">Cylinder Carts & Accessories</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/flowmeters-manifolds/c/241" >
+                                                <span class="title">Flowmeters & Manifolds</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/high-flow-products/c/242" >
+                                                <span class="title">High Flow Products</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/humidification-nebulization/c/243" >
+                                                <span class="title">Humidification & Nebulization</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/jet-ventilators/c/244" >
+                                                <span class="title">Jet Ventilators</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/medical-fittings-hoses/c/245" >
+                                                <span class="title">Medical Fittings & Hoses</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/nasal-cannulas/c/246" >
+                                                <span class="title">Nasal Cannulas</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/oxygen-analyzers/c/247" >
+                                                <span class="title">Oxygen Analyzers</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/oxygen-masks/c/248" >
+                                                <span class="title">Oxygen Masks</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/oxygen-sensors/c/249" >
+                                                <span class="title">Oxygen Sensors</span>
+                                            </a>
+                                        </li>
+                                        </ul>
+                                                <ul class="subcategory-list-container">
+                                            <li class="subcategory-item">
+                                            <a href="/ths/regulators-conservers/c/250" >
+                                                <span class="title">Regulators & Conservers</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/trach-masks/c/252" >
+                                                <span class="title">Trach Masks</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/transtracheal-devices/c/251" >
+                                                <span class="title">Transtracheal Devices</span>
+                                            </a>
+                                        </li>
+                                        </ul>
+                                
+
+
+
+
+
+
+    
+        <a href="https://www.tri-anim.com/ths/philips-healthcare/ac611-high-flow-nasal-cannula/p/group004771" class="subcategory-logo right" data-logo-position="right">
+        <img src="https://cdn.tri-anim.com/ths/categories/THS_mega-menu_Philips_AC611_8954316193822.jpg">
+        </a>
+    
+    
+
+
+</div>
+                        </li>
+                <li class="category-item">
+                        <a href="/ths/patient-care-supplies/c/9" > 
+                            <span class="title">Patient Care Supplies</span>
+                            <span class="category-item-icon"></span>
+                        </a>
+                        <div class="subcategory-container">
+                                <ul class="subcategory-list-container">
+                                    <li class="subcategory-item">
+                                            <a href="/ths/equipment-covers-bags/c/283" >
+                                                <span class="title">Equipment Covers & Bags</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/equipment-dryers/c/284" >
+                                                <span class="title">Equipment Dryers</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/iv-poles-carts/c/287" >
+                                                <span class="title">IV Poles & Carts</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/immobilization/c/286" >
+                                                <span class="title">Immobilization</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/infection-prevention/c/285" >
+                                                <span class="title">Infection Prevention</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/spill-control/c/288" >
+                                                <span class="title">Spill Control</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/surgical-instruments-supplies/c/289" >
+                                                <span class="title">Surgical Instruments & Supplies</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/surgical-needles-syringes/c/290" >
+                                                <span class="title">Surgical Needles & Syringes</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/surgical-preparation/c/291" >
+                                                <span class="title">Surgical Preparation</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/training-aids/c/292" >
+                                                <span class="title">Training Aids</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/urology/c/293" >
+                                                <span class="title">Urology</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/wound-care/c/294" >
+                                                <span class="title">Wound Care</span>
+                                            </a>
+                                        </li>
+                                        </ul>
+                                
+
+
+
+
+
+
+    
+        <a href="https://www.tri-anim.com/ths/patient-care-supplies/iv-poles-carts/iv-poles/basic-and-premium-smartstack-iv-stands/p/group002803" class="subcategory-logo right" data-logo-position="right">
+        <img src="https://cdn.tri-anim.com/ths/categories/THS_mega-menu_Maxtec_SmartStack_8954316455966.jpg">
+        </a>
+    
+    
+
+
+</div>
+                        </li>
+                <li class="category-item">
+                        <a href="/ths/ventilation/c/10" > 
+                            <span class="title">Ventilation</span>
+                            <span class="category-item-icon"></span>
+                        </a>
+                        <div class="subcategory-container">
+                                <ul class="subcategory-list-container">
+                                    <li class="subcategory-item">
+                                            <a href="/ths/adapters-connectors/c/295" >
+                                                <span class="title">Adapters & Connectors</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/filters/c/296" >
+                                                <span class="title">Filters</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/hmefs/c/298" >
+                                                <span class="title">HMEFs</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/hmes/c/297" >
+                                                <span class="title">HMEs</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/hyperinflation-bags/c/299" >
+                                                <span class="title">Hyperinflation Bags</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/resuscitation-accessories/c/300" >
+                                                <span class="title">Resuscitation Accessories</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/resuscitation-bags/c/301" >
+                                                <span class="title">Resuscitation Bags</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/resuscitation-masks/c/302" >
+                                                <span class="title">Resuscitation Masks</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/test-lungs-sensors/c/303" >
+                                                <span class="title">Test Lungs & Sensors</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/transport-ventilators-circuits/c/304" >
+                                                <span class="title">Transport Ventilators & Circuits</span>
+                                            </a>
+                                        </li>
+                                        <li class="subcategory-item">
+                                            <a href="/ths/ventilation-tubing-accessories/c/305" >
+                                                <span class="title">Ventilation Tubing & Accessories</span>
+                                            </a>
+                                        </li>
+                                        </ul>
+                                
+
+
+
+
+
+
+    
+        <a href="https://www.tri-anim.com/ths/anesthesia-solutions/heat-moisture-exchangers-hme-/hmes/curaplex-clearpath-hme/p/301-1014" class="subcategory-logo right" data-logo-position="right">
+        <img src="https://cdn.tri-anim.com/ths/categories/THS_mega-menu_Curaplex_HME_8954316718110.jpg">
+        </a>
+    
+    
+
+
+</div>
+                        </li>
+                </ul>
+        </nav>
+    </div>
+</div><div class="yCmsComponent  pull-left product-navigation-bar-item navigation-slot-item">
+<div id="menu-manufacturers-dropdown" class="nav-category-list js-nav-manufacturers display-none NAVcompONENT item nav-dropdown-item">
+    <div class="nav-category-list-menu-header nav-dropdown-item-head">
+        <span>Manufacturers</span>
+    </div>
+    <nav class="nav-category-list__child-wrap hidden-visibility nav-dropdown-item-body">
+        <div class="dropdown-body-title">
+            Featured Manufacturers</div>
+        <ul class="category-list-container">
+            <li class="category-item">
+                <a href="/ths/aerogen/c/7035">
+                        <span class="title" style="text-transform:none">Aerogen</span>
+                    </a>
+                </li>
+            <li class="category-item">
+                <a href="/ths/brainscope/c/7677">
+                        <span class="title" style="text-transform:none">BrainScope</span>
+                    </a>
+                </li>
+            <li class="category-item">
+                <a href="/ths/curaplex/c/7007">
+                        <span class="title" style="text-transform:none">Curaplex</span>
+                    </a>
+                </li>
+            <li class="category-item">
+                <a href="/ths/icu-medical/c/7386">
+                        <span class="title" style="text-transform:none">ICU Medical</span>
+                    </a>
+                </li>
+            <li class="category-item">
+                <a href="/ths/intersurgical/c/7042">
+                        <span class="title" style="text-transform:none">Intersurgical</span>
+                    </a>
+                </li>
+            <li class="category-item">
+                <a href="/ths/maxtec/c/7041">
+                        <span class="title" style="text-transform:none">Maxtec</span>
+                    </a>
+                </li>
+            <li class="category-item">
+                <a href="/ths/monaghan-medical/c/7040">
+                        <span class="title" style="text-transform:none">Monaghan Medical</span>
+                    </a>
+                </li>
+            <li class="category-item">
+                <a href="/ths/neotech/c/7036">
+                        <span class="title" style="text-transform:none">Neotech</span>
+                    </a>
+                </li>
+            <li class="category-item">
+                <a href="/ths/nonin-medical-inc-/c/7027">
+                        <span class="title" style="text-transform:none">Nonin Medical, Inc.</span>
+                    </a>
+                </li>
+            <li class="category-item">
+                <a href="/ths/philips-healthcare/c/7034">
+                        <span class="title" style="text-transform:none">Philips Healthcare</span>
+                    </a>
+                </li>
+            <li class="category-item">
+                <a href="/ths/precision-medical/c/7039">
+                        <span class="title" style="text-transform:none">Precision Medical</span>
+                    </a>
+                </li>
+            <li class="category-item">
+                <a href="/ths/rivanna-medical/c/7068">
+                        <span class="title" style="text-transform:none">Rivanna Medical</span>
+                    </a>
+                </li>
+            <li class="category-item">
+                <a href="/ths/sunmed/c/7038">
+                        <span class="title" style="text-transform:none">SunMed</span>
+                    </a>
+                </li>
+            </ul>
+        <div class="dropdown-body-action">
+            <a href="/ths/manufacturers">View All Manufacturers</a>
+        </div>
+    </nav>
+</div>
+</div><div class="yCmsComponent  pull-left product-navigation-bar-item navigation-slot-item">
+<div class="nav-category-list js-nav-category-list js-nav-clinical-focus display-none NAVcompONENT item nav-dropdown-item">
+		<div class="nav-category-list-menu-header nav-dropdown-item-head">
+						<span>Clinical Focus</span>
+					</div>
+				<nav class="nav-category-list__child-wrap hidden-visibility nav-dropdown-item-body">
+						<ul class="category-list-container">
+							<a class="sm-back js-enquire-sub-close hidden-md hidden-lg" href="#">Back</a>
+							<div class="row">
+								<div class="sub-navigation-section col-md-12">
+												<ul class="sub-navigation-list ">
+													<li class="yCmsComponent category-item">
+<a href="/ths/clinical-focus/respiratory-care" title="Respiratory Care">Respiratory Care</a></li><li class="yCmsComponent category-item">
+<a href="/ths/clinical-focus/anesthesia" title="Anesthesia">Anesthesia</a></li><li class="yCmsComponent category-item">
+<a href="/ths/clinical-focus/critical-care" title="Critical Care">Critical Care</a></li><li class="yCmsComponent category-item">
+<a href="/ths/clinical-focus/neonatal-care" title="Neonatal Care">Neonatal Care</a></li><li class="yCmsComponent category-item">
+<a href="/ths/clinical-focus/ambulatory-surgery-centers" title="Ambulatory Surgery Centers">Ambulatory Surgery Centers</a></li></ul>
+											</div>
+										</div>
+						</ul>
+					</nav>
+				</div>
+</div></div><div class="yCmsContentSlot  order-navigation-bar bottom-navigation-slot pull-right">
+<div id="QuickOrderLink" class="yCmsComponent  pull-right order-navigation-bar-item navigation-slot-item">
+<a href="/ths/quickOrder" title="Quick Order">Quick Order</a></div></div></div>
+	</div>
+
+	<div class="bottom-navigation-bar-tablet" id="tablet-navigation-bar">
+		<div class="mobile-nav-row mobile-controls order-navigation-bar">
+			<div class="header-mobile-item mega-menu collapsed" data-toggle="collapse" data-target="#tablet-mega-menu-content">
+				<span class="tablet-mega-menu-icon"></span>
+				<span class="tablet-mega-menu-title">Menu</span>
+			</div>
+			<div class="header-mobile-item mini-cart"></div>
+		</div>
+		<div class="mobile-nav-row mobile-dropdown-content mega-menu-content collapse" id="tablet-mega-menu-content">
+			<div class="mobile-mega-menu-manufacturers">
+			</div>
+
+			<div class="mobile-mega-menu-links">	
+			</div>
+
+			<div class="mobile-mega-menu-categories">
+			<ul class="mega-menu-item-title-container mobile-categories-title-container js-clinical-focus-title-container">
+				</ul>
+			<ul class="mega-menu-item-title-container mobile-categories-title-container">
+					<li>
+						<a href="javscript:void(0)" class="mobile-categories-title js-category-extended-title" 
+						data-text-shop-by-subcat="Shop by Subcategory in"
+						data-text-shop-by="Shop by Category"
+						>
+							Shop by Category</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="bottom-navigation-bar-mobile" id="mobile-navigation-bar">
+		<div class="mobile-nav-row mobile-controls">
+			<div class="header-mobile-item js-header-mobile-item mega-menu collapsed" data-toggle="collapse" data-target="#mobile-mega-menu-content"></div>
+			<div class="header-mobile-item js-header-mobile-item mobile-search collapsed" data-toggle="collapse" data-target="#mobile-search-content"></div>
+
+			<a class="header-mobile-item js-header-mobile-item account-menu" href="/ths/login">
+					</a>
+				<div class="header-mobile-item js-header-mobile-item mini-cart"></div>
+		</div>
+
+		<div class="mobile-nav-row mobile-dropdown-content mobile-search-content" id="mobile-search-content">
+		</div>
+
+		<div class="mobile-nav-row mobile-dropdown-content account-menu-content collapse" id="mobile-account-menu-content">
+			<ul>
+				<li class="logged_in js-logged_in">
+					<a href="javascript:void(0)">
+						Hello, Anonymous</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="mobile-nav-row mobile-dropdown-content unit-menu-content collapse" id="mobile-unit-menu-content">
+		</div>
+
+		<div class="mobile-nav-row mobile-dropdown-content mega-menu-content collapse" id="mobile-mega-menu-content">
+			<div class="mobile-mega-menu-manufacturers">
+			</div>
+
+			<div class="mobile-mega-menu-quick-order display-none">
+				<ul>
+					<li>
+					</li>
+				</ul>
+			</div>
+			<div class="mobile-mega-menu-supply-list display-none">
+				<ul class="mega-menu-item-title-container mobile-supply-list-title-container collapsed" data-toggle="collapse" data-target="#mobile-mega-supply-list-body">
+					<li>
+						<a href="javascript:void(0)" class=" mobile-supply-list-title" >
+							<span class="title">
+								Supply lists</span>
+							<span class="expand-icon">
+								
+							</span>
+						</a>
+					</li>
+				</ul>
+				<ul class="mobile-supply-list-body-container collapse supply-list-preview-component" id="mobile-mega-supply-list-body">
+	            </ul>
+			</div>
+			<div class="mobile-mega-menu-order-history display-none">
+				<ul class="mega-menu-item-title-container mobile-order-history-title-container collapsed" data-toggle="collapse" data-target="#mobile-mega-order-history-body">
+					<li>
+						<a href="javascript:void(0)" class=" mobile-order-history-title 
+							
+						">
+							<span class="title">
+								Order history</span>
+							<span class="expand-icon">
+								
+							</span>
+						</a>
+					</li>
+				</ul>
+				<div class="mobile-order-history-body-container collapse order-history-preview-component" id="mobile-mega-order-history-body">
+		            	<ul>
+		            		<li class="show-all item">
+				            	<a class="" href="/ths/login">Log in to see your order history</a>
+		            		</li>
+		            	</ul>
+					</div>
+		        <div class="mobile-order-history-body-container collapse order-history-preview-component" id="mobile-mega-order-history-body">
+					<img src='/ths/_ui/responsive/common/images/spinner.gif'/>
+				</div>
+			</div>
+			<div class="mobile-mega-menu-categories">
+			<ul class="mega-menu-item-title-container mobile-categories-title-container js-clinical-focus-title-container">
+				</ul>	
+			<ul class="mega-menu-item-title-container mobile-categories-title-container">
+					<li>
+						<a href="javscript:void(0)" class="mobile-categories-title js-category-extended-title" 
+						data-text-shop-by-subcat="Shop by Subcategory in"
+						data-text-shop-by="Shop by Category"
+						>
+							Shop by Category</a>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+
+	</div> <div class="yCmsContentSlot componentContainer breadcrumbs-container">
+</div></header>
+
+
+<div class="yCmsContentSlot container-fluid">
+</div><div class="page-content-container">
+					
+					<div class="print-header display-none">
+						<div class="logo-container">
+	                        <img loading="lazy" src="/ths/_ui/responsive/common/images/TRIANIM_Logo_RGB.png"/>
+						</div>
+					</div>
+					<div class="page-content-container_globalMessages">
+						</div>
+					<div class="landing-page-container">
+
+	<div class="section-banner-wrapper section-wrapper">
+		<div class="top-banner-container row">
+			<div class="banner-container-1 col-lg-8">
+				<div class="banner-item banner-item-0">
+						<div class="simple-banner banner__component--responsive">
+	<a href="https://www.tri-anim.com/ths/aeroverse">
+					<img loading="lazy" class="js-responsive-image"  data-media='{"480":"/ths/medias/06-THS-homepage-Aeroverse-HPA.jpg?context=bWFzdGVyfGltYWdlc3wxNDM5OTZ8aW1hZ2UvanBlZ3xpbWFnZXMvaGEwL2gwNS85MDAzOTQ4OTk4Njg2LmpwZ3xjYmE4OGZlYzJlMDE0ZDE4M2E0ZDg5MzY0M2YwZjY4NGM2ZDQ5NDBlZTczYmYwNmM5MWM5MWZiMThmM2M1MWQy","768":"/ths/medias/06-THS-homepage-Aeroverse-HPA.jpg?context=bWFzdGVyfGltYWdlc3wxNDM5OTZ8aW1hZ2UvanBlZ3xpbWFnZXMvaGJiL2hlNy85MDAzOTQ4OTMzMTUwLmpwZ3xkZGRiOGNhZTZlZjRmYmY5ZTY4YTVkMDI5YzE4Njg5ZmI5OGJlYjg3Y2I2MzAwZDljM2VjYmExMTBhMzBhMTRi","992":"/ths/medias/06-THS-homepage-Aeroverse-HPA.jpg?context=bWFzdGVyfGltYWdlc3wxNDM5OTZ8aW1hZ2UvanBlZ3xpbWFnZXMvaDZiL2g0NC85MDAzOTQ4ODY3NjE0LmpwZ3xhNWFhODgyYTE0MTBkYTlmMzNkZTQ4MjEwMWVmNzBlZjljN2FkNzRjZDdhMDJkN2ExZDAxNDNhODA2YzQ2NTgx","1200":"/ths/medias/06-THS-homepage-Aeroverse-HPA.jpg?context=bWFzdGVyfGltYWdlc3wxNDM5OTZ8aW1hZ2UvanBlZ3xpbWFnZXMvaGIzL2g1My85MDAzOTQ4ODAyMDc4LmpwZ3w4OGFkMmQ3ZTNlYzUzYWZkOGJlOWVhMmRhMDMyOTk4NzQ4ZmRjMzEzZjY3YzlhNjY1YWUzMGViYWViOTE4NTJl"}' alt='06-THS_homepage_Aeroverse_HPA.jpg' style="">
+				</a>
+		</div></div>
+				</div>
+			<div class="banner-container-2 col-lg-4">
+				<div class="banner-item banner-section-a banner-item-0 col-md-12 col-sm-6 col-xs-12">
+						<div class="simple-banner banner__component--responsive">
+	<a href="https://www.tri-anim.com/ths/philips-alar">
+					<img loading="lazy" class="js-responsive-image"  data-media='{"480":"/ths/medias/06-THS-homepage-Alar-HPB.jpg?context=bWFzdGVyfGltYWdlc3wzNTk1MHxpbWFnZS9qcGVnfGltYWdlcy9oNGEvaDNlLzkwMDYyMzk2NDU3MjYuanBnfDU1N2VjYTUxZWFhZGFmMWYwNjI2NzQxZjgxNTk5Njg0OWJjMjAxNDBiMGI5N2Y2NGI2NDZkODU5ODczNDZmMzQ","768":"/ths/medias/06-THS-homepage-Alar-HPB.jpg?context=bWFzdGVyfGltYWdlc3wzNTk1MHxpbWFnZS9qcGVnfGltYWdlcy9oZWEvaDA4LzkwMDYyMzk1ODAxOTAuanBnfGMyMmI5NmUyYWYyODA1YjlhZmFiOWIxMzY1YmEyN2VhZTM5MjZlZDdiMzk1OTJhNmI4ZDFjNjkzMzAyNzFhNWY","992":"/ths/medias/06-THS-homepage-Alar-HPB.jpg?context=bWFzdGVyfGltYWdlc3wzNTk1MHxpbWFnZS9qcGVnfGltYWdlcy9oMDIvaGQwLzkwMDYyMzk1MTQ2NTQuanBnfDZiNmFhZjIxMTFhODcxZGJjZmQwMWU3OTA0YTEzNmU0NmZhOWQzODUzNzdhZDllODhhOGUyMDJjZGIxOTQzODU","1200":"/ths/medias/06-THS-homepage-Alar-HPB.jpg?context=bWFzdGVyfGltYWdlc3wzNTk1MHxpbWFnZS9qcGVnfGltYWdlcy9oOWMvaGIxLzkwMDYyMzk0NDkxMTguanBnfGMyYjhiMDI4YTY2NmVhOGEwMWVmNGQ0ZjBmZWNmNzdlN2I3NmZiNDA0OThmMDBiYjQwYzZiOWMwMmJiODI2MTU"}' alt='06-THS_homepage_Alar_HPB.jpg' style="">
+				</a>
+		</div></div>
+				<div class="banner-item banner-section-c banner-item-0 col-md-12 col-sm-6 col-xs-12">
+						<div class="simple-banner banner__component--responsive">
+	<a href="https://www.tri-anim.com/ths/circuits">
+					<img loading="lazy" class="js-responsive-image"  data-media='{"480":"/ths/medias/06-THS-homepage-Circuits-HPC-no2.jpg?context=bWFzdGVyfGltYWdlc3w1NjUyOXxpbWFnZS9qcGVnfGltYWdlcy9oN2YvaDJmLzkwMDc2NDA5NjkyNDYuanBnfGNjZTg5YjJkYTBlNzgxOGVkOWFiOThhNTFjZTk2NTk0NDhjMDcxYTk1MjdiOWEyMTRjOWE2ODlmOWI5NDYyZGI","768":"/ths/medias/06-THS-homepage-Circuits-HPC-no2.jpg?context=bWFzdGVyfGltYWdlc3w1NjUyOXxpbWFnZS9qcGVnfGltYWdlcy9oZDUvaDA0LzkwMDc2NDA5MDM3MTAuanBnfDQ0MjU3NGI4ZTk2OGU0NDliZTk2MjE3OGQ3Nzg3YmU4ODJmNTYxMDdkNGI2NWI2MDQyZTMwN2JjYzBjZWU4ZDM","992":"/ths/medias/06-THS-homepage-Circuits-HPC-no2.jpg?context=bWFzdGVyfGltYWdlc3w1NjUyOXxpbWFnZS9qcGVnfGltYWdlcy9oMzYvaGMxLzkwMDc2NDA4MzgxNzQuanBnfDZlNGQ5MjFjOTliOTBhYmU5NWM4N2ZmMGJhMTNkNDg5ZDVmYWJjMjYxZTdiMjVlYmYxYmFlNTZmNDc3MTQ5OGU","1200":"/ths/medias/06-THS-homepage-Circuits-HPC-no2.jpg?context=bWFzdGVyfGltYWdlc3w1NjUyOXxpbWFnZS9qcGVnfGltYWdlcy9oNmMvaGUyLzkwMDc2NDA3NzI2MzguanBnfDBjNmU4ZTZjNTAwYmJlM2VjYTQyODBiZDFhNmY3ZjY2YmNhY2IzZWIxMmY2YTA1YWNmM2U4ODBjZTZhNTdlOWY"}' alt='06-THS_homepage_Circuits_HPC_no2.jpg' style="">
+				</a>
+		</div></div>
+				</div>
+		</div>
+	</div>
+
+	<section class="container learn-more">
+        </section>
+
+
+
+	<div class="yCmsContentSlot section-carousel-wrapper section-wrapper">
+<div class="yCmsComponent no-space yComponentWrapper">
+<div class="content"><!-- 4x1 Image Grid -->
+<div class="container-fluid" style="text-align: center; margin: 20px 0; ">
+	<div class="row" style="margin-bottom: 20px; ">
+		<div class="col-sm-12">
+			<div class="hidden-xs col-sm-1 col-md-1"></div>
+			<div class="col-xs-12 col-sm-10 col-md-10">
+				<h1 style="color: #004165;">INNOVATIVE PRODUCTS FOR PATIENT CARE</h1>
+				<p class="large">Tri-anim provides innovative respiratory, anesthesia, critical care and neonatal care products to hospitals, health systems and other patient care facilities nationwide.</p>
+			</div>
+			<div class="hidden-xs col-sm-1 col-md-1"></div>
+		</div>
+	</div>
+	<div class="row" style="margin: 20px 0; ">
+		<div class="col-xs-12 col-sm-6 col-md-3" style="padding: 20px; ">
+			<img alt="Respiratory Care" class="img-responsive center-block" loading="lazy" src="https://sarnova.s3.amazonaws.com/assets/ths/Home/respiratory-care.jpg" />				
+			<h5 style="color: #018F9A; font-style: normal; font-weight: bold; padding-top: 10px;"><a href="/ths/clinical-focus/respiratory-care">Respiratory Care »</a></h5>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-3" style="padding: 20px; ">
+			<img alt="Anesthesia" class="img-responsive center-block" loading="lazy" src="https://sarnova.s3.amazonaws.com/assets/ths/Home/anesthesia.jpg" />	
+			<h5 style="color: #018F9A; font-style: normal; font-weight: bold; padding-top: 10px;"><a href="/ths/clinical-focus/anesthesia">Anesthesia »</a></h5>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-3" style="padding: 20px; ">
+			<img alt="Critical Care" class="img-responsive center-block" loading="lazy" src="https://sarnova.s3.amazonaws.com/assets/ths/Home/critical-care.jpg" />	
+			<h5 style="color: #018F9A; font-style: normal; font-weight: bold; padding-top: 10px;"><a href="/ths/clinical-focus/critical-care">Critical Care »</a></h5>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-3" style="padding: 20px; ">
+			<img alt="Neonatal Care" class="img-responsive center-block" loading="lazy" src="https://sarnova.s3.amazonaws.com/assets/ths/Home/neonatal-care.jpg" />				
+			<h5 style="color: #018F9A; font-style: normal; font-weight: bold; padding-top: 10px;"><a href="/ths/clinical-focus/neonatal-care">Neonatal Care »</a></h5>
+		</div>
+	</div>
+</div></div></div><div class="yCmsComponent no-space yComponentWrapper">
+</div><div class="yCmsComponent no-space yComponentWrapper">
+</div><div class="yCmsComponent no-space yComponentWrapper">
+</div></div><div class="yCmsContentSlot section-cms-wrapper section-wrapper">
+<div class="cms-content-slot cms-content-slot-0">
+			<div class="yCmsComponent ComponentWrapper">
+</div></div>
+	</div><div class="yCmsContentSlot">
+<div class="yCmsComponent yComponentWrapper">
+<div class="content"><!-- Why Choose THS and Catalogs -->
+<!-- Desktop -->
+<div class="container-fluid hidden-xs hidden-sm hidden-md" style="margin-bottom: 20px;">
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="row" style="background-color: #E8F8F8;">
+				<div class="col-sm-1"></div>
+				<div class="col-sm-10" style="height: 480px;">
+						<h2 style="text-align: center; color: #004165; padding-top: 60px;">WHY CHOOSE TRI-ANIM</h2>
+						<p style="text-align: center; padding: 0 70px;">Since 1975, Tri-anim Health Services has served as a specialty healthcare consultant and distributor of respiratory, anesthesia, critical care and neonatal care supplies, equipment and services designed to provide effective and efficient patient care.</p>
+				<table align="center" style="background-color:#E8F8F8; height: 250px;">
+					<tbody><tr>
+						<td><img alt="Checkmark" class="img-responsive center-block" loading="lazy" src="https://sarnova.s3.amazonaws.com/assets/ths/Home/checkmark-icon.png" />
+						<p class="large" style="text-align: center; font-weight: bold; padding-top: 20px;"><a href="/ths/about-us/tri-anim-advantage">Tri-anim Advantage »</a></p></td>
+						<td><img alt="Star" class="img-responsive center-block" loading="lazy" src="https://sarnova.s3.amazonaws.com/assets/ths/Home/star-icon.png" />
+						<p class="large" style="text-align: center; font-weight: bold; padding-top: 20px;"><a href="/ths/capital-rewards">Capital Rewards »</a></p></td>
+					</tr>
+				</tbody></table>
+				</div>
+				<div class="col-sm-1"></div>
+			</div>
+		</div>
+		<div class="col-sm-4" style="background-color: #EDEDED; padding: 20px; height: 480px;">
+		<img alt="Catalogs" class="img-responsive center-block" loading="lazy" src="https://sarnova.s3.amazonaws.com/assets/ths/Home/THS_homepage_catalogs_2023.png" />
+		<h2 style="text-align: center; color: #004165; ">ONLINE CATALOGS</h2>
+		<p style="text-align: center; padding: 0 40px;">Our catalogs are available for online viewing using an interactive, print-ready interface.</p>
+		<a class="btn btn-block btn-secondary" href="/ths/browse-products/online-catalogs" role="button" style="width: 12em; margin: 0 auto; " title="View Catalogs">VIEW CATALOGS</a>
+		</div>
+	</div>
+</div>
+<!-- Tablet -->
+<div class="container-fluid hidden-xs hidden-lg" style="margin-bottom: 20px;">
+	<div class="row">
+		<div class="col-sm-6" style="background-color:#E8F8F8; height: 480px;">
+			<h2 style="text-align: center; color: #004165; padding-top: 20px;">WHY CHOOSE TRI-ANIM</h2>
+			<p style="text-align: center; padding: 0 20px;">Since 1975, Tri-anim Health Services has served as a specialty healthcare consultant and distributor of respiratory, anesthesia, critical care and neonatal care supplies, equipment and services designed to provide effective and efficient patient care.</p>
+			<table align="left" style="background-color:#E8F8F8;" width="80%">
+				<tbody><tr>
+					<td><img alt="Checkmark" class="img-responsive center-block" loading="lazy" src="https://sarnova.s3.amazonaws.com/assets/ths/Home/checkmark-icon.png" />
+					<p style="text-align: center; font-weight: bold; padding-top: 20px;"><a href="/ths/about-us/tri-anim-advantage">Tri-anim Advantage »</a></p></td>
+					<td><img alt="Star" class="img-responsive center-block" loading="lazy" src="https://sarnova.s3.amazonaws.com/assets/ths/Home/star-icon.png" />
+					<p style="text-align: center; font-weight: bold; padding-top: 20px;"><a href="/ths/capital-rewards">Capital Rewards »</a></p></td>
+				</tr>
+			</tbody></table>
+		</div>
+		<div class="col-sm-6" style="background-color: #EDEDED; padding: 20px; height: 480px;">
+		<img alt="Catalogs" class="img-responsive center-block" loading="lazy" src="https://sarnova.s3.amazonaws.com/assets/ths/Home/THS_homepage_catalogs_2023.png" />
+		<h2 style="text-align: center; color: #004165;">ONLINE CATALOGS</h2>
+		<p style="text-align: center;">Our catalogs are available for online viewing using an interactive, print-ready interface.</p>
+		<a class="btn btn-block btn-secondary" href="/ths/browse-products/online-catalogs" role="button" style="width: 12em; margin: 0 auto; " title="View Catalogs">VIEW CATALOGS</a>
+		</div>
+	</div>
+</div>
+
+<!-- Mobile -->
+<div class="container-fluid hidden-sm hidden-md hidden-lg" style="margin-bottom: 20px;">
+	<div class="row">
+		<div class="col-sm-12" style="background-color:#E8F8F8;">
+			<h2 style="text-align: center; color: #004165; padding-top: 20px;">WHY CHOOSE TRI-ANIM</h2>
+			<p style="text-align: center; padding: 0 10px;">Since 1975, Tri-anim Health Services has served as a specialty healthcare consultant and distributor of respiratory, anesthesia, critical care and neonatal care supplies, equipment and services designed to provide effective and efficient patient care.</p>
+			<img alt="Checkmark" class="img-responsive center-block" loading="lazy" src="https://sarnova.s3.amazonaws.com/assets/ths/Home/checkmark-icon.png" />
+			<p style="text-align: center; font-weight: bold; padding-top: 20px;"><a href="/ths/about-us/tri-anim-advantage">Tri-anim Advantage »</a></p>
+			<img alt="Star" class="img-responsive center-block" loading="lazy" src="https://sarnova.s3.amazonaws.com/assets/ths/Home/star-icon.png" />
+			<p style="text-align: center; font-weight: bold; padding: 20px 0;"><a href="/ths/capital-rewards">Capital Rewards »</a></p>
+		</div>
+	</div>
+</div>
+<div class="container-fluid hidden-sm hidden-md hidden-lg" style="margin-bottom: 20px;">
+	<div class="row">
+		<div class="col-sm-12" style="background-color: #EDEDED; padding: 20px;">
+		<img alt="Catalogs" class="img-responsive center-block" loading="lazy" src="https://sarnova.s3.amazonaws.com/assets/ths/Home/THS_homepage_catalogs_2023.png" />
+		<h2 style="text-align: center; color: #004165;">ONLINE CATALOGS</h2>
+		<p style="text-align: center;">Our catalogs are available for online viewing using an interactive, print-ready interface.</p>
+		<a class="btn btn-block btn-secondary" href="/ths/browse-products/online-catalogs" role="button" style="width: 12em; margin: 0 auto; " title="View Catalogs">VIEW CATALOGS</a>
+		</div>
+	</div>
+</div></div></div></div><div class="yCmsContentSlot">
+</div></div>
+</div>
+
+				<footer>
+    <div class="container-fluid">
+	    <div class="footer__top">
+	        <div class="row">
+	            <div class="footer__left col-xs-12 col-sm-12 col-md-8">
+	                <div class="row">
+	                	<div class="footer__nav--container col-xs-12 col-sm-3">
+		                	       <div class="title">About Us</div>
+	                               <ul class="footer__nav--links">
+	                                   <li class="yCmsComponent footer__link">
+<a href="/ths/about-us/about-tri-anim" title="About Tri-anim">About Tri-anim</a></li><li class="yCmsComponent footer__link">
+<a href="/ths/about-us/tri-anim-advantage" title="Tri-anim Advantage">Tri-anim Advantage</a></li><li class="yCmsComponent footer__link">
+<a href="/ths/about-us/careers" title="Careers">Careers</a></li><li class="yCmsComponent footer__link">
+<a href="/ths/about-us/news-and-events" title="News &amp; Events">News &amp; Events</a></li><li class="yCmsComponent footer__link">
+<a href="/ths/about-us/code-of-conduct" title="Code of Conduct">Code of Conduct</a></li><li class="yCmsComponent footer__link">
+<a href="/ths/about-us/supplier-code-of-conduct" title="Supplier Code of Conduct">Supplier Code of Conduct</a></li></ul>
+	                		   </div>
+						    <div class="footer__nav--container col-xs-12 col-sm-3">
+		                	       <div class="title">Customer Care</div>
+	                               <ul class="footer__nav--links">
+	                                   <li class="yCmsComponent footer__link">
+<a href="/ths/customer-care/contact-us" title="Contact Us">Contact Us</a></li><li class="yCmsComponent footer__link">
+<a href="/ths/my-account/account-dashboard" title="My Account">My Account</a></li><li class="yCmsComponent footer__link">
+<a href="/ths/customer-care/get-account-manager" title="Get an Account Manager">Get an Account Manager</a></li><li class="yCmsComponent footer__link">
+<a href="/ths/customer-care/locations" title="Locations">Locations</a></li><li class="yCmsComponent footer__link">
+<a href="/ths/customer-care/online-forms" title="Online Forms">Online Forms</a></li><li class="yCmsComponent footer__link">
+<a href="/ths/customer-care/return-policy" title="Return Policy">Return Policy</a></li><li class="yCmsComponent footer__link">
+<a href="/ths/customer-care/website-help" title="Website Help">Website Help</a></li><li class="yCmsComponent footer__link">
+<a href="/ths/packing-list" title="View Packing Lists">View Packing Lists</a></li><li class="yCmsComponent footer__link">
+<a href="/ths/customer-care/order-faqs" title="Order FAQs">Order FAQs</a></li></ul>
+	                		   </div>
+						    <div class="footer__nav--container col-xs-12 col-sm-3">
+		                	       <div class="title">Clinical Focus</div>
+	                               <ul class="footer__nav--links">
+	                                   <li class="yCmsComponent footer__link">
+<a href="/ths/clinical-focus/respiratory-care" title="Respiratory Care">Respiratory Care</a></li><li class="yCmsComponent footer__link">
+<a href="/ths/clinical-focus/anesthesia" title="Anesthesia">Anesthesia</a></li><li class="yCmsComponent footer__link">
+<a href="/ths/clinical-focus/critical-care" title="Critical Care">Critical Care</a></li><li class="yCmsComponent footer__link">
+<a href="/ths/clinical-focus/neonatal-care" title="Neonatal Care">Neonatal Care</a></li><li class="yCmsComponent footer__link">
+<a href="/ths/clinical-focus/ambulatory-surgery-centers" title="Ambulatory Surgery Centers">Ambulatory Surgery Centers</a></li></ul>
+	                		   </div>
+						    <div class="footer__nav--container col-xs-12 col-sm-3">
+		                	       <div class="title">Products</div>
+	                               <ul class="footer__nav--links">
+	                                   <li class="yCmsComponent footer__link">
+<a href="/ths/manufacturers" title="Browse All Manufacturers">Browse All Manufacturers</a></li><li class="yCmsComponent footer__link">
+<a href="/ths/browse-products/online-catalogs" title="View Online Catalogs">View Online Catalogs</a></li></ul>
+	                		   </div>
+						    <div class="footer__nav--container col-xs-12 col-sm-3">
+		                	       <div class="title">Follow Us</div>
+	                               <ul class="footer__nav--links">
+	                                   <li class="yCmsComponent footer__link">
+<a href="https://www.facebook.com/trianimhealthservices/" class="fab fa-facebook-square" target="_blank" rel="noopener noreferrer"></a></li><li class="yCmsComponent footer__link">
+<a href="https://www.linkedin.com/company/tri-anim-health-services" class="fab fa-linkedin" target="_blank" rel="noopener noreferrer"></a></li></ul>
+	                		   </div>
+						    </div>
+	           </div>
+	           <div class="right-footer-parent col-xs-12 col-sm-12 col-md-4 ">
+                   <div class="footer__right col-xs-12 col-sm-12 col-md-4 footer-logo-container">
+	                        <div class="row" style="padding: 5px 0;">
+	                            <a title="Zenith Award " target="_self"><img  height="83" width ="193" title="Zenith Award" loading="lazy" src="/ths/_ui/responsive/common/images/Zenith_2021_white.png" alt="" style="border-width:0px;"></a>
+               	            </div>
+               	            <div class="row" style="padding: 5px 0;">
+               		            <p style="margin-bottom: 5px; padding-left: 0px; padding-right: 25px; "><img height="83" width ="193" loading="lazy" src="/ths/_ui/responsive/common/images/Sarnova_HC_LLC__2023_Certification_Badge.png"/></p>
+                            </div>
+                   </div>
+                   <div class="footer__right col-xs-12 col-sm-12 col-md-8 right-footer-div">
+                             <div class="row captialRewards" style="padding: 5px 0; ">
+                                    <p class="title" style="margin-bottom: 5px; padding-left: 0px; padding-right: 5px; ">
+									<img class="footer-image"loading="lazy" height="30" width="30" src="/ths/_ui/responsive/common/images/THS_Rewards_Star_Icon.png"/> 
+									<b> Capital Rewards</b> <br/>This icon indicates Rewards eligible products.<a href="/ths/capital-rewards"> Learn more >> </a><br/></p>
+                             </div>
+                             <div class="row" style="padding: 5px 0; ">
+               		                <p style="margin-bottom: 5px; padding-left: 0px; padding-right: 5px; ">
+									   <img class="footer-image" width="80" loading="lazy" src="/ths/_ui/responsive/common/images/CPX_THX_ourbrand_bug-webversion-02.png"/> <b> Curaplex<sup>®</sup></b> <br/> This icon indicates our Curaplex<sup>®</sup> products.<a href="/ths/curaplex"> Learn more >> </a><br/></p>
+                             </div>
+                   </div>
+
+	               <div class="row">
+	                       <div class="col-xs-6 col-md-6 footer__dropdown">
+	                           </div>
+	                       <div class="col-xs-6 col-md-6 footer__dropdown">
+	                           </div>
+	                   </div>
+	               </div>
+	        </div>
+	    </div>
+	</div>
+<div
+        
+            style="display: none;"
+        
+        class="compare-products-component">
+    <div class="products">
+        <div class="product-slot empty">
+            
+                </div>
+            <div class="product-slot empty">
+            
+                </div>
+            <div class="product-slot empty">
+            
+                </div>
+            <div class="product-slot empty">
+            
+                </div>
+            </div>
+    <div class="controls">
+        <div class="section-one">
+            <button class="small js-compare-component-close close-btn">
+                <span class="cross">&times;</span>
+                <span class="text">Close</span>
+            </button>
+        </div>
+        <div class="section-two buttons">
+            <a href="/ths/product-compare" class="btn btn-primary small compare-btn">Compare</a>
+        </div>
+    </div>
+</div><div class="footer-bottom-container">
+	    <div class="yCmsContentSlot footer-bottom footer__left">
+<div class="content"><!-- Bottom Section --><!-- Tablet/Laptop/Desktop Version --><div class='container-fluid hidden-xs' style='background-color: #028993; color:#D5FAFA; margin-left: -30px; margin-right: -30px; font-size: 16px; text-align: center;'> <div class='row'> <div> <p style='color: #D5FAFA;'> Tri-anim provides innovative respiratory care, anesthesia, critical care and neonatal care products to hospitals, health systems and other patient care facilities nationwide.</p> </div> <div class='col-sm-12'> <p class='small' style='color: #D5FAFA; '><a href='/ths/terms-and-conditions'>Customer Terms & Conditions</a><span class='f-text'>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span><a href='/ths/supplier-terms-and-conditions'>Supplier Terms & Conditions</a><span class='f-text'>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span><a href='/ths/privacy-policy'>Privacy</a><span class='f-text'>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span><a href='/ths/terms-of-use'>Terms of Use</a><span class='f-text'>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>5000 Tuttle Crossing Blvd. Dublin, OH 43016<span class='f-text'>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span><span class= 'fl-text'>800.874.2646</span></p> </div> </div></div></div></div></div>
+</footer>
+
+</main>
+		</div>
+	<form name="accessiblityForm">
+		<input type="hidden" id="accesibility_refreshScreenReaderBufferField" name="accesibility_refreshScreenReaderBufferField" value=""/>
+	</form>
+	<div id="ariaStatusMsg" class="skip" role="status" aria-relevant="text" aria-live="polite"></div>
+
+	<script type="text/javascript">
+		/*<![CDATA[*/
+		
+		var ACC = { config: { } };
+			ACC.config.contextPath = "/ths";
+			ACC.config.encodedContextPath = "/ths";
+			ACC.config.commonResourcePath = "/ths/_ui/responsive/common";
+			ACC.config.themeResourcePath = "/ths/_ui/responsive/theme-trianim";
+			ACC.config.siteResourcePath = "/ths/_ui/responsive/site-trianim";
+			ACC.config.rootPath = "/ths/_ui/responsive";	
+			ACC.config.CSRFToken = "9ce6d6df-8e2c-42bf-bb28-0a24be2a66b2";
+			ACC.pwdStrengthVeryWeak = 'Very weak';
+			ACC.pwdStrengthWeak = 'Weak';
+			ACC.pwdStrengthMedium = 'Medium';
+			ACC.pwdStrengthStrong = 'Strong';
+			ACC.pwdStrengthVeryStrong = 'Very strong';
+			ACC.pwdStrengthUnsafePwd = 'password.strength.unsafepwd';
+			ACC.pwdStrengthTooShortPwd = 'Too short';
+			ACC.pwdStrengthMinCharText = 'Minimum length is %d characters';
+			ACC.pwdCheckFormat='Password does not meet minimum requirements.';
+			ACC.pwdCheckEquals='Password and password confirmation do not match';
+			ACC.emailCheckEquals='Email and Re-enter email address does not match';
+			ACC.loginEmptyEmail='login.error.email.emptyField';
+			ACC.updatePwdInvalid='updatePassword.pwd.invalid';
+			ACC.registerExistingLinkAccountNumberBlank='register.linkaccount.errorMsg.blank';
+			ACC.registerPwdInvalid='Password does not meet minimum requirements.';
+			ACC.registerEmptyPwd='login.error.password.empty';
+			ACC.registerCheckPwdInvalid='Please confirm your password';
+			ACC.loginValidEmail='login.error.validemail';
+			ACC.registerFirstNameInvalid='Please enter a first name';
+			ACC.registerLastNameInvalid='Please enter a last name';
+			ACC.profilePhoneInvalid='Please enter a phone';
+			ACC.profilePhoneNumericInvalid='Please enter a valid phone number';
+			ACC.registerEmailInvalid='Please enter a valid email';
+			ACC.registerAccountTypeInvalid='register.accounttype.invalid';
+			ACC.registerValidZipCode='Please enter a valid zipcode.';
+			ACC.registerEmptyZipCode='Please enter a Zip / Postal Code';
+			ACC.accessibilityLoading = 'Loading... Please wait...';
+			ACC.accessibilityStoresLoaded = 'Stores loaded';
+			ACC.NotestoCustomerMessage = '(Adding notes will flag your order for review and may cause a delay)';
+			ACC.quotaExceededErrorMessage = 'You are unable to select more than your available quota at this time. Please contact your administrator for assistance.';
+			ACC.addressTownCityInvalid = 'Please enter a Town/City';
+			ACC.addressReginIsoInvalid = 'Please enter a region';
+			ACC.addressLine1Invalid = 'Please enter address Line 1';
+			ACC.supplyListEmpty = 'text.supplylist.error.name.message.popup';
+			ACC.supplyListPageSubstituteDesc = 'supplyList.substitute.item.popup.description';
+			
+			ACC.editsupplyListDescError = 'edit.supplyList.incorrect.error.desc';
+			ACC.editsupplyListNameError = 'edit.supplyList.incorrect.error.name';
+			
+			ACC.addressAccountTypeInvalid = 'address.accountType.invalid';
+			ACC.addressFirstNameInvalid = 'Please enter a first name';
+			ACC.addressLastNameInvalid = 'Please enter a last name';
+			ACC.addressLine1Invalid = 'Please enter address Line 1';
+			ACC.addressTownCityInvalid = 'Please enter a Town/City';
+			ACC.addressZipCodeInvalid = 'Please enter a Zip / Postal Code';
+			ACC.addressValidZipCode='Please enter a ZIP/Postal Code of at least 5 characters.';
+			ACC.packingSlipInvoiceEmpty='Shipment ID/Invoice # cannot be empty';
+			ACC.addressShippingValidZipCode='address.shipping.organization.validZipCode';
+			ACC.addressRegionIsoInvalid = 'Please enter a region';
+			ACC.addressphoneInvalid = 'Please enter a valid phone number';
+			ACC.addressEmailInvalid = 'Please enter a valid email';
+			ACC.addressEmailFormatInvalid = 'Email address should be in the format of xxx@xxx.xxx. Please confirm and try again.';
+			
+			ACC.createNewsavedcartNameEmpty = 'text.save.cart.action.saved.cart.empty.error';
+			ACC.createNewsavedcartNameExist = 'text.savedcart.popup.error.new.name';
+			ACC.createNewSupplyListNameExist = 'text.supplylist.popup.error.new.name';
+			ACC.createNewSupplyListPopupErrorMessage = 'text.supplylist.popup.errorMsg.text';
+			ACC.createNewSupplyListPopupErrorMessageEnd  = 'text.supplylist.popup.errorMsg.text.end';
+			
+			ACC.validCreditCardNumber = 'creditcard.billing.card_accountNumber';
+			ACC.validCreditCardName = 'creditcard.billing.card_nameOnCard';
+			ACC.validCreditCardMonth = 'creditcard.billing_expirationMonth';
+			ACC.validCreditCardYear = 'creditcard.billing_expirationYear';
+			
+			ACC.validPoNumber = 'checkout.multi.purchaseOrderNumber.valid';
+			
+			ACC.config.googleApiKey="";
+			ACC.config.googleApiVersion="3.7";
+
+			
+			ACC.autocompleteUrl = '/ths/search/autocompleteSecure';
+
+			
+			ACC.config.loginUrl = '/ths/login';
+
+			
+			ACC.config.authenticationStatusUrl = '/ths/authentication/status';
+
+			
+			ACC.config.refineFilterUrl = 'filterProducts';
+
+			ACC.messages = {};
+			
+			ACC.messages.search = {};
+			ACC.messages.search.suggestedCategoriesTitle = 'Search suggestions (by Category)';
+			ACC.messages.search.recommendedProductsTitle = 'Recommended products for';
+			ACC.messages.search.item = 'Item #';
+			ACC.messages.search.listPrice = 'List Price';
+			ACC.messages.search.yourPrice = 'Your price';
+			ACC.messages.search.viewSalePrices = 'View Sale Prices';
+			ACC.messages.search.fromDefault = 'from';
+			ACC.messages.search.yourPrice.better = 'Your Price is better than the promotional price.';
+			ACC.messages.search.login = 'Log in';
+			ACC.messages.search.viewMultiple = 'View Multiple';
+			ACC.messages.search.viewMultipleIncludingIndividual = 'View Multiple, Including Item #:';
+
+       		ACC.messages.reports = {};
+			ACC.messages.reports.notFound = 'No records found with this search criteria';
+
+			ACC.messages.orderHistory = {};
+			ACC.messages.orderHistory.shippedTo='Shipped To';
+			ACC.messages.orderHistory.dateRange='text.account.orderHistory.dateRange.simple';
+			ACC.messages.orderHistory.searchTerm='text.account.orderHistory.searchTerm.simple';
+
+			ACC.pdpUnit='pdp.unit';
+			
+
+			
+
+			ACC.user = {
+				isLoggedIn: false,
+				email:""
+			};
+
+			
+		
+		/*]]>*/
+	</script>
+	<script type="text/javascript">
+	/*<![CDATA[*/
+	ACC.addons = {};	//JS holder for addons properties
+			
+	
+		ACC.addons.capgeminicustomproductcatalogaddon = [];
+		
+		ACC.addons.sarnovacommerceorgaddon = [];
+		
+		ACC.addons.b2bacceleratoraddon = [];
+		
+		ACC.addons.sarnovab2bcheckoutaddon = [];
+		
+		ACC.addons.manufacturersaddon = [];
+		
+		ACC.addons.bloomreachproductrecommendation = [];
+		
+		ACC.addons.smarteditaddon = [];
+		
+		ACC.addons.customerticketingaddon = [];
+		
+		ACC.addons.sarnovastaticfileversioningaddon = [];
+		
+		ACC.addons.assistedservicestorefront = [];
+		
+				ACC.addons.assistedservicestorefront['asm.timer.min'] = 'min';
+			
+		ACC.addons.klaviyointegrationaddon = [];
+		
+		ACC.addons.bloomreachpixeladdon = [];
+		
+		ACC.addons.commerceorgaddon = [];
+		
+		ACC.addons.wishlists = [];
+		
+	/*]]>*/
+</script>
+<script type="text/javascript" src="/ths/_ui/shared/js/generatedVariables.js?v=202306221729"></script>
+<script type="text/javascript" src="/ths/wro/all_responsive.js?v=202306221729"></script>
+	  	<script type="text/javascript" src="/ths/wro/addons_responsive.js?v=202306221729"></script>
+	</body>
+
+</html>

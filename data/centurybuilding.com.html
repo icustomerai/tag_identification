@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head ><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.v="1.2.3",this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",t=>{this.persisted=t.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(t){if(document.hidden){t._triggerListener();return}this.triggerEvents.forEach(e=>window.addEventListener(e,t.userEventHandler,{passive:!0})),window.addEventListener("touchstart",t.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",t.touchStartHandler),document.addEventListener("visibilitychange",t.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(t){"HTML"!==t.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),t.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(t){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(t){t.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(t.target,"rocket-onclick","onclick"),this.interceptedClicks.push(t),t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(t=>{t.target.dispatchEvent(new MouseEvent("click",{view:t.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(t=>{this._isClickPending?this._pendingClickFinished=t:t()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(t,e,r){t.hasAttribute&&t.hasAttribute(e)&&(event.target.setAttribute(r,event.target.getAttribute(e)),event.target.removeAttribute(e))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let t=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{if(e.hasAttribute("src")){let r=new URL(e.src).origin;r!==location.origin&&t.push({src:r,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this._batchInjectResourceHints(t,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(t){console.error(t)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _transformScript(t){return new Promise((await this._littleBreath(),navigator.userAgent.indexOf("Firefox/")>0||""===navigator.vendor)?e=>{let r=document.createElement("script");[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),r.setAttribute(e,t.nodeValue))}),t.text&&(r.text=t.text),r.hasAttribute("src")?(r.addEventListener("load",e),r.addEventListener("error",e)):(r.text=t.text,e());try{t.parentNode.replaceChild(r,t)}catch(i){e()}}:async e=>{function r(){t.setAttribute("data-rocket-status","failed"),e()}try{let i=t.getAttribute("data-rocket-type"),n=t.getAttribute("data-rocket-src");t.text,i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",function r(){t.setAttribute("data-rocket-status","executed"),e()}),t.addEventListener("error",r),n?(t.removeAttribute("data-rocket-src"),t.src=n):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}catch(s){r()}})}async _loadScriptsFromList(t){let e=t.shift();return e&&e.isConnected?(await this._transformScript(e),this._loadScriptsFromList(t)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(t,e){var r=document.createDocumentFragment();t.forEach(t=>{let i=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(i){let n=document.createElement("link");n.href=i,n.rel=e,"preconnect"!==e&&(n.as="script"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),r.appendChild(n),this.trash.push(n)}}),document.head.appendChild(r)}_delayEventListeners(t){let e={};function r(t,r){!function t(r){!e[r]&&(e[r]={originalFunctions:{add:r.addEventListener,remove:r.removeEventListener},eventsToRewrite:[]},r.addEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.add.apply(r,arguments)},r.removeEventListener=function(){arguments[0]=i(arguments[0]),e[r].originalFunctions.remove.apply(r,arguments)});function i(t){return e[r].eventsToRewrite.indexOf(t)>=0?"rocket-"+t:t}}(t),e[t].eventsToRewrite.push(r)}function i(t,e){let r=t[e];Object.defineProperty(t,e,{get:()=>r||function(){},set(i){t["rocket"+e]=r=i}})}r(document,"DOMContentLoaded"),r(window,"DOMContentLoaded"),r(window,"load"),r(window,"pageshow"),r(document,"readystatechange"),i(document,"onreadystatechange"),i(window,"onload"),i(window,"onpageshow")}_delayJQueryReady(t){let e;function r(r){if(r&&r.fn&&!t.allJQueries.includes(r)){r.fn.ready=r.fn.init.prototype.ready=function(e){return t.domReadyFired?e.bind(document)(r):document.addEventListener("rocket-DOMContentLoaded",()=>e.bind(document)(r)),r([])};let i=r.fn.on;r.fn.on=r.fn.init.prototype.on=function(){if(this[0]===window){function t(t){return t.split(" ").map(t=>"load"===t||0===t.indexOf("load.")?"rocket-jquery-load":t).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=t(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(e=>{let r=arguments[0][e];delete arguments[0][e],arguments[0][t(e)]=r})}return i.apply(this,arguments),this},t.allJQueries.push(r)}e=r}r(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){r(t)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this._littleBreath();let t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let t=new Map;document.write=document.writeln=function(e){let r=document.currentScript;r||console.error("WPRocket unable to document.write this: "+e);let i=document.createRange(),n=r.parentElement,s=t.get(r);void 0===s&&(s=r.nextSibling,t.set(r,s));let a=document.createDocumentFragment();i.setStart(a,0),a.appendChild(i.createContextualFragment(e)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}_emptyTrash(){this.trash.forEach(t=>t.remove())}static run(){let t=new RocketLazyLoadScripts;t._addUserInteractionListener(t)}}RocketLazyLoadScripts.run();</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="google-site-verification" content="1w71gPp_aNanezVWutVsRPMz1uV10F9VFmpYXE-YCE8" /><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v20.9 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Building Materials Store on Long Island, NY</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Pragati%20Narrow%3A400&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pragati%20Narrow%3A400&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pragati%20Narrow%3A400&#038;display=swap" /></noscript><link rel="stylesheet" href="https://centurybuilding.com/wp-content/cache/min/1/845e90b2b85a2b82adbd8c26092dd5c1.css" media="all" data-minify="1" />
+	<meta name="description" content="From floor to rooftop and everything in between, Century Building Materials has the building materials you need! Find out more here." />
+	<link rel="canonical" href="https://centurybuilding.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Century Building Materials" />
+	<meta property="og:description" content="From floor to rooftop and everything in between, Century Building Materials has the building materials you need! Find out more here." />
+	<meta property="og:url" content="https://centurybuilding.com/" />
+	<meta property="og:site_name" content="Century Building Materials" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"CollectionPage","@id":"https://centurybuilding.com/","url":"https://centurybuilding.com/","name":"Building Materials Store on Long Island, NY","isPartOf":{"@id":"https://centurybuilding.com/#website"},"description":"From floor to rooftop and everything in between, Century Building Materials has the building materials you need! Find out more here.","breadcrumb":{"@id":"https://centurybuilding.com/#breadcrumb"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","@id":"https://centurybuilding.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://centurybuilding.com/#website","url":"https://centurybuilding.com/","name":"Century Building Materials","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://centurybuilding.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//netdna.bootstrapcdn.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Century Building Materials &raquo; Feed" href="https://centurybuilding.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Century Building Materials &raquo; Comments Feed" href="https://centurybuilding.com/comments/feed/" />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v8.16 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+		<!-- Note: MonsterInsights is not currently configured on this site. The site owner needs to authenticate with Google Analytics in the MonsterInsights settings panel. -->
+					<!-- No UA code set -->
+				<!-- / Google Analytics by MonsterInsights -->
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	
+
+
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<style id='responsive-menu-inline-css' type='text/css'>
+/** This file is major component of this plugin so please don't try to edit here. */
+#rmp_menu_trigger-2158 {
+  width: 55px;
+  height: 55px;
+  position: fixed;
+  top: 15px;
+  border-radius: 5px;
+  display: none;
+  text-decoration: none;
+  right: 5%;
+  background: #000000;
+  transition: transform 0.5s, background-color 0.5s;
+}
+#rmp_menu_trigger-2158:hover, #rmp_menu_trigger-2158:focus {
+  background: #000000;
+  text-decoration: unset;
+}
+#rmp_menu_trigger-2158.is-active {
+  background: #000000;
+}
+#rmp_menu_trigger-2158 .rmp-trigger-box {
+  width: 25px;
+  color: #ffffff;
+}
+#rmp_menu_trigger-2158 .rmp-trigger-icon-active, #rmp_menu_trigger-2158 .rmp-trigger-text-open {
+  display: none;
+}
+#rmp_menu_trigger-2158.is-active .rmp-trigger-icon-active, #rmp_menu_trigger-2158.is-active .rmp-trigger-text-open {
+  display: inline;
+}
+#rmp_menu_trigger-2158.is-active .rmp-trigger-icon-inactive, #rmp_menu_trigger-2158.is-active .rmp-trigger-text {
+  display: none;
+}
+#rmp_menu_trigger-2158 .rmp-trigger-label {
+  color: #ffffff;
+  pointer-events: none;
+  line-height: 13px;
+  font-family: inherit;
+  font-size: 14px;
+  display: inline;
+  text-transform: inherit;
+}
+#rmp_menu_trigger-2158 .rmp-trigger-label.rmp-trigger-label-top {
+  display: block;
+  margin-bottom: 12px;
+}
+#rmp_menu_trigger-2158 .rmp-trigger-label.rmp-trigger-label-bottom {
+  display: block;
+  margin-top: 12px;
+}
+#rmp_menu_trigger-2158 .responsive-menu-pro-inner {
+  display: block;
+}
+#rmp_menu_trigger-2158 .responsive-menu-pro-inner, #rmp_menu_trigger-2158 .responsive-menu-pro-inner::before, #rmp_menu_trigger-2158 .responsive-menu-pro-inner::after {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  position: absolute;
+}
+#rmp_menu_trigger-2158.is-active .responsive-menu-pro-inner, #rmp_menu_trigger-2158.is-active .responsive-menu-pro-inner::before, #rmp_menu_trigger-2158.is-active .responsive-menu-pro-inner::after {
+  background-color: #ffffff;
+}
+#rmp_menu_trigger-2158:hover .responsive-menu-pro-inner, #rmp_menu_trigger-2158:hover .responsive-menu-pro-inner::before, #rmp_menu_trigger-2158:hover .responsive-menu-pro-inner::after {
+  background-color: #ffffff;
+}
+/* Hamburger menu styling */
+@media screen and (max-width: 768px) {
+  /** Menu Title Style */
+  /** Menu Additional Content Style */
+  #rmp_menu_trigger-2158 {
+    display: block;
+  }
+  #rmp-container-2158 {
+    position: fixed;
+    top: 0;
+    margin: 0;
+    transition: transform 0.5s;
+    overflow: auto;
+    display: block;
+    width: 75%;
+    background-color: #212121;
+    background-image: url("");
+    height: 100%;
+    left: 0;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+  }
+  #rmp-menu-wrap-2158 {
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    background-color: #212121;
+  }
+  #rmp-menu-wrap-2158 .rmp-menu, #rmp-menu-wrap-2158 .rmp-submenu {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  #rmp-menu-wrap-2158 .rmp-submenu-depth-1 .rmp-menu-item-link {
+    padding-left: 10%;
+  }
+  #rmp-menu-wrap-2158 .rmp-submenu-depth-2 .rmp-menu-item-link {
+    padding-left: 15%;
+  }
+  #rmp-menu-wrap-2158 .rmp-submenu-depth-3 .rmp-menu-item-link {
+    padding-left: 20%;
+  }
+  #rmp-menu-wrap-2158 .rmp-submenu-depth-4 .rmp-menu-item-link {
+    padding-left: 25%;
+  }
+  #rmp-menu-wrap-2158 .rmp-submenu.rmp-submenu-open {
+    display: block;
+  }
+  #rmp-menu-wrap-2158 .rmp-menu-item {
+    width: 100%;
+    list-style: none;
+    margin: 0;
+  }
+  #rmp-menu-wrap-2158 .rmp-menu-item-link {
+    height: 40px;
+    line-height: 40px;
+    font-size: 13px;
+    border-bottom: 1px solid #212121;
+    font-family: inherit;
+    color: #ffffff;
+    text-align: left;
+    background-color: #212121;
+    font-weight: normal;
+    letter-spacing: 0px;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.5s, border-color 0.5s, 0.5s;
+    padding: 0 5%;
+    padding-right: 50px;
+  }
+  #rmp-menu-wrap-2158 .rmp-menu-item-link:after, #rmp-menu-wrap-2158 .rmp-menu-item-link:before {
+    display: none;
+  }
+  #rmp-menu-wrap-2158 .rmp-menu-item-link:hover {
+    color: #ffffff;
+    border-color: #212121;
+    background-color: #3f3f3f;
+  }
+  #rmp-menu-wrap-2158 .rmp-menu-item-link:focus {
+    outline: none;
+    border-color: unset;
+    box-shadow: unset;
+  }
+  #rmp-menu-wrap-2158 .rmp-menu-item-link .rmp-font-icon {
+    height: 40px;
+    line-height: 40px;
+    margin-right: 10px;
+    font-size: 13px;
+  }
+  #rmp-menu-wrap-2158 .rmp-menu-current-item .rmp-menu-item-link {
+    color: #ffffff;
+    border-color: #212121;
+    background-color: #212121;
+  }
+  #rmp-menu-wrap-2158 .rmp-menu-current-item .rmp-menu-item-link:hover {
+    color: #ffffff;
+    border-color: #3f3f3f;
+    background-color: #3f3f3f;
+  }
+  #rmp-menu-wrap-2158 .rmp-menu-subarrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    overflow: hidden;
+    background-size: cover;
+    overflow: hidden;
+    right: 0;
+    border-left-style: solid;
+    border-left-color: #212121;
+    border-left-width: 1px;
+    height: 39px;
+    width: 40px;
+    color: #ffffff;
+    background-color: #212121;
+  }
+  #rmp-menu-wrap-2158 .rmp-menu-subarrow:hover {
+    color: #ffffff;
+    border-color: #3f3f3f;
+    background-color: #3f3f3f;
+  }
+  #rmp-menu-wrap-2158 .rmp-menu-subarrow .rmp-font-icon {
+    margin-right: unset;
+  }
+  #rmp-menu-wrap-2158 .rmp-menu-subarrow * {
+    vertical-align: middle;
+    line-height: 39px;
+  }
+  #rmp-menu-wrap-2158 .rmp-menu-subarrow-active {
+    display: block;
+    background-size: cover;
+    color: #ffffff;
+    border-color: #212121;
+    background-color: #212121;
+  }
+  #rmp-menu-wrap-2158 .rmp-menu-subarrow-active:hover {
+    color: #ffffff;
+    border-color: #3f3f3f;
+    background-color: #3f3f3f;
+  }
+  #rmp-menu-wrap-2158 .rmp-submenu {
+    display: none;
+  }
+  #rmp-menu-wrap-2158 .rmp-submenu .rmp-menu-item-link {
+    height: 40px;
+    line-height: 40px;
+    letter-spacing: 0px;
+    font-size: 13px;
+    border-bottom: 1px solid #212121;
+    font-family: inherit;
+    font-weight: normal;
+    color: #ffffff;
+    text-align: left;
+    background-color: #212121;
+  }
+  #rmp-menu-wrap-2158 .rmp-submenu .rmp-menu-item-link:hover {
+    color: #ffffff;
+    border-color: #212121;
+    background-color: #3f3f3f;
+  }
+  #rmp-menu-wrap-2158 .rmp-submenu .rmp-menu-current-item .rmp-menu-item-link {
+    color: #ffffff;
+    border-color: #212121;
+    background-color: #212121;
+  }
+  #rmp-menu-wrap-2158 .rmp-submenu .rmp-menu-current-item .rmp-menu-item-link:hover {
+    color: #ffffff;
+    border-color: #3f3f3f;
+    background-color: #3f3f3f;
+  }
+  #rmp-menu-wrap-2158 .rmp-submenu .rmp-menu-subarrow {
+    right: 0;
+    border-right: unset;
+    border-left-style: solid;
+    border-left-color: #1d4354;
+    border-left-width: 0px;
+    height: 39px;
+    line-height: 39px;
+    width: 40px;
+    color: #fff;
+    background-color: inherit;
+  }
+  #rmp-menu-wrap-2158 .rmp-submenu .rmp-menu-subarrow:hover {
+    color: #fff;
+    border-color: #3f3f3f;
+    background-color: inherit;
+  }
+  #rmp-menu-wrap-2158 .rmp-submenu .rmp-menu-subarrow-active {
+    color: #fff;
+    border-color: #1d4354;
+    background-color: inherit;
+  }
+  #rmp-menu-wrap-2158 .rmp-submenu .rmp-menu-subarrow-active:hover {
+    color: #fff;
+    border-color: #3f3f3f;
+    background-color: inherit;
+  }
+  #rmp-menu-wrap-2158 .rmp-menu-item-description {
+    margin: 0;
+    padding: 5px 5%;
+    opacity: 0.8;
+    color: #ffffff;
+  }
+  #rmp-search-box-2158 {
+    display: block;
+    padding-top: 0px;
+    padding-left: 5%;
+    padding-bottom: 0px;
+    padding-right: 5%;
+  }
+  #rmp-search-box-2158 .rmp-search-form {
+    margin: 0;
+  }
+  #rmp-search-box-2158 .rmp-search-box {
+    background: #ffffff;
+    border: 1px solid #dadada;
+    color: #333333;
+    width: 100%;
+    padding: 0 5%;
+    border-radius: 30px;
+    height: 45px;
+    -webkit-appearance: none;
+  }
+  #rmp-search-box-2158 .rmp-search-box::placeholder {
+    color: #c7c7cd;
+  }
+  #rmp-search-box-2158 .rmp-search-box:focus {
+    background-color: #ffffff;
+    outline: 2px solid #dadada;
+    color: #333333;
+  }
+  #rmp-menu-title-2158 {
+    background-color: #212121;
+    color: #ffffff;
+    text-align: left;
+    font-size: 13px;
+    padding-top: 10%;
+    padding-left: 5%;
+    padding-bottom: 0%;
+    padding-right: 5%;
+    font-weight: 400;
+    transition: background-color 0.5s, border-color 0.5s, color 0.5s;
+  }
+  #rmp-menu-title-2158:hover {
+    background-color: #212121;
+    color: #ffffff;
+  }
+  #rmp-menu-title-2158 > a {
+    color: #ffffff;
+    width: 100%;
+    background-color: unset;
+    text-decoration: none;
+  }
+  #rmp-menu-title-2158 > a:hover {
+    color: #ffffff;
+  }
+  #rmp-menu-title-2158 .rmp-font-icon {
+    font-size: 13px;
+  }
+  #rmp-menu-additional-content-2158 {
+    padding-top: 0px;
+    padding-left: 5%;
+    padding-bottom: 0px;
+    padding-right: 5%;
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+  }
+}
+/**
+This file contents common styling of menus.
+*/
+.rmp-container {
+  display: none;
+  visibility: visible;
+  padding: 0px 0px 0px 0px;
+  z-index: 99998;
+  transition: all 0.3s;
+  /** Scrolling bar in menu setting box **/
+}
+.rmp-container.rmp-fade-top, .rmp-container.rmp-fade-left, .rmp-container.rmp-fade-right, .rmp-container.rmp-fade-bottom {
+  display: none;
+}
+.rmp-container.rmp-slide-left, .rmp-container.rmp-push-left {
+  transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+}
+.rmp-container.rmp-slide-left.rmp-menu-open, .rmp-container.rmp-push-left.rmp-menu-open {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+}
+.rmp-container.rmp-slide-right, .rmp-container.rmp-push-right {
+  transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+}
+.rmp-container.rmp-slide-right.rmp-menu-open, .rmp-container.rmp-push-right.rmp-menu-open {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+}
+.rmp-container.rmp-slide-top, .rmp-container.rmp-push-top {
+  transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+}
+.rmp-container.rmp-slide-top.rmp-menu-open, .rmp-container.rmp-push-top.rmp-menu-open {
+  transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+}
+.rmp-container.rmp-slide-bottom, .rmp-container.rmp-push-bottom {
+  transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  -moz-transform: translateY(100%);
+}
+.rmp-container.rmp-slide-bottom.rmp-menu-open, .rmp-container.rmp-push-bottom.rmp-menu-open {
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+}
+.rmp-container::-webkit-scrollbar {
+  width: 0px;
+}
+.rmp-container ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px transparent;
+}
+.rmp-container ::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.rmp-container ::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+.rmp-container .rmp-menu-wrap .rmp-menu {
+  transition: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+  border: 0;
+  bottom: auto;
+  box-sizing: border-box;
+  clip: auto;
+  color: #666;
+  display: block;
+  float: none;
+  font-family: inherit;
+  font-size: 14px;
+  height: auto;
+  left: auto;
+  line-height: 1.7;
+  list-style-type: none;
+  margin: 0;
+  min-height: auto;
+  max-height: none;
+  opacity: 1;
+  outline: none;
+  overflow: visible;
+  padding: 0;
+  position: relative;
+  pointer-events: auto;
+  right: auto;
+  text-align: left;
+  text-decoration: none;
+  text-indent: 0;
+  text-transform: none;
+  transform: none;
+  top: auto;
+  visibility: inherit;
+  width: auto;
+  word-wrap: break-word;
+  white-space: normal;
+}
+.rmp-container .rmp-menu-additional-content {
+  display: block;
+  word-break: break-word;
+}
+.rmp-container .rmp-menu-title {
+  display: flex;
+  flex-direction: column;
+}
+.rmp-container .rmp-menu-title .rmp-menu-title-image {
+  max-width: 100%;
+  margin-bottom: 15px;
+  display: block;
+  margin: auto;
+  margin-bottom: 15px;
+}
+button.rmp_menu_trigger {
+  z-index: 999999;
+  overflow: hidden;
+  outline: none;
+  border: 0;
+  display: none;
+  margin: 0;
+  transition: transform 0.5s, background-color 0.5s;
+  padding: 0;
+}
+button.rmp_menu_trigger .responsive-menu-pro-inner::before, button.rmp_menu_trigger .responsive-menu-pro-inner::after {
+  content: "";
+  display: block;
+}
+button.rmp_menu_trigger .responsive-menu-pro-inner::before {
+  top: 10px;
+}
+button.rmp_menu_trigger .responsive-menu-pro-inner::after {
+  bottom: 10px;
+}
+button.rmp_menu_trigger .rmp-trigger-box {
+  width: 40px;
+  display: inline-block;
+  position: relative;
+  pointer-events: none;
+  vertical-align: super;
+}
+/*  Menu Trigger Boring Animation */
+.rmp-menu-trigger-boring .responsive-menu-pro-inner {
+  transition-property: none;
+}
+.rmp-menu-trigger-boring .responsive-menu-pro-inner::after, .rmp-menu-trigger-boring .responsive-menu-pro-inner::before {
+  transition-property: none;
+}
+.rmp-menu-trigger-boring.is-active .responsive-menu-pro-inner {
+  transform: rotate(45deg);
+}
+.rmp-menu-trigger-boring.is-active .responsive-menu-pro-inner:before {
+  top: 0;
+  opacity: 0;
+}
+.rmp-menu-trigger-boring.is-active .responsive-menu-pro-inner:after {
+  bottom: 0;
+  transform: rotate(-90deg);
+}
+
+</style>
+
+
+<style id='rs-plugin-settings-inline-css' type='text/css'>
+#rs-demo-id {}
+</style>
+
+
+
+
+
+<!--n2css--><script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://centurybuilding.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.4' id='jquery-core-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://centurybuilding.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0' id='jquery-migrate-js'></script>
+<script type='text/javascript' id='rmp_menu_scripts-js-extra'>
+/* <![CDATA[ */
+var rmp_menu = {"ajaxURL":"https:\/\/centurybuilding.com\/wp-admin\/admin-ajax.php","wp_nonce":"b33647f20c","menu":[{"menu_theme":"Default","theme_type":"default","theme_location_menu":"0","submenu_submenu_arrow_width":"40","submenu_submenu_arrow_width_unit":"px","submenu_submenu_arrow_height":"39","submenu_submenu_arrow_height_unit":"px","submenu_arrow_position":"right","submenu_sub_arrow_background_colour":"","submenu_sub_arrow_background_hover_colour":"","submenu_sub_arrow_background_colour_active":"","submenu_sub_arrow_background_hover_colour_active":"","submenu_sub_arrow_border_width":"","submenu_sub_arrow_border_width_unit":"px","submenu_sub_arrow_border_colour":"#1d4354","submenu_sub_arrow_border_hover_colour":"#3f3f3f","submenu_sub_arrow_border_colour_active":"#1d4354","submenu_sub_arrow_border_hover_colour_active":"#3f3f3f","submenu_sub_arrow_shape_colour":"#fff","submenu_sub_arrow_shape_hover_colour":"#fff","submenu_sub_arrow_shape_colour_active":"#fff","submenu_sub_arrow_shape_hover_colour_active":"#fff","use_header_bar":"off","header_bar_items_order":{"logo":"off","title":"on","additional content":"off","menu":"on","search":"off"},"header_bar_title":"Responsive Menu","header_bar_html_content":"","header_bar_logo":"","header_bar_logo_link":"","header_bar_logo_width":"","header_bar_logo_width_unit":"%","header_bar_logo_height":"","header_bar_logo_height_unit":"px","header_bar_height":"80","header_bar_height_unit":"px","header_bar_padding":{"top":"0px","right":"5%","bottom":"0px","left":"5%"},"header_bar_font":"","header_bar_font_size":"14","header_bar_font_size_unit":"px","header_bar_text_color":"#ffffff","header_bar_background_color":"#1d4354","header_bar_breakpoint":"8000","header_bar_position_type":"fixed","header_bar_adjust_page":"on","header_bar_scroll_enable":"off","header_bar_scroll_background_color":"#36bdf6","mobile_breakpoint":"600","tablet_breakpoint":"768","transition_speed":"0.5","sub_menu_speed":"0.2","show_menu_on_page_load":"off","menu_disable_scrolling":"off","menu_overlay":"off","menu_overlay_colour":"rgba(0,0,0,0.7)","desktop_menu_width":"","desktop_menu_width_unit":"%","desktop_menu_positioning":"absolute","desktop_menu_side":"left","desktop_menu_to_hide":"","use_current_theme_location":"off","mega_menu":{"225":"off","227":"off","229":"off","228":"off","226":"off"},"desktop_submenu_open_animation":"none","desktop_submenu_open_animation_speed":"100ms","desktop_submenu_open_on_click":"off","desktop_menu_hide_and_show":"off","menu_name":"Default Menu","menu_to_use":"primary-menu","different_menu_for_mobile":"off","menu_to_use_in_mobile":"main-menu","use_mobile_menu":"on","use_tablet_menu":"on","use_desktop_menu":"off","menu_display_on":"all-pages","menu_to_hide":"","submenu_descriptions_on":"off","custom_walker":"","menu_background_colour":"#212121","menu_depth":"5","smooth_scroll_on":"off","smooth_scroll_speed":"500","menu_font_icons":{"id":["225"],"icon":[""]},"menu_links_height":"40","menu_links_height_unit":"px","menu_links_line_height":"40","menu_links_line_height_unit":"px","menu_depth_0":"5","menu_depth_0_unit":"%","menu_font_size":"13","menu_font_size_unit":"px","menu_font":"","menu_font_weight":"normal","menu_text_alignment":"left","menu_text_letter_spacing":"","menu_word_wrap":"off","menu_link_colour":"#ffffff","menu_link_hover_colour":"#ffffff","menu_current_link_colour":"#ffffff","menu_current_link_hover_colour":"#ffffff","menu_item_background_colour":"#212121","menu_item_background_hover_colour":"#3f3f3f","menu_current_item_background_colour":"#212121","menu_current_item_background_hover_colour":"#3f3f3f","menu_border_width":"1","menu_border_width_unit":"px","menu_item_border_colour":"#212121","menu_item_border_colour_hover":"#212121","menu_current_item_border_colour":"#212121","menu_current_item_border_hover_colour":"#3f3f3f","submenu_links_height":"40","submenu_links_height_unit":"px","submenu_links_line_height":"40","submenu_links_line_height_unit":"px","menu_depth_side":"left","menu_depth_1":"10","menu_depth_1_unit":"%","menu_depth_2":"15","menu_depth_2_unit":"%","menu_depth_3":"20","menu_depth_3_unit":"%","menu_depth_4":"25","menu_depth_4_unit":"%","submenu_item_background_colour":"#212121","submenu_item_background_hover_colour":"#3f3f3f","submenu_current_item_background_colour":"#212121","submenu_current_item_background_hover_colour":"#3f3f3f","submenu_border_width":"1","submenu_border_width_unit":"px","submenu_item_border_colour":"#212121","submenu_item_border_colour_hover":"#212121","submenu_current_item_border_colour":"#212121","submenu_current_item_border_hover_colour":"#3f3f3f","submenu_font_size":"13","submenu_font_size_unit":"px","submenu_font":"","submenu_font_weight":"normal","submenu_text_letter_spacing":"","submenu_text_alignment":"left","submenu_link_colour":"#ffffff","submenu_link_hover_colour":"#ffffff","submenu_current_link_colour":"#ffffff","submenu_current_link_hover_colour":"#ffffff","inactive_arrow_shape":"\u25bc","active_arrow_shape":"\u25b2","inactive_arrow_font_icon":"","active_arrow_font_icon":"","inactive_arrow_image":"","active_arrow_image":"","submenu_arrow_width":"40","submenu_arrow_width_unit":"px","submenu_arrow_height":"39","submenu_arrow_height_unit":"px","arrow_position":"right","menu_sub_arrow_shape_colour":"#ffffff","menu_sub_arrow_shape_hover_colour":"#ffffff","menu_sub_arrow_shape_colour_active":"#ffffff","menu_sub_arrow_shape_hover_colour_active":"#ffffff","menu_sub_arrow_border_width":"1","menu_sub_arrow_border_width_unit":"px","menu_sub_arrow_border_colour":"#212121","menu_sub_arrow_border_hover_colour":"#3f3f3f","menu_sub_arrow_border_colour_active":"#212121","menu_sub_arrow_border_hover_colour_active":"#3f3f3f","menu_sub_arrow_background_colour":"#212121","menu_sub_arrow_background_hover_colour":"#3f3f3f","menu_sub_arrow_background_colour_active":"#212121","menu_sub_arrow_background_hover_colour_active":"#3f3f3f","fade_submenus":"off","fade_submenus_side":"left","fade_submenus_delay":"100","fade_submenus_speed":"500","use_slide_effect":"off","slide_effect_back_to_text":"Back","accordion_animation":"off","auto_expand_all_submenus":"off","auto_expand_current_submenus":"off","menu_item_click_to_trigger_submenu":"off","button_width":"55","button_width_unit":"px","button_height":"55","button_height_unit":"px","button_background_colour":"#000000","button_background_colour_hover":"#000000","button_background_colour_active":"#000000","toggle_button_border_radius":"5","button_transparent_background":"off","button_left_or_right":"right","button_position_type":"fixed","button_distance_from_side":"5","button_distance_from_side_unit":"%","button_top":"15","button_top_unit":"px","button_push_with_animation":"off","button_click_animation":"boring","button_line_margin":"5","button_line_margin_unit":"px","button_line_width":"25","button_line_width_unit":"px","button_line_height":"3","button_line_height_unit":"px","button_line_colour":"#ffffff","button_line_colour_hover":"#ffffff","button_line_colour_active":"#ffffff","button_font_icon":"","button_font_icon_when_clicked":"","button_image":"","button_image_when_clicked":"","button_title":"","button_title_open":"","button_title_position":"left","menu_container_columns":"","button_font":"","button_font_size":"14","button_font_size_unit":"px","button_title_line_height":"13","button_title_line_height_unit":"px","button_text_colour":"#ffffff","button_trigger_type_click":"on","button_trigger_type_hover":"off","button_click_trigger":"#responsive-menu-button","items_order":{"title":"on","menu":"on","search":"on","additional content":"on"},"menu_title":"","menu_title_link":"\/","menu_title_link_location":"_self","menu_title_image":"","menu_title_font_icon":"","menu_title_section_padding":{"top":"10%","right":"5%","bottom":"0%","left":"5%"},"menu_title_background_colour":"#212121","menu_title_background_hover_colour":"#212121","menu_title_font_size":"13","menu_title_font_size_unit":"px","menu_title_alignment":"left","menu_title_font_weight":"400","menu_title_font_family":"","menu_title_colour":"#ffffff","menu_title_hover_colour":"#ffffff","menu_title_image_width":"","menu_title_image_width_unit":"%","menu_title_image_height":"","menu_title_image_height_unit":"px","menu_additional_content":"","menu_additional_section_padding":{"top":"0px","right":"5%","bottom":"0px","left":"5%"},"menu_additional_content_font_size":"16","menu_additional_content_font_size_unit":"px","menu_additional_content_alignment":"center","menu_additional_content_colour":"#ffffff","menu_search_box_text":"Search","menu_search_box_code":"","menu_search_section_padding":{"top":"0px","right":"5%","bottom":"0px","left":"5%"},"menu_search_box_height":"45","menu_search_box_height_unit":"px","menu_search_box_border_radius":"30","menu_search_box_text_colour":"#333333","menu_search_box_background_colour":"#ffffff","menu_search_box_placeholder_colour":"#c7c7cd","menu_search_box_border_colour":"#dadada","menu_section_padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"menu_width":"75","menu_width_unit":"%","menu_maximum_width":"","menu_maximum_width_unit":"px","menu_minimum_width":"","menu_minimum_width_unit":"px","menu_auto_height":"off","menu_container_padding":{"top":"0px","right":"0px","bottom":"0px","left":"0px"},"menu_container_background_colour":"#212121","menu_background_image":"","animation_type":"slide","menu_appear_from":"left","animation_speed":"0.5","page_wrapper":"","menu_close_on_body_click":"off","menu_close_on_scroll":"off","menu_close_on_link_click":"off","enable_touch_gestures":"off","hamburger_position_selector":"","menu_id":2158,"active_toggle_contents":"\u25b2","inactive_toggle_contents":"\u25bc"}]};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' data-rocket-src='https://centurybuilding.com/wp-content/cache/min/1/wp-content/plugins/responsive-menu/v4.0.0/assets/js/rmp-menu.js?ver=1686566326' id='rmp_menu_scripts-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://centurybuilding.com/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.tools.min.js?ver=5.4.8' id='tp-tools-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://centurybuilding.com/wp-content/plugins/revslider/public/assets/js/jquery.themepunch.revolution.min.js?ver=5.4.8' id='revmin-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://centurybuilding.com/wp-content/themes/EM-Genesis-Child/js/common.min.js?ver=2.0' id='gs-common-js'></script>
+<script type="rocketlazyloadscript" async data-rocket-type='text/javascript' id='cookie-notice-front-js-before'>
+var cnArgs = {"ajaxUrl":"https:\/\/centurybuilding.com\/wp-admin\/admin-ajax.php","nonce":"9d99d0954b","hideEffect":"fade","position":"bottom","onScroll":false,"onScrollOffset":100,"onClick":false,"cookieName":"cookie_notice_accepted","cookieTime":2592000,"cookieTimeRejected":2592000,"globalCookie":false,"redirection":false,"cache":true,"revokeCookies":false,"revokeCookiesOpt":"automatic"};
+</script>
+<script type="rocketlazyloadscript" async data-rocket-type='text/javascript' data-rocket-src='https://centurybuilding.com/wp-content/plugins/cookie-notice/js/front.min.js?ver=2.4.8' id='cookie-notice-front-js'></script>
+<link rel="https://api.w.org/" href="https://centurybuilding.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://centurybuilding.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://centurybuilding.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.2.2" />
+<link rel="icon" href="https://centurybuilding.com/wp-content/themes/EM-Genesis-Child/images/favicon.png" />
+<!-- Google Tag Manager -->
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WV8XHC2');</script>
+<!-- End Google Tag Manager -->
+
+<meta name="google-site-verification" content="hAckgDRQ_n_-59zly_8IJFOp8br1jbDh8OljQudDdOY" />
+
+<!-- Facebook Pixel Code -->
+<script type="rocketlazyloadscript">
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '596118963898178');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=596118963898178&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "LocalBusiness",
+  "areaServed": "https://en.wikipedia.org/wiki/Long_Island",
+  "name": "Century Building Materials",
+  "image": "https://centurybuilding.com/wp-content/themes/EM-Genesis-Child/images/logo.png",
+  "logo": "https://centurybuilding.com/wp-content/themes/EM-Genesis-Child/images/logo.png",
+  "@id": "https://centurybuilding.com/",
+  "url": "https://centurybuilding.com/",
+  "email": "sales@centurybuilding.com",
+  "telephone": "+1-631-888-8810",
+  "priceRange": "$$",
+  "knowsAbout": "https://en.wikipedia.org/wiki/Building_material",
+  "sameAs": [
+    "https://www.facebook.com/CenturyBuildingMaterials/",
+    "https://www.instagram.com/centurybuildingmaterials/"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "275 East Sunrise Hwy",
+    "addressLocality": "Lindenhurst",
+    "addressRegion": "NY",
+    "postalCode": "11757",
+    "addressCountry": "US" 
+    },
+        "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 40.7071372,
+    "longitude": -73.370271
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "07:00",
+    "closes": "17:00"
+    },
+"contactPoint" : [
+   { "@type" : "ContactPoint",
+  "telephone" : "+1-631-888-8810",
+  "contactType" : "Office",
+  "areaServed" : "Long Island, New York",
+  "availableLanguage" : "English"
+  } ]
+ }
+}
+</script>
+
+<meta name="google-site-verification" content="raBsQd7T5AagQw80eBwzVjXtmXZh9zlNSa1qvh5DUFs" /><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="generator" content="Powered by Slider Revolution 5.4.8 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">function setREVStartSize(e){									
+						try{ e.c=jQuery(e.c);var i=jQuery(window).width(),t=9999,r=0,n=0,l=0,f=0,s=0,h=0;
+							if(e.responsiveLevels&&(jQuery.each(e.responsiveLevels,function(e,f){f>i&&(t=r=f,l=e),i>f&&f>r&&(r=f,n=e)}),t>r&&(l=n)),f=e.gridheight[l]||e.gridheight[0]||e.gridheight,s=e.gridwidth[l]||e.gridwidth[0]||e.gridwidth,h=i/s,h=h>1?1:h,f=Math.round(h*f),"fullscreen"==e.sliderLayout){var u=(e.c.width(),jQuery(window).height());if(void 0!=e.fullScreenOffsetContainer){var c=e.fullScreenOffsetContainer.split(",");if (c) jQuery.each(c,function(e,i){u=jQuery(i).length>0?u-jQuery(i).outerHeight(!0):u}),e.fullScreenOffset.split("%").length>1&&void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0?u-=jQuery(window).height()*parseInt(e.fullScreenOffset,0)/100:void 0!=e.fullScreenOffset&&e.fullScreenOffset.length>0&&(u-=parseInt(e.fullScreenOffset,0))}f=u}else void 0!=e.minHeight&&f<e.minHeight&&(f=e.minHeight);e.c.closest(".rev_slider_wrapper").css({height:f})					
+						}catch(d){console.log("Failure at Presize of Slider:"+d)}						
+					};</script>
+		<style type="text/css" id="wp-custom-css">
+			#genesis-content > a, a > *, button > a, div > a {
+	text-decoration: underline;
+}
+
+h2 a:hover {
+	color: #dd3333 !important;
+}
+
+.red-button:hover {
+	background-color: #992424;
+} 
+
+.one-half .phone > a:hover {
+	background-color: #0C2658;
+}
+
+#blue-box .red-button {
+    width: 200px;
+    margin: 0 auto;
+}
+body.outdoorDC iframe {
+    width: 560px;
+    height: 315px;
+}
+div#shop_by_brand {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 12px;
+}
+
+@media screen and (min-width: 900px) {
+header.entry-header > h4.entry-title > a {
+font-size: 2rem !important;
+}
+div[class*="-smartslider"] h5 {
+display: inline-flex !important;
+justify-content: center !important;
+align-items: center !important;
+}
+}
+@media screen and (max-width: 699px) {
+	#home-featured > div:nth-child(1){
+		display: grid !important;
+		grid-template-rows: auto !important;
+		grid-template-columns: 1fr !important;
+		align-items: center !important;
+		justify-items: center !important;
+	}
+	body.outdoorDC iframe {
+    width: 100%;
+}
+.roofing-row {
+    padding: 20px !important;
+}
+}
+@media screen and (max-width: 600px) {
+figure {
+    width: 100%;
+    justify-content: center;
+}
+div#shop_by_brand {
+    row-gap: 25px;
+}
+}
+@media screen and (max-width: 480px) {
+.roofing-row {
+	position: relative;
+	overflow: hidden;
+}
+.roofing-row img {
+    width: 50px;
+}
+.roofing-row .speak-bubble.triangle-right.left {
+    font-size: 12px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    bottom: 0;
+    width: 135px;
+    padding: 15px 15px 0 !important;
+    display: block;
+    clear: both;
+    margin: 0px 0px 10px;
+}
+.roofing-row .speak-bubble.triangle-right.left a {
+    margin: 10px 0 0px;
+}
+}
+@media screen and (max-width: 375px) {
+body.outdoorDC iframe {
+    height: 100%;
+}
+}
+
+
+/* style.css | https://centurybuilding.com/wp-content/themes/EM-Genesis-Child/style.css?ver=2.0 */
+
+.genesis-nav-menu {
+  max-height: 800px !important;
+}
+		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
+<body data-rsssl=1 class="home blog header-image full-width-content genesis-breadcrumbs-hidden genesis-footer-widgets-visible cookies-not-set"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WV8XHC2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) --><div class="site-container"><ul class="genesis-skip-link"><li><a href="#genesis-nav-primary" class="screen-reader-shortcut"> Skip to primary navigation</a></li><li><a href="#genesis-content" class="screen-reader-shortcut"> Skip to main content</a></li><li><a href="#genesis-footer-widgets" class="screen-reader-shortcut"> Skip to footer</a></li></ul><header class="site-header"><div class="title-area"><a id="sitelogo" href="https://centurybuilding.com"><img width="249" height="65" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20249%2065'%3E%3C/svg%3E" alt="Century Building Materials" data-lazy-src="https://centurybuilding.com/wp-content/themes/EM-Genesis-Child/images/logo.png" /><noscript><img width="249" height="65" src="https://centurybuilding.com/wp-content/themes/EM-Genesis-Child/images/logo.png" alt="Century Building Materials" /></noscript></a><h1 class="site-title"><a href="https://centurybuilding.com/">Century Building Materials</a></h1></div><div class="widget-area header-widget-area"><section id="custom_html-3" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div class="one-half first">
+	<span>HOURS:<br>
+M/F 7am-5pm, Sat 7am-2pm <br>
+Sun CLOSED
+</span></div>
+
+<div class="one-half">
+	<div class="phone">
+		<a href="tel:+16318888810">(631) 888-8810</a>
+	</div>
+</div></div></div></section>
+</div></header><nav class="nav-primary" aria-label="Main" id="genesis-nav-primary"><div class="wrap"><ul id="menu-primary-menu" class="menu genesis-nav-menu menu-primary js-superfish"><li id="menu-item-1239" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1239"><a href="https://centurybuilding.com/products/"><span >Products</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-1468" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1468"><a href="https://centurybuilding.com/products/lumber/"><span >Lumber Supply</span></a></li>
+	<li id="menu-item-1469" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1469"><a href="https://centurybuilding.com/products/masonry/"><span >Masonry</span></a></li>
+	<li id="menu-item-1735" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1735"><a href="https://centurybuilding.com/products/nicolock-pavers/"><span >Nicolock</span></a></li>
+	<li id="menu-item-2641" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2641"><a href="https://centurybuilding.com/products/diablo-tools/"><span >Diablo Tools</span></a></li>
+	<li id="menu-item-1465" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1465"><a href="https://centurybuilding.com/products/doors/"><span >Doors</span></a></li>
+	<li id="menu-item-1464" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1464"><a href="https://centurybuilding.com/products/decking/"><span >Decking</span></a></li>
+	<li id="menu-item-1461" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1461"><a href="https://centurybuilding.com/products/dryvit/"><span >Dryvit Supply</span></a></li>
+	<li id="menu-item-1472" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1472"><a href="https://centurybuilding.com/products/roofing-and-siding/"><span >Roofing &#038; Siding</span></a></li>
+	<li id="menu-item-1473" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1473"><a href="https://centurybuilding.com/products/windows-and-skylights/"><span >Windows &#038; Skylights</span></a></li>
+	<li id="menu-item-1466" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1466"><a href="https://centurybuilding.com/products/drywall-and-insulation/"><span >Drywall &#038; Insulation</span></a></li>
+	<li id="menu-item-1463" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1463"><a href="https://centurybuilding.com/products/ceiling-tile-and-grid/"><span >Ceiling Tile &#038; Grid</span></a></li>
+	<li id="menu-item-1471" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1471"><a href="https://centurybuilding.com/products/rebar-and-mesh/"><span >Rebar &#038; Mesh</span></a></li>
+	<li id="menu-item-1618" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1618"><a href="https://centurybuilding.mouldingmodule.com"><span >Online Moulding Catalog</span></a></li>
+	<li id="menu-item-1467" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1467"><a href="https://centurybuilding.com/products/go-green/"><span >Go Green Materials</span></a></li>
+	<li id="menu-item-1462" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1462"><a href="https://centurybuilding.com/products/additional-products/"><span >Additional Products</span></a></li>
+</ul>
+</li>
+<li id="menu-item-1849" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1849"><a href="https://centurybuilding.com/products/nicolock-pavers/"><span >Nicolock Paving Stones</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-1848" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1848"><a href="https://centurybuilding.com/products/nicolock-pavers/nicolock-fire-pits-and-fireplaces/"><span >Fire Pits and Fireplaces</span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-1868" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1868"><a href="https://centurybuilding.com/products/nicolock-pavers/nicolock-fire-pits-and-places-gallery/"><span >Fire Pits and Places Gallery</span></a></li>
+	</ul>
+</li>
+	<li id="menu-item-1847" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1847"><a href="https://centurybuilding.com/products/nicolock-pavers/paver-patios/"><span >Pool Patios</span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-1846" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1846"><a href="https://centurybuilding.com/products/nicolock-pavers/paver-patios/pool-patios-inspiration-gallery/"><span >Pool Patios Gallery</span></a></li>
+	</ul>
+</li>
+	<li id="menu-item-1986" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1986"><a href="https://centurybuilding.com/century-building-retaining-walls/"><span >Retaining Walls</span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-2012" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2012"><a href="https://centurybuilding.com/century-building-retaining-wall-gallery/"><span >Retaining Walls Gallery</span></a></li>
+	</ul>
+</li>
+	<li id="menu-item-2040" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2040"><a href="https://centurybuilding.com/products/nicolock-pavers/nicolock-driveways-and-walkways/"><span >Driveways and Walkways</span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-2041" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2041"><a href="https://centurybuilding.com/driveways-and-walkways-inspiration-gallery/"><span >Driveways and Walkways Gallery</span></a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-1238" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1238"><a href="https://centurybuilding.com/outdoor-display-center/"><span >Outdoor Display Center</span></a></li>
+<li id="menu-item-1240" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1240"><a href="https://centurybuilding.com/services/"><span >Our Services</span></a></li>
+<li id="menu-item-1236" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1236"><a href="https://centurybuilding.com/careers/"><span >Careers</span></a></li>
+<li id="menu-item-1235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1235"><a href="https://centurybuilding.com/about-us/"><span >About Us</span></a></li>
+<li id="menu-item-1237" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1237"><a href="https://centurybuilding.com/contact/"><span >Contact Us</span></a></li>
+</ul></div></nav><nav class="nav-secondary" id="secondary-nav" aria-label="Secondary"><div class="wrap"><ul id="menu-product-menu" class="menu genesis-nav-menu menu-secondary js-superfish"><li id="menu-item-1248" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1248"><a href="https://centurybuilding.com/products/lumber/"><span >Lumber Supply</span></a></li>
+<li id="menu-item-1249" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1249"><a href="https://centurybuilding.com/products/masonry/"><span >Masonry</span></a></li>
+<li id="menu-item-1242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1242"><a href="https://centurybuilding.com/products/nicolock-pavers/"><span >Nicolock</span></a></li>
+<li id="menu-item-2640" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2640"><a href="https://centurybuilding.com/products/diablo-tools/"><span >Diablo Tools</span></a></li>
+<li id="menu-item-1757" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1757"><a href="https://centurybuilding.com/products/doors/"><span >Doors</span></a></li>
+<li id="menu-item-1245" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1245"><a href="https://centurybuilding.com/products/decking/"><span >Decking</span></a></li>
+<li id="menu-item-1241" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1241"><a href="https://centurybuilding.com/products/dryvit/"><span >Dryvit Supply</span></a></li>
+<li id="menu-item-1252" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1252"><a href="https://centurybuilding.com/products/roofing-and-siding/"><span >Roofing &#038; Siding</span></a></li>
+<li id="menu-item-1253" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1253"><a href="https://centurybuilding.com/products/windows-and-skylights/"><span >Windows &#038; Skylights</span></a></li>
+<li id="menu-item-1247" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1247"><a href="https://centurybuilding.com/products/drywall-and-insulation/"><span >Drywall &#038; Insulation</span></a></li>
+<li id="menu-item-1244" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1244"><a href="https://centurybuilding.com/products/ceiling-tile-and-grid/"><span >Ceiling Tile &#038; Grid</span></a></li>
+<li id="menu-item-1251" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1251"><a href="https://centurybuilding.com/products/rebar-and-mesh/"><span >Rebar &#038; Mesh</span></a></li>
+<li id="menu-item-2209" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2209"><a href="https://centurybuilding.com/products/moulding/"><span >Moulding</span></a></li>
+<li id="menu-item-1619" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1619"><a href="https://centurybuilding.mouldingmodule.com"><span >Online Moulding Catalog</span></a></li>
+<li id="menu-item-1758" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1758"><a href="https://centurybuilding.com/products/go-green/"><span >Go Green Materials</span></a></li>
+<li id="menu-item-1243" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1243"><a href="https://centurybuilding.com/products/additional-products/"><span >Additional Products</span></a></li>
+</ul></div></nav><div class="site-inner" id="site-inner"><div class="wrap"><div class="content-sidebar-wrap"><main class="content" id="genesis-content"><section id="home-hero"><div class="home-widget widget-area"><section id="rev-slider-widget-2" class="widget widget_revslider"><div class="widget-wrap">
+<div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-source="gallery" style="margin:0px auto;background:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+<!-- START REVOLUTION SLIDER 5.4.8 auto mode -->
+	<div id="rev_slider_1_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.8">
+<ul>	<!-- SLIDE  -->
+	<li data-index="rs-1" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+		<!-- MAIN IMAGE -->
+		<img width="1600" height="595" src="https://centurybuilding.com/wp-content/uploads/revslider/home-slider/century-hero.jpg"  alt="century hero" title="century hero"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-no-retina>
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 1 -->
+		<div class="tp-caption   tp-resizeme" 
+			 id="slide-1-layer-1" 
+			 data-x="60" 
+			 data-y="28" 
+						data-width="['467']"
+			data-height="['67']"
+ 
+			data-type="text" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":500,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"nothing"}]'
+			data-textAlign="['left','left','left','left']"
+			data-paddingtop="[15,15,15,15]"
+			data-paddingright="[25,25,25,25]"
+			data-paddingbottom="[0,0,0,0]"
+			data-paddingleft="[25,25,25,25]"
+
+			style="z-index: 5; min-width: 467px; max-width: 467px; max-width: 67px; max-width: 67px; white-space: normal; font-size: 80px; line-height: 22px; font-weight: 400; color: rgba(255,255,255,1); letter-spacing: px;font-family:Pragati Narrow;background-color:rgba(231,21,0,0.8);"><h1>Long Island Building Materials</h1> </div>
+
+		<!-- LAYER NR. 2 -->
+		<div class="tp-caption   tp-resizeme" 
+			 id="slide-1-layer-2" 
+			 data-x="58" 
+			 data-y="107" 
+						data-width="['708']"
+			data-height="['auto']"
+ 
+			data-type="text" 
+			data-responsive_offset="on" 
+
+			data-frames='[{"delay":500,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power2.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"nothing"}]'
+			data-textAlign="['left','left','left','left']"
+			data-paddingtop="[25,25,25,25]"
+			data-paddingright="[25,25,25,25]"
+			data-paddingbottom="[25,25,25,25]"
+			data-paddingleft="[25,25,25,25]"
+
+			style="z-index: 6; min-width: 708px; max-width: 708px; white-space: normal; font-size: 20px; line-height: 22px; font-weight: 400; color: rgba(255,255,255,1); letter-spacing: ;font-family:Pragati Narrow;background-color:rgba(12,38,88,0.8);">Century Building Materials has been in the Long Island region for more than 50 years. We have the supplies you need to complete your project and make it look perfect. You won’t just see items in a catalog when you come to our showroom, we’ll have them in stock. Whether you’re a do-it-yourself homeowner or a professional contractor, our highly trained sales staff will assist you in finding the right product. We’re a leading supplier for all of your building needs, and unlike the chain stores, we can show you what the job will look like when it’s finished at our outdoor display center. Contractors often bring homeowners to the center to see how our products look, why not come see for yourself? Century Building Materials is proud to carry Nicolock products and be Long Island’s exclusive distributor of Dryvit Energy Efficient Exteriors. 
+ </div>
+	</li>
+</ul>
+<div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>	</div>
+<script type="rocketlazyloadscript">var htmlDiv = document.getElementById("rs-plugin-settings-inline-css"); var htmlDivCss="";
+				if(htmlDiv) {
+					htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+				}else{
+					var htmlDiv = document.createElement("div");
+					htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
+					document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
+				}
+			</script>
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+if (setREVStartSize!==undefined) setREVStartSize(
+	{c: '#rev_slider_1_1', gridwidth: [1200], gridheight: [400], sliderLayout: 'auto'});
+			
+var revapi1,
+	tpj;	
+(function() {			
+	if (!/loaded|interactive|complete/.test(document.readyState)) document.addEventListener("DOMContentLoaded",onLoad); else onLoad();	
+	function onLoad() {				
+		if (tpj===undefined) { tpj = jQuery; if("off" == "on") tpj.noConflict();}
+	if(tpj("#rev_slider_1_1").revolution == undefined){
+		revslider_showDoubleJqueryError("#rev_slider_1_1");
+	}else{
+		revapi1 = tpj("#rev_slider_1_1").show().revolution({
+			sliderType:"standard",
+			jsFileLocation:"//centurybuilding.com/wp-content/plugins/revslider/public/assets/js/",
+			sliderLayout:"auto",
+			dottedOverlay:"none",
+			delay:9000,
+			navigation: {
+				onHoverStop:"off",
+			},
+			visibilityLevels:[1240,1024,778,480],
+			gridwidth:1200,
+			gridheight:400,
+			lazyType:"none",
+			shadow:0,
+			spinner:"spinner0",
+			stopLoop:"off",
+			stopAfterLoops:-1,
+			stopAtSlide:-1,
+			shuffle:"off",
+			autoHeight:"off",
+			disableProgressBar:"on",
+			hideThumbsOnMobile:"off",
+			hideSliderAtLimit:0,
+			hideCaptionAtLimit:0,
+			hideAllCaptionAtLilmit:0,
+			debugMode:false,
+			fallbacks: {
+				simplifyAll:"off",
+				nextSlideOnWindowFocus:"off",
+				disableFocusListener:false,
+			}
+		});
+	}; /* END OF revapi call */
+	
+ }; /* END OF ON LOAD FUNCTION */
+}()); /* END OF WRAPPING FUNCTION */
+</script>
+		</div><!-- END REVOLUTION SLIDER --></div></section>
+</div></section><!-- end #home-hero --><section id="home-company-info"><div class="home-widget widget-area"><section id="custom_html-6" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><h2><font color="#EE3B33">Century Building Materials</font></h2>
+<p>We have been serving contractors and do-it-yourselfers alike from Queens to Montauk since 1951! Come visit. From floor to rooftop and everything in between, we have the building materials you need! Bring your dream home improvement project to life by calling us at <a href="tel:+16318888810"><u>(631)888-8810</u></a>, emailing <a href="mailto:sales@centurybuilding.com"><u>sales@centurybuilding.com</u></a>, or filling out our <a href="https://centurybuilding.com/contact/"><u>contact form</u></a>.</p></div></div></section>
+</div></section><!-- end #home-company-info --><section id="home-featured"><div class="home-widget widget-area"><section id="featured-page-advanced-2" class="widget featured-content featuredpage"><div class="widget-wrap"><article class="post-61 page type-page status-publish has-post-thumbnail entry" aria-label="Outdoor Display Center"><a href="https://centurybuilding.com/outdoor-display-center/" title="Outdoor Display Center" class="alignleft" target="_self" rel="" ><img width="300" height="157" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20157'%3E%3C/svg%3E" class="entry-image" alt="Our Outdoor Design Center showroom" decoding="async" data-lazy-src="https://centurybuilding.com/wp-content/uploads/2021/05/outdoor-design-center.jpg" /><noscript><img width="300" height="157" src="https://centurybuilding.com/wp-content/uploads/2021/05/outdoor-design-center.jpg" class="entry-image" alt="Our Outdoor Design Center showroom" decoding="async" /></noscript></a><h3 class="widgettitle widget-title">Outdoor Display Center</h3>
+<div class="entry-content"><p><br>Visit our unique, life-size Outdoor Display Center in Lindenhurst. Here, you can envision exactly what your next finished home project will look like before making the commitment! Including authentic life-size exterior models. </p><div class="fpa-more-link"><a href="https://centurybuilding.com/outdoor-display-center/" class="more-link" target="_self" rel="">Outdoor Center <span class="screen-reader-text">about Outdoor Display Center</span></a></div></div></article></div></section>
+<section id="featured-page-advanced-7" class="widget featured-content featuredpage"><div class="widget-wrap"><article class="post-1026 page type-page status-publish has-post-thumbnail entry" aria-label="Nicolock Paving Stones"><a href="https://centurybuilding.com/products/nicolock-pavers/" title="Nicolock Paving Stones" class="aligncenter" target="_self" rel="" ><img width="300" height="157" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20157'%3E%3C/svg%3E" class="entry-image" alt="Nicolock pavers on a pool deck" decoding="async" style="display:block;margin:0 auto;" data-lazy-src="https://centurybuilding.com/wp-content/uploads/2021/05/nicolock-pavers.jpg" /><noscript><img width="300" height="157" src="https://centurybuilding.com/wp-content/uploads/2021/05/nicolock-pavers.jpg" class="entry-image" alt="Nicolock pavers on a pool deck" decoding="async" style="display:block;margin:0 auto;" /></noscript></a><h3 class="widgettitle widget-title">Nicolock Paving Stones</h3>
+<div class="entry-content"><p>Check out our selection of Nicolock pavers with paver-shield™ technology in a variety of styles and an assortment of colors available to suit the needs of your dream outdoor living space or yard.  </p><div class="fpa-more-link"><a href="https://centurybuilding.com/products/nicolock-pavers/" class="more-link" target="_self" rel="">Nicolock Pavers <span class="screen-reader-text">about Nicolock Paving Stones</span></a></div></div></article></div></section>
+<section id="featured-page-advanced-5" class="widget featured-content featuredpage"><div class="widget-wrap"><article class="post-41 page type-page status-publish has-post-thumbnail entry" aria-label="Green Building Materials"><a href="https://centurybuilding.com/products/go-green/" title="Green Building Materials" class="aligncenter" target="_self" rel="" ><img width="300" height="157" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20157'%3E%3C/svg%3E" class="entry-image attachment-page" alt="Green Building Materials" decoding="async" data-lazy-srcset="https://centurybuilding.com/wp-content/uploads/2016/04/go-green-300x157.jpg 300w, https://centurybuilding.com/wp-content/uploads/2016/04/go-green.jpg 315w" data-lazy-sizes="(max-width: 300px) 100vw, 300px" data-lazy-src="https://centurybuilding.com/wp-content/uploads/2016/04/go-green-300x157.jpg" /><noscript><img width="300" height="157" src="https://centurybuilding.com/wp-content/uploads/2016/04/go-green-300x157.jpg" class="entry-image attachment-page" alt="Green Building Materials" decoding="async" srcset="https://centurybuilding.com/wp-content/uploads/2016/04/go-green-300x157.jpg 300w, https://centurybuilding.com/wp-content/uploads/2016/04/go-green.jpg 315w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></a><h3 class="widgettitle widget-title">Energy Efficient Materials</h3>
+<div class="entry-content"><p>From Dryvit/stucco insulation materials to permeable pavers, energy-efficient windows, treated lumber, and other environmentally conscious products visit our location today to start saving money and the planet! Start saving today. </p><div class="fpa-more-link"><a href="https://centurybuilding.com/products/go-green/" class="more-link" target="_self" rel="">Energy Saving Materials <span class="screen-reader-text">about Green Building Materials</span></a></div></div></article></div></section>
+<section id="featured-page-advanced-6" class="widget featured-content featuredpage"><div class="widget-wrap"><article class="post-32 page type-page status-publish has-post-thumbnail entry" aria-label="Interior and Exterior Doors"><a href="https://centurybuilding.com/products/doors/" title="Interior and Exterior Doors" class="aligncenter" target="_self" rel="" ><img width="300" height="157" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20157'%3E%3C/svg%3E" class="entry-image attachment-page" alt="Interior and Exterior Doors" decoding="async" data-lazy-srcset="https://centurybuilding.com/wp-content/uploads/2016/04/doors-300x157.jpg 300w, https://centurybuilding.com/wp-content/uploads/2016/04/doors.jpg 315w" data-lazy-sizes="(max-width: 300px) 100vw, 300px" data-lazy-src="https://centurybuilding.com/wp-content/uploads/2016/04/doors-300x157.jpg" /><noscript><img width="300" height="157" src="https://centurybuilding.com/wp-content/uploads/2016/04/doors-300x157.jpg" class="entry-image attachment-page" alt="Interior and Exterior Doors" decoding="async" srcset="https://centurybuilding.com/wp-content/uploads/2016/04/doors-300x157.jpg 300w, https://centurybuilding.com/wp-content/uploads/2016/04/doors.jpg 315w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></a><h3 class="widgettitle widget-title">Interior &#038; Exterior Doors</h3>
+<div class="entry-content"><p>Doors can enhance the curb appeal of a home, add character to an office, and create wonderful first impressions for your guests. Come down to our interior and exterior door showroom to see all your options. </p><div class="fpa-more-link"><a href="https://centurybuilding.com/products/doors/" class="more-link" target="_self" rel="">Interior &amp; Exterior Doors <span class="screen-reader-text">about Interior and Exterior Doors</span></a></div></div></article></div></section>
+<section id="featured-page-advanced-4" class="widget featured-content featuredpage"><div class="widget-wrap"><article class="post-35 page type-page status-publish has-post-thumbnail entry" aria-label="Roofing and Siding"><a href="https://centurybuilding.com/products/roofing-and-siding/" title="Roofing and Siding" class="aligncenter" target="_self" rel="" ><img width="300" height="157" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20157'%3E%3C/svg%3E" class="entry-image attachment-page" alt="Roofing and Siding" decoding="async" data-lazy-srcset="https://centurybuilding.com/wp-content/uploads/2016/04/roofing-siding-300x157.jpg 300w, https://centurybuilding.com/wp-content/uploads/2016/04/roofing-siding.jpg 315w" data-lazy-sizes="(max-width: 300px) 100vw, 300px" data-lazy-src="https://centurybuilding.com/wp-content/uploads/2016/04/roofing-siding-300x157.jpg" /><noscript><img width="300" height="157" src="https://centurybuilding.com/wp-content/uploads/2016/04/roofing-siding-300x157.jpg" class="entry-image attachment-page" alt="Roofing and Siding" decoding="async" srcset="https://centurybuilding.com/wp-content/uploads/2016/04/roofing-siding-300x157.jpg 300w, https://centurybuilding.com/wp-content/uploads/2016/04/roofing-siding.jpg 315w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></a><h3 class="widgettitle widget-title">Roofing and Siding</h3>
+<div class="entry-content"><p>Enhance your exteriors with updated roof and siding projects that look great and are designed to withstand the elements. </p><div class="fpa-more-link"><a href="https://centurybuilding.com/products/roofing-and-siding/" class="more-link" target="_self" rel="">Roofing &amp; Siding <span class="screen-reader-text">about Roofing and Siding</span></a></div></div></article></div></section>
+<section id="featured-page-advanced-3" class="widget featured-content featuredpage"><div class="widget-wrap"><article class="post-39 page type-page status-publish has-post-thumbnail entry" aria-label="Additional Products"><a href="https://centurybuilding.com/products/additional-products/" title="Additional Products" class="aligncenter" target="_self" rel="" ><img width="300" height="157" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20157'%3E%3C/svg%3E" class="entry-image attachment-page" alt="Additional Products" decoding="async" data-lazy-srcset="https://centurybuilding.com/wp-content/uploads/2016/04/tools-and-more-300x157.jpg 300w, https://centurybuilding.com/wp-content/uploads/2016/04/tools-and-more.jpg 315w" data-lazy-sizes="(max-width: 300px) 100vw, 300px" data-lazy-src="https://centurybuilding.com/wp-content/uploads/2016/04/tools-and-more-300x157.jpg" /><noscript><img width="300" height="157" src="https://centurybuilding.com/wp-content/uploads/2016/04/tools-and-more-300x157.jpg" class="entry-image attachment-page" alt="Additional Products" decoding="async" srcset="https://centurybuilding.com/wp-content/uploads/2016/04/tools-and-more-300x157.jpg 300w, https://centurybuilding.com/wp-content/uploads/2016/04/tools-and-more.jpg 315w" sizes="(max-width: 300px) 100vw, 300px" /></noscript></a><h3 class="widgettitle widget-title">Additional Products</h3>
+<div class="entry-content"><p>From Wellcraft Window Escape systems and power tools to ladders and caulking, Century Building Materials has got you covered. </p><div class="fpa-more-link"><a href="https://centurybuilding.com/products/additional-products/" class="more-link" target="_self" rel="">Additional Products <span class="screen-reader-text">about Additional Products</span></a></div></div></article></div></section>
+</div></section><!-- end #home-featured --><section id="home-affiliations"><div class="home-widget widget-area"><section id="custom_html-12" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget">
+<div id="rev_slider_2_2_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-source="gallery" style="margin:0px auto;background:#f9f9f9;padding:0px;margin-top:0px;margin-bottom:0px;">
+<!-- START REVOLUTION SLIDER 5.4.8 auto mode -->
+	<div id="rev_slider_2_2" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.4.8">
+<ul>	<!-- SLIDE  -->
+	<li data-index="rs-2" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="https://centurybuilding.com/wp-content/uploads/2016/11/0003_dryvit_color_logo-100x50.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+		<!-- MAIN IMAGE -->
+		<img width="1" height="1" src="https://centurybuilding.com/wp-content/plugins/revslider/admin/assets/images/dummy.png"  alt=""  data-lazyload="https://centurybuilding.com/wp-content/uploads/2016/11/0003_dryvit_color_logo.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+		<!-- LAYERS -->
+	</li>
+	<!-- SLIDE  -->
+	<li data-index="rs-3" data-transition="fade" data-slotamount="7" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="https://centurybuilding.com/wp-content/uploads/2016/11/0002_Layer-1-100x50.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+		<!-- MAIN IMAGE -->
+		<img width="1" height="1" src="https://centurybuilding.com/wp-content/plugins/revslider/admin/assets/images/dummy.png"  alt=""  data-lazyload="https://centurybuilding.com/wp-content/uploads/2016/11/0002_Layer-1.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+		<!-- LAYERS -->
+	</li>
+	<!-- SLIDE  -->
+	<li data-index="rs-4" data-transition="fade" data-slotamount="7" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="https://centurybuilding.com/wp-content/uploads/2016/11/0004_products-tyvek-100x50.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+		<!-- MAIN IMAGE -->
+		<img width="1" height="1" src="https://centurybuilding.com/wp-content/plugins/revslider/admin/assets/images/dummy.png"  alt=""  data-lazyload="https://centurybuilding.com/wp-content/uploads/2016/11/0004_products-tyvek.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+		<!-- LAYERS -->
+	</li>
+	<!-- SLIDE  -->
+	<li data-index="rs-5" data-transition="fade" data-slotamount="7" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="https://centurybuilding.com/wp-content/uploads/2016/11/0001_Layer-2-100x50.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+		<!-- MAIN IMAGE -->
+		<img width="1" height="1" src="https://centurybuilding.com/wp-content/plugins/revslider/admin/assets/images/dummy.png"  alt=""  data-lazyload="https://centurybuilding.com/wp-content/uploads/2016/11/0001_Layer-2.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+		<!-- LAYERS -->
+	</li>
+	<!-- SLIDE  -->
+	<li data-index="rs-6" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb="https://centurybuilding.com/wp-content/uploads/2016/11/0000_marvin-scaled-100x50.jpg"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+		<!-- MAIN IMAGE -->
+		<img width="1" height="1" src="https://centurybuilding.com/wp-content/plugins/revslider/admin/assets/images/dummy.png"  alt=""  data-lazyload="https://centurybuilding.com/wp-content/uploads/2016/11/0000_marvin-scaled.jpg" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+		<!-- LAYERS -->
+	</li>
+</ul>
+<script type="rocketlazyloadscript">var htmlDiv = document.getElementById("rs-plugin-settings-inline-css"); var htmlDivCss="";
+						if(htmlDiv) {
+							htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+						}else{
+							var htmlDiv = document.createElement("div");
+							htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
+							document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
+						}
+					</script>
+<div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>	</div>
+<script type="rocketlazyloadscript">var htmlDiv = document.getElementById("rs-plugin-settings-inline-css"); var htmlDivCss="";
+				if(htmlDiv) {
+					htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+				}else{
+					var htmlDiv = document.createElement("div");
+					htmlDiv.innerHTML = "<style>" + htmlDivCss + "</style>";
+					document.getElementsByTagName("head")[0].appendChild(htmlDiv.childNodes[0]);
+				}
+			</script>
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+if (setREVStartSize!==undefined) setREVStartSize(
+	{c: '#rev_slider_2_2', gridwidth: [150], gridheight: [150], sliderLayout: 'auto'});
+			
+var revapi2,
+	tpj;	
+(function() {			
+	if (!/loaded|interactive|complete/.test(document.readyState)) document.addEventListener("DOMContentLoaded",onLoad); else onLoad();	
+	function onLoad() {				
+		if (tpj===undefined) { tpj = jQuery; if("off" == "on") tpj.noConflict();}
+	if(tpj("#rev_slider_2_2").revolution == undefined){
+		revslider_showDoubleJqueryError("#rev_slider_2_2");
+	}else{
+		revapi2 = tpj("#rev_slider_2_2").show().revolution({
+			sliderType:"carousel",
+			jsFileLocation:"//centurybuilding.com/wp-content/plugins/revslider/public/assets/js/",
+			sliderLayout:"auto",
+			dottedOverlay:"none",
+			delay:1000,
+			navigation: {
+				keyboardNavigation:"off",
+				keyboard_direction: "horizontal",
+				mouseScrollNavigation:"off",
+ 							mouseScrollReverse:"default",
+				onHoverStop:"off",
+				touch:{
+					touchenabled:"on",
+					touchOnDesktop:"off",
+					swipe_threshold: 75,
+					swipe_min_touches: 50,
+					swipe_direction: "horizontal",
+					drag_block_vertical: false
+				}
+				,
+				arrows: {
+					style:"hesperiden",
+					enable:true,
+					hide_onmobile:false,
+					hide_onleave:false,
+					tmp:'',
+					left: {
+						h_align:"left",
+						v_align:"center",
+						h_offset:30,
+						v_offset:0
+					},
+					right: {
+						h_align:"right",
+						v_align:"center",
+						h_offset:30,
+						v_offset:0
+					}
+				}
+			},
+			carousel: {
+				maxRotation: 65,
+				vary_rotation: "on",
+				minScale: 15,
+				vary_scale: "off",
+				horizontal_align: "center",
+				vertical_align: "center",
+				fadeout: "on",
+				vary_fade: "off",
+				maxVisibleItems: 5,
+				infinity: "on",
+				space: 20,
+				stretch: "off",
+ 							showLayersAllTime: "off",
+ 							easing: "Power3.easeInOut",
+ 							speed: "800"
+			},
+			visibilityLevels:[1240,1024,778,480],
+			gridwidth:150,
+			gridheight:150,
+			lazyType:"smart",
+			parallax: {
+				type:"mouse",
+				origo:"slidercenter",
+				speed:2000,
+				speedbg:0,
+				speedls:0,
+				levels:[2,3,4,5,6,7,12,16,10,50,47,48,49,50,51,55],
+			},
+			shadow:0,
+			spinner:"off",
+			stopLoop:"off",
+			stopAfterLoops:-1,
+			stopAtSlide:-1,
+			shuffle:"off",
+			autoHeight:"off",
+			disableProgressBar:"on",
+			hideThumbsOnMobile:"off",
+			hideSliderAtLimit:0,
+			hideCaptionAtLimit:0,
+			hideAllCaptionAtLilmit:0,
+			startWithSlide:2,
+			debugMode:false,
+			fallbacks: {
+				simplifyAll:"off",
+				nextSlideOnWindowFocus:"off",
+				disableFocusListener:false,
+			}
+		});
+	}; /* END OF revapi call */
+	
+ }; /* END OF ON LOAD FUNCTION */
+}()); /* END OF WRAPPING FUNCTION */
+</script>
+		<script type="rocketlazyloadscript">
+					var htmlDivCss = unescape(".hesperiden.tparrows%20%7B%0A%09cursor%3Apointer%3B%0A%09background%3Argba%280%2C0%2C0%2C0.5%29%3B%0A%09width%3A40px%3B%0A%09height%3A40px%3B%0A%09position%3Aabsolute%3B%0A%09display%3Ablock%3B%0A%09z-index%3A100%3B%0A%20%20%20%20border-radius%3A%2050%25%3B%0A%7D%0A.hesperiden.tparrows%3Ahover%20%7B%0A%09background%3Argba%280%2C%200%2C%200%2C%201%29%3B%0A%7D%0A.hesperiden.tparrows%3Abefore%20%7B%0A%09font-family%3A%20%22revicons%22%3B%0A%09font-size%3A20px%3B%0A%09color%3Argb%28255%2C%20255%2C%20255%29%3B%0A%09display%3Ablock%3B%0A%09line-height%3A%2040px%3B%0A%09text-align%3A%20center%3B%0A%7D%0A.hesperiden.tparrows.tp-leftarrow%3Abefore%20%7B%0A%09content%3A%20%22%5Ce82c%22%3B%0A%20%20%20%20margin-left%3A-3px%3B%0A%7D%0A.hesperiden.tparrows.tp-rightarrow%3Abefore%20%7B%0A%09content%3A%20%22%5Ce82d%22%3B%0A%20%20%20%20margin-right%3A-3px%3B%0A%7D%0A");
+					var htmlDiv = document.getElementById('rs-plugin-settings-inline-css');
+					if(htmlDiv) {
+						htmlDiv.innerHTML = htmlDiv.innerHTML + htmlDivCss;
+					}
+					else{
+						var htmlDiv = document.createElement('div');
+						htmlDiv.innerHTML = '<style>' + htmlDivCss + '</style>';
+						document.getElementsByTagName('head')[0].appendChild(htmlDiv.childNodes[0]);
+					}
+				  </script>
+				</div><!-- END REVOLUTION SLIDER --></div></div></section>
+</div></section><!-- end #home-affiliations --></main></div></div></div><div id="footer-widgets" class="footer-widgets gs-footer-widgets-4"><div class="wrap"><div class="footer-widgets-1 widget-area first one-fourth"><section id="custom_html-7" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><address style="margin-bottom:25px;">275 East Sunrise Hwy<br>
+Lindenhurst, NY 11757</address>		
+Phone: <a href="tel:+16318888810">(631) 888-8810</a><br>
+Fax: (631) 888-8824<br>
+Email: <a href="mailto:sales@centurybuilding.com?Subject=Website%20Lead" target="_top" rel="noopener">sales@centurybuilding.com</a></div></div></section>
+</div><div class="footer-widgets-2 widget-area one-fourth"><section id="custom_html-8" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h3 class="widgettitle widget-title">Our Hours:</h3>
+<div class="textwidget custom-html-widget">M/F 7am-5pm <br>
+Sat 7am-2pm <br>
+Sun CLOSED</div></div></section>
+</div><div class="footer-widgets-3 widget-area one-fourth"><section id="nav_menu-2" class="widget widget_nav_menu"><div class="widget-wrap"><div class="menu-footer-menu-container"><ul id="menu-footer-menu" class="menu"><li id="menu-item-1254" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-1254"><a href="https://centurybuilding.com/" aria-current="page">Home</a></li>
+<li id="menu-item-1255" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1255"><a href="https://centurybuilding.com/about-us/">About Us</a></li>
+<li id="menu-item-1259" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1259"><a href="https://centurybuilding.com/products/">Products</a></li>
+<li id="menu-item-1260" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1260"><a href="https://centurybuilding.com/services/">Our Professional Services</a></li>
+<li id="menu-item-1256" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1256"><a href="https://centurybuilding.com/careers/">Careers</a></li>
+<li id="menu-item-1257" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1257"><a href="https://centurybuilding.com/contact/">Contact Us</a></li>
+<li id="menu-item-1258" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1258"><a href="https://centurybuilding.com/outdoor-display-center/">Outdoor Display Center</a></li>
+<li id="menu-item-2124" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2124"><a href="https://centurybuilding.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-2123" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2123"><a href="https://centurybuilding.com/cookie-policy/">Cookie Policy</a></li>
+</ul></div></div></section>
+</div><div class="footer-widgets-4 widget-area one-fourth"><section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><ul class="social-menu">
+<li><a href="https://www.facebook.com/CenturyBuildingMaterials/" target="blank" rel="noopener"><img width="50" height="50" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2050%2050'%3E%3C/svg%3E" alt="facebook" data-lazy-src="/wp-content/uploads/2016/05/social-fb.jpg"><noscript><img width="50" height="50" src="/wp-content/uploads/2016/05/social-fb.jpg" alt="facebook"></noscript></a></li>
+
+<li><a href="https://www.instagram.com/centurybuildingmaterials/" target="_blank" rel="noopener"><img width="50" height="50" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2050%2050'%3E%3C/svg%3E" alt="instagram" data-lazy-src="/wp-content/uploads/2022/08/instagram-logo-50x50-1.jpeg"><noscript><img width="50" height="50" src="/wp-content/uploads/2022/08/instagram-logo-50x50-1.jpeg" alt="instagram"></noscript></a></li>
+<!--<li><a href="#" target="_blank" rel="noopener"><img width="50" height="50" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2050%2050'%3E%3C/svg%3E" alt="pinterest" data-lazy-src="/wp-content/uploads/2016/05/social-pinterest.jpg"><noscript><img width="50" height="50" src="/wp-content/uploads/2016/05/social-pinterest.jpg" alt="pinterest"></noscript></a></li>
+<li><a href="#" target="_blank" rel="noopener"><img width="50" height="50" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2050%2050'%3E%3C/svg%3E" alt="houzz" data-lazy-src="/wp-content/uploads/2016/05/social-houzz.jpg"><noscript><img width="50" height="50" src="/wp-content/uploads/2016/05/social-houzz.jpg" alt="houzz"></noscript></a></li>
+-->
+</ul></div></div></section>
+</div></div></div><footer class="site-footer"><div class="wrap"><div class="footer-credits"><p>Copyright © 1997 - 2023 Century Building Materials , LLC. All Rights Reserved. <a href="https://centurybuilding.com/privacy-policy/" title=" Privacy Policy">Privacy Policy</a> &middot; <a href="https://centurybuilding.com/site-map/"  title=" Site Map">Site Map</a></p></p></div><!--footer-credits-container --><p></p></div></footer></div>			<button type="button"  aria-controls="rmp-container-2158" aria-label="Menu Trigger" id="rmp_menu_trigger-2158"  class="rmp_menu_trigger rmp-menu-trigger-boring">
+								<span class="rmp-trigger-box">
+									<span class="responsive-menu-pro-inner"></span>
+								</span>
+					</button>
+						<div id="rmp-container-2158" class="rmp-container rmp-container rmp-slide-left">
+							<div id="rmp-menu-title-2158" class="rmp-menu-title">
+				<a href="/" target="_self" id="rmp-menu-title-link">
+								<span></span>
+				</a>
+			</div>
+			<div id="rmp-menu-wrap-2158" class="rmp-menu-wrap"><ul id="rmp-menu-2158" class="rmp-menu" role="menubar" aria-label="Default Menu"><li id="rmp-menu-item-1239" class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children rmp-menu-item rmp-menu-item-has-children rmp-menu-top-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/products/"  role="menuitem"  >Products<div class="rmp-menu-subarrow">▼</div></a><ul aria-label="Products"
+            role="menu" data-depth="2"
+            class="rmp-submenu rmp-submenu-depth-1"><li id="rmp-menu-item-1468" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/products/lumber/"  role="menuitem"  >Lumber Supply</a></li><li id="rmp-menu-item-1469" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/products/masonry/"  role="menuitem"  >Masonry</a></li><li id="rmp-menu-item-1735" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/products/nicolock-pavers/"  role="menuitem"  >Nicolock</a></li><li id="rmp-menu-item-2641" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/products/diablo-tools/"  role="menuitem"  >Diablo Tools</a></li><li id="rmp-menu-item-1465" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/products/doors/"  role="menuitem"  >Doors</a></li><li id="rmp-menu-item-1464" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/products/decking/"  role="menuitem"  >Decking</a></li><li id="rmp-menu-item-1461" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/products/dryvit/"  role="menuitem"  >Dryvit Supply</a></li><li id="rmp-menu-item-1472" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/products/roofing-and-siding/"  role="menuitem"  >Roofing &#038; Siding</a></li><li id="rmp-menu-item-1473" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/products/windows-and-skylights/"  role="menuitem"  >Windows &#038; Skylights</a></li><li id="rmp-menu-item-1466" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/products/drywall-and-insulation/"  role="menuitem"  >Drywall &#038; Insulation</a></li><li id="rmp-menu-item-1463" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/products/ceiling-tile-and-grid/"  role="menuitem"  >Ceiling Tile &#038; Grid</a></li><li id="rmp-menu-item-1471" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/products/rebar-and-mesh/"  role="menuitem"  >Rebar &#038; Mesh</a></li><li id="rmp-menu-item-1618" class=" menu-item menu-item-type-custom menu-item-object-custom rmp-menu-item rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.mouldingmodule.com"  role="menuitem"  >Online Moulding Catalog</a></li><li id="rmp-menu-item-1467" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/products/go-green/"  role="menuitem"  >Go Green Materials</a></li><li id="rmp-menu-item-1462" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/products/additional-products/"  role="menuitem"  >Additional Products</a></li></ul></li><li id="rmp-menu-item-1849" class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children rmp-menu-item rmp-menu-item-has-children rmp-menu-top-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/products/nicolock-pavers/"  role="menuitem"  >Nicolock Paving Stones<div class="rmp-menu-subarrow">▼</div></a><ul aria-label="Nicolock Paving Stones"
+            role="menu" data-depth="2"
+            class="rmp-submenu rmp-submenu-depth-1"><li id="rmp-menu-item-1848" class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children rmp-menu-item rmp-menu-item-has-children rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/products/nicolock-pavers/nicolock-fire-pits-and-fireplaces/"  role="menuitem"  >Fire Pits and Fireplaces<div class="rmp-menu-subarrow">▼</div></a><ul aria-label="Fire Pits and Fireplaces"
+            role="menu" data-depth="3"
+            class="rmp-submenu rmp-submenu-depth-2"><li id="rmp-menu-item-1868" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/products/nicolock-pavers/nicolock-fire-pits-and-places-gallery/"  role="menuitem"  >Fire Pits and Places Gallery</a></li></ul></li><li id="rmp-menu-item-1847" class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children rmp-menu-item rmp-menu-item-has-children rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/products/nicolock-pavers/paver-patios/"  role="menuitem"  >Pool Patios<div class="rmp-menu-subarrow">▼</div></a><ul aria-label="Pool Patios"
+            role="menu" data-depth="3"
+            class="rmp-submenu rmp-submenu-depth-2"><li id="rmp-menu-item-1846" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/products/nicolock-pavers/paver-patios/pool-patios-inspiration-gallery/"  role="menuitem"  >Pool Patios Gallery</a></li></ul></li><li id="rmp-menu-item-1986" class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children rmp-menu-item rmp-menu-item-has-children rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/century-building-retaining-walls/"  role="menuitem"  >Retaining Walls<div class="rmp-menu-subarrow">▼</div></a><ul aria-label="Retaining Walls"
+            role="menu" data-depth="3"
+            class="rmp-submenu rmp-submenu-depth-2"><li id="rmp-menu-item-2012" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/century-building-retaining-wall-gallery/"  role="menuitem"  >Retaining Walls Gallery</a></li></ul></li><li id="rmp-menu-item-2040" class=" menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children rmp-menu-item rmp-menu-item-has-children rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/products/nicolock-pavers/nicolock-driveways-and-walkways/"  role="menuitem"  >Driveways and Walkways<div class="rmp-menu-subarrow">▼</div></a><ul aria-label="Driveways and Walkways"
+            role="menu" data-depth="3"
+            class="rmp-submenu rmp-submenu-depth-2"><li id="rmp-menu-item-2041" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-sub-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/driveways-and-walkways-inspiration-gallery/"  role="menuitem"  >Driveways and Walkways Gallery</a></li></ul></li></ul></li><li id="rmp-menu-item-1238" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-top-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/outdoor-display-center/"  role="menuitem"  >Outdoor Display Center</a></li><li id="rmp-menu-item-1240" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-top-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/services/"  role="menuitem"  >Our Services</a></li><li id="rmp-menu-item-1236" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-top-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/careers/"  role="menuitem"  >Careers</a></li><li id="rmp-menu-item-1235" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-top-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/about-us/"  role="menuitem"  >About Us</a></li><li id="rmp-menu-item-1237" class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-top-level-item" role="none"><a  class="rmp-menu-item-link"  href="https://centurybuilding.com/contact/"  role="menuitem"  >Contact Us</a></li></ul></div>			<div id="rmp-search-box-2158" class="rmp-search-box">
+					<form action="https://centurybuilding.com/" class="rmp-search-form" role="search">
+						<input type="search" name="s" title="Search" placeholder="Search" class="rmp-search-box">
+					</form>
+				</div>
+						<div id="rmp-menu-additional-content-2158" class="rmp-menu-additional-content">
+									</div>
+						</div>
+			<script type="rocketlazyloadscript">
+let allAtags = document.querySelectorAll('a');
+allAtags.forEach(el => {
+    if(!el.href.includes('https://twinforkspestcontrol.com/')) {
+        el.setAttribute('rel', "noreferrer nofollow noopener");
+    }
+});
+</script><script type="rocketlazyloadscript"> (function(){ var s = document.createElement('script'); var h = document.querySelector('head') || document.body; s.src = 'https://acsbapp.com/apps/app/dist/js/app.js'; s.async = true; s.onload = function(){ acsbJS.init({ statementLink : '', footerHtml : '', hideMobile : false, hideTrigger : false, disableBgProcess : false, language : 'en', position : 'left', leadColor : '#ef232e', triggerColor : '#ef2d24', triggerRadius : '50%', triggerPositionX : 'right', triggerPositionY : 'top', triggerIcon : 'people', triggerSize : 'medium', triggerOffsetX : 20, triggerOffsetY : 20, mobile : { triggerSize : 'small', triggerPositionX : 'right', triggerPositionY : 'center', triggerOffsetX : 10, triggerOffsetY : 0, triggerRadius : '50%' } }); }; h.appendChild(s); })(); </script>			<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+				function revslider_showDoubleJqueryError(sliderID) {
+					var errorMessage = "Revolution Slider Error: You have some jquery.js library include that comes after the revolution files js include.";
+					errorMessage += "<br> This includes make eliminates the revolution slider libraries, and make it not work.";
+					errorMessage += "<br><br> To fix it you can:<br>&nbsp;&nbsp;&nbsp; 1. In the Slider Settings -> Troubleshooting set option:  <strong><b>Put JS Includes To Body</b></strong> option to true.";
+					errorMessage += "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jquery.js include and remove it.";
+					errorMessage = "<span style='font-size:16px;color:#BC0C06;'>" + errorMessage + "</span>";
+						jQuery(sliderID).show().html(errorMessage);
+				}
+			</script>
+			<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/popupbuilder\/contractor-event\/|\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/centurybuilding.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://centurybuilding.com/wp-includes/js/hoverIntent.min.js?ver=1.10.2' id='hoverIntent-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://centurybuilding.com/wp-content/themes/genesis/lib/js/menu/superfish.min.js?ver=1.7.10' id='superfish-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://centurybuilding.com/wp-content/themes/genesis/lib/js/menu/superfish.args.min.js?ver=3.4.0' id='superfish-args-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' data-rocket-src='https://centurybuilding.com/wp-content/themes/genesis/lib/js/skip-links.min.js?ver=3.4.0' id='skip-links-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" id="slb_context">/* <![CDATA[ */if ( !!window.jQuery ) {(function($){$(document).ready(function(){if ( !!window.SLB ) { {$.extend(SLB, {"context":["public","user_guest"]});} }})})(jQuery);}/* ]]> */</script>
+
+		<!-- Cookie Notice plugin v2.4.8 by Hu-manity.co https://hu-manity.co/ -->
+		<div id="cookie-notice" role="dialog" class="cookie-notice-hidden cookie-revoke-hidden cn-position-bottom" aria-label="Cookie Notice" style="background-color: rgba(50,50,58,1);"><div class="cookie-notice-container" style="color: #fff"><span id="cn-notice-text" class="cn-text-container">We use cookies to analyze our traffic and enhance your browsing experience. By clicking "Accept" you consent to our use of cookies. <div class="float-btn"><a href="/privacy-policy/">Privacy Policy</a><a href="/cookie-policy/">Cookie Policy</a></div> </span><span id="cn-notice-buttons" class="cn-buttons-container"><a href="#" id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie cn-button" aria-label="Accept" style="background-color: #f5352d">Accept</a><a href="#" id="cn-refuse-cookie" data-cookie-set="refuse" class="cn-set-cookie cn-button" aria-label="Reject" style="background-color: #f5352d">Reject</a></span><span id="cn-close-notice" data-cookie-set="accept" class="cn-close-icon" title="Reject"></span></div>
+			
+		</div>
+		<!-- / Cookie Notice plugin --><script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://centurybuilding.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script></body></html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1687726525 -->

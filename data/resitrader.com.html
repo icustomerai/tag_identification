@@ -1,0 +1,47 @@
+ï»¿<!DOCTYPE html>
+<html lang="en" ng-app="common" ng-controller="loginController as login">
+<head>
+    <title ng-if="privateLabel!='Flatirons' && privateLabel!='TMCDirect'">Login page | Resitrader </title>
+    <title ng-if="privateLabel=='Flatirons'">Login page | FIRE </title>
+    <title ng-if="privateLabel=='TMCDirect'">Login page | TMC Direct</title>
+
+    <!-- THIRD PARTY LIBS -->
+    <link rel="stylesheet" type="text/css" media="screen" href="dist/vendor.css">
+
+    <!-- Custom CSS is imported as less files -->
+    <!--<link rel="stylesheet/less" type="text/css" href="css/site.less" />-->
+    <link rel="stylesheet/less" type="text/css" href="css/promontory.less" />
+
+    <link rel="shortcut icon" href="img/icons/ResiLogo.ico" type="image/x-icon">
+    <link rel="icon" href="img/icons/ResiLogo.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/flatirons.css" ng-if="privateLabel=='Flatirons'" />
+    <link rel="stylesheet" href="css/tmcDirect.css" ng-if="privateLabel=='TMCDirect'" />
+</head>
+<body ng-cloak>
+
+    <div ng-if="privateLabel=='Resitrader'" ng-include="'../LoginPages/obResiLogin.html'"></div>
+    <div ng-if="privateLabel=='Flatirons' || privateLabel=='TMCDirect'" ng-include="'../LoginPages/resiLogin.html'"></div>
+    <!--JAVASCRIPT-->
+    <!--=================================================-->
+    <!-- THIRD PARTY LIBS -->
+    <script src="dist/vendor.js"></script>
+
+    <!-- Load app main script -->
+    <script src="app/login-module.js" type="text/javascript"></script>
+
+    <!-- Load services -->
+    <script src="app/services/localStorage.js"></script>
+    <script src="app/services/currentUser.js"></script>
+    <script src="app/services/formEncode.js"></script>
+    <script src="app/services/loginRedirect.js"></script>
+    <script src="app/services/oauth.js"></script>
+    <script src="app/services/addToken.js"></script>
+    <script src="app/services/resiAlert.js"></script>
+
+    <!-- Load controllers -->
+    <script src="app/controllers/loginController.js"></script>
+    <script src="app/controllers/modals/showForgotUserPasswordController.js"></script>
+    <script src="app/controllers/modals/showTermsOfUseController.js"></script>
+</body>
+</html>

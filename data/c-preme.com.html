@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>C-Preme</title>
+    
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/reset.css">
+
+    <link rel="stylesheet" href="css/cpreme.css">
+
+    <script src="js/cpreme.js"></script>
+    
+
+    
+    
+    
+  </head>
+  
+  <body>
+    <!-- page content -->
+    
+    <div id="left">
+    <img id="cpreme_img"src="images/cpreme-logo.jpg" alt="cpreme" >
+    </div>
+    
+    <div id="right">
+    <nav>
+    <ul>
+    <li><a href="http://raskullz.com">Raskullz<sup>&reg;</sup></a></li>
+    <li><a href="http://krashco.com">Krash!<sup>&#0153;</sup></a></li>
+    
+    </ul>
+    </nav>
+
+    	<ul id="sub-nav">
+			<li><a class="button" data-type="zoomin" href="#"><img src="images/info.png"></a></li>
+			<li><a class="button" data-type="zoomin_2" href="#"><img src="images/contact.png"></a></li>
+		</ul>
+		
+		
+		
+		
+		<div class="overlay-container">
+		<div class="window-container zoomin">
+			<h3>C-Preme Limited, LLC</h3> 
+			<p>C-Preme is a Los Angeles-based company passionately devoted to designing innovative products for children. We understand the moms and dads of today. We know the cool person you were before parenthood and guess what? We think youâre even cooler now that youâre a mom or dad. Yes, you still love to surf the web, but now in addition to your favorite websites you frequent cool parenting sites that show you crafts you can do with your kids. You blog your baby photos and share updates about your kids on Facebook. You love your iPod even more now that it has Yo Gabba Gabba tunes on it. You post your toddlerâs first bike ride with no training wheels up on YouTube for everyone to see. You are still rad and now it is a whole new world of radness.</p>
+			<p>At C-Preme we strive to create products that are smarter, more innovative and safer. Products that appeal not only to your children but to your sense of design. We make products that inspire your childrenâs imagination and keep them safe and having fun. Thatâs our ultimate goal in everything we do.</p>
+			<p>We create products that are original and transformational. Our team continues to bring design to life, introducing exciting, innovative essentials for the coolest kids in the world.</p>
+		</br>
+			<span class="close">Close Me</span>
+		</div>
+
+		<div class="window-container zoomin_2">
+			<h3>CONTACT</h3> 
+			<h5>Address:</h5>
+			<p>
+				C-Preme LLC<br>
+				1250 E 223rd St, Unit 116<br>
+				Carson, CA 90745
+			</p>
+			<h5>Toll Free Hotline:</h5>
+			<p> 1-855-277-3635 (Monday - Friday 8a-5p CST)</p>
+			<h5>Email:</h5>
+			<p><a href="mailto:info@c-preme.com">info@c-preme.com</a>
+
+
+			</br>
+			<span class="close">Close Me</span>
+		</div>
+	</div> <!-- overlay-container -->
+	
+	
+	
+	
+	<script type="text/javascript">
+
+			$('.button').click(function() {
+			
+			type = $(this).attr('data-type');
+			
+			$('.overlay-container').fadeIn(function() {
+				
+				window.setTimeout(function(){
+				$('.window-container.'+type).addClass('window-container-visible');
+				}, 50);
+				
+				
+			});
+		});
+			
+		$('.close').click(function() {
+			$('.overlay-container').fadeOut().end().find('.window-container').removeClass('window-container-visible');
+		});
+	</script>
+
+
+
+		
+
+    </div> <!-- Right--> 
+  </body>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37674678-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</html>

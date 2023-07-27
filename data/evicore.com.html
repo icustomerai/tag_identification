@@ -1,0 +1,2132 @@
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    
+
+
+<!-- Google Tag Manager -->
+    <script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TTGKVP');</script>
+
+<!-- End Google Tag Manager -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ND16Q04L0F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+ 
+  gtag('config', 'G-ND16Q04L0F');
+</script>
+
+    
+
+
+
+<!-- be_ixf, sdk, gho-->
+<meta name="be:sdk" content="dotnet_sdk_1.4.17" />
+<meta name="be:timer" content="16ms" />
+<meta name="be:orig_url" content="https://www.evicore.com/" />
+<meta name="be:capsule_url" content="https://ixfd-api.bc0a.com/api/ixf/1.0.0/get_capsule/f00000000082915/0140131157" />
+<meta name="be:norm_url" content="https://www.evicore.com/" />
+<meta name="be:api_dt" content="py_2023; pm_06; pd_08; ph_04; pmh_44; p_epoch:1686224668130" />
+<meta name="be:mod_dt" content="py_2023; pm_06; pd_08; ph_04; pmh_44; p_epoch:1686224668130" />
+<meta name="be:messages" content="0" />
+<script type='text/javascript'>
+if (window.BEJSSDKObserver === undefined) {
+  (function(BEJSSDKObserver, $, undefined) {
+    var observer = void 0;
+    var listeners = [];
+    var readySet = [];
+    var doc = window.document;
+    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+
+    function checkSelector(selector, fn, indexList) {
+      var elements = doc.querySelectorAll(selector);
+  /**
+    issues on IE @see https://www.codesd.com/item/javascript-es6-not-a-function-error.html
+    elements = Array.from(elements);
+
+    */
+    for (var i = 0, len = elements.length; i < len; i++) {
+      /* -1 means all instances */
+      if (indexList != -1 && !(i in indexList)) {
+        continue;
+      }
+      var element = elements[i];
+      for (var j = 0; j < readySet.length; j++) {
+        if (readySet[j] == element.className || readySet[j] == element.id) {
+          return;
+        }
+      }
+      if (element.className) {
+        readySet.push(element.className);
+      }
+      if (element.id) {
+        readySet.push(element.id);
+      }
+
+      if (!element.ready || MutationObserver==null) {
+        element.ready = true;
+        fn.call(element, element);
+      }
+    }
+  }
+
+  function checkListeners() {
+    listeners.forEach(function (listener) {
+      return checkSelector(listener.selector, listener.fn, listener.indexList);
+    });
+  }
+
+  function removeListener(selector, fn) {
+    var i = listeners.length;
+    while (i--) {
+      var listener = listeners[i];
+      if (listener.selector === selector && listener.fn === fn) {
+        listeners.splice(i, 1);
+        if (!listeners.length && observer) {
+          observer.disconnect();
+          observer = null;
+        }
+      }
+    }
+  }
+
+/**
+ * Fire event on first js selector
+ * @param selector string to watch on
+ * @param fn       callback function
+ * @param index_list can be undefined which means only first one
+ *                   or -1 which means all
+ *                   or a list of allowable indexes
+ */
+ BEJSSDKObserver.jsElementReady = function(selector, fn, index_list) {
+  if (index_list === undefined) {
+    index_list = [];
+    index_list.push(0);
+  }
+
+  if (MutationObserver != null) {
+    if (!observer) {
+      observer = new MutationObserver(checkListeners);
+      observer.observe(doc.documentElement, {
+        childList: true,
+        subtree: true
+      });
+    }
+    listeners.push({ selector: selector, fn: fn, indexList: index_list });
+  } else {
+    /* <= IE8 */
+    if (!document.addEventListener) {
+      /* log("<=IE8 attachEvent assignment"); */
+      document.addEventListener = document.attachEvent;
+    }
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var elements = doc.querySelectorAll(selector);
+      for (var i = 0, len = elements.length; i < len; i++) {
+        /* -1 means all instances */
+        if (index_list != -1 && !(i in index_list)) {
+          continue;
+        }
+        var element = elements[i];
+        element.ready = true;
+        fn.call(element, element);
+      }
+    });
+  }
+
+  checkSelector(selector, fn, index_list);
+  return function () {
+    return removeListener(selector, fn);
+  };
+};
+}(window.BEJSSDKObserver = window.BEJSSDKObserver || {}));
+}
+var jsElementReady = window.BEJSSDKObserver.jsElementReady;
+
+if (window.BELinkBlockGenerator === undefined) {
+  (function(BELinkBlockGenerator, $, undefined) {
+    BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH = 100;
+    BELinkBlockGenerator.MAXIMUM_DESC_LENGTH = 200;
+
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_URL_TYPE = 0;
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_HEADLINE_TYPE = 1;
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_DESCRIPTION_TYPE = 2;
+    BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_IMAGE_TYPE = 3;
+
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_OVERWRITE = 0;
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_POST_APPEND_ELEMENT = 1;
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_ELEMENT = 2;
+    BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_PARENT = 3;
+
+    BELinkBlockGenerator.setMaximumHeadlineLength = function(length) {
+      BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH = length;
+    };
+
+    BELinkBlockGenerator.setMaximumDescriptionLength = function(length) {
+      BELinkBlockGenerator.MAXIMUM_DESC_LENGTH = length;
+    };
+
+    BELinkBlockGenerator.generateIndividualLinks = function(parentElement, linkStructure, link) {
+      var link_level_element_tag = linkStructure[0];
+      var link_level_element = document.createElement(link_level_element_tag);
+      var link_attribute_dictionary = linkStructure[1];
+      var allowable_elements = linkStructure[2];
+      var children_link_structures = linkStructure[3];
+      for (var link_attribute_key in link_attribute_dictionary) {
+        link_level_element.setAttribute(link_attribute_key, link_attribute_dictionary[link_attribute_key]);
+      }
+
+      var added_something = false;
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_URL_TYPE)>=0) {
+        link_level_element.setAttribute('href', link.url);
+        added_something = true;
+      }
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_HEADLINE_TYPE)>=0 && link.h1) {
+        var headline_text = link.h1;
+        if (headline_text.length > BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH) {
+          headline_text = headline_text.substring(0, BELinkBlockGenerator.MAXIMUM_HEADLINE_LENGTH) + '...';
+        }
+        var text_node = document.createTextNode(headline_text);
+        link_level_element.appendChild(text_node);
+        added_something = true;
+      }
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_DESCRIPTION_TYPE)>=0 && link.desc) {
+        var desc_text = link.desc;
+        if (desc_text.length > BELinkBlockGenerator.MAXIMUM_DESC_LENGTH) {
+          desc_text = desc_text.substring(0, BELinkBlockGenerator.MAXIMUM_DESC_LENGTH) + '...';
+        }
+        var text_node = document.createTextNode(desc_text);
+        link_level_element.appendChild(text_node);
+        added_something = true;
+      }
+      if (allowable_elements.indexOf(BELinkBlockGenerator.IND_LINK_BLOCK_TYPE_IMAGE_TYPE)>=0 && link.image) {
+        link_level_element.setAttribute('src', link.image);
+        added_something = true;
+      }
+/**
+    don't emit for empty links, desc, headline, image
+    except for parent structures where allowable_length=0
+    */
+    if (!added_something && allowable_elements.length != 0) {
+
+      return;
+    }
+    /* go depth first */
+    for (var childrenIndex=0; childrenIndex<children_link_structures.length; childrenIndex++) {
+      var childLinkStructure = children_link_structures[childrenIndex];
+      BELinkBlockGenerator.generateIndividualLinks(link_level_element, childLinkStructure, link);
+    }
+    parentElement.appendChild(link_level_element);
+  };
+
+  BELinkBlockGenerator.insertLinkBlocks = function(targetElement, replacementStrategy, overallStructure, linkStructure, links,
+                                                   titleStructure) {
+    if (targetElement == null) {
+      return;
+    }
+
+    if (replacementStrategy == BELinkBlockGenerator.REPLACEMENT_STRATEGY_OVERWRITE) {
+      while (targetElement.firstChild) {
+        targetElement.removeChild(targetElement.firstChild);
+      }
+    }
+
+    var previousElement = targetElement;
+    for (var i=0;i<overallStructure.length;i++) {
+      var level_definition = overallStructure[i];
+      var level_element_tag = level_definition[0];
+      var level_element = document.createElement(level_element_tag);
+      var attribute_dictionary = level_definition[1];
+      for (var attribute_key in attribute_dictionary) {
+        level_element.setAttribute(attribute_key, attribute_dictionary[attribute_key]);
+      }
+
+      /* need to place title structure */
+      if (titleStructure && titleStructure[0] == i) {
+        var title_element_tag = titleStructure[1];
+        var title_element = document.createElement(title_element_tag);
+        var title_attribute_dictionary = titleStructure[2];
+        var title_text_content = titleStructure[3];
+        for (var title_attribute_key in title_attribute_dictionary) {
+          title_element.setAttribute(title_attribute_key, title_attribute_dictionary[title_attribute_key]);
+        }
+
+        var title_text_node = document.createTextNode(title_text_content);
+        title_element.appendChild(title_text_node);
+
+
+        level_element.appendChild(title_element);
+      }
+
+      /* last level place links */
+      if (i == overallStructure.length-1) {
+        for (var link_i=0; link_i < links.length; link_i++) {
+          var link = links[link_i];
+          for (var linkStructureIndex=0;linkStructureIndex < linkStructure.length; linkStructureIndex++) {
+            BELinkBlockGenerator.generateIndividualLinks(level_element, linkStructure[linkStructureIndex], link)
+          }
+        }
+      }
+
+      /* first level child we need to check placement */
+      if (previousElement == targetElement) {
+        if (replacementStrategy == BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_ELEMENT) {
+          /* 2 means insert right before */
+          previousElement.insertBefore(level_element, targetElement.firstChild);
+        } else if (replacementStrategy == BELinkBlockGenerator.REPLACEMENT_STRATEGY_PRE_APPEND_PARENT) {
+          /* 3 means insert right before at parent level */
+          var parentElement = previousElement.parentElement;
+          parentElement.insertBefore(level_element, previousElement);
+        } else {
+          previousElement.appendChild(level_element);
+        }
+      } else {
+        previousElement.appendChild(level_element);
+      }
+      previousElement = level_element;
+    }
+  };
+}(window.BELinkBlockGenerator = window.BELinkBlockGenerator || {}))
+};
+</script>
+
+<style>
+.be-ix-link-block{clear:both}
+.be-ix-link-block .be-related-link-container{margin-bottom:15px}
+.be-ix-link-block .be-related-link-container .be-label,.be-ix-link-block .be-related-link-container .be-list{font-size:1.125em;}
+.be-ix-link-block .be-related-link-container .be-label{margin:0;color:#002855}
+.be-ix-link-block .be-related-link-container .be-list{list-style:none;margin:0;padding:0;line-height:inherit}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item{margin:0;padding:0;font-size:.85em;line-height:inherit}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item a{color:#363636;border-bottom:2px solid transparent}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item a:hover{border-bottom-color:#363636}
+@media (max-width: 767px) {
+.be-ix-link-block .be-related-link-container .be-label{width:100%;font-family:'gt_walsheim_probold';line-height:1.1;margin-bottom:15px;font-size:.9em}
+.be-ix-link-block .be-related-link-container .be-list{display:block;width:100%;font-size:.85em;line-height:1.7}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item{display:block}
+}
+@media (min-width: 768px) {
+.be-ix-link-block .be-related-link-container{display:flex}
+.be-ix-link-block .be-related-link-container .be-label{display:inline-block;margin-right:20px;flex-basis:150px;flex-grow:0;flex-shrink:0}
+.be-ix-link-block .be-related-link-container .be-list{display:inline-block;width:auto}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item{display:inline-block;margin-right:20px}
+.be-ix-link-block .be-related-link-container .be-list .be-list-item:last-child{margin-right:0}
+}
+</style>
+
+    
+    <title>
+eviCore Healthcare | Empowering the Improvement of Care     </title>
+    
+<meta name="VIcurrentDateTime" content="638233588975294701" />
+<script type="text/javascript" src="/layouts/system/VisitorIdentification.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="keywords" content="eviCore,  Healthcare, Prior authorization" />
+    <meta name="description" content="eviCore is committed to providing evidence-based approach that leverages our exceptional clinical and technological capabilities , powerful analytics, and sensitivity to the needs of everyone involved across the healthcare continuum. " />
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="/assets/images/favicons/favicon.ico">
+    <!-- Styles -->
+    <link type="text/css" rel="stylesheet" href="/assets/css/evicore-style.css">
+    <link type="text/css" rel="stylesheet" href="/assets/css/jquery.fancybox.min.css">
+    <!-- [if IE]>
+            <script type="text/javascript" src="/assets/js/html5shiv.min.js"></script>
+            <script type="text/javascript" src="/assets/js/respond.min.js"></script>
+        <![endif] -->
+    <!-- [if lte IE 9]>
+            <link type="text/css" rel="stylesheet" href="/assets/css/ie9.css" />
+        <![endif] -->
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/plugins.min.js"></script>
+    
+    <script src="https://www.google.com/recaptcha/api.js?onload=myCallBack&render=explicit" async defer></script>
+
+</head>
+
+<body class="home-page">
+    
+
+
+<!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TTGKVP"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
+<!-- End Google Tag Manager (noscript) -->
+
+    <div class="page-wrapper">
+
+        <!-- Header Section-->
+        <header class="page-header">
+            
+
+<div class="nav-toggle">
+    <span>&nbsp;</span> MENU
+
+</div>
+
+
+<div class="header-right-toggle">
+    PROVIDERS
+    <span class="icon">
+
+    </span>
+</div>
+<a href="/" class="site-logo">
+    <img src="/Assets/images/eviCore Att RGB.png" alt="site-logo" width="120px" height="88px"/>
+    
+</a>
+<nav class="page-nav">
+    <a href="#" class="close-btn">
+
+        <span>
+
+        </span>
+    </a>
+    <ul class="page-menu">
+                <li class="">
+
+                    <a href="/about">About</a>
+                </li>
+                <li class="">
+
+                    <a href="javascript:void(0);">Solutions</a>
+                        <ul class="sub-nav">
+
+                            <li>
+
+                                <a href="/solutions/health-plan">Health Plans</a>
+
+                                                                        <ul>
+                                            <li class="parent">
+                                                
+                                                <a href="/solutions/health-plan/utilization-management">Utilization Management</a>
+
+
+                                                <ul>
+                                                            <li><a href="/solutions/health-plan/utilization-management/cardiology">Cardiovascular</a></li>
+                                                            <li><a href="/solutions/health-plan/utilization-management/gastroenterology">Gastroenterology</a></li>
+                                                            <li><a href="/solutions/health-plan/utilization-management/laboratory-management">Laboratory Management</a></li>
+                                                            <li><a href="/solutions/health-plan/utilization-management/medical-drug-management">Medical Drug Management</a></li>
+                                                            <li><a href="/solutions/health-plan/utilization-management/medical-oncology">Medical Oncology</a></li>
+                                                            <li><a href="/solutions/health-plan/utilization-management/musculoskeletal">Musculoskeletal</a></li>
+                                                            <li><a href="/solutions/health-plan/utilization-management/post-acute-care">Post-Acute Care</a></li>
+                                                            <li><a href="/solutions/health-plan/utilization-management/radiation-oncology">Radiation Oncology</a></li>
+                                                            <li><a href="/solutions/health-plan/utilization-management/radiology">Radiology</a></li>
+                                                            <li><a href="/solutions/health-plan/utilization-management/sleep">Sleep</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li class="parent">
+                                                
+                                                <a href="/solutions/health-plan/care-coordination">Care Coordination</a>
+
+
+                                                <ul>
+                                                            <li><a href="/solutions/health-plan/care-coordination/post-acute-care">Post-Acute Care</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li class="parent">
+                                                
+                                                <a href="/solutions/health-plan/payment-integrity">Payment Integrity</a>
+
+
+                                                <ul>
+                                                            <li><a href="/solutions/health-plan/payment-integrity/implant-management">Implant Management</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li class="parent">
+                                                
+                                                <a href="/solutions/health-plan/member-engagement">Member Engagement</a>
+
+
+                                                <ul>
+                                                            <li><a href="/solutions/health-plan/member-engagement/consumer-engagement">Consumer Engagement</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li class="parent">
+                                                
+                                                <a href="/solutions/health-plan/benefit-protection">Benefit Protection</a>
+
+
+                                            </li>
+                                            <li class="parent">
+                                                
+                                                <a href="/solutions/health-plan/clinical-decision-support">Clinical Decision Support</a>
+
+
+                                                <ul>
+                                                            <li><a href="/solutions/health-plan/clinical-decision-support/evicore-clinical-decision-support">eviCore Clinical Decision Support</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li class="parent">
+                                                
+                                                <a href="/solutions/health-plan/familypath">FamilyPath<sup>SM</sup></a>
+
+
+                                                <ul>
+                                                            <li><a href="/solutions/health-plan/familypath/familypath-fertility">FamilyPath<sup>SM</sup>  Fertility</a></li>
+
+                                                </ul>
+                                            </li>
+                                                                                        <li class="">
+
+                                                
+                                                <a href="/solutions/health-plan/utilization-management/evicore-onconnect">eviCore onConnect<sup>SM</sup></a>
+
+                                            </li>
+
+                                        </ul>
+
+                            </li>
+                            <li>
+
+                                <a href="/self-funded-employers">Self-Funded Employers</a>
+
+                                                                        <ul>
+                                            <li class="parent">
+                                                
+                                                <a href="/solutions/health-plan/utilization-management">Utilization Management</a>
+
+
+                                                <ul>
+                                                            <li><a href="/solutions/health-plan/utilization-management/cardiology">Cardiovascular</a></li>
+                                                            <li><a href="/solutions/health-plan/utilization-management/evicore-onconnect">eviCore onConnect<sup>SM</sup></a></li>
+                                                            <li><a href="/solutions/health-plan/utilization-management/gastroenterology">Gastroenterology</a></li>
+                                                            <li><a href="/solutions/health-plan/utilization-management/laboratory-management">Laboratory Management</a></li>
+                                                            <li><a href="/solutions/health-plan/utilization-management/medical-drug-management">Medical Drug Management</a></li>
+                                                            <li><a href="/solutions/health-plan/utilization-management/medical-oncology">Medical Oncology</a></li>
+                                                            <li><a href="/solutions/health-plan/utilization-management/musculoskeletal">Musculoskeletal</a></li>
+                                                            <li><a href="/solutions/health-plan/utilization-management/post-acute-care">Post-Acute Care</a></li>
+                                                            <li><a href="/solutions/health-plan/utilization-management/radiation-oncology">Radiation Oncology</a></li>
+                                                            <li><a href="/solutions/health-plan/utilization-management/radiology">Radiology</a></li>
+                                                            <li><a href="/solutions/health-plan/utilization-management/sleep">Sleep</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li class="parent">
+                                                
+                                                <a href="/solutions/health-plan/care-coordination">Care Coordination</a>
+
+
+                                                <ul>
+                                                            <li><a href="/solutions/health-plan/care-coordination/post-acute-care">Post-Acute Care</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li class="parent">
+                                                
+                                                <a href="/solutions/health-plan/payment-integrity">Payment Integrity</a>
+
+
+                                                <ul>
+                                                            <li><a href="/solutions/health-plan/payment-integrity/implant-management">Implant Management</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li class="parent">
+                                                
+                                                <a href="/solutions/health-plan/member-engagement">Member Engagement</a>
+
+
+                                                <ul>
+                                                            <li><a href="/solutions/health-plan/member-engagement/consumer-engagement">Consumer Engagement</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li class="parent">
+                                                
+                                                <a href="/solutions/health-plan/benefit-protection">Benefit Protection</a>
+
+
+                                            </li>
+                                            <li class="parent">
+                                                
+                                                <a href="/solutions/health-plan/clinical-decision-support">Clinical Decision Support</a>
+
+
+                                                <ul>
+                                                            <li><a href="/solutions/health-plan/clinical-decision-support/evicore-clinical-decision-support">eviCore Clinical Decision Support</a></li>
+
+                                                </ul>
+                                            </li>
+                                            <li class="parent">
+                                                
+                                                <a href="/solutions/health-plan/familypath">FamilyPath<sup>SM</sup></a>
+
+
+                                                <ul>
+                                                            <li><a href="/solutions/health-plan/familypath/familypath-fertility">FamilyPath<sup>SM</sup>  Fertility</a></li>
+
+                                                </ul>
+                                            </li>
+                                            
+                                        </ul>
+
+                            </li>
+                            <li>
+
+                                <a href="/provider/provider-support">Providers</a>
+
+                                    <ul>
+
+                                                <li class="parent">
+
+                                                    <a href="javascript:void(0);">Prior Authorization Automation</a>
+
+                                                        <ul>
+                                                                <li>
+
+                                                                    <a href="/solutions/provider/prior-authorization-automation/evicore-intellipath">eviCore intelliPath<sup>®</sup></a>
+                                                                </li>
+                                                        </ul>
+                                                </li>
+                                    </ul>
+                                
+                            </li>
+
+                        </ul>
+                </li>
+                <li class="">
+
+                    <a href="/patients">Patients</a>
+                </li>
+                <li class="">
+
+                    <a href="/provider">Provider&#39;s Hub</a>
+                </li>
+                <li class="">
+
+                    <a href="/insights">Insights</a>
+                </li>
+                <li class="">
+
+                    <a href="/careers">Careers</a>
+                </li>
+                <li class="last">
+
+                    <a href="/contact">Contact Us</a>
+                </li>
+    </ul>
+    <div class="search-box">
+        
+
+        <form action="/search" method="get">
+            <div class="search-expand bg-white pos-a">
+                <input type="text" id="s" name="s" placeholder="Search....." onkeydown="if (event.keyCode == 13) { this.form.submit(); return false; } " autocomplete="off">
+                
+                <div class="search-autosuggest" style="display: none;" id="divGlobalSearch">
+                    <ul id="GlobalSearchResults"></ul>
+                </div>
+
+            </div>
+            <button type="submit" class="custom-hover"> <span class="text">Search</span> <span class="icon"> </span></button>
+        </form>
+
+    </div>
+    <div class="mobile-btns">
+        <a href="#" class="btn btn-blue-transparent mob-contact-btn">Contact us</a>
+        <a href="#" class="btn btn-blue liveChatBtn" onclick="livechat();">Chat with us now</a>
+    </div>
+</nav>
+
+<div class="header-right bg-evicore-green  pos-a  ">
+    <div class="mob-title">
+        <h3>PROVIDERS AREA</h3>
+        <a href="#" class="close-btn">
+            <span></span>
+
+        </a>
+
+    </div>
+    <div class="col-wrap   d-f">
+        <div class="d-f col hide-inner ff-GTWalsheim-ProMedium"> <span class="c-white">PROVIDERS:</span> </div>
+                        <div class="d-f  col pos-r">
+                            <a href="https://www.evicore.com" class="c-white drop-link">
+                                <span class="icon  hide-inner">
+                                    <img src="/Assets/images/check-icon.svg" width="24" height="21" alt=">Check Prior Authorization Status">
+                                </span>
+                                <span class="text">Check Prior Authorization Status</span>
+                            </a>
+                            <div class="login-drop drop-down">
+                                <div class="backLink">Check Prior Authorization Status</div>
+                                <div class="pad20 ta-c">
+                                    <p class="ta-l">
+                                        As part of our continued effort to provide a high quality user experience while also ensuring the integrity of the information of those that we service is protected,
+                                        we will be implementing changes to <a class="c-evicore-green" href="https://www.evicore.com">evicore.com</a> in the near future.
+                                        <strong>
+                                            Beginning on 3/15/21, web users will be required to log in to <strong><a class="c-evicore-green" href="https://www.evicore.com">evicore.com</a></strong> in order to check the status
+                                            of authorization request(s).  Please click <a class="c-evicore-green" href="https://myevicoreportal.medsolutions.com/User/Registration/Index" target="_blank">here</a> to register for an account.
+                                        </strong>
+                                        <br /><br />
+                                        
+                                    </p>
+                                    <strong><a style="font-size:12px; text-transform:none;" class="btn" href="https://carriers.carecorenational.com/PreAuthorization/screens/AuthorizationLookup.aspx" target="_blank">Continue to Authorization Lookup</a> </strong>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                        <div class="d-f col  pos-r login-col">
+                            <a href="#" class="c-white drop-link">
+                                <span class="icon  hide-inner">
+                                    <img src="/Assets/images/providers-login-icons.svg" width="20" height="21"
+                                         alt="Login">
+                                </span> <span class="text">Login</span>
+                            </a>
+                            <!-- Login Dropdown -->
+                            <div class="login-drop drop-down">
+                                <div class="backLink">Log In</div>
+                                <div class="login-form">
+                                    <iframe width="100%" height="400 px" align="middle" src="https://myevicoreportal.medsolutions.com/" scrolling="no"></iframe>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-f col provider-hub-box">
+                        </div>
+                        <div class="d-f col resources-col">
+                            <a href="#" class="c-white drop-link ">
+                                <span class="icon  hide-inner ">
+                                    <img src="/Assets/images/resources-icon.svg" width="19" height="24"
+                                         alt="Resources">
+                                </span> <span class="text">Resources</span> <span class="arrow"></span>
+                            </a>
+                            <!-- Resources Dropdown -->
+                            <div class="resources-drop  drop-down c-evicore-green">
+                                <div class="block-title marB30">
+                                    <h3 class=""> <span class="icon"><img src="/Assets/images/resources-icon-large.svg" width="38" height="48" alt="Resources"></span>Resources</h3>
+                                </div>
+                                <div class="d-f  jc-sb fxw-w">
+                                                    <div class="block">
+
+                                                            <ul>
+                                                                    <li><a href="/provider/clinical-guidelines" class="btn">Clinical Guidelines</a></li>
+
+
+                                                                    <li>
+
+                                                                        <a href="/provider/online-forms">Clinical Worksheets</a>
+                                                                    </li>
+                                                                    <li>
+
+                                                                        <a href="/provider/network-standard">Network Standards/Accreditations </a>
+                                                                    </li>
+                                                                    <li>
+
+                                                                        <a href="/provider/playbooks">Provider Playbooks</a>
+                                                                    </li>
+                                                                    <li>
+
+                                                                        <a href="/provider#training-resources">Training Resources</a>
+                                                                    </li>
+                                                            </ul>
+                                                    </div>
+                                                    <div class="block">
+
+                                                                <h4>I Would Like To</h4>
+                                                            <ul>
+
+
+                                                                    <li>
+
+                                                                        <a href="/provider/request-a-clinical-consultation">Request a Consultation with a Clinical Peer Reviewer</a>
+                                                                    </li>
+                                                                    <li>
+
+                                                                        <a href="/provider/request-an-appeal">Request an Appeal or Reconsideration</a>
+                                                                    </li>
+                                                                    <li>
+
+                                                                        <a href="/provider/contact-support">Receive Technical Web Support</a>
+                                                                    </li>
+                                                                    <li>
+
+                                                                        <a href="https://carriers.carecorenational.com/PreAuthorization/screens/AuthorizationLookup.aspx" rel="noopener noreferrer" target="_blank">Check Status Of Existing Prior Authorization </a>
+                                                                    </li>
+                                                                    <li>
+
+                                                                        <a href="https://carriers.carecorenational.com/PreAuthorization/screens/EligibilityLookup.aspx " rel="noopener noreferrer" target="_blank">Check Eligibility Status</a>
+                                                                    </li>
+                                                                    <li>
+
+                                                                        <a href="https://claimsportal.carecorenational.com/" rel="noopener noreferrer" target="_blank">Access Claims Portal</a>
+                                                                    </li>
+                                                            </ul>
+                                                    </div>
+                                                    <div class="block">
+
+                                                                <h4>Learn How To</h4>
+                                                            <ul>
+
+
+                                                                    <li>
+
+                                                                        <a href="/provider#i-want-to-learn-how-to">Submit A New Prior Authorization</a>
+                                                                    </li>
+                                                                    <li>
+
+                                                                        <a href="/provider#i-want-to-learn-how-to">Upload Additional Clinical </a>
+                                                                    </li>
+                                                                    <li>
+
+                                                                        <a href="/provider#i-want-to-learn-how-to">Find Contact Information</a>
+                                                                    </li>
+                                                                    <li>
+
+                                                                        <a href="/provider#Podcasts">Podcasts</a>
+                                                                    </li>
+                                                            </ul>
+                                                    </div>
+                                                    <div class="block">
+                                                        <a href="/provider" class="btn  btn-arrow provider-btn tt-u">GO TO PROVIDER’S HUB<span class="arrow"></span></a>
+                                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+    </div>
+</div>
+
+
+<script>
+    //On document ready
+    var ajax_inprocess = false;
+
+    $(document).ajaxStart(function () {
+        ajax_inprocess = true;
+    });
+
+    $(document).ajaxStop(function () {
+        ajax_inprocess = false;
+    });
+
+
+
+
+    $("#s").keyup(function () {
+        var Globalkeyword = $.trim($(this).val()).toLowerCase();
+        $('#divGlobalSearch').hide();
+        $('#GlobalSearchResults').html('');
+        if (Globalkeyword.length > 2) {
+
+            //Snippet from live search function
+            if (ajax_inprocess == true) {
+                //request.abort();
+            }
+
+            var formData = new FormData();
+
+            formData.append("ReqCase", "GlobalSearch");
+            formData.append("keyword", Globalkeyword);
+
+            $.ajax({
+                type: "POST",
+                url: "/assets/pages/ajaxfunctions.aspx",
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    if (data != "") {
+                        $('#GlobalSearchResults').html(data);
+                        $('#divGlobalSearch').show();
+                    }
+                    else {
+                        $('#GlobalSearchResults').html('<li>Sorry, No result found.</li>');
+                        $('#divGlobalSearch').show();
+                    }
+                },
+                error: function (xhr) {
+
+                    //alert(xhr.responseText);
+                }
+
+            });
+        }
+    });
+</script>
+	    
+<div class="alert-msg-wrapper">
+            <div class="header-alert-msg c-blue yellowBg-whiteText">
+                <a href="#" class="close"><span></span></a>
+                <p>Multi-Factor Authentication (MFA) is now live on eviCore&rsquo;s web portal! All web users may now protect their portal accounts with an additional layer of security, including e-mail &amp; SMS.<strong> <a href="-/media/B119C4B2A54A4355B633AA5C379EB2B9.ashx" target="_blank">Click here</a>&nbsp;</strong>for the MFA registration &amp; setup guide.</p>
+            </div>
+</div>
+
+        </header>
+        <!-- Header Section End -->
+        <!-- Main Section -->
+        <section class="page-main fl-fix ">
+            <section class="home-section">
+                
+                
+
+
+
+<section class="home-banner fl-fix pos-r marB40">
+        <div class="oval">
+            <div class="slider">
+                    <div class="item">
+                        <figure><img src="/-/media/Images/eviCore/Home/home-banner.jpg?h=1016&amp;la=en&amp;w=1607" class="w100" alt="eviCore Healthcare Solutions Empowering the Improvement of Care " width="1607" height="1016" style="margin: 0px 0px" /> </figure>
+                        <div class="banner-content pos-a to-load">
+                            <div class="wrapper">
+                                <div class="text-block c-white">
+                                    <h1 class="title c-white yellow-border-btm">Empowering the Improvement of Care</h1>
+                                    <div class="short-info">
+                                        <p>eviCore is committed to providing an evidence-based approach that leverages our exceptional clinical and technological capabilities, powerful analytics, and sensitivity to the needs of everyone involved across the healthcare continuum.</p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+
+        </div>
+        <div class="paging">
+            <div class="wrapper"> </div>
+        </div>
+    <div class="wrapper">
+        <div class="pos-a providers-login-block ">
+            <h3 class="c-white marL30 marB25 h4">
+                <span class="icon">
+                    <img src="/assets/images/providers-login-icon.svg" width="47" height="47"
+                         alt="Portal Login">
+                </span> Portal Login
+            </h3>
+            <div class="bg-white b-r b-shad2 white-box">
+                <div class="login-form">
+                    <iframe width="100%" height="400 px" align="middle" src="https://myevicoreportal.medsolutions.com/" scrolling="no"></iframe>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="fl-fix home-insights-section marB30 pos-r">
+        <div class="ov-h circle-wrap">
+            <div class="circle circle1 bg-light-blue "> </div>
+        </div>
+        <div class="wrapper">
+            <div class="title-block ta-c pos-r to-load">
+                
+                <span class="marB75 h2">Insights</span>
+            </div>
+            <div class="row col-full marB55  ">
+                <div class="col article-col d-f  to-load Blog">
+                    <figure class="w68 pos-r b-r has-placeholder bgr-n bgp-cc bgsz-cv " style="background-image:url('/-/media/Images/eviCore/SOC-Blog-Image.png?mw=1300')">
+                        <a href="/insights/same-quality-care-lower-costs-satisfied-patients" class="tag-btn">Blog</a>
+                        <a href="/insights/same-quality-care-lower-costs-satisfied-patients">
+                            <img src="/assets/images/placeholder-insights.gif" alt="Insights" width="849" height="460" class="placeholder">
+                        </a>
+                    </figure>
+                    <div class="w32 article-details b-r bg-white podcast-details">
+                            <h3 class="h4">
+
+                                <a href="/insights/same-quality-care-lower-costs-satisfied-patients">
+                                    eviCore&#39;s Site of Care Solution: Same Quality Care, Lower Costs, Satisfied Patients 
+                                </a>
+                            </h3>
+
+                        <div class="marL30 description">
+                            <p>
+                                While there are situations when hospital care is necessary, alternative sites like ambulatory surgery centers, freestanding imaging centers, and clinics are often the smarter choice. And you may be surprised by just how much they can save.
+                            </p>
+                        </div>
+                        <a href="/insights/same-quality-care-lower-costs-satisfied-patients" class="btn btn-small btn-blue-transparent">READ MORE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="d-f   fxw-w col-3  article-slider-mob">
+                    <div class="col article-col to-load Infographics">
+                        <figure class="pos-r b-r has-placeholder bgr-n bgp-cc bgsz-cv " style="background-image:url('/-/media/Images/eviCore/Renee-Image.png?mw=1300')">
+                            <a href="/insights/meet-renee-patient-story" class="tag-btn">Infographics</a>
+                            <a href="/insights/meet-renee-patient-story">
+                                <img src="/assets/images/placeholder-insights.gif" width="382" height="207" alt="Podcast" class="placeholder">
+                            </a>
+                        </figure>
+                        <div class=" article-details b-r bg-white podcast-details">
+
+                                    <h3 class="h6 ">
+                                        <a href="/insights/meet-renee-patient-story">Meet Renee</a>
+                                    </h3>
+                        </div>
+                    </div>
+                    <div class="col article-col to-load Infographics">
+                        <figure class="pos-r b-r has-placeholder bgr-n bgp-cc bgsz-cv " style="background-image:url('/-/media/Images/eviCore/Jacob-Blog-Images.jpg?mw=1300')">
+                            <a href="/insights/meet-jacob-oncpatientstory" class="tag-btn">Infographics</a>
+                            <a href="/insights/meet-jacob-oncpatientstory">
+                                <img src="/assets/images/placeholder-insights.gif" width="382" height="207" alt="Podcast" class="placeholder">
+                            </a>
+                        </figure>
+                        <div class=" article-details b-r bg-white podcast-details">
+
+                                    <h3 class="h6 ">
+                                        <a href="/insights/meet-jacob-oncpatientstory">Meet Jacob: an eviCore Oncology Patient </a>
+                                    </h3>
+                        </div>
+                    </div>
+                    <div class="col article-col to-load Blog">
+                        <figure class="pos-r b-r has-placeholder bgr-n bgp-cc bgsz-cv " style="background-image:url('/-/media/Images/eviCore/GastroVideoBlogImages.png?mw=1300')">
+                            <a href="/insights/colorectal-screening-program" class="tag-btn">Blog</a>
+                            <a href="/insights/colorectal-screening-program">
+                                <img src="/assets/images/placeholder-insights.gif" width="382" height="207" alt="Podcast" class="placeholder">
+                            </a>
+                        </figure>
+                        <div class=" article-details b-r bg-white podcast-details">
+
+                                    <h3 class="h6 ">
+                                        <a href="/insights/colorectal-screening-program">eviCore Colorectal Screening Program</a>
+                                    </h3>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+<div class="audio-playerr" style="display:none;">
+    <iframe src="" id="iframe"></iframe>
+</div>
+
+
+    <section class="fl-fix home-about-section pos-r ">
+        <div class="ov-h circle-wrap">
+            <div class="circle circle2 bg-light-blue "> </div>
+        </div>
+        <div class="wrapper">
+            <div class="alternate-table">
+                <div class="d-tb w100 to-load ">
+                    <div class="d-tbc va-m w55 pos-r ">
+                        <span class="light-blue-circle pos-a b-r-f ">
+                        </span>
+                        <figure class="pos-r b-r-f ov-h has-placeholder bgr-n bgp-cc bgsz-cv" style="background-image:url('/-/media/Images/eviCore/DaveSTILLwebsite3.png')">
+                            <img src="/assets/images/placeholder-square.gif" width="654" height="654" alt="About eviCore">
+
+                            <a data-fancybox='popUp' data-width="780" href="https://vimeo.com/680568253" class="play-video-btn c-white pos-a transform-center">
+                                <span class="play-icon b-r-f bg-white"></span> <strong>WATCH VIDEO</strong>
+                            </a>
+                        </figure>
+                    </div>
+                    <div class="d-tbc va-m  w45 text-block to-load">
+                        
+                        <span class="yellow-border-btm h2">About eviCore</span>
+                        <div class="small-description">
+                            <p class="ff-GTWalsheim-ProRegular f-20">Specifically designed with the size and scale to address the complexity of our healthcare system today and tomorrow, eviCore is committed to advancing healthcare management through evidence-based medicine.</p>
+                        </div>
+                        <a class="btn btn-small btn-yellow" href="/about">LEARN MORE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fl-fix milestones-section ta-c">
+        <div class="wrapper">
+            <div class="title-block ta-c to-load ">
+                <span class="marB85 h2">Evolving Excellence</span>
+            </div>
+            <div class="d-f  jc-sb fxw-w milestones to-load ">
+                    <div class="col">
+                        <div class="count c-yellow"><span class="no " id="count1" data-end="25">25</span>+</div>
+                        <span class="icon"> <img src="/assets/images/dots-shape.png" width="59" height="18" alt="Evolving Excellence"> </span>
+                        <div class="text c-blue">Years of Experience</div>
+                    </div>
+                    <div class="col">
+                        <div class="count c-yellow"><span class="no " id="count2" data-end="100">100</span>M+</div>
+                        <span class="icon"> <img src="/assets/images/dots-shape.png" width="59" height="18" alt="Evolving Excellence"> </span>
+                        <div class="text c-blue">Members Managed</div>
+                    </div>
+                    <div class="col">
+                        <div class="count c-yellow"><span class="no " id="count3" data-end="5000">5000</span>+</div>
+                        <span class="icon"> <img src="/assets/images/dots-shape.png" width="59" height="18" alt="Evolving Excellence"> </span>
+                        <div class="text c-blue">Employees Nationwide</div>
+                    </div>
+                    <div class="col">
+                        <div class="count c-yellow"><span class="no " id="count4" data-end="1100">1100</span>+</div>
+                        <span class="icon"> <img src="/assets/images/dots-shape.png" width="59" height="18" alt="Evolving Excellence"> </span>
+                        <div class="text c-blue">Clinicians</div>
+                    </div>
+            </div>
+                     
+            <div class="to-load"> <a class="btn btn-blue" href="/about">Discover our story</a>
+        </div>
+    </section>
+
+            </section>
+        </section>
+        <!-- Main Section End-->
+        <!-- Footer Section -->
+        
+
+<footer class="page-footer fl-fix {0950B22B-4AD8-49E3-B3A9-F5DD8C8D9F18}">
+    <input type="hidden" id="hdnSitekey" name="hdnSitekey" value="6LfEU_IUAAAAAN4TheAAG3yNwek3AFzbEdfQrfcp" />
+    <div class="top-footer ov-h">
+        <div class="oval"> </div>
+        <div class="wrapper">
+            <div class="d-f  jc-sb fxw-w">
+                    <div class="col affiliates w40">
+                        <h3 class="h5 marB30">Affiliations</h3>
+                        <div class="d-f">
+                                <figure><a href="http://www.ncqa.org/" rel="noopener noreferrer" target="_blank"><img src="/-/media/Images/eviCore/Icons/54_Accred_UM_CMYK.jpg?h=178&amp;la=en&amp;w=178" alt="NCQA" width="178" height="178" style="margin: 0px 0px" /></a>   </figure>
+                                <figure><a href="https://www.urac.org/" rel="noopener noreferrer" target="_blank"><img src="/-/media/Images/eviCore/Icons/URAC_Seal_eviCore.jpg?h=182&amp;la=en&amp;w=150" alt="URAC Accreditation Seal - Digital Web use " width="150" height="182" style="margin: 0px 0px" /></a>   </figure>
+                                <figure><a href="https://hitrustalliance.net/hitrust-csf/" rel="noopener noreferrer" target="_blank"><img src="/-/media/Images/eviCore/Icons/affiliate4.png?h=41&amp;la=en&amp;w=83" alt="HiTrust" width="83" height="41" style="margin: 0px 0px" /></a>   </figure>
+                        </div>
+                    </div>
+                                    <div class="col affiliates w40 marB30">
+                        <h3 class="h5">Stay Updated With Our Provider Newsletter</h3>
+                        <div class="subscribe-form d-f">
+                            <div class="form-row floating-label w70">
+                                <label>Your email address</label>
+                                <input type="text" class="form-field" id="txtSMFormEmail">
+                                <span class="error-msg" style="display:none" id="spnSFormInvalidEmail">Please enter valid email.</span>
+                            </div>
+                            <input type="submit" class="btn btn-yellow" value="SUBSCRIBE">
+                            <div class="signup-form" style="display:none;">
+
+                                <div class="common-form-block">
+                                    <div class="form-wrap">
+                                        <span class="h3 marB30 ta-c w100">Email Sign Up</span>
+                                        <p class="req-note c-blue w100 marB20">
+                                            Required fields marked with "*".
+                                        </p>
+                                        <span id="lblSFormError" class="w100 marB20" style="display:none;"></span>
+
+                                        <div class="form-row floating-label  marB30">
+                                            <label>First Name <span class="reqired">*</span></label>
+                                            <input type="text" class="form-field" id="txtSFormFirstName">
+                                            <span class="error-msg" style="display:none" id="spnSFormFirstName">
+                                                Please enter First Name
+                                            </span>
+                                        </div>
+                                        <div class="form-row floating-label  marB30">
+                                            <label>Last Name  <span class="reqired">*</span></label>
+                                            <input type="text" class="form-field" id="txtSFormLastName">
+                                            <span class="error-msg" style="display:none" id="spnSFormLastName">
+                                                Please enter Last Name
+                                            </span>
+                                        </div>
+                                        <div class="form-row floating-label  marB30 isActive">
+                                            <label>Email<span class="reqired">*</span></label>
+                                            <input type="text" class="form-field" id="txtSFormEmail">
+                                            <span class="error-msg" style="display:none" id="spnSFormInvalidEmail">
+                                                Please enter valid email.
+                                            </span>
+                                        </div>
+                                        <div class="form-row floating-label  marB30">
+                                            <label>Company<span class="reqired">*</span></label>
+                                            <input type="text" class="form-field" id="txtSFormCompany">
+                                            <span class="error-msg" style="display:none" id="spnSFormCompany">
+                                                Please enter Company
+                                            </span>
+                                        </div>
+                                        <div class="form-row floating-label  marB30">
+                                            <label>Phone Number<span class="reqired">*</span></label>
+                                            <input type="text" class="form-field telMask" id="txtSFormPhoneNumber">
+                                            <span class="error-msg" style="display:none" id="spnSFormPhoneNumber">
+                                                Please enter Phone Number
+                                            </span>
+                                        </div>
+                                        <div class="form-row floating-label  marB30 w50">
+                                            
+                                            <div id="recaptcha1"></div>
+                                            <span id="errECaptcha" class="error-msg" style="display:none">reCAPTCHA is not valid; Please try again!</span>
+                                        </div>
+
+                                        <div class="form-row submit-row ta-c">
+
+                                            <div class="d-ib va-t pos-r">
+                                                <input type="submit" value="SUBMIT" class="btn-yellow btn-small" onclick="EmailSignUp();">
+                                                <img src="/Assets/images/ajax-loader-yellow.gif" width="32" height="32" alt="ajax-loader" class="pos-a ajax-loader d-n" id="ajaxLoaderEmailSignUp" style="right: -45px; top: 5px;">
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="footer-main">
+        <div class="wrapper">
+            <div class="d-f">
+
+                        <div class="col">
+                            <h3>Provider&#39;s Hub</h3>
+
+                            
+                            
+                                    <ul>
+                                            <li>
+
+<a href="/provider#login">Login</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="/provider/clinical-guidelines">Clinical Guidelines</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="/provider/online-forms">Clinical Worksheets</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="/provider#i-want-to-learn-how-to">Submit a New Prior Authorization</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="https://carriers.carecorenational.com/PreAuthorization/screens/AuthorizationLookup.aspx" rel="noopener noreferrer" target="_blank">Check Status of Existing Prior Authorization</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="/provider#i-want-to-learn-how-to">Upload Additional Clinical</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="/provider#i-want-to-learn-how-to">Find Contact Information</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="/provider/request-a-clinical-consultation">Request a Consultation with a Clinical Peer Reviewer</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="/provider/request-an-appeal">Request an Appeal or Reconsideration</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="/provider/contact-support">Receive Technical Web Support</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="/provider#Podcasts">Podcasts</a>                                                
+                                                
+                                            </li>
+                                    </ul>
+
+                        </div>
+                        <div class="col">
+                            <h3>Solutions</h3>
+
+                            
+                            
+                                    <ul>
+                                            <li>
+
+<a href="https://www.evicore.com/solutions/health-plan/utilization-management/cardiology">Cardiovascular</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="https://www.evicore.com/solutions/health-plan/utilization-management/evicore-onconnect">Comprehensive Oncology</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="https://www.evicore.com/solutions/health-plan/member-engagement/consumer-engagement">Consumer Engagement</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="https://www.evicore.com/solutions/health-plan/utilization-management/gastroenterology">Gastroenterology</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="https://www.evicore.com/solutions/health-plan/payment-integrity/implant-management">Implant Management</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="https://www.evicore.com/solutions/health-plan/utilization-management/laboratory-management">Laboratory Management</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="https://www.evicore.com/solutions/health-plan/utilization-management/medical-oncology">Medical Oncology</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="https://www.evicore.com/solutions/health-plan/utilization-management/musculoskeletal">Musculoskeletal</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="https://www.evicore.com/solutions/health-plan/utilization-management/post-acute-care">Post-Acute Care</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="https://www.evicore.com/solutions/health-plan/utilization-management/radiation-oncology">Radiation Oncology</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="https://www.evicore.com/solutions/health-plan/utilization-management/radiology">Radiology</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="https://www.evicore.com/solutions/health-plan/utilization-management/sleep">Sleep</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="https://www.evicore.com/solutions/health-plan/utilization-management/medical-drug-management">Medical Drug Management </a>                                                
+                                                
+                                            </li>
+                                    </ul>
+
+                        </div>
+                        <div class="col">
+                            <h3>Who We Empower</h3>
+
+                            
+                            
+                                    <ul>
+                                            <li>
+
+<a href="/solutions/health-plan">Health Plans</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="/self-funded-employers">Self-Funded Employers</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="/provider/provider-support">Providers</a>                                                
+                                                
+                                            </li>
+                                    </ul>
+
+                        </div>
+                        <div class="col">
+                            <h3>About</h3>
+
+                            
+                            
+                                    <ul>
+                                            <li>
+
+<a href="/about">About</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="/about#executive-team">Executive Team</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="https://www.evernorth.com/">Evernorth</a>                                                
+                                                
+                                            </li>
+                                    </ul>
+
+                        </div>
+                        <div class="col">
+                            <h3>Careers</h3>
+
+                            
+                            
+                                    <ul>
+                                            <li>
+
+<a href="/careers/#why-evicore">Why eviCore</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="/careers/#locations-corporate-headquarters">Locations and Corporate Headquarters</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="https://jobs.cigna.com " rel="noopener noreferrer" target="_blank">Open Positions</a>                                                
+                                                
+                                            </li>
+                                            <li>
+
+<a href="/careers/#learn-more-about-life-at-evicore">Life at eviCore</a>                                                
+                                                
+                                            </li>
+                                    </ul>
+
+                        </div>
+
+                <div class="col">
+                    <h3>Join the conversation</h3>
+                        <ul class="social-links">
+                                <li>
+                                    <figure><a href="https://www.linkedin.com/company/evicore" rel="noopener noreferrer" target="_blank"><img src="/-/media/Images/eviCore/Icons/in.png?h=64&amp;la=en&amp;w=70" alt="ln" width="70" height="64" style="margin: 0px 0px" /></a></figure>
+                                </li>
+                                <li>
+                                    <figure><a href="https://twitter.com/evicorehc" rel="noopener noreferrer" target="_blank"><img src="/-/media/Images/eviCore/Icons/twitter.png?h=64&amp;la=en&amp;w=70" alt="twitter" width="70" height="64" style="margin: 0px 0px" /></a></figure>
+                                </li>
+                                <li>
+                                    <figure><a href="https://www.facebook.com/eviCorehealthcare" rel="noopener noreferrer" target="_blank"><img src="/-/media/Images/eviCore/Icons/fb.png?h=64&amp;la=en&amp;w=31" alt="fb" width="31" height="64" style="margin: 0px 0px" /></a></figure>
+                                </li>
+                                <li>
+                                    <figure><a href="http://www.youtube.com/channel/UC4Ps7AnjdVdoweQZMnSq4Eg" rel="noopener noreferrer" target="_blank"><img src="/-/media/Images/eviCore/Icons/yt-icon.png?h=27&amp;la=en&amp;w=37" alt="YouTube Icon" width="37" height="27" style="margin: 0px 0px" /></a></figure>
+                                </li>
+                        </ul>
+
+
+
+
+                    <span class="h2">  eviCore healthcare</span>
+<address>
+400 Buckwalter Place Blvd.<br />
+Bluffton, SC 29910<br />
+1.800.918.8924<br />
+</address>
+<a href="/contact" class="contact-link">CONTACT US</a><br />
+<a href="/faqs" class="support">SUPPORT</a>
+
+
+                </div>
+            </div>
+            <div class="footer-btm">
+                <div class="be-ix-link-block">
+                    
+
+<script type='text/javascript'>
+    function positionLinkBlock(targetContainer) {
+        if (targetContainer != null) {
+            var strLinkBlock = '<div class="be-related-link-container"><div class="be-label">Also of Interest</div><ul class="be-list"><li class="be-list-item"><a class="be-related-link" href="https://www.evicore.com/solutions/health-plan/utilization-management/cardiology">Cardiovascular</a></li><li class="be-list-item"><a class="be-related-link" href="https://www.evicore.com/insights/burning-pain-in-your-esophagus">Heartburn? Reflux? Or Something Else? Helping...</a></li><li class="be-list-item"><a class="be-related-link" href="https://www.evicore.com/insights/the-benefits-of-quality-in-home-healthcare">The Benefits of Quality In-Home Healthcare</a></li></ul></div>';
+            targetContainer.insertAdjacentHTML('afterbegin', strLinkBlock);
+        }
+    }
+
+    jsElementReady('.be-ix-link-block', positionLinkBlock)
+
+</script>
+
+<!-- be_ixf, bodystr, _body_open -->
+
+                </div>
+
+
+                <p> Copyright 2022 eviCore healthcare. All Rights Reserved.</p>
+
+                    <p>
+
+<a href="/terms-of-use">Terms of Use</a> <span class="sep">|</span>
+<a href="/privacy-policy">Privacy Policy</a> <span class="sep">|</span>
+<a href="/report-fraud-and-abuse">Report Fraud &amp; Abuse</a> <span class="sep">|</span>
+<a href="/ethics-and-compliance">Ethics &amp; Compliance</a> <span class="sep">|</span>
+<a href="/member-rights-policy">Member Rights Policy</a> <span class="sep">|</span>
+<a href="/annual-utilization-statistics">Annual Utilization Statistics</a> <span class="sep">|</span>
+<a href="/e-verify-and-ier-right-to-work">E-Verify and IER Right to Work</a>                    </p>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="footer-btns">
+        <a class="pos-a feedback-btn bg-blue c-white pos-f">WEB FEEDBACK</a>
+        <a id="wsa_image_dock" class="pos-a chat-btn bg-blue c-white pos-f">CHAT WITH US</a>
+    </div>
+    <div class="feedback-window">
+
+        <div class="common-form-block">
+            <div class="form-wrap">
+                <div class="evicore-logo ta-r">
+                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="375px" height="278px" viewBox="0 0 375 278" enable-background="new 0 0 375 278" xml:space="preserve">
+<defs></defs>
+<g>
+                    <defs>
+                    <rect id="SVGID_1_" width="375.076" height="277.701"></rect>
+  </defs>
+                    <clipPath id="SVGID_2_">
+                    <use xlink:href="#SVGID_1_" overflow="visible"></use>
+  </clipPath>
+                    <path clip-path="url(#SVGID_2_)" fill="#CFD7DF" d="M129.17,232.911c-4.001-4.229-3.817-10.899,0.41-14.9
+                       c4.228-4.001,10.899-3.817,14.9,0.41c3.986,4.231,3.798,10.89-0.42,14.89c-1.952,1.858-4.545,2.894-7.24,2.891
+                       C133.926,236.202,131.16,235.012,129.17,232.911"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#C0CBD5" d="M171,263.541c-5.231-2.54-7.414-8.84-4.874-14.071
+                       c0.001-0.003,0.002-0.006,0.004-0.009c2.545-5.23,8.847-7.41,14.08-4.87c5.232,2.54,7.414,8.84,4.874,14.071
+                       c-0.001,0.003-0.002,0.006-0.004,0.009c-1.762,3.632-5.443,5.938-9.48,5.94C174.005,264.613,172.431,264.247,171,263.541"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#B3C0CD" d="M220.8,277.65c-5.784-0.599-9.996-5.763-9.42-11.55
+                       c0.6-5.784,5.763-9.996,11.55-9.42c5.786,0.583,10.005,5.746,9.422,11.531c0,0.007-0.001,0.013-0.002,0.019
+                       c-0.543,5.376-5.067,9.467-10.47,9.471C221.52,277.704,221.159,277.687,220.8,277.65"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#A4B4C3" d="M259.61,266.161c-1.469-5.627,1.902-11.38,7.53-12.848
+                       c0.003-0.001,0.006-0.002,0.01-0.003c5.62-1.474,11.37,1.888,12.844,7.508c0.002,0.008,0.004,0.015,0.006,0.022
+                       c1.479,5.619-1.877,11.372-7.496,12.852c-0.012,0.003-0.022,0.006-0.034,0.009c-0.868,0.224-1.763,0.338-2.66,0.34
+                       C265.014,274.038,260.824,270.801,259.61,266.161"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#A4B4C3" d="M304.78,249.301c-3.372-4.742-2.267-11.319,2.47-14.7
+                       c4.745-3.369,11.323-2.26,14.7,2.48c3.371,4.742,2.267,11.319-2.47,14.7c-1.781,1.268-3.914,1.949-6.101,1.949
+                       C309.965,253.736,306.76,252.085,304.78,249.301"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#859AAE" d="M340.9,217.381c-4.871-3.173-6.258-9.688-3.101-14.57
+                       c3.174-4.876,9.693-6.267,14.579-3.109c4.878,3.173,6.266,9.696,3.102,14.58c-1.942,3.001-5.275,4.813-8.852,4.81
+                       C344.596,219.081,342.606,218.488,340.9,217.381"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#859AAE" d="M362.54,174.311c-5.691-1.095-9.428-6.583-8.36-12.279
+                       c-0.009-0.066-0.009-0.134,0-0.199c1.086-5.716,6.593-9.474,12.311-8.401c5.72,1.08,9.481,6.593,8.401,12.313
+                       c-0.001,0.003-0.001,0.005-0.002,0.008c-0.002,0.033-0.002,0.066,0,0.1c0.004,0.044,0.004,0.087,0,0.13
+                       c-0.941,4.968-5.284,8.563-10.34,8.561C363.874,174.529,363.201,174.452,362.54,174.311"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#768EA4" d="M354,117.791c-1.148-5.704,2.538-11.261,8.24-12.42
+                       c5.703-1.142,11.255,2.549,12.41,8.25c1.153,5.694-2.526,11.246-8.221,12.4c-0.017,0.003-0.033,0.007-0.05,0.01
+                       c-0.694,0.138-1.401,0.209-2.11,0.21C359.276,126.216,354.986,122.687,354,117.791"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#768EA4" d="M337.22,77.031c-3.168-4.87-1.788-11.387,3.082-14.555
+                       c0.003-0.002,0.006-0.003,0.008-0.005c4.865-3.176,11.384-1.806,14.561,3.059c0.007,0.01,0.013,0.021,0.02,0.031
+                       c3.16,4.879,1.778,11.394-3.09,14.57c-1.703,1.115-3.694,1.71-5.729,1.71C342.495,81.844,339.162,80.033,337.22,77.031"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#768EA4" d="M306.77,44.871L306.77,44.871c-4.695-3.421-5.729-10.001-2.309-14.697
+                       l0.009-0.013c3.432-4.703,10.024-5.733,14.728-2.303c0.001,0.001,0.002,0.002,0.003,0.003c4.699,3.434,5.726,10.029,2.291,14.728
+                       c-0.001,0.001-0.001,0.001-0.001,0.002c-1.982,2.708-5.134,4.312-8.491,4.32C310.759,46.914,308.575,46.2,306.77,44.871"></path>
+                    <path clip-path="url(#SVGID_2_)" d="M266.87,25.511c-5.599-1.582-8.857-7.4-7.28-13c1.577-5.603,7.397-8.866,13-7.29
+                       c5.599,1.582,8.857,7.4,7.28,13c-1.274,4.545-5.42,7.685-10.14,7.68C268.764,25.897,267.802,25.766,266.87,25.511"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#5A7692" d="M266.87,25.511c-5.599-1.582-8.857-7.4-7.28-13
+                       c1.577-5.603,7.397-8.866,13-7.29c5.599,1.582,8.857,7.4,7.28,13c-1.274,4.545-5.42,7.685-10.14,7.68
+                       C268.764,25.897,267.802,25.766,266.87,25.511"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#3B5D7D" d="M211.38,11.381c-0.459-5.809,3.877-10.89,9.686-11.349l0.015-0.001
+                       c5.805-0.442,10.868,3.905,11.31,9.709v0.001c0.442,5.797-3.893,10.858-9.689,11.31h-0.83
+                       C216.392,21.044,211.832,16.84,211.38,11.381"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#1F466B" d="M165.84,27.221c-2.458-5.269-0.185-11.533,5.08-14
+                       c5.269-2.458,11.533-0.185,14,5.08c2.452,5.27,0.181,11.529-5.08,14c-1.392,0.654-2.911,0.996-4.45,1
+                       C171.295,33.306,167.569,30.934,165.84,27.221"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#0D375F" d="M129,58.301c-4.187-4.041-4.321-10.705-0.3-14.91
+                       c4.034-4.191,10.7-4.325,14.9-0.3c4.199,4.029,4.338,10.7,0.31,14.9c-1.987,2.076-4.737,3.247-7.61,3.24
+                       C133.581,61.228,130.967,60.179,129,58.301"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#C99700" d="M101.66,84.121L101.66,84.121c-3.349,4.625-2.314,11.09,2.311,14.439
+                       c0.01,0.007,0.019,0.014,0.029,0.021c4.638,3.351,11.112,2.312,14.47-2.32c3.34-4.644,2.294-11.116-2.34-14.47
+                       c-2.024-1.467-4.511-2.15-7-1.92C106.139,80.13,103.41,81.683,101.66,84.121"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#002855" d="M16.51,136.871c0.17,4,1.77,7.75,7.66,7.75c3.71,0,6-1.771,6.66-4.221h16
+                       c-1.43,8.601-9.43,15.081-22.57,15.081C9.1,155.48,0,146.811,0,133.411c0-12.12,8-22.15,23.92-22.15
+                       c15.24,0,23.58,9.52,23.58,19.38c0.023,2.087-0.144,4.172-0.5,6.23H16.51z M16.51,128.871H31c0-4.55-2.78-7.33-7.16-7.33
+                       S16.51,124.151,16.51,128.871"></path>
+                    <polygon clip-path="url(#SVGID_2_)" fill="#002855" points="63.53,112.441 72.29,137.371 81.29,112.441 98.48,112.441
+                       79.48,154.301 65.05,154.301 46.35,112.441 	"></polygon>
+                    <rect x="101.17" y="112.441" clip-path="url(#SVGID_2_)" fill="#002855" width="16.51" height="41.859"></rect>
+                    <path clip-path="url(#SVGID_2_)" fill="#002855" d="M178.4,133.701c-1.74,12.17-11.57,22.3-27.82,22.3c-18.23,0-29-13.16-29-27.9
+                       c0-14.74,10.66-27.9,28.5-27.9c17.09,0,26.69,10.43,28.13,23.21h-16.44c-0.91-5-4.69-8.92-11.19-8.92
+                       c-8.47,0-12.86,6.43-12.86,13.61c0,7.71,4.92,13.61,13.16,13.61c5.82,0,9.9-3.63,10.89-8L178.4,133.701z"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#002855" d="M181.72,133.411c0-12.21,8.76-22.15,24.339-22.15
+                       c15.58,0,24.431,9.94,24.431,22.15c0,12.05-8.84,22.07-24.431,22.07C190.471,155.48,181.72,145.461,181.72,133.411 M213.9,133.411
+                       c0-4.71-3-8.25-7.841-8.25c-4.84,0-7.829,3.54-7.829,8.25c0,4.55,3.119,8.26,7.829,8.26S213.9,137.96,213.9,133.411"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#002855" d="M267.7,127.271c-1.83-0.542-3.732-0.798-5.641-0.76
+                       c-6.319,0-11.199,3-11.199,13v14.74H234.35v-41.81h16.511v6.66c2.474-4.629,7.301-7.514,12.55-7.5
+                       c1.453-0.047,2.903,0.153,4.29,0.59V127.271z"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#002855" d="M285.73,136.871c0.17,4,1.77,7.75,7.67,7.75c3.699,0,6-1.771,6.649-4.221h16
+                       c-1.43,8.601-9.43,15.081-22.569,15.081c-15.16,0-24.25-8.67-24.25-22.069c0-12.12,8-22.15,23.92-22.15
+                       c15.239,0,23.58,9.52,23.58,19.38c0.019,2.087-0.152,4.173-0.511,6.23H285.73z M285.73,128.871h14.489c0-4.55-2.779-7.33-7.16-7.33
+                       C288.68,121.541,285.73,124.151,285.73,128.871"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#C99700" d="M101.17,167.311h4v14.891c1.394-2.721,4.258-4.366,7.31-4.2
+                       c2.87,0,5,1,6.21,2.74c1.14,1.55,1.6,3.38,1.6,6.3v12.24h-4v-11c0-3.83-1.37-6.761-5.25-6.761c-3.88,0-5.89,3.381-5.89,7.08v10.69
+                       h-4L101.17,167.311z"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#C99700" d="M129.29,189.961c0.19,3.521,1.88,6.49,6.44,6.49c3.11,0,4.61-1.511,5.25-3.29h4
+                       c-0.68,3.51-4.06,6.62-9.27,6.62c-7,0-10.36-4.891-10.36-10.87c0-6.25,3.69-10.91,10.22-10.91c5.157-0.139,9.449,3.93,9.587,9.087
+                       c0.002,0.091,0.003,0.182,0.003,0.273c0.013,0.871-0.048,1.739-0.18,2.6H129.29z M129.34,186.961h12
+                       c0.186-3.087-2.167-5.74-5.254-5.926c-0.195-0.011-0.391-0.012-0.586-0.004c-3.56,0-6.07,2.17-6.16,5.92V186.961z"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#C99700" d="M171.07,178.551v20.73h-3.93v-3.61c-1.497,2.584-4.274,4.157-7.26,4.11
+                       c-6.014-0.003-10.888-4.881-10.886-10.896c0.003-6.011,4.875-10.882,10.886-10.885c2.986-0.047,5.763,1.525,7.26,4.11v-3.561
+                       H171.07z M167.14,188.911c0-4-2.74-7.351-7-7.351c-4.26,0-6.94,3.38-6.94,7.351c0,3.97,2.74,7.31,6.94,7.31
+                       S167.14,192.881,167.14,188.911"></path>
+                    <rect x="178.19" y="167.311" clip-path="url(#SVGID_2_)" fill="#C99700" width="4" height="32"></rect>
+                    <path clip-path="url(#SVGID_2_)" fill="#C99700" d="M200.56,199.281c-1.178,0.177-2.368,0.267-3.56,0.271
+                       c-2.56,0-6.529-0.461-6.529-7.261v-10.41h-3.83v-3.329h3.83v-7h3.999v7h5.391v3.329h-5.391v9.54c0,4,1.42,4.52,3.431,4.52
+                       c0.899-0.007,1.797-0.067,2.689-0.18L200.56,199.281z"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#C99700" d="M204.81,167.311h4v14.891c1.394-2.721,4.258-4.366,7.311-4.2
+                       c2.87,0,5,1,6.211,2.74c1.139,1.55,1.589,3.38,1.589,6.3v12.24h-4v-11c0-3.83-1.37-6.761-5.25-6.761s-5.89,3.381-5.89,7.08v10.69
+                       h-4L204.81,167.311z"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#C99700" d="M245.17,186.081c-0.32-2.561-1.87-4.521-5.75-4.521
+                       c-4.3,0-6.439,3.471-6.439,7.351s2.05,7.31,6.659,7.31c3.431,0,4.94-1.6,5.58-4.07h4c-0.64,4.301-3.79,7.631-9.819,7.631
+                       c-6.761,0-10.36-5.25-10.36-10.87s3.57-10.88,10.29-10.88s9.45,4.06,9.81,8.08L245.17,186.081z"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#C99700" d="M274.89,178.551v20.73H271v-3.61c-1.5,2.581-4.275,4.152-7.26,4.11
+                       c-5.826,0.052-10.592-4.629-10.645-10.455c-0.001-0.139,0-0.277,0.004-0.415c0-5.891,4.29-10.91,10.641-10.91
+                       c2.984-0.043,5.76,1.528,7.26,4.11v-3.561H274.89z M271,188.911c0-4-2.74-7.351-7-7.351s-6.94,3.38-6.94,7.351
+                       c0,3.97,2.74,7.31,6.94,7.31S271,192.881,271,188.911"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#C99700" d="M294.84,182.201c-0.653-0.164-1.326-0.241-2-0.23
+                       c-4.609,0-6.899,3.24-6.899,8.22v9.091h-4v-20.73h4v4.061c1.255-2.675,3.945-4.382,6.899-4.381c0.682-0.03,1.362,0.078,2,0.32
+                       V182.201z"></path>
+                    <path clip-path="url(#SVGID_2_)" fill="#C99700" d="M300.55,189.961c0.181,3.521,1.87,6.49,6.44,6.49c3.1,0,4.609-1.511,5.25-3.29
+                       h4c-0.69,3.51-4.07,6.62-9.271,6.62c-7,0-10.37-4.891-10.37-10.87c0-6.25,3.7-10.91,10.23-10.91
+                       c5.156-0.139,9.448,3.93,9.587,9.087c0.002,0.091,0.003,0.182,0.003,0.273c0.013,0.871-0.048,1.739-0.18,2.6H300.55z
+                        M300.55,186.961h12c0.169-3.083-2.192-5.719-5.275-5.888c-0.188-0.011-0.376-0.011-0.564-0.002c-3.51-0.04-6.02,2.13-6.12,5.88
+                       L300.55,186.961z"></path>
+</g>
+</svg>
+
+                </div>
+                
+                <span class="h3 marB10 ta-c w100">Website Feedback</span>
+                <p class="req-note  w100 padB10">
+                    Thank you for using eviCore’s website today! As a valued user of our website, we’d appreciate your feedback to help us improve your website experience.
+                </p>
+                <span id="lblFFormError" class="w100 marB20" style="display:none;"></span>
+                <div class="form-row  marB20">
+                    <p class="c-blue">Q1: Overall, how satisfied are you with eviCore’s website?<span class="reqired">*</span></p>
+
+                    <div class="survey-list d-f" id="ratingValue">
+                        <span class="limits">Extremely Dissatisfied</span>
+                        <span class="limits right">Extremely Satisfied</span>
+                        <span><input type="radio" name="number" value="0">0</span>
+                        <span><input type="radio" name="number" value="1">1</span>
+                        <span><input type="radio" name="number" value="2">2</span>
+                        <span><input type="radio" name="number" value="3">3</span>
+                        <span><input type="radio" name="number" value="4">4</span>
+                        <span><input type="radio" name="number" value="5">5</span>
+                        <span><input type="radio" name="number" value="6">6</span>
+                        <span><input type="radio" name="number" value="7">7</span>
+                        <span><input type="radio" name="number" value="8">8</span>
+                        <span><input type="radio" name="number" value="9">9</span>
+                        <span><input type="radio" name="number" value="10">10</span>
+                    </div>
+                    <span class="error-msg" style="display:none" id="spnFormInvalidSelection">
+                        Please rate the following statement.
+                    </span>
+                </div>
+                <div class="form-row marB20">
+                    <p class="c-blue">
+                        Q2: Choose the primary task you came to the website to complete:<span class="reqired">*</span>
+                    </p>
+                    <div class="c-select" id="ddlTask">
+                        <select id="ddlPrimarytask">
+
+                            <option value="Learn more about eviCore as a potential client/partner">Learn more about eviCore as a potential client/partner</option>
+                            <option value="Review Insights blog">Review Insights blog</option>
+                            <option value="Get technical support/training">Get technical support/training</option>
+                            <option value="Locate eviCore contact information">Locate eviCore contact information</option>
+                            <option value="Access eviCore career website">Access eviCore career website</option>
+                            <option value="Learn more about prior authorization process">Learn more about prior authorization process</option>
+                            <option value="Visit the Provider’s Hub">Visit the Provider’s Hub</option>
+                            <option value="Login to eviCore’s secure Provider Portal(for prior auth requests)">Login to eviCore’s secure Provider Portal(for prior auth requests)</option>
+                            <option value="None of the above">None of the above</option>
+
+                        </select>
+                        <span class="error-msg" style="display:none" id="spnFormInvalidDDLTask">
+                            Please select primary task.
+                        </span>
+
+                    </div>
+
+
+                </div>
+                <div class="form-row   marB15">
+                    <p class="c-blue">
+                        Q3:  Please rate the following statement: <span class="reqired">*</span>
+                        <br /><strong>eviCore made it easy to complete my primary task online</strong>
+                    </p>
+
+                    <div class="survey-list d-f" id="primaryTask">
+                        <span class="limits">Strongly Disagree</span>
+                        <span class="limits right">Strongly Agree</span>
+                        <span><input type="radio" name="rating" value="0">0</span>
+                        <span><input type="radio" name="rating" value="1">1</span>
+                        <span><input type="radio" name="rating" value="2">2</span>
+                        <span><input type="radio" name="rating" value="3">3</span>
+                        <span><input type="radio" name="rating" value="4">4</span>
+                        <span><input type="radio" name="rating" value="5">5</span>
+                        <span><input type="radio" name="rating" value="6">6</span>
+                        <span><input type="radio" name="rating" value="7">7</span>
+
+                    </div>
+                    <span class="error-msg" style="display:none" id="spnFormInvalidPrimaryTask">
+                        Please rate the following statement.
+                    </span>
+                </div>
+                <div class="form-row  marB20">
+                    <p class="c-blue">
+                        Q4: How can eviCore make it easier for you to use this website?
+                    </p>
+
+                    <textarea class="form-field" id="txtMessage"></textarea>
+
+                </div>
+                <div class="form-row floating-label  marB20">
+                    <label>Name <span class="reqired">*</span></label>
+                    <input type="text" class="form-field" id="txtFFormFirstName">
+                    <span class="error-msg" style="display:none" id="spnFFormFirstName">
+                        Please enter Name
+                    </span>
+
+                </div>
+                <div class="form-row floating-label  marB20">
+                    <label>Email Address<span class="reqired">*</span></label>
+                    <input type="text" class="form-field" id="txtFFormEmail">
+                    <span class="error-msg" style="display:none" id="spnFFormInvalidEmail">
+                        Please enter valid email.
+                    </span>
+                </div>
+
+                <div class="form-row   marB10">
+                    <div class="c-checkbox">
+                        <input type="checkbox" id="ck1" />
+                        <label for="ck1">Contact me with more information about eviCore’s healthcare solutions.</label>
+                    </div>
+
+                </div>
+                <div class="form-row   marB20">
+                    <div class="c-checkbox">
+                        <input type="checkbox" id="ck2" />
+                        <label for="ck2">Sign me up to receive eviCore’s Provider eNewsletter, and other valuable communications. </label>
+                    </div>
+
+                </div>
+                <div class="form-row marB20 ">
+                    
+                    <div id="recaptcha2"></div>
+                    <span id="errFCaptcha" class="error-msg" style="display:none">reCAPTCHA is not valid; Please try again!</span>
+                </div>
+                <div class="form-row submit-row ta-c marB20">
+                    <div class="d-ib va-t pos-r">
+                        <input type="submit" value="SUBMIT" class="btn btn-blue btn-small" onclick="FeedbackForm();">
+                        <img src="/Assets/images/ajax-loader-blue.gif" width="32" height="32" alt="ajax-loader" class="pos-a ajax-loader d-n" id="ajaxLoaderFeedbackForm" style="right: -20px; top: 5px;">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-71877130-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+<script type="text/javascript" language="javascript">
+    var sf14gv = 28702;
+    (function () {
+        var sf14g = document.createElement('script'); sf14g.type = 'text/javascript'; sf14g.async = true;
+        sf14g.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 't.sf14g.com/sf14g.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sf14g, s);
+    })();
+</script>
+
+<script type="text/javascript">
+    piAId = '66462';
+    piCId = '23761';
+
+    (function () {
+        function async_load() {
+            var s = document.createElement('script'); s.type = 'text/javascript';
+            s.src = ('https:' == document.location.protocol ? 'https://pi' : 'http://cdn') + '.pardot.com/pd.js';
+            var c = document.getElementsByTagName('script')[0]; c.parentNode.insertBefore(s, c);
+        }
+        if (window.attachEvent) { window.attachEvent('onload', async_load); }
+        else { window.addEventListener('load', async_load, false); }
+    })();
+
+</script>
+
+<script type="text/javascript">
+
+    $(".subscribe-form .btn").on('click', function () {
+
+        $('#spnSMFormInvalidEmail').hide();
+
+        var email = $.trim($("#txtSMFormEmail").val());
+
+        if (email == '' || !validateEmail(email)) {
+            $('#spnSFormInvalidEmail').show();
+        }
+        else {
+            $("#txtSFormEmail").val(email);
+            $("#txtSFormEmail").parent('div.form-row').addClass('isActive');
+            // $('#recaptcha').show();
+            $.fancybox.open({
+                src: '.signup-form',
+                type: 'inline',
+                smallBtn: true,
+                opts: {
+                    afterShow: function (instance, current) {
+                        console.info('done!');
+                    }
+                    //afterClose: function (instance, current) {
+                    //    // alert(1);
+                    //    $('#recaptcha').hide();
+                    //}
+                }
+
+            });
+        }
+
+
+
+    });
+
+    //var verifyCallback = function (response) {
+    //    alert(response);
+    //};
+    var recaptcha1;
+    var recaptcha2;
+    var sitekey = $('#hdnSitekey').val();
+    var myCallBack = function () {
+        //Render the recaptcha1 on the element with ID "recaptcha1"
+        recaptcha1 = grecaptcha.render('recaptcha1', {
+            'sitekey': sitekey, //Replace this with your Site key
+
+        });
+
+        //Render the recaptcha2 on the element with ID "recaptcha2"
+        recaptcha2 = grecaptcha.render('recaptcha2', {
+            'sitekey': sitekey, //Replace this with your Site key
+            //'callback': verifyCallback,
+        });
+    };
+
+
+    function EmailSignUp() {
+
+        $('#spnSFormInvalidEmail').hide();
+        $('#spnSFormFirstName').hide();
+        $('#spnSFormLastName').hide();
+        $('#spnSFormCompany').hide();
+        $('#spnSFormPhoneNumber').hide();
+        $('#lblSFormError').hide();
+        $('#errECaptcha').hide();
+        var email = $.trim($("#txtSFormEmail").val());
+        var firstName = $.trim($("#txtSFormFirstName").val());
+        var lastName = $.trim($("#txtSFormLastName").val());
+        var company = $.trim($("#txtSFormCompany").val());
+        var phoneNumber = $.trim($("#txtSFormPhoneNumber").val());
+        var Response = grecaptcha.getResponse(recaptcha1);
+
+        var isDataValid = true;
+
+
+        if (email == '' || !validateEmail(email)) {
+            $('#spnSFormInvalidEmail').show();
+            isDataValid = false;
+        }
+        if (firstName == '') {
+            $('#spnSFormFirstName').show();
+            isDataValid = false;
+        }
+        if (lastName == '') {
+            $('#spnSFormLastName').show();
+            isDataValid = false;
+        }
+        if (company == '') {
+            $('#spnSFormCompany').show();
+            isDataValid = false;
+        }
+        if (phoneNumber == '') {
+            $('#spnSFormPhoneNumber').show();
+            isDataValid = false;
+        }
+        if (Response == '') {
+            isDataValid = false;
+            $('#errECaptcha').show();
+
+        }
+        if (!isDataValid) {
+            return false;
+        }
+
+        var formData = new FormData();
+        formData.append("ReqCase", "EmailSignUp");
+        formData.append("email", email);
+        formData.append("firstName", firstName);
+        formData.append("lastName", lastName);
+        formData.append("company", company);
+        formData.append("phoneNumber", phoneNumber);
+        formData.append("Captcha", Response);
+
+        $.ajax({
+            type: "POST",
+            url: "/assets/pages/ajaxfunctions.aspx",
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            beforeSend: function () {
+                $("#ajaxLoaderEmailSignUp").show();
+            },
+            success: function (data) {
+                if (data != "") {
+                    if (data == "success") {
+                        $('#lblSFormError').attr('class', 'c-green marB20')
+                        $('#lblSFormError').html('Your requested has been submitted successfully.');
+                        $('#lblSFormError').show();
+                        $('.signup-form .common-form-block input:text').val('');
+                        grecaptcha.reset(recaptcha1);
+
+                        //constantcontact form submission - start
+                        //var constantcontactFormData = new FormData();
+                        //constantcontactFormData.append("ca", "ba1dbac4-b01a-4de3-b483-61d0aa7218d3");
+                        //constantcontactFormData.append("list", "8");
+                        //constantcontactFormData.append("source", "EFD");
+                        //constantcontactFormData.append("required", "list,email,first_name,last_name,company");
+                        //constantcontactFormData.append("url", "");
+                        //constantcontactFormData.append("email", email);
+                        //constantcontactFormData.append("first_name", firstName);
+                        //constantcontactFormData.append("last_name", lastName);
+                        //constantcontactFormData.append("phone", phoneNumber);
+                        //constantcontactFormData.append("company", company);
+
+                        //$.ajax({
+                        //    type: "POST",
+                        //    url: "https://visitor2.constantcontact.com/api/signup",
+                        //    data: constantcontactFormData,
+                        //    cache: false,
+                        //    contentType: false,
+                        //    processData: false,
+                        //    success: function (data) {
+                        //        if (data != "") {
+                        //            //alert("constantcontact data saved.-->" + data);
+                        //        }
+
+                        //    },
+                        //    error: function (xhr) {
+                        //        //alert("constantcontact Error:-->" + xhr.responseText);
+                        //    }
+
+
+                        //});
+                        //constantcontact form submission - end
+                    }
+                    else if (data == "error") {
+                        $('#lblSFormError').attr('class', 'error-msg marB20')
+                        $('#lblSFormError').html('There is some error please tray again later.');
+                        $('#lblSFormError').show();
+                    }
+                    else if (data == "failed") {
+                        $('#lblSFormError').attr('class', 'error-msg marB20')
+                        $('#lblSFormError').html('There is some error please tray again later.');
+                        $('#errECaptcha').show();
+                    }
+                }
+                $("#ajaxLoaderEmailSignUp").hide();
+
+            },
+            error: function (xhr) {
+                alert(xhr.responseText);
+            }
+
+        });
+        return false;
+    }
+
+
+    function FeedbackForm() {
+
+        $('#spnFFormInvalidEmail').hide();
+        $('#spnFFormFirstName').hide();
+        $('#spnFormInvalidPrimaryTask').hide();
+        $('#spnFormInvalidDDLTask').hide();
+        $('#spnFormInvalidSelection').hide();
+        $('#lblFFormError').hide();
+        $('#errFCaptcha').hide();
+        var websiteRating = $("#ratingValue input[name='number']:checked").val();
+        var primaryTask = $("#ddlTask option:selected").attr('value');
+        var statementRating = $("#primaryTask input[name='rating']:checked").val();
+        var message = $.trim($("#txtMessage").val());
+        var firstName = $.trim($("#txtFFormFirstName").val());
+        var email = $.trim($("#txtFFormEmail").val());
+        var contactCheckbox = $("#ck1").is(":checked");
+        var signUpCheckbox = $("#ck2").is(":checked");
+        var Response = grecaptcha.getResponse(recaptcha2);
+
+        var isDataValid = true;
+
+        //alert(checkbox1);
+        //alert(checkbox2);
+        if ($('#ratingValue input:checked').length <= 0) {
+            isDataValid = false;
+            $("#spnFormInvalidSelection").show();
+        }
+        if (primaryTask == '') {
+            $('#spnFormInvalidDDLTask').show();
+            isDataValid = false;
+        }
+        if ($('#primaryTask input:checked').length <= 0) {
+            isDataValid = false;
+            $("#spnFormInvalidPrimaryTask").show();
+        }
+
+        if (firstName == '') {
+            $('#spnFFormFirstName').show();
+            isDataValid = false;
+        }
+
+        if (email == '' || !validateEmail(email)) {
+            $('#spnFFormInvalidEmail').show();
+            isDataValid = false;
+        }
+
+        if (Response == '') {
+            isDataValid = false;
+            $('#errFCaptcha').show();
+
+        }
+
+        if (!isDataValid) {
+            return false;
+        }
+
+        var formData = new FormData();
+        formData.append("ReqCase", "FeedbackForm");
+        formData.append("WebsiteRating", websiteRating);
+        formData.append("PrimaryTask", primaryTask);
+        formData.append("StatementRating", statementRating);
+        formData.append("message", message);
+        formData.append("firstName", firstName);
+        formData.append("email", email);
+        formData.append("ContactCheckbox", contactCheckbox);
+        formData.append("SignUpCheckbox", signUpCheckbox);
+        formData.append("Captcha", Response);
+
+
+        $.ajax({
+            type: "POST",
+            url: "/assets/pages/ajaxfunctions.aspx",
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false,
+            beforeSend: function () {
+                $("#ajaxLoaderFeedbackForm").show();
+            },
+            success: function (data) {
+                if (data != "") {
+                    if (data == "success") {
+                        $('#lblFFormError').attr('class', 'c-green marB20')
+                        $('#lblFFormError').html('Thank you! We appreciate your feedback and will be using it to make future enhancements to our website.');
+                        $('#lblFFormError').show();
+
+                        var radioContact1 = document.getElementById("ratingValue").getElementsByTagName("input");
+
+                        for (var i = 0; i < radioContact1.length; i++) {
+                            radioContact1[i].checked = false;
+
+                        }
+                        var radioContact2 = document.getElementById("primaryTask").getElementsByTagName("input");
+
+                        for (var i = 0; i < radioContact2.length; i++) {
+                            radioContact2[i].checked = false;
+
+                        }
+
+                        $(".feedback-window .common-form-block #ddlPrimarytask")[0].selectedIndex = 0;
+                        $(".feedback-window .common-form-block input:checkbox").prop("checked", false);
+                        $('.feedback-window .common-form-block input:text').val('');
+                        $('.feedback-window .common-form-block textarea').val('');
+                        grecaptcha.reset(recaptcha2);
+
+                    }
+                    else if (data == "error") {
+                        $('#lblFFormError').attr('class', 'error-msg marB20')
+                        $('#lblFFormError').html('There is some error please tray again later.');
+                        $('#lblFFormError').show();
+                    }
+                    else if (data == "failed") {
+                        $('#lblFFormError').attr('class', 'error-msg marB20')
+                        $('#lblFFormError').html('There is some error please tray again later.');
+                        $('#errFCaptcha').show();
+                    }
+                }
+                $("#ajaxLoaderFeedbackForm").hide();
+
+            },
+            error: function (xhr) {
+                alert(xhr.responseText);
+            }
+
+        });
+        return false;
+    }
+
+
+</script>
+
+        <!-- Footer Section  End-->
+    </div>
+
+        <div id="job-alert" style="display:none"><p><strong>IMPORTANT</strong>: In the coming days, we will be migrating systems for our
+eviCore positions. Beginning Friday, December 18th at 5:00pm EST, you
+won&rsquo;t be able to apply to eviCore openings. We&rsquo;re still hiring for other
+open positions so continue your job search at <a rel="noopener noreferrer" rel="noopener noreferrer" href="https://www.cigna.com/careers" target="_blank"><span style="text-decoration: underline;">Cigna.com/careers</span></a></p></div>
+    <!-- Page Wrapper End-->
+
+
+    <script src="/assets/js/index.min.js"></script>
+    <script src="/assets/js/custom.js"></script>
+    <!-- Scripts End-->
+
+    <script type="text/javascript">
+        (function () {
+            function initInsights() {
+                if (!window._contently) {
+                    var _contently = { siteId: "c218325ef8f31f093949135dfa237881" }
+                    _contently.insights = new ContentlyInsights({ site_id: _contently.siteId });
+                    window._contently = _contently
+                }
+            }
+
+            var s = document.createElement('script');
+            s.setAttribute('type', 'text/javascript');
+            s.setAttribute('async', 'async');
+            s.setAttribute('src', '//assets.contently.com/insights/insights.js')
+            s.onreadystatechange = function () {
+                if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                    initInsights();
+                }
+            };
+            s.onload = initInsights;
+            document.body.appendChild(s);
+        })();
+    </script>
+    <script type="text/javascript" charset="utf-8">
+        var _eiq = _eiq || [];
+        var _engagio_settings = {
+            accountId: "c7f52f7f5b2caeef9040ed0292d1697e208a201c"
+        };
+        (function () {
+            var ei = document.createElement('script'); ei.type = 'text/javascript'; ei.async = true;
+            ei.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'web-analytics.engagio.com/js/ei.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ei, s);
+        })();
+    </script>
+</body>
+<!-- Body End-->
+</html>

@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en-US">
+<head><!--[if IE 8]><script src="//cdnjs.cloudflare.com/ajax/libs/ie8/0.6.0/ie8.js"></script><![endif]--><script>!function(e,t){function n(){for(var e,n=t.getElementsByTagName("link"),r=0;r<n.length;r++)"preload"===(e=n[r]).rel&&"style"===e.getAttribute("as")&&(!function(e,n,r){function a(){l.addEventListener&&l.removeEventListener("load",a),l.media=r||"all"}var l=t.createElement("link");l.rel="stylesheet",l.href=e,l.media="only x";l.addEventListener&&l.addEventListener("load",a);(function e(){t.body?n.parentNode.insertBefore(l,n):setTimeout(e)})(),function e(){for(var n=t.styleSheets,r=n.length;r--;)if(n[r].href===l.href)return a();setTimeout(e)}()}(e.href,e,e.media),e.rel=null)}function r(){n(),clearInterval(a)}try{if(t.createElement("link").relList.supports("preload"))return}catch(e){}var a=setInterval(n,300);e.addEventListener&&e.addEventListener("load",r),e.attachEvent&&e.attachEvent("onload",r),n()}(window,document);</script><meta name="viewport" content="width=0, initial-scale=1">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="profile" href="https://gmpg.org/xfn/11">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>:root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}*,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%}section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff;font-family:'Gotham-Light';overflow-y:scroll;overflow-x:hidden;-ms-overflow-style:scrollbar;--wp--preset--color--black:#000;--wp--preset--color--cyan-bluish-gray:#abb8c3;--wp--preset--color--white:#fff;--wp--preset--color--pale-pink:#f78da7;--wp--preset--color--vivid-red:#cf2e2e;--wp--preset--color--luminous-vivid-orange:#ff6900;--wp--preset--color--luminous-vivid-amber:#fcb900;--wp--preset--color--light-green-cyan:#7bdcb5;--wp--preset--color--vivid-green-cyan:#00d084;--wp--preset--color--pale-cyan-blue:#8ed1fc;--wp--preset--color--vivid-cyan-blue:#0693e3;--wp--preset--color--vivid-purple:#9b51e0;--wp--preset--color--primary:#0073a8;--wp--preset--color--secondary:#005075;--wp--preset--color--dark-gray:#111;--wp--preset--color--light-gray:#767676;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple:linear-gradient(135deg,#0693e3 0%,#9b51e0 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan:linear-gradient(135deg,#7adcb4 0%,#00d082 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange:linear-gradient(135deg,#fcb900 0%,#ff6900 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red:linear-gradient(135deg,#ff6900 0%,#cf2e2e 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray:linear-gradient(135deg,#eee 0%,#a9b8c3 100%);--wp--preset--gradient--cool-to-warm-spectrum:linear-gradient(135deg,#4aeadc 0%,#9778d1 20%,#cf2aba 40%,#ee2c82 60%,#fb6962 80%,#fef84c 100%);--wp--preset--gradient--blush-light-purple:linear-gradient(135deg,#ffceec 0%,#9896f0 100%);--wp--preset--gradient--blush-bordeaux:linear-gradient(135deg,#fecda5 0%,#fe2d2d 50%,#6b003e 100%);--wp--preset--gradient--luminous-dusk:linear-gradient(135deg,#ffcb70 0%,#c751c0 50%,#4158d0 100%);--wp--preset--gradient--pale-ocean:linear-gradient(135deg,#fff5cb 0%,#b6e3d4 50%,#33a7b5 100%);--wp--preset--gradient--electric-grass:linear-gradient(135deg,#caf880 0%,#71ce7e 100%);--wp--preset--gradient--midnight:linear-gradient(135deg,#020381 0%,#2874fc 100%);--wp--preset--duotone--dark-grayscale:url(/?pagespeedninja=no#wp-duotone-dark-grayscale);--wp--preset--duotone--grayscale:url(/?pagespeedninja=no#wp-duotone-grayscale);--wp--preset--duotone--purple-yellow:url(/?pagespeedninja=no#wp-duotone-purple-yellow);--wp--preset--duotone--blue-red:url(/?pagespeedninja=no#wp-duotone-blue-red);--wp--preset--duotone--midnight:url(/?pagespeedninja=no#wp-duotone-midnight);--wp--preset--duotone--magenta-yellow:url(/?pagespeedninja=no#wp-duotone-magenta-yellow);--wp--preset--duotone--purple-green:url(/?pagespeedninja=no#wp-duotone-purple-green);--wp--preset--duotone--blue-orange:url(/?pagespeedninja=no#wp-duotone-blue-orange);--wp--preset--font-size--small:19.5px;--wp--preset--font-size--medium:20px;--wp--preset--font-size--large:36.5px;--wp--preset--font-size--x-large:42px;--wp--preset--font-size--normal:22px;--wp--preset--font-size--huge:49.5px;--wp--preset--spacing--20:.44rem;--wp--preset--spacing--30:.67rem;--wp--preset--spacing--40:1rem;--wp--preset--spacing--50:1.5rem;--wp--preset--spacing--60:2.25rem;--wp--preset--spacing--70:3.38rem;--wp--preset--spacing--80:5.06rem;--wp--preset--shadow--natural:6px 6px 9px rgba(0,0,0,.2);--wp--preset--shadow--deep:12px 12px 50px rgba(0,0,0,.4);--wp--preset--shadow--sharp:6px 6px 0 rgba(0,0,0,.2);--wp--preset--shadow--outlined:6px 6px 0 -3px #fff ,6px 6px #000;--wp--preset--shadow--crisp:6px 6px 0 #000}h1,h2,h3{margin-top:0;margin-bottom:.5rem;font-weight:500;line-height:1.2}p,ul{margin-top:0;margin-bottom:1rem}ul ul{margin-bottom:0}a{color:#007bff;text-decoration:none;background-color:transparent}img,svg{vertical-align:middle}img{border-style:none}svg{overflow:hidden}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}h1{font-size:2.5rem}h2{font-size:2rem}h3{font-size:1.75rem}.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}.row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.col-sm-4,.col-sm-6,.col-sm-8{position:relative;width:100%;padding-right:15px;padding-left:15px}.text-center{text-align:center!important}#main-nav{display:none}.mobile-logo{position:absolute;top:18px;left:10px;width:200px}.mobile-logo img{width:250px}#main-nav,.nav-new{position:fixed;top:0;z-index:999;width:100%}.nav-new{background:#fff;padding:15px 0}.nav-new ul{margin-bottom:0;padding:0}.menu-new,.nav-new{display:block}.menu-item-link-return{display:none}.menu-new li{display:inline-block;position:relative;z-index:100}.menu-new li:last-child{margin:0}.menu-new li:first-child{margin-left:0}.menu-new li a{font-weight:400;text-decoration:none;padding:12px 8px;display:block;color:#000;font-size:15px;letter-spacing:1px;text-transform:uppercase}.menu-new ul,.menu-new ul li a{background:#fff;border-bottom:1px solid #eee}.menu-new ul{visibility:hidden;opacity:0;margin:0;padding:0;width:270px;position:absolute;left:0;z-index:99;border-top:22px solid #fff;border-left:1px solid #eee;border-right:1px solid #eee}.menu-new ul:after{bottom:100%;left:20%;border:solid transparent;content:" ";height:0;width:0;position:absolute;border-color:transparent transparent #fff;border-width:6px;margin-left:-6px}.menu-new ul li{display:block;float:none;background:0 0;margin:0;padding:0}.menu-new ul li a{font-size:14px;font-weight:400;display:block;color:#797979;text-align:left;padding:15px}.menu-right{width:100%;text-align:right;margin:8px 0 0}.about-us{padding:5em 0}#about-us h3,#banner h1,#banner h2,#banner h3{font-size:15px;color:#2e2e2e;padding:0 0 30px;margin:0;letter-spacing:1px;font-family:'GothamMedium';text-transform:uppercase}#about-us h3 span{width:34px;height:1px;margin:0 10px 0 -45px;background:#947550;display:inline-block;vertical-align:middle}.banner-content{position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;width:100%;height:38%}.banner-new,.banner-widget{width:100%}#banner h1,#banner h2,#banner h3{color:#fff;margin:0 0 10px;font-size:42px;font-family:'Cinzel-Regular';display:inline-block;background:rgba(0,0,0,.5);padding:10px 15px}#banner h2,#banner h3{margin:0;font-size:32px}#banner h3{font-size:25px}.banner-content-widget{width:100%;margin:25px 0 0}#banner p{font-size:15px;padding:0;margin:0;color:#fff;line-height:25px;letter-spacing:.5px}.banner{margin:65px 0 0}.client-login a{background:#947550;color:#fff!important;font-weight:700!important}.mobile-content{margin:-7px 0 0}#banner,#banner video{min-height:100%;overflow:hidden}#banner{display:-moz-flex;display:-webkit-flex;display:-ms-flex;display:flex;background-image:url(/wp-content/uploads/2019/09/poster-new.jpg);background-position:center;background-repeat:no-repeat;background-size:cover;border-top:0;display:-ms-flexbox;height:100vh!important;position:relative;width:100%}#banner video{-moz-transform:translateX(50%) translateY(50%);-webkit-transform:translateX(50%) translateY(50%);-ms-transform:translateX(50%) translateY(50%);transform:translateX(50%) translateY(50%);bottom:50%;height:auto;min-width:100%;position:absolute;right:50%;width:auto}#banner:after,#banner:before{content:'';display:block;height:100%;left:0;opacity:.45;position:absolute;top:0;width:100%;z-index:1}#banner:after{content:' ';opacity:.6;webkit-linear-gradientidth:100%}.mobile-content,.mobile-view-content{padding:2em 0;background:#005a49;display:none}.stellarnav{position:relative;width:100%;z-index:9900;line-height:normal}.stellarnav ul{margin:0;padding:0;text-align:center}#main-nav .scroll-mobile{overflow-y:scroll;overflow-x:hidden;max-height:400px;height:100%}ul{box-sizing:border-box}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.main-menu-more,.svg-icon{display:none}@media (min-width:576px){.container{max-width:540px}.col-sm-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-sm-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-sm-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}@media print{*,::after,::before{text-shadow:none!important;box-shadow:none!important}a:not(.btn){text-decoration:underline}img{page-break-inside:avoid}h2,h3,p{orphans:3;widows:3}h2,h3{page-break-after:avoid}.container,body{min-width:992px!important}}@media (min-width:768px) and (max-width:979px){.menu-new ul{top:37px}.menu-new li a{font-size:12px}}@media (max-width:767px){.menu-new{display:none}.nav-new{margin:0;background:0 0}.menu-new li{display:block;margin:0}.menu-new li a{background:#fff;color:#797979}.menu-new ul{visibility:hidden;opacity:0;top:0;left:0;width:100%;transform:initial}}@media all and (max-width:1199px){.menu-new li a{font-size:13px;padding:12px 4px}.client-login a{padding:12px 10px!important;font-size:14px!important}}@media all and (max-width:991px){#main-nav{display:block}#desktop-menu{display:none}.banner{margin:75px 0 0}#banner .col-sm-6{max-width:100%;flex:0 0 100%}#about-us h3 span{margin:0}.about-us{padding:4em 0}}@media all and (max-width:600px){.mobile-content{display:block;visibility:hidden}.banner-content{display:none}.mobile-view-content{display:block}#banner h2{font-size:30px;margin:0 0 10px}#banner h3{font-size:25px;margin:0 0 15px}#mobile-view-content h2,#mobile-view-content h3,#mobile-view-content p{color:#fff}#banner video{height:350px}#banner{height:auto!important}.about-us{text-align:center}}@media only screen and (max-width:991px){.stellarnav{overflow:hidden;display:block}.stellarnav ul{position:relative;display:none}}@media print and print{body{font:13pt Georgia,"Times New Roman",Times,serif;line-height:1.3;background:#fff!important;color:#000}h1{font-size:24pt;page-break-after:avoid;page-break-inside:avoid}h2,h3{font-size:14pt;margin-top:25px}h2,h3,img{page-break-after:avoid}ul{page-break-before:avoid}a,a:link{background:0 0;font-weight:700;text-decoration:underline;text-align:left}a,h2,h3,img{page-break-inside:avoid}a[href^=http]:after{content:" < " attr(href) "> "}.image-filters-enabled :after{display:none!important}}img.lazy{display:none}</style><link rel="preload" href="https://tscmllc.com/wp-content/themes/timessquare/css/bootstrap.min.css" as="style" onload="this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://tscmllc.com/wp-content/themes/timessquare/css/bootstrap.min.css"></noscript>
+<link rel="preload" href="https://tscmllc.com/wp-content/themes/timessquare/css/custom.css" as="style" onload="this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://tscmllc.com/wp-content/themes/timessquare/css/custom.css"></noscript>
+<link rel="preload" href="https://tscmllc.com/wp-content/themes/timessquare/css/fonts.css" as="style" onload="this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://tscmllc.com/wp-content/themes/timessquare/css/fonts.css"></noscript>
+<link rel="preload" href="https://tscmllc.com/wp-content/themes/timessquare/css/font-awesome.min.css" as="style" onload="this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://tscmllc.com/wp-content/themes/timessquare/css/font-awesome.min.css"></noscript>
+<link rel="preload" href="https://tscmllc.com/wp-content/themes/timessquare/css/mobile-responsive.css" as="style" onload="this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://tscmllc.com/wp-content/themes/timessquare/css/mobile-responsive.css"></noscript>
+<link rel="preload" href="https://tscmllc.com/wp-content/themes/timessquare/css/stellarnav.css" as="style" onload="this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://tscmllc.com/wp-content/themes/timessquare/css/stellarnav.css"></noscript>
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	
+	<title>TimesSquare Capital Management LLC</title>
+	<meta name="description" content="TimesSquare, a registered investment adviser headquartered in New York, manages assets primarily for institutional clients including corporate pension plans" />
+	<link rel="canonical" href="https://tscmllc.com/">
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="TimesSquare Capital Management LLC" />
+	<meta property="og:description" content="TimesSquare, a registered investment adviser headquartered in New York, manages assets primarily for institutional clients including corporate pension plans" />
+	<meta property="og:url" content="https://tscmllc.com/" />
+	<meta property="og:site_name" content="TimesSquare" />
+	<meta property="article:modified_time" content="2019-09-25T13:24:37+00:00" />
+	<meta property="og:image" content="https://tscmllc.com/wp-content/uploads/2019/09/NewGlobeLogoLLC_Green_-_high_resolution.jpg" />
+	<meta property="og:image:width" content="4236" />
+	<meta property="og:image:height" content="917" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://tscmllc.com/","url":"https://tscmllc.com/","name":"TimesSquare Capital Management LLC","isPartOf":{"@id":"https://tscmllc.com/#website"},"about":{"@id":"https://tscmllc.com/#organization"},"primaryImageOfPage":{"@id":"https://tscmllc.com/#primaryimage"},"image":{"@id":"https://tscmllc.com/#primaryimage"},"thumbnailUrl":"https://tscmllc.com/wp-content/uploads/2019/09/NewGlobeLogoLLC_Green_-_high_resolution.jpg","datePublished":"2019-07-31T15:11:14+00:00","dateModified":"2019-09-25T13:24:37+00:00","description":"TimesSquare, a registered investment adviser headquartered in New York, manages assets primarily for institutional clients including corporate pension plans","breadcrumb":{"@id":"https://tscmllc.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://tscmllc.com/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://tscmllc.com/#primaryimage","url":"https://tscmllc.com/wp-content/uploads/2019/09/NewGlobeLogoLLC_Green_-_high_resolution.jpg","contentUrl":"https://tscmllc.com/wp-content/uploads/2019/09/NewGlobeLogoLLC_Green_-_high_resolution.jpg","width":4236,"height":917},{"@type":"BreadcrumbList","@id":"https://tscmllc.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://tscmllc.com/#website","url":"https://tscmllc.com/","name":"TimesSquare","description":"","publisher":{"@id":"https://tscmllc.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://tscmllc.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://tscmllc.com/#organization","name":"TimesSquare Capital Management LLC","url":"https://tscmllc.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://tscmllc.com/#/schema/logo/image/","url":"https://tscmllc.com/wp-content/uploads/2019/09/NewGlobeLogoLLC_Green_-_high_resolution.jpg","contentUrl":"https://tscmllc.com/wp-content/uploads/2019/09/NewGlobeLogoLLC_Green_-_high_resolution.jpg","width":4236,"height":917,"caption":"TimesSquare Capital Management LLC"},"image":{"@id":"https://tscmllc.com/#/schema/logo/image/"}}]}</script>
+	
+
+
+<link rel="alternate" type="application/rss+xml" title="TimesSquare &raquo; Feed" href="https://tscmllc.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="TimesSquare &raquo; Comments Feed" href="https://tscmllc.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="TimesSquare &raquo; Home Comments Feed" href="https://tscmllc.com/sample-page/feed/">
+		
+							<script async defer>try{!function(e,t,n,o,i,r){function a(){r("scroll",a),r("mouseover",a),r("touchstart",a,{passive:!0}),s()}function s(t){for(o=e.getElementsByTagName("script")[t=0],ress_js=d;n[t];)d(n[t++]);n=[]}function d(t,n){e.getElementById(t)||(n=e.createElement("script"),n.src=n.id=t,n.async=!0,o.parentNode.insertBefore(n,o))}ress_js=n.push.bind(n),i=t.addEventListener,r=t.removeEventListener,i&&"complete"!==e.readyState?(i("load",function(){setTimeout(a,5500)}),i("scroll",a),i("mousemove",a),i("touchstart",a)):s()}(document,window,[])}catch(e){console.log(e)}</script><script data-cfasync="false" data-wpfc-render="false" type="text/javascript" async>ress_js("//www.googletagmanager.com/gtag/js?id=UA-251670219-1");</script>
+			<script data-cfasync="false" data-wpfc-render="false" type="text/javascript">
+				var mi_version = '8.12.1';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+				
+								var disableStrs = [
+															'ga-disable-UA-251670219-1',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+							
+														parameters.send_to = monsterinsights_frontend.ua;
+							__gtagDataLayer(type, name, parameters);
+													} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+															__gtagTracker('config', 'UA-251670219-1', {"forceSSL":"true","link_attribution":"true"} );
+										window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				
+		<script src="/s/f.php?464526.js"></script><style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="preload" as="style" onload="this.rel='stylesheet'" href="/s/f.php?664d86.css"><noscript><link rel="stylesheet" href="/s/f.php?664d86.css"></noscript>
+<style id="wp-block-library-theme-inline-css" type="text/css">
+.wp-block-audio figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-audio figcaption{color:hsla(0,0%,100%,.65)}.wp-block-audio{margin:0 0 1em}.wp-block-code{border:1px solid #ccc;border-radius:4px;font-family:Menlo,Consolas,monaco,monospace;padding:.8em 1em}.wp-block-embed figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-embed figcaption{color:hsla(0,0%,100%,.65)}.wp-block-embed{margin:0 0 1em}.blocks-gallery-caption{color:#555;font-size:13px;text-align:center}.is-dark-theme .blocks-gallery-caption{color:hsla(0,0%,100%,.65)}.wp-block-image figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-image figcaption{color:hsla(0,0%,100%,.65)}.wp-block-image{margin:0 0 1em}.wp-block-pullquote{border-bottom:4px solid;border-top:4px solid;color:currentColor;margin-bottom:1.75em}.wp-block-pullquote cite,.wp-block-pullquote footer,.wp-block-pullquote__citation{color:currentColor;font-size:.8125em;font-style:normal;text-transform:uppercase}.wp-block-quote{border-left:.25em solid;margin:0 0 1.75em;padding-left:1em}.wp-block-quote cite,.wp-block-quote footer{color:currentColor;font-size:.8125em;font-style:normal;position:relative}.wp-block-quote.has-text-align-right{border-left:none;border-right:.25em solid;padding-left:0;padding-right:1em}.wp-block-quote.has-text-align-center{border:none;padding-left:0}.wp-block-quote.is-large,.wp-block-quote.is-style-large,.wp-block-quote.is-style-plain{border:none}.wp-block-search .wp-block-search__label{font-weight:700}.wp-block-search__button{border:1px solid #ccc;padding:.375em .625em}:where(.wp-block-group.has-background){padding:1.25em 2.375em}.wp-block-separator.has-css-opacity{opacity:.4}.wp-block-separator{border:none;border-bottom:2px solid;margin-left:auto;margin-right:auto}.wp-block-separator.has-alpha-channel-opacity{opacity:1}.wp-block-separator:not(.is-style-wide):not(.is-style-dots){width:100px}.wp-block-separator.has-background:not(.is-style-dots){border-bottom:none;height:1px}.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots){height:2px}.wp-block-table{margin:0 0 1em}.wp-block-table td,.wp-block-table th{word-break:normal}.wp-block-table figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-table figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video figcaption{color:#555;font-size:13px;text-align:center}.is-dark-theme .wp-block-video figcaption{color:hsla(0,0%,100%,.65)}.wp-block-video{margin:0 0 1em}.wp-block-template-part.has-background{margin-bottom:0;margin-top:0;padding:1.25em 2.375em}
+</style>
+<style>/*! This file is auto-generated */.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #FFF;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--primary: #0073a8;--wp--preset--color--secondary: #005075;--wp--preset--color--dark-gray: #111;--wp--preset--color--light-gray: #767676;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 19.5px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36.5px;--wp--preset--font-size--x-large: 42px;--wp--preset--font-size--normal: 22px;--wp--preset--font-size--huge: 49.5px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="preload" id="twentynineteen-style-css" href="https://tscmllc.com/wp-content/themes/timessquare/style.css?ver=1.0" type="text/css" media="all" as="style" onload="this.rel='stylesheet'"><noscript><link rel="stylesheet" id="twentynineteen-style-css" href="https://tscmllc.com/wp-content/themes/timessquare/style.css?ver=1.0" type="text/css" media="all"></noscript>
+<link rel="preload" id="twentynineteen-print-style-css" href="https://tscmllc.com/wp-content/themes/timessquare/print.css?ver=1.0" type="text/css" media="print" as="style" onload="this.rel='stylesheet'"><noscript><link rel="stylesheet" id="twentynineteen-print-style-css" href="https://tscmllc.com/wp-content/themes/timessquare/print.css?ver=1.0" type="text/css" media="print"></noscript>
+<script type="text/javascript" src="wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=8.12.1" id="monsterinsights-frontend-script-js"></script>
+<script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id="monsterinsights-frontend-script-js-extra">/* <![CDATA[ */
+var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/tscmllc.com","hash_tracking":"false","ua":"UA-251670219-1","v4_id":""};/* ]]> */
+</script>
+<link rel="https://api.w.org/" href="https://tscmllc.com/wp-json/"><link rel="alternate" type="application/json" href="https://tscmllc.com/wp-json/wp/v2/pages/2"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://tscmllc.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tscmllc.com/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 6.2.2" />
+<link rel="shortlink" href="https://tscmllc.com/">
+<link rel="alternate" type="application/json+oembed" href="https://tscmllc.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftscmllc.com%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://tscmllc.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftscmllc.com%2F&#038;format=xml">
+<link rel="pingback" href="https://tscmllc.com/xmlrpc.php"><style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><link rel="icon" href="https://tscmllc.com/wp-content/uploads/2019/08/cropped-logo-32x32.png" sizes="32x32">
+<link rel="icon" href="https://tscmllc.com/wp-content/uploads/2019/08/cropped-logo-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://tscmllc.com/wp-content/uploads/2019/08/cropped-logo-180x180.png">
+<meta name="msapplication-TileImage" content="https://tscmllc.com/wp-content/uploads/2019/08/cropped-logo-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			.main-menu-more {
+    display: none;
+}
+.teammodel .body-widget h2 {
+  margin-bottom: 0px;
+}
+.page-id-1534 .modal-body p {
+  margin-top: 16px;
+}
+.teammodel h3 {
+	padding: 0 0 2px 0;}
+.teammodel h3 {
+	font-size: 12px;}
+.years-bio ul li{text-transform:capitalize;}
+
+
+.svg-icon {
+    display: none;
+}
+.page-id-48 .col-sm-4.Sonu.Chawla\,.CFA {
+  display: none !important;
+}
+.page-id-48 #our-team h3 {
+  display: none;
+}
+.page-id-48 .team-bg {
+  height: 190px;
+}
+#our-team h2 {
+	font-size: 18px;}
+
+.col-sm-4.Caglar,.Magnus,.Kenneth {
+    display: none !important;
+}
+.sheet-btn a {
+	display: inline-block;}
+.page-id-763 a.fact-btn {
+    font-size: 12px;
+}
+.page-id-48 .col-sm-4.David.L\..Oh {
+    display: none !important;
+}
+.col-sm-4.Bret.D\..Jones\,.CFA {
+    display: none !important;
+}
+.col-sm-4.David.Ferreiro\,.Ph\.D {
+    display: none !important;
+}
+.col-sm-4.David.A\..Hirsh {
+    display: none !important;
+}
+.st{display:none !important}
+.banner-new h6 {
+    color: #947550;
+    font-weight: 600;
+    background: rgba(0,0,0,0.5);
+    padding: 10px 15px;
+    letter-spacing: 1px;
+    margin: 10px 0 0;
+    line-height: 30px;
+    font-size: 18px;
+}
+#mobile-view-content h6 {
+    font-size: 22px;
+    color: #fff;
+}
+.insight-repeat p {
+    padding: 0 0 10px !important;
+}
+.insight-repeat a {
+    font-weight: 600;
+}
+#stragies-tabs .img-fluid {
+  margin: 0 0 15px 0;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+}
+
+
+@media only screen and (max-width: 600px) {
+.modal-content .body-widget img {
+  width: 100%;
+  margin-bottom: 22px;
+max-height: 300px;
+min-height: 300px;
+}
+
+}
+
+		</style>
+		<style>img.lazy,iframe.lazy{display:none}</style></head>
+<body class="home page-template page-template-page-templates page-template-home page-template-page-templateshome-php page page-id-2 wp-embed-responsive singular image-filters-enabled">
+
+
+
+<div id="main-nav" class="stellarnav">
+	<div class="mobile-logo">
+		<a href="https://tscmllc.com">
+				<img src="wp-content/uploads/2019/08/logo.png" class="logo" alt="">
+				</a>
+	</div>
+		<ul id="menu-header-menu" class="scroll-mobile"><li id="menu-item-86" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-86"><a href="https://tscmllc.com/company/" aria-haspopup="true" aria-expanded="false">Company</a><span class="submenu-expand" tabindex="-1"><svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path><path fill="none" d="M0 0h24v24H0V0z"></path></svg></span>
+<ul class="sub-menu">
+	<li id="menu-item--1" class="mobile-parent-nav-menu-item menu-item--1"><span class="menu-item-link-return" tabindex="-1"><svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg>Company</span></li>
+	<li id="menu-item-116" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116"><a href="https://tscmllc.com/about-us/">About Us</a></li>
+	<li id="menu-item-1737" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1737"><a href="https://tscmllc.com/our-team/">Our Team</a></li>
+</ul>
+</li>
+<li id="menu-item-20" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-20"><a href="https://tscmllc.com/strategies/" aria-haspopup="true" aria-expanded="false">Strategies</a><span class="submenu-expand" tabindex="-1"><svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path><path fill="none" d="M0 0h24v24H0V0z"></path></svg></span>
+<ul class="sub-menu">
+	<li id="menu-item--2" class="mobile-parent-nav-menu-item menu-item--2"><span class="menu-item-link-return" tabindex="-1"><svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg>Strategies</span></li>
+	<li id="menu-item-402" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-402"><a href="https://tscmllc.com/us-equity/">U.S. Equity</a></li>
+	<li id="menu-item-444" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-444"><a href="https://tscmllc.com/non-us-equity/">Non-U.S. Equity</a></li>
+	<li id="menu-item-443" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-443"><a href="https://tscmllc.com/global-equity/">Global Equity</a></li>
+</ul>
+</li>
+<li id="menu-item-113" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-113"><a href="https://tscmllc.com/insights/">Insights</a></li>
+<li id="menu-item-820" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-820"><a href="https://tscmllc.com/resources/">Resources</a></li>
+<li id="menu-item-107" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-107"><a href="https://tscmllc.com/contact/">Contact</a></li>
+<li id="menu-item-23" class="client-login menu-item menu-item-type-custom menu-item-object-custom menu-item-23"><a target="_blank" rel="noopener" href="https://www.tscmllc-client.com/">Client Login</a></li>
+</ul><div class="main-menu-more"><ul class="main-menu" tabindex="0"><li class="menu-item menu-item-has-children"><a href="#" class="screen-reader-text" aria-label="More" aria-haspopup="true" aria-expanded="false">More</a><span class="submenu-expand main-menu-more-toggle is-empty" tabindex="-1"><svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" focusable="false" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path fill="currentColor" fill-rule="nonzero" d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zM6 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm6 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm6 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></g></svg></span><ul class="sub-menu hidden-links"><li id="menu-item--1" class="mobile-parent-nav-menu-item menu-item--1"><span class="menu-item-link-return"><svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg>Back</span></li></ul></li></ul></div></div>
+
+
+
+<div class="nav-new" id="desktop-menu"> 
+  <div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="body-widget">
+				<a href="https://tscmllc.com">
+										<img src="wp-content/uploads/2019/08/logo.png" class="logo" alt="">
+								</a>
+			</div>
+		</div>
+		<div class="col-sm-8">
+			<div class="menu-right">
+				<div class="body-widget">
+					<ul id="menu-header-menu-1" class="menu-new"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-86"><a href="https://tscmllc.com/company/" aria-haspopup="true" aria-expanded="false">Company</a><span class="submenu-expand" tabindex="-1"><svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path><path fill="none" d="M0 0h24v24H0V0z"></path></svg></span>
+<ul class="sub-menu">
+	<li id="menu-item--3" class="mobile-parent-nav-menu-item menu-item--3"><span class="menu-item-link-return" tabindex="-1"><svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg>Company</span></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-116"><a href="https://tscmllc.com/about-us/">About Us</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1737"><a href="https://tscmllc.com/our-team/">Our Team</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-20"><a href="https://tscmllc.com/strategies/" aria-haspopup="true" aria-expanded="false">Strategies</a><span class="submenu-expand" tabindex="-1"><svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path><path fill="none" d="M0 0h24v24H0V0z"></path></svg></span>
+<ul class="sub-menu">
+	<li id="menu-item--4" class="mobile-parent-nav-menu-item menu-item--4"><span class="menu-item-link-return" tabindex="-1"><svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg>Strategies</span></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-402"><a href="https://tscmllc.com/us-equity/">U.S. Equity</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-444"><a href="https://tscmllc.com/non-us-equity/">Non-U.S. Equity</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-443"><a href="https://tscmllc.com/global-equity/">Global Equity</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-113"><a href="https://tscmllc.com/insights/">Insights</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-820"><a href="https://tscmllc.com/resources/">Resources</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-107"><a href="https://tscmllc.com/contact/">Contact</a></li>
+<li class="client-login menu-item menu-item-type-custom menu-item-object-custom menu-item-23"><a target="_blank" rel="noopener" href="https://www.tscmllc-client.com/">Client Login</a></li>
+</ul><div class="main-menu-more"><ul class="main-menu" tabindex="0"><li class="menu-item menu-item-has-children"><a href="#" class="screen-reader-text" aria-label="More" aria-haspopup="true" aria-expanded="false">More</a><span class="submenu-expand main-menu-more-toggle is-empty" tabindex="-1"><svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" focusable="false" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"/><path fill="currentColor" fill-rule="nonzero" d="M12 2c5.52 0 10 4.48 10 10s-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2zM6 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm6 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm6 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></g></svg></span><ul class="sub-menu hidden-links"><li id="menu-item--1" class="mobile-parent-nav-menu-item menu-item--1"><span class="menu-item-link-return"><svg class="svg-icon" width="24" height="24" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg>Back</span></li></ul></li></ul></div>				</div>
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+
+<section id="banner" class="banner">
+				<video id="video-play" muted autoplay loop playsinline data-mode="fill" preload="auto" poster="https://tscmllc.com/wp-content/uploads/2019/09/poster-new-1.jpg">
+				<source src="https://tscmllc.com/wp-content/uploads/2019/09/1025788832-hd-1-2-final-1.mp4" type="video/mp4">	  
+			</video>
+		
+						
+			
+		<div class="banner-content">
+			<div class="container">
+				<div class="banner-widget">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="body-widget">
+								<h1>Growth Equity</h1>
+							</div>
+							<div class="banner-new">
+								<h2>Investment Specialists</h2>
+							</div>
+							<div class="banner-content-widget">
+								<div class="body-widget">
+									<p>
+									TimesSquare is a fundamental research-oriented equity investment management firm specializing in growth equity strategies for institutional investors.									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+			
+	
+	
+	<div class="mobile-content">
+		<div class="container">
+			<div class="body-widget text-center">
+				<h2>Growth Equity</h2>
+				<h3>Investment Specialists</h3>
+				
+				<p>
+					TimesSquare is a fundamental research-oriented equity investment management firm specializing in growth equity strategies for institutional investors.				</p>
+			</div>
+		</div>
+	</div>
+	
+</section>
+
+<section id="mobile-view-content" class="mobile-view-content">
+	<div class="container">
+		<div class="body-widget text-center">
+				<h2>Growth Equity</h2>
+				<h3>Investment Specialists</h3>
+				<p>
+					TimesSquare is a fundamental research-oriented equity investment management firm specializing in growth equity strategies for institutional investors.				</p>
+			</div>
+	</div>
+</section>
+
+
+<section id="about-us" class="about-us">
+	<div class="container">
+		<div class="body-widget">
+			<h3><span></span> About TimesSquare</h3>
+		</div>
+		<div class="about-main">
+			<div class="about-left">
+				<div class="about-widget">
+					<div class="body-widget">
+						<h2>We use a well-established, team approach to growth investing that has been in place since the mid-1980s.</h2>
+					</div>
+				</div>
+			</div>
+			<div class="about-right">
+				<div class="body-widget">
+					<p>Our goal is to build diversified portfolios of growth stocks that generate competitive risk-adjusted returns. Proprietary fundamental research drives our unique, disciplined bottom-up process of selecting companies that meet our definition of a quality growth business.</p>
+										<div class="about-btn">
+						<a href="/about-us/">Learn More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+					</div>
+									</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<div id="footer-new" class="footer-new">
+	<div class="container">
+		<div class="body-widget text-center">
+			<ul id="menu-footer-menu" class="menu"><li id="menu-item-229" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-229"><a href="https://tscmllc.com/privacy/">Privacy</a></li>
+<li id="menu-item-228" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-228"><a href="https://tscmllc.com/legal-desclaimers-conditions-of-use/">Legal Disclosure</a></li>
+<li id="menu-item-227" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-227"><a href="https://tscmllc.com/copyright/">Copyright</a></li>
+</ul>			
+			<p>© Copyright 2023 TimesSquare Capital Management LLC, All Rights Reserved.</p>
+			
+		</div>
+	</div>
+</div>
+
+
+<script src="wp-content/themes/timessquare/js/jquery.min.js"></script>
+<script src="wp-content/themes/timessquare/js/popper.min.js"></script>
+<script src="wp-content/themes/timessquare/js/bootstrap.min.js"></script>
+<script src="wp-content/themes/timessquare/js/browser.min.js"></script>
+<script src="wp-content/themes/timessquare/js/breakpoints.min.js"></script>
+<script src="wp-content/themes/timessquare/js/util.js"></script>
+<script src="wp-content/themes/timessquare/js/main.js"></script>
+<script src="wp-content/themes/timessquare/js/stellarnav.js"></script>
+<script src="wp-content/themes/timessquare/js/jquery.matchHeight-min.js"></script>
+<script src="wp-content/themes/timessquare/js/custom.js"></script>
+<script>
+jQuery(document).ready(function($){
+$('ul#menu-us-equity li a').addClass('nav-link');
+$('ul#menu-non-us-eq li a').addClass('nav-link')
+$('ul#menu-global-eq li a').addClass('nav-link')
+
+$('ul#menu-non-us-eq-1 li a').addClass('nav-link')
+$('ul#menu-global-eq-1 li a').addClass('nav-link')
+$('ul#menu-us-equity-1 li a').addClass('nav-link')
+
+
+
+});
+
+</script>
+<script src="/s/f.php?98694e.js" async defer></script></body>
+</html>

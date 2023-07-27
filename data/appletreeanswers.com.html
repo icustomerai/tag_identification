@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head> <script>
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,initializeOnLoaded:function(o){gform.domLoaded&&gform.scriptsLoaded?o():!gform.domLoaded&&gform.scriptsLoaded?window.addEventListener("DOMContentLoaded",o):document.addEventListener("gform_main_scripts_loaded",o)},hooks:{action:{},filter:{}},addAction:function(o,n,r,t){gform.addHook("action",o,n,r,t)},addFilter:function(o,n,r,t){gform.addHook("filter",o,n,r,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,n){gform.removeHook("action",o,n)},removeFilter:function(o,n,r){gform.removeHook("filter",o,n,r)},addHook:function(o,n,r,t,i){null==gform.hooks[o][n]&&(gform.hooks[o][n]=[]);var e=gform.hooks[o][n];null==i&&(i=n+"_"+e.length),gform.hooks[o][n].push({tag:i,callable:r,priority:t=null==t?10:t})},doHook:function(n,o,r){var t;if(r=Array.prototype.slice.call(r,1),null!=gform.hooks[n][o]&&((o=gform.hooks[n][o]).sort(function(o,n){return o.priority-n.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==n?t.apply(null,r):r[0]=t.apply(null,r)})),"filter"==n)return r[0]},removeHook:function(o,n,t,i){var r;null!=gform.hooks[o][n]&&(r=(r=gform.hooks[o][n]).filter(function(o,n,r){return!!(null!=i&&i!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][n]=r)}});
+</script>
+<meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",e=>{this.persisted=e.persisted}),window.addEventListener("DOMContentLoaded",()=>{this._preconnect3rdParties()}),this.delayedScripts={normal:[],async:[],defer:[]},this.trash=[],this.allJQueries=[]}_addUserInteractionListener(e){if(document.hidden){e._triggerListener();return}this.triggerEvents.forEach(t=>window.addEventListener(t,e.userEventHandler,{passive:!0})),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler)}_removeUserInteractionListener(){this.triggerEvents.forEach(e=>window.removeEventListener(e,this.userEventHandler,{passive:!0})),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"),this._pendingClickStarted())}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this._pendingClickFinished()}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation(),this._pendingClickFinished()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach(e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))})}_waitForPendingClicks(){return new Promise(e=>{this._isClickPending?this._pendingClickFinished=e:e()})}_pendingClickStarted(){this._isClickPending=!0}_pendingClickFinished(){this._isClickPending=!1}_renameDOMAttribute(e,t,i){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(i,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(t=>{if(t.hasAttribute("src")){let i=new URL(t.src).origin;i!==location.origin&&e.push({src:i,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}}),e=[...new Map(e.map(e=>[JSON.stringify(e),e])).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(this),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){console.error(e)}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._waitForPendingClicks().then(()=>{this._replayClicks()}),this._emptyTrash()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach(e=>{e.hasAttribute("data-rocket-src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)})}async _transformScript(e){return await this._littleBreath(),new Promise(t=>{function i(){e.setAttribute("data-rocket-status","executed"),t()}function r(){e.setAttribute("data-rocket-status","failed"),t()}try{let n=e.getAttribute("data-rocket-type"),s=e.getAttribute("data-rocket-src");if(n?(e.type=n,e.removeAttribute("data-rocket-type")):e.removeAttribute("type"),e.addEventListener("load",i),e.addEventListener("error",r),s)e.src=s,e.removeAttribute("data-rocket-src");else if(navigator.userAgent.indexOf("Firefox/")>0){var a=document.createElement("script");[...e.attributes].forEach(e=>{"type"!==e.nodeName&&a.setAttribute("data-rocket-type"===e.nodeName?"type":e.nodeName,e.nodeValue)}),a.text=e.text,e.parentNode.replaceChild(a,e),i()}else e.src="data:text/javascript;base64,"+btoa(e.text)}catch(o){r()}})}async _loadScriptsFromList(e){let t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var i=document.createDocumentFragment();e.forEach(e=>{let r=e.getAttribute&&e.getAttribute("data-rocket-src")||e.src;if(r){let n=document.createElement("link");n.href=r,n.rel=t,"preconnect"!==t&&(n.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),e.crossOrigin&&(n.crossOrigin=e.crossOrigin),e.integrity&&(n.integrity=e.integrity),i.appendChild(n),this.trash.push(n)}}),document.head.appendChild(i)}_delayEventListeners(e){let t={};function i(e,i){!function e(i){!t[i]&&(t[i]={originalFunctions:{add:i.addEventListener,remove:i.removeEventListener},eventsToRewrite:[]},i.addEventListener=function(){arguments[0]=r(arguments[0]),t[i].originalFunctions.add.apply(i,arguments)},i.removeEventListener=function(){arguments[0]=r(arguments[0]),t[i].originalFunctions.remove.apply(i,arguments)});function r(e){return t[i].eventsToRewrite.indexOf(e)>=0?"rocket-"+e:e}}(e),t[e].eventsToRewrite.push(i)}function r(e,t){let i=e[t];Object.defineProperty(e,t,{get:()=>i||function(){},set(r){e["rocket"+t]=i=r}})}i(document,"DOMContentLoaded"),i(window,"DOMContentLoaded"),i(window,"load"),i(window,"pageshow"),i(document,"readystatechange"),r(document,"onreadystatechange"),r(window,"onload"),r(window,"onpageshow"),Object.defineProperty(document,"readyState",{get:()=>e.rocketReadyState,set(t){e.rocketReadyState=t}}),document.readyState="loading"}_delayJQueryReady(e){let t;function i(i){if(i&&i.fn&&!e.allJQueries.includes(i)){i.fn.ready=i.fn.init.prototype.ready=function(t){return e.domReadyFired?t.bind(document)(i):document.addEventListener("rocket-DOMContentLoaded",()=>t.bind(document)(i)),i([])};let r=i.fn.on;i.fn.on=i.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map(e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]})}return r.apply(this,arguments),this},e.allJQueries.push(i)}t=i}i(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>t,set(e){i(e)}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,document.readyState="interactive",await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){document.readyState="complete",await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach(e=>e(window).trigger("rocket-jquery-load")),await this._littleBreath();let e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){let e=new Map;document.write=document.writeln=function(t){let i=document.currentScript;i||console.error("WPRocket unable to document.write this: "+t);let r=document.createRange(),n=i.parentElement,s=e.get(i);void 0===s&&(s=i.nextSibling,e.set(i,s));let a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),n.insertBefore(a,s)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise(e=>setTimeout(e)):new Promise(e=>requestAnimationFrame(e))}_emptyTrash(){this.trash.forEach(e=>e.remove())}static run(){let e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+	
+	<meta name="viewport" content="width=device-width">
+	<!-- <link rel="preconnect" href="https://www.google.com">
+	<link rel="preconnect" href="https://www.gstatic.com"> -->
+	<!-- <link rel="preload"  href="https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-Regular.woff" as="font" type="font/woff" crossorigin />
+	<link rel="preload"  href="https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-Bold.woff" as="font" type="font/woff" crossorigin />
+	<link rel="preload"  href="https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-ExtraBold.woff" as="font" type="font/woff" crossorigin /> -->
+	<script type="rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-BXZE7QSW9Z"></script>
+	<script type="rocketlazyloadscript">
+	document.addEventListener('DOMContentLoaded',function(){
+	  setTimeout(function(){	
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-BXZE7QSW9Z');
+	},2500);});	  
+	</script>
+	
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	
+	<title>24 Hour Answering &amp; Call Center Service | Appletree Answers</title><style id="rocket-critical-css">:root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}*,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%}header,main,nav,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}h1,h2,h4,h5{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}ol,ul{margin-top:0;margin-bottom:1rem}ul ul{margin-bottom:0}a{color:#007bff;text-decoration:none;background-color:transparent}img{vertical-align:middle;border-style:none}label{display:inline-block;margin-bottom:.5rem}input{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}input{overflow:visible}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}h1,h2,h4,h5{margin-bottom:.5rem;font-weight:500;line-height:1.2}h1{font-size:2.5rem}h2{font-size:2rem}h4{font-size:1.5rem}h5{font-size:1.25rem}.container,.container-fluid{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}.row{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.col-lg-4,.col-lg-8,.col-md-6,.col-md-7,.col-sm-6{position:relative;width:100%;padding-right:15px;padding-left:15px}@media (min-width:576px){.col-sm-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}}@media (min-width:768px){.col-md-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-md-7{-ms-flex:0 0 58.333333%;flex:0 0 58.333333%;max-width:58.333333%}}@media (min-width:992px){.col-lg-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}.col-lg-8{-ms-flex:0 0 66.666667%;flex:0 0 66.666667%;max-width:66.666667%}}.carousel-item{position:relative;display:none;float:left;width:100%;margin-right:-100%;-webkit-backface-visibility:hidden;backface-visibility:hidden}.carousel-indicators{position:absolute;right:0;bottom:0;left:0;z-index:15;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;padding-left:0;margin-right:15%;margin-left:15%;list-style:none}.carousel-indicators li{box-sizing:content-box;-ms-flex:0 1 auto;flex:0 1 auto;width:30px;height:3px;margin-right:3px;margin-left:3px;text-indent:-999px;background-color:#fff;background-clip:padding-box;border-top:10px solid transparent;border-bottom:10px solid transparent;opacity:.5}.carousel-indicators .active{opacity:1}.float-right{float:right!important}.owl-carousel{position:relative}.owl-carousel{display:none;width:100%;z-index:1}@-webkit-keyframes pulse{0%{-webkit-transform:scaleX(1);transform:scaleX(1)}50%{-webkit-transform:scale3d(1.05,1.05,1.05);transform:scale3d(1.05,1.05,1.05)}to{-webkit-transform:scaleX(1);transform:scaleX(1)}}@keyframes pulse{0%{-webkit-transform:scaleX(1);transform:scaleX(1)}50%{-webkit-transform:scale3d(1.05,1.05,1.05);transform:scale3d(1.05,1.05,1.05)}to{-webkit-transform:scaleX(1);transform:scaleX(1)}}.pulse{-webkit-animation-name:pulse;animation-name:pulse}@-webkit-keyframes fadeInLeft{0%{opacity:0;-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}to{opacity:1;-webkit-transform:translateZ(0);transform:translateZ(0)}}@keyframes fadeInLeft{0%{opacity:0;-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}to{opacity:1;-webkit-transform:translateZ(0);transform:translateZ(0)}}.fadeInLeft{-webkit-animation-name:fadeInLeft;animation-name:fadeInLeft}@-webkit-keyframes fadeInUp{0%{opacity:0;-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}to{opacity:1;-webkit-transform:translateZ(0);transform:translateZ(0)}}@keyframes fadeInUp{0%{opacity:0;-webkit-transform:translate3d(0,100%,0);transform:translate3d(0,100%,0)}to{opacity:1;-webkit-transform:translateZ(0);transform:translateZ(0)}}.fadeInUp{-webkit-animation-name:fadeInUp;animation-name:fadeInUp}body{margin:0px;padding:0px;font-family:'Conv_NunitoSans-Regular';overflow-x:hidden}#header{background-color:#fff}h1,h2,h4,h5{margin:0px;font-weight:normal;padding:0px}p{margin:0px;padding:0px;font-weight:normal}img{border:none}ul{margin:0px;padding:0px}ul li{list-style-type:none}a{text-decoration:none}p{font-size:20px;color:#47536b;font-family:'Conv_NunitoSans-Light';line-height:36px}@font-face{font-family:'Conv_NunitoSans-Regular';src:url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-Regular.eot);src:url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-Regular.woff) format('woff'),url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-Regular.ttf) format('truetype'),url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-Regular.svg) format('svg');font-weight:normal;font-style:normal;font-display:swap}@font-face{font-family:'Conv_NunitoSans-ExtraBold';src:url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-ExtraBold.eot);src:url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-ExtraBold.woff) format('woff'),url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-ExtraBold.ttf) format('truetype'),url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-ExtraBold.svg) format('svg');font-weight:normal;font-style:normal;font-display:swap}@font-face{font-family:'Conv_NunitoSans-Bold';src:url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-Bold.eot);src:url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-Bold.woff) format('woff'),url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-Bold.ttf) format('truetype'),url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-Bold.svg) format('svg');font-weight:normal;font-style:normal;font-display:swap}@font-face{font-family:'Conv_NunitoSans-Light';src:url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-Light.eot);src:url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-Light.woff) format('woff'),url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-Light.ttf) format('truetype'),url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-Light.svg) format('svg');font-weight:normal;font-style:normal;font-display:swap}@font-face{font-family:'Conv_NunitoSans-Italic';src:url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-Italic.eot);src:url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-Italic.woff) format('woff'),url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-Italic.ttf) format('truetype'),url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/fonts/NunitoSans-Italic.svg) format('svg');font-weight:normal;font-style:normal;font-display:swap}.container{max-width:1180px}.logo{width:25%;margin:27px 0;overflow:hidden;float:left;text-align:center;height:97px}.logo img{width:282px}#header{display:table;box-shadow:0 0px 25px rgba(0,0,0,.12);z-index:9;position:relative;height:150px;z-index:999}.sticky-logo{display:none}#header .row{display:block}.menu-icon{display:none;text-transform:uppercase;font-size:16px;color:#a62d40;font-family:'Conv_NunitoSans-ExtraBold';padding-left:15px;margin-top:10px}.menu-icon span{width:24px;height:2px;background:#a62d40;margin:3px 0;display:inline-block;margin-left:2px;position:relative;top:-2px}.menu-icon span:after,.menu-icon span:before{width:24px;height:2px;background:#a62d40;display:inline-block;content:"";position:absolute;left:0}.menu-icon span:after{bottom:-5px}.menu-icon span:before{top:-5px}.header-right{border-left:1px solid #e5e5e5;width:75%;float:right}.call-top-section{border-bottom:1px solid #e5e5e5;overflow:hidden;padding:18px 18px 18px 40px;display:flex;flex-direction:row;justify-content:flex-end;align-items:center}.number-text{float:left;width:55%;justify-content:flex-start}.call-top-section .float-right{width:45%;justify-content:flex-end;display:flex}.number-text a{font-size:18px;color:#47536b;font-family:'Conv_NunitoSans-Regular',Helvetica,sans-serif;padding-right:20px}.number-text a span{font-family:'Conv_NunitoSans-Bold',Helvetica,sans-serif;font-weight:bold}.navigation-menu{padding:10px 30px;position:relative}.navigation-menu ul li{display:inline;margin-right:25px;position:relative}.navigation-menu ul li a{font-size:18px;font-family:'Conv_NunitoSans-Bold',Helvetica,sans-serif;font-weight:bold;color:#47536b;padding:9px 0;display:inline-block;position:relative}.navigation-menu ul li:last-child{padding-right:0}.navigation-menu ul>li a:before{height:2px;width:0;background:#a62d40;content:"";position:absolute;bottom:10px;left:0}.navigation-menu .sub-menu a:before{background:none}.btn-apple{font-size:16px;color:#fff;font-family:'Conv_NunitoSans-Bold',Helvetica,sans-serif;font-weight:bold;padding:12px 45px 11px 12px;border-radius:16px;line-height:normal;display:inline-block;position:relative}.btn-apple.btn-gray{position:relative;margin:0 18px;background:linear-gradient(180deg,rgba(125,131,147,1) 25%,rgba(58,61,68,1) 100%)}.btn-apple.btn-gray:after,.btn-apple.btn-red:after{width:23px;height:21px;content:"";background-image:url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/image/sprite.svg);background-repeat:no-repeat;background-position:-41px -12px;display:inline-block;position:absolute;top:12px;right:12px;background-size:570px auto}.btn-apple.btn-red:after{background-position:-11px -12px}.btn-apple.btn-red{position:relative;background:linear-gradient(180deg,rgba(198,61,87,1) 25%,rgba(135,29,42,1) 100%)}.top-contain .btn-red{margin-top:25px;z-index:99}.header-right .btn-apple{font-size:18px;padding:15px 54px 14px 18px}.header-right .btn-apple.btn-gray:after,.header-right .btn-apple.btn-red:after{width:27px;height:23px;background-position:-46px -14px;top:14px;right:14px;background-size:640px auto}.header-right .btn-apple.btn-red:after{background-position:-12px -14px}input{width:100%;border-radius:25px;border:none;font-size:16px;color:#393c43;height:40px;padding:10px 20px!important;box-shadow:0 2px 5px rgba(0,0,0,0.1) inset;border:1px solid #dedfe2;font-family:'Conv_NunitoSans-Regular'!important}.cookie-notice-container span{font-size:14px;color:#000}.cookie-notice-container a.button{background:linear-gradient(180deg,rgba(198,61,87,1) 25%,rgba(135,29,42,1) 100%)!important;font-size:16px;border:none;text-shadow:none;color:#fff;padding:7px 13px 8px 13px;border-radius:13px;font-family:'Conv_NunitoSans-Bold'}.navigation-menu .sub-menu{position:absolute;background:#fff;box-shadow:0 0 10px #f5f5f5;width:245px;z-index:9;padding-right:0;top:31px;left:0}.navigation-menu .sub-menu a{padding:10px 20px;border-bottom:1px solid #eee;width:100%;display:inline-block}.navigation-menu .sub-menu li{padding-right:0;margin-right:0}.navigation-menu ul li .sub-menu{display:none}.navigation-menu .dropdown-arrow{width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:5px solid #942d42;position:relative;top:-2px;right:-8px;display:inline-block}@media (max-width:1366px){.logo img{width:250px}.call-top-section{padding:18px 18px 18px 30px}.number-text a{font-size:17px;padding-right:14px}.header-right .btn-apple.btn-gray{margin:0 14px}.header-right .btn-apple.btn-gray:first-child{margin-left:0}.header-right .btn-apple{font-size:16px}.navigation-menu ul li a{font-size:17px}.header-right .btn-apple{padding:15px 50px 14px 18px}.cookie-notice-container a.button{font-size:15px}.navigation-menu ul li .sub-menu{overflow-y:auto;max-height:400px}}@media (max-width:1199px){#cookie-notice .cn-button{margin-top:10px}.cookie-notice-container span{width:100%;float:left}#header{height:127px}.logo{height:68px}.menu-icon{padding-left:10px}.container{max-width:95%}.logo img{width:200px}.call-top-section{padding:18px 10px 18px 15px}.navigation-menu{padding:2px 20px}.navigation-menu .sub-menu{top:30px}.header-right .btn-apple{padding:12px 41px 11px 11px;font-size:14px}.header-right .btn-apple.btn-gray::after,.header-right .btn-apple.btn-red::after{width:23px;height:21px;background-size:570px auto;background-position:-41px -11px;top:10px;right:10px}.header-right .btn-apple.btn-red::after{background-position:-11px -12px;top:11px}.number-text a{font-size:15px;padding-right:0px}p{line-height:30px;font-size:18px}}@media (max-width:991px){#cookie-notice .cn-button{float:left;margin-left:30px;margin-top:3px}.cookie-notice-container #cn-notice-text{width:60%;text-align:left}.navigation-menu ul>li a:before{background:none;position:relative;bottom:0}#header{height:87px}.navigation-menu .main-menu{padding-bottom:15%}#header{z-index:9999}.call-top-section .float-right{width:100%;display:block}.number-text{display:none}.navigation-menu{padding:0}.logo img{width:180px}.menu-icon{display:block;position:absolute;right:15px;top:23px;padding-left:10px;font-size:14px}.logo{margin:10px 0 0 24px;width:auto}.call-top-section{padding:22px 104px 22px 0;display:block;float:right;width:auto;border-bottom:0}.mobile-header a img{width:128px}nav.navigation-menu{position:fixed;top:0;bottom:0;right:0;width:100%;padding:0;background-color:#fff;text-align:left;overflow-y:auto;overflow-x:hidden;transform:translateX(100%);height:120%;z-index:9999}.navigation-menu .close-icon{width:24px;display:none;height:24px;position:absolute;top:30px;right:20px;z-index:99999}.navigation-menu .close-icon:after,.navigation-menu .close-icon:before{width:24px;height:2px;background:#47536b;display:inline-block;content:"";position:absolute;left:0;top:10px}.navigation-menu .close-icon:after{transform:rotate(135deg)}.navigation-menu .close-icon:before{transform:rotate(41deg)}.navigation-menu ul li{margin-right:0}.navigation-menu ul li a{display:inline-block;width:100%;padding:10px 20px;border-bottom:1px solid #eee}.header-right .btn-apple.btn-gray{margin:0 10px}.header-right{border-left:none;width:auto}.container{max-width:720px}.menu-icon span,.menu-icon span:after,.menu-icon span:before{width:20px}.btn-gray{margin:0 10px}p{line-height:28px;font-size:16px}.navigation-menu ul li .sub-menu{max-height:inherit}input{font-size:14px}.navigation-menu ul li .sub-menu{display:none;position:inherit;top:0;width:100%}.navigation-menu .dropdown-arrow{width:32px;height:32px;border-left:0;border-radius:0;border-top:0;position:absolute;top:5px;right:13px;transform:rotate(270deg)}.sub-menu{display:none}.sub-menu li a:after,.sub-menu li a:before{content:"";background:#a62d40!important;position:absolute}.sub-menu li a:after{width:10px;height:2px;transform:rotate(129deg);left:19px;top:23px}.navigation-menu .sub-menu a{padding:10px 20px 10px 35px}.navigation-menu .sub-menu li a:before{width:2px!important;height:10px!important;left:23px!important;top:13px!important;bottom:auto!important;transform:rotate(124deg)!important;position:absolute!important}.navigation-menu .dropdown-arrow:before,.navigation-menu .dropdown-arrow:after{content:"";background:#47536b!important;position:absolute!important}.navigation-menu .dropdown-arrow:after{width:25px;height:5px}.navigation-menu .dropdown-arrow:before{width:5px;height:25px}.navigation-menu ul li{position:relative;display:inline-block;width:100%}.navigation-menu .dropdown-arrow::before{width:2px;height:12px;left:8px;top:7px;transform:rotate(132deg)}.navigation-menu .dropdown-arrow::after{width:12px;height:2px;transform:rotate(132deg);left:11px;top:12px}}@media (max-width:767px){#cookie-notice .cn-button{margin-top:0}.cookie-notice-container{overflow:hidden}.cookie-notice-container #cn-notice-text{width:100%;margin:0;text-align:center}#cookie-notice .cn-button{float:none;margin:10px 0 0 0}.logo{margin:15px 0 0 15px}.logo img{width:150px}.container{max-width:100%}.menu-icon{top:22px}.call-top-section{padding:22px 90px 22px 0}.header-right .btn-apple.btn-gray:first-child{margin-left:0}.header-right .btn-apple.btn-gray{margin:0 8px}.navigation-menu .main-menu{padding-bottom:37%}}@media (max-width:585px){.cookie-notice-container{padding:15px 10px}.call-top-section{padding:12px 0;float:none;width:100%;border-top:1px solid #e5e5e5;margin-top:5px}.logo{width:auto;margin-left:15px;text-align:left;margin-top:12px;height:65px}#header{height:149px}.logo img{width:160px}.header-right{width:100%;text-align:center}.number-text a{font-size:18px;clear:both;float:left;width:100%}.menu-icon{top:25px}}@media (max-width:479px){.cookie-notice-container #cn-notice-text{text-align:left}.header-right .btn-apple.btn-gray{margin:0}.header-right .btn-apple.btn-red::after{top:10px}.header-right .btn-apple.btn-gray::after{top:9px}.header-right .btn-apple{padding:11px 41px 10px 9px}.btn-red,.btn-gray{font-size:14px}.btn-apple.btn-red::after{top:11px}.btn-apple.btn-gray::after{top:10px}.menu-icon{position:absolute;right:20px}.review-section .carousel-indicators li,.review-section .carousel-indicators li img{width:40px;height:40px}.cookie-notice-container{padding:5px 10px 5px 10px}#cookie-notice .cn-button{float:left;margin:5px 0 0 0}}.top-contain{background:linear-gradient(180deg,rgba(236,239,241,1) 25%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%);padding:60px 0 70px 0;position:relative}.top-contain h1{font-size:56px;color:#a62d40;font-family:'Conv_NunitoSans-ExtraBold',Helvetica,sans-serif;font-weight:bold;padding-top:150px;z-index:99;position:relative}.top-contain p{color:#47536b;font-size:24px;line-height:36px;font-family:'Conv_NunitoSans-Light',Helvetica,sans-serif;padding-top:15px;z-index:99;font-weight:300;position:relative}.banner-right{position:absolute;top:0;right:0}.banner-right img{width:930px}.service-contain{clear:both;padding-top:220px;z-index:999;position:relative}.service-contain h2,.review-section h4{font-size:16px;color:#393c43;letter-spacing:2px;font-family:'Conv_NunitoSans-ExtraBold';text-transform:uppercase;position:relative}.service-contain h2{padding-left:200px}.service-contain .row{padding-top:75px;-ms-flex-pack:center!important;justify-content:center!important;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}.single-service-box{box-shadow:0px 6px 15px rgba(0,0,0,0.15);text-align:center;display:inline-block;border-radius:90px;width:100%;height:calc(100% - 8px);background:#fff;overflow:hidden}.img-service{position:relative;border-radius:90px 90px 0 0}.img-service img{border-radius:90px 90px 0 0;width:99.99%;filter:grayscale(100%);object-fit:cover}.img-service:before{background:rgba(55,60,61,0.75);position:absolute;top:0;left:0;width:100%;height:100%;z-index:9;content:"";border-radius:90px 90px 0 0}.img-service:after{background-size:641px auto;content:"";background-image:url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/image/sprite.svg);background-repeat:no-repeat;display:inline-block;position:absolute;z-index:9}.telephone-icon:after{left:calc(50% - 62px);top:calc(50% - 58px);width:122px;height:116px;background-position:-349px -279px}.live-answering:after{background-position:-18px -1019px;left:calc(50% - 62px);top:calc(50% - 54px);width:124px;height:108px}.virtual-receptionist:after{width:122px;height:123px;top:calc(50% - 61px);left:calc(50% - 61px);background-size:641px auto;background-position:-176px -1306px}.top-contain:before{width:1088px;height:785px;content:"";background-image:url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/image/bg-contain.png);background-repeat:no-repeat;display:inline-block;bottom:0;left:0;position:absolute;background-size:100% auto;z-index:9}.mobile-header{display:none}.review-section h4{color:#fff;text-align:center;padding:0;z-index:999;position:relative}.review-section .carousel-indicators{position:relative;margin:0;display:none}.review-section .carousel-item p{color:#fff;font-size:16px;line-height:22px}.review-section .carousel-item h4{color:#fff;font-size:16px;line-height:22px;font-family:'Conv_NunitoSans-Bold';padding-top:18px;text-transform:capitalize;letter-spacing:0}.review-section .carousel-item h5{color:#fff;font-size:16px;line-height:22px;font-family:'Conv_NunitoSans-Italic';padding-bottom:17px}.review-section .carousel-indicators li{width:57px;height:57px;text-indent:9px;background:none;border:none;margin:0 15px 0 0;opacity:0.2;float:left}.review-section .carousel-indicators li.active{opacity:1}.review-section .carousel-indicators li.active img{border:2px solid #333842;padding:3px}.review-section .carousel-indicators li img{border-radius:10px;border:2px solid transparent;padding:3px;float:left}.review-section .carousel-indicators li:last-child{margin-right:0}.partner-section .owl-carousel{margin:75px 0 0 0}.partner-section .owl-carousel .item{text-align:center}.partner-section .owl-carousel .item img{width:auto;display:inline-block}#backtotop{display:inline-block;background-color:#a62d40;width:42px;height:44px;text-align:center;border-radius:5px 0 0 5px;position:fixed;bottom:12%;right:0;opacity:0;visibility:hidden;z-index:999999}#backtotop::after{width:28px;height:18px;content:"";background-image:url(https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/image/sprite.svg);background-repeat:no-repeat;background-position:-131px -100px;position:absolute;top:13px;right:6px;background-size:400px auto;transform:rotate(90deg)}#field_1_8{display:none}@media (max-width:1366px){.cookie-notice-container{width:930px;margin:auto}.banner-right{right:0}.banner-right img{width:800px}.partner-section .owl-carousel{width:90%;margin:75px auto 0 auto}.service-contain{padding-top:100px}}@media (max-width:1199px){#backtotop{bottom:8%}.cookie-notice-container{width:100%}.banner-right{right:0}.banner-right img{width:570px}.top-contain h1{font-size:44px;padding-top:100px}.top-contain::before{width:100%}.top-contain p{font-size:22px;line-height:32px}.service-contain .row{padding-top:55px}.img-service:after{width:112px;height:102px;background-size:570px auto}.telephone-icon:after{background-position:-310px -249px;top:calc(50% - 54px);left:calc(50% - 56px)}.live-answering:after{background-position:-16px -905px;top:calc(50% - 54px);left:calc(50% - 56px)}.virtual-receptionist::after{height:112px;background-position:-154px -1161px;top:calc(50% - 56px);left:calc(50% - 56px)}.top-contain::before{height:585px}.partner-section .owl-carousel{width:90%;margin:50px auto 0 auto}.service-contain h2{padding-left:0;padding-right:0;text-align:center}}@media (max-width:991px){.partner-section .owl-carousel .item img{width:auto}.top-contain .container{display:flex;flex-wrap:wrap}.top-contain p{font-size:20px;line-height:29px}.top-contain::before{height:545px}.service-contain{padding-top:100px;order:3}.service-contain .row{padding-top:25px}.service-contain .col-lg-4{margin-bottom:30px}.top-contain{padding:0 0 30px 0}.partner-section .owl-carousel{margin:30px auto 0 auto}.top-contain h1{font-size:32px;padding-top:50px}.banner-right img{width:420px}.top-contain p{font-size:18px;line-height:28px;margin:auto}.top-contain p br{display:none}.review-section h4{font-size:21px}.review-section .carousel-item p{line-height:26px;font-size:18px}}@media (max-width:767px){.single-service-box{border-radius:70px}#backtotop{bottom:21%}.banner-right img{margin-left:-15%}.top-contain p{width:100%}.service-contain .col-lg-4{margin-bottom:15px}.top-contain h1{font-size:28px;padding-top:0}.top-contain .container .row{order:2}.banner-right{position:relative;text-align:center;order:1;width:100%}.top-contain .container .row .col-lg-8{order:2;text-align:center}.top-contain p{font-size:16px;line-height:24px}.top-contain::before{height:423px}.service-contain{padding-top:30px}}@media (max-width:585px){.banner-right img{width:350px;margin-left:-20%}.top-contain h1{font-size:26px;padding-top:0}.top-contain::before{height:343px}.review-section .carousel-indicators li{margin-right:5px}.review-section .carousel-indicators li img{width:100%}}@media (max-width:479px){.header-right .btn-apple{font-size:15px}.header-right .btn-apple{font-size:15px}#backtotop{bottom:15px}.banner-right::before{background:none;width:0}.top-contain h1{font-size:24px;padding-top:0}.banner-right img{width:250px;margin-left:-23%}.top-contain::before{height:232px}.partner-section .owl-carousel{width:85%;margin-left:auto;margin-right:auto}.review-section .carousel-indicators li{width:40px;height:40px;margin:0 5px 0 0}.header-right .btn-apple.btn-gray{margin:0 20px}.call-top-section{padding:10px 0;margin-top:10px}}@media (max-width:320px){.header-right .btn-apple.btn-gray{margin:0 5px}}@media (max-width:315px){.header-right .btn-apple.btn-gray{margin:10px}.call-top-section{padding:0 0 10px 0}.header-right .btn-apple.btn-gray:first-child{margin-left:10px}#header{height:198px}}.right-contact .gform_wrapper ul.gform_fields:not(.top_label) .gfield_label{width:125px;float:left;text-align:right;font-size:16px;color:#fff;padding-top:9px;margin:0}.right-contact .ginput_container{width:65%!important;margin-left:0!important;float:right}.right-contact .gform_wrapper ul.gform_fields li.gfield{display:table;margin:0 0 20px 0!important;padding:0!important;width:100%;position:relative}.right-inner-contact .gform_wrapper ul.gform_fields:not(.top_label) .gfield_label{color:#fff!important;text-align:right;padding-right:15px!important}@media (max-width:991px){.right-contact .gform_wrapper ul.gform_fields li.gfield{margin:0 0 15px 0!important}.right-contact .gform_wrapper ul.gform_fields:not(.top_label) .gfield_label{width:110px;padding-right:0!important}}@media (max-width:767px){.right-contact .ginput_container{width:74%!important}}@media (max-width:585px){.right-contact .gform_wrapper ul.gform_fields:not(.top_label) .gfield_label{width:100px}}@media (max-width:479px){.right-contact .gform_wrapper ul.gform_fields:not(.top_label) .gfield_label{width:100%;font-size:14px;text-align:left;padding:5px 0}.right-contact .ginput_container{width:100%!important}.right-inner-contact .gform_wrapper ul.gform_fields:not(.top_label) .gfield_label{text-align:left}}#cookie-notice *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}#cookie-notice .cookie-notice-container{display:block}#cookie-notice.cookie-notice-hidden .cookie-notice-container{display:none}.cookie-notice-container{padding:15px 30px;text-align:center;width:100%;z-index:2}.cn-close-icon{position:absolute;right:15px;top:50%;margin-top:-10px;width:15px;height:15px;opacity:.5;padding:10px;outline:none}.cn-close-icon:before,.cn-close-icon:after{position:absolute;content:' ';height:15px;width:2px;top:3px;background-color:#fff}.cn-close-icon:before{transform:rotate(45deg)}.cn-close-icon:after{transform:rotate(-45deg)}#cookie-notice .cn-button{margin:0 0 0 10px}.cn-button.wp-default{font-family:-apple-system,BlinkMacSystemFont,Arial,Roboto,"Helvetica Neue",sans-serif;font-weight:400;font-size:13px;letter-spacing:.25px;line-height:20px;margin:0;text-align:center;text-transform:none;display:inline-block;touch-action:manipulation;white-space:nowrap;outline:none;box-shadow:none;text-shadow:none;border:none;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;text-decoration:none;padding:8.5px 10px;line-height:1}.cn-button.wp-default{color:#fff;background:#fbb03b}.cn-text-container{margin:0 0 6px 0}.cn-text-container,.cn-buttons-container{display:inline-block}@media all and (max-width:900px){.cookie-notice-container #cn-notice-text{display:block}.cookie-notice-container #cn-notice-buttons{display:block}#cookie-notice .cn-button{margin:0 5px 5px 5px}}@media all and (max-width:480px){.cookie-notice-container{padding:15px 25px}}.gform_legacy_markup_wrapper *{box-sizing:border-box!important}.gform_legacy_markup_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]){font-size:inherit;font-family:inherit;padding:5px 4px;letter-spacing:normal}.gform_legacy_markup_wrapper form li,.gform_legacy_markup_wrapper li{margin-left:0!important;list-style-type:none!important;list-style-image:none!important;list-style:none!important;overflow:visible}.gform_legacy_markup_wrapper ul li.gfield{clear:both}.gform_legacy_markup_wrapper form ul.gform_fields.left_label li.gfield,.gform_legacy_markup_wrapper ul.gform_fields.left_label li.gfield{margin-bottom:14px}.gform_legacy_markup_wrapper ul li:after,.gform_legacy_markup_wrapper ul li:before{padding:0;margin:0;overflow:visible}.gform_legacy_markup_wrapper label.gfield_label{font-weight:700;font-size:inherit}.gform_legacy_markup_wrapper .hidden_label .gfield_label{clip:rect(1px,1px,1px,1px);position:absolute!important;height:1px;width:1px;overflow:hidden}.gform_legacy_markup_wrapper .screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.gform_legacy_markup_wrapper .gfield_description{font-size:.813em;line-height:inherit;clear:both;font-family:inherit;letter-spacing:normal}.gform_legacy_markup_wrapper .gfield_description{padding:0 16px 0 0}.gform_legacy_markup_wrapper .field_description_below .gfield_description{padding-top:16px}.gform_legacy_markup_wrapper .gfield_description{width:100%}.gform_legacy_markup_wrapper .gform_hidden,.gform_legacy_markup_wrapper input.gform_hidden,.gform_legacy_markup_wrapper input[type=hidden]{display:none!important;max-height:1px!important;overflow:hidden}.gform_legacy_markup_wrapper .gform_validation_container,.gform_validation_container,body .gform_legacy_markup_wrapper .gform_body ul.gform_fields li.gfield.gform_validation_container,body .gform_legacy_markup_wrapper li.gform_validation_container,body .gform_legacy_markup_wrapper ul.gform_fields li.gfield.gform_validation_container{display:none!important;position:absolute!important;left:-9000px}body .gform_legacy_markup_wrapper ul li.gfield{margin-top:16px;padding-top:0}@media only screen and (max-width:641px){.gform_legacy_markup_wrapper input:not([type=radio]):not([type=checkbox]):not([type=image]):not([type=file]){line-height:2;min-height:2rem}}@media only screen and (min-width:641px){.gform_legacy_markup_wrapper ul.gform_fields:not(.top_label) .gfield_label{float:left;width:29%;padding-right:16px;margin-bottom:16px}.gform_legacy_markup_wrapper .left_label .gfield_description{width:70%}.gform_legacy_markup_wrapper .left_label .gfield_description{margin-left:29%}.gform_legacy_markup_wrapper ul.gform_fields li.gfield{padding-right:16px}html:not([dir=rtl]) .gform_legacy_markup_wrapper ul.gform_fields:not(.top_label) .gfield_description,html:not([dir=rtl]) .gform_legacy_markup_wrapper ul.gform_fields:not(.top_label) .ginput_container:not(.ginput_container_time):not(.ginput_container_date){width:70%;margin-left:29%}.gform_legacy_markup_wrapper ul.gform_fields:not(.top_label) .ginput_container.ginput_recaptcha{margin-left:29%!important}}.gform_legacy_markup_wrapper.gf_browser_chrome ul li:after,.gform_legacy_markup_wrapper.gf_browser_chrome ul li:before{content:none}</style>
+	<meta name="description" content="Appletree Answers provides best-in-class live answering services and 24/7 inbound call center solutions. Customized, affordable plans for your organization." />
+	<link rel="canonical" href="https://appletreeanswers.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="24 Hour Answering &amp; Call Center Service | Appletree Answers" />
+	<meta property="og:description" content="Appletree Answers provides best-in-class live answering services and 24/7 inbound call center solutions. Customized, affordable plans for your organization." />
+	<meta property="og:url" content="https://appletreeanswers.com/" />
+	<meta property="og:site_name" content="Appletree Answers" />
+	<meta property="article:modified_time" content="2021-01-15T17:41:40+00:00" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://appletreeanswers.com/","url":"https://appletreeanswers.com/","name":"24 Hour Answering & Call Center Service | Appletree Answers","isPartOf":{"@id":"https://appletreeanswers.com/#website"},"datePublished":"2013-07-18T21:05:24+00:00","dateModified":"2021-01-15T17:41:40+00:00","description":"Appletree Answers provides best-in-class live answering services and 24/7 inbound call center solutions. Customized, affordable plans for your organization.","breadcrumb":{"@id":"https://appletreeanswers.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://appletreeanswers.com/"]}]},{"@type":"BreadcrumbList","@id":"https://appletreeanswers.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://appletreeanswers.com/#website","url":"https://appletreeanswers.com/","name":"Appletree Answers","description":"24/7 Answering Service","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://appletreeanswers.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"}]}</script>
+	<meta name="google-site-verification" content="Hy1i6k4uZR-iM4Z33XoY0rBZiAI4Kh3-NOyk2M7VWbo" />
+	
+
+
+
+<link rel="alternate" type="application/rss+xml" title="Appletree Answers &raquo; Feed" href="https://appletreeanswers.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Appletree Answers &raquo; Comments Feed" href="https://appletreeanswers.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Appletree Answers &raquo; Home Comments Feed" href="https://appletreeanswers.com/home/feed/" />
+<style>
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='preload'  href='https://appletrapro.wpenginepowered.com/wp-includes/css/classic-themes.min.css?ver=6.2' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  media='all' />
+<style id='global-styles-inline-css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link data-minify="1" rel='preload'  href='https://appletrapro.wpenginepowered.com/wp-content/cache/min/1/wp-content/themes/appletree-latest/style.css?ver=1686864411' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  media='all' />
+<link rel='preload'  href='https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/css/bootstrap.min.css?ver=1687699818' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  media='all' />
+<link rel='preload'  href='https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/css/owl.carousel.min.css?ver=1687699818' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  media='all' />
+<link rel='preload'  href='https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/css/animate.min.css?ver=1687699818' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  media='all' />
+<link data-minify="1" rel='preload'  href='https://appletrapro.wpenginepowered.com/wp-content/cache/min/1/wp-content/themes/appletree-latest/assets/css/global.css?ver=1686864411' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  media='all' />
+<link data-minify="1" rel='preload'  href='https://appletrapro.wpenginepowered.com/wp-content/cache/min/1/wp-content/themes/appletree-latest/assets/css/stylesheet.css?ver=1686864411' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  media='all' />
+<link data-minify="1" rel='preload'  href='https://appletrapro.wpenginepowered.com/wp-content/cache/min/1/wp-content/themes/appletree-latest/assets/css/rahul.css?ver=1686864411' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  media='all' />
+<style id='rocket-lazyload-inline-css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://appletrapro.wpenginepowered.com/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+</style>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src='https://appletrapro.wpenginepowered.com/wp-content/cache/min/1/wp-content/themes/appletree-latest/assets/js/zcga.js?ver=1686864412' id='zcga-js-js'></script>
+<script src='https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/js/jquery.min.js' id='jquery-js'></script>
+<link rel="https://api.w.org/" href="https://appletreeanswers.com/wp-json/" /><link rel="alternate" type="application/json" href="https://appletreeanswers.com/wp-json/wp/v2/pages/11" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://appletreeanswers.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://appletrapro.wpenginepowered.com/wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='https://appletreeanswers.com/' />
+<link rel="alternate" type="application/json+oembed" href="https://appletreeanswers.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fappletreeanswers.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://appletreeanswers.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fappletreeanswers.com%2F&#038;format=xml" />
+<link rel="pingback" href="https://appletreeanswers.com/xmlrpc.php"><script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Organization","name":"Appletree Answers","url":"https:\/\/appletreeanswers.com","telephone":"+49800-285-1190","address":{"@type":"PostalAddress","streetAddress":"620 Academy Drive","postalCode":"60062","addressLocality":"Northbrook","addressRegion":"IL","addressCountry":"USA"},"logo":"https:\/\/appletreeanswers.com\/wp-content\/uploads\/2020\/11\/logo-151.png","image":"https:\/\/appletreeanswers.com\/wp-content\/uploads\/2020\/11\/logo-200.png","sameAs":["https:\/\/www.facebook.com\/stericyclecommunications","https:\/\/www.linkedin.com\/company\/appletree-answers\/","https:\/\/twitter.com\/stericyclecomms"],"contactPoint":[{"@type":"ContactPoint","contactType":"sales","telephone":"+49800-285-1190","contactOption":["TollFree"]},{"@type":"ContactPoint","contactType":"customer support","telephone":"+49800-827-7775","contactOption":["TollFree"]}]}</script><link rel="icon" href="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/11/cropped-fav-icon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/11/cropped-fav-icon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/11/cropped-fav-icon-180x180.png" />
+<meta name="msapplication-TileImage" content="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/11/cropped-fav-icon-270x270.png" />
+		<style id="wp-custom-css">
+			/* 19-10-2022 */
+
+.gform_validation_errors>h2.hide_summary {
+    padding-top: 15px !important;
+}
+.gform_validation_errors>h2:before{
+	height: 20px !important;
+}
+
+/* 19-10-2022 */
+
+.cc-color-override-288644992.cc-window{
+	z-index: 99999;
+}
+.zls-sptwndw.siqembed.siqtrans {
+    z-index: 999 !important;
+}
+.zsiq_theme1.zsiq_floatmain {
+    z-index: 999 !important;
+}
+#gform_1_validation_container h2.gform_submission_error.hide_summary {
+	margin-left: 11px;
+	margin-right: 11px;
+}
+}
+.ginput_container_radio .gfield_radio li input[type="radio"]{
+	width: auto !important;
+}
+.gform_validation_errors>h2.hide_summary{
+	padding-top: 10px;
+}
+
+
+/* 19-07-2022 */
+.cc-window.cc-floating {
+	bottom: 0em;
+	width: 100%;
+	max-width: 100% !important;
+}
+@media screen and (min-width: 500px) {
+	.cc-window.cc-floating {
+		align-items: center;
+		flex-direction: row !important;
+	}
+	.cc-floating .cc-message {
+		margin-bottom: 0em;
+	}
+}
+@media screen and (max-width: 499px) {
+	.cc-window.cc-floating {
+		flex-direction: column !important;
+	}
+	.cc-window.cc-floating {
+		padding: 1.5em !important;
+	}
+	.cc-compliance {
+		justify-content: space-around !important;
+	}
+}
+/* 19-07-2022 */
+
+/* 13-08-2022 */
+@media screen and (max-width: 667px) {
+	.service-about.blog-detail-page p a {
+		word-break: break-all;
+	}
+}
+/* 13-08-2022 */
+@media (max-width: 575px){
+#header {
+    z-index: 99;
+}
+	body.menu-open #header{
+		z-index: 9999;
+	}	
+}
+
+
+/* 20-01-2023 */
+.contact-form .right-inner-contact .gform_wrapper .gform_footer:not(.top_label) {
+	margin-top: 20px;
+}
+.contact-form .right-inner-contact .gform_wrapper .gform_footer button {
+	margin-top: 0;
+}
+.contact-form .right-inner-contact .gform_wrapper .gform_ajax_spinner {
+	width: auto;
+	height: auto;
+}
+/* 20-01-2023 */
+
+
+/* 01-06-2023 */
+
+.page-id-36 .appletree-terms .terms-conditions-list  li:before{
+	display:none;	
+}
+
+.page-id-36 .appletree-terms p{
+	margin-bottom:10px;	
+}
+
+
+/*
+    Max width before this PARTICULAR table gets nasty. This query will take effect for any screen smaller than 760px and also iPads specifically.
+    */
+.table {
+  border-collapse: collapse;
+	color: #47536b !important;
+}
+
+.table, th, td {
+  border: 1px solid black;
+	padding: 10px;
+  font-size: 20px;
+  line-height: 30px;
+	margin-bottom:20px;
+	text-align: center;
+}
+
+.table thead th{
+	border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.table td, .table p {
+	font-family:Conv_NunitoSans-Light;
+	text-align:center;
+	line-height:30px !important;
+}	
+
+@media only screen and (max-width: 1024px){
+	
+	.table td{
+		border-top:unset; 
+		padding-left:50% !important;
+	}
+
+}
+
+@media only screen and (max-width: 991px){
+	
+	.table td{
+		border-top:unset; 
+		position:relative;
+		padding-left:50% !important;
+	}
+	
+	.table, th, td{
+		font-size:18px !important;
+	}
+	
+	.table p{
+		font-size:18px !important;
+	}	
+	
+	.service-about ul li{
+	padding-left: 25px !important;
+	}	
+	
+.page-id-34 .location-wrap a,  .page-id-36 .location-wrap a {
+	font-size:18px !important;
+}	
+	
+.page-id-34 .right-to-know{
+	font-size:18px !important;
+	}	
+	
+	.page-id-4552 .data-processing{
+		margin-bottom:10px;
+	}
+	
+	
+	
+}
+ @media
+      only screen 
+    and (max-width: 760px), (min-device-width: 768px) 
+    and (max-device-width: 1024px)  {
+
+        /* Force table to not be like tables anymore */
+        .table, thead, tbody, th, td, tr {
+            display: block;
+        }
+
+        /* Hide table headers (but not display: none;, for accessibility) */
+        thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+    tr {
+/*       margin: 0 0 1rem 0; */
+    }
+      
+    tr:nth-child(odd) {
+      background: rgb(249 249 249);
+    } 
+    
+        td {
+            /* Behave  like a "row" */
+            border: none;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 50%;
+						font-size:20px;
+        }
+
+        td:before {
+            /* Now like a table header */
+            position: absolute;
+            /* Top/left values mimic padding */
+            top: 7px;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+						font-size:20px;
+        }
+
+        /*
+        Label the data
+    You could also use a data-* attribute and content for this. That way "bloats" the HTML, this way means you need to keep HTML and CSS in sync. Lea Verou has a clever way to handle with text-shadow.
+        */
+        td:nth-of-type(1):before { content: "Category\00B9"; 
+		font-weight: 700;
+			}
+        td:nth-of-type(2):before { content: "Examples   "; 
+	font-weight: 700;
+			}
+        td:nth-of-type(3):before { content: "Collected";
+		font-weight: 700;
+			}
+        td:nth-of-type(4):before { content: "Retention Period "; 
+			font-weight: 700;
+			}
+    }
+
+/* 01-06-2023 */
+
+.page-id-34 .appletree-privacy-policy p{
+	margin-bottom:10px;
+}
+
+.page-id-34 .appletree-privacy-policy ul li{
+	margin-left:30px;
+}
+
+.page-id-34 .appletree-privacy-policy .padd-left{
+	margin-left:18px;
+}
+
+.page-id-34 .appletree-privacy-policy .right-to-know{
+	font-size:20px;
+	font-family:Conv_NunitoSans-Light;
+	color:#47536b;
+}
+
+.page-id-34 .appletree-privacy-policy .rights-content li::before{
+	background-image:unset;	
+}
+
+.page-id-4552 .appletree-dpa ul:not(.details-processing) li::before{
+	background-image:unset;
+}
+.page-id-4552 .appletree-dpa ul.details-processing li::before{
+	background-image: url('https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/image/sprite.svg');
+}
+
+.page-id-4552 .appletree-dpa .ol_exhibitb{
+list-style-type: lower-roman !important;
+}
+
+.page-id-4552 .appletree-dpa .upper-roman-list{
+list-style-type: upper-roman !important;
+}
+
+.page-id-4552 .appletree-dpa .exhibit li{
+list-style-type: unset;
+}
+
+.page-id-4552 .upper-roman-list > li::marker{
+	font-weight:bold;
+	color:#47536b;
+}
+
+.page-id-4552 .service-about ul, .page-id-34 .service-about ul{
+padding:0px;
+}
+
+
+ .page-id-34 .table thead th{
+	vertical-align:middle;
+}
+
+.page-id-34 .location-wrap a, .page-id-36 .location-wrap a {
+	font-size:20px;
+	text-decoration:none;
+}
+
+.page-id-4552 .definitions li{
+	padding-left:20px !important;
+}
+
+.service-about span.uninterr-supply {
+		font-family: 'Conv_NunitoSans-light';
+}
+
+@media only screen and (max-width: 630px){
+.page-id-36 .updated{
+		margin-top:12px;
+	}
+}
+
+@media (max-width: 480px) {
+	.page-id-4552 .appletree-dpa .upper-roman-list {
+		padding-left: 20px;
+	}
+	.page-id-4552 .appletree-dpa .exhibit li {
+		padding-left: 10px !important;
+	}
+	.service-about span.uninterr-supply {
+		word-break: break-all;
+		font-family: 'Conv_NunitoSans-light';
+	}
+}
+
+@media only screen and (max-width: 400px){
+	.table td {
+		padding-left:60% !important;
+	}	
+}
+
+@media only screen and (device-width: 320px){
+	.table td {
+		padding-left:53% !important;
+	}	
+.table td:before {	
+	font-size:16px;	
+}
+}
+
+.page-id-4552 .measures{
+	padding-left:0px;
+}
+		</style>
+		<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript">
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script>	
+	
+	<script type="rocketlazyloadscript">
+		(function(){
+			var docElem = document.documentElement;
+
+			window.lazySizesConfig = window.lazySizesConfig || {};
+
+			window.lazySizesConfig.loadMode = 1;
+
+			//set expand to a higher value on larger displays
+			window.lazySizesConfig.expand = Math.max(Math.min(docElem.clientWidth, docElem.clientHeight, 1222) - 1, 359);
+			window.lazySizesConfig.expFactor = lazySizesConfig.expand < 380 ? 3 : 2;
+		})();
+	</script>
+	<link data-minify="1" rel="preload" type="text/css" href="https://appletrapro.wpenginepowered.com/wp-content/cache/min/1/npm/cookieconsent@3/build/cookieconsent.min.css?ver=1686864412" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  />
+</head>
+<body class="home page-template page-template-content_home page-template-content_home-php page page-id-11 no-sidebar">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.498039215686" /><feFuncG type="table" tableValues="0 0.498039215686" /><feFuncB type="table" tableValues="0 0.498039215686" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.549019607843 0.988235294118" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.717647058824 0.254901960784" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.278431372549" /><feFuncB type="table" tableValues="0.592156862745 0.278431372549" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.647058823529" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.780392156863 1" /><feFuncG type="table" tableValues="0 0.949019607843" /><feFuncB type="table" tableValues="0.352941176471 0.470588235294" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.650980392157 0.403921568627" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.447058823529 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.0980392156863 1" /><feFuncG type="table" tableValues="0 0.662745098039" /><feFuncB type="table" tableValues="0.847058823529 0.419607843137" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg>    
+         
+<div class="wrapper">
+
+	<header id="header" class="container-fluid nav-down">
+		<div class="row">
+			                            
+					<a href="https://appletreeanswers.com" class="logo">
+						<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/10/logo.png" alt="Appletree Answers" title="">
+					</a>
+					      
+			                             
+					<a href="https://appletreeanswers.com" class="sticky-logo">
+						<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/10/logo.png" alt="Appletree Answers" title="">
+					</a>
+					 
+			
+		
+			
+				<div class="header-right">
+					<div class="call-top-section">
+						<div class="number-text">                                           
+						                            
+								<a href="tel:1-800-827-7775 ">Sales <span>1-800-827-7775</span></a>
+										
+						                            
+						   <a href="tel:1-800-285-1190">Client Support <span>1-800-285-1190</span></a>
+							 
+						</div>
+						<div class="float-right">
+							 	<a class="btn-apple btn-gray" href="https://secure2.appletreeanswers.com/" target="_blank" rel="noopener noreferrer">Client Portal</a>
+	
+									<a class="btn-apple btn-red" href="https://appletreeanswers.com/request-a-quote/" target="_self" >Request A Quote</a>
+	      						
+							
+						</div>
+					</div>
+					<a href="javascript:void(0);" class="menu-icon" aria-label="Menu">Menu <span></span></a>
+					<nav class="navigation-menu">
+						<div class="mobile-header">
+							                            
+								<a href="https://appletreeanswers.com">
+									<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/10/logo.png" alt="Appletree Answers" title="">
+								</a>
+								 
+							<a href="javascript:void(0);" class="close-icon" aria-label="Close"></a>
+						</div>
+						 <ul id="menu-main-menu" class="main-menu"><li id="menu-item-186" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-186"><a href="https://appletreeanswers.com/services-solutions/">Services &#038; Solutions</a><span class="dropdown-arrow"></span>
+<ul class="sub-menu">
+	<li id="menu-item-4126" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4126"><a href="https://appletreeanswers.com/services-solutions/answering-services/">Answering Services</a></li>
+	<li id="menu-item-4124" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4124"><a href="https://appletreeanswers.com/services-solutions/virtual-receptionist/">Virtual Receptionist</a></li>
+	<li id="menu-item-4125" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4125"><a href="https://appletreeanswers.com/services-solutions/call-center-services/">Call Center Services</a></li>
+</ul>
+</li>
+<li id="menu-item-190" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-190"><a href="https://appletreeanswers.com/industries-served/">Industries Served</a><span class="dropdown-arrow"></span>
+<ul class="sub-menu">
+	<li id="menu-item-4322" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4322"><a href="https://appletreeanswers.com/industries-served/healthcare/">Healthcare</a></li>
+	<li id="menu-item-4323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4323"><a href="https://appletreeanswers.com/industries-served/legal/">Legal</a></li>
+	<li id="menu-item-4325" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4325"><a href="https://appletreeanswers.com/industries-served/real-estate-property-management/">Property Management</a></li>
+	<li id="menu-item-4318" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4318"><a href="https://appletreeanswers.com/industries-served/construction/">Contractors</a></li>
+	<li id="menu-item-4319" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4319"><a href="https://appletreeanswers.com/industries-served/disaster-recovery-restoration/">Disaster Restoration</a></li>
+	<li id="menu-item-4326" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4326"><a href="https://appletreeanswers.com/industries-served/business-personal-services/">Small Business</a></li>
+	<li id="menu-item-4327" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4327"><a href="https://appletreeanswers.com/industries-served/retail/">E-commerce</a></li>
+	<li id="menu-item-4324" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4324"><a href="https://appletreeanswers.com/industries-served/pest-control/">Pest Control</a></li>
+	<li id="menu-item-4328" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4328"><a href="https://appletreeanswers.com/industries-served/veterinary/">Veterinary</a></li>
+	<li id="menu-item-4321" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4321"><a href="https://appletreeanswers.com/industries-served/government-services/">Government</a></li>
+	<li id="menu-item-4320" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4320"><a href="https://appletreeanswers.com/industries-served/funeral-home/">Funeral</a></li>
+	<li id="menu-item-4329" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4329"><a href="https://appletreeanswers.com/industries-served/utility-provider/">Utility Providers</a></li>
+</ul>
+</li>
+<li id="menu-item-207" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-207"><a href="https://appletreeanswers.com/about-us/">About Us</a><span class="dropdown-arrow"></span>
+<ul class="sub-menu">
+	<li id="menu-item-4280" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4280"><a href="https://appletreeanswers.com/about-us/careers/">Careers</a></li>
+	<li id="menu-item-4317" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4317"><a href="https://appletreeanswers.com/about-us/testimonials/">Testimonials</a></li>
+</ul>
+</li>
+<li id="menu-item-212" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-212"><a href="https://appletreeanswers.com/contact-us/">Contact Us</a></li>
+</ul>					</nav>
+				</div>
+			
+		</div>
+	</header>  
+	
+	<main>
+	
+	
+	
+<section class="top-contain">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-7 wow fadeInLeft">
+										<h1>24/7 Answering Services<br>& Call Center Solutions</h1>
+										<p>Our experienced team creates customized, affordable<br />
+communication solutions to fit your requirements and<br />
+exceed your expectations.</p>
+					<a class="btn-apple btn-red" href="https://appletreeanswers.com/request-a-quote/" target="_self" >Request A Quote</a>
+	                   
+			</div>
+		</div>
+		
+		 			<div class="banner-right">
+				<img data-expand="-20" class="addlazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/11/banner-image-new-2.png" data-src-small = "https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/11/banner-image-new-2.png" alt="Virtual Receptionist at Call Center Solutions" title="" 
+				>
+			</div>
+											   
+		
+			<div class="service-contain">
+										<h2>SERVICES & SOLUTIONS</h2>
+						                    
+				<div class="row">                       
+					 							<div class="col-lg-4 col-md-6 col-sm-6">
+								<div class="single-service-box wow pulse">
+																		<div class="img-service live-answering" >
+										<img data-expand="-20" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/10/live-image.png" alt="Women Working at Phone Answering Company" title="" width="359" height="206">
+									</div>
+																		<div class="service-detail">
+										<h3>Live Answering</h3>										<p>Helping businesses ensure they never miss any phone calls or opportunities with 24/7 availability to cover the phone whenever you choose!</p>
+										<a href="https://appletreeanswers.com/services-solutions/answering-services/">LEARN MORE</a>
+									</div>
+								</div>
+							</div>
+															<div class="col-lg-4 col-md-6 col-sm-6">
+								<div class="single-service-box wow pulse">
+																		<div class="img-service virtual-receptionist" >
+										<img data-expand="-20" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/10/rece-home.png" alt="Girl working as virtual receptionist to handle client's call" title="" width="360" height="206">
+									</div>
+																		<div class="service-detail">
+										<h3>Virtual Receptionist</h3>										<p>Call routing, message taking, appointment scheduling, and more from the best receptionists.</p>
+										<a href="https://appletreeanswers.com/services-solutions/virtual-receptionist/">LEARN MORE</a>
+									</div>
+								</div>
+							</div>
+															<div class="col-lg-4 col-md-6 col-sm-6">
+								<div class="single-service-box wow pulse">
+																		<div class="img-service telephone-icon" >
+										<img data-expand="-20" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/10/call-home.png" alt="Girls working at Call Answering Company" title="" width="360" height="206">
+									</div>
+																		<div class="service-detail">
+										<h3>Call Center Services</h3>										<p>Fully customized call handling<br />
+solutions that scale to be an ideal<br />
+fit for any company.</p>
+										<a href="https://appletreeanswers.com/services-solutions/call-center-services">LEARN MORE</a>
+									</div>
+								</div>
+							</div>
+								                      
+					</div>
+			</div>
+		
+		</div>
+</section>
+<section class="review-section">
+				<h4>REAL REVIEWS</h4>
+			        
+		<div id="reviewslider" class="carousel slide container wow fadeInUp" data-ride="carousel">                               
+			                         
+		  <div class="carousel-inner">
+			  
+		   			  
+			  				 <div class="carousel-item active" >
+					<p>&#8220;We continue to be amazed at the competence and the performance of the Appletree team. Our customers are number one, and in our offices, there is nothing more important than catering to the customers every need. With Appletree Answering Service, we never have to worry that a customer will not be treated exactly as we would handle them. Their professionalism and efforts to accommodate every customer call are extravagant, and we can&#8217;t believe we ever worked without the Appletree team!&#8221;</p>
+					<h4>Christopher Breen</h4>
+										<h5>CEO, Metro United Communications</h5>                 
+				 </div>
+			  				  
+					  
+			  			  <div class="carousel-item" >
+					<p>&#8220;We use Appletree Answering Service to increase productivity. Because Appletree agents let us know who&#8217;s on the line, we can accept the call or have the agent take a message. This virtually eliminates needless interruptions and saves us a substantial amount of time.&#8221;</p>
+					<h4>Bob Hartman</h4> 
+										<h5>COO, Reyntech</h5>                      
+				 </div>
+				  				  
+					  
+			  			  <div class="carousel-item" >
+					<p>&#8220;Appletree is very efficient, professional, and they always stay ahead of the industry with regards to technology and what they can offer their clients.&#8221;</p>
+					<h4>Bill DelCampo</h4> 
+										<h5>Owner, William DelCampo Mechanical Services</h5>                      
+				 </div>
+				  				  
+					  
+			  			  <div class="carousel-item" >
+					<p>&#8220;As an outsource supplier for SENOS PR, Appletree has excelled in reliable service, meeting the goals set forth in our company&#8217;s business plan, and exceeded the result for the growth of our women&#8217;s radiology practice. The numbers speak for themselves. They have been able to successfully manage the 24 hour, 7 days a week appointment scheduling program. We are truly pleased with the support given by Appletree and the professionalism of their staff.&#8221;</p>
+					<h4>David Soler</h4> 
+										<h5>Operations Director, SENOS PR</h5>                      
+				 </div>
+				  				  
+					  
+			  			  <div class="carousel-item" >
+					<p>&#8220;Diamond Phoenix Corp. is a manufacturing and systems integrator of automated storage and retrieval equipment. Since we provide our customers with telephone support 24/7, it is essential for us to have a dependable after-hours answering service to forward the support calls to our technicians so they can assist our customers. We are very pleased with Appletree and the service they provide to help us keep our customers happy. Thanks Appletree! Keep up the good work!&#8221;</p>
+					<h4>Diamond Phoenix Corp.</h4> 
+										                      
+				 </div>
+				  				  
+					  
+			  			  <div class="carousel-item" >
+					<p>&#8220;Appletree has provided a great return on investment. I am able to concentrate on all other aspects of the business, because Appletree takes care of our telephone orders. I am very satisfied with the service.”</p>
+					<h4>Duane Dewsbury</h4> 
+										<h5>HatsAmerica.com</h5>                      
+				 </div>
+				  				  
+		                     
+		  </div>
+		   
+		  <ol class="carousel-indicators">
+			  			   			  <li data-target="#reviewslider" data-slide-to="0" class="active"> 
+					    <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/image/review-1-img.png" alt="review image" width="57" height="57" />
+					</li>
+					  			  			   					<li data-target="#reviewslider" data-slide-to="1" > 
+					   <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/image/review-1-img.png" alt="review image" width="57" height="57" />
+					</li>
+								  			   					<li data-target="#reviewslider" data-slide-to="2" > 
+					   <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/image/review-1-img.png" alt="review image" width="57" height="57" />
+					</li>
+								  			   					<li data-target="#reviewslider" data-slide-to="3" > 
+					   <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/image/review-1-img.png" alt="review image" width="57" height="57" />
+					</li>
+								  			   					<li data-target="#reviewslider" data-slide-to="4" > 
+					   <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/image/review-1-img.png" alt="review image" width="57" height="57" />
+					</li>
+								  			   					<li data-target="#reviewslider" data-slide-to="5" > 
+					   <img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/image/review-1-img.png" alt="review image" width="57" height="57" />
+					</li>
+								                                                                                                         
+		  </ol>
+			
+		  <a class="carousel-control-prev" href="#reviewslider" role="button" data-slide="prev" aria-label="Prev">
+		  </a>
+		  <a class="carousel-control-next" href="#reviewslider" role="button" data-slide="next" aria-label="Next">
+		  </a>                                
+		  
+		</div>		
+			<a class="btn-apple btn-light-gray" href="https://appletreeanswers.com/about-us/testimonials/" target="_self" >See More Reviews</a>
+	                             
+</section>
+
+<section class="served-section" id="served-section">
+	<div class="container">    
+						<h2>INDUSTRIES SERVED</h2>
+				                   
+	</div>
+	<div class="border-animation">
+ 		<svg version="1.1" id="Layer_10" class="tree-animation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1328 371" style="enable-background:new 0 0 1328 371;" xml:space="preserve">
+
+<path fill-rule="evenodd"  class="dali-border" fill="none" stroke="#f0f2f5" stroke-width="1"
+ d="M56.000,129.000 C180.580,56.003 386.372,72.247 530.000,163.000 C638.926,231.826 677.942,232.628 748.000,234.000 C818.058,235.372 937.031,179.441 1011.000,190.000 C1084.969,200.559 1124.687,239.101 1202.000,239.000 C1279.313,238.900 1318.216,215.616 1327.000,203.000 C1328.717,209.120 1327.000,211.000 1327.000,211.000 C1327.000,211.000 1259.580,260.458 1173.000,251.000 C1086.420,241.542 1045.497,209.727 989.000,214.000 C932.503,218.273 791.429,279.436 692.000,279.000 C542.774,278.346 382.094,190.552 267.000,195.000 C160.992,199.097 116.732,234.538 57.000,289.000 C57.000,289.000 -68.580,201.997 56.000,129.000 Z"/>
+<path fill-rule="evenodd"  class="leaf-6" fill="none" stroke="#f0f2f5" stroke-width="2" 
+ d="M467.858,311.502 C465.527,311.459 463.199,311.534 460.885,311.734 C458.617,311.928 456.364,312.237 454.136,312.642 C451.907,313.045 449.703,313.545 447.521,314.095 C447.499,314.100 447.480,314.110 447.459,314.118 C447.505,314.100 447.554,314.089 447.605,314.084 C449.839,313.851 452.088,313.671 454.348,313.590 C456.607,313.508 458.877,313.524 461.147,313.657 C464.043,313.822 466.933,314.186 469.796,314.730 C470.254,314.817 470.710,314.907 471.166,315.003 C472.330,315.248 473.489,315.522 474.640,315.826 C474.691,315.839 474.744,315.856 474.794,315.874 C475.727,316.213 476.201,317.251 475.853,318.192 C475.505,319.132 474.467,319.620 473.535,319.281 L473.529,319.279 C472.162,318.782 470.776,318.332 469.376,317.923 C452.910,344.163 429.389,331.322 415.875,315.966 C430.238,302.063 452.811,288.620 467.858,311.502 Z"/>
+<path fill-rule="evenodd"  class="dali-leaf-5" fill="none" stroke="#f0f2f5" stroke-width="2"
+ d="M664.000,254.000 C663.107,268.302 664.004,269.312 676.000,276.000 C687.996,282.688 722.058,303.409 734.000,337.000 C745.942,370.591 771.801,365.757 783.000,367.000 C783.000,361.221 781.000,363.000 781.000,363.000 C781.000,363.000 760.833,364.155 749.000,351.000 C737.168,337.844 731.964,282.702 690.000,262.000 C648.036,241.298 664.000,254.000 664.000,254.000 Z"/>
+<path fill-rule="evenodd"  class="dali-leaf-4" fill="none" stroke="#f0f2f5" stroke-width="2" 
+ d="M1134.000,238.000 C1128.170,262.649 1074.748,306.322 1110.000,330.000 C1115.320,329.310 1098.745,318.470 1104.000,302.000 C1109.255,285.530 1135.293,242.668 1149.000,244.000 "/>
+<path fill-rule="evenodd"  class="leaf-5" fill="none" stroke="#f0f2f5" stroke-width="2" 
+ d="M741.045,308.598 C743.755,308.810 746.450,309.157 749.113,309.647 C751.725,310.123 754.306,310.731 756.848,311.445 C759.390,312.159 761.893,312.979 764.365,313.855 C764.389,313.864 764.410,313.877 764.433,313.889 C764.382,313.864 764.327,313.845 764.268,313.833 C761.700,313.316 759.110,312.857 756.495,312.511 C753.881,312.164 751.243,311.928 748.594,311.825 C745.213,311.691 741.816,311.786 738.431,312.090 C737.890,312.138 737.350,312.191 736.810,312.250 C735.432,312.402 734.055,312.586 732.684,312.806 C732.624,312.816 732.560,312.829 732.500,312.844 C731.379,313.129 730.712,314.268 731.010,315.388 C731.308,316.508 732.459,317.184 733.579,316.899 L733.587,316.897 C735.229,316.479 736.888,316.117 738.560,315.805 C754.728,347.793 783.479,335.677 800.895,319.550 C785.782,301.969 761.085,283.997 741.045,308.598 Z"/>
+<path fill-rule="evenodd"  class="leaf-4" fill="none" stroke="#f0f2f5" stroke-width="2" 
+ d="M1092.071,304.652 C1090.334,305.151 1088.624,305.736 1086.953,306.409 C1085.315,307.067 1083.714,307.807 1082.153,308.611 C1080.591,309.414 1079.070,310.282 1077.576,311.181 C1077.561,311.190 1077.549,311.202 1077.536,311.212 C1077.566,311.189 1077.599,311.170 1077.636,311.154 C1079.240,310.475 1080.867,309.831 1082.525,309.258 C1084.182,308.683 1085.869,308.179 1087.582,307.760 C1089.767,307.222 1091.993,306.832 1094.239,306.579 C1094.598,306.539 1094.957,306.501 1095.317,306.468 C1096.235,306.383 1097.156,306.320 1098.079,306.281 C1098.120,306.279 1098.163,306.279 1098.204,306.281 C1098.972,306.318 1099.559,306.971 1099.513,307.740 C1099.468,308.510 1098.809,309.104 1098.041,309.067 L1098.035,309.067 C1096.910,309.013 1095.780,308.998 1094.650,309.017 C1088.372,332.012 1068.025,327.944 1054.531,319.754 C1062.038,306.287 1075.739,291.290 1092.071,304.652 Z"/>
+<path fill-rule="evenodd"  class="dali-leaf-2" fill="none" stroke="#f0f2f5" stroke-width="2" 
+ d="M511.000,155.000 C545.279,170.747 601.026,192.296 600.000,156.000 C598.974,119.704 628.331,108.557 657.000,115.000 C685.669,121.442 686.000,101.000 686.000,101.000 C690.970,101.000 693.000,102.000 693.000,102.000 C692.486,108.924 674.630,126.077 657.000,122.000 C639.370,117.923 607.728,126.828 608.000,155.000 C608.272,183.172 601.419,195.404 575.000,192.000 C548.581,188.596 511.000,155.000 511.000,155.000 Z"/>
+<path fill-rule="evenodd"  class="leaf-1"  fill="none" stroke="#f0f2f5" stroke-width="2" 
+ d="M234.575,49.093 C231.477,46.610 228.264,44.289 224.944,42.155 C221.691,40.058 218.342,38.134 214.930,36.366 C211.519,34.596 208.044,32.982 204.547,31.459 C204.512,31.445 204.477,31.437 204.441,31.427 C204.520,31.451 204.598,31.486 204.671,31.532 C207.918,33.540 211.130,35.635 214.258,37.877 C217.386,40.116 220.429,42.500 223.354,45.041 C227.089,48.280 230.617,51.783 233.926,55.502 C234.454,56.096 234.979,56.694 235.496,57.299 C236.816,58.844 238.102,60.421 239.347,62.033 C239.401,62.104 239.457,62.182 239.506,62.259 C240.420,63.691 240.010,65.596 238.591,66.514 C237.172,67.432 235.280,67.015 234.366,65.584 L234.360,65.574 C233.020,63.476 231.608,61.422 230.134,59.409 C181.430,77.975 162.706,36.031 160.007,1.077 C193.412,-2.894 237.416,2.305 234.575,49.093 Z"/>
+<path fill-rule="evenodd"  class="left-dali-leaf-2" fill="none" stroke="#f0f2f5" stroke-width="2" 
+ d="M604.972,136.532 C601.426,130.640 593.820,124.083 582.616,122.349 C581.383,123.774 582.813,124.576 582.813,124.576 C582.813,124.576 600.472,129.602 601.870,147.133 L604.972,136.532 Z"/>
+<path fill-rule="evenodd"  class="dali-leaf-3" fill="none" stroke="#f0f2f5" stroke-width="2" 
+ d="M975.000,190.000 C986.382,190.000 994.878,166.152 993.000,151.000 C991.122,135.848 986.768,125.096 994.000,122.000 C996.312,123.306 998.000,126.000 998.000,126.000 C995.312,130.608 994.899,143.758 998.000,151.000 C1001.101,158.242 990.233,183.963 1008.000,190.000 C1025.767,196.037 963.618,190.000 975.000,190.000 Z"/>
+<path fill-rule="evenodd"  class="leaf-2" fill="none" stroke="#f0f2f5" stroke-width="2" 
+ d="M612.401,157.210 C614.895,156.603 617.415,156.121 619.948,155.778 C622.431,155.438 624.925,155.225 627.414,155.120 C629.903,155.013 632.388,155.015 634.861,155.076 C634.886,155.077 634.909,155.082 634.932,155.086 C634.879,155.078 634.824,155.078 634.768,155.084 C632.312,155.374 629.854,155.725 627.406,156.183 C624.958,156.640 622.522,157.204 620.114,157.893 C617.040,158.768 614.017,159.853 611.066,161.124 C610.595,161.327 610.125,161.534 609.658,161.746 C608.464,162.288 607.282,162.860 606.115,163.462 C606.064,163.488 606.010,163.519 605.960,163.550 C605.037,164.137 604.768,165.359 605.361,166.280 C605.953,167.200 607.182,167.471 608.105,166.884 L608.111,166.880 C609.465,166.020 610.849,165.205 612.259,164.432 C636.050,188.476 658.349,169.097 669.309,149.445 C650.643,138.064 623.260,129.154 612.401,157.210 Z"/>
+<path fill-rule="evenodd"  class="leaf-3" fill="none" stroke="#f0f2f5" stroke-width="2" 
+ d="M988.289,160.615 C986.348,160.141 984.387,159.764 982.416,159.494 C980.483,159.229 978.543,159.062 976.606,158.980 C974.669,158.896 972.735,158.898 970.810,158.946 C970.791,158.946 970.774,158.951 970.755,158.953 C970.796,158.947 970.839,158.947 970.883,158.952 C972.794,159.179 974.707,159.453 976.612,159.812 C978.517,160.170 980.413,160.611 982.287,161.150 C984.679,161.834 987.031,162.684 989.328,163.678 C989.694,163.837 990.060,163.998 990.424,164.165 C991.353,164.589 992.273,165.036 993.181,165.507 C993.221,165.528 993.263,165.552 993.301,165.576 C994.020,166.035 994.229,166.992 993.768,167.712 C993.307,168.433 992.351,168.644 991.632,168.185 L991.627,168.182 C990.574,167.509 989.497,166.872 988.399,166.266 C969.885,185.080 952.532,169.917 944.003,154.540 C958.529,145.635 979.839,138.662 988.289,160.615 Z"/>
+<path fill-rule="evenodd"  class="dali-leaf-6" fill="none" stroke="#f0f2f5" stroke-width="2" 
+ d="M430.000,223.000 C454.809,231.074 477.255,259.631 474.000,305.000 C470.745,350.369 493.564,350.192 506.000,356.000 C505.533,350.629 481.996,347.647 483.000,312.000 C484.004,276.354 499.054,221.775 472.000,200.000 C444.946,178.224 412.079,166.552 430.000,223.000 Z"/>
+<path fill-rule="evenodd"  class="dali-leaf-1"  fill="none" stroke="#f0f2f5" stroke-width="1" 
+ d="M203.000,85.000 C226.140,85.000 227.093,57.000 254.000,57.000 C280.907,57.000 267.006,64.927 282.000,75.000 C296.994,85.073 290.217,89.343 310.000,92.000 C330.253,118.333 203.000,138.369 203.000,85.000 Z"/>
+</svg>
+				<div class="box-served icon1-business lazyload" data-bg="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/10/medical-bg.png" data-expand="-20" onclick="javascript:location.href='https://appletreeanswers.com/industries-served/healthcare/'" >
+			<div class="box-inner-served">
+			<svg version="1.1" id="Layer_7" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64 61" style="enable-background:new 0 0 64 61;" xml:space="preserve">
+
+<path fill-rule="evenodd"
+ d="M60.561,17.788 L60.561,18.326 C60.561,20.825 59.167,23.003 57.123,24.107 L57.123,24.646 C57.123,28.260 54.209,31.200 50.628,31.200 L43.893,31.200 C44.185,31.802 44.348,32.481 44.348,33.205 C44.348,35.714 42.345,37.755 39.883,37.755 L33.250,37.755 L33.250,41.895 L39.849,41.895 C42.330,41.895 44.348,43.951 44.348,46.479 C44.348,49.006 42.330,51.063 39.849,51.063 L33.250,51.063 L33.250,54.093 L43.098,54.093 C43.788,54.093 44.348,54.662 44.348,55.364 C44.348,56.067 43.788,56.636 43.098,56.636 L33.250,56.636 L33.250,59.728 C33.250,60.430 32.690,61.000 32.000,61.000 C31.310,61.000 30.750,60.430 30.750,59.728 L30.750,56.636 L24.555,56.636 C22.358,56.636 20.571,54.815 20.571,52.577 C20.571,50.340 22.358,48.519 24.555,48.519 L30.750,48.519 L30.750,44.438 L24.316,44.438 C21.819,44.438 19.787,42.369 19.787,39.825 C19.787,37.280 21.819,35.211 24.316,35.211 L30.750,35.211 L30.750,31.200 L13.372,31.200 C9.791,31.200 6.877,28.259 6.877,24.646 L6.877,24.107 C4.833,23.003 3.439,20.825 3.439,18.326 L3.439,17.788 C1.394,16.683 -0.000,14.506 -0.000,12.006 L-0.000,10.968 C-0.000,10.266 0.560,9.696 1.250,9.696 L19.906,9.696 C24.992,9.696 29.373,13.179 30.558,18.167 C30.559,18.169 30.559,18.171 30.560,18.174 L30.750,18.993 L30.750,12.496 C27.868,11.936 25.685,9.373 25.685,6.305 C25.685,2.828 28.487,-0.000 31.932,-0.000 C35.377,-0.000 38.179,2.828 38.179,6.305 C38.179,9.324 36.064,11.855 33.250,12.467 L33.250,18.993 L33.440,18.174 C33.440,18.171 33.441,18.169 33.442,18.167 C34.627,13.179 39.008,9.696 44.094,9.696 L62.750,9.696 C63.440,9.696 64.000,10.266 64.000,10.968 L64.000,12.006 C64.000,14.506 62.606,16.683 60.561,17.788 ZM33.250,48.519 L39.849,48.519 C40.951,48.519 41.848,47.604 41.848,46.479 C41.848,45.353 40.951,44.439 39.849,44.439 L33.250,44.439 L33.250,48.519 ZM28.128,18.761 C27.213,14.921 23.833,12.240 19.906,12.240 L2.507,12.240 C2.628,14.343 4.370,16.016 6.495,16.016 C6.518,16.016 6.540,16.017 6.562,16.018 L18.001,16.018 C18.691,16.018 19.251,16.587 19.251,17.289 C19.251,17.992 18.691,18.561 18.001,18.561 L6.459,18.561 C6.436,18.561 6.414,18.561 6.392,18.559 L5.945,18.559 C6.066,20.662 7.809,22.336 9.933,22.336 L18.118,22.336 C18.808,22.336 19.368,22.905 19.368,23.608 C19.368,24.310 18.808,24.880 18.118,24.880 L9.384,24.880 C9.505,26.982 11.247,28.656 13.372,28.656 L30.421,28.656 L28.128,18.761 ZM24.555,51.063 C23.737,51.063 23.071,51.743 23.071,52.577 C23.071,53.413 23.737,54.093 24.555,54.093 L30.750,54.093 L30.750,51.063 L24.555,51.063 ZM24.316,37.755 C23.197,37.755 22.287,38.683 22.287,39.825 C22.287,40.966 23.197,41.895 24.316,41.895 L30.750,41.895 L30.750,37.755 L24.316,37.755 ZM35.679,6.305 C35.679,4.231 33.998,2.543 31.932,2.543 C29.866,2.543 28.185,4.231 28.185,6.305 C28.185,8.378 29.866,10.065 31.932,10.065 C33.998,10.065 35.679,8.378 35.679,6.305 ZM33.250,31.200 L33.250,35.211 L39.883,35.211 C40.966,35.211 41.848,34.312 41.848,33.205 C41.848,32.062 40.945,31.200 39.747,31.200 L33.250,31.200 ZM44.094,12.240 C40.167,12.240 36.787,14.921 35.872,18.761 L33.579,28.656 L50.628,28.656 C52.753,28.656 54.495,26.982 54.616,24.880 L45.882,24.880 C45.192,24.880 44.632,24.310 44.632,23.608 C44.632,22.905 45.192,22.336 45.882,22.336 L54.067,22.336 C56.191,22.336 57.933,20.663 58.055,18.561 L51.442,18.561 C50.751,18.561 50.192,17.992 50.192,17.289 C50.192,16.587 50.751,16.018 51.442,16.018 L57.438,16.018 C57.460,16.016 57.483,16.016 57.505,16.016 C59.630,16.016 61.372,14.343 61.493,12.240 L44.094,12.240 ZM45.074,18.347 C44.581,18.019 44.389,17.353 44.614,16.803 C44.815,16.310 45.311,15.992 45.835,16.019 C46.354,16.048 46.813,16.415 46.964,16.920 C47.113,17.419 46.938,17.983 46.528,18.299 C46.106,18.624 45.516,18.647 45.074,18.347 Z"/>
+</svg>			
+			<br /> <a href="https://appletreeanswers.com/industries-served/healthcare/">Healthcare</a>
+		</div>
+	</div>
+	
+		<div class="box-served icon2-business lazyload" data-bg="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/10/real-estate-bg.png" data-expand="-20" onclick="javascript:location.href='https://appletreeanswers.com/industries-served/real-estate-property-management/'" >
+			<div class="box-inner-served">
+			<svg version="1.1" id="Layer_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 61 61" style="enable-background:new 0 0 61 61;" xml:space="preserve">
+<path fill-rule="evenodd"
+ d="M60.857,28.381 C60.453,29.644 59.279,30.500 57.953,30.500 L54.902,30.500 L54.902,54.903 C54.902,56.587 53.537,57.953 51.852,57.953 L21.368,57.953 L21.610,54.903 L51.852,54.903 L51.852,27.450 L57.953,27.450 L36.600,12.198 L23.630,21.462 C23.122,20.541 22.391,19.776 21.509,19.228 L34.826,9.716 C35.357,9.337 35.978,9.148 36.600,9.148 C37.221,9.148 37.842,9.337 38.373,9.716 L59.726,24.967 C60.805,25.738 61.263,27.118 60.857,28.381 ZM12.196,18.299 C7.151,18.299 3.045,14.193 3.045,9.148 C3.045,4.103 7.151,-0.003 12.196,-0.003 C17.243,-0.003 21.348,4.101 21.348,9.148 C21.348,14.194 17.243,18.299 12.196,18.299 ZM12.196,3.047 C8.827,3.047 6.095,5.778 6.095,9.148 C6.095,12.517 8.827,15.248 12.196,15.248 C15.566,15.248 18.297,12.517 18.297,9.148 C18.297,5.778 15.566,3.047 12.196,3.047 ZM6.095,21.349 L18.297,21.349 C19.771,21.349 21.034,22.404 21.298,23.854 L24.348,40.630 C24.510,41.521 24.269,42.436 23.689,43.130 C23.110,43.825 22.253,44.226 21.348,44.226 L19.398,44.226 L18.288,58.195 C18.162,59.780 16.838,61.003 15.247,61.003 L9.146,61.003 C7.554,61.003 6.232,59.780 6.105,58.195 L4.994,44.226 L3.045,44.226 C2.141,44.226 1.283,43.826 0.703,43.131 C0.124,42.437 -0.117,41.521 0.044,40.631 L3.095,23.854 C3.358,22.404 4.621,21.349 6.095,21.349 ZM7.812,41.176 L9.146,57.953 L15.247,57.953 L16.581,41.176 L21.348,41.176 L18.297,24.399 L13.721,24.399 L13.721,33.679 C13.721,34.521 13.039,35.204 12.196,35.204 C11.353,35.204 10.671,34.521 10.671,33.679 L10.671,24.399 L6.095,24.399 L3.045,41.176 L7.812,41.176 Z"/>
+</svg><br /> <a href="https://appletreeanswers.com/industries-served/real-estate-property-management/">Property Management</a></div>
+			</div>
+				<div class="box-served icon3-business lazyload" data-bg="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/10/law-form-bg.png" data-expand="-20" onclick="javascript:location.href='https://appletreeanswers.com/industries-served/legal/'" >
+			<div class="box-inner-served">
+			<svg version="1.1" id="Layer_4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 62 61" style="enable-background:new 0 0 62 61;" xml:space="preserve">
+
+<path fill-rule="evenodd"
+ d="M53.793,18.656 C53.690,18.656 53.577,18.642 53.472,18.642 L61.793,30.092 C61.811,30.125 61.826,30.159 61.840,30.194 C61.916,30.320 61.962,30.461 61.975,30.607 C61.985,30.644 61.993,30.682 61.999,30.719 C61.999,36.602 57.151,41.371 51.172,41.371 C45.192,41.371 40.345,36.602 40.345,30.719 C40.350,30.682 40.358,30.644 40.368,30.607 C40.381,30.461 40.427,30.320 40.503,30.194 C40.516,30.159 40.532,30.125 40.549,30.092 L49.315,18.031 C47.710,17.627 46.242,17.110 44.813,16.607 C41.629,15.347 38.263,14.590 34.840,14.362 L34.840,49.212 C34.840,49.809 34.348,50.292 33.742,50.292 C33.136,50.292 32.645,49.809 32.645,49.212 L32.645,9.226 C32.645,8.332 31.908,7.607 30.999,7.607 C30.090,7.607 29.353,8.332 29.353,9.226 L29.353,52.502 L45.154,52.502 C45.761,52.502 46.252,52.986 46.252,53.582 L46.252,59.920 C46.252,60.516 45.761,60.999 45.154,60.999 L16.844,60.999 C16.238,60.999 15.746,60.516 15.746,59.920 L15.746,53.582 C15.746,52.986 16.238,52.502 16.844,52.502 L27.165,52.502 L27.165,9.226 C27.166,8.198 27.595,7.215 28.352,6.506 C28.310,6.466 28.269,6.425 28.228,6.384 C26.763,4.875 26.819,2.483 28.352,1.042 C29.886,-0.400 32.317,-0.345 33.782,1.164 C35.247,2.673 35.192,5.065 33.658,6.506 C34.416,7.215 34.845,8.198 34.846,9.226 L34.846,12.200 C38.522,12.421 42.138,13.223 45.556,14.575 C47.446,15.296 49.393,15.864 51.378,16.272 C54.432,16.895 57.614,16.320 60.244,14.670 C60.729,14.312 61.416,14.409 61.780,14.886 C62.144,15.363 62.045,16.039 61.561,16.397 C59.262,17.903 56.555,18.691 53.793,18.656 ZM17.941,54.662 L17.941,58.841 L44.057,58.841 L44.057,54.662 L17.941,54.662 ZM30.999,2.166 C30.090,2.167 29.354,2.892 29.353,3.786 C29.353,4.680 30.090,5.405 30.999,5.405 C31.908,5.405 32.645,4.680 32.645,3.786 C32.645,2.891 31.908,2.166 30.999,2.166 ZM51.171,39.212 C55.513,39.207 59.177,36.035 59.734,31.799 L42.609,31.799 C43.166,36.034 46.830,39.206 51.171,39.212 ZM51.172,19.190 L43.575,29.640 L58.767,29.640 L51.172,19.190 ZM24.262,14.649 C21.843,15.072 19.472,15.729 17.183,16.608 C15.755,17.111 14.289,17.627 12.683,18.032 L21.449,30.092 C21.466,30.125 21.482,30.159 21.495,30.194 C21.571,30.320 21.617,30.461 21.631,30.607 C21.640,30.644 21.648,30.682 21.653,30.719 L21.655,30.718 C21.655,36.600 16.808,41.369 10.828,41.369 C4.849,41.369 0.001,36.600 0.001,30.718 C0.007,30.680 0.014,30.642 0.024,30.606 C0.037,30.460 0.084,30.319 0.159,30.193 C0.173,30.157 0.188,30.123 0.206,30.090 L8.528,18.640 C8.422,18.642 8.310,18.655 8.207,18.655 C5.445,18.689 2.738,17.902 0.439,16.395 C-0.046,16.037 -0.144,15.361 0.220,14.884 C0.583,14.407 1.271,14.310 1.756,14.668 C4.392,16.306 7.567,16.880 10.622,16.272 C12.607,15.864 14.554,15.296 16.443,14.575 C18.860,13.648 21.364,12.959 23.918,12.517 C24.511,12.429 25.066,12.825 25.164,13.406 C25.264,13.995 24.860,14.551 24.262,14.649 ZM10.826,39.212 C15.168,39.207 18.832,36.035 19.389,31.799 L2.264,31.799 C2.822,36.034 6.485,39.206 10.826,39.212 ZM3.231,29.640 L18.423,29.640 L10.826,19.190 L3.231,29.640 Z"/>
+</svg><br /> <a href="https://appletreeanswers.com/industries-served/legal/">Legal</a></div>
+			</div>
+				<div class="box-served icon4-business lazyload" data-bg="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/10/construction-bg.png" data-expand="-20" onclick="javascript:location.href='https://appletreeanswers.com/industries-served/construction/'" >
+			<div class="box-inner-served">
+			<svg version="1.1" id="Layer_9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 50 38" style="enable-background:new 0 0 50 38;" xml:space="preserve">
+
+
+<path fill-rule="evenodd"
+ d="M46.488,29.314 L46.488,24.705 C46.488,19.920 44.952,15.372 42.046,11.553 C39.467,8.163 35.900,5.563 31.919,4.147 C31.808,1.841 29.906,-0.000 27.584,-0.000 L21.797,-0.000 C19.475,-0.000 17.573,1.841 17.462,4.147 C13.481,5.563 9.914,8.163 7.335,11.553 C4.429,15.372 2.893,19.920 2.893,24.705 L2.893,29.314 C1.210,29.914 -0.000,31.530 -0.000,33.424 C-0.000,35.828 1.947,37.784 4.340,37.784 L45.041,37.784 C47.434,37.784 49.381,35.828 49.381,33.424 C49.381,31.530 48.171,29.914 46.488,29.314 ZM5.787,24.705 C5.787,19.464 8.015,14.559 11.670,11.059 L11.670,15.985 C11.670,16.788 12.318,17.439 13.117,17.439 C13.916,17.439 14.564,16.788 14.564,15.985 L14.564,8.779 C15.475,8.194 16.442,7.685 17.457,7.260 L17.457,18.892 C17.457,19.694 18.105,20.345 18.904,20.345 C19.703,20.345 20.350,19.694 20.350,18.892 L20.350,5.225 C20.350,5.221 20.350,5.217 20.350,5.213 L20.350,4.360 C20.350,3.558 20.999,2.906 21.797,2.906 L27.584,2.906 C28.382,2.906 29.031,3.558 29.031,4.360 L29.031,5.213 C29.031,5.217 29.031,5.221 29.031,5.225 L29.031,18.892 C29.031,19.694 29.678,20.345 30.477,20.345 C31.276,20.345 31.924,19.694 31.924,18.892 L31.924,7.260 C32.939,7.685 33.906,8.195 34.817,8.779 L34.817,15.985 C34.817,16.788 35.465,17.439 36.264,17.439 C37.063,17.439 37.711,16.788 37.711,15.985 L37.711,11.059 C41.366,14.559 43.594,19.464 43.594,24.705 L43.594,29.065 L5.787,29.065 L5.787,24.705 ZM45.041,34.877 L4.340,34.877 C3.542,34.877 2.893,34.226 2.893,33.424 C2.893,32.623 3.542,31.971 4.340,31.971 L45.041,31.971 C45.839,31.971 46.488,32.623 46.488,33.424 C46.488,34.226 45.839,34.877 45.041,34.877 Z"/>
+</svg><br /> <a href="https://appletreeanswers.com/industries-served/construction/">Contractors</a></div>
+			</div>
+				<div class="box-served icon5-business lazyload" data-bg="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/10/e-commerce-bg.png" data-expand="-20" onclick="javascript:location.href='https://appletreeanswers.com/industries-served/retail/'" >
+			<div class="box-inner-served">
+			<svg version="1.1" id="Layer_6" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 62 62" style="enable-background:new 0 0 62 62;" xml:space="preserve">
+<path fill-rule="evenodd"
+ d="M61.922,10.993 L58.470,25.627 C57.699,28.923 54.963,31.372 51.637,31.743 L21.360,34.946 L20.784,36.257 C20.366,37.416 20.499,38.705 21.144,39.752 C21.797,40.811 22.932,41.468 24.165,41.499 L52.141,41.499 C52.935,41.499 53.579,42.151 53.579,42.955 C53.579,43.759 52.935,44.411 52.141,44.411 L24.165,44.411 C21.981,44.345 19.968,43.203 18.771,41.353 C17.562,39.470 17.321,37.113 18.124,35.019 L18.843,33.345 L9.709,5.460 C9.198,3.964 7.821,2.947 6.257,2.912 L1.438,2.912 C0.644,2.912 0.000,2.260 0.000,1.456 C0.000,0.652 0.644,-0.000 1.438,-0.000 L6.257,-0.000 C9.054,0.030 11.530,1.837 12.442,4.514 L13.736,8.518 L60.555,9.173 C60.997,9.217 61.406,9.424 61.706,9.756 C61.995,10.098 62.077,10.572 61.922,10.993 ZM14.671,11.430 L21.360,31.961 L51.278,28.831 C53.418,28.659 55.198,27.094 55.665,24.972 L58.757,12.086 L14.671,11.430 ZM19.777,47.978 C23.352,47.978 26.250,50.912 26.250,54.531 C26.250,58.150 23.352,61.083 19.777,61.083 C16.203,61.083 13.305,58.150 13.305,54.531 C13.305,50.912 16.203,47.978 19.777,47.978 ZM19.777,58.172 C21.763,58.172 23.373,56.542 23.373,54.531 C23.373,52.521 21.763,50.891 19.777,50.891 C17.792,50.891 16.182,52.521 16.182,54.531 C16.182,56.542 17.792,58.172 19.777,58.172 ZM47.106,47.978 C50.681,47.978 53.579,50.912 53.579,54.531 C53.579,58.150 50.681,61.083 47.106,61.083 C43.532,61.083 40.634,58.150 40.634,54.531 C40.634,50.912 43.532,47.978 47.106,47.978 ZM47.106,58.172 C49.092,58.172 50.702,56.542 50.702,54.531 C50.702,52.521 49.092,50.891 47.106,50.891 C45.121,50.891 43.511,52.521 43.511,54.531 C43.511,56.542 45.121,58.172 47.106,58.172 Z"/>
+</svg><br /> <a href="https://appletreeanswers.com/industries-served/retail/">E-commerce</a></div>
+			</div>
+				<div class="box-served icon6-business lazyload" data-bg="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/10/business-bg.png" data-expand="-20" onclick="javascript:location.href='https://appletreeanswers.com/industries-served/business-personal-services/'" >
+			<div class="box-inner-served ">
+			<svg version="1.1" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 60 55" style="enable-background:new 0 0 60 55;" xml:space="preserve">
+
+
+<path fill-rule="evenodd" 
+ d="M55.028,55.001 L5.379,55.001 C2.638,54.998 0.417,52.825 0.414,50.144 L0.414,15.172 C0.417,12.491 2.638,10.318 5.379,10.315 L19.280,10.315 L19.280,5.458 C19.284,2.776 21.505,0.603 24.245,0.600 L36.161,0.600 C38.902,0.603 41.123,2.776 41.126,5.458 L41.126,10.315 L55.028,10.315 C57.769,10.318 59.989,12.491 59.993,15.172 L59.993,50.144 C59.989,52.825 57.769,54.998 55.028,55.001 ZM39.140,5.458 C39.140,3.848 37.806,2.543 36.161,2.543 L24.245,2.543 C22.600,2.543 21.266,3.848 21.266,5.458 L21.266,10.315 L23.252,10.315 L23.252,5.458 C23.252,4.921 23.697,4.486 24.245,4.486 L36.161,4.486 C36.709,4.486 37.154,4.921 37.154,5.458 L37.154,10.315 L39.140,10.315 L39.140,5.458 ZM25.238,6.429 L25.238,10.315 L35.168,10.315 L35.168,6.429 L25.238,6.429 ZM58.007,15.172 C58.007,13.562 56.673,12.258 55.028,12.258 L5.379,12.258 C3.733,12.258 2.399,13.562 2.399,15.172 L2.399,25.224 L25.238,35.055 L25.238,32.658 C25.238,32.121 25.683,31.686 26.231,31.686 L34.175,31.686 C34.724,31.686 35.168,32.121 35.168,32.658 L35.168,35.055 L58.007,25.224 L58.007,15.172 ZM33.182,35.572 L33.182,33.629 L27.224,33.629 L27.224,35.572 L33.182,35.572 ZM27.224,37.515 L27.224,40.430 C27.224,42.039 28.558,43.344 30.203,43.344 C31.849,43.344 33.182,42.039 33.182,40.430 L33.182,37.515 L27.224,37.515 ZM58.007,27.347 L35.168,37.178 L35.168,40.430 C35.168,43.112 32.945,45.287 30.203,45.287 C27.461,45.287 25.238,43.112 25.238,40.430 L25.238,37.178 L2.399,27.347 L2.399,50.144 C2.399,51.754 3.733,53.059 5.379,53.059 L55.028,53.059 C56.673,53.059 58.007,51.754 58.007,50.144 L58.007,27.347 ZM29.210,39.458 L31.196,39.458 L31.196,41.401 L29.210,41.401 L29.210,39.458 Z"/>
+</svg><br /> <a href="https://appletreeanswers.com/industries-served/business-personal-services/">Small Business</a></div>
+			</div>
+				<div class="box-served icon7-business lazyload" data-bg="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/10/other-industries-bg.png" data-expand="-20" onclick="javascript:location.href=' https://appletreeanswers.com/industries-served/'" >
+			<div class="box-inner-served">
+			<svg version="1.1" id="Layer_8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 61 61" style="enable-background:new 0 0 61 61;" xml:space="preserve">
+
+<path fill-rule="evenodd"
+ d="M57.845,6.352 L57.845,49.753 C57.845,50.337 57.374,50.811 56.793,50.811 L44.258,50.811 L51.304,59.677 L49.661,61.000 L41.563,50.811 L31.552,50.811 L31.552,53.123 C32.450,53.443 33.157,54.154 33.475,55.059 C34.056,56.712 33.195,58.527 31.552,59.111 C29.909,59.696 28.106,58.829 27.525,57.176 C26.944,55.522 27.805,53.708 29.448,53.123 L29.448,50.811 L19.437,50.811 L11.339,61.000 L9.696,59.677 L16.742,50.811 L4.207,50.811 C3.626,50.811 3.155,50.337 3.155,49.753 L3.155,6.352 C1.413,6.352 0.000,4.930 0.000,3.176 C0.000,1.422 1.413,0.000 3.155,0.000 L57.845,0.000 C59.587,0.000 61.000,1.422 61.000,3.176 C61.000,4.930 59.587,6.352 57.845,6.352 ZM30.500,57.163 C31.081,57.163 31.552,56.689 31.552,56.104 C31.552,55.520 31.081,55.046 30.500,55.046 C29.919,55.046 29.448,55.520 29.448,56.104 C29.448,56.689 29.919,57.163 30.500,57.163 ZM5.259,48.694 L55.741,48.694 L55.741,6.352 L5.259,6.352 L5.259,48.694 ZM57.845,2.117 L3.155,2.117 C2.574,2.117 2.103,2.591 2.103,3.176 C2.103,3.760 2.574,4.234 3.155,4.234 L57.845,4.234 C58.426,4.234 58.897,3.760 58.897,3.176 C58.897,2.591 58.426,2.117 57.845,2.117 ZM49.431,37.050 L51.534,37.050 L51.534,44.460 L49.431,44.460 L49.431,37.050 ZM34.707,19.054 L51.534,19.054 L51.534,21.171 L34.707,21.171 L34.707,19.054 ZM34.707,14.820 L51.534,14.820 L51.534,16.938 L34.707,16.938 L34.707,14.820 ZM43.121,10.586 L51.534,10.586 L51.534,12.703 L43.121,12.703 L43.121,10.586 ZM38.914,10.586 L41.017,10.586 L41.017,12.703 L38.914,12.703 L38.914,10.586 ZM34.707,44.460 L32.603,44.460 L32.603,39.167 L34.707,39.167 L34.707,44.460 ZM9.466,38.109 L26.293,38.109 L26.293,40.225 L9.466,40.225 L9.466,38.109 ZM9.466,33.874 L26.293,33.874 L26.293,35.992 L9.466,35.992 L9.466,33.874 ZM17.879,29.640 L26.293,29.640 L26.293,31.757 L17.879,31.757 L17.879,29.640 ZM13.672,31.757 L13.672,29.640 L15.776,29.640 L15.776,31.757 L13.672,31.757 ZM17.879,26.464 C13.235,26.459 9.471,22.671 9.466,17.996 C9.466,13.319 13.233,9.527 17.879,9.527 C22.526,9.527 26.293,13.319 26.293,17.996 C26.293,22.673 22.526,26.464 17.879,26.464 ZM14.243,12.816 C11.402,14.832 10.722,18.785 12.726,21.645 L16.828,17.572 L16.865,11.740 C15.921,11.893 15.024,12.261 14.243,12.816 ZM18.963,11.746 L18.931,16.281 L22.965,14.253 C22.004,12.927 20.569,12.029 18.963,11.746 ZM23.913,16.142 L18.519,18.857 L14.198,23.145 C15.268,23.926 16.557,24.347 17.879,24.347 C18.503,24.347 19.123,24.254 19.719,24.071 C23.052,23.047 24.930,19.497 23.913,16.142 ZM22.086,44.460 L9.466,44.460 L9.466,42.343 L22.086,42.343 L22.086,44.460 ZM38.914,44.460 L36.810,44.460 L36.810,35.992 L38.914,35.992 L38.914,44.460 ZM43.121,44.460 L41.017,44.460 L41.017,31.757 L43.121,31.757 L43.121,44.460 ZM34.707,23.289 L47.328,23.289 L47.328,25.406 L34.707,25.406 L34.707,23.289 ZM47.328,44.460 L45.224,44.460 L45.224,34.933 L47.328,34.933 L47.328,44.460 Z"/>
+</svg><br /> <a href=" https://appletreeanswers.com/industries-served/">Other <br> Industries</a></div>
+			</div>
+ 	</div>	
+</section>
+<section class="partner-section">
+	 			<h4>OUR CLIENTS</h4>
+			          
+	<div class="container">
+		<div class="owl-carousel client-carousel owl-theme wow fadeInUp">
+									<div class="item">
+							<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/12/Airgas-1.png" alt="Airgas - an Air Liquide company" title=""  width="123" height="56">
+						</div>
+												<div class="item">
+							<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/12/Cummins-1.png" alt="Cummins" title=""  width="56" height="56">
+						</div>
+												<div class="item">
+							<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/12/Delta-1.png" alt="Delta" title=""  width="154" height="56">
+						</div>
+												<div class="item">
+							<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/12/H-and-E-Equipment-1.png" alt="H&E-Equipment Services" title=""  width="56" height="56">
+						</div>
+												<div class="item">
+							<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/12/HomeVestors-1.png" alt="HomeVestors - America's #1 Home Buyer" title=""  width="148" height="56">
+						</div>
+												<div class="item">
+							<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/12/Ingersoll-Rand-1.png" alt="Ingersoll Rand" title=""  width="154" height="56">
+						</div>
+												<div class="item">
+							<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/12/Message-Media-1.png" alt="Message Media" title=""  width="154" height="56">
+						</div>
+												<div class="item">
+							<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/12/Oberto-1.png" alt="Oberto" title=""  width="76" height="56">
+						</div>
+												<div class="item">
+							<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/12/Skytech-Enterprises-Ltd-1.png" alt="Skytech Enterprises Ltd" title=""  width="137" height="56">
+						</div>
+												<div class="item">
+							<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/12/SUEZ-1.png" alt="SUEZ" title=""  width="154" height="56">
+						</div>
+												<div class="item">
+							<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/12/Topco-1.png" alt="Topco" title=""  width="146" height="56">
+						</div>
+												<div class="item">
+							<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/12/Total-Access-Elevator-1.png" alt="Total Access Elevator" title=""  width="154" height="56">
+						</div>
+								</div>
+	</div>
+</section>
+ 
+	<section class="contact-section">
+		<div class="container-fluid">
+			<div class="row middle-lg">
+				<div class="col-lg-6 col-md-6 left-contact lazyload" data-bg="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/11/left-contact.png">
+					<div class="left-inner-contact wow fadeInLeft">
+					<h4>Free No-Obligation<br> Consultation!</h4><h4><span>Let us help you make the<br> right decision for your<br> business.</span></h4>                            
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6 right-contact lazyload" data-bg="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/10/form-home.jpg">
+					<div class="right-inner-contact wow fadeInRight">
+					<script type="rocketlazyloadscript">var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,initializeOnLoaded:function(o){gform.domLoaded&&gform.scriptsLoaded?o():!gform.domLoaded&&gform.scriptsLoaded?window.addEventListener("DOMContentLoaded",o):document.addEventListener("gform_main_scripts_loaded",o)},hooks:{action:{},filter:{}},addAction:function(o,n,r,t){gform.addHook("action",o,n,r,t)},addFilter:function(o,n,r,t){gform.addHook("filter",o,n,r,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,n){gform.removeHook("action",o,n)},removeFilter:function(o,n,r){gform.removeHook("filter",o,n,r)},addHook:function(o,n,r,t,i){null==gform.hooks[o][n]&&(gform.hooks[o][n]=[]);var e=gform.hooks[o][n];null==i&&(i=n+"_"+e.length),gform.hooks[o][n].push({tag:i,callable:r,priority:t=null==t?10:t})},doHook:function(n,o,r){var t;if(r=Array.prototype.slice.call(r,1),null!=gform.hooks[n][o]&&((o=gform.hooks[n][o]).sort(function(o,n){return o.priority-n.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==n?t.apply(null,r):r[0]=t.apply(null,r)})),"filter"==n)return r[0]},removeHook:function(o,n,t,i){var r;null!=gform.hooks[o][n]&&(r=(r=gform.hooks[o][n]).filter(function(o,n,r){return!!(null!=i&&i!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][n]=r)}});</script>
+                <div class='gf_browser_chrome gform_wrapper gform_legacy_markup_wrapper' id='gform_wrapper_1' ><div id='gf_1' class='gform_anchor' tabindex='-1'></div><form method='post' enctype='multipart/form-data' target='gform_ajax_frame_1' id='gform_1'  action='/#gf_1' >
+                        <div class='gform_body gform-body'><ul id='gform_fields_1' class='gform_fields left_label form_sublabel_below description_below'><li id="field_1_1"  class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_1"><label class='gfield_label' for='input_1_1' >First Name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_text'><input name='input_1' id='input_1_1' type='text' value='' class='large' maxlength='25'   placeholder='First Name' aria-required="true" aria-invalid="false"   /> </div></li><li id="field_1_2"  class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_2"><label class='gfield_label' for='input_1_2' >Last Name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_text'><input name='input_2' id='input_1_2' type='text' value='' class='large' maxlength='25'   placeholder='Last Name' aria-required="true" aria-invalid="false"   /> </div></li><li id="field_1_3"  class="gfield field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_3"><label class='gfield_label' for='input_1_3' >Company</label><div class='ginput_container ginput_container_text'><input name='input_3' id='input_1_3' type='text' value='' class='large'    placeholder='Company'  aria-invalid="false"   /> </div></li><li id="field_1_5"  class="gfield cust-phone-num gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_5"><label class='gfield_label' for='input_1_5' >Phone<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_phone'><input name='input_5' id='input_1_5' type='text' value='' class='large'  placeholder='(000) 000-0000' aria-required="true" aria-invalid="false"   /></div></li><li id="field_1_4"  class="gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_4"><label class='gfield_label' for='input_1_4' >Email<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span></label><div class='ginput_container ginput_container_email'>
+                            <input name='input_4' id='input_1_4' type='text' value='' class='large'   placeholder='Email Address' aria-required="true" aria-invalid="false"  />
+                        </div></li><li id="field_1_6"  class="gfield field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_6"><label class='gfield_label' for='input_1_6' >Your Message</label><div class='ginput_container ginput_container_textarea'><textarea name='input_6' id='input_1_6' class='textarea medium'    placeholder='Your Message'  aria-invalid="false"   rows='10' cols='50'></textarea></div></li><li id="field_1_8"  class="gfield field_sublabel_below field_description_below hidden_label gfield_visibility_visible"  data-js-reload="field_1_8"><label class='gfield_label screen-reader-text' for='input_1_8' ></label><div id='input_1_8' class='ginput_container ginput_recaptcha' data-sitekey='6Lch-FQcAAAAAAHY8vYdtoWWnJgr78u_Gq77E441'  data-theme='light' data-tabindex='-1' data-size='invisible' data-badge='bottomright'></div></li><li id="field_1_11"  class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_11"><div class='ginput_container ginput_container_text'><input name='input_11' id='input_1_11' type='hidden' class='gform_hidden'  aria-invalid="false" value='' /></div></li><li id="field_1_30"  class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_30"><div class='ginput_container ginput_container_text'><input name='input_30' id='input_1_30' type='hidden' class='gform_hidden'  aria-invalid="false" value='' /></div></li><li id="field_1_9"  class="gfield gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_9"><div class='ginput_container ginput_container_text'><input name='input_9' id='input_1_9' type='hidden' class='gform_hidden'  aria-invalid="false" value='Direct Traffic' /></div></li><li id="field_1_10"  class="gfield gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_10"><div class='ginput_container ginput_container_text'><input name='input_10' id='input_1_10' type='hidden' class='gform_hidden'  aria-invalid="false" value='APPLETREE' /></div></li><li id="field_1_12"  class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_12"><div class='ginput_container ginput_container_text'><input name='input_12' id='input_1_12' type='hidden' class='gform_hidden'  aria-invalid="false" value='' /></div></li><li id="field_1_13"  class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_13"><div class='ginput_container ginput_container_text'><input name='input_13' id='input_1_13' type='hidden' class='gform_hidden'  aria-invalid="false" value='' /></div></li><li id="field_1_14"  class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_14"><div class='ginput_container ginput_container_text'><input name='input_14' id='input_1_14' type='hidden' class='gform_hidden'  aria-invalid="false" value='FORM' /></div></li><li id="field_1_15"  class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_15"><div class='ginput_container ginput_container_text'><input name='input_15' id='input_1_15' type='hidden' class='gform_hidden'  aria-invalid="false" value='United States' /></div></li><li id="field_1_16"  class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_16"><div class='ginput_container ginput_container_text'><input name='input_16' id='input_1_16' type='hidden' class='gform_hidden'  aria-invalid="false" value='' /></div></li><li id="field_1_17"  class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_17"><div class='ginput_container ginput_container_text'><input name='input_17' id='input_1_17' type='hidden' class='gform_hidden'  aria-invalid="false" value='' /></div></li><li id="field_1_18"  class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_18"><div class='ginput_container ginput_container_text'><input name='input_18' id='input_1_18' type='hidden' class='gform_hidden'  aria-invalid="false" value='' /></div></li><li id="field_1_19"  class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_19"><div class='ginput_container ginput_container_text'><input name='input_19' id='input_1_19' type='hidden' class='gform_hidden'  aria-invalid="false" value='' /></div></li><li id="field_1_20"  class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_20"><div class='ginput_container ginput_container_text'><input name='input_20' id='input_1_20' type='hidden' class='gform_hidden'  aria-invalid="false" value='' /></div></li><li id="field_1_21"  class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_21"><div class='ginput_container ginput_container_text'><input name='input_21' id='input_1_21' type='hidden' class='gform_hidden'  aria-invalid="false" value='' /></div></li><li id="field_1_22"  class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_22"><div class='ginput_container ginput_container_text'><input name='input_22' id='input_1_22' type='hidden' class='gform_hidden'  aria-invalid="false" value='' /></div></li><li id="field_1_23"  class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_23"><div class='ginput_container ginput_container_text'><input name='input_23' id='input_1_23' type='hidden' class='gform_hidden'  aria-invalid="false" value='' /></div></li><li id="field_1_24"  class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_24"><div class='ginput_container ginput_container_text'><input name='input_24' id='input_1_24' type='hidden' class='gform_hidden'  aria-invalid="false" value='' /></div></li><li id="field_1_25"  class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_25"><div class='ginput_container ginput_container_text'><input name='input_25' id='input_1_25' type='hidden' class='gform_hidden'  aria-invalid="false" value='' /></div></li><li id="field_1_26"  class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_26"><div class='ginput_container ginput_container_text'><input name='input_26' id='input_1_26' type='hidden' class='gform_hidden'  aria-invalid="false" value='' /></div></li><li id="field_1_31"  class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_31"><div class='ginput_container ginput_container_text'><input name='input_31' id='input_1_31' type='hidden' class='gform_hidden'  aria-invalid="false" value='' /></div></li><li id="field_1_28"  class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_28"><div class='ginput_container ginput_container_text'><input name='input_28' id='input_1_28' type='hidden' class='gform_hidden'  aria-invalid="false" value='' /></div></li><li id="field_1_29"  class="gfield gfield--width-full gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_29"><div class='ginput_container ginput_container_text'><input name='input_29' id='input_1_29' type='hidden' class='gform_hidden'  aria-invalid="false" value='' /></div></li><li id="field_1_7"  class="gfield gfield_html gfield_html_formatted gfield_no_follows_desc field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_7"><div class="recaptcha">* This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a> and <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a> apply.
+<br><p class="gur-text">We guarantee 100% privacy. Your information will not be shared.</p></div></li><li id="field_1_27"  class="gfield gform_hidden field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_27"><div class='ginput_container ginput_container_text'><input name='input_27' id='input_1_27' type='hidden' class='gform_hidden'  aria-invalid="false" value='' /></div></li><li id="field_1_32"  class="gfield gform_validation_container field_sublabel_below field_description_below gfield_visibility_visible"  data-js-reload="field_1_32"><label class='gfield_label' for='input_1_32' >Comments</label><div class='ginput_container'><input name='input_32' id='input_1_32' type='text' value='' /></div><div class='gfield_description' id='gfield_description_1_32'>This field is for validation purposes and should be left unchanged.</div></li></ul></div>
+        <div class='gform_footer left_label'> <button  type='submit' id='gform_submit_button_1' class='gform_button button'  onclick='if(window["gf_submitting_1"]){return false;}  window["gf_submitting_1"]=true;  ' onkeypress='if( event.keyCode == 13 ){ if(window["gf_submitting_1"]){return false;} window["gf_submitting_1"]=true;  jQuery("#gform_1").trigger("submit",[true]); }'>Send Message</button> <input type='hidden' name='gform_ajax' value='form_id=1&amp;title=&amp;description=&amp;tabindex=0' />
+            <input type='hidden' class='gform_hidden' name='is_submit_1' value='1' />
+            <input type='hidden' class='gform_hidden' name='gform_submit' value='1' />
+            
+            <input type='hidden' class='gform_hidden' name='gform_unique_id' value='' />
+            <input type='hidden' class='gform_hidden' name='state_1' value='WyJbXSIsIjU0MGMyMDQ5MDYyZmJiY2QxZDBkMGQ4MzYwZTY1MGNmIl0=' />
+            <input type='hidden' class='gform_hidden' name='gform_target_page_number_1' id='gform_target_page_number_1' value='0' />
+            <input type='hidden' class='gform_hidden' name='gform_source_page_number_1' id='gform_source_page_number_1' value='1' />
+            <input type='hidden' name='gform_field_values' value='' />
+            
+        </div>
+                        </form>
+                        </div>
+                <iframe style='display:none;width:0px;height:0px;' src='about:blank' name='gform_ajax_frame_1' id='gform_ajax_frame_1' title=''></iframe>
+                <script type="rocketlazyloadscript">
+gform.initializeOnLoaded( function() {gformInitSpinner( 1, 'https://appletrapro.wpenginepowered.com/wp-content/plugins/gravityforms/images/spinner.svg' );jQuery('#gform_ajax_frame_1').on('load',function(){var contents = jQuery(this).contents().find('*').html();var is_postback = contents.indexOf('GF_AJAX_POSTBACK') >= 0;if(!is_postback){return;}var form_content = jQuery(this).contents().find('#gform_wrapper_1');var is_confirmation = jQuery(this).contents().find('#gform_confirmation_wrapper_1').length > 0;var is_redirect = contents.indexOf('gformRedirect(){') >= 0;var is_form = form_content.length > 0 && ! is_redirect && ! is_confirmation;var mt = parseInt(jQuery('html').css('margin-top'), 10) + parseInt(jQuery('body').css('margin-top'), 10) + 100;if(is_form){jQuery('#gform_wrapper_1').html(form_content.html());if(form_content.hasClass('gform_validation_error')){jQuery('#gform_wrapper_1').addClass('gform_validation_error');} else {jQuery('#gform_wrapper_1').removeClass('gform_validation_error');}setTimeout( function() { /* delay the scroll by 50 milliseconds to fix a bug in chrome */ jQuery(document).scrollTop(jQuery('#gform_wrapper_1').offset().top - mt); }, 50 );if(window['gformInitDatepicker']) {gformInitDatepicker();}if(window['gformInitPriceFields']) {gformInitPriceFields();}var current_page = jQuery('#gform_source_page_number_1').val();gformInitSpinner( 1, 'https://appletrapro.wpenginepowered.com/wp-content/plugins/gravityforms/images/spinner.svg' );jQuery(document).trigger('gform_page_loaded', [1, current_page]);window['gf_submitting_1'] = false;}else if(!is_redirect){var confirmation_content = jQuery(this).contents().find('.GF_AJAX_POSTBACK').html();if(!confirmation_content){confirmation_content = contents;}setTimeout(function(){jQuery('#gform_wrapper_1').replaceWith(confirmation_content);jQuery(document).scrollTop(jQuery('#gf_1').offset().top - mt);jQuery(document).trigger('gform_confirmation_loaded', [1]);window['gf_submitting_1'] = false;wp.a11y.speak(jQuery('#gform_confirmation_message_1').text());}, 50);}else{jQuery('#gform_1').append(contents);if(window['gformRedirect']) {gformRedirect();}}jQuery(document).trigger('gform_post_render', [1, current_page]);} );} );
+</script>
+									
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	</main>
+<footer class="footer">
+		<div class="footer-top wow pulse">
+			  
+					<a href="https://appletreeanswers.com">
+						<img class="footer-logo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/uploads/2020/10/logo.png" alt="Appletree Answers" title="">
+					</a>
+								<ul class="social-icon">
+					<li><a href="https://www.linkedin.com/company/appletree-answers/" class="linkedin" target="_blank" rel="noopener" aria-label="linkedin"></a></li>                                                       
+			</ul>
+            <ul id="menu-footer-menu" class="footer-menu"><li id="menu-item-3877" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3877"><a href="https://appletreeanswers.com/services-solutions/">Services &#038; Solutions</a></li>
+<li id="menu-item-3878" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3878"><a href="https://appletreeanswers.com/industries-served/">Industries Served</a></li>
+<li id="menu-item-3880" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3880"><a href="https://appletreeanswers.com/about-us/">About Us</a></li>
+<li id="menu-item-3881" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3881"><a href="https://appletreeanswers.com/contact-us/">Contact Us</a></li>
+</ul>			<div class="btn-footer">
+					<a class="btn-apple btn-gray" href="https://secure2.appletreeanswers.com/" target="_blank" rel="noopener noreferrer">Client Portal</a>
+	
+						<a class="btn-apple btn-red" href="https://appletreeanswers.com/request-a-quote/" target="_self" >Request A Quote</a>
+	                        
+			</div>                            
+			<div class="number-text">
+				                            
+					<a href="tel:1-800-827-7775">Sales <span>1-800-827-7775</span></a>
+										
+				                            
+				   <a href="tel:1-800-285-1190">Client Support <span>1-800-285-1190</span></a>
+					                                
+			</div>
+			
+			<div class="footer-bg">
+				
+				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 viewBox="0 0 1601 1000" style="enable-background:new 0 0 1601 1000;" xml:space="preserve">
+
+				<path fill-rule="evenodd" class="bg-footer" fill="none" stroke="#f0f2f5" stroke-width="1"
+				 d="M0,461.2c131.7,9,299.8,72.6,521.7,198.9c514.3,292.8,983.8,93.9,1078.7-286.6l-0.4,626.5H0
+					C0,1000.1,0.7,588.9,0,461.2z"/>
+
+				<path fill-rule="evenodd"  class="pan-1" fill="none" stroke="#f0f2f5" stroke-width="1"
+				 d="M243.7,492.9c6.4-4.3,13-8.3,19.8-11.9c6.6-3.6,13.4-6.8,20.3-9.7c6.9-2.9,13.9-5.5,20.9-7.9c0.1,0,0.1,0,0.2,0
+					c-0.2,0-0.3,0.1-0.5,0.2c-6.6,3.4-13.2,6.9-19.6,10.8c-6.4,3.8-12.7,8-18.8,12.4c-7.8,5.7-15.1,11.9-22.1,18.6
+					c-1.1,1.1-2.2,2.1-3.3,3.2c-2.8,2.8-5.5,5.6-8.2,8.6c-0.1,0.1-0.2,0.3-0.3,0.4c-2,2.6-1.5,6.4,1.2,8.3c2.6,2,6.4,1.5,8.4-1.2l0,0
+					c2.9-3.8,6-7.6,9.1-11.3c92.1,43.2,134.7-34.9,145.1-102C331.5,398.8,245.1,402.2,243.7,492.9z"/>
+
+				<path fill-rule="evenodd"  class="pan-2" fill="none" stroke="#f0f2f5" stroke-width="1"
+				 d="M358.7,597.7c-3.8,6.7-7.3,13.6-10.4,20.6c-3,6.9-5.7,13.9-8.1,21c-2.4,7.1-4.4,14.3-6.3,21.5
+					c0,0.1,0,0.1,0,0.2c0-0.2,0.1-0.3,0.1-0.5c2.9-6.9,5.9-13.7,9.3-20.4c3.4-6.7,7-13.3,11-19.7c5.1-8.2,10.7-16,16.9-23.5
+					c1-1.2,2-2.4,3-3.6c2.6-3,5.2-5.9,7.9-8.8c0.1-0.1,0.3-0.3,0.4-0.4c2.5-2.2,6.2-1.9,8.4,0.5c2.2,2.5,1.9,6.2-0.5,8.4l0,0
+					c-3.6,3.2-7.1,6.5-10.5,10c50,88.6-24.6,137-90.7,152.4C271.5,692.4,268.4,605.9,358.7,597.7z"/>
+
+				<path fill-rule="evenodd"  class="pan-3" fill="none" stroke="#f0f2f5" stroke-width="1"
+				 d="M1417.1,679.2c3.4,5.1,6.6,10.3,9.5,15.7c2.8,5.3,5.4,10.7,7.7,16.2c2.3,5.5,4.4,11,6.3,16.6c0,0.1,0,0.1,0,0.2
+					c0-0.1-0.1-0.2-0.1-0.4c-2.7-5.3-5.5-10.5-8.6-15.6c-3.1-5.1-6.3-10.1-9.9-14.9c-4.5-6.2-9.5-12-14.7-17.6c-0.8-0.9-1.7-1.8-2.6-2.6
+					c-2.2-2.2-4.5-4.4-6.8-6.5c-0.1-0.1-0.2-0.2-0.3-0.3c-2.1-1.6-5-1.2-6.6,0.9c-1.6,2.1-1.2,5.1,0.9,6.6l0,0c3.1,2.3,6,4.7,8.9,7.3
+					c-34.2,73.1,27.7,107,80.9,115.2C1491.8,748.9,1489.1,680.2,1417.1,679.2z"/>
+
+				<path fill-rule="evenodd"  class="pan-4" fill="none" stroke="#f0f2f5" stroke-width="1"
+				 d="M1342.6,689.1c-4.2-4.5-8.5-8.8-13.1-12.8c-4.5-4-9.2-7.7-14-11.2c-4.8-3.5-9.7-6.8-14.7-9.9
+					c-0.1,0-0.1-0.1-0.2-0.1c0.1,0.1,0.2,0.1,0.3,0.2c4.5,3.8,8.9,7.8,13.2,11.9c4.3,4.1,8.4,8.5,12.2,13c4.9,5.8,9.5,12,13.7,18.4
+					c0.7,1,1.3,2.1,2,3.1c1.7,2.7,3.2,5.4,4.8,8.1c0.1,0.1,0.1,0.3,0.2,0.4c1.1,2.4,0,5.2-2.4,6.2c-2.4,1.1-5.2,0-6.3-2.4l0,0
+					c-1.6-3.5-3.2-7-5-10.4c-79.1,16.5-97.7-51.6-93.5-105.2C1292,600.4,1358.1,618.9,1342.6,689.1z"/>
+
+				</svg>
+			</div>
+		</div>
+		<div class="footer-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-12">
+													   <p>© 1995-2023 Appletree Answers. All rights reserved.</p>
+													</div>
+					<div class="col-lg-4 col-md-12 text-center">
+						<ul>
+														<li>
+									<a  href="https://appletreeanswers.com/privacy-policy/" target="_self" >Privacy Policy</a>
+									
+							</li>
+							<li> |</li>							<li>
+									<a  href="https://appletreeanswers.com/terms/" target="_self" >Terms &amp; Conditions</a>
+									
+							</li>
+							
+							<li> |</li>							
+							<li>
+									<a  href="https://appletreeanswers.com/dpa/" target="_self" >Dpa</a>
+									
+							</li>	
+						</ul>
+					</div>
+					<div class="col-lg-4 col-md-12">
+						<p class="text-right">
+							<span>Web Design By: </span>
+							<a href="http://gotechark.com/" target="_blank" rel="noopener noreferrer">
+								<img class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/image/logo_teckark.svg" alt="logo" />
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<a id="backtotop" href="javascript:void(0);" aria-label="Back To Top"></a>
+</div>
+<link rel='preload'  href='https://appletrapro.wpenginepowered.com/wp-content/plugins/gravityforms/legacy/css/formreset.min.css?ver=2.6.9' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  media='all' />
+<link rel='preload'  href='https://appletrapro.wpenginepowered.com/wp-content/plugins/gravityforms/legacy/css/formsmain.min.css?ver=2.6.9' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  media='all' />
+<link rel='preload'  href='https://appletrapro.wpenginepowered.com/wp-content/plugins/gravityforms/legacy/css/readyclass.min.css?ver=2.6.9' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  media='all' />
+<link rel='preload'  href='https://appletrapro.wpenginepowered.com/wp-content/plugins/gravityforms/legacy/css/browsers.min.css?ver=2.6.9' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" onerror="this.removeAttribute('data-rocket-async')"  media='all' />
+<script type="rocketlazyloadscript" id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script id='rocket-preload-links-js-extra'>
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?(.*)wp\\-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/appletreeanswers.com","onHoverDelay":"100","rateThrottle":"3"};
+</script>
+<script type="rocketlazyloadscript" id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-rocket-src='https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/js/bootstrap.min.js?ver=1687699818' id='bootstrap-min-js-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/js/modernizr.min.js?ver=1687699818' id='modernizr-min-js-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src='https://appletrapro.wpenginepowered.com/wp-content/cache/min/1/wp-content/themes/appletree-latest/assets/js/gsap.js?ver=1686864412' id='gsap-js-js'></script>
+<script src='https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/js/lazysizes.min.js?ver=1687699818' id='lazysizes-js-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/js/bootstrap.bundle.min.js?ver=1687699818' id='boostrap-bundle-min-js-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/js/owl.carousel.min.js?ver=1687699818' id='owl-carousel-min-js-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/js/wow.min.js?ver=1687699818' id='wow-min-js-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src='https://appletrapro.wpenginepowered.com/wp-content/cache/min/1/wp-content/themes/appletree-latest/assets/js/script.js?ver=1686864412' id='scripts-js-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://appletrapro.wpenginepowered.com/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2' id='wp-polyfill-inert-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://appletrapro.wpenginepowered.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11' id='regenerator-runtime-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://appletrapro.wpenginepowered.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://appletrapro.wpenginepowered.com/wp-includes/js/dist/dom-ready.min.js?ver=392bdd43726760d1f3ca' id='wp-dom-ready-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://appletrapro.wpenginepowered.com/wp-includes/js/dist/hooks.min.js?ver=4169d3cf8e8d95a3d6d5' id='wp-hooks-js'></script>
+<script type="rocketlazyloadscript" data-rocket-src='https://appletrapro.wpenginepowered.com/wp-includes/js/dist/i18n.min.js?ver=9e794f35a71bb98672ae' id='wp-i18n-js'></script>
+<script type="rocketlazyloadscript" id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type="rocketlazyloadscript" data-rocket-src='https://appletrapro.wpenginepowered.com/wp-includes/js/dist/a11y.min.js?ver=ecce20f002eda4c19664' id='wp-a11y-js'></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src='https://appletrapro.wpenginepowered.com/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.6.9' id='gform_json-js'></script>
+<script id='gform_gravityforms-js-extra'>
+var gform_i18n = {"datepicker":{"days":{"monday":"Mon","tuesday":"Tue","wednesday":"Wed","thursday":"Thu","friday":"Fri","saturday":"Sat","sunday":"Sun"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_legacy_multi = [];
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled"},"vars":{"images_url":"https:\/\/appletreeanswers.com\/wp-content\/plugins\/gravityforms\/images"}};
+var gf_global = {"gf_currency_config":{"name":"U.S. Dollar","symbol_left":"$","symbol_right":"","symbol_padding":"","thousand_separator":",","decimal_separator":".","decimals":2,"code":"USD"},"base_url":"https:\/\/appletreeanswers.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/appletreeanswers.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+</script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src='https://appletrapro.wpenginepowered.com/wp-content/plugins/gravityforms/js/gravityforms.min.js?ver=2.6.9' id='gform_gravityforms-js'></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src='https://appletrapro.wpenginepowered.com/wp-content/plugins/gravityforms/js/jquery.textareaCounter.plugin.min.js?ver=2.6.9' id='gform_textarea_counter-js'></script>
+<script type="rocketlazyloadscript" defer='defer' data-rocket-src='https://appletrapro.wpenginepowered.com/wp-content/plugins/gravityforms/js/placeholders.jquery.min.js?ver=2.6.9' id='gform_placeholder-js'></script>
+<script type="rocketlazyloadscript">
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 1) {if(!jQuery('#input_1_1+.ginput_counter').length){jQuery('#input_1_1').textareaCount(    {'maxCharacterSize': 25,    'originalStyle': 'ginput_counter',	 'truncate': true,	 'errorStyle' : '',    'displayFormat' : '#input of #max max characters'    });jQuery('#input_1_1').next('.ginput_counter').attr('aria-live','polite');}if(!jQuery('#input_1_2+.ginput_counter').length){jQuery('#input_1_2').textareaCount(    {'maxCharacterSize': 25,    'originalStyle': 'ginput_counter',	 'truncate': true,	 'errorStyle' : '',    'displayFormat' : '#input of #max max characters'    });jQuery('#input_1_2').next('.ginput_counter').attr('aria-live','polite');}if(typeof Placeholders != 'undefined'){
+                        Placeholders.enable();
+                    }} } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script type="rocketlazyloadscript">
+gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_render', [1, 1]) } );
+</script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://appletrapro.wpenginepowered.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><script>function lazyLoadThumb(e){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?'':'&'+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var e,t,p,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),a[t].appendChild(e),p=e.querySelector('.play'),p.onclick=lazyLoadYoutubeIframe});</script><script type="application/json" id="afterload-scripts">
+[
+	"https://www.google.com/recaptcha/api.js?hl=en&render=explicit&ver=5.4.1",
+	"https://cdn.userway.org/widget.js"
+]
+</script>
+<!--<script type="application/json" id="afterload-styles">
+[
+	"https://appletrapro.wpenginepowered.com/wp-content/plugins/gravityforms/css/formreset.min.css?ver=2.6.9",
+	"https://appletrapro.wpenginepowered.com/wp-content/plugins/gravityforms/css/readyclass.min.css?ver=2.6.9",
+	"https://appletrapro.wpenginepowered.com/wp-content/plugins/gravityforms/css/browsers.min.css?ver=2.6.9",
+	"https://appletrapro.wpenginepowered.com/wp-content/plugins/gravityforms/css/formsmain.min.css?ver=2.6.9",
+	"https://appletrapro.wpenginepowered.com/wp-content/plugins/gravityforms/css/datepicker.min.css?ver=2.6.9"
+]
+</script>-->
+<script type="application/json" id="afterload-styles">
+[]
+</script>
+<script type="rocketlazyloadscript">
+document.addEventListener('DOMContentLoaded',function(){
+	setTimeout(function(){
+		function _loadScript(src, callback) {
+			var r = false,
+			s = document.createElement('script');
+			s.type = 'text/javascript';
+			s.src = src;
+			document.head.appendChild(s);
+		}
+		
+		function _loadStyle(src, callback) {
+			var r = false,
+			s = document.createElement('link');
+			s.type = 'text/css';
+			s.rel = 'stylesheet';
+			s.href = src;
+			document.head.appendChild(s);
+		}
+
+		var scripts = document.getElementById('afterload-scripts').innerHTML;
+		scripts = JSON.parse(scripts);
+		
+		for(var i=0;i<scripts.length;i++){
+			_loadScript(scripts[i]);
+		}
+		
+		var styles = document.getElementById('afterload-styles').innerHTML;
+		styles = JSON.parse(styles);
+		
+		for(var i=0;i<styles.length;i++){
+			_loadStyle(styles[i]);
+		}
+		  
+	},5000);	
+});
+
+jQuery( document ).ready(function() {
+	setTimeout(function(){
+		console.log("Yes, It's My");
+		jQuery(".addlazyload").addClass('lazyload');
+	},2000);
+});
+</script>
+<script type="rocketlazyloadscript">
+   var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode:"68add0cbcfd8ab677f1c1623606f3495f135c4359a0d3ca95c6f072ee508770a2843e5c156e92b1319fc64f640fc9ca8", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);d.write("<div id='zsiqwidget'></div>");
+  
+  var _userway_config = {
+    /* uncomment the following line to override default position*/
+    /* position: '3', */
+    /* uncomment the following line to override default size (values: small, large)*/
+    /* size: 'small', */
+    /* uncomment the following line to override default language (e.g., fr, de, es, he, nl, etc.)*/
+    /* language: 'null', */
+    /* uncomment the following line to override color set via widget (e.g., #053f67)*/
+    /* color: '#1e4870', */
+    /* uncomment the following line to override type set via widget (1=person, 2=chair, 3=eye, 4=text)*/
+    /* type: '1', */
+    /* uncomment the following lines to override the accessibility statement*/
+    /* statement_text: "Our Accessibility Statement", */
+    statement_url: "https://appletreeanswers.com/privacy-policy/", 
+    /* uncomment the following line to override support on mobile devices*/
+    /* mobile: true, */
+    account: 'XNu4PwaTKC'
+  };
+</script>
+<script type="rocketlazyloadscript" data-minify="1" defer data-rocket-src="https://appletrapro.wpenginepowered.com/wp-content/cache/min/1/widget.js?ver=1686864412"></script>
+
+<style>
+	.cc-btn .cc-allow {
+		background: linear-gradient(180deg,rgba(198,61,87,1) 25%,rgba(135,29,42,1) 100%);
+	}
+	.cc-btn .cc-allow:hover {
+		background: linear-gradient(180deg,rgba(135,29,42,1) 25%,rgba(198,61,87,1) 100%);
+	}
+	
+</style>
+
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-src="https://appletrapro.wpenginepowered.com/wp-content/cache/min/1/npm/cookieconsent@3/build/cookieconsent.min.js?ver=1686864412" data-cfasync="false"></script>
+<script type="rocketlazyloadscript">
+	window.cookieconsent.initialise({
+		"palette": {
+			"popup": {
+				"background": "#e2e2e2"
+			},
+			"button": {
+				"background": "#871d2a",
+				"text": "#ffffff"
+			}
+		},
+		"content": {
+			"href": "https://appletreeanswers.com/privacy-policy/",
+			"message": "We use cookies on this site to enhance your user experience. By clicking any link on this page you are giving your consent for us to set cookies."
+		},
+		  //"position": "bottom-right",
+		  "type": "opt-in",
+		  onStatusChange: function(status) {
+
+		  	if(this.hasConsented() == true){
+		  		window.dataLayer = window.dataLayer || [];
+		  		dataLayer.push({'cookie-state': 'Accepted'});
+
+		  		console.log('accepted');
+		  	}else{
+		  		window.dataLayer = window.dataLayer || [];
+		  		dataLayer.push({'cookie-state': 'Deny'});
+
+		  		console.log('deny');
+
+		  	}
+
+		  	console.log(this.hasConsented() ?
+		  		'enable cookies' : 'disable cookies');
+
+		  	if(!this.hasConsented())
+		  	{
+		  		location.reload();
+		  	}
+		  },
+		});
+
+
+	document.addEventListener('DOMContentLoaded',function(){
+		var _gid = getCookie('_gid');	
+		console.log("_gID=> "+_gid);
+
+		var _gcl_au = getCookie('_gcl_au');	
+		console.log("_gcl_au=> "+_gcl_au);
+		
+		var session_id = _gid.substring(_gid.indexOf(".") + 3);	
+		jQuery('#input_5_12, #input_1_12, #input_4_12').val(session_id);
+
+		var gclid_id = _gcl_au.substring(_gcl_au.indexOf(".") + 3);	
+		jQuery('#input_5_13, #input_1_13, #input_4_13').val(gclid_id);
+	});
+
+	function getCookie(cname) {
+		var name = cname + "=";
+		var decodedCookie = decodeURIComponent(document.cookie);
+		var ca = decodedCookie.split(';');
+		for(var i = 0; i <ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+	}
+
+
+	var city_name = "Delhi";
+	var sname = "National Capital Territory of Delhi";
+	var country_name = "India";
+	var IP_add = "146.196.34.154";
+	
+	console.log(city_name+" ==> "+sname+" ==> "+country_name);
+
+	jQuery("#input_5_11, #input_1_11, #input_4_11").val(city_name);
+	jQuery("#input_5_30, #input_1_30, #input_4_29").val(sname);
+	jQuery("#input_5_15, #input_1_15, #input_4_15").val(country_name);
+
+	jQuery("#input_5_31, #input_1_31, #input_4_30").val(IP_add);
+
+
+	jQuery('.cust-phone-num').find('input').attr('maxlength', '11');
+	jQuery('.cust-phone-num').find('input').on('keyup keypress', function(event) {
+		var keycode = event.which;
+		if (!(event.shiftKey == false && (keycode == 43 || keycode == 45 || keycode == 46 || keycode == 8 || keycode == 37 || keycode == 39 || (keycode >= 48 && keycode <= 57)))) {
+			event.preventDefault();
+		}
+	});
+
+	</script>
+<script>"use strict";function wprRemoveCPCSS(){var preload_stylesheets=document.querySelectorAll('link[data-rocket-async="style"][rel="preload"]');if(preload_stylesheets&&0<preload_stylesheets.length)for(var stylesheet_index=0;stylesheet_index<preload_stylesheets.length;stylesheet_index++){var media=preload_stylesheets[stylesheet_index].getAttribute("media")||"all";if(window.matchMedia(media).matches)return void setTimeout(wprRemoveCPCSS,200)}var elem=document.getElementById("rocket-critical-css");elem&&"remove"in elem&&elem.remove()}window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link rel='stylesheet' id='classic-theme-styles-css' href='https://appletrapro.wpenginepowered.com/wp-includes/css/classic-themes.min.css?ver=6.2' media='all' /><link data-minify="1" rel='stylesheet' id='appletree-style-css' href='https://appletrapro.wpenginepowered.com/wp-content/cache/min/1/wp-content/themes/appletree-latest/style.css?ver=1686864411' media='all' /><link rel='stylesheet' id='bootstrap-min-css-css' href='https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/css/bootstrap.min.css?ver=1687699818' media='all' /><link rel='stylesheet' id='owl-carousel-min-css-css' href='https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/css/owl.carousel.min.css?ver=1687699818' media='all' /><link rel='stylesheet' id='animate-min-css-css' href='https://appletrapro.wpenginepowered.com/wp-content/themes/appletree-latest/assets/css/animate.min.css?ver=1687699818' media='all' /><link data-minify="1" rel='stylesheet' id='global-css-css' href='https://appletrapro.wpenginepowered.com/wp-content/cache/min/1/wp-content/themes/appletree-latest/assets/css/global.css?ver=1686864411' media='all' /><link data-minify="1" rel='stylesheet' id='stylesheet-css-css' href='https://appletrapro.wpenginepowered.com/wp-content/cache/min/1/wp-content/themes/appletree-latest/assets/css/stylesheet.css?ver=1686864411' media='all' /><link data-minify="1" rel='stylesheet' id='rahul-css-css' href='https://appletrapro.wpenginepowered.com/wp-content/cache/min/1/wp-content/themes/appletree-latest/assets/css/rahul.css?ver=1686864411' media='all' /><link data-minify="1" rel="stylesheet" type="text/css" href="https://appletrapro.wpenginepowered.com/wp-content/cache/min/1/npm/cookieconsent@3/build/cookieconsent.min.css?ver=1686864412" /><link rel='stylesheet' id='gforms_reset_css-css' href='https://appletrapro.wpenginepowered.com/wp-content/plugins/gravityforms/legacy/css/formreset.min.css?ver=2.6.9' media='all' /><link rel='stylesheet' id='gforms_formsmain_css-css' href='https://appletrapro.wpenginepowered.com/wp-content/plugins/gravityforms/legacy/css/formsmain.min.css?ver=2.6.9' media='all' /><link rel='stylesheet' id='gforms_ready_class_css-css' href='https://appletrapro.wpenginepowered.com/wp-content/plugins/gravityforms/legacy/css/readyclass.min.css?ver=2.6.9' media='all' /><link rel='stylesheet' id='gforms_browsers_css-css' href='https://appletrapro.wpenginepowered.com/wp-content/plugins/gravityforms/legacy/css/browsers.min.css?ver=2.6.9' media='all' /></noscript></body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

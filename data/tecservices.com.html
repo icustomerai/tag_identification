@@ -1,0 +1,948 @@
+<!doctype html>
+<html lang="en-US">
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10.0, user-scalable=yes">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v19.11 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Construction Materials Testing Laboratory &amp; Engineering Services</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C700%2C700i%2C900%2C900i&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C700%2C700i%2C900%2C900i&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A100%2C100i%2C300%2C300i%2C400%2C400i%2C500%2C500i%2C700%2C700i%2C900%2C900i&#038;display=swap" /></noscript>
+	<meta name="description" content="We are an independent materials testing laboratory with a professional staff ready to analyze and solve your problems. Call +01-770-995-8000" />
+	<link rel="canonical" href="https://tecservices.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Construction Materials Testing Laboratory &amp; Engineering Services" />
+	<meta property="og:description" content="We are an independent materials testing laboratory with a professional staff ready to analyze and solve your problems. Call +01-770-995-8000" />
+	<meta property="og:url" content="https://tecservices.com/" />
+	<meta property="og:site_name" content="SGS TEC Services" />
+	<meta property="article:modified_time" content="2023-06-21T22:31:23+00:00" />
+	<meta property="og:image" content="https://tecservices.com/wp-content/uploads/2021/11/image001.png" />
+	<meta property="og:image:width" content="606" />
+	<meta property="og:image:height" content="456" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://tecservices.com/","url":"https://tecservices.com/","name":"Construction Materials Testing Laboratory & Engineering Services","isPartOf":{"@id":"https://tecservices.com/#website"},"about":{"@id":"https://tecservices.com/#organization"},"primaryImageOfPage":{"@id":"https://tecservices.com/#primaryimage"},"image":{"@id":"https://tecservices.com/#primaryimage"},"thumbnailUrl":"https://tecservices.com/wp-content/uploads/2021/11/image001.png","datePublished":"2020-12-16T01:09:26+00:00","dateModified":"2023-06-21T22:31:23+00:00","description":"We are an independent materials testing laboratory with a professional staff ready to analyze and solve your problems. Call +01-770-995-8000","breadcrumb":{"@id":"https://tecservices.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://tecservices.com/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://tecservices.com/#primaryimage","url":"https://tecservices.com/wp-content/uploads/2021/11/image001.png","contentUrl":"https://tecservices.com/wp-content/uploads/2021/11/image001.png","width":606,"height":456},{"@type":"BreadcrumbList","@id":"https://tecservices.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://tecservices.com/#website","url":"https://tecservices.com/","name":"SGS TEC Services","description":"Construction Materials Testing Laboratory","publisher":{"@id":"https://tecservices.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://tecservices.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://tecservices.com/#organization","name":"SGS TEC Services","url":"https://tecservices.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://tecservices.com/#/schema/logo/image/","url":"https://i1.wp.com/tecservices.com/wp-content/uploads/2020/12/cropped-sgs-logo.png?fit=512%2C512&ssl=1","contentUrl":"https://i1.wp.com/tecservices.com/wp-content/uploads/2020/12/cropped-sgs-logo.png?fit=512%2C512&ssl=1","width":512,"height":512,"caption":"SGS TEC Services"},"image":{"@id":"https://tecservices.com/#/schema/logo/image/"}}]}</script>
+	<meta name="google-site-verification" content="3S25rZodZfbnThTgY1mY0hsQtVfPvxJSEGg5mrNausI" />
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="SGS TEC Services &raquo; Feed" href="https://tecservices.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="SGS TEC Services &raquo; Comments Feed" href="https://tecservices.com/comments/feed/" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='https://tecservices.com/wp-includes/css/dist/block-library/style.min.css?ver=6.1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://tecservices.com/wp-includes/css/classic-themes.min.css?ver=1' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='fastgallery-vc-main-style-css' href='https://tecservices.com/wp-content/plugins/fastgallery_vc/assets/css/style.css?ver=6.1.3' type='text/css' media='all' />
+<link rel='stylesheet' id='vcv:assets:front:style-css' href='https://tecservices.com/wp-content/plugins/visualcomposer/public/dist/front.bundle.css?ver=45.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='vcv:assets:source:styles:assetslibrarybackgroundsimpledistbackgroundsimplebundlecss-css' href='https://tecservices.com/wp-content/plugins/visualcomposer/public/sources/assetsLibrary/backgroundSimple/dist/backgroundSimple.bundle.css?ver=45.1.1-3864' type='text/css' media='all' />
+<link rel='stylesheet' id='vcv:assets:source:styles:assetslibraryimagefilterdistimagefilterbundlecss-css' href='https://tecservices.com/wp-content/plugins/visualcomposer/public/sources/assetsLibrary/imageFilter/dist/imageFilter.bundle.css?ver=45.1.1-3864' type='text/css' media='all' />
+<style id='vcv:assets:front:style:3864-inline-css' type='text/css'>
+.vce-col{box-sizing:border-box;display:-ms-flexbox;display:flex;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%;min-width:1em;position:relative}.vce-col--auto{-ms-flex-preferred-size:auto;-ms-flex:1;flex:1;flex-basis:auto}.vce-col-content,.vce-col-inner{overflow-wrap:break-word;position:relative;transition:box-shadow .2s}.vce-col-inner{width:100%}.vce-col-direction--rtl{direction:rtl}.vce-element--has-background>.vce-col-inner>.vce-col-content{padding-left:30px;padding-right:30px;padding-top:30px}.vce-col.vce-col--all-hide{display:none}@media (min-width:0),print{.vce-col--xs-auto{-ms-flex:1 1 0;flex:1 1 0;width:auto}.vce-col--xs-1{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.vce-col.vce-col--xs-visible{display:-ms-flexbox;display:flex}.vce-col.vce-col--xs-hide{display:none}}.vce-row-container>.vce-row>.vce-row-content>.vce-col>.vce-col-inner{padding:0}@media (min-width:544px),print{.vce-col--sm-auto{-ms-flex:1 1 0;flex:1 1 0;width:auto}.vce-col--sm-1{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.vce-col.vce-col--sm-visible{display:-ms-flexbox;display:flex}.vce-col.vce-col--sm-hide{display:none}}@media (min-width:768px),print{.vce-col--md-auto{-ms-flex:1 1 0;flex:1 1 0;width:auto}.vce-col--md-1{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.vce-col.vce-col--md-visible{display:-ms-flexbox;display:flex}.vce-col.vce-col--md-hide{display:none}}@media print,screen and (min-width:992px){.vce-col--lg-auto{-ms-flex:1 1 0;flex:1 1 0;width:1px}.vce-col--lg-1{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.vce-col.vce-col--lg-visible{display:-ms-flexbox;display:flex}.vce-col.vce-col--lg-hide{display:none}}@media (min-width:1200px),print{.vce-col--xl-auto{-ms-flex:1 1 0;flex:1 1 0;width:auto}.vce-col--xl-1{-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.vce-col.vce-col--xl-visible{display:-ms-flexbox;display:flex}.vce-col.vce-col--xl-hide{display:none}}@media (min-width:0) and (max-width:543px){.vce-element--xs--has-background>.vce-col-inner>.vce-col-content{padding-left:30px;padding-right:30px;padding-top:30px}}@media (min-width:544px) and (max-width:767px){.vce-element--sm--has-background>.vce-col-inner>.vce-col-content{padding-left:30px;padding-right:30px;padding-top:30px}}@media (min-width:768px) and (max-width:991px){.vce-element--md--has-background>.vce-col-inner>.vce-col-content{padding-left:30px;padding-right:30px;padding-top:30px}}@media (min-width:992px) and (max-width:1199px){.vce-element--lg--has-background>.vce-col-inner>.vce-col-content{padding-left:30px;padding-right:30px;padding-top:30px}}@media (min-width:1200px){.vce-element--xl--has-background>.vce-col-inner>.vce-col-content{padding-left:30px;padding-right:30px;padding-top:30px}}.vce{margin-bottom:30px}.vce-row-container{width:100%}.vce-row{display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;margin-left:0;position:relative;transition:box-shadow .2s}.vce-row,.vce-row-content>.vce-col:last-child{margin-right:0}.vce-row-full-height{min-height:100vh}.vce-row-content{-ms-flex-pack:start;-ms-flex-line-pack:start;-ms-flex-align:start;align-content:flex-start;align-items:flex-start;display:-ms-flexbox;display:flex;-ms-flex:1 1 auto;flex:1 1 auto;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;justify-content:flex-start;min-height:1em;position:relative}.vce-row-wrap--reverse>.vce-row-content{-ms-flex-line-pack:end;-ms-flex-align:end;align-content:flex-end;align-items:flex-end;-ms-flex-wrap:wrap-reverse;flex-wrap:wrap-reverse}.vce-row-columns--top>.vce-row-content{-ms-flex-line-pack:start;align-content:flex-start}.vce-row-columns--top.vce-row-wrap--reverse>.vce-row-content{-ms-flex-line-pack:end;align-content:flex-end}.vce-row-columns--middle>.vce-row-content{-ms-flex-line-pack:center;align-content:center}.vce-row-columns--bottom>.vce-row-content{-ms-flex-line-pack:end;align-content:flex-end}.vce-row-columns--bottom.vce-row-wrap--reverse>.vce-row-content{-ms-flex-line-pack:start;align-content:flex-start}.vce-row-columns--bottom>.vce-row-content:after,.vce-row-columns--middle>.vce-row-content:after,.vce-row-columns--top>.vce-row-content:after{content:"";display:block;height:0;overflow:hidden;visibility:hidden;width:100%}.vce-row-content--middle>.vce-row-content>.vce-col>.vce-col-inner{-ms-flex-pack:center;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;justify-content:center}.vce-row-content--bottom>.vce-row-content>.vce-col>.vce-col-inner{-ms-flex-pack:end;display:-ms-flexbox;display:flex;-ms-flex-direction:column;flex-direction:column;justify-content:flex-end}.vce-row-equal-height>.vce-row-content{-ms-flex-align:stretch;align-items:stretch}.vce-row-columns--stretch>.vce-row-content{-ms-flex-line-pack:stretch;-ms-flex-align:stretch;align-content:stretch;align-items:stretch}.vce-row[data-vce-full-width=true]{box-sizing:border-box;position:relative}.vce-row[data-vce-stretch-content=true]{padding-left:30px;padding-right:30px}.vce-row[data-vce-stretch-content=true].vce-row-no-paddings{padding-left:0;padding-right:0}.vce-row.vce-element--has-background{padding-left:30px;padding-right:30px;padding-top:30px}.vce-row.vce-element--has-background[data-vce-full-width=true]:not([data-vce-stretch-content=true]){padding-left:0;padding-right:0}.vce-row.vce-element--has-background.vce-row--has-col-background{padding-bottom:30px}.vce-row>.vce-row-content>.vce-col.vce-col--all-last{margin-right:0}.rtl .vce-row>.vce-row-content>.vce-col.vce-col--all-last,.rtl.vce-row>.vce-row-content>.vce-col.vce-col--all-last{margin-left:0}@media (min-width:0) and (max-width:543px){.vce-row.vce-element--xs--has-background{padding-left:30px;padding-right:30px;padding-top:30px}.vce-row.vce-element--xs--has-background[data-vce-full-width=true]:not([data-vce-stretch-content=true]){padding-left:0;padding-right:0}.vce-row.vce-element--has-background.vce-row--xs--has-col-background,.vce-row.vce-element--xs--has-background.vce-row--has-col-background,.vce-row.vce-element--xs--has-background.vce-row--xs--has-col-background{padding-bottom:30px}.vce-row>.vce-row-content>.vce-col.vce-col--xs-last{margin-right:0}.rtl .vce-row>.vce-row-content>.vce-col.vce-col--xs-last,.rtl.vce-row>.vce-row-content>.vce-col.vce-col--xs-last{margin-left:0}}@media (min-width:544px) and (max-width:767px){.vce-row.vce-element--sm--has-background{padding-left:30px;padding-right:30px;padding-top:30px}.vce-row.vce-element--sm--has-background[data-vce-full-width=true]:not([data-vce-stretch-content=true]){padding-left:0;padding-right:0}.vce-row.vce-element--has-background.vce-row--sm--has-col-background,.vce-row.vce-element--sm--has-background.vce-row--has-col-background,.vce-row.vce-element--sm--has-background.vce-row--sm--has-col-background{padding-bottom:30px}.vce-row>.vce-row-content>.vce-col.vce-col--sm-last{margin-right:0}.rtl .vce-row>.vce-row-content>.vce-col.vce-col--sm-last,.rtl.vce-row>.vce-row-content>.vce-col.vce-col--sm-last{margin-left:0}}@media (min-width:768px) and (max-width:991px){.vce-row.vce-element--md--has-background{padding-left:30px;padding-right:30px;padding-top:30px}.vce-row.vce-element--md--has-background[data-vce-full-width=true]:not([data-vce-stretch-content=true]){padding-left:0;padding-right:0}.vce-row.vce-element--has-background.vce-row--md--has-col-background,.vce-row.vce-element--md--has-background.vce-row--has-col-background,.vce-row.vce-element--md--has-background.vce-row--md--has-col-background{padding-bottom:30px}.vce-row>.vce-row-content>.vce-col.vce-col--md-last{margin-right:0}.rtl .vce-row>.vce-row-content>.vce-col.vce-col--md-last,.rtl.vce-row>.vce-row-content>.vce-col.vce-col--md-last{margin-left:0}}@media (min-width:992px) and (max-width:1199px){.vce-row.vce-element--lg--has-background{padding-left:30px;padding-right:30px;padding-top:30px}.vce-row.vce-element--lg--has-background[data-vce-full-width=true]:not([data-vce-stretch-content=true]){padding-left:0;padding-right:0}.vce-row.vce-element--has-background.vce-row--lg--has-col-background,.vce-row.vce-element--lg--has-background.vce-row--has-col-background,.vce-row.vce-element--lg--has-background.vce-row--lg--has-col-background{padding-bottom:30px}.vce-row>.vce-row-content>.vce-col.vce-col--lg-last{margin-right:0}.rtl .vce-row>.vce-row-content>.vce-col.vce-col--lg-last,.rtl.vce-row>.vce-row-content>.vce-col.vce-col--lg-last{margin-left:0}}@media (min-width:1200px){.vce-row.vce-element--xl--has-background{padding-left:30px;padding-right:30px;padding-top:30px}.vce-row.vce-element--xl--has-background[data-vce-full-width=true]:not([data-vce-stretch-content=true]){padding-left:0;padding-right:0}.vce-row.vce-element--has-background.vce-row--xl--has-col-background,.vce-row.vce-element--xl--has-background.vce-row--has-col-background,.vce-row.vce-element--xl--has-background.vce-row--xl--has-col-background{padding-bottom:30px}.vce-row>.vce-row-content>.vce-col.vce-col--xl-last{margin-right:0}.rtl .vce-row>.vce-row-content>.vce-col.vce-col--xl-last,.rtl.vce-row>.vce-row-content>.vce-col.vce-col--xl-last{margin-left:0}}a.vce-single-image-inner{color:transparent}a.vce-single-image-inner,a.vce-single-image-inner:focus,a.vce-single-image-inner:hover{border-bottom:0;box-shadow:none;text-decoration:none}.vce-single-image-inner{line-height:1;position:relative}.vce-single-image-inner,.vce-single-image-wrapper{display:inline-block;max-width:100%;vertical-align:top}.vce-single-image-wrapper{overflow:hidden}.vce-single-image-wrapper img{max-width:100%;vertical-align:top}.vce-single-image--border-rounded{border-radius:5px;overflow:hidden}.vce-single-image--border-round{border-radius:50%;overflow:hidden}.vce-single-image--align-center{text-align:center}.vce-single-image--align-right{text-align:right}.vce-single-image--align-left{text-align:left}.vce-single-image-wrapper figure{margin:0}.vce-single-image-wrapper figcaption{font-style:italic;margin-top:10px}.vce-single-image-wrapper figcaption[hidden]{display:none}.vce-single-image-inner.vce-single-image--absolute .vce-single-image:not([data-dynamic-natural-size=true]){height:100%;left:0;object-fit:cover;position:absolute;top:0;width:100%}.vce-single-image-container .vce-single-image-inner .vce-single-image{box-shadow:none}.vce-single-image-figure-inner{display:inline-block;max-width:100%}.vce-row--col-gap-30>.vce-row-content>.vce-col{margin-right:30px}.vce-row--col-gap-30>.vce-row-content>.vce-column-resizer .vce-column-resizer-handler{width:30px}.rtl .vce-row--col-gap-30>.vce-row-content>.vce-col,.rtl.vce-row--col-gap-30>.vce-row-content>.vce-col{margin-left:30px;margin-right:0}@media all and (min-width:768px),print{.vce-row--col-gap-30[data-vce-do-apply*=cb0dd944]>.vce-row-content>.vce-col--md-auto{-webkit-flex:1 1 0;flex:1 1 0;max-width:none;width:auto}} #el-cb0dd944 [data-vce-do-apply*=all][data-vce-do-apply*=el-cb0dd944] .vce-content-background-container,#el-cb0dd944 [data-vce-do-apply*=border][data-vce-do-apply*=el-cb0dd944] .vce-content-background-container,#el-cb0dd944[data-vce-do-apply*=all][data-vce-do-apply*=el-cb0dd944] .vce-content-background-container,#el-cb0dd944[data-vce-do-apply*=border][data-vce-do-apply*=el-cb0dd944] .vce-content-background-container{border-radius:inherit}@media{#el-cb0dd944 [data-vce-do-apply*=all][data-vce-do-apply*=el-cb0dd944],#el-cb0dd944 [data-vce-do-apply*=margin][data-vce-do-apply*=el-cb0dd944],#el-cb0dd944[data-vce-do-apply*=all][data-vce-do-apply*=el-cb0dd944],#el-cb0dd944[data-vce-do-apply*=margin][data-vce-do-apply*=el-cb0dd944]{margin-bottom:30px;margin-top:50px}}@media all and (min-width:768px),print{.vce-row--col-gap-30[data-vce-do-apply*="35d433a8"]>.vce-row-content>.vce-col--md-auto{-webkit-flex:1 1 0;flex:1 1 0;max-width:none;width:auto}} #el-35d433a8 [data-vce-do-apply*=all][data-vce-do-apply*=el-35d433a8] .vce-content-background-container,#el-35d433a8 [data-vce-do-apply*=border][data-vce-do-apply*=el-35d433a8] .vce-content-background-container,#el-35d433a8[data-vce-do-apply*=all][data-vce-do-apply*=el-35d433a8] .vce-content-background-container,#el-35d433a8[data-vce-do-apply*=border][data-vce-do-apply*=el-35d433a8] .vce-content-background-container{border-radius:inherit}@media{#el-35d433a8 [data-vce-do-apply*=all][data-vce-do-apply*=el-35d433a8],#el-35d433a8 [data-vce-do-apply*=margin][data-vce-do-apply*=el-35d433a8],#el-35d433a8[data-vce-do-apply*=all][data-vce-do-apply*=el-35d433a8],#el-35d433a8[data-vce-do-apply*=margin][data-vce-do-apply*=el-35d433a8]{margin-top:50px}#el-35d433a8 [data-vce-do-apply*=all][data-vce-do-apply*=el-35d433a8],#el-35d433a8 [data-vce-do-apply*=padding][data-vce-do-apply*=el-35d433a8],#el-35d433a8[data-vce-do-apply*=all][data-vce-do-apply*=el-35d433a8],#el-35d433a8[data-vce-do-apply*=padding][data-vce-do-apply*=el-35d433a8]{padding-top:30px}}@media all and (min-width:768px),print{.vce-row--col-gap-30[data-vce-do-apply*="70c79dc6"]>.vce-row-content>.vce-col--md-auto{-webkit-flex:1 1 0;flex:1 1 0;max-width:none;width:auto}}@media all and (min-width:768px),print{.vce-row--col-gap-30[data-vce-do-apply*="06ce3dc5"]>.vce-row-content>.vce-col--md-auto{-webkit-flex:1 1 0;flex:1 1 0;max-width:none;width:auto}} #el-06ce3dc5 [data-vce-do-apply*=all][data-vce-do-apply*=el-06ce3dc5] .vce-content-background-container,#el-06ce3dc5 [data-vce-do-apply*=border][data-vce-do-apply*=el-06ce3dc5] .vce-content-background-container,#el-06ce3dc5[data-vce-do-apply*=all][data-vce-do-apply*=el-06ce3dc5] .vce-content-background-container,#el-06ce3dc5[data-vce-do-apply*=border][data-vce-do-apply*=el-06ce3dc5] .vce-content-background-container{border-radius:inherit}@media{#el-06ce3dc5 [data-vce-do-apply*=all][data-vce-do-apply*=el-06ce3dc5],#el-06ce3dc5 [data-vce-do-apply*=margin][data-vce-do-apply*=el-06ce3dc5],#el-06ce3dc5[data-vce-do-apply*=all][data-vce-do-apply*=el-06ce3dc5],#el-06ce3dc5[data-vce-do-apply*=margin][data-vce-do-apply*=el-06ce3dc5]{margin-top:40px}}@media all and (min-width:768px),print{.vce-row--col-gap-30[data-vce-do-apply*=fdfad129]>.vce-row-content>.vce-col--md-auto{-webkit-flex:1 1 0;flex:1 1 0;max-width:none;width:auto}} #el-fdfad129 [data-vce-do-apply*=all][data-vce-do-apply*=el-fdfad129] .vce-content-background-container,#el-fdfad129 [data-vce-do-apply*=border][data-vce-do-apply*=el-fdfad129] .vce-content-background-container,#el-fdfad129[data-vce-do-apply*=all][data-vce-do-apply*=el-fdfad129] .vce-content-background-container,#el-fdfad129[data-vce-do-apply*=border][data-vce-do-apply*=el-fdfad129] .vce-content-background-container{border-radius:inherit}@media{#el-fdfad129 [data-vce-do-apply*=all][data-vce-do-apply*=el-fdfad129],#el-fdfad129 [data-vce-do-apply*=margin][data-vce-do-apply*=el-fdfad129],#el-fdfad129[data-vce-do-apply*=all][data-vce-do-apply*=el-fdfad129],#el-fdfad129[data-vce-do-apply*=margin][data-vce-do-apply*=el-fdfad129]{margin-top:0}#el-fdfad129 [data-vce-do-apply*=all][data-vce-do-apply*=el-fdfad129],#el-fdfad129 [data-vce-do-apply*=padding][data-vce-do-apply*=el-fdfad129],#el-fdfad129[data-vce-do-apply*=all][data-vce-do-apply*=el-fdfad129],#el-fdfad129[data-vce-do-apply*=padding][data-vce-do-apply*=el-fdfad129]{padding-top:0}}@media all and (min-width:768px),print{.vce-row--col-gap-30[data-vce-do-apply*="73076fba"]>.vce-row-content>.vce-col--md-auto{-webkit-flex:1 1 0;flex:1 1 0;max-width:none;width:auto}} #el-73076fba [data-vce-do-apply*=all][data-vce-do-apply*=el-73076fba] .vce-content-background-container,#el-73076fba [data-vce-do-apply*=border][data-vce-do-apply*=el-73076fba] .vce-content-background-container,#el-73076fba[data-vce-do-apply*=all][data-vce-do-apply*=el-73076fba] .vce-content-background-container,#el-73076fba[data-vce-do-apply*=border][data-vce-do-apply*=el-73076fba] .vce-content-background-container{border-radius:inherit}@media{#el-73076fba [data-vce-do-apply*=all][data-vce-do-apply*=el-73076fba],#el-73076fba [data-vce-do-apply*=margin][data-vce-do-apply*=el-73076fba],#el-73076fba[data-vce-do-apply*=all][data-vce-do-apply*=el-73076fba],#el-73076fba[data-vce-do-apply*=margin][data-vce-do-apply*=el-73076fba]{margin-bottom:0;margin-top:0}#el-73076fba [data-vce-do-apply*=all][data-vce-do-apply*=el-73076fba],#el-73076fba [data-vce-do-apply*=padding][data-vce-do-apply*=el-73076fba],#el-73076fba[data-vce-do-apply*=all][data-vce-do-apply*=el-73076fba],#el-73076fba[data-vce-do-apply*=padding][data-vce-do-apply*=el-73076fba]{padding-bottom:60px}}@media all and (min-width:768px),print{.vce-row--col-gap-30[data-vce-do-apply*="417bc582"]>.vce-row-content>.vce-col--md-auto{-webkit-flex:1 1 0;flex:1 1 0;max-width:none;width:auto}} #el-417bc582 [data-vce-do-apply*=all][data-vce-do-apply*=el-417bc582] .vce-content-background-container,#el-417bc582 [data-vce-do-apply*=border][data-vce-do-apply*=el-417bc582] .vce-content-background-container,#el-417bc582[data-vce-do-apply*=all][data-vce-do-apply*=el-417bc582] .vce-content-background-container,#el-417bc582[data-vce-do-apply*=border][data-vce-do-apply*=el-417bc582] .vce-content-background-container{border-radius:inherit}@media{#el-417bc582 [data-vce-do-apply*=all][data-vce-do-apply*=el-417bc582],#el-417bc582 [data-vce-do-apply*=margin][data-vce-do-apply*=el-417bc582],#el-417bc582[data-vce-do-apply*=all][data-vce-do-apply*=el-417bc582],#el-417bc582[data-vce-do-apply*=margin][data-vce-do-apply*=el-417bc582]{margin-bottom:0;margin-top:0}} @media{#el-417bc582 [data-vce-do-apply*=all][data-vce-do-apply*=el-417bc582],#el-417bc582 [data-vce-do-apply*=background][data-vce-do-apply*=el-417bc582],#el-417bc582[data-vce-do-apply*=all][data-vce-do-apply*=el-417bc582],#el-417bc582[data-vce-do-apply*=background][data-vce-do-apply*=el-417bc582]{background-color:#f60}}@media all and (min-width:768px),print{.vce-row--col-gap-30[data-vce-do-apply*=c3f4ce32]>.vce-row-content>.vce-col--md-auto{-webkit-flex:1 1 0;flex:1 1 0;max-width:none;width:auto}}@media{#clone-el-371ef81d [data-vce-do-apply*=all][data-vce-do-apply*=el-371ef81d],#clone-el-371ef81d [data-vce-do-apply*=border][data-vce-do-apply*=el-371ef81d],#clone-el-371ef81d[data-vce-do-apply*=all][data-vce-do-apply*=el-371ef81d],#clone-el-371ef81d[data-vce-do-apply*=border][data-vce-do-apply*=el-371ef81d],#el-371ef81d [data-vce-do-apply*=all][data-vce-do-apply*=el-371ef81d],#el-371ef81d [data-vce-do-apply*=border][data-vce-do-apply*=el-371ef81d],#el-371ef81d[data-vce-do-apply*=all][data-vce-do-apply*=el-371ef81d],#el-371ef81d[data-vce-do-apply*=border][data-vce-do-apply*=el-371ef81d]{border-style:solid;border-width:1px}} @media{#clone-el-371ef81d [data-vce-do-apply*=all][data-vce-do-apply*=el-371ef81d],#clone-el-371ef81d [data-vce-do-apply*=background][data-vce-do-apply*=el-371ef81d],#clone-el-371ef81d[data-vce-do-apply*=all][data-vce-do-apply*=el-371ef81d],#clone-el-371ef81d[data-vce-do-apply*=background][data-vce-do-apply*=el-371ef81d],#el-371ef81d [data-vce-do-apply*=all][data-vce-do-apply*=el-371ef81d],#el-371ef81d [data-vce-do-apply*=background][data-vce-do-apply*=el-371ef81d],#el-371ef81d[data-vce-do-apply*=all][data-vce-do-apply*=el-371ef81d],#el-371ef81d[data-vce-do-apply*=background][data-vce-do-apply*=el-371ef81d]{background-color:#dadada}} @media{#clone-el-50a31e58 [data-vce-do-apply*=all][data-vce-do-apply*=el-50a31e58],#clone-el-50a31e58 [data-vce-do-apply*=border][data-vce-do-apply*=el-50a31e58],#clone-el-50a31e58[data-vce-do-apply*=all][data-vce-do-apply*=el-50a31e58],#clone-el-50a31e58[data-vce-do-apply*=border][data-vce-do-apply*=el-50a31e58],#el-50a31e58 [data-vce-do-apply*=all][data-vce-do-apply*=el-50a31e58],#el-50a31e58 [data-vce-do-apply*=border][data-vce-do-apply*=el-50a31e58],#el-50a31e58[data-vce-do-apply*=all][data-vce-do-apply*=el-50a31e58],#el-50a31e58[data-vce-do-apply*=border][data-vce-do-apply*=el-50a31e58]{border-style:solid;border-width:1px}} @media{#clone-el-50a31e58 [data-vce-do-apply*=all][data-vce-do-apply*=el-50a31e58],#clone-el-50a31e58 [data-vce-do-apply*=background][data-vce-do-apply*=el-50a31e58],#clone-el-50a31e58[data-vce-do-apply*=all][data-vce-do-apply*=el-50a31e58],#clone-el-50a31e58[data-vce-do-apply*=background][data-vce-do-apply*=el-50a31e58],#el-50a31e58 [data-vce-do-apply*=all][data-vce-do-apply*=el-50a31e58],#el-50a31e58 [data-vce-do-apply*=background][data-vce-do-apply*=el-50a31e58],#el-50a31e58[data-vce-do-apply*=all][data-vce-do-apply*=el-50a31e58],#el-50a31e58[data-vce-do-apply*=background][data-vce-do-apply*=el-50a31e58]{background-color:#dadada}} @media{#clone-el-aef2b8f5 [data-vce-do-apply*=all][data-vce-do-apply*=el-aef2b8f5],#clone-el-aef2b8f5 [data-vce-do-apply*=border][data-vce-do-apply*=el-aef2b8f5],#clone-el-aef2b8f5[data-vce-do-apply*=all][data-vce-do-apply*=el-aef2b8f5],#clone-el-aef2b8f5[data-vce-do-apply*=border][data-vce-do-apply*=el-aef2b8f5],#el-aef2b8f5 [data-vce-do-apply*=all][data-vce-do-apply*=el-aef2b8f5],#el-aef2b8f5 [data-vce-do-apply*=border][data-vce-do-apply*=el-aef2b8f5],#el-aef2b8f5[data-vce-do-apply*=all][data-vce-do-apply*=el-aef2b8f5],#el-aef2b8f5[data-vce-do-apply*=border][data-vce-do-apply*=el-aef2b8f5]{border-style:solid;border-width:1px}} @media{#clone-el-aef2b8f5 [data-vce-do-apply*=all][data-vce-do-apply*=el-aef2b8f5],#clone-el-aef2b8f5 [data-vce-do-apply*=background][data-vce-do-apply*=el-aef2b8f5],#clone-el-aef2b8f5[data-vce-do-apply*=all][data-vce-do-apply*=el-aef2b8f5],#clone-el-aef2b8f5[data-vce-do-apply*=background][data-vce-do-apply*=el-aef2b8f5],#el-aef2b8f5 [data-vce-do-apply*=all][data-vce-do-apply*=el-aef2b8f5],#el-aef2b8f5 [data-vce-do-apply*=background][data-vce-do-apply*=el-aef2b8f5],#el-aef2b8f5[data-vce-do-apply*=all][data-vce-do-apply*=el-aef2b8f5],#el-aef2b8f5[data-vce-do-apply*=background][data-vce-do-apply*=el-aef2b8f5]{background-color:#dadada}} @media{#clone-el-e46c3179 [data-vce-do-apply*=all][data-vce-do-apply*=el-e46c3179],#clone-el-e46c3179 [data-vce-do-apply*=border][data-vce-do-apply*=el-e46c3179],#clone-el-e46c3179[data-vce-do-apply*=all][data-vce-do-apply*=el-e46c3179],#clone-el-e46c3179[data-vce-do-apply*=border][data-vce-do-apply*=el-e46c3179],#el-e46c3179 [data-vce-do-apply*=all][data-vce-do-apply*=el-e46c3179],#el-e46c3179 [data-vce-do-apply*=border][data-vce-do-apply*=el-e46c3179],#el-e46c3179[data-vce-do-apply*=all][data-vce-do-apply*=el-e46c3179],#el-e46c3179[data-vce-do-apply*=border][data-vce-do-apply*=el-e46c3179]{border-style:solid;border-width:1px}} @media{#clone-el-e46c3179 [data-vce-do-apply*=all][data-vce-do-apply*=el-e46c3179],#clone-el-e46c3179 [data-vce-do-apply*=background][data-vce-do-apply*=el-e46c3179],#clone-el-e46c3179[data-vce-do-apply*=all][data-vce-do-apply*=el-e46c3179],#clone-el-e46c3179[data-vce-do-apply*=background][data-vce-do-apply*=el-e46c3179],#el-e46c3179 [data-vce-do-apply*=all][data-vce-do-apply*=el-e46c3179],#el-e46c3179 [data-vce-do-apply*=background][data-vce-do-apply*=el-e46c3179],#el-e46c3179[data-vce-do-apply*=all][data-vce-do-apply*=el-e46c3179],#el-e46c3179[data-vce-do-apply*=background][data-vce-do-apply*=el-e46c3179]{background-color:#dadada}} @media{#clone-el-b896a2b4 [data-vce-do-apply*=all][data-vce-do-apply*=el-b896a2b4],#clone-el-b896a2b4 [data-vce-do-apply*=border][data-vce-do-apply*=el-b896a2b4],#clone-el-b896a2b4[data-vce-do-apply*=all][data-vce-do-apply*=el-b896a2b4],#clone-el-b896a2b4[data-vce-do-apply*=border][data-vce-do-apply*=el-b896a2b4],#el-b896a2b4 [data-vce-do-apply*=all][data-vce-do-apply*=el-b896a2b4],#el-b896a2b4 [data-vce-do-apply*=border][data-vce-do-apply*=el-b896a2b4],#el-b896a2b4[data-vce-do-apply*=all][data-vce-do-apply*=el-b896a2b4],#el-b896a2b4[data-vce-do-apply*=border][data-vce-do-apply*=el-b896a2b4]{border-style:solid;border-width:1px}} @media{#clone-el-b896a2b4 [data-vce-do-apply*=all][data-vce-do-apply*=el-b896a2b4],#clone-el-b896a2b4 [data-vce-do-apply*=background][data-vce-do-apply*=el-b896a2b4],#clone-el-b896a2b4[data-vce-do-apply*=all][data-vce-do-apply*=el-b896a2b4],#clone-el-b896a2b4[data-vce-do-apply*=background][data-vce-do-apply*=el-b896a2b4],#el-b896a2b4 [data-vce-do-apply*=all][data-vce-do-apply*=el-b896a2b4],#el-b896a2b4 [data-vce-do-apply*=background][data-vce-do-apply*=el-b896a2b4],#el-b896a2b4[data-vce-do-apply*=all][data-vce-do-apply*=el-b896a2b4],#el-b896a2b4[data-vce-do-apply*=background][data-vce-do-apply*=el-b896a2b4]{background-color:#dadada}} @media{#clone-el-0c2af1af [data-vce-do-apply*=all][data-vce-do-apply*=el-0c2af1af],#clone-el-0c2af1af [data-vce-do-apply*=border][data-vce-do-apply*=el-0c2af1af],#clone-el-0c2af1af[data-vce-do-apply*=all][data-vce-do-apply*=el-0c2af1af],#clone-el-0c2af1af[data-vce-do-apply*=border][data-vce-do-apply*=el-0c2af1af],#el-0c2af1af [data-vce-do-apply*=all][data-vce-do-apply*=el-0c2af1af],#el-0c2af1af [data-vce-do-apply*=border][data-vce-do-apply*=el-0c2af1af],#el-0c2af1af[data-vce-do-apply*=all][data-vce-do-apply*=el-0c2af1af],#el-0c2af1af[data-vce-do-apply*=border][data-vce-do-apply*=el-0c2af1af]{border-style:solid;border-width:1px}} @media{#clone-el-0c2af1af [data-vce-do-apply*=all][data-vce-do-apply*=el-0c2af1af],#clone-el-0c2af1af [data-vce-do-apply*=background][data-vce-do-apply*=el-0c2af1af],#clone-el-0c2af1af[data-vce-do-apply*=all][data-vce-do-apply*=el-0c2af1af],#clone-el-0c2af1af[data-vce-do-apply*=background][data-vce-do-apply*=el-0c2af1af],#el-0c2af1af [data-vce-do-apply*=all][data-vce-do-apply*=el-0c2af1af],#el-0c2af1af [data-vce-do-apply*=background][data-vce-do-apply*=el-0c2af1af],#el-0c2af1af[data-vce-do-apply*=all][data-vce-do-apply*=el-0c2af1af],#el-0c2af1af[data-vce-do-apply*=background][data-vce-do-apply*=el-0c2af1af]{background-color:#dadada}} 
+</style>
+<link rel='stylesheet' id='font-awesome-css' href='https://tecservices.com/wp-content/plugins/js_composer/assets/lib/bower/font-awesome/css/font-awesome.min.css?ver=5.5.2' type='text/css' media='all' />
+
+<link rel='stylesheet' id='customify-style-css' href='https://tecservices.com/wp-content/themes/customify/style.css?ver=0.4.0' type='text/css' media='all' />
+<style id='customify-style-inline-css' type='text/css'>
+
+.header-top .header--row-inner,
+					.button,
+					button:not(.menu-mobile-toggle, .components-button, .customize-partial-edit-shortcut-button),
+					button.button,
+					input[type="button"]:not(.components-button, .customize-partial-edit-shortcut-button),
+					input[type="reset"]:not(.components-button, .customize-partial-edit-shortcut-button),
+					input[type="submit"]:not(.components-button, .customize-partial-edit-shortcut-button),
+					.pagination .nav-links > *:hover,
+					.pagination .nav-links span,
+					.nav-menu-desktop.style-full-height .primary-menu-ul > li.current-menu-item > a,
+					.nav-menu-desktop.style-full-height .primary-menu-ul > li.current-menu-ancestor > a,
+					.nav-menu-desktop.style-full-height .primary-menu-ul > li > a:hover,
+					.posts-layout .readmore-button:hover
+					{
+					    background-color: #d76f2c;
+					}
+					.posts-layout .readmore-button {
+						color: #d76f2c;
+					}
+					.pagination .nav-links > *:hover,
+					.pagination .nav-links span,
+					.entry-single .tags-links a:hover,
+					.entry-single .cat-links a:hover,
+					.posts-layout .readmore-button,
+					.posts-layout .readmore-button:hover
+					{
+					    border-color: #d76f2c;
+					}
+
+.customify-builder-btn
+					{
+					    background-color: #353535;
+					}
+
+body
+					{
+					    color: #000000;
+					}
+					abbr, acronym {
+					    border-bottom-color: #000000;
+					}
+
+a
+	                {
+	                    color: #d76f2c;
+					}
+
+a:hover,
+a:focus,
+.link-meta:hover, .link-meta a:hover
+{
+    color: #878787;
+}
+
+h2 + h3,
+.comments-area h2 + .comments-title,
+.h2 + h3,
+.comments-area .h2 + .comments-title,
+.page-breadcrumb {
+    border-top-color: #eaecee;
+}
+blockquote,
+.site-content .widget-area .menu li.current-menu-item > a:before
+{
+    border-left-color: #eaecee;
+}
+
+@media screen and (min-width: 64em) {
+    .comment-list .children li.comment {
+        border-left-color: #eaecee;
+    }
+    .comment-list .children li.comment:after {
+        background-color: #eaecee;
+    }
+}
+
+.page-titlebar, .page-breadcrumb,
+.posts-layout .entry-inner {
+    border-bottom-color: #eaecee;
+}
+
+.header-search-form .search-field,
+.entry-content .page-links a,
+.header-search-modal,
+.pagination .nav-links > *,
+.entry-footer .tags-links a, .entry-footer .cat-links a,
+.search .content-area article,
+.site-content .widget-area .menu li.current-menu-item > a,
+.posts-layout .entry-inner,
+.post-navigation .nav-links,
+article.comment .comment-meta,
+.widget-area .widget_pages li a, .widget-area .widget_categories li a, .widget-area .widget_archive li a, .widget-area .widget_meta li a, .widget-area .widget_nav_menu li a, .widget-area .widget_product_categories li a, .widget-area .widget_recent_entries li a, .widget-area .widget_rss li a,
+.widget-area .widget_recent_comments li
+{
+    border-color: #eaecee;
+}
+
+.header-search-modal::before {
+    border-top-color: #eaecee;
+    border-left-color: #eaecee;
+}
+
+@media screen and (min-width: 48em) {
+    .content-sidebar.sidebar_vertical_border .content-area {
+        border-right-color: #eaecee;
+    }
+    .sidebar-content.sidebar_vertical_border .content-area {
+        border-left-color: #eaecee;
+    }
+    .sidebar-sidebar-content.sidebar_vertical_border .sidebar-primary {
+        border-right-color: #eaecee;
+    }
+    .sidebar-sidebar-content.sidebar_vertical_border .sidebar-secondary {
+        border-right-color: #eaecee;
+    }
+    .content-sidebar-sidebar.sidebar_vertical_border .sidebar-primary {
+        border-left-color: #eaecee;
+    }
+    .content-sidebar-sidebar.sidebar_vertical_border .sidebar-secondary {
+        border-left-color: #eaecee;
+    }
+    .sidebar-content-sidebar.sidebar_vertical_border .content-area {
+        border-left-color: #eaecee;
+        border-right-color: #eaecee;
+    }
+    .sidebar-content-sidebar.sidebar_vertical_border .content-area {
+        border-left-color: #eaecee;
+        border-right-color: #eaecee;
+    }
+}
+
+article.comment .comment-post-author {
+						background: #6d6d6d;
+					}
+					.pagination .nav-links > *,
+					.link-meta,
+					.link-meta a,
+					.color-meta,
+					.entry-single .tags-links:before,
+					.entry-single .cats-links:before
+					{
+					    color: #6d6d6d;
+					}
+
+h1, h2, h3, h4, h5, h6 { color: #2b2b2b;}
+
+.site-content .widget-title { color: #444444;}
+body {
+	font-family: "Roboto";
+	font-weight: 300;
+	font-size: 16px;
+}h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: "Roboto";
+	font-weight: 500;
+}.entry-content h1, .wp-block h1, .entry-single .entry-title {
+	font-size: 30px;
+}.entry-content h2, .wp-block h2 {
+	font-size: 20px;
+}.entry-content h3, .wp-block h3 {
+	font-size: 16px;
+}.entry-content h4, .wp-block h4 {
+	font-weight: bold;
+	font-size: 18px;
+}
+#page-cover {
+	background-repeat: repeat;
+}
+#page-titlebar .titlebar-title {
+	line-height: 31px;
+}
+.header--row:not(.header--transparent).header-top .header--row-inner  {
+	background-color: #ffffff;
+} 
+
+.header--row:not(.header--transparent).header-bottom .header--row-inner  {
+	background-color: #000000;border-style: none;
+} 
+
+#header-menu-sidebar-bg  {
+	color: #ffffff; text-decoration-color: #ffffff;
+} 
+
+#header-menu-sidebar-bg .menu li a, #header-menu-sidebar-bg .item--html a, #header-menu-sidebar-bg .cart-item-link, #header-menu-sidebar-bg .nav-toggle-icon  {
+	color: #ffffff; text-decoration-color: #ffffff;
+} 
+
+#header-menu-sidebar-bg:before  {
+	background-color: #020202;
+} 
+
+#header-menu-sidebar-bg .menu li a:hover, #header-menu-sidebar-bg .item--html a:hover, #header-menu-sidebar-bg .cart-item-link:hover, #header-menu-sidebar-bg li.open-sub .nav-toggle-icon  {
+	color: #cccccc; text-decoration-color: #cccccc;
+} 
+
+.sub-menu .li-duplicator {
+	display:none !important;
+}
+.builder-header-html-item.item--html p, .builder-header-html-item.item--html {
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 15px;
+	letter-spacing: 0px;
+}
+.header-search_icon-item .search-icon  {
+	color: #ffffff; text-decoration-color: #ffffff;
+} 
+
+.header-search_icon-item .search-icon:hover  {
+	color: #3d3d3d; text-decoration-color: #3d3d3d;
+} 
+
+.header-search_icon-item .header-search-modal  {
+	border-style: solid;
+} 
+
+.header-search_icon-item .search-field  {
+	border-style: solid;
+} 
+
+.dark-mode .header-search_box-item .search-form-fields, .header-search_box-item .search-form-fields  {
+	border-style: solid;
+} 
+
+.nav-menu-desktop.style-border-bottom .primary-menu-ul > li > a .link-before:before { bottom: -3px; } .nav-menu-desktop.style-border-top .primary-menu-ul > li > a .link-before:before { top: -3px; }
+
+.builder-item--primary-menu .nav-icon-angle { width: 6px; height: 6px; }
+
+.builder-item--primary-menu .nav-menu-desktop .primary-menu-ul > li > a  {
+	color: #ffffff; text-decoration-color: #ffffff;background-color: #000000;
+} 
+
+.header--row:not(.header--transparent) .builder-item--primary-menu .nav-menu-desktop .primary-menu-ul > li > a:hover, .header--row:not(.header--transparent) .builder-item--primary-menu .nav-menu-desktop .primary-menu-ul > li.current-menu-item > a, .header--row:not(.header--transparent) .builder-item--primary-menu .nav-menu-desktop .primary-menu-ul > li.current-menu-ancestor > a, .header--row:not(.header--transparent) .builder-item--primary-menu .nav-menu-desktop .primary-menu-ul > li.current-menu-parent > a  {
+	color: #d76f2c; text-decoration-color: #d76f2c;border-color: #ffffff;
+} 
+.builder-item--primary-menu .nav-menu-desktop .primary-menu-ul > li > a,.builder-item-sidebar .primary-menu-sidebar .primary-menu-ul > li > a {
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 18px;
+}
+.builder-item--primary-menu .nav-menu-desktop .primary-menu-ul .sub-menu, .builder-item-sidebar .sub-menu  {
+	background-color: #000000;border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-left-width: 0px;border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+} 
+
+.builder-item--primary-menu .nav-menu-desktop .primary-menu-ul .sub-menu li a, .builder-item-sidebar .sub-menu li a  {
+	color: #ffffff; text-decoration-color: #ffffff;background-color: #000000;border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+} 
+
+.builder-item--primary-menu .nav-menu-desktop .primary-menu-ul .sub-menu li a:hover, .builder-item--primary-menu .nav-menu-desktop .primary-menu-ul .sub-menu li a:focus, .builder-item-sidebar .sub-menu li a:hover, .builder-item-sidebar .sub-menu li a:focus  {
+	color: #ffffff; text-decoration-color: #ffffff;background-color: #474747;border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+} 
+.builder-item--primary-menu .nav-menu-desktop .primary-menu-ul .sub-menu li a, .builder-item-sidebar .sub-menu li a {
+	font-size: 14px;
+	line-height: 23px;
+}a.item--button {
+	font-weight: 400;
+	font-size: 13px;
+}
+a.item--button  {
+	color: #ffffff; text-decoration-color: #ffffff;background-color: #494949;border-style: solid;border-top-width: 2px;
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+	border-left-width: 2px;border-color: #ff6400;
+} 
+
+a.item--button:hover  {
+	color: #dddddd; text-decoration-color: #dddddd;background-color: #000000;border-style: solid;border-top-width: 2px;
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+	border-left-width: 2px;border-color: #ff6400;border-top-left-radius: 1px;
+	border-top-right-radius: 1px;
+	border-bottom-right-radius: 1px;
+	border-bottom-left-radius: 1px;
+} 
+
+.builder-item--secondary-menu .nav-menu-desktop .secondary-menu-ul > li > a  {
+	color: #000000; text-decoration-color: #000000;
+} 
+
+.header--row:not(.header--transparent) .builder-item--secondary-menu .nav-menu-desktop .secondary-menu-ul > li > a:hover, .header--row:not(.header--transparent) .builder-item--secondary-menu .nav-menu-desktop .secondary-menu-ul > li.current-menu-item > a, .header--row:not(.header--transparent) .builder-item--secondary-menu .nav-menu-desktop .secondary-menu-ul > li.current-menu-ancestor > a, .header--row:not(.header--transparent) .builder-item--secondary-menu .nav-menu-desktop .secondary-menu-ul > li.current-menu-parent > a  {
+	color: #000000; text-decoration-color: #000000;background-color: #cccccc;
+} 
+.builder-item--secondary-menu .nav-menu-desktop .secondary-menu-ul > li > a,.builder-item-sidebar .primary-menu-sidebar .primary-menu-ul > li > a {
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 16px;
+}
+.builder-item--secondary-menu .nav-menu-desktop .secondary-menu-ul .sub-menu, .builder-item-sidebar .sub-menu  {
+	background-color: #eaeaea;
+} 
+
+.builder-item--secondary-menu .nav-menu-desktop .secondary-menu-ul .sub-menu li a, .builder-item-sidebar .sub-menu li a  {
+	color: #000000; text-decoration-color: #000000;
+} 
+.builder-item--secondary-menu .nav-menu-desktop .secondary-menu-ul .sub-menu li a, .builder-item-sidebar .sub-menu li a {
+	font-weight: bold;
+}
+#cb-row--footer-main .footer--row-inner {
+	background-color: #000000
+}
+#cb-row--footer-main .footer--row-inner {
+	font-size: 10px;
+}
+#cb-row--footer-main .footer--row-inner .widget-title  {
+	color: #ffffff; text-decoration-color: #ffffff;
+} 
+.footer--row-inner.footer-main-inner .widget-title {
+	font-weight: bold;
+	font-size: 12px;
+}
+body  {
+	background-color: #FFFFFF;
+} 
+
+.site-content .content-area  {
+	background-color: #FFFFFF;
+} 
+
+
+/* CSS for desktop */
+
+#sidebar-secondary, #sidebar-primary, #main {
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
+#page-cover {
+	text-align: left;
+}
+
+#page-cover .page-cover-inner {
+	min-height: 0px;
+}
+
+.is-header-transparent #page-cover {
+	padding-top: 0px;
+}
+
+#page-cover .page-cover-title  {
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;padding-top: 8px;
+	padding-right: 8px;
+	padding-bottom: 8px;
+	padding-left: 8px;
+} 
+
+#page-titlebar  {
+	padding-top: 3px;
+	padding-right: 3px;
+	padding-bottom: 3px;
+	padding-left: 3px;
+} 
+
+#page-titlebar .titlebar-title  {
+	margin-top: 3px;
+	margin-right: 3px;
+	margin-bottom: 3px;
+	margin-left: 3px;padding-top: 3px;
+	padding-right: 3px;
+	padding-bottom: 3px;
+	padding-left: 3px;
+} 
+
+#page-titlebar .titlebar-tagline  {
+	margin-top: 2px;
+	margin-right: 2px;
+	margin-bottom: 2px;
+	margin-left: 2px;padding-top: 2px;
+	padding-right: 2px;
+	padding-bottom: 2px;
+	padding-left: 2px;
+} 
+
+.header--row.header-top .customify-grid, .header--row.header-top .style-full-height .primary-menu-ul > li > a {
+	min-height: 64px;
+}
+
+.header--row.header-main .customify-grid, .header--row.header-main .style-full-height .primary-menu-ul > li > a {
+	min-height: 3px;
+}
+
+.header--row.header-bottom .customify-grid, .header--row.header-bottom .style-full-height .primary-menu-ul > li > a {
+	min-height: 60px;
+}
+
+.site-header .site-branding img { max-width: 217px; } .site-header .cb-row--mobile .site-branding img { width: 217px; }
+
+.header--row .builder-first--nav-icon {
+	text-align: right;
+}
+
+.header-search_icon-item .search-icon {
+	padding: 9px;
+}
+
+.header-search_icon-item .search-submit {
+	margin-left: -40px;
+}
+
+.header-search_box-item .search-submit{margin-left: -40px;} .header-search_box-item .woo_bootster_search .search-submit{margin-left: -40px;} .header-search_box-item .header-search-form button.search-submit{margin-left:-40px;}
+
+.builder-item--primary-menu .nav-menu-desktop .primary-menu-ul .sub-menu, .builder-item-sidebar .sub-menu  {
+	margin-top: 1px;
+	margin-right: 1px;
+	margin-bottom: 1px;
+	margin-left: 1px;
+} 
+
+.builder-item--primary-menu .nav-menu-desktop .primary-menu-ul .sub-menu li a, .builder-item-sidebar .sub-menu li a  {
+	padding-top: 9px;
+	padding-right: 9px;
+	padding-bottom: 9px;
+	padding-left: 9px;
+} 
+
+.header--row .builder-item--primary-menu, .builder-item.builder-item--group .item--inner.builder-item--primary-menu {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+
+.header--row .builder-first--primary-menu {
+	text-align: right;
+}
+
+a.item--button  {
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+} 
+
+.header--row .builder-item--button, .builder-item.builder-item--group .item--inner.builder-item--button {
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+
+.builder-item--secondary-menu .nav-menu-desktop .secondary-menu-ul .sub-menu li a, .builder-item-sidebar .sub-menu li a  {
+	padding-top: 3px;
+	padding-right: 3px;
+	padding-bottom: 3px;
+	padding-left: 3px;
+} 
+
+
+/* CSS for tablet */
+@media screen and (max-width: 1024px) { 
+#page-cover .page-cover-inner {
+	min-height: 250px;
+}
+
+.header--row .builder-first--nav-icon {
+	text-align: right;
+}
+
+.header-search_icon-item .search-submit {
+	margin-left: -40px;
+}
+
+.header-search_box-item .search-submit{margin-left: -40px;} .header-search_box-item .woo_bootster_search .search-submit{margin-left: -40px;} .header-search_box-item .header-search-form button.search-submit{margin-left:-40px;}
+ }
+
+/* CSS for mobile */
+@media screen and (max-width: 568px) { 
+#page-cover .page-cover-inner {
+	min-height: 200px;
+}
+
+.header--row.header-top .customify-grid, .header--row.header-top .style-full-height .primary-menu-ul > li > a {
+	min-height: 33px;
+}
+
+.header-menu-sidebar-inner {
+	text-align: left;
+}
+
+.header--row .builder-first--nav-icon {
+	text-align: right;
+}
+
+.header-search_icon-item .search-submit {
+	margin-left: -40px;
+}
+
+.header-search_box-item .search-submit{margin-left: -40px;} .header-search_box-item .woo_bootster_search .search-submit{margin-left: -40px;} .header-search_box-item .header-search-form button.search-submit{margin-left:-40px;}
+ }
+
+</style>
+<link rel='stylesheet' id='customify-header-transparent-css' href='https://tecservices.com/wp-content/plugins/customify-pro/modules/header-transparent/css/style.css?ver=0.4.0' type='text/css' media='all' />
+<link rel='stylesheet' id='customify-header-footer-items-css' href='https://tecservices.com/wp-content/plugins/customify-pro/modules/header-footer-items/css/style.css?ver=0.4.0' type='text/css' media='all' />
+<link rel='stylesheet' id='customify-blog-css' href='https://tecservices.com/wp-content/plugins/customify-pro/modules/blog/css/style.css?ver=0.4.0' type='text/css' media='all' />
+<link rel='stylesheet' id='customify-infinity-css' href='https://tecservices.com/wp-content/plugins/customify-pro/modules/infinity/assets/css/infinity.css?ver=0.4.0' type='text/css' media='all' />
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://tecservices.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.1' id='jquery-core-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://tecservices.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js' defer></script>
+<link rel="https://api.w.org/" href="https://tecservices.com/wp-json/" /><link rel="alternate" type="application/json" href="https://tecservices.com/wp-json/wp/v2/pages/3864" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://tecservices.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://tecservices.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 6.1.3" />
+<link rel='shortlink' href='https://tecservices.com/' />
+<link rel="alternate" type="application/json+oembed" href="https://tecservices.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftecservices.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://tecservices.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftecservices.com%2F&#038;format=xml" />
+
+		<!-- GA Google Analytics @ https://m0n.co/ga -->
+		<script type="rocketlazyloadscript" async src="https://www.googletagmanager.com/gtag/js?id=G-NMD8V7SCC6"></script>
+		<script type="rocketlazyloadscript">
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'G-NMD8V7SCC6');
+		</script>
+
+		        <style>
+	            .ili-indent{padding-left:40px !important;overflow:hidden}	        </style>
+	    <meta name="generator" content="Powered by Visual Composer Website Builder - fast and easy-to-use drag and drop visual editor for WordPress."/><noscript><style>.vce-row-container .vcv-lozad {display: none}</style></noscript><meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
+<!--[if lte IE 9]><link rel="stylesheet" type="text/css" href="https://tecservices.com/wp-content/plugins/js_composer/assets/css/vc_lte_ie9.min.css" media="screen"><![endif]--><link rel="icon" href="https://tecservices.com/wp-content/uploads/2020/12/cropped-sgs-logo-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://tecservices.com/wp-content/uploads/2020/12/cropped-sgs-logo-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://tecservices.com/wp-content/uploads/2020/12/cropped-sgs-logo-180x180.png" />
+<meta name="msapplication-TileImage" content="https://tecservices.com/wp-content/uploads/2020/12/cropped-sgs-logo-270x270.png" />
+		<style type="text/css" id="wp-custom-css">
+			.page .entry-header {
+    padding-top: 25px;
+	  padding-left: 15px;
+}		</style>
+		<noscript><style type="text/css"> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
+
+<body class="home page-template-default page page-id-3864 wp-custom-logo vcwb content main-layout-content site-full-width menu_sidebar_slide_left wpb-js-composer js-comp-ver-5.5.2 vc_responsive">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;" ><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB" ><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><div id="page" class="site box-shadow">
+	<a class="skip-link screen-reader-text" href="#site-content">Skip to content</a>
+	<a class="close is-size-medium  close-panel close-sidebar-panel" href="#">
+        <span class="hamburger hamburger--squeeze is-active">
+            <span class="hamburger-box">
+              <span class="hamburger-inner"><span class="screen-reader-text">Menu</span></span>
+            </span>
+        </span>
+        <span class="screen-reader-text">Close</span>
+        </a><header id="masthead" class="site-header header-v2"><div id="masthead-inner" class="site-header-inner">							<div  class="header-top header--row layout-full-contained"  id="cb-row--header-top"  data-row-id="top"  data-show-on="desktop mobile">
+								<div class="header--row-inner header-top-inner light-mode">
+									<div class="customify-container">
+										<div class="customify-grid  cb-row--desktop hide-on-mobile hide-on-tablet customify-grid-middle"><div class="row-v2 row-v2-top no-center"><div class="col-v2 col-v2-left"><div class="item--inner builder-item--logo" data-section="title_tagline" data-item-id="logo" >		<div class="site-branding logo-left no-tran-logo">
+						<a href="https://tecservices.com/" class="logo-link" rel="home" itemprop="url">
+				<img width="350" height="74" class="site-img-logo" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20350%2074'%3E%3C/svg%3E" alt="SGS TEC Services" data-lazy-srcset="https://tecservices.com/wp-content/uploads/2019/08/cropped-SGS-TEC-Services-350-Web.jpg 2x" data-lazy-src="https://tecservices.com/wp-content/uploads/2019/08/SGS-TEC-Services-350-Web.jpg"><noscript><img width="350" height="74" class="site-img-logo" src="https://tecservices.com/wp-content/uploads/2019/08/SGS-TEC-Services-350-Web.jpg" alt="SGS TEC Services" srcset="https://tecservices.com/wp-content/uploads/2019/08/cropped-SGS-TEC-Services-350-Web.jpg 2x"></noscript>
+							</a>
+					</div><!-- .site-branding -->
+		</div></div><div class="col-v2 col-v2-right"><div class="item--inner builder-item--secondary-menu has_menu" data-section="header_menu_secondary" data-item-id="secondary-menu" ><nav  id="site-navigation-top-desktop" class="site-navigation secondary-menu secondary-menu-top nav-menu-desktop secondary-menu-desktop style-plain"><ul id="menu-top-bar-menu" class="secondary-menu-ul menu nav-menu"><li id="menu-item--top-desktop-4497" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4497"><a href="https://tecservices.com/contact-sgs-tec-services/"><span class="link-before">Contact</span></a></li>
+<li id="menu-item--top-desktop-4496" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4496"><a href="https://tecservices.com/about-tec-services/"><span class="link-before">About<span class="nav-icon-angle">&nbsp;</span></span></a>
+<ul class="sub-menu sub-lv-0">
+	<li id="menu-item--top-desktop-4654" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4654"><a href="https://tecservices.com/about-tec-services/team-of-experts/"><span class="link-before">Our Team Of Experts</span></a></li>
+</ul>
+</li>
+<li id="menu-item--top-desktop-4498" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-4498"><a href="https://#"><span class="link-before">Accreditations<span class="nav-icon-angle">&nbsp;</span></span></a>
+<ul class="sub-menu sub-lv-0">
+	<li id="menu-item--top-desktop-4499" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4499"><a href="https://tecservices.com/about-tec-services/aashto-accredited-lab-amrl-r18-iso-17025-certified/"><span class="link-before">AASHTO Accredited Lab</span></a></li>
+	<li id="menu-item--top-desktop-4500" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4500"><a href="https://tecservices.com/about-tec-services/a2la-certificate/"><span class="link-before">American Association for Laboratory Accreditation</span></a></li>
+	<li id="menu-item--top-desktop-4501" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4501"><a href="https://tecservices.com/about-tec-services/astm/"><span class="link-before">ASTM International</span></a></li>
+	<li id="menu-item--top-desktop-4502" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4502"><a href="https://tecservices.com/about-tec-services/team-of-experts/"><span class="link-before">Our Team Of Experts</span></a></li>
+</ul>
+</li>
+</ul></nav></div></div></div></div><div class="cb-row--mobile hide-on-desktop customify-grid customify-grid-middle"><div class="row-v2 row-v2-top no-left no-center"><div class="col-v2 col-v2-right"><div class="item--inner builder-item--search_icon" data-section="search_icon" data-item-id="search_icon" ><div class="header-search_icon-item item--search_icon">		<a class="search-icon" href="#" aria-label="open search tool">
+			<span class="ic-search">
+				<svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21">
+					<path fill="currentColor" fill-rule="evenodd" d="M12.514 14.906a8.264 8.264 0 0 1-4.322 1.21C3.668 16.116 0 12.513 0 8.07 0 3.626 3.668.023 8.192.023c4.525 0 8.193 3.603 8.193 8.047 0 2.033-.769 3.89-2.035 5.307l4.999 5.552-1.775 1.597-5.06-5.62zm-4.322-.843c3.37 0 6.102-2.684 6.102-5.993 0-3.31-2.732-5.994-6.102-5.994S2.09 4.76 2.09 8.07c0 3.31 2.732 5.993 6.102 5.993z"></path>
+				</svg>
+			</span>
+			<span class="ic-close">
+				<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="612px" height="612px" viewBox="0 0 612 612" fill="currentColor" style="enable-background:new 0 0 612 612;" xml:space="preserve"><g><g id="cross"><g><polygon points="612,36.004 576.521,0.603 306,270.608 35.478,0.603 0,36.004 270.522,306.011 0,575.997 35.478,611.397 306,341.411 576.521,611.397 612,575.997 341.459,306.011 " /></g></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+			</span>
+			<span class="arrow-down"></span>
+		</a>
+		<div class="header-search-modal-wrapper">
+			<form role="search" class="header-search-modal header-search-form" action="https://tecservices.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search ..." value="" name="s" title="Search for:" />
+				</label>
+				<button type="submit" class="search-submit" aria-label="submit search">
+					<svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21">
+						<path fill="currentColor" fill-rule="evenodd" d="M12.514 14.906a8.264 8.264 0 0 1-4.322 1.21C3.668 16.116 0 12.513 0 8.07 0 3.626 3.668.023 8.192.023c4.525 0 8.193 3.603 8.193 8.047 0 2.033-.769 3.89-2.035 5.307l4.999 5.552-1.775 1.597-5.06-5.62zm-4.322-.843c3.37 0 6.102-2.684 6.102-5.993 0-3.31-2.732-5.994-6.102-5.994S2.09 4.76 2.09 8.07c0 3.31 2.732 5.993 6.102 5.993z"></path>
+					</svg>
+				</button>
+			</form>
+		</div>
+		</div></div></div></div></div>									</div>
+								</div>
+							</div>
+														<div  class="header-main header--row layout-full-contained"  id="cb-row--header-main"  data-row-id="main"  data-show-on="desktop mobile">
+								<div class="header--row-inner header-main-inner light-mode">
+									<div class="customify-container">
+										<div class="customify-grid  cb-row--desktop hide-on-mobile hide-on-tablet customify-grid-middle"><div class="row-v2 row-v2-main no-left no-center"><div class="col-v2 col-v2-right"><div class="item--inner builder-item--html" data-section="header_html" data-item-id="html" ><div class="builder-header-html-item item--html"><h4><span STYLE="color: #000000"><a href="tel:1-770-995-8000"><i class="fa fa-phone"></i>  01-770-995-8000 </a></span></h4>
+</div></div></div></div></div><div class="cb-row--mobile hide-on-desktop customify-grid customify-grid-middle"><div class="row-v2 row-v2-main no-center"><div class="col-v2 col-v2-left"><div class="item--inner builder-item--logo" data-section="title_tagline" data-item-id="logo" >		<div class="site-branding logo-left no-tran-logo">
+						<a href="https://tecservices.com/" class="logo-link" rel="home" itemprop="url">
+				<img width="350" height="74" class="site-img-logo" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20350%2074'%3E%3C/svg%3E" alt="SGS TEC Services" data-lazy-srcset="https://tecservices.com/wp-content/uploads/2019/08/cropped-SGS-TEC-Services-350-Web.jpg 2x" data-lazy-src="https://tecservices.com/wp-content/uploads/2019/08/SGS-TEC-Services-350-Web.jpg"><noscript><img width="350" height="74" class="site-img-logo" src="https://tecservices.com/wp-content/uploads/2019/08/SGS-TEC-Services-350-Web.jpg" alt="SGS TEC Services" srcset="https://tecservices.com/wp-content/uploads/2019/08/cropped-SGS-TEC-Services-350-Web.jpg 2x"></noscript>
+							</a>
+					</div><!-- .site-branding -->
+		</div></div><div class="col-v2 col-v2-right"><div class="item--inner builder-item--nav-icon" data-section="header_menu_icon" data-item-id="nav-icon" >		<button type="button" class="menu-mobile-toggle item-button is-size-desktop-medium is-size-tablet-medium is-size-mobile-medium">
+			<span class="hamburger hamburger--squeeze">
+				<span class="hamburger-box">
+					<span class="hamburger-inner"></span>
+				</span>
+			</span>
+			<span class="nav-icon--label hide-on-tablet hide-on-mobile">Menu</span></button>
+		</div></div></div></div>									</div>
+								</div>
+							</div>
+														<div  class="header-bottom header--row layout-full-contained"  id="cb-row--header-bottom"  data-row-id="bottom"  data-show-on="desktop">
+								<div class="header--row-inner header-bottom-inner light-mode">
+									<div class="customify-container">
+										<div class="customify-grid  cb-row--desktop hide-on-mobile hide-on-tablet customify-grid-middle"><div class="row-v2 row-v2-bottom no-left"><div class="col-v2 col-v2-left"></div><div class="col-v2 col-v2-center"><div class="item--inner builder-item--primary-menu has_menu" data-section="header_menu_primary" data-item-id="primary-menu" ><nav  id="site-navigation-bottom-desktop" class="site-navigation primary-menu primary-menu-bottom nav-menu-desktop primary-menu-desktop style-plain"><ul id="menu-tecs-main-menu" class="primary-menu-ul menu nav-menu"><li id="menu-item--bottom-desktop-4214" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-3864 current_page_item menu-item-4214"><a href="https://tecservices.com/" aria-current="page"><span class="link-before">Home</span></a></li>
+<li id="menu-item--bottom-desktop-2487" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2487"><a href="https://tecservices.com/construction-materials-testing-laboratory/"><span class="link-before">Testing<span class="nav-icon-angle">&nbsp;</span></span></a>
+<ul class="sub-menu sub-lv-0">
+	<li id="menu-item--bottom-desktop-2682" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2682"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-testing-laboratory-2/"><span class="link-before">Concrete Testing Laboratory<span class="nav-icon-angle">&nbsp;</span></span></a>
+	<ul class="sub-menu sub-lv-1">
+		<li id="menu-item--bottom-desktop-2535" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2535"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-testing-laboratory-2/admixures-testing/"><span class="link-before">Admixtures Testing</span></a></li>
+		<li id="menu-item--bottom-desktop-2761" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2761"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-testing-laboratory-2/fiber-reinforced-concrete-testing/"><span class="link-before">Fiber-Reinforced Concrete Testing</span></a></li>
+		<li id="menu-item--bottom-desktop-2888" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2888"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-testing-laboratory-2/construction-repair-products-mortars-testing/"><span class="link-before">Repair Products &#038; Mortars Testing</span></a></li>
+		<li id="menu-item--bottom-desktop-2569" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2569"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-testing-laboratory-2/aggregate-testing/"><span class="link-before">Aggregates Testing</span></a></li>
+		<li id="menu-item--bottom-desktop-2778" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2778"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-testing-laboratory-2/masonry-testing-laboratory/"><span class="link-before">Masonry Testing</span></a></li>
+	</ul>
+</li>
+	<li id="menu-item--bottom-desktop-2806" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2806"><a href="https://tecservices.com/construction-materials-testing-laboratory/metals-testing-laboratory/"><span class="link-before">Metals Testing</span></a></li>
+	<li id="menu-item--bottom-desktop-2665" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2665"><a href="https://tecservices.com/construction-materials-testing-laboratory/cement-testing-laboratory/"><span class="link-before">Cement Testing Laboratory<span class="nav-icon-angle">&nbsp;</span></span></a>
+	<ul class="sub-menu sub-lv-1">
+		<li id="menu-item--bottom-desktop-2848" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2848"><a href="https://tecservices.com/construction-materials-testing-laboratory/cement-testing-laboratory/pozzolanic-mineral-admixture-testing/"><span class="link-before">Pozzolanic &#038; Mineral Admixture Testing</span></a></li>
+	</ul>
+</li>
+	<li id="menu-item--bottom-desktop-2655" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2655"><a href="https://tecservices.com/construction-materials-testing-laboratory/anchor-systems-testing/"><span class="link-before">Anchor Systems Testing</span></a></li>
+	<li id="menu-item--bottom-desktop-3664" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3664"><a href="https://tecservices.com/construction-materials-testing-laboratory/epoxy-sealants-coatings-laboratory/"><span class="link-before">Epoxy, Sealants, &#038; Coatings Testing</span></a></li>
+	<li id="menu-item--bottom-desktop-2872" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2872"><a href="https://tecservices.com/construction-materials-testing-laboratory/products-conformance-testing/"><span class="link-before">Product Conformance Testing</span></a></li>
+	<li id="menu-item--bottom-desktop-4777" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4777"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-petrography/"><span class="link-before">Petrography<span class="nav-icon-angle">&nbsp;</span></span></a>
+	<ul class="sub-menu sub-lv-1">
+		<li id="menu-item--bottom-desktop-4798" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4798"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-petrography/petrographic-evaluation/"><span class="link-before">Petrographic Evaluation</span></a></li>
+		<li id="menu-item--bottom-desktop-4797" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4797"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-petrography/mortar-evaluations/"><span class="link-before">Mortar Evaluations</span></a></li>
+		<li id="menu-item--bottom-desktop-4796" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4796"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-petrography/aggregate-petrography/"><span class="link-before">Aggregate Petrography</span></a></li>
+		<li id="menu-item--bottom-desktop-4799" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4799"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-petrography/x-ray-diffraction/"><span class="link-before">X-Ray Diffraction</span></a></li>
+	</ul>
+</li>
+	<li id="menu-item--bottom-desktop-4800" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4800"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-petrography/x-ray-diffraction/"><span class="link-before">X-Ray Diffraction</span></a></li>
+</ul>
+</li>
+<li id="menu-item--bottom-desktop-3481" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3481"><a><span class="link-before">Engineering<span class="nav-icon-angle">&nbsp;</span></span></a>
+<ul class="sub-menu sub-lv-0">
+	<li id="menu-item--bottom-desktop-2920" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-2920"><a href="https://tecservices.com/engineering/facilities-structural-inspections/"><span class="link-before">Facilities<span class="nav-icon-angle">&nbsp;</span></span></a>
+	<ul class="sub-menu sub-lv-1">
+		<li id="menu-item--bottom-desktop-2976" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2976"><a href="https://tecservices.com/engineering/facilities-structural-inspections/parking-garage-assessment-inspection/"><span class="link-before">Parking Garage Condition Assessments</span></a></li>
+		<li id="menu-item--bottom-desktop-2989" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2989"><a href="https://tecservices.com/engineering/facilities-structural-inspections/roof-and-facade-condition-assessments/"><span class="link-before">Roofs &#038; Facades Condition Assessments</span></a></li>
+		<li id="menu-item--bottom-desktop-3003" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3003"><a href="https://tecservices.com/engineering/facilities-structural-inspections/structural-distress-facilities/"><span class="link-before">Structural Distress (Facilities)</span></a></li>
+		<li id="menu-item--bottom-desktop-5207" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5207"><a href="https://tecservices.com/engineering/facilities-structural-inspections/roof-anchorages-window-washing-safety-3/"><span class="link-before">Roof Anchorages &#038; Window Washing Safety</span></a></li>
+	</ul>
+</li>
+	<li id="menu-item--bottom-desktop-4446" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4446"><a href="https://tecservices.com/engineering/structural-engineers-atlanta-georgia/"><span class="link-before">Structural Engineering<span class="nav-icon-angle">&nbsp;</span></span></a>
+	<ul class="sub-menu sub-lv-1">
+		<li id="menu-item--bottom-desktop-2948" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2948"><a href="https://tecservices.com/engineering/structural-engineers-atlanta-georgia/structural-distress-analysis-repair/"><span class="link-before">Structural Distress</span></a></li>
+		<li id="menu-item--bottom-desktop-2952" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2952"><a href="https://tecservices.com/engineering/structural-engineers-atlanta-georgia/change-of-use-design/"><span class="link-before">Change of Use Design</span></a></li>
+		<li id="menu-item--bottom-desktop-2958" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2958"><a href="https://tecservices.com/engineering/structural-engineers-atlanta-georgia/condition-assessments/"><span class="link-before">Condition Assessments</span></a></li>
+		<li id="menu-item--bottom-desktop-2961" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2961"><a href="https://tecservices.com/engineering/structural-engineers-atlanta-georgia/structural-design-services/"><span class="link-before">Structural Design</span></a></li>
+	</ul>
+</li>
+	<li id="menu-item--bottom-desktop-3013" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3013"><a href="https://tecservices.com/engineering/non-destructive-testing-services/"><span class="link-before">Non-Destructive Testing<span class="nav-icon-angle">&nbsp;</span></span></a>
+	<ul class="sub-menu sub-lv-1">
+		<li id="menu-item--bottom-desktop-3067" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3067"><a href="https://tecservices.com/engineering/non-destructive-testing-services/ground-penetrating-radar-services/"><span class="link-before">Ground Penetrating Radar</span></a></li>
+		<li id="menu-item--bottom-desktop-4937" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4937"><a href="https://tecservices.com/engineering/non-destructive-testing-services/rebar-corrosion-ndt/"><span class="link-before">Rebar Corrosion NDT</span></a></li>
+		<li id="menu-item--bottom-desktop-3063" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3063"><a href="https://tecservices.com/engineering/non-destructive-testing-services/half-cell-potential-testing/"><span class="link-before">Half-Cell Potential Testing</span></a></li>
+		<li id="menu-item--bottom-desktop-3065" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3065"><a href="https://tecservices.com/engineering/non-destructive-testing-services/impact-echo-testing-of-concrete/"><span class="link-before">Impact Echo</span></a></li>
+		<li id="menu-item--bottom-desktop-3064" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3064"><a href="https://tecservices.com/engineering/non-destructive-testing-services/ultrasonic-pulse-velocity-testing-of-hardened-concrete/"><span class="link-before">Ultrasonic Pulse Velocity</span></a></li>
+	</ul>
+</li>
+	<li id="menu-item--bottom-desktop-4816" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4816"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-petrography/"><span class="link-before">Petrography<span class="nav-icon-angle">&nbsp;</span></span></a>
+	<ul class="sub-menu sub-lv-1">
+		<li id="menu-item--bottom-desktop-4815" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4815"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-petrography/petrographic-evaluation/"><span class="link-before">Petrographic Evaluation</span></a></li>
+		<li id="menu-item--bottom-desktop-4812" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4812"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-petrography/aggregate-petrography/"><span class="link-before">Aggregate Petrography</span></a></li>
+		<li id="menu-item--bottom-desktop-4814" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4814"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-petrography/mortar-evaluations/"><span class="link-before">Mortar Evaluations</span></a></li>
+		<li id="menu-item--bottom-desktop-4813" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4813"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-petrography/x-ray-diffraction/"><span class="link-before">X-Ray Diffraction</span></a></li>
+	</ul>
+</li>
+	<li id="menu-item--bottom-desktop-4991" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4991"><a href="https://tecservices.com/engineering/non-destructive-testing-services/rebar-corrosion-ndt/"><span class="link-before">Rebar Corrosion NDT</span></a></li>
+	<li id="menu-item--bottom-desktop-4982" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4982"><a href="https://tecservices.com/engineering/construction-materials-testing-structural-engineering-success-stories/"><span class="link-before">Success Stories</span></a></li>
+</ul>
+</li>
+<li id="menu-item--bottom-desktop-3098" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3098"><a href="#"><span class="link-before">Consulting<span class="nav-icon-angle">&nbsp;</span></span></a>
+<ul class="sub-menu sub-lv-0">
+	<li id="menu-item--bottom-desktop-4988" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4988"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-petrography/"><span class="link-before">Petrography<span class="nav-icon-angle">&nbsp;</span></span></a>
+	<ul class="sub-menu sub-lv-1">
+		<li id="menu-item--bottom-desktop-4987" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4987"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-petrography/petrographic-evaluation/"><span class="link-before">Petrographic Evaluation</span></a></li>
+		<li id="menu-item--bottom-desktop-4985" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4985"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-petrography/aggregate-petrography/"><span class="link-before">Aggregate Petrography</span></a></li>
+		<li id="menu-item--bottom-desktop-4986" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4986"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-petrography/mortar-evaluations/"><span class="link-before">Mortar Evaluations</span></a></li>
+		<li id="menu-item--bottom-desktop-4989" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4989"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-petrography/x-ray-diffraction/"><span class="link-before">X-Ray Diffraction</span></a></li>
+	</ul>
+</li>
+	<li id="menu-item--bottom-desktop-4806" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4806"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-petrography/x-ray-diffraction/"><span class="link-before">X-Ray Diffraction</span></a></li>
+	<li id="menu-item--bottom-desktop-4984" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4984"><a href="https://tecservices.com/engineering/non-destructive-testing-services/rebar-corrosion-ndt/"><span class="link-before">Rebar Corrosion NDT</span></a></li>
+	<li id="menu-item--bottom-desktop-3085" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3085"><a href="https://tecservices.com/mineral-geological-exploration-services/"><span class="link-before">Mineral &#038; Geological Exploration</span></a></li>
+</ul>
+</li>
+</ul></nav></div></div><div class="col-v2 col-v2-right"><div class="item--inner builder-item--search_icon" data-section="search_icon" data-item-id="search_icon" ><div class="header-search_icon-item item--search_icon">		<a class="search-icon" href="#" aria-label="open search tool">
+			<span class="ic-search">
+				<svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21">
+					<path fill="currentColor" fill-rule="evenodd" d="M12.514 14.906a8.264 8.264 0 0 1-4.322 1.21C3.668 16.116 0 12.513 0 8.07 0 3.626 3.668.023 8.192.023c4.525 0 8.193 3.603 8.193 8.047 0 2.033-.769 3.89-2.035 5.307l4.999 5.552-1.775 1.597-5.06-5.62zm-4.322-.843c3.37 0 6.102-2.684 6.102-5.993 0-3.31-2.732-5.994-6.102-5.994S2.09 4.76 2.09 8.07c0 3.31 2.732 5.993 6.102 5.993z"></path>
+				</svg>
+			</span>
+			<span class="ic-close">
+				<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="612px" height="612px" viewBox="0 0 612 612" fill="currentColor" style="enable-background:new 0 0 612 612;" xml:space="preserve"><g><g id="cross"><g><polygon points="612,36.004 576.521,0.603 306,270.608 35.478,0.603 0,36.004 270.522,306.011 0,575.997 35.478,611.397 306,341.411 576.521,611.397 612,575.997 341.459,306.011 " /></g></g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>
+			</span>
+			<span class="arrow-down"></span>
+		</a>
+		<div class="header-search-modal-wrapper">
+			<form role="search" class="header-search-modal header-search-form" action="https://tecservices.com/">
+				<label>
+					<span class="screen-reader-text">Search for:</span>
+					<input type="search" class="search-field" placeholder="Search ..." value="" name="s" title="Search for:" />
+				</label>
+				<button type="submit" class="search-submit" aria-label="submit search">
+					<svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21">
+						<path fill="currentColor" fill-rule="evenodd" d="M12.514 14.906a8.264 8.264 0 0 1-4.322 1.21C3.668 16.116 0 12.513 0 8.07 0 3.626 3.668.023 8.192.023c4.525 0 8.193 3.603 8.193 8.047 0 2.033-.769 3.89-2.035 5.307l4.999 5.552-1.775 1.597-5.06-5.62zm-4.322-.843c3.37 0 6.102-2.684 6.102-5.993 0-3.31-2.732-5.994-6.102-5.994S2.09 4.76 2.09 8.07c0 3.31 2.732 5.993 6.102 5.993z"></path>
+					</svg>
+				</button>
+			</form>
+		</div>
+		</div></div><div class="item--inner builder-item--button" data-section="header_button" data-item-id="button" ><a href="https://tecservices.com/contact-sgs-tec-services/request-a-quote/" class="item--button customify-btn customify-builder-btn is-icon-before">Request A Quote</a></div></div></div></div>									</div>
+								</div>
+							</div>
+							<div id="header-menu-sidebar" class="header-menu-sidebar menu-sidebar-panel dark-mode"><div id="header-menu-sidebar-bg" class="header-menu-sidebar-bg"><div id="header-menu-sidebar-inner" class="header-menu-sidebar-inner"><div class="builder-item-sidebar mobile-item--search_box"><div class="item--inner" data-item-id="search_box" data-section="search_box"><div class="header-search_box-item item--search_box">		<form role="search" class="header-search-form " action="https://tecservices.com/">
+			<div class="search-form-fields">
+				<span class="screen-reader-text">Search for:</span>
+				
+				<input type="search" class="search-field" placeholder="Search ..." value="" name="s" title="Search for:" />
+
+							</div>
+			<button type="submit" class="search-submit" aria-label="Submit Search">
+				<svg aria-hidden="true" focusable="false" role="presentation" xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21">
+					<path fill="currentColor" fill-rule="evenodd" d="M12.514 14.906a8.264 8.264 0 0 1-4.322 1.21C3.668 16.116 0 12.513 0 8.07 0 3.626 3.668.023 8.192.023c4.525 0 8.193 3.603 8.193 8.047 0 2.033-.769 3.89-2.035 5.307l4.999 5.552-1.775 1.597-5.06-5.62zm-4.322-.843c3.37 0 6.102-2.684 6.102-5.993 0-3.31-2.732-5.994-6.102-5.994S2.09 4.76 2.09 8.07c0 3.31 2.732 5.993 6.102 5.993z"></path>
+				</svg>
+			</button>
+		</form>
+		</div></div></div><div class="builder-item-sidebar mobile-item--html_3"><div class="item--inner" data-item-id="html_3" data-section="header_html_3"><div class="builder-header-html_3-item item--html"><p><a>Home</a></p>
+<p><a href="https://tecservices.com/menu-testing/">Testing</a></p>
+<p><a href="https://tecservices.com/menu-engineering/">Engineering</a></p>
+<p><a href="https://tecservices.com/menu-consulting/">Consulting</a></p>
+<p><a href="tel:1-770-995-8000"><i class="fa fa-phone"></i>  01-770-995-8000 </a></p>
+</div></div></div><div class="builder-item-sidebar mobile-item--button"><div class="item--inner" data-item-id="button" data-section="header_button"><a href="https://tecservices.com/contact-sgs-tec-services/request-a-quote/" class="item--button customify-btn customify-builder-btn is-icon-before">Request A Quote</a></div></div></div></div></div></div></header>	<div id="site-content" class="site-content">
+		<div class="customify-container">
+			<div class="customify-grid">
+				<main id="main" class="content-area customify-col-12">
+						<div class="content-inner">
+		<article id="post-3864" class="post-3864 page type-page status-publish has-post-thumbnail hentry">
+	
+	<div class="entry-content">
+		<div class="vce-row-container"><div class="vce-row vce-element--has-background vce-row--col-gap-30 vce-row-equal-height vce-row-content--top" data-vce-full-width="true" id="el-73076fba" data-vce-do-apply="all el-73076fba"><div class="vce-content-background-container"><div class="vce-asset-background-simple-container vce-visible-all-only vce-asset-background-simple--style-cover vce-asset-background-simple--position-center-top"><div class="vce-asset-background-simple"><div data-bg="https://tecservices.com/wp-content/uploads/2018/06/construction-materials-testing-lab-1600x412.png" class="vce-asset-background-simple-item rocket-lazyload" style=""></div></div></div></div><div class="vce-row-content" data-vce-element-content="true"><div class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-last vce-col--lg-last vce-col--xl-last vce-col--md-first vce-col--lg-first vce-col--xl-first" id="el-d3238864"><div class="vce-col-inner" data-vce-do-apply="border margin background  el-d3238864"><div class="vce-col-content" data-vce-element-content="true" data-vce-do-apply="padding el-d3238864"><div class="vce-text-block"><div class="vce-text-block-wrapper vce" id="el-27640bc7" data-vce-do-apply="all el-27640bc7"><h1>&nbsp;</h1><h1 style="text-align: center;"><span style="color: #ffffff;">Construction Materials Testing Laboratory</span><br><span style="color: #ffffff;">&amp; Engineering Services</span></h1></div></div></div></div></div></div></div></div><div class="vce-row-container"><div class="vce-row vce-element--has-background vce-row--col-gap-30 vce-row-equal-height vce-row-content--top" data-vce-full-width="true" id="el-417bc582" data-vce-do-apply="all el-417bc582"><div class="vce-content-background-container"></div><div class="vce-row-content" data-vce-element-content="true"><div class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-last vce-col--lg-last vce-col--xl-last vce-col--md-first vce-col--lg-first vce-col--xl-first" id="el-f5a2d113"><div class="vce-col-inner" data-vce-do-apply="border margin background  el-f5a2d113"><div class="vce-col-content" data-vce-element-content="true" data-vce-do-apply="padding el-f5a2d113"><div class="vce-text-block"><div class="vce-text-block-wrapper vce" id="el-1d3c9d58" data-vce-do-apply="all el-1d3c9d58"><h3 class="vc_custom_heading"><span style="font-size: 16pt;">Located in Atlanta, Georgia, U.S.A., we are an independent materials testing laboratory including a professional staff of registered engineers, geologists, petrographers, chemists, ACI special inspectors, consultants, and laboratory specialists. We serve clients around the world.</span></h3></div></div></div></div></div></div></div></div><div class="vce-row-container" data-vce-boxed-width="true"><div class="vce-row vce-row--col-gap-30 vce-row-equal-height vce-row-content--top" id="el-35d433a8" data-vce-do-apply="all el-35d433a8"><div class="vce-content-background-container"></div><div class="vce-row-content" data-vce-element-content="true"><div class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-first vce-col--lg-first vce-col--xl-first" id="el-9daf05dc"><div class="vce-col-inner" data-vce-do-apply="border margin background  el-9daf05dc"><div class="vce-col-content" data-vce-element-content="true" data-vce-do-apply="padding el-9daf05dc"><div class="vce-text-block"><div class="vce-text-block-wrapper vce" id="el-c1d7da69" data-vce-do-apply="all el-c1d7da69"><h2 style="text-align: center;"><a href="https://tecservices.com/construction-materials-testing-laboratory/">Testing Laboratory</a></h2><p><a href="https://tecservices.com/construction-materials-testing-laboratory/"><img decoding="async" class="alignnone wp-image-2206 size-full" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20340'%3E%3C/svg%3E" alt="" width="640" height="340" data-wp-editing="1" data-lazy-srcset="https://tecservices.com/wp-content/uploads/2018/06/construction-materials-testing-laboratory-640-1.png 640w, https://tecservices.com/wp-content/uploads/2018/06/construction-materials-testing-laboratory-640-1-500x266.png 500w" data-lazy-sizes="(max-width: 640px) 100vw, 640px" data-lazy-src="https://tecservices.com/wp-content/uploads/2018/06/construction-materials-testing-laboratory-640-1.png" /><noscript><img decoding="async" class="alignnone wp-image-2206 size-full" src="https://tecservices.com/wp-content/uploads/2018/06/construction-materials-testing-laboratory-640-1.png" alt="" width="640" height="340" data-wp-editing="1" srcset="https://tecservices.com/wp-content/uploads/2018/06/construction-materials-testing-laboratory-640-1.png 640w, https://tecservices.com/wp-content/uploads/2018/06/construction-materials-testing-laboratory-640-1-500x266.png 500w" sizes="(max-width: 640px) 100vw, 640px" /></noscript></a></p><p>Our construction materials testing laboratory is an AMRL R18 AASHTO accredited lab meeting ASTM C1077 requirements. We test CCRL and AMRL samples, concrete mix designs, metals, and a multitude of products.</p></div></div></div></div></div><div class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first" id="el-f0ee297a"><div class="vce-col-inner" data-vce-do-apply="border margin background  el-f0ee297a"><div class="vce-col-content" data-vce-element-content="true" data-vce-do-apply="padding el-f0ee297a"><div class="vce-text-block"><div class="vce-text-block-wrapper vce" id="el-221091b5" data-vce-do-apply="all el-221091b5"><h2 style="text-align: center;"><a href="https://tecservices.com/engineering/structural-engineers-atlanta-georgia/">Engineering Services</a></h2><p><a href="https://tecservices.com/engineering/structural-engineers-atlanta-georgia/"><img decoding="async" class="alignnone wp-image-2214 size-full" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20340'%3E%3C/svg%3E" alt="Structural Engineering, Atlanta, GA" width="640" height="340" data-wp-editing="1" data-lazy-srcset="https://tecservices.com/wp-content/uploads/2018/06/construction-materials-engineering-640.png 640w, https://tecservices.com/wp-content/uploads/2018/06/construction-materials-engineering-640-500x266.png 500w" data-lazy-sizes="(max-width: 640px) 100vw, 640px" data-lazy-src="https://tecservices.com/wp-content/uploads/2018/06/construction-materials-engineering-640.png" /><noscript><img decoding="async" class="alignnone wp-image-2214 size-full" src="https://tecservices.com/wp-content/uploads/2018/06/construction-materials-engineering-640.png" alt="Structural Engineering, Atlanta, GA" width="640" height="340" data-wp-editing="1" srcset="https://tecservices.com/wp-content/uploads/2018/06/construction-materials-engineering-640.png 640w, https://tecservices.com/wp-content/uploads/2018/06/construction-materials-engineering-640-500x266.png 500w" sizes="(max-width: 640px) 100vw, 640px" /></noscript></a></p><p>Our experienced professional staff consists of Structural, Metallurgical, Concrete, and Materials Engineers and Construction Consultants – many of whom are registered, with multiple years of broad experience.</p></div></div></div></div></div><div class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-last vce-col--lg-last vce-col--xl-last" id="el-2724b72e"><div class="vce-col-inner" data-vce-do-apply="border margin background  el-2724b72e"><div class="vce-col-content" data-vce-element-content="true" data-vce-do-apply="padding el-2724b72e"><div class="vce-text-block"><div class="vce-text-block-wrapper vce" id="el-ba3aa534" data-vce-do-apply="all el-ba3aa534"><h2 style="text-align: center;"><a href="https://tecservices.com/construction-materials-consultants/">Consulting</a></h2><p><a href="https://tecservices.com/construction-materials-consultants/"><img decoding="async" class="alignnone wp-image-2220 size-full" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20340'%3E%3C/svg%3E" alt="Structural Engineers Consult On Roof Collapse" width="640" height="340" data-lazy-srcset="https://tecservices.com/wp-content/uploads/2018/06/roof-collapse-structural-engineer-640.png 640w, https://tecservices.com/wp-content/uploads/2018/06/roof-collapse-structural-engineer-640-500x266.png 500w" data-lazy-sizes="(max-width: 640px) 100vw, 640px" data-lazy-src="https://tecservices.com/wp-content/uploads/2018/06/roof-collapse-structural-engineer-640.png" /><noscript><img decoding="async" class="alignnone wp-image-2220 size-full" src="https://tecservices.com/wp-content/uploads/2018/06/roof-collapse-structural-engineer-640.png" alt="Structural Engineers Consult On Roof Collapse" width="640" height="340" srcset="https://tecservices.com/wp-content/uploads/2018/06/roof-collapse-structural-engineer-640.png 640w, https://tecservices.com/wp-content/uploads/2018/06/roof-collapse-structural-engineer-640-500x266.png 500w" sizes="(max-width: 640px) 100vw, 640px" /></noscript></a></p><p>Difficult Engineering and problems arise on most construction projects.&nbsp; SGS TEC Services has the reputation for taking on these problems and determining adequate and practical repair<br>solutions.</p></div></div></div></div></div></div></div></div><div class="vce-row-container" data-vce-boxed-width="true"><div class="vce-row vce-row--col-gap-30 vce-row-equal-height vce-row-content--top" id="el-cb0dd944" data-vce-do-apply="all el-cb0dd944"><div class="vce-content-background-container"></div><div class="vce-row-content" data-vce-element-content="true"><div class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-last vce-col--lg-last vce-col--xl-last vce-col--md-first vce-col--lg-first vce-col--xl-first" id="el-7e6a6c5a"><div class="vce-col-inner" data-vce-do-apply="border margin background  el-7e6a6c5a"><div class="vce-col-content" data-vce-element-content="true" data-vce-do-apply="padding el-7e6a6c5a"><div class="vce-row-container" data-vce-boxed-width="true"><div class="vce-row vce-row--col-gap-30 vce-row-equal-height vce-row-content--top" id="el-70c79dc6" data-vce-do-apply="all el-70c79dc6"><div class="vce-row-content" data-vce-element-content="true"><div class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-last vce-col--lg-last vce-col--xl-last vce-col--md-first vce-col--lg-first vce-col--xl-first" id="el-4a6b409e"><div class="vce-col-inner" data-vce-do-apply="border margin background  el-4a6b409e"><div class="vce-col-content" data-vce-element-content="true" data-vce-do-apply="padding el-4a6b409e"><div class="vce-text-block"><div class="vce-text-block-wrapper vce" id="el-2a5bc093" data-vce-do-apply="all el-2a5bc093"><h1 style="text-align: center;">Discover These Testing Services</h1></div></div></div></div></div></div></div></div></div></div></div></div></div></div><div class="vce-row-container" data-vce-boxed-width="true"><div class="vce-row vce-row--col-gap-30 vce-row-equal-height vce-row-content--top" id="el-c3f4ce32" data-vce-do-apply="all el-c3f4ce32"><div class="vce-row-content" data-vce-element-content="true"><div class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-first vce-col--lg-first vce-col--xl-first" id="el-b583b99f"><div class="vce-col-inner" data-vce-do-apply="border margin background  el-b583b99f"><div class="vce-col-content" data-vce-element-content="true" data-vce-do-apply="padding el-b583b99f"><div class="vce-single-image-container vce-single-image--align-center"><div class="vce vce-single-image-wrapper" id="el-e46c3179" data-vce-do-apply="all el-e46c3179"><figure><div class="vce-single-image-figure-inner" style="width: 638px;"><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-testing-laboratory-2/fiber-reinforced-concrete-testing/" title="" class="vce-single-image-inner vce-single-image--absolute" style="width: 100%; padding-bottom: 53.4483%;"><img decoding="async" class="vce-single-image"  width="638" height="341" data-lazy-srcset="https://tecservices.com/wp-content/uploads/2023/06/Fiber-Reinforced-Concrete-Testing-Lab-320x171.png 320w, https://tecservices.com/wp-content/uploads/2023/06/Fiber-Reinforced-Concrete-Testing-Lab-480x257.png 480w, https://tecservices.com/wp-content/uploads/2023/06/Fiber-Reinforced-Concrete-Testing-Lab-638x341.png 638w" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20638%20341'%3E%3C/svg%3E" data-img-src="https://tecservices.com/wp-content/uploads/2023/06/Fiber-Reinforced-Concrete-Testing-Lab.png" data-attachment-id="5930"  alt="Fiber-Reinforced Concrete Testing Lab" title="Fiber-Reinforced-Concrete-Testing-Lab" data-lazy-src="https://tecservices.com/wp-content/uploads/2023/06/Fiber-Reinforced-Concrete-Testing-Lab-638x341.png" /><noscript><img decoding="async" class="vce-single-image"  width="638" height="341" srcset="https://tecservices.com/wp-content/uploads/2023/06/Fiber-Reinforced-Concrete-Testing-Lab-320x171.png 320w, https://tecservices.com/wp-content/uploads/2023/06/Fiber-Reinforced-Concrete-Testing-Lab-480x257.png 480w, https://tecservices.com/wp-content/uploads/2023/06/Fiber-Reinforced-Concrete-Testing-Lab-638x341.png 638w" src="https://tecservices.com/wp-content/uploads/2023/06/Fiber-Reinforced-Concrete-Testing-Lab-638x341.png" data-img-src="https://tecservices.com/wp-content/uploads/2023/06/Fiber-Reinforced-Concrete-Testing-Lab.png" data-attachment-id="5930"  alt="Fiber-Reinforced Concrete Testing Lab" title="Fiber-Reinforced-Concrete-Testing-Lab" /></noscript></a></div><figcaption>Fiber-Reinforced Concrete</figcaption></figure></div></div><div class="vce-single-image-container vce-single-image--align-center"><div class="vce vce-single-image-wrapper" id="el-50a31e58" data-vce-do-apply="all el-50a31e58"><figure><div class="vce-single-image-figure-inner" style="width: 640px;"><a href="https://tecservices.com/construction-materials-testing-laboratory/metals-testing-laboratory/" title="" class="vce-single-image-inner vce-single-image--absolute" style="width: 100%; padding-bottom: 53.125%;"><img decoding="async" class="vce-single-image"  width="640" height="340" data-lazy-srcset="https://tecservices.com/wp-content/uploads/2023/06/steel-testing-metals-testing-1-320x170.png 320w, https://tecservices.com/wp-content/uploads/2023/06/steel-testing-metals-testing-1-480x255.png 480w, https://tecservices.com/wp-content/uploads/2023/06/steel-testing-metals-testing-1-640x340.png 640w" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20340'%3E%3C/svg%3E" data-img-src="https://tecservices.com/wp-content/uploads/2023/06/steel-testing-metals-testing-1.png" data-attachment-id="5935"  alt="Steel Testing" title="steel-testing-metals-testing" data-lazy-src="https://tecservices.com/wp-content/uploads/2023/06/steel-testing-metals-testing-1-640x340.png" /><noscript><img decoding="async" class="vce-single-image"  width="640" height="340" srcset="https://tecservices.com/wp-content/uploads/2023/06/steel-testing-metals-testing-1-320x170.png 320w, https://tecservices.com/wp-content/uploads/2023/06/steel-testing-metals-testing-1-480x255.png 480w, https://tecservices.com/wp-content/uploads/2023/06/steel-testing-metals-testing-1-640x340.png 640w" src="https://tecservices.com/wp-content/uploads/2023/06/steel-testing-metals-testing-1-640x340.png" data-img-src="https://tecservices.com/wp-content/uploads/2023/06/steel-testing-metals-testing-1.png" data-attachment-id="5935"  alt="Steel Testing" title="steel-testing-metals-testing" /></noscript></a></div><figcaption>Steel Testing</figcaption></figure></div></div></div></div></div><div class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first" id="el-dac23d0c"><div class="vce-col-inner" data-vce-do-apply="border margin background  el-dac23d0c"><div class="vce-col-content" data-vce-element-content="true" data-vce-do-apply="padding el-dac23d0c"><div class="vce-single-image-container vce-single-image--align-center"><div class="vce vce-single-image-wrapper" id="el-b896a2b4" data-vce-do-apply="all el-b896a2b4"><figure><div class="vce-single-image-figure-inner" style="width: 479px;"><a href="https://tecservices.com/analytical-chemistry-laboratory-addition-expanded-capabilities/" title="" class="vce-single-image-inner vce-single-image--absolute" style="width: 100%; padding-bottom: 52.6096%;"><img decoding="async" class="vce-single-image"  width="479" height="252" data-lazy-srcset="https://tecservices.com/wp-content/uploads/2023/06/Analytical-Chemistry-Lab-320x168.jpg 320w, https://tecservices.com/wp-content/uploads/2023/06/Analytical-Chemistry-Lab-479x252.jpg 479w" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20479%20252'%3E%3C/svg%3E" data-img-src="https://tecservices.com/wp-content/uploads/2023/06/Analytical-Chemistry-Lab.jpg" data-attachment-id="5929"  alt="Analytical Chemistry Laboratory" title="Analytical-Chemistry-Lab" data-lazy-src="https://tecservices.com/wp-content/uploads/2023/06/Analytical-Chemistry-Lab-479x252.jpg" /><noscript><img decoding="async" class="vce-single-image"  width="479" height="252" srcset="https://tecservices.com/wp-content/uploads/2023/06/Analytical-Chemistry-Lab-320x168.jpg 320w, https://tecservices.com/wp-content/uploads/2023/06/Analytical-Chemistry-Lab-479x252.jpg 479w" src="https://tecservices.com/wp-content/uploads/2023/06/Analytical-Chemistry-Lab-479x252.jpg" data-img-src="https://tecservices.com/wp-content/uploads/2023/06/Analytical-Chemistry-Lab.jpg" data-attachment-id="5929"  alt="Analytical Chemistry Laboratory" title="Analytical-Chemistry-Lab" /></noscript></a></div><figcaption>Analytical Chemistry Lab</figcaption></figure></div></div><div class="vce-single-image-container vce-single-image--align-center"><div class="vce vce-single-image-wrapper" id="el-aef2b8f5" data-vce-do-apply="all el-aef2b8f5"><figure><div class="vce-single-image-figure-inner" style="width: 640px;"><a href="https://tecservices.com/construction-materials-testing-laboratory/products-conformance-testing/" title="" class="vce-single-image-inner vce-single-image--absolute" style="width: 100%; padding-bottom: 53.125%;"><img decoding="async" class="vce-single-image"  width="640" height="340" data-lazy-srcset="https://tecservices.com/wp-content/uploads/2023/06/products-conformance-testing-640-320x170.png 320w, https://tecservices.com/wp-content/uploads/2023/06/products-conformance-testing-640-480x255.png 480w, https://tecservices.com/wp-content/uploads/2023/06/products-conformance-testing-640-640x340.png 640w" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20640%20340'%3E%3C/svg%3E" data-img-src="https://tecservices.com/wp-content/uploads/2018/07/products-conformance-testing-640.png" data-attachment-id="2252"  alt="" title="products-conformance-testing-640" data-lazy-src="https://tecservices.com/wp-content/uploads/2023/06/products-conformance-testing-640-640x340.png" /><noscript><img decoding="async" class="vce-single-image"  width="640" height="340" srcset="https://tecservices.com/wp-content/uploads/2023/06/products-conformance-testing-640-320x170.png 320w, https://tecservices.com/wp-content/uploads/2023/06/products-conformance-testing-640-480x255.png 480w, https://tecservices.com/wp-content/uploads/2023/06/products-conformance-testing-640-640x340.png 640w" src="https://tecservices.com/wp-content/uploads/2023/06/products-conformance-testing-640-640x340.png" data-img-src="https://tecservices.com/wp-content/uploads/2018/07/products-conformance-testing-640.png" data-attachment-id="2252"  alt="" title="products-conformance-testing-640" /></noscript></a></div><figcaption>Product Conformance</figcaption></figure></div></div></div></div></div><div class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-last vce-col--lg-last vce-col--xl-last" id="el-05dba5b0"><div class="vce-col-inner" data-vce-do-apply="border margin background  el-05dba5b0"><div class="vce-col-content" data-vce-element-content="true" data-vce-do-apply="padding el-05dba5b0"><div class="vce-single-image-container vce-single-image--align-center"><div class="vce vce-single-image-wrapper" id="el-0c2af1af" data-vce-do-apply="all el-0c2af1af"><figure><div class="vce-single-image-figure-inner" style="width: 643px;"><a href="https://tecservices.com/construction-materials-testing-laboratory/cement-testing-laboratory/" title="" class="vce-single-image-inner vce-single-image--absolute" style="width: 100%; padding-bottom: 52.8771%;"><img decoding="async" class="vce-single-image"  width="643" height="340" data-lazy-srcset="https://tecservices.com/wp-content/uploads/2023/06/Cement-Testing-Lab-320x169.png 320w, https://tecservices.com/wp-content/uploads/2023/06/Cement-Testing-Lab-480x254.png 480w, https://tecservices.com/wp-content/uploads/2023/06/Cement-Testing-Lab-643x340.png 643w" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20643%20340'%3E%3C/svg%3E" data-img-src="https://tecservices.com/wp-content/uploads/2023/06/Cement-Testing-Lab.png" data-attachment-id="5931"  alt="Cement Testing" title="Cement-Testing-Lab" data-lazy-src="https://tecservices.com/wp-content/uploads/2023/06/Cement-Testing-Lab-643x340.png" /><noscript><img decoding="async" class="vce-single-image"  width="643" height="340" srcset="https://tecservices.com/wp-content/uploads/2023/06/Cement-Testing-Lab-320x169.png 320w, https://tecservices.com/wp-content/uploads/2023/06/Cement-Testing-Lab-480x254.png 480w, https://tecservices.com/wp-content/uploads/2023/06/Cement-Testing-Lab-643x340.png 643w" src="https://tecservices.com/wp-content/uploads/2023/06/Cement-Testing-Lab-643x340.png" data-img-src="https://tecservices.com/wp-content/uploads/2023/06/Cement-Testing-Lab.png" data-attachment-id="5931"  alt="Cement Testing" title="Cement-Testing-Lab" /></noscript></a></div><figcaption>Cement Testing</figcaption></figure></div></div><div class="vce-single-image-container vce-single-image--align-center"><div class="vce vce-single-image-wrapper" id="el-371ef81d" data-vce-do-apply="all el-371ef81d"><figure><div class="vce-single-image-figure-inner" style="width: 479px;"><a href="https://tecservices.com/construction-materials-testing-laboratory/epoxy-sealants-coatings-laboratory/" title="" class="vce-single-image-inner vce-single-image--absolute" style="width: 100%; padding-bottom: 53.6534%;"><img decoding="async" class="vce-single-image"  width="479" height="257" data-lazy-srcset="https://tecservices.com/wp-content/uploads/2023/06/Epoxy-Coatings-Testing-320x172.png 320w, https://tecservices.com/wp-content/uploads/2023/06/Epoxy-Coatings-Testing-479x257.png 479w" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20479%20257'%3E%3C/svg%3E" data-img-src="https://tecservices.com/wp-content/uploads/2023/06/Epoxy-Coatings-Testing.png" data-attachment-id="5939"  alt="Epoxy &amp; Coatings Testing" title="Epoxy-Coatings-Testing" data-lazy-src="https://tecservices.com/wp-content/uploads/2023/06/Epoxy-Coatings-Testing-479x257.png" /><noscript><img decoding="async" class="vce-single-image"  width="479" height="257" srcset="https://tecservices.com/wp-content/uploads/2023/06/Epoxy-Coatings-Testing-320x172.png 320w, https://tecservices.com/wp-content/uploads/2023/06/Epoxy-Coatings-Testing-479x257.png 479w" src="https://tecservices.com/wp-content/uploads/2023/06/Epoxy-Coatings-Testing-479x257.png" data-img-src="https://tecservices.com/wp-content/uploads/2023/06/Epoxy-Coatings-Testing.png" data-attachment-id="5939"  alt="Epoxy &amp; Coatings Testing" title="Epoxy-Coatings-Testing" /></noscript></a></div><figcaption>Epoxy &amp; Coatings Testing</figcaption></figure></div></div></div></div></div></div></div></div><div class="vce-row-container" data-vce-boxed-width="true"><div class="vce-row vce-row--col-gap-30 vce-row-equal-height vce-row-content--top" id="el-06ce3dc5" data-vce-do-apply="all el-06ce3dc5"><div class="vce-content-background-container"></div><div class="vce-row-content" data-vce-element-content="true"><div class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-last vce-col--lg-last vce-col--xl-last vce-col--md-first vce-col--lg-first vce-col--xl-first" id="el-e49b3a4c"><div class="vce-col-inner" data-vce-do-apply="border margin background  el-e49b3a4c"><div class="vce-col-content" data-vce-element-content="true" data-vce-do-apply="padding el-e49b3a4c"><div class="vce-text-block"><div class="vce-text-block-wrapper vce" id="el-15b55607" data-vce-do-apply="all el-15b55607"><h2 class="vc_custom_heading wpb_animate_when_almost_visible wpb_fadeInDown fadeInDown wpb_start_animation animated" style="text-align: center;">Our Lab Is Certified, Accredited, and Validated...</h2><p>&nbsp;</p></div></div></div></div></div></div></div></div><div class="vce-row-container" data-vce-boxed-width="true"><div class="vce-row vce-row--col-gap-30 vce-row-equal-height vce-row-content--top" id="el-fdfad129" data-vce-do-apply="all el-fdfad129"><div class="vce-content-background-container"></div><div class="vce-row-content" data-vce-element-content="true"><div class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-first vce-col--lg-first vce-col--xl-first" id="el-3af3ce0b"><div class="vce-col-inner" data-vce-do-apply="border margin background  el-3af3ce0b"><div class="vce-col-content" data-vce-element-content="true" data-vce-do-apply="padding el-3af3ce0b"><div class="vce-text-block"><div class="vce-text-block-wrapper vce" id="el-2ce27261" data-vce-do-apply="all el-2ce27261"><p><img decoding="async" class="aligncenter wp-image-3261 size-thumbnail" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2080%2080'%3E%3C/svg%3E" alt="American Association for Laboratory Accreditation" width="80" height="80" data-wp-editing="1" data-lazy-src="https://tecservices.com/wp-content/uploads/2018/07/a2la-accredited-laboratory-1-80x80.png"><noscript><img decoding="async" class="aligncenter wp-image-3261 size-thumbnail" src="https://tecservices.com/wp-content/uploads/2018/07/a2la-accredited-laboratory-1-80x80.png" alt="American Association for Laboratory Accreditation" width="80" height="80" data-wp-editing="1"></noscript></p><p style="text-align: center;"><a href="https://tecservices.com/about-tec-services/a2la-certificate/">American Association for<br>Laboratory Accreditation</a></p></div></div></div></div></div><div class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first" id="el-032d5155"><div class="vce-col-inner" data-vce-do-apply="border margin background  el-032d5155"><div class="vce-col-content" data-vce-element-content="true" data-vce-do-apply="padding el-032d5155"><div class="vce-text-block"><div class="vce-text-block-wrapper vce" id="el-ac5c6e88" data-vce-do-apply="all el-ac5c6e88"><p><img decoding="async" class="aligncenter wp-image-2332 size-thumbnail" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2080%2080'%3E%3C/svg%3E" alt="AASHTO Accredited Laboratory" width="80" height="80" data-lazy-src="https://tecservices.com/wp-content/uploads/2018/07/aashto-accredited-laboratory-80x80.png"><noscript><img decoding="async" class="aligncenter wp-image-2332 size-thumbnail" src="https://tecservices.com/wp-content/uploads/2018/07/aashto-accredited-laboratory-80x80.png" alt="AASHTO Accredited Laboratory" width="80" height="80"></noscript></p><p style="text-align: center;"><a href="https://tecservices.com/about-tec-services/aashto-accredited-lab-amrl-r18-iso-17025-certified/">AASHTO Accreditation AMRL R18 and ISO 17025 Certification</a></p></div></div></div></div></div><div class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first" id="el-8fb828f4"><div class="vce-col-inner" data-vce-do-apply="border margin background  el-8fb828f4"><div class="vce-col-content" data-vce-element-content="true" data-vce-do-apply="padding el-8fb828f4"><div class="vce-text-block"><div class="vce-text-block-wrapper vce" id="el-de29c5cb" data-vce-do-apply="all el-de29c5cb"><img decoding="async" class="aligncenter wp-image-2334 size-thumbnail" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2080%2080'%3E%3C/svg%3E" alt="US Army Corps of Engineers Validation" width="80" height="80" data-lazy-src="https://tecservices.com/wp-content/uploads/2018/07/usacoe-laboratory-validation-128-80x80.png"><noscript><img decoding="async" class="aligncenter wp-image-2334 size-thumbnail" src="https://tecservices.com/wp-content/uploads/2018/07/usacoe-laboratory-validation-128-80x80.png" alt="US Army Corps of Engineers Validation" width="80" height="80"></noscript><br><p style="text-align: center;"><a href="https://tecservices.com/about-tec-services/us-army-corps-of-engineers-validation/">US Army Corps of Engineers Validation</a></p></div></div></div></div></div><div class="vce-col vce-col--md-auto vce-col--xs-1 vce-col--xs-last vce-col--xs-first vce-col--sm-last vce-col--sm-first vce-col--md-last vce-col--lg-last vce-col--xl-last" id="el-db919e58"><div class="vce-col-inner" data-vce-do-apply="border margin background  el-db919e58"><div class="vce-col-content" data-vce-element-content="true" data-vce-do-apply="padding el-db919e58"><div class="vce-text-block"><div class="vce-text-block-wrapper vce" id="el-656a0064" data-vce-do-apply="all el-656a0064"><p><img decoding="async" class="aligncenter wp-image-2335 size-thumbnail" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2080%2080'%3E%3C/svg%3E" alt="American Society for Testing &amp; Materials" width="80" height="80" data-lazy-src="https://tecservices.com/wp-content/uploads/2018/07/astm-laboratory-128-80x80.png"><noscript><img decoding="async" class="aligncenter wp-image-2335 size-thumbnail" src="https://tecservices.com/wp-content/uploads/2018/07/astm-laboratory-128-80x80.png" alt="American Society for Testing &amp; Materials" width="80" height="80"></noscript></p><p style="text-align: center;"><a href="https://tecservices.com/about-tec-services/astm/">American Society for Testing &amp; Materials</a></p></div></div></div></div></div></div></div></div>
+	</div><!-- .entry-content -->
+
+</article><!-- #post-3864 -->
+	</div><!-- #.content-inner -->
+              			</main><!-- #main -->
+					</div><!-- #.customify-grid -->
+	</div><!-- #.customify-container -->
+</div><!-- #content -->
+<footer class="site-footer" id="site-footer">							<div  class="footer-main footer--row layout-full-contained"  id="cb-row--footer-main"  data-row-id="main"  data-show-on="desktop">
+								<div class="footer--row-inner footer-main-inner dark-mode">
+									<div class="customify-container">
+										<div class="customify-grid  customify-grid-top"><div class="customify-col-3_md-3_sm-6_xs-12 builder-item builder-first--footer-1" data-push-left="_sm-0"><div class="item--inner builder-item--footer-1" data-section="sidebar-widgets-footer-1" data-item-id="footer-1" ><div class="widget-area"><section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><a href= "https://tecservices.com/contact-sgs-tec-services/"><strong>CUSTOMER SERVICE</strong></a>
+<br><br>
+SGS TEC Services
+<br>
+235 Buford Drive
+<br>
+Lawrenceville, GA 30046 USA
+<br>
+Phone: <a href="tel:17709958000">+1-770-995-8000</a>
+<br>
+<br>
+<a href="https://tecservices.com/contact-sgs-tec-services/request-a-quote/"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20135%2036'%3E%3C/svg%3E" alt="" width="135" height="36" data-lazy-src="https://tecservices.com/wp-content/uploads/2022/03/Request-A-Quote-button.jpg"><noscript><img src="https://tecservices.com/wp-content/uploads/2022/03/Request-A-Quote-button.jpg" alt="" width="135" height="36"></noscript></a>
+</div></section></div></div></div><div class="customify-col-3_md-3_sm-6_xs-12 builder-item builder-first--footer-2" data-push-left="_sm-0"><div class="item--inner builder-item--footer-2" data-section="sidebar-widgets-footer-2" data-item-id="footer-2" ><div class="widget-area"><section id="text-3" class="widget widget_text">			<div class="textwidget"><p><strong>TESTING LABORATORY</strong></p>
+<p><a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-testing-laboratory-2/admixures-testing/">Admixture Testing</a><br />
+<a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-testing-laboratory-2/aggregate-testing/">Aggregate Laboratory</a><br />
+<a href="https://tecservices.com/construction-materials-testing-laboratory/anchor-systems-testing/">Anchor Systems Testing</a><br />
+<a href="https://tecservices.com/construction-materials-testing-laboratory/cement-testing-laboratory/">Cement Laboratory</a><br />
+<a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-testing-laboratory-2/">Concrete Laboratory</a><br />
+<a href="https://tecservices.com/construction-materials-testing-laboratory/epoxy-sealants-coatings/">Epoxy, Sealants, &amp; Coatings</a><br />
+<a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-testing-laboratory-2/fiber-reinforced-concrete-testing/">Fiber-Reinforced Concrete</a><br />
+<a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-testing-laboratory-2/masonry-testing-laboratory/">Masonry Testing</a><br />
+<a href="https://tecservices.com/construction-materials-testing-laboratory/metals-testing-laboratory/">Metals Testing</a><br />
+<a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-petrography/">Petrographic Laboratory</a><br />
+<a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-petrography/petrographic-evaluation/">Petrographic Evaluation</a><br />
+<a href="https://tecservices.com/construction-materials-testing-laboratory/pozzolanic-mineral-admixture-testing/">Pozzolanic &amp; Mineral Admixture Laboratory</a><br />
+<a href="https://tecservices.com/construction-materials-testing-laboratory/products-conformance-testing">Products Conformance Testing</a><br />
+<a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-testing-laboratory-2/construction-repair-products-mortars-testing/">Repair Products &amp; Mortars Testing</a><br />
+<a href="https://tecservices.com/construction-materials-testing-laboratory/treestand-testing-fall-arrest-harness-testing/">Tree Stand &amp; Fall Arrest Harness Testing</a><br />
+<a href="https://tecservices.com/construction-materials-testing-laboratory/concrete-petrography/x-ray-diffraction/">X-Ray Diffraction</a></p>
+</div>
+		</section></div></div></div><div class="customify-col-3_md-3_sm-6_xs-12 builder-item builder-first--footer-3" data-push-left="_sm-0"><div class="item--inner builder-item--footer-3" data-section="sidebar-widgets-footer-3" data-item-id="footer-3" ><div class="widget-area"><section id="text-4" class="widget widget_text">			<div class="textwidget"><p><strong>ENGINEERING</strong></p>
+<p><a href="https://tecservices.com/engineering/facilities-structural-inspections/">Facilities</a><br />
+<a href="https://tecservices.com/engineering/structural-engineers-atlanta-georgia/">Structural Engineering</a><br />
+<a href="https://tecservices.com/engineering/non-destructive-testing-services/">Non-Destructive Testing</a><br />
+<a href="https://tecservices.com/construction-materials-testing-structural-engineering-success-stories/">Success Stories</a></p>
+</div>
+		</section><section id="text-5" class="widget widget_text">			<div class="textwidget"><p><strong>CONSULTING</strong></p>
+<p><a href="https://tecservices.com/construction-materials-consultants/">Materials &amp; Engineering</a><br />
+<a href="https://tecservices.com/geographical-information-systems-gis-mapping-services/">GIS &amp; Mapping Services</a><br />
+<a href="https://tecservices.com/mineral-geological-exploration-services/">Geology &amp; Exploration</a></p>
+</div>
+		</section></div></div></div><div class="customify-col-3_md-3_sm-6_xs-12 builder-item builder-first--footer-4" data-push-left="_sm-0"><div class="item--inner builder-item--footer-4" data-section="sidebar-widgets-footer-4" data-item-id="footer-4" ><div class="widget-area">
+		<section id="recent-posts-4" class="widget widget_recent_entries">
+		<h4 class="widget-title">Recent Posts</h4>
+		<ul>
+											<li>
+					<a href="https://tecservices.com/new-service-gis-and-gps-surveying/">NEW Service: GIS and GPS Surveying</a>
+									</li>
+											<li>
+					<a href="https://tecservices.com/analytical-chemistry-laboratory-addition-expanded-capabilities/">Analytical Chemistry Laboratory Addition &#038; Expanded Capabilities</a>
+									</li>
+											<li>
+					<a href="https://tecservices.com/new-uva-uvb-chambers-for-our-chemistry-lab/">New UVA &#038; UVB Chambers for Our Chemistry Lab</a>
+									</li>
+											<li>
+					<a href="https://tecservices.com/recent-2016-surveillance-audits/">Surveillance Audits</a>
+									</li>
+					</ul>
+
+		</section></div></div></div></div>									</div>
+								</div>
+							</div>
+														<div  class="footer-bottom footer--row layout-full-contained"  id="cb-row--footer-bottom"  data-row-id="bottom"  data-show-on="desktop">
+								<div class="footer--row-inner footer-bottom-inner dark-mode">
+									<div class="customify-container">
+										<div class="customify-grid  customify-grid-top"><div class="customify-col-8_md-8_sm-12_xs-12 builder-item builder-first--footer_copyright" data-push-left="off-4 _sm-0"><div class="item--inner builder-item--footer_copyright" data-section="footer_copyright" data-item-id="footer_copyright" ><div class="builder-footer-copyright-item footer-copyright"><p>Copyright &copy; 2023 SGS TEC Services</p>
+</div></div></div></div>									</div>
+								</div>
+							</div>
+							</footer></div><!-- #page -->
+
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://tecservices.com/wp-content/plugins/visualcomposer/public/dist/runtime.bundle.js?ver=45.1.1' id='vcv:assets:runtime:script-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://tecservices.com/wp-content/plugins/visualcomposer/public/dist/front.bundle.js?ver=45.1.1' id='vcv:assets:front:script-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://tecservices.com/wp-content/plugins/visualcomposer/public/sources/assetsLibrary/fullWidth/dist/fullWidth.bundle.js?ver=45.1.1-3864' id='vcv:assets:source:scripts:assetslibraryfullwidthdistfullwidthbundlejs-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://tecservices.com/wp-includes/js/imagesloaded.min.js?ver=4.1.4' id='imagesloaded-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://tecservices.com/wp-includes/js/masonry.min.js?ver=4.2.2' id='masonry-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://tecservices.com/wp-includes/js/jquery/jquery.masonry.min.js?ver=3.1.2b' id='jquery-masonry-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$\/|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)\/|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/tecservices.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type='text/javascript' id='customify-themejs-js-extra'>
+/* <![CDATA[ */
+var Customify_JS = {"is_rtl":"","css_media_queries":{"all":"%s","desktop":"%s","tablet":"@media screen and (max-width: 1024px) { %s }","mobile":"@media screen and (max-width: 568px) { %s }"},"sidebar_menu_no_duplicator":"1"};
+var Customify_Pro_JS = {"infinity_load":{"posts":{"enable":1,"load_type":"auto","loading_text":"Loading","load_more_text":"Load More"},"products":{"enable":1,"load_type":"auto","loading_text":"Loading","load_more_text":"Load More"}}};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://tecservices.com/wp-content/themes/customify/assets/js/theme.js?ver=0.4.0' id='customify-themejs-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://tecservices.com/wp-content/plugins/customify-pro/modules/header-sticky/js/script.js?ver=0.4.0' id='header-sticky-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://tecservices.com/wp-content/plugins/customify-pro/assets/js/shuffle.js?ver=0.4.0' id='shuffle.js-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://tecservices.com/wp-content/plugins/customify-pro/modules/blog/js/script.js?ver=0.4.0' id='blog-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://tecservices.com/wp-content/plugins/customify-pro/modules/infinity/assets/js/infinity.js?ver=0.4.0' id='infinity-js' defer></script>
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://tecservices.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script>
+</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1687741399 -->

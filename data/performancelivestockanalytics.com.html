@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="pingback" href="https://performancelivestockanalytics.com/xmlrpc.php" />
+
+	<script type="text/javascript">
+		document.documentElement.className = 'js';
+	</script>
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><style id="et-divi-open-sans-inline-css">/* Original: https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&#038;subset=latin,latin-ext&#038;display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4uaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4uaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4uaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4uaVc.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1x4uaVc.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkWV4exg.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkWV4exg.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjWV4exg.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjWV4exg.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjWV4exg.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4uaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4uaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4uaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4uaVQ.woff) format('woff');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1x4uaVQ.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkWV4ewA.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkWV4ewA.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkxhjWV4ewA.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0RkyFjWV4ewA.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk0ZjWV4ewA.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4uaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4uaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 600;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4uaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 700;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4uaVI.woff2) format('woff2');}@font-face {font-family: 'Open Sans';font-style: normal;font-weight: 800;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v35/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1x4uaVI.woff2) format('woff2');}</style><style id="et-builder-googlefonts-cached-inline">/* Original: https://fonts.googleapis.com/css?family=Barlow:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&#038;subset=latin,latin-ext&#038;display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Barlow';font-style: italic;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHtv4kjgoGqM7E_CfNY8HMJnQ.ttf) format('truetype');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfP04WogvT8.ttf) format('truetype');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfOQ4mogvT8.ttf) format('truetype');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHrv4kjgoGqM7E_Cfs1wHo.ttf) format('truetype');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfPI42ogvT8.ttf) format('truetype');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfPk5GogvT8.ttf) format('truetype');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfOA5WogvT8.ttf) format('truetype');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfOc5mogvT8.ttf) format('truetype');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfO452ogvT8.ttf) format('truetype');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHrv4kjgoGqM7E3b_s1wHo.ttf) format('truetype');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3w-os6Vop.ttf) format('truetype');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3p-ks6Vop.ttf) format('truetype');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHpv4kjgoGqM7E_Ass8.ttf) format('truetype');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3_-gs6Vop.ttf) format('truetype');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E30-8s6Vop.ttf) format('truetype');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3t-4s6Vop.ttf) format('truetype');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3q-0s6Vop.ttf) format('truetype');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3j-ws6Vop.ttf) format('truetype');}/* User Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:27.0) Gecko/20100101 Firefox/27.0 */@font-face {font-family: 'Barlow';font-style: italic;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHtv4kjgoGqM7E_CfNY8HMJng.woff) format('woff');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfP04WogvTw.woff) format('woff');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfOQ4mogvTw.woff) format('woff');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHrv4kjgoGqM7E_Cfs1wHk.woff) format('woff');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfPI42ogvTw.woff) format('woff');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfPk5GogvTw.woff) format('woff');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfOA5WogvTw.woff) format('woff');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfOc5mogvTw.woff) format('woff');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfO452ogvTw.woff) format('woff');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHrv4kjgoGqM7E3b_s1wHk.woff) format('woff');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3w-os6Voq.woff) format('woff');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3p-ks6Voq.woff) format('woff');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHpv4kjgoGqM7E_Ass_.woff) format('woff');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3_-gs6Voq.woff) format('woff');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E30-8s6Voq.woff) format('woff');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3t-4s6Voq.woff) format('woff');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3q-0s6Voq.woff) format('woff');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3j-ws6Voq.woff) format('woff');}/* User Agent: Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/39.0 */@font-face {font-family: 'Barlow';font-style: italic;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHtv4kjgoGqM7E_CfNY8HMJmA.woff2) format('woff2');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfP04WogvTo.woff2) format('woff2');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfOQ4mogvTo.woff2) format('woff2');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHrv4kjgoGqM7E_Cfs1wH8.woff2) format('woff2');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfPI42ogvTo.woff2) format('woff2');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfPk5GogvTo.woff2) format('woff2');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfOA5WogvTo.woff2) format('woff2');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfOc5mogvTo.woff2) format('woff2');}@font-face {font-family: 'Barlow';font-style: italic;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfO452ogvTo.woff2) format('woff2');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 100;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHrv4kjgoGqM7E3b_s1wH8.woff2) format('woff2');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 200;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3w-os6Vos.woff2) format('woff2');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 300;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3p-ks6Vos.woff2) format('woff2');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 400;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHpv4kjgoGqM7E_Ass5.woff2) format('woff2');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 500;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3_-gs6Vos.woff2) format('woff2');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 600;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E30-8s6Vos.woff2) format('woff2');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 700;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3t-4s6Vos.woff2) format('woff2');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 800;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3q-0s6Vos.woff2) format('woff2');}@font-face {font-family: 'Barlow';font-style: normal;font-weight: 900;font-display: swap;src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3j-ws6Vos.woff2) format('woff2');}</style><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v20.9 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Home | Performance Livestock Analytics</title>
+	<meta name="description" content="Performance Livestock Analytics uses cattle data and analytics to improve beef management, saving time and boosting profitability for feedlots." />
+	<link rel="canonical" href="https://performancelivestockanalytics.com/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Home | Performance Livestock Analytics" />
+	<meta property="og:description" content="Performance Livestock Analytics uses cattle data and analytics to improve beef management, saving time and boosting profitability for feedlots." />
+	<meta property="og:site_name" content="Performance Livestock Analytics" />
+	<meta property="article:publisher" content="https://www.facebook.com/performancebeef/" />
+	<meta property="article:modified_time" content="2022-09-01T20:48:18+00:00" />
+	<meta property="og:image" content="https://performancelivestockanalytics.com/wp-content/uploads/2022/09/pla_logo_black_zoetis_100k-1-1.png" />
+	<meta property="og:image:width" content="1064" />
+	<meta property="og:image:height" content="584" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@PerformanceBeef" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="1 minute" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://performancelivestockanalytics.com/","url":"https://performancelivestockanalytics.com/","name":"Home | Performance Livestock Analytics","isPartOf":{"@id":"https://performancelivestockanalytics.com/#website"},"about":{"@id":"https://performancelivestockanalytics.com/#organization"},"datePublished":"2022-04-22T01:31:57+00:00","dateModified":"2022-09-01T20:48:18+00:00","description":"Performance Livestock Analytics uses cattle data and analytics to improve beef management, saving time and boosting profitability for feedlots.","breadcrumb":{"@id":"https://performancelivestockanalytics.com/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://performancelivestockanalytics.com/"]}]},{"@type":"BreadcrumbList","@id":"https://performancelivestockanalytics.com/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"}]},{"@type":"WebSite","@id":"https://performancelivestockanalytics.com/#website","url":"https://performancelivestockanalytics.com/","name":"Performance Livestock Analytics","description":"Analytics for Cattle Management","publisher":{"@id":"https://performancelivestockanalytics.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://performancelivestockanalytics.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"https://performancelivestockanalytics.com/#organization","name":"Performance Livestock Analytics","url":"https://performancelivestockanalytics.com/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://performancelivestockanalytics.com/#/schema/logo/image/","url":"https://performancelivestockanalytics.com/wp-content/uploads/2022/09/pla_logo_black_zoetis_100k-1-1.png","contentUrl":"https://performancelivestockanalytics.com/wp-content/uploads/2022/09/pla_logo_black_zoetis_100k-1-1.png","width":1064,"height":584,"caption":"Performance Livestock Analytics"},"image":{"@id":"https://performancelivestockanalytics.com/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/performancebeef/","https://twitter.com/PerformanceBeef","http://instagram.com/performancebeef","https://www.linkedin.com/company/performance-livestock-analytics/"]}]}</script>
+	<meta name="msvalidate.01" content="94FA6075BB85BDBA5C7190E99477056E" />
+	<meta name="google-site-verification" content="RKloRMlxKGXjEOJQ5M19ncyHIAGHr3sZK8V4UN9MxzA" />
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="alternate" type="application/rss+xml" title="Performance Livestock Analytics &raquo; Feed" href="https://performancelivestockanalytics.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Performance Livestock Analytics &raquo; Comments Feed" href="https://performancelivestockanalytics.com/comments/feed/" />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/performancelivestockanalytics.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.2.2"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){p.clearRect(0,0,i.width,i.height),p.fillText(e,0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(t,0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s("\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!s("\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!s("\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!s("\ud83e\udef1\ud83c\udffb\u200d\ud83e\udef2\ud83c\udfff","\ud83e\udef1\ud83c\udffb\u200b\ud83e\udef2\ud83c\udfff")}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<meta content="Performance Livestock Analytics v.1.0.0" name="generator"/><style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	
+<style id='pac-drh-blurb-inline-css'>@media all and (max-width:767px){.pac_drh_ph_blurb_top_left.et_pb_blurb_position_left .et_pb_main_blurb_image{display:block!important}.pac_drh_ph_blurb_top_left.et_pb_blurb_position_left .et_pb_blurb_container{padding-left:0;display:block!important}.pac_drh_ph_blurb_top_center.et_pb_blurb_position_left .et_pb_main_blurb_image{display:block!important;width:50%;margin:0 auto;margin-bottom:30px}.pac_drh_ph_blurb_top_center.et_pb_blurb_position_left .et_pb_blurb_container{padding-left:0;display:block!important}.pac_drh_ph_blurb_top_right.et_pb_blurb_position_left .et_pb_main_blurb_image{margin-left:auto;display:flex;flex-direction:row-reverse}.pac_drh_ph_blurb_top_right.et_pb_blurb_position_left .et_pb_blurb_container{padding-left:0;display:block!important}}</style>
+
+<style id='pac-drh-tabs-inline-css'>@media (min-width:768px) and (max-width:980px){.pac_drh_tabs_vertical_tab .et_pb_tabs_controls li{float:none;border-right:none;border-bottom:1px solid #d9d9d9;display:block}}@media (min-width:300px) and (max-width:767px){.pac_drh_tabs_horizontal_phone ul.et_pb_tabs_controls{display:flex;flex-wrap:wrap}.pac_drh_tabs_horizontal_phone .et_pb_tabs_controls li{flex-grow:1}.pac_drh_tabs_horizontal_phone .et_pb_tabs_controls li a{display:block}}</style>
+
+<style id='pac-drh-menu-inline-css'>@media (min-width:981px){.pac_drh_hide_menu_item_desktop{display:none!important;}}@media (min-width:768px) and (max-width:980px){.pac_drh_hide_menu_item_tablet{display:none!important;}}@media (min-width:300px) and (max-width:767px){.pac_drh_hide_menu_item_mobile{display:none!important;}}</style>
+<link rel='stylesheet' id='wp-pagenavi-css' href='https://performancelivestockanalytics.com/wp-content/plugins/wp-pagenavi/pagenavi-css.css?ver=2.70' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-ajax-filter-styles-css' href='https://performancelivestockanalytics.com/wp-content/plugins/divi-ajax-filter/styles/style.min.css?ver=2.3.3' type='text/css' media='all' />
+<link rel='stylesheet' id='carousel-layouts-styles-css' href='https://performancelivestockanalytics.com/wp-content/plugins/divi-carousel-maker/styles/style.min.css?ver=2.0.2' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-machine-styles-css' href='https://performancelivestockanalytics.com/wp-content/plugins/divi-machine/styles/style.min.css?ver=5.4.3' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-modal-popup-styles-css' href='https://performancelivestockanalytics.com/wp-content/plugins/divi-modal-popup/styles/style.min.css?ver=1.0.8' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-social-sharing-buttons-styles-css' href='https://performancelivestockanalytics.com/wp-content/plugins/divi-social-sharing-buttons/styles/style.min.css?ver=2.2.1' type='text/css' media='all' />
+<link rel='stylesheet' id='pac_drh_public-css' href='https://performancelivestockanalytics.com/wp-content/plugins/divi-responsive-helper/includes/assets/public/css/style.min.css?ver=2.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='pac_drh_stacking-css' href='https://performancelivestockanalytics.com/wp-content/plugins/divi-responsive-helper/includes/assets/public/css/stacking.min.css?ver=2.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='pac_drh_col_numbering_css-css' href='https://performancelivestockanalytics.com/wp-content/plugins/divi-responsive-helper/includes/assets/public/css/column-numbering.min.css?ver=2.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='pac_drh_et_pb_blog_css-css' href='https://performancelivestockanalytics.com/wp-content/plugins/divi-responsive-helper/includes/assets/public/css/et-pb-blog.min.css?ver=2.3.1' type='text/css' media='all' />
+<link rel='stylesheet' id='dmach-carousel-css-css' href='https://performancelivestockanalytics.com/wp-content/plugins/divi-machine/css/carousel.min.css?ver=5.4.3' type='text/css' media='all' />
+<link rel='stylesheet' id='divi-style-parent-css' href='https://performancelivestockanalytics.com/wp-content/themes/Divi/style-static.min.css?ver=4.21.0' type='text/css' media='all' />
+<link rel='stylesheet' id='splidecss-css' href='https://performancelivestockanalytics.com/wp-content/themes/performance-livestock-analytics/assets/styles/vendor/splide.min.css?ver=0.0.1' type='text/css' media='' />
+<link rel='stylesheet' id='divi-style-css' href='https://performancelivestockanalytics.com/wp-content/themes/performance-livestock-analytics/style.css?ver=4.21.0' type='text/css' media='all' />
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.4' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0' id='jquery-migrate-js'></script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/plugins/divi-machine/includes/modules/divi-ajax-filter/js/masonry.min.js?ver=5.4.3' id='divi-filter-masonry-js-js'></script>
+<script type='text/javascript' id='divi-filter-loadmore-js-js-extra'>
+/* <![CDATA[ */
+var loadmore_ajax_object = {"ajax_url":"https:\/\/performancelivestockanalytics.com\/wp-admin\/admin-ajax.php","security":"707355afe5"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/plugins/divi-ajax-filter/includes/modules/MachineLoop/../../../js/divi-filter-loadmore.min.js?ver=2.3.3' id='divi-filter-loadmore-js-js'></script>
+<link rel="https://api.w.org/" href="https://performancelivestockanalytics.com/wp-json/" /><link rel="alternate" type="application/json" href="https://performancelivestockanalytics.com/wp-json/wp/v2/pages/8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://performancelivestockanalytics.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://performancelivestockanalytics.com/wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='https://performancelivestockanalytics.com/' />
+<link rel="alternate" type="application/json+oembed" href="https://performancelivestockanalytics.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fperformancelivestockanalytics.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://performancelivestockanalytics.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fperformancelivestockanalytics.com%2F&#038;format=xml" />
+<script>
+jQuery(document).ready(function(i){const c=window.navigator.userAgent;function t(c){i(".et_pb_de_mach_archive_loop").each(function(t,s){var e,n,o,d=i(this).find(".dmach-grid-item"),h=(e=i(".dmach-grid-sizes"),n=c,o=void 0,i(e.attr("class").split(" ")).each(function(){this.indexOf(n)>-1&&(o=this)}),o).replace(c,""),a=1,r=1;i(d).each(function(i,c){a++});var l=Math.ceil(a/h),m=l*h;i(d).each(function(c,t){var s=(r-1)%h+1,e=Math.ceil(r*l/m);i(this).closest(".grid-posts").find(".dmach-grid-item:nth-child("+r+")").css("-ms-grid-row",""+e),i(this).closest(".grid-posts").find(".dmach-grid-item:nth-child("+r+")").css("-ms-grid-column",""+s),r++})})}/MSIE|Trident/.test(c)&&i(window).on("resize",function(){i(window).width()>=981?(col_size="col-desk-",t(col_size)):(col_size="col-mob-",t(col_size))})});
+</script>
+
+<style>
+.col-desk-1>:not(.no-results-layout){display:-ms-grid;-ms-grid-columns:1fr}.col-desk-2>:not(.no-results-layout){display:-ms-grid;-ms-grid-columns:1fr 1fr}.col-desk-3>:not(.no-results-layout){display:-ms-grid;-ms-grid-columns:1fr 1fr 1fr}.col-desk-4>:not(.no-results-layout){display:-ms-grid;-ms-grid-columns:1fr 1fr 1fr 1fr}.col-desk-5>:not(.no-results-layout){display:-ms-grid;-ms-grid-columns:1fr 1fr 1fr 1fr 1fr}.col-desk-6>:not(.no-results-layout){display:-ms-grid;-ms-grid-columns:1fr 1fr 1fr 1fr 1fr 1fr}@media(max-width:980px){body .col-mob-1>:not(.no-results-layout){display:-ms-grid;-ms-grid-columns:1fr}body .col-mob-2>:not(.no-results-layout){display:-ms-grid;-ms-grid-columns:1fr 1fr}}@media screen and (-ms-high-contrast:active),(-ms-high-contrast:none){.et_pb_gutters4 .dmach-grid-sizes>:not(.no-results-layout)>div{margin-left:8%!important;margin-right:8%!important}.et_pb_gutters3 .dmach-grid-sizes>:not(.no-results-layout)>div{margin-left:5.5%!important;margin-right:5.5%!important}.et_pb_gutters2 .dmach-grid-sizes>:not(.no-results-layout)>div{margin-left:3%!important;margin-right:3%!important}.et_pb_gutters1 .dmach-grid-sizes>:not(.no-results-layout)>div{margin-left:0!important;margin-right:0!important}}
+</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<style id='pac-drh-phs-inline-css'>#page-container{overflow-x: hidden;}</style>
+
+<meta name="theme-color" content="#ffffff" />
+
+<style id='pac-drh-opened-menu-icon-inline-css'>#et_mobile_nav_menu .mobile_nav.opened .mobile_menu_bar:before{content:'M';</style>
+
+<style id='pac-drh-change-phone-menu-breakpoint-inline-css'>@media (max-width: 767px) and (min-width: 0px){ #et_top_search{margin: 5px 15px 0 0;float: left;}}</style>
+
+<style id='pac-drh-collapse-mobile-submenus-inline-css'>#et_mobile_nav_menu .et-db #et-boc .et-l ul.et_mobile_menu li.menu-item-has-children .mobile-toggle,#et_mobile_nav_menu .et-db #et-boc .et-l ul.et_mobile_menu li.page_item_has_children .mobile-toggle,#et_mobile_nav_menu ul.et_mobile_menu li.menu-item-has-children .mobile-toggle,#et_mobile_nav_menu ul.et_mobile_menu li.page_item_has_children .mobile-toggle{width:44px;height:100%;padding:0!important;max-height:44px;border:none;position:absolute;right:0;top:0;z-index:999;background-color:transparent}#et_mobile_nav_menu .et-db #et-boc .et-l ul.et_mobile_menu>li.menu-item-has-children,#et_mobile_nav_menu .et-db #et-boc .et-l ul.et_mobile_menu>li.menu-item-has-children .sub-menu li.menu-item-has-children,#et_mobile_nav_menu .et-db #et-boc .et-l ul.et_mobile_menu>li.page_item_has_children,#et_mobile_nav_menu ul.et_mobile_menu>li.menu-item-has-children,#et_mobile_nav_menu ul.et_mobile_menu>li.menu-item-has-children .sub-menu li.menu-item-has-children,#et_mobile_nav_menu ul.et_mobile_menu>li.page_item_has_children{position:relative}#et_mobile_nav_menu .et-db #et-boc .et-l .et_mobile_menu .menu-item-has-children>a,#et_mobile_nav_menu .et_mobile_menu .menu-item-has-children>a{background-color:transparent}#et_mobile_nav_menu #main-header ul.et_mobile_menu .menu-item-has-children .sub-menu,#et_mobile_nav_menu .et-db #et-boc .et-l ul.et_mobile_menu .menu-item-has-children .sub-menu,#et_mobile_nav_menu .et-db #main-header ul.et_mobile_menu .menu-item-has-children .sub-menu,#et_mobile_nav_menu ul.et_mobile_menu .menu-item-has-children .sub-menu{display:none!important;visibility:hidden!important}#main-header ul.et_mobile_menu .menu-item-has-children .sub-menu.visible,.et-db #et-boc .et-l ul.et_mobile_menu .menu-item-has-children .sub-menu.visible,.et-db #main-header ul.et_mobile_menu .menu-item-has-children .sub-menu.visible,ul.et_mobile_menu .menu-item-has-children .sub-menu.visible{display:block!important;visibility:visible!important}#et_mobile_nav_menu .et-db #et-boc .et-l ul.et_mobile_menu li.menu-item-has-children .mobile-toggle,#et_mobile_nav_menu ul.et_mobile_menu li.menu-item-has-children .mobile-toggle{text-align:center;opacity:1}#et_mobile_nav_menu .et-db #et-boc .et-l ul.et_mobile_menu li.menu-item-has-children .mobile-toggle::after,#et_mobile_nav_menu ul.et_mobile_menu li.menu-item-has-children .mobile-toggle::after{top:10px;position:relative;font-family:ETModules,serif;content:'3';color:#ffffff;background:#f0f3f6;border-radius:50%;padding:3px}#et_mobile_nav_menu .et-db #et-boc .et-l ul.et_mobile_menu li.menu-item-has-children.dt-open>.mobile-toggle::after,#et_mobile_nav_menu ul.et_mobile_menu li.menu-item-has-children.dt-open>.mobile-toggle::after{content:'2'}#et_mobile_nav_menu .et_pb_menu_0.et_pb_menu .et_mobile_menu:after{position:absolute;right:5%;margin-left:-20px;top:-14px;width:0;height:0;content:'';border-left:20px solid transparent;border-right:20px solid transparent;border-bottom:20px solid #fff}#et_mobile_nav_menu .mobile_menu_bar{position:relative;display:block;line-height:0}#et_mobile_nav_menu .et_pb_menu_0.et_pb_menu .et_mobile_menu,#et_mobile_nav_menu .et_pb_menu_0.et_pb_menu .et_mobile_menu ul{background-color:#fff!important;border-radius:10px}</style>
+        <script type="text/javascript" id="pac-drh-collapse-mobile-submenus-inline-js">
+            jQuery(function ($) {
+                $(document).ready(function () {
+                    let isCollapseSubMenus = '';
+                    $("body #et_mobile_nav_menu ul.et_mobile_menu li.menu-item-has-children, body #et_mobile_nav_menu ul.et_mobile_menu  li.page_item_has_children").append('<a href="javascript:void(0)" class="mobile-toggle"></a>');
+                    $('#et_mobile_nav_menu ul.et_mobile_menu li.menu-item-has-children .mobile-toggle, #et_mobile_nav_menu ul.et_mobile_menu li.page_item_has_children .mobile-toggle').click(function (event) {
+                        event.preventDefault();
+                        let parentLIObj = $(this).parent('li');
+                        if (parentLIObj.hasClass('dt-open')) {
+                            parentLIObj.toggleClass('dt-open');
+                            parentLIObj.find('ul.children').first().toggleClass('visible');
+                            parentLIObj.find('ul.sub-menu').first().toggleClass('visible');
+                        } else {
+                            if (!parentLIObj.parent('ul').hasClass('visible') && isCollapseSubMenus) {
+                                $('li.menu-item-has-children').removeClass('dt-open');
+                                $('li.menu-item-has-children .sub-menu').removeClass('visible');
+                            }
+                            parentLIObj.toggleClass('dt-open');
+                            parentLIObj.find('ul.children').first().toggleClass('visible');
+                            parentLIObj.find('ul.sub-menu').first().toggleClass('visible');
+                        }
+                    });
+                    let iconFINAL = 'P';
+                    $('body ul.et_mobile_menu li.menu-item-has-children, body ul.et_mobile_menu li.page_item_has_children').attr('data-icon', iconFINAL);
+                    $('.mobile-toggle').on('mouseover', function () {
+                        $(this).parent().addClass('is-hover');
+                    }).on('mouseout', function () {
+                        $(this).parent().removeClass('is-hover');
+                    })
+                });
+            });
+        </script>
+                    <script type="text/javascript" id="pac-drh-openclose-submenu-parent-inline-js">
+                jQuery(function ($) {
+                    $(document).ready(function () {
+                        $("#et_mobile_nav_menu .et_mobile_menu .menu-item-has-children a").each(function () {
+                            $(this).click(function (e) {
+                                let parent = $(this).siblings('ul').children('li').find('ul');
+                                parent.removeClass('visible');
+                                parent.toggleClass('visible');
+                            })
+                        });
+                        $("body #et_mobile_nav_menu ul.et_mobile_menu li.menu-item-has-children, body #et_mobile_nav_menu ul.et_mobile_menu  li.page_item_has_children").each(function () {
+                            var outerThis = this;
+                            $(outerThis).find('a:first').attr('href', 'javascript:void(0)').off('click');
+                            $(outerThis).find('a:first').click(function (e) {
+                                $(outerThis).find('ul').toggleClass('visible')
+                            });
+                        });
+                    });
+                })
+            </script>
+            <style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #ffffff; }
+</style>
+	<!-- Start of Equal Height Divi Blog Grid -->
+<script>
+	(function ($) {
+		var pa_equalize_button_height = "true";
+
+		if (pa_equalize_button_height == "false") {
+			function pa_equalize_blog_post_height(blog) {
+				var articles = blog.find('article');
+				var heights = [];
+
+				articles.each(function () {
+					var height = 0;
+					height += ($(this).find('.et_pb_image_container, .et_main_video_container').length != 0) ? $(this).find('.et_pb_image_container, .et_main_video_container').outerHeight(true) : 0;
+					height += $(this).find('.entry-title').outerHeight(true);
+					height += ($(this).find('.post-meta').length != 0) ? $(this).find('.post-meta').outerHeight(true) : 0;
+					height += ($(this).find('.post-content').length != 0) ? $(this).find('.post-content').outerHeight(true) : 0;
+
+					heights.push(height);
+				});
+
+				var max_height = Math.max.apply(Math, heights);
+
+				articles.each(function () {
+					$(this).height(max_height);
+				});
+			}
+		} else {
+			function pa_equalize_blog_post_height(blog) {
+				var articles = blog.find('article');
+				var heights = [];
+				var btnheights = [];
+
+				articles.each(function () {
+					var height = 0;
+					var btnheight = 0;
+					var basebtnmargin = 20;
+
+					height += ($(this).find('.et_pb_image_container, .et_main_video_container').length != 0) ? $(this).find('.et_pb_image_container, .et_main_video_container').outerHeight(true) : 0;
+					height += $(this).find('.entry-title').outerHeight(true);
+					height += $(this).find('.post-meta').outerHeight(true);
+					height += $(this).find('.post-content').outerHeight(true);
+
+					btnheight += ($(this).find('.et_pb_image_container, .et_main_video_container').length != 0) ? $(this).find('.et_pb_image_container, .et_main_video_container').outerHeight(true) : 0;
+					btnheight += $(this).find('.entry-title').outerHeight(true);
+					btnheight += $(this).find('.post-meta').outerHeight(true);
+					btnheight += $(this).find(".post-content p").outerHeight(true);
+					btnheight += basebtnmargin;
+
+					heights.push(height);
+					btnheights.push(btnheight);
+
+				});
+
+				var max_height = Math.max.apply(Math, heights);
+				var max_btn_height = Math.max.apply(Math, btnheights);
+
+				articles.each(function () {
+					$(this).height(max_height);
+
+					var eachheight = 0;
+					var eachbasebtnmargin = 20;
+					eachheight += ($(this).find('.et_pb_image_container, .et_main_video_container').length != 0) ? $(this).find('.et_pb_image_container, .et_main_video_container').outerHeight(true) : 0;
+					eachheight += $(this).find('.entry-title').outerHeight(true);
+					eachheight += $(this).find('.post-meta').outerHeight(true);
+					eachheight += $(this).find(".post-content p").outerHeight(true);
+					eachheight += eachbasebtnmargin;
+
+					var requiredbtnmargin = (max_btn_height - eachheight) + eachbasebtnmargin;
+					$(this).find(".more-link").css("margin-top", requiredbtnmargin + "px");
+				});
+			}
+		}
+    
+		$(document).ready(function () {
+			$(window).resize(function () {
+				if ($(this).width() >= 768) {
+
+					$(".pa-blog-equal-height article").each(function () {
+						$(this).removeClass("pa-auto-height");
+						$(this).find(".more-link").removeClass("pa-auto-margin");
+					})
+					$('.pa-blog-equal-height').each(function () {
+						pa_equalize_blog_post_height($(this));
+					});
+
+					$('.pa-blog-equal-height').each(function () {
+						var pa_blog = $(this);
+
+						pa_equalize_blog_post_height(pa_blog);
+
+						var observer = new MutationObserver(function (mutations) {
+							pa_equalize_blog_post_height(pa_blog);
+						});
+
+						var config = {
+							subtree: true,
+							childList: true
+						};
+
+						observer.observe(pa_blog[0], config);
+					});
+
+					$(document).ajaxComplete(function () {
+						$('.pa-blog-equal-height').imagesLoaded().then(function () {
+							$('.pa-blog-equal-height').each(function () {
+								pa_equalize_blog_post_height($(this));
+							});
+						});
+					});
+
+					$.fn.imagesLoaded = function () {
+						var $imgs = this.find('img[src!=""]');
+						var dfds = [];
+
+						if (!$imgs.length) {
+							return $.Deferred().resolve().promise();
+						}
+
+						$imgs.each(function () {
+							var dfd = $.Deferred();
+							dfds.push(dfd);
+							var img = new Image();
+
+							img.onload = function () {
+								dfd.resolve();
+							};
+
+							img.onerror = function () {
+								dfd.resolve();
+							};
+
+							img.src = this.src;
+						});
+
+						return $.when.apply($, dfds);
+					}
+				} else {
+					$(".pa-blog-equal-height article").each(function () {
+						$(this).addClass("pa-auto-height");
+						$(this).find(".more-link").addClass("pa-auto-margin");
+					})
+				}
+			});
+		});
+	})(jQuery); 
+</script>
+<!-- End of Equal Height Divi Blog Grid -->
+<!-- Start Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-MKR5723');</script>
+<!-- End Google Tag Manager -->
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '412165789387453');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=412165789387453&amp;ev=PageView&amp;noscript=1"></noscript>
+<!-- End Facebook Pixel Code -->
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/2048951.js"></script>
+<!-- End of HubSpot Embed Code --><link rel="icon" href="https://performancelivestockanalytics.com/wp-content/uploads/2022/04/cropped-favicon-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://performancelivestockanalytics.com/wp-content/uploads/2022/04/cropped-favicon-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://performancelivestockanalytics.com/wp-content/uploads/2022/04/cropped-favicon-180x180.png" />
+<meta name="msapplication-TileImage" content="https://performancelivestockanalytics.com/wp-content/uploads/2022/04/cropped-favicon-270x270.png" />
+<style id="et-divi-customizer-global-cached-inline-styles">body,.et_pb_column_1_2 .et_quote_content blockquote cite,.et_pb_column_1_2 .et_link_content a.et_link_main_url,.et_pb_column_1_3 .et_quote_content blockquote cite,.et_pb_column_3_8 .et_quote_content blockquote cite,.et_pb_column_1_4 .et_quote_content blockquote cite,.et_pb_blog_grid .et_quote_content blockquote cite,.et_pb_column_1_3 .et_link_content a.et_link_main_url,.et_pb_column_3_8 .et_link_content a.et_link_main_url,.et_pb_column_1_4 .et_link_content a.et_link_main_url,.et_pb_blog_grid .et_link_content a.et_link_main_url,body .et_pb_bg_layout_light .et_pb_post p,body .et_pb_bg_layout_dark .et_pb_post p{font-size:16px}.et_pb_slide_content,.et_pb_best_value{font-size:18px}body{color:#222222}h1,h2,h3,h4,h5,h6{color:#222222}body{line-height:2.1em}#et_search_icon:hover,.mobile_menu_bar:before,.mobile_menu_bar:after,.et_toggle_slide_menu:after,.et-social-icon a:hover,.et_pb_sum,.et_pb_pricing li a,.et_pb_pricing_table_button,.et_overlay:before,.entry-summary p.price ins,.et_pb_member_social_links a:hover,.et_pb_widget li a:hover,.et_pb_filterable_portfolio .et_pb_portfolio_filters li a.active,.et_pb_filterable_portfolio .et_pb_portofolio_pagination ul li a.active,.et_pb_gallery .et_pb_gallery_pagination ul li a.active,.wp-pagenavi span.current,.wp-pagenavi a:hover,.nav-single a,.tagged_as a,.posted_in a{color:#ffffff}.et_pb_contact_submit,.et_password_protected_form .et_submit_button,.et_pb_bg_layout_light .et_pb_newsletter_button,.comment-reply-link,.form-submit .et_pb_button,.et_pb_bg_layout_light .et_pb_promo_button,.et_pb_bg_layout_light .et_pb_more_button,.et_pb_contact p input[type="checkbox"]:checked+label i:before,.et_pb_bg_layout_light.et_pb_module.et_pb_button{color:#ffffff}.footer-widget h4{color:#ffffff}.et-search-form,.nav li ul,.et_mobile_menu,.footer-widget li:before,.et_pb_pricing li:before,blockquote{border-color:#ffffff}.et_pb_counter_amount,.et_pb_featured_table .et_pb_pricing_heading,.et_quote_content,.et_link_content,.et_audio_content,.et_pb_post_slider.et_pb_bg_layout_dark,.et_slide_in_menu_container,.et_pb_contact p input[type="radio"]:checked+label i:before{background-color:#ffffff}.container,.et_pb_row,.et_pb_slider .et_pb_container,.et_pb_fullwidth_section .et_pb_title_container,.et_pb_fullwidth_section .et_pb_title_featured_container,.et_pb_fullwidth_header:not(.et_pb_fullscreen) .et_pb_fullwidth_header_container{max-width:1920px}.et_boxed_layout #page-container,.et_boxed_layout.et_non_fixed_nav.et_transparent_nav #page-container #top-header,.et_boxed_layout.et_non_fixed_nav.et_transparent_nav #page-container #main-header,.et_fixed_nav.et_boxed_layout #page-container #top-header,.et_fixed_nav.et_boxed_layout #page-container #main-header,.et_boxed_layout #page-container .container,.et_boxed_layout #page-container .et_pb_row{max-width:2080px}a{color:#b9070d}#main-header,#main-header .nav li ul,.et-search-form,#main-header .et_mobile_menu{background-color:#404040}.et_secondary_nav_enabled #page-container #top-header{background-color:#ffffff!important}#et-secondary-nav li ul{background-color:#ffffff}.et_header_style_centered .mobile_nav .select_page,.et_header_style_split .mobile_nav .select_page,.et_nav_text_color_light #top-menu>li>a,.et_nav_text_color_dark #top-menu>li>a,#top-menu a,.et_mobile_menu li a,.et_nav_text_color_light .et_mobile_menu li a,.et_nav_text_color_dark .et_mobile_menu li a,#et_search_icon:before,.et_search_form_container input,span.et_close_search_field:after,#et-top-navigation .et-cart-info{color:#ffffff}.et_search_form_container input::-moz-placeholder{color:#ffffff}.et_search_form_container input::-webkit-input-placeholder{color:#ffffff}.et_search_form_container input:-ms-input-placeholder{color:#ffffff}#top-menu li a,.et_search_form_container input{font-weight:normal;font-style:normal;text-transform:uppercase;text-decoration:none}.et_search_form_container input::-moz-placeholder{font-weight:normal;font-style:normal;text-transform:uppercase;text-decoration:none}.et_search_form_container input::-webkit-input-placeholder{font-weight:normal;font-style:normal;text-transform:uppercase;text-decoration:none}.et_search_form_container input:-ms-input-placeholder{font-weight:normal;font-style:normal;text-transform:uppercase;text-decoration:none}#top-menu li.current-menu-ancestor>a,#top-menu li.current-menu-item>a,#top-menu li.current_page_item>a{color:#ffffff}#main-footer{background-color:#404040}#main-footer .footer-widget h4,#main-footer .widget_block h1,#main-footer .widget_block h2,#main-footer .widget_block h3,#main-footer .widget_block h4,#main-footer .widget_block h5,#main-footer .widget_block h6{color:#ffffff}.footer-widget li:before{border-color:#ffffff}#footer-widgets .footer-widget li:before{top:10.6px}#footer-bottom{background-color:#404040}#footer-info,#footer-info a{color:#ffffff}#footer-bottom .et-social-icon a{color:#ffffff}@media only screen and (min-width:981px){.et-fixed-header #top-menu a,.et-fixed-header #et_search_icon:before,.et-fixed-header #et_top_search .et-search-form input,.et-fixed-header .et_search_form_container input,.et-fixed-header .et_close_search_field:after,.et-fixed-header #et-top-navigation .et-cart-info{color:#ffffff!important}.et-fixed-header .et_search_form_container input::-moz-placeholder{color:#ffffff!important}.et-fixed-header .et_search_form_container input::-webkit-input-placeholder{color:#ffffff!important}.et-fixed-header .et_search_form_container input:-ms-input-placeholder{color:#ffffff!important}.et-fixed-header #top-menu li.current-menu-ancestor>a,.et-fixed-header #top-menu li.current-menu-item>a,.et-fixed-header #top-menu li.current_page_item>a{color:#ffffff!important}}@media only screen and (min-width:2400px){.et_pb_row{padding:48px 0}.et_pb_section{padding:96px 0}.single.et_pb_pagebuilder_layout.et_full_width_page .et_post_meta_wrapper{padding-top:144px}.et_pb_fullwidth_section{padding:0}}@media only screen and (max-width:980px){#main-header,#main-header .nav li ul,.et-search-form,#main-header .et_mobile_menu{background-color:}}	#main-header,#et-top-navigation{font-family:'Barlow',Helvetica,Arial,Lucida,sans-serif}.pa-header{background:transparent;-webkit-transition:background-color .5s ease-out;-moz-transition:background-color .5s ease-out;-o-transition:background-color .5s ease-out;transition:background-color .5s ease-out}.pa-fixed-header{background-color:#404040!important;-webkit-transition:background-color .5s ease-out;-moz-transition:background-color .5s ease-out;-o-transition:background-color .5s ease-out;transition:background-color .5s ease-out}sup,sub{vertical-align:baseline;font-size:0.6em}</style></head>
+<body class="home page-template-default page page-id-8 custom-background et-tb-has-template et-tb-has-header et-tb-has-footer et-tb-footer-disabled et_pb_button_helper_class et_cover_background et_pb_gutter et_pb_gutters3 et_pb_pagebuilder_layout et_smooth_scroll et_no_sidebar et_divi_theme et-db">
+	<div id="page-container">
+<div id="et-boc" class="et-boc">
+			
+		<header class="et-l et-l--header">
+			<div class="et_builder_inner_content et_pb_gutters2"><div class="et_pb_section et_pb_section_0_tb_header et_pb_with_background et_section_regular et_pb_section--fixed et_pb_section--with-menu" >
+				
+				
+				
+				
+				
+				
+				<div class="et_pb_with_border et_pb_row et_pb_row_0_tb_header et_pb_gutters4 et_pb_row--with-menu">
+				<div class="et_pb_column et_pb_column_4_4 et_pb_column_0_tb_header  et_pb_css_mix_blend_mode_passthrough et-last-child et_pb_column--with-menu">
+				
+				
+				
+				
+				<div class="et_pb_module et_pb_menu et_pb_menu_0_tb_header et_pb_bg_layout_light  et_pb_text_align_right et_dropdown_animation_fade et_pb_menu--with-logo et_pb_menu--style-left_aligned">
+					
+					
+					
+					
+					<div class="et_pb_menu_inner_container clearfix">
+						<div class="et_pb_menu__logo-wrap">
+			  <div class="et_pb_menu__logo">
+				<a href="/" ><img decoding="async" src="https://performancelivestockanalytics.com/wp-content/uploads/2022/04/performance-livestock-analytics-logo-white.svg" alt="Performance Livestock Analytics" class="wp-image-33" /></a>
+			  </div>
+			</div>
+						<div class="et_pb_menu__wrap">
+							<div class="et_pb_menu__menu">
+								<nav class="et-menu-nav"><ul id="menu-primary-menu" class="et-menu nav"><li class="et_pb_menu_page_id-14 menu-item menu-item-type-post_type menu-item-object-page menu-item-65"><a title="Performance Beef" href="https://performancelivestockanalytics.com/performance-beef/">Performance Beef</a></li>
+<li class="et_pb_menu_page_id-17 menu-item menu-item-type-post_type menu-item-object-page menu-item-64"><a title="Performance Ranch" href="https://performancelivestockanalytics.com/performance-ranch/">Performance Ranch</a></li>
+<li class="et_pb_menu_page_id-19 menu-item menu-item-type-post_type menu-item-object-page menu-item-63"><a title="Cattle Krush" href="https://performancelivestockanalytics.com/cattle-krush/">Cattle Krush</a></li>
+<li class="et_pb_menu_page_id-2695 menu-item menu-item-type-post_type menu-item-object-page menu-item-4018"><a href="https://performancelivestockanalytics.com/stories/">Stories</a></li>
+<li class="et_pb_menu_page_id-23 menu-item menu-item-type-post_type menu-item-object-page menu-item-61"><a title="Support" target="_blank" rel="noopener" href="https://performancelivestockanalytics.com/support/">Support</a></li>
+<li class="et_pb_menu_page_id-25 menu-item menu-item-type-post_type menu-item-object-page menu-item-60"><a title="About Us" href="https://performancelivestockanalytics.com/about-us/">About Us</a></li>
+<li class="demo-link et_pb_menu_page_id-66 menu-item menu-item-type-post_type menu-item-object-page menu-item-68"><a title="Request a Demo" href="https://performancelivestockanalytics.com/demo/">Request a Demo</a></li>
+</ul></nav>
+							</div>
+							
+							
+							<div class="et_mobile_nav_menu">
+				<div class="mobile_nav closed">
+					<span class="mobile_menu_bar"></span>
+				</div>
+			</div>
+						</div>
+						
+					</div>
+				</div><div class="et_pb_module et_pb_code et_pb_code_0_tb_header">
+				
+				
+				
+				
+				
+			</div>
+			</div>
+				
+				
+				
+				
+			</div>
+				
+				
+			</div>		</div>
+	</header>
+	<div id="et-main-area">
+	
+<div id="main-content">
+	<div class="scroll-arrow">
+		<div id="animate-arrow">
+			<span id="detail-home-page-arrow" class="home-page-arrow">
+				<ul class="scroll-nav">
+					<li><a class="anchor scroll-nav-anchor active" href="#pla"></a></li>
+					<li><a class="anchor scroll-nav-anchor" href="#beef"></a></li>
+					<li><a class="anchor scroll-nav-anchor" href="#ranch"></a></li>
+				</ul>
+				<img src="/wp-content/uploads/2022/08/icon-down-arrow-white.svg" class="navigation-arrow" />
+			</sp>
+		</div>
+	</div>	
+	<div class="gsap-container">
+		<div id="pla" class="panel">
+			<video playsinline autoplay muted loop poster="" id="home-page-slide-1-bg" class="slide-bg">
+				<source src="/wp-content/themes/performance-livestock-analytics/assets/video/home-page-bg.mp4" data-src="/wp-content/themes/performance-livestock-analytics/assets/video/home-page-bg.mp4" type="video/mp4">
+			</video>
+			<div class="slide-content slide-1">
+				<div class="slide-content__inner column">
+					<h2>PERFORMANCE LIVESTOCK ANALYTICS</h2>
+					<h1>STRENGTHEN YOUR<br /> CATTLE OPERATION WITH<br /> THE POWER OF DATA</h1>
+				</div>
+			</div>
+			<!-- <div class="scroll-arrow">
+				<div id="animate-arrow">
+					<span id="detail-home-page-arrow" class="home-page-arrow">
+						<ul class="scroll-nav">
+							<li><a class="anchor scroll-nav-anchor active" href="#pla"></a></li>
+							<li><a class="anchor scroll-nav-anchor" href="#beef"></a></li>
+							<li><a class="anchor scroll-nav-anchor" href="#ranch"></a></li>
+						</ul>
+						<img src="/wp-content/uploads/2022/08/icon-down-arrow-white.svg" class="navigation-arrow" />
+					</sp>
+				</div>
+			</div> -->
+		</div>
+		<div id="beef" class="panel panel-beef">
+			<img id="home-page-slide-2-bg" class="slide-bg" src="/wp-content/uploads/2022/08/preformance-beef-home-slider.jpg" data-src="/wp-content/uploads/2022/08/preformance-beef-home-slider.jpg" alt="">
+			<div class="slide-content slide-2">
+				<div class="slide-content__inner row">
+					<div class="slide-content__inner--left">
+						<h2>PERFORMANCE BEEF</h2>
+						<h1>SIMPLIFY RECORDKEEPING ON YOUR OPERATION</h1>
+						<p>Performance Beef helps streamline your feeding, performance and health records for feedlot, stocker and backgrounder producers.</p>
+						<div class="cta-box">
+							<div class="demo-link">
+								<a class="app-request" href="/performance-beef/" title="DISCOVER PERFORMANCE BEEF" rel="noopener">DISCOVER PERFORMANCE BEEF</a>
+							</div>
+						</div>
+					</div>
+					<div class="slide-content__inner--right">
+						<img src="/wp-content/uploads/2022/07/preformance-beef-home-slider.png" alt="">
+					</div>
+				</div>
+			</div>
+		  </div>
+		  <div id="ranch" class="panel panel-ranch">
+			<img id="home-page-slide-3-bg" class="slide-bg" src="/wp-content/uploads/2022/08/preformance-ranch-home-slider.jpg" data-src="/wp-content/uploads/2022/08/preformance-ranch-home-slider.jpg" alt="">
+			<div class="slide-content slide-3">
+				<div class="slide-content__inner row">
+					<div class="slide-content__inner--left">
+						<h2>PERFORMANCE RANCH</h2>
+						<h1>MANAGE COW-CALF DATA IN REAL TIME</h1>
+						<p>Performance Ranch helps cow-calf producers implement management decisions, track inventory and capture health data.</p>
+						<div class="cta-box">
+							<div class="demo-link">
+								<a class="app-request" href="/performance-ranch/" title="EXPLORE PERFORMANCE RANCH" rel="noopener">EXPLORE PERFORMANCE RANCH</a>
+							</div>
+							<!-- <div class="app-link">
+								<a class="app-request" title="Login" href="https://ranch.performancebeef.com/" target="_blank" rel="noopener">Login</a>
+							</div> -->
+						</div>
+					</div>
+					<div class="slide-content__inner--right">
+						<img src="/wp-content/uploads/2022/07/preformance-ranch-home-slider.png" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> <!-- #main-content -->
+</div> <!-- #et-main-area -->
+</div> <!-- #et-boc -->
+</div> <!-- #page-container -->
+
+		</div>
+
+			
+		</div>
+		</div>
+
+			            <script type="text/javascript" id="pac-drh-disabled-hover-effects-inline-js">
+                jQuery(document).ready(function () {
+                    var isTouch = 'ontouchstart' in document.documentElement || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
+                    setTimeout(function () {
+                        if (isTouch) {
+                            let etPBModule = $('.et_pb_module');
+                            if (etPBModule.length > 0) {
+                                etPBModule.each(function () {
+                                    if ($(this).hasClass('et_multi_view__hover_selector')) {
+                                        $(this).removeClass('et_multi_view__hover_selector');
+                                    }
+                                });
+                            }
+                            let sheetCount = document.styleSheets.length;
+                            let lastSheet = document.styleSheets[sheetCount - 1];
+                            let ruleCount;
+                            if (lastSheet.cssRules) {
+                                ruleCount = lastSheet.cssRules.length;
+                            } else if (lastSheet.rules) {
+                                ruleCount = lastSheet.rules.length;
+                            }
+                            if (ruleCount > 0 && ruleCount !== undefined) {
+                                let i;
+                                for (i = 0; i < ruleCount; i++) {
+                                    let styleSheet = lastSheet.cssRules[i];
+                                    if (undefined !== styleSheet.selectorText && styleSheet.cssText.indexOf(':hover') >= 0) {
+                                        styleSheet.selectorText = styleSheet.selectorText.replace(/:hover/g, '.pac_drh_responsive_hover_effect:hover');
+                                    }
+                                }
+                            }
+                        }
+                    }, 500);
+                });
+            </script>
+            
+<style id='pac-drh-hide-divi-responsive-views-inline-css'>.et-bfb-responsive-view-controls, .et-fb-responsive-view-controls {display: none;}.et-db #et-boc .et-l #et-fb-app-frame {position: absolute !important;top: 0 !important;padding-top: 0 !important}.wp-admin .et-boc.et-fb-root-ancestor.et-fb-iframe-ancestor{margin-top: 20px !important;}</style>
+            <script type="text/javascript">
+                jQuery(document).ready(function () {
+                                                            // exclude woo-commerce add product and edit product pages
+                    if (!(jQuery("body.wp-admin.post-new-php.post-type-product").length) || !(jQuery("body.wp-admin.post-php.post-type-product").length)) {
+                        setTimeout(function () {
+                            jQuery("p").dwfWidow(1);
+                        }, 30)
+                    }
+                                    });
+            </script>
+            <style>
+                h1, h2, h3, h4, h5, h6 {
+                    overflow-wrap: normal;
+                }
+            </style>
+        
+<style id="pac-drh-mmb-1023-inline-css">@media only screen and (max-width:1023px){ .et_pb_menu_0_tb_header .et_pb_menu__menu{display:none!important} .et_pb_menu_0_tb_header .et_mobile_nav_menu{display:flex!important} .et_pb_menu_0_tb_header ul.et_mobile_menu{list-style-type:none!important;padding:0!important}}</style></style>
+<!-- Start Google Tag Manager -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKR5723" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager --><script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/themes/performance-livestock-analytics/assets/js/main.js?ver=0.0.1' id='pla-main-js'></script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/themes/performance-livestock-analytics/assets/js/vendor/splide.min.js?ver=0.0.1' id='splidejs-js'></script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/themes/performance-livestock-analytics/assets/js/vendor/splide-extension-url-hash.min.js?ver=0.0.1' id='splide-hashjs-js'></script>
+<script type='text/javascript' id='divi-custom-script-js-extra'>
+/* <![CDATA[ */
+var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
+var et_builder_utils_params = {"condition":{"diviTheme":true,"extraTheme":false},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"};
+var et_frontend_scripts = {"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};
+var et_pb_custom = {"ajaxurl":"https:\/\/performancelivestockanalytics.com\/wp-admin\/admin-ajax.php","images_uri":"https:\/\/performancelivestockanalytics.com\/wp-content\/themes\/Divi\/images","builder_images_uri":"https:\/\/performancelivestockanalytics.com\/wp-content\/themes\/Divi\/includes\/builder\/images","et_frontend_nonce":"0e98a24cd3","subscription_failed":"Please, check the fields below to make sure you entered the correct information.","et_ab_log_nonce":"711a0c58c2","fill_message":"Please, fill in the following fields:","contact_error_message":"Please, fix the following errors:","invalid":"Invalid email","captcha":"Captcha","prev":"Prev","previous":"Previous","next":"Next","wrong_captcha":"You entered the wrong number in captcha.","wrong_checkbox":"Checkbox","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"8","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"yes","is_shortcode_tracking":"","tinymce_uri":"https:\/\/performancelivestockanalytics.com\/wp-content\/themes\/Divi\/includes\/builder\/frontend-builder\/assets\/vendors","accent_color":"#ffffff","waypoints_options":[]};
+var et_pb_box_shadow_elements = [];
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/themes/Divi/js/scripts.min.js?ver=4.21.0' id='divi-custom-script-js'></script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/themes/Divi/js/smoothscroll.js?ver=4.21.0' id='smoothscroll-js'></script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.fitvids.js?ver=4.21.0' id='fitvids-js'></script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-includes/js/comment-reply.min.js?ver=6.2.2' id='comment-reply-js'></script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/jquery.mobile.js?ver=4.21.0' id='jquery-mobile-js'></script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/magnific-popup.js?ver=4.21.0' id='magnific-popup-js'></script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/easypiechart.js?ver=4.21.0' id='easypiechart-js'></script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/salvattore.js?ver=4.21.0' id='salvattore-js'></script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/plugins/divi-ajax-filter/scripts/frontend-bundle.min.js?ver=2.3.3' id='divi-ajax-filter-frontend-bundle-js'></script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/plugins/divi-carousel-maker/scripts/frontend-bundle.min.js?ver=2.0.2' id='carousel-layouts-frontend-bundle-js'></script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/plugins/divi-machine/scripts/frontend-bundle.min.js?ver=5.4.3' id='divi-machine-frontend-bundle-js'></script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/plugins/divi-modal-popup/scripts/frontend-bundle.min.js?ver=1.0.8' id='divi-modal-popup-frontend-bundle-js'></script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/plugins/divi-social-sharing-buttons/scripts/frontend-bundle.min.js?ver=2.2.1' id='divi-social-sharing-buttons-frontend-bundle-js'></script>
+<script type='text/javascript' id='pac_drh_dwf_widow-js-extra'>
+/* <![CDATA[ */
+var pacDRHWF = {"isExcludeEnabled":"false"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/plugins/divi-responsive-helper/includes/assets/public/js/dwf-widow.min.js?ver=2.3.1' id='pac_drh_dwf_widow-js'></script>
+<script type='text/javascript' id='pac_drh_viewport-js-extra'>
+/* <![CDATA[ */
+var pac_drh_vp_obj = {"is_admin":""};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/plugins/divi-responsive-helper/includes/assets/admin/js/viewport.min.js?ver=2.3.1' id='pac_drh_viewport-js'></script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/themes/Divi/core/admin/js/common.js?ver=4.21.0' id='et-core-common-js'></script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/plugins/divi-machine/js/carousel.min.js?ver=5.4.3' id='dmach-carousel-js-js'></script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/plugins/divi-machine/js/frontend-general.min.js?ver=5.4.3' id='divi-machine-general-js-js'></script>
+<script type='text/javascript' id='divi-machine-general-js-js-after'>
+var filter_ajax_object = {"ajax_url":"https:\/\/performancelivestockanalytics.com\/wp-admin\/admin-ajax.php","ajax_pagination":true,"security":"707355afe5"}
+</script>
+<script type='text/javascript' id='et-builder-modules-script-motion-js-extra'>
+/* <![CDATA[ */
+var et_pb_motion_elements = {"desktop":[],"tablet":[],"phone":[]};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/motion-effects.js?ver=4.21.0' id='et-builder-modules-script-motion-js'></script>
+<script type='text/javascript' id='et-builder-modules-script-sticky-js-extra'>
+/* <![CDATA[ */
+var et_pb_sticky_elements = [];
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://performancelivestockanalytics.com/wp-content/themes/Divi/includes/builder/feature/dynamic-assets/assets/js/sticky-elements.js?ver=4.21.0' id='et-builder-modules-script-sticky-js'></script>
+<style id="et-builder-module-design-tb-140-tb-160-8-cached-inline-styles">.et_pb_section_0_tb_header.et_pb_section{padding-top:1.5rem;padding-right:0px;padding-bottom:1.5rem;padding-left:0px;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px;background-color:rgba(0,0,0,0.2)!important}.et_pb_section_0_tb_header{width:100%;max-width:100%;z-index:9999;position:fixed!important;top:0px;bottom:auto;left:50%;right:auto;transform:translateX(-50%);background-color:unset}body.logged-in.admin-bar .et_pb_section_0_tb_header{top:calc(0px + 32px)}.et_pb_row_0_tb_header{border-style:none;border-color:#222222 #222222 rgba(34,34,34,0.5) #222222;border-bottom-width:1px}.et_pb_menu_0_tb_header.et_pb_menu ul li a{font-family:'Barlow',Helvetica,Arial,Lucida,sans-serif;font-weight:600;text-transform:uppercase;font-size:12px;color:#FFFFFF!important}.et_pb_menu_0_tb_header{padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:3.5vw;margin-top:0px!important;margin-right:0px!important;margin-bottom:0px!important;margin-left:0px!important}.et_pb_menu_0_tb_header.et_pb_menu .et_mobile_menu a,.et_pb_menu_0_tb_header.et_pb_menu .nav li ul.sub-menu a,.et_pb_menu_0_tb_header.et_pb_menu ul li.current-menu-item a{color:#FFFFFF!important}.et_pb_menu_0_tb_header.et_pb_menu .nav li ul{background-color:#ffffff!important;border-color:RGBA(255,255,255,0)}.et_pb_menu_0_tb_header.et_pb_menu .et_mobile_menu{border-color:RGBA(255,255,255,0)}.et_pb_menu_0_tb_header.et_pb_menu .nav li ul.sub-menu li.current-menu-item a{color:#B9070D!important}.et_pb_menu_0_tb_header.et_pb_menu .et_mobile_menu,.et_pb_menu_0_tb_header.et_pb_menu .et_mobile_menu ul{background-color:RGBA(255,255,255,0)!important}.et_pb_menu_0_tb_header .et_pb_menu__logo-wrap .et_pb_menu__logo img{width:auto}.et_pb_menu_0_tb_header .et_pb_menu_inner_container>.et_pb_menu__logo-wrap,.et_pb_menu_0_tb_header .et_pb_menu__logo-slot{width:auto;max-width:100%}.et_pb_menu_0_tb_header .et_pb_menu_inner_container>.et_pb_menu__logo-wrap .et_pb_menu__logo img,.et_pb_menu_0_tb_header .et_pb_menu__logo-slot .et_pb_menu__logo-wrap img{height:75px;max-height:none}.et_pb_menu_0_tb_header .mobile_nav .mobile_menu_bar:before,.et_pb_menu_0_tb_header .et_pb_menu__icon.et_pb_menu__search-button,.et_pb_menu_0_tb_header .et_pb_menu__icon.et_pb_menu__close-search-button,.et_pb_menu_0_tb_header .et_pb_menu__icon.et_pb_menu__cart-button{color:#ffffff}.et_pb_menu_0_tb_header .et_mobile_nav_menu .mobile_nav.closed .mobile_menu_bar:before{font-family:ETmodules!important;font-weight:400;content:'a'}.et_pb_menu_0_tb_header .et_mobile_nav_menu .mobile_nav.opened .mobile_menu_bar:before{font-family:ETmodules!important;font-weight:400;content:'M'}.et_pb_column_0_tb_header{padding-top:0px;padding-right:0.5rem;padding-bottom:0px;padding-left:0.5rem}.et_pb_row_0_tb_header.et_pb_row{padding-top:0px!important;padding-right:0px!important;padding-bottom:0px!important;padding-left:0px!important;margin-top:0px!important;margin-right:0px!important;margin-bottom:0px!important;margin-left:0px!important;margin-left:auto!important;margin-right:auto!important;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px}@media only screen and (min-width:981px){.et_pb_row_0_tb_header,body #page-container .et-db #et-boc .et-l .et_pb_row_0_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_0_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_0_tb_header.et_pb_row{width:100%}}@media only screen and (max-width:980px){div.et_pb_section.et_pb_section_0_tb_header{background-image:initial!important}.et_pb_section_0_tb_header.et_pb_section{background-color:rgba(0,0,0,0.2)!important}.et_pb_row_0_tb_header{border-bottom-width:1px;border-bottom-color:rgba(34,34,34,0.5)}.et_pb_row_0_tb_header,body #page-container .et-db #et-boc .et-l .et_pb_row_0_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single #page-container #et-boc .et-l .et_pb_row_0_tb_header.et_pb_row,body.et_pb_pagebuilder_layout.single.et_full_width_page #page-container #et-boc .et-l .et_pb_row_0_tb_header.et_pb_row{width:100%}.et_pb_menu_0_tb_header.et_pb_menu ul li a{font-size:12px}.et_pb_menu_0_tb_header{padding-right:20px;padding-left:20px}}@media only screen and (max-width:767px){div.et_pb_section.et_pb_section_0_tb_header{background-image:initial!important}.et_pb_section_0_tb_header{z-index:1}.et_pb_section_0_tb_header.et_pb_section{background-color:rgba(0,0,0,0.2)!important}.et_pb_row_0_tb_header{border-bottom-width:1px;border-bottom-color:rgba(34,34,34,0.5)}.et_pb_menu_0_tb_header.et_pb_menu ul li a{font-size:12px}.et_pb_menu_0_tb_header{padding-right:20px;padding-left:20px}}</style>	
+	</body>
+</html>
