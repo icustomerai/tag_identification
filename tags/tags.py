@@ -1,6 +1,8 @@
+# list of all tags based on r&d, these are list of variations,
+
 
 # free-trial
-free_trial = [
+free_trial= [
     ["free_trial"],
     "Trial period",
     "Trial offer",
@@ -46,8 +48,8 @@ demo = [["demo"], "demo", "free demo", "request a demo"]
 
 
 # eCommerce
-e_commerce = [
-    ["e_commerce"],
+ecommerce= [
+    ["ecommerce"],
     "shopping cart",
     "Shop",
     "Cart",
@@ -115,8 +117,8 @@ pricing = [
 
 # job-page
 
-job_opening = [
-    ["job_opening"],
+job_page = [
+    ["job_page"],
     "vacancy",
     "Job vacancy",
     "Employment opportunity",
@@ -217,8 +219,8 @@ offer = [["offer"], "offer"]
 # it-products
 
 # newsletter
-news_letter = [
-    ["news_letter"],
+newsletter = [
+    ["newsletter"],
     "news letter",
     "Bulletin",
     "Publication",
@@ -227,8 +229,8 @@ news_letter = [
 
 
 # certificates
-certificates = [
-    ["certificates"],
+certificate = [
+    ["certificate"],
     "training & certifications",
     "certifications",
     "get certification",
@@ -323,22 +325,22 @@ social_handle = [
 
 
 # job-opening-marketing
-job_opening_marketing = ["marketing"]
+job_opening_marketing = [["job_opening_marketing"],"marketing"]
 
 # job-opening-sales
-job_opening_sales = ["sales", "telesales"]
+job_opening_sales = [["job_opening_sales"],"sales", "telesales"]
 
 # job-opening-engg
-job_opening_engineering = ["engineering"]
+job_opening_engg= [["job_opening_engg"],"engineering"]
 
 # job-opening-admin
-job_opening_admin = ["admin", "administrative", "administration"]
+job_opening_admin = [["job_opening_admin"],"admin", "administrative", "administration"]
 
 # job-opening-analytics
-job_opening_analytics = ["analytics"]
+job_opening_analytics = [["job_opening_analytics"],"analytics"]
 
 # job-opening-it
-job_opening_IT = [
+job_opening_IT = [["job_opening_IT"],
     "information technology",
     "App",
     "AWS",
@@ -444,3 +446,29 @@ job_opening_IT = [
     "Enterprise Architecture",
     "Network & Information Security",
     "Information Security"]
+
+
+generic_email_prefixes = [
+    "info",
+    "contact",
+    "support",
+    "sales",
+    "admin",
+    "help",
+    "hello",
+    "inquiry",
+    "feedback",
+    "marketing",
+    "contactus",
+    "customerservice",
+    "webmaster",
+    "team",
+    "careers",
+    "billing",
+    "media",
+    "customer",
+    "contactme",
+    "supportteam",
+    "contactus",
+    "hr"
+]

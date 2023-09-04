@@ -1,0 +1,48 @@
+
+<title>ResourceXperts is under construction</title>
+<link href="https://fonts.bunny.net/css?family=Nunito:400,900" rel="stylesheet"/>
+<link href="https://resourcexperts.com/wp-content/plugins/under-construction-page/themes/css/bootstrap.min.css?v=3.97" rel="stylesheet" type="text/css"/>
+<link href="https://resourcexperts.com/wp-content/plugins/under-construction-page/themes/css/common.css?v=3.97" rel="stylesheet" type="text/css"/>
+<link href="https://resourcexperts.com/wp-content/plugins/under-construction-page/themes/light_bulb/style.css?v=3.97" rel="stylesheet" type="text/css"/>
+<link href="https://resourcexperts.com/wp-content/plugins/under-construction-page/themes/css/font-awesome.min.css?v=3.97" rel="stylesheet" type="text/css"/>
+<link href="https://resourcexperts.com/wp-content/plugins/under-construction-page/themes/images/favicon.png" rel="icon">
+<div class="container top-container">
+<div class="row display-table">
+<div class="col-lg-offset-1 col-xs-12 col-md-12 col-lg-5 display-cell">
+<h1></h1>
+</div>
+<div class="col-xs-12 col-md-12 col-lg-5 display-cell">
+<div id="hero-image">
+<img alt="Switching on the site soon ..." class="fadein" src="https://resourcexperts.com/wp-content/plugins/under-construction-page/themes/light_bulb/light_bulb_off.png" title="Switching on the site soon ..."/>
+</div>
+</div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-offset-2 col-lg-8">
+<p class="content"></p>
+</div>
+</div>
+<div class="row" id="social">
+<div class="col-xs-12 col-md-12 col-lg-12">
+</div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+    jQuery(function($) {
+      var std = $('.fadein').attr('src');
+      var hover = std.replace('_off', '_on');
+      $('.fadein').clone().insertAfter('.fadein').attr('src', hover).removeClass('fadein').siblings().css({
+          position:'absolute'
+      });
+      $('.fadein').mouseenter(function() {
+          $('.fadein').stop().fadeTo(600, 0);
+      }).mouseleave(function() {
+          $('.fadein').stop().fadeTo(400, 1);
+      });
+
+    });
+    </script>
+</link>
